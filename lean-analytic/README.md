@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All nine declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All sixteen declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -19,6 +19,12 @@ This is a genuine local analytic component of the no-go argument, not a formal p
 
 `HermitianRigidity.lean` adds three kernel-checked declarations: `real_valued_holomorphic_constant`, `conjugate_holomorphic_pair_constant`, and `holomorphic_hermitian_family_constant`. They use actual complex differentiability on a connected open domain and `Matrix.IsHermitian`. The last theorem is entrywise and even permits an arbitrary index type; the paper uses finite matrices with a fixed inner product. It does not apply to families Hermitian only for real parameter values, or prove any arithmetic determinant identity.
 
+## Positive generalized spectral pencils
+
+`PositivePencil.lean` adds seven actual complex/matrix declarations: `real_ratio_from_positive_form`, `positive_pencil_eigenvalue_real`, `positive_pencil_det_zero_real`, `positive_pencil_det_ne_zero`, `centered_positive_pencil_zero_on_line`, `det_ne_zero_of_strict_imaginary_form`, and `indefinite_pencil_off_line_witness`. The matrix theorems use fixed `Matrix.IsHermitian` A and actual `Matrix.PosDef` B, including the required `ComplexOrder` scope. Singularity is converted into a nonzero kernel vector; quadratic-form reality/strict positivity gives a real generalized eigenvalue and the centered critical-line conclusion. The last theorem checks the explicit off-line determinant witness at s=1/4 when B is indefinite; Hermitian-entry facts for that transparent example are discussed in prose.
+
+This verifies a genuine sufficient spectral mechanism and its positivity caveat. It does not construct arithmetic A_N,B_N, prove determinant matching/convergence, or formalize the operator-norm inverse estimate. The strict-imaginary-form theorem is pointwise and imposes the displayed nontrivial positivity hypothesis; it does not assume or verify that any L-function satisfies it.
+
 ## Reproduce dependencies
 
 Lean4.24.0 is the same project-local toolchain as the standalone layer. Mathlib is cloned under ignored `.tools/mathlib4-v4.24.0` at tagv4.24.0 and exact commit recorded in DEPENDENCIES.json. Its package revisions are in mathlib-manifest.json. No supplied repository was modified and no global Lean configuration was changed.
@@ -26,7 +32,7 @@ Lean4.24.0 is the same project-local toolchain as the standalone layer. Mathlib 
 For a fresh machine, obtain the official toolchain, clone the pinned mathlib tag into that path, confirm its hash, and from the mathlib directory run:
 
 ```sh
-lake exe cache get Mathlib.Analysis.Complex.LocallyUniformLimit Mathlib.Analysis.SpecialFunctions.Pow.Complex Mathlib.Analysis.Complex.AbsMax Mathlib.Analysis.Complex.OpenMapping Mathlib.Analysis.Complex.ReImTopology Mathlib.LinearAlgebra.Matrix.Hermitian
+lake exe cache get Mathlib.Analysis.Complex.LocallyUniformLimit Mathlib.Analysis.SpecialFunctions.Pow.Complex Mathlib.Analysis.Complex.AbsMax Mathlib.Analysis.Complex.OpenMapping Mathlib.Analysis.Complex.ReImTopology Mathlib.LinearAlgebra.Matrix.Hermitian Mathlib.LinearAlgebra.Matrix.PosDef Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
 ```
 
 The cache command downloads public build artifacts for those imports and uses mathlib's default cache directory. No existing cache was cleaned or reindexed. All cache/tool artifacts are retained; no cache-clean or dependency-upgrade command is needed. Use the pinned manifest, not `lake update`.

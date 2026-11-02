@@ -9,7 +9,7 @@ A private research workspace for auditing and developing surface-order and Hilbe
 | Edition | Source | Compiled PDF | Scope |
 |---|---|---|---|
 | Concise, 6 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
-| Extended, 12 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
+| Extended, 13 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
 
 Both editions share [core.tex](papers/core.tex). They are research drafts with full proofs of their stated obstruction results; they do not claim a full proof of GRH or certification of all upstream results. Authorship, novelty assessment and submission venue require confirmation before journal submission.
 
@@ -44,7 +44,7 @@ python3 scripts/check_exponent_frontier.py
 sh scripts/build_papers.sh
 ```
 
-Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies nine statements about actual complex Euler factors, boundary convergence, and holomorphic Hermitian rigidity. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
+Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies sixteen statements about complex Euler factors, boundary convergence, Hermitian rigidity, and positive generalized spectral pencils. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
 
 Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. Both PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
 
@@ -65,3 +65,5 @@ The next unresolved target is zero location/self-adjoint realization for the con
 An active hourly research loop is attached to this chat. It resumes the latest recorded proof obligation, performs research and verification, and pushes substantive private milestones. See [loop workflow](planning/RESEARCH_LOOP.md). It reports meaningful findings or required actions rather than routine unchanged status. Keep the desktop app running and the machine on for local scheduled work.
 
 The [Hermitian-rigidity research note](research/hermitian-rigidity.md) proves that an entrywise holomorphic matrix family Hermitian at every complex parameter must be constant. The associated Lean theorem rules out that particular pointwise extraction shortcut; fixed self-adjoint operators and real-axis Hermitian pencils remain possible, with their arithmetic and zero-location obligations still open.
+
+The [positive-pencil research note](research/positive-pencils.md) provides a valid constructive finite spectral criterion: fixed Hermitian A and positive-definite B give real zeros of det(A−zB), with an explicit resolvent bound in prose. The seven new Lean declarations verify the matrix zero-location mechanism, centered substitution, strict imaginary-form criterion and an indefinite off-line witness. Constructing arithmetic pencils with the required determinant matching remains open.

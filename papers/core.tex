@@ -187,6 +187,28 @@ independent of the spectral variable $s$. Requiring self-adjointness only
 on a real parameter line is also consistent with a nonconstant holomorphic
 extension, but needs its own zero-location theorem.
 
+\begin{proposition}[A positive generalized spectral pencil]\label{prop:positive-pencil}
+Let $A=A^*$ and $B=B^*>0$ be fixed $d\times d$ matrices.
+Every zero of $\det(A-zB)$ is real. Consequently every zero of
+$\det(A+i(s-1/2)B)$ lies on $\Rea s=1/2$.
+\end{proposition}
+\begin{proof}
+Singularity supplies $v\ne0$ with $Av=zBv$. Hence
+$z=(v^*Av)/(v^*Bv)$, with real numerator and strictly positive real
+denominator. Thus $z$ is real. Substitute $z=-i(s-1/2)$.
+\end{proof}
+This supplies a valid finite spectral mechanism, but not its arithmetic
+construction. To apply it one must construct $A_N,B_N$, certify
+$B_N>0$, and prove the required completed-$L$ determinant approximation
+independently. Hermitian coefficients alone are insufficient: for
+\[
+ A=\begin{pmatrix}0&\varepsilon\\\varepsilon&0\end{pmatrix},
+ \quad B=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+ \det(A-zB)=-(z^2+\varepsilon^2),
+\]
+$0<\varepsilon<1/2$ gives transported off-line zeros
+$s=1/2\pm\varepsilon$ inside the critical strip.
+
 \section{A necessary change of approximation class}
 \begin{theorem}[Zero-free Euler truncations cannot approximate a zero]\label{thm:euler-nogo}
 Let $U$ be a connected open subset of $\{\Rea s>0\}$, let $g_N$

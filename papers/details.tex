@@ -179,6 +179,67 @@ domains, closure, adjoint and determinant regularization. No finite-matrix
 rigidity statement here is asserted to settle variable-domain unbounded
 operator constructions.
 
+\section{Positive pencils, resolvent control, and a Herglotz test}
+The positive generalized pencil is precisely a fixed self-adjoint
+construction in different coordinates. Put $H=B^{-1/2}AB^{-1/2}=H^*$.
+Then
+\[
+ A-zB=B^{1/2}(H-zI)B^{1/2},
+\]
+and therefore
+\[
+ \det(A+i(s-1/2)B)=i^d\det(B)
+ \det\bigl(sI-(\tfrac12I+iH)\bigr).
+\]
+The positive metric $B$ must be supplied by the arithmetic construction;
+its existence is not inferred from a desire for real roots.
+
+There is also a quantitative test. If $B\ge bI$ with $b>0$ and $z$ is
+nonreal, then for every $v$,
+\[
+ \|(A-zB)v\|\,\|v\|\ge |v^*(A-zB)v|
+ \ge |\Im z|v^*Bv\ge b|\Im z|\,\|v\|^2.
+\]
+For $v\ne0$, divide by $\|v\|$. In finite dimension this proves
+invertibility and the operator-norm bound
+\[
+ \|(A-zB)^{-1}\|\le\frac1{b|\Im z|}
+ =\frac1{b|\Rea s-1/2|}.
+\]
+Uniform approximation arguments must track dimension, normalization and
+$b_N$; a bound for each individual pencil does not by itself provide
+uniform determinant convergence.
+
+A nonlinear extension uses a matrix-valued Herglotz condition: if $M(z)$
+is holomorphic upstairs and
+\[
+ \Im M(z):=\frac{M(z)-M(z)^*}{2i}>0,
+\]
+then $M(z)v=0$ would contradict $v^*\Im M(z)v>0$. Thus $\det M(z)\ne0$
+there. A reflected lower-half-plane extension
+$M(\bar z)=M(z)^*$ is likewise invertible. A quantitative lower bound
+$\Im M(z)\ge\eta(z)I>0$ gives $\|M(z)^{-1}\|\le1/\eta(z)$ by the
+same argument. For the positive linear pencil the Herglotz sign is
+$M(z)=zB-A$, not $A-zB$.
+Semidefinite positivity alone allows $M(z)=\operatorname{diag}(z,0)$,
+which is always singular. Without reflection, $M(z)=z+i$ is strictly
+Herglotz upstairs but has a lower-half-plane zero. Possible real-axis
+poles and the arithmetic determinant identity remain separate obligations.
+
+For a candidate normalized identity written in the $z$-coordinate,
+$F_N(z)/g_N(z)=\det(A_N-zB_N)$ with a prescribed nowhere-zero $g_N$,
+a necessary diagnostic, for $d_N>0$, is
+\[
+ -\partial_z\log(F_N/g_N)
+ =\tr\bigl((A_N-zB_N)^{-1}B_N\bigr)
+ =\sum_{j=1}^{d_N}\frac1{\lambda_{j,N}-z}.
+\]
+Its imaginary part is strictly positive for $\Im z>0$.
+A certified violation rejects that particular determinant identity;
+finitely many successful samples cannot prove it. One must not choose
+$g_N$ using unknown zero locations or assume this Herglotz positivity as
+a substitute for establishing the arithmetic bridge.
+
 \section{Quantitative arithmetic approximation and prime regularization}
 For the nonprincipal-character approximants, a compact set
 $K\subset\{\Rea s>0\}$ has
