@@ -10,6 +10,10 @@
 
 **Spec:** `planning/DESIGN.md`.
 
+## Execution status
+
+Audit, exact obstruction checks, the standalone Lean layer, and both paper editions are implemented; see PROGRESS.md. The analytic/mathlib proof milestones and the research frontier remain open. Checklist entries below retain their acceptance conditions; this document does not assert they are all achieved.
+
 ## Global constraints
 Preserve source repositories and unrelated data; never delete or move protected progress. No credentials in files or logs. No new production dependencies, CI infrastructure, or broad upgrades. No `sorry`, `admit`, project-specific axioms, or GRH assumptions hidden in an unconditional theorem. Use named output directories and deterministic exact checks. Preserve upstream licenses.
 

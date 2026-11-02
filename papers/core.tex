@@ -1,0 +1,182 @@
+\section{Scope and conventions}
+For a primitive Dirichlet character $\chi$ of conductor $q$, write
+\[
+ L(s,\chi)=\sum_{n\ge1}\frac{\chi(n)}{n^s},\qquad
+ \Lambda(s,\chi)=\left(\frac q\pi\right)^{(s+a)/2}
+ \Gamma\left(\frac{s+a}{2}\right)L(s,\chi),\quad
+ a=\frac{1-\chi(-1)}2.
+\]
+The series and Euler product initially apply for $\Rea s>1$.
+Our target is Dirichlet GRH: every zero in $0<\Rea s<1$ has real part $1/2$.
+For $q=1$, use the entire function
+$\xi(s)=\tfrac12s(s-1)\Lambda(s,1)$ when an entire target is required.
+Finite-order Hecke characters and general Artin representations require separate constructions;
+a theorem for one family is not silently a theorem for another.
+
+The supplied surface-order manuscripts \cite{surface,grhsource} propose
+arithmetic transfer operators and self-adjoint approximants. We isolate
+valid closure logic and prove obstructions to particular claimed constructions.
+These obstructions refute intermediate statements, not GRH.
+The separate \texttt{math} repository \cite{mathsource} includes claimed zero-free
+regions strictly weaker than GRH. Such a region cannot replace the missing critical-line argument.
+
+\section{A corrected conditional closure theorem}
+\begin{theorem}[Spectral approximation criterion]\label{thm:closure}
+Let $U\subset\C$ be connected and open, let $f$ be holomorphic on $U$ and
+not identically zero, and let
+\[
+ F_N(s)=e^{a_N+b_Ns}\det\bigl(sI-(\tfrac12 I+iH_N)\bigr),
+ \qquad H_N=H_N^*\in M_{d_N}(\C).
+\]
+If $F_N\to f$ locally uniformly on $U$, then every zero of $f$ in $U$
+has real part $1/2$.
+\end{theorem}
+\begin{proof}
+The eigenvalues $\lambda_{j,N}$ of $H_N$ are real. Thus the zeros of $F_N$
+are $1/2+i\lambda_{j,N}$, with algebraic multiplicities; the exponential
+factor never vanishes. If $f(z)=0$ off that line, choose a closed disk
+$D\subset U$ about $z$ disjoint from the line, with $f$ nonzero on its
+boundary. Such a disk exists because the zeros of a nonzero holomorphic
+function on a connected domain are isolated. Let
+$m=\min_{\partial D}|f|>0$. Local uniform convergence gives
+$|F_N-f|<m$ on $\partial D$ for sufficiently large $N$.
+Rouch\'e's theorem forces $F_N$ and $f$ to have the same positive number
+of zeros inside $D$, contradicting the zero location of $F_N$.
+\end{proof}
+
+\begin{remark}
+This is a conditional criterion, not a construction. Self-adjointness alone
+establishes only the zero location of the approximants. The difficult arithmetic
+statement is convergence to the particular completed $L$-function.
+Pointwise convergence, weak operator convergence, and agreement of finitely
+many zeros do not supply the displayed hypothesis.
+\end{remark}
+
+\begin{proposition}[A usable continuation interface]\label{prop:normal}
+Suppose $U$ is a connected domain, the entire functions $F_N$ are locally
+uniformly bounded on $U$, and they converge pointwise on a nonempty open
+subset $V\subset U$ to a holomorphic function $f$ defined on $U$.
+Then $F_N\to f$ locally uniformly on $U$.
+\end{proposition}
+\begin{proof}
+Montel's theorem makes the family normal. Every subsequence has a further
+subsequence converging locally uniformly to a holomorphic function $g$.
+On $V$, pointwise convergence gives $g=f$, so the identity theorem gives
+$g=f$ on $U$. If the original sequence failed to converge locally uniformly,
+a compact set, positive error, and violating subsequence would contradict
+this subsequence property.
+\end{proof}
+A proposed analytic continuation proof must actually provide the uniform
+bounds and a genuine overlap $V$. The disjoint domains $\Rea s>1$ and
+$0<\Rea s<1$ are not an overlap.
+
+\section{Arithmetic obstructions to the claimed completion}
+\begin{theorem}[No integral prime-power geodesic norms]\label{thm:norm}
+Let $\gamma\in\mathrm{SL}_2(\Z)$ be hyperbolic. Its expanding eigenvalue
+in absolute value is $u>1$, and its hyperbolic norm is $N(\gamma)=u^2$.
+Then $N(\gamma)$ is not an integer greater than one. In particular no
+closed geodesic arising from such a matrix has length $k\log p$ for a
+prime $p$ and integer $k\ge1$.
+\end{theorem}
+\begin{proof}
+Put $t=|\tr\gamma|\in\Z$, so $t=u+u^{-1}$.
+If $u^2=n\in\Z$, $n>1$, squaring gives
+\[
+ t^2=n+2+\frac1n.
+\]
+The left-hand side and $n+2$ are integers, so $1/n$ is an integer,
+contradicting $0<1/n<1$. Since length is $\log N(\gamma)$,
+length $k\log p$ would imply $N(\gamma)=p^k$, already excluded.
+\end{proof}
+The statement applies to every subgroup of $\mathrm{SL}_2(\Z)$, hence to
+congruence surfaces. The prime geodesic theorem is an asymptotic counting
+analogy; it cannot provide the termwise identification claimed in the
+completion section of \cite{surface}. Hecke correspondences of determinant
+$p$ must not be identified with hyperbolic deck transformations of determinant one.
+
+\begin{theorem}[Failure of integral cyclic induction]\label{thm:cyclic}
+The trivial character of $G=C_2\times C_2$ is not an integer linear
+combination of characters induced from one-dimensional characters of
+cyclic subgroups of $G$.
+\end{theorem}
+\begin{proof}
+Every cyclic subgroup has order one or two. The degree of any such
+induced character is its index, namely four or two. Evaluation at the
+identity sends every integer linear combination to an even integer,
+whereas the trivial character has degree one.
+\end{proof}
+This distinguishes rational Artin induction from integral Brauer induction.
+It invalidates the stated cyclic integral reduction, while leaving appropriate
+forms of these classical induction theorems available for a revised argument.
+
+\begin{theorem}[Prime-tail obstruction]\label{thm:tail}
+For every real $\sigma\le1$, the positive series
+$\sum_p p^{-\sigma}$ diverges. Thus
+$\sum_{p>N}p^{-\sigma}$ is not a vanishing absolutely convergent tail
+in the critical strip.
+\end{theorem}
+\begin{proof}
+It suffices to show $\sum_p1/p=\infty$, since $p^{-\sigma}\ge p^{-1}$.
+Suppose the reciprocal-prime series converged. For $0\le x\le1/2$,
+$-\log(1-x)\le2x$, for example by integrating
+$(1-t)^{-1}\le2$ from zero to $x$. Hence the finite Euler products
+$\prod_{p\le X}(1-1/p)^{-1}$ would be bounded uniformly in $X$.
+Expanding each as a finite product of absolutely convergent geometric
+series gives the sum of $1/n$ over all positive integers with prime
+factors at most $X$. In particular it dominates
+$\sum_{n\le\lfloor X\rfloor}1/n$, which is unbounded. Contradiction.
+\end{proof}
+Any repair below $\Rea s=1$ must introduce proved cancellation or a
+regularization, with quantitative control; absolute prime-tail bounds cannot suffice.
+
+\section{Determinants and lost arithmetic information}
+For $T=\operatorname{diag}(\chi(p)p^{-s})_{p\le N}$ one has exactly
+\[
+ \det(I-T)=\prod_{p\le N}(1-\chi(p)p^{-s})=L_N(s,\chi)^{-1},
+\]
+not $L_N$. On an absolute-convergence region,
+\[
+ \log\det(I-T)=-\sum_{k\ge1}\frac{\tr(T^k)}k.
+\]
+The reciprocal orientation matters before any analytic continuation.
+Moreover Hermitian-part extraction does not preserve this determinant:
+\[
+ T=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad
+ \frac{T+T^*}2=0,\quad \det(I-T)=2\ne1=\det(I).
+\]
+An identity for the transfer determinant therefore does not automatically
+identify the centered characteristic polynomial of a symmetrized operator.
+
+\begin{proposition}[A direct obstruction to the supplied diagonal diagnostic]\label{prop:diagonal}
+For the $q=1$ model evaluated at $s=1/2$, the algorithm that sets
+$\lambda_p=-\arg(p^{-1/2})$ gives $H_N=0$ and
+$F_N(s)=(s-1/2)^{d_N}$. These functions cannot converge locally uniformly
+to $\Lambda(s,1)$ or $\xi(s)$ on a neighborhood of $1/2$.
+\end{proposition}
+\begin{proof}
+Every $p^{-1/2}$ is positive, so its argument is zero and $F_N(1/2)=0$.
+On the other hand the alternating Dirichlet series
+$\eta(1/2)=\sum_{n\ge1}(-1)^{n-1}n^{-1/2}$ is positive: grouping into
+adjacent pairs gives positive terms and its sum is at least
+$1-1/\sqrt2>0$. The continuation identity
+$\eta(s)=(1-2^{1-s})\zeta(s)$ gives $\zeta(1/2)<0$.
+The gamma factor at $1/4$ is positive and finite, so
+$\Lambda(1/2,1)\ne0$, and its pole-removal factor at $1/2$ is nonzero.
+Even pointwise convergence at that point is impossible.
+\end{proof}
+
+\section{Consequences for a revised research article}
+Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
+require replacements for the associated proof steps, not additional exposition.
+A credible next theorem would construct operators independently of unknown
+zeros and establish their exact arithmetic determinant, including ramified,
+archimedean, and conductor terms. It must then prove locally uniform
+convergence or the local boundedness in Proposition~\ref{prop:normal}.
+Only then does Theorem~\ref{thm:closure} prove the desired zero location.
+
+Weil/Li positivity, adelic trace methods, and canonical-product approximations
+are potential alternative interfaces. They move the research obligation to a
+specific positivity, trace, or approximation theorem; they do not discharge it
+by analogy. Lagarias \cite{lagarias} and Connes \cite{connes} provide relevant
+primary-source starting points. No novelty or complete proof is claimed for
+these classical conditional principles.

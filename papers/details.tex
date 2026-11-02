@@ -1,0 +1,189 @@
+\appendix
+\section{Worked geodesic calculations and possible replacements}
+For trace $t=3$, the expanding eigenvalue is $(3+\sqrt5)/2$ and
+\[
+ N=\frac{7+3\sqrt5}{2},\qquad
+ \ell=2\log\frac{3+\sqrt5}{2}.
+\]
+This is a legitimate hyperbolic length, but not $\log p$.
+For $p=2$, the proposed length $\log2$ would require
+$t=3/\sqrt2$, equivalently $2t^2=9$, which is impossible even modulo two.
+The Lean companion verifies this last exact integer obstruction.
+For arbitrary $p^k$, the integer argument in Theorem~\ref{thm:norm}
+is stronger than a numerical search over traces.
+
+A Hecke operator attached to determinant-$p$ double cosets is a different
+object from a determinant-one deck transformation. A replacement must
+specify the ambient space, coefficient system, trace class or regularized
+trace, and the precise arithmetic distribution. Reusing the same symbol
+for these objects does not construct an identification.
+An adelic framework may encode prime norms intrinsically; its trace and
+positivity obligations must then be proved in that framework.
+
+\section{Character examples and induction bookkeeping}
+The nonprincipal character modulo three has values
+$\chi(1)=1$, $\chi(2)=-1$, $\chi(0)=0$ and is odd.
+For scalar weight-zero automorphy under $\Gamma_0(3)$,
+\[
+ f(\gamma z)=\chi(d)f(z),
+\]
+the element $-I$ fixes $z$ and has $\chi(-1)=-1$. Hence every such
+function would satisfy $f(z)=-f(z)$ and vanish. The proposed scalar bundle
+on the projective quotient is therefore unavailable as written. One can
+work on a different group or choose a compatible nonzero weight; either
+change requires rebuilding the operator and trace identity.
+
+Modulo five, the quadratic character has $\chi(2)=-1$.
+Consequently the one-prime diagonal entry $\chi(2)2^{-1/2}$ is negative.
+Its $1\times1$ minor is already negative, so an unrestricted assertion of
+total nonnegativity of these transfer matrices is false. A positive state
+constructed as $TT^*/\tr(TT^*)$ discards phase information in this diagonal
+model: the nonzero character phases disappear from $TT^*$ at real $s$, although the ramification zero mask remains. Thus positivity
+of that state cannot by itself recover character-sensitive Euler factors.
+
+For $C_2\times C_2$, the three order-two subgroups each admit two linear
+characters. All six induced characters have degree two; induction from
+the trivial subgroup gives degree four. Negative integer coefficients do
+not fix the parity obstruction. Rational coefficients can change parity,
+which explains why rational and integral induction cannot be interchanged.
+For a monomial representation $\operatorname{Ind}_H^G\theta$, the appropriate
+Artin formalism yields a Hecke $L$-function over the fixed field of $H$;
+it does not automatically reduce to a product of Dirichlet functions over
+$\mathbb Q$. Every extension must retain the base field and infinity type.
+
+\section{Local algebra and topology checks}
+For the upper-Iwahori order
+\[
+ \mathcal O=\begin{pmatrix}R&R\\\pi R&R\end{pmatrix},\quad
+ S=\begin{pmatrix}0&\pi\\1&0\end{pmatrix},
+\]
+$E_{12}\in\mathcal O$, whereas
+$SE_{12}S^{-1}=\pi^{-1}E_{21}\notin\mathcal O$.
+The displayed shift orientation therefore does not normalize this order.
+Changing an orientation may repair this isolated calculation, but all
+subsequent products and gluing maps must be rechecked with that convention.
+
+For $R=\C[[t]]$ and $\lambda\in\C^\times$, there is no unital
+$\C$-algebra homomorphism sending $t$ to $\lambda I$ in a nonzero matrix
+algebra: $t-\lambda$ is a unit in $R$ and would be sent to zero.
+Thus substituting a unit complex phase for a formal uniformizer is not a
+representation of this allowed complete DVR. An algebra of Laurent
+polynomials can admit unitary phase evaluation, but it is a different
+algebra and needs its own construction.
+
+A dessin on a sphere with two vertices and three edges has three faces,
+by Euler's formula $V-E+F=2$, not two. Repeating a vertex along a face
+boundary does not create a new primitive vertex idempotent. In particular,
+a three-vertex path algebra with arrows between distinct vertices cannot
+have the claimed surjection to a six-vertex radical-square-zero cycle
+algebra: compose with the target's semisimple quotient $k^6$. Arrows map
+to zero, since the orthogonal source idempotents force their endpoint
+supports to be disjoint in the commutative target. The image is generated
+by at most three orthogonal idempotents, so it cannot be all of $k^6$.
+A valid replacement may require a cover or unfolded category rather than
+a quotient of the stated algebra.
+
+\section{Why weak convergence and boundary analogies are insufficient}
+Let $P_n$ be projection onto the $n$th basis vector of $\ell^2$.
+For every $x\in\ell^2$, $\|P_nx\|=|x_n|\to0$, so $P_n\to0$ strongly,
+but $\|P_n\|_1=1$ for every $n$. Moreover
+$\det(I-P_n)=0$ while $\det(I)=1$.
+Thus even strong operator convergence does not imply determinant
+convergence. Trace-norm control is a natural sufficient condition, and
+must be established for the actual operator family, locally uniformly
+in $s$, before invoking Fredholm determinant continuity.
+
+For a Phragm\'en--Lindel\"of argument, one needs uniform control of
+approximants as the approximation level changes. Polynomial growth of
+each individual polynomial has constants and degrees depending on $N$;
+it does not supply a common bound. Dividing by $(1+|s|^2)^M$ produces a
+nonholomorphic expression, to which the maximum modulus principle does
+not apply. Dividing by $(1+s^2)^M$ instead introduces poles at $s=\pm i$;
+a denominator must be holomorphic and nonvanishing on the actual domain.
+Even after selecting such a denominator, the necessary uniform boundary
+and horizontal-side estimates are substantive mathematical work.
+
+Likewise, a bound on a density of geodesics is not a bound on a weighted
+analytic remainder. The full test-function dependence, prime powers,
+scattering, elliptic and parabolic contributions must be retained.
+On a cusped finite-area surface the infimum of the injectivity radius
+is zero. It cannot provide the positive global mesh bound claimed in the
+source completion argument.
+
+\section{Spectral approximation can conceal the original hypothesis}
+\begin{proposition}[Canonical-product converse for the Riemann target]
+If RH holds, the entire order-one function $\xi$ admits locally uniform
+approximations of the form in Theorem~\ref{thm:closure} with diagonal
+self-adjoint $H_N$.
+\end{proposition}
+\begin{proof}
+The Hadamard factorization of $\xi$, which has no zero at zero, is
+\[
+ \xi(s)=e^{a+bs}\prod_\rho(1-s/\rho)e^{s/\rho},
+\]
+with an enumeration for which the canonical product converges locally
+uniformly. Under RH every $\rho=1/2+i\gamma$ has real $\gamma$.
+Each finite product is an exponential of an affine function times a
+constant times $\prod_{j\le N}(s-\rho_j)$; absorb the nonzero constant
+into the exponential. Take $H_N=\operatorname{diag}(\gamma_1,\ldots,\gamma_N)$.
+\end{proof}
+Together with Theorem~\ref{thm:closure}, this shows why existence of the
+approximants, without an independent arithmetic construction, may merely
+restate RH. It is not progress to import the unknown zero locations into
+the input spectrum and then prove that the constructed spectrum is real.
+This proposition is a classical consequence, not a novel proof of RH.
+
+\section{Research tasks with mathematical acceptance criteria}
+\paragraph{Track A: repair the determinant interface.}
+Start with the exact diagonal Euler transfer on $\Rea s>1$.
+Determine which regularized operator determinant could continue the
+reciprocal Euler product without poles or zeros being silently exchanged.
+Prove a relation to a self-adjoint operator before replacing the transfer
+by its Hermitian part. Acceptance requires an identity of functions,
+not similarity of zero plots. The displayed $2\times2$ example rejects
+unrestricted determinant preservation immediately.
+
+\paragraph{Track B: trace norms and normal families.}
+Choose a connected domain containing an Euler-product overlap and the
+critical strip, after removing the known poles in the target. Supply
+estimates uniform in $N$ on every compact set. Either construct a
+trace-class holomorphic family with uniform trace-norm convergence or
+prove the hypotheses of Proposition~\ref{prop:normal}. The divergence
+in Theorem~\ref{thm:tail} prevents an absolute prime-sum shortcut.
+Any cancellation estimate must be independently proved without a
+zero-free region equivalent to the desired conclusion.
+
+\paragraph{Track C: positivity and canonical products.}
+Compare the exact spectral quadratic form with Weil positivity and the
+Li coefficients for the chosen $L$-function family. First state the
+test-function space and regularization, then prove equality of the
+forms. Positivity of a finite matrix or of finitely many Li coefficients
+is insufficient; a uniform infinite-family statement is required.
+Canonical products provide a convergence benchmark, but the preceding
+converse explains the circularity risk of using zeros as input.
+
+\paragraph{Track D: make formalization match mathematics.}
+The current Lean companion verifies only exact integer and finite-matrix
+obstructions. It has no definition of Dirichlet $L$-functions or analytic
+continuation. A later mathlib layer must use actual complex analytic
+functions, the standard zeta definitions, local uniform convergence,
+and self-adjoint operators. An abstract theorem of the form
+``if an assumed bridge implies GRH, then GRH'' is logically valid but
+would not verify the bridge. Print every theorem's axioms and review
+its full type and dependencies, not merely its name.
+
+\section{Computational examples and reproducibility}
+The Python checks use integers and \texttt{fractions.Fraction}, with
+no random choices, model weights, scientific datasets or floating-point
+zero finding. They reproduce the Iwahori witness at $\pi=2$, the determinant
+change $2\to1$, the parity obstruction, and the vanishing diagonal model.
+The Lean statements verify selected finite calculations and the parity
+argument in the kernel of a pinned Lean 4 toolchain. Neither executable
+claims to verify the full complex-analytic arguments in this article.
+
+Both editions share the same core source. The longer edition adds these
+calculations and research interfaces; extra exposition does not strengthen
+an unproved hypothesis into a theorem. The source manifest and audit
+coverage record distinguish full text review, focused review, and
+unverified dependencies. Publication readiness also requires independent
+mathematical review, confirmed authorship, and journal-specific preparation.
