@@ -31,3 +31,7 @@ Added: an Euler-product convergence no-go theorem with fixed boundary-error lowe
 The exponent research identifies a specific stronger short-row mean-square input and an explicitly conditional small parameter refinement. Neither is asserted as an established new zero-free theorem. The desired self-adjoint arithmetic bridge remains open; no background automation or indefinite hidden execution is claimed.
 
 Continuation milestone `fe09069` was pushed to the private repository; local and remote heads matched. Raw dependency-download and expected-failure probe logs remain retained locally and ignored; successful verification evidence is tracked.
+
+## Research loop activated
+
+At the user's request, the built-in app heartbeat `grh-research-loop` was created and verified ACTIVE with an hourly cadence on the existing research chat. Its workflow is recorded in planning/RESEARCH_LOOP.md. This supersedes earlier statements that no scheduled research was configured. The saved prompt requires concrete research, accurate proof status, focused Lean/checks, preservation, private milestone pushes, and quiet unchanged runs. No persistent MCP server configuration was changed.

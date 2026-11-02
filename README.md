@@ -59,3 +59,7 @@ Milestone commits are pushed to the private GitHub repository. Credentials are n
 The [Euler convergence report](research/euler-convergence.md) proves a structural no-go for finite Euler products near zeros and supplies constructive partial-sum replacements. The [exponent frontier report](research/exponent-frontier.md) extracts the actual7/8and11/12constraints, an explicitly conditional tiny refinement, and the stronger short-row mean-square input needed for further progress. The refinement is not claimed proved: its analytic hypotheses remain unverified.
 
 The next unresolved target is zero location/self-adjoint realization for the convergent arithmetic approximants. Ordinary convergence alone does not provide that property.
+
+## Scheduled research loop
+
+An active hourly research loop is attached to this chat. It resumes the latest recorded proof obligation, performs research and verification, and pushes substantive private milestones. See [loop workflow](planning/RESEARCH_LOOP.md). It reports meaningful findings or required actions rather than routine unchanged status. Keep the desktop app running and the machine on for local scheduled work.
