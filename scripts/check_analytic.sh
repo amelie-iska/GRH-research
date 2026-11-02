@@ -8,4 +8,6 @@ expected=f897ebcf72cd16f89ab4577d0c826cd14afaafc7
 cmp "$mathlib/lake-manifest.json" "$root/lean-analytic/mathlib-manifest.json"
 export PATH="$lean_bin:$PATH"
 cd "$mathlib"
-lake env lean -DwarningAsError=true "$root/lean-analytic/EulerFactors.lean"
+for source in "$root"/lean-analytic/*.lean; do
+  lake env lean -DwarningAsError=true "$source"
+done

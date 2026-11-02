@@ -35,3 +35,9 @@ Continuation milestone `fe09069` was pushed to the private repository; local and
 ## Research loop activated
 
 At the user's request, the built-in app heartbeat `grh-research-loop` was created and verified ACTIVE with an hourly cadence on the existing research chat. Its workflow is recorded in planning/RESEARCH_LOOP.md. This supersedes earlier statements that no scheduled research was configured. The saved prompt requires concrete research, accurate proof status, focused Lean/checks, preservation, private milestone pushes, and quiet unchanged runs. No persistent MCP server configuration was changed.
+
+## Research heartbeat2026-11-02: complex spectral-parameter rigidity
+
+Attempted claim: preserve arithmetic holomorphy while obtaining self-adjointness by pointwise Hermitian extraction or dilation. Derived and kernel-checked the contrary rigidity theorem: an entrywise holomorphic pointwise-Hermitian matrix family on a connected open complex domain is constant. Added real-valued and conjugate-pair holomorphic constancy lemmas. The nine-declaration analytic suite uses only standard foundational axioms. Independent mathematical review confirmed the rigidity, SVD/dilation formulas, source references and scope caveats.
+
+Surviving architecture: fixed self-adjoint operators independent of spectral s, or a holomorphic pencil Hermitian only for real t plus a separate zero-location theorem. The arithmetic determinant bridge remains unresolved. Updated both paper editions and repaired the older extended-paper description that incorrectly still called the entire Lean companion finite-only. Next run should investigate a concrete fixed-operator/reflected-pencil construction or a particular missing mean-square input rather than retrying simultaneous complex holomorphy and pointwise Hermitian values. This is a classical structural deduction, not a GRH proof or a novelty claim.

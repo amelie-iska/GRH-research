@@ -21,3 +21,5 @@ A sequence of upper bounds β_n→1/2 on zero real parts could provide another r
 - Nonprincipal Dirichlet partial sums and pole-subtracted zeta sums give convergent arithmetic approximants on Re>0, independently of unknown zeros. They do not have a proved critical-line zero divisor or self-adjoint realization.
 - The separate mathlib layer now proves finite complex Euler-factor nonvanishing and a genuine boundary-uniform-limit nonvanishing theorem with explicit local assumptions. Root isolation and the entire GRH closure remain prose/unresolved as documented.
 - The exponent report identifies a missing short-row mean square and explicitly conditional parameter extension; neither has been established as a new unconditional zero-free theorem.
+
+- Holomorphic pointwise-Hermitian matrix rigidity is now kernel-checked. A nonconstant complex-holomorphic transfer cannot become a complex-holomorphic Hermitian family by ordinary pointwise extraction. A fixed H_N independent of spectral s remains permitted. Hermitian dilation loses phases/spectral imaginary parameter for the prime diagonal; real-axis Hermitian pencils require a separate zero-location theorem.

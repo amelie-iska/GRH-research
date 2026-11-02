@@ -165,6 +165,28 @@ $\Lambda(1/2,1)\ne0$, and its pole-removal factor at $1/2$ is nonzero.
 Even pointwise convergence at that point is impossible.
 \end{proof}
 
+\begin{proposition}[Holomorphic Hermitian rigidity]\label{prop:hermitian-rigidity}
+Let $U\subset\C$ be connected and open, with a fixed inner product on
+$\C^d$. If $H:U\to M_d(\C)$ has holomorphic entries and
+$H(s)^*=H(s)$ for every complex $s\in U$, then $H$ is constant.
+\end{proposition}
+\begin{proof}
+In fixed orthonormal coordinates, for each vector $v$, the holomorphic
+scalar $v^*H(s)v$ is real-valued,
+so it is constant by the open mapping theorem. Polarization recovers all
+matrix entries from these quadratic forms, hence every entry is constant.
+Equivalently, $H_{ij}+H_{ji}$ and $i(H_{ij}-H_{ji})$ are real-valued
+holomorphic functions whose constancy determines $H_{ij}$.
+\end{proof}
+Thus a nonconstant arithmetic transfer $T(s)$ cannot retain entrywise
+holomorphy after pointwise Hermitian-part extraction: a holomorphic
+$(T+T^*)/2$ would be constant, and the remaining holomorphic skew-Hermitian
+part would be constant as well. This excludes that particular shortcut,
+not fixed self-adjoint operators. The spectral criterion uses $H_N$
+independent of the spectral variable $s$. Requiring self-adjointness only
+on a real parameter line is also consistent with a nonconstant holomorphic
+extension, but needs its own zero-location theorem.
+
 \section{A necessary change of approximation class}
 \begin{theorem}[Zero-free Euler truncations cannot approximate a zero]\label{thm:euler-nogo}
 Let $U$ be a connected open subset of $\{\Rea s>0\}$, let $g_N$

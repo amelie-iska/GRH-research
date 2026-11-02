@@ -133,6 +133,52 @@ restate RH. It is not progress to import the unknown zero locations into
 the input spectrum and then prove that the constructed spectrum is real.
 This proposition is a classical consequence, not a novel proof of RH.
 
+\section{Hermitian dilation and the spectral parameter}
+A common attempt to preserve arithmetic input while obtaining self-adjointness
+is the dilation, for square $T(s)\in M_d(\C)$,
+\[
+ K(s)=\begin{pmatrix}0&T(s)\\T(s)^*&0\end{pmatrix}.
+\]
+It is Hermitian pointwise. Singular-value decomposition shows that its
+spectrum is $\{\pm\sigma_j(T(s)):1\le j\le d\}$, with multiplicities.
+Consequently
+\[
+ \det(\lambda I-K(s))=\prod_{j=1}^d(\lambda^2-\sigma_j(T(s))^2),
+ \qquad \det(-K(s))=(-1)^d|\det T(s)|^2.
+\]
+These formulas retain singular values and erase determinant phase.
+For a nonconstant holomorphic scalar $f$, $|f|^2$ cannot be holomorphic:
+a real-valued holomorphic function is constant, and constant modulus then
+forces $f$ constant. Thus the zero-matching scalar $|f|^2$ is not a
+holomorphic replacement for $f$. Matrix nonholomorphy alone does not imply
+that every scalar expression formed from it is nonholomorphic; each
+proposed determinant identity must be examined separately.
+For example, $T(s)=\operatorname{diag}(e^s,e^{-s})$ is nonconstant but its
+dilation determinant is constantly one.
+
+For the prime-diagonal model, the dilation eigenvalues are exactly
+$\pm|\chi(p)|p^{-\Rea s}$. Both $\Im s$ and the nonzero character phases
+disappear. This cannot encode the proposed arithmetic zero ordinates.
+The source's parameter mismatch is visible where an $s$-dependent
+transfer is converted to a Hermitian/modular Hamiltonian and then used as
+though it had fixed eigenvalues in a characteristic polynomial
+\cite{surface}, source lines 11465--11484 and 12200--12215; see also
+lines 13636--13643 for the explicit skew-Hermitian-part extraction.
+Its numerical code fixes a particular evaluation point instead, so the
+rigidity proposition does not itself refute that distinct operation.
+The earlier diagonal diagnostic obstruction addresses it directly.
+
+A permitted architecture is a fixed self-adjoint $H_N$ with spectral
+variable entering through $sI-(1/2+iH_N)$. Alternatively one may use a
+holomorphic pencil that is Hermitian only on its real parameter axis,
+but this condition does not force real spectral roots. Already the
+scalar polynomial $h(t)=t^2+1$ is real for real $t$, whereas
+$z-h(z)=0$ has the nonreal solutions $(1\pm i\sqrt3)/2$.
+An infinite-dimensional operator model would additionally need explicit
+domains, closure, adjoint and determinant regularization. No finite-matrix
+rigidity statement here is asserted to settle variable-domain unbounded
+operator constructions.
+
 \section{Quantitative arithmetic approximation and prime regularization}
 For the nonprincipal-character approximants, a compact set
 $K\subset\{\Rea s>0\}$ has
@@ -230,11 +276,12 @@ Canonical products provide a convergence benchmark, but the preceding
 converse explains the circularity risk of using zeros as input.
 
 \paragraph{Track D: make formalization match mathematics.}
-The current Lean companion verifies only exact integer and finite-matrix
-obstructions. It has no definition of Dirichlet $L$-functions or analytic
-continuation. A later mathlib layer must use actual complex analytic
-functions, the standard zeta definitions, local uniform convergence,
-and self-adjoint operators. An abstract theorem of the form
+The standalone Lean companion checks exact integer and finite-matrix
+obstructions. A separate mathlib layer now verifies complex Euler-factor
+nonvanishing, a local boundary-convergence theorem, and holomorphic
+Hermitian rigidity. It does not yet formalize the Dirichlet partial-sum
+convergence or an arithmetic self-adjoint operator. Further formalization
+must use the actual standard $L$-functions and explicit analytic domains. An abstract theorem of the form
 ``if an assumed bridge implies GRH, then GRH'' is logically valid but
 would not verify the bridge. Print every theorem's axioms and review
 its full type and dependencies, not merely its name.
