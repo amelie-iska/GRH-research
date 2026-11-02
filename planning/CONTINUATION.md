@@ -9,3 +9,11 @@ Authorized by the user's instruction to continue necessary/helpful improvements.
 5. Independently review additions, compile both editions, inspect changed layout, run focused Lean/integrity checks, push substantive findings.
 
 Unresolved target: prove that arithmetic approximants can be made self-adjoint with the correct zero divisor, or prove an equivalent positivity property without assuming GRH. The existing zero-free truncations are structurally unsuitable near zeros.
+
+## Current frontier after the finite arithmetic test
+
+The latest completed attempt is research/arithmetic-zero-certificate.md. The primitive modulo3 character's fifth partial sum has one certified simple zero in the disk centered at0.337261+11.027504i with radius1e−4, lying strictly left of the critical line. This excludes its exact local representation as a nowhere-zero holomorphic factor times the determinant of a fixed positive Hermitian pencil. It does not exclude convergence of the partial sums, later truncations/subsequences, or modified approximants, and says nothing adverse about zeros of the full L-function.
+
+Resume by specifying a different arithmetic approximation class and testing an actual positive-metric certificate, or by proving a particular short-row mean-square estimate identified in research/exponent-frontier.md. A symmetry-preserving polynomial construction is a possible experiment, not an established positive family. Do not rerun the completed S5 certificate as new research or assume functional-equation symmetry forces real zeros. The arithmetic spectral bridge, full analytic formalization and intended GRH scopes remain open.
+
+Evidence: exact-rational certificate and all18 analytic Lean declarations pass; the new Lean statements cover disk location and rational margin only. Both paper editions contain the argument. Run-specific logs are preserved under outputs/checks/2026-11-02-arithmetic-zero/.

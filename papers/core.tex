@@ -280,6 +280,43 @@ They avoid Theorem~\ref{thm:euler-nogo} by allowing additive cancellation
 and unrestricted finite-level zeros. They establish convergence, but
 provide no self-adjoint realization or critical-line theorem for those zeros.
 
+\section{A certified test of the arithmetic pencil candidate}
+Let $\chi$ be the primitive nonprincipal character modulo $3$. Its fifth
+Dirichlet partial sum is the entire function
+\[
+ f(s)=S_5(s,\chi)=1-2^{-s}+4^{-s}-5^{-s}.
+\]
+\begin{theorem}[Certified zero of a finite partial sum]\label{thm:finite-offline}
+Put
+\[c=(337261+11027504i)/10^6,\qquad r=10^{-4}.\]
+The disk $|s-c|<r$ contains exactly one zero of $f$, counted with
+multiplicity, and lies inside $0<\Rea s<1/2$.
+\end{theorem}
+\begin{proof}
+The exact rational procedure detailed in the extended edition establishes
+\[
+ |f(c)|<10^{-6},\qquad |f'(c)|>1,\qquad
+ \sup_{|s-c|\le r}|f''(s)|\le9.
+\]
+It uses $60$ terms of the logarithm's positive atanh series and terms
+$0$ through $120$ of the exponential Taylor series, with explicit
+remainders; no floating-point value is used in these inequalities.
+On the boundary, Taylor's formula gives
+\[
+ |f(s)-f'(c)(s-c)|<10^{-6}+\tfrac92r^2<r<|f'(c)(s-c)|.
+\]
+Rouch\'e gives exactly one zero, which is therefore simple.
+The real part throughout the closed disk belongs to
+$[337161,337361]/10^6\subset(0,1/2)$.
+\end{proof}
+The completed fifth partial sum has the same zero because its
+conductor/gamma factor is holomorphic and nonzero on this disk.
+It cannot equal a nowhere-zero holomorphic factor times the determinant of a fixed
+positive Hermitian pencil there. This rejects that exact finite-level
+identification. It does not reject convergence of the partial sums,
+modified approximants, later truncations, subsequences, or GRH itself:
+$f$ is a finite partial sum, not the full $L$-function.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

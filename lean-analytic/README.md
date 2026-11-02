@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All sixteen declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All eighteen declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -24,6 +24,10 @@ This is a genuine local analytic component of the no-go argument, not a formal p
 `PositivePencil.lean` adds seven actual complex/matrix declarations: `real_ratio_from_positive_form`, `positive_pencil_eigenvalue_real`, `positive_pencil_det_zero_real`, `positive_pencil_det_ne_zero`, `centered_positive_pencil_zero_on_line`, `det_ne_zero_of_strict_imaginary_form`, and `indefinite_pencil_off_line_witness`. The matrix theorems use fixed `Matrix.IsHermitian` A and actual `Matrix.PosDef` B, including the required `ComplexOrder` scope. Singularity is converted into a nonzero kernel vector; quadratic-form reality/strict positivity gives a real generalized eigenvalue and the centered critical-line conclusion. The last theorem checks the explicit off-line determinant witness at s=1/4 when B is indefinite; Hermitian-entry facts for that transparent example are discussed in prose.
 
 This verifies a genuine sufficient spectral mechanism and its positivity caveat. It does not construct arithmetic A_N,B_N, prove determinant matching/convergence, or formalize the operator-norm inverse estimate. The strict-imaginary-form theorem is pointwise and imposes the displayed nontrivial positivity hypothesis; it does not assume or verify that any L-function satisfies it.
+
+## Arithmetic zero certificate: formal scope
+
+`ArithmeticZeroDisk.lean` verifies `arithmetic_zero_disk_in_left_strip` using actual complex distance and `arithmetic_zero_certificate_margin` using exact real rational arithmetic. These are the geometry and final margin of the separate certificate for S5(s,chi_mod3). The exact logarithm/exponential enclosure computations are performed by Python Fraction arithmetic and their analytic error estimates/Rouche inference are prose proofs. Neither declaration asserts a kernel-checked zero of the full L-function, a full Lean zero-existence certificate, or a counterexample to GRH.
 
 ## Reproduce dependencies
 

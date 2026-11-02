@@ -307,6 +307,90 @@ The functional equation relates a fixed character's zeros across the
 critical line after complex conjugation, so a full right-half-plane
 nonvanishing theorem would give the desired Dirichlet GRH conclusion.
 
+\section{Exact arithmetic behind the finite-level zero certificate}
+This section gives all parameters needed to reproduce
+Theorem~\ref{thm:finite-offline}. Write $C=|\Rea c|+|\Im c|<12$.
+Use the following rational logarithm approximations $\ell_n$ and error
+bounds $\delta_n$:
+\[
+\begin{array}{c|c|c}
+ n&\ell_n&\delta_n\\\hline
+ 2&6931471805599453/10^{16}&10^{-15}\\
+ 4&13862943611198906/10^{16}&2\cdot10^{-15}\\
+ 5&16094379124341004/10^{16}&10^{-15}
+\end{array}
+\]
+For $y=(n-1)/(n+1)$, set
+\[
+ L_n=2\sum_{k=0}^{59}\frac{y^{2k+1}}{2k+1},\qquad
+ T_n=\frac{2y^{121}}{121(1-y^2)}.
+\]
+The positive series for $\log n$ gives $L_n\le\log n\le L_n+T_n$.
+Exact rational comparisons give
+$\ell_n-\delta_n\le L_n$ and $L_n+T_n\le\ell_n+\delta_n$.
+They also give $0<\log2<1$ and $0<\log4,\log5<2$.
+
+Define Gaussian rationals
+\[
+ E_n=\sum_{k=0}^{120}\frac{(-c\ell_n)^k}{k!},\qquad
+ \tau=\frac{3^{24}24^{121}}{121!}<10^{-18},\qquad
+ \eta_n=\tau+2C\delta_n.
+\]
+Since $|c\ell_n|\le C\ell_n<24$, the exponential series tail is
+at most $e^{24}24^{121}/121!<\tau$. Here $e<3$ follows directly
+from its series. Also
+\[
+ |e^{-c\log n}-e^{-c\ell_n}|
+ \le e^{-\Rea(c)\ell_n}|c|\delta_n e^{|c|\delta_n}
+ \le2C\delta_n,
+\]
+because $\ell_n,\Rea c>0$, $C\delta_n\le1/2$, and
+$e^u\le(1-u)^{-1}\le2$ for $0\le u\le1/2$.
+Thus $|n^{-c}-E_n|\le\eta_n$.
+
+Put
+\[
+ F=1-E_2+E_4-E_5,\qquad
+ D=\ell_2E_2-\ell_4E_4+\ell_5E_5.
+\]
+All entries are exact Gaussian rationals. With
+$\|(a,b)\|_1=|a|+|b|$, the script checks the rational inequalities
+\[
+ \|F\|_1+\eta_2+\eta_4+\eta_5<10^{-6},\qquad
+ |\Rea D|-\sum_{n\in\{2,4,5\}}(\delta_n+\ell_n\eta_n)>1.
+\]
+The first bounds $|f(c)|$. For the second, note that $|n^{-c}|\le1$
+and
+\[
+ |(\log n)n^{-c}-\ell_nE_n|
+ \le\delta_n+\ell_n\eta_n.
+\]
+This proves $|f'(c)|>1$. On the entire closed disk, $\Rea s>0$,
+so
+\[
+ |f''(s)|\le(\log2)^2+(\log4)^2+(\log5)^2<1+4+4=9.
+\]
+Integrating the second derivative along the line segment from $c$ to $s$
+justifies the Taylor remainder bound $9|s-c|^2/2$.
+The exact strict boundary margin is
+\[
+ r-10^{-6}-\tfrac92r^2=\frac{19791}{200000000}>0.
+\]
+Consequently $|f(s)|$ is greater than that margin on $|s-c|=r$.
+Any zero-free holomorphic positive-pencil model $G$ on a neighborhood of
+this disk must have boundary error at least $\min_{|s-c|=r}|f(s)|$;
+otherwise another application of Rouch\'e would contradict its zero count.
+This is a quantitative rejection of a prescribed finite-level model,
+not a proof about the zero locations of the limiting $L$-function.
+
+The certificate program
+\path{scripts/check_arithmetic_zero.py}
+uses only Python integer and Fraction arithmetic.
+A separate independent exact-arithmetic reproduction passed. Lean verifies
+the disk's location and the last rational margin; the logarithm/exponential
+error estimates and the Rouch\'e inference remain explicit prose proofs,
+not claims of a complete kernel-checked zero-existence theorem.
+
 \section{Research tasks with mathematical acceptance criteria}
 \paragraph{Track A: repair the determinant interface.}
 Start with the exact diagonal Euler transfer on $\Rea s>1$.

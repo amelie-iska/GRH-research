@@ -16,7 +16,7 @@ M03,math Siegel main theorem,uniform logarithmic real-zero gap,full text read; n
 L01,lean/GRHResearch.lean,7 finite arithmetic obstruction statements,Lean checked,build and axioms log,analytic interpretation remains prose
 P01,papers/core.tex closure,conditional GRH interface,prose checked,independent review,open arithmetic convergence
 P02,papers/details.tex canonical converse,RH implies centered approximants,prose checked conditional on RH,Hadamard product,not an independent construction
-A01,lean-analytic/,16 analytic and spectral matrix statements,Lean checked,pinned mathlib build and axiom report,full Hurwitz and arithmetic convergence remain prose
+A01,lean-analytic/,18 analytic spectral and certificate statements,Lean checked,pinned mathlib build and axiom report,full Hurwitz and arithmetic convergence remain prose
 A02,papers/core.tex Euler convergence,zero-free truncation no-go,prose checked,Rouche boundary margin,change approximation class
 A03,papers/core.tex arithmetic sums,compact-uniform arithmetic approximants,prose checked,Abel and Euler summation exact tails,establish spectral zero-location bridge
 A04,research/exponent-frontier.md,conditional exponent refinement,conditional only,exact rational checks,prove missing analytic extensions
@@ -25,3 +25,5 @@ H02,research/hermitian-rigidity.md,Hermitian dilation encodes singular values an
 Q01,lean-analytic/PositivePencil.lean,positive Hermitian generalized pencils have real determinant zeros,Lean checked,actual Matrix.PosDef and nonzero kernel vector,construct arithmetic A_N and B_N without assuming zero locations
 Q02,lean-analytic/PositivePencil.lean,strict imaginary quadratic-form positivity excludes determinant zeros,Lean checked,pointwise actual complex matrix kernel argument,establish positivity for a concrete arithmetic family
 Q03,research/positive-pencils.md,resolvent bound and normalized logarithmic-derivative diagnostic,prose independently reviewed,Cauchy-Schwarz and positive metric congruence,track normalization and uniform conditioning
+Z01,papers/core.tex finite arithmetic zero theorem,S5 modulo3 has one simple zero in the displayed off-line disk,exact arithmetic plus prose analytic proof,Fraction enclosures independently reproduced and Rouche comparison,reject direct finite-level positive-pencil identity only
+Z02,lean-analytic/ArithmeticZeroDisk.lean,actual disk location and exact positive margin,Lean checked,complex distance and rational inequalities,analytic function estimates and root existence remain prose
