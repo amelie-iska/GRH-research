@@ -12,6 +12,7 @@ The project-local binary is under `.tools/lean-4.24.0-darwin_aarch64/bin/`; the 
 ## What is checked
 
 - `no_integral_trace_norm_two`: no integer t satisfies 2t²=9. The prose derivation linking this to geodesic norm two is not formalized.
+- `no_integer_norm_trace_equation`: no integers n>1,t satisfy n t²=(n+1)². This proves the general arithmetic obstruction; the real-geometric derivation remains prose.
 - `cyclicDegrees_even` and `no_integral_cyclic_induction_degree_one`: arbitrary finite integer combinations of even degrees cannot have degree one. The finite-group character interpretation is in the paper, not in this Lean model.
 - `symmetrization_changes_determinant`: exact determinants in the finite counterexample. The function mapping an arbitrary transfer to its Hermitian part is not formalized.
 - `unipotence_does_not_bound_exponent`: the displayed unipotent integer matrix does not square to identity. This is one witness against the source's proposed degree/exponent implication.
@@ -21,6 +22,6 @@ The project-local binary is under `.tools/lean-4.24.0-darwin_aarch64/bin/`; the 
 
 ## What is not checked
 
-The analytic spectral criterion, normal-family continuation, prime-tail divergence, general prime-power obstruction, Hadamard factorization, zeta nonvanishing at 1/2, and GRH remain outside this small formalization. This build is not a formal proof of the papers in full or of GRH.
+The full analytic spectral criterion, normal-family continuation, prime-tail divergence, Hadamard factorization, zeta nonvanishing at 1/2, and GRH remain outside this small formalization. This build is not a formal proof of the papers in full or of GRH. The separate `lean-analytic/` layer checks explicit complex Euler factors and a local boundary-convergence theorem.
 
 Upstream `math/lean` pins Lean 4.34.1 and many external packages. Its actual solution modules and comparator challenge files have different roles; a comparator's `sorry` is not evidence of an admission in its solution. We have not built that upstream dependency graph and do not represent this local build as verifying it.

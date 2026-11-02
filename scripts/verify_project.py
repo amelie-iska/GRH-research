@@ -10,7 +10,7 @@ for row in manifest["sources"]:
     assert git("rev-parse","HEAD",cwd=source).strip()==row["commit"]
     assert git("status","--porcelain",cwd=source)=="", f"Source changed: {source.name}"
     assert git("ls-files","--stage",row["repository"]).startswith("160000 "+row["commit"])
-for path in (root/"lean").glob("*.lean"):
+for path in [*(root/"lean").glob("*.lean"), *(root/"lean-analytic").glob("*.lean")]:
     assert not re.search(r"\b(sorry|admit|axiom)\b",path.read_text()), f"Admission token: {path}"
 patterns=[rb"gh[pousr]_[A-Za-z0-9]{30,}",rb"github_pat_[A-Za-z0-9_]{30,}",rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"]
 files=git("ls-files","-z").split("\0")

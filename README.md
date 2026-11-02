@@ -2,14 +2,14 @@
 
 A private research workspace for auditing and developing surface-order and Hilbert–Pólya approaches to the generalized Riemann hypothesis, with synchronized concise and extended manuscripts and exact Lean4 checks.
 
-**Current result:** a corrected conditional spectral criterion and rigorous obstructions to several supplied proof steps. **A complete proof of GRH has not been established.** In particular, the claimed prime/geodesic identification is false, and the absolute prime-tail bound used in the separate GRH PDF diverges in the asserted range. These require mathematical replacements. See [audit](planning/AUDIT.md) and [open obligations](planning/OPEN_OBLIGATIONS.md).
+**Current result:** a corrected conditional spectral criterion, convergent arithmetic approximants with explicit errors, and rigorous obstructions to several supplied proof steps. **A complete proof of GRH has not been established.** In particular, the claimed prime/geodesic identification is false, and the absolute prime-tail bound used in the separate GRH PDF diverges in the asserted range. These require mathematical replacements. See [audit](planning/AUDIT.md) and [open obligations](planning/OPEN_OBLIGATIONS.md).
 
 ## Papers
 
 | Edition | Source | Compiled PDF | Scope |
 |---|---|---|---|
-| Concise,4 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
-| Extended,8 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
+| Concise, 5 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
+| Extended, 11 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
 
 Both editions share [core.tex](papers/core.tex). They are research drafts with full proofs of their stated obstruction results; they do not claim a full proof of GRH or certification of all upstream results. Authorship, novelty assessment and submission venue require confirmation before journal submission.
 
@@ -38,10 +38,13 @@ Use the existing TeX Live/latexmk and Python3 standard library:
 ```sh
 python3 scripts/check_obstructions.py
 sh scripts/check_lean.sh
+sh scripts/check_analytic.sh
+python3 scripts/check_arithmetic_approximants.py
+python3 scripts/check_exponent_frontier.py
 sh scripts/build_papers.sh
 ```
 
-Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. No new production libraries or global environment changes were needed. The Lean build verifies six exact arithmetic/finite-matrix statements, with printed axiom dependencies. It does not formalize analytic continuation, the whole papers, or GRH.
+Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies six statements about actual complex Euler factors, the reciprocal maximum-modulus estimate, and boundary convergence. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
 
 Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. Both PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
 
@@ -50,3 +53,9 @@ Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks ar
 The [implementation plan](planning/IMPLEMENTATION_PLAN.md), [claim ledger](planning/CLAIMS.csv), [background sources](planning/BIBLIOGRAPHY.md), and [progress record](planning/PROGRESS.md) define the continuation. The principal target is an arithmetic determinant identity preserved by a self-adjoint realization, followed by independently proved compact-uniform convergence. Alternative tracks include precise Weil/Li positivity and adelic trace formulations. None is assumed solved.
 
 Milestone commits are pushed to the private GitHub repository. Credentials are never placed in tracked files or remote URLs. This repository contains no token from the chat.
+
+## Continued research
+
+The [Euler convergence report](research/euler-convergence.md) proves a structural no-go for finite Euler products near zeros and supplies constructive partial-sum replacements. The [exponent frontier report](research/exponent-frontier.md) extracts the actual7/8and11/12constraints, an explicitly conditional tiny refinement, and the stronger short-row mean-square input needed for further progress. The refinement is not claimed proved: its analytic hypotheses remain unverified.
+
+The next unresolved target is zero location/self-adjoint realization for the convergent arithmetic approximants. Ordinary convergence alone does not provide that property.

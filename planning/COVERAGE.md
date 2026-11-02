@@ -14,6 +14,8 @@ This file records textual coverage, not a guarantee that every background theore
 | math formalization graph | Static transitive OAI graph of two actual solution modules:3125 modules, no missing local import and no sorry/admit/axiom token matches | No kernel verification; external packages not traversed; static token scans cannot certify semantics |
 | Other math text matches | 27candidate TeX files triaged by matching contexts | GrH cohomology/macros/vendor-code false positives excluded; applications and historical RH mentions not full proof sources |
 | New papers | Full core/details reviewed independently; PDFs compiled, representative pages rendered and inspected | Research drafts, not full GRH proofs or journal acceptance |
-| New Lean | All6 named statements built and axiom reports inspected | Only finite/arithmetic obstructions; no analytic GRH formalization |
+| New Lean | All7 standalone statements built and axiom reports inspected | Only finite/arithmetic obstructions; no analytic GRH formalization |
 
 No repository AGENTS.md files were found in the three clones. Root user instructions governed preservation. No source clone was edited, updated, cleaned, migrated or rewritten. The large math clone contains174524tracked files; reviewing the selected RH family is not a claim to have reviewed the entire collection.
+
+Continuation: the added main-text and extended-paper arguments were independently reviewed in full, as recorded in reviews/continuation-review.md. The separate analytic Lean file has six kernel-checked declarations using pinned mathlib4.24.0. The source-level exponent analysis is explicitly conditional; exact rational envelope calculations do not certify the character-moment estimates.

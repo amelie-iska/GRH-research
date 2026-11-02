@@ -133,6 +133,73 @@ restate RH. It is not progress to import the unknown zero locations into
 the input spectrum and then prove that the constructed spectrum is real.
 This proposition is a classical consequence, not a novel proof of RH.
 
+\section{Quantitative arithmetic approximation and prime regularization}
+For the nonprincipal-character approximants, a compact set
+$K\subset\{\Rea s>0\}$ has
+$\delta=\min_K\Rea s>0$, $M=\max_K|s|$, and
+$G=\max_K|(q/\pi)^{(s+a)/2}\Gamma((s+a)/2)|<\infty$.
+The completed approximation error is at most
+$GB(1+M/\delta)N^{-\delta}$ uniformly on $K$.
+This is a fixed-character compact bound, not a uniform-in-conductor GRH estimate.
+To verify the Abel formula's sign, first sum between integers $N<T$:
+\[
+ \sum_{N<n\le T}\chi(n)n^{-s}
+ =A(T)T^{-s}-A(N)N^{-s}
+   +s\int_N^T A(x)x^{-s-1}\,dx.
+\]
+Then $A(T)T^{-s}\to0$. Bounding $|A|$ by $B$ gives exactly the main-text estimate.
+For zeta, $\lfloor x\rfloor=x-\{x\}$ in the same summation formula yields
+\[
+ \zeta(s)=\frac{s}{s-1}-s\int_1^\infty\{x\}x^{-s-1}\,dx.
+\]
+The finite sum formula gives the stated remainder after subtracting $Z_N$.
+The integral and its derivatives converge uniformly on compact subsets
+of the positive half-plane, since logarithmic powers are integrable
+against $x^{-1-\delta}$. This justifies holomorphy and continuation.
+Multiplying the remainder by $s(s-1)\pi^{-s/2}\Gamma(s/2)/2$
+gives the compact-uniform $\xi_N$ error, including at $s=1$.
+In contrast, multiplying a finite Euler product by $s(s-1)$ would force
+a zero at $1$ for every truncation, although $\xi(1)=1/2$.
+
+A second exact interface isolates what a prime-based repair would need.
+For a nonprincipal primitive $\chi$, define on $\Rea s>1$
+\[
+ P_\chi(s)=\sum_p\chi(p)p^{-s},\qquad
+ R_\chi(s)=\sum_p\sum_{k\ge2}\frac{\chi(p)^k}{k p^{ks}}.
+\]
+On each compact subset of $\Rea s>1/2$, the second series converges
+absolutely and uniformly. Indeed, for $\Rea s\ge\delta>1/2$,
+\[
+ \sum_{k\ge2}\frac{|\chi(p)|^k}{k p^{k\delta}}
+ \le\frac{p^{-2\delta}}{1-2^{-\delta}},
+\]
+and the prime sum is dominated by the convergent integer series
+$\sum_{n\ge2}n^{-2\delta}$. Thus $R_\chi$ is holomorphic there.
+On $\Rea s>1$, $L(s,\chi)=\exp(P_\chi(s)+R_\chi(s))$.
+
+\begin{proposition}[The missing prime-linear term]\label{prop:prime-linear}
+For a nonprincipal primitive character, $P_\chi$ has a single-valued
+holomorphic continuation to $\Rea s>1/2$ if and only if
+$L(s,\chi)$ is zero-free there.
+\end{proposition}
+\begin{proof}
+If such a continuation exists, its exponential with $R_\chi$ agrees
+with $L$ on $\Rea s>1$ and hence on the connected half-plane by the
+identity theorem. The exponential is nonzero. Conversely, if $L$ is
+nonzero, the simply connected half-plane admits a holomorphic logarithm
+of $L$. Choose its additive constant to agree with the absolutely
+convergent Euler logarithm on $\Rea s>1$. Subtract $R_\chi$ to obtain
+the required continuation of $P_\chi$.
+\end{proof}
+This proposition isolates a precise analytic obligation; it does not prove it.
+Regularizing away the terms $k\ge2$ supplies no proof that the missing
+prime-linear function extends. The principal zeta case must first remove
+the pole, for example by using $(s-1)\zeta(s)$; an unqualified logarithm
+of $\zeta$ cannot be holomorphic through $1$.
+The functional equation relates a fixed character's zeros across the
+critical line after complex conjugation, so a full right-half-plane
+nonvanishing theorem would give the desired Dirichlet GRH conclusion.
+
 \section{Research tasks with mathematical acceptance criteria}
 \paragraph{Track A: repair the determinant interface.}
 Start with the exact diagonal Euler transfer on $\Rea s>1$.

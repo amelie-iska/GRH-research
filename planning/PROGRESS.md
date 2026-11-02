@@ -23,3 +23,9 @@ Plan: planning/IMPLEMENTATION_PLAN.md. Design approved 2026-11-02. User subseque
 ## Unresolved
 
 The arithmetic self-adjoint determinant bridge and required analytic convergence remain open. GRH has not been proved. Full analytic Lean formalization, upstream Lean4.34.1dependency verification, independent certification of the math zero-free claims, and publication submission remain outstanding. The open obligations are mathematical research, not missing formatting. No indefinite background research or scheduled automatic pushing was configured.
+
+## Continuation on user instruction
+
+Added: an Euler-product convergence no-go theorem with fixed boundary-error lower bound; constructive arithmetic approximants with explicit Abel/Euler-summation error bounds; a precise prime-linear analytic-continuation equivalence; a general integer norm equation in Lean; and a separate pinned mathlib layer checking complex Euler nonvanishing and local boundary convergence. Independent review found no actionable issue in these additions. Exact-rational approximation diagnostics and exponent-envelope checks pass. Both updated TeX editions compile.
+
+The exponent research identifies a specific stronger short-row mean-square input and an explicitly conditional small parameter refinement. Neither is asserted as an established new zero-free theorem. The desired self-adjoint arithmetic bridge remains open; no background automation or indefinite hidden execution is claimed.

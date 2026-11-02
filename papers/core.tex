@@ -165,6 +165,77 @@ $\Lambda(1/2,1)\ne0$, and its pole-removal factor at $1/2$ is nonzero.
 Even pointwise convergence at that point is impossible.
 \end{proof}
 
+\section{A necessary change of approximation class}
+\begin{theorem}[Zero-free Euler truncations cannot approximate a zero]\label{thm:euler-nogo}
+Let $U$ be a connected open subset of $\{\Rea s>0\}$, let $g_N$
+be holomorphic and nowhere zero on $U$, and let $P_N$ be arbitrary
+finite sets of rational primes. Put
+\[
+ D_N(s)=\prod_{p\in P_N}(1-\chi(p)e^{-s\log p}).
+\]
+Each of $g_ND_N$ and $g_N/D_N$ is holomorphic and nowhere zero on $U$.
+If either sequence converges locally uniformly to a holomorphic $f$
+which is not identically zero, then $f$ has no zero in $U$.
+\end{theorem}
+\begin{proof}
+For $\Rea s>0$, $|\chi(p)e^{-s\log p}|\le p^{-\Rea s}<1$,
+so every local factor is nonzero. Hence the finite product, its reciprocal,
+and their normalized versions have the asserted property.
+If $f$ had a zero, choose a closed disk inside $U$ with a positive
+number of zeros of $f$ in its interior and none on its boundary.
+Local uniform convergence and Rouch\'e's theorem would force the
+zero-free approximants to have that positive number of zeros, a contradiction.
+\end{proof}
+More quantitatively, on any such disk $D$, every zero-free holomorphic
+approximant $G$ satisfies
+\[
+ \max_{\partial D}|G-f|\ \ge\ \min_{\partial D}|f|>0.
+\]
+Otherwise Rouch\'e yields the same contradiction. Thus improved estimates
+cannot repair this approximation class near a nontrivial zero. The
+construction must change so that finite approximants can have zeros in
+the strip; a nonvanishing gamma or exponential normalization cannot do this.
+
+\section{A convergent arithmetic replacement}
+For a nonprincipal character modulo $q$, put
+$A(x)=\sum_{n\le x}\chi(n)$ and $B=\sup_x|A(x)|\le q$.
+Complete periods sum to zero, so $B$ is finite. Partial summation gives,
+for $\sigma=\Rea s>0$,
+\[
+ L(s,\chi)-\sum_{n\le N}\chi(n)n^{-s}
+ =-A(N)N^{-s}+s\int_N^\infty A(x)x^{-s-1}\,dx,
+\]
+and therefore
+\[
+ \left|L(s,\chi)-\sum_{n\le N}\chi(n)n^{-s}\right|
+ \le B\left(1+\frac{|s|}{\sigma}\right)N^{-\sigma}.
+\]
+The endpoint tends to zero and the integral is absolutely convergent.
+The limit agrees with the Euler definition on $\Rea s>1$, hence with
+its analytic continuation. Multiplication by the correct gamma/conductor
+factor gives locally uniform approximation on $\Rea s>0$ for either parity.
+
+For zeta, reproduce the pole before removing it. Set
+\[
+ Z_N(s)=\sum_{n\le N}n^{-s}+\frac{N^{1-s}}{s-1}.
+\]
+Euler summation gives, for $\sigma>0$ and $s\ne1$,
+\[
+ \zeta(s)-Z_N(s)=-s\int_N^\infty\{x\}x^{-s-1}\,dx,
+ \qquad |\zeta(s)-Z_N(s)|\le\frac{|s|}{\sigma}N^{-\sigma}.
+\]
+The integral continues holomorphically to $\sigma>0$. Consequently
+\[
+ \xi_N(s)=\frac{s}{2}\pi^{-s/2}\Gamma(s/2)
+ \left((s-1)\sum_{n\le N}n^{-s}+N^{1-s}\right)
+\]
+is holomorphic on that half-plane, including $s=1$, and converges
+locally uniformly to $\xi$; in fact $\xi_N(1)=1/2$ for every $N$.
+These constructions use known arithmetic coefficients, not unknown zeros.
+They avoid Theorem~\ref{thm:euler-nogo} by allowing additive cancellation
+and unrestricted finite-level zeros. They establish convergence, but
+provide no self-adjoint realization or critical-line theorem for those zeros.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

@@ -11,3 +11,5 @@ Primary sources consulted on 2026-11-02:
 Supplied papers are tracked separately in SOURCES.json and reviews/. Classical Rouché, Montel, identity, and Hadamard factorization theorems are used explicitly in prose and are not claimed as new results or as formally verified by the small standalone Lean module.
 
 Next primary-source work: inspect actual theorem statements for Selberg trace formula, Eichler–Shimura, Artin/Brauer induction, and Li/Weil test spaces. The exact counterexamples in the audit already disprove the specific overstatements without requiring a literature consensus argument.
+
+Continuation references checked: [DLMF5.2](https://dlmf.nist.gov/5.2) for gamma's nonvanishing and poles, and [DLMF25.15](https://dlmf.nist.gov/25.15) for Dirichlet analytic continuation, Euler product scope, parity and functional equation. The new partial-sum error formulas are derived explicitly in the papers, not inferred from a finite numerical test.

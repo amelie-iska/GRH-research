@@ -8,6 +8,19 @@ namespace GRHResearch
 theorem no_integral_trace_norm_two (t : Int) : 2 * (t * t) ≠ 9 := by
   omega
 
+/-- The integral trace equation forced by an integer hyperbolic norm is impossible.
+The geometric derivation remains in prose; this arithmetic obstruction is universal. -/
+theorem no_integer_norm_trace_equation (n t : Int) (hn : 1 < n) :
+    n * (t * t) ≠ (n + 1) * (n + 1) := by
+  intro h
+  simp only [Int.add_mul, Int.mul_add, Int.one_mul, Int.mul_one] at h
+  have hprod : n * (t * t - n - 2) = 1 := by
+    simp only [Int.mul_sub]
+    omega
+  have hdiv : n ∣ 1 := ⟨t * t - n - 2, hprod.symm⟩
+  have hle : n ≤ 1 := Int.le_of_dvd (by decide) hdiv
+  omega
+
 /-- Degrees of arbitrary integral combinations of even-degree characters remain even. -/
 def cyclicDegrees : List Int → Int
   | [] => 0
@@ -51,6 +64,7 @@ theorem iwahori_shift_witness :
     mul (mul ⟨0,2,1,0⟩ ⟨0,1,0,0⟩) ⟨0,2,1,0⟩ = ⟨0,0,1,0⟩ := by decide
 
 #print axioms no_integral_trace_norm_two
+#print axioms no_integer_norm_trace_equation
 #print axioms cyclicDegrees_even
 #print axioms no_integral_cyclic_induction_degree_one
 #print axioms symmetrization_changes_determinant
