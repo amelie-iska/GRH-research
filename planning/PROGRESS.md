@@ -11,7 +11,7 @@ Plan: planning/IMPLEMENTATION_PLAN.md. Design approved 2026-11-02. User subseque
 - 6 Lean 4 statements compile under pinned4.24.0; no project-specific axioms or admissions. Standard foundational axioms are reported explicitly.
 - 5 deterministic exact checks pass;3 source pins and clean worktrees checked; indexed project credential-pattern scan passes.
 - Concise4 page and extended8 page TeX editions compile with resolved references and no overfull boxes. Representative pages rendered and inspected. Two independent readers found no substantive error in the new mathematical arguments; one phase-wording correction applied.
-- Private repository created and first planning commit pushed. Research/papers milestone prepared for push after final verification.
+- Private repository created and first planning commit pushed. Research/papers milestone `ce51ab8` pushed; remote main matched the local commit and repository privacy was reverified.
 
 ## Rulings
 
