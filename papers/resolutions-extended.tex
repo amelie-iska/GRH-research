@@ -1,16 +1,17 @@
 \input{preamble}
+\usepackage{tikz-cd}
 \newtheorem{corollary}[theorem]{Corollary}
 \newcommand{\gshift}[2]{#1\langle #2\rangle}
 \date{November 3, 2026}
-\title{Projective resolutions, surface orders and zeta determinants\\\large Extended constructions, calculations and arithmetic research program}
+\title{Infinite dessin orders, projective resolutions and spectral determinants\\\large Extended proofs, Schur functors and Auslander--Reiten calculations}
 \author{Research working draft}
 \begin{document}
 \maketitle
 \begin{abstract}
-This extended edition constructs forbidden-path projective resolutions and their graded Ext and Tor, proves the weighted Cartan determinant formula by finite arrow-state matrices, and develops the passage from derived objects to determinant lines and cohomological zeta functions. Examples isolate the effects of completion, singular seams, periodic tails, nonflat specialization and cancellation. We explain the graded-curve and Koszul-dual interfaces with their finiteness hypotheses, and compare finite-field purity with the missing global number-field positive determinant realization. Both successful algebraic constructions and unresolved arithmetic obligations are explicit. Selected components are verified in Lean4; neither the full derived framework nor GRH is formalized or proved.
+We work throughout with infinite-dimensional locally gentle algebras and completed surface orders arising from explicit cellular clean dessins on compact Riemann surfaces. We construct their projective resolutions, Cartan determinants and dual dessins; develop determinant semi-invariants, Schur modules and cyclic-quiver character kernels; and calculate actual lattice almost-split sequences and an affine-type diamond quotient. A constrained-path Fock algebra retains the gentle relations and has a compact extension with incidence boundary map. Its degree spectral triple and an inserted arithmetic Fredholm family are explicit. A pair of complex-isomorphic elliptic Belyi maps with different rational Frobenius factors isolates the necessary descent datum. Recent spectral approaches are compared with their actual hypotheses. Selected power-series, module and matrix statements are verified in Lean4. The arithmetic positive determinant comparison remains open; no proof of GRH is claimed.
 \end{abstract}
 \tableofcontents
-\input{resolutions-core}
-\input{resolutions-details}
-\input{resolutions-references}
+\input{dessin-core}
+\input{dessin-details}
+\input{dessin-references}
 \end{document}

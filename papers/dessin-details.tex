@@ -1,0 +1,258 @@
+\appendix
+\section{Expanded dessin, resolution and derived calculations}
+\subsection{The cycle order in coordinates}
+Number a permitted cycle in travel order $0,\ldots,\ell-1$. Map an arrow $i\to i+1$ to $E_{i,i+1}$ for $i<\ell-1$, and the final arrow to $u_c E_{\ell-1,0}$. A path from $i$ to $j$ then gives $u_c^rE_{ij}$, where $r$ counts cut crossings. These are linearly independent path normal forms, and every positive-length permitted path has exactly one such expression on exactly one branch. The full-cycle sum in a branch is $u_c I$. At a paired edge its two diagonal occurrences come from a single original idempotent; no positive-length coefficients are identified. This proves the order description including self-pairings within one cycle. Although the suborder is generically a product of full matrix algebras, it is not their unglued product at the special fiber.
+
+For the interval this becomes the literal fiber product
+\[
+ \Lambda=\{(f,g)\in k[[X]]^2:f(0)=g(0)\},\qquad
+ x=(X,0),\ y=(0,X),\ u=(X,X).
+\]
+Every element has a unique expression $a(u)+b(u)x$: take $a=g$ and $b=(f-g)/X$. Thus it is $R$-free on $1,x$ with $x^2=ux$ and $y=u-x$. The annihilator of $x$ consists of pairs $(0,g)$ with $g(0)=0$, exactly $y\Lambda$; the other branch is symmetric. Multiplication by $u$ is injective, coefficientwise. These are actual formal power-series statements, not conclusions from finite truncations.
+
+\subsection{The two-arm complex and its calculations}
+For an arrow $a$ write $f(a)$ for its unique forbidden successor. The summand in $P_n(i)$ indexed by the initial arrow $a$ has endpoint $t(f^{n-1}(a))$. Its map multiplies by that last arrow. Thus the resolution can be computed by iterating a finite permutation, while the projectives themselves remain infinite-dimensional. The Hom complex against a module $N$ is the direct sum of the endpoint spaces with differentials given by the same arrow matrices. Tensor against a left module instead uses the same path entries acting on the left. No rank or exactness claim for an arbitrary $N$ is inferred by counting endpoints alone.
+
+For the nodal residue field the maps are particularly explicit:
+\[
+ \cdots\xrightarrow{\operatorname{diag}(x,y)}\Lambda^2
+ \xrightarrow{\operatorname{diag}(y,x)}\Lambda^2
+ \xrightarrow{(x\ \ y)}\Lambda\longrightarrow k\longrightarrow0.
+\]
+If $xz_1+yz_2=0$, its first branch says the first branch of $z_1$ is zero, and its second branch says the second branch of $z_2$ is zero. Hence $z_1=yw_1$, $z_2=xw_2$. The same annihilator calculation proves the alternating kernels in all degrees. Projectivity is genuine: the terms are regular modules or their finite direct sums. It is not a finite free resolution, despite the period of its positive tail.
+
+For the elliptic theta the quiver vertices are $v_0=\{0,3\}$, $v_1=\{1,4\}$, $v_2=\{2,5\}$. The arrows $a_0,a_3$ go $v_0\to v_2$, $a_2,a_5$ go $v_2\to v_1$, and $a_1,a_4$ go $v_1\to v_0$. The two forbidden arms from $v_0$ are
+\[
+ a_0,a_5,a_1,a_3,a_2,a_4,\ldots,\qquad
+ a_3,a_2,a_4,a_0,a_5,a_1,\ldots.
+\]
+Their top pairs are $(v_2,v_2),(v_1,v_1),(v_0,v_0)$, repeated. The three steps exchange the arms. Their distinct top pairs exclude shorter unordered positive periods. The spherical theta instead has forbidden two-cycles and successive top pairs $(v_2,v_1),(v_0,v_0)$, giving period two. Thus even identical hereditary overorders need not give identical resolutions.
+
+Quadratic Koszul duality here has a directly checkable local meaning: relations complement the two possible successors. The dual dessin replaces the graph rotation by $\phi^{-1}$. In the Ext algebra against $A/J$, concatenating the forbidden-word basis gives the product when the join is forbidden; a permitted join gives zero. One can see this by lifting a length-$r$ basis class to the resolution: discard the prescribed initial $r$ letters and identify the remaining summand with its suffix resolution, taking zero on other prefixes. These prefix-discard comparison maps commute with the suffix differentials, with the standard shift signs when viewed as shifted complexes. The concatenated indexing word exists exactly when its join is forbidden; evaluation of the two basis classes on that word gives one. If the join is permitted there is no such indexing word and the product is zero. Composition therefore concatenates indexing words, with the chosen right-module/Yoneda opposite convention. This is a graded algebra statement; it neither makes the unbounded resolution perfect nor constructs an equivalence of all formal-completion derived categories.
+
+For an arbitrary bounded projective complex $P^\bullet$, its determinant line over a commutative coefficient ring is $\bigotimes_n(\det P^n)^{(-1)^n}$, with determinant duals for negative exponents. A chain automorphism acts on this line; a quasi-isomorphism gives the corresponding determinant-functor isomorphism. For a general endomorphism $F$, the expression for $1-zF$ uses the locus where it is invertible and gives a rational determinant-line action/trivialization, not an everywhere invertible line map at singular parameters. Additivity is compatible with exact triangles under the usual determinant-functor conventions \cite{KnudsenMumford,Breuning}. In our order context an $R$-linear determinant uses the finite free underlying $R$-modules; it must specify a separate endomorphism. Determinants of a differential presentation, alternating determinants of a chain action, regularized analytic determinants and the Cartan path matrix are four distinct constructions. Their equality requires a proof, not their shared name.
+
+The geometric model literature \cite{GeometricGentle,GeometricResolutions,GeometricKoszul} is useful for identifying which crossings and gradings would have to be represented by a functor. To apply it here one must specify the category of polynomial strings, completed lattices or finite-length quotients; construct its surface/curve objects; and prove that degree-$r$ intersections compute the Hom group into shift $r$, with local systems and boundary exceptions included. We have supplied explicit walks and maps in the examples, not claimed this general completed-order theorem. On a finite word, a map can already be computed rigorously without such a theorem: assign a coefficient matrix between equal-vertex occurrences and solve $F_{t(a)}N(a)=N'(a)F_{s(a)}$ for every arrow. The diamond calculations below implement exactly this system.
+
+\section{Semi-invariants, tableaux and explicit intertwiners}
+\subsection{Derived information retained by a presentation}
+Let $K=\operatorname{im}f$. The injection $\operatorname{Hom}(K,N)\to\operatorname{Hom}(P_1,N)$ descends to the Ext injection used in Theorem~\ref{thm:semi}; its kernel modulo $\operatorname{im}\operatorname{Hom}(P_0,N)$ is zero because the map $P_1\to K$ is onto. The missing part of the cokernel detects maps on $P_1$ not descending through $K$. This explains exactly why an injective resolution map is needed for its full Euler interpretation.
+
+In the node example the resolution of $M=\Lambda/(x)$ has maps $x,y,x,y,\ldots$. On $N=k[y]/(y^2)$ the Hom cochain maps are $0,y,0,y,\ldots$. Thus $\operatorname{Hom}(M,N)=N$ and $\operatorname{Ext}^1(M,N)=\ker y$ have dimensions two and one; the cokernel of the first zero map is two-dimensional. In the elliptic-square example the first four Hom maps are $1,0,0,0$, periodically. Hence degrees zero and one vanish, degrees two and three are $k$, and degree four vanishes. This also makes clear why a nonzero scalar semi-invariant does not give a derived orthogonality theorem.
+
+With coordinate action $(gF)(N)=F(g^{-1}N)$ the Schofield weight is $a-b$, the negative of the point-evaluation weight. For a single arrow it is the same elementary distinction as the action on $\operatorname{Hom}(V,W)$ versus on its coordinate functions $V\otimes W^*$. The Cauchy decomposition for coordinate functions is
+\[
+ \operatorname{Sym}^m(V\otimes W^*)\cong
+ \bigoplus_{\lambda\vdash m}S_\lambda(V)\otimes S_\lambda(W)^*.
+\]
+A relation quotient can kill these components; its ambient multiplicities do not descend unchanged. Acyclic-quiver semi-invariant/LR results such as \cite{DerksenWeyman} retain their acyclicity assumptions. The explicit two-arrow slice below is acyclic, whereas the whole theta quiver is not.
+
+\subsection{One Young operator and one LR decomposition in coordinates}
+For $\lambda=(2,1)$ number the first row $1,2$ and second row $3$. Then
+\[
+ Y=(I+P_{12})(I-P_{13}),\quad Y^2=3Y,\quad
+ \dim\operatorname{im}(Y\mid(k^2)^{\otimes3})=2.
+\]
+The hook product is three; its Specht dimension is $3!/3=2$, also two here for a different reason. The normalized projector extracts one $S_{(2,1)}$ copy. The trace $\tr((Y/3)M^{\otimes3})$ is therefore the Schur character, not twice that character. This fixes the common row/column normalization ambiguity.
+
+Write $t=\tr M$, $\Delta=\det M$ for a two-dimensional endomorphism. Its complete characters obey $h_0=1$, $h_1=t$, $h_m=th_{m-1}-\Delta h_{m-2}$, and
+\[
+ \chi_{(a,b)}(M)=\Delta^b h_{a-b}(M),\quad a\ge b\ge0.
+\]
+In particular $h_2=t^2-\Delta$, $h_3=t^3-2t\Delta$, and $\chi_{(2,1)}=t\Delta$. Thus $t h_2=h_3+\chi_{(2,1)}$ is the LR identity $V\otimes\operatorname{Sym}^2V\cong\operatorname{Sym}^3V\oplus S_{(2,1)}V$, with $S_{(2,1)}V\cong\det V\otimes V$.
+
+An explicit natural splitting avoids relying just on characters. In characteristic zero multiplication $m:V\otimes\operatorname{Sym}^2V\to\operatorname{Sym}^3V$ has natural section
+\[
+ s(v_1v_2v_3)=\tfrac13\sum_{i=1}^3v_i\otimes\prod_{j\ne i}v_j.
+\]
+The map $j:\bigwedge^2V\otimes V\to V\otimes\operatorname{Sym}^2V$ sends $(v\wedge w)\otimes z$ to $v\otimes wz-w\otimes vz$. In dimension two it is injective: for a basis $e_1,e_2$ its images at $z=e_1,e_2$ have distinct independent coordinates. They lie in $\ker m$, whose dimension is $6-4=2$. Hence $(s,j)$ is the required isomorphism. Tensorial definitions make both maps commute with every linear endomorphism, including singular arrow maps. This is a genuine LR intertwiner on our dessin representation stratum.
+
+For a concrete theta representation take
+\[
+ X_1=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad
+ X_2=\begin{pmatrix}2&0\\0&1\end{pmatrix},\quad
+ X_3=\begin{pmatrix}1&0\\1&1\end{pmatrix}.
+\]
+Then $M=X_3X_2X_1=\left(\begin{smallmatrix}2&2\\2&3\end{smallmatrix}\right)$, $t=5$, $\Delta=2$, $h_2=23$, $h_3=105$ and $\chi_{(2,1)}=10$. The identity is $115=105+10$. Since the other permitted branch is zero, every forbidden product is zero; this is an actual representation of the infinite elliptic dessin algebra.
+
+In the invertible-arrow open stratum one can gauge $X_1,X_2$ to the identity, leaving conjugation of $M$. The invariant-ring proof in the core works also at singular arrows by cycle-trace generation, not by assuming that this gauge choice extends there. The degree-one monodromy coefficients have total arrow degree three; this is why the Hilbert-series denominator uses $3j$, not $j$.
+
+For the Cauchy kernel choose the Schur subspace inside the tensor power with its inherited Hilbert norm. $M^{\otimes m}$ preserves it and has norm at most $\|M\|^m$. This proves the trace bound for nonnormal matrices as well as diagonal ones. Formal Cauchy identities extend by polynomial continuity in matrix entries; the stated absolute bound then justifies analytic summation. Gram positivity does not assert entrywise positivity or positivity of an unrelated arithmetic form. For three exact test matrices $M$, $\left(\begin{smallmatrix}1&1\\0&2\end{smallmatrix}\right)$, $\left(\begin{smallmatrix}0&1\\-1&1\end{smallmatrix}\right)$, the choice $r=1/100$ satisfies $rR_0^2\le21/100<1$ using Frobenius norms, and all seven principal minors of the rational kernel matrix are nonnegative.
+
+\subsection{Two precise functorial limitations}
+At any actual vertex simple $S$ of $A$, the split exact sequence $0\to S\to S\oplus S\to S\to0$ uses first inclusion and second projection. Termwise $\operatorname{Sym}^2$ has dimensions $1,3,1$ at that vertex; its middle kernel contains the mixed monomial as well as the first square, but its first image contains only the first square. Middle homology is $S$. Thus even split exactness is not preserved. Genuine derived Schur constructions instead use mixed tensor degrees, signed total differentials and suitable flat/projective replacements \cite{SchurComplexes,DerivedSchur}; their membership in a particular order category must still be checked.
+
+The $R$-lattice $M=R e_x\oplus R e_y$ with $x=\operatorname{diag}(u,0)$, $y=\operatorname{diag}(0,u)$ has $x+y=uI$. On $\operatorname{Sym}^2_RM$ the images are $\operatorname{diag}(u^2,0,0)$ and $\operatorname{diag}(0,0,u^2)$. Their sum kills the mixed vector, hence equals neither $uI$ nor $u^2I$. This is a specific failure to retain the original central action, not a failure of the polynomial monomial representation functor. Even a common ramified base substitution does not repair this mixed vector.
+
+Semi-invariants retain useful moduli on nilpotent modules. In the theta quiver keep only $a_0,a_3:v_0\to v_2$, put their scalar values $(x,y)=(1,\lambda)$ and all other arrows zero. The $v_1$ simple splits off. Every length-two path acts by zero, so these are continuous completed modules. The two scalars have the same weight $g_{v_2}/g_{v_0}$, and $y/x$ is a rational invariant on $x\ne0$, giving the projective pencil $[x:y]$. It is not a regular invariant on the whole affine locus, whose orbit closures meet zero.
+
+For the interval quotient take $x=J_2$, $y=\lambda J_2$. With its top and socle specified, the separated Kronecker coordinates are again $(1,\lambda)$; the relation to the same-weight ratio is exact. The pp formula in the core is stronger than merely noticing a ratio: on $M_\lambda$ its solution set is $\operatorname{im}x$, whereas on $M_\mu$, $\mu\ne\lambda$, the equation $(\mu-\lambda)xv=0$ forces $z=xv=0$. Different parameters are therefore distinguishable by actual positive-primitive conditions even though every cycle trace is zero.
+
+\section{Full lattice and diamond diagrams}
+\subsection{The nodal exact diagram}
+The normalization proof of Theorem~\ref{thm:nodear} uses $BM$ inside the generic module. Replacing it without justification by $B\otimes_\Lambda M$ could introduce torsion and would not prove the same statement. Once the subdirect residue subspace is decomposed, the branch basis changes lift over complete DVRs; taking inverse images modulo the conductor gives the direct decomposition, not just a decomposition of residues.
+
+Here is the promised diagram, with the terminal short exact column for every position:
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+0\arrow[r]&Y\arrow[r,hook]\arrow[d,"u"]&\Lambda\arrow[r,"x"]\arrow[d,"u"]&X\arrow[r]\arrow[d,"u"]&0\\
+0\arrow[r]&Y\arrow[r,hook]\arrow[d]&\Lambda\arrow[r,"x"]\arrow[d]&X\arrow[r]\arrow[d]&0\\
+0\arrow[r]&Y/uY\arrow[r,hook]&\Lambda/u\Lambda\arrow[r]&X/uX\arrow[r]&0
+\end{tikzcd}
+\]
+Each vertical column is completed by zero above and below. In the bottom row identify $Y/uY=k$ via generator $y$, $X/uX=k$ via $x$, and $\Lambda/u\Lambda=k[\epsilon]/(\epsilon^2)$ with $x=\epsilon$, $y=-\epsilon$. Its first map is $1\mapsto-\epsilon$, its second the augmentation. It is nonsplit as a dual-number sequence. This explicit order reduction, not an unrelated finite algebra, explains its appearance.
+
+For a further Ext calculation, resolve $X\cong\Lambda/(y)$ with successive maps $y,x,\ldots$. On $Y$ the first is multiplication by $y$ and the second zero, so $\operatorname{Ext}^1(X,Y)=Y/yY=k$; on $X$ the first is zero and the second injective, so $\operatorname{Ext}^1(X,X)=0$. Interchanging branches gives the other two cases. The two nonsplit lattice rows realize the nonzero cross classes. Their Hom spaces are finite over $R$, generally infinite over $k$.
+
+\subsection{Chebyshev geometry and the exact quotient}
+The identity $1-T_n(z)^2=(1-z^2)U_{n-1}(z)^2$ follows from $z=\cos\theta$ and the sine/cosine multiple-angle formulas, hence as a polynomial identity. $T_n'=nU_{n-1}$. Therefore $\beta_n$ has its only zero at infinity, of order $2n$; its $n$ points over one are double since $\beta_n-1=T_n^2/(1-T_n^2)$; and its poles are simple at $\pm1$ and double at the $n-1$ interior roots of $U_{n-1}$. The derivative has no additional critical values. The total ramification is $(2n-1)+n+(n-1)=4n-2$, as required for a degree-$2n$ rational Belyi map. The dual graph has $n+1$ vertices of degrees $1,1,2,\ldots,2$, and $n$ edges; it is a connected path. Its planar ribbon embedding is unique, so this identifies the particular nested-loop dessin, not only its passport.
+
+In the quotient retaining orientation $\Omega$, any surviving path traverses each chain edge at most once and either endpoint loop at most once. Its length is at most $n+1$; thus the killed-arrow ideal contains $J^{n+2}$. The quotient of $A_n$ and of its completion is the same $H_n(\Omega)$. For $n=3$ with forward chain arrows, its path counts in lengths zero through four are $3,4,3,2,1$, total thirteen. These counts describe a quotient representation category of the infinite order, not a change of primary object.
+
+Inflation is full because the two algebras have exactly the same actions on these annihilated objects. It preserves internal exact sequences. It does not preserve arbitrary ambient extension closure: the two adjacent simples are annihilated by the killed reverse arrow, but the two-dimensional extension having only that arrow nonzero is not. Likewise endpoint-local freeness over $k[l]/l^2$ or $k[r]/r^2$ in \cite{HuangLinSu} is not $R$-freeness. To transfer an almost-split property to a larger category one must prove the requisite approximation/factorization statements; locally finite quiver criteria \cite{BautistaLiuPaquette,Paquette,LiuNgPaquette} do not apply just because each vertex has two arrows. The permitted cycles violate interval/Hom finiteness.
+
+\subsection{Nine actual strings and all maps}
+Take $n=3$ with $1\xrightarrow{a}2\xrightarrow{b}3$, loops $l,r$ and $l^2=r^2=0$ in the quotient. Here $b$ denotes the retained forward $a_2$, not a reverse arrow of the original doubled chain. The following words are in travel order. A superscript $-$ means a formal inverse in a word, not an inverse algebra element.
+\begin{center}\small
+\begin{tabular}{llll}
+\toprule
+Object & word & start & dimension vector\\\midrule
+$A$&$l^- a b r b^- a^- l^-$&1&$(4,2,2)$\\
+$B$&$l^- a b$&1&$(2,1,1)$\\
+$C$&$l^- a b r^-$&1&$(2,1,2)$\\
+$D$&$a b r b^- a^- l^-$&1&$(3,2,2)$\\
+$E$&$a b$&1&$(1,1,1)$\\
+$F$&$a b r^-$&1&$(1,1,2)$\\
+$G$&$r^- b^- a^- l a b r b^- a^- l^-$&3&$(4,3,4)$\\
+$H$&$r^- b^- a^- l a b$&3&$(2,2,3)$\\
+$I$&$r^- b^- a^- l a b r^-$&3&$(2,2,4)$\\\bottomrule
+\end{tabular}
+\end{center}
+A basis vector is assigned to each visited position $0,\ldots,\ell(w)$ at its vertex. A direct letter sends its preceding vector to its following vector; an inverse letter sends the following vector to the preceding vector. Sum these elementary maps for each arrow and put all unmentioned entries zero. This defines every matrix, including repeated loops, and verifies the relations. Set the killed reverse arrows to zero to obtain actual $\Lambda_3$-modules.
+
+Their signed grid is
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ A\arrow[r,"p"]\arrow[d,"-p"']&B\arrow[r,"i"]\arrow[d,"p"]&C\arrow[d,"-p"]\\
+ D\arrow[r,"p"]\arrow[d,"-i"']&E\arrow[r,"i"]\arrow[d,"i"]&F\arrow[d,"-i"]\\
+ G\arrow[r,"p"]&H\arrow[r,"i"]&I.
+\end{tikzcd}
+\]
+Horizontal projections keep the initial word positions and kill the remaining positions. Horizontal inclusions append the final $r^-$, keeping old positions. Upper vertical projections delete the initial $l^-$: old position $j\ge1$ maps to position $j-1$, and old position zero maps to zero. Lower vertical inclusions prepend $r^-b^-a^-l$: position $j$ maps to $j+4$. Multiply these maps by the indicated signs. For every arrow these formulas commute with the string action, including the two positions adjacent to a cut or join; those are exactly where the loop inverse and chosen orientation matter.
+
+Every small square has two length-two composites whose sum is zero. The exact sequences are
+\[
+\begin{split}
+0&\to A\to B\oplus D\to E\to0,\qquad
+0\to B\to C\oplus E\to F\to0,\\
+0&\to D\to E\oplus G\to H\to0,\qquad
+0\to E\to F\oplus H\to I\to0.
+\end{split}
+\]
+For example the maps out of $A$ retain its initial positions $0,1,2,3$ in $B$ and delete its first position in $D$, so their joint kernel is zero. The maps to $E$ are onto, and the dimension vectors give $\dim A+\dim E=\dim B+\dim D$ vertexwise. The zero composite plus this equality proves exactness. The other three use precisely the same keep/delete or append/prepend rules; their vertexwise dimension equalities and jointly injective/surjective maps prove exactness. The shipped exact checker constructs all matrices and verifies these assertions independently over $\mathbb Q$.
+
+The stronger almost-split property is imported by identifying $E=w=ab$ as the minimal string of type $(2,2)$ and these exact hook/cohook words with \cite[Proposition3.12]{HuangLinSu}, using that paper's Propositions2.6/2.9 and Lemma3.10. Opposite-module conventions are reconciled by reversing travel/composition conventions; the closed doubled quiver is isomorphic to its opposite by exchanging the two arrows at each chain edge. Thus intrinsically $\tau E=A$, $\tau F=B$, $\tau H=D$, $\tau I=E$. The rows and columns of this grid are \emph{not} generally short exact, unlike the nodal diagram. Two small cautions in that source are not needed here: a tube-rank label in Example3.9(3) is inconsistent with its listed mouth, and a general homogeneous-tube statement must not be read as a converse classifying every such object as a band. Neither is used to import these four meshes.
+
+\subsection{The pure-injective quotient and what its dimension means}
+For $B_0=\Lambda/J^2=k\langle x,y\rangle/(x,y)^2$, words alternate direct and inverse letters because every direct/direct and inverse/inverse adjacent pair is forbidden. Up to rotation and inverse its only primitive band is $xy^{-1}$; the bridge quiver has two oriented band vertices with no connecting nontrivial bridge. The longest path has length zero. The domestic string results \cite{PuninskiPrest,LakingPrestPuninski} therefore give relative dimension $0+2=2$, not an automatic dimension three for every one-domestic algebra. Finite-dimensional points have relative CB rank zero; the appropriate Prüfer/adic and one-sided periodic string points have rank one; the unique generic point has rank two. These statements concern the quotient category with its inherited pp structure.
+
+Indeed a pp formula is a finite system of linear equations with existentially quantified unknowns. On a module annihilated by $J^2$ every coefficient reduces to $B_0$, so purity and pure-injectivity are preserved in both directions under inflation. The condition $MJ^2=0$ is a definable closed condition, giving the closed Ziegler subspace. Its relative ranks need not be ranks in the entire $\Lambda$ spectrum. This subcategory is not extension closed: $\Lambda/(x^3,y)$ gives an extension of objects killed by $J^2$ that is not itself killed by $J^2$. Since $u^2$ annihilates every object of the subcategory, it contains no nonzero $R$-free lattice. Ringel's representation-theoretic node construction is also not a Morita equivalence identifying the geometric nodal order with the Kronecker algebra. Infinite-dimensional polynomial string classifications \cite{CrawleyBoeveyStrings} retain finitely-controlled or pointwise-artinian assumptions; an arbitrary complete lattice does not automatically satisfy them as an algebraic $A$-module.
+
+\section{The operator extension in detail}
+\subsection{A corrected cycle lift and the integer boundary map}
+In the permitted-state graph each length-$\ell$ cycle has a full matrix-corner Laurent/circle coordinate. Its chosen $K_1$ generator is the full cycle at one state plus the complementary identity. In Fock space $L_c^*L_c=Q_a+v_{s(a)}$. Thus the tempting lift $L_c+(1-Q_a)$ has overlapping initial pieces and is not an isometry. The corrected lift in Theorem~\ref{thm:fock} first restricts to $Q_a$:
+\[
+ W=L_cQ_a+(1-Q_a),\quad W^*W=I,\quad
+ I-WW^*=Q_a-L_cQ_aL_c^*.
+\]
+A path starting with $a$ and length greater than $\ell$ has uniquely the full prefix $c$ followed by another path starting with $a$. The missing range consists exactly of lengths $1,\ldots,\ell$. Its terminal multiset is the original graph's incident-edge multiset at that cycle vertex. These finite defect vectors all lie in terminal compact ideals; their classes give the claimed unsigned incidence entries. The sign convention affects only the overall sign of the boundary map.
+
+Here is the Smith calculation without spectral assumptions. Choose a spanning tree of the connected underlying graph and one root. By changing signs on one bipartition of the tree, its $E\times V$ incidence submatrix becomes the ordinary oriented tree incidence, with $V-1$ unit pivots. After eliminating these pivots, a remaining column represents the common root coordinate, and each nontree edge evaluates on it as zero when its fundamental cycle is even, or $\pm2$ when odd. A loop is the latter case. If all are even the graph is bipartite and this column is zero; otherwise its entries have gcd two, giving the final pivot two. Remaining rows are free. Consequently the kernel/cokernel, then the six-term sequence, give the $K$ groups stated in the core. No theorem reconstructing a cyclic embedding from those groups is asserted.
+
+The compact ideal is block diagonal, not $\mathcal K(\mathcal H)$: prefixes never move terminal vertices, so cross-terminal rank-one maps do not belong to the displayed ideal. This is why the arithmetic insertion must choose one terminal sector. A graph/Cuntz boundary quotient kills the vacua and hence this ideal, so that insertion need not survive passage to the quotient.
+
+\subsection{Spectral domain and arithmetic trace}
+A vector belongs to the adjoint domain of the diagonal $N$ precisely when its coefficientwise product by the real sequence $|p|$ is square summable; this proves self-adjointness on the given domain. The truncations by length prove finite supports are a core. Resolvent coefficients $(|p|-i)^{-1}$ tend to zero and each length space is finite dimensional, giving compactness. Prefix and deletion shift the length by at most one, so preserve the domain and prove the commutator formulas there. Leibniz then handles the dense polynomial *-algebra.
+
+Every terminal sector has one vacuum and two paths at each length $n\ge1$, even when some graph endpoints coincide: distinct formal paths remain distinct basis vectors. Thus restriction to a sector still has a simple vacuum, but it need not be a faithful representation of the whole concrete algebra. The trace of $e^{-tN^2}$ is $E+2E\sum_{n\ge1}e^{-tn^2}$, distinct from the semigroup trace of $N$ in the core. The trace identity with $\chi(N)$ is only on $\Rea s>1$, where the product is trace class. Analytic continuation of the scalar $L$-function does not make that same operator product trace class on $\Rea s>0$.
+
+\section{Abel determinant estimates and the arithmetic program}
+For completeness the inserted family has a full elementary convergence proof. Since complete nonprincipal character periods sum to zero, $|A_n|\le B_0\le q_\chi$. On $2^k\le n<2^{k+1}$,
+\[
+ \sum |u_n|^2\le\frac{B_0^2}{(k+1)^2},\qquad
+ \sum |v_n(s)|^2\le M^2(k+1)^2r^k,\quad r=2^{-2\sigma_0}<1.
+\]
+The second follows from $n^{-s}-(n+1)^{-s}=s\int_n^{n+1}x^{-s-1}\,dx$. Define
+\[
+ Q_J(r)=r^J\left(\frac{(J+1)^2}{1-r}
+ +\frac{2(J+1)r}{(1-r)^2}+\frac{r(1+r)}{(1-r)^3}\right).
+\]
+Expanding $(J+j+1)^2$ in the three geometric moment sums proves $Q_J=\sum_{k\ge J}(k+1)^2r^k\to0$. Locally uniform $\ell^2$ convergence of the holomorphic finite-coordinate vectors proves Banach holomorphy. The linear functional $z\mapsto\sum v_nz_n$ has norm $\|v\|$; this is the complex-linear coefficient pairing, not a conjugate-linear dependence on $s$.
+
+Write $\mathcal I(v)(z)=\sum_n v_nz_n$ for the coefficient functional, distinct from the arrow ideal $J$. For $N_J=2^J-1$, $J\ge1$, let $K_N=u\otimes(\mathcal I(P_Nv)-e_1^*)$. Then
+\[
+ \|K-K_{N_J}\|_1\le\sqrt2 B_0M\sqrt{Q_J(r)}.
+\]
+Finite summation by parts gives
+\[
+ T_N=\det_F(I+K_N)
+ =\sum_{n\le N}A_n(n^{-s}-(n+1)^{-s})
+ =S_N-A_N(N+1)^{-s}.
+\]
+Adding the last endpoint times $e_1^*$ to the functional recovers $S_N$ exactly because $u_1=1$. Its trace-norm error is at most
+\[
+ \sqrt2 B_0\bigl(M\sqrt{Q_J(r)}+B_0(N_J+1)^{-\sigma_0}\bigr).
+\]
+For arbitrary cutoffs use the last whole dyadic block for an enclosing tail. Galerkin compressions also converge: $\|u-P_{N_J}u\|\le B_0/\sqrt J$. With $C_K=1+M\sqrt{(1+r)/(1-r)^3}$,
+\[
+ \|K-P_{N_J}KP_{N_J}\|_1
+ \le\frac{B_0 C_K}{\sqrt J}+\sqrt2 B_0M\sqrt{Q_J(r)}.
+\]
+The raw endpoint adds the same endpoint bound as before. Isometric insertion by $U$ preserves nonzero singular values, every norm estimate, and the Fredholm determinant. Everything is in one compact ideal of the actual infinite dessin Fock algebra.
+
+For primitive parity $a$ use $g(s)=(q_\chi/\pi)^{(s+a)/2}\Gamma((s+a)/2)$, holomorphic nonzero on $\Rea s>0$. The completed functional is $g(s)\mathcal I(v)-e_1^*$, and the completed raw functional is $g(s)(\mathcal I(P_Nv)+A_N(N+1)^{-s}e_1^*)-e_1^*$. Their determinants are exactly $gL$ and $gS_N$. Scaling the entire old perturbation would instead give $1+g(L-1)$, the wrong normalization. Trace-class background is standard \cite{Bornemann}, while these special rank-one identities follow directly from $\det_F(I+u\otimes\varphi)=1+\varphi(u)$.
+
+The metric obstruction is likewise elementary. With inner product conjugate-linear in its first variable, symmetry of $T=u\otimes\varphi$ implies
+\[
+ \varphi(z)\langle u,u\rangle=\overline{\varphi(u)}\langle u,z\rangle.
+\]
+A nonzero $\varphi$ cannot have $\varphi(u)=0$; thus all symmetric maps with that range have proportional functionals. For $n\ge2$ the coefficient ratios at $\sigma+it$ and $\sigma$ satisfy
+\[
+ \frac{v_n(\sigma+it)}{v_n(\sigma)}
+ =\frac{\sigma+it}{\sigma}\,n^{-it}(1+O_{\sigma,t}(1/n)).
+\]
+Integers nearest $\exp(2\pi k/|t|)$ and $\exp((2\pi k+\pi)/|t|)$ give opposite nonzero subsequential limits. Hence no common positive metric symmetrizes this family for all critical heights. Restricting any proposed metric on the inserted family to $U\ell^2$ gives the same contradiction. An independently constructed positive comparison is still a possible different route.
+
+\subsection{Precisely how classical and recent sources enter}
+Over a finite field the Grothendieck trace-formula architecture writes a zeta function as alternating determinants on finite-dimensional cohomology; Deligne's purity supplies the weights of eigenvalues \cite{SGAFourHalf,DeligneWeilI,DeligneWeilII}. If a weight-$w$ Frobenius is $q^{w/2}$ times a positive-metric unitary, each eigenvalue has modulus $q^{w/2}$. The norm conclusion is immediate; constructing that form or proving purity is the deep step. Symplectic/alternating duality $F^tJF=q^wJ$ alone only pairs reciprocal eigenvalues and does not give their individual moduli. An order resolution or Schur-positive character expansion alone cannot replace this step in number-field cohomology.
+
+The recent primary comparisons used here are specific:
+\begin{itemize}
+\item \cite[Theorem3.12, pp.15--17]{ConnesConsaniKnots} gives finite abelian covers with local orbit length $\log p$ and genuine arithmetic monodromy. It suggests what a descent-equipped order functor should match; it does not identify our $u$ or a face cycle with a prime without such a functor.
+\item \cite[Propositions4.1--4.3, Theorem4.6]{Prolate} builds finite-prime local models with archimedean Fourier factors. Its Hilbertian isomorphisms are not an asserted uniformly controlled common isometry for our arithmetic approximants. \cite[Proposition3.1]{LocalMoments} gives determinacy of a particular local moment problem; positive finite Hankel matrices are not the missing global Weil inequality.
+\item \cite[Theorem3.6]{ZetaTriples} gives discreteness/lower boundedness for the stated restricted Weil form. Theorem5.10, pp.23--24, additionally assumes a finite truncation, $\lambda>1$, a simple even bottom eigenfunction $\xi$ and $\delta_N\xi=1$. Its quotient metric is positive and its regularized determinant is $-i\lambda^{-iz}\widehat\xi(z)$. Passing to the infinite arithmetic comparison, including the ground-state and convergence conditions in its \S8, is not automatic.
+\item \cite[Theorem6.1, p.13]{QuadraticForms} assumes a specified real distribution on an interval, the corresponding trigonometric-core form, essential self-adjointness, and an isolated simple lowest eigenvalue with reflection-even eigenfunction. Its Fourier transform then has only real zeros. Our degree operator's vacuum and length parity are not those data.
+\item \cite[Theorem6.1]{DeningerPackets} gives prime-indexed periodic packets in its dynamical construction, not one proved orbit per prime with the full desired cohomological trace formula. \cite{DeningerReal} isolates an obstruction to a particular real-coefficient cohomology with full functorial Artin multiplicities; it is not a theorem excluding every Hilbert--P\'olya operator. The current survey \cite{ConnesSurvey} distinguishes remaining steps. The recent Picard-monoid construction \cite{ConnesConsaniJacobian} is not already a polarized abelian variety with a number-field purity theorem. \cite{PongeTian} uses RH as an input in the cited spectral identification, so cannot be used circularly as its proof.
+\end{itemize}
+These are targeted theorem/proof readings, not claims that every page of every cited work has been audited. The preserved review records specify actual page coverage and hashes, including inaccessible original PDFs where the modern primary proof was used instead.
+
+\subsection{A concrete sequence of remaining constructions}
+First choose a number-field model of a Belyi pair, its finite covers and conductor/ramification data. Construct actions or exact correspondences on the labelled order/module or analytic categories that recover the local prime Frobenius polynomials. The elliptic twists show why omitting this datum loses information. Test at more than one arithmetic model of the same complex dessin, not just its topological passport.
+
+Second specify a finite projective or otherwise determinant-admissible complex and its \emph{independent} arithmetic endomorphism. Prove exact-sequence/determinant-line compatibility. Use semi-invariants to encode presentation degeneracies, and Schur/exterior characters to calculate local factors, retaining every central-action and nilpotence distinction above. General derived Schur replacements require their own construction; termwise Schur on the resolution fails the exhibited split sequence test.
+
+Third prove the same local factors, gamma terms and conductor give a globally convergent or correctly regularized determinant. Trace-norm convergence must be established for the chosen analytic perturbations; strong convergence is insufficient in general. The inserted Abel family supplies this topology for an elementary scalar encoding, but has neither the independent arithmetic spectrum nor the positive metric needed for zero location.
+
+Finally produce an independently proved positive form or self-adjoint determinant-preserving realization. One acceptance criterion is the Hurwitz target in the core; another is equality with the precise arithmetic quadratic form in the recent spectral theorems, with all their domain, ground-state, normalization and limit hypotheses verified. The local Cauchy kernel, $K$-group computation and graph spectral dimension alone meet none of these final comparison hypotheses. No remaining condition is silently asserted true here. Dirichlet, Hecke, Dedekind and Artin scopes must remain individually recorded.
+
+\section{Literal formal and computational coverage}
+\texttt{DessinNodeOrder.lean} defines the fiber-product subring of two genuine power-series rings. Its twenty printed declarations establish diagonal injectivity, nonzero branches, branch zero products, factorizations and annihilator identities, regular $u$, augmentation surjectivity and exactness, bijective power-series coordinates, square-zero alternating maps, three kernel-equals-range statements and projectivity of the actual regular/product terms. The coordinate statement is a bijection; the file does not yet package it as an $R$-linear equivalence or declare the general order freeness theorem.
+
+\texttt{DessinInvariantComponents.lean} has ten printed declarations: three CK1-collapse components, determinant change of bases with an actual inverse, symmetric-square zero, identity, composition and relation preservation, the degree-two Schur character identity, and the nodal central-parameter obstruction. Its symmetric-square matrix is
+\[
+ \operatorname{Sym}^2\!\begin{pmatrix}a&b\\c&d\end{pmatrix}
+ =\begin{pmatrix}a^2&ab&b^2\\2ac&ad+bc&2bd\\c^2&cd&d^2\end{pmatrix}.
+\]
+This is the ordinary monomial basis convention; composition is proved universally over any commutative ring. The full project suite prints types and foundational dependencies; no theorem about general LR decompositions, abstract derived equivalences, C* $K$-theory or GRH is inferred from these component proofs.
+
+The exact Python checks use fixed rational matrices and exhaustive finite sets, with no random seeds. They construct the displayed permutations and paths, evaluate rational Cartan identities, check formal Euler products through a stated degree, verify unrestricted-output Fock basis identities on bounded input sets, compute incidence Smith data, construct all nine string representations and signed maps, and test Young/LR/Cauchy examples and the seven-element-field counts. Those diagnostics are reproducible finite corroboration. The universal infinite claims rest on the proofs or explicitly cited theorems, and the arithmetic comparison remains open.

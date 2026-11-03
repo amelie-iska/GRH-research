@@ -1,0 +1,3957 @@
+{
+  "arithmetic": "Deterministic exact integers/Fraction; no dependencies or random seed",
+  "conventions": "Travel-order words; phi=alpha*sigma^-1; Cartan source rows; prefix Fock action",
+  "bounds": {
+    "input_Fock_path_length_through": 8,
+    "signed_series_degree_through": 10,
+    "rational_Cartan_samples_per_dessin": 3
+  },
+  "examples": {
+    "interval": {
+      "sigma": [
+        0,
+        1
+      ],
+      "alpha": [
+        1,
+        0
+      ],
+      "phi": [
+        1,
+        0
+      ],
+      "genus": 0,
+      "sigma_cycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "phi_cycles": [
+        [
+          0,
+          1
+        ]
+      ],
+      "quiver_arrows_source_target": [
+        [
+          "0",
+          0,
+          0
+        ],
+        [
+          "1",
+          0,
+          0
+        ]
+      ],
+      "rank_over_common_DVR": 2,
+      "cartan": {
+        "rational_samples": [
+          {
+            "q": "1/2",
+            "cartan": [
+              [
+                "3"
+              ]
+            ],
+            "determinant": "3"
+          },
+          {
+            "q": "1/3",
+            "cartan": [
+              [
+                "2"
+              ]
+            ],
+            "determinant": "2"
+          },
+          {
+            "q": "-1/2",
+            "cartan": [
+              [
+                "1/3"
+              ]
+            ],
+            "determinant": "1/3"
+          }
+        ],
+        "path_counts": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "series_degree_through": 10,
+        "signed_EC_and_CE_scalar_coefficients": 22
+      },
+      "Fock": {
+        "basis_input_length_through": 8,
+        "basis_vectors": 17,
+        "unrestricted_output_lengths": true,
+        "initial_projection_identities": 34,
+        "forbidden_products": 34,
+        "vertex_vacuum_identities": 17,
+        "terminal_preservation": 18,
+        "number_commutators_on_nonzero_creation": 18,
+        "terminal_sector_dimension_by_degree": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "matrix_unit_input_and_word_length_through": 3,
+        "actual_terminal_sector_matrix_unit_actions": 343,
+        "cycle_isometry_and_defect_checks": 34,
+        "cycle_defects": [
+          {
+            "allowed_cycle": [
+              0
+            ],
+            "defect_by_terminal_sector": [
+              1
+            ],
+            "connecting_map_column": [
+              -1
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          },
+          {
+            "allowed_cycle": [
+              1
+            ],
+            "defect_by_terminal_sector": [
+              1
+            ],
+            "connecting_map_column": [
+              -1
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          }
+        ],
+        "unsigned_incidence_matrix": [
+          [
+            1,
+            1
+          ]
+        ],
+        "Smith_nonzero_diagonal": [
+          1
+        ],
+        "K0_free_rank": 2,
+        "K0_torsion_orders": [],
+        "K1_free_rank": 1,
+        "K_group_scope": "Diagnostic incidence calculation; analytic extension proof is prose."
+      }
+    },
+    "loop": {
+      "sigma": [
+        1,
+        0
+      ],
+      "alpha": [
+        1,
+        0
+      ],
+      "phi": [
+        0,
+        1
+      ],
+      "genus": 0,
+      "sigma_cycles": [
+        [
+          0,
+          1
+        ]
+      ],
+      "phi_cycles": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "quiver_arrows_source_target": [
+        [
+          "0",
+          0,
+          0
+        ],
+        [
+          "1",
+          0,
+          0
+        ]
+      ],
+      "rank_over_common_DVR": 4,
+      "cartan": {
+        "rational_samples": [
+          {
+            "q": "1/2",
+            "cartan": [
+              [
+                "3"
+              ]
+            ],
+            "determinant": "3"
+          },
+          {
+            "q": "1/3",
+            "cartan": [
+              [
+                "2"
+              ]
+            ],
+            "determinant": "2"
+          },
+          {
+            "q": "-1/2",
+            "cartan": [
+              [
+                "1/3"
+              ]
+            ],
+            "determinant": "1/3"
+          }
+        ],
+        "path_counts": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "series_degree_through": 10,
+        "signed_EC_and_CE_scalar_coefficients": 22
+      },
+      "Fock": {
+        "basis_input_length_through": 8,
+        "basis_vectors": 17,
+        "unrestricted_output_lengths": true,
+        "initial_projection_identities": 34,
+        "forbidden_products": 34,
+        "vertex_vacuum_identities": 17,
+        "terminal_preservation": 18,
+        "number_commutators_on_nonzero_creation": 18,
+        "terminal_sector_dimension_by_degree": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "matrix_unit_input_and_word_length_through": 3,
+        "actual_terminal_sector_matrix_unit_actions": 343,
+        "cycle_isometry_and_defect_checks": 17,
+        "cycle_defects": [
+          {
+            "allowed_cycle": [
+              0,
+              1
+            ],
+            "defect_by_terminal_sector": [
+              2
+            ],
+            "connecting_map_column": [
+              -2
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          }
+        ],
+        "unsigned_incidence_matrix": [
+          [
+            2
+          ]
+        ],
+        "Smith_nonzero_diagonal": [
+          2
+        ],
+        "K0_free_rank": 1,
+        "K0_torsion_orders": [
+          2
+        ],
+        "K1_free_rank": 0,
+        "K_group_scope": "Diagnostic incidence calculation; analytic extension proof is prose."
+      }
+    },
+    "elliptic_theta": {
+      "sigma": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "alpha": [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2
+      ],
+      "phi": [
+        5,
+        3,
+        4,
+        2,
+        0,
+        1
+      ],
+      "genus": 1,
+      "sigma_cycles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "phi_cycles": [
+        [
+          0,
+          5,
+          1,
+          3,
+          2,
+          4
+        ]
+      ],
+      "quiver_arrows_source_target": [
+        [
+          "0",
+          0,
+          2
+        ],
+        [
+          "1",
+          1,
+          0
+        ],
+        [
+          "2",
+          2,
+          1
+        ],
+        [
+          "3",
+          0,
+          2
+        ],
+        [
+          "4",
+          1,
+          0
+        ],
+        [
+          "5",
+          2,
+          1
+        ]
+      ],
+      "rank_over_common_DVR": 18,
+      "cartan": {
+        "rational_samples": [
+          {
+            "q": "1/2",
+            "cartan": [
+              [
+                "9/7",
+                "4/7",
+                "8/7"
+              ],
+              [
+                "8/7",
+                "9/7",
+                "4/7"
+              ],
+              [
+                "4/7",
+                "8/7",
+                "9/7"
+              ]
+            ],
+            "determinant": "9/7"
+          },
+          {
+            "q": "1/3",
+            "cartan": [
+              [
+                "14/13",
+                "3/13",
+                "9/13"
+              ],
+              [
+                "9/13",
+                "14/13",
+                "3/13"
+              ],
+              [
+                "3/13",
+                "9/13",
+                "14/13"
+              ]
+            ],
+            "determinant": "14/13"
+          },
+          {
+            "q": "-1/2",
+            "cartan": [
+              [
+                "7/9",
+                "4/9",
+                "-8/9"
+              ],
+              [
+                "-8/9",
+                "7/9",
+                "4/9"
+              ],
+              [
+                "4/9",
+                "-8/9",
+                "7/9"
+              ]
+            ],
+            "determinant": "7/9"
+          }
+        ],
+        "path_counts": [
+          3,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "series_degree_through": 10,
+        "signed_EC_and_CE_scalar_coefficients": 198
+      },
+      "Fock": {
+        "basis_input_length_through": 8,
+        "basis_vectors": 51,
+        "unrestricted_output_lengths": true,
+        "initial_projection_identities": 306,
+        "forbidden_products": 306,
+        "vertex_vacuum_identities": 153,
+        "terminal_preservation": 54,
+        "number_commutators_on_nonzero_creation": 54,
+        "terminal_sector_dimension_by_degree": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "matrix_unit_input_and_word_length_through": 3,
+        "actual_terminal_sector_matrix_unit_actions": 3087,
+        "cycle_isometry_and_defect_checks": 102,
+        "cycle_defects": [
+          {
+            "allowed_cycle": [
+              0,
+              2,
+              1
+            ],
+            "defect_by_terminal_sector": [
+              1,
+              1,
+              1
+            ],
+            "connecting_map_column": [
+              -1,
+              -1,
+              -1
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          },
+          {
+            "allowed_cycle": [
+              3,
+              5,
+              4
+            ],
+            "defect_by_terminal_sector": [
+              1,
+              1,
+              1
+            ],
+            "connecting_map_column": [
+              -1,
+              -1,
+              -1
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          }
+        ],
+        "unsigned_incidence_matrix": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "Smith_nonzero_diagonal": [
+          1
+        ],
+        "K0_free_rank": 4,
+        "K0_torsion_orders": [],
+        "K1_free_rank": 1,
+        "K_group_scope": "Diagnostic incidence calculation; analytic extension proof is prose."
+      }
+    },
+    "spherical_theta": {
+      "sigma": [
+        1,
+        2,
+        0,
+        4,
+        5,
+        3
+      ],
+      "alpha": [
+        3,
+        5,
+        4,
+        0,
+        2,
+        1
+      ],
+      "phi": [
+        4,
+        3,
+        5,
+        1,
+        0,
+        2
+      ],
+      "genus": 0,
+      "sigma_cycles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "phi_cycles": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "quiver_arrows_source_target": [
+        [
+          "0",
+          0,
+          2
+        ],
+        [
+          "1",
+          1,
+          0
+        ],
+        [
+          "2",
+          2,
+          1
+        ],
+        [
+          "3",
+          0,
+          1
+        ],
+        [
+          "4",
+          2,
+          0
+        ],
+        [
+          "5",
+          1,
+          2
+        ]
+      ],
+      "rank_over_common_DVR": 18,
+      "cartan": {
+        "rational_samples": [
+          {
+            "q": "1/2",
+            "cartan": [
+              [
+                "9/7",
+                "6/7",
+                "6/7"
+              ],
+              [
+                "6/7",
+                "9/7",
+                "6/7"
+              ],
+              [
+                "6/7",
+                "6/7",
+                "9/7"
+              ]
+            ],
+            "determinant": "27/49"
+          },
+          {
+            "q": "1/3",
+            "cartan": [
+              [
+                "14/13",
+                "6/13",
+                "6/13"
+              ],
+              [
+                "6/13",
+                "14/13",
+                "6/13"
+              ],
+              [
+                "6/13",
+                "6/13",
+                "14/13"
+              ]
+            ],
+            "determinant": "128/169"
+          },
+          {
+            "q": "-1/2",
+            "cartan": [
+              [
+                "7/9",
+                "-2/9",
+                "-2/9"
+              ],
+              [
+                "-2/9",
+                "7/9",
+                "-2/9"
+              ],
+              [
+                "-2/9",
+                "-2/9",
+                "7/9"
+              ]
+            ],
+            "determinant": "1/3"
+          }
+        ],
+        "path_counts": [
+          3,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "series_degree_through": 10,
+        "signed_EC_and_CE_scalar_coefficients": 198
+      },
+      "Fock": {
+        "basis_input_length_through": 8,
+        "basis_vectors": 51,
+        "unrestricted_output_lengths": true,
+        "initial_projection_identities": 306,
+        "forbidden_products": 306,
+        "vertex_vacuum_identities": 153,
+        "terminal_preservation": 54,
+        "number_commutators_on_nonzero_creation": 54,
+        "terminal_sector_dimension_by_degree": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "matrix_unit_input_and_word_length_through": 3,
+        "actual_terminal_sector_matrix_unit_actions": 3087,
+        "cycle_isometry_and_defect_checks": 102,
+        "cycle_defects": [
+          {
+            "allowed_cycle": [
+              0,
+              2,
+              1
+            ],
+            "defect_by_terminal_sector": [
+              1,
+              1,
+              1
+            ],
+            "connecting_map_column": [
+              -1,
+              -1,
+              -1
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          },
+          {
+            "allowed_cycle": [
+              3,
+              5,
+              4
+            ],
+            "defect_by_terminal_sector": [
+              1,
+              1,
+              1
+            ],
+            "connecting_map_column": [
+              -1,
+              -1,
+              -1
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          }
+        ],
+        "unsigned_incidence_matrix": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "Smith_nonzero_diagonal": [
+          1
+        ],
+        "K0_free_rank": 4,
+        "K0_torsion_orders": [],
+        "K1_free_rank": 1,
+        "K_group_scope": "Diagnostic incidence calculation; analytic extension proof is prose."
+      }
+    },
+    "elliptic_square": {
+      "sigma": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "alpha": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "phi": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "genus": 1,
+      "sigma_cycles": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "phi_cycles": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "quiver_arrows_source_target": [
+        [
+          "0",
+          0,
+          1
+        ],
+        [
+          "1",
+          1,
+          0
+        ],
+        [
+          "2",
+          0,
+          1
+        ],
+        [
+          "3",
+          1,
+          0
+        ]
+      ],
+      "rank_over_common_DVR": 16,
+      "cartan": {
+        "rational_samples": [
+          {
+            "q": "1/2",
+            "cartan": [
+              [
+                "5/3",
+                "4/3"
+              ],
+              [
+                "4/3",
+                "5/3"
+              ]
+            ],
+            "determinant": "1"
+          },
+          {
+            "q": "1/3",
+            "cartan": [
+              [
+                "5/4",
+                "3/4"
+              ],
+              [
+                "3/4",
+                "5/4"
+              ]
+            ],
+            "determinant": "1"
+          },
+          {
+            "q": "-1/2",
+            "cartan": [
+              [
+                "5/3",
+                "-4/3"
+              ],
+              [
+                "-4/3",
+                "5/3"
+              ]
+            ],
+            "determinant": "1"
+          }
+        ],
+        "path_counts": [
+          2,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "series_degree_through": 10,
+        "signed_EC_and_CE_scalar_coefficients": 88
+      },
+      "Fock": {
+        "basis_input_length_through": 8,
+        "basis_vectors": 34,
+        "unrestricted_output_lengths": true,
+        "initial_projection_identities": 136,
+        "forbidden_products": 136,
+        "vertex_vacuum_identities": 68,
+        "terminal_preservation": 36,
+        "number_commutators_on_nonzero_creation": 36,
+        "terminal_sector_dimension_by_degree": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "matrix_unit_input_and_word_length_through": 3,
+        "actual_terminal_sector_matrix_unit_actions": 1372,
+        "cycle_isometry_and_defect_checks": 34,
+        "cycle_defects": [
+          {
+            "allowed_cycle": [
+              0,
+              3,
+              2,
+              1
+            ],
+            "defect_by_terminal_sector": [
+              2,
+              2
+            ],
+            "connecting_map_column": [
+              -2,
+              -2
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          }
+        ],
+        "unsigned_incidence_matrix": [
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "Smith_nonzero_diagonal": [
+          2
+        ],
+        "K0_free_rank": 2,
+        "K0_torsion_orders": [
+          2
+        ],
+        "K1_free_rank": 0,
+        "K_group_scope": "Diagnostic incidence calculation; analytic extension proof is prose."
+      }
+    },
+    "chebyshev_3": {
+      "sigma": [
+        2,
+        0,
+        4,
+        1,
+        5,
+        3
+      ],
+      "alpha": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4
+      ],
+      "phi": [
+        0,
+        2,
+        1,
+        4,
+        3,
+        5
+      ],
+      "genus": 0,
+      "sigma_cycles": [
+        [
+          0,
+          2,
+          4,
+          5,
+          3,
+          1
+        ]
+      ],
+      "phi_cycles": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "quiver_arrows_source_target": [
+        [
+          "0",
+          0,
+          0
+        ],
+        [
+          "1",
+          0,
+          1
+        ],
+        [
+          "2",
+          1,
+          0
+        ],
+        [
+          "3",
+          1,
+          2
+        ],
+        [
+          "4",
+          2,
+          1
+        ],
+        [
+          "5",
+          2,
+          2
+        ]
+      ],
+      "rank_over_common_DVR": 36,
+      "cartan": {
+        "rational_samples": [
+          {
+            "q": "1/2",
+            "cartan": [
+              [
+                "11/7",
+                "6/7",
+                "4/7"
+              ],
+              [
+                "6/7",
+                "9/7",
+                "6/7"
+              ],
+              [
+                "4/7",
+                "6/7",
+                "11/7"
+              ]
+            ],
+            "determinant": "9/7"
+          },
+          {
+            "q": "1/3",
+            "cartan": [
+              [
+                "122/91",
+                "6/13",
+                "18/91"
+              ],
+              [
+                "6/13",
+                "14/13",
+                "6/13"
+              ],
+              [
+                "18/91",
+                "6/13",
+                "122/91"
+              ]
+            ],
+            "determinant": "128/91"
+          },
+          {
+            "q": "-1/2",
+            "cartan": [
+              [
+                "31/63",
+                "-2/9",
+                "4/63"
+              ],
+              [
+                "-2/9",
+                "7/9",
+                "-2/9"
+              ],
+              [
+                "4/63",
+                "-2/9",
+                "31/63"
+              ]
+            ],
+            "determinant": "1/7"
+          }
+        ],
+        "path_counts": [
+          3,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "series_degree_through": 10,
+        "signed_EC_and_CE_scalar_coefficients": 198
+      },
+      "Fock": {
+        "basis_input_length_through": 8,
+        "basis_vectors": 51,
+        "unrestricted_output_lengths": true,
+        "initial_projection_identities": 306,
+        "forbidden_products": 306,
+        "vertex_vacuum_identities": 153,
+        "terminal_preservation": 54,
+        "number_commutators_on_nonzero_creation": 54,
+        "terminal_sector_dimension_by_degree": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "matrix_unit_input_and_word_length_through": 3,
+        "actual_terminal_sector_matrix_unit_actions": 3087,
+        "cycle_isometry_and_defect_checks": 51,
+        "cycle_defects": [
+          {
+            "allowed_cycle": [
+              0,
+              1,
+              3,
+              5,
+              4,
+              2
+            ],
+            "defect_by_terminal_sector": [
+              2,
+              2,
+              2
+            ],
+            "connecting_map_column": [
+              -2,
+              -2,
+              -2
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          }
+        ],
+        "unsigned_incidence_matrix": [
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "Smith_nonzero_diagonal": [
+          2
+        ],
+        "K0_free_rank": 3,
+        "K0_torsion_orders": [
+          2
+        ],
+        "K1_free_rank": 0,
+        "K_group_scope": "Diagnostic incidence calculation; analytic extension proof is prose."
+      },
+      "Belyi_map": "1/(1-T_3(z)^2)",
+      "arrow_labels": {
+        "l": 0,
+        "r": 5,
+        "a_1": 1,
+        "a_2": 3,
+        "b_1": 2,
+        "b_2": 4
+      }
+    },
+    "chebyshev_4": {
+      "sigma": [
+        2,
+        0,
+        4,
+        1,
+        6,
+        3,
+        7,
+        5
+      ],
+      "alpha": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4,
+        7,
+        6
+      ],
+      "phi": [
+        0,
+        2,
+        1,
+        4,
+        3,
+        6,
+        5,
+        7
+      ],
+      "genus": 0,
+      "sigma_cycles": [
+        [
+          0,
+          2,
+          4,
+          6,
+          7,
+          5,
+          3,
+          1
+        ]
+      ],
+      "phi_cycles": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "quiver_arrows_source_target": [
+        [
+          "0",
+          0,
+          0
+        ],
+        [
+          "1",
+          0,
+          1
+        ],
+        [
+          "2",
+          1,
+          0
+        ],
+        [
+          "3",
+          1,
+          2
+        ],
+        [
+          "4",
+          2,
+          1
+        ],
+        [
+          "5",
+          2,
+          3
+        ],
+        [
+          "6",
+          3,
+          2
+        ],
+        [
+          "7",
+          3,
+          3
+        ]
+      ],
+      "rank_over_common_DVR": 64,
+      "cartan": {
+        "rational_samples": [
+          {
+            "q": "1/2",
+            "cartan": [
+              [
+                "129/85",
+                "66/85",
+                "36/85",
+                "24/85"
+              ],
+              [
+                "66/85",
+                "99/85",
+                "54/85",
+                "36/85"
+              ],
+              [
+                "36/85",
+                "54/85",
+                "99/85",
+                "66/85"
+              ],
+              [
+                "24/85",
+                "36/85",
+                "66/85",
+                "129/85"
+              ]
+            ],
+            "determinant": "81/85"
+          },
+          {
+            "q": "1/3",
+            "cartan": [
+              [
+                "547/410",
+                "183/410",
+                "63/410",
+                "27/410"
+              ],
+              [
+                "183/410",
+                "427/410",
+                "147/410",
+                "63/410"
+              ],
+              [
+                "63/410",
+                "147/410",
+                "427/410",
+                "183/410"
+              ],
+              [
+                "27/410",
+                "63/410",
+                "183/410",
+                "547/410"
+              ]
+            ],
+            "determinant": "256/205"
+          },
+          {
+            "q": "-1/2",
+            "cartan": [
+              [
+                "127/255",
+                "-62/255",
+                "28/255",
+                "-8/255"
+              ],
+              [
+                "-62/255",
+                "217/255",
+                "-98/255",
+                "28/255"
+              ],
+              [
+                "28/255",
+                "-98/255",
+                "217/255",
+                "-62/255"
+              ],
+              [
+                "-8/255",
+                "28/255",
+                "-62/255",
+                "127/255"
+              ]
+            ],
+            "determinant": "9/85"
+          }
+        ],
+        "path_counts": [
+          4,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "series_degree_through": 10,
+        "signed_EC_and_CE_scalar_coefficients": 352
+      },
+      "Fock": {
+        "basis_input_length_through": 8,
+        "basis_vectors": 68,
+        "unrestricted_output_lengths": true,
+        "initial_projection_identities": 544,
+        "forbidden_products": 544,
+        "vertex_vacuum_identities": 272,
+        "terminal_preservation": 72,
+        "number_commutators_on_nonzero_creation": 72,
+        "terminal_sector_dimension_by_degree": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "matrix_unit_input_and_word_length_through": 3,
+        "actual_terminal_sector_matrix_unit_actions": 5488,
+        "cycle_isometry_and_defect_checks": 68,
+        "cycle_defects": [
+          {
+            "allowed_cycle": [
+              0,
+              1,
+              3,
+              5,
+              7,
+              6,
+              4,
+              2
+            ],
+            "defect_by_terminal_sector": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "connecting_map_column": [
+              -2,
+              -2,
+              -2,
+              -2
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          }
+        ],
+        "unsigned_incidence_matrix": [
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "Smith_nonzero_diagonal": [
+          2
+        ],
+        "K0_free_rank": 4,
+        "K0_torsion_orders": [
+          2
+        ],
+        "K1_free_rank": 0,
+        "K_group_scope": "Diagnostic incidence calculation; analytic extension proof is prose."
+      },
+      "Belyi_map": "1/(1-T_4(z)^2)",
+      "arrow_labels": {
+        "l": 0,
+        "r": 7,
+        "a_1": 1,
+        "a_2": 3,
+        "a_3": 5,
+        "b_1": 2,
+        "b_2": 4,
+        "b_3": 6
+      }
+    },
+    "chebyshev_5": {
+      "sigma": [
+        2,
+        0,
+        4,
+        1,
+        6,
+        3,
+        8,
+        5,
+        9,
+        7
+      ],
+      "alpha": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4,
+        7,
+        6,
+        9,
+        8
+      ],
+      "phi": [
+        0,
+        2,
+        1,
+        4,
+        3,
+        6,
+        5,
+        8,
+        7,
+        9
+      ],
+      "genus": 0,
+      "sigma_cycles": [
+        [
+          0,
+          2,
+          4,
+          6,
+          8,
+          9,
+          7,
+          5,
+          3,
+          1
+        ]
+      ],
+      "phi_cycles": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9
+        ]
+      ],
+      "quiver_arrows_source_target": [
+        [
+          "0",
+          0,
+          0
+        ],
+        [
+          "1",
+          0,
+          1
+        ],
+        [
+          "2",
+          1,
+          0
+        ],
+        [
+          "3",
+          1,
+          2
+        ],
+        [
+          "4",
+          2,
+          1
+        ],
+        [
+          "5",
+          2,
+          3
+        ],
+        [
+          "6",
+          3,
+          2
+        ],
+        [
+          "7",
+          3,
+          4
+        ],
+        [
+          "8",
+          4,
+          3
+        ],
+        [
+          "9",
+          4,
+          4
+        ]
+      ],
+      "rank_over_common_DVR": 100,
+      "cartan": {
+        "rational_samples": [
+          {
+            "q": "1/2",
+            "cartan": [
+              [
+                "513/341",
+                "258/341",
+                "12/31",
+                "72/341",
+                "48/341"
+              ],
+              [
+                "258/341",
+                "387/341",
+                "18/31",
+                "108/341",
+                "72/341"
+              ],
+              [
+                "12/31",
+                "18/31",
+                "33/31",
+                "18/31",
+                "12/31"
+              ],
+              [
+                "72/341",
+                "108/341",
+                "18/31",
+                "387/341",
+                "258/341"
+              ],
+              [
+                "48/341",
+                "72/341",
+                "12/31",
+                "258/341",
+                "513/341"
+              ]
+            ],
+            "determinant": "243/341"
+          },
+          {
+            "q": "1/3",
+            "cartan": [
+              [
+                "9842/7381",
+                "3282/7381",
+                "18/121",
+                "378/7381",
+                "162/7381"
+              ],
+              [
+                "3282/7381",
+                "7658/7381",
+                "42/121",
+                "882/7381",
+                "378/7381"
+              ],
+              [
+                "18/121",
+                "42/121",
+                "122/121",
+                "42/121",
+                "18/121"
+              ],
+              [
+                "378/7381",
+                "882/7381",
+                "42/121",
+                "7658/7381",
+                "3282/7381"
+              ],
+              [
+                "162/7381",
+                "378/7381",
+                "18/121",
+                "3282/7381",
+                "9842/7381"
+              ]
+            ],
+            "determinant": "8192/7381"
+          },
+          {
+            "q": "-1/2",
+            "cartan": [
+              [
+                "511/1023",
+                "-254/1023",
+                "4/33",
+                "-56/1023",
+                "16/1023"
+              ],
+              [
+                "-254/1023",
+                "889/1023",
+                "-14/33",
+                "196/1023",
+                "-56/1023"
+              ],
+              [
+                "4/33",
+                "-14/33",
+                "31/33",
+                "-14/33",
+                "4/33"
+              ],
+              [
+                "-56/1023",
+                "196/1023",
+                "-14/33",
+                "889/1023",
+                "-254/1023"
+              ],
+              [
+                "16/1023",
+                "-56/1023",
+                "4/33",
+                "-254/1023",
+                "511/1023"
+              ]
+            ],
+            "determinant": "27/341"
+          }
+        ],
+        "path_counts": [
+          5,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ],
+        "series_degree_through": 10,
+        "signed_EC_and_CE_scalar_coefficients": 550
+      },
+      "Fock": {
+        "basis_input_length_through": 8,
+        "basis_vectors": 85,
+        "unrestricted_output_lengths": true,
+        "initial_projection_identities": 850,
+        "forbidden_products": 850,
+        "vertex_vacuum_identities": 425,
+        "terminal_preservation": 90,
+        "number_commutators_on_nonzero_creation": 90,
+        "terminal_sector_dimension_by_degree": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "matrix_unit_input_and_word_length_through": 3,
+        "actual_terminal_sector_matrix_unit_actions": 8575,
+        "cycle_isometry_and_defect_checks": 85,
+        "cycle_defects": [
+          {
+            "allowed_cycle": [
+              0,
+              1,
+              3,
+              5,
+              7,
+              9,
+              8,
+              6,
+              4,
+              2
+            ],
+            "defect_by_terminal_sector": [
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "connecting_map_column": [
+              -2,
+              -2,
+              -2,
+              -2,
+              -2
+            ],
+            "naive_Lc_plus_complement_vacuum_norm_squared": 2
+          }
+        ],
+        "unsigned_incidence_matrix": [
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "Smith_nonzero_diagonal": [
+          2
+        ],
+        "K0_free_rank": 5,
+        "K0_torsion_orders": [
+          2
+        ],
+        "K1_free_rank": 0,
+        "K_group_scope": "Diagnostic incidence calculation; analytic extension proof is prose."
+      },
+      "Belyi_map": "1/(1-T_5(z)^2)",
+      "arrow_labels": {
+        "l": 0,
+        "r": 9,
+        "a_1": 1,
+        "a_2": 3,
+        "a_3": 5,
+        "a_4": 7,
+        "b_1": 2,
+        "b_2": 4,
+        "b_3": 6,
+        "b_4": 8
+      }
+    }
+  },
+  "schur": {
+    "monodromy": [
+      [
+        "2",
+        "2"
+      ],
+      [
+        "2",
+        "3"
+      ]
+    ],
+    "monodromy_trace": 5,
+    "monodromy_det": 2,
+    "Young_shape": [
+      2,
+      1
+    ],
+    "Young_hook_factor": 3,
+    "Young_rank": 2,
+    "semistandard_two_row_shapes_size_through_5": 12,
+    "actual_theta_zero_relations_and_Sym2_images": 6,
+    "Young_trace_samples": 3,
+    "LR_actual_matrix_intertwiners": 5,
+    "LR_includes_singular_and_zero": true,
+    "cauchy_coefficients": 81,
+    "cauchy_degree_through": 8,
+    "cauchy_r": "1/100",
+    "sufficient_convergence_bound": "r*max_Frobenius_norm_squared=21/100<1",
+    "Gram_all_principal_minors": [
+      {
+        "indices": [
+          0
+        ],
+        "determinant": "781250/593047"
+      },
+      {
+        "indices": [
+          1
+        ],
+        "determinant": "781250/713097"
+      },
+      {
+        "indices": [
+          2
+        ],
+        "determinant": "100000000/98999901"
+      },
+      {
+        "indices": [
+          0,
+          1
+        ],
+        "determinant": "236953125015258789062500/3025690998549310301881671"
+      },
+      {
+        "indices": [
+          0,
+          2
+        ],
+        "determinant": "44883712033203125000000000/196904513144565816361134363"
+      },
+      {
+        "indices": [
+          1,
+          2
+        ],
+        "determinant": "209479733767578125000000000/4619400359011451560037023533"
+      },
+      {
+        "indices": [
+          0,
+          1,
+          2
+        ],
+        "determinant": "23689208665289753919739287323951721191406250000000000/35551379173543719985202415925452538427191680125181571899"
+      }
+    ],
+    "coordinate_degree_two": "2281/1225",
+    "split_Sym2_middle_homology_dimension": 1,
+    "fixed_R_lattice_failures_u_samples": [
+      "2",
+      "3/2"
+    ],
+    "empty_partition_scope": "constant scalar feature, not a zero-relation module functor",
+    "scope": "Exact finite identities; no global arithmetic PSD or exact Schur functor claim."
+  },
+  "finite_field_twists": {
+    "field": "F_7",
+    "equation": "y^2=x^3-d",
+    "point_counts": {
+      "1": 4,
+      "2": 7
+    },
+    "models": {
+      "1": {
+        "y_fibers_x_0_through_6": [
+          [],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [],
+          [
+            0
+          ],
+          [],
+          []
+        ],
+        "fiber_cardinalities": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "points_including_infinity": 4,
+        "a7": 4,
+        "H1_local_factor_ascending": [
+          1,
+          -4,
+          7
+        ]
+      },
+      "2": {
+        "y_fibers_x_0_through_6": [
+          [],
+          [],
+          [],
+          [
+            2,
+            5
+          ],
+          [],
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "fiber_cardinalities": [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        "points_including_infinity": 7,
+        "a7": 1,
+        "H1_local_factor_ascending": [
+          1,
+          -1,
+          7
+        ]
+      }
+    },
+    "scope": "Two good-reduction models; complex Belyi descent argument is prose."
+  },
+  "scope": "Bounded exact diagnostics of the stated infinite path algebras, Fock basis rules, Schur matrices and two F7 curves. Not an analytic extension proof, a universal completed-order Schur/resolution theorem, an arithmetic determinant bridge, or RH/GRH.",
+  "HLS_diamond_checker": {
+    "arithmetic": "Exact Fraction arithmetic; deterministic; no random seed required.",
+    "H3_quotient": "Closed infinite dessin with permitted cycle l a1 a2 r back2 back1, quotient killing back1,back2.",
+    "H3_modules": [
+      {
+        "label": "w",
+        "travel_word": [
+          "a",
+          "b"
+        ],
+        "start_vertex": 1,
+        "basis_vertices": [
+          1,
+          2,
+          3
+        ],
+        "dimension_vector": [
+          1,
+          1,
+          1
+        ],
+        "total_dimension": 3,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              1,
+              0,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              2,
+              1,
+              "1"
+            ]
+          ],
+          "l": [],
+          "r": [],
+          "back1": [],
+          "back2": []
+        }
+      },
+      {
+        "label": "hw",
+        "travel_word": [
+          "a",
+          "b",
+          "r-"
+        ],
+        "start_vertex": 1,
+        "basis_vertices": [
+          1,
+          2,
+          3,
+          3
+        ],
+        "dimension_vector": [
+          1,
+          1,
+          2
+        ],
+        "total_dimension": 4,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              1,
+              0,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              2,
+              1,
+              "1"
+            ]
+          ],
+          "l": [],
+          "r": [
+            [
+              2,
+              3,
+              "1"
+            ]
+          ],
+          "back1": [],
+          "back2": []
+        }
+      },
+      {
+        "label": "wh",
+        "travel_word": [
+          "r-",
+          "b-",
+          "a-",
+          "l",
+          "a",
+          "b"
+        ],
+        "start_vertex": 3,
+        "basis_vertices": [
+          3,
+          3,
+          2,
+          1,
+          1,
+          2,
+          3
+        ],
+        "dimension_vector": [
+          2,
+          2,
+          3
+        ],
+        "total_dimension": 7,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              2,
+              3,
+              "1"
+            ],
+            [
+              5,
+              4,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              1,
+              2,
+              "1"
+            ],
+            [
+              6,
+              5,
+              "1"
+            ]
+          ],
+          "l": [
+            [
+              4,
+              3,
+              "1"
+            ]
+          ],
+          "r": [
+            [
+              0,
+              1,
+              "1"
+            ]
+          ],
+          "back1": [],
+          "back2": []
+        }
+      },
+      {
+        "label": "wc",
+        "travel_word": [
+          "l-",
+          "a",
+          "b"
+        ],
+        "start_vertex": 1,
+        "basis_vertices": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "dimension_vector": [
+          2,
+          1,
+          1
+        ],
+        "total_dimension": 4,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              2,
+              1,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              3,
+              2,
+              "1"
+            ]
+          ],
+          "l": [
+            [
+              0,
+              1,
+              "1"
+            ]
+          ],
+          "r": [],
+          "back1": [],
+          "back2": []
+        }
+      },
+      {
+        "label": "cw",
+        "travel_word": [
+          "a",
+          "b",
+          "r",
+          "b-",
+          "a-",
+          "l-"
+        ],
+        "start_vertex": 1,
+        "basis_vertices": [
+          1,
+          2,
+          3,
+          3,
+          2,
+          1,
+          1
+        ],
+        "dimension_vector": [
+          3,
+          2,
+          2
+        ],
+        "total_dimension": 7,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              1,
+              0,
+              "1"
+            ],
+            [
+              4,
+              5,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              2,
+              1,
+              "1"
+            ],
+            [
+              3,
+              4,
+              "1"
+            ]
+          ],
+          "l": [
+            [
+              5,
+              6,
+              "1"
+            ]
+          ],
+          "r": [
+            [
+              3,
+              2,
+              "1"
+            ]
+          ],
+          "back1": [],
+          "back2": []
+        }
+      },
+      {
+        "label": "hwc",
+        "travel_word": [
+          "l-",
+          "a",
+          "b",
+          "r-"
+        ],
+        "start_vertex": 1,
+        "basis_vertices": [
+          1,
+          1,
+          2,
+          3,
+          3
+        ],
+        "dimension_vector": [
+          2,
+          1,
+          2
+        ],
+        "total_dimension": 5,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              2,
+              1,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              3,
+              2,
+              "1"
+            ]
+          ],
+          "l": [
+            [
+              0,
+              1,
+              "1"
+            ]
+          ],
+          "r": [
+            [
+              3,
+              4,
+              "1"
+            ]
+          ],
+          "back1": [],
+          "back2": []
+        }
+      },
+      {
+        "label": "cwc",
+        "travel_word": [
+          "l-",
+          "a",
+          "b",
+          "r",
+          "b-",
+          "a-",
+          "l-"
+        ],
+        "start_vertex": 1,
+        "basis_vertices": [
+          1,
+          1,
+          2,
+          3,
+          3,
+          2,
+          1,
+          1
+        ],
+        "dimension_vector": [
+          4,
+          2,
+          2
+        ],
+        "total_dimension": 8,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              2,
+              1,
+              "1"
+            ],
+            [
+              5,
+              6,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              3,
+              2,
+              "1"
+            ],
+            [
+              4,
+              5,
+              "1"
+            ]
+          ],
+          "l": [
+            [
+              0,
+              1,
+              "1"
+            ],
+            [
+              6,
+              7,
+              "1"
+            ]
+          ],
+          "r": [
+            [
+              4,
+              3,
+              "1"
+            ]
+          ],
+          "back1": [],
+          "back2": []
+        }
+      },
+      {
+        "label": "hwh",
+        "travel_word": [
+          "r-",
+          "b-",
+          "a-",
+          "l",
+          "a",
+          "b",
+          "r-"
+        ],
+        "start_vertex": 3,
+        "basis_vertices": [
+          3,
+          3,
+          2,
+          1,
+          1,
+          2,
+          3,
+          3
+        ],
+        "dimension_vector": [
+          2,
+          2,
+          4
+        ],
+        "total_dimension": 8,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              2,
+              3,
+              "1"
+            ],
+            [
+              5,
+              4,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              1,
+              2,
+              "1"
+            ],
+            [
+              6,
+              5,
+              "1"
+            ]
+          ],
+          "l": [
+            [
+              4,
+              3,
+              "1"
+            ]
+          ],
+          "r": [
+            [
+              0,
+              1,
+              "1"
+            ],
+            [
+              6,
+              7,
+              "1"
+            ]
+          ],
+          "back1": [],
+          "back2": []
+        }
+      },
+      {
+        "label": "cwh",
+        "travel_word": [
+          "r-",
+          "b-",
+          "a-",
+          "l",
+          "a",
+          "b",
+          "r",
+          "b-",
+          "a-",
+          "l-"
+        ],
+        "start_vertex": 3,
+        "basis_vertices": [
+          3,
+          3,
+          2,
+          1,
+          1,
+          2,
+          3,
+          3,
+          2,
+          1,
+          1
+        ],
+        "dimension_vector": [
+          4,
+          3,
+          4
+        ],
+        "total_dimension": 11,
+        "arrow_nonzero_entries": {
+          "a": [
+            [
+              2,
+              3,
+              "1"
+            ],
+            [
+              5,
+              4,
+              "1"
+            ],
+            [
+              8,
+              9,
+              "1"
+            ]
+          ],
+          "b": [
+            [
+              1,
+              2,
+              "1"
+            ],
+            [
+              6,
+              5,
+              "1"
+            ],
+            [
+              7,
+              8,
+              "1"
+            ]
+          ],
+          "l": [
+            [
+              4,
+              3,
+              "1"
+            ],
+            [
+              9,
+              10,
+              "1"
+            ]
+          ],
+          "r": [
+            [
+              0,
+              1,
+              "1"
+            ],
+            [
+              7,
+              6,
+              "1"
+            ]
+          ],
+          "back1": [],
+          "back2": []
+        }
+      }
+    ],
+    "signed_morphisms": [
+      {
+        "source": "cwc",
+        "target": "wc",
+        "sign": 1,
+        "shape": [
+          4,
+          8
+        ],
+        "rank": 4,
+        "nonzero_entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ],
+          [
+            3,
+            3,
+            "1"
+          ]
+        ]
+      },
+      {
+        "source": "wc",
+        "target": "hwc",
+        "sign": 1,
+        "shape": [
+          5,
+          4
+        ],
+        "rank": 4,
+        "nonzero_entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ],
+          [
+            3,
+            3,
+            "1"
+          ]
+        ]
+      },
+      {
+        "source": "cw",
+        "target": "w",
+        "sign": 1,
+        "shape": [
+          3,
+          7
+        ],
+        "rank": 3,
+        "nonzero_entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ]
+        ]
+      },
+      {
+        "source": "w",
+        "target": "hw",
+        "sign": 1,
+        "shape": [
+          4,
+          3
+        ],
+        "rank": 3,
+        "nonzero_entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ]
+        ]
+      },
+      {
+        "source": "cwh",
+        "target": "wh",
+        "sign": 1,
+        "shape": [
+          7,
+          11
+        ],
+        "rank": 7,
+        "nonzero_entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ],
+          [
+            3,
+            3,
+            "1"
+          ],
+          [
+            4,
+            4,
+            "1"
+          ],
+          [
+            5,
+            5,
+            "1"
+          ],
+          [
+            6,
+            6,
+            "1"
+          ]
+        ]
+      },
+      {
+        "source": "wh",
+        "target": "hwh",
+        "sign": 1,
+        "shape": [
+          8,
+          7
+        ],
+        "rank": 7,
+        "nonzero_entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ],
+          [
+            2,
+            2,
+            "1"
+          ],
+          [
+            3,
+            3,
+            "1"
+          ],
+          [
+            4,
+            4,
+            "1"
+          ],
+          [
+            5,
+            5,
+            "1"
+          ],
+          [
+            6,
+            6,
+            "1"
+          ]
+        ]
+      },
+      {
+        "source": "cwc",
+        "target": "cw",
+        "sign": -1,
+        "shape": [
+          7,
+          8
+        ],
+        "rank": 7,
+        "nonzero_entries": [
+          [
+            0,
+            1,
+            "-1"
+          ],
+          [
+            1,
+            2,
+            "-1"
+          ],
+          [
+            2,
+            3,
+            "-1"
+          ],
+          [
+            3,
+            4,
+            "-1"
+          ],
+          [
+            4,
+            5,
+            "-1"
+          ],
+          [
+            5,
+            6,
+            "-1"
+          ],
+          [
+            6,
+            7,
+            "-1"
+          ]
+        ]
+      },
+      {
+        "source": "wc",
+        "target": "w",
+        "sign": 1,
+        "shape": [
+          3,
+          4
+        ],
+        "rank": 3,
+        "nonzero_entries": [
+          [
+            0,
+            1,
+            "1"
+          ],
+          [
+            1,
+            2,
+            "1"
+          ],
+          [
+            2,
+            3,
+            "1"
+          ]
+        ]
+      },
+      {
+        "source": "hwc",
+        "target": "hw",
+        "sign": -1,
+        "shape": [
+          4,
+          5
+        ],
+        "rank": 4,
+        "nonzero_entries": [
+          [
+            0,
+            1,
+            "-1"
+          ],
+          [
+            1,
+            2,
+            "-1"
+          ],
+          [
+            2,
+            3,
+            "-1"
+          ],
+          [
+            3,
+            4,
+            "-1"
+          ]
+        ]
+      },
+      {
+        "source": "cw",
+        "target": "cwh",
+        "sign": -1,
+        "shape": [
+          11,
+          7
+        ],
+        "rank": 7,
+        "nonzero_entries": [
+          [
+            4,
+            0,
+            "-1"
+          ],
+          [
+            5,
+            1,
+            "-1"
+          ],
+          [
+            6,
+            2,
+            "-1"
+          ],
+          [
+            7,
+            3,
+            "-1"
+          ],
+          [
+            8,
+            4,
+            "-1"
+          ],
+          [
+            9,
+            5,
+            "-1"
+          ],
+          [
+            10,
+            6,
+            "-1"
+          ]
+        ]
+      },
+      {
+        "source": "w",
+        "target": "wh",
+        "sign": 1,
+        "shape": [
+          7,
+          3
+        ],
+        "rank": 3,
+        "nonzero_entries": [
+          [
+            4,
+            0,
+            "1"
+          ],
+          [
+            5,
+            1,
+            "1"
+          ],
+          [
+            6,
+            2,
+            "1"
+          ]
+        ]
+      },
+      {
+        "source": "hw",
+        "target": "hwh",
+        "sign": -1,
+        "shape": [
+          8,
+          4
+        ],
+        "rank": 4,
+        "nonzero_entries": [
+          [
+            4,
+            0,
+            "-1"
+          ],
+          [
+            5,
+            1,
+            "-1"
+          ],
+          [
+            6,
+            2,
+            "-1"
+          ],
+          [
+            7,
+            3,
+            "-1"
+          ]
+        ]
+      }
+    ],
+    "mesh_sequences": [
+      {
+        "source": "cwc",
+        "middle": [
+          "wc",
+          "cw"
+        ],
+        "target": "w",
+        "source_dimension": 8,
+        "middle_dimension": 11,
+        "target_dimension": 3,
+        "injection_rank": 8,
+        "surjection_rank": 3,
+        "middle_kernel_dimension": 8,
+        "vertex_boundary_ranks": [
+          {
+            "vertex": 1,
+            "source_dimension": 4,
+            "middle_dimension": 5,
+            "target_dimension": 1,
+            "injection_rank": 4,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 4
+          },
+          {
+            "vertex": 2,
+            "source_dimension": 2,
+            "middle_dimension": 3,
+            "target_dimension": 1,
+            "injection_rank": 2,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 2
+          },
+          {
+            "vertex": 3,
+            "source_dimension": 2,
+            "middle_dimension": 3,
+            "target_dimension": 1,
+            "injection_rank": 2,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 2
+          }
+        ],
+        "mesh_relation": "sum of the two signed path composites is zero"
+      },
+      {
+        "source": "wc",
+        "middle": [
+          "hwc",
+          "w"
+        ],
+        "target": "hw",
+        "source_dimension": 4,
+        "middle_dimension": 8,
+        "target_dimension": 4,
+        "injection_rank": 4,
+        "surjection_rank": 4,
+        "middle_kernel_dimension": 4,
+        "vertex_boundary_ranks": [
+          {
+            "vertex": 1,
+            "source_dimension": 2,
+            "middle_dimension": 3,
+            "target_dimension": 1,
+            "injection_rank": 2,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 2
+          },
+          {
+            "vertex": 2,
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          },
+          {
+            "vertex": 3,
+            "source_dimension": 1,
+            "middle_dimension": 3,
+            "target_dimension": 2,
+            "injection_rank": 1,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 1
+          }
+        ],
+        "mesh_relation": "sum of the two signed path composites is zero"
+      },
+      {
+        "source": "cw",
+        "middle": [
+          "w",
+          "cwh"
+        ],
+        "target": "wh",
+        "source_dimension": 7,
+        "middle_dimension": 14,
+        "target_dimension": 7,
+        "injection_rank": 7,
+        "surjection_rank": 7,
+        "middle_kernel_dimension": 7,
+        "vertex_boundary_ranks": [
+          {
+            "vertex": 1,
+            "source_dimension": 3,
+            "middle_dimension": 5,
+            "target_dimension": 2,
+            "injection_rank": 3,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 3
+          },
+          {
+            "vertex": 2,
+            "source_dimension": 2,
+            "middle_dimension": 4,
+            "target_dimension": 2,
+            "injection_rank": 2,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 2
+          },
+          {
+            "vertex": 3,
+            "source_dimension": 2,
+            "middle_dimension": 5,
+            "target_dimension": 3,
+            "injection_rank": 2,
+            "surjection_rank": 3,
+            "middle_kernel_dimension": 2
+          }
+        ],
+        "mesh_relation": "sum of the two signed path composites is zero"
+      },
+      {
+        "source": "w",
+        "middle": [
+          "hw",
+          "wh"
+        ],
+        "target": "hwh",
+        "source_dimension": 3,
+        "middle_dimension": 11,
+        "target_dimension": 8,
+        "injection_rank": 3,
+        "surjection_rank": 8,
+        "middle_kernel_dimension": 3,
+        "vertex_boundary_ranks": [
+          {
+            "vertex": 1,
+            "source_dimension": 1,
+            "middle_dimension": 3,
+            "target_dimension": 2,
+            "injection_rank": 1,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 1
+          },
+          {
+            "vertex": 2,
+            "source_dimension": 1,
+            "middle_dimension": 3,
+            "target_dimension": 2,
+            "injection_rank": 1,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 1
+          },
+          {
+            "vertex": 3,
+            "source_dimension": 1,
+            "middle_dimension": 5,
+            "target_dimension": 4,
+            "injection_rank": 1,
+            "surjection_rank": 4,
+            "middle_kernel_dimension": 1
+          }
+        ],
+        "mesh_relation": "sum of the two signed path composites is zero"
+      }
+    ],
+    "node_AR_fiber": {
+      "order": "Lambda=k[[x,y]]/(xy), t=x+y; R0-free ranks Y,Lambda,X=1,2,1",
+      "basis_convention": "Lambda basis (1,x), X generator x, Y generator y",
+      "formal_maps": {
+        "Y_to_Lambda": [
+          "t",
+          "-1"
+        ],
+        "Lambda_to_X": [
+          "1",
+          "t"
+        ],
+        "X_to_Lambda": [
+          "0",
+          "1"
+        ],
+        "Lambda_to_Y": [
+          "1",
+          "0"
+        ]
+      },
+      "fiber": {
+        "algebra": "k[epsilon]/epsilon^2; x=epsilon,y=-epsilon",
+        "ending_X_inclusion": [
+          [
+            1,
+            0,
+            "-1"
+          ]
+        ],
+        "ending_X_quotient": [
+          [
+            0,
+            0,
+            "1"
+          ]
+        ],
+        "rows": {
+          "ending_X": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          },
+          "ending_Y": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          }
+        }
+      },
+      "finite_jet_levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "exact_3_by_3_diagrams": [
+        {
+          "upper_jet_level": 1,
+          "middle_jet_level": 2,
+          "bottom_jet_level": 1,
+          "vertical_map": "multiplication by t into next jet",
+          "column_boundary_ranks": {
+            "Y": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            },
+            "Lambda": {
+              "source_dimension": 2,
+              "middle_dimension": 4,
+              "target_dimension": 2,
+              "injection_rank": 2,
+              "surjection_rank": 2,
+              "middle_kernel_dimension": 2
+            },
+            "X": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            }
+          },
+          "commuting_squares": 8,
+          "upper_rows": {
+            "ending_X": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            },
+            "ending_Y": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            }
+          },
+          "middle_rows": {
+            "ending_X": {
+              "source_dimension": 2,
+              "middle_dimension": 4,
+              "target_dimension": 2,
+              "injection_rank": 2,
+              "surjection_rank": 2,
+              "middle_kernel_dimension": 2
+            },
+            "ending_Y": {
+              "source_dimension": 2,
+              "middle_dimension": 4,
+              "target_dimension": 2,
+              "injection_rank": 2,
+              "surjection_rank": 2,
+              "middle_kernel_dimension": 2
+            }
+          },
+          "bottom_rows": {
+            "ending_X": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            },
+            "ending_Y": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            }
+          }
+        },
+        {
+          "upper_jet_level": 2,
+          "middle_jet_level": 3,
+          "bottom_jet_level": 1,
+          "vertical_map": "multiplication by t into next jet",
+          "column_boundary_ranks": {
+            "Y": {
+              "source_dimension": 2,
+              "middle_dimension": 3,
+              "target_dimension": 1,
+              "injection_rank": 2,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 2
+            },
+            "Lambda": {
+              "source_dimension": 4,
+              "middle_dimension": 6,
+              "target_dimension": 2,
+              "injection_rank": 4,
+              "surjection_rank": 2,
+              "middle_kernel_dimension": 4
+            },
+            "X": {
+              "source_dimension": 2,
+              "middle_dimension": 3,
+              "target_dimension": 1,
+              "injection_rank": 2,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 2
+            }
+          },
+          "commuting_squares": 8,
+          "upper_rows": {
+            "ending_X": {
+              "source_dimension": 2,
+              "middle_dimension": 4,
+              "target_dimension": 2,
+              "injection_rank": 2,
+              "surjection_rank": 2,
+              "middle_kernel_dimension": 2
+            },
+            "ending_Y": {
+              "source_dimension": 2,
+              "middle_dimension": 4,
+              "target_dimension": 2,
+              "injection_rank": 2,
+              "surjection_rank": 2,
+              "middle_kernel_dimension": 2
+            }
+          },
+          "middle_rows": {
+            "ending_X": {
+              "source_dimension": 3,
+              "middle_dimension": 6,
+              "target_dimension": 3,
+              "injection_rank": 3,
+              "surjection_rank": 3,
+              "middle_kernel_dimension": 3
+            },
+            "ending_Y": {
+              "source_dimension": 3,
+              "middle_dimension": 6,
+              "target_dimension": 3,
+              "injection_rank": 3,
+              "surjection_rank": 3,
+              "middle_kernel_dimension": 3
+            }
+          },
+          "bottom_rows": {
+            "ending_X": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            },
+            "ending_Y": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            }
+          }
+        },
+        {
+          "upper_jet_level": 3,
+          "middle_jet_level": 4,
+          "bottom_jet_level": 1,
+          "vertical_map": "multiplication by t into next jet",
+          "column_boundary_ranks": {
+            "Y": {
+              "source_dimension": 3,
+              "middle_dimension": 4,
+              "target_dimension": 1,
+              "injection_rank": 3,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 3
+            },
+            "Lambda": {
+              "source_dimension": 6,
+              "middle_dimension": 8,
+              "target_dimension": 2,
+              "injection_rank": 6,
+              "surjection_rank": 2,
+              "middle_kernel_dimension": 6
+            },
+            "X": {
+              "source_dimension": 3,
+              "middle_dimension": 4,
+              "target_dimension": 1,
+              "injection_rank": 3,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 3
+            }
+          },
+          "commuting_squares": 8,
+          "upper_rows": {
+            "ending_X": {
+              "source_dimension": 3,
+              "middle_dimension": 6,
+              "target_dimension": 3,
+              "injection_rank": 3,
+              "surjection_rank": 3,
+              "middle_kernel_dimension": 3
+            },
+            "ending_Y": {
+              "source_dimension": 3,
+              "middle_dimension": 6,
+              "target_dimension": 3,
+              "injection_rank": 3,
+              "surjection_rank": 3,
+              "middle_kernel_dimension": 3
+            }
+          },
+          "middle_rows": {
+            "ending_X": {
+              "source_dimension": 4,
+              "middle_dimension": 8,
+              "target_dimension": 4,
+              "injection_rank": 4,
+              "surjection_rank": 4,
+              "middle_kernel_dimension": 4
+            },
+            "ending_Y": {
+              "source_dimension": 4,
+              "middle_dimension": 8,
+              "target_dimension": 4,
+              "injection_rank": 4,
+              "surjection_rank": 4,
+              "middle_kernel_dimension": 4
+            }
+          },
+          "bottom_rows": {
+            "ending_X": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            },
+            "ending_Y": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            }
+          }
+        },
+        {
+          "upper_jet_level": 4,
+          "middle_jet_level": 5,
+          "bottom_jet_level": 1,
+          "vertical_map": "multiplication by t into next jet",
+          "column_boundary_ranks": {
+            "Y": {
+              "source_dimension": 4,
+              "middle_dimension": 5,
+              "target_dimension": 1,
+              "injection_rank": 4,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 4
+            },
+            "Lambda": {
+              "source_dimension": 8,
+              "middle_dimension": 10,
+              "target_dimension": 2,
+              "injection_rank": 8,
+              "surjection_rank": 2,
+              "middle_kernel_dimension": 8
+            },
+            "X": {
+              "source_dimension": 4,
+              "middle_dimension": 5,
+              "target_dimension": 1,
+              "injection_rank": 4,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 4
+            }
+          },
+          "commuting_squares": 8,
+          "upper_rows": {
+            "ending_X": {
+              "source_dimension": 4,
+              "middle_dimension": 8,
+              "target_dimension": 4,
+              "injection_rank": 4,
+              "surjection_rank": 4,
+              "middle_kernel_dimension": 4
+            },
+            "ending_Y": {
+              "source_dimension": 4,
+              "middle_dimension": 8,
+              "target_dimension": 4,
+              "injection_rank": 4,
+              "surjection_rank": 4,
+              "middle_kernel_dimension": 4
+            }
+          },
+          "middle_rows": {
+            "ending_X": {
+              "source_dimension": 5,
+              "middle_dimension": 10,
+              "target_dimension": 5,
+              "injection_rank": 5,
+              "surjection_rank": 5,
+              "middle_kernel_dimension": 5
+            },
+            "ending_Y": {
+              "source_dimension": 5,
+              "middle_dimension": 10,
+              "target_dimension": 5,
+              "injection_rank": 5,
+              "surjection_rank": 5,
+              "middle_kernel_dimension": 5
+            }
+          },
+          "bottom_rows": {
+            "ending_X": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            },
+            "ending_Y": {
+              "source_dimension": 1,
+              "middle_dimension": 2,
+              "target_dimension": 1,
+              "injection_rank": 1,
+              "surjection_rank": 1,
+              "middle_kernel_dimension": 1
+            }
+          }
+        }
+      ],
+      "scope": "Actual finite jet actions/exactness/commutation. Infinite lattice classification and almost-split factorization are prose proofs, not inferred from bounded jet checks."
+    },
+    "counts": {
+      "H3_modules": 9,
+      "dessin_relation_checks": 54,
+      "signed_morphisms": 12,
+      "arrow_commutations": 72,
+      "exact_mesh_sequences": 4,
+      "vertex_exactness_checks": 12,
+      "negative_sign_control": 1,
+      "node_jet_levels": 5,
+      "node_exact_rows": 10,
+      "node_3_by_3_jet_diagrams": 4,
+      "node_exact_columns": 12,
+      "node_commuting_squares": 32
+    },
+    "scope": "Intrinsic H3 quotient AR meshes; actual finite matrix diagnostics. No automatic ambient AR transfer, universal exactness certificate, arithmetic Frobenius, or GRH claim."
+  },
+  "totals": {
+    "dessins": 8,
+    "rational_Cartan_samples": 24,
+    "Fock_initial_projection_identities": 2516,
+    "Fock_forbidden_products": 2516,
+    "cycle_lift_and_defect_checks": 493,
+    "terminal_sector_matrix_unit_basis_actions": 25382,
+    "signed_series_scalar_coefficients": 1628,
+    "Cauchy_coefficients": 81,
+    "actual_LR_matrix_intertwiners": 5
+  }
+}

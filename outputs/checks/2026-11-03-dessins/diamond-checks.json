@@ -1,0 +1,1615 @@
+{
+  "arithmetic": "Exact Fraction arithmetic; deterministic; no random seed required.",
+  "H3_quotient": "Closed infinite dessin with permitted cycle l a1 a2 r back2 back1, quotient killing back1,back2.",
+  "H3_modules": [
+    {
+      "label": "w",
+      "travel_word": [
+        "a",
+        "b"
+      ],
+      "start_vertex": 1,
+      "basis_vertices": [
+        1,
+        2,
+        3
+      ],
+      "dimension_vector": [
+        1,
+        1,
+        1
+      ],
+      "total_dimension": 3,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            1,
+            0,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            2,
+            1,
+            "1"
+          ]
+        ],
+        "l": [],
+        "r": [],
+        "back1": [],
+        "back2": []
+      }
+    },
+    {
+      "label": "hw",
+      "travel_word": [
+        "a",
+        "b",
+        "r-"
+      ],
+      "start_vertex": 1,
+      "basis_vertices": [
+        1,
+        2,
+        3,
+        3
+      ],
+      "dimension_vector": [
+        1,
+        1,
+        2
+      ],
+      "total_dimension": 4,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            1,
+            0,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            2,
+            1,
+            "1"
+          ]
+        ],
+        "l": [],
+        "r": [
+          [
+            2,
+            3,
+            "1"
+          ]
+        ],
+        "back1": [],
+        "back2": []
+      }
+    },
+    {
+      "label": "wh",
+      "travel_word": [
+        "r-",
+        "b-",
+        "a-",
+        "l",
+        "a",
+        "b"
+      ],
+      "start_vertex": 3,
+      "basis_vertices": [
+        3,
+        3,
+        2,
+        1,
+        1,
+        2,
+        3
+      ],
+      "dimension_vector": [
+        2,
+        2,
+        3
+      ],
+      "total_dimension": 7,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            2,
+            3,
+            "1"
+          ],
+          [
+            5,
+            4,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            1,
+            2,
+            "1"
+          ],
+          [
+            6,
+            5,
+            "1"
+          ]
+        ],
+        "l": [
+          [
+            4,
+            3,
+            "1"
+          ]
+        ],
+        "r": [
+          [
+            0,
+            1,
+            "1"
+          ]
+        ],
+        "back1": [],
+        "back2": []
+      }
+    },
+    {
+      "label": "wc",
+      "travel_word": [
+        "l-",
+        "a",
+        "b"
+      ],
+      "start_vertex": 1,
+      "basis_vertices": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "dimension_vector": [
+        2,
+        1,
+        1
+      ],
+      "total_dimension": 4,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            2,
+            1,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            3,
+            2,
+            "1"
+          ]
+        ],
+        "l": [
+          [
+            0,
+            1,
+            "1"
+          ]
+        ],
+        "r": [],
+        "back1": [],
+        "back2": []
+      }
+    },
+    {
+      "label": "cw",
+      "travel_word": [
+        "a",
+        "b",
+        "r",
+        "b-",
+        "a-",
+        "l-"
+      ],
+      "start_vertex": 1,
+      "basis_vertices": [
+        1,
+        2,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "dimension_vector": [
+        3,
+        2,
+        2
+      ],
+      "total_dimension": 7,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            1,
+            0,
+            "1"
+          ],
+          [
+            4,
+            5,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            2,
+            1,
+            "1"
+          ],
+          [
+            3,
+            4,
+            "1"
+          ]
+        ],
+        "l": [
+          [
+            5,
+            6,
+            "1"
+          ]
+        ],
+        "r": [
+          [
+            3,
+            2,
+            "1"
+          ]
+        ],
+        "back1": [],
+        "back2": []
+      }
+    },
+    {
+      "label": "hwc",
+      "travel_word": [
+        "l-",
+        "a",
+        "b",
+        "r-"
+      ],
+      "start_vertex": 1,
+      "basis_vertices": [
+        1,
+        1,
+        2,
+        3,
+        3
+      ],
+      "dimension_vector": [
+        2,
+        1,
+        2
+      ],
+      "total_dimension": 5,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            2,
+            1,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            3,
+            2,
+            "1"
+          ]
+        ],
+        "l": [
+          [
+            0,
+            1,
+            "1"
+          ]
+        ],
+        "r": [
+          [
+            3,
+            4,
+            "1"
+          ]
+        ],
+        "back1": [],
+        "back2": []
+      }
+    },
+    {
+      "label": "cwc",
+      "travel_word": [
+        "l-",
+        "a",
+        "b",
+        "r",
+        "b-",
+        "a-",
+        "l-"
+      ],
+      "start_vertex": 1,
+      "basis_vertices": [
+        1,
+        1,
+        2,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "dimension_vector": [
+        4,
+        2,
+        2
+      ],
+      "total_dimension": 8,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            2,
+            1,
+            "1"
+          ],
+          [
+            5,
+            6,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            3,
+            2,
+            "1"
+          ],
+          [
+            4,
+            5,
+            "1"
+          ]
+        ],
+        "l": [
+          [
+            0,
+            1,
+            "1"
+          ],
+          [
+            6,
+            7,
+            "1"
+          ]
+        ],
+        "r": [
+          [
+            4,
+            3,
+            "1"
+          ]
+        ],
+        "back1": [],
+        "back2": []
+      }
+    },
+    {
+      "label": "hwh",
+      "travel_word": [
+        "r-",
+        "b-",
+        "a-",
+        "l",
+        "a",
+        "b",
+        "r-"
+      ],
+      "start_vertex": 3,
+      "basis_vertices": [
+        3,
+        3,
+        2,
+        1,
+        1,
+        2,
+        3,
+        3
+      ],
+      "dimension_vector": [
+        2,
+        2,
+        4
+      ],
+      "total_dimension": 8,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            2,
+            3,
+            "1"
+          ],
+          [
+            5,
+            4,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            1,
+            2,
+            "1"
+          ],
+          [
+            6,
+            5,
+            "1"
+          ]
+        ],
+        "l": [
+          [
+            4,
+            3,
+            "1"
+          ]
+        ],
+        "r": [
+          [
+            0,
+            1,
+            "1"
+          ],
+          [
+            6,
+            7,
+            "1"
+          ]
+        ],
+        "back1": [],
+        "back2": []
+      }
+    },
+    {
+      "label": "cwh",
+      "travel_word": [
+        "r-",
+        "b-",
+        "a-",
+        "l",
+        "a",
+        "b",
+        "r",
+        "b-",
+        "a-",
+        "l-"
+      ],
+      "start_vertex": 3,
+      "basis_vertices": [
+        3,
+        3,
+        2,
+        1,
+        1,
+        2,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "dimension_vector": [
+        4,
+        3,
+        4
+      ],
+      "total_dimension": 11,
+      "arrow_nonzero_entries": {
+        "a": [
+          [
+            2,
+            3,
+            "1"
+          ],
+          [
+            5,
+            4,
+            "1"
+          ],
+          [
+            8,
+            9,
+            "1"
+          ]
+        ],
+        "b": [
+          [
+            1,
+            2,
+            "1"
+          ],
+          [
+            6,
+            5,
+            "1"
+          ],
+          [
+            7,
+            8,
+            "1"
+          ]
+        ],
+        "l": [
+          [
+            4,
+            3,
+            "1"
+          ],
+          [
+            9,
+            10,
+            "1"
+          ]
+        ],
+        "r": [
+          [
+            0,
+            1,
+            "1"
+          ],
+          [
+            7,
+            6,
+            "1"
+          ]
+        ],
+        "back1": [],
+        "back2": []
+      }
+    }
+  ],
+  "signed_morphisms": [
+    {
+      "source": "cwc",
+      "target": "wc",
+      "sign": 1,
+      "shape": [
+        4,
+        8
+      ],
+      "rank": 4,
+      "nonzero_entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ]
+      ]
+    },
+    {
+      "source": "wc",
+      "target": "hwc",
+      "sign": 1,
+      "shape": [
+        5,
+        4
+      ],
+      "rank": 4,
+      "nonzero_entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ]
+      ]
+    },
+    {
+      "source": "cw",
+      "target": "w",
+      "sign": 1,
+      "shape": [
+        3,
+        7
+      ],
+      "rank": 3,
+      "nonzero_entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ]
+      ]
+    },
+    {
+      "source": "w",
+      "target": "hw",
+      "sign": 1,
+      "shape": [
+        4,
+        3
+      ],
+      "rank": 3,
+      "nonzero_entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ]
+      ]
+    },
+    {
+      "source": "cwh",
+      "target": "wh",
+      "sign": 1,
+      "shape": [
+        7,
+        11
+      ],
+      "rank": 7,
+      "nonzero_entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ],
+        [
+          4,
+          4,
+          "1"
+        ],
+        [
+          5,
+          5,
+          "1"
+        ],
+        [
+          6,
+          6,
+          "1"
+        ]
+      ]
+    },
+    {
+      "source": "wh",
+      "target": "hwh",
+      "sign": 1,
+      "shape": [
+        8,
+        7
+      ],
+      "rank": 7,
+      "nonzero_entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ],
+        [
+          4,
+          4,
+          "1"
+        ],
+        [
+          5,
+          5,
+          "1"
+        ],
+        [
+          6,
+          6,
+          "1"
+        ]
+      ]
+    },
+    {
+      "source": "cwc",
+      "target": "cw",
+      "sign": -1,
+      "shape": [
+        7,
+        8
+      ],
+      "rank": 7,
+      "nonzero_entries": [
+        [
+          0,
+          1,
+          "-1"
+        ],
+        [
+          1,
+          2,
+          "-1"
+        ],
+        [
+          2,
+          3,
+          "-1"
+        ],
+        [
+          3,
+          4,
+          "-1"
+        ],
+        [
+          4,
+          5,
+          "-1"
+        ],
+        [
+          5,
+          6,
+          "-1"
+        ],
+        [
+          6,
+          7,
+          "-1"
+        ]
+      ]
+    },
+    {
+      "source": "wc",
+      "target": "w",
+      "sign": 1,
+      "shape": [
+        3,
+        4
+      ],
+      "rank": 3,
+      "nonzero_entries": [
+        [
+          0,
+          1,
+          "1"
+        ],
+        [
+          1,
+          2,
+          "1"
+        ],
+        [
+          2,
+          3,
+          "1"
+        ]
+      ]
+    },
+    {
+      "source": "hwc",
+      "target": "hw",
+      "sign": -1,
+      "shape": [
+        4,
+        5
+      ],
+      "rank": 4,
+      "nonzero_entries": [
+        [
+          0,
+          1,
+          "-1"
+        ],
+        [
+          1,
+          2,
+          "-1"
+        ],
+        [
+          2,
+          3,
+          "-1"
+        ],
+        [
+          3,
+          4,
+          "-1"
+        ]
+      ]
+    },
+    {
+      "source": "cw",
+      "target": "cwh",
+      "sign": -1,
+      "shape": [
+        11,
+        7
+      ],
+      "rank": 7,
+      "nonzero_entries": [
+        [
+          4,
+          0,
+          "-1"
+        ],
+        [
+          5,
+          1,
+          "-1"
+        ],
+        [
+          6,
+          2,
+          "-1"
+        ],
+        [
+          7,
+          3,
+          "-1"
+        ],
+        [
+          8,
+          4,
+          "-1"
+        ],
+        [
+          9,
+          5,
+          "-1"
+        ],
+        [
+          10,
+          6,
+          "-1"
+        ]
+      ]
+    },
+    {
+      "source": "w",
+      "target": "wh",
+      "sign": 1,
+      "shape": [
+        7,
+        3
+      ],
+      "rank": 3,
+      "nonzero_entries": [
+        [
+          4,
+          0,
+          "1"
+        ],
+        [
+          5,
+          1,
+          "1"
+        ],
+        [
+          6,
+          2,
+          "1"
+        ]
+      ]
+    },
+    {
+      "source": "hw",
+      "target": "hwh",
+      "sign": -1,
+      "shape": [
+        8,
+        4
+      ],
+      "rank": 4,
+      "nonzero_entries": [
+        [
+          4,
+          0,
+          "-1"
+        ],
+        [
+          5,
+          1,
+          "-1"
+        ],
+        [
+          6,
+          2,
+          "-1"
+        ],
+        [
+          7,
+          3,
+          "-1"
+        ]
+      ]
+    }
+  ],
+  "mesh_sequences": [
+    {
+      "source": "cwc",
+      "middle": [
+        "wc",
+        "cw"
+      ],
+      "target": "w",
+      "source_dimension": 8,
+      "middle_dimension": 11,
+      "target_dimension": 3,
+      "injection_rank": 8,
+      "surjection_rank": 3,
+      "middle_kernel_dimension": 8,
+      "vertex_boundary_ranks": [
+        {
+          "vertex": 1,
+          "source_dimension": 4,
+          "middle_dimension": 5,
+          "target_dimension": 1,
+          "injection_rank": 4,
+          "surjection_rank": 1,
+          "middle_kernel_dimension": 4
+        },
+        {
+          "vertex": 2,
+          "source_dimension": 2,
+          "middle_dimension": 3,
+          "target_dimension": 1,
+          "injection_rank": 2,
+          "surjection_rank": 1,
+          "middle_kernel_dimension": 2
+        },
+        {
+          "vertex": 3,
+          "source_dimension": 2,
+          "middle_dimension": 3,
+          "target_dimension": 1,
+          "injection_rank": 2,
+          "surjection_rank": 1,
+          "middle_kernel_dimension": 2
+        }
+      ],
+      "mesh_relation": "sum of the two signed path composites is zero"
+    },
+    {
+      "source": "wc",
+      "middle": [
+        "hwc",
+        "w"
+      ],
+      "target": "hw",
+      "source_dimension": 4,
+      "middle_dimension": 8,
+      "target_dimension": 4,
+      "injection_rank": 4,
+      "surjection_rank": 4,
+      "middle_kernel_dimension": 4,
+      "vertex_boundary_ranks": [
+        {
+          "vertex": 1,
+          "source_dimension": 2,
+          "middle_dimension": 3,
+          "target_dimension": 1,
+          "injection_rank": 2,
+          "surjection_rank": 1,
+          "middle_kernel_dimension": 2
+        },
+        {
+          "vertex": 2,
+          "source_dimension": 1,
+          "middle_dimension": 2,
+          "target_dimension": 1,
+          "injection_rank": 1,
+          "surjection_rank": 1,
+          "middle_kernel_dimension": 1
+        },
+        {
+          "vertex": 3,
+          "source_dimension": 1,
+          "middle_dimension": 3,
+          "target_dimension": 2,
+          "injection_rank": 1,
+          "surjection_rank": 2,
+          "middle_kernel_dimension": 1
+        }
+      ],
+      "mesh_relation": "sum of the two signed path composites is zero"
+    },
+    {
+      "source": "cw",
+      "middle": [
+        "w",
+        "cwh"
+      ],
+      "target": "wh",
+      "source_dimension": 7,
+      "middle_dimension": 14,
+      "target_dimension": 7,
+      "injection_rank": 7,
+      "surjection_rank": 7,
+      "middle_kernel_dimension": 7,
+      "vertex_boundary_ranks": [
+        {
+          "vertex": 1,
+          "source_dimension": 3,
+          "middle_dimension": 5,
+          "target_dimension": 2,
+          "injection_rank": 3,
+          "surjection_rank": 2,
+          "middle_kernel_dimension": 3
+        },
+        {
+          "vertex": 2,
+          "source_dimension": 2,
+          "middle_dimension": 4,
+          "target_dimension": 2,
+          "injection_rank": 2,
+          "surjection_rank": 2,
+          "middle_kernel_dimension": 2
+        },
+        {
+          "vertex": 3,
+          "source_dimension": 2,
+          "middle_dimension": 5,
+          "target_dimension": 3,
+          "injection_rank": 2,
+          "surjection_rank": 3,
+          "middle_kernel_dimension": 2
+        }
+      ],
+      "mesh_relation": "sum of the two signed path composites is zero"
+    },
+    {
+      "source": "w",
+      "middle": [
+        "hw",
+        "wh"
+      ],
+      "target": "hwh",
+      "source_dimension": 3,
+      "middle_dimension": 11,
+      "target_dimension": 8,
+      "injection_rank": 3,
+      "surjection_rank": 8,
+      "middle_kernel_dimension": 3,
+      "vertex_boundary_ranks": [
+        {
+          "vertex": 1,
+          "source_dimension": 1,
+          "middle_dimension": 3,
+          "target_dimension": 2,
+          "injection_rank": 1,
+          "surjection_rank": 2,
+          "middle_kernel_dimension": 1
+        },
+        {
+          "vertex": 2,
+          "source_dimension": 1,
+          "middle_dimension": 3,
+          "target_dimension": 2,
+          "injection_rank": 1,
+          "surjection_rank": 2,
+          "middle_kernel_dimension": 1
+        },
+        {
+          "vertex": 3,
+          "source_dimension": 1,
+          "middle_dimension": 5,
+          "target_dimension": 4,
+          "injection_rank": 1,
+          "surjection_rank": 4,
+          "middle_kernel_dimension": 1
+        }
+      ],
+      "mesh_relation": "sum of the two signed path composites is zero"
+    }
+  ],
+  "node_AR_fiber": {
+    "order": "Lambda=k[[x,y]]/(xy), t=x+y; R0-free ranks Y,Lambda,X=1,2,1",
+    "basis_convention": "Lambda basis (1,x), X generator x, Y generator y",
+    "formal_maps": {
+      "Y_to_Lambda": [
+        "t",
+        "-1"
+      ],
+      "Lambda_to_X": [
+        "1",
+        "t"
+      ],
+      "X_to_Lambda": [
+        "0",
+        "1"
+      ],
+      "Lambda_to_Y": [
+        "1",
+        "0"
+      ]
+    },
+    "fiber": {
+      "algebra": "k[epsilon]/epsilon^2; x=epsilon,y=-epsilon",
+      "ending_X_inclusion": [
+        [
+          1,
+          0,
+          "-1"
+        ]
+      ],
+      "ending_X_quotient": [
+        [
+          0,
+          0,
+          "1"
+        ]
+      ],
+      "rows": {
+        "ending_X": {
+          "source_dimension": 1,
+          "middle_dimension": 2,
+          "target_dimension": 1,
+          "injection_rank": 1,
+          "surjection_rank": 1,
+          "middle_kernel_dimension": 1
+        },
+        "ending_Y": {
+          "source_dimension": 1,
+          "middle_dimension": 2,
+          "target_dimension": 1,
+          "injection_rank": 1,
+          "surjection_rank": 1,
+          "middle_kernel_dimension": 1
+        }
+      }
+    },
+    "finite_jet_levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "exact_3_by_3_diagrams": [
+      {
+        "upper_jet_level": 1,
+        "middle_jet_level": 2,
+        "bottom_jet_level": 1,
+        "vertical_map": "multiplication by t into next jet",
+        "column_boundary_ranks": {
+          "Y": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          },
+          "Lambda": {
+            "source_dimension": 2,
+            "middle_dimension": 4,
+            "target_dimension": 2,
+            "injection_rank": 2,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 2
+          },
+          "X": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          }
+        },
+        "commuting_squares": 8,
+        "upper_rows": {
+          "ending_X": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          },
+          "ending_Y": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          }
+        },
+        "middle_rows": {
+          "ending_X": {
+            "source_dimension": 2,
+            "middle_dimension": 4,
+            "target_dimension": 2,
+            "injection_rank": 2,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 2
+          },
+          "ending_Y": {
+            "source_dimension": 2,
+            "middle_dimension": 4,
+            "target_dimension": 2,
+            "injection_rank": 2,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 2
+          }
+        },
+        "bottom_rows": {
+          "ending_X": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          },
+          "ending_Y": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          }
+        }
+      },
+      {
+        "upper_jet_level": 2,
+        "middle_jet_level": 3,
+        "bottom_jet_level": 1,
+        "vertical_map": "multiplication by t into next jet",
+        "column_boundary_ranks": {
+          "Y": {
+            "source_dimension": 2,
+            "middle_dimension": 3,
+            "target_dimension": 1,
+            "injection_rank": 2,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 2
+          },
+          "Lambda": {
+            "source_dimension": 4,
+            "middle_dimension": 6,
+            "target_dimension": 2,
+            "injection_rank": 4,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 4
+          },
+          "X": {
+            "source_dimension": 2,
+            "middle_dimension": 3,
+            "target_dimension": 1,
+            "injection_rank": 2,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 2
+          }
+        },
+        "commuting_squares": 8,
+        "upper_rows": {
+          "ending_X": {
+            "source_dimension": 2,
+            "middle_dimension": 4,
+            "target_dimension": 2,
+            "injection_rank": 2,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 2
+          },
+          "ending_Y": {
+            "source_dimension": 2,
+            "middle_dimension": 4,
+            "target_dimension": 2,
+            "injection_rank": 2,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 2
+          }
+        },
+        "middle_rows": {
+          "ending_X": {
+            "source_dimension": 3,
+            "middle_dimension": 6,
+            "target_dimension": 3,
+            "injection_rank": 3,
+            "surjection_rank": 3,
+            "middle_kernel_dimension": 3
+          },
+          "ending_Y": {
+            "source_dimension": 3,
+            "middle_dimension": 6,
+            "target_dimension": 3,
+            "injection_rank": 3,
+            "surjection_rank": 3,
+            "middle_kernel_dimension": 3
+          }
+        },
+        "bottom_rows": {
+          "ending_X": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          },
+          "ending_Y": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          }
+        }
+      },
+      {
+        "upper_jet_level": 3,
+        "middle_jet_level": 4,
+        "bottom_jet_level": 1,
+        "vertical_map": "multiplication by t into next jet",
+        "column_boundary_ranks": {
+          "Y": {
+            "source_dimension": 3,
+            "middle_dimension": 4,
+            "target_dimension": 1,
+            "injection_rank": 3,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 3
+          },
+          "Lambda": {
+            "source_dimension": 6,
+            "middle_dimension": 8,
+            "target_dimension": 2,
+            "injection_rank": 6,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 6
+          },
+          "X": {
+            "source_dimension": 3,
+            "middle_dimension": 4,
+            "target_dimension": 1,
+            "injection_rank": 3,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 3
+          }
+        },
+        "commuting_squares": 8,
+        "upper_rows": {
+          "ending_X": {
+            "source_dimension": 3,
+            "middle_dimension": 6,
+            "target_dimension": 3,
+            "injection_rank": 3,
+            "surjection_rank": 3,
+            "middle_kernel_dimension": 3
+          },
+          "ending_Y": {
+            "source_dimension": 3,
+            "middle_dimension": 6,
+            "target_dimension": 3,
+            "injection_rank": 3,
+            "surjection_rank": 3,
+            "middle_kernel_dimension": 3
+          }
+        },
+        "middle_rows": {
+          "ending_X": {
+            "source_dimension": 4,
+            "middle_dimension": 8,
+            "target_dimension": 4,
+            "injection_rank": 4,
+            "surjection_rank": 4,
+            "middle_kernel_dimension": 4
+          },
+          "ending_Y": {
+            "source_dimension": 4,
+            "middle_dimension": 8,
+            "target_dimension": 4,
+            "injection_rank": 4,
+            "surjection_rank": 4,
+            "middle_kernel_dimension": 4
+          }
+        },
+        "bottom_rows": {
+          "ending_X": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          },
+          "ending_Y": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          }
+        }
+      },
+      {
+        "upper_jet_level": 4,
+        "middle_jet_level": 5,
+        "bottom_jet_level": 1,
+        "vertical_map": "multiplication by t into next jet",
+        "column_boundary_ranks": {
+          "Y": {
+            "source_dimension": 4,
+            "middle_dimension": 5,
+            "target_dimension": 1,
+            "injection_rank": 4,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 4
+          },
+          "Lambda": {
+            "source_dimension": 8,
+            "middle_dimension": 10,
+            "target_dimension": 2,
+            "injection_rank": 8,
+            "surjection_rank": 2,
+            "middle_kernel_dimension": 8
+          },
+          "X": {
+            "source_dimension": 4,
+            "middle_dimension": 5,
+            "target_dimension": 1,
+            "injection_rank": 4,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 4
+          }
+        },
+        "commuting_squares": 8,
+        "upper_rows": {
+          "ending_X": {
+            "source_dimension": 4,
+            "middle_dimension": 8,
+            "target_dimension": 4,
+            "injection_rank": 4,
+            "surjection_rank": 4,
+            "middle_kernel_dimension": 4
+          },
+          "ending_Y": {
+            "source_dimension": 4,
+            "middle_dimension": 8,
+            "target_dimension": 4,
+            "injection_rank": 4,
+            "surjection_rank": 4,
+            "middle_kernel_dimension": 4
+          }
+        },
+        "middle_rows": {
+          "ending_X": {
+            "source_dimension": 5,
+            "middle_dimension": 10,
+            "target_dimension": 5,
+            "injection_rank": 5,
+            "surjection_rank": 5,
+            "middle_kernel_dimension": 5
+          },
+          "ending_Y": {
+            "source_dimension": 5,
+            "middle_dimension": 10,
+            "target_dimension": 5,
+            "injection_rank": 5,
+            "surjection_rank": 5,
+            "middle_kernel_dimension": 5
+          }
+        },
+        "bottom_rows": {
+          "ending_X": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          },
+          "ending_Y": {
+            "source_dimension": 1,
+            "middle_dimension": 2,
+            "target_dimension": 1,
+            "injection_rank": 1,
+            "surjection_rank": 1,
+            "middle_kernel_dimension": 1
+          }
+        }
+      }
+    ],
+    "scope": "Actual finite jet actions/exactness/commutation. Infinite lattice classification and almost-split factorization are prose proofs, not inferred from bounded jet checks."
+  },
+  "counts": {
+    "H3_modules": 9,
+    "dessin_relation_checks": 54,
+    "signed_morphisms": 12,
+    "arrow_commutations": 72,
+    "exact_mesh_sequences": 4,
+    "vertex_exactness_checks": 12,
+    "negative_sign_control": 1,
+    "node_jet_levels": 5,
+    "node_exact_rows": 10,
+    "node_3_by_3_jet_diagrams": 4,
+    "node_exact_columns": 12,
+    "node_commuting_squares": 32
+  },
+  "scope": "Intrinsic H3 quotient AR meshes; actual finite matrix diagnostics. No automatic ambient AR transfer, universal exactness certificate, arithmetic Frobenius, or GRH claim."
+}
