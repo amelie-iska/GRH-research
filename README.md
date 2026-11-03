@@ -22,7 +22,17 @@ Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `p
 
 The [live plan and queue](http://127.0.0.1:8765/implementation-plan.html) tracks ongoing work. The latest extension deduplicates the book's generic panels, introduces corrected Manim theta/HLS/bifiltration/pooling scenes, and adds a fully worked persistence/Schur/surface-coefficient chapter. Both complete original sources and the old clock schematic remain preserved.
 
-The [architecture trace layer](examples/architecture/README.md) now exports **22 numerical cases and 836 DAG nodes**: six real trained model families and six explicitly fixed-weight graph/attention/expert references. Gate states, covariance matrices, tensor shapes, masks, tropical ties, routing and readouts are checked against actual PennyLane/Strawberry Fields/Cirq/Qiskit backends and independent scalar loops. [Live manifest](http://127.0.0.1:8765/data/architecture/manifest.json). The new step-through architecture inspector and further persistence tools/formalization remain queued; numerical trace availability does not imply that UI or full formalization is complete.
+The [step-through architecture inspector](http://127.0.0.1:8765/architecture.html)
+now displays the [22 numerical cases and 836 DAG nodes](examples/architecture/README.md)
+from six trained CPU model families and six fixed-weight references, plus an
+adjustable computed clock/shift carrier. Orbit/zoom the 3D dependency scene,
+step or play the pass, inspect tensor heads/coordinates and literal values,
+select circuit gates, view Gaussian marginals and examine tropical witnesses,
+expert routing and exact Harper certificate records. Browser tests cover every
+saved case, numerical coordinates, checksum rejection, loading/playback races,
+mobile layout and the unique in-book embedding. All 22 original record hashes
+and trained checkpoints are unchanged. This is a computational inspector;
+complete categorical/physics/arithmetic formalization remains pending.
 
 ## Infinite dessin orders and determinant development (2026-11-03)
 

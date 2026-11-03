@@ -1,0 +1,116 @@
+\chapter{Reading an architecture from its tensors}
+\label{book:architecture}
+The trained models of Chapter~\ref{book:computations} and the ToricGT
+references have a common computational interface: a finite directed acyclic
+graph whose vertices contain actual tensors and whose edges record the
+inputs to each operation. The local inspector at
+\url{http://127.0.0.1:8765/architecture.html} makes this graph navigable.
+Its scene is a computation graph, not a hardware layout or a physical
+embedding of the infinite surface order. The source code and numerical
+records are part of the project.
+
+\section{Three distinct kinds of evidence}
+The twenty-two saved cases cover six trained CPU model families and six
+fixed-weight reference variants. The QCNN4 and QCNN9 weights, shared
+two-qubit convolution, quantum-feature attention, Gaussian photonic pooling
+and finite Harper hybrid are replayed without further optimizer steps.
+The classical TokenGT-style, tropical, block-ring, attention-hybrid and two
+expert-routing variants use explicit seeded weights. They are executable
+miniatures, not upstream trained language-model checkpoints. The adjustable
+forward clock is a separately computed finite carrier. GPU and hardware
+execution remain unavailable, and optional upstream heads remain proposals
+unless their own numerical evidence is supplied.
+
+The record contains the source/checkpoint hashes, seed, conventions,
+formulas, shapes, axes, parameter values and checked errors. Each saved
+record is immutable and content addressed; its SHA-256 is verified before
+the interface accepts it. The inspector never changes the trained weights.
+Selecting a forward-operation step is not selecting a training epoch.
+
+\section{Shapes explain the operation}
+Two different attention mechanisms illustrate why the axes matter.
+The trained quantum-feature model produces three feature vectors,
+\[
+ F\in\R^{3\times3},\quad \ell=Fq\in\R^3,\quad
+ \alpha=\operatorname{softmax}(\ell),\quad c=\alpha^{\mathsf{T}}F\in\R^3.
+\]
+Softmax here runs over three patches. The classical reference has seven
+token positions, including one padded node, model width six and two heads.
+After projection and splitting, its $Q,K,V$ have shape
+$[1,2,7,3]$. These heads are different from the three observables of the
+quantum circuit. Its $Q,K$ also undergo the source's maximum shift and
+Euclidean normalization before dot scores.
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small},
+ box/.style={draw,rounded corners,align=center,text width=4.5cm,minimum height=.8cm}]
+\node[box] (q) at (0,0) {Trained quantum patches\\$F:[3,3]$};
+\node[box] (a) at (0,-1.4) {Patch softmax\\$\alpha:[3]$, $c:[3]$};
+\node[box] (h) at (0,-2.8) {Local/context affine heads\\prediction $[3]$};
+\node[box] (t) at (6,0) {Fixed graph tokens\\$X:[1,7,6]$};
+\node[box] (s) at (6,-1.4) {Projected/normalized heads\\$Q,K,V:[1,2,7,3]$};
+\node[box] (v) at (6,-2.8) {Softmax or max-plus context\\$[1,2,7,3]$};
+\draw[->] (q)--(a);\draw[->] (a)--(h);
+\draw[->] (t)--(s);\draw[->] (s)--(v);
+\end{tikzpicture}
+\end{center}
+The shape labels are literal exported dimensions. The two columns are
+different finite models; no equivalence of their learned functions is
+asserted.
+
+For tropical aggregation, a scalar output is
+\[
+ C_{bhic}=\max_{j\text{ legal}}
+       \bigl(S_{bhij}+V_{bhjc}\bigr),\qquad
+ S=QK^{\mathsf{T}}/\sqrt{d_{\rm head}}.
+\]
+The inspector shows every maximizing key and the gap between the largest
+two legal values. A tie means equality of computed floating-point values,
+not a symbolic equality certificate. A query with no legal key has zero
+context by an explicit guard. Invalid block entries are stored as zero
+\emph{with a validity mask}; including these zeros in a maximum would be
+incorrect. Softmax weights displayed in tropical records are comparison
+diagnostics rather than the tropical aggregation rule.
+
+Soft-MoE dispatch normalizes across valid tokens for each expert-slot;
+combination normalizes across expert-slots for each valid token. These are
+different axes. Strict-prefix slots exclude the current and later token
+indices, while equal-rank attention can permit different tokens with the
+same reveal rank. The two rules must not be conflated into a stronger
+causality assertion. Likewise padding can acquire projection bias in a
+residual, so its mask must remain in later routing and pooling.
+
+\section{Quantum and Gaussian inspection}
+The stored StatePrep input precedes the displayed circuit. The variational
+gates have their exact wire order and angle metadata. Qubit zero is most
+significant. For QCNN9, the final CNOT targets start at wire five; the
+retained density matrix has shape $[32,32]$, not a five-qubit pure state
+obtained by discarding amplitudes. The partial trace follows the unitary
+gates and is distinct from their dimension-preserving action.
+
+The photonic model uses covariance order $(x_0,x_1,p_0,p_1)$ and
+$\hbar=2$. Its ellipse is a one-standard-deviation contour of a selected
+two-coordinate Gaussian marginal, with the marginal covariance taken from
+the actual intermediate record. It is not a plot of a trained interacting
+field theory. The Harper page separately displays the learned proposal and
+the fifteen exact rational principal-minor certificates. Rejected proposals
+are labelled as repaired. The carrier uses backward $V$, so $VU=iUV$;
+the live forward-clock example instead has $UV=\omega VU$.
+
+\section{A reproducible way to explore}
+Choose an evidence category and example, then a step. Clicking an input
+follows its recorded dependency. Head/token/coordinate controls select
+literal array slices; paging exposes large states without pretending that a
+small viewport is the entire tensor. Color is a display convention and the
+selected coordinate gives its numerical real and imaginary parts. A zero
+amplitude has undefined phase and is labelled accordingly. Playback visits
+the forward pass, and stops when cases change or the tab becomes hidden.
+Orbit and zoom change the view, not the state or physical model.
+
+The shared numerical records have independent quantum-backend and scalar
+reference checks. Browser checks exercise all saved cases, coordinate
+selection, masks, playback, view controls, circuits, covariance and certificate
+panels. These computational checks do not imply complete Lean formalization,
+generalization beyond the samples, quantum advantage or the arithmetic
+positive-determinant comparison. The general path/category and arithmetic
+interfaces remain the research obligations described in the final chapters.

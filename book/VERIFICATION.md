@@ -4,7 +4,7 @@ The book is a developed critical edition of the two supplied manuscripts, not a 
 
 ## Current kernel-checked layer
 
-The working critical book has 30 chapters, with four unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
+The working critical book has 31 chapters, with five unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
 
 The pinned Lean 4.24/mathlib suite has **243 printed theorem dependency reports** including the new covering-obstruction module. The full suite passed with warnings treated as errors: 241 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
 
@@ -19,7 +19,7 @@ The pinned Lean 4.24/mathlib suite has **243 printed theorem dependency reports*
 | Learned renormalization | Actual PennyLane three-architecture and larger nine-qubit training; NumPy comparison, analytic target/gradient checks; actual Strawberry Fields training | No optimizer convergence theorem, hardware run, general QFT RG theorem or quantum advantage claim |
 | ToricGT hybrid | Actual pinned upstream Weyl module, trained PennyLane surrogate, six exact rational 15-minor PSD certificates | No upstream language-model campaign reproduced; no inferred arithmetic L-function operator |
 | Persistence extension | Complete prose resolution/CW/Schur/flag-incidence and actual surface-order coefficient construction; independent review | These new full module/category arguments are not yet Lean formalized |
-| Numerical architecture traces | 22 cases and 836 shape-labelled DAG nodes; unchanged trained checkpoint replay, fixed-weight classical references, independent gate/covariance/scalar-loop checks | Step-through 3D inspector is a separate queued task; numerical arrays are not kernel-checked theorems or new training |
+| Numerical architecture inspector | 22 saved cases and 836 shape-labelled DAG nodes plus a computed clock; actual backend/reference checks, all-case browser tests, 3D/flat dependency views, exact coordinate values, gate/covariance/witness/expert/certificate panels and one canonical book embed | Optional upstream probes, full model campaigns, hardware/GPU execution and general mathematical formalization remain separate; numerical arrays are not kernel-checked theorems or new training |
 | Covering/GLS/geometric extension | Actual theta finite-quotient cover, 36 exact Hom pairs, local endomorphism radical and higher-genus non-lifting proofs; three fresh Lean matrix statements with standard dependencies | General covering/module/AR/derived/Fukaya interfaces and uniform higher-genus obstruction are not fully Lean formalized; no GLS identification or arithmetic positivity inferred |
 | Sage | Exact scripts supplied | Installed launcher points to missing app; Sage execution not passed |
 | NVIDIA | Two requested upstream-only public forks and pinned local clones; optional adapters | No supported NVIDIA GPU runtime on this Apple machine; GPU execution not passed |

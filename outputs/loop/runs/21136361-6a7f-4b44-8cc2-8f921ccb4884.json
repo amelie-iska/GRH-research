@@ -1,0 +1,28 @@
+{
+  "id": "21136361-6a7f-4b44-8cc2-8f921ccb4884",
+  "utc": "2026-11-03T20:05:50.793208+00:00",
+  "action": "checkpoint",
+  "owner": "grh-research-loop",
+  "task": {
+    "id": "P1-architecture-inspector",
+    "priority": 4,
+    "status": "complete",
+    "dependencies": [
+      "P1-architecture-data"
+    ],
+    "objective": "Interactive 3D step/inspect/play tensor and quantum-state explorer",
+    "acceptance": "Every architecture category has a numerically checked example, useful controls/code links and passing browser checks",
+    "owner": "grh-research-loop",
+    "updated_utc": "2026-11-03T20:05:50.793208+00:00",
+    "last_result": "Original3D/flat step-through inspector covers22 saved cases plus computedclock, actual tensor coordinates/masks/witnesses/routing/circuits/covariances/certificates; independent review, all-case and negative/race/mobile/book browser checks, legacy companion and fresh backend data checks pass; book137pages withfive unique tools; no trained data changed",
+    "evidence": [
+      "outputs/checks/2026-11-03-inspector/browser.json",
+      "outputs/checks/2026-11-03-inspector/model-checks.json",
+      "outputs/checks/2026-11-03-inspector/trace-data-checks.json",
+      "outputs/checks/2026-11-03-inspector/book-checks.json",
+      "outputs/checks/2026-11-03-inspector/companion-checks.json",
+      "planning/reviews/architecture/INSPECTOR_REVIEW.md"
+    ]
+  },
+  "note": "Administrative checkpoint; scientific validity comes from reviewed evidence"
+}

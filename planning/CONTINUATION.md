@@ -246,3 +246,37 @@ clones, original manuscripts, caches, candidate exports, inspection renders and
 the approved environments. Keep low-gcd/positive-arithmetic research active
 without repeating completed finite-carrier or high-gcd audits. The current
 reference task is complete, not the project or either GRH completion gate.
+
+
+## Latest frontier: canonical architecture inspector (2026-11-03)
+
+P1-architecture-inspector is implemented and independently reviewed. Open
+http://127.0.0.1:8765/architecture.html or the single #lab-architecture in-book
+embed. All22 saved cases/836nodes are available with a separately computed
+clock. Read examples/architecture/README.md and
+planning/reviews/architecture/INSPECTOR_REVIEW.md for exact conventions and
+evidence. Numerical arrays/checkpoints were not changed; the manifest now
+points readers to the queue for current interface status. Data backend checks
+pass124+38, pure inspection tests pass, and all-case/browser/checksum/mobile/
+loading-race and legacy companion regressions pass. The book is31chapters/
+137pages with15 distinct vector diagrams and five canonical iframe sources.
+Articles25/53 and the243-report Lean suite remain unchanged. Do not call the
+UI a full upstream training reproduction, hardware run or full formalization.
+
+NEXT: claim P2-persistence-tools. The exact staircase/CW/resolution chapter
+and data already exist; implement one context-specific canonical persistence
+tool with actual monotone maps, rank/Betti/syzygy calculations and fixed-snapshot
+quantum bifiltrations, then extend the actual Lean module interfaces. Preserve
+the inspector and its immutable records, all environments, source clones,
+profiles, caches, original manuscripts and earlier renders. Use the approved
+CPU environment; no installs/upgrades. Test browser profiles are preserved in
+ignored outputs/browser-tests; the launcher refuses an occupied port9242 and
+the checks close their own isolated Chrome only. Keep the user preview8765
+alive. For the companion regression, pass current check/render directories
+as arguments so old evidence remains preserved.
+
+The arithmetic lane remains the original low-gcd kernel (especially gcd1),
+retaining source masks/conductors/uniformity, or an independent positive
+determinant construction. Do not repeat finished high-gcd or finite-carrier
+obstructions as new progress. Both completion gates remain unresolved and
+the existing hourly loop must stay active.

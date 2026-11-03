@@ -349,3 +349,46 @@ changed. The ongoing architecture-inspector task remains next, and the original
 low-gcd estimate and independent positive arithmetic bridge remain open.
 Evidence: outputs/checks/2026-11-03-coverings/, research/covering-geometry-interfaces.md
 and planning/reviews/covering-literature/REVIEW.md.
+
+
+## P1 architecture inspector implemented (2026-11-03)
+
+Implemented the original local step-through inspector at /architecture.html
+and one canonical in-book embedding. It displays all22 saved numerical cases
+(836 tensor nodes), six trained CPU model families, six fixed-weight reference
+variants and a separately computed adjustable finite forward clock. The scene
+uses genuine perspective projection, camera-depth painter/picking order and
+actual dependency edges. Step/play, orbit/zoom/flat view, head/token/coordinate
+slices, literal numerical values, phases, masks, tropical witnesses/margins,
+expert routing, gate-level circuits, Gaussian marginals and exact certificate
+records are available. Category/evidence and finite-carrier limitations are
+explicit. No training or hardware/GPU work was performed.
+
+Independent review checked82295 coordinates,168 witness sets,392 block masks,
+24 covariance marginals and closed-form clock evolution. Reviewer findings
+were fixed: CNOT target/StatePrep caption, actual depth ordering, native button
+roles, and the Play-during-load race. The race was observed failing before
+the fix and passed afterward; stale responses are aborted and failed loads
+retain/label the prior valid case. Browser tests pass all22 records plus the
+computed clock, literal cell comparisons, rapid case changes, all controls,
+mask/phase conventions, deliberate checksum corruption, mobile and in-book
+use. The existing companion regression also passes ten surfaces, five AR views,
+six trained models and native-MathML/PDF/video/access checks.
+
+All22 original trace hashes and trained checkpoints remain unchanged. The
+manifest's obsolete queued-status wording and exporter source hash were refreshed;
+new backend checks pass124 trace checks and38 independent checks using the
+approved PennyLane/Strawberry Fields/Cirq/Qiskit environment. Existing source
+pins, environments, caches, browser profiles and source volumes were preserved.
+The book now has31 chapters/137pages,15 distinct compiled vector diagrams and
+five unique tools. PDF and HTML were built in staging; a TeX4ht font-superscript
+parse failure was fixed with explicit grouping before promotion. Scene/mobile/
+book and PDF diagram artifacts were visually inspected. Articles25/53pages and
+the243-report Lean layer are unchanged; no unrelated Lean suite rerun was needed.
+
+Evidence: outputs/checks/2026-11-03-inspector/,
+planning/reviews/architecture/INSPECTOR_REVIEW.md and
+planning/architecture-inspector-design.md. Next task is P2-persistence-tools,
+then actual module formalization. Optional upstream heads, larger training,
+whole-book formalization and the original low-gcd/positive arithmetic bridge
+remain open. This completes the core inspector task only.

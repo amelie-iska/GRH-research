@@ -146,3 +146,11 @@ gentle. GLS identification, equivariant linearizations for fixed objects,
 completion/Fukaya/derived interfaces and determinant block compatibility all
 require their own proofs. Three matrix lemmas do not formalize these entire
 categories. The low-gcd estimate and positive arithmetic bridge remain open.
+
+
+The P1 inspector is now implemented for the 22 saved cases and the computed
+finite clock. Numerical masks, coordinates, routing, states and certificate
+records have browser/reference checks; this closes the core inspector task,
+not the optional upstream heads, larger trained campaigns, physical/GPU runs,
+whole-book Lean coverage or arithmetic research gate. The next implementation
+task is the exact persistence tool, followed by its genuine module formalization.

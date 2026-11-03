@@ -35,7 +35,7 @@ def main():
         traces=[dict(id=t["id"],title=t["title"],category=t["category"],kind=t["provenance"]["kind"],
                      file=filenames[t["id"]],sha256=hashlib.sha256(bodies[t["id"]].encode()).hexdigest(),
                      nodes=len(t["nodes"]),checks=len(t["checks"])) for t in traces],
-        interface_status="Numerical trace layer complete; step-through architecture inspector is a separate queued task",
+        interface_status="Numerical trace layer; current inspector status is tracked in planning/IMPLEMENTATION_QUEUE.json",
         unavailable="No GPU, upstream ToricGT checkpoint training, full infinite-order simulation, full-book Lean verification or GRH proof claimed")
     args.output.mkdir(parents=True,exist_ok=True)
     serialized["manifest.json"]=json.dumps(manifest,indent=2)+"\n"

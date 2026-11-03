@@ -166,3 +166,11 @@ module/functor formalization and any actual GLS/skew-group identification
 remain P6/P4 obligations. Do not infer positivity or block determinants from
 a Hom decomposition. This reference task does not replace the next canonical
 architecture inspector or the open low-gcd/positive arithmetic research lane.
+
+
+P1 completion note (2026-11-03): the core numerical architecture inspector is
+implemented for all22 saved cases plus the computed clock, with one canonical
+book embedding. Its detailed checks and limits are recorded in the queue,
+examples/architecture/README.md and independent inspector review. Optional
+upstream probes, broader trained campaigns and physical/GPU runs remain
+separate P4/P5 obligations. P2 persistence tools are the next ready dependency.

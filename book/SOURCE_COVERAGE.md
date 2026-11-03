@@ -87,8 +87,8 @@ and 836 intermediate DAG nodes for the six existing trained families and six
 fixed-weight classical variants. See examples/architecture/README.md and
 planning/reviews/architecture/TRACE_EXPORT_REVIEW.md. This adds executable
 coverage of states, covariances, attention and routing, not corrected exposition
-of every source topic or whole-book Lean coverage. The new inspector remains a
-separate pending task.
+of every source topic or whole-book Lean coverage. At that data-export milestone
+the inspector remained pending; its subsequent implementation is recorded below.
 
 The requested covering, tame-GLS and geometric-model references are now
 integrated into the shared article proofs and the chapter
@@ -97,3 +97,12 @@ family, Hom-control counterexample and derived non-density are proved in
 prose and independently reviewed. `CoveringBand.lean` checks the three exact
 matrix statements only. This does not certify external classification
 theorems, the full categorical interfaces or the remaining source topics.
+
+
+The architecture inspector now has a developed chapter
+`book/chapters/architecture.tex` and one canonical on-page laboratory. All 22
+saved trace cases and their 836 numerical nodes are covered, with a separately
+computed clock carrier, actual coordinate inspection and category-specific
+panels. Five distinct iframe sources remain unique. The inspector reuses
+verified numerical records; it neither supplies missing source-topic proofs
+nor completes whole-book Lean formalization or hardware experiments.

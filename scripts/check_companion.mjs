@@ -1,5 +1,9 @@
 // Headless Chromium checks of our own local companion. No external runtime.
-import {writeFileSync} from 'node:fs';
+import {writeFileSync,readFileSync,mkdirSync} from 'node:fs';
+const checkDirectory=process.argv[2]??'outputs/checks/2026-11-03-book';
+const renderDirectory=process.argv[3]??'outputs/renders/2026-11-03-book';
+mkdirSync(checkDirectory,{recursive:true});mkdirSync(renderDirectory,{recursive:true});
+const expectedChapters=(readFileSync('outputs/book/surface-orders-book.toc','utf8').match(/\\contentsline \{chapter\}\{\\numberline/g)||[]).length;
 const base='http://127.0.0.1:9242';
 let tab;
 for(let i=0;i<30;i++){
@@ -39,14 +43,14 @@ if(exceptions.length)throw Error(JSON.stringify(exceptions));
 for(const name of ['atlas','ar','learning','reading']){
  await evaluate(`document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,document.getElementById('${name}').offsetTop-85)`);
  const r=await send('Page.captureScreenshot',{format:'png'});
- writeFileSync(`outputs/renders/2026-11-03-book/web-${name}.png`,Buffer.from(r.data,'base64'));
+ writeFileSync(`${renderDirectory}/web-${name}.png`,Buffer.from(r.data,'base64'));
 }
 await evaluate(`document.getElementById('surface').value='hyp';document.getElementById('surface').dispatchEvent(new Event('input'));document.getElementById('hyperboloid').checked=false;document.getElementById('hyperboloid').dispatchEvent(new Event('input'));window.scrollTo(0,document.getElementById('atlas').offsetTop-85)`);
-for(const mode of ['disk','hyperboloid']){if(mode==='hyperboloid')await evaluate(`document.getElementById('hyperboloid').checked=true;document.getElementById('hyperboloid').dispatchEvent(new Event('input'))`);const r=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`outputs/renders/2026-11-03-book/web-hyperbolic-${mode}.png`,Buffer.from(r.data,'base64'));}
+for(const mode of ['disk','hyperboloid']){if(mode==='hyperboloid')await evaluate(`document.getElementById('hyperboloid').checked=true;document.getElementById('hyperboloid').dispatchEvent(new Event('input'))`);const r=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`${renderDirectory}/web-hyperbolic-${mode}.png`,Buffer.from(r.data,'base64'));}
 await send('Page.navigate',{url:'http://127.0.0.1:8765/book/main.html'});await new Promise(r=>setTimeout(r,1600));
-report.book=await evaluate(`({chapters:document.querySelectorAll('h2.chapterHead').length,panels:document.querySelectorAll('.reader-lab').length,math:document.querySelectorAll('math').length,brokenImages:[...document.images].filter(x=>!x.complete||x.naturalWidth===0).map(x=>x.src)})`);if(report.book.chapters!==27||report.book.panels!==4||report.book.brokenImages.length)throw Error(JSON.stringify(report.book));
-await evaluate(`document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,0)`);const bookShot=await send('Page.captureScreenshot',{format:'png'});writeFileSync('outputs/renders/2026-11-03-book/web-book.png',Buffer.from(bookShot.data,'base64'));
-writeFileSync('outputs/checks/2026-11-03-book/companion-checks.json',JSON.stringify({...report,uncaughtExceptions:exceptions},null,2)+'\n');
+report.book=await evaluate(`({chapters:document.querySelectorAll('h2.chapterHead').length,panels:document.querySelectorAll('.reader-lab').length,math:document.querySelectorAll('math').length,brokenImages:[...document.images].filter(x=>!x.complete||x.naturalWidth===0).map(x=>x.src)})`);if(report.book.chapters!==expectedChapters||report.book.panels!==5||report.book.brokenImages.length)throw Error(JSON.stringify(report.book));
+await evaluate(`document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,0)`);const bookShot=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`${renderDirectory}/web-book.png`,Buffer.from(bookShot.data,'base64'));
+writeFileSync(`${checkDirectory}/companion-checks.json`,JSON.stringify({...report,uncaughtExceptions:exceptions},null,2)+'\n');
 console.log('Companion: ten surfaces, five AR views, trained models, native MathML book, PDF/video and access checks passed');
-await evaluate(`const im=document.querySelector('img[src="main4x.svg"]');window.scrollTo(0,im.getBoundingClientRect().top+scrollY-200)`);const diagramShot=await send('Page.captureScreenshot',{format:'png'});writeFileSync('outputs/renders/2026-11-03-book/web-book-diamond.png',Buffer.from(diagramShot.data,'base64'));
+await evaluate(`const im=document.querySelector('img[src="main4x.svg"]');window.scrollTo(0,im.getBoundingClientRect().top+scrollY-200)`);const diagramShot=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`${renderDirectory}/web-book-diamond.png`,Buffer.from(diagramShot.data,'base64'));
 await send('Browser.close');ws.close();

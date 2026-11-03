@@ -1,10 +1,11 @@
 # Numerical architecture traces
 
-This is the numerical data layer for the book's forthcoming step-through
-architecture inspector. It exports **22 cases, 836 numerical DAG nodes**, with
-shapes, semantic axes, formulas, parameter values and provenance. It does not
-yet supply that new inspector. The existing four canonical book tools remain
-available.
+This is the numerical data layer for the book's
+[step-through architecture inspector](http://127.0.0.1:8765/architecture.html).
+It exports **22 cases, 836 numerical DAG nodes**, with shapes, semantic axes,
+formulas, parameter values and provenance. The inspector adds a separately
+computed adjustable forward clock/shift carrier. It has one canonical in-book
+location alongside the four earlier tools.
 
 | Family | Evidence | Exported cases |
 |---|---|---:|
@@ -89,8 +90,28 @@ classical references share weights between their two layers only to make the
 comparison inspectable. Optional upstream polar compression, optimizer
 campaigns, GPU/distributed execution and physical hardware are not run.
 
-Next task: render these actual arrays in the unique canonical architecture
-inspector, with playback, shape/value inspection and category-specific circuit,
-covariance, token/attention and expert-slot views. Numerical data availability
-must not be relabelled as completed interactive UI, complete book
-formalization or a proof of GRH.
+The inspector renders these arrays with playback, dependency navigation,
+perspective orbit/zoom, exact coordinate selection and category-specific
+circuit, covariance, token/attention, tropical-witness and expert-slot views.
+Large tensors are paged; cells are rounded and selected coordinates expose
+the numerical real/imaginary values. The data and trained checkpoints stay
+immutable. A corrupted record is rejected before display; failed loads retain
+and label the previous valid case. The current UI is not a training interface,
+full upstream campaign, complete book formalization or a proof of GRH.
+
+Frontend verification uses the project's existing dependency-free Node and
+isolated headless Chrome/CDP harness:
+
+```sh
+node scripts/check_architecture_model.mjs
+python3 scripts/launch_inspector_browser.py
+node scripts/check_architecture_browser.mjs
+```
+
+The launcher refuses an occupied test port and preserves its isolated profile.
+The browser checker closes only that isolated test browser. It covers all 22
+saved cases, live clock parameters, exact displayed coordinates, masks, zero
+phase, playback/loading races, checksum rejection, orbit/depth ordering,
+responsive layout and the unique in-book embedding. No browser package is
+installed. Optional upstream memory/GFlowNet/persistence heads, non-Gaussian
+photonic networks and NVIDIA/hardware execution remain separate obligations.
