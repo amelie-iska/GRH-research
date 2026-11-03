@@ -1,0 +1,96 @@
+{
+  "arithmetic": "exact Fraction; deterministic; no random seed",
+  "cosh_model_positive_pivots_degrees_1_to_8": {
+    "1": [
+      "1"
+    ],
+    "2": [
+      "2",
+      "48"
+    ],
+    "3": [
+      "3",
+      "240",
+      "5760"
+    ],
+    "4": [
+      "4",
+      "672",
+      "53760",
+      "1290240"
+    ],
+    "5": [
+      "5",
+      "1440",
+      "241920",
+      "19353600",
+      "464486400"
+    ],
+    "6": [
+      "6",
+      "2640",
+      "760320",
+      "127733760",
+      "10218700800",
+      "245248819200"
+    ],
+    "7": [
+      "7",
+      "4368",
+      "1921920",
+      "553512960",
+      "92990177280",
+      "7439214182400",
+      "178541140377600"
+    ],
+    "8": [
+      "8",
+      "6720",
+      "4193280",
+      "1845043200",
+      "531372441600",
+      "89270570188800",
+      "7141645615104000",
+      "171399494762496000"
+    ]
+  },
+  "positive_moment_counterexample_gamma": [
+    "1",
+    "1/20",
+    "1/120"
+  ],
+  "counterexample_companion": [
+    [
+      "0",
+      "-120"
+    ],
+    [
+      "1",
+      "-12"
+    ]
+  ],
+  "counterexample_newton_hermite": [
+    [
+      "2",
+      "-12"
+    ],
+    [
+      "-12",
+      "-96"
+    ]
+  ],
+  "counterexample_determinant": "-336",
+  "gaussian_smoothing_turan_gap": "-7/1200 for every variance >= 0 (algebra in Lean)",
+  "repeated_root_model_metric": [
+    [
+      "2",
+      "-2"
+    ],
+    [
+      "-2",
+      "2"
+    ]
+  ],
+  "coefficient_bound_finite_checks": "1<=d<=64, 0<=j<=128; universal argument in paper",
+  "scope": "Model arithmetic and construction checks only. No xi coefficient enclosures or universal Jensen positivity proved. GRH remains unresolved."
+}

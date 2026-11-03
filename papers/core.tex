@@ -317,6 +317,68 @@ identification. It does not reject convergence of the partial sums,
 modified approximants, later truncations, subsequences, or GRH itself:
 $f$ is a finite partial sum, not the full $L$-function.
 
+\section{Jensen approximants and a coefficient-defined metric}
+This alternative currently concerns the Riemann target only. Define
+\[
+ \gamma_j=\frac{j!\,\xi^{(2j)}(1/2)}{(2j)!},\qquad
+ F(w)=\sum_{j\ge0}\frac{\gamma_j}{j!}w^j,\qquad
+ \Xi(t)=\xi(1/2+it)=F(-t^2).
+\]
+The classical positive Fourier kernel of $\Xi$ gives $\gamma_j>0$~\cite{romik};
+evenness and entirety of $\xi$ make $F$ entire. Set, for $d\ge1$,
+\[
+ J_d(x)=\sum_{j=0}^d\binom dj\gamma_jx^j,\qquad
+ Q_d(w)=J_d(w/d),\qquad P_d(t)=Q_d(-t^2).
+\]
+\begin{proposition}[Explicit convergence without a zero-location premise]
+For $R,T\ge0$,
+\[
+ \sup_{|w|\le R}|Q_d(w)-F(w)|\le\frac{R^2F''(R)}{2d},\qquad
+ \sup_{|t|\le T}|P_d(t)-\Xi(t)|\le\frac{T^4F''(T^2)}{2d}.
+\]
+\end{proposition}
+\begin{proof}
+The coefficient multiplier $w_{d,j}=j!\binom dj/d^j$ for $j\le d$,
+and $0$ for $j>d$, satisfies
+$0\le w_{d,j}\le1$ and $1-w_{d,j}\le j(j-1)/(2d)$.
+For $j\le d$ use $1-\prod_{k<j}(1-k/d)\le\sum_{k<j}k/d$;
+for $j>d$ use $j(j-1)\ge2d$. Summing the absolutely convergent
+series with nonnegative coefficients proves the bounds.
+\end{proof}
+
+Let $C_d$ be the multiplication-by-$x$ companion of the monic
+$J_d/\gamma_d$, and $H_d=(m_{i+j})_{0\le i,j<d}$, where
+$m_k=\tr(C_d^k)$ and $m_0=d$. Newton identities compute $H_d$
+from the coefficients, and $H_dC_d=C_d^T H_d$.
+The Hermite--Sylvester criterion gives $H_d\ge0$ exactly when
+$J_d$ is real-rooted~\cite{hermitesylvester}; then its positive coefficients
+force all roots negative. If $H_d>0$, the extended edition constructs
+an explicit real symmetric $K_d$ with
+\[
+ P_d(t)=\frac{(-1)^d\gamma_d}{d^d}\det(tI-K_d).
+\]
+Strict positivity is needed for that construction; semidefinite metrics
+can be singular. The classical Jensen criterion makes $H_d\ge0$ for
+every $d$ equivalent to zeta RH~\cite{jensen}. This identifies the missing
+positivity; it does not prove it. Fixed-degree eventual hyperbolicity
+as the shift grows does not settle this unshifted growing-degree family.
+
+\begin{proposition}[Positive smooth kernels do not supply the metric]
+Positivity of an even smooth Fourier density, including Gaussian decay,
+does not imply positivity of its Jensen Newton-sum metric.
+\end{proposition}
+\begin{proof}
+Convolve $\frac9{10}\delta_0+\frac1{20}(\delta_{-1}+\delta_1)$ with a
+centered Gaussian of variance $v>0$. Its Fourier transform is
+$e^{-vt^2/2}(9/10+\cos t/10)$ and its density is strictly positive,
+even and Schwartz. Writing its associated $F(w)=\sum\gamma_jw^j/j!$
+gives $\gamma_0=1$, $\gamma_1=(v+1/10)/2$ and
+$\gamma_2=(3v^2+3v/5+1/10)/12$. Thus
+$\gamma_1^2-\gamma_0\gamma_2=-7/1200<0$; the degree-two
+Newton-sum metric has negative determinant. These are model coefficients,
+not the arithmetic $\xi$ coefficients.
+\end{proof}
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

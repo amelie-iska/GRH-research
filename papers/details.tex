@@ -391,6 +391,116 @@ the disk's location and the last rational margin; the logarithm/exponential
 error estimates and the Rouch\'e inference remain explicit prose proofs,
 not claims of a complete kernel-checked zero-existence theorem.
 
+\section{Jensen companions: exact normalization and the failed moment argument}
+Our $\gamma_j$ equals one eighth of the convention in equation~1
+of~\cite{jensen}, whose generating function is $8\xi(1/2+z)$.
+This common positive factor changes no polynomial zeros. Entirety of
+$F$ follows directly from the even Taylor series: its absolute series
+at $|w|=R$ is the absolute series for $\xi(1/2+z)$ at $|z|=\sqrt R$.
+The finite-product inequality in the main-text convergence proof is
+also verified in Lean. The analytic summation and $\xi$ specialization
+remain prose arguments, using classical properties of $\xi$.
+For an explicit coefficient interface, the classical representation
+in~\cite[equations 1.8--1.11]{romik} gives
+\[
+ \Phi(u)=2\sum_{n\ge1}
+ (2\pi^2 n^4 e^{9u/2}-3\pi n^2e^{5u/2})e^{-\pi n^2e^{2u}},\qquad
+ \gamma_j=\frac{j!}{(2j)!}\int_{\R}u^{2j}\Phi(u)\,du.
+\]
+The kernel is even. Each summand is positive for $u\ge0$ because
+$2\pi n^2e^{2u}>3$, so the moments are strictly positive.
+Its rapid decay permits differentiation of the Fourier integral.
+This arithmetic kernel representation is an external classical input,
+not a new Lean theorem in this project.
+
+\subsection{The coefficient construction}
+Write $p(x)=J_d(x)/\gamma_d=x^d+\sum_{i<d}a_ix^i$.
+The companion $C$ has $C_{j+1,j}=1$ for $0\le j<d-1$,
+last column $C_{i,d-1}=-a_i$, and all other entries zero.
+For $1\le k\le d$ Newton's recurrence is
+\[
+ m_k+\sum_{i=1}^{k-1}a_{d-i}m_{k-i}+ka_{d-k}=0,
+\]
+and for $k>d$ it is
+\[
+ m_k+\sum_{i=1}^d a_{d-i}m_{k-i}=0.
+\]
+Together with $m_0=d$, this determines the entire required matrix
+$H=(m_{i+j})_{0\le i,j<d}$. Multiplication in the quotient algebra
+$\R[x]/(p)$ gives its bilinear form
+\[
+ h(u,v)=\tr(M_{uv}),\qquad h(xu,v)=h(u,xv),
+\]
+so $HC=C^TH$ without any zero-location assumption.
+Here $M_{uv}$ means multiplication by $uv$ in that finite quotient.
+When roots are real and distinct, the evaluation matrix $V$ gives
+$H=V^TV>0$. Repeated roots make $V$ singular; the semidefinite
+Hermite criterion still applies, but inverse square roots do not.
+Nonnegative leading principal minors alone are not a PSD certificate;
+all principal minors, or a valid alternative test, are required.
+
+Assume now $H>0$. Then
+\[
+ S=H^{1/2}(-C)H^{-1/2}=S^T>0,\qquad
+ K=\begin{pmatrix}0&\sqrt{dS}\\\sqrt{dS}&0\end{pmatrix}=K^T.
+\]
+Indeed the similarity is symmetric by $HC=C^TH$, and its eigenvalues
+are negatives of the roots of $p$, all positive. The block determinant
+and companion characteristic polynomial give
+\begin{align*}
+ \det(tI_{2d}-K)&=\det(t^2I_d-dS)
+                  =\det(t^2I_d+dC),\\
+ J_d(-t^2/d)&=\gamma_d(-1/d)^d\det(t^2I_d+dC).
+\end{align*}
+The identity holds also at $t=0$, by polynomial equality.
+Using a companion for the scaled $Q_d$ instead would remove the extra
+$d$ inside the square root. With our stated convention it cannot be omitted.
+Thus the arithmetic data and approximation rate are specified; the
+unproved universal positivity is precisely where the RH difficulty lies.
+This construction supplies no general Dirichlet, Hecke, Dedekind or
+Artin conclusion. Their symmetry and coefficient interfaces must be
+established separately.
+
+\subsection{Why ordinary moment positivity fails}
+For $p=x^2+bx+a$, the companion and Newton-sum metric are
+\[
+ C=\begin{pmatrix}0&-a\\1&-b\end{pmatrix},\qquad
+ H=\begin{pmatrix}2&-b\\-b&b^2-2a\end{pmatrix}.
+\]
+Direct calculation gives $HC=(HC)^T$, $\det H=b^2-4a$, and
+\[
+ u^THu=2(u_0-bu_1/2)^2+\tfrac12(b^2-4a)u_1^2.
+\]
+These identities and positivity under $b^2-4a>0$ are formalized in Lean.
+For $J_2=\gamma_0+2\gamma_1x+\gamma_2x^2$, $\gamma_2>0$,
+\[
+ \det H=\frac{4(\gamma_1^2-\gamma_0\gamma_2)}{\gamma_2^2}.
+\]
+The unsmoothed atomic example has $\mu_0=1$, $\mu_2=\mu_4=1/10$.
+Its ordinary even-moment Hankel matrix and Jensen metric are respectively
+\[
+ \begin{pmatrix}1&1/10\\1/10&1/10\end{pmatrix}>0,\qquad
+ \begin{pmatrix}2&-12\\-12&-96\end{pmatrix},\quad\det H=-336.
+\]
+Gaussian smoothing gives the strictly positive densities in the main-text
+counterexample. The standard Gaussian moments yield
+$\mu_2=v+1/10$ and $\mu_4=3v^2+3v/5+1/10$.
+With $\gamma_n=n!\mu_{2n}/(2n)!$, the negative gap is independent of $v$.
+Lean checks that exact algebraic cancellation; the measure integral and
+Fourier-transform identities remain prose. Thus even smooth positive
+kernel information cannot replace arithmetic-specific Jensen inequalities.
+
+The exact program \path{scripts/check_jensen_metric.py} verifies the
+Newton recurrence, companion symmetry, positive LDL pivots for the
+$\cosh\sqrt w$ model at degrees $1$ through $8$, and the negative and
+singular witnesses. Its finite coefficient-bound checks supplement the
+universal proof; they do not replace it. No arithmetic $\xi$ coefficient
+intervals or universal Jensen positivity are certified by this program.
+For example the sequence $(1,1,1)$ gives $J_2=(1+x)^2$ and
+$H=\left(\begin{smallmatrix}2&-2\\-2&2\end{smallmatrix}\right)$,
+which is PSD and singular. Adding an arbitrary positive diagonal to $H$
+need not preserve $HC=C^TH$.
+
 \section{Research tasks with mathematical acceptance criteria}
 \paragraph{Track A: repair the determinant interface.}
 Start with the exact diagonal Euler transfer on $\Rea s>1$.

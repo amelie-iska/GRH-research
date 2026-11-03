@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All eighteen declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All twenty-five declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -40,3 +40,9 @@ lake exe cache get Mathlib.Analysis.Complex.LocallyUniformLimit Mathlib.Analysis
 ```
 
 The cache command downloads public build artifacts for those imports and uses mathlib's default cache directory. No existing cache was cleaned or reindexed. All cache/tool artifacts are retained; no cache-clean or dependency-upgrade command is needed. Use the pinned manifest, not `lake update`.
+
+## Jensen metric components
+
+`JensenMetric.lean` adds seven actual finite-product/matrix/algebra statements: a universal product-defect inequality; real eigenvalues of an actual complex matrix with a positive symmetrizing metric; the quadratic companion's Newton-sum symmetrization, determinant and completed-square form; positive definiteness under an explicit discriminant inequality; and the Gaussian-mixture Turan gap identity. The discriminant/metric positivity hypotheses are explicit. These declarations do not assert arithmetic xi metric positivity.
+
+The entire-function error summation, xi coefficients and kernel, Gaussian measure integrals, general Hermite criterion, and the full conditional block-determinant construction remain prose/classical dependencies. `scripts/check_jensen_metric.py` checks specified rational model sequences, including positive, indefinite and repeated-root cases; these are not xi coefficient certificates. See research/jensen-metric.md for exact assumptions and the remaining RH-equivalent obligation.
