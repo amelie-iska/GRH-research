@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 101 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 110 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -94,3 +94,9 @@ The lattice Poisson formula, annular point count, fixed source reciprocity/ray m
 `ReciprocityPeriod.lean` adds thirteen declarations in QuadraticAlgebra over ZMod4 and over the integers. The generator satisfies omega²+omega+1=0 with actual Eisenstein multiplication. Theorems verify the twelve odd units, inverse/closure, the square-class map and its square kernel, the complex four-term phase table/refinement, the sign bicharacter/diagonal and the integer period under adding4z in either column. Finite reductions run in the kernel, with no native_decide or project-specific axioms. The increased local heartbeat limit permits the finite phase-table proof; it changes no toolchain setting.
 
 The identification with quadratic Gauss sums, classical cubic reciprocity, Kummer/Artin maps, conductor-discriminant and the exact full source coefficient period are prose/classical arguments in research/reciprocity-period.md, not claimed as full Lean theorems. The source application now has a proved classical common defining modulus; no exact conductor or zero-free region is asserted. The one newly missing QuadraticAlgebra public cache artifact was added at unchanged pins without cleaning prior artifacts or changing a manifest.
+
+## Reflected local characters, phases and common density
+
+`ReflectedIdentity.lean` adds nine declarations. Actual arbitrary-field MulChar objects satisfy the two zero-preserving row/mark column identities under the explicit finite-order hypothesis A^6=1. The principal character remains zero at nonunits. A mask-deletion witness and exact Ramanujan partition retain shared cube primes. Complex-unit integer powers verify the local scalar extraction; actual complex powers verify the general pair phase under the explicit cubic-symbol equality, row-mark cancellation and moving-j4 residue. An actual Bochner integral in a complete complex normed space, with integrability stated, proves extraction of the one common density scalar before the norm.
+
+These statements do not assume GRH or desired arithmetic positivity. They do not establish the global theta automorphy/cusp identification, actual cubic reciprocity or source Fourier representation, gamma/Stirling bounds, or the hybrid mean square. The arithmetic reduction is conditional on the exact source block/representation hypotheses; the kernel-profile proof is prose with named classical gamma inputs. The nine declarations were independently compiled; the complete110-declaration suite was run separately by the primary agent. Existing pinned modules/caches sufficed: no dependency, manifest, toolchain or cache download changed.

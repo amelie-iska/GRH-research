@@ -1493,6 +1493,114 @@ field diagnostics include repeated powers, shared zeros, actual signed
 row conversions and the norms $31,43$ witness. Finite samples do not
 replace the classical universal conductor proof or establish GRH.
 
+\section{Exact reflected phases, shared cubes and the common density}
+Proposition~\ref{prop:reflected-extraction} audits September
+lines 7747--8005 and their canonical scalar inputs.
+It assumes the stated theta/cusp reflection identity, rather than replacing
+that identity by finite-field experiments.
+The branch denominator is $c=c_FF_{\rm act}RP$.
+Separate full sectors of $R,P$ fix the class of their product and hence
+$d,\vartheta,\kappa_F$ without imposing a pair-dependent restriction.
+An inactive marked prime is absent from the conductor and carries its
+$q_p^{-1}$ weight. Its absolute mass is removed by Hilbert-space triangle
+before applying the active-block norm.
+
+\paragraph{The phase computation and its obstruction.}
+For a unit $z$ and unit $w$, the exact integer-exponent identity is
+\[
+ z^{-2}(wz^{-2})^{-(j+2)}=w^{-(j+2)}z^{2j+2}.
+\]
+It explains the local dependence on $c/p$ without dividing a zero symbol.
+For $a^2=b^2$ one has
+$a^{2j+2}b^{2k+2}=(a^2)^{j+k+2}$.
+If $a^6=1$, the row--mark case is one; the moving $j=4$ case equals
+$a^2$. The actual norms $7,13$ example in the core text has $a^2=\omega$.
+Thus freezing those nonresidual primes is an arithmetic condition, not
+an optional simplification. The changed marked sign remains a one-prime
+scalar. Interactions with frozen primes depend on only one moving product.
+The angular factor $\bar\alpha(c)^2$ separates multiplicatively.
+
+\paragraph{A shared cube prime is not extracted twice.}
+Let a frozen Ramanujan prime have $v_p(n_0)\in\{0,1\}$ and
+$v_p(b_0)=b_p\ge0$.
+If $v_p(n_0)=1$, the $N_F$ assignment removes that one occurrence
+from $n_0$ and leaves all $b_p$ occurrences in $b_0$.
+The dual valuation remains $1+3b_p$.
+If $v_p(n_0)=0$ and $b_p\ge1$, the $B_F$ assignment extracts one
+occurrence from $b_0$ and leaves $b_p-1$; the dual valuation is
+$3+3(b_p-1)=3b_p$.
+The divisibility coefficient contributes $q_p^{1/2}$ only once.
+It cancels $q_p^{-1/2}$ in the first assignment and leaves
+$q_p^{-1/2}$ in the second. These calculations remain valid when
+other frozen primes occur in both dual ideals.
+
+The bound $|d(\mu)|\le27\,3^{h/6}|B_Fb|$ and
+$q_\mu=3^h q_{N_Fn}q_{B_Fb}^3$ give the exact extraction in the core.
+The ramified power is $3^{h/6-h/2}=3^{-h/3}$, including $h\ge-4$.
+Together with the canonical scalar $1/81$, this leaves $1/3$.
+The normalized dual coefficient is bounded by one and is independent
+of the row and active tuple after the full sectors are fixed.
+It still includes the original source coefficient and all frozen local
+restrictions. A numerator such as $-2$ is allowed in the source dual
+support; evaluating a good moving character there does not permit adding
+an $S$-mask to the dual sum.
+
+\paragraph{The one joint profile.}
+Write $y_R=q_R/Z^H$, $y_n=q_n/Z^v$, $y_b=q_b/Z^{\ell_b}$ and
+$y_i=q_{p_i}/Z^{z_i}$. Then, on the actual cutoffs,
+\[
+ \frac{q_\mu X}{q_c^2}
+   =Yy_ny_b^3y_R^{-2}\prod_i y_i^{-2},\qquad
+ Y=q_{c_F}^{-2}Z^{v+3\ell_b+e_\lambda-T_d}.
+\]
+This uses actual products, not a coprimality approximation.
+One may retain $q_P^{-1/2}$ explicitly and put the remaining inverse
+roots, norm windows and kernel in a single profile.
+All norm labels are coordinates of that profile; they do not index
+independently selected measures.
+
+Let $D_x=x\partial_x$ and
+$\mathfrak m_A(Y)=\min\{Y^{1/4},(1+Y)^{-A}\}$.
+For the kernel in the core proof, the first numerator gamma pole is
+$-5/6$ and reciprocal denominator gamma is entire.
+Vertical Stirling bounds cancel the exponential factors and leave the
+power $4\Re t$. The Mellin transform of a rapidly decreasing smooth test
+is entire and rapidly decreasing on fixed strips, by integration by parts.
+Consequently the shifts and Euler differentiation under the integral
+are justified. Three line bounds give the displayed small-, bounded-
+and large-argument estimate, with constants depending on the fixed order.
+
+If $h(\boldsymbol y)=\prod y_i^{a_i}$ and the logarithmic support is
+fixed and compact, then
+$D_iV^\sharp(Yh)=a_iD_xV^\sharp(Yh)$.
+Leibniz and logarithmic Fourier integration by parts give
+\[
+ \|F_Y\|_{J,\rm sep}\ll
+ \mathfrak m_A(Y)p_{J+d+2}(W)
+ \mathfrak M_{A,\lceil4A\rceil+J+d+4}(V).
+\]
+The Fourier weight is integrable; each fixed annular row/tuple/dual block
+is finite, so interchange with the one density is legitimate.
+The extracted scalar therefore enters the linear row vector once.
+The new actual Bochner theorem, for an explicitly integrable density in a
+complete complex normed space, proves
+\[
+ \left\|\int(c\phi(t))B(t)\,dt\right\|
+ \le |c|\int |\phi(t)|\,\|B(t)\|\,dt.
+\]
+It does not assert that the arithmetic representation or gamma estimates
+are formally proved. Squaring this inequality supplies $|c|^2$;
+positive row enlargement occurs only after separation.
+Whole discarded dyads are bounded on their original kernel arguments
+before taking Fourier absolute values.
+
+The nine Lean declarations and exact diagnostics verify these local and
+norm components, including zero inputs and repeated cube primes.
+They do not prove the canonical theta transformation, identify its three
+cusp coefficient families, establish the hybrid quadratic--cubic large
+sieve or complete the final common-signal argument. Those remain distinct
+mathematical obligations.
+
 \section{Computational examples and reproducibility}
 The Python checks use integers and \texttt{fractions.Fraction}, with
 no random choices, model weights, scientific datasets or floating-point
