@@ -26,6 +26,7 @@ canonical={
  'almost-split geometry, hom control and determinant relations':('ar','lean/BookInterfaces.lean','Lean matrix and determinant interfaces'),
  'positive evolution, clocks and holonomy':('circuits','examples/quantum/backend_adapters.py','Six-backend carrier code'),
  'trained quantum coarse-graining architectures':('learning','examples/quantum/train_pennylane.py','PennyLane training code'),
+ 'two-parameter persistence, schur syzygies':('persistence','examples/persistence/check_tool.py','Exact staircase and finite homology checks'),
  'reading an architecture from its tensors':('architecture','examples/architecture/README.md','Numerical architecture records and reproduction')}
 def panel(m):
  global count
@@ -34,15 +35,13 @@ def panel(m):
  if selected is None:
   if 'coverings, equivariant ar theory and graded surfaces' in text:
    return heading+'<aside class="reader-covering"><h3>Exact covering calculation</h3><p>The displayed quiver window is a cover of a finite theta quotient, not an AR component. <a href="/data/theta-cover.json">Exact Hom/radical and higher-genus results</a>.</p><details><summary>Complete exact Python source</summary><button class="load-code" data-source="/examples/coverings/theta_cover.py">Load complete source</button><pre class="source-code"></pre></details><details><summary>Lean matrix obstruction and theorem dependencies</summary><button class="load-code" data-source="/lean/CoveringBand.lean">Load Lean source</button><pre class="source-code"></pre></details><p>Three matrix statements are kernel checked; the general categorical results remain separately scoped.</p></aside>'
-  if 'two-parameter persistence, schur syzygies' in text:
-   return heading+'<aside class="reader-animation"><h3>Bifiltration and syzygies</h3><video controls="controls" preload="metadata" style="width:100%" src="/media/Bifiltration.mp4"></video><p>One canonical animation of the worked example; exactness is proved in the chapter.</p></aside>'
   return heading
  count+=1;section,code,label=selected
- video={'atlas':'ThetaDessin','ar':'HLSDiamond','learning':'QCNNPooling'}.get(section)
+ video={'atlas':'ThetaDessin','ar':'HLSDiamond','learning':'QCNNPooling','persistence':'Bifiltration'}.get(section)
  animation=(f'<video controls="controls" preload="metadata" style="width:100%" src="/media/{video}.mp4"></video>' if video else '')
- frame='/architecture.html?embed=book' if section=='architecture' else '/?embed='+section
- standalone='/architecture.html' if section=='architecture' else '/#'+section
- height=1100 if section=='architecture' else 700
+ frame='/'+section+'.html?embed=book' if section in {'architecture','persistence'} else '/?embed='+section
+ standalone='/'+section+'.html' if section in {'architecture','persistence'} else '/#'+section
+ height=1100 if section in {'architecture','persistence'} else 700
  return heading+f'''<aside class="reader-lab" id="lab-{section}"><h3>Interactive {section} laboratory</h3><p>This is the canonical location of this tool. Related chapters link here instead of repeating it. Numerical illustrations are separate from proof.</p><p><a href="{standalone}">Open this laboratory separately</a>.</p><iframe loading="lazy" src="{frame}" title="Interactive {section} examples" height="{height}"></iframe>{animation}<details><summary>{label}</summary><button class="load-code" data-source="/{code}">Load complete source</button><pre class="source-code"></pre></details><p><a href="/verification.html">Exact formalization and execution coverage</a>.</p></aside>'''
 s=re.sub(r'<h2 class="chapterHead">.*?</h2>',panel,s,flags=re.S)
 s=s.replace('</body>','''<script>document.querySelectorAll('.load-code').forEach(button=>button.onclick=async()=>{const r=await fetch(button.dataset.source);const p=button.parentElement.querySelector('pre');p.textContent=r.ok?await r.text():'Source unavailable';button.hidden=true;});</script></body>''')

@@ -408,3 +408,55 @@ module example, the flag-incidence model and the surface-order coefficient
 resolution show how to add the missing checks. None identifies those
 finite invariants with a completed arithmetic $L$-function, provides a
 positive arithmetic spectral limit, or proves GRH.
+
+\section{The executable staircase and quantum laboratory}
+The canonical on-page tool accompanies this chapter; other chapters link
+here. Proposition~\ref{thm:staircase} generalizes the worked square-ideal
+resolution to every strict Artinian staircase. Four displayed ideals have
+lengths $3,6,13,16$, with custom natural exponents also allowed. The tool
+shows generator and adjacent-syzygy degrees, standard monomials, exact
+comparable-grade maps and cellular incidence ranks. Coefficients in $E$
+multiply field dimensions by four; the displayed free ranks over
+$\Lambda[x,y]$ instead come from the $u^2$ cone. These are different rings.
+
+Specializing the free resolution at a point over $\mathbb F_2$ computes
+its fiber-complex homology. At the origin its dimensions are
+$(1,m,m-1)$; at each of the three nonzero $\mathbb F_2$ points they vanish,
+since a pure-power generator becomes a unit. This is derived fiber data,
+not the CW homology at a filtration grade. The signed maximal minors and
+Hilbert numerator are checked independently with symbolic polynomials.
+
+The quantum tab uses the single saved trained four-qubit QCNN unitary $U$
+and the channel $T(\rho)=\operatorname{Tr}_{2,3}(U\rho U^*)$.
+The designed inputs have their last three qubits in $|000\rangle$.
+Their first qubit runs over eight equatorial states
+$(|0\rangle+e^{2\pi i j/8}|1\rangle)/\sqrt2$ and both poles.
+This is an out-of-training-distribution illustrative family, not new
+training or a held-out performance claim. Birth labels are fixed from the
+input population $(I+Z_0)/2$: south $0$, equator $500$, north $1000$.
+They are retained at the output; recomputing them from output energy
+would not justify the same identity inclusion.
+
+Floating-point input/output trace distances are scaled by $1000$ and
+rounded upward. Their frozen integer graph labels are saved with a SHA-256
+checksum and checkpoint provenance. The inequality of output and input
+labels is verified directly, never imposed by taking their minimum.
+Proposition~\ref{thm:channel-filtration} explains the exact-channel contractivity;
+the numerical records are not interval certificates. For the recorded labels,
+all finite boundary matrices and induced ranks are computed exactly over
+$\mathbb F_2$. At grade $(400,500)$ the input contains an equatorial
+8-cycle and an isolated south pole, with $(\beta_0,\beta_1)=(2,1)$.
+Its $H_1$ map to $(600,500)$ has rank one, whereas its map to $(800,1000)$
+has rank zero. The plotted two-parameter rank table fixes the target and
+varies comparable source grades; it is not a complete multiparameter barcode.
+Rotating the drawing changes the input-qubit Bloch layout only. The same
+layout is used at output and does not embed its two-qubit state space.
+
+Independent row elimination and the browser's bit-column implementation
+agree on both Betti numbers and inclusion ranks for the saved cases.
+These executable finite examples complement the proofs and the cited
+persistence theory. General module exactness, categorical interfaces and
+channel norm contractivity have not yet been fully formalized in Lean;
+the next verification task addresses those actual objects. No learned
+component or finite homology calculation supplies the unresolved positive
+arithmetic determinant bridge.

@@ -106,3 +106,13 @@ computed clock carrier, actual coordinate inspection and category-specific
 panels. Five distinct iframe sources remain unique. The inspector reuses
 verified numerical records; it neither supplies missing source-topic proofs
 nor completes whole-book Lean formalization or hardware experiments.
+
+The persistence chapter now has one canonical tool rather than a standalone
+animation alone. It generalizes the scalar example to strict Artinian
+staircases, retains the actual nodal order through E, and implements exact
+finite diagrams from one fixed trained quantum channel. Full elementary
+proofs are shared by both focused article editions and the book; derived
+fiber, CW and quantum flag homology remain distinct. Python/JavaScript and
+independent review passed. This does not cover missing whole-source topics,
+prove general categorical Lean interfaces or supply arithmetic positivity.
+The supplied Sage companion was not executed. Six distinct tools remain unique.

@@ -154,3 +154,13 @@ records have browser/reference checks; this closes the core inspector task,
 not the optional upstream heads, larger trained campaigns, physical/GPU runs,
 whole-book Lean coverage or arithmetic research gate. The next implementation
 task is the exact persistence tool, followed by its genuine module formalization.
+
+P2 persistence tools are implemented and independently reviewed. Exact finite
+staircase/CW/fiber/rank data and a fixed-channel quantum flag bifiltration
+now have a single canonical laboratory. Universal staircase exactness and
+channel contractivity have full elementary prose proofs; finite diagnostics
+are not their full Lean formalization. P6 must connect actual multivariate
+polynomial/module maps, prove the relevant exactness and inspect theorem
+axioms. No new Lean result was claimed here. Sage remains supplied unexecuted;
+quantum distance estimates remain non-interval-certified. The original-family
+low-gcd estimate and independently positive arithmetic determinant remain open.

@@ -74,6 +74,108 @@ The last cancellation does not imply finite global dimension: its forbidden reso
 
 For clarity, a complex is a sequence with $d^2=0$, its homotopy category identifies maps differing by $dh+hd$, and $D(A)$ inverts maps inducing cohomology isomorphisms. A perfect complex is represented by a bounded complex of finite projectives. Our infinite simple resolutions compute derived Hom and tensor but are generally not perfect. The two-term presentation $[P_1\to P_0]$ is perfect even if its kernel is nonzero. Quadratic linearity is a Koszul statement; it is not by itself an equivalence between all completed derived categories. Likewise a finite-dimensional gentle graded-curve theorem \cite{GeometricGentle} cannot simply be transferred to these closed infinite orders. Here the surface walks explicitly compute the resolution endpoints: $\tau$ turns round a graph vertex and $\phi$ follows a face. For longer string objects all maps can be computed from the occurrence matrices; a universal geodesic-intersection classification for this completed category remains a separate theorem.
 
+\subsection{Auxiliary staircase resolutions over the order}
+The two filtration parameters below are not dessin arrows. Let $R=k[x,y]$
+for a field $k$, and let $I=(g_0,\ldots,g_{m-1})$, $m\ge2$, where
+$g_i=x^{a_i}y^{b_i}$,
+\[
+ a_0>\cdots>a_{m-1}=0,\qquad 0=b_0<\cdots<b_{m-1}.
+\]
+The positive outer exponents make $R/I$ finite length. Write $R(-a,-b)$
+for a free generator born in bidegree $(a,b)$.
+\begin{proposition}[Adjacent syzygies]\label{thm:staircase}
+A minimal bigraded free resolution of $M=R/I$ is
+\[
+0\longrightarrow\bigoplus_{i=0}^{m-2}R(-a_i,-b_{i+1})
+\xrightarrow{d_2}\bigoplus_{i=0}^{m-1}R(-a_i,-b_i)
+\xrightarrow{d_1}R\longrightarrow M\longrightarrow0,
+\]
+where $d_1(e_i)=g_i$ and
+$d_2(f_i)=-y^{b_{i+1}-b_i}e_i+x^{a_i-a_{i+1}}e_{i+1}$.
+Deleting row $i$ from $d_2$ gives determinant $(-1)^ig_i$.
+The Hilbert series numerator is
+$1-\sum_i s^{a_i}t^{b_i}+\sum_{i=0}^{m-2}s^{a_i}t^{b_{i+1}}$.
+\end{proposition}
+\begin{proof}
+Each column maps to zero. In a relation $\sum h_i g_i=0$, all terms except
+the last contain $x^{a_{m-2}}$. Coprimality with $y^{b_{m-1}}$ implies
+$h_{m-1}=x^{a_{m-2}}q$. Subtract $q d_2(f_{m-2})$ from the coefficient
+vector; its last component vanishes. Factor $x^{a_{m-2}}$ from the remaining
+generators. They form a smaller staircase with the same strict inequalities,
+ending in a pure $y$-power. Induction expresses the remaining relation in
+the preceding adjacent columns. The base of one generator has no relations,
+since $R$ is a domain. Hence $\ker d_1=\operatorname{im}d_2$.
+If $d_2(q)=0$, its first row gives $-y^{b_1}q_0=0$; successive rows then
+force all $q_i=0$. This proves injectivity. Every differential entry has
+positive degree, so reduction modulo $(x,y)$ kills the differentials and
+the resolution is minimal. In the row-deleted matrix the unique nonzero
+permutation term uses the negative $y$ entries before row $i$ and the
+positive $x$ entries after it. Their exponents telescope to $b_i,a_i$,
+respectively, and the sign is $(-1)^i$. Finally take the degreewise Euler
+characteristic; the free summands have Hilbert denominator $(1-s)(1-t)$.
+\end{proof}
+At grade $\nu\in\mathbb N^2$, $M_\nu$ has dimension one exactly when
+no generator degree is componentwise at most $\nu$. Its comparable-grade
+map has rank one exactly when both endpoint grades satisfy this condition.
+A CW realization takes one loop and attaches a disk once along it at each
+generator degree. The active indices form an interval: the $x$ inequality
+selects a final interval, the $y$ inequality an initial interval. With $c$
+active disks, the cellular map $k^c\to k$ has every entry one. Thus
+$\dim H_1=\mathbf1_{c=0}$ and $\dim H_2=\max(c-1,0)$, the latter counting
+active adjacent syzygies. This auxiliary CW complex is not the dessin surface.
+
+For the actual nodal order $\Lambda=k[[\xi,\eta]]/(\xi\eta)$ put
+$u=\xi+\eta$ and $E=\Lambda/u^2\Lambda$.
+The basis $(1,\xi,u,u\xi)$ of $E$ satisfies $\xi^2=u\xi$, $u^2=0$,
+$\eta=u-\xi$. Tensoring the resolution above with
+$0\to\Lambda\xrightarrow{u^2}\Lambda\to E\to0$ gives, over
+$\mathcal B=\Lambda[x,y]$, free ranks $(1,m+1,2m-1,m-1)$.
+Indeed the scalar resolution stays exact after tensoring over the field;
+its degree-zero module is free over $\Lambda$ on the standard monomials.
+Multiplication by $u^2$ is injective there and on all free terms, so the
+long exact homology sequence of its mapping cone gives positive-degree
+homology zero and degree-zero module $E\otimes_k M$.
+In contrast, as an $R$-module this object has ranks $4(1,m,m-1)$ in its
+minimal resolution. Neither finite-length $E$ nor these parameter rings
+replace the infinite parent dessin algebra or its lattice category.
+
+\subsection{A monotone quantum comparison with exact finite ranks}
+\begin{proposition}[One common channel]\label{thm:channel-filtration}
+Let $T$ be a positive trace-preserving linear map between finite complex
+matrix algebras. For density matrices $\rho,\sigma$, their trace distance
+$d(\rho,\sigma)=\tfrac12\|\rho-\sigma\|_1$ satisfies
+$d(T\rho,T\sigma)\le d(\rho,\sigma)$.
+For finitely many labelled states, keep fixed vertex birth grades $e_i$.
+At $(r,e)$ include vertices with $e_i\le e$ and edges with distance at most
+$r$, and take the flag complex. Then $T$ gives an identity-on-labels inclusion
+from the input to the output bifiltration, natural in $(r,e)$.
+\end{proposition}
+\begin{proof}
+Write the Hermitian difference as $A=A_+-A_-$ with $A_\pm\ge0$.
+Positivity, the trace norm triangle inequality and trace preservation give
+$\|T A\|_1\le\|T A_+\|_1+\|T A_-\|_1
+=\operatorname{tr}A_++\operatorname{tr}A_-=\|A\|_1$.
+Thus every input edge is an output edge; the fixed births preserve vertices,
+and all cliques are preserved. Increasing either parameter preserves the
+simplices, and every map is the same label inclusion, so the squares commute.
+Complete positivity is sufficient but is not needed for this norm argument.
+\end{proof}
+For a finite inclusion $K\subset L$, work over a field and embed a basis
+$Z_K$ of source one-cycles into the target edge space. If $B_L$ is the
+matrix of target two-boundaries, the induced $H_1$ rank is
+\[
+ \rho_1(K,L)=\operatorname{rank}[B_L\ Z_K]-\operatorname{rank}B_L.
+\]
+Its image is $(Z_K+\operatorname{im}B_L)/\operatorname{im}B_L$; source
+boundaries already map into target boundaries. This proves the formula,
+including empty complexes. Computing a flag two-skeleton suffices for
+$H_0,H_1$, but does not compute the full flag complex's $H_2$.
+Integer ceilings of scaled exact distances preserve the inclusion.
+For numerical distances, frozen integer labels define an exact combinatorial
+diagram only after their inequality is checked; this is not an interval
+certificate of the underlying quantum distances. None of these finite ranks
+identifies a completed arithmetic determinant or proves GRH.
+
 \section{Determinant semi-invariants and Schur constructions}
 Assume $k$ algebraically closed of characteristic zero for invariant-ring statements. A finite-dimensional representation of the \emph{infinite} $A$ has spaces $N_i$, arrow matrices $N(a)$ satisfying the monomial relations, and base-change group $G=\prod_i\mathrm{GL}(N_i)$. With column vectors, $N(a)\mapsto g_{t(a)}N(a)g_{s(a)}^{-1}$. Let $P_0=\bigoplus P_i^{a_i}$, $P_1=\bigoplus P_i^{b_i}$, and $f:P_1\to P_0$ be a finite path-matrix map. When $\sum a_i\dim N_i=\sum b_i\dim N_i$, define
 \[

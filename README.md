@@ -206,3 +206,24 @@ The [Gram periodic-Poisson report](research/gram-poisson.md) proves a general an
 The [reciprocity-period report](research/reciprocity-period.md) supplies the actual common modulus l_fixed=lcm((12),m_presentations,(6)^6 product_(p in S)p^25), independent of growing rows and divisors. The conductor bound uses named classical class field/discriminant theorems; thirteen additional Lean declarations verify the actual O/(4) algebra and phase table, not those entire number-field arguments. An exact norms31/43 witness shows why modulus12 alone cannot cover fixed numerator characters. All original masks and full defining moduli are retained. The reflected arithmetic extraction is now checked conditionally on the canonical theta formula as described below; the arithmetic self-adjoint determinant bridge and every complete GRH scope remain open.
 
 The [reflected-identity report](research/reflected-identity.md) verifies the exact coefficient normalization, shared-cube extraction, row-mark phase cancellation and original zero masks, retaining the canonical theta/cusp formula as an input. A genuine norms7/13 example shows why moving j=4 primes cannot be handled by dropping their cross phase; the source already freezes them. The defined Mellin kernel supplies a common homogeneous profile bound in prose using classical gamma estimates. Nine additional Lean statements check actual arbitrary-field characters, complex phase units and an integrable Banach-valued common-density bound. The hybrid quadratic-cubic mean square and global theta identification remain open, along with the spectral bridge and GRH.
+
+## Executable two-parameter persistence
+
+The [new persistence laboratory](http://127.0.0.1:8765/persistence.html)
+combines exact staircase resolutions and actual nodal-order coefficients with
+a fixed saved quantum channel's flag bifiltration. It has one
+[canonical book location](http://127.0.0.1:8765/book/main.html#lab-persistence).
+There are six distinct in-book tools, without repeated generic panels.
+The shared articles prove the general adjacent-syzygy resolution, its signed
+minors and Hilbert series, the coefficient cone ranks, channel contractivity
+and the induced homology-rank formula. The book is now 140 pages; the focused
+concise/extended articles are 27/54 pages. Original source volumes are intact.
+
+[Reproduction and conventions](examples/persistence/README.md),
+[independent review](planning/reviews/persistence-tools/REVIEW.md) and
+[verification records](outputs/checks/2026-11-03-persistence-tools) separate
+exact finite algebra from numerical quantum distances and unexecuted Sage.
+The illustrative coherent inputs reuse trained weights; no new training,
+dependencies or hardware runs were performed. Whole-module Lean formalization
+is the next task; the existing 243 dependency reports are unchanged. GRH and
+the independent positive arithmetic determinant bridge remain unresolved.

@@ -174,3 +174,11 @@ book embedding. Its detailed checks and limits are recorded in the queue,
 examples/architecture/README.md and independent inspector review. Optional
 upstream probes, broader trained campaigns and physical/GPU runs remain
 separate P4/P5 obligations. P2 persistence tools are the next ready dependency.
+
+P2 tools completion note (2026-11-03): one canonical persistence laboratory
+now exposes strict staircase resolutions, rank/Betti/syzygy/CW/fiber data,
+actual nodal coefficients and fixed-channel quantum flag inclusions. General
+proofs are integrated into the shared articles and book. Numerical quantum
+labels are frozen and separately scoped; exact finite ranks are checked by
+independent algorithms and review. P6 persistence/module formalization is the
+next dependency-ready task; the arithmetic lane remains independently open.

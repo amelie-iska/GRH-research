@@ -280,3 +280,38 @@ retaining source masks/conductors/uniformity, or an independent positive
 determinant construction. Do not repeat finished high-gcd or finite-carrier
 obstructions as new progress. Both completion gates remain unresolved and
 the existing hourly loop must stay active.
+
+## Latest frontier: exact persistence tools (2026-11-03)
+
+P2-persistence-tools is implemented. Open /persistence.html or the unique
+/book/main.html#lab-persistence. Read examples/persistence/README.md and
+planning/reviews/persistence-tools/REVIEW.md. The general strict staircase
+resolution and channel/inclusion-rank proofs are in papers/dessin-core.tex;
+the book's persistence chapter explains exact data and category boundaries.
+Five symbolic examples,36 independent row/column GF2 cases,72 monotone maps,
+160 reviewer cycle-coset cases/64 staircases, numerical provenance, browser
+controls/checksum/mobile/book and companion regressions pass. Final numerical
+record22310cb4f0143946…935b1 preserves the old record and changes provenance
+only. Training checkpoints and imported implementations are hashed unchanged.
+Book140pages/31chapters, focused articles27/54pages,15 vector diagrams and six
+canonical tools. The full Lean layer remains243 reports; no new formalized
+universal module or trace-norm theorem was claimed. Sage remains unexecuted.
+
+NEXT: use research_loop.py to claim P6-persistence-formal. Start with actual
+MvPolynomial k(Fin2) free modules for the worked staircase, explicitly define
+the graded presentation/differentials and prove nontrivial exactness or an
+honest reusable kernel/image lemma. Print theorem types and axiom dependencies;
+no admissions or project axioms. Extend the existing pinned mathlib layer
+without upgrades. Do not replace full exactness by d²=0, confuse CW homology
+with specialized Tor or quantum flags, or conflate E's R ranks with the
+Lambda[x,y] cone. Preserve all live tools, outputs, test profiles, caches,
+environments, source volumes and unrelated work. Browser test port9242 is
+isolated; use the existing launcher and close only its own profile. Reader
+preview8765 stays alive. The architecture/companion checks now accept fresh
+check/render directories so old verification artifacts need not be overwritten.
+
+Keep the independent arithmetic lane active: original-family low-gcd
+(especially gcd1) with all masks/conductors/uniformities, or an actual
+independent positive determinant construction. No new arithmetic positivity
+or zero-location result was obtained by this finite persistence work. Both
+completion gates remain unresolved; the existing hourly loop stays active.

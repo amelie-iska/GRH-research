@@ -2,7 +2,8 @@
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 const root='http://127.0.0.1:8765',port='http://127.0.0.1:9242';
-mkdirSync('outputs/checks/2026-11-03-inspector',{recursive:true});mkdirSync('outputs/renders/2026-11-03-inspector',{recursive:true});
+const checkDirectory=process.argv[2]??'outputs/checks/2026-11-03-inspector',renderDirectory=process.argv[3]??'outputs/renders/2026-11-03-inspector';
+mkdirSync(checkDirectory,{recursive:true});mkdirSync(renderDirectory,{recursive:true});
 let tab;
 for(let attempt=0;attempt<40;attempt++){
  try{const tabs=await(await fetch(port+'/json')).json();tab=tabs.find(t=>t.type==='page');if(tab)break;}catch{}
@@ -20,7 +21,7 @@ const send=(method,params={})=>new Promise((resolve,reject)=>{const id=++serial,
 async function evaluate(expression){const result=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(result.exceptionDetails)throw Error(JSON.stringify(result.exceptionDetails));return result.result.value;}
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(expression){for(let i=0;i<150;i++){if(await evaluate(expression))return;await delay(30);}throw Error('Condition timeout: '+expression);}
-async function screenshot(name){const s=await send('Page.captureScreenshot',{format:'png'});writeFileSync('outputs/renders/2026-11-03-inspector/'+name+'.png',Buffer.from(s.data,'base64'));}
+async function screenshot(name){const s=await send('Page.captureScreenshot',{format:'png'});writeFileSync(renderDirectory+'/'+name+'.png',Buffer.from(s.data,'base64'));}
 async function change(id,value){await evaluate(`document.getElementById(${JSON.stringify(id)}).value=${JSON.stringify(value)};document.getElementById(${JSON.stringify(id)}).dispatchEvent(new Event('change',{bubbles:true}));`);}
 async function select(id){const generation=await evaluate('window.architectureInspector?.snapshot().generation??0');await change('traceSelect',id);await until(`document.body.dataset.ready==='true'&&window.architectureInspector.snapshot().trace===${JSON.stringify(id)}&&window.architectureInspector.snapshot().generation>${generation}`);}
 async function node(id){await evaluate(`document.querySelectorAll('#nodeList button').forEach(b=>{if(b.dataset.node===${JSON.stringify(id)})b.click()})`);assert.equal(await evaluate('window.architectureInspector.snapshot().node'),id);}
@@ -88,15 +89,15 @@ await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScal
 assert(await evaluate('document.documentElement.scrollWidth<=window.innerWidth+1'));
 await send('Emulation.setDeviceMetricsOverride',{width:1550,height:1100,deviceScaleFactor:1,mobile:false});
 await send('Page.navigate',{url:root+'/architecture.html?trace=not-a-record&node=invalid'});await until(`document.body.dataset.ready==='true'`);assert.equal(await evaluate('window.architectureInspector.snapshot().trace'),'qcnn-4-0');
-await send('Page.navigate',{url:root+'/book/main.html'});await until(`document.querySelectorAll('iframe').length===5`);
+await send('Page.navigate',{url:root+'/book/main.html'});await until(`document.querySelectorAll('iframe').length===6`);
 const book=await evaluate(`({chapters:document.querySelectorAll('h2.chapterHead').length,sources:[...document.querySelectorAll('iframe')].map(f=>f.getAttribute('src')),canonical:document.querySelectorAll('#lab-architecture').length})`);
 const toc=readFileSync('outputs/book/surface-orders-book.toc','utf8'),expectedChapters=(toc.match(/\\contentsline \{chapter\}\{\\numberline/g)||[]).length;
-assert.equal(book.chapters,expectedChapters);assert.equal(new Set(book.sources).size,5);assert.equal(book.canonical,1);
+assert.equal(book.chapters,expectedChapters);assert.equal(new Set(book.sources).size,6);assert.equal(book.canonical,1);
 await evaluate(`document.getElementById('lab-architecture').scrollIntoView({block:'start'})`);
-await until(`document.querySelector('#lab-architecture iframe').contentDocument?.body.dataset.ready==='true'`);
+await until(`document.querySelector('#lab-architecture iframe').contentDocument?.body?.dataset.ready==='true'`);
 await evaluate(`(()=>{const d=document.querySelector('#lab-architecture iframe').contentDocument;const s=d.getElementById('traceSelect');s.value='photonic-0';s.dispatchEvent(new Event('change',{bubbles:true}));})()`);
 await until(`document.querySelector('#lab-architecture iframe').contentWindow.architectureInspector.snapshot().trace==='photonic-0'`);
 await screenshot('book-inspector');report.screenshots.push('book-inspector');report.book=book;
 assert.equal(exceptions.length,0);report.passed=true;report.uncaughtExceptions=exceptions;report.data_cases=22;report.computed_clock=true;report.numeric_cells_match_saved_records=true;report.play_pause_orbit_zoom_slices_masks_certificates_mobile=true;
-writeFileSync('outputs/checks/2026-11-03-inspector/browser.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({passed:true,cases:report.cases.length,screenshots:report.screenshots.length}));
+writeFileSync(checkDirectory+'/architecture-browser.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({passed:true,cases:report.cases.length,screenshots:report.screenshots.length}));
 await send('Browser.close');ws.close();

@@ -392,3 +392,55 @@ planning/architecture-inspector-design.md. Next task is P2-persistence-tools,
 then actual module formalization. Optional upstream heads, larger training,
 whole-book formalization and the original low-gcd/positive arithmetic bridge
 remain open. This completes the core inspector task only.
+
+## 2026-11-03 — exact persistence laboratory and fixed quantum inclusions
+
+Completed P2-persistence-tools at /persistence.html and the single
+#lab-persistence in-book location. Four presets and custom strict Artinian
+staircases expose support, generator/syzygy degrees, Betti shifts, comparable
+grade maps, CW incidence and derived F2 fibers. The actual infinite nodal
+order contributes E=Lambda/u² with its nontrivial arrow actions. The UI
+separates ranks over k[x,y] from Lambda[x,y] cone ranks and finite-length
+modules from lattices. The shared focused articles/book now give full proofs
+of the general adjacent resolution, signed minors/Hilbert numerator,
+coefficient cone, positive trace-preserving channel contractivity and exact
+induced H1 rank formula.
+
+One existing trained QCNN4 channel processes a designed eight-equator/two-pole
+family without training. Input population births stay fixed. Frozen integer
+labels give genuine input-to-output and comparable-grade inclusions; distances
+are approximate, not interval certificates. The input H1 cycle at(400,500)
+persists with rank1 to(600,500), then maps with rank0 to(800,1000).
+Rotatable Bloch-layout flag diagrams and a clickable target-fixed rank table
+report only H0/H1 and do not claim a multiparameter barcode or output-space
+embedding. Checkpoint/generator/channel-source hashes and content addressing
+are recorded. The original record is preserved; the final manifest adds
+imported implementation provenance with identical non-provenance data.
+
+Focused checks: five exact symbolic staircase/minor/cone/Hilbert examples,
+actual nodal actions,36 independent row-versus-column GF2 cases,72 monotone
+maps, empty/equality-grade maps and nontrivial cycle persistence/death.
+Independent review additionally passed160 exhaustive cycle/boundary-coset
+inclusions and64 staircase patterns and reproduced all10 quantum outputs,
+fixed births and200 distance labels. Its optional imported-source hash
+suggestion was implemented and rechecked. Browser controls, invalid-input
+preservation, coefficient/fiber distinctions, orbit/rank selection, mobile,
+checksum rejection and one canonical embed pass without uncaught exceptions.
+The companion regression also passed ten surfaces/five AR views/six models.
+Initial browser-harness attempts failed on iframe readiness and a nonresponsive
+isolated Chrome/CDP process; the readiness predicate was made null-safe and
+fresh-profile final reruns passed. The CDP stall cause was not established.
+All test profiles and raw failed-attempt logs remain preserved.
+
+Book140pages/31chapters, focused articles27/54pages and native MathML built
+with six unique tools and15 existing vector diagrams. Article builds now
+validate in staging before promotion, matching the book's protected preview.
+PDF proof/exposition pages and browser/mobile/book artifacts were visually
+inspected. TeX4ht's intermediate image-alt DOM warning is repaired by the
+existing escaped-alt preparation; final XML validates. Sage companion supplied
+unexecuted; no packages, environments or source clones changed. The243-report
+Lean baseline is unchanged, and full module/category formalization is next.
+Evidence: outputs/checks/2026-11-03-persistence-tools/ and
+planning/reviews/persistence-tools/REVIEW.md. Neither implementation completion
+nor rigorous GRH completion is reached; original low-gcd/positive determinant
+research remains open. Keep the existing hourly loop active.
