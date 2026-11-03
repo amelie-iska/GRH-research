@@ -10,8 +10,8 @@ The current focused editions use **infinite-dimensional locally gentle algebras 
 
 | Current focused edition | TeX | PDF |
 |---|---|---|
-| Concise, 20 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
-| Extended, 43 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
+| Concise, 22 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
+| Extended, 49 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
 
 The paper gives complete explicit resolution/order/Cartan calculations; presentation semi-invariant weights and their precise Hom/Ext scope; positive-degree Schur module functors, Young tableaux and natural Littlewood–Richardson maps; the cyclic monodromy invariant ring and a convergent local positive Cauchy kernel. Schur functors fail termwise exactness and fixed order-base action in displayed examples. On continuous finite-length completed modules cycle traces are nilpotent, so nonconstant parameters require semi-invariants, flags or pp data.
 
@@ -19,7 +19,7 @@ The actual node lattice category has two proved almost-split sequences and a gen
 
 Ordinary Leavitt/graph CK1 relations collapse when combined with all closed-dessin gentle zero relations. The replacement constrained-path Fock C* algebra retains them and has a proved compact extension; its boundary map is minus unsigned graph incidence. The degree spectral triple is ungraded and its spectrum depends only on edge count. The compact ideal supports the earlier [arithmetic Abel family](research/abel-boundary-determinant.md), preserving exact L determinants and trace-norm convergence, but not yet module/Frobenius compatibility. Two complex-isomorphic elliptic Belyi pairs have different rational Frobenius factors: arithmetic descent cannot be recovered from complex dessin data alone.
 
-Thirty new Lean declarations verify **actual formal-power-series node order and resolution components**, CK1 collapse, determinant base change and actual symmetric-square identities; the full analytic suite has **208 checked declarations**. The [exact checker](scripts/check_dessin_extension.py) and [diamond checker](scripts/check_dessin_diamonds.py) supplement universal proofs with reproducible finite diagnostics. They do not formalize all the papers or GRH. Recent Connes/Consani/Moscovici, van Suijlekom and Deninger sources are used with exact domain, ground-state, arithmetic and convergence hypotheses.
+Thirty new Lean declarations verify **actual formal-power-series node order and resolution components**, CK1 collapse, determinant base change and actual symmetric-square identities; the full analytic suite has **220 checked declarations**. The [exact checker](scripts/check_dessin_extension.py) and [diamond checker](scripts/check_dessin_diamonds.py) supplement universal proofs with reproducible finite diagnostics. They do not formalize all the papers or GRH. Recent Connes/Consani/Moscovici, van Suijlekom and Deninger sources are used with exact domain, ground-state, arithmetic and convergence hypotheses.
 
 The [dessin extension plan](planning/DESSIN_EXTENSION_PLAN.md), [current frontier](planning/CONTINUATION.md), [claim ledger](planning/CLAIMS.csv) and [open obligations](planning/OPEN_OBLIGATIONS.md) specify what remains. The load-bearing missing result is still a descent/Frobenius-compatible arithmetic determinant with an independently proved positive realization for the same completed L-function. The new local Schur positivity and simple Fock vacuum do not establish it.
 
@@ -48,6 +48,14 @@ The [next order-interface result](research/theta-projective-multiplicity.md) now
 A constructive repair is available: the actual hereditary-branch column lattice defines a derived functor Perf(Λ)→Perf(Q[[u]]) taking a basic projective to rank one. Its determinant on the earlier external arithmetic matrix is the local factor once, without taking a root. This repairs multiplicity, **not the independent arithmetic action**. The selected branch determinant fails full branch-swap compatibility; strict central-fixed rotation on a rank-one branch lattice is also impossible. Ramification plus a changed lattice gives a precisely qualified rotation model. Full arithmetic descent and the global positive spectral comparison remain open.
 
 [Concise theorem](papers/theta-projective-core.tex), [full constructions](papers/theta-projective-details.tex), [independent reviews](planning/reviews/multiplicity/README.md) and [exact diagnostics](scripts/check_theta_projective_multiplicity.py) accompany five new Lean components, bringing the analytic suite to208. The preceding19/38page PDFs are preserved under outputs/papers/archive/13a6896/.
+
+## Tame descent and the full-deck kernel test
+
+The [tame descent calculation](research/theta-tame-descent.md) now explicitly tests the ramified repair. Its invariants recover the cut column; the actual endomorphism invariant algebra recovers the hereditary branch order. A determinant line descends, with a proved nonunit boundary comparison. The obvious Jacobi rotation polynomial fails descent, while its weighted replacement has the wrong characteristic factor.
+
+More strongly, **every finite free, fixed-center coefficient kernel with invertible rotation and branch-swap intertwiners has vertex rank divisible by six**. For arbitrary induced projective endomorphisms, its determinant specializes to a sixth-multiple power. The full character-orbit repair is the hereditary normalization and returns the original ordinary determinant exactly. This closes that specified kernel route; twisted determinant categories and infinite/other arithmetic correspondences remain open. No global GRH conclusion follows.
+
+[Concise theorem](papers/theta-tame-core.tex), [full proofs](papers/theta-tame-details.tex), [independent reviews](planning/reviews/tame-descent/README.md) and [exact checker](scripts/check_theta_tame_descent.py) accompany12printed Lean components, bringing the full suite to220. The preceding20/43page PDFs are preserved under outputs/papers/archive/46df63d/. The handoff rotates next to the actual short-row hybrid mean-square input, retaining all original masks and avoiding GRH-conditional prime estimates.
 
 ## Earlier audit papers
 
@@ -89,6 +97,7 @@ python3 -B scripts/check_dessin_diamonds.py
 python3 -B scripts/check_dessin_gluing.py
 python3 -B scripts/check_theta_jacobi.py
 python3 -B scripts/check_theta_projective_multiplicity.py
+python3 -B scripts/check_theta_tame_descent.py
 python3 scripts/check_arithmetic_approximants.py
 python3 scripts/check_exponent_frontier.py
 python3 scripts/check_arithmetic_zero.py
@@ -108,7 +117,7 @@ python3 scripts/check_abel_boundary.py
 sh scripts/build_papers.sh
 ```
 
-Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 208 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, frozen row-count components, the perturbed low-energy exponent, central contour/integral components, actual finite-field characters/Gauss sums, normalized finite Fourier/dyadic Gram components, actual Eisenstein quotient-ring reciprocity phases, local reflected characters/phase and common-density components, projective-resolution and arrow-state determinant components, Hodge/boundary matrices, continuous Abel boundary operators, actual completed nodal order/resolution components and symmetric-square/invariant components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
+Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 220 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, frozen row-count components, the perturbed low-energy exponent, central contour/integral components, actual finite-field characters/Gauss sums, normalized finite Fourier/dyadic Gram components, actual Eisenstein quotient-ring reciprocity phases, local reflected characters/phase and common-density components, projective-resolution and arrow-state determinant components, Hodge/boundary matrices, continuous Abel boundary operators, actual completed nodal order/resolution components and symmetric-square/invariant components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
 
 Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. All four PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
 

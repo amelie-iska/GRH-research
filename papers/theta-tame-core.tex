@@ -1,0 +1,43 @@
+\subsection{Tame descent: a surviving order and a sharper obstruction}
+We now test the proposed ramified repair rather than assume that its rotation descends. Extend coefficients explicitly to $k=\mathbb Q(\omega)$, $\omega^2+\omega+1=0$. Put $R=k[[u]]$, $S=k[[v]]$, $u=v^3$, and let $g(v)=\omega v$, fixing $k$. On the balanced plus column $W=S^3$, let $C\epsilon_i=\epsilon_{i+1}$ and
+\[
+ \Theta=Dg,\qquad D=\operatorname{diag}(1,\omega^2,\omega).
+\]
+The plus arrows act by $vE_{i,i-1}$, and minus arrows by zero. Direct calculation gives $\Theta^3=1$, compatibility of $\Theta$ with this $\Lambda_R$-action, and
+\[
+ \Theta C=\omega^2C\Theta,\qquad
+ L=W^\Theta=R\epsilon_0\oplus Rv\epsilon_1\oplus Rv^2\epsilon_2.
+\]
+Thus invariants restore precisely the original cut lattice. The extension $R\to S$ is finite \emph{free} of rank three and faithfully flat; the group quotient is not a torsor at $v=0$. The comparison $S\otimes_R L\to W$ has matrix $\operatorname{diag}(1,v,v^2)$, determinant $u$ and cokernel $S/(v)\oplus S/(v^2)$. Hence this semilinear group action alone is not effective descent of the column to $R$. This is the explicit local root-stack situation, consistent with the trivial-stabilizer criterion for vector-bundle descent \cite[Theorem10.3]{AlperDescent}; no stack theorem is needed for the displayed calculation.
+
+Two positive constructions survive. The determinant line $\bigwedge_S^3W$ has trivial $D$ and $C$ actions and does descend, but the natural map
+\[
+ \det_R(L)\longrightarrow(\det_S W)^\Theta
+\]
+has image $uR$ inside $R$, not an isomorphism. Determinant and coarse invariants cannot be interchanged while dropping this nonunit comparison. Also the \emph{carrier} endomorphism algebra $\operatorname{End}_S(W)^\Theta$, conjugated to the invariant basis, is exactly the hereditary order with entries $R$ on and below the diagonal and $uR$ above. Its rotation descends as $\operatorname{Ad}(A)$, where
+\[
+ A=\begin{pmatrix}0&0&u\\1&0&0\\0&1&0\end{pmatrix},\qquad A^3=uI.
+\]
+The algebra automorphism has order three although $A$ is not an integral unit. This is not $\operatorname{End}_\Lambda(W)$ or a descended arithmetic cohomology group.
+
+The natural arithmetic attempt fails: $aI+bC$ does not commute with $\Theta$ when $b\ne0$, as in both prime-seven Jacobi examples. The original cellular sum-zero plane is not $\Theta$-stable either. Replacing $C$ by $vC$ does give the descended operator $A$ on $L$, but
+\[
+ \det(1-T(aI+bA))=(1-aT)^3-ub^3T^3,
+\]
+whose special fiber is $(1-aT)^3$, not the required local quadratic. These carrier maps are not automatically $\Lambda$-linear arithmetic endomorphisms.
+
+There is a stronger category-level conclusion.
+\begin{theorem}[Full-deck coefficient kernels]\label{thm:full-deck-kernel}
+Let $W_0$ be a finite $R$-free left $\Lambda_R$-module on which the central $u$ acts by the given scalar. Suppose it has invertible $R$-linear intertwiners lifting the order automorphisms $\sigma$ and $\alpha$. Then, for some $m\ge0$, every $e_iW_0$ has rank $6m$. For any finite projective $P$ and $\Lambda_R$-linear $f:P\to P$, let $A_i$ be its top blocks. The genuine coefficient functor $\Phi_{W_0}= -\otimes_\Lambda^{\mathbf L} W_0$ satisfies
+\[
+ \left.\det_R(1-T\Phi_{W_0}(f))\right|_{u=0}
+ =\left(\prod_i\det_k(1-TA_i)\right)^{6m}.
+\]
+Bounded perfect ratios retain this exponent. Thus this whole class of full-deck, fixed-center finite free coefficient kernels cannot supply either the single local quadratic or the full local curve zeta.
+\end{theorem}
+\begin{proof}
+In the generic fiber intersect $W_0$ with its two central branch summands to obtain finite free integral lattices $W_\pm$; an integral direct-sum decomposition is not assumed. Rotation preserves them and branch swap exchanges them. On a branch let the common vertex rank be $r$. The three arrow matrices have cyclic product $uI_r$. Their determinant valuations are nonnegative, sum to $r$, and rotation intertwiners make them equal. Therefore $3\mid r$. Branch swap makes the two ranks equal, so the full vertex rank is $6m$.
+
+For the determinant formula, filter $W_0/uW_0$ by the arrow radical, whose fourth power vanishes. A positive-length entry of $f$ raises the filtration; a top block $A_i$ repeats across its $i$-th graded pieces a total of $\dim_k e_i(W_0/uW_0)=6m$ times. Triangular determinants give the assertion. Finite alternating products preserve it. Quadratic degree and the uncancelled simple pole of the full local zeta exclude the targets as before.
+\end{proof}
+This theorem is sharp: $W_0=\Lambda_R$ has vertex rank six. It requires neither left projectivity nor left flatness of a general kernel. It excludes this coefficient category, not arbitrary semilinear correspondences, twisted determinant lines or infinite spectral constructions. The extended edition identifies the full character-orbit repair with the hereditary normalization and explains why Schur commutator cancellation is insufficient. All determinant multiplicities here are relative to the stated $k$-valued base; restricting a rational quadratic factor to the former $\mathbb Q$-base squares it. No arithmetic descent or global positive determinant has been recovered by this ramification.

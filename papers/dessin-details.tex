@@ -251,6 +251,8 @@ Finally produce an independently proved positive form or self-adjoint determinan
 
 \input{theta-projective-details}
 
+\input{theta-tame-details}
+
 \section{Literal formal and computational coverage}
 \texttt{DessinNodeOrder.lean} defines the fiber-product subring of two genuine power-series rings. Its twenty printed declarations establish diagonal injectivity, nonzero branches, branch zero products, factorizations and annihilator identities, regular $u$, augmentation surjectivity and exactness, bijective power-series coordinates, square-zero alternating maps, three kernel-equals-range statements and projectivity of the actual regular/product terms. The coordinate statement is a bijection; the file does not yet package it as an $R$-linear equivalence or declare the general order freeness theorem.
 
@@ -271,3 +273,6 @@ The final three \texttt{ThetaJacobi.lean} declarations verify the actual conjuga
 
 
 \texttt{ThetaProjectiveMultiplicity.lean} adds five declarations. Arbitrary upper-block matrices with six identical diagonal blocks have the sixth-power determinant and characteristic-factor formulas. A literal power-series constant-coefficient map specializes matrix determinants, for each scalar parameter; the coefficientwise polynomial/order interface remains prose. A nonzero quadratic cannot be a rational-function sixth power, proved by polynomial degrees. Three genuine power series with product $X$ cannot have the cyclically equivalent residue-vanishing conditions forced by invertible rank-one arrow intertwiners. The derivation of the path blocks from the full theta order, projective decomposition, derived branch functor and deck intertwiners is not fully formalized. The complete analytic suite now has208printed declarations; no hidden arithmetic positivity assumption occurs.
+
+
+\texttt{ThetaTameDescent.lean} adds twelve printed component declarations (and one auxiliary polynomial lemma). They use genuine formal-power-series rescaling and its coefficient operator, proving the coefficient action, invariant-coefficient vanishing and the tame operator's cube. Actual three-state matrices satisfy the clock/rotation commutator, comparison determinant and closed-fiber equations, weighted-cycle cube and full characteristic polynomial, noncommutation of a nonconstant rotation polynomial, trivial whole-column determinant actions, and the same-operator comparison for $vC$. The classification of all fixed series by residues, full order action and hereditary invariant algebra, stack interpretation, valuation/rank theorem, general coefficient-functor filtration and GRH are not thereby fully formalized. No unknown positivity premise is assumed.

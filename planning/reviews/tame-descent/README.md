@@ -1,0 +1,12 @@
+# Tame-descent independent reviews
+
+Continuation from46df63d, 2026-11-03. The three independent reviewers used read-only shared-file access.
+
+- [Surface descent](surface-descent.md): independent formal-series invariants/clock-shift signs, hereditary carrier End algebra, determinant boundary comparison, full-deck branch-intersection rank theorem, and careful Schur/dual limits. No independent Lean build claimed by this reviewer.
+- [Coefficient kernels](coefficient-kernels.md): full arbitrary-kernel rank and induced-f determinant proofs, correct orbit ranks, normalization determinant equality and complete literal new article read. It distinguishes k-relative and rational determinants; the final literal pass does not claim to reread all primary literature or compile Lean.
+- [Formal/checker review](formal-and-checker.md): fresh independent12-component Lean build at warnings-as-errors, full current file and two paper fragments read, final exact checker pure API rerun, and precise limitations. Two harmless ring tactic informational suggestions are recorded; no proof errors, warning failures or admission dependencies remain.
+- [Primary sources](source-manifest.json): published Alper2013 Theorem10.3 and full proof, printed2386–2387, and the mathematical root-stack guide Tag04V8; exact preserved local cache hashes. This is targeted coverage, not a full55page audit. The withdrawn arXiv Cadman record was checked only to identify the publication context, and is not cited as an audited proof.
+
+Local corrections incorporated: the orbit uses plain C without a degree shift (vC is a different map); finite active arrow assertions are96 among297candidate cases. Use positive-degree vertexwise Sym^d, distinguish carrier End_S from End_Λ, preserve the nonunit determinant comparison, and compare the SAME operatorvC on the two determinant lines. The finite free ring extension is faithfully flat; the ramified group action is not automatically effective coarse descent data. A nontrivial determinant line escape survives, so no universal determinant no-go is claimed.
+
+Final source/PDF/log hashes are in outputs/checks/2026-11-03-tame-descent/VERIFICATION.json. Review snapshot hashes retain each reviewer's actual read version; final edits are local scope/notation corrections and the formal coverage paragraph. All arithmetic/Frobenius/Tate/global positive comparison obligations remain explicit.

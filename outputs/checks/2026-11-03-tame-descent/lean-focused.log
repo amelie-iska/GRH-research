@@ -1,0 +1,51 @@
+Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+GRHResearch.ThetaTameDescent.clock_rotation.{u_1} {K : Type u_1} [Field K] (z : K) (hz : z ^ 3 = 1) :
+  clock z * rotation = z ^ 2 • (rotation * clock z)
+GRHResearch.ThetaTameDescent.tame_coefficient.{u_1} {K : Type u_1} [Field K] (z : K) (w : Fin 3 → PowerSeries K)
+  (i : Fin 3) (n : ℕ) : (PowerSeries.coeff n) (tame z w i) = z ^ (weights i + n) * (PowerSeries.coeff n) (w i)
+GRHResearch.ThetaTameDescent.invariant_coefficient_zero.{u_1} {K : Type u_1} [Field K] (z : K)
+  (w : Fin 3 → PowerSeries K) (hw : tame z w = w) (i : Fin 3) (n : ℕ) (hn : z ^ (weights i + n) ≠ 1) :
+  (PowerSeries.coeff n) (w i) = 0
+GRHResearch.ThetaTameDescent.tame_cube.{u_1} {K : Type u_1} [Field K] (z : K) (hz : z ^ 3 = 1)
+  (w : Fin 3 → PowerSeries K) : tame z (tame z (tame z w)) = w
+GRHResearch.ThetaTameDescent.comparison_determinant.{u_1} {K : Type u_1} [Field K] : comparison.det = PowerSeries.X ^ 3
+GRHResearch.ThetaTameDescent.comparison_closed_fiber.{u_1} {K : Type u_1} [Field K] :
+  comparison.map ⇑PowerSeries.constantCoeff = !![1, 0, 0; 0, 0, 0; 0, 0, 0]
+GRHResearch.ThetaTameDescent.weighted_rotation_cube.{u_2} {R : Type u_2} [CommRing R] (u : R) :
+  weightedRotation u ^ 3 = u • 1
+GRHResearch.ThetaTameDescent.weighted_rotation_polynomial.{u_2} {R : Type u_2} [CommRing R] (a b u t : R) :
+  (1 - t • (a • 1 + b • weightedRotation u)).det = (1 - a * t) ^ 3 - u * b ^ 3 * t ^ 3
+GRHResearch.ThetaTameDescent.rotation_polynomial_commutator.{u_1} {K : Type u_1} [Field K] (z a b : K)
+  (hz : z ^ 3 = 1) :
+  clock z * (a • 1 + b • rotation) - (a • 1 + b • rotation) * clock z = (b * (z ^ 2 - 1)) • (rotation * clock z)
+GRHResearch.ThetaTameDescent.no_nonconstant_rotation_descent.{u_1} {K : Type u_1} [Field K] (z a b : K) (hz : z ^ 3 = 1)
+  (hne : z ≠ 1) (hb : b ≠ 0) : clock z * (a • 1 + b • rotation) ≠ (a • 1 + b • rotation) * clock z
+GRHResearch.ThetaTameDescent.clock_rotation_determinants.{u_1} {K : Type u_1} [Field K] (z : K) (hz : z ^ 3 = 1) :
+  (clock z).det = 1 ∧ rotation.det = 1
+GRHResearch.ThetaTameDescent.weighted_lift_intertwining.{u_1} {K : Type u_1} [Field K] :
+  comparison * weightedRotation (PowerSeries.X ^ 3) = PowerSeries.X • rotation * comparison
+'GRHResearch.ThetaTameDescent.clock_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.tame_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.invariant_coefficient_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.tame_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.comparison_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.comparison_closed_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.weighted_rotation_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.weighted_rotation_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.rotation_polynomial_commutator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.no_nonconstant_rotation_descent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.ThetaTameDescent.clock_rotation_determinants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaTameDescent.weighted_lift_intertwining' depends on axioms: [propext, Classical.choice, Quot.sound]

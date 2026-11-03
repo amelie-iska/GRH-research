@@ -1,0 +1,108 @@
+\section{Explicit tame descent and the full-deck coefficient test}
+The preceding ramified column is a precisely specified object of the original infinite theta-order framework. We compute its descent instead of treating a semilinear group action as automatically effective integral descent. All constructions below are over the new \emph{mathematical} coefficient field $k=\mathbb Q(\omega)$; they do not replace the original rational model or its source history.
+
+\subsection{The action on genuine formal series}
+Write $R=k[[u]]$, $S=k[[v]]$ with $u=v^3$. Every $f(v)\in S$ has a unique expansion $f_0(u)+vf_1(u)+v^2f_2(u)$. Hence $S$ is finite free of rank three over $R$. Let $g(f)(v)=f(\omega v)$. On $W=S^3$ with basis $\epsilon_0,\epsilon_1,\epsilon_2$, put
+\[
+ \Theta(f_i\epsilon_i)=\omega^{-i}f_i(\omega v)\epsilon_i,\qquad
+ C\epsilon_i=\epsilon_{i+1}\quad(i\bmod3).
+\]
+The plus arrow $a_i^+$ acts by $vE_{i,i-1}$, the minus arrow by zero. The cyclic product is $uE_{ii}$ and arbitrarily long permitted paths tend to zero $v$-adically, so this is a module over the full completed order. For $i=0$, the coefficient in the target under $\Theta a_i^+$ is $\omega v$ and in the source under $a_i^+\Theta$ it is $v\omega^{-2}$; these agree. The same calculation for $i=1,2$ proves compatibility with every arrow and therefore the completed algebra. Also $\Theta^3=1$.
+
+For all coefficients, not just a truncated diagnostic,
+\[
+ [v^n](\Theta w)_i=\omega^{n-i}[v^n]w_i.
+\]
+Thus invariance is equivalent to support in $n\equiv i\pmod3$, and
+\[
+ L=W^\Theta=\bigoplus_{i=0}^2 Rb_i,\qquad b_i=v^i\epsilon_i.
+\]
+The arrows on this basis have scalar valuations $(1,0,0)$, since $a_0^+b_2=ub_0$, $a_1^+b_0=b_1$ and $a_2^+b_1=b_2$. Tame invariants return the old cut column rather than a new strict unramified rotation carrier.
+
+The extension $R\subset S$ is faithfully flat. Its group quotient has a fixed point at $v=0$, however, and is not a $\mu_3$-torsor there: $S\otimes_R S$ is not the product of the three group graphs at that point. Semilinear $\mu_3$ data are therefore not by themselves the full effective fpqc descent data for a vector bundle on $\operatorname{Spec}R$. The adjunction comparison is explicitly
+\[
+ S\otimes_R L\longrightarrow W,\qquad
+ \operatorname{diag}(1,v,v^2),
+\]
+with determinant $v^3=u$, cokernel $S/(v)\oplus S/(v^2)$ and closed-fiber rank one. This proves its failure to be an isomorphism directly. The quotient stack $[\operatorname{Spec}S/\mu_3]$ retains the stabilizer at zero; its coarse space is $\operatorname{Spec}R$. This local root construction is described in \cite{RootStackGuide}. Alper's vector-bundle criterion \cite[Theorem10.3, pp.2386--2387]{AlperDescent} distinguishes precisely this nontrivial closed-fiber action from effective coarse descent. We use these sources for interpretation; all displayed module comparisons have already been calculated explicitly.
+
+\subsection{A projective symmetry survives on the endomorphism order}
+Directly on the three basis vectors,
+\[
+ \Theta C=\omega^{-1}C\Theta=\omega^2C\Theta.
+\]
+Thus the rotation does not preserve $L$. The corrected $vC$ does preserve it, since the factor $\omega$ from $g(v)$ cancels the commutator. In the invariant basis it has matrix $A$ from the core, with $A^3=uI$ and $\det A=u$. This is generically invertible and gives an order-three projective rotation after passing to the fraction field; it is not an invertible integral lattice intertwiner.
+
+There is nevertheless a true algebra-level escape. Let $F=(f_{ij})$ be an arbitrary $S$-linear endomorphism of the \emph{carrier} $W$, not assumed $\Lambda$-linear. Its tame conjugate has entries $\omega^{j-i}g(f_{ij})$. Invariance therefore means
+\[
+ f_{ij}\in v^{[i-j]_3}R,
+\]
+where $[r]_3\in\{0,1,2\}$ is the least residue. After replacing $\epsilon_i$ by $b_i=v^i\epsilon_i$, the entry becomes
+\[
+ v^{[i-j]_3+j-i}R=
+ \begin{cases}R&i\ge j,\\uR&i<j.\end{cases}
+\]
+Consequently $\operatorname{End}_S(W)^\Theta$ is exactly the hereditary three-cycle order $B_+$ in the previously fixed cut convention. Multiplication is preserved by conjugation in the generic matrix algebra; no entrywise projection is being misused as a ring map.
+
+The scalar commutator cancels under conjugation. Hence $\operatorname{Ad}(C)$ commutes with tame conjugation, descends to $B_+$, and is represented there by $\operatorname{Ad}(A)$ because $v$ is central. Since $A^3=uI$, this algebra automorphism has order three and preserves the hereditary order despite $A^{-1}$ not lying in its unit group. This explains the surviving rotation of the branch order; it does not construct a rotated integral column or a Frobenius endomorphism. The other branch is identical and the paired-diagonal residue gluing still defines the original $\Lambda_R$ inside $B_+\times B_-$. Its label automorphisms remain the already constructed dessin symmetries.
+
+\subsection{Determinants, Schur weights and the boundary correction}
+On $\det_S W=\bigwedge_S^3W$, both $\det D=1$ and $\det C=1$. Thus this line has the scalar action $g$ and genuinely descends to the trivial $R$-line with trivial rotation. This is a real positive determinant-level result. On the other hand,
+\[
+ b_0\wedge b_1\wedge b_2=v^3(\epsilon_0\wedge\epsilon_1\wedge\epsilon_2),
+\]
+so the natural comparison
+\[
+ \det_R(W^\Theta)\longrightarrow(\det_S W)^\Theta
+\]
+is multiplication by $u$, with cokernel $R/(u)$. Both lines are abstractly free of rank one, but their given comparison is not an isomorphism. It records the divisor of the ramified lattice change and cannot be discarded when claiming a determinant-preserving integral comparison. For the \emph{same} operator $vC$, the scalar on both determinant lines is $u$; naturality is respected. Comparing $\det C=1$ with $\det A=u$ without the extra factor $v$ would instead compare different operators.
+
+For an induced nonzero homogeneous tensor/Schur carrier of degree $d$, the same functorial calculation gives commutator $\omega^{-d}$. The two induced invertible operators commute exactly when $3\mid d$. This is a group-action statement, not sufficient for coarse vector-bundle descent: $\operatorname{Sym}^3(S^3)$ has closed-fiber inertia multiplicities $(4,3,3)$ for the three characters, so its inertia is still nontrivial even though the commutator vanishes. A mixed tensor $W^{\otimes a}\otimes(W^*)^{\otimes b}$ has net exponent $a-b$; $\operatorname{End}_S(W)$ is the concrete net-zero escape computed above.
+
+These carrier functors are not automatically functors on unital $\Lambda$-modules. Applying global $\bigwedge^3$ to the rank-one vertex idempotents kills all three, although their sum is the identity before applying this nonadditive functor. Vertexwise $\bigwedge^3$ of the rank-one column is zero. Vertexwise $\operatorname{Sym}^d$ for $d>0$ does retain the monomial zero relations but changes the full-cycle scalar from $u$ to $u^d$. It leaves the fixed central-action problem unless that change of base is included. None of the Schur cancellations supplies the missing two-dimensional arithmetic carrier.
+
+\subsection{Why the local Jacobi plane does not descend by this repair}
+On constant vectors $\Theta$ acts by $D$. It sends the sum-zero cycle $\epsilon_0-\epsilon_1$ to $\epsilon_0-\omega^2\epsilon_1$, whose coordinate sum is nonzero. It also does not preserve the edge-sum line. Thus this order column is not already a tame descent of the earlier cellular chain complex or its $H_1$.
+
+For the split local coefficient $\pi=a+b\omega$, the natural rotation polynomial on the balanced carrier is $F=aI+bC$. Since $g$ fixes $a,b\in k$, its commutator is
+\[
+ \Theta F-F\Theta=b(\omega^2-1)C\Theta.
+\]
+It is nonzero when $b\ne0$. In particular both prime-seven twists $(a,b)=(3,2),(-1,-3)$ fail this test. Prime powers with $b=0$ are not excluded by this particular calculation; that exceptional commutation does not prove a global comparison.
+
+Replacing $C$ by $vC$ gives an invariant carrier map, whose matrix on $L$ is $aI+bA$. Direct determinant expansion gives
+\[
+ \det(1-T(aI+bA))=(1-aT)^3-ub^3T^3.
+\]
+At $u=0$ this is $(1-aT)^3$, not $P_d(T)$, which has degree two. The weighted replacement therefore does not recover the established local factor. Neither $C$ nor $vC$ is generally $\Lambda$-linear: they intertwine its rotation. Their sums with the identity have not thereby become endomorphisms in the ordinary order-module category. They are legitimate carrier tests, with exactly the failures just exhibited.
+
+\subsection{The full orbit is the normalization, and arbitrary kernels still fail}
+Twist the tame action by the three characters: $\Theta_r=\omega^r\Theta$, $r\in\mathbb Z/3$. Its fixed lattice is
+\[
+ L_r=\bigoplus_i Rv^{[i-r]_3}\epsilon_i,
+\]
+with the cut at arrow $r$. Rotation gives an actual $R$-linear isomorphism $C:L_r\to L_{r+1}$, taking each displayed basis vector to the corresponding next one. Thus the direct sum of all three cuts has a strict rotation, at the cost of vertex rank three. Before invariants the orbit is $S$-rank nine and underlying $R$-rank twenty-seven; its invariant lattice is $R$-rank nine. The original orbit $S$-lattice still has nontrivial inertia at zero and need not be the base change of these invariants.
+
+There is an explicit integral identification of the invariant orbit. In the standard hereditary order $B_+$, the $j$-th column has entries $u^{t_{ij}}R$ with $t_{ij}=1$ for $i<j$ and zero otherwise. In its natural column basis the arrow coefficient has exponent
+\[
+ \delta_{i0}+t_{i-1,j}-t_{ij}=\delta_{ij}.
+\]
+Its cut is therefore exactly $j$, identifying $B_+e_j$ with $L_j$. Consequently $\bigoplus_rL_r\simeq B_+$ as left $\Lambda_R$-modules. Adding the exchanged minus-branch orbit gives the hereditary normalization $\widetilde\Lambda=B_+\times B_-$, with full deck action and vertex rank six. On a basic projective with external arithmetic matrix this yields $P_d^6$.
+
+In fact this normalization replacement restores the \emph{ordinary determinant for every linear endomorphism}. For a finite projective $P$, the inclusion $P\to P\otimes_\Lambda\widetilde\Lambda$ becomes an isomorphism over $K=k((u))$, since $\widetilde\Lambda_K=\Lambda_K$. Its extended endomorphism and the original $f$ therefore have the same generic characteristic determinant. Both polynomials have coefficients in $R$, which injects into $K$, so they agree already over $R$. The bounded-complex ratios also agree. This symmetry repair returns the previously refuted ordinary determinant, not merely its external tensor exponent.
+
+For completeness we now prove Theorem~\ref{thm:full-deck-kernel} for arbitrary finite free kernels, without assuming they split integrally into branches or are projective over the order. Let
+\[
+ p_\pm=u^{-1}\sum_i c_i^\pm\in\Lambda_K.
+\]
+These are central generic branch idempotents. Put $W_\pm=W_0\cap p_\pm(W_0\otimes_R K)$. They are finite free $R$-lattices spanning those generic summands, stable under $\Lambda_R$. Rotation fixes them, branch swap exchanges them. Their vertex ranks are constant on each branch: the arrow maps become invertible over $K$ because a full cycle acts by $u$. Write these ranks $r_+,r_-$. No equality $W_0=W_+\oplus W_-$ over $R$ has been assumed.
+
+On the plus branch choose integral vertex bases. The three square arrow matrices $X_0,X_1,X_2$ have product $uI_{r_+}$ around every cycle. Thus
+\[
+ \sum_i\operatorname{val}_u(\det X_i)=r_+.
+\]
+The rotation lift is an invertible matrix between each pair of vertex lattices, hence its determinant is an $R$-unit. Its intertwining identities make all three arrow determinant valuations equal. Therefore $r_+=3m_+$; similarly $r_-=3m_-$. The branch-swap lift gives $r_+=r_-$, so generic rank additivity gives $\operatorname{rank}_R e_iW_0=6m$. Only invertible intertwiners were used; imposing the full deck group relations is stronger than necessary.
+
+For the general determinant statement reduce modulo $u$ and filter each vertex by $e_iJ^a(W_0/uW_0)$. Since $J^4\subset u\Lambda$, this is a finite filtration. In $\Phi_{W_0}(P)=\bigoplus_i(e_iW_0)^{n_i}$, positive-length entries of $f$ raise the filtration, while the degree-zero matrix $A_i$ repeats on its $i$-th graded pieces. Their total dimension is $6m$. Multiplying the graded characteristic determinants proves the asserted power for \emph{every} $f$. Flatness of the kernel as a left $\Lambda$-module was not used; bounded right projectives compute the derived functor and give finite free $R$-outputs. Denominator constant terms one permit specialization of every bounded alternating ratio. The regular left kernel $\Lambda_R$ attains $m=1$, making the rank bound sharp.
+
+The remaining arithmetic problem therefore requires a different hypothesis: a genuinely twisted determinant target, a specified non-linear/semilinear correspondence with its own comparison, or an infinite analytic realization. One cannot continue searching inside this closed finite-free, fixed-center, full-deck kernel class for a missing small estimate. The local purity and descent computations supply no global positive spectral limit. Moreover $k/\mathbb Q$ has degree two: ordinary restriction of scalars sends a rational local factor $P_d$ to $P_d^2$. A relative $k$-determinant must not silently be identified with the former rational determinant. Finite-field curve zeta, global elliptic $L$-functions and Dirichlet GRH keep their distinct scopes and centers.
