@@ -19,3 +19,7 @@ media=ROOT/'web/media';media.mkdir(exist_ok=True)
 video=ROOT/'outputs/animations/videos/manim_surface/480p15/SurfaceClock.mp4'
 if video.exists():shutil.copyfile(video,media/'SurfaceClock.mp4')
 print('Prepared',len(out['models']),'saved models')
+
+for name in ['ThetaDessin','HLSDiamond','Bifiltration','QCNNPooling']:
+    source=ROOT/f'outputs/animations/videos/manim_research/480p15/{name}.mp4'
+    if source.exists():shutil.copyfile(source,media/(name+'.mp4'))

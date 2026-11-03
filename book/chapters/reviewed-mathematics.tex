@@ -562,13 +562,7 @@ For the interval quotient take $x=J_2$, $y=\lambda J_2$. With its top and socle 
 The normalization proof of Theorem~\ref{thm:nodear} uses $BM$ inside the generic module. Replacing it without justification by $B\otimes_\Lambda M$ could introduce torsion and would not prove the same statement. Once the subdirect residue subspace is decomposed, the branch basis changes lift over complete DVRs; taking inverse images modulo the conductor gives the direct decomposition, not just a decomposition of residues.
 
 Here is the promised diagram, with the terminal short exact column for every position:
-\[
-\begin{tikzcd}[column sep=large,row sep=large]
-0\arrow[r]&Y\arrow[r,hook]\arrow[d,"u"]&\Lambda\arrow[r,"x"]\arrow[d,"u"]&X\arrow[r]\arrow[d,"u"]&0\\
-0\arrow[r]&Y\arrow[r,hook]\arrow[d]&\Lambda\arrow[r,"x"]\arrow[d]&X\arrow[r]\arrow[d]&0\\
-0\arrow[r]&Y/uY\arrow[r,hook]&\Lambda/u\Lambda\arrow[r]&X/uX\arrow[r]&0
-\end{tikzcd}
-\]
+\par\noindent The canonical diagram appears in Chapter~\ref{arb:chapter}; the proof and calculation below are retained.\par
 Each vertical column is completed by zero above and below. In the bottom row identify $Y/uY=k$ via generator $y$, $X/uX=k$ via $x$, and $\Lambda/u\Lambda=k[\epsilon]/(\epsilon^2)$ with $x=\epsilon$, $y=-\epsilon$. Its first map is $1\mapsto-\epsilon$, its second the augmentation. It is nonsplit as a dual-number sequence. This explicit order reduction, not an unrelated finite algebra, explains its appearance.
 
 For a further Ext calculation, resolve $X\cong\Lambda/(y)$ with successive maps $y,x,\ldots$. On $Y$ the first is multiplication by $y$ and the second zero, so $\operatorname{Ext}^1(X,Y)=Y/yY=k$; on $X$ the first is zero and the second injective, so $\operatorname{Ext}^1(X,X)=0$. Interchanging branches gives the other two cases. The two nonsplit lattice rows realize the nonzero cross classes. Their Hom spaces are finite over $R$, generally infinite over $k$.
@@ -600,13 +594,7 @@ $I$&$r^- b^- a^- l a b r^-$&3&$(2,2,4)$\\\bottomrule
 A basis vector is assigned to each visited position $0,\ldots,\ell(w)$ at its vertex. A direct letter sends its preceding vector to its following vector; an inverse letter sends the following vector to the preceding vector. Sum these elementary maps for each arrow and put all unmentioned entries zero. This defines every matrix, including repeated loops, and verifies the relations. Set the killed reverse arrows to zero to obtain actual $\Lambda_3$-modules.
 
 Their signed grid is
-\[
-\begin{tikzcd}[column sep=large,row sep=large]
- A\arrow[r,"p"]\arrow[d,"-p"']&B\arrow[r,"i"]\arrow[d,"p"]&C\arrow[d,"-p"]\\
- D\arrow[r,"p"]\arrow[d,"-i"']&E\arrow[r,"i"]\arrow[d,"i"]&F\arrow[d,"-i"]\\
- G\arrow[r,"p"]&H\arrow[r,"i"]&I.
-\end{tikzcd}
-\]
+\par\noindent The canonical diagram appears in Chapter~\ref{arb:chapter}; the proof and calculation below are retained.\par
 Horizontal projections keep the initial word positions and kill the remaining positions. Horizontal inclusions append the final $r^-$, keeping old positions. Upper vertical projections delete the initial $l^-$: old position $j\ge1$ maps to position $j-1$, and old position zero maps to zero. Lower vertical inclusions prepend $r^-b^-a^-l$: position $j$ maps to $j+4$. Multiply these maps by the indicated signs. For every arrow these formulas commute with the string action, including the two positions adjacent to a cut or join; those are exactly where the loop inverse and chosen orientation matter.
 
 Every small square has two length-two composites whose sum is zero. The exact sequences are

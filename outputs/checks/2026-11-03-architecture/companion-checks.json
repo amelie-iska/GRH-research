@@ -1,0 +1,42 @@
+{
+  "surfaces": [
+    "Elliptic theta dessin",
+    "Elliptic square dessin",
+    "Spherical theta dessin",
+    "Genus-two hyperelliptic dessin",
+    "Genus-three hyperelliptic dessin",
+    "Genus-4 hyperelliptic dessin",
+    "Genus-5 hyperelliptic dessin",
+    "Genus-9 hyperelliptic dessin",
+    "Genus-16 hyperelliptic dessin",
+    "Infinite {7,3} lattice · a finite window"
+  ],
+  "ar": [
+    "One whole ℤA∞∞ component",
+    "Three indecomposable lattices",
+    "Two stable vertices; no arrows",
+    "Smooth support · homogeneous tube",
+    "Ringel’s quilt tile · comparison resource"
+  ],
+  "models": [
+    "Backend: PennyLane default.qubit CPU, analytic expectations\nSeed: 20261103\n4 qubits · 16 parameters\nTrain / held-out: 27 / 9\nEpoch 120\nTraining loss 0.21459\nHeld-out loss 0.23973",
+    "Backend: PennyLane default.qubit CPU, analytic expectations\nSeed: 20261103\n2 qubits · 12 parameters\nTrain / held-out: 90 / 30\nEpoch 180\nTraining loss 0.00015079\nHeld-out loss 0.00012590\nConstant test baseline 0.11797",
+    "Backend: PennyLane default.qubit CPU, analytic expectations\nSeed: 20261103\n2 qubits · 18 parameters\nTrain / held-out: 75 / 25\nEpoch 120\nTraining loss 0.0018387\nHeld-out loss 0.0020448\nConstant test baseline 0.058216",
+    "Backend: PennyLane default.qubit CPU + pinned ToricGT Weyl matrices + exact Fraction certificates\nSeed: 20261104\n2 qubits · 12 parameters\nTrain / held-out: 75 / 25\nEpoch 160\nTraining loss 0.000043932\nHeld-out loss 0.000040190\nConstant test baseline 0.010664",
+    "Backend: Strawberry Fields 0.23.0 gaussian CPU\nSeed: 20261103\n2 modes · 1 parameters\nTrain / held-out: 12 / 4\nEpoch 60\nTraining loss 0.78237\nHeld-out loss 0.96476",
+    "Backend: PennyLane default.qubit CPU; sparse finite Hamiltonian eigensolver\nSeed: 20261105\n9 qubits · 36 parameters\nTrain / held-out: 9 / 3\nEpoch 50\nTraining loss 0.54789\nHeld-out loss 0.40856"
+  ],
+  "hyperbolic": "{7,3} · angle 2π/3\n90 heptagons in this window\nDepth cap 3 · tile cap 450\nDisk |z|<1 / Lorentz hyperboloid\nInfinite tiling; no compact quotient asserted",
+  "quantum": "d = 8 · ζ = exp(2πi/8)\nCircuit: F → U^7 → V^3\nProbability of each state = 1/8\nRelative phases carry the holonomy\nUV − ζVU = 0 (algebraic identity)",
+  "pdfStatus": 200,
+  "videoStatus": 200,
+  "invalidTraversal": 404,
+  "forbiddenSource": 404,
+  "book": {
+    "chapters": 27,
+    "panels": 4,
+    "math": 3064,
+    "brokenImages": []
+  },
+  "uncaughtExceptions": []
+}

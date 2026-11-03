@@ -124,3 +124,8 @@ Both complete source manuscripts are preserved and the critical book/on-page com
 Three PennyLane renormalization models, a larger genus-four nine-qubit QCNN, a Strawberry Fields Gaussian model and the ToricGT/PennyLane finite Harper surrogate have actual saved CPU training evidence. Low training loss does not imply exact physical RG, generalization, quantum advantage, arithmetic identification or GRH. The Harper benchmark has a known exact spectrum; exact rational principal-minor certificates, not the learner, establish its lower bounds. NVIDIA GPU adapters and Sage execution remain unpassed on this machine.
 
 The analytic frontier now controls the fixed-radial-profile high-gcd part G>=D^(5/8) at H=D^(3/4), but not small gcd or moving-profile/supremum uniformity. Arbitrary-beta or arbitrary-column-weight strengthenings have coherent-row counterexamples; the specific arithmetic source family is not refuted. Next research must control that actual small-gcd kernel or construct a genuinely different independently positive arithmetic determinant family.
+
+
+## Master-loop and persistence extension boundary
+
+The governing plan/queue/hourly implementation loop is installed; three concrete checkpoints are complete. The new tensor/state architecture inspector, full persistence visualization tools, further chapterwise formalization, comprehensive matched training evaluations and the arithmetic GRH bridge remain pending. Four canonical tools replace repeated generic book panels. The new exact persistence/surface-coefficient construction is prose proved and independently reviewed, not fully Lean formal. Do not confuse a completed implementation checkpoint or scheduled heartbeat with completion of GRH.

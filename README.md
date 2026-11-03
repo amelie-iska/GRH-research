@@ -16,6 +16,12 @@ The user approved the new isolated CPU environment; existing environments/toolch
 
 Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `python3 scripts/prepare_companion.py`. Start/restart the loopback-only server with `python3 scripts/serve_book.py`; no public deployment or external scripts are needed. The preview is running as a separate local process, so a chat interruption need not stop it.
 
+## Governing implementation plan and active loop
+
+[Master implementation plan](planning/MASTER_IMPLEMENTATION_PLAN.md), [dependency queue](planning/IMPLEMENTATION_QUEUE.json) and [versioned loop prompt](planning/IMPLEMENTATION_LOOP_PROMPT.md) consolidate every instruction and accepted correction. The existing `grh-research-loop` heartbeat is active hourly. It resumes one ready concrete task, checks evidence, updates the book/page/coverage and privately pushes substantive milestones. Implementation completion and a complete rigorous GRH proof are separate gates.
+
+The [live plan and queue](http://127.0.0.1:8765/implementation-plan.html) tracks ongoing work. The latest extension deduplicates the book's generic panels, introduces corrected Manim theta/HLS/bifiltration/pooling scenes, and adds a fully worked persistence/Schur/surface-coefficient chapter. Architecture tensor/state inspectors and further persistence tools/formalization are explicitly queued; they are not presented as already implemented. Both complete original sources and the old clock schematic remain preserved.
+
 ## Infinite dessin orders and determinant development (2026-11-03)
 
 The current focused editions use **infinite-dimensional locally gentle algebras and completed surface orders from explicit cellular dessins** throughout: the nodal interval, spherical loop, two theta dessins, elliptic square, and a Chebyshev family. [Shared core](papers/dessin-core.tex), [expanded proofs](papers/dessin-details.tex), and [pinned primary references](papers/dessin-references.tex) form the new account. Earlier general bodies and source clones remain intact; [previous focused PDFs](outputs/papers/archive/c465a95/) are preserved.

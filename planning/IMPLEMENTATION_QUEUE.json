@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "governing_plan": "planning/MASTER_IMPLEMENTATION_PLAN.md",
+  "project_complete": false,
+  "research_complete": false,
+  "tasks": [
+    {
+      "id": "P0-deduplicate",
+      "priority": 0,
+      "status": "complete",
+      "dependencies": [],
+      "objective": "Canonical unique in-book tools and AR diagrams; verified staged PDF/HTML promotion",
+      "acceptance": "No duplicate iframe sources, no duplicated canonical node/HLS rendering, preserved proofs, valid PDF/HTML/assets and live preview",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-03T18:26:44.177606+00:00",
+      "last_result": "Canonical four tools and thirteen distinct vector diagrams; duplicate node/HLS renderings removed; staging preserves live PDF/HTML; integrity and HTTP checks pass",
+      "evidence": [
+        "outputs/checks/2026-11-03-architecture/implementation-checks.json",
+        "outputs/checks/2026-11-03-architecture/integrity.json"
+      ]
+    },
+    {
+      "id": "P3-manim",
+      "priority": 1,
+      "status": "complete",
+      "dependencies": [],
+      "objective": "Render actual theta, signed HLS, bifiltration and quantum-pooling scenes; correct legacy caption",
+      "acceptance": "Four clips rendered and visually/scientifically checked against source data; accurate canonical captions",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-03T18:26:44.269793+00:00",
+      "last_result": "Four corrected Manim clips rendered, reviewed and linked once per relevant book topic; legacy clock schematic preserved with corrected scope",
+      "evidence": [
+        "examples/quantum/MANIM_SCOPE.md",
+        "outputs/checks/2026-11-03-architecture/manim.log"
+      ]
+    },
+    {
+      "id": "P2-persistence-chapter",
+      "priority": 2,
+      "status": "complete",
+      "dependencies": [],
+      "objective": "Reviewed primary-paper persistence chapter with exact bifiltered CW/module/resolution example",
+      "acceptance": "Full exactness/Hilbert/Betti/representation proof and actual surface-order compatibility, independent review and book build",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-03T18:27:47.568892+00:00",
+      "last_result": "Primary-paper reviewed chapter integrated with full exactness/CW/Schur/flag proofs and actual surface-order coefficient total resolution; independent adversarial review and exact symbolic checks pass; book/HTML compile",
+      "evidence": [
+        "planning/reviews/architecture/PERSISTENCE_REVIEW.md",
+        "outputs/checks/2026-11-03-architecture/persistence-checks.json",
+        "research/persistence-interfaces.md"
+      ]
+    },
+    {
+      "id": "P1-architecture-data",
+      "priority": 3,
+      "status": "pending",
+      "dependencies": [],
+      "objective": "Numerical trace exports for real quantum checkpoints and audited miniature TokenGT/tropical/Soft-MoE/ToricGT/hybrid models",
+      "acceptance": "Correct tensor shapes, formulas, state/readout agreement, seed/provenance and explicit demo versus checkpoint labels"
+    },
+    {
+      "id": "P1-architecture-inspector",
+      "priority": 4,
+      "status": "pending",
+      "dependencies": [
+        "P1-architecture-data"
+      ],
+      "objective": "Interactive 3D step/inspect/play tensor and quantum-state explorer",
+      "acceptance": "Every architecture category has a numerically checked example, useful controls/code links and passing browser checks"
+    },
+    {
+      "id": "P2-persistence-tools",
+      "priority": 5,
+      "status": "pending",
+      "dependencies": [
+        "P2-persistence-chapter"
+      ],
+      "objective": "Interactive staircase/rank/Betti/syzygy and fixed-snapshot quantum bifiltration tools",
+      "acceptance": "Exact polynomial/GF2 inclusion-rank checks and monotonicity; one canonical in-book location"
+    },
+    {
+      "id": "P6-persistence-formal",
+      "priority": 6,
+      "status": "pending",
+      "dependencies": [
+        "P2-persistence-chapter"
+      ],
+      "objective": "Actual Lean polynomial/complex/module interfaces with printed dependencies",
+      "acceptance": "Relevant precise statements compile without admissions; complete/component/prose distinctions maintained"
+    },
+    {
+      "id": "P4-source-expansion",
+      "priority": 7,
+      "status": "pending",
+      "dependencies": [
+        "P0-deduplicate"
+      ],
+      "objective": "Expand every preserved source topic cohesively with corrected math/physics and chapter-specific examples",
+      "acceptance": "Every source topic mapped to corrected exposition, evidence and formal status; no historical false claim presented as theorem"
+    },
+    {
+      "id": "P5-larger-ablations",
+      "priority": 8,
+      "status": "pending",
+      "dependencies": [
+        "P1-architecture-data"
+      ],
+      "objective": "Larger surface/local-hyperbolic learning with matched baselines and honest compute/OOD evaluation",
+      "acceptance": "Actual reproducible training, protected checkpoints, leakage-free splits, ablations and reported limitations"
+    },
+    {
+      "id": "P7-low-gcd",
+      "priority": 9,
+      "status": "pending",
+      "dependencies": [],
+      "objective": "One new concrete original low-gcd arithmetic-kernel proof or decisive scoped counterexample",
+      "acceptance": "Exact derivation/failed step and surviving result; independent review; no assumed GRH cancellation"
+    },
+    {
+      "id": "P6-full-formalization",
+      "priority": 10,
+      "status": "pending",
+      "dependencies": [
+        "P6-persistence-formal"
+      ],
+      "objective": "General path/order/category/operator/arithmetic interfaces through all valid book claims",
+      "acceptance": "Whole-book dependency ledger complete with actual kernel-checked objects and explicit external dependencies"
+    },
+    {
+      "id": "P7-positive-bridge",
+      "priority": 11,
+      "status": "pending",
+      "dependencies": [],
+      "objective": "Independent arithmetic positive determinant and global zero-location bridge for each intended scope",
+      "acceptance": "Full proof, scope/hypotheses/normalizations, comprehensive appropriate Lean verification and independent adversarial review"
+    }
+  ]
+}
