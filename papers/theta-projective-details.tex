@@ -1,0 +1,75 @@
+\section{The theta order interface beyond tensor insertion}
+We prove the multiplicity theorem and construct its actual functorial escape, retaining the completed infinite order as the primary algebra. The finite algebra used below is its specified special fiber, not a replacement primary example.
+
+\subsection{Normal forms and the special fiber}
+Index the three quiver vertices by $i\in\mathbb Z/3$. Let $a_i^\pm:i\to i-1$ be the two permitted branches. Only paths of constant sign survive. Write $p_{i,r}^\pm$ for their length-$r$ paths and $c_i^\pm=p_{i,3}^\pm$. The split order model gives
+\[
+ ue_i=c_i^++c_i^-,\qquad
+ p_{i,r+3}^\pm=u p_{i,r}^\pm\quad(r\ge1).
+\]
+The second identity follows because multiplying by the opposite full cycle switches branch and vanishes. An $R$-basis of $e_i\Lambda$ is
+\[
+ e_i,\ a_i^+,a_i^-,\ p_{i,2}^+,p_{i,2}^-,\ c_i^+.
+\]
+These span by the two identities and completion. They are independent in the two hereditary branch orders: off-diagonal entries distinguish the four shorter paths; the remaining combination $xe_i+yc_i^+$ has paired diagonal entries $(x+uy,x)$, forcing $x=y=0$. This is an actual power-series basis, not just a generic rank calculation.
+
+In $B=\Lambda/u\Lambda$, the same eighteen basis vectors remain. A product of nonempty paths is zero if branches switch or the total length exceeds three; the length-three minus path is the negative of the plus path. A length-four path is $u$ times a length-one path, hence zero. The radical $\mathfrak r$ is the positive-length ideal, with $\mathfrak r^4=0$ and $B/\mathfrak r=\mathbb Q^3$. Each $e_iB$ has radical-layer dimensions $(1,2,2,1)$ and has two composition factors at each vertex, so the Cartan matrix is
+\[
+ C_B=\begin{pmatrix}2&2&2\\2&2&2\\2&2&2\end{pmatrix}.
+\]
+The Cartan matrix alone does not establish the endomorphism formula; the path filtration supplies that step.
+
+\subsection{All projectives and all linear endomorphisms}
+Let $J$ be the completed arrow ideal. Every $1-x$, $x\in J$, has its convergent formal inverse; the same applies to $1-yx$ for arbitrary $y\in\Lambda$. Thus $J$ is contained in the Jacobson radical, and $\Lambda/J=\mathbb Q^3$ implies equality. If $P$ is finitely generated projective, choose a basis of each multiplicity space in $P/PJ$ and lift its vectors into $Pe_i$. This gives
+\[
+ Q=\bigoplus_i(e_i\Lambda)^{n_i}\longrightarrow P
+\]
+inducing an isomorphism on tops. Nakayama makes this surjective. Its split kernel $N$ is finitely generated and satisfies $N/NJ=0$, hence vanishes by Nakayama. This proves the decomposition for every such projective without an unproved freeness assumption over $\Lambda$.
+
+An entry $e_i\Lambda\to e_j\Lambda$ is left multiplication by an element of $e_j\Lambda e_i$. Its degree-zero part is possible only when $i=j$ and is a scalar multiple of $e_i$. For $f$ on $P$, write its top blocks $A_i$ and set $A=\operatorname{diag}_iA_i$. The remainder has positive path length. On $P/uP$ it strictly raises the path filtration. At each of the two length-one and two length-two slots, and the length-zero and length-three slots, the degree-preserving map is exactly $A$. In an increasing-degree basis the matrix is lower block triangular. For the formal upper-block convention order the six slots instead as
+\[
+ 3+,\ 2+,\ 2-,\ 1+,\ 1-,\ 0.
+\]
+There are six diagonal copies of $A$, allowing arbitrary positive-length off-diagonal entries. Hence
+\[
+ \det_{\mathbb Q}(1-T\overline f)=\det_{\mathbb Q}(1-TA)^6.
+\]
+Specializing the finite $R$-matrix determinant coefficientwise gives Theorem~\ref{thm:theta-multiplicity}. No simultaneous diagonalizability, tensor form of $f$, arithmetic purity or deck equivariance is required.
+
+For a bounded complex $P^\bullet$ with a linear chain map $f^\bullet$, fix either parity convention and write
+\[
+ D_R(P^\bullet,f^\bullet;T)=\prod_j\det_R(1-Tf^j)^{(-1)^j}.
+\]
+The inverse convention gives the reciprocal and the same obstruction. Each factor has constant coefficient one, so its reduction is nonzero. Specialization of this displayed rational expression is defined and equals
+\[
+ \left[\prod_{j,i}\det_{\mathbb Q}(1-TA_i^j)^{(-1)^j}\right]^6.
+\]
+Cancellations cannot change the divisibility of divisor multiplicities. In particular adding contractible projective pairs cannot repair it. Here a perfect endomorphism means a bounded-projective chain representative; no statement about an arbitrary infinite resolution or nonperfect lattice is inferred.
+
+Generically put $N=\sum_i n_i$. As a right module over $M_3(K)\times M_3(K)$, $P_K$ is the sum of $N$ copies of each branch's three-dimensional row simple. Any commuting map has matrices $F_+,F_-\in M_N(K)$ on their multiplicity spaces, so
+\[
+ \det_K(1-Tf_K)=\bigl(\det(1-TF_+)\det(1-TF_-)\bigr)^3.
+\]
+For example, left multiplication by $c_i^+$ on $e_i\Lambda$ has ordinary characteristic determinant $(1-uT)^3$, so a sixth power is forced only at the special fiber. This also shows why generic reduced determinants and ordinary determinants must not be conflated. We do not need an integral choice of either generic matrix to derive the cube obstruction.
+
+For the local numerator, suppose a sixth power $A(T)^6/B(T)^6$ equals a nonzero quadratic $P(T)$ with $B\ne0$. Polynomial degrees would give $6\deg A=2+6\deg B$, impossible. This includes repeated roots. For the complete curve zeta, $q>1$ and $|a_q|\le2\sqrt q$ imply $P(1)>0$ and $P(1/q)=P(1)/q>0$. Its two denominator roots are distinct uncancelled simple poles, again impossible for a sixth power. These arguments do not assume global RH or Artin holomorphy.
+
+\subsection{An actual integral determinant functor of multiplicity one}
+Project to one hereditary cycle order $B_+\subset M_3(R)$. Its standard column $W_+=R^3$ is a left $\Lambda$-module with $e_iW_+=R\epsilon_i$. More explicitly $a_i^+$ acts by $u^{w_i}E_{i,i-1}$, with $(w_0,w_1,w_2)=(1,0,0)$ for one cut, while every $a_i^-$ acts by zero. These matrices respect travel-order multiplication as written: $E_{ij}E_{jk}=E_{ik}$. Each plus full cycle is $uE_{ii}$, so the common central $u$ acts by $uI$. Nonempty paths tend to zero $u$-adically, giving the action of the \emph{full completed order}, not just its polynomial subalgebra.
+
+This $(\Lambda,R)$-bimodule defines $-\otimes_\Lambda^{\mathbf L}W_+$. On a bounded complex of finite projectives it is computed termwise, and its terms are finite free over $R$. An acyclic bounded projective complex is split contractible, and tensor preserves that contraction. Thus it descends to a genuine triangulated functor $\Phi_+:\operatorname{Perf}(\Lambda)\to\operatorname{Perf}(R)$. No assertion of exactness on all un-derived modules or flatness of $W_+$ is needed. In fact $W_+$ has infinite projective dimension as a left $\Lambda$-module: $\Lambda$ is noetherian, being finite over the central noetherian ring $R$, and $W_+$ is finitely generated. A finite projective resolution could thus be chosen with finite terms. Every left projective term has $R$-rank divisible by six by the same top argument, whereas $W_+$ has rank three, contradicting the alternating rank identity. This does not prevent tensoring bounded right-projective complexes.
+
+The isomorphism $e_i\Lambda\otimes_\Lambda W_+\to e_iW_+$ sends $e_i\lambda\otimes w\mapsto e_i\lambda w$. Its inverse is $e_iw\mapsto e_i\otimes e_iw$, proving rank one directly. Consequently $e_i\Lambda\otimes_{\mathbb Q}V$, with action $1\otimes M$, maps to $R\otimes_{\mathbb Q}V$ with action $M$. Its characteristic determinant is $\det(1-TM)$ \emph{once}. On the regular input, the three vertex lines survive and the factor appears three times. A full symmetric vertex orbit therefore is not silently replaced by a chosen vertex.
+
+Different cycle cuts give different integral column lattices. Their generic modules are isomorphic, and branch endomorphism characteristic determinants agree by generic conjugation; equality over $K$ implies equality over $R$. Nevertheless an equivariant lattice is stronger data. Branch selection also changes the functor: for the unit $f=e_i+c_i^+$ on $e_i\Lambda$, the plus determinant is $1+u$ and its characteristic factor is $1-(1+u)T$. Under $\alpha$, $c_i^+$ becomes $c_i^-$, whose plus action is zero; the determinant becomes one and the characteristic factor $1-T$. Since these scalar automorphisms differ, no natural isomorphism of determinant lines can make this chosen branch functor $\alpha$-invariant for all endomorphisms. Pairing both branch functors makes this branch-swap data available but doubles the local factor on the basic-projective tensor input.
+
+\subsection{The exact rotation obstruction and its allowed escape}
+Consider any left $\Lambda$-lattice supported on the plus branch, free of rank one at every $e_i$, and with central $u$ acting as multiplication by $u$. Write its plus arrow scalars as $a_0,a_1,a_2\in R$. Their product is $u$, so they are nonzero and their nonnegative valuations sum to one. A strict $R$-linear lift of $\sigma$ that intertwines the order rotation permutes the three vertex lines by units. Its arrow-intertwining identities make the three arrow valuations equal. Thus $3m=1$ for an integer $m\ge0$, impossible. The argument already excludes an invertible intertwiner; imposing that its cube be one cannot help.
+
+There is an elementary coefficient proof of the same obstruction. Intertwining by units makes vanishing of the three arrow constant coefficients equivalent. Their product has constant coefficient zero, so all three vanish. Factoring $u$ from two of them would make $a_0a_1a_2$ divisible by $u^2$, contradicting that it equals $u$. This is the literal power-series component checked in Lean.
+
+After the explicit ramified change $R'=\mathbb Q[[v]]$, $u=v^3$, \emph{choose a new column lattice} with all three plus arrow maps $vE_{i,i-1}$. Cyclic permutation of the basis is an order-three intertwiner fixing $v$. The full-cycle relation is now $v^3=u$ as required. Merely base-changing the old cut lattice gives arrow valuations $(3,0,0)$ and does not produce that linearization. This construction changes the base and lattice and does not establish an unramified descent comparison. It also still needs both branches to address $\alpha$.
+
+The rotation obstruction is about actual central-fixed rank-one branch lattices, not every possible determinant-level natural transformation. The branch characteristic determinants may be rotation-invariant through their generic reduced interpretation even without a lattice lift. Neither this theorem nor the ordinary-determinant obstruction excludes semilinear correspondences, other determinant categories or infinite analytic models.
+
+The next arithmetic task is therefore narrower and more concrete: choose a branch functor, a ramified lattice or a different equivariant replacement only after proving the required descent comparison, and construct its prime action from arithmetic data rather than feed in the already known $M_d$. Bad primes, integral/Tate comparison, local-to-global conductor and gamma factors, and a positive spectral limit for the same completed function remain unresolved.

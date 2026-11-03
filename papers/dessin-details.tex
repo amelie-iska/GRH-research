@@ -249,6 +249,8 @@ Finally produce an independently proved positive form or self-adjoint determinan
 
 \input{theta-jacobi-details}
 
+\input{theta-projective-details}
+
 \section{Literal formal and computational coverage}
 \texttt{DessinNodeOrder.lean} defines the fiber-product subring of two genuine power-series rings. Its twenty printed declarations establish diagonal injectivity, nonzero branches, branch zero products, factorizations and annihilator identities, regular $u$, augmentation surjectivity and exactness, bijective power-series coordinates, square-zero alternating maps, three kernel-equals-range statements and projectivity of the actual regular/product terms. The coordinate statement is a bijection; the file does not yet package it as an $R$-linear equivalence or declare the general order freeness theorem.
 
@@ -266,3 +268,6 @@ The ten additional \texttt{DessinPullbackComponents.lean} statements use literal
 \texttt{ThetaJacobi.lean} adds sixteen declarations, with actual finite fields and MulChar rather than a hypothetical arithmetic kernel. Its norm theorem invokes mathlib's proved Jacobi inverse-product identity and derives characteristic inequality from finiteness; all three character nontrivialities are explicit. Other declarations verify the rescaling substitution, CM multiplication/polynomial/Gram positivity components, exact prime-seven matrix polynomials, and actual 2-by-3 boundary/3-by-2 cellular inclusion, homology restriction, three-edge determinant and rational vertex chain-map equations. It does not formalize elliptic point counting or an order-to-Frobenius functor.
 
 The final three \texttt{ThetaJacobi.lean} declarations verify the actual conjugation matrix identities and the real two-dimensional inert-prime determinant obstruction. They do not assume any unknown zero location or exclude complex/enlarged spectral realizations.
+
+
+\texttt{ThetaProjectiveMultiplicity.lean} adds five declarations. Arbitrary upper-block matrices with six identical diagonal blocks have the sixth-power determinant and characteristic-factor formulas. A literal power-series constant-coefficient map specializes matrix determinants, for each scalar parameter; the coefficientwise polynomial/order interface remains prose. A nonzero quadratic cannot be a rational-function sixth power, proved by polynomial degrees. Three genuine power series with product $X$ cannot have the cyclically equivalent residue-vanishing conditions forced by invertible rank-one arrow intertwiners. The derivation of the path blocks from the full theta order, projective decomposition, derived branch functor and deck intertwiners is not fully formalized. The complete analytic suite now has208printed declarations; no hidden arithmetic positivity assumption occurs.

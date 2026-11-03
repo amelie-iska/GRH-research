@@ -1,0 +1,28 @@
+GRHResearch.ThetaProjectiveMultiplicity.six_path_blocks_det.{u_1, u_2} {R : Type u_1} [CommRing R] {ι : Type u_2}
+  [Fintype ι] [DecidableEq ι] (M : Matrix (Fin 6 × ι) (Fin 6 × ι) R) (A : Matrix ι ι R)
+  (ht : M.BlockTriangular Prod.fst) (hd : ∀ (k : Fin 6) (i j : ι), M (k, i) (k, j) = A i j) : M.det = A.det ^ 6
+GRHResearch.ThetaProjectiveMultiplicity.six_path_blocks_local_det.{u_1, u_2} {R : Type u_1} [CommRing R] {ι : Type u_2}
+  [Fintype ι] [DecidableEq ι] (M : Matrix (Fin 6 × ι) (Fin 6 × ι) R) (A : Matrix ι ι R)
+  (ht : M.BlockTriangular Prod.fst) (hd : ∀ (k : Fin 6) (i j : ι), M (k, i) (k, j) = A i j) (t : R) :
+  (1 - t • M).det = (1 - t • A).det ^ 6
+GRHResearch.ThetaProjectiveMultiplicity.power_series_det_specialization.{u_1, u_2} {R : Type u_1} [CommRing R]
+  {ι : Type u_2} [Fintype ι] [DecidableEq ι] (M : Matrix ι ι (PowerSeries R)) (t : R) :
+  PowerSeries.constantCoeff (1 - PowerSeries.C t • M).det = (1 - t • M.map ⇑PowerSeries.constantCoeff).det
+GRHResearch.ThetaProjectiveMultiplicity.quadratic_not_ratio_sixth (P A B : Polynomial ℚ) (hp : P.natDegree = 2)
+  (hb : B ≠ 0) : P * B ^ 6 ≠ A ^ 6
+GRHResearch.ThetaProjectiveMultiplicity.no_cyclic_rank_one_arrows.{u_3} {K : Type u_3} [Field K] (a b c : PowerSeries K)
+  (hab : PowerSeries.constantCoeff a = 0 ↔ PowerSeries.constantCoeff b = 0)
+  (hbc : PowerSeries.constantCoeff b = 0 ↔ PowerSeries.constantCoeff c = 0) (hprod : a * b * c = PowerSeries.X) : False
+'GRHResearch.ThetaProjectiveMultiplicity.six_path_blocks_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaProjectiveMultiplicity.six_path_blocks_local_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.ThetaProjectiveMultiplicity.power_series_det_specialization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.ThetaProjectiveMultiplicity.quadratic_not_ratio_sixth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.ThetaProjectiveMultiplicity.no_cyclic_rank_one_arrows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,12 @@
+# Independent theta projective/multiplicity review
+
+2026-11-03, continuation from13a6896. Three independent read-only agents reviewed the new arbitrary-endomorphism claim and positive branch replacement.
+
+- [Arbitrary projectives](arbitrary-projectives.md): universal special-fiber sixth power, generic cube, all projectives via Nakayama, bounded perfect ratios including cancellations; targets excluded even when numerator roots repeat. Positive branch functor and strict cut obstruction proved independently.
+- [Surface/functor review](surface-functor.md): actual18-dimensional special fiber; correct travel convention; derived column functor; alpha corner-unit obstruction; lattice rotation versus determinant-level comparison; ramification plus changed lattice. Both article fragments read in full; independent exact algebra diagnostics. This reviewer did not rerun Lean/checker.
+- [Literal formal/checker review](formal-and-checker.md): five actual Lean theorem types compiled independently at warningAsError, with standard foundations, complete new prose and exact checker read and rerun through its pure API. Scope limitations are explicit.
+- [Primary source manifest](source-manifest.json): stable Stacks tags0FJ9 and0GSX, exact retrieved HTML hashes in preserved ignored local cache. Full mathematical sections read; web forms/comments excluded. These sources support standard determinant background, not an assertion that GRH follows.
+
+Corrections incorporated: do not assume distinct roots at every prime power; a quadratic degree argument covers double roots. Use “full local curve zeta” because it has poles; specify the corner unit as an automorphism of e_iΛ. Order path slots by descending degree for Lean's upper-triangular convention. Specify basic e_iΛ input for factoronce (regular remainscubed), and the NEWlattice after ramification. Rotation-lattice failure does not exclude every determinant-level rotation comparison.
+
+Formal scope is component-level: no fully formal theta order/projective classification, derived tensor functor, Frobenius/Tate descent, global comparison or GRH. New artifact hashes are in outputs/checks/2026-11-03-projective-multiplicity/VERIFICATION.json. Individual reviewers' snapshot hashes retain their actual historical read versions; final copy edits and the elementary infinite-left-pd/sharpness additions were subsequently reviewed in the literal formal report.

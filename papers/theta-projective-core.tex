@@ -1,0 +1,27 @@
+\subsection{Arbitrary projective actions: an obstruction and a genuine determinant repair}
+The preceding tensor test has a stronger replacement. Keep the characteristic-zero completed elliptic theta order $\Lambda$ over $R=\mathbb Q[[u]]$, and write $K=\mathbb Q((u))$. All determinants in the next theorem are \emph{ordinary underlying-$R$ determinants}; they are not reduced norms.
+\begin{theorem}[Projective determinant multiplicity]\label{thm:theta-multiplicity}
+Let $P$ be any finitely generated projective right $\Lambda$-module and $f\in\operatorname{End}_\Lambda(P)$. Then $P\simeq\bigoplus_{i=0}^2(e_i\Lambda)^{n_i}$. Let $A_i\in M_{n_i}(\mathbb Q)$ be the induced maps on its three top multiplicity spaces. Then
+\[
+ \left.\det_R(1-Tf)\right|_{u=0}
+ =\left(\prod_{i=0}^2\det(1-TA_i)\right)^6.
+\]
+For any bounded complex of these projectives and any $\Lambda$-linear chain endomorphism, its alternating determinant ratio specializes to a sixth power in $\mathbb Q(T)$. Generically, the ordinary ratio is a cube in $K(T)$.
+\end{theorem}
+\begin{proof}
+The arrow ideal is the Jacobson radical: its elements admit geometric-series inverses after subtracting from one, and the quotient is $\mathbb Q^3$. A projective's top lifts to a map from the displayed sum; Nakayama gives surjectivity, projectivity splits it, and another application of Nakayama kills the kernel.
+
+Put $B=\Lambda/u\Lambda$. Each $e_iB$ has path layers of dimensions $1,2,2,1$: the identity, two length-one paths, two length-two paths, and one length-three path. The two full cycles based at $i$ add to $ue_i$, so become negatives; all length-four paths vanish. A positive-length entry of a projective homomorphism strictly raises path length. Consequently the associated graded map has six copies of $A=\operatorname{diag}(A_0,A_1,A_2)$, giving the formula by triangular block determinants. Base change of determinants justifies specialization. Multiplicativity along filtrations is ordinary linear algebra, consistent with \cite[Tags0FJ9,0GSX]{StacksDeterminants}; no purity assumption enters.
+
+Each term's determinant has constant term one in $T$, so every denominator has nonzero specialization. Taking the finite alternating product therefore preserves the sixth power, even after cancellation. Finally $\Lambda_K=M_3(K)\times M_3(K)$; a projective's branch modules are sums of three-dimensional simples. A commuting endomorphism acts on each multiplicity space, repeating every factor three times. This proves the generic assertion.
+\end{proof}
+Thus no such ordinary perfect-complex ratio can equal the constant-in-$u$ quadratic $P_d(T)$, or the full local curve zeta $P_d(T)/((1-T)(1-qT))$. For $P_d$, the valuation at infinity is $-2$, not a multiple of six. For the zeta ratio, $P_d(1)=q+1-a_q>0$ by the local bound $|a_q|\le2\sqrt q<q+1$, so its pole at $T=1$ is simple. This also covers square prime powers where the numerator may have a double root. It is an obstruction for the specified ordinary determinant and linear category, not all spectral or determinant theories.
+
+There is nevertheless a \emph{genuine integral functor} removing this multiplicity. Choose a permitted branch and its cycle cut. Its projection $\Lambda\to B_+\subset M_3(R)$ makes the column lattice $W_+=R^3$ a left $\Lambda$-module. Define
+\[
+ \Phi_+ :\operatorname{Perf}(\Lambda)\longrightarrow\operatorname{Perf}(R),
+ \qquad P^\bullet\longmapsto P^\bullet\otimes_\Lambda W_+.
+\]
+Bounded projectives compute this derived tensor functor; flatness of $W_+$ on all modules is unnecessary. Since $e_iW_+\simeq R$, its determinant on $e_i\Lambda\otimes_{\mathbb Q}V$ with external action $1\otimes M_d$ is exactly $P_d$, whereas on the regular module it is $P_d^3$. This is a defined change of determinant functor, not an arbitrary polynomial root. It does not construct the arithmetic action independently: the already computed $M_d$ is still the input.
+
+The price of this repair is precise. Branch swap $\alpha$ exchanges $W_+$ and $W_-$; pairing them yields $P_d^2$ on that basic-projective input. The chosen branch determinant cannot intertwine $\alpha$ on all endomorphisms: the corner unit $e_i+c_i^+$ acting on $e_i\Lambda$, with $c_i^+$ a plus full cycle, acts on its determinant by $1+u$, whereas its $\alpha$-image acts by one. Also no rank-one-per-vertex column lattice supported on one branch admits an $R$-linear lift of the rotation $\sigma$ fixing $u$. Its three nonzero arrow scalars have nonnegative $u$-valuations summing to one; an invertible cyclic lift would make all three equal. This contradiction concerns that lattice, not every determinant-level rotation comparison. Ramification $u=v^3$ \emph{and a new lattice} with all three arrow scalars $v$ admits such a rotation, changing the stipulated base/lattice data. A descent-compatible arithmetic determinant retaining the required symmetry and a global positive realization remains open.

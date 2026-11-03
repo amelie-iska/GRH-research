@@ -148,3 +148,10 @@ These are universal algebraic components. The continuous circle C* subalgebras, 
 The file does not choose cubic/quadratic characters, prove the elliptic cube/square fiber count, define every arithmetic j/λ/π object, formalize Kummer descent, the H0/H2 zeta cancellation or full rational homotopy, identify a canonical integral Frobenius lattice, or construct an order-to-Frobenius functor. These are proved prose deductions or explicitly named external interpretations. No GRH-equivalent positivity is assumed. See outputs/checks/2026-11-03-jacobi/ for full types and evidence.
 
 The final three declarations prove the actual conjugation-matrix identities and the universal real2inert-prime determinant obstruction. They rule out the specified fixed real2cubic-deck carrier with positive Frobenius determinant, not complex/enlarged models. The complex one-qrepair and its extension-power limits remain prose, independently reviewed.
+
+
+## Theta projective multiplicity components (2026-11-03)
+
+`ThetaProjectiveMultiplicity.lean` adds five declarations (full analytic suite208). An arbitrary block-triangular matrix with six repeated diagonal blocks has sixth-power determinant and det(1−tM). A genuine PowerSeries constant-coefficient ring homomorphism specializes finite matrices, at each scalar parameter. Polynomial degree excludes a quadratic rational sixth power. Genuine formal series with productX cannot obey the residue-vanishing equivalences imposed by a cyclic rank-one arrow intertwiner. No toy arithmetic spectrum or unknown positivity is a premise.
+
+The complete theta order, projective Nakayama decomposition, path-filtration interface, coefficientwise polynomial specialization, generic Morita interpretation, actual derived branch functor and full deck-equivariance arguments are proved in prose, not all formalized. Five focused checks and the full suite print types and standard foundations at the unchanged pin. The standalone historical7-declaration layer was not modified or rerun this extension.
