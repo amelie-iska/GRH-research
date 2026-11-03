@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 33 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 39 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -52,3 +52,9 @@ The entire-function error summation, xi coefficients and kernel, Gaussian measur
 `EulerCorrection.lean` adds eight statements: the exact unramified residual identity; principal specialization, remainder defect and Euler factorization; local nonvanishing by an actual complex norm convexity bound; actual complex infinite-product nonvanishing and norm error with explicit summability assumptions; and shifted zero transport under an explicit factorization and zero input. The last statement does not establish existence of a Hecke zero.
 
 The source's preceding Gauss/reciprocity identity, arithmetic power estimates, ideal counting, multivariable normal convergence and classical infinite-order Hecke completion theory remain prose/external dependencies. In particular the7/12 obstruction is not asserted as a complete Lean theorem. The added mathlib import `Mathlib.Analysis.SpecialFunctions.Log.Summable` uses the same pinned version; its public cache artifacts were added without cleaning existing caches or changing the manifest.
+
+## Principal residue components
+
+`PrincipalResidue.lean` adds six actual complex algebra/finite-sum statements: exact multiplier evaluation when r=d, the two local error identities, weighted slot factorization with the correct sign, transfer of an error bound through nonnegative weights with positive total mass, and a finite-product relative-error bound. The last estimate uses a common error bound at most1; the empty product is included. Each theorem has explicit hypotheses and prints its standard foundational dependencies.
+
+The arithmetic inert-prime identification at s=3/5, fixed-ray prime theorem, prime-power asymptotics, slot admissibility and contour integration remain prose/external inputs. The module does not certify the inherited high representation or the remaining energy/row-count estimates. No new imports, dependencies or cache downloads were needed for this module.

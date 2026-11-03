@@ -16,7 +16,7 @@ M03,math Siegel main theorem,uniform logarithmic real-zero gap,full text read; n
 L01,lean/GRHResearch.lean,7 finite arithmetic obstruction statements,Lean checked,build and axioms log,analytic interpretation remains prose
 P01,papers/core.tex closure,conditional GRH interface,prose checked,independent review,open arithmetic convergence
 P02,papers/details.tex canonical converse,RH implies centered approximants,prose checked conditional on RH,Hadamard product,not an independent construction
-A01,lean-analytic/,33 analytic spectral and certificate statements,Lean checked,pinned mathlib build and axiom report,full Hurwitz and arithmetic convergence remain prose
+A01,lean-analytic/,39 analytic spectral and certificate statements,Lean checked,pinned mathlib build and axiom report,full Hurwitz and arithmetic convergence remain prose
 A02,papers/core.tex Euler convergence,zero-free truncation no-go,prose checked,Rouche boundary margin,change approximation class
 A03,papers/core.tex arithmetic sums,compact-uniform arithmetic approximants,prose checked,Abel and Euler summation exact tails,establish spectral zero-location bridge
 A04,research/exponent-frontier.md,conditional exponent refinement,conditional only,exact rational checks,prove missing analytic extensions
@@ -35,3 +35,8 @@ E01,research/euler-correction.md,second local Euler region extends to Re x>=3/4,
 E02,research/euler-correction.md,principal correction equals A times shifted infinite-order Hecke L,prose independently reviewed,A is holomorphic nonzero on Re>1/2 and factorization on Re>2/3,account for extra angular factor in a changed probe
 E03,papers/core.tex unchanged correction limitation,correction has a zero with real part at least7/12,conditional on scalar identity and listed classical Hecke inputs,Hadamard growth and same-character reflection plus shifted zero transport,replace correction before seeking nonvanishing below7/12
 E04,lean-analytic/EulerCorrection.lean,eight scalar norm infinite-product and transport statements,Lean checked,actual complex expressions with explicit summability and zero inputs,arithmetic summation and Hecke zero existence remain prose
+R01,research/principal-residue.md,principal multiplier has uniform 37/50 local saving on enlarged rectangle,proved for displayed scalar factors,exact cancellation and local correction lower bound,verify remaining nonprincipal and row-count inputs
+R02,research/principal-residue.md,compensated scalar normalizer and relative residue error extend to perturbed geometry,prose independently reviewed with classical fixed-ray PNT input,nonnegative weighted average and finite-product bound with mu=(7/10)ell_min,use same normalizer in low and high estimates
+R03,research/principal-residue.md,principal contour comparison extends to sigma0>=3/4,conditional on inherited exact high Mellin-tail and reciprocal contracts,contours and unchanged three remainder powers,certify broader nonprincipal contours and arithmetic energy
+R04,papers/core.tex pointwise normalization boundary,pointwise negative-power approximation by -1 fails at and below3/5,proved from scalar formula with arithmetic inert endpoint,uniform phase asymptotic and exact r=d gives B=-1/Q,no conclusion about cancellation in prime averages
+R05,lean-analytic/PrincipalResidue.lean,six multiplier and finite normalization statements,Lean checked,actual complex identities weighted errors and product induction,prime asymptotics and contour integration remain prose

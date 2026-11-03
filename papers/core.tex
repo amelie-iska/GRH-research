@@ -454,6 +454,65 @@ theorems here~\cite{tate,white}. No GRH or Artin holomorphy premise is
 used. This limits the specified probe and nonvanishing criterion; it
 does not refute GRH, the claimed $7/8$ result, or different constructions.
 
+\section{The compensated principal residue at perturbed parameters}
+We retain the source's scalar local identity, exact high representation,
+Mellin integrated/trace tail contracts, and polynomial reciprocal control
+on $\Rea s=\beta_*+e$. The following verifies a principal interface,
+not the remaining energy or row-count estimates.
+On the enlarged Euler region, the four local multiplier errors have powers
+\[
+ Q^{-x_r},\quad Q^{-6z_r},\quad Q^{4-5x_r-6z_r},\quad Q^{1-w_r-6z_r}.
+\]
+Their common saving is at least $37/50$. The local lower bound for $H_p$
+therefore gives $\mathcal B_p=-1+O(Q^{-37/50})$, uniformly in all heights.
+On fixed real boxes the full principal correction is
+$O(Z^{\ell\Rea z})$, with height degree zero.
+
+For a nonempty fixed slot system with positive lengths $\ell_i$, set
+\[
+ S_i=\sum_{p\in\mathcal P_i(Z)}W_i(Q/P_i)Q^{-5/6},\qquad
+ A_T=(-1)^KZ^{-\ell/6}\prod_iS_i,\qquad
+ \mu=\tfrac7{10}\min_i\ell_i>0.
+\]
+Fixed-ray prime counting gives $S_i>0$ eventually and
+$A_T\sim c_T(\log Z)^{-K}$ with $c_T\ne0$, of sign $(-1)^K$~\cite{tz}.
+No uniformity in a moving ray conductor is used. Nonnegative weights give
+the exact residue factorization
+\[
+ \mathfrak H_{\eta,1,Z}(s,1,1/6)
+ =H_\eta(s)Z^{\ell/6}A_T(Z)(1+\mathcal R_{\eta,Z}(s)),\qquad
+ \mathcal R_{\eta,Z}=O(Z^{-\mu}).
+\]
+Indeed the $i$th relative error is the negative weighted average of
+$\mathcal B_p+1$, of size $O(P_i^{-37/50})$; a fixed finite product
+preserves that saving. Also $|A_T|^{-1}\ll_\epsilon Z^\epsilon$.
+
+With the explicitly inherited contracts above, the source's principal
+contour comparison now extends to $3/4\le\sigma_0<\beta_*$. Its three
+remainders, relative to $C(\beta_*)$, have exponents
+\[
+ (1+h)e-l_y/20+\epsilon,\qquad e-h/600+\epsilon,\qquad e-\mu+\epsilon.
+\]
+The extended edition derives these by crossing only $w=1$ and $z=1/6$.
+All three are negative for sufficiently small pretarget $e,\epsilon$.
+The perturbed geometry at $t=10^{-5}$ satisfies this interface, with
+$C(s)=s-11/16$ and target $349999/400000$. This is not a new
+zero-free theorem: other low, nonprincipal contour and row-count inputs
+remain unverified.
+
+There is a separate pointwise limitation. At the principal residue,
+putting $N=1-vr-(1-v)d$ gives
+\[
+ \mathcal B_p+1=\frac{(1-v)[r/d-vr-(1-v)d]}{N}.
+\]
+For fixed $1/2<\sigma=\Rea s\le3/5$ its norm is asymptotic to
+$Q^{3-5\sigma}$, uniformly in phases. In particular, for $\eta=1$ and
+an inert rational prime, $\alpha^{-6}=1$ and real $s=3/5$ give $r=d$,
+so $\mathcal B_p=-1/Q$ exactly. The error around $-1$ tends to $1$.
+Such primes can occur in the fixed identity ray. This excludes the
+pointwise power-saving argument there, without excluding cancellation
+after prime averaging or a different normalization.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

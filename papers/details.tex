@@ -653,6 +653,158 @@ multivariable holomorphy and classical Hecke completion theory remain
 prose/external dependencies. This does not establish the missing
 compensated contour bounds, mean-square estimates or GRH.
 
+\section{Principal multiplier, weighted slots and the extended residue comparison}
+The source passages are lines 6173--6328, 7004--7044, 9050--9097 and
+15548--15669 of the pinned September paper. We retain its displayed
+scalar/high identities and Mellin/reciprocal contracts as stated inputs.
+
+\subsection{Local errors and the scalar normalizer}
+Its exact cancellation for $G_p+H_p$ consists of a bounded prefactor times
+\[
+ (1-Q^{-w})\{V/(1-V)-D\}
+ +(\overline{\eta(p)}Q^x+1-Q^{-w})\mathcal E_p.
+\]
+The first term costs $Q^{-6z_r}+Q^{-x_r}$. Multiplying the previous
+residual bound by $Q^{x_r}$ costs
+$Q^{4-5x_r-6z_r}+Q^{1-w_r-6z_r}$; unamplified residual terms are
+smaller. Division by the uniformly nonzero $H_p$ therefore gives
+\[
+ |\mathcal B_p+1|\ll Q^{-\kappa},\qquad
+ \kappa=\min(x_r,6z_r,5x_r+6z_r-4,w_r+6z_r-1)\ge37/50.
+\]
+It follows that $G_p=O(1)$ on the enlarged principal region. On a fixed
+real box, an annular slot contributes at most $O(P_i^{z_r})$ by ideal
+counting, since its weight is $Q^{z-1}$. The unselected product has a
+bounded positive majorant. Thus the full tuple is $O(Z^{\ell z_r})$
+uniformly in heights, as required. This is not a constant uniform over
+unbounded $z_r$.
+
+For the prime normalizer, the fixed-extension consequence of
+\cite[Theorem 1.1]{tz} gives
+$\pi_{1_T}(x)\sim\operatorname{Li}(x)/|T|$.
+Any exceptional zero is fixed below $1$, so its secondary term is
+asymptotically smaller; it need not be ruled out. Stieltjes integration
+against the fixed annular weight gives
+\[
+ S_i(Z)\sim\frac{P_i^{1/6}}{|T|\log P_i}
+                  \int_0^\infty W_i(y)y^{-5/6}\,dy>0.
+\]
+A further fixed finite deletion eventually leaves the window entirely.
+The normalizer consequently has the signed asymptotic
+\[
+ A_T(Z)\sim\frac{c_T}{(\log Z)^K},\qquad
+ c_T=\frac{(-1)^K}{|T|^K}\prod_i
+       \left(\ell_i^{-1}\int_0^\infty W_i(y)y^{-5/6}\,dy\right)\ne0.
+\]
+This proves the inverse subpower bound. For example, after setting
+$u=\log Z$, the exponential series shows that $e^{\epsilon u}$ eventually
+dominates the fixed power $u^K$. Thresholds may depend on the fixed ray
+and excluded set; the power-saving exponents do not.
+
+At the residue write $a_p=W_i(Q/P_i)Q^{-5/6}\ge0$ and
+$\varepsilon_p=\mathcal B_p+1$. Then
+\[
+ \sum_pa_p\mathcal B_p=-S_i(1+\rho_i),\qquad
+ \rho_i=-\frac{\sum_pa_p\varepsilon_p}{S_i},\qquad
+ |\rho_i|\ll P_i^{-37/50}.
+\]
+The sign of $\rho_i$ matters. Nonnegative individual weights permit
+division by their positive total without cancellation. A merely positive
+sum of signed weights would not give this inequality.
+For a fixed finite set of $K$ errors bounded by $\delta\le1$,
+\[
+ \left|\prod_i(1+\rho_i)-1\right|\le(2^K-1)\delta.
+\]
+Induct by writing $(1+\rho_i)P-1=(1+\rho_i)(P-1)+\rho_i$ and using
+$|1+\rho_i|\le2$. Thus the displayed residue identity holds with
+$\mu=(7/10)\ell_{\min}$, where $\ell_{\min}>0$ is fixed before the target.
+The same signed $A_T$ is used in every normalization of this probe.
+
+\subsection{Contour powers and the perturbed geometry}
+Use the inherited exact high representation for the same physical probe,
+the rapid integrated and trace tail contracts for the Mellin tests, and
+polynomial reciprocal control to the right of $\beta_*$. For
+$3/4\le\sigma_0<\beta_*$, the principal paths can be moved to
+\[
+ \Rea s=\beta_*+e,\quad \Rea w=1+e,\quad \Rea z=1/6+e
+\]
+inside the enlarged domain. Move $w$ left to $19/20$; in its residue
+move $z$ left to $33/200$. Only the two scalar zeta poles are crossed.
+The reciprocal remains on the global line; at a principal pole its zero
+causes no additional residue. Horizontal joins use the trace estimates
+in the independent height coordinates $(\Im(s+z),\Im z,\Im w)$.
+After the $w$ residue, use the corresponding two-dimensional kernel.
+Arithmetic height orders are fixed first; later external tail orders
+increase only the decay requested from the tests.
+
+The raw exponent is
+\[
+ l_x/2+\Rea s-1+h\Rea z+l_y(\Rea w-1),\qquad h=1-l_x+\ell.
+\]
+On the unresidued $w$ integral it is
+$C(\beta_*)+(1+h)e-l_y/20$; on the leftover $z$ integral it is
+$C(\beta_*)+e-h/600$. At the double residue the normalization gives
+the main signal times $1+\mathcal R_{\eta,Z}(s)$. Its error costs
+$Z^{C(\beta_*)+e-\mu+\epsilon}$ on the entire global line, using the
+Gaussian and reciprocal bound. Only the main signal moves right to
+$\Rea s=2$; no continuation of the relative error is used. The factor
+$1/6$ is already in $c_S$ from the residue of $\zeta_F^S(6z)$.
+The normalizer's inverse is absorbed in the allocated $\epsilon$.
+This proves the three remainder powers stated in the main text,
+conditional on the explicit inherited analytic contracts.
+
+For $t=10^{-5}$, the perturbed parameters are
+\[
+ \ell=1/6+t,\quad l_x=17/48-t/2,\quad l_y=23/48-t/2,
+ \quad h=13/16+3t/2.
+\]
+They have $C(s)=s-11/16$ and $\sigma_t=349999/400000>3/4$.
+Put $m_w=l_y/20$, $m_z=h/600$, and choose
+\[
+ 0<e=\epsilon\le
+ \min\left(\frac1{10000},\frac{m_w}{8(1+h)},\frac{m_z}{8},\frac\mu8\right).
+\]
+Each total error cost is at most one quarter of its corresponding
+margin, so all three remainders have a common positive saving fixed
+before the target. Nonprincipal contour, energy and frozen-capacity
+row-count extensions remain separate obligations.
+
+\subsection{A pointwise obstruction at $3/5$}
+At the principal residue put $N=1-vr-(1-v)d$. In addition to the
+main-text multiplier identity, exact algebra gives
+\[
+ \frac{\mathcal B_p+1}{r/d}-1
+ =\frac{-v(1-r)+(1-v)^2d(1-d/r)}{N}.
+\]
+For fixed $1/2<\sigma\le3/5$ and $Q\ge4$, $|N|\ge1/4$,
+$|r|<1$ and $|d|<1/2$. Hence the relative error is at most
+\[
+ 8Q^{-1}+4Q^{-\sigma}+4Q^{4\sigma-3}\longrightarrow0.
+\]
+Since $|r/d|=Q^{3-5\sigma}$, a pointwise negative-power bound around
+$-1$ fails in this range, uniformly in phases and heights.
+
+For an exact arithmetic endpoint example, let $\eta=1$ and let the
+rational prime $p\equiv2\pmod3$ be inert. Its prime ideal has norm
+$Q=p^2$ and primary generator $-p$, so $\alpha^{-6}=1$.
+At real $s=3/5$, $r=Q^{3-18/5}=Q^{-3/5}=d$. Thus $P_p^*=0$
+and $\mathcal B_p=-Q^{-1}$. Given a fixed ray modulus $\mathfrak m$,
+choose a positive integer $M$ with $M\mathcal O\subset\mathfrak m$.
+Primes $p\equiv-1\pmod{3M}$ have primary generator $-p\equiv1\pmod{\mathfrak m}$
+and occur infinitely often by the classical fixed-progression prime theorem.
+They obey the identity-ray restriction. Nevertheless their ideals have
+count $O(\sqrt P)$ up to norm $P$, a zero-density subset of the prime
+ideals. This supplies no exclusion of cancellation in the full slot average.
+
+The exact checker \path{scripts/check_principal_residue.py} verifies the
+multiplier and slot identities, rational gaps and illustrative principal
+loss allocations. Its slot counts do not certify row-count admissibility.
+The six Lean statements verify scalar identities, actual complex weighted
+normalization and finite-product error transfer. Prime counting, the
+arithmetic endpoint identification and all contour integrations remain
+prose/external inputs. No new zero-free half-plane follows from this
+principal interface alone.
+
 \section{Research tasks with mathematical acceptance criteria}
 \paragraph{Track A: repair the determinant interface.}
 Start with the exact diagonal Euler transfer on $\Rea s>1$.

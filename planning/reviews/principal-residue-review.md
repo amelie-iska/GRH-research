@@ -1,0 +1,11 @@
+# Independent review: compensated principal residue
+
+2026-11-02. Read-only review by the project_review agent. No reviewer edits.
+
+The reviewer independently checked the four local error exponents, the37/50uniform gap, multiplier algebra, normalizer sign(-1)^Kand the negative weighted-average sign for rho_i. The choice mu=(7/10)ell_min is valid and fixed before the target. The height-degree-zero tuple bound is correctly limited to fixed real boxes. The principal contour proof has no other intrinsic7/8 restriction once the larger domain and bounds replace that input; exact high, Mellin/trace and reciprocal contracts remain explicit inherited hypotheses. The same three remainder powers result, with small losses chosen before the target. Remaining energy, nonprincipal and row-count interfaces are not promoted to proved results.
+
+The published Thorner–Zaman Theorem1.1 was independently inspected: its fixed-extension consequence supports the positive S_i asymptotic despite a possible fixed exceptional zero below1. No moving-conductor uniformity is needed. The pointwise3/5 obstruction and exact inert-prime witness are correct. Primary generators-p for primes p=-1mod3M meet a fixed identity ray, using a separate classical progression prime theorem. Their degree-two ideals have zero density, so no averaged exclusion is justified or claimed. This limitation is kept distinct from the earlier global7/12 correction obstruction.
+
+All6literal PrincipalResidue.lean declarations independently compiled with warnings as errors and only propext, Classical.choice and Quot.sound. Actual Python arithmetic ran in memory before report writing: all12prime-phase samples, weighted-slot/product checks and fraction allocations passed. The boundary rational samples are accurately labeled as tests of r=d, not evaluations of the transcendental Q^(-3/5). Example slot counts do not certify nonprincipal row admissibility. No report or bytecode files were written by the reviewer.
+
+The final research note and both paper sections received a literal prose review. No actionable issues remained. Protected source clones were clean. This is an independent project check, not external peer review or a full analytic proof audit.

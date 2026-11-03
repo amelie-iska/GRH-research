@@ -1,0 +1,39 @@
+{
+  "arithmetic": "exact Fraction and Q(sqrt(-3)); deterministic; no random seed",
+  "rectangle_gaps": [
+    "3/4",
+    "99/100",
+    "37/50",
+    "47/50"
+  ],
+  "uniform_local_gap": "37/50",
+  "target_sigma": "349999/400000",
+  "geometry_t": "1/100000",
+  "principal_loss_allocations": {
+    "2": {
+      "mu": "350021/6000000",
+      "e": "1/10000",
+      "w_saving": "142060991/6000000000",
+      "z_saving": "138503/120000000",
+      "residue_saving": "348821/6000000"
+    },
+    "8": {
+      "mu": "350021/24000000",
+      "e": "1/10000",
+      "w_saving": "142060991/6000000000",
+      "z_saving": "138503/120000000",
+      "residue_saving": "345221/24000000"
+    },
+    "1024": {
+      "mu": "350021/3072000000",
+      "e": "350021/24576000000",
+      "w_saving": "117561883337437/4915200000000000",
+      "z_saving": "27150477/20480000000",
+      "residue_saving": "350021/4096000000"
+    }
+  },
+  "arithmetic_prime_phase_samples": 12,
+  "boundary_relation": "r=d implies B=-1/Q; inert prime ideals at s=3/5 and eta=1 realize r=d, proved in prose and scalar identity in Lean",
+  "weighted_slot_and_product_checks": "passed; nonnegative weights, plus signed-weight failure witness",
+  "scope": "Exact algebra/exponents only. No fixed-ray PNT, full source Gauss identity, contour integration, energy/row-count estimates or new zero-free theorem is certified."
+}
