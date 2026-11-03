@@ -277,3 +277,36 @@ Four corrected Manim clips render and are reviewed: actualtheta three shared-end
 The new persistence chapter gives full R/(x,y)^2 exactness, a realCWbifiltration with H1/H2syzygies, GL2totalgrading versus torusbigrading, corrected Fitting/base-change/flag-incidence statements, and a genuine actual-node E=Lambda/u² coefficient totalresolution of ranks1,4,5,2. Independent adversarial review and exact symbolic products/minors/Hilbert/CWchecks pass. This is a mathematical positive construction, not an arithmetic bridge or completeLeanformalization. The integratedbook compiles127pages,27chapters with resolvedreferences/nooverfull. Existing23/50page articles and240Leanreports are unchanged; the fullLean suite was not redundantly rerun for prose/UI/governance-only changes.
 
 Architectureinspector sourceaudit is saved and all required tensor/state categories are queued, but their new 3D inspector is not yet implemented. Nextreadytask is P1-architecture-data, then inspector and persistence tools/formalization; the original low-gcd/positivearithmetickernel tasks remain active. Local page/book/plan responses are200, uniqueness and queue checks pass, no production dependency or existing environment was changed, all protected progress survives, and private staged credential/integrity checks precede the next substantive push.
+
+
+## Architecture numerical trace layer (2026-11-03)
+
+Claimed P1-architecture-data through the existing queue helper and implemented
+22 numerical cases, 836 shape/axis-labelled DAG nodes and 124 internal checks.
+The six existing trained CPU families are replayed without optimization or
+checkpoint changes; the six classical TokenGT-style/softmax/tropical/ring/
+attention-hybrid/Soft-MoE references have explicitly seeded fixed weights.
+The theta carrier is one permitted three-cycle of the actual genus-one dessin;
+it forgets full alpha-gluing and is not a faithful infinite-order action.
+Harper probes retain exact rational certificate provenance rather than being
+mislabelled held-out training examples.
+
+Independent focused checks passed: 38 additional checks, actual PennyLane
+gate-level states, Strawberry Fields intermediate covariances, Cirq/Qiskit
+state replay, literal attention/expert loops, empty masks/prefixes, transport
+of metadata and exact floating ties versus near-ties. Independent review
+corrected three semantic DAG omissions, tolerant tie labelling and cross-file
+promotion. Immutable content-addressed records plus atomic manifest replacement
+now preserve old-reader consistency. All 22 served record hashes and local
+page/book/PDF/data links pass HTTP checks.
+
+Evidence: outputs/checks/2026-11-03-architecture/trace-checks.json,
+trace-http-checks.json and planning/reviews/architecture/TRACE_EXPORT_REVIEW.md.
+No dependency/environment/source clone changed. No new mathematical article
+content or Lean theorem changed, so the existing 127-page book, 23/50-page
+articles and 240 printed Lean reports were preserved rather than redundantly
+rebuilt. Integrity checks still cover their saved final logs and source pins.
+The next deliverable is P1-architecture-inspector: consume these actual arrays
+in one canonical useful step-through view. The original low-gcd estimate and
+independent positive arithmetic determinant bridge remain open; no GRH advance
+is claimed from this numerical implementation.

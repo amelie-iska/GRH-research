@@ -53,10 +53,18 @@
     {
       "id": "P1-architecture-data",
       "priority": 3,
-      "status": "pending",
+      "status": "complete",
       "dependencies": [],
       "objective": "Numerical trace exports for real quantum checkpoints and audited miniature TokenGT/tropical/Soft-MoE/ToricGT/hybrid models",
-      "acceptance": "Correct tensor shapes, formulas, state/readout agreement, seed/provenance and explicit demo versus checkpoint labels"
+      "acceptance": "Correct tensor shapes, formulas, state/readout agreement, seed/provenance and explicit demo versus checkpoint labels",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-03T18:52:10.917149+00:00",
+      "last_result": "22 numerical cases and 836 dependency/shape-labelled nodes; unchanged trained-checkpoint replay and explicitly fixed-weight classical references; 124 trace plus 38 independent backend/scalar checks; independent review and served content hashes pass; step-through inspector remains next",
+      "evidence": [
+        "outputs/checks/2026-11-03-architecture/trace-checks.json",
+        "outputs/checks/2026-11-03-architecture/trace-http-checks.json",
+        "planning/reviews/architecture/TRACE_EXPORT_REVIEW.md"
+      ]
     },
     {
       "id": "P1-architecture-inspector",

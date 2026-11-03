@@ -180,3 +180,35 @@ Read planning/MASTER_IMPLEMENTATION_PLAN.md, IMPLEMENTATION_QUEUE.json and IMPLE
 The live criticalbook is127pages/27chapters, with four unique canonical interactive tools (not26generic repeated panels),13canonical vector diagrams and four corrected animations. Buildscripts now validate staged PDF/HTML before live promotion. Complete original sources, old diagrams/assets and legacyclockclip remain protected. New persistence full exactness/CW/Schur/incidence/actualnodecoefficient result has independent review and symbolic checks; new fullclaims are NOTyetLeanformal. Existing240reports were already passed and were not repeated for nonLeanchanges.
 
 Next implement numerical trace exports of actual quantum checkpoints versus clearly labelled miniature TokenGT/tropical/SoftMoE/ToricGT/hybrid reference models, then the interactive inspector and fixed-snapshot persistence tools. Keep the canonical example locations and source/proof scope labels. Use the corrected actualtheta/HLS/bifiltration/QCNN Manim clips, not the old disjointloopclip as a theta dessin. Continue formalization and independent original low-gcd/arithmeticpositivebridge research in the governing plan; GRH remains unresolved. Keep the loopback server available and research private.
+
+
+## Latest frontier: numerical architecture traces (2026-11-03)
+
+P1-architecture-data is complete after independent review and focused checks.
+Read examples/architecture/README.md, web/data/architecture/manifest.json and
+planning/reviews/architecture/TRACE_EXPORT_REVIEW.md. There are 22 checked
+cases, 836 nodes, 124 trace checks and 38 independent checks against actual
+PennyLane/Strawberry Fields/Cirq/Qiskit and literal reference loops. Existing
+trained weights/checkpoints were not changed; classical miniatures are seeded
+fixed-weight references, not upstream trained TokenGT checkpoints. Tensor
+shapes, axes, parameters, formulas and DAG dependencies are exported.
+
+NEXT: claim P1-architecture-inspector with scripts/research_loop.py; implement
+one canonical original step/inspect/play UI reading these real numerical
+records. Use category-specific quantum state/circuit, photonic covariance,
+token/attention, tropical witness/block and expert-slot views; expose shape/
+values and provenance. Distinguish the classical attention hybrid from the
+quantum-classical hybrid. Every masked block zero requires its block_valid
+mask; padding residuals may have projection bias. Quantum bit0 is most
+significant; Harper uses backward V and VU=iUV. Show exact floating ties
+without pretending they certify symbolic equalities. Do not repeat generic
+panels in the book. The current exported data is available from the learning
+section link; the new inspector itself has NOT shipped.
+
+Manifest promotion uses immutable content-addressed records; do not delete
+old generations, local candidate exports or inspection renders. Preserve the
+approved CPU environment and all source pins. Local preview remains on
+127.0.0.1:8765. No new TeX/article statement or Lean theorem changed this run;
+existing book/PDFs and 240-report formal suite remain as previously verified.
+Keep the low-gcd arithmetic lane active without rerunning completed high-gcd
+or finite-carrier no-go audits. GRH and complete book formalization remain open.

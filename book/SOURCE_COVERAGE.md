@@ -81,3 +81,11 @@ SHA256 `7c91fe980d5aed525a94b2c391a512682395edd0c8498fd4c1bd4cba95899379`; 13493
 | `\chapter{Worked example: a mixed dessin on $\mathbb T^2$ (torus) and its AR geometry}` | 13314 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
 
 The source review at planning/reviews/book/source-review.md gives exact full prior audit coverage and fresh changed-line coverage. The physics, AR, computation and ToricGT reviews state independent validation limits. Refer to VERIFICATION.md for the formalization backlog and to planning/CLAIMS.csv for refutations and open obligations.
+
+The architecture data layer now provides 22 numerical replay/reference cases
+and 836 intermediate DAG nodes for the six existing trained families and six
+fixed-weight classical variants. See examples/architecture/README.md and
+planning/reviews/architecture/TRACE_EXPORT_REVIEW.md. This adds executable
+coverage of states, covariances, attention and routing, not corrected exposition
+of every source topic or whole-book Lean coverage. The new inspector remains a
+separate pending task.

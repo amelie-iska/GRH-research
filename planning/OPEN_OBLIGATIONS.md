@@ -129,3 +129,10 @@ The analytic frontier now controls the fixed-radial-profile high-gcd part G>=D^(
 ## Master-loop and persistence extension boundary
 
 The governing plan/queue/hourly implementation loop is installed; three concrete checkpoints are complete. The new tensor/state architecture inspector, full persistence visualization tools, further chapterwise formalization, comprehensive matched training evaluations and the arithmetic GRH bridge remain pending. Four canonical tools replace repeated generic book panels. The new exact persistence/surface-coefficient construction is prose proved and independently reviewed, not fully Lean formal. Do not confuse a completed implementation checkpoint or scheduled heartbeat with completion of GRH.
+
+The subsequent architecture-data checkpoint supplies 22 checked numerical
+cases (836 DAG nodes) from existing trained parameters and fixed-weight
+references. It closes the data-export task only. The step-through inspector,
+upstream full-model training reproduction, larger matched evaluations and all
+remaining mathematical/formal obligations above remain open. No new arithmetic
+cancellation or determinant positivity is inferred from the trace exports.

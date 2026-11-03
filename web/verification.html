@@ -19,6 +19,7 @@ The pinned Lean 4.24/mathlib suite has **240 printed theorem dependency reports*
 | Learned renormalization | Actual PennyLane three-architecture and larger nine-qubit training; NumPy comparison, analytic target/gradient checks; actual Strawberry Fields training | No optimizer convergence theorem, hardware run, general QFT RG theorem or quantum advantage claim |
 | ToricGT hybrid | Actual pinned upstream Weyl module, trained PennyLane surrogate, six exact rational 15-minor PSD certificates | No upstream language-model campaign reproduced; no inferred arithmetic L-function operator |
 | Persistence extension | Complete prose resolution/CW/Schur/flag-incidence and actual surface-order coefficient construction; independent review | These new full module/category arguments are not yet Lean formalized |
+| Numerical architecture traces | 22 cases and 836 shape-labelled DAG nodes; unchanged trained checkpoint replay, fixed-weight classical references, independent gate/covariance/scalar-loop checks | Step-through 3D inspector is a separate queued task; numerical arrays are not kernel-checked theorems or new training |
 | Sage | Exact scripts supplied | Installed launcher points to missing app; Sage execution not passed |
 | NVIDIA | Two requested upstream-only public forks and pinned local clones; optional adapters | No supported NVIDIA GPU runtime on this Apple machine; GPU execution not passed |
 
