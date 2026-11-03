@@ -5,9 +5,9 @@ No complete GRH proof has been established. A proof must discharge these, not as
 | ID | Obligation | Acceptance evidence | Status |
 |---|---|---|---|
 | O1 | Specify arithmetic Hilbert space and operator independently of unknown zeros | Complete domain, measure, action, closure, adjoint and convergence definitions | Open |
-| O2 | Recover full completed L-function from that operator | Exact determinant/trace identity with conductor, gamma, ramified factors and multiplicities | Open; proposed source identity refuted |
+| O2 | Recover full completed L-function from that operator | Exact determinant/trace identity with conductor, gamma, ramified factors and multiplicities | Open for the intended positive spectral object; source identity refuted and separate elementary Abel rank-one Dirichlet identity proved |
 | O3 | Preserve O2 under a self-adjoint realization | Explicit intertwining/determinant identity, not arbitrary Hermitian extraction | Open; unrestricted preservation refuted |
-| O4 | Prove locally uniform convergence on a domain with overlap | Uniform trace-norm or normal-family estimates, all constants quantified | Open for spectral operators; partial-sum arithmetic approximants now have explicit compact-uniform convergence |
+| O4 | Prove locally uniform convergence on a domain with overlap | Uniform trace-norm or normal-family estimates, all constants quantified | Open for intended positive spectral operators; the arithmetic Abel rank-one family has explicit trace-norm convergence in prose |
 | O5 | Apply closure with nonzero holomorphic target | Rouché/Hurwitz argument after O1–O4 | Proved conditionally in prose |
 | O6 | Extend from primitive Dirichlet to finite-order Hecke | Field/infinity type/conductor-specific construction and estimates | Open |
 | O7 | Extend to general Artin with correct analytic scope | Holomorphy or meromorphic/pole analysis, valid induction and no hidden automorphy assumptions | Open |
@@ -67,3 +67,9 @@ A concrete intermediate acceptance target is the elliptic curve y²=x³−x over
 The plain finite alternating determinant of Δ=(d+d*)² cancels every nonzero spectral factor; positivity from a resolution alone cannot preserve the missing arithmetic spectrum. Ordinary factors vary with metric, and a holomorphic d(s) need not give a holomorphic Δ(s). This is a failed repair attempt, not a refutation of independent arithmetic chain endomorphisms or degree-weighted torsion.
 
 An explicit bounded ℓ² relative boundary model now realizes det(I−M), and hence the weighted Cartan ratio. This closes that algebraic/relative realization task in prose, not PR-B/PR-C. Its natural truncated shifts have an escaping terminal block: finite determinants stay1, the scalar M=1/2 limiting determinant is1/2, and trace-norm distance stays1 despite strong convergence. A changed boundary correction or different actual arithmetic approximants must supply the required determinant comparison and topology. The existing positive-length zero-free obstruction remains. Do not claim a universal infinite Hodge no-go: individual trace-class heat or a specified relative regularization matters.
+
+## Arithmetic Abel family2026-11-03
+
+An explicit elementary nonprincipal Dirichlet family on a fixed ℓ² space now has Fredholm determinant L(s,χ) for Re(s)>0, and explicit operators with determinants exactly the EXISTING raw partial sums converge locally uniformly in trace norm. Primitive gamma/conductor completion is included with the corrected functional normalization. This closes the analytic arithmetic encoding/convergence task for THIS rank-one family in prose; it does not identify a fixed self-adjoint height operator, a surface-order arithmetic realization or any general Hecke/Dedekind/Artin extension.
+
+The direct common-positive-metric shortcut for this family is decisively rejected: symmetric fixed-range rank-one maps need proportional coefficient functionals, while two distinct critical-height functionals are not proportional. A different or enlarged positive spectral realization with a determinant-preserving comparison remains open. The mere existence of this elementary rank-one determinant is not a zero-location theorem. Ten formal components do not amount to formal verification of the full ℓ², Fredholm and asymptotic arguments.

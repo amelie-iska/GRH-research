@@ -1,0 +1,248 @@
+GRHResearch.AbelBoundary.symmetric_boundary_value_ne_zero.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [InnerProductSpace ℂ E] (u : E) (φ : E →L[ℂ] ℂ) (hu : u ≠ 0) (hφ : φ ≠ 0)
+  (hsym : ∀ (x y : E), inner ℂ ((boundaryOperator u φ) x) y = inner ℂ x ((boundaryOperator u φ) y)) : φ u ≠ 0
+GRHResearch.AbelBoundary.squared_geometric_majorant (r : ℝ) (hr : ‖r‖ < 1) :
+  HasSum (fun n => (↑n + 1) ^ 2 * r ^ n) ((1 + r) / (1 - r) ^ 3)
+GRHResearch.AbelBoundary.finite_abel_boundary (c f : ℕ → ℂ) (N : ℕ) :
+  ∑ n ∈ range N, (∑ k ∈ range (n + 1), c k) * (f n - f (n + 1)) = ∑ n ∈ range N, c n * f n - (∑ k ∈ range N, c k) * f N
+GRHResearch.AbelBoundary.finite_boundary_determinant.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (u v : ι → ℂ) :
+  (1 + vecMulVec u v).det = 1 + ∑ i, v i * u i
+GRHResearch.AbelBoundary.boundary_operator_on_range.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  (u : E) (φ : E →L[ℂ] ℂ) : (boundaryOperator u φ) u = φ u • u
+GRHResearch.AbelBoundary.boundary_operator_square.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  (u : E) (φ : E →L[ℂ] ℂ) : (boundaryOperator u φ).comp (boundaryOperator u φ) = φ u • boundaryOperator u φ
+GRHResearch.AbelBoundary.boundary_operator_difference_norm.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [InnerProductSpace ℂ E] (u : E) (φ ψ : E →L[ℂ] ℂ) : ‖boundaryOperator u φ - boundaryOperator u ψ‖ = ‖φ - ψ‖ * ‖u‖
+GRHResearch.AbelBoundary.symmetric_boundary_functional.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [InnerProductSpace ℂ E] (u : E) (φ : E →L[ℂ] ℂ) (hu : u ≠ 0)
+  (hsym : ∀ (x y : E), inner ℂ ((boundaryOperator u φ) x) y = inner ℂ x ((boundaryOperator u φ) y)) (x : E) :
+  φ x = star (φ u) * inner ℂ u x / inner ℂ u u
+GRHResearch.AbelBoundary.symmetric_boundary_pair.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  (u : E) (φ ψ : E →L[ℂ] ℂ) (hu : u ≠ 0)
+  (hφ : ∀ (x y : E), inner ℂ ((boundaryOperator u φ) x) y = inner ℂ x ((boundaryOperator u φ) y))
+  (hψ : ∀ (x y : E), inner ℂ ((boundaryOperator u ψ) x) y = inner ℂ x ((boundaryOperator u ψ) y)) (x : E) :
+  star (φ u) * ψ x = star (ψ u) * φ x
+GRHResearch.AbelBoundary.real_abel_kernel_minor : 1 / 6 * (7 / 144) - 5 / 36 * (1 / 12) = -1 / 288
+'GRHResearch.AbelBoundary.symmetric_boundary_value_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.squared_geometric_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.finite_abel_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.finite_boundary_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.boundary_operator_on_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.boundary_operator_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.boundary_operator_difference_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.symmetric_boundary_functional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.symmetric_boundary_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.real_abel_kernel_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.arithmetic_zero_disk_in_left_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.arithmetic_zero_certificate_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.central_rectangle_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.retained_height_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.buffered_height_from_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.strict_ramified_credit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.simultaneous_ramified_power_credit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.central_normalization_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.central_perturbation_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.central_reference_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.original_integral_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.late_height_and_tail_choice' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.epsilon_ne_zero.{u_1} (k : Type u_1) [Field k] : epsilon k ≠ 0
+GRHResearch.Analytic.DualNumberResolution.epsilon_square_zero.{u_1} (k : Type u_1) [Field k] : epsilon k * epsilon k = 0
+GRHResearch.Analytic.DualNumberResolution.boundary_coordinates.{u_1} (k : Type u_1) [Field k] (x : Ring k) :
+  (boundary k) x = { re := 0, im := x.re }
+GRHResearch.Analytic.DualNumberResolution.boundary_square_zero.{u_1} (k : Type u_1) [Field k] :
+  boundary k ∘ₗ boundary k = 0
+GRHResearch.Analytic.DualNumberResolution.boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (boundary k) = LinearMap.range (boundary k)
+GRHResearch.Analytic.DualNumberResolution.differential_exact_all_degrees.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  LinearMap.ker (differential k n) = LinearMap.range (differential k (n + 1))
+GRHResearch.Analytic.DualNumberResolution.differential_square_zero.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  differential k n ∘ₗ differential k (n + 1) = 0
+GRHResearch.Analytic.DualNumberResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(augmentationLinear k)
+GRHResearch.Analytic.DualNumberResolution.augmentation_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (augmentationLinear k) = LinearMap.range (differential k 0)
+GRHResearch.Analytic.DualNumberResolution.resolution_terms_projective.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  Module.Projective (Ring k) (Term k n)
+GRHResearch.Analytic.DualNumberResolution.epsilon_smul_residue.{u_1} (k : Type u_1) [Field k] (a : k) :
+  epsilon k • a = 0
+GRHResearch.Analytic.DualNumberResolution.hom_boundary_zero.{u_1} (k : Type u_1) [Field k] (f : Ring k →ₗ[Ring k] k)
+  (n : ℕ) : f ∘ₗ differential k n = 0
+GRHResearch.Analytic.DualNumberResolution.augmentationLinear_ne_zero.{u_1} (k : Type u_1) [Field k] :
+  augmentationLinear k ≠ 0
+'GRHResearch.Analytic.DualNumberResolution.epsilon_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.epsilon_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.boundary_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.boundary_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.differential_exact_all_degrees' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.differential_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.augmentation_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.augmentation_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.resolution_terms_projective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.epsilon_smul_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.hom_boundary_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.augmentationLinear_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.good_residual_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_correction_from_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_remainder_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_euler_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_correction_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.correction_tprod_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.correction_tprod_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.shifted_zero_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.norm_eulerWeight_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.euler_factor_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_euler_product_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.boundary_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.limit_ne_zero_of_boundary_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.boundary_uniform_limit_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_power_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_trivial_character_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_unit_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_unit_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_autocorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_solve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_units' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_one_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_zero_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_principal_corner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_f7_corner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.sextic_character_power_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_gauss_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_gauss_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_gauss_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.count_from_complex_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_plain_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_row_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_crossing_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_short_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_balanced_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_supply_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.normalized_finite_fourier_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.normalized_finite_fourier_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.nonprincipal_independent_coordinate_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.nonprincipal_joint_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_dyadic_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_dyadic_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_dyadic_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_dyadic_head_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_nonexceptional_accounting' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.real_valued_holomorphic_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.conjugate_holomorphic_pair_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.holomorphic_hermitian_family_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Hodge.boundary_relative_product.{u_1} {R : Type u_1} [Ring R] (P M N : R) (hMP : M * P = P * M)
+  (hN : (1 - M) * N = 1) : (1 - M) * (P + (1 - P) * N) = 1 - P * M
+GRHResearch.Hodge.odd_dirac_square.{u_1, u_2} {m : Type u_1} {n : Type u_2} [Fintype m] [DecidableEq m] [Fintype n]
+  [DecidableEq n] (B : Matrix n m ℂ) : fromBlocks 0 Bᴴ B 0 * fromBlocks 0 Bᴴ B 0 = fromBlocks (Bᴴ * B) 0 0 (B * Bᴴ)
+GRHResearch.Hodge.gram_partners_positive.{u_1, u_2} {m : Type u_1} {n : Type u_2} [Fintype m] [DecidableEq m]
+  [Fintype n] [DecidableEq n] (B : Matrix n m ℂ) : (Bᴴ * B).PosSemidef ∧ (B * Bᴴ).PosSemidef
+GRHResearch.Hodge.shifted_matrix_factor.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (M : Matrix ι ι ℂ) (μ : ℂ)
+  (hμ : μ ≠ 0) : μ • 1 + M = μ • (1 + μ⁻¹ • M)
+GRHResearch.Hodge.identity_metric_positive (r : ℝ) (hr : 0 < r) : (↑r • 1).PosDef
+GRHResearch.Hodge.normalized_gram_determinants.{u_1, u_2} {m : Type u_1} {n : Type u_2} [Fintype m] [DecidableEq m]
+  [Fintype n] [DecidableEq n] (B : Matrix n m ℂ) (z : ℂ) : (1 + z • (Bᴴ * B)).det = (1 + z • (B * Bᴴ)).det
+GRHResearch.Hodge.shifted_gram_determinants.{u_1, u_2} {m : Type u_1} {n : Type u_2} [Fintype m] [DecidableEq m]
+  [Fintype n] [DecidableEq n] (B : Matrix n m ℂ) (μ : ℂ) (hμ : μ ≠ 0) :
+  (μ • 1 + Bᴴ * B).det * μ ^ Fintype.card n = (μ • 1 + B * Bᴴ).det * μ ^ Fintype.card m
+GRHResearch.Hodge.normalized_gram_superdet.{u_1, u_2} {m : Type u_1} {n : Type u_2} [Fintype m] [DecidableEq m]
+  [Fintype n] [DecidableEq n] (B : Matrix n m ℂ) (z : ℂ) (h : (1 + z • (B * Bᴴ)).det ≠ 0) :
+  (1 + z • (Bᴴ * B)).det / (1 + z • (B * Bᴴ)).det = 1
+GRHResearch.Hodge.identity_weighted_adjoint (r : ℝ) : 1ᴴ * ↑r • 1 = ↑r • 1
+GRHResearch.Hodge.identity_metric_laplacian_det (r : ℝ) (z : ℂ) : (↑r • 1 - z • 1).det = ↑r - z
+GRHResearch.Hodge.identity_metric_moves_zero : (1 • 1 - 1 • 1).det = 0 ∧ (4 • 1 - 1 • 1).det ≠ 0
+'GRHResearch.Hodge.boundary_relative_product' depends on axioms: [propext]
+'GRHResearch.Hodge.odd_dirac_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.gram_partners_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.shifted_matrix_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.identity_metric_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.normalized_gram_determinants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.shifted_gram_determinants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.normalized_gram_superdet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.identity_weighted_adjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.identity_metric_laplacian_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Hodge.identity_metric_moves_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_product_defect_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.positive_metric_eigenvalue_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.quadratic_hermite_symmetrizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.quadratic_hermite_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.quadratic_hermite_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.quadratic_hermite_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gaussian_mixture_turan_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.hybrid_minimum_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.kernel_quarter_charge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_energy_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.perturbed_rescaling_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.perturbed_scale_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.perturbed_rescaling_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.perturbed_rescaling_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.real_ratio_from_positive_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.positive_pencil_eigenvalue_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.positive_pencil_det_zero_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.positive_pencil_det_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.centered_positive_pencil_zero_on_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.det_ne_zero_of_strict_imaginary_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.indefinite_pencil_off_line_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_multiplier_when_equal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_multiplier_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_multiplier_scaled_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.weighted_slot_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.weighted_slot_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_product_relative_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.eisenstein4_relation' depends on axioms: [propext, Quot.sound]
+'GRHResearch.Analytic.odd4_has_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.odd4_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.squareClass4_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.odd4_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.squareClass4_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gammaFour4_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.signClass4_bicharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.signClass4_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gammaClass4_refinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gammaFour4_refinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reduceEisenstein4_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reciprocityPhase4_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_row_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_mark_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_mark_mask_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_ramanujan_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_unit_cross_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_pair_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_row_mark_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_moving_j4_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_common_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Resolutions.arrow_state_determinant.{u_1, u_2, u_3} {R : Type u_1} [CommRing R] {n : Type u_2}
+  {m : Type u_3} [Fintype n] [DecidableEq n] [Fintype m] [DecidableEq m] (S : Matrix n m R) (T : Matrix m n R)
+  (D U V W : Matrix m m R) (hinv : (1 - U) * W = 1) (hsplit : T * S * D = U + V) :
+  (1 + S * D * W * T).det * (1 - U).det = (1 + V).det
+GRHResearch.Resolutions.acyclic_pair_determinant.{u_1, u_2} {R : Type u_1} [CommRing R] {n : Type u_2} [Fintype n]
+  [DecidableEq n] (A B E : Matrix n n R) (hAB : A * B = 1) (t : R) : (1 - t • (A * E * B)).det = (1 - t • E).det
+GRHResearch.Resolutions.alternating_duality_without_purity :
+  have F := !![2, 0; 0, 1];
+  have J := !![0, 1; -1, 0];
+  Fᵀ * J * F = 2 • J ∧ 2 ^ 2 ≠ 2
+'GRHResearch.Resolutions.arrow_state_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Resolutions.acyclic_pair_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Resolutions.alternating_duality_without_purity' depends on axioms: [propext, Classical.choice, Quot.sound]

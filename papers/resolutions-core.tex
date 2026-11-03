@@ -212,6 +212,58 @@ Every primitive cycle has positive total length and product weight of modulus st
 \end{proof}
 Thus the resolution/Cartan formula rigorously diagnoses a failed direct Euler-product repair. Artificially centering the weights at $s-1/2$ puts their elementary cycle zeros on a chosen line but proves no matching with an arithmetic $L$-function.
 
+\subsection{An arithmetic trace-class boundary family}
+The relative-boundary calculation suggests testing a different arithmetic family in the determinant's required topology. The following construction is elementary; representing a scalar analytic function by a rank-one determinant is not itself a zero-location theorem.
+\begin{theorem}[Abel boundary realization]\label{thm:abel-boundary}
+Let $\chi$ be a nonprincipal Dirichlet character modulo $q$, $A_n=\sum_{j\le n}\chi(j)$ and $B=\sup_n|A_n|<\infty$. On $H=\ell^2(\mathbb N_{\ge1})$, put
+\[
+ \ell_n=1+\lfloor\log_2n\rfloor,\quad w_n=\sqrt n\,\ell_n,\quad
+ u_n=A_n/w_n,\quad v_n(s)=w_n\bigl(n^{-s}-(n+1)^{-s}\bigr).
+\]
+For $\Rea s>0$, the complex-linear functional
+$\varphi_s(x)=\sum_n v_n(s)x_n-x_1$ is bounded, and
+\[
+ K_sx=\varphi_s(x)u,\qquad \det_F(1+K_s)=L(s,\chi).
+\]
+The family is holomorphic in trace norm. There are explicit rank-one approximants with determinant exactly $S_N(s)=\sum_{n\le N}\chi(n)n^{-s}$ for every integer $N\ge1$, converging locally uniformly in trace norm on this half-plane. Their Galerkin compressions have the same determinants and also converge in trace norm.
+\end{theorem}
+\begin{proof}
+Character periodicity gives $|A_n|\le B$ and $A_1=1$. On each dyadic block,
+$\sum|u_n|^2\le B^2/(k+1)^2$, hence $\|u\|^2\le2B^2$ and $u_1=1$. For $\sigma=\Rea s>0$,
+\[
+ |n^{-s}-(n+1)^{-s}|\le |s|n^{-\sigma-1}.
+\]
+On a compact set with $\sigma\ge\sigma_0>0$, $|s|\le M$, the $k$th block of $\|v(s)\|^2$ is at most $M^2(k+1)^2r^k$, $r=2^{-2\sigma_0}<1$. These geometric tails converge uniformly, proving $v\in\ell^2$ and its Banach-valued holomorphy by finite-coordinate approximation. The coefficient pairing $\sum v_nx_n$ is complex linear, with norm $\|v\|$; no conjugation of $s$ occurs. Rank-one trace norm is $\|u\|\|\varphi\|$ and determinant is $1+\varphi(u)$. Finite Abel summation gives
+\[
+ T_N=\sum_{n\le N}A_n(n^{-s}-(n+1)^{-s})
+     =S_N-A_N(N+1)^{-s}.
+\]
+Its absolutely convergent limit is $L(s,\chi)$. With $v_N=P_Nv$, take
+\[
+ \varphi_N^{\rm raw}(x)=\sum_{n\le N}v_n(s)x_n-x_1
+                 +A_N(N+1)^{-s}x_1.
+\]
+Then $u\otimes\varphi_N^{\rm raw}$ has determinant $S_N$ and trace-norm error at most
+$\|u\|(\|v-v_N\|+B(N+1)^{-\sigma_0})$, uniformly on the compact set. The Galerkin error additionally has the term $\|u-P_Nu\|\|\varphi_s\|$, which tends uniformly to zero. Its determinant is unchanged because the finite functional pairs with $P_Nu$ exactly as with $u$. The extended edition gives closed tail bounds.
+\end{proof}
+For primitive $\chi$ of conductor $q$ and parity $a\in\{0,1\}$, where $\chi(-1)=(-1)^a$, completion by
+$g(s)=(q/\pi)^{(s+a)/2}\Gamma((s+a)/2)$ is obtained by replacing $\varphi_s$ with $g(s)\sum v_n(s)x_n-x_1$. Multiplying the whole old functional would give the wrong determinant $1+g(L-1)$. The same correction gives completed raw approximants $gS_N$. The infinite dyadic weights are not a bounded diagonal similarity; only the stated finite compressions admit that coordinate transformation.
+
+\begin{proposition}[Obstruction to a common metric]\label{prop:abel-metric}
+No one positive inner product on this fixed vector space makes all the operators $K_{1/2+it}$ symmetric. The same holds for the completed family and any nowhere-zero scalar completion $g$.
+\end{proposition}
+\begin{proof}
+If a nonzero fixed-range rank-one map $u\otimes\varphi$ is symmetric, then
+$\varphi(x)\langle u,u\rangle=\overline{\varphi(u)}\langle u,x\rangle$.
+Thus all nonzero such symmetric maps have proportional functionals. But for $n\ge2$, $\sigma>0$ and $t\ne0$,
+\[
+ \frac{v_n(\sigma+it)}{v_n(\sigma)}
+ =\frac{\sigma+it}{\sigma}\,n^{-it}(1+O_{\sigma,t}(n^{-1})).
+\]
+The integral formula used above proves this expansion. Integers nearest $e^{2\pi k/|t|}$ and $e^{(2\pi k+\pi)/|t|}$ give two opposite nonzero subsequential limits. The ratios are not constant, so the functionals are not proportional. A nonzero scalar $g(\sigma+it)/g(\sigma)$ does not fix this. Set $\sigma=1/2$ and compare height zero with one nonzero height.
+\end{proof}
+This excludes a direct fixed-metric symmetrization of this particular family. It does not exclude a different positive pencil, an enlarged realization, or an independently justified parameter-dependent comparison. The family has only the possibly nonzero eigenvalue $L(s,\chi)-1$; no independent arithmetic height spectrum has been constructed. Its Dirichlet scope does not automatically include principal, Hecke, Dedekind or Artin targets.
+
 \begin{theorem}[Conditional positive determinant closure]\label{thm:closure}
 Let $\Omega$ be a connected open subset of $\mathbb C$ containing an open portion of the critical strip, and let $L_\circ$ be holomorphic on $\Omega$, not identically zero. Suppose holomorphic functions $D_N$ converge locally uniformly to $L_\circ$ and every zero of $D_N$ in $\Omega$ lies on $\Rea s=1/2$. Then every zero of $L_\circ$ in $\Omega$ lies on that line. One sufficient finite realization is
 \[
@@ -223,7 +275,7 @@ with $g_N$ holomorphic and nonzero and the same convergence hypothesis.
 \begin{proof}
 At a singular pencil, a nonzero $v$ satisfies $A_Nv=zB_Nv$. The quotient $z=(v^*A_Nv)/(v^*B_Nv)$ is real since its denominator is positive. For $z=-i(s-1/2)$ this means $\Rea s=1/2$. If the limit had an off-line zero, a small disk avoiding the line and other zeros would contradict Rouch\'e exactly as in Proposition~\ref{prop:nogo}.
 \end{proof}
-This theorem is a closure mechanism, not a construction of $A_N,B_N,g_N$. Our existing arithmetic partial-sum approximants converge with compact error bounds; no positive-pencil determinant identity for them has been proved. Replacing their matrices by Hermitian parts can change the determinant and is not such an identity.
+This theorem is a closure mechanism, not a construction of $A_N,B_N,g_N$. The Abel boundary family now realizes the arithmetic partial-sum approximants with compact trace-norm error bounds, but Proposition~\ref{prop:abel-metric} blocks direct common-metric symmetry of that family. No positive-pencil determinant identity for those approximants has been proved. Replacing their matrices by Hermitian parts can change the determinant and is not such an identity.
 
 A complete attempt using resolutions must discharge the following sequence of concrete claims.
 \begin{enumerate}
@@ -238,4 +290,4 @@ The local homological part can now be implemented explicitly. The global arithme
 \section{Verification and reproducibility}
 The separate pinned Lean4.24/mathlib layer verifies a general cleared version of the rectangular determinant identity, acyclic-pair characteristic-determinant cancellation, the actual alternating-duality counterexample, and exactness/projectivity components of a dual-number resolution over an actual nonsemisimple algebra. The Hodge module also verifies actual block squaring, Gram positivity and determinant cancellation, positive scalar metrics and their moving-zero example, and a universal ring identity for the boundary relative product. The infinite Hilbert-space/Fredholm and trace-norm arguments just given remain prose. Existing files verify positive Hermitian pencils and analytic nonvanishing components. Theorems print their types and foundation dependencies. These are components, not a formalization of all forbidden-chain resolutions, the derived surface models, the trace formula, Deligne purity, or GRH.
 
-A standard-library exact rational checker tests finite quivers, path/chain coefficients, differentials and bounded internal-degree exactness, signed matrix inversion and the weighted cycle determinant, including nodal, terminating, periodic and cancellation examples. Finite tests supplement the universal proofs; they do not certify the arithmetic bridge. All source submodules and pinned environments are preserved. Both editions compile from shared core text; the extended edition adds explicit computations, geometric hypotheses and implementation tasks.
+An additional Lean module verifies finite Abel summation, rank-one determinants and genuine continuous operators, an infinite geometric majorant and necessary symmetry conditions. The dyadic arithmetic $\ell^2$ construction, trace-class holomorphy and critical-height asymptotic remain prose. A standard-library exact rational checker tests finite quivers, path/chain coefficients, differentials and bounded internal-degree exactness, signed matrix inversion and the weighted cycle determinant, including nodal, terminating, periodic and cancellation examples. Finite tests supplement the universal proofs; they do not certify the arithmetic bridge. All source submodules and pinned environments are preserved. Both editions compile from shared core text; the extended edition adds explicit computations, geometric hypotheses and implementation tasks.

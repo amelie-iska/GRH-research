@@ -1,0 +1,35 @@
+GRHResearch.AbelBoundary.symmetric_boundary_value_ne_zero.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [InnerProductSpace ℂ E] (u : E) (φ : E →L[ℂ] ℂ) (hu : u ≠ 0) (hφ : φ ≠ 0)
+  (hsym : ∀ (x y : E), inner ℂ ((boundaryOperator u φ) x) y = inner ℂ x ((boundaryOperator u φ) y)) : φ u ≠ 0
+GRHResearch.AbelBoundary.squared_geometric_majorant (r : ℝ) (hr : ‖r‖ < 1) :
+  HasSum (fun n => (↑n + 1) ^ 2 * r ^ n) ((1 + r) / (1 - r) ^ 3)
+GRHResearch.AbelBoundary.finite_abel_boundary (c f : ℕ → ℂ) (N : ℕ) :
+  ∑ n ∈ range N, (∑ k ∈ range (n + 1), c k) * (f n - f (n + 1)) = ∑ n ∈ range N, c n * f n - (∑ k ∈ range N, c k) * f N
+GRHResearch.AbelBoundary.finite_boundary_determinant.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (u v : ι → ℂ) :
+  (1 + vecMulVec u v).det = 1 + ∑ i, v i * u i
+GRHResearch.AbelBoundary.boundary_operator_on_range.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  (u : E) (φ : E →L[ℂ] ℂ) : (boundaryOperator u φ) u = φ u • u
+GRHResearch.AbelBoundary.boundary_operator_square.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  (u : E) (φ : E →L[ℂ] ℂ) : (boundaryOperator u φ).comp (boundaryOperator u φ) = φ u • boundaryOperator u φ
+GRHResearch.AbelBoundary.boundary_operator_difference_norm.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [InnerProductSpace ℂ E] (u : E) (φ ψ : E →L[ℂ] ℂ) : ‖boundaryOperator u φ - boundaryOperator u ψ‖ = ‖φ - ψ‖ * ‖u‖
+GRHResearch.AbelBoundary.symmetric_boundary_functional.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [InnerProductSpace ℂ E] (u : E) (φ : E →L[ℂ] ℂ) (hu : u ≠ 0)
+  (hsym : ∀ (x y : E), inner ℂ ((boundaryOperator u φ) x) y = inner ℂ x ((boundaryOperator u φ) y)) (x : E) :
+  φ x = star (φ u) * inner ℂ u x / inner ℂ u u
+GRHResearch.AbelBoundary.symmetric_boundary_pair.{u_1} {E : Type u_1} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+  (u : E) (φ ψ : E →L[ℂ] ℂ) (hu : u ≠ 0)
+  (hφ : ∀ (x y : E), inner ℂ ((boundaryOperator u φ) x) y = inner ℂ x ((boundaryOperator u φ) y))
+  (hψ : ∀ (x y : E), inner ℂ ((boundaryOperator u ψ) x) y = inner ℂ x ((boundaryOperator u ψ) y)) (x : E) :
+  star (φ u) * ψ x = star (ψ u) * φ x
+GRHResearch.AbelBoundary.real_abel_kernel_minor : 1 / 6 * (7 / 144) - 5 / 36 * (1 / 12) = -1 / 288
+'GRHResearch.AbelBoundary.symmetric_boundary_value_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.squared_geometric_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.finite_abel_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.finite_boundary_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.boundary_operator_on_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.boundary_operator_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.boundary_operator_difference_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.symmetric_boundary_functional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.symmetric_boundary_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.AbelBoundary.real_abel_kernel_minor' depends on axioms: [propext, Classical.choice, Quot.sound]

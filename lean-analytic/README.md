@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 137 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 147 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -113,6 +113,13 @@ At the projective-resolution milestone all 126 analytic declarations were checke
 
 ## Finite Hodge cancellation and relative boundary algebra
 
-`HodgeDeterminant.lean` adds eleven declarations: actual odd block-Dirac squaring; positivity of both Gram partners; nonzero scalar-shift factorization; equality of normalized Gram determinants; a cleared shifted equality assuming nonzero mass; the normalized parity quotient where its denominator is nonzero; positive scalar metrics on a fixed one-dimensional complex; the weighted-adjoint identity; the ordinary metric-dependent characteristic determinant and explicit moving-zero witness; and a relative boundary-product identity in an arbitrary noncommutative unital ring, with inverse/commutation hypotheses explicit. All types and standard foundation dependencies are printed. The complete analytic suite now has137 declarations.
+`HodgeDeterminant.lean` adds eleven declarations: actual odd block-Dirac squaring; positivity of both Gram partners; nonzero scalar-shift factorization; equality of normalized Gram determinants; a cleared shifted equality assuming nonzero mass; the normalized parity quotient where its denominator is nonzero; positive scalar metrics on a fixed one-dimensional complex; the weighted-adjoint identity; the ordinary metric-dependent characteristic determinant and explicit moving-zero witness; and a relative boundary-product identity in an arbitrary noncommutative unital ring, with inverse/commutation hypotheses explicit. All types and standard foundation dependencies are printed. At that milestone the complete analytic suite had137 declarations.
 
 The full finite-complex/cohomology interpretation, polynomial extension of the shifted equality to mass0, ℓ² shift, finite-rank Fredholm determinant, infinite relative boundary realization and trace-norm/strong-limit proofs remain prose in research/hodge-boundary-determinants.md and the focused preprints. No bounded Hilbert operator or Fredholm determinant is claimed constructed in Lean from the abstract ring identity. No arithmetic determinant or desired positivity is assumed. Existing pinned modules/caches sufficed; no dependency, cache download, manifest or toolchain changed.
+
+
+## Arithmetic Abel boundary components
+
+`AbelBoundary.lean` adds ten declarations: exact finite Abel summation with its endpoint term; universal finite rank-one determinant; an actual HasSum for the infinite squared geometric majorant; genuine continuous rank-one operators, their square/range evaluation and exact operator-norm difference on arbitrary complex inner-product spaces; necessary functional form, nonzero boundary value and pairwise proportionality for symmetric fixed-range rank-one maps; and the exact real Abel-kernel minor −1/288. All full types and standard foundation dependencies are printed. The complete suite147 passes warnings-as-errors at unchanged pins.
+
+The particular dyadic arithmetic vectors u/v are constructed on ℓ² in prose; their Banach/trace-norm holomorphy, trace-class norm and Fredholm identity, explicit dyadic tails, completed/raw arithmetic comparison and critical-height subsequence obstruction are not claimed fully formalized. The formal symmetry hypotheses are actual universal operator properties used to derive a necessary condition, not assumed arithmetic positivity or a GRH-equivalent axiom. Exact finite character/determinant/tail diagnostics supplement the proofs. No dependency, cache, manifest, toolchain, infrastructure or MCP activation changed.
