@@ -1,0 +1,226 @@
+\appendix
+\section{Worked resolutions and matrices}
+\subsection{A terminating two-arrow example}
+Take $1\xrightarrow{a}2\xrightarrow{b}3$ with $ab=0$. Then
+\[
+ 0\longrightarrow \gshift{P_3}{2}\xrightarrow{x\mapsto bx}\gshift{P_2}{1}
+ \xrightarrow{x\mapsto ax}P_1\longrightarrow S_1\longrightarrow0.
+\]
+The permitted path bases are $P_1=\langle e_1,a\rangle$, $P_2=\langle e_2,b\rangle$, $P_3=\langle e_3\rangle$. The second map has kernel $kb$, the image of the first, and the first is injective. Consequently
+\[
+ C(z)=\begin{pmatrix}1&z&0\\0&1&z\\0&0&1\end{pmatrix},\qquad
+ E(z)=\begin{pmatrix}1&-z&z^2\\0&1&-z\\0&0&1\end{pmatrix}.
+\]
+Multiplication gives the identity: the $(1,3)$ coefficient is $-z^2+z^2=0$. In particular $\operatorname{Ext}^2(S_1,S_3)=k$, although $\operatorname{Hom}(S_1,S_3)=0$. Its generator is the Yoneda splice of the two arrow extensions. In the complementary algebra the path $ab$ survives; this is the simplest nontrivial product in the quadratic dual. All determinant factors here are one since neither transition graph has a cycle.
+
+\subsection{Comparison maps and completed resolutions}
+Here is the promised Yoneda calculation with bases fixed. For a forbidden chain $p$ of length $m$ from $i$ to $j$, let $f_p:P_m(i)\to S_j$ project to the summand indexed by $p$ and apply its simple augmentation. Lift it for every $r\geq0$ to
+\[
+ F_p^r:P_{m+r}(i)\longrightarrow P_r(j)
+\]
+by sending the summand indexed by $pq$ identically to the summand indexed by $q$, and every other summand to zero. The zero-length suffix has endpoint $j$. A summand $pq$ exists only if the entire concatenation is a forbidden chain. For $r\geq1$, removing its last arrow commutes with removing the fixed prefix $p$; both composites multiply by that same last arrow. Summands with a different prefix remain zero on both sides. Thus these are comparison maps of the homological tails, lifting $f_p$ through the augmentation. Composing $F_p^n$ with $f_q:P_n(j)\to S_l$ picks exactly the summand $pq$ in degree $m+n$. If the joining pair is permitted that summand does not exist, so the composite is zero. These representatives compute the Yoneda splice. With the corresponding homological convention their nonzero coefficient is one; converting to signed cochain shifts transports the usual shift signs consistently. This proves the stated multiplication rule, not merely its dimensions.
+
+The path argument also extends to the arrow-adic completion, but should be proved directly rather than justified by an unproved flatness assertion. An element of $e_v\widehat A$ is a formal sum of permitted paths, with finitely many paths in every bounded length. Multiplication by an arrow either kills a coefficient because its first pair is forbidden or prefixes a distinct permitted path. Its kernel is exactly the finite sum of the formal branch ideals $b\widehat A$ for forbidden successors $b$. Different branches have disjoint supports, and every formal series on such a branch is obtained by factoring off its first arrow. Each map and its image is closed in the length topology. Consequently the completed version of Theorem~\ref{thm:resolution}, using finite direct sums at each fixed homological degree, is exact coefficient by coefficient. This is a filtered resolution; its associated grading has the internal shifts used above.
+
+The closed arrow ideal $\widehat J$ is the Jacobson radical: for $x\in\widehat J$ and any $a\in\widehat A$, the geometric series in $ax$ inverts $1-ax$, proving $\widehat J\subseteq\operatorname{Jac}(\widehat A)$, and the quotient is the semisimple algebra $k^{Q_0}$, proving the reverse inclusion. The augmentation maps are therefore projective covers and the completed resolution is minimal in this semiperfect setting. Applying Hom to vertex simples again kills every differential. These conclusions concern the specified completion over $k$, not arbitrary changes of coefficient rings or central specialization.
+
+\subsection{Dual numbers, actual exactness and nonperfectness}
+For $R=k[\varepsilon]/(\varepsilon^2)$ the maps in
+\[
+ \cdots\xrightarrow{\varepsilon}R\xrightarrow{\varepsilon}R
+ \xrightarrow{\varepsilon}R\xrightarrow{\pi}k\longrightarrow0
+\]
+are $R$-linear. Write $r=a+b\varepsilon$. Then $\varepsilon r=a\varepsilon$, so $\ker(\varepsilon\cdot)=k\varepsilon=\operatorname{im}(\varepsilon\cdot)$ and $\ker\pi=k\varepsilon$. The preimage of $b\varepsilon$ is the scalar $b$; the preimage of $a\in k$ under $\pi$ is $a\in R$. This proves exactness in all degrees and augmentation surjectivity. Every term is the regular free rank-one $R$-module. Applying $\operatorname{Hom}_R(-,k)$ makes every arrow zero and each term is $k$, since an $R$-linear map from $R$ is determined freely by its value at one. Thus
+\[
+ \operatorname{Ext}^n_R(k,k)=k,\quad
+ \operatorname{Tor}_n^R(k,k)=k\quad(n\geq0),\qquad
+ C_R(z)=1+z,\quad E_R(z)=\frac1{1+z}.
+\]
+Nonvanishing Ext in all degrees rules out a finite projective resolution of $k$, so $k\notin\operatorname{Perf}(R)$. Infinite periodicity cannot be used to replace it by an arbitrary finite perfect complex. In this example the permitted transition is zero and the forbidden transition is the one-loop $\varepsilon$; the determinant formula gives $1+w_\varepsilon$ directly.
+
+The Lean implementation uses the actual algebra \texttt{QuadraticAlgebra k 0 0}, not a coordinate pair with an assumed differential. It selects the regular self-action explicitly and the residue action pulled back along the augmentation. The proof of all-degree exactness is the coordinate calculation just made, with an explicit preimage. It also proves each term projective and every induced Hom boundary zero, but does not yet identify the abstract derived Ext functor or construct mathlib's categorical resolution object. Those distinctions are recorded with the theorem types.
+
+\subsection{The node and its complementary relations}
+In $A=k[x,y]/(xy)$ the nonempty permitted paths are $x^r,y^r$. The forbidden chains alternate $x,y$, so there are two in every positive length. Summation gives
+\[
+ C_A(z)=1+2\sum_{r\geq1}z^r=\frac{1+z}{1-z},\quad
+ E_A(z)=1+2\sum_{r\geq1}(-z)^r=\frac{1-z}{1+z}.
+\]
+The unsigned Ext series is again $(1+z)/(1-z)$. The forbidden cycle has length two and weight $w_xw_y$, while the two permitted loops have weights $w_x,w_y$, producing the multivariate formula in the core. Applying an extra sign to the already signed Euler series gives
+\[
+ C_A(z)E_A(-z)=\left(\frac{1+z}{1-z}\right)^2
+             =1+4z+8z^2+\cdots\ne1.
+\]
+This detects the original preprint's sign error independently of any matrix transpose.
+
+The complementary algebra $A^\#=k\langle x,y\rangle/(x^2,y^2)$ has two forbidden loops and one permitted alternating cycle, hence
+\[
+ C_{A^\#}(w_x,w_y)=\frac{(1+w_x)(1+w_y)}{1-w_xw_y}.
+\]
+After $w_x=w_y=z$ it has the same univariate Hilbert and Betti dimensions as the node, while its maps and relations differ. The equality of these coarse numerical series does not determine the algebra or the surface gluing.
+
+For the completed node, let $R_0=k[[t]]$ and $t=x+y$. Then
+\[
+ \Lambda\cong R_0[x]/(x^2-tx)=R_0\oplus R_0x,
+ \qquad y=t-x.
+\]
+The displayed basis follows by reducing powers of $x$ and comparing the two branch series. Each positive syzygy, a submodule of a finite free $R_0$-module, is $R_0$-torsion-free. Since $t$ kills the simple, no positive syzygy is isomorphic to that simple. The labelled branch maps alternate, but the direct sum of the two syzygy branches can be interchanged. Thus a labelled return time and a least ungraded module period are different invariants. In the graded category the internal shifts must be retained as well.
+
+The branch module $M=\Lambda/(y)$ has alternating resolution
+\[
+ \cdots\xrightarrow{y}\Lambda\xrightarrow{x}\Lambda
+ \xrightarrow{y}\Lambda\longrightarrow M\longrightarrow0.
+\]
+Its exactness is the same annihilator computation. Tensoring with $k$ gives a zero differential in every degree, so $\operatorname{Tor}_n^\Lambda(M,k)=k$ for all $n$. It is not perfect, although the normalization factors $k[[x]]$ and $k[[y]]$ are regular hereditary rings. This is the elementary matrix-factorization mechanism over the hypersurface $xy$ \cite{Eisenbud}.
+
+\subsection{A nontrivial cancellation invisible to the determinant}
+Let $a,b:0\to1$ and $c,d:1\to0$. Declare the permitted transitions to be
+\[
+ a\to c\to b\to d\to a
+\]
+and the forbidden transitions to be
+\[
+ a\to d\to b\to c\to a.
+\]
+Both cycles have length four and the same commuting product $w_aw_bw_cw_d$. The numerator and denominator of Theorem~\ref{thm:cartan} cancel, so $\det C=1$ as a formal series. With all weights $z$ one can see the entire matrix:
+\[
+ C(z)=\frac1{1-z^2}
+ \begin{pmatrix}1+z^2&2z\\2z&1+z^2\end{pmatrix},\quad
+ E(z)=\frac1{1-z^2}
+ \begin{pmatrix}1+z^2&-2z\\-2z&1+z^2\end{pmatrix}.
+\]
+Their product is the identity, their determinants are one, and both simples have two resolution arms forever. In particular a scalar determinant neither detects finite projective dimension nor recovers the endpoint-refined Ext algebra. Any arithmetic comparison must specify which information survives its realization.
+
+\section{Exactness in parameter families and correct specialization}
+\subsection{What a generic complex does and does not prove}
+A family of matrices satisfying $d_id_{i+1}=0$ is a family of complexes. Adding rank upper bounds does not imply exactness: zero matrices satisfy all such equations. For a finite free complex over a commutative Noetherian ring $B$, the Buchsbaum--Eisenbud criterion \cite{BE} uses expected ranks
+\[
+ r_i=\sum_{j=i}^n(-1)^{j-i}\operatorname{rank}F_j
+\]
+and the conditions $\operatorname{rank}d_i=r_i$ and
+$\operatorname{grade}I_{r_i}(d_i)\geq i$ for $i\geq1$, with the usual zero-rank conventions. There is no requirement that $d_1$ surject onto $F_0$: its cokernel is the resolved module. Over a general Noetherian ring height is not a substitute for grade. For constant-rank finite projectives one works locally. This is an imported commutative acyclicity theorem, not a theorem about minors of arbitrary noncommutative arrow entries.
+
+Theorem~5.3 of \cite{S3} does not state this criterion. Its discussion of generic resolutions must also be read with Bruns's direct-limit construction \cite{Bruns}, rather than a claim that an unspecified finite exactification stage always terminates. A generic based resolution specializes to prescribed resolutions under the construction's hypotheses; arbitrary points of a rank-bounded complex scheme need not be such resolutions.
+
+For a gentle algebra over $k$, use actual idempotent projectives and their path maps. If a parameter algebra $A_B$ is finite projective over a commutative base $B$, the underlying $B$-complex of finite $A_B$-projectives is finite projective. One may apply the commutative criterion to that realization, or prove flatness and Tor vanishing. For infinite-dimensional completions neither finite rank nor finite length is automatic.
+
+\subsection{A complete base-change calculation}
+Over $B=k[t]$, the complex $B\xrightarrow{t}B$ in degrees $-1,0$ resolves $k=B/(t)$. Tensor with $k$: the map becomes zero, giving $H^{-1}=k$ as well as $H^0=k$. The two-term complex is the correct \emph{derived} base change; replacing it by $k$ in degree zero loses Tor. This example proves why arbitrary specialization is invalid without appealing to a complicated generic ring.
+
+For the node, set $t=0$ in the $R_0$-free order resolution. Its first maps become
+\[
+ \overline\Lambda^2\xrightarrow{\operatorname{diag}(-x,x)}\overline\Lambda^2
+ \xrightarrow{[x\ -x]}\overline\Lambda,
+ \qquad\overline\Lambda=k[x]/(x^2).
+\]
+Write a vector as $(a+bx,c+dx)$. Its image under the row map is $(a-c)x$, so the kernel has dimension three over $k$, while the diagonal image has dimension two. Thus $H_1$ has dimension one. The augmentation cokernel has dimension one and the higher positive homology vanishes, as also follows from $\operatorname{Tor}^{R_0}_*(k,k)$ using the two-term $R_0$ resolution. The rank-one dual-number resolution of the special-fiber simple is a different exact complex.
+
+The same care applies to hereditary orders. If $H=\left(\begin{smallmatrix}R_0&tR_0\\R_0&R_0\end{smallmatrix}\right)$, then $H/tH$ has dimension four, not three: the upper-right basis vector $tE_{12}$ survives modulo $tH$. Entrywise reduction into $M_2(k)$ kills that vector and gives a different triangular image. A special fiber is the quotient of the module by its central parameter, not an informal entrywise picture.
+
+\subsection{Rank loci and a corrected determinantal example}
+The rank-at-most-$r$ locus is cut out by $(r+1)$-minors, not $r$-minors. In the one-arrow format of dimensions $(1,1)$ and upper rank $r=1$, the coordinate ring is simply $k[x]$: there are no $2$-minors. Excluding the size-one maximal minor $x$ would leave only the monomial $1$, which is not a basis for $k[x]$. This is a decisive test of Definition~8.5 in \cite{S3}. More generally equality of complementary minors requires an actual complex, expected-rank/exactness hypotheses, determinant-line orientations and multipliers. For independent matrices $A=[I_3\ 0]$ of size $3\times5$ and $B=0$ of size $5\times2$, $AB=0$, a $3$-minor of $A$ is one and every $2$-minor of $B$ is zero. Their exterior-power matrices cannot be unconditionally equal.
+
+A unit in a differential of a free complex, on the other hand, is not by itself a mistake. Elementary basis changes split off an identity map $B\xrightarrow{1}B$ in adjacent degrees; this pair is contractible and can be canceled. The nonminimal format $(1,6,8,4,1)$ in \cite{S3} reduces in this way to $(1,6,8,3)$ in its determinantal example. Theorem~\ref{thm:cohom} explains why a compatible chain endomorphism on that acyclic pair cannot create a new zeta factor.
+
+\section{Derived geometry, curve computations and Koszul interfaces}
+\subsection{From complexes to a usable category}
+A cochain complex has maps $d^i:C^i\to C^{i+1}$ with $d^{i+1}d^i=0$. Its homotopy category identifies maps differing by $dh+hd$. A quasi-isomorphism induces isomorphisms on every cohomology group. Localizing at these maps gives $D(A)$. A bounded-above projective resolution computes $\mathbf R\operatorname{Hom}$ from a module, while a bounded perfect replacement permits finite determinant operations. These are different finiteness demands.
+
+For a right module $M$ and a left module $N$, choose the former's projective resolution $P_\bullet$; $H_n(P_\bullet\otimes_A N)$ is $\operatorname{Tor}^A_n(M,N)$. For right $M,N$, $H^n\operatorname{Hom}_A(P_\bullet,N)$ is $\operatorname{Ext}^n_A(M,N)$. Theorem~\ref{thm:resolution} makes both computations explicit for vertex simples. An arbitrary string module requires the actual overlap/projective-cover maps, not just its intersection count.
+
+Under our natural grading, a relation word and an allowed path in $A^\#$ are the same indexing sequence. Choosing dual arrow functionals yields the quadratic dual with reversed arrow orientation in the usual tensor-dual convention. This accounts for apparent opposites in Ext-algebra formulas. The functorial Koszul construction uses a graded/projective resolution of $A/J$ and its dg endomorphisms; passing from this dg algebra to its cohomology and asserting an equivalence requires the proper Koszul and finiteness/completion hypotheses. It does not follow from equality of Hilbert series: the node and its complementary algebra already warn against reconstructing a category from that series.
+
+\subsection{A practical curve-to-resolution workflow}
+In the finite-dimensional graded gentle setting, a marked surface with dissection and line field encodes the algebra. Crossing the dissection records the combinatorial word and its degrees. For module curves in a specified heart this is an ordinary string; general derived objects use the appropriate homotopy-string or homotopy-band data, not necessarily a module string. At each crossing the line field fixes the grading. Boundary endpoints and punctures govern finite versus infinite tails. Closed curves additionally carry a local system and can represent band objects. A topological curve is used up to the appropriate homotopy, often drawn in minimal position. A choice of hyperbolic metric can give a geodesic representative but is not the definition of its algebraic degree or an arithmetic prime length.
+
+An ordinary string is a composable word in arrows and formal inverse letters, with no immediate cancellation and no subword belonging to $I$ or the inverse of such a subword. Its module has one basis vector for each position of the word, placed at the corresponding vertex; each traversed arrow carries the specified adjacent vector to the next (or previous for an inverse traversal), and all other entries are zero. Repeated vertices give distinct basis vectors, not an identification of positions. A band is an appropriate primitive cyclic string whose powers remain strings; a local system supplies its cyclic gluing and parameter. Formal inverse letters record a linear map's direction in the word, not invertible elements of $A$. Derived homotopy-string conventions allow different relation behavior and must be taken from the chosen model. This is why a general derived curve is not automatically a module in degree zero.
+
+The following computation is supported by the precise models, rather than a proposed new equivalence.
+\begin{enumerate}
+\item Fix the algebra, its handedness, the marked surface, line field and the exact object category in \cite{OPS}. Record whether the curve gives a perfect complex or an object with an infinite tail.
+\item Use the zigzag/projective-curve construction of Chang \cite{Chang}, Theorem~2.16 and Proposition~2.23, or the rotated construction of \cite{LZZ}, to list idempotent-projective summands with degrees and actual maps. At a puncture test the infinite periodic-tail case before applying a finite determinant. Chang's Remark~2.27 and Corollary~2.28 distinguish those possibilities.
+\item Put curves in the prescribed minimal position and retain oriented, graded intersections. Under \cite{OPS}, Theorem~3.3, these label the standard morphisms, with extra identity and Auslander--Reiten connecting maps in the exceptional coincident closed-curve cases. Local systems modify the closed-curve calculation. Ordinary ungraded transverse crossings omit these data.
+\item Compare these maps to $\operatorname{Hom}(M,N[n])$ in the chosen heart and hence to Ext. For Tor specify a left module or dual realization first; intersections between two right-module curves are not already a tensor product.
+\item If using geometric Koszul duality, verify the homologically smooth graded gentle hypotheses of \cite{Koszul}, whose body Theorems~3.6 and3.9 implement the half-rotation functor and indexed intersection formula. Do not import that equivalence to a singular completed order without a comparison theorem.
+\end{enumerate}
+For the terminating example above these operations must recover three projective curves, the maps $a,b$, a nonzero degree-two morphism from $S_1$ to $S_3$, and zero ordinary Hom. This provides a small acceptance test with known exact answer. The project currently proves the algebraic calculation; a full curve-diagram implementation is a next construction, not an artifact silently claimed complete.
+
+Surface cuts and recollements \cite{Cuts} can organize exact triangles, whose realized determinant lines multiply. Their hypotheses on the generated subsurface and interior marked points must be retained. The recent locally gentle resolutions \cite{FOZ} give a direct independent algebraic reference; recent gentle-tree resolving subcategories \cite{ResolveTrees} organize syzygy/extension closures but do not make every closed surface order smooth. These are complementary tools for selecting a perfect subcategory and checking which arithmetic operations preserve it.
+
+\subsection{Patching and the center}
+Projective modules over a conductor fiber product can be patched from projectives on its two pieces and an actual isomorphism on the overlap, under the projective-patching hypotheses. Beauville--Laszlo \cite{BL} is a precise alternative for vector bundles with a non-zero-divisor parameter and specified localization/completion data. Its descent diagram is part of the theorem; equality of a few diagonal entries is not a proof of a global affine-Schubert bundle or Langlands equivalence.
+
+Likewise for $\mathrm{GL}_n$ over $F=k((t))$, $R_0=k[[t]]$, distinguish
+\[
+ \mathrm{Gr}=\mathrm{GL}_n(F)/\mathrm{GL}_n(R_0),\qquad
+ \mathrm{Fl}_{\rm aff}=\mathrm{GL}_n(F)/\mathcal I,
+ \qquad \mathrm{GL}_n(R_0)/\mathcal I=\mathrm{GL}_n(k)/B.
+\]
+Here $\mathcal I$ is the Iwahori \emph{group}, not the entire order. Full lattice chains consist of rank-$n$ lattices with successive residue dimensions one. Nilpotent cyclic-quiver representations can be realized by the appropriate resolvent/lattice map into Schubert geometry \cite{Magyar}; nilpotency of cyclic products is weaker than requiring those products to vanish. This controls local algebraic strata, not arithmetic Frobenius or the compatibility of every seam in a proposed global construction.
+
+Here is the coefficientwise proof of the completed-order comparison used in the core. For a permitted cycle of length $n_c$, choose positions $1,\ldots,n_c$ and let $H_c\subset M_{n_c}(k[[x_c]])$ be generated by the diagonal idempotents, $E_{j,j+1}$ for $j<n_c$, and $x_cE_{n_c,1}$. In this convention its upper-triangular entries lie in $k[[x_c]]$ and its strictly lower entries in $x_ck[[x_c]]$. Reversing the indexing gives the other usual Iwahori-order convention. The radical consists of all off-diagonal entries together with diagonal entries divisible by $x_c$, and $H_c/\operatorname{rad}H_c=k^{n_c}$.
+
+The closed incidence hypothesis pairs exactly two cycle positions over each original quiver vertex, possibly on the same cycle. Form the subalgebra $\Lambda'$ of $\prod_cH_c$ where their diagonal constants agree. Send $e_v$ to the sum of its two position idempotents and send each arrow to its successive matrix unit, with the wrap multiplier $x_c$. Forbidden pairs vanish because they change permitted cycle positions without a matching matrix index. For every fixed pair of positions, the permitted paths are the unique oriented segments followed by any number of full turns. Their images are exactly the corresponding distinct powers of $x_c$ times the matrix unit. A positive path returning to its initial position has at least one full turn, so its diagonal entry has zero constant term. Thus no positive path can cancel a vertex constant or another path coefficient. This proves injectivity on formal series. Conversely any tuple in $\Lambda'$ decomposes into its matching vertex constants and its independent positive path series in these entries. This proves surjectivity and establishes the actual algebra isomorphism $\widehat A\cong\Lambda'$.
+
+Put $L=\max_c n_c$. The element $t=(x_c1)_c$ belongs to the image and is central. Any permitted path of length at least $L+1$ makes a full turn on its chosen cycle and leaves a nonempty suffix. Multiplying that suffix by $t$ adds exactly the full turn on its branch: the other cycle incidence at its initial vertex is annihilated by the forbidden relation. Factoring coefficients on each branch therefore gives $\widehat J^{L+1}\subseteq t\Lambda'$, whereas $t\Lambda'\subseteq\widehat J$. Raising these inclusions proves cofinality of the two filtrations. Each $H_c$ is finite free over the common $k[[t]]$ with $x_c=t$; $\Lambda'$ contains $t\prod_cH_c$ and differs only by finitely many residue equalities. It is finite and torsion-free over this DVR, hence free, of rank $\sum_c n_c^2$. This proves the split common-base assertion with no assumption that the cycle lengths agree. It does not establish a mixed-characteristic or arbitrary Dedekind-base comparison.
+
+A further useful repair concerns central data. In a connected quiver, $\sum c_ie_i$ commutes with each arrow only if its coefficients agree along that arrow, hence all $c_i$ are equal. Thus the entire degree-zero algebra $kQ_0$ is not central. In the split closed case, sums of all rotations of each permitted cycle give the positive central generators; one must sum rotations, since an individual based cycle need not commute with arrows. More importantly normalization remembers permitted-cycle lengths but not all gluing. For example put $\sigma=(123)(456)$. The pairings
+\[
+ \alpha_1=(14)(25)(36),\qquad \alpha_2=(14)(26)(35)
+\]
+give $\phi_j=\alpha_j\sigma^{-1}$ with respectively one six-cycle and three two-cycles. Both connected dessins have normalization type $H_3\times H_3$ but genera one and zero. Indeed $V=2$, $E=3$ and $F=1$ or $3$, so $2-2g=V-E+F$. A normalization invariant cannot determine the passport, much less a Galois orbit. The endpoint-refined resolution maps and actual incidence are necessary.
+
+\section{Cartan--Eilenberg, Weil models and Frobenius: three roles}
+The phrase Cartan--Weil can refer to different useful structures; keeping their roles distinct prevents an erroneous proof transfer. Cartan--Eilenberg homological algebra controls double resolutions, derived functors and spectral sequences. A first-quadrant double complex has a convergent filtration spectral sequence because each total degree has finitely many entries; unbounded totalizations require a separate convergence/completion choice. This matters for periodic surface-order resolutions. Finite derived constructions do not justify exchanging arbitrary infinite sums, determinants and specializations.
+
+The Cartan/Weil models of equivariant de Rham theory encode connections, curvature and characteristic classes. In the one-dimensional abelian Weil algebra over characteristic zero,
+\[
+ W=k[u]\otimes\Lambda(\theta),\qquad |\theta|=1,
+ \quad |u|=2,\quad d\theta=u,\quad du=0.
+\]
+Every element is $f(u)+\theta g(u)$ and its differential is $ug(u)$. Since $u$ is not a zero divisor, the closed elements are $k[u]$ and the boundaries are $uk[u]$, so $H(W)=k$. The basic subcomplex in equivariant theory is a separate construction and need not have the same cohomology. This is a legitimate acyclic-resolution model, unlike taking $d\varepsilon=1$ and claiming cohomology $k$.
+
+Indeed in the source DG example $k[\varepsilon]/(\varepsilon^2)$ with $|\varepsilon|=-1$ and $d\varepsilon=1$, a closed $z$ satisfies $d(\varepsilon z)=z$. Its cohomology is zero and no augmentation to $k$ can be a DG map since the unit is a boundary. This is compatible with $d^2=0$; square-zero alone does not identify the intended resolved object. Our dual-number resolution uses an ordinary algebra with zero algebra differential and a separate module differential given by multiplication by $\varepsilon$, so it does not repeat that mistake.
+
+Weil cohomology and $\ell$-adic Frobenius play a third role. They supply arithmetic traces and weights, not merely a resolution of the unit. Grothendieck's trace formula and Deligne's weight theorem are the two deep inputs in the finite-field calculation in the core. Weil II Theorem~3.3.1 is formulated for finite-type morphisms over $\mathbb Z$ with fiberwise weights; Corollaries~3.3.4--3.3.6 control compact-support/ordinary cohomology and purity of the image $H_c^i\to H^i$. This is not a global complex-variable determinant formula for completed number-field $L$-functions.
+
+For the elliptic benchmark, the values of $x^3-x$ at $x=0,1,2,3,4$ modulo five are $0,0,1,4,0$. They give $1,1,2,2,1$ affine points and one point at infinity. Thus $\#X(\mathbb F_5)=8$. The curve trace formula gives the degree-two numerator from trace $-2$ and determinant five. Its inverse roots are $-1\pm2i$, which verifies the required purity in this example directly. General purity is still the external theorem, not inferred from this finite check.
+
+\section{Arithmetic realization and implementation}
+\subsection{A finite endomorphism needs compatibility}
+For each $i$, choose vector-space complements $Z^i=B^i\oplus\widetilde H^i$ and $C^i=Z^i\oplus L^i$. The differential induces an isomorphism $L^i\to B^{i+1}$. A chain map has diagonal blocks for $B^i,H^i,B^{i+1}$ in these adapted decompositions; it need not preserve the complements themselves. This proves the triangular factorization in Theorem~\ref{thm:cohom} without assuming a Frobenius-equivariant splitting. It also shows why the endomorphism on an acyclic adjacent pair is conjugate through its differential: their characteristic determinants coincide. The Lean matrix lemma formalizes this conjugacy cancellation over an arbitrary commutative ring, rather than treating two independently chosen endomorphisms as equal.
+
+The line functor and this characteristic function fit together only after the scalar realization is specified. For instance a perfect $B$-complex $P$ with endomorphism $F$ gives a determinant line construction over $B[u]$ and a rational trivialization from $1-uF$ on its invertibility locus. The alternating characteristic expression can have poles: a one-dimensional term in cohomological degree one with $F=1$ contributes $(1-u)^{-1}$ to the determinant with exponent $(-1)^i$. It is not generally a global regular section under an arbitrary line convention. A basis change must transform both trivializations consistently. A noncommutative algebraic $K$-theory refinement is possible in other settings but would need its own definition and comparison; it is not the elementary determinant used in the Cartan formula.
+
+For an infinite Hilbert-space operator $K(s)$, a Fredholm determinant requires trace class and holomorphic trace-class dependence. Continuity in trace norm can then justify convergence of determinants. A zeta-regularized determinant of an unbounded operator requires its own spectral zeta continuation and normalization. These notions cannot be substituted without proof. An algebraic periodic resolution does not automatically define any of them.
+
+\subsection{A stronger interior duality counterexample}
+Even zeros strictly inside the strip can satisfy the expected reflection. Set $q=16$, $F=\mathrm{diag}(2,8)$ and the same alternating $J$. Then $F^tJF=16J$ while
+\[
+ \det(1-uF)=1-10u+16u^2=(1-2u)(1-8u).
+\]
+With $u=16^{-s}$ its zeros have real parts $1/4$ and $3/4$. The determinant has the expected reciprocal pairing around $1/2$ yet fails purity. A positive Hermitian similitude cannot exist here, by Proposition~\ref{prop:purity}. Consequently one cannot repair the arithmetic argument merely by enforcing the functional equation or Poincar\'e-type alternating duality.
+
+\subsection{A flow criterion and its missing construction}
+A conceivable global number-field object has a generator $\Theta$ with an inner product satisfying $\Theta+\Theta^*=1$ on the zero-bearing cohomology, together with a rigorously defined regularized determinant for $s-\Theta$. If this identity is valid on an eigenvector $v$ in the actual operator domains, then
+\[
+ (\rho+\overline\rho)\langle v,v\rangle
+ =\langle\Theta v,v\rangle+\langle v,\Theta v\rangle
+ =\langle v,v\rangle,
+\]
+so $\Rea\rho=1/2$. To turn this calculation into a zero theorem one must prove that determinant zeros correspond exactly to these eigenvalues, with no spurious factors or domain omissions. Deninger's foliated-space proposals \cite{Deninger} motivate this architecture but do not supply an established number-field realization to import. Cohomological special-value/determinant-line results such as Weil-\'etale constructions address different questions unless the missing all-zero identity and positivity are proved.
+
+There are therefore two precise comparison targets: a determinant-preserving positive-pencil model of the existing convergent arithmetic approximants, or an independently built global arithmetic flow with the above spectral identity and regularization. Resolution maps can provide chain-level computational data and gluing obstructions for either target. Their existence alone proves neither comparison.
+
+\subsection{Implementation sequence with acceptance tests}
+The next work can proceed without repeatedly re-auditing the supplied papers.
+\begin{enumerate}
+\item Extend the actual Lean dual-number construction to idempotent path projectives and a categorical projective resolution for the terminating three-vertex example. Check graded shifts and Yoneda composition, not only scalar Betti recurrences. The required answer is the matrices and Ext product in Appendix~A.
+\item Build a marked-surface example with a declared dissection and line field, translate its string to actual maps, and compare its graded intersections with computed Hom groups including exceptional cases. Verify that the chosen realized object is perfect before any finite determinant.
+\item Implement the conductor-patching functor in one split nodal example; check central and arrow-adic topologies, descent maps and derived specialization. Recover the extra one-dimensional $H_1$ in the nonflat fiber, rather than dropping it.
+\item Construct a genuine arithmetic test category over $\mathbb F_5$ with an actual Frobenius realization and recover $1+2u+5u^2$ from the elliptic benchmark. A curve's established cohomology is an external arithmetic dependency until formally constructed. An arbitrary fitted matrix with those coefficients would only reproduce a polynomial.
+\item Before proposing a number-field theorem, write the exact functor, local trace and archimedean comparison. For primitive Dirichlet functions fix parity, primitive conductor and pole treatment at the principal case. For finite-order Hecke characters additionally fix field and infinity types. Dedekind and Artin cases require their own factorization and pole/holomorphy analysis; false integral induction from cyclic subgroups is not a replacement.
+\item Attempt positivity or a determinant-preserving positive metric on the resulting object, with all-degree evidence and an independent adversarial proof review. A finite collection of positive minors, a finite zero check or an assumed metric positivity is not a universal theorem. If this step fails, record the exact obstruction and rotate to a different comparison construction.
+\item Finally prove the analytic determinant convergence and exhaust the nontrivial strip, then apply Theorem~\ref{thm:closure}. The published claim must track every remaining classical or informal dependency and the literal scope of Lean verification.
+\end{enumerate}
+This sequence is complete as a specification of the missing constructions. Its arithmetic steps remain unresolved, so the present manuscript is a corrected foundation and conditional program rather than a completed GRH proof.

@@ -1,0 +1,16 @@
+\input{preamble}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\gshift}[2]{#1\langle #2\rangle}
+\date{November 3, 2026}
+\title{Projective resolutions, surface orders and zeta determinants\\\large Extended constructions, calculations and arithmetic research program}
+\author{Research working draft}
+\begin{document}
+\maketitle
+\begin{abstract}
+This extended edition constructs forbidden-path projective resolutions and their graded Ext and Tor, proves the weighted Cartan determinant formula by finite arrow-state matrices, and develops the passage from derived objects to determinant lines and cohomological zeta functions. Examples isolate the effects of completion, singular seams, periodic tails, nonflat specialization and cancellation. We explain the graded-curve and Koszul-dual interfaces with their finiteness hypotheses, and compare finite-field purity with the missing global number-field positive determinant realization. Both successful algebraic constructions and unresolved arithmetic obligations are explicit. Selected components are verified in Lean4; neither the full derived framework nor GRH is formalized or proved.
+\end{abstract}
+\tableofcontents
+\input{resolutions-core}
+\input{resolutions-details}
+\input{resolutions-references}
+\end{document}

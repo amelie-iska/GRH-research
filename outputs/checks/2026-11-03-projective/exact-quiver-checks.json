@@ -1,0 +1,541 @@
+{
+  "arithmetic": "exact integers and fractions.Fraction; deterministic; no randomness",
+  "conventions": "right modules; arrows/words in travel order; matrices source-row/target-column; generator degree m in resolution degree m; E already includes (-1)^m",
+  "bounds": {
+    "maximum_internal_degree": 10,
+    "maximum_series_degree": 12,
+    "rational_weight_samples_per_quiver": 3
+  },
+  "manuscript_critical_arrow_to_checker": {
+    "a": "a",
+    "b": "c",
+    "c": "b",
+    "d": "d"
+  },
+  "examples": {
+    "node": {
+      "vertices": [
+        0
+      ],
+      "arrows_source_target": [
+        [
+          "x",
+          0,
+          0
+        ],
+        [
+          "y",
+          0,
+          0
+        ]
+      ],
+      "forbidden_adjacent_travel_pairs": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "y",
+          "x"
+        ]
+      ],
+      "resolution": {
+        "internal_degrees": [
+          0,
+          10
+        ],
+        "homological_degrees": "0..internal degree, including augmentation",
+        "square_zero_checks": 66,
+        "exactness_checks": 66,
+        "largest_homogeneous_projective_basis": 4
+      },
+      "series": {
+        "degree_through": 12,
+        "signed_E_times_C_and_C_times_E_coefficients_checked": 26,
+        "permitted_path_counts": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "forbidden_chain_counts": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "transfer_and_BH": {
+        "permitted_primitive_arrow_cycles": [
+          [
+            "x"
+          ],
+          [
+            "y"
+          ]
+        ],
+        "forbidden_primitive_arrow_cycles": [
+          [
+            "x",
+            "y"
+          ]
+        ],
+        "rational_weight_samples": [
+          {
+            "arrow_weights": {
+              "x": "1/2",
+              "y": "1/3"
+            },
+            "det_C": "5/2",
+            "det_I_minus_permitted_transfer": "1/3",
+            "det_I_plus_forbidden_transfer": "5/6",
+            "BH_cycle_ratio": "5/2"
+          },
+          {
+            "arrow_weights": {
+              "x": "1/3",
+              "y": "-1/4"
+            },
+            "det_C": "13/10",
+            "det_I_minus_permitted_transfer": "5/6",
+            "det_I_plus_forbidden_transfer": "13/12",
+            "BH_cycle_ratio": "13/10"
+          },
+          {
+            "arrow_weights": {
+              "x": "0",
+              "y": "1/3"
+            },
+            "det_C": "3/2",
+            "det_I_minus_permitted_transfer": "2/3",
+            "det_I_plus_forbidden_transfer": "1",
+            "BH_cycle_ratio": "3/2"
+          }
+        ]
+      }
+    },
+    "dual_numbers": {
+      "vertices": [
+        0
+      ],
+      "arrows_source_target": [
+        [
+          "x",
+          0,
+          0
+        ]
+      ],
+      "forbidden_adjacent_travel_pairs": [
+        [
+          "x",
+          "x"
+        ]
+      ],
+      "resolution": {
+        "internal_degrees": [
+          0,
+          10
+        ],
+        "homological_degrees": "0..internal degree, including augmentation",
+        "square_zero_checks": 66,
+        "exactness_checks": 66,
+        "largest_homogeneous_projective_basis": 1
+      },
+      "series": {
+        "degree_through": 12,
+        "signed_E_times_C_and_C_times_E_coefficients_checked": 26,
+        "permitted_path_counts": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "forbidden_chain_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "transfer_and_BH": {
+        "permitted_primitive_arrow_cycles": [],
+        "forbidden_primitive_arrow_cycles": [
+          [
+            "x"
+          ]
+        ],
+        "rational_weight_samples": [
+          {
+            "arrow_weights": {
+              "x": "1/2"
+            },
+            "det_C": "3/2",
+            "det_I_minus_permitted_transfer": "1",
+            "det_I_plus_forbidden_transfer": "3/2",
+            "BH_cycle_ratio": "3/2"
+          },
+          {
+            "arrow_weights": {
+              "x": "1/3"
+            },
+            "det_C": "4/3",
+            "det_I_minus_permitted_transfer": "1",
+            "det_I_plus_forbidden_transfer": "4/3",
+            "BH_cycle_ratio": "4/3"
+          },
+          {
+            "arrow_weights": {
+              "x": "0"
+            },
+            "det_C": "1",
+            "det_I_minus_permitted_transfer": "1",
+            "det_I_plus_forbidden_transfer": "1",
+            "BH_cycle_ratio": "1"
+          }
+        ]
+      }
+    },
+    "radical_square_zero_length_two_line": {
+      "vertices": [
+        0,
+        1,
+        2
+      ],
+      "arrows_source_target": [
+        [
+          "a",
+          0,
+          1
+        ],
+        [
+          "b",
+          1,
+          2
+        ]
+      ],
+      "forbidden_adjacent_travel_pairs": [
+        [
+          "a",
+          "b"
+        ]
+      ],
+      "resolution": {
+        "internal_degrees": [
+          0,
+          10
+        ],
+        "homological_degrees": "0..internal degree, including augmentation",
+        "square_zero_checks": 198,
+        "exactness_checks": 198,
+        "largest_homogeneous_projective_basis": 1
+      },
+      "series": {
+        "degree_through": 12,
+        "signed_E_times_C_and_C_times_E_coefficients_checked": 234,
+        "permitted_path_counts": [
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "forbidden_chain_counts": [
+          3,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "transfer_and_BH": {
+        "permitted_primitive_arrow_cycles": [],
+        "forbidden_primitive_arrow_cycles": [],
+        "rational_weight_samples": [
+          {
+            "arrow_weights": {
+              "a": "1/2",
+              "b": "1/3"
+            },
+            "det_C": "1",
+            "det_I_minus_permitted_transfer": "1",
+            "det_I_plus_forbidden_transfer": "1",
+            "BH_cycle_ratio": "1"
+          },
+          {
+            "arrow_weights": {
+              "a": "1/3",
+              "b": "-1/4"
+            },
+            "det_C": "1",
+            "det_I_minus_permitted_transfer": "1",
+            "det_I_plus_forbidden_transfer": "1",
+            "BH_cycle_ratio": "1"
+          },
+          {
+            "arrow_weights": {
+              "a": "0",
+              "b": "1/3"
+            },
+            "det_C": "1",
+            "det_I_minus_permitted_transfer": "1",
+            "det_I_plus_forbidden_transfer": "1",
+            "BH_cycle_ratio": "1"
+          }
+        ]
+      }
+    },
+    "critical_two_vertex_four_arrow": {
+      "vertices": [
+        0,
+        1
+      ],
+      "arrows_source_target": [
+        [
+          "a",
+          0,
+          1
+        ],
+        [
+          "b",
+          1,
+          0
+        ],
+        [
+          "c",
+          0,
+          1
+        ],
+        [
+          "d",
+          1,
+          0
+        ]
+      ],
+      "forbidden_adjacent_travel_pairs": [
+        [
+          "a",
+          "d"
+        ],
+        [
+          "b",
+          "a"
+        ],
+        [
+          "c",
+          "b"
+        ],
+        [
+          "d",
+          "c"
+        ]
+      ],
+      "resolution": {
+        "internal_degrees": [
+          0,
+          10
+        ],
+        "homological_degrees": "0..internal degree, including augmentation",
+        "square_zero_checks": 132,
+        "exactness_checks": 132,
+        "largest_homogeneous_projective_basis": 4
+      },
+      "series": {
+        "degree_through": 12,
+        "signed_E_times_C_and_C_times_E_coefficients_checked": 104,
+        "permitted_path_counts": [
+          2,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "forbidden_chain_counts": [
+          2,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "transfer_and_BH": {
+        "permitted_primitive_arrow_cycles": [
+          [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        ],
+        "forbidden_primitive_arrow_cycles": [
+          [
+            "a",
+            "d",
+            "c",
+            "b"
+          ]
+        ],
+        "rational_weight_samples": [
+          {
+            "arrow_weights": {
+              "a": "1/2",
+              "b": "1/3",
+              "c": "1/4",
+              "d": "1/5"
+            },
+            "det_C": "1",
+            "det_I_minus_permitted_transfer": "119/120",
+            "det_I_plus_forbidden_transfer": "119/120",
+            "BH_cycle_ratio": "1"
+          },
+          {
+            "arrow_weights": {
+              "a": "1/3",
+              "b": "-1/4",
+              "c": "1/5",
+              "d": "-1/6"
+            },
+            "det_C": "1",
+            "det_I_minus_permitted_transfer": "359/360",
+            "det_I_plus_forbidden_transfer": "359/360",
+            "BH_cycle_ratio": "1"
+          },
+          {
+            "arrow_weights": {
+              "a": "0",
+              "b": "1/3",
+              "c": "1/4",
+              "d": "1/5"
+            },
+            "det_C": "1",
+            "det_I_minus_permitted_transfer": "1",
+            "det_I_plus_forbidden_transfer": "1",
+            "BH_cycle_ratio": "1"
+          }
+        ]
+      }
+    }
+  },
+  "counterexamples": {
+    "nonflat_node_specialization": {
+      "central_parameter": "t=x+y",
+      "order": "R[x]/(x^2-tx)",
+      "fiber": "k[x]/(x^2)",
+      "reduced_complex_H0_H1_H2": [
+        1,
+        1,
+        0
+      ],
+      "true_fiber_resolution_positive_homology": 0,
+      "order_Betti_0_through_5": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "fiber_Betti_0_through_5": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "nodal_period": {
+      "ordered_arm_period": 2,
+      "unordered_syzygy_tail_period": 1,
+      "first_ordered_pair": [
+        "x",
+        "y"
+      ],
+      "next_ordered_pair": [
+        "y",
+        "x"
+      ],
+      "meaning": "ungraded positive syzygy tail; NOT Omega^p(k)=k"
+    },
+    "double_sign_counterexample": {
+      "correct_q_coefficient": 0,
+      "double_signed_q_coefficient": 4,
+      "C": "(1+q)/(1-q)",
+      "signed_E": "(1-q)/(1+q)"
+    }
+  },
+  "totals": {
+    "homogeneous_exactness_checks": 462,
+    "homogeneous_d_squared_zero_checks": 462,
+    "signed_series_scalar_coefficients": 390,
+    "rational_transfer_BH_samples": 12
+  },
+  "scope": "Finite exact diagnostics for the four stated monomial quivers and rational weights; each tested internal degree includes all its homological terms. Not a universal resolution theorem, a theorem about arbitrary completed or mixed-characteristic orders, analytic determinant identification, or RH/GRH."
+}

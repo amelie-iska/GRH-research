@@ -19,10 +19,10 @@ for name in filter(None,files):
     if not path.is_file(): continue
     data=path.read_bytes()
     assert not any(re.search(p,data) for p in patterns), f"Potential credential in {name}"
-for edition in ["concise","extended"]:
+for edition in ["concise","extended","resolutions-concise","resolutions-extended"]:
     assert (root/f"outputs/papers/{edition}.pdf").read_bytes().startswith(b"%PDF")
     log=(root/f"outputs/papers/{edition}.log").read_text()
     assert not re.search(r"undefined references|Citation .* undefined|Reference .* undefined|Overfull",log)
-report={"source_pins_verified":3,"source_worktrees_clean":True,"credential_pattern_scan":"passed for indexed project files; source submodule contents excluded","local_admission_scan":"passed","pdf_final_logs":"resolved references; no overfull boxes","scope":"Integrity checks only, not mathematical proof verification"}
+report={"source_pins_verified":3,"source_worktrees_clean":True,"credential_pattern_scan":"passed for indexed project files; source submodule contents excluded","local_admission_scan":"passed","pdf_final_logs":"resolved references; no overfull boxes","pdf_editions_verified":["concise","extended","resolutions-concise","resolutions-extended"],"scope":"Integrity checks only, not mathematical proof verification"}
 (root/"outputs/checks/project-verification.json").write_text(json.dumps(report,indent=2)+"\n")
 print(json.dumps(report,indent=2))

@@ -4,7 +4,18 @@ A private research workspace for auditing and developing surface-order and Hilbe
 
 **Current result:** a corrected conditional spectral criterion, convergent arithmetic approximants with explicit errors, and rigorous obstructions to several supplied proof steps. **A complete proof of GRH has not been established.** In particular, the claimed prime/geodesic identification is false, and the absolute prime-tail bound used in the separate GRH PDF diverges in the asserted range. These require mathematical replacements. See [audit](planning/AUDIT.md) and [open obligations](planning/OPEN_OBLIGATIONS.md).
 
-## Papers
+## Projective resolutions and determinant development (2026-11-03)
+
+The [new focused preprint](papers/resolutions-core.tex) gives explicit forbidden-chain projective resolutions and Ext/Tor, signed Euler–Cartan inversion, and a finite arrow-state proof of the full Bessenrodt–Holm weighted determinant formula. It develops completion, nodal conductor gluing, nonflat specialization, graded surface/derived/Koszul interfaces, determinant lines and Frobenius purity, with a precise conditional number-field program. The [four full-reading reviews](planning/reviews/projective/README.md) record corrections and exact source versions, plus focused primary literature through2026. The source clones remain unchanged.
+
+| Focused edition | TeX | PDF |
+|---|---|---|
+| Concise,10 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
+| Extended,20 pages with calculations and implementation tasks | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
+
+The new sixteen Lean declarations verify actual dual-number module exactness/projectivity and general matrix determinant components. Exact finite diagnostics check462 homogeneous exactness cases and12 rational determinant samples; these supplement universal prose proofs. They do not formalize the entire path/derived/Weil framework. The main missing step remains an arithmetic determinant comparison with a positive realization for the same completed L-function; a formal Cartan determinant or a periodic resolution does not prove it. See the [current plan](planning/PROJECTIVE_RESOLUTIONS_PLAN.md) and [handoff](planning/CONTINUATION.md).
+
+## Earlier audit papers
 
 | Edition | Source | Compiled PDF | Scope |
 |---|---|---|---|
@@ -52,12 +63,13 @@ python3 scripts/check_finite_correlation.py
 python3 scripts/check_gram_poisson.py
 python3 scripts/check_reciprocity_period.py
 python3 scripts/check_reflected_identity.py
+python3 scripts/check_projective_resolutions.py
 sh scripts/build_papers.sh
 ```
 
-Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 110 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, frozen row-count components, the perturbed low-energy exponent, central contour/integral components, actual finite-field characters/Gauss sums, normalized finite Fourier/dyadic Gram components, actual Eisenstein quotient-ring reciprocity phases, and local reflected characters/phase and common-density components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
+Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 126 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, frozen row-count components, the perturbed low-energy exponent, central contour/integral components, actual finite-field characters/Gauss sums, normalized finite Fourier/dyadic Gram components, actual Eisenstein quotient-ring reciprocity phases, local reflected characters/phase and common-density components, and projective-resolution and arrow-state determinant components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
 
-Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. Both PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
+Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. All four PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
 
 ## Research next steps
 

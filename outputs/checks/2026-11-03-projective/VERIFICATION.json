@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-03",
+  "lean_toolchain": "4.24.0-darwin_aarch64",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "full_analytic_declarations": 126,
+  "standalone_declarations": 7,
+  "new_formal_components": [
+    {
+      "file": "lean-analytic/DualNumberResolution.lean",
+      "sha256": "58487840ee31a19a67e68129144b0e16b32986a558344df59e16b9c7e12bd4fa",
+      "declarations": 13
+    },
+    {
+      "file": "lean-analytic/ResolutionDeterminant.lean",
+      "sha256": "0af562e374ce22245e1a032d5e6242f1976221a7cb85521a0ee6979fd0910f09",
+      "declarations": 3
+    }
+  ],
+  "exact_diagnostics": {
+    "homogeneous_exactness_checks": 462,
+    "homogeneous_d_squared_zero_checks": 462,
+    "signed_series_scalar_coefficients": 390,
+    "rational_transfer_BH_samples": 12
+  },
+  "pdfs": [
+    {
+      "file": "outputs/papers/concise.pdf",
+      "pages": 18,
+      "sha256": "a3bff0b8e4d98c92ced9f98427ab48dca650c64077ada042bde027196803e21f"
+    },
+    {
+      "file": "outputs/papers/extended.pdf",
+      "pages": 44,
+      "sha256": "d93e3442e6fb6559fddc2aa86728aff962550d775cbc2416a9ec01adcab84361"
+    },
+    {
+      "file": "outputs/papers/resolutions-concise.pdf",
+      "pages": 10,
+      "sha256": "90509d123141027b88cb5fe93a3fbb4b5c426e918eaa75a10473c7c707988811"
+    },
+    {
+      "file": "outputs/papers/resolutions-extended.pdf",
+      "pages": 20,
+      "sha256": "e7d0b4ee72d7013a984361c3bd517c4b39f776f1b57ad0effa0f1e327dec58ce"
+    }
+  ],
+  "independent_review": "planning/reviews/projective/independent-construction-review.md",
+  "visual_review": "All initial29 pages rendered and contact-sheet inspected; final changed extended pages14-17 inspected individually; final heading shortened and reference spacing corrected. Final logs clean.",
+  "scope": "Selected actual module and matrix components only; general resolution/determinant proofs are prose, geometry and trace/purity rely on scoped external sources, arithmetic comparison and GRH remain open.",
+  "environment": "No production dependency, toolchain/manifest, infrastructure or MCP activation change; selective public cache at same pins."
+}
