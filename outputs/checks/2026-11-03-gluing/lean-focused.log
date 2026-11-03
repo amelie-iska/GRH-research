@@ -1,0 +1,28 @@
+GRHResearch.DessinPullback.matrix_unit_forward.{u_1} {R : Type u_1} [CommRing R] : e01 * e10 = e00
+GRHResearch.DessinPullback.matrix_unit_reverse.{u_1} {R : Type u_1} [CommRing R] : e10 * e01 = e11
+GRHResearch.DessinPullback.matrix_unit_orthogonal.{u_1} {R : Type u_1} [CommRing R] : e00 * e11 = 0
+GRHResearch.DessinPullback.matrix_unit_square.{u_1} {R : Type u_1} [CommRing R] : e00 * e00 = e00
+GRHResearch.DessinPullback.matrix_unit_sum.{u_1} {R : Type u_1} [CommRing R] : e00 + e11 = 1
+GRHResearch.DessinPullback.diagonal_extraction_not_multiplicative.{u_1} {R : Type u_1} [CommRing R] [Nontrivial R] :
+  (e01 * e10) 0 0 ≠ e01 0 0 * e10 0 0
+GRHResearch.DessinPullback.no_commutative_matrix_residue.{u_1, u_2} {R : Type u_1} [CommRing R] {S : Type u_2}
+  [CommRing S] [Nontrivial S] (f : Matrix (Fin 2) (Fin 2) R →+* S) : False
+GRHResearch.DessinPullback.diagonal_fiber_multiplicative.{u_1} {R : Type u_1} [CommRing R] (a b : Fin 2 → R)
+  (i : Fin 2) : (diagonal a * diagonal b) i i = a i * b i
+GRHResearch.DessinPullback.pullback_projection_surjective.{u_2, u_3, u_4} {B : Type u_2} {C : Type u_3} {D : Type u_4}
+  [Ring B] [Ring C] [Ring D] (f : B →+* D) (g : C →+* D) (s : C →+* B) (hs : ∀ (c : C), f (s c) = g c) :
+  Function.Surjective fun p => (↑p).2
+GRHResearch.DessinPullback.pullback_zero_fiber.{u_2, u_3, u_4} {B : Type u_2} {C : Type u_3} {D : Type u_4} [Ring B]
+  [Ring C] [Ring D] (f : B →+* D) (g : C →+* D) (p : ↥(pullbackSubring f g)) (hp : (↑p).2 = 0) : f (↑p).1 = 0
+'GRHResearch.DessinPullback.matrix_unit_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinPullback.matrix_unit_reverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinPullback.matrix_unit_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinPullback.matrix_unit_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinPullback.matrix_unit_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinPullback.diagonal_extraction_not_multiplicative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.DessinPullback.no_commutative_matrix_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinPullback.diagonal_fiber_multiplicative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinPullback.pullback_projection_surjective' depends on axioms: [propext, Quot.sound]
+'GRHResearch.DessinPullback.pullback_zero_fiber' depends on axioms: [propext, Quot.sound]

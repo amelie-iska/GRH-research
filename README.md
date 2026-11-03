@@ -10,8 +10,8 @@ The current focused editions use **infinite-dimensional locally gentle algebras 
 
 | Current focused edition | TeX | PDF |
 |---|---|---|
-| Concise, 14 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
-| Extended, 25 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
+| Concise, 17 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
+| Extended, 32 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
 
 The paper gives complete explicit resolution/order/Cartan calculations; presentation semi-invariant weights and their precise Hom/Ext scope; positive-degree Schur module functors, Young tableaux and natural Littlewood–Richardson maps; the cyclic monodromy invariant ring and a convergent local positive Cauchy kernel. Schur functors fail termwise exactness and fixed order-base action in displayed examples. On continuous finite-length completed modules cycle traces are nilpotent, so nonconstant parameters require semi-invariants, flags or pp data.
 
@@ -19,9 +19,17 @@ The actual node lattice category has two proved almost-split sequences and a gen
 
 Ordinary Leavitt/graph CK1 relations collapse when combined with all closed-dessin gentle zero relations. The replacement constrained-path Fock C* algebra retains them and has a proved compact extension; its boundary map is minus unsigned graph incidence. The degree spectral triple is ungraded and its spectrum depends only on edge count. The compact ideal supports the earlier [arithmetic Abel family](research/abel-boundary-determinant.md), preserving exact L determinants and trace-norm convergence, but not yet module/Frobenius compatibility. Two complex-isomorphic elliptic Belyi pairs have different rational Frobenius factors: arithmetic descent cannot be recovered from complex dessin data alone.
 
-Thirty new Lean declarations verify **actual formal-power-series node order and resolution components**, CK1 collapse, determinant base change and actual symmetric-square identities; the full analytic suite has **177 checked declarations**. The [exact checker](scripts/check_dessin_extension.py) and [diamond checker](scripts/check_dessin_diamonds.py) supplement universal proofs with reproducible finite diagnostics. They do not formalize all the papers or GRH. Recent Connes/Consani/Moscovici, van Suijlekom and Deninger sources are used with exact domain, ground-state, arithmetic and convergence hypotheses.
+Thirty new Lean declarations verify **actual formal-power-series node order and resolution components**, CK1 collapse, determinant base change and actual symmetric-square identities; the full analytic suite has **187 checked declarations**. The [exact checker](scripts/check_dessin_extension.py) and [diamond checker](scripts/check_dessin_diamonds.py) supplement universal proofs with reproducible finite diagnostics. They do not formalize all the papers or GRH. Recent Connes/Consani/Moscovici, van Suijlekom and Deninger sources are used with exact domain, ground-state, arithmetic and convergence hypotheses.
 
 The [dessin extension plan](planning/DESSIN_EXTENSION_PLAN.md), [current frontier](planning/CONTINUATION.md), [claim ledger](planning/CLAIMS.csv) and [open obligations](planning/OPEN_OBLIGATIONS.md) specify what remains. The load-bearing missing result is still a descent/Frobenius-compatible arithmetic determinant with an independently proved positive realization for the same completed L-function. The new local Schur positivity and simple Fock vacuum do not establish it.
+
+## Graph pullbacks and precise category bridges
+
+The [new graph-pullback review](planning/reviews/pullbacks/README.md) records a full reading of arXiv:1907.10260v3. The focused papers now prove that the existing constrained Fock algebra is the graph C* algebra of an explicit state-and-vacuum graph. For the nodal interval, the paper's actual hypotheses yield a constants-symbol AF pullback. A separate paired diagonal-fiber C* model has a faithful polynomial dessin representation and a complete generation proof, while a formal-unit obstruction proves this embedding cannot extend to the entire completed order. The polynomial image generates that C* algebra **with adjoints**; its ordinary norm closure need not contain them.
+
+The string classification applies directly to finitely generated/artinian polynomial dessin modules. Completed lattices escape those hypotheses; the indecomposable branch k[[x]] is a concrete non-string/non-band example in the ordinary polynomial sense. The smooth infinite quotient k[x] has a precise one-stop annulus Perf/Fukaya model, but its module inflation is not derived fully faithful. LP's smoothness, grading and stop hypotheses and OPS's category conventions are retained. Our specified Leavitt examples have invariant basis number, witnessed by finite-dimensional quotients.
+
+[Full derivations](papers/dessin-gluing-details.tex), [category scope](papers/dessin-string-scope.tex), [research handoff](research/dessin-pullbacks-and-categories.md) and [exact diagnostics](scripts/check_dessin_gluing.py) accompany ten further Lean matrix/pullback components. The analytic suite now has187declarations; topological C* results and arithmetic comparison are not fully formalized. Earlier14/25page focused PDFs are preserved in outputs/papers/archive/fa564b6/.
 
 ## Earlier audit papers
 
@@ -60,6 +68,7 @@ sh scripts/check_lean.sh
 sh scripts/check_analytic.sh
 python3 -B scripts/check_dessin_extension.py
 python3 -B scripts/check_dessin_diamonds.py
+python3 -B scripts/check_dessin_gluing.py
 python3 scripts/check_arithmetic_approximants.py
 python3 scripts/check_exponent_frontier.py
 python3 scripts/check_arithmetic_zero.py
@@ -79,7 +88,7 @@ python3 scripts/check_abel_boundary.py
 sh scripts/build_papers.sh
 ```
 
-Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 177 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, frozen row-count components, the perturbed low-energy exponent, central contour/integral components, actual finite-field characters/Gauss sums, normalized finite Fourier/dyadic Gram components, actual Eisenstein quotient-ring reciprocity phases, local reflected characters/phase and common-density components, projective-resolution and arrow-state determinant components, Hodge/boundary matrices, continuous Abel boundary operators, actual completed nodal order/resolution components and symmetric-square/invariant components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
+Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 187 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, frozen row-count components, the perturbed low-energy exponent, central contour/integral components, actual finite-field characters/Gauss sums, normalized finite Fourier/dyadic Gram components, actual Eisenstein quotient-ring reciprocity phases, local reflected characters/phase and common-density components, projective-resolution and arrow-state determinant components, Hodge/boundary matrices, continuous Abel boundary operators, actual completed nodal order/resolution components and symmetric-square/invariant components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
 
 Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. All four PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
 

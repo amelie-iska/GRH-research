@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 177 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 187 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -132,3 +132,10 @@ The particular dyadic arithmetic vectors u/v are constructed on ℓ² in prose; 
 `DessinInvariantComponents.lean` adds ten declarations. Three actual ring identities prove ordinary CK1 plus closed forbidden successors kills arrows and covered vertices. The determinant statement verifies the cleared basis-change weight. The explicit 3-by-3 symmetric-square matrix of a 2-by-2 endomorphism preserves zero, identity and composition universally over a commutative ring, hence preserves monomial zero relations. The remaining statements are the degree-two Schur character identity and the actual mixed-vector failure of the node's fixed central parameter on Sym². No general Young/Schur-Weyl/LR theorem is claimed formalized.
 
 The full 177-declaration suite passed warnings-as-errors at unchanged Lean4.24/mathlib pins; types and dependencies are in outputs/checks/2026-11-03-dessins/analytic-verification.log. Only standard foundations occur. General dessins, abstract Ext/Tor and AR, all derived/curve equivalences, operator C* extensions and K-theory, Fredholm determinants and arithmetic descent remain prose or external-theorem dependencies. No GRH-equivalent positivity is introduced as a purported unconditional theorem.
+
+
+## Graph residue and pullback algebra components (2026-11-03)
+
+`DessinPullbackComponents.lean` adds ten declarations, using literal matrix units over a commutative ring: forward/reverse products, orthogonality, square and sum; raw diagonal extraction fails multiplicativity; no unital map from the two-state full matrix algebra to a nonzero commutative ring; the corrected diagonal fiber is multiplicative. An actual equal-image subring of a product of arbitrary rings has a surjective second projection under its explicit compatible-section hypothesis and the stated zero-fiber identity.
+
+These are universal algebraic components. The continuous circle C* subalgebras, graph gauge uniqueness, functional calculus and uniform generation, K-theory and the full formal-completion obstruction are proved in prose or use named external theorems. The full187-declaration suite prints every type and standard-foundation dependency, with no project assumptions or admissions. The standalone layer is unchanged and its previous7-declaration result is preserved; this extension does not claim a fresh upstream4.34.1 build or a formal GRH proof.

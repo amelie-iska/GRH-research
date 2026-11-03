@@ -83,3 +83,10 @@ The direct common-positive-metric shortcut for this family is decisively rejecte
 - **Derived/Schur compatibility:** nonempty Schur functors preserve monomial arrow relations on polynomial finite representations, but not termwise exactness or the fixed R central action on arbitrary lattices. Genuine mixed-degree replacements and an exact/dg functor require proof.
 - **Geometric and AR scope:** general completed derived/geodesic Hom/Ext equivalence is not proved. HLS meshes are intrinsic to the specified quotient-annihilator subcategory, which is not ambient extension closed; no general AR transfer follows. Domestic CB/KG=2 is relative to Λ/J², not all Λ modules/lattices.
 - **Full formalization:** actual nodal all-degree resolution components and matrix identities are Lean verified. General dessins, AR factorization, Schur/LR, C* exactness/K theory, Fredholm/descent and every complete GRH scope remain outside the kernel-checked layer.
+
+
+## After the graph-pullback extension
+
+The original-quiver CK1 collapse is now complemented by a proved graph presentation on arrow states plus vacuum sinks and a literal nodal AF pullback. This closes that operator-model identification, not arithmetic compatibility. The separate diagonal-fiber circle model has a proven polynomial embedding/generation with adjoints; extension to the entire formal order is impossible for this embedding, not a pending estimate. A valid continuous/topological order functor must state a smaller analytic domain or different realization.
+
+The unrestricted completion/string and Perf/Fukaya identifications are false under the current hypotheses. The polynomial quotient annulus remains valid intrinsically; derived inflation fails. A precise singular/completed/geometric functor, compatible with the displayed Ext and center actions, remains necessary. No statement here supplies descent/Frobenius, global L determinants, positive comparison or GRH. Ten new generic matrix/pullback declarations do not formalize C* topology or the full category constructions.

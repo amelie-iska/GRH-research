@@ -1,0 +1,12 @@
+# Dessin graph and diagonal-fiber pullback implementation plan
+
+Goal: review the user's new graph-pullback resource and make the actual operator/category bridges precise for the existing infinite dessin orders. Continue under the existing implementation/private-push authorization; no infrastructure or dependencies change.
+
+1. Read pinned1907.10260v3 fully; record hypotheses of3.4/4.3, figure conventions, hashes and actual applicability. Recheck1308.6410v2 and primary Fukaya theorem scope; prove why completed lattices cannot simply be classified by the polynomial theorem. Sources remain immutable.
+2. Prove the existing constrained Fock algebra is the graph C* algebra of the explicit arrow-state graph with paired vacuum sinks. Derive its vertex-relation matrix and recover the previous incidence K groups. This is not the ordinary graph C* algebra of the original gentle quiver.
+3. Test a genuine diagonal-fiber circle-matrix C* pullback D_H retaining α gluing. Prove split ideal/quotient, faithful polynomial dessin representation and generation, plus no extension to the whole formal order. Distinguish it from Fock/graph-boundary completions and arithmetic descent.
+4. Extend Lean with actual matrix multiplication/residue obstructions and a general algebraic pullback component at unchanged toolchain pins. No abstract C* or GRH theorem is claimed formalized. Add deterministic finite graph/matrix diagnostics separately from universal proofs.
+5. Update both TeX editions with cohesive statements/proofs, definitions/category restrictions and exact pinned citations. Compile and inspect changed pages. Preserve existing source histories and previous verification artifacts.
+6. Independently review major constructions, run focused and full formal checks, update ledger/README/progress/continuation and record durable evidence. Scan staged credentials/integrity, verify private visibility, commit/push this substantive milestone. No claim of a completed arithmetic positive-determinant bridge.
+
+Review focus: graph edges versus finite paths and gauge weights; self-paired sinks; branch cycles length one; nonunital corner functional calculus; all continuous functions vanishing at the fiber; formal units versus norm convergence; finitely generated polynomial modules versus completed lattices; Perf versus bounded derived and smoothness/stops/line fields. Tests are finite corroboration, not analytic surrogates.

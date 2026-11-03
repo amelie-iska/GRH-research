@@ -1,0 +1,80 @@
+\section{Graph pullbacks and completions with specified fibers}
+\subsection{The complete Fock graph presentation}
+For graph C* conventions the edge operator has initial projection at its range vertex and final projection under its source vertex. Put
+\[
+ S_h=L_{a_h}Q_{a_{\tau h}},\qquad T_h=L_{a_h}v_{[\tau h]}.
+\]
+The two right-hand projections are orthogonal subprojections of $L_{a_h}^*L_{a_h}=Q_{a_{\tau h}}+v_{[\tau h]}$. Thus $S_h^*S_h=Q_{a_{\tau h}}$, $T_h^*T_h=v_{[\tau h]}$, and $S_h^*T_h=0$. For distinct $h$ the prefix ranges are orthogonal, so every other cross-edge CK1 product is zero. Their final projections sum to $Q_{a_h}$. The vacua have no outgoing edges. The resulting graph has $|H|+|Q_0|$ vertices and $2|H|$ edges, with cycles only among its state vertices and exits to the paired sinks. Gauge covariance and nonzero vertices prove faithfulness as well as surjectivity. This explains precisely how a graph C* algebra is obtained without imposing the incompatible original-quiver CK1 relations.
+
+The graph integer map has one column for each regular vertex $h$ and no sink columns:
+\[
+ d:\Z^H\longrightarrow\Z^H\oplus\Z^{Q_0},\qquad
+ d(e_h)=e_h-e_{\tau h}-b_{[\tau h]}.
+\]
+The state part of $d(x)=0$ says $x_h=x_{\tau^{-1}h}$; the sink part then says the constant cycle coefficients are in $\ker B_\Gamma$. For the cokernel choose a base state on each cycle and successively use $q_h=q_{\tau h}+b_{[\tau h]}$ to eliminate all other states. Closing the cycle leaves $\sum_{h\in c}b_{[h]}=0$, while its base state remains free. Hence
+\[
+ \operatorname{coker}d\cong\Z^{\#\operatorname{cyc}\sigma}\oplus\operatorname{coker}B_\Gamma.
+\]
+This gives an independent integral check of the previous compact-extension computation. The full labelled graph, diagonal projections and edge families carry more information than those coarse groups.
+
+\subsection{A genuine application of the supplied pullback theorem}
+For the interval dessin let $E_2=G_\alpha$ have loop vertices $q_x,q_y$, common sink $b$, loops $s_x,s_y$ and exits $t_x,t_y$. Remove $b$ to obtain $F_2$, two disjoint loop graphs. Its quotient is exactly $C(\mathbb T)^2$. Let $E_1$ have the same three vertices and edges $e_{x,n}:q_x\to b$, $e_{y,n}:q_y\to b$, $n\ge0$, and no other edges. Remove $b$ to obtain the edgeless $F_1$, whose algebra is $\C^2$.
+
+The inclusions $F_i\subset E_i$ are admissible in the precise sense of \cite[Definition3.1]{GraphPullbacks}: the removed sink set is hereditary/saturated; all edges ending at retained vertices are retained; no vertex emits infinitely many edges into the removed set and a positive finite number outside it. For $E_1$ the latter outside count is zero, which is allowed. Define a path functor identity on objects by
+\[
+ e_{x,n}\longmapsto s_x^nt_x,\qquad
+ e_{y,n}\longmapsto s_y^nt_y.
+\]
+Images of distinct positive edges are prefix incomparable: at the first different length one has an exit and the other a loop. Source vertices and identities cause no exception. The image consists of all positive pointed paths in $E_2$, whose last edge is not a short loop; vertices are included separately. The first graph is acyclic and the removed sink has no short loop in the second. All hypotheses of Theorem3.4 are now verified, giving
+\[
+ C^*(E_1)\cong\mathcal T_A\mathop{\times}_{C(\mathbb T)^2}\C^2.
+\]
+The quotient of $C^*(E_1)$ by its sink ideal is $\C^2$, and its sink ideal is compact operators on the paths ending at $b$. The graph is acyclic, hence its algebra is AF. There are no regular vertices in $E_1$: the two sources are infinite emitters and $b$ is a sink. The graph $K$ matrix has no columns and three rows, yielding $K_0=\Z^3$ and $K_1=0$.
+
+This is a positive instance of the new source inside our infinite dessin framework. It is a constants-symbol subalgebra of the Fock model, not the entire Fock algebra or the formal order. For a permitted cycle of length greater than one, its full closed path is itself pointed in this paper's convention, so an object-preserving acyclic path functor cannot cover all such paths. That simple obstruction prevents copying this example to every cycle by analogy. The sink-extension Theorem4.3 also requires a specified original pullback, injective gluing maps, annihilation of glued vertex projections and coverage of all paths ending at the gluing sinks. A two-to-one identification of sink occurrences within one branch does not satisfy these assumptions without another construction.
+
+\subsection{Diagonal residue obstruction and the corrected pullback}
+Suppose one tries to glue full matrix-circle blocks by their diagonal values. In $M_2$, $E_{12}E_{21}=E_{11}$, although both factors have zero diagonal. Thus the proposed boundary map is not a homomorphism. For $\ell>1$, more generally any *-homomorphism from the full matrix-circle algebra to a commutative C*-algebra has equal images of $E_{ii}=E_{ij}E_{ji}$ and $E_{jj}=E_{ji}E_{ij}$. These images are both orthogonal and equal, hence zero; summing the diagonal units kills the image of one and then the whole homomorphism. This works for nonunital *-maps as well: a nonzero image of one would give a nonzero unital corner map. The failure concerns full matrix-circle blocks, not the already-restricted fiber algebra $D_\ell$.
+
+Evaluation $D_\ell\to\C^\ell$ is a genuine surjective *-homomorphism since at one both factors are diagonal. Its kernel is $C_0(\mathbb T\setminus\{1\},M_\ell)$. Pulling it back along the repeated-coordinate embedding $\Delta_\alpha:\C^{Q_0}\to\C^H$ gives exactly the fiber conditions of $\mathcal D_H$. The paired constant diagonal matrices give a unital *-section. Hence this is a split C*-extension, not a claim deduced from a merely commutative diagram of nonmultiplicative maps. Since $\mathbb T\setminus\{1\}\cong\R$, each kernel block is a matrix suspension of $\C$, with $K_0=0$, $K_1=\Z$. Split exactness now proves Theorem~\ref{thm:diagonalmodel}.
+
+The pairing is retained in this specified presentation, not recovered from the unmarked isomorphism class. In particular arbitrary constant permutation matrices can relabel a branch's diagonal positions, so the spherical and elliptic theta examples have isomorphic unmarked $\mathcal D_H$ despite different ribbon orderings. Keep the labelled arrows, cycle cuts and distinguished fiber as additional data when using it as a dessin model. Also the central branch unitary $zI_\ell$ represents $\ell$ times the primitive corner generator in $K_1$, not a new independent generator per matrix entry.
+
+\subsection{Generation, faithfulness and the exact failure of extension}
+Let $\rho$ denote the polynomial representation in Theorem~\ref{thm:diagonalmodel}. Its vertex images are orthogonal projections summing to one. Every arrow image lies under the correct source and range vertex projections. A forbidden product vanishes because the intermediate state indices are $\tau h$ and $\alpha\tau h$, which are distinct. Thus $\rho$ is an actual algebra map, not a fitted characteristic polynomial.
+
+For a full turn starting at $h$, $\rho(c_h)=w_cE_{hh}$ with $w_c(z)=g(z)^{|c|}z$. It is a normal element of $\mathcal D_H$. The function $w_c$ vanishes exactly at one; away from that point $w_c/|w_c|=z$. Therefore it is injective on all of $\mathbb T$, and a homeomorphism to its image. Nonunital continuous functional calculus at $\rho(c_h)$, using functions zero at zero, gives every $fE_{hh}$ with $f\in C(\mathbb T)$, $f(1)=0$. The zero condition makes the result vanish in all other matrix entries and branches.
+
+To obtain an off-diagonal entry choose the unique shortest permitted path from state $h$ to $j$ within its cycle, of length $r>0$ and cut-crossing count $\kappa\in\{0,1\}$. Its image is $g^rz^\kappa E_{hj}$. Given $f(1)=0$, multiply it on the left by the already available diagonal element
+\[
+ \frac{f(z)z^{-\kappa}}{g(z)^r+\varepsilon}E_{hh},\qquad \varepsilon>0.
+\]
+The product is $f g^r/(g^r+\varepsilon)E_{hj}$ and converges uniformly to $fE_{hj}$. Indeed near one $|f|$ is small, and on the complement of that neighborhood $g^r$ has a positive minimum. These two bounds prove uniform convergence without assuming division by a function vanishing at the fiber. Thus the generated algebra contains the whole kernel ideal. Its quotient contains the entire paired diagonal algebra, so it is $\mathcal D_H$.
+
+For injectivity let a finite linear combination of path images vanish. At one, all positive paths vanish, forcing the coefficients of the original vertex idempotents to vanish. Fix a state-matrix entry in a branch. Its remaining paths have lengths $r+m\ell$ and images
+\[
+ g^rz^\kappa\sum_m a_m(g^\ell z)^m E_{hj},
+\]
+with a possible initial zero coefficient if $r=0$. On $\mathbb T\setminus\{1\}$ the prefactor is nonzero, and $w_c$ has infinite range, so the polynomial has infinitely many distinct zeros. All coefficients are zero. Repeating by entries proves faithfulness.
+
+No boundedness improvement repairs full formal extension. Pick any $z_0\ne1$, let $\lambda=w_c(z_0)^{-1}$, and consider $1-\lambda c_h$. Its inverse $\sum_{m\ge0}\lambda^m c_h^m$ exists in the arrow-adic order. The matrix image at $z_0$ has a zero eigenvalue on state $h$, so cannot be invertible. A unital algebra homomorphism would preserve the inverse identity, an immediate contradiction. This proves nonextension without any continuity assumption. It does not rely on the false claim that a norm greater than one alone forces a geometric-series denominator to be singular. Scaling $g$ to have norm at most one still does not allow arbitrary formal series.
+
+The two valid operator completions are structurally different. In the bipartite case $K_0(\mathcal T_A)=\Z^{E+1}$ differs from $K_0(\mathcal D_H)=\Z^E$; in the nonbipartite case the former has the extra $\Z/2$ torsion. Neither is automatically the norm completion of the arrow-adic topology. No invariant constructed solely from these complex objects distinguishes the rational twists already exhibited; arithmetic descent remains a separate input.
+
+\subsection{Invariant basis number and the Leavitt comparison}
+If a unital $k$-algebra $R_1$ has a unital representation on a nonzero finite-dimensional vector space $V$, an isomorphism $R_1^m\cong R_1^n$ induces an isomorphism $V^m\cong V^n$ by tensoring. Comparing dimensions gives $m=n$. This proves invariant basis number without requiring the representation to be faithful. Every original dessin algebra and completed order has a vertex-simple representation, and each permitted-state Laurent algebra has evaluation onto a nonzero matrix block. The Leavitt algebra of $G_\alpha$ has the same finite-dimensional representation after killing the vacuum sinks and evaluating one boundary cycle. Thus all of these examples have invariant basis number. Leavitt's free-rank phenomena are important elsewhere but cannot be assumed in this class simply from the name LPA.
+
+For the specified finite graph $G_\alpha$, the usual complex Leavitt path algebra embeds in $C^*(G_\alpha)$ with norm-dense image, using its canonical generators and involution \cite[Theorem7.3]{TomfordeEmbedding}. Those generators are the split $S_h,T_h$, not the unsplit original gentle arrows equipped with ordinary CK1. This is the exact algebraic/analytic twin relationship applicable here.
+
+\section{String finiteness and the smooth quotient surface}
+For a finite quiver, finitely controlled implies finitely generated: choose one finitely generated submodule containing each vertex space and sum the finitely many choices. Conversely the module itself works. Stabilization at each of finitely many vertices likewise gives ordinary artinianity. Crawley--Boevey's polynomial theorem therefore applies directly to our finitely generated and artinian polynomial modules, with its primitive injective bands in the latter case. It does not assert a classification of every possible algebraic module.
+
+The formal branch $M=k[[x]]$, $y=0$, gives a precise counterexample to that stronger assertion. An $A$-endomorphism $F$ preserves each $x^nM$. For the polynomial truncation $f_n$ of $f$, one has $F(f)-f_nF(1)\in x^nM$. Separatedness and all $n$ imply $F(f)=fF(1)$. Hence $\operatorname{End}_A(M)=k[[x]]$ is local, so $M$ is indecomposable. If an ordinary word module has $y=0$, its word cannot contain $y$ or $y^{-1}$, since such a letter would create a nonzero basis map. A reduced word using only $x^{\pm1}$ cannot change direction. Its nonperiodic choices are finite strings, the free ray $k[x]$, and the opposite locally nilpotent ray. The first and last fail injectivity of $x$, and the free ray fails invertibility of $1-x$. A two-sided pure-$x$ word is periodic, and in every associated band $x$ acts invertibly. On $M$, $x$ is injective but not onto. None of these possibilities equals $M$. This includes arbitrary nonzero indecomposable Laurent coefficient modules, not just finite bands.
+
+For a general nonzero completed lattice, finite generation over $A$ would imply finite generation over $k[u]$. Every nonzero polynomial in $u$ is a power of $u$ times a unit of $k[[u]]$, so it acts injectively. The lattice would be a nonzero finite free $k[u]$-module. Multiplication by $1-u$ on such a free module has a nonzero cokernel, but the same map is invertible over $k[[u]]$. This proves the contradiction in the core. The strictly descending $u$-adic chain separately excludes artinianity. These are actual failed hypotheses, not merely unverified applicability.
+
+Lekili--Polishchuk's precise convention takes $D(A)$ to mean perfect dg modules. Their locally gentle definition allows infinite dimension, and their smoothness criterion says no forbidden cycle; properness says no permitted cycle. Both fail for every nonempty closed dessin here. Their Theorem3.2.2 therefore does not apply to the full polynomial dessin algebra, even though it applies to suitable infinite-dimensional quotients. The OPS finite-dimensional geometric-intersection theorem has its own grading, local-system, boundary and exceptional coincident-curve conditions. An unrestricted statement that every gentle/string derived object is an ungraded geodesic crossing is not justified by either source.
+
+For the interval quotient $B=A/(y)=k[x]$, global dimension one follows from its PID structure: every submodule of a finite free module is free, giving finite projective resolutions of all finitely generated modules. Thus $\operatorname{Perf}(B)=D^b(\operatorname{mod}_{\rm fg}B)$ in grading zero. Its permitted loop gives one unmarked boundary component and its length-one forbidden thread $x$ gives one stop on the other boundary, the annulus of the smooth partially wrapped model. This construction uses the infinite polynomial quotient, not the completed $k[[x]]$ category.
+
+Finally the quotient does not give a derived fully faithful embedding by ordinary inflation. Resolve $B$ over $A$ by the alternating maps $y,x,y,x,\ldots$. Hom into $B$ gives $0,x,0,x,\ldots$, so $\operatorname{Ext}_A^{2r}(B,B)=B/xB=k$ for every $r\ge1$, whereas all positive self-Ext over $B$ vanish. Consequently its inflation is not derived fully faithful, and the perfect $B$-module $B$ becomes an infinite-projective-dimension $A$-module. A surface functor transferring these categories must account for that difference explicitly.
