@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 39 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 46 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -58,3 +58,9 @@ The source's preceding Gauss/reciprocity identity, arithmetic power estimates, i
 `PrincipalResidue.lean` adds six actual complex algebra/finite-sum statements: exact multiplier evaluation when r=d, the two local error identities, weighted slot factorization with the correct sign, transfer of an error bound through nonnegative weights with positive total mass, and a finite-product relative-error bound. The last estimate uses a common error bound at most1; the empty product is included. Each theorem has explicit hypotheses and prints its standard foundational dependencies.
 
 The arithmetic inert-prime identification at s=3/5, fixed-ray prime theorem, prime-power asymptotics, slot admissibility and contour integration remain prose/external inputs. The module does not certify the inherited high representation or the remaining energy/row-count estimates. No new imports, dependencies or cache downloads were needed for this module.
+
+## Frozen row-count components
+
+`FrozenRowCount.lean` adds seven declarations: an actual finite complex moment-to-cardinality inequality, the exact kappa=3/4 plain capacity, real coefficient bounds, crossing bounds on the full parameter rectangle, the exact short-count crossing, balanced cutoff and supply inequality. The coefficient/cutoff statements permit the larger x<=1/2 domain where the formulas still hold; the crossing theorem keeps0<=x<=1/2. All theorem types and standard axiom dependencies are explicit.
+
+These check finite algebra and inequalities, not the arithmetic moment bounds, saturated detector witnesses, selection rounding theorem, floor-bin estimates or global7/8 theorem. The full conditional counting argument and quantifier order remain prose in research/frozen-row-count.md. No imports, pinned dependencies or cache artifacts were added.

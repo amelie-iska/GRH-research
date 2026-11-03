@@ -845,6 +845,125 @@ must use the actual standard $L$-functions and explicit analytic domains. An abs
 would not verify the bridge. Print every theorem's axioms and review
 its full type and dependencies, not merely its name.
 
+
+\section{Details of the frozen row-count extension}
+We give the selection and uniformity details of
+Proposition~\ref{prop:frozen-row}. The immutable source locations and
+full dependency list are recorded in \texttt{research/frozen-row-count.md}.
+This proof uses the stated source moments and witnesses as hypotheses;
+it does not establish them. Given the requested exponent loss, first
+choose capacity decrements and a moment/rounding mesh threshold
+independent of the eventual slot count; then fix the finite slot system
+and form the bins. Only afterward fix its finite internal profile and
+height orders. An arbitrary loss is not asserted for a fixed coarse mesh.
+
+\paragraph{Spikes and selection.}
+After subdivision by a fixed finite character presentation and a dyadic
+pair, the witnesses have common row character, smooth profiles and
+lengths $r,m$. The number of subdivisions is $O((\log U)^2)$.
+At base $U$, slot $i$ has length $w_i=\ell_i/d$ and amplitude
+$g_i\in[0,\delta/2]$, with
+$q=(\sum_i w_i g_i)/(\sum_i w_i)$. Only positive amplitudes provide
+lower bounds for the corresponding physical slot.
+Fill requested length $z$ with the largest positive amplitudes first.
+The fractional selection has gain at least $qz$: its initial weighted
+average is at least the total mean; after the positive slots are
+exhausted their full gain is $q\ell/d\ge qz$.
+Dropping the one possibly fractional slot gives
+\[
+ \left|\prod_{i\ \mathrm{selected}}Q_i\right|^2
+ \ge U^{2qz-\delta\max_i w_i}.
+\]
+A fixed capacity decrement $\nu_0$ adds a loss at most $2q\nu_0$.
+Since $d\ge d_{\min}$, a sufficiently fine fixed physical mesh makes
+both losses as small as required. Error slots with $g_i=0$ do not
+acquire fictitious lower bounds.
+
+The inverse moment, divided by the two spikes, bounds the row count
+by $U^{1-\delta r-2qz+\epsilon}(1+T_1)^A$.
+For the plain moment use two copies of $S_m$, so division is by
+$|S_m|^4$, giving exponent $1-2\delta m-2qz+\epsilon$.
+A formal component verifies this finite-moment step for actual complex
+values: if $A_0\le|w_u|^2$, $B_0\le|p_u|^2$, $B_0\ge0$ and
+$\sum_{u\in\mathcal B}|w_up_u|^2\le M_0$, then
+$\#\mathcal B\,A_0B_0\le M_0$. It supplies no arithmetic moment bound.
+
+\paragraph{Arithmetic presentations.}
+With negative common orientation write the row as
+$\nu(n)\overline{\chi_n(u)}$, $\nu\in\Theta$. The slot coefficient
+is $\overline{\nu(p)}1_{p\in1_T}$, a fixed finite expansion in
+$\Theta$, independent of the moving row in the current sum.
+For the plain moment conjugate the entire product, both witness
+profiles and all selected slots. Its positive orientation has
+coefficients $\nu(p)1_{p\in1_T}$, still in the allowed class.
+Conjugation preserves zero extensions and underlying disjoint supports.
+The same admissible fixed-within-the-sum mask is retained in both
+plain copies and every selected slot. A moving mask is never absorbed
+into the fixed arithmetic datum. Large physical sixth-power-free rows
+induce outside $\Theta$ by ramification outside $S$; exceptional
+physical rows supported on $S$ remain a separate finite family.
+These family properties are indispensable inherited hypotheses.
+
+\paragraph{Crossing and strict margins.}
+The frozen capacity satisfies
+\[
+ 2m+6(3/4)\frac{1-2m}{9/2}=1.
+\]
+The plain exponent decreases with $m$, with derivative
+$-2\delta+8q/9<0$, so $m\ge\tau-r-o(1)$ gives $S_\tau(r)$.
+Both affine counts have opposite slopes. Their crossing satisfies
+\[
+ r_*(3/2)=1,\quad r_*(1)\ge23/37,\quad
+ \tau-r_*(\tau)=\frac{(1-x)\tau+5x/9}{D}\in[1/3,1/2].
+\]
+Thus the chosen inverse capacity is at most $7/37$ and the plain
+capacity at most $2/27+O(\epsilon)$. On the inverse side,
+$z=(1-r)/2-\nu_0>0$ gives
+\[
+ 1-r-2z=2\nu_0,\qquad
+ 3-2r-8z=4(1-r-2z)+(2r-1)\ge9/37.
+\]
+These are fixed positive widths for the marked moment.
+If either capacity is at most $\nu_0$, no-slot moments give at most
+$1-\delta+O(\nu_0)$, below the short envelope.
+For $r\ge1$, the amplified inverse exponent is
+$1-\alpha+(\alpha-\delta)r\le L(\tau)+O(\epsilon)$;
+for $r\le1$ the no-slot exponent is $1-\delta r$.
+Their uniform agreement at $r=1$ avoids an invalid marked-moment
+application with a vanishing width. If $m\ge1/2$, use the no-slot
+plain moment. The floor $a=51/100$ is excluded because its rows
+need not have an actual zero and hence need not have witnesses.
+
+\paragraph{Balancing and the height ceiling.}
+One has $D\ge37/18$, $P\ge7/9$ and
+$\alpha-\delta\ge1/12$. Consequently $J>\delta P\ge0$ and
+$1\le\tau_*<3/2$. The exact identity
+\[
+ D\{R_{\rm short}(\tau)-L(\tau)\}
+ =\delta P/2-J(\tau-1)
+\]
+proves the displayed balance and its minimax property.
+The algebra includes $\delta=0$; physical nonfloor bins satisfy
+$\delta>1/50$. Neither the algebraic endpoint nor finitely many
+rational test cases imply the source's arithmetic estimates.
+
+Fix the internal moment and detector smoothness orders before the
+external Fourier-tail order. If $A_{\rm ht}$ dominates their finitely
+many height degrees, choose a positive analysis exponent $\omega_{\rm ht}$
+within the inherited ceilings and at most
+$d_{\min}\epsilon_{\rm ht}/[20(A_{\rm ht}+1)]$.
+For $T_1=Z^{\omega_{\rm ht}}$, eventually
+\[
+ (1+T_1)^{A_{\rm ht}}
+ \le2^{A_{\rm ht}}Z^{d_{\min}\epsilon_{\rm ht}/20}
+ \le U^{\epsilon_{\rm ht}/10}.
+\]
+The later external tail order changes only external input seminorms,
+not any previously fixed internal height degree. This preserves the
+source's order of choices. It is not a height-uniform estimate without
+a ceiling, and it leaves the low-energy and nonprincipal-contour
+obligations separate.
+
 \section{Computational examples and reproducibility}
 The Python checks use integers and \texttt{fractions.Fraction}, with
 no random choices, model weights, scientific datasets or floating-point

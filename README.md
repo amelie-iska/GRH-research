@@ -8,8 +8,8 @@ A private research workspace for auditing and developing surface-order and Hilbe
 
 | Edition | Source | Compiled PDF | Scope |
 |---|---|---|---|
-| Concise, 10 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
-| Extended, 25 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
+| Concise, 11 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
+| Extended, 27 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
 
 Both editions share [core.tex](papers/core.tex). They are research drafts with full proofs of their stated obstruction results; they do not claim a full proof of GRH or certification of all upstream results. Authorship, novelty assessment and submission venue require confirmation before journal submission.
 
@@ -45,10 +45,11 @@ python3 scripts/check_arithmetic_zero.py
 python3 scripts/check_jensen_metric.py
 python3 scripts/check_euler_correction.py
 python3 scripts/check_principal_residue.py
+python3 scripts/check_frozen_row_count.py
 sh scripts/build_papers.sh
 ```
 
-Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 39 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, and principal-residue normalization. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
+Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 46 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, and frozen row-count components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
 
 Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. Both PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
 
@@ -76,6 +77,8 @@ A [certified finite arithmetic test](research/arithmetic-zero-certificate.md) fi
 
 The [Jensen-metric report](research/jensen-metric.md) changes the arithmetic approximation class and proves an explicit compact error bound. Its coefficient-defined Newton-sum metric gives a conditional exact self-adjoint determinant, with positivity still unresolved. A smooth positive Gaussian-mixture counterexample rejects deriving that metric's positivity from ordinary kernel moment positivity. This part concerns zeta RH only; no general GRH conclusion follows. The model checker does not enclose actual xi coefficients.
 
-The [Euler-correction report](research/euler-correction.md) proves a larger convergence region for the explicit September local factors, inheriting their scalar arithmetic identity. The principal correction contains a shifted infinite-order angular Hecke factor. With the stated classical completion inputs, its zeros prevent the unchanged correction from satisfying the common-signal nonvanishing condition below7/12. This does not refute GRH or the source's claimed7/8 result. Quantitative compensated contours and mean squares remain open.
+The [Euler-correction report](research/euler-correction.md) proves a larger convergence region for the explicit September local factors, inheriting their scalar arithmetic identity. The principal correction contains a shifted infinite-order angular Hecke factor. With the stated classical completion inputs, its zeros prevent the unchanged correction from satisfying the common-signal nonvanishing condition below7/12. This does not refute GRH or the source's claimed7/8 result. Remaining nonprincipal contours and mean squares remain open.
 
-The [principal-residue report](research/principal-residue.md) verifies the compensated normalizer, a uniform relative-error saving, and the principal contour comparison at the perturbed geometry under the listed inherited scalar/high/Mellin/reciprocal contracts. An exact inert-prime example shows that the pointwise approximation by -1 fails at s=3/5; it does not rule out cancellation after prime averaging. Energy, frozen-capacity row counts and other nonprincipal contour estimates remain open, so no new zero-free theorem or GRH proof is claimed.
+The [principal-residue report](research/principal-residue.md) verifies the compensated normalizer, a uniform relative-error saving, and the principal contour comparison at the perturbed geometry under the listed inherited scalar/high/Mellin/reciprocal contracts. An exact inert-prime example shows that the pointwise approximation by -1 fails at s=3/5; it does not rule out cancellation after prime averaging. Energy and other nonprincipal contour estimates remain open; the conditional row-count extension is described below. No new zero-free theorem or GRH proof is claimed.
+
+The [frozen row-count report](research/frozen-row-count.md) reconstructs the perturbed counting interface with kappa=3/4, removing the Delta/4 capacity loss. This remains conditional on the explicitly unverified arithmetic moments, witnesses and earlier7/8 bound. Mesh selection precedes the fixed slot system, and floor-bin rows remain separate. The next target is the low reflected-energy application; no new zero-free theorem is claimed.

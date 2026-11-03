@@ -1,0 +1,9 @@
+# Independent review: frozen-capacity row counts
+
+2026-11-02. Read-only review by project_review; source files unchanged.
+
+The reviewer independently reconstructed the fixed-kappa=3/4 argument from September12532–12576and15100–15491. Under the separate uncertified beta_*<=7/8 premise, the fourth-moment zero-free condition holds and the actual plain capacity equals2(1-2m)/9. The Delta/4 comparison loss therefore disappears; no other essential positive-Delta input was found in the counting proof. Alpha remains5/6 from amplification, independent of kappa. The crossing bounds, minimax R_*, no-slot count, exact perturbed supply room and fixed-height ceiling were independently checked. Floor rows, nonprincipal family, individual saturated spikes, masks, orientations and strict moment margins remain explicit requirements.
+
+Two literal draft defects were corrected before final verification: a fixed mesh's rounding/decrement loss is an allocated epsilon_round, not o_U(1); and the epsilon-dependent mesh threshold is chosen independently of the eventual slot count before fixing slots and forming bins. The reviewer reread the corrected research note and both paper sections and found no remaining actionable issue. Arithmetic moments, detector construction, low energy, nonprincipal contours and the prior7/8 theorem were not promoted to certified results.
+
+All seven latest FrozenRowCount.lean statements independently compiled with warnings as errors and only propext, Classical.choice and Quot.sound. The reviewer executed the actual Python assertions in memory before the report-writing block:64crossing/cutoff samples and6finite complex-moment checks passed. No report, bytecode or source files were written by the reviewer. This is independent project review, not external peer review or a full audit of the source moments.
