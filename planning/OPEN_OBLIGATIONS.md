@@ -164,3 +164,13 @@ polynomial/module maps, prove the relevant exactness and inspect theorem
 axioms. No new Lean result was claimed here. Sage remains supplied unexecuted;
 quantum distance estimates remain non-interval-certified. The original-family
 low-gcd estimate and independently positive arithmetic determinant remain open.
+
+P6 persistence interface now closes the complete underlying ungraded worked
+sequence for k[x,y]/(x²,xy,y²), including augmentation, projective terms and
+both Hom boundaries for the actual residue action. Its general regular-pair
+premise is discharged for the polynomial variables. Remaining obligations:
+general staircase exactness in Lean; bigradings/minimality, Ext/Tor objects
+and dimensions, CW/Schur equivariance, and the actual nodal E tensor cone.
+The module quotient basis/Hilbert series and categorical ProjectiveResolution
+wrapper are not formalized by these19 declarations. Entire-book coverage and
+the original low-gcd/independent arithmetic positivity bridge remain open.

@@ -114,6 +114,15 @@ positive $x$ entries after it. Their exponents telescope to $b_i,a_i$,
 respectively, and the sign is $(-1)^i$. Finally take the degreewise Euler
 characteristic; the free summands have Hilbert denominator $(1-s)(1-t)$.
 \end{proof}
+For $I=(x^2,xy,y^2)$ the underlying sequence is also kernel checked
+in Lean~4 over the actual ring $\operatorname{MvPolynomial}(\mathrm{Fin}\,2,k)$.
+The verification proves the kernel/image equalities, the stated ideal image,
+surjective quotient augmentation, projective free terms, and vanishing of
+both induced Hom differentials to the constant-coefficient residue field.
+It uses regular multiplication on the free modules, distinct from the
+residue action on $k$. General staircases, graded minimality and the
+surface-order coefficient cone remain separately scoped prose arguments.
+
 At grade $\nu\in\mathbb N^2$, $M_\nu$ has dimension one exactly when
 no generator degree is componentwise at most $\nu$. Its comparable-grade
 map has rank one exactly when both endpoint grades satisfy this condition.

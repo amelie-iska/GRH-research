@@ -1,0 +1,40 @@
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/PersistenceResolution.lean:66:4: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/PersistenceResolution.lean:93:52: error: No goals to be solved
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/PersistenceResolution.lean:93:18: error: unsolved goals
+case snd
+k : Type u_1
+inst✝ : Field k
+a b : F2 k
+⊢ (-y k * (a + b).1, x k * (a + b).1 - y k * (a + b).2, x k * (a + b).2).2 =
+    ((-y k * a.1, x k * a.1 - y k * a.2, x k * a.2) + (-y k * b.1, x k * b.1 - y k * b.2, x k * b.2)).2
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/PersistenceResolution.lean:109:8: error(lean.unknownIdentifier): Unknown constant `Submodule.eq_bot_iff.mpr`
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/PersistenceResolution.lean:110:8: error: No goals to be solved
+GRHResearch.PersistenceResolution.relation_decomposition.{u_1} {S : Type u_1} [CommRing S] [IsDomain S] (x y : S)
+  (hx : x ≠ 0) (hregular : ∀ (z : S), x ∣ y * z → x ∣ z) (a b c : S) (h : x ^ 2 * a + x * y * b + y ^ 2 * c = 0) :
+  ∃ p q, a = -y * p ∧ b = x * p - y * q ∧ c = x * q
+GRHResearch.PersistenceResolution.x_dvd_of_y_mul.{u_1} (k : Type u_1) [Field k] (z : Ring k) (h : x k ∣ y k * z) :
+  x k ∣ z
+GRHResearch.PersistenceResolution.complex_identity.{u_1} (k : Type u_1) [Field k] : d1 k ∘ₗ d2 k = 0
+GRHResearch.PersistenceResolution.d2_injective.{u_1} (k : Type u_1) [Field k] : Function.Injective ⇑(d2 k)
+GRHResearch.PersistenceResolution.d1_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (d1 k) = LinearMap.range (d2 k)
+GRHResearch.PersistenceResolution.d1_range.{u_1} (k : Type u_1) [Field k] : LinearMap.range (d1 k) = ideal k
+GRHResearch.PersistenceResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(augmentation k)
+GRHResearch.PersistenceResolution.augmentation_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (augmentation k) = LinearMap.range (d1 k)
+GRHResearch.PersistenceResolution.free_terms_projective.{u_1} (k : Type u_1) [Field k] :
+  Module.Projective (Ring k) (Ring k) ∧ Module.Projective (Ring k) (F1 k) ∧ Module.Projective (Ring k) (F2 k)
+'GRHResearch.PersistenceResolution.relation_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.x_dvd_of_y_mul' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.complex_identity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d2_injective' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d1_kernel' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d1_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.augmentation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.augmentation_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.free_terms_projective' depends on axioms: [propext, Classical.choice, Quot.sound]

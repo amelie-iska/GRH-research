@@ -1,5 +1,5 @@
 # Complete source inclusion and development map
-Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical127-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
+Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical140-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
 
 ## emergent_cyclic_time_hilbert_polya_GRH_2053.tex
 SHA256 `08708269403c3095381c45eb4c82435a073aaca8819f427a232e8eba368e05dc`; 15556 lines.
@@ -13,7 +13,7 @@ SHA256 `08708269403c3095381c45eb4c82435a073aaca8819f427a232e8eba368e05dc`; 15556
 | `\part{Representation Theory of Compact Gentle Surface Algebras}` | 1090 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
 | `\chapter{Linear Relations on Vector Spaces and Functorial Filtrations}\label{ch:6}` | 1097 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
 | `\chapter{DG and \texorpdfstring{$A_\infty$}{A-infty} foundations: making ``derived time'' honest}` | 1308 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
-| `\chapter{Explicit multiparameter persistence computations tied to surface orders}` | 1479 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
+| `\chapter{Explicit multiparameter persistence computations tied to surface orders}` | 1479 | Entire source preserved; corrected persistence chapter has monotone maps, reviewed replacement staircase/CW/order-coefficient constructions and executable examples | Replacement square-ideal underlying ungraded resolution and residue Hom boundaries checked; general source chapter and graded/category interfaces not certified |
 | `\part{Surface Orders, Twisted Shifts, and Classification}` | 1740 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
 | `\chapter{Compact Gentle Surface Orders}` | 1742 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
 | `\chapter{Examples: Double Simple Cycle Algebras}` | 2929 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
@@ -116,3 +116,11 @@ fiber, CW and quantum flag homology remain distinct. Python/JavaScript and
 independent review passed. This does not cover missing whole-source topics,
 prove general categorical Lean interfaces or supply arithmetic positivity.
 The supplied Sage companion was not executed. Six distinct tools remain unique.
+
+The worked persistence square-ideal module now has its entire underlying
+ungraded free resolution and residue Hom differential calculation formalized
+in actual MvPolynomial modules. This closes that concrete proof interface,
+not general staircases, graded/Schur/CW/derived interfaces or the actual nodal
+coefficient tensor cone. Nineteen new printed dependencies use only standard
+foundations; primary algebra scope remains the infinite dessin/order setting,
+with k[x,y] auxiliary. No whole-source or GRH completion is inferred.

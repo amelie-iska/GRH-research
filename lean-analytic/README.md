@@ -174,3 +174,27 @@ The full suite now has **240 printed dependency reports**, all freshly checked w
 `HyperbolicCoordinates.lean` adds3 reports: actual rational disk-to-Lorentz identity, inverse disk defect and four-coordinate norm preservation under a unit-circle plane rotation. Nonzero denominator and orthogonality hypotheses are explicit. The full infinite tiling, compact quotient and uniformization theorem are not formalized by these coordinate identities.
 
 Types, standard axiom dependencies, focused checks and the full suite are under `outputs/checks/2026-11-03-book/`. See `book/VERIFICATION.md` for the exact per-topic boundary and the all-book formalization backlog.
+
+## Worked persistence module over the actual polynomial ring
+
+`PersistenceResolution.lean` adds 19 printed declarations, bringing the pinned
+full-suite report count to 262. For any field k, R is MvPolynomial(Fin2) k,
+F1=R×(R×R), F2=R×R, and the quotient is the actual ideal quotient by
+(x²,xy,y²). The maps have columns (-y,x,0),(0,-y,x) and row(x²,xy,y²).
+The file proves a reusable regular-pair relation decomposition, discharges
+its regularity premise for the independent polynomial variables, proves
+injectivity and both kernel/image equalities, identifies the image ideal,
+proves quotient surjectivity and projectivity of the free terms.
+
+The regular R-action is explicitly Semiring.toModule before all definitions;
+the residue field action is Module.compHom via constantCoeff. Separate
+`regular_action` and `residue_action` identities guard that distinction.
+For every actual R-linear map to that residue field, both precomposition
+Hom differentials vanish. These are not finite matrix samples. Only standard
+Lean foundations occur, with warnings treated as errors and no project axioms.
+
+This proves the entire underlying ungraded worked resolution and its Hom
+boundary calculation. General staircases, a packaged graded-minimal complex,
+Ext identifications, CW realization, Schur equivariance, tensoring with the
+actual surface-order coefficient E, channel norms and the arithmetic bridge
+remain separate formalization tasks. No source clone or pinned toolchain changed.

@@ -455,8 +455,51 @@ layout is used at output and does not embed its two-qubit state space.
 Independent row elimination and the browser's bit-column implementation
 agree on both Betti numbers and inclusion ranks for the saved cases.
 These executable finite examples complement the proofs and the cited
-persistence theory. General module exactness, categorical interfaces and
-channel norm contractivity have not yet been fully formalized in Lean;
-the next verification task addresses those actual objects. No learned
+persistence theory. The worked square-ideal module now has a kernel-checked ungraded
+free resolution, described below. General staircase exactness, graded and
+categorical interfaces, the coefficient cone and channel norm contractivity
+remain separate formalization tasks. No learned
 component or finite homology calculation supplies the unresolved positive
 arithmetic determinant bridge.
+
+\section{What the polynomial Lean resolution actually verifies}
+The file \texttt{PersistenceResolution.lean} uses
+$R=\operatorname{MvPolynomial}(\mathrm{Fin}\,2,k)$ for an arbitrary field.
+Its free coordinate modules are $F_1=R\times R\times R$ and
+$F_2=R\times R$, with the matrices of Theorem~\ref{pers:resolution}.
+The augmentation is the actual $R$-linear quotient map to
+$R/(x^2,xy,y^2)$. The proof of \texttt{d1\_kernel} quantifies over
+all polynomial coefficient vectors; it is not a sampled scalar-rank test.
+
+The reusable lemma \texttt{relation\_decomposition} starts with a
+commutative domain and a pair $x,y$ such that $x\ne0$ and
+$x\mid yz$ implies $x\mid z$. From
+$x^2a+xyb+y^2c=0$ it constructs $p,q$ with
+$(a,b,c)=(-yp,xp-yq,xq)$. For the actual polynomial variables, the
+regularity premise is discharged by viewing $R$ as polynomials in $x$
+with coefficients in $k[y]$. A polynomial is divisible by $x$ exactly
+when its constant coefficient vanishes; multiplication by the nonzero
+$y$ cannot kill such a coefficient. Thus the final kernel theorem has
+no unproved regularity hypothesis. The first and last coordinates then
+prove \texttt{d2\_injective}; \texttt{d1\_range} identifies the image
+with the specified ideal. Augmentation exactness and surjectivity complete
+the sequence, and the free terms are proved projective.
+
+The field $k$ carries the residue action
+$r\cdot a=\operatorname{constantCoeff}(r)a$.
+The free modules retain ordinary polynomial multiplication. Both actions
+are explicit in the source, with action identities checked in the kernel.
+For every $R$-linear map from the appropriate free term to this residue
+field, precomposition with $d_1$ or $d_2$ is zero, since all displayed
+entries contain $x$ or $y$. These are actual Hom statements with their
+module actions, not merely entrywise evaluations. Abstract Ext-group
+identifications and the graded minimal-resolution interface are not yet
+packaged as formal theorems.
+
+All theorem types and axiom dependencies are printed. Only the standard
+Lean foundations occur; no project axioms or incomplete proofs are used.
+This establishes the entire underlying ungraded worked resolution and its
+residue Hom differential calculation. It does not formalize every staircase,
+the CW model, Schur equivariance, the $E$-coefficient tensor cone or any
+arithmetic determinant comparison. Those distinctions remain visible on
+the local verification page beside the executable laboratory.

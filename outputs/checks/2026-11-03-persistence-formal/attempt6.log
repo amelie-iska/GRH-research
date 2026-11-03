@@ -1,0 +1,83 @@
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/PersistenceResolution.lean:197:124: error: Application type mismatch: The argument
+  d1 k
+has type
+  @LinearMap (Ring k) (Ring k) MvPolynomial.commSemiring.toSemiring MvPolynomial.commSemiring.toSemiring
+    (RingHom.id (Ring k)) (F1 k) (Ring k) Prod.instAddCommMonoid
+    CommRing.toNonUnitalCommRing.toNonUnitalNonAssocCommRing.toNonUnitalNonAssocCommSemiring.toAddCommMonoid
+    (@Prod.instModule (Ring k) (Ring k) (Ring k × Ring k) MvPolynomial.commSemiring.toSemiring
+      CommRing.toNonUnitalCommRing.toNonUnitalNonAssocCommRing.toNonUnitalNonAssocCommSemiring.toAddCommMonoid
+      Prod.instAddCommMonoid Semiring.toModule Prod.instModule)
+    Semiring.toModule
+but is expected to have type
+  @LinearMap (Ring k) (Ring k) MvPolynomial.commSemiring.toSemiring MvPolynomial.commSemiring.toSemiring
+    (RingHom.id (Ring k)) (F1 k) (Ring k) Prod.instAddCommMonoid
+    CommRing.toNonUnitalCommRing.toNonUnitalNonAssocCommRing.toNonUnitalNonAssocCommSemiring.toAddCommMonoid
+    (@Prod.instModule (Ring k) (Ring k) (Ring k × Ring k) MvPolynomial.commSemiring.toSemiring
+      CommRing.toNonUnitalCommRing.toNonUnitalNonAssocCommRing.toNonUnitalNonAssocCommSemiring.toAddCommMonoid
+      Prod.instAddCommMonoid MvPolynomial.module Prod.instModule)
+    MvPolynomial.module
+in the application
+  f ∘ₗ d1 k
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/PersistenceResolution.lean:208:122: error: Application type mismatch: The argument
+  d2 k
+has type
+  @LinearMap (Ring k) (Ring k) MvPolynomial.commSemiring.toSemiring MvPolynomial.commSemiring.toSemiring
+    (RingHom.id (Ring k)) (F2 k) (F1 k) Prod.instAddCommMonoid Prod.instAddCommMonoid
+    (@Prod.instModule (Ring k) (Ring k) (Ring k) MvPolynomial.commSemiring.toSemiring
+      CommRing.toNonUnitalCommRing.toNonUnitalNonAssocCommRing.toNonUnitalNonAssocCommSemiring.toAddCommMonoid
+      CommRing.toNonUnitalCommRing.toNonUnitalNonAssocCommRing.toNonUnitalNonAssocCommSemiring.toAddCommMonoid
+      Semiring.toModule Semiring.toModule)
+    Prod.instModule
+but is expected to have type
+  @LinearMap (Ring k) (Ring k) MvPolynomial.commSemiring.toSemiring MvPolynomial.commSemiring.toSemiring
+    (RingHom.id (Ring k)) (F2 k) (F1 k) Prod.instAddCommMonoid Prod.instAddCommMonoid
+    (@Prod.instModule (Ring k) (Ring k) (Ring k) MvPolynomial.commSemiring.toSemiring
+      CommRing.toNonUnitalCommRing.toNonUnitalNonAssocCommRing.toNonUnitalNonAssocCommSemiring.toAddCommMonoid
+      CommRing.toNonUnitalCommRing.toNonUnitalNonAssocCommRing.toNonUnitalNonAssocCommSemiring.toAddCommMonoid
+      MvPolynomial.module MvPolynomial.module)
+    Prod.instModule
+in the application
+  f ∘ₗ d2 k
+GRHResearch.PersistenceResolution.x_ne_zero.{u_1} (k : Type u_1) [Field k] : x k ≠ 0
+GRHResearch.PersistenceResolution.y_ne_zero.{u_1} (k : Type u_1) [Field k] : y k ≠ 0
+GRHResearch.PersistenceResolution.residue_x_smul.{u_1} (k : Type u_1) [Field k] (a : k) : x k • a = 0
+GRHResearch.PersistenceResolution.residue_y_smul.{u_1} (k : Type u_1) [Field k] (a : k) : y k • a = 0
+GRHResearch.PersistenceResolution.hom_x_smul_zero.{u_1, u_2} (k : Type u_1) [Field k] {N : Type u_2} [AddCommMonoid N]
+  [Module (Ring k) N] (f : N →ₗ[Ring k] k) (v : N) : f (x k • v) = 0
+GRHResearch.PersistenceResolution.hom_y_smul_zero.{u_1, u_2} (k : Type u_1) [Field k] {N : Type u_2} [AddCommMonoid N]
+  [Module (Ring k) N] (f : N →ₗ[Ring k] k) (v : N) : f (y k • v) = 0
+GRHResearch.PersistenceResolution.hom_d1_zero.{u_1} (k : Type u_1) [Field k] (f : Ring k →ₗ[Ring k] k) : f ∘ₗ sorry = 0
+GRHResearch.PersistenceResolution.hom_d2_zero.{u_1} (k : Type u_1) [Field k] (f : F1 k →ₗ[Ring k] k) : f ∘ₗ sorry = 0
+GRHResearch.PersistenceResolution.relation_decomposition.{u_1} {S : Type u_1} [CommRing S] [IsDomain S] (x y : S)
+  (hx : x ≠ 0) (hregular : ∀ (z : S), x ∣ y * z → x ∣ z) (a b c : S) (h : x ^ 2 * a + x * y * b + y ^ 2 * c = 0) :
+  ∃ p q, a = -y * p ∧ b = x * p - y * q ∧ c = x * q
+GRHResearch.PersistenceResolution.x_dvd_of_y_mul.{u_1} (k : Type u_1) [Field k] (z : Ring k) (h : x k ∣ y k * z) :
+  x k ∣ z
+GRHResearch.PersistenceResolution.complex_identity.{u_1} (k : Type u_1) [Field k] : d1 k ∘ₗ d2 k = 0
+GRHResearch.PersistenceResolution.d2_injective.{u_1} (k : Type u_1) [Field k] : Function.Injective ⇑(d2 k)
+GRHResearch.PersistenceResolution.d1_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (d1 k) = LinearMap.range (d2 k)
+GRHResearch.PersistenceResolution.d1_range.{u_1} (k : Type u_1) [Field k] : LinearMap.range (d1 k) = ideal k
+GRHResearch.PersistenceResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(augmentation k)
+GRHResearch.PersistenceResolution.augmentation_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (augmentation k) = LinearMap.range (d1 k)
+GRHResearch.PersistenceResolution.free_terms_projective.{u_1} (k : Type u_1) [Field k] :
+  Module.Projective (Ring k) (Ring k) ∧ Module.Projective (Ring k) (F1 k) ∧ Module.Projective (Ring k) (F2 k)
+'GRHResearch.PersistenceResolution.x_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.y_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.residue_x_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.residue_y_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.hom_x_smul_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.hom_y_smul_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.hom_d1_zero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.hom_d2_zero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.relation_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.x_dvd_of_y_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.complex_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d2_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d1_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d1_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.augmentation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.augmentation_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.free_terms_projective' depends on axioms: [propext, Classical.choice, Quot.sound]

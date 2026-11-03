@@ -2,10 +2,11 @@
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 const root='http://127.0.0.1:8765',port='http://127.0.0.1:9242';
-mkdirSync('outputs/checks/2026-11-03-persistence-tools',{recursive:true});mkdirSync('outputs/renders/2026-11-03-persistence-tools',{recursive:true});
+const checkDirectory=process.argv[2]??'outputs/checks/2026-11-03-persistence-tools',renderDirectory=process.argv[3]??'outputs/renders/2026-11-03-persistence-tools';
+mkdirSync(checkDirectory,{recursive:true});mkdirSync(renderDirectory,{recursive:true});
 let tab;
-for(let attempt=0;attempt<40;attempt++){
- try{const tabs=await(await fetch(port+'/json')).json();tab=tabs.find(t=>t.type==='page');if(tab)break;}catch{}
+for(const deadline=Date.now()+20000;Date.now()<deadline;){
+ try{const tabs=await(await fetch(port+'/json',{signal:AbortSignal.timeout(1000)})).json();tab=tabs.find(t=>t.type==='page');if(tab)break;}catch{}
  await new Promise(r=>setTimeout(r,100));
 }
 assert(tab,'Isolated test browser did not become ready');
@@ -20,7 +21,7 @@ const send=(method,params={})=>new Promise((resolve,reject)=>{const id=++serial,
 async function evaluate(expression){const result=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(result.exceptionDetails)throw Error(JSON.stringify(result.exceptionDetails));return result.result.value;}
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 async function until(expression){for(let i=0;i<150;i++){if(await evaluate(expression))return;await delay(30);}throw Error('Condition timeout: '+expression);}
-async function screenshot(name){const s=await send('Page.captureScreenshot',{format:'png'});writeFileSync('outputs/renders/2026-11-03-persistence-tools/'+name+'.png',Buffer.from(s.data,'base64'));}
+async function screenshot(name){const s=await send('Page.captureScreenshot',{format:'png'});writeFileSync(renderDirectory+'/'+name+'.png',Buffer.from(s.data,'base64'));}
 async function change(id,value,event='input'){await evaluate(`document.getElementById(${JSON.stringify(id)}).value=${JSON.stringify(value)};document.getElementById(${JSON.stringify(id)}).dispatchEvent(new Event(${JSON.stringify(event)},{bubbles:true}));`);}
 async function snap(){return evaluate('window.persistenceTool.snapshot()');}
 const report={};
@@ -60,7 +61,12 @@ console.log('Book frame count passed.');assert.equal(await evaluate(`document.qu
 assert.equal(await evaluate(`new Set([...document.querySelectorAll('iframe')].map(f=>f.src)).size`),6);
 await evaluate(`document.getElementById('lab-persistence').scrollIntoView({block:'start'})`);await until(`document.querySelector('#lab-persistence iframe').contentDocument?.body?.dataset.ready==='true'`);
 await evaluate(`document.querySelector('#lab-persistence iframe').contentDocument.getElementById('quantumTab').click()`);await screenshot('book-canonical');
+const sourceSelector='#lab-persistence button[data-source="/lean/PersistenceResolution.lean"]';
+await evaluate(`(()=>{const b=document.querySelector('${sourceSelector}');b.closest('details').open=true;b.click();})()`);
+await until(`document.querySelector('${sourceSelector}').parentElement.querySelector('pre').textContent.includes('end GRHResearch.PersistenceResolution')`);
+const sourceText=await evaluate(`document.querySelector('${sourceSelector}').parentElement.querySelector('pre').textContent`);assert.equal(sourceText,readFileSync('lean-analytic/PersistenceResolution.lean','utf8'));report.kernel_checked_source_matches_file=true;
+await evaluate(`document.querySelector('${sourceSelector}').parentElement.scrollIntoView({block:'center'})`);await screenshot('book-lean-resolution');
 assert.equal(exceptions.length,0);
 Object.assign(report,{passed:true,staircase_presets:4,invalid_input_preserves_model:true,coefficient_rings_and_fibers:true,monotone_grade_controls:true,nontrivial_cycle_persists_then_dies:true,same_channel_inclusion:true,orbit_and_heatmap:true,mobile:true,checksum_failure_preserves_algebra:true,canonical_embeds:6,uncaughtExceptions:exceptions});
-writeFileSync('outputs/checks/2026-11-03-persistence-tools/browser.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+writeFileSync(checkDirectory+'/browser.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }catch(error){console.error('Original failure:',error);throw error;}finally{try{await send('Browser.close');}catch(error){console.error('Test browser close failed:',error.message);}ws.close();}

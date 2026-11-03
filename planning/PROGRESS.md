@@ -444,3 +444,43 @@ Evidence: outputs/checks/2026-11-03-persistence-tools/ and
 planning/reviews/persistence-tools/REVIEW.md. Neither implementation completion
 nor rigorous GRH completion is reached; original low-gcd/positive determinant
 research remains open. Keep the existing hourly loop active.
+
+## 2026-11-03 — actual polynomial module resolution in Lean
+
+P6-persistence-formal supplies the complete underlying ungraded sequence
+R²→R³→R→R/(x²,xy,y²) with R=MvPolynomial(Fin2)k for arbitrary fields,
+actual R-linear maps and the actual ideal quotient. A reusable regular-pair
+lemma constructs every syzygy from the two displayed columns; polynomial
+constant coefficients discharge its regularity premise. Injectivity, image
+ideal, both kernel/image equalities, augmentation surjectivity and term
+projectivity are checked. The residue k-action is constantCoeff(r)*a;
+regular polynomial multiplication is fixed separately. Both induced Hom
+boundaries to that residue field vanish for every R-linear map, rather than
+merely for sampled scalar matrices. Nineteen theorem types/axiom reports are
+printed. Independent semantic and compiler review accepts exactly this scope.
+
+The focused file and full pinned wildcard suite pass with warnings as errors:
+262 reports total,260 standard foundational dependencies and2 axiom-free.
+No admissions, project axioms, native_decide, installs or pin changes. Initial
+elaboration failures are preserved; an action-instance mismatch was resolved
+by explicitly fixing regular multiplication before introducing the residue
+action, with two checked action contracts. The historical standalone suite
+was unchanged and not rerun. No numerical training data or source clones changed.
+
+The shared articles and persistence chapter explain the proof and formal
+boundary. PDF/native-MathML book remain140pages/31chapters, focused articles
+27/54pages,15 vector diagrams and six unique interactive tools. The canonical
+persistence panel now loads the exact kernel-checked source; browser equality
+against the file passes alongside coefficient/fiber/map/cycle/checksum/mobile
+checks, with no runtime exceptions. A startup harness timeout was corrected
+with bounded polling; its known isolated profile was preserved. PDF and
+on-page artifacts were visually inspected. Builds were validated in staging
+before promotion; final integrity/source-hash checks pass.
+
+Evidence: outputs/checks/2026-11-03-persistence-formal/ and
+planning/reviews/persistence-formal/REVIEW.md. General staircases, graded
+minimality, categorical resolution/Ext/Tor interfaces, CW/Schur objects and
+the actual nodal E tensor cone remain separate formalization tasks. This is
+no full-book or GRH completion. Next ready implementation task is P4 source
+expansion; the independent original low-gcd/positive arithmetic lane stays
+open and the existing hourly loop remains active.

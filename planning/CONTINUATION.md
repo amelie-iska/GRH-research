@@ -315,3 +315,45 @@ Keep the independent arithmetic lane active: original-family low-gcd
 independent positive determinant construction. No new arithmetic positivity
 or zero-location result was obtained by this finite persistence work. Both
 completion gates remain unresolved; the existing hourly loop stays active.
+
+## Latest frontier: actual persistence resolution formalized (2026-11-03)
+
+P6-persistence-formal closes its concrete interface target. Read
+lean-analytic/PersistenceResolution.lean and its independent review in
+planning/reviews/persistence-formal/REVIEW.md. It verifies the entire underlying
+ungraded worked polynomial sequence, actual ideal quotient, injectivity,
+projectivity, exactness and universal residue Hom boundary vanishing. Regular
+multiplication and the constant-coefficient field action are fixed separately;
+two identities guard that boundary. The regular-pair premise is proved for
+the actual independent variables before applying the kernel theorem.
+Focused19 and full262 printed dependency reports pass warnings-as-errors;
+260 use standard axioms and2 are axiom-free. Final source hash is
+ed22e939fe97a2e641644fc18b87f6dd687862bbd5b927d234ed1e652379366d.
+No dependency/pin/source/training mutation. All failed attempts remain preserved.
+
+Both shared articles and book explain the actual proof/status. Book140pages,
+focused articles27/54pages,31chapters/15 diagrams/six unique tools. The unique
+#lab-persistence panel loads the literal checked source; browser controls,
+negative checksum/mobile/cycle-map tests and source equality pass. Reader
+preview8765 stays alive; isolated test browser closes normally. Standalone
+seven-result Lean suite and unexecuted Sage are unchanged. General staircase,
+graded/Ext/Tor/category/CW/Schur and E-cone interfaces remain open despite the
+worked ungraded resolution being fully checked.
+
+NEXT: claim P4-source-expansion and develop one precise source construction,
+not a generic preservation row. A concrete first target is original2053
+lines1308–1478 (DG/A-infinity foundations), compared with book physics189–225.
+The source's epsilon degree−1/d epsilon=1 example needs a cohomology check;
+construct a correct DG resolution of the actual infinite nodal algebra,
+for example using the regular relation xi*eta in k[xi,eta], and spell out
+augmentation, differential, clock automorphism and completion hypotheses.
+Do not equate H0(A)≅Lambda with a DG quasi-isomorphism or assume an arbitrary
+clock lift/derived equivalence. Pin any primary references, give full proofs,
+actual examples and new source-topic mapping, and independently review/build
+before pushing. Preserve all source volumes/environments/checkpoints/caches.
+
+Retain an independent P7 lane for the original low-gcd arithmetic kernel,
+especially gcd1 with every original mask/conductor/uniformity, or an actually
+independent positive determinant construction. No arithmetic cancellation or
+GRH proof was supplied by this formalized auxiliary polynomial example.
+Both completion gates remain unresolved; the existing hourly loop stays active.

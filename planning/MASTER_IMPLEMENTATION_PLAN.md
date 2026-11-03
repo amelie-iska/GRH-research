@@ -182,3 +182,13 @@ proofs are integrated into the shared articles and book. Numerical quantum
 labels are frozen and separately scoped; exact finite ranks are checked by
 independent algorithms and review. P6 persistence/module formalization is the
 next dependency-ready task; the arithmetic lane remains independently open.
+
+P6 persistence-interface note (2026-11-03): the worked square-ideal module now
+has an actual MvPolynomial ungraded free resolution, ideal quotient and residue
+Hom differential calculation checked in Lean. Nineteen printed dependencies
+use standard foundations; the complete pinned suite passes262 reports. The
+ordinary regular action is explicitly distinguished from the residue field
+action. This closes the concrete interface task, not general staircase,
+graded/CW/Schur/cone/category formalization or either completion gate. Continue
+P4 source expansion with a precise corrected construction and source-topic map;
+retain the independent P7 arithmetic lane and the broader P6 formal backlog.

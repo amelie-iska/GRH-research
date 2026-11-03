@@ -49,6 +49,8 @@ optimizer and does not alter training outputs. The first record is preserved;
 the current manifest's record adds the imported implementation hash with
 unchanged distance/graph/state data. No package installation is needed.
 
-Full module/category exactness and channel norm theorems are not yet Lean
-formalized. These finite constructions do not solve the original low-gcd
+The worked square-ideal module now has a complete underlying ungraded free
+resolution and residue Hom boundaries checked in `/lean/PersistenceResolution.lean`.
+General staircase, graded/category, CW/coefficient-cone and channel norm
+formalization remain separate. These finite constructions do not solve the original low-gcd
 estimate or establish the positive arithmetic determinant/GRH bridge.

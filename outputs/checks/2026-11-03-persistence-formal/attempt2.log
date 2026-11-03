@@ -1,0 +1,25 @@
+GRHResearch.PersistenceResolution.relation_decomposition.{u_1} {S : Type u_1} [CommRing S] [IsDomain S] (x y : S)
+  (hx : x ≠ 0) (hregular : ∀ (z : S), x ∣ y * z → x ∣ z) (a b c : S) (h : x ^ 2 * a + x * y * b + y ^ 2 * c = 0) :
+  ∃ p q, a = -y * p ∧ b = x * p - y * q ∧ c = x * q
+GRHResearch.PersistenceResolution.x_dvd_of_y_mul.{u_1} (k : Type u_1) [Field k] (z : Ring k) (h : x k ∣ y k * z) :
+  x k ∣ z
+GRHResearch.PersistenceResolution.complex_identity.{u_1} (k : Type u_1) [Field k] : d1 k ∘ₗ d2 k = 0
+GRHResearch.PersistenceResolution.d2_injective.{u_1} (k : Type u_1) [Field k] : Function.Injective ⇑(d2 k)
+GRHResearch.PersistenceResolution.d1_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (d1 k) = LinearMap.range (d2 k)
+GRHResearch.PersistenceResolution.d1_range.{u_1} (k : Type u_1) [Field k] : LinearMap.range (d1 k) = ideal k
+GRHResearch.PersistenceResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(augmentation k)
+GRHResearch.PersistenceResolution.augmentation_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (augmentation k) = LinearMap.range (d1 k)
+GRHResearch.PersistenceResolution.free_terms_projective.{u_1} (k : Type u_1) [Field k] :
+  Module.Projective (Ring k) (Ring k) ∧ Module.Projective (Ring k) (F1 k) ∧ Module.Projective (Ring k) (F2 k)
+'GRHResearch.PersistenceResolution.relation_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.x_dvd_of_y_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.complex_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d2_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d1_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d1_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.augmentation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.augmentation_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.free_terms_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
