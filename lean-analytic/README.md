@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 187 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 203 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -139,3 +139,12 @@ The full 177-declaration suite passed warnings-as-errors at unchanged Lean4.24/m
 `DessinPullbackComponents.lean` adds ten declarations, using literal matrix units over a commutative ring: forward/reverse products, orthogonality, square and sum; raw diagonal extraction fails multiplicativity; no unital map from the two-state full matrix algebra to a nonzero commutative ring; the corrected diagonal fiber is multiplicative. An actual equal-image subring of a product of arbitrary rings has a surjective second projection under its explicit compatible-section hypothesis and the stated zero-fiber identity.
 
 These are universal algebraic components. The continuous circle C* subalgebras, graph gauge uniqueness, functional calculus and uniform generation, K-theory and the full formal-completion obstruction are proved in prose or use named external theorems. The full187-declaration suite prints every type and standard-foundation dependency, with no project assumptions or admissions. The standalone layer is unchanged and its previous7-declaration result is preserved; this extension does not claim a fresh upstream4.34.1 build or a formal GRH proof.
+
+
+## Arithmetic theta Jacobi and cellular components (2026-11-03)
+
+`ThetaJacobi.lean` adds16printed declarations. Genuine finite-field MulChar Jacobi sums satisfy conjugation, squared norm=cardinality with three explicit nontrivialities, and shifted rescaling. Cubic/quadratic powers force the required noncancellation. Actual2×2CM matrices have the proved determinant/local polynomial/Gram similitude and positive real quadratic form, plus the exact post-character prime7matrix polynomials. Actual theta boundary2×3/inclusion3×2 matrices satisfy dB=0, homology restriction, the3-edge determinant polynomial and the rational vertex/edge chain equation. Full203analytic declarations pass warnings-as-errors at unchanged pins, standard foundations only.
+
+The file does not choose cubic/quadratic characters, prove the elliptic cube/square fiber count, define every arithmetic j/λ/π object, formalize Kummer descent, the H0/H2 zeta cancellation or full rational homotopy, identify a canonical integral Frobenius lattice, or construct an order-to-Frobenius functor. These are proved prose deductions or explicitly named external interpretations. No GRH-equivalent positivity is assumed. See outputs/checks/2026-11-03-jacobi/ for full types and evidence.
+
+The final three declarations prove the actual conjugation-matrix identities and the universal real2inert-prime determinant obstruction. They rule out the specified fixed real2cubic-deck carrier with positive Frobenius determinant, not complex/enlarged models. The complex one-qrepair and its extension-power limits remain prose, independently reviewed.

@@ -1,0 +1,87 @@
+\section{Arithmetic character sums and the cellular determinant}
+\subsection{The uniform calculation and its exceptional cases}
+In the finite-field calculation write $k=\mathbb F_q$; the final order-insertion paragraphs specify a separate characteristic-zero coefficient field. The curve is nonsingular because its discriminant is $-432d^2\ne0$, and has one point at infinity. Thus counting $1+\eta(x^3-d)$ in each affine fiber proves the trace formula in Theorem~\ref{thm:jacobitheta} directly. The multiplicative group of $k$ is cyclic. When $3\mid q-1$, a nonzero cube has three roots and a noncube none, detected by $1+\rho(t)+\bar\rho(t)$. At zero this expression is one, using the \emph{constant} one. This convention differs from mathlib's zero-extended trivial multiplicative character, whose value there is zero. The proof and formal components never replace the constant by that character.
+
+The substitution is valid including $u=0,1$ because the characters are zero extended:
+\[
+ \sum_t\rho(t)\eta(t-d)
+ =\sum_u\rho(du)\eta(du-d)
+ =\rho(d)\eta(-d)\sum_u\rho(u)\eta(1-u).
+\]
+Multiplying by the initial minus sign gives exactly $\pi_d+\bar\pi_d$. Changing $\rho$ to $\rho^{-1}$ conjugates both $j$ and $\lambda_d$, so does not change the unordered roots or the integer trace. Characteristics two and three and $d=0$ are excluded throughout. For a residue characteristic $p\equiv2\pmod3$, odd extension degrees have trace zero by cube bijectivity, whereas even degrees lie in the split case; no claim of zero trace for all extensions of that characteristic is made.
+
+For completeness, choose a nonzero $\mathbb F_p$-linear functional on $k$ and compose it with $t\mapsto e^{2\pi it/p}$ to obtain $\psi$. For a nontrivial multiplicative character $\chi$,
+\[
+ \begin{aligned}
+ |G(\chi)|^2
+ &=\sum_{u\ne0}\chi(u)\sum_{y\ne0}\psi((u-1)y)\\
+ &=(q-1)-\sum_{u\ne0,1}\chi(u)=q.
+ \end{aligned}
+\]
+Both orthogonality identities follow by translating a finite character sum by an element on which its character is not one. The $z=0$ terms in $G(\chi)G(\theta)$ sum to $\theta(-1)\sum_x(\chi\theta)(x)$, zero if the product is nontrivial. For $z\ne0$ set $x=zu$, $y=z(1-u)$ to obtain $J(\chi,\theta)G(\chi\theta)$. Coprime orders three and two ensure our product character is nontrivial. Taking norms proves $|J|^2=q$, rather than presuming a desired positivity. This is the classical calculation reviewed directly in \cite{WeilJacobi}; no claim of novelty is made.
+
+At seven the five nonzero summands are $-\omega^2,-\omega,\omega,-\omega^2,1$, so $J=3+2\omega$. Multiplication by $\lambda_2=\omega^2$ gives $-1-3\omega$. Their matrices are
+\[
+ \begin{pmatrix}3&-2\\2&1\end{pmatrix},\qquad
+ \begin{pmatrix}-1&3\\-3&2\end{pmatrix}.
+\]
+Both have determinant seven and the same positive Gram form; their traces are four and one. The arithmetic distinction between the rational models now comes from explicit finite-field characters, while their complex dessin is unchanged. Exact prime-field diagnostics test every nonzero twist for the listed nineteen primes; the theorem itself is uniform in prime powers and rests on the proof, not that finite list.
+
+\subsection{Deck descent and the actual cellular basis}
+The CM cellular construction in this and the next subsection assumes $q\equiv1\pmod3$.
+The cover $\beta=x^3/d$ has deck transformations $(x,y)\mapsto(\zeta_3x,y)$ and $(x,y)\mapsto(x,-y)$, generating $C_3\times C_2=C_6$. Label their actions on darts by $\sigma=(012)(345)$ and $\alpha=(03)(14)(25)$; they commute. Their product is $(0\,4\,2\,3\,1\,5)$. They preserve the edge pairing and both successor permutations. Consequently they define algebra automorphisms, preserve $J$ and its completion and fix the common $u$. The projective-resolution maps are compatible since $\theta_g(a_hx)=a_{gh}\theta_g(x)$. Twisting module actions gives an exact functor and the corresponding relabelled resolution, without an assumption of arithmetic Frobenius.
+
+Over an algebraic closure choose $a^3=d$, $b^2=d$ and $\varphi(x,y)=(ax,by)$ from $E_1$ to $E_d$. For the $q$-power Frobenius morphisms,
+\[
+ \varphi^{-1}\circ F_d\circ\varphi=h_d\circ F_1,\qquad
+ h_d(x,y)=(a^{q-1}x,b^{q-1}y).
+\]
+When $q\equiv1\pmod6$, the first coordinate is the cubic residue $d^{(q-1)/3}$ and the second $\eta(d)$. Choose the embedding of cube roots defining $\rho$ consistently. On the deck eigenspace labelled by $dx/y$, the \emph{deck} character is their ratio, $\rho(d)/\eta(d)=\lambda_d$. This labels the twist, not a nonzero Frobenius action on differentials in characteristic $p$: that pullback is zero. An inverse convention for arithmetic Galois Frobenius changes the action convention; our displayed formula uses the geometric curve morphism explicitly. The character-sum polynomial fixes its trace without an unstated convention.
+
+Orient the three geometric edges as in the core. Each occurs twice with opposite orientation in the single face, so $\partial_2=0$; $\partial_1$ has columns $(-1,1)^t$. The homology basis $b_0=e_0-e_1$, $b_1=e_1-e_2$ has Gram matrix $G$ inherited from the orthonormal cellular edges. Rotation sends $b_0\mapsto b_1$, $b_1\mapsto-b_0-b_1$, exactly $C$. The involution swaps vertices and reverses each edge, hence acts as $-I$ on this plane. Thus multiplication by $A+B\omega$ is literally $AI+BC$, not merely an abstract matrix with the correct trace. Expanding its determinant gives the norm $A^2-AB+B^2$, and multiplication of this norm proves $M^tGM=qG$. The displayed positive quadratic decomposition proves the metric independently of unknown zeros.
+
+\subsection{An explicit chain lift and determinant cancellation}
+Let $P$ be the three-cycle permutation on $C_1$. Write $\pi_d=A+B\omega$ and $\gamma=A+B$. Define
+\[
+ F_1=AI+BP,\qquad
+ F_0=\frac12\begin{pmatrix}1+\gamma&1-\gamma\\1-\gamma&1+\gamma\end{pmatrix},\qquad
+ F_2=q.
+\]
+These are rational cellular maps. The sum-zero plane of $F_1$ has restriction $M_d$, while the edge-sum line has eigenvalue $\gamma$. On $C_0$ the vertex-sum line has eigenvalue one and the boundary line eigenvalue $\gamma$. It follows directly that $F_0\partial_1=\partial_1F_1$; the other chain condition is zero. The induced maps on $H_0,H_1,H_2$ have characteristic factors $1-T$, $P_d(T)$, $1-qT$. In particular
+\[
+ \det(I-TF_0)=(1-T)(1-\gamma T),\qquad
+ \det(I-TF_1)=(1-\gamma T)P_d(T).
+\]
+The contractible boundary factor cancels, giving
+\[
+ \frac{\det(I-TF_1)}{\det(I-TF_0)\det(I-TF_2)}
+ =\frac{P_d(T)}{(1-T)(1-qT)}.
+\]
+This equality holds as a formal rational identity and by cancellation at apparent intermediate singularities. The alternating determinant with exponent $(-1)^i$ is its inverse; signs are not changed silently. The standard elliptic trace and determinant theorem identifies the right side with the finite-field curve zeta function \cite{SGAFourHalf,DeligneWeilI}. The elementary proof above supplies its actual trace and norm here; it does not independently reprove the general cohomological trace formalism.
+
+This lift also has the required descent character on $H_1$. Write the base Jacobi value as $j=A_1+B_1\omega$. Then $h_d$ acts there by $\eta(d)C^r$ when $\rho(d)=\omega^r$, so twisting $A_1I+B_1C$ multiplies its eigenvalue $j$ by $\lambda_d$, giving $M_d=A_dI+B_dC$. Reduction modulo $C^2+C+I=0$ gives the coefficients of $\pi_d$. If the corresponding full three-edge polynomials differ by $c(I+P+P^2)$, the coefficients are $c=0,\eta(d)B_1,\eta(d)A_1$ for $r=0,1,2$ respectively; they have the same homology action and differ only on the contractible boundary pair. An explicit homotopy sends $v_--v_+$ to $c(e_0+e_1+e_2)$ and the vertex sum to zero. Its $\partial H+H\partial$ is the edge difference and the boundary scalar difference $3c$. Thus this normalization is compatible up to rational chain homotopy. It is not asserted to arise from a continuous Frobenius map of the complex Riemann surface, or to give a canonical integral Tate-lattice comparison.
+
+\subsection{A decisive restriction at inert primes}
+For $q\equiv2\pmod3$, Frobenius sends $\zeta_3$ to $\zeta_3^{-1}$. Thus its cohomological relation with the cubic deck action requires $MC=C^2M$ (the pullback convention yields the equivalent reversed relation). On a real two-dimensional carrier with our fixed $C$, comparing entries forces
+\[
+ M=\begin{pmatrix}a&b\\a+b&-a\end{pmatrix},\qquad
+ \det M=-a^2-ab-b^2
+ =-\tfrac12\bigl(a^2+b^2+(a+b)^2\bigr)\le0.
+\]
+The genuine elliptic Frobenius determinant is $q>0$, so such a real carrier is impossible. This is an elementary instance of the real-coefficient cohomology issue discussed by Deninger \cite{DeningerReal}. It does not rule out a complex realization, a larger real space, a different coefficient theory or an infinite-dimensional height operator. In particular it is not a refutation of an unrestricted Hilbert--P\'olya approach.
+
+There is a local complex replacement, with its limitations explicit. The conjugation matrix
+\[
+ K=\begin{pmatrix}1&-1\\0&-1\end{pmatrix}
+ \quad\text{satisfies}\quad K^2=I,\ KC=C^2K,\ K^tGK=G.
+\]
+Set $F=i\sqrt q\,K$ on the complexification. Then $\tr F=0$, $\det F=q$, $F^2=-qI$ and $F^*GF=qG$, giving the correct trace-zero local factor. This is a two-dimensional complex, hence four-dimensional real, local model. This is a one-$q$ model; independently choosing $i\sqrt q K$ for each extension field does not give Frobenius-power compatibility. Such a family would need to start from one $F_p$ and prove the comparison for its powers. The inserted $i\sqrt q$ is not a canonical rational or integral Tate comparison or a construction of a global positive determinant. The fixed real two-dimensional model has genuinely failed; its surviving split-prime construction and this complex alternative must not be conflated.
+
+\subsection{The remaining order and global spectral obligations}
+The deck automorphism has finite order, so over characteristic zero its eigenvalues are roots of unity. Its permutation action alone cannot supply a weight-one norm $\sqrt q>1$. The independently computed Jacobi coefficient is essential. The above construction closes the specified local cellular benchmark, not a reconstruction of arithmetic from bare complex dessin data.
+
+For these order-insertion tests take $\Lambda=\Lambda_{\mathbb{Q}}$ over $R=\mathbb{Q}[[u]]$, with rational residue simples and $V_d=\mathbb{Q}^2$. This is distinct from reducing the matrix in characteristic $p$, where its determinant $p$ becomes zero. There are two concrete failures of a naive order lift. First, a residue simple $S_e$ is annihilated by all arrows; $S_e\otimes V_d$ with independent endomorphism $I\otimes M_d$ has the desired underlying finite-$\mathbb{Q}$ determinant. But its projective dimension is infinite by the nonterminating forbidden resolution, and $\sigma$ permutes all three vertex labels, so choosing $S_e$ does not preserve full deck symmetry. This is not a perfect-order determinant realization.
+
+Second, $\Lambda\otimes V_d$ is free of rank two over $\Lambda$, but the underlying $R$-rank of $\Lambda$ is eighteen. In an $R$-basis, the \emph{$\Lambda$-linear} $I\otimes M_d$ is eighteen copies of $M_d$, hence its determinant is $P_d^{18}$. On $e\Lambda$ the rank is six: each of its two hereditary branches contributes a row of length three, with finite conductor gluing changing no rank. This gives $P_d^6$. Restoring all three residue vertices similarly gives $P_d^3$ for this untwisted tensor action. A genuine deck-semilinear map permutes factors as well and need not have these powers; it requires its own comparison. No justified determinant-line root or multiplicity-removing functor is supplied here.
+
+Finally fix a nonzero rational $d$ when forming its global Euler product from good reductions. Local purity cannot be multiplied into a global zero-location proof. Since each reciprocal root has modulus $\sqrt p$, the product of good elliptic factors is absolutely convergent on $\Rea s>3/2$. The local zeros at $\Rea s=1/2$ are outside that initial product argument. The finite-field curve zeta's center is $1/2$; the global elliptic $L$-function's unshifted center is one, or $1/2$ only after a half-unit shift. Neither is an identification with the primitive Dirichlet function targeted earlier. Ramified factors, archimedean normalization, adelic descent and the global determinant-preserving positive spectral limit remain separate obligations.

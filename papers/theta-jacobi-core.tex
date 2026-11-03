@@ -1,0 +1,45 @@
+\subsection{A constructive arithmetic benchmark on the theta dessin}
+The preceding twists can be distinguished constructively once their finite-field descent data are retained. This closes the elementary local-factor computation, not the global positive-determinant problem. Let $\kappa=\mathbb F_q$, $\operatorname{char}\kappa\ne2,3$ and $d\in\kappa^*$. Put $E_d:y^2=x^3-d$ and $a_q(d)=q+1-\#E_d(\kappa)$. For $q\equiv1\pmod3$, fix a nontrivial cubic character $\rho$ and the quadratic character $\eta$, both extended by zero at zero. Define
+\[
+ J=\sum_{u\in\kappa}\rho(u)\eta(1-u),\qquad
+ j=-\eta(-1)J,\qquad \lambda_d=\eta(d)\rho(d),\quad \pi_d=\lambda_dj.
+\]
+\begin{theorem}[Uniform local factor]\label{thm:jacobitheta}
+For every such prime power and nonzero $d$,
+\[
+ a_q(d)=\pi_d+\overline{\pi_d},\quad |\pi_d|^2=q,\quad
+ P_d(T):=1-a_q(d)T+qT^2=(1-\pi_dT)(1-\overline{\pi_d}T).
+\]
+If $q\equiv2\pmod3$, instead $a_q(d)=0$. The split-case values lie in $\Z[\omega]$, $\omega^2+\omega+1=0$.
+\end{theorem}
+\begin{proof}
+Cube fibers have size $1+\rho(t)+\overline{\rho(t)}$, including at zero; the first term is the literal constant one, not the zero-extended trivial character. Counting square fibers gives $a_q(d)=-\sum_x\eta(x^3-d)$. Grouping by $t=x^3$ removes the constant term since $\sum_t\eta(t-d)=0$. Substitution $t=du$ gives $\sum_t\rho(t)\eta(t-d)=\rho(d)\eta(-d)J$; the other term is its conjugate. This proves the signed trace formula.
+
+For a nontrivial additive character $\psi$, write $G(\chi)=\sum_x\chi(x)\psi(x)$. Character orthogonality gives $|G(\chi)|^2=q$ for nontrivial $\chi$: substitute $x=uy$ in its squared norm; the inner sum over $y\ne0$ is $q-1$ at $u=1$ and $-1$ otherwise. Grouping $G(\rho)G(\eta)$ by $x+y$ gives $JG(\rho\eta)$, the zero-sum fiber vanishing since $\rho\eta$ is nontrivial. The three Gauss norms yield $|J|^2=q$. Neither purity nor RH was assumed. The remaining signs and character values have modulus one. For $q\equiv2\pmod3$ cubing is bijective, so the quadratic-character sum is zero. Finally all split-case summands are signs times cube roots of unity. These are the classical Gauss--Jacobi methods \cite[pp.499--502]{WeilJacobi}, with our normalization proved explicitly.
+\end{proof}
+At $q=7$, choose $\rho(3)=\omega$. Then $j=3+2\omega$, $\lambda_2=\omega^2$, and $\pi_2=-1-3\omega$, giving the two factors already counted. At $q=13$, $\rho(2)=\omega$ gives $J=1+4\omega$ but $j=-1-4\omega$; this detects the essential sign hidden by the first example.
+
+\subsection{A genuine cellular carrier, and what still fails for the order}
+Assume $q\equiv1\pmod3$ in this cellular construction. The elliptic theta dessin has cellular chains $C_2=\mathbb{Q}$, $C_1=\mathbb{Q}^3$, $C_0=\mathbb{Q}^2$. Orient the three edges from $v_+$ to $v_-$; then $\partial_1(e_i)=v_--v_+$ and $\partial_2=0$. Thus $H_1$ is the sum-zero plane, with basis $e_0-e_1,e_1-e_2$. Rotation $\sigma$ acts there by
+\[
+ C=\begin{pmatrix}0&-1\\1&-1\end{pmatrix},\qquad
+ G=\begin{pmatrix}2&-1\\-1&2\end{pmatrix}.
+\]
+$G$ is the actual Euclidean edge Gram matrix in this basis. The deck involution $\alpha$ acts as $-I$. Consequently the six-element deck group $\langle\sigma,\alpha\rangle$ acts on this homology and permutes the original quiver and its entire projective resolution.
+
+Write $\pi_d=A_d+B_d\omega$. Its multiplication action on this \emph{actual cellular} plane is
+\[
+ M_d=A_dI+B_dC=\begin{pmatrix}A_d&-B_d\\B_d&A_d-B_d\end{pmatrix},\qquad
+ \det(I-TM_d)=P_d(T),\qquad M_d^tGM_d=qG.
+\]
+This constructs the local matrix from finite-field character sums and the dessin's deck action, rather than fitting its trace. Positivity follows from $2x^2-2xy+2y^2=(x-y)^2+x^2+y^2$. The normalized matrix is $G$-unitary, not asserted self-adjoint. The extended edition supplies a rational cellular chain lift, its exact determinant cancellation, and Kummer descent compatibility on homology. Its odd-over-even determinant ratio is the classical finite-field curve zeta function
+\[
+ Z(E_d/\kappa,T)=\frac{P_d(T)}{(1-T)(1-qT)}.
+\]
+Identification with the geometric $\ell$-adic Frobenius polynomial uses the standard elliptic trace and determinant theorem; a canonical integral comparison or an order-derived Frobenius functor has not been constructed here.
+
+There is also a precise obstruction to extending this same real two-dimensional carrier to $q\equiv2\pmod3$. Frobenius then conjugates the cubic deck action. The relation $MC=C^2M$ forces $M=\left(\begin{smallmatrix}a&b\\a+b&-a\end{smallmatrix}\right)$, whose determinant is $-a^2-ab-b^2\le0$, contradicting the required positive determinant $q$. This excludes that real carrier with its fixed deck action, not complex or enlarged Hilbert--P\'olya constructions. The extended edition gives a compatible complex local replacement.
+
+For the following insertion test use the characteristic-zero theta order $\Lambda_{\mathbb{Q}}$ over $R_{\mathbb{Q}}=\mathbb{Q}[[u]]$, with residue simple $S_e=\mathbb{Q}$. The limitation is concrete. The deck action has finite order and cannot alone supply the norm-$\sqrt q$ Jacobi coefficient. Inserting $M_d$ into $S_e\otimes\mathbb{Q}^2$ gives an actual residue-module endomorphism with determinant $P_d$, but that simple is not perfect over the order and choosing it breaks full deck symmetry. Inserting the same matrix $\Lambda_{\mathbb{Q}}$-linearly into the regular projective instead gives the $R_{\mathbb{Q}}$-determinant $P_d^{18}$, or $P_d^6$ on $e\Lambda_{\mathbb{Q}}\otimes\mathbb{Q}^2$. Taking a root is not an established determinant-line comparison; a deck-semilinear lift is a different map. These surviving multiplicity/equivariance obligations prevent promoting the local computation to the required arithmetic order functor.
+
+For the global comparison fix a nonzero rational $d$ and use its good reductions. The finite-field curve zeta has center $1/2$ after $T=q^{-s}$. The \emph{global elliptic} $L$-function over $\mathbb{Q}$ has unshifted center one, whereas Dirichlet $L$-functions have center $1/2$. Local weight-one purity does not determine either global zero set. The elementary local bound proves absolute convergence of the elliptic Euler product on $\Rea s>3/2$; the new local identities give no determinant-preserving continuation with the desired global positive spectrum.

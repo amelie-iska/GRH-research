@@ -247,6 +247,8 @@ Finally produce an independently proved positive form or self-adjoint determinan
 
 \input{dessin-gluing-details}
 
+\input{theta-jacobi-details}
+
 \section{Literal formal and computational coverage}
 \texttt{DessinNodeOrder.lean} defines the fiber-product subring of two genuine power-series rings. Its twenty printed declarations establish diagonal injectivity, nonzero branches, branch zero products, factorizations and annihilator identities, regular $u$, augmentation surjectivity and exactness, bijective power-series coordinates, square-zero alternating maps, three kernel-equals-range statements and projectivity of the actual regular/product terms. The coordinate statement is a bijection; the file does not yet package it as an $R$-linear equivalence or declare the general order freeness theorem.
 
@@ -260,3 +262,7 @@ This is the ordinary monomial basis convention; composition is proved universall
 The exact Python checks use fixed rational matrices and exhaustive finite sets, with no random seeds. They construct the displayed permutations and paths, evaluate rational Cartan identities, check formal Euler products through a stated degree, verify unrestricted-output Fock basis identities on bounded input sets, compute incidence Smith data, construct all nine string representations and signed maps, and test Young/LR/Cauchy examples and the seven-element-field counts. Those diagnostics are reproducible finite corroboration. The universal infinite claims rest on the proofs or explicitly cited theorems, and the arithmetic comparison remains open.
 
 The ten additional \texttt{DessinPullbackComponents.lean} statements use literal two-state matrix units and a subring of a product of arbitrary rings, with equal images under two ring homomorphisms. The section hypothesis of its projection-surjectivity theorem is explicit. It does not construct a topological C*-pullback or assert that a commutative diagram is automatically a pullback. The no-residue theorem is universal algebra, with a nontrivial commutative target; it is not an assumed arithmetic positivity premise.
+
+\texttt{ThetaJacobi.lean} adds sixteen declarations, with actual finite fields and MulChar rather than a hypothetical arithmetic kernel. Its norm theorem invokes mathlib's proved Jacobi inverse-product identity and derives characteristic inequality from finiteness; all three character nontrivialities are explicit. Other declarations verify the rescaling substitution, CM multiplication/polynomial/Gram positivity components, exact prime-seven matrix polynomials, and actual 2-by-3 boundary/3-by-2 cellular inclusion, homology restriction, three-edge determinant and rational vertex chain-map equations. It does not formalize elliptic point counting or an order-to-Frobenius functor.
+
+The final three \texttt{ThetaJacobi.lean} declarations verify the actual conjugation matrix identities and the real two-dimensional inert-prime determinant obstruction. They do not assume any unknown zero location or exclude complex/enlarged spectral realizations.
