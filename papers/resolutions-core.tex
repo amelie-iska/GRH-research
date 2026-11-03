@@ -141,6 +141,39 @@ Over a characteristic-zero field (or after extending scalars to a $\mathbb Q$-al
 \]
 Indeed the derivative of the left side is $\tr(M(1-uM)^{-1})$; expand and integrate term by term with constant term zero. For a partial permutation this becomes the primitive-cycle Euler product. Such transfer zeta functions are not automatically Hasse--Weil or number-field $L$-functions. An infinite-dimensional extension needs a stated Fredholm or regularized determinant and its convergence theorem.
 
+\subsection{Testing a positive Hodge replacement}
+A natural next attempt is to turn the resolution differential into a positive operator. The following calculation identifies exactly what this retains.
+\begin{theorem}[Finite Hodge determinant cancellation]\label{thm:hodge-cancel}
+Let $C^\bullet$ be a bounded finite-dimensional complex Hilbert complex, $D=d+d^*$ and $\Delta=D^2$. Write $E,O$ for the even and odd sums, of dimensions $e,o$. Then
+\[
+ \det(1+z\Delta_E)=\det(1+z\Delta_O),\qquad
+ \mu^o\det(\mu1_E+\Delta_E)=\mu^e\det(\mu1_O+\Delta_O).
+\]
+The shifted parity quotient is $\mu^{e-o}$ as a meromorphic function; pointwise division requires a nonzero denominator. Thus every nonzero spectral factor cancels in the plain alternating Hodge determinant.
+\end{theorem}
+\begin{proof}
+In orthonormal bases the odd self-adjoint $D$ has block form
+$\left(\begin{smallmatrix}0&B^*\\B&0\end{smallmatrix}\right)$, so $\Delta_E=B^*B$ and $\Delta_O=BB^*$. Sylvester's identity applied to $zB^*,B$ proves the first assertion. For $\mu\ne0$, factor $\mu$ from each matrix and apply that identity at $z=\mu^{-1}$. The cleared equality is polynomial in $\mu$, hence also holds at zero. The difference $e-o$ is the Euler characteristic, by cancellation of boundary dimensions. The quotient statement is meromorphic; it does not assign a pointwise value to a common $0/0$ at a negative Laplace eigenvalue.
+\end{proof}
+The ordinary determinant avoids this cancellation but is metric dependent even on the fixed exact complex $\mathbb C\xrightarrow{1}\mathbb C$: metrics $1,r>0$ give both Laplacians $r$, with ordinary factor $r-z$. Also $d(s)=s$ gives $\Delta(s)=|s|^2$, which is not holomorphic near $s=1$. Positivity of a Hodge construction therefore does not supply a determinant-preserving arithmetic comparison. Degree-weighted analytic torsion \cite{RaySinger} is a different invariant and is not excluded by this unweighted parity calculation.
+
+\subsection{A relative boundary realization and its limit obstruction}
+\begin{proposition}[Relative realization of the Cartan determinant]\label{prop:boundary}
+Let $S$ be the unilateral shift on $\ell^2(\mathbb N)$ and $P_0$ its initial rank-one projection. For a finite matrix $M$ with $1-M$ invertible, define
+\[
+ A_M=1-(S^*S)\otimes M,\qquad C_M=1-(SS^*)\otimes M.
+\]
+Then $A_MC_M^{-1}=1-P_0\otimes M$, a finite-rank perturbation of the identity, and
+\[
+ R(M):=\det_F(A_MC_M^{-1})=\det(1-M).
+\]
+Consequently $R(-V)/R(U)=\det C_A$ for the arrow-state matrices above, initially where the operators are defined and then by the indicated polynomial/meromorphic continuation.
+\end{proposition}
+\begin{proof}
+Coordinates give $S^*S=1$, $SS^*=1-P_0$. On $P_0\otimes\mathbb C^r$, $C_M$ is the identity and $A_M=1-M$; on its orthogonal complement both equal $1\otimes(1-M)$. Their relative product therefore has the stated form. Its Fredholm determinant is the finite determinant on its $r$-dimensional support. Theorem~\ref{thm:cartan} gives the last assertion. Individual Fredholm determinants of the bulk operators are generally undefined; no quotient of two such determinants is taken. At singular $1-M$ only the scalar polynomial continuation is asserted, not a defined quotient operator.
+\end{proof}
+This is an explicit Hilbert-space relative realization of the formal Cartan invariant, not an arithmetic or generally self-adjoint realization. Its natural finite sections expose a further analytic gap. For scalar $M=1/2$, the truncated shift on $N\ge2$ coordinates gives a relative operator equal to $1/2$ at the first coordinate, $2$ at the last and $1$ elsewhere. Its determinant is always $1$. Extending it by the identity, it converges strongly to $1-P_0/2$, whose Fredholm determinant is $1/2$. The difference from that limit is the last-coordinate projection, of trace norm exactly $1$. Hence strong convergence here cannot justify determinant convergence. The extended edition gives the general matrix formula and the necessary infinite-dimensional qualifications.
+
 \section{What finite-field purity supplies}
 For a separated finite-type $X/\mathbb F_q$ and a suitable constructible $\ell$-adic coefficient system $\mathcal F$, $\ell\ne\operatorname{char}\mathbb F_q$, the Grothendieck trace formula identifies
 \[
@@ -203,6 +236,6 @@ A complete attempt using resolutions must discharge the following sequence of co
 The local homological part can now be implemented explicitly. The global arithmetic identity, its positive realization and its analytic comparison remain mathematical research problems. No assumption of GRH, Artin holomorphy or unknown zero locations is used in the proved algebraic statements.
 
 \section{Verification and reproducibility}
-The separate pinned Lean4.24/mathlib layer verifies a general cleared version of the rectangular determinant identity, acyclic-pair characteristic-determinant cancellation, the actual alternating-duality counterexample, and exactness/projectivity components of a dual-number resolution over an actual nonsemisimple algebra. Existing files verify positive Hermitian pencils and analytic nonvanishing components. Theorems print their types and foundation dependencies. These are components, not a formalization of all forbidden-chain resolutions, the derived surface models, the trace formula, Deligne purity, or GRH.
+The separate pinned Lean4.24/mathlib layer verifies a general cleared version of the rectangular determinant identity, acyclic-pair characteristic-determinant cancellation, the actual alternating-duality counterexample, and exactness/projectivity components of a dual-number resolution over an actual nonsemisimple algebra. The Hodge module also verifies actual block squaring, Gram positivity and determinant cancellation, positive scalar metrics and their moving-zero example, and a universal ring identity for the boundary relative product. The infinite Hilbert-space/Fredholm and trace-norm arguments just given remain prose. Existing files verify positive Hermitian pencils and analytic nonvanishing components. Theorems print their types and foundation dependencies. These are components, not a formalization of all forbidden-chain resolutions, the derived surface models, the trace formula, Deligne purity, or GRH.
 
 A standard-library exact rational checker tests finite quivers, path/chain coefficients, differentials and bounded internal-degree exactness, signed matrix inversion and the weighted cycle determinant, including nodal, terminating, periodic and cancellation examples. Finite tests supplement the universal proofs; they do not certify the arithmetic bridge. All source submodules and pinned environments are preserved. Both editions compile from shared core text; the extended edition adds explicit computations, geometric hypotheses and implementation tasks.

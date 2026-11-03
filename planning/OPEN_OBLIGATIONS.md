@@ -61,3 +61,9 @@ The four requested source reviews and corrected algebraic resolution/determinant
 - PR-E: Extend actual Lean verification from dual numbers and matrix interfaces to general path projectives, categorical resolutions, Ext products and the eventual arithmetic comparison. The full surface/derived/Weil theory and original upstream graph are not claimed formalized.
 
 A concrete intermediate acceptance target is the elliptic curve y²=x³−x overF5 with eight points and numerator1+2u+5u², using an actual arithmetic realization rather than a fitted polynomial. This is a finite-field benchmark, not evidence of a number-field GRH proof. Earlier hybrid-energy and short-row/contour frontiers remain preserved for alternative work.
+
+## Hodge and boundary comparison update2026-11-03
+
+The plain finite alternating determinant of Δ=(d+d*)² cancels every nonzero spectral factor; positivity from a resolution alone cannot preserve the missing arithmetic spectrum. Ordinary factors vary with metric, and a holomorphic d(s) need not give a holomorphic Δ(s). This is a failed repair attempt, not a refutation of independent arithmetic chain endomorphisms or degree-weighted torsion.
+
+An explicit bounded ℓ² relative boundary model now realizes det(I−M), and hence the weighted Cartan ratio. This closes that algebraic/relative realization task in prose, not PR-B/PR-C. Its natural truncated shifts have an escaping terminal block: finite determinants stay1, the scalar M=1/2 limiting determinant is1/2, and trace-norm distance stays1 despite strong convergence. A changed boundary correction or different actual arithmetic approximants must supply the required determinant comparison and topology. The existing positive-length zero-free obstruction remains. Do not claim a universal infinite Hodge no-go: individual trace-class heat or a specified relative regularization matters.

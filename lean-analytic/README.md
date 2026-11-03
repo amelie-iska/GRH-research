@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 110 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 137 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -108,4 +108,11 @@ These statements do not assume GRH or desired arithmetic positivity. They do not
 
 `ResolutionDeterminant.lean` adds three declarations. `arrow_state_determinant` proves the universal cleared rectangular determinant identity over any commutative ring, with the right-inverse and composable-pair splitting explicitly assumed. It does not assume the determinant conclusion or any spectral fact. `acyclic_pair_determinant` proves conjugacy cancellation under an explicit inverse identity; this is a component of, not the entire cohomological cancellation theorem. `alternating_duality_without_purity` proves an actual rational2×2 symplectic-similitude counterexample. The full forbidden-chain resolution, partial-permutation cycle factorization, surface equivalences, Grothendieck trace formula, Deligne purity and arithmetic GRH comparison remain prose/external/open as indicated in the new papers.
 
-All 126 analytic declarations are checked by the existing pinned suite, each printing standard foundation dependencies. The selective public SchurComplement/Projective cache was added at unchanged toolchain, HEAD and manifest; no production dependency, cleanup or upgrade occurred. Sixteen new theorem types and axiom reports are in outputs/checks/2026-11-03-projective. Prior upstream3125-module Lean4.34.1 verification remains unrun and distinct.
+At the projective-resolution milestone all 126 analytic declarations were checked by the existing pinned suite, each printing standard foundation dependencies. The selective public SchurComplement/Projective cache was added at unchanged toolchain, HEAD and manifest; no production dependency, cleanup or upgrade occurred. Sixteen new theorem types and axiom reports are in outputs/checks/2026-11-03-projective. Prior upstream3125-module Lean4.34.1 verification remains unrun and distinct.
+
+
+## Finite Hodge cancellation and relative boundary algebra
+
+`HodgeDeterminant.lean` adds eleven declarations: actual odd block-Dirac squaring; positivity of both Gram partners; nonzero scalar-shift factorization; equality of normalized Gram determinants; a cleared shifted equality assuming nonzero mass; the normalized parity quotient where its denominator is nonzero; positive scalar metrics on a fixed one-dimensional complex; the weighted-adjoint identity; the ordinary metric-dependent characteristic determinant and explicit moving-zero witness; and a relative boundary-product identity in an arbitrary noncommutative unital ring, with inverse/commutation hypotheses explicit. All types and standard foundation dependencies are printed. The complete analytic suite now has137 declarations.
+
+The full finite-complex/cohomology interpretation, polynomial extension of the shifted equality to mass0, ℓ² shift, finite-rank Fredholm determinant, infinite relative boundary realization and trace-norm/strong-limit proofs remain prose in research/hodge-boundary-determinants.md and the focused preprints. No bounded Hilbert operator or Fredholm determinant is claimed constructed in Lean from the abstract ring identity. No arithmetic determinant or desired positivity is assumed. Existing pinned modules/caches sufficed; no dependency, cache download, manifest or toolchain changed.

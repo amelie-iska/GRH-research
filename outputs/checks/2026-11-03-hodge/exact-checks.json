@@ -1,0 +1,270 @@
+{
+  "arithmetic": "exact Fraction arithmetic; deterministic; no random seed required",
+  "finite_complexes": [
+    {
+      "name": "interval",
+      "term_dimensions": [
+        2,
+        1
+      ],
+      "betti_numbers": [
+        1,
+        0
+      ],
+      "euler_characteristic": 1
+    },
+    {
+      "name": "circle",
+      "term_dimensions": [
+        3,
+        3
+      ],
+      "betti_numbers": [
+        1,
+        1
+      ],
+      "euler_characteristic": 0
+    },
+    {
+      "name": "filled_triangle",
+      "term_dimensions": [
+        3,
+        3,
+        1
+      ],
+      "betti_numbers": [
+        1,
+        0,
+        0
+      ],
+      "euler_characteristic": 1
+    },
+    {
+      "name": "augmented_triangle",
+      "term_dimensions": [
+        1,
+        3,
+        3,
+        1
+      ],
+      "betti_numbers": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "euler_characteristic": 0
+    },
+    {
+      "name": "nontrivial_cohomology",
+      "term_dimensions": [
+        2,
+        3,
+        2
+      ],
+      "betti_numbers": [
+        1,
+        1,
+        1
+      ],
+      "euler_characteristic": 1
+    }
+  ],
+  "counts": {
+    "complex_metric_systems": 15,
+    "normalized_determinants": 60,
+    "cleared_shifted_determinants": 60,
+    "positive_mass_ratios": 30
+  },
+  "metric_example": [
+    {
+      "target_metric": "1",
+      "laplacians": [
+        "1",
+        "1"
+      ],
+      "ordinary_factor_at_z_1": "0"
+    },
+    {
+      "target_metric": "4",
+      "laplacians": [
+        "4",
+        "4"
+      ],
+      "ordinary_factor_at_z_1": "3"
+    }
+  ],
+  "finite_boundary_samples": [
+    {
+      "N": 2,
+      "weight": "1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "1/2",
+      "trace_norm_distance": "1"
+    },
+    {
+      "N": 3,
+      "weight": "1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "1/2",
+      "trace_norm_distance": "1"
+    },
+    {
+      "N": 4,
+      "weight": "1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "1/2",
+      "trace_norm_distance": "1"
+    },
+    {
+      "N": 5,
+      "weight": "1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "1/2",
+      "trace_norm_distance": "1"
+    },
+    {
+      "N": 6,
+      "weight": "1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "1/2",
+      "trace_norm_distance": "1"
+    },
+    {
+      "N": 7,
+      "weight": "1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "1/2",
+      "trace_norm_distance": "1"
+    },
+    {
+      "N": 2,
+      "weight": "1/3",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "2/3",
+      "trace_norm_distance": "1/2"
+    },
+    {
+      "N": 3,
+      "weight": "1/3",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "2/3",
+      "trace_norm_distance": "1/2"
+    },
+    {
+      "N": 4,
+      "weight": "1/3",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "2/3",
+      "trace_norm_distance": "1/2"
+    },
+    {
+      "N": 5,
+      "weight": "1/3",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "2/3",
+      "trace_norm_distance": "1/2"
+    },
+    {
+      "N": 6,
+      "weight": "1/3",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "2/3",
+      "trace_norm_distance": "1/2"
+    },
+    {
+      "N": 7,
+      "weight": "1/3",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "2/3",
+      "trace_norm_distance": "1/2"
+    },
+    {
+      "N": 2,
+      "weight": "-1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "3/2",
+      "trace_norm_distance": "1/3"
+    },
+    {
+      "N": 3,
+      "weight": "-1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "3/2",
+      "trace_norm_distance": "1/3"
+    },
+    {
+      "N": 4,
+      "weight": "-1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "3/2",
+      "trace_norm_distance": "1/3"
+    },
+    {
+      "N": 5,
+      "weight": "-1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "3/2",
+      "trace_norm_distance": "1/3"
+    },
+    {
+      "N": 6,
+      "weight": "-1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "3/2",
+      "trace_norm_distance": "1/3"
+    },
+    {
+      "N": 7,
+      "weight": "-1/2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "3/2",
+      "trace_norm_distance": "1/3"
+    },
+    {
+      "N": 2,
+      "weight": "2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "-1",
+      "trace_norm_distance": "2"
+    },
+    {
+      "N": 3,
+      "weight": "2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "-1",
+      "trace_norm_distance": "2"
+    },
+    {
+      "N": 4,
+      "weight": "2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "-1",
+      "trace_norm_distance": "2"
+    },
+    {
+      "N": 5,
+      "weight": "2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "-1",
+      "trace_norm_distance": "2"
+    },
+    {
+      "N": 6,
+      "weight": "2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "-1",
+      "trace_norm_distance": "2"
+    },
+    {
+      "N": 7,
+      "weight": "2",
+      "finite_relative_det": "1",
+      "boundary_relative_det": "-1",
+      "trace_norm_distance": "2"
+    }
+  ],
+  "boundary_count": 24,
+  "infinite_result_scope": "Hilbert shift, relative Fredholm determinant, strong-limit and non-trace-norm-convergence claims are proved in prose, not inferred from finite samples.",
+  "GRH_scope": "No arithmetic L-function identity or positive arithmetic realization; no GRH proof."
+}

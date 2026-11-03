@@ -224,3 +224,65 @@ The next work can proceed without repeatedly re-auditing the supplied papers.
 \item Finally prove the analytic determinant convergence and exhaust the nontrivial strip, then apply Theorem~\ref{thm:closure}. The published claim must track every remaining classical or informal dependency and the literal scope of Lean verification.
 \end{enumerate}
 This sequence is complete as a specification of the missing constructions. Its arithmetic steps remain unresolved, so the present manuscript is a corrected foundation and conditional program rather than a completed GRH proof.
+
+\section{Hodge cancellation and the boundary correction in detail}
+\subsection{Harmonic representatives do not manufacture arithmetic weights}
+For a finite Hilbert complex,
+\[
+ \langle\Delta x,x\rangle=\|dx\|^2+\|d^*x\|^2.
+\]
+Thus $\ker\Delta=\ker d\cap\ker d^*$. In degree $i$, the finite-dimensional space of cycles decomposes orthogonally into $B^i$ and $Z^i\cap(B^i)^\perp$. Since $(B^i)^\perp=\ker(d^{i-1})^*$, the second summand is precisely the harmonic space. It maps bijectively to cohomology. Alternating the dimensions cancels the boundaries, so $e-o=\chi(C)=\chi(H(C))$. This identifies the index power in Theorem~\ref{thm:hodge-cancel}; all paired nonzero eigenvalues have disappeared. Exactness is not needed for the normalized determinant identity.
+
+For the fixed differential $d=1$ in degrees zero and one, give the source Hermitian form $\overline xy$ and target form $r\overline xy$, $r>0$. The adjoint identity forces $d^*=r$, so $\Delta_0=\Delta_1=r$. The ordinary factors $r-z$ move under $r=1,4$, whereas the normalized parity quotient remains one. This is a genuine change of positive metric on one fixed exact complex, not a change of its cohomology. It defeats an automatic identification of that ordinary determinant with an invariant arithmetic function.
+
+The holomorphic issue is separate. For $d(s)=s$ and standard metrics, $\Delta(s)=|s|^2$. At $s=1$, the difference quotient along real $h$ is $2+h$, while along $ih$, $h\in\mathbb R$, it is $-ih$. Their limits disagree. Consequently the Hodge operation does not preserve holomorphic dependence in a complex spectral parameter. A parameter-independent Hodge operator or a family self-adjoint only on a real slice has different hypotheses and still needs the exact arithmetic comparison.
+
+An arithmetic endomorphism $F$ commuting with $d$ is not being discarded: its determinant on cohomology is the object in Theorem~\ref{thm:cohom}. The arithmetic weights of that $F$ are independent information. Choosing harmonic representatives neither proves them nor supplies a positive form making $F$ a scaled isometry.
+
+Likewise analytic torsion uses degree weights: with a positive-Laplacian convention, one common expression is
+\[
+ T=\prod_i(\det{}'\Delta_i)^{(-1)^{i+1}i/2}.
+\]
+It is not the unweighted parity superdeterminant. Ray--Singer \cite{RaySinger}, \S1, Definition1.6 and Proposition1.7, introduce the regularized and finite combinatorial versions with their metric, acyclicity and basis hypotheses. Their Laplacian sign differs from ours. The finite cancellation theorem does not refute torsion, its geometric invariance theorems, or its possible arithmetic uses. Those would require a specified additional construction and comparison.
+
+\subsection{The relative operator is explicitly defined}
+On $H=\ell^2(\mathbb N)\otimes\mathbb C^r$, set $P=P_0\otimes1$ and $\widetilde M=1\otimes M$. The shift preserves the norm, its adjoint deletes the first coordinate, and $SS^*=1-P_0$. Put $A=1-\widetilde M$ and assume $1-M$ invertible. Then
+\[
+ C=P+(1-P)A,\qquad C^{-1}=P+(1-P)A^{-1},
+ \qquad AC^{-1}=1-P\widetilde M.
+\]
+The first two identities are verified on the orthogonal decomposition $PH\oplus(1-P)H$. The last is multiplication on those same summands. Boundedness and invertibility follow from the finite matrix inverse; no unbounded-operator domain is suppressed. The perturbation has rank at most $r$. By the finite-support definition of its Fredholm determinant, its determinant is $\det(1-M)$.
+
+The Lean ring lemma proves the underlying algebraic product identity from explicit commutation and inverse hypotheses. It is valid in operator rings but does not itself construct the shift on mathlib's $\ell^2$ space, prove trace class, or define the Fredholm determinant. Those are the prose constructions here. This distinction avoids claiming an infinite analytic formalization from a finite matrix theorem.
+
+For the node, $R(-t)/R(t)=(1+t)/(1-t)$ reproduces its Cartan series. For an arbitrary locally gentle quiver, use $M=-V$ and $M=U$. The numerator continuation $\det(1+V)$ is polynomial; division by $\det(1-U)$ is meromorphic. Swapping the relative pair to $C_MA_M^{-1}$ reciprocates the determinant; merely reordering the multiplication does not. None of these operators is automatically positive or self-adjoint. In particular this realization leaves the positive-length obstruction of Proposition~\ref{prop:nogo} intact.
+
+\subsection{The escaping terminal boundary prevents trace-norm convergence}
+Let $S_N$ act on the first $N$ coordinates and annihilate $e_{N-1}$. For $N\ge2$,
+\[
+ S_N^*S_N=1-P_{N-1},\qquad S_NS_N^*=1-P_0.
+\]
+Using these in the same relative construction and extending by the identity on the infinite tail gives
+\[
+ R_N^{\rm op}=1-P_0\otimes M
+     +P_{N-1}\otimes\bigl((1-M)^{-1}-1\bigr).
+\]
+The initial boundary acts by $1-M$, the terminal one by $(1-M)^{-1}$, and every other block is the identity. Therefore
+\[
+ \det R_N^{\rm op}=1,\qquad
+ \det_F(1-P_0\otimes M)=\det(1-M).
+\]
+For every $x\in H$, its coordinate norms tend to zero. Thus the last term tends strongly to zero. In trace norm, however,
+\[
+ \bigl\|R_N^{\rm op}-(1-P_0\otimes M)\bigr\|_1
+   =\bigl\|(1-M)^{-1}-1\bigr\|_1.
+\]
+Embedding a finite matrix on a coordinate subspace preserves its nonzero singular values, proving the equality. The right side is positive for $M\ne0$: if it vanished, the inverse would be the identity and hence $M=0$. For $M=1/2$ it is exactly one. This is the precise failed determinant-continuity step, not a contradiction with Sylvester's finite identity.
+
+There is also no unrestricted infinite heat-cancellation theorem from a trace-class \emph{difference} alone. For the unilateral shift,
+\[
+ e^{-tS^*S}-e^{-tSS^*}=(e^{-t}-1)P_0,
+\]
+whose trace is $e^{-t}-1$, while $\operatorname{index}S=-1$. Neither individual heat operator is trace class. Compatible trace-class heat or specified relative regularization hypotheses must be verified; one cannot cancel two divergent traces. For Hilbert--Schmidt $B$, by contrast, both Gram perturbations of the identity are trace class and the corresponding Fredholm Sylvester identity has its usual well-defined setting. This does not cover the bulk shift construction.
+
+The next arithmetic comparison must specify its terminal/boundary correction and prove convergence in the topology required by its determinant. Removing the terminal term makes the relative determinant $\det(1-M)$ at each stage, but changes the finite realization and requires an independent arithmetic interpretation. We have constructed an exact relative Cartan model and isolated a failed natural approximation. The number-field determinant, positive metric for that same function and the resulting GRH proof remain open.
