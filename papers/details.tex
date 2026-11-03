@@ -1078,6 +1078,109 @@ constant is introduced. This verifies the conditional low application;
 it does not certify the general reflection, Gram/correlation proof,
 exact arithmetic identities or the remaining nonprincipal contours.
 
+
+\section{Central conductor, height and integral safeguards}
+These details support Proposition~\ref{prop:central}; pinned passages and
+its unverified arithmetic dependencies are in
+\texttt{research/central-contour.md}.
+
+\paragraph{The correction is continued before it is divided.}
+Contour movement uses the full finite tuple sum with selected $G_p$
+and unselected $H_p$, including at zeros of individual raw factors.
+On the retained dynamic lines only, the local estimates give
+$H_p-1=O(Q^{-1-10e})$ for $p\nmid u$ and $O(Q^{-10e})$ for $p\mid u$.
+A fixed sufficiently large $P_0(e)$ makes these $H_p$ nonzero there.
+Only now define $G_p/H_p$ and split each slot into main and error parts.
+The resulting factorization is not used for continuation or global tails.
+The four good-prime error exponents are
+\[
+ -a-4e,\quad-51/25+12e,\quad49/25-5a-68e,\quad a-51/25+12e,
+\]
+all at most $-51/100$ on the stated range.
+The fixed identity ray does not impose $\eta(p)=1$.
+
+The strict ramified term requires one simultaneous conductor inequality.
+For its distinct labels $J_0$, retain the source arithmetic assertion
+\[
+ q_{\mathfrak f_u}\ll_S q_u\prod_{p\in J_0}Q_p^{-(j_p-1)}.
+\]
+The primitive functional equation and buffered reflected numerator bound
+cost $q_{\mathfrak f_u}^{A_*}$, up to small row powers and a fixed
+polynomial height, where $A_*=1/2-w_r=a-1/2+6e\ge0$.
+For every label,
+\[
+ -w_r-(j_p-1)A_*=-1/2-(j_p-2)A_*\le-1/2.
+\]
+Spend the deficit once for the whole set, before summing labels.
+Disjoint slot supports prevent the same prime from spending it twice.
+Divisor-many ramified choices cost a small row power. Good-prime errors
+have the stronger $51/100$ saving. Together these give the joint
+numerator/error estimate, with zero amplitude assigned to every error
+slot. Lean checks the simultaneous real-power inequality, not the
+arithmetic conductor identification or the buffered $L$-bound.
+Main slots contribute $\sum_i\ell_i g_i=q\ell$, a base-$Z$ power;
+it must not be replaced by $dq\ell$.
+
+\paragraph{A cumulative height budget.}
+For each buffered argument list once all its coordinates:
+$\gamma_j+\sum_{k=1}^m a_{jk}v_k$. Put
+\[
+ c_k=\frac1{2m(1+\max_j|a_{jk}|)},\qquad |v_k|\le c_kT_1.
+\]
+Then $|\sum_k a_{jk}v_k|\le T_1/2$. If
+$|\gamma_j|\le(3i+1)T_1$, the resulting height is at most
+$(3i+3/2)T_1$, within the $(3i+2)T_1$ buffer. A fixed bounded shift
+fits after increasing the threshold. The allowance is not renewed at
+successive prime, witness or row estimates.
+
+An internal coefficient measure known only through a fixed weighted
+$L^1$ bound stays integrated inside the arithmetic factor. It does not
+become a pointwise external trace density. Extra integrals used for a
+central bound must be included before asserting its aggregate estimate;
+discarded parts stay on global or absolute lines. In particular integrated
+tails alone do not justify horizontal joins. The external trace estimate
+does not differentiate the arithmetic factor, so increasing its decay
+order cannot raise an internal moment-profile or height order.
+
+The detector excludes bounded rows for which any inducing presentation
+in its finite family is principal. Numerator nonprincipality alone does
+not encode this full retained-family condition. Floor-bin rows remain
+permitted for central accounting, but have direct cardinality bounds;
+a saturated witness theorem is not asserted for them.
+
+\paragraph{Only the original analytic sum is integrated.}
+At a retained point the amplitude/witness partition may depend on that
+point. Apply triangle, bound the number of labels by a fixed logarithmic
+power, and dominate every exponent by a uniform supremum. The original
+analytic sum, times its kernel, is the function integrated. The pointwise
+pieces need not be integrated or assigned measurable labels.
+For an actual integrable complex function $f$ and integrable real kernel
+$k$, the Lean component proves
+\[
+ \|f(x)\|\le Ck(x)\ \text{a.e.}\quad\Longrightarrow\quad
+ \left\|\int f\,d\mu\right\|\le C\int k\,d\mu.
+\]
+The original integrability and pointwise envelope are explicit inputs;
+this theorem does not assert an arithmetic majorant from no hypotheses.
+
+\paragraph{Boundary reference and the late height choice.}
+The exact accounting also gives
+$E_\sigma-(\beta_*-\sigma)=E_{\beta_*}$.
+For frozen algebraic $\delta,q,R$, the fixed-$d$ perturbation is
+$t(13/50+\delta/4+q)$. At the moving endpoint $h_t=h_0+3t/2$,
+\[
+ E_t(h_t)-E_0(h_0)=t(-1/4+\delta+q+3R/2).
+\]
+These identities do not equate the actual pointwise row partitions of
+two different probes or prove their exponents negative.
+If a positive common saving $m$ is independently established and the
+internal height order $A$ is fixed, choose a positive height exponent
+$\tau$ within its detector ceiling and $m/[4(A+1)]$. Only afterward
+choose $N$ so $B-N\tau<C(\beta_*)-m/2$.
+Both choices can depend on the target, while $m$ remains common.
+Lean checks the real and natural-number choices. It does not establish
+the hypothesized saving or a complete zero-free theorem.
+
 \section{Computational examples and reproducibility}
 The Python checks use integers and \texttt{fractions.Fraction}, with
 no random choices, model weights, scientific datasets or floating-point

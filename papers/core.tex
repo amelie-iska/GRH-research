@@ -641,6 +641,86 @@ energy and Gram bounds are not. This closes the conditional low interface
 at $t=10^{-5}$, leaving the nonprincipal contours and the deep source
 inputs unverified. It gives no unconditional new zero-free theorem.
 
+
+\section{The nonprincipal central-contour interface}
+The principal second Euler region does not govern the following move.
+Write $\mathcal D_1(\varepsilon_0)$ for the region
+$\Rea s\ge51/100$, $\Rea z\ge17/50$, $\Rea w\ge-1/100$,
+$\Rea(s+w)\ge1+\varepsilon_0$.
+\begin{proposition}[Conditional central accounting]\label{prop:central}
+Retain the exact arithmetic high identity, full-correction holomorphy and
+polynomial height bounds on $\mathcal D_1$, the source's buffered detector
+bounds, and both integrated and trace-tail contracts. Fix
+$\beta_*>\sigma_0\ge51/100$ and a retained nonprincipal bin of physical
+rows $q_u\asymp U=Z^d$, with fixed
+$0<d_{\min}\le d\le d_{\max}<\infty$ and $51/100\le a\le\beta_*\le1$. Exclude the detector's bounded exceptional rows.
+Take $T_1=Z^\tau>2$, with positive $\tau$ within $d_{\min}/100$
+and the retained detector height ceiling.
+For $0<e<10^{-3}$ the original bin integral moves to
+\[
+ \Rea s=a+16e,\qquad\Rea w=1-a-6e,\qquad\Rea z=z_0=17/50
+\]
+with error $O_{\eta,N}(Z^BT_1^{-N})$. Here $B$ and internal height
+orders are fixed before $N$. On these retained contours suppose an
+admissible finite decomposition and pointwise row partitions satisfy
+\[
+ \sum_{u\in\mathcal C}|L^S(w,\chi(u))\mathfrak H_u^{(\lambda)}|
+ \ll U^{R+\delta/2+\epsilon_c}
+ Z^{\ell(z_0-1/2)+g+\epsilon_c}(1+T_1)^A,
+\]
+uniformly, with $\epsilon_c\ge0$, bounded $R,g$ and polynomial
+logarithmic multiplicity. For every $\epsilon_d,\epsilon_p>0$,
+the original bin contribution is bounded by
+\[
+ \begin{gathered}
+ Z^{C(\sigma_0)+\sup E_{\sigma_0}(d;R,g)
+ +(16-6l_y)e+(1+d)\epsilon_c+d\epsilon_d+\epsilon_p}(1+T_1)^A\\
+ {}+O_{\eta,N}(Z^BT_1^{-N}),
+ \end{gathered}
+\]
+where $\delta=2a-1$, $h=1-l_x+\ell$ and
+\[
+ E_\sigma=a-\sigma+h(z_0-1/6)-a l_y-\ell/2+g
+               +d(R+\delta/2-z_0).
+\]
+Auxiliary retained coordinates and discarded integrations must obey the
+same single cumulative buffered-height allocation.
+\end{proposition}
+\begin{proof}
+Move the full holomorphic tuple correction before introducing pieces.
+First move $z$ to $z_0$ and $s$ to $\beta_*+20e$ with $w=3$.
+The reciprocal stays to the right of the actual supremum $\beta_*$.
+Next move $w$ to $1-a-6e$; since $a\le\beta_*$,
+$\Rea(s+w)\ge1+14e$. Discard the original height tails while the
+reciprocal is global, then move the retained $s$ segment to $a+16e$.
+The rectangle has $\Rea(s+w)\ge1+10e$ and stays in $\mathcal D_1$.
+The buffered hypotheses exclude denominator zeros there. The numerator
+is entire and nonprincipal, and $6z_0>1$, so no pole is crossed.
+Horizontal joins use the trace contract; the buffered $s$-axis is
+never extended beyond its buffer.
+
+Only after this move apply triangle and the aggregate bounds at each
+point. Dominate all occurring powers by one supremum and integrate the
+original analytic row sum; no individual pointwise partition is integrated.
+The outside power is
+$l_x(1/2-z_0)+a+z_0-1-a l_y-dz_0+(16-6l_y)e$.
+Adding the assumed row power and subtracting
+$C(\sigma_0)=\sigma_0+l_x/2-1+h/6$ proves the formula.
+\end{proof}
+
+On the retained region only, local nonvanishing permits the main/error
+factorization with $g=q\ell$. Strict ramified errors spend the conductor
+deficit simultaneously: for distinct labels of valuation $j_p\ge2$,
+$A_*=1/2-w_r\ge0$ gives
+$-w_r-(j_p-1)A_*\le-1/2$. The extended edition records the allocation.
+For the perturbed geometry, at fixed algebraic $\delta,q,R,d$,
+\[
+ E_t(d)-E_0(d)=t(13/50+\delta/4+q).
+\]
+Thus the conditional central interface covers $t=10^{-5}$ without a new
+$7/8$ restriction. It establishes neither negativity of every row
+exponent nor the underlying arithmetic inputs, outer rows or GRH.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

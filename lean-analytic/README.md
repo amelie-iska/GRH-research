@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 53 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 63 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -70,3 +70,9 @@ These check finite algebra and inequalities, not the arithmetic moment bounds, s
 `LowEnergy.lean` adds seven declarations: the hybrid minimum dichotomy, kernel quarter-range charge, the actual reflected real-exponent inequality with support offsets and retained-range slack, exact rescaling identities, universal scale/Gram margins, subset-loss absorption and an actual real-power bound. The generic exponent theorem uses explicit inequalities for the actual row and dual centers, including nonnegative v and ell_b and a permitted negative unit exponent. It assumes no L-function zero locations.
 
 These results do not establish the arithmetic reflected-energy or Gram estimates, sector/reflection identities, common Fourier-density summability or exact finite low separation. They verify the real inequalities used in their conditional application. The already-present `Mathlib.Analysis.SpecialFunctions.Pow.Real` module cache supplies real powers, at the same pinned mathlib commit; no dependency, manifest, cache download or global environment changed.
+
+## Central contour and integral components
+
+`CentralContour.lean` adds ten declarations: real retained-rectangle geometry, an actual finite cumulative height sum and buffer inclusion, strict and simultaneous real-power conductor credit, exact central normalization/reference/perturbation identities, an actual complex Bochner-integral envelope, and existence of a late real height exponent and natural tail order. The integral theorem explicitly uses integrability of the original function and kernel and an almost-everywhere norm bound. It does not assume measurable pointwise partition labels or integrate unverified pieces.
+
+The module does not formalize the contour deformation, arithmetic conductor identification, scalar/high identity, buffered L-function bounds, trace tails or row moments. Those are explicit inputs to the prose conditional interface. Both real-power and Bochner-integral modules were already cached at the pinned mathlib version; no download or dependency/manifest change occurred.
