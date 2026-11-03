@@ -1,0 +1,13 @@
+# Independent review: explicit fixed reciprocity period
+
+2026-11-03. Read-only adversarial review by grh_pdf_audit; no reviewer edits or Git mutations.
+
+The reviewer independently checked the quadratic Gaussian determinant, transform amplitude and damping, normalized class means, four-term limit, all12unit classes and sign bicharacter. Sextic reciprocity is derived from that quadratic calculation and unconditional cubic reciprocity with the exact primary convention, rather than assumed as the target. Milne CFTVIII5.3/5.5 gives the arithmetic-Frobenius orientation and ray factorization; VTheorem3.27 and Remark3.28 gives conductor-discriminant.
+
+The explicit m0=(6)^6 product_(p in S)p^25 is valid. Integrality/normality give monic minimal-polynomial factors of X^6-a; the root/resultant discriminant identity and integral-index trace identity prove field disc divides the displayed polynomial disc. Reducibility and degrees1,2,3 cause no defect. These are named classical dependencies, not claimed Lean CFT. This is a common upper defining modulus, not an exact conductor. The higher powers matter: the reviewer supplied the actual norms31/43 lambda-symbol counterexample to a universal modulus12. It supports a restriction already present in the source.
+
+Every literal column factor was mapped: complete presentations and c_sigma, R modulo4, fixed S-numerators reduced modulo6, moving good residue fields, the original zero masks and artificial L_C. Neither growing d nor unbounded S-valuations enter the fixed modulus. The resulting lcm period and independent nonprincipal coordinate pass review.
+
+All13latest ReciprocityPeriod.lean declarations independently compile warnings-as-errors with only standard foundations. Actual QuadraticAlgebra multiplication, odd-subset count/inversion/closure, square-class kernel/homomorphism, explicit complex table/refinement and integer period are checked. The reviewer ran the actual checker in memory with bytecode and writes disabled, reproducing1728unit triples,1936actual symbol pairs including294shared-zero cases,26400signed row conversions and the witness. Full Gaussian integration, cubic reciprocity and CFT are not formalized.
+
+Literal note and both paper sections pass. Citation precision was improved to Milne ANTProposition2.11, Lemma2.23 and Proposition2.34; zero-based web PDF indices were corrected to one-based physical pages174/254 (printed165/245 remain unchanged). The short G-modulo12 deduction was made explicit in the note. No mathematical correction remained. This is independent project review, not external peer review or a complete GRH certification.

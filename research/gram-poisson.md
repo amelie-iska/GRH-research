@@ -2,6 +2,8 @@
 
 Status: proved general periodic-Poisson estimate in prose and nine kernel-checked finite Fourier/dyadic components; conditional reconstruction of the September Gram bound. No GRH or new zero-free half-plane is established. The arithmetic pairing, reciprocity-period identification and initial scalar/Poisson representation are explicit source inputs, not hypotheses silently discharged by Fourier algebra.
 
+Follow-up2026-11-03: research/reciprocity-period.md now supplies the source fixed period and CRT independence in prose using named classical reciprocity/CFT theorems, with an explicit common defining modulus. Its full number-field formalization and the other analytic inputs remain open. The last section below records the historical handoff that led to this follow-up.
+
 Source: math at4eaee87548250b2682affda7d05d947c05554bae, preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex, blob268c4e3206d460c617d3d2129742a72b831b3def, lines8345–8560 (prop:probe-gram and eq:gram-periodic-poisson). The finite correlation input is audited separately in research/finite-correlation.md. No source file was changed.
 
 ## Precise cancellation lemma

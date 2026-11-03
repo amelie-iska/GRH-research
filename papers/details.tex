@@ -1389,6 +1389,110 @@ They do not prove the source reciprocity theorem, its trace pairing,
 the reflected identity, moments, outer-row estimates or final closure.
 These and the arithmetic spectral bridge remain separate research tasks.
 
+\section{From the phase table to the literal column period}
+\paragraph{A nonminimal modulus with explicit exponents.}
+The modulus $\mathfrak m_0$ of Proposition~\ref{prop:fixed-period}
+has exponent $6v_{\mathfrak p}(6)+25$ at every $\mathfrak p\in S$.
+For $S$ consisting just of the primes above $2,3$, this is $31$ at
+$(2)$ and $37$ at $(\lambda)$.
+These are upper defining exponents, not exact conductors.
+Existing complete ray presentations remain in $\mathfrak m_{\rm pres}$.
+In particular a primitive conductor never erases a redundant zero prime.
+
+To justify the discriminant step even in smaller degree, let
+$\xi^6=a$ and $g=\operatorname{minpoly}_F(\xi)$.
+The roots of $g$ are integral, so its coefficients lie in the normal ring
+$\mathcal O$; division gives a monic integral $h$ with $X^6-a=gh$.
+The root-difference discriminant identity and resultant are integral,
+and the polynomial is separable. Locally at every prime, the trace
+matrix for the power basis changes to an integral basis with determinant
+an integral index, so the field discriminant divides the order
+one~\cite[Proposition 2.11, Lemma 2.23 and Proposition 2.34]{milneant}.
+Conductor--discriminant includes every character of the cyclic group;
+the faithful $\mu_6$ character is among them, also for degrees $1,2,3$.
+This proves all ideal divisibilities used in the core proof without
+assuming irreducibility of $X^6-a$ or a power integral basis.
+
+\paragraph{The Gaussian normalization and square classes.}
+For the self-dual source measure $d\mu=(2/\sqrt3)dx\,dy$, apply Poisson
+to $e(z^2/c)e^{-\pi\varepsilon|z|^2}$. The quadratic determinant is
+$\varepsilon^2+16/(3|c|^2)$. Writing
+$r_\varepsilon=1+3|c|^2\varepsilon^2/16$, its transform is
+\[
+ \frac{|c|}{2\sqrt{r_\varepsilon}}
+ e^{-\pi\varepsilon |c|^2|y|^2/(4r_\varepsilon)}
+ e\!\left(-\frac{cy^2}{4r_\varepsilon}\right).
+\]
+Divide by $I_\varepsilon=2/(\sqrt3\varepsilon)$.
+Original residue means modulo $c$ give $\Gamma(c)/|c|$.
+On the dual side replacing $r_\varepsilon$ by $1$ costs
+$O_c(1)=o(I_\varepsilon)$ in the phase, and smaller normalized
+amplitude/damping errors. Each of the four classes modulo $2$ has
+damped normalized mean $1/|c|^2$.
+The limit is the four-term formula. This argument fixes $c$ before
+letting $\varepsilon\downarrow0$; it asserts no uniform moving-modulus limit.
+
+The twelve units modulo $4$ have square subgroup
+$\{1,\omega,\omega^2\}$. If square classes are written
+$(-1)^e\lambda^f$, then
+\[
+ \mathcal R((-1)^e\lambda^f,(-1)^g\lambda^h)=(-1)^{eh+fg+fh}.
+\]
+Its diagonal is multiplicative. The element residue class of $-1$
+is used here; the ideal $(-1)$ is the identity ideal and cannot be
+substituted for that residue class. For coprime primary pairs cubic
+reciprocity makes the sextic quotient a sign; quadratic CRT computes
+its cube as the displayed sign. This establishes the orientation.
+No GRH-conditional analytic theorem of~\cite{dunnradziwill} is invoked.
+
+\paragraph{Every literal factor.}
+After the complete M\"obius insertion, the joint coefficient is, up to
+fixed scalar conventions,
+\begin{align*}
+ a_{C,d,k}(m_1,m_2)={}&\mu(d)c_\sigma(Cdm_1)
+       \overline{c_\sigma(Cdm_2)}\,
+       \chi_{dm_1}(k)\overline{\chi_{dm_2}(-k)}\\
+ &\cdot\mathcal R(dm_1,dm_2)L_C(dm_1,dm_2;k).
+\end{align*}
+Here $c_\sigma(s)=1_{s\in\sigma}\chi_s(b_*)/(\tau\xi(s))$ is
+extended by zero off primary elements prime to $S$ before division.
+The symbol with numerator $b_*$ has conductor dividing $\mathfrak m_0$;
+$\xi$ and the full $\sigma$ presentation are fixed.
+On the nonzero branch, multiplication by primary good $C,d$ only
+changes an input residue. Congruent unit elements modulo a defining
+ray modulus generate ideals with the same character value, since
+their quotient has local representative $1$ there. On nonunits the
+common zero branch is used first.
+
+The factor $\mathcal R(dm_1,dm_2)$ depends only on residues modulo $4$.
+The artificial $L_C$ has period $\operatorname{rad}(C)$, including
+when $C$ meets a residual. If $d$ meets $C$, its artificial zero kills
+the term; if $d$ meets $k$, the original symbol zero kills it.
+Otherwise factor $\chi_{dm}(\pm k)=\chi_d(\pm k)\chi_m(\pm k)$.
+For $k=\zeta k_Sk_{\rm good}$, the fixed numerator reduces the
+$S$-valuations modulo six and uses $\mathfrak m_0$.
+The good reciprocity phase uses $4$ and the remaining local powers use
+only their good residue fields. The sign change uses $-\zeta$ in the
+same fixed family. No moving prime enters $\mathfrak l$.
+
+At a nonexceptional prime outside $C\mathfrak l$, the first column
+contains just the nonprincipal $\chi_p(m_1)^{e_p}$ in that CRT
+coordinate; arbitrary dependence in the other coordinates is harmless.
+Since $(d,k)=1$, multiplication by $d$ is invertible at $p$.
+This supplies the complete zero mode needed by the Gram proof.
+
+The formal companion uses
+$\operatorname{QuadraticAlgebra}(\Z/4\Z,-1,-1)$, with actual
+Eisenstein multiplication, and its integer counterpart.
+Thirteen declarations check the ring relation, unit inverse/count/closure,
+square-class homomorphism/kernel, four-term table/refinement, sign
+bicharacter/diagonal and integer period.
+They do not formalize class field theory, the Gaussian integral,
+cubic reciprocity or the full analytic moments. Exact split and inert
+field diagnostics include repeated powers, shared zeros, actual signed
+row conversions and the norms $31,43$ witness. Finite samples do not
+replace the classical universal conductor proof or establish GRH.
+
 \section{Computational examples and reproducibility}
 The Python checks use integers and \texttt{fractions.Fraction}, with
 no random choices, model weights, scientific datasets or floating-point

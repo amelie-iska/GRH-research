@@ -873,6 +873,87 @@ The lattice argument above is prose. Applying it to the source still
 requires the listed arithmetic representation and fixed period; neither
 the full upstream theorem nor a GRH scope is certified by this reduction.
 
+\section{A concrete fixed arithmetic period}
+The arithmetic period retained in Proposition~\ref{prop:gram-reconstruction}
+can be supplied in prose using classical reciprocity and class field theory.
+This does not certify its other analytic representation hypotheses.
+
+\begin{proposition}[A common defining modulus]\label{prop:fixed-period}
+Let $S$ be the fixed source prime set, including primes above $6$, and
+let $\mathfrak m_{\rm pres}$ contain the full defining moduli of its
+fixed ray/coefficient presentations, including redundant zero primes. Put
+\[
+ \mathfrak m_0=(6)^6\prod_{\mathfrak p\in S}\mathfrak p^{25},
+ \qquad
+ \mathfrak l=\operatorname{lcm}((12),\mathfrak m_{\rm pres},\mathfrak m_0).
+\]
+The source's artificial two-column Gram coefficient at fixed $C,d,k\ne0$
+is periodic in each column modulo
+\[
+ \mathfrak r=\operatorname{lcm}
+   (\mathfrak l,\operatorname{rad}(C),\operatorname{rad}(k)),
+ \qquad N\mathfrak r\le N\mathfrak l\,q_Cq_k.
+\]
+If some prime $p\nmid C\mathfrak l$ has $6\nmid v_p(k)$,
+its complete joint mean is zero.
+The defining modulus $\mathfrak l$ is independent of $C,d,k$ and $Z$.
+\end{proposition}
+\begin{proof}
+For $a=u\prod_{\mathfrak p\in S}\pi_{\mathfrak p}^{e_{\mathfrak p}}$,
+$0\le e_{\mathfrak p}\le5$, the extension
+$E=F(a^{1/6})/F$ is cyclic of degree dividing six. Its power-residue
+character has conductor dividing the relative discriminant by the
+classical conductor--discriminant formula~\cite[Theorem V.3.27]{milnecft}.
+The minimal polynomial $g$ is a monic integral factor of $X^6-a$.
+The field discriminant divides the power-basis discriminant, and
+$\operatorname{disc}(gh)=\operatorname{disc}(g)\operatorname{disc}(h)
+\operatorname{Res}(g,h)^2$. Thus its conductor divides
+$(6)^6(a)^5$, hence $\mathfrak m_0$. This also covers reducible $X^6-a$.
+Arithmetic Frobenius identifies this character with the sextic residue
+symbol~\cite[Sections VIII.5.3--5.5]{milnecft}. Actual $S$-valuations
+reduce modulo six on $S$-units.
+
+For odd $c=a+b\omega$, Gaussian Poisson summation gives
+\[
+ \Gamma(c)=\frac{1+i^{-b}+i^a+i^{b-a}}2.
+\]
+Its values on square classes $1,-1,\lambda,-\lambda$ modulo $4$ are
+$1,1,i,-i$. The ratio
+$\Gamma(ab)/(\Gamma(a)\Gamma(b))$ is the symmetric sign bicharacter
+$\mathcal R(a,b)$. Classical cubic reciprocity~\cite[Equation (1.4)]{dunnradziwill}
+and CRT for quadratic Gauss sums identify it with
+$\chi_b(a)/\chi_a(b)$ on coprime primary pairs.
+For general pairs its separate finite definition is retained.
+
+Write $k=\zeta k_Sk_{\rm good}$. Reciprocity gives, with every zero retained,
+\[
+ \chi_m(k)=\kappa_{\zeta,\boldsymbol e}(m)
+       \mathcal R(k_{\rm good},m)
+       \prod_{p\mid k_{\rm good}}\chi_p(m)^{e_p}.
+\]
+The first factor has conductor dividing $\mathfrak m_0$, the second has
+period $4$, and the product has period $\operatorname{rad}(k_{\rm good})$.
+Fixed coefficients use $\mathfrak l$ and the artificial kernel uses
+$\operatorname{rad}(C)$. The substitutions by $C,d$ introduce no larger
+period. All nonunit/primary zero branches are taken before inverses.
+At a nonexceptional prime outside $C\mathfrak l$, one nonprincipal
+field coordinate remains independent of all other factors; its mean is zero.
+\end{proof}
+
+The larger bad-prime powers are essential. The primary primes
+$\pi_{31}=1+6\omega$ and $\pi_{43}=1-6\omega$ agree modulo $12$, but
+\[
+ \chi_{\pi_{31}}(\lambda)=\zeta_6,\qquad
+ \chi_{\pi_{43}}(\lambda)=\zeta_6^5,\qquad \zeta_6=1+\omega.
+\]
+Indeed $\omega=5$ in $\mathbb F_{31}$ and $\omega=36$ in
+$\mathbb F_{43}$, giving $11^5=6$ and $30^7=7$ in the respective fields.
+Thus modulus $12$ for the quadratic phase cannot replace the full fixed
+numerator modulus. The source already allows those higher powers.
+Thirteen Lean components check the actual quotient-algebra phase and period;
+the Gaussian, cubic-reciprocity and conductor arguments remain classical
+prose dependencies, with no zero-location assumption.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

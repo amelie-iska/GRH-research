@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 88 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 101 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -36,7 +36,7 @@ Lean4.24.0 is the same project-local toolchain as the standalone layer. Mathlib 
 For a fresh machine, obtain the official toolchain, clone the pinned mathlib tag into that path, confirm its hash, and from the mathlib directory run:
 
 ```sh
-lake exe cache get Mathlib.Analysis.Complex.LocallyUniformLimit Mathlib.Analysis.SpecialFunctions.Pow.Complex Mathlib.Analysis.Complex.AbsMax Mathlib.Analysis.Complex.OpenMapping Mathlib.Analysis.Complex.ReImTopology Mathlib.LinearAlgebra.Matrix.Hermitian Mathlib.LinearAlgebra.Matrix.PosDef Mathlib.LinearAlgebra.Matrix.ToLinearEquiv Mathlib.Analysis.SpecialFunctions.Log.Summable Mathlib.NumberTheory.JacobiSum.Basic
+lake exe cache get Mathlib.Analysis.Complex.LocallyUniformLimit Mathlib.Analysis.SpecialFunctions.Pow.Complex Mathlib.Analysis.Complex.AbsMax Mathlib.Analysis.Complex.OpenMapping Mathlib.Analysis.Complex.ReImTopology Mathlib.LinearAlgebra.Matrix.Hermitian Mathlib.LinearAlgebra.Matrix.PosDef Mathlib.LinearAlgebra.Matrix.ToLinearEquiv Mathlib.Analysis.SpecialFunctions.Log.Summable Mathlib.NumberTheory.JacobiSum.Basic Mathlib.Algebra.QuadraticAlgebra
 ```
 
 The cache command downloads public build artifacts for those imports and uses mathlib's default cache directory. No existing cache was cleaned or reindexed. All cache/tool artifacts are retained; no cache-clean or dependency-upgrade command is needed. Use the pinned manifest, not `lake update`.
@@ -88,3 +88,9 @@ Prime-power quotient-ring lifting, CRT, the source trace pairing and the identif
 `GramPoisson.lean` adds nine declarations: the norm and trivial mode of an actual normalized finite additive Fourier coefficient; two nonprincipal finite-field independent-coordinate means allowing arbitrary coupling of the other labels; the exact finite dyadic head, actual infinite total and tail; a uniform finite head inequality; and the exact nonexceptional scale cancellation. All statements print standard foundational dependencies and assume no zero locations or arithmetic positivity.
 
 The lattice Poisson formula, annular point count, fixed source reciprocity/ray modulus, ideal counts, smooth seminorms and the full arithmetic Gram/moment theorem are not formalized here. The prose application retains their exact scope in research/gram-poisson.md. The already-cached SpecificLimits.Normed module supplies actual real tsums; no dependency, manifest or toolchain changed and no cache was downloaded. The finite checker is a diagnostic, not a substitute for the universal analytic argument.
+
+## Actual Eisenstein quotient-ring reciprocity phase
+
+`ReciprocityPeriod.lean` adds thirteen declarations in QuadraticAlgebra over ZMod4 and over the integers. The generator satisfies omega²+omega+1=0 with actual Eisenstein multiplication. Theorems verify the twelve odd units, inverse/closure, the square-class map and its square kernel, the complex four-term phase table/refinement, the sign bicharacter/diagonal and the integer period under adding4z in either column. Finite reductions run in the kernel, with no native_decide or project-specific axioms. The increased local heartbeat limit permits the finite phase-table proof; it changes no toolchain setting.
+
+The identification with quadratic Gauss sums, classical cubic reciprocity, Kummer/Artin maps, conductor-discriminant and the exact full source coefficient period are prose/classical arguments in research/reciprocity-period.md, not claimed as full Lean theorems. The source application now has a proved classical common defining modulus; no exact conductor or zero-free region is asserted. The one newly missing QuadraticAlgebra public cache artifact was added at unchanged pins without cleaning prior artifacts or changing a manifest.
