@@ -150,3 +150,19 @@ Each run:
 ## Immediate queue
 
 P0 deduplication/build promotion → P3 corrected Manim completion → P2 persistence chapter/checked data → P1 architecture tensor/state export and inspector → P6 formal interfaces → P5 larger matched experiments and P7 low-gcd/arithmetic bridge attempts. Work may proceed independently where inputs are already fixed; do not overlap edits or mislabel partially completed features as shipped.
+
+
+## Requested covering and geometric literature extension (2026-11-03)
+
+The three new references are pinned and reviewed under
+planning/reviews/covering-literature/. Retain the new exact theta-quotient
+cover, non-lifting and Hom-control calculations when expanding the AR and
+derived chapters. Respect precovering versus covering/density, right/left
+module conventions, finite string quotient versus quadratic gentle algebra,
+finite module versus DVR lattice, and graded Fukaya category versus compact
+Riemann surface/completed order. The specified higher-genus family and derived
+non-density are proved; three matrix components are Lean checked. General
+module/functor formalization and any actual GLS/skew-group identification
+remain P6/P4 obligations. Do not infer positivity or block determinants from
+a Hom decomposition. This reference task does not replace the next canonical
+architecture inspector or the open low-gcd/positive arithmetic research lane.

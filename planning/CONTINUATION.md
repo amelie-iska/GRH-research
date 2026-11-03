@@ -212,3 +212,37 @@ approved CPU environment and all source pins. Local preview remains on
 existing book/PDFs and 240-report formal suite remain as previously verified.
 Keep the low-gcd arithmetic lane active without rerunning completed high-gcd
 or finite-carrier no-go audits. GRH and complete book formalization remain open.
+
+
+## Latest frontier after requested covering papers (2026-11-03)
+
+The user supplied three new covering/GLS/geometric-model papers. Their relevant
+results are pinned and integrated, with category distinctions, in
+research/covering-geometry-interfaces.md, papers/covering-core.tex,
+papers/covering-details.tex and book/chapters/coverings.tex. Read the independent
+review and source manifest in planning/reviews/covering-literature/.
+
+New scoped results: actual theta B_L integer cover; finite-support Hom deck
+decomposition; actual finite-source Hom-control defects4/1; indecomposable
+9-dimensional non-lifting module with local7-dimensional End ring; uniform
+odd-m family obstruction0=m and bounded-derived non-density. Do not treat
+this cover as dense, a quiver window as an AR component, or B_L(L>2) as a
+quadratic gentle algebra. GLS vertex ranks, central-DVR lattices and Fukaya/
+completion categories remain different. No arithmetic cancellation or GRH
+bridge has been supplied by the covering results.
+
+Full pinned Lean run now243 printed dependency reports (241standard,2axiom-free);
+CoveringBand adds three actual matrix statements. The full covering category,
+endomorphism classification, uniform family and derived/surface equivalences
+are NOT thereby Lean formalized. Book30chapters/134pages, articles25/53pages,
+HTML14distinct compiled diagrams, four core tools and one unique covering code
+panel pass builds/visual/source/HTTP checks. The final new chapter anchor is
+http://127.0.0.1:8765/book/main.html#x1-8400022 . Exact data in web/data/theta-cover.json.
+
+NEXT: P1-architecture-inspector remains the next ready task. Use its existing
+22-case numerical manifest and prior detailed handoff; no new training or
+checkpoint replacement is necessary to build the inspector. Preserve source
+clones, original manuscripts, caches, candidate exports, inspection renders and
+the approved environments. Keep low-gcd/positive-arithmetic research active
+without repeating completed finite-carrier or high-gcd audits. The current
+reference task is complete, not the project or either GRH completion gate.

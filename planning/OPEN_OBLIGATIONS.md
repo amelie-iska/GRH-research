@@ -136,3 +136,13 @@ references. It closes the data-export task only. The step-through inspector,
 upstream full-model training reproduction, larger matched evaluations and all
 remaining mathematical/formal obligations above remain open. No new arithmetic
 cancellation or determinant positivity is inferred from the trace exports.
+
+The covering extension now supplies an actual locally bounded integer cover
+of theta finite quotients and explicit non-lifting modules, including genus
+4 and 9 examples. Thus the general module and bounded-derived push-down is
+not dense; full AR coverage cannot be assumed. The parent infinite algebra
+is not locally bounded, and a length-cutoff quotient need not be quadratic
+gentle. GLS identification, equivariant linearizations for fixed objects,
+completion/Fukaya/derived interfaces and determinant block compatibility all
+require their own proofs. Three matrix lemmas do not formalize these entire
+categories. The low-gcd estimate and positive arithmetic bridge remain open.

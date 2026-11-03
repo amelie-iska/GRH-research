@@ -89,3 +89,11 @@ planning/reviews/architecture/TRACE_EXPORT_REVIEW.md. This adds executable
 coverage of states, covariances, attention and routing, not corrected exposition
 of every source topic or whole-book Lean coverage. The new inspector remains a
 separate pending task.
+
+The requested covering, tame-GLS and geometric-model references are now
+integrated into the shared article proofs and the chapter
+`book/chapters/coverings.tex`. The actual theta-quotient example, higher-genus
+family, Hom-control counterexample and derived non-density are proved in
+prose and independently reviewed. `CoveringBand.lean` checks the three exact
+matrix statements only. This does not certify external classification
+theorems, the full categorical interfaces or the remaining source topics.

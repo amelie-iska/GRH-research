@@ -310,3 +310,42 @@ The next deliverable is P1-architecture-inspector: consume these actual arrays
 in one canonical useful step-through view. The original low-gcd estimate and
 independent positive arithmetic determinant bridge remain open; no GRH advance
 is claimed from this numerical implementation.
+
+
+## Requested covering/GLS/geometric literature and actual theta construction (2026-11-03)
+
+Pinned arXiv2508.01563v5 and2609.26503v1 plus Schroll's author preprint
+2601.14396v1 and inspected the requested published SIAM chapter. Reviewed
+relevant definitions, theorem hypotheses and selected proofs; no independent
+reproof of complete external classification theorems is claimed. The primary
+source manifest records exact PDFs/hashes and the preprint/publication distinction.
+
+Constructed the actual locally bounded integer cover of B_L=A/J^L for the
+elliptic theta algebra, with a full finite-support deck-Hom proof. An actual
+finite convex-source example has same K0 class but defects4 and1, disproving
+automatic Zwara Hom control. A nine-dimensional B3 module has local End ring
+k plus a six-dimensional cube-zero radical, so is indecomposable. Arbitrary
+Euler-operator equations telescope to0=3, excluding every finite-support lift;
+exactness then proves bounded-derived non-density. The specified odd-m clean
+dessin family gives the uniform0=m obstruction in dimension3m, including
+genus4/dimension27 and genus9/dimension57. These are scoped category obstructions,
+not a GRH obstruction or a positive arithmetic determinant construction.
+
+Exact SymPy checks pass for36 Hom pairs, all basis-component reconstructions,
+radical products and m3/5/9/19. Independent adversarial review accepted the
+proofs and corrected the finite-source definition and exact family specification.
+The full pinned Lean suite passes with243 printed reports:241 use standard
+foundations and2 are axiom-free. Three new actual-matrix theorems verify mixed
+products, cubic nilpotence and no Euler operator; general category, radical,
+higher-genus and derived formalizations remain explicitly incomplete.
+
+The book now has30 chapters/134 pages, focused articles25/53 pages, native-MathML
+HTML,14 unique compiled vector diagrams, four canonical interactive tools and
+one new chapter-specific code/data panel. PDF proof/diagram pages were inspected;
+an initial overlapping caption was corrected and the final page checked.
+All eight chapter/PDF/code/data routes return200. The saved exact Sage source
+remains unexecuted on this host. No environment, dependency or source clone was
+changed. The ongoing architecture-inspector task remains next, and the original
+low-gcd estimate and independent positive arithmetic bridge remain open.
+Evidence: outputs/checks/2026-11-03-coverings/, research/covering-geometry-interfaces.md
+and planning/reviews/covering-literature/REVIEW.md.

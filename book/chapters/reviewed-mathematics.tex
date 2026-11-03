@@ -447,6 +447,130 @@ Finally, the three-vertex theta algebra has no unital surjection onto a six-vert
 
 
 
+\chapter{A genuine theta covering and its categorical limits}
+\label{cover:section}
+Use column matrices, hence covariant quiver representations (left modules);
+opposite categories translate the right-module convention in
+\cite{CoveringLecture2026}. Let $A$ be the infinite elliptic theta dessin
+algebra: vertices $i\in\Z/3$, arrows $a_i,b_i:i\to i+1$, and all mixed
+length-two paths zero. For the arrow ideal $J$ and $L\geq2$ put $B_L=A/J^L$.
+This is a finite string quotient of our actual infinite gentle algebra;
+for $L>2$ its length-$L$ relations prevent treating it as quadratic gentle.
+
+\begin{proposition}[A locally bounded integer cover]\label{cover:hom}
+The category $\widetilde B_L$ with vertices $r\in\Z$, two arrows
+$a_r,b_r:r\to r+1$, and the same mixed and length-$L$ zero relations,
+has orbit $B_L$ under $r\mapsto r+3$. For finite-support representations,
+push-down $F$ is exact and
+\[
+ \operatorname{Hom}_{B_L}(FM,FN)
+ \simeq\bigoplus_{g\in\Z}
+       \operatorname{Hom}_{\widetilde B_L}(M,T_gN),\qquad
+ (T_gN)_r=N_{r-3g}.
+\]
+Only finitely many summands are nonzero. In general $F$ is neither full,
+dense, nor Hom-controlled in Zwara's sense.
+\end{proposition}
+\begin{proof}
+A nonzero path is constant-branch with length less than $L$.
+Thus the incoming and outgoing total Hom dimensions at a cover vertex are
+$2L-1$, and $\dim B_L=3(2L-1)$. Paths and relations lift uniquely; the
+deck action is free and has the stated orbit. Push-down sums spaces of equal
+residue. A morphism decomposes uniquely into blocks with target lift index
+minus source index equal to $-3g$. The arrow commutation equations preserve
+that difference, proving the formula; finite supports bound the possible
+differences. Direct sums of vector spaces preserve exact sequences.
+The following explicit witnesses prove the three failures.
+\end{proof}
+
+For $L=5$, let $P$ be the cover interval on $0,1,2,3,4$ with all its
+$a$-maps one and $b$-maps zero, and let $S$ be the sum of the five simples
+at the same vertices. They have the same $K_0$ class, but
+\[
+\begin{array}{c|ccc}
+ &\dim\operatorname{End}_{\widetilde B_5}
+ &\dim\operatorname{End}_{B_5}(F(-))&\text{defect}\\\hline
+ S&5&9&4\\ P&1&2&1
+\end{array}
+\]
+Indeed the pushed-down simple multiplicities are $(2,2,1)$, whereas
+$\operatorname{End}_{B_5}(FP)=kI\oplus kX^3$ for its single nilpotent
+five-step chain $X$. The extra endomorphism $X^3$ proves non-fullness;
+the unequal defects at the same class exclude a bilinear $K_0$ defect.
+To use Zwara's finite-algebra definition literally, restrict the source to
+the finite convex interval $[0,4]$, then extend by zero before push-down.
+This exact functor has the same endomorphism spaces and $K_0$ comparison.
+
+\begin{proposition}[An indecomposable module outside this cover image]
+\label{cover:band}
+Over a characteristic-zero field, $B_3$ has a nine-dimensional
+indecomposable representation which is not the push-down of any
+finite-support $\widetilde B_3$ representation.
+\end{proposition}
+\begin{proof}
+Label its basis by $0,\ldots,8$ with vertex residues
+$(0,1,0,1,2,1,2,0,2)$, and use matrix units $E_{ij}$ acting on columns.
+Set
+\begin{align*}
+ X&=E_{10}+E_{32}+E_{43}+E_{65}+E_{76}+E_{08},\\
+ Y&=E_{12}+E_{45}+E_{78}.
+\end{align*}
+Their restrictions between adjacent vertex spaces give the $a_i,b_i$ maps.
+They satisfy $XY=YX=X^3=Y^3=0$, hence every length-three path is zero.
+The endomorphism ring preserving vertex spaces is $kI\oplus\mathfrak r$,
+where
+\[
+ \mathfrak r=\langle E_{02}+E_{13},E_{15},E_{35}+E_{46},
+                       E_{48},E_{68}+E_{70},E_{72}\rangle,
+ \qquad \mathfrak r^3=0.
+\]
+Solving the arrow commutation equations gives exactly these seven basis
+elements. The ring is local: an element $cI+n$ is invertible exactly when
+$c\ne0$, by the finite geometric series. It has no nontrivial idempotents,
+so the representation is indecomposable.
+
+A finite-support lift would define an Euler operator $D$ acting by $r$ on
+the summand at lift vertex $r$. Then $[D,X]=X$ and $[D,Y]=Y$.
+Every displayed nonzero arrow is the unique nonzero entry in its row and
+column in its own matrix. Its commutator entry is therefore
+$D_{ii}-D_{jj}$. Add the six $X$ equations and subtract the three $Y$
+equations. Each diagonal term cancels, leaving $0=6-3=3$, a contradiction.
+This argument allows arbitrary $D$, not just a diagonal matrix in the
+displayed basis.
+\end{proof}
+
+\begin{corollary}[Higher-genus and derived non-density]\label{cover:higher}
+For the clean dessin with rotations
+$\sigma=(0\,\cdots\,m-1)(m\,\cdots\,2m-1)$ and
+$\alpha=\prod_{i=0}^{m-1}(i\,i+m)$, odd $m\geq3$, and genus $(m-1)/2$,
+the analogous $A_m/J^3$ has a $3m$-dimensional representation
+outside its integer-cover image in characteristic zero. Its bounded-derived
+push-down is not dense either.
+\end{corollary}
+\begin{proof}
+Use basis $v_0,\ldots,v_{3m-1}$, assign vertices $i,i+1,i$ to
+$v_{3i},v_{3i+1},v_{3i+2}$ modulo $m$, and set
+\[
+ Xv_{3i}=v_{3i+1},\quad Xv_{3i+2}=v_{3i+3},\quad
+ Yv_{3i+2}=v_{3i+1},
+\]
+with indices modulo $3m$ and all other values zero. Again mixed products
+and cubes vanish. An Euler operator would yield $2m-m=m=0$ by the same
+telescoping calculation, impossible in characteristic zero. If a bounded
+finite-support complex pushed to this module in degree zero, exactness would
+make its zeroth cohomology a module lift, a contradiction.
+\end{proof}
+
+The source's derived result is a \emph{precovering} in the stated bounded
+categories \cite[Theorem~4.28]{CoveringLecture2026}; density remains an
+additional condition. Neither this result nor the GLS equivariant
+classification \cite{TameGLS2026} identifies our completed order with a GLS
+algebra. Graded surface/Fukaya models \cite{SchrollGeometric2026} likewise
+require their own dg category, stops and grading. These categorical tools
+do not construct the independent positive arithmetic determinant.
+
+
+
 \chapter{Verification and research frontier}
 The two nodal/invariant Lean files construct the node as an actual subring of $k[[X]]\times k[[X]]$ with equal constants, prove its annihilators, regular common parameter, augmentation, alternating projective resolution and a bijective pair of power-series coordinates. A second file proves CK1 collapse under the stated permutation/coverage hypotheses, determinant base change, actual $2\times2$ symmetric-square functoriality and relation preservation, a Schur character identity and the fixed-parameter lattice failure. These thirty printed theorem types have only standard Lean foundations. They do not formalize general dessins, abstract Ext/AR/Schur--Weyl, C* exactness, Fredholm determinants, arithmetic descent or GRH. Earlier formal layers remain preserved with their literal scopes.
 
@@ -1091,3 +1215,81 @@ The final three \texttt{ThetaJacobi.lean} declarations verify the actual conjuga
 
 
 \texttt{ThetaTameDescent.lean} adds twelve printed component declarations (and one auxiliary polynomial lemma). They use genuine formal-power-series rescaling and its coefficient operator, proving the coefficient action, invariant-coefficient vanishing and the tame operator's cube. Actual three-state matrices satisfy the clock/rotation commutator, comparison determinant and closed-fiber equations, weighted-cycle cube and full characteristic polynomial, noncommutation of a nonconstant rotation polynomial, trivial whole-column determinant actions, and the same-operator comparison for $vC$. The classification of all fixed series by residues, full order action and hereditary invariant algebra, stack interpretation, valuation/rank theorem, general coefficient-functor filtration and GRH are not thereby fully formalized. No unknown positivity premise is assumed.
+
+
+\chapter{Explicit covering calculations and derived transport}
+\label{cover:details}
+Here are the linear details behind Proposition~\ref{cover:band}. Write
+$x_i=F_{ii}$ for diagonal entries of an endomorphism $F$ preserving the
+three vertex spaces. Solving $FX=XF$, $FY=YF$ leaves a common diagonal
+$c$ and six free entries. More explicitly its only off-diagonal entries are
+\[
+ F_{02}=F_{13}=t_0,\quad F_{15}=t_1,\quad
+ F_{35}=F_{46}=t_2,\quad F_{48}=t_3,\quad
+ F_{68}=F_{70}=t_4,\quad F_{72}=t_5.
+\]
+All others vanish. This can be checked column by column using the displayed
+partial permutation matrices $X,Y$: their nonzero columns specify all
+constraints, and the zero columns force the remaining entries to zero.
+If $r_0,\ldots,r_5$ are the six radical generators in the displayed order,
+the only nonzero products are
+\[
+ r_0r_2=r_1,\qquad r_2r_4=r_3,\qquad r_4r_0=r_5.
+\]
+Every product of three radical generators vanishes. Thus the listed space
+is a local algebra, not merely a seven-dimensional vector-space count.
+
+For clarity, the Euler equations used in the obstruction are
+\begin{align*}
+ d_1-d_0&=1,&d_3-d_2&=1,&d_4-d_3&=1,\\
+ d_6-d_5&=1,&d_7-d_6&=1,&d_0-d_8&=1,\\
+ d_1-d_2&=1,&d_4-d_5&=1,&d_7-d_8&=1,
+\end{align*}
+where $d_i=D_{ii}$. Subtract the last row from the first two rows after
+summing: the left side is zero and the right side is three. This is an
+identity in every characteristic-zero coefficient field. In characteristic
+three this particular obstruction disappears; no conclusion there is
+asserted. The closed walk
+\[
+ a_0b_0^{-1}a_0\,a_1b_1^{-1}a_1\,a_2b_2^{-1}a_2
+\]
+explains the computation: six forward steps and three backward steps have
+net lift displacement three. Arbitrary changes of basis cannot remove the
+Euler contradiction. This is an algebraic lift obstruction, not an
+assertion about the topological fundamental group of the compact torus.
+
+The Hom formula also has a constructive perfect-complex version. Each
+cover representable is finite support and pushes to its corresponding
+vertex projective. For a bounded complex $P^\bullet$ of finite sums of such
+representables and a bounded finite-support complex $N^\bullet$, decompose
+the entire Hom complex by deck displacement. The differential preserves
+that displacement, and only finitely many displacements occur across the
+finitely many degrees. Taking cohomology gives
+\[
+ \operatorname{Hom}_{D(B_L)}(FP^\bullet,FN^\bullet[q])
+ \simeq\bigoplus_g
+ \operatorname{Hom}_{D(\widetilde B_L)}(P^\bullet,T_gN^\bullet[q]).
+\]
+Bounded projective complexes compute these derived Hom spaces, which
+justifies the equality rather than assuming every module perfect. This
+elementary proof does not assert an equivalence of entire bounded derived
+categories or cover objects of infinite projective dimension. The broader
+precovering statement has its exact hypotheses in
+\cite[Theorem~4.28]{CoveringLecture2026}.
+
+Finally the branch involution $\sigma(a_i)=b_i$, $\sigma(b_i)=a_i$
+preserves $B_L$. In characteristic different from two one can study
+$B_L\#k[\Z/2]$ through equivariant representations. For the nine-dimensional
+module above, $\operatorname{rank}X=6$ and $\operatorname{rank}Y=3$, so
+$M\not\simeq\sigma M$. The sum $M\oplus\sigma M$ has canonical swap
+equivariance. This is an explicit orbit construction; it neither chooses a
+nonexistent fixed-object linearization nor identifies this skew group
+algebra with the particular GLS algebras in \cite{TameGLS2026}.
+
+\texttt{CoveringBand.lean} verifies the actual matrices' mixed products,
+cubic nilpotence and absence of an arbitrary Euler matrix. The general
+covering, module endomorphism classification, derived functors and the
+surface/Fukaya equivalence are not fully formalized by these three matrix
+statements. Exact rational code additionally checks thirty-six Hom pairs,
+the full radical multiplication and the two Hom-control defects.
+

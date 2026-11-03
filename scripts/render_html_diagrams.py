@@ -9,7 +9,7 @@ import re,subprocess,json,hashlib,sys
 from concurrent.futures import ThreadPoolExecutor
 ROOT=Path(__file__).resolve().parents[1]
 OUT=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else ROOT/'web/book'
-text='\n'.join((ROOT/'book/chapters'/(n+'.tex')).read_text() for n in ['reviewed-mathematics','ar-components','physics','computations','toricgt','persistence','frontier'])
+text='\n'.join((ROOT/'book/chapters'/(n+'.tex')).read_text() for n in ['reviewed-mathematics','ar-components','coverings','physics','computations','toricgt','persistence','frontier'])
 expressions=[m[0] for m in re.finditer(r'\\begin\{(tikzpicture|tikzcd)\}.*?\\end\{\1\}',text,re.S)]
 assert len(expressions)>=1
 preamble=r'''\documentclass[border=5pt]{standalone}

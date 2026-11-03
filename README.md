@@ -12,7 +12,7 @@ The private local page is **[http://127.0.0.1:8765](http://127.0.0.1:8765)**; th
 
 Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuQuantum/CUDA-Q sources are forked and cloned, but GPU adapters are not executed on this Apple machine. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
 
-The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **240 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
+The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **243 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
 
 Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `python3 scripts/prepare_companion.py`. Start/restart the loopback-only server with `python3 scripts/serve_book.py`; no public deployment or external scripts are needed. The preview is running as a separate local process, so a chat interruption need not stop it.
 
@@ -25,6 +25,20 @@ The [live plan and queue](http://127.0.0.1:8765/implementation-plan.html) tracks
 The [architecture trace layer](examples/architecture/README.md) now exports **22 numerical cases and 836 DAG nodes**: six real trained model families and six explicitly fixed-weight graph/attention/expert references. Gate states, covariance matrices, tensor shapes, masks, tropical ties, routing and readouts are checked against actual PennyLane/Strawberry Fields/Cirq/Qiskit backends and independent scalar loops. [Live manifest](http://127.0.0.1:8765/data/architecture/manifest.json). The new step-through architecture inspector and further persistence tools/formalization remain queued; numerical trace availability does not imply that UI or full formalization is complete.
 
 ## Infinite dessin orders and determinant development (2026-11-03)
+
+The [covering/geometry extension](research/covering-geometry-interfaces.md)
+integrates the newly requested covering lecture, tame GLS/AR paper and
+Schroll geometric-model survey with pinned primary sources. It proves a
+finite-support deck-Hom formula for actual theta quotients, a nine-dimensional
+indecomposable outside the covering image, and a specified higher-genus
+family with the same obstruction (dimensions 27 and 57 in genera 4 and 9).
+The bounded-derived push-down is consequently not dense. A separate actual
+theta example has unequal Hom-control defects 4 and 1 at the same K0 class.
+Exact code checks 36 Hom pairs and the radical multiplication; three new
+Lean statements verify the actual matrix relations and Euler obstruction.
+The [new book chapter](http://127.0.0.1:8765/book/main.html#x1-8400022)
+distinguishes coverings, GLS equivariance, graded/Fukaya categories and
+completions. These results do not establish the arithmetic determinant bridge.
 
 The current focused editions use **infinite-dimensional locally gentle algebras and completed surface orders from explicit cellular dessins** throughout: the nodal interval, spherical loop, two theta dessins, elliptic square, and a Chebyshev family. [Shared core](papers/dessin-core.tex), [expanded proofs](papers/dessin-details.tex), and [pinned primary references](papers/dessin-references.tex) form the new account. Earlier general bodies and source clones remain intact; [previous focused PDFs](outputs/papers/archive/c465a95/) are preserved.
 

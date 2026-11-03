@@ -1,0 +1,75 @@
+\section{Explicit covering calculations and derived transport}
+\label{cover:details}
+Here are the linear details behind Proposition~\ref{cover:band}. Write
+$x_i=F_{ii}$ for diagonal entries of an endomorphism $F$ preserving the
+three vertex spaces. Solving $FX=XF$, $FY=YF$ leaves a common diagonal
+$c$ and six free entries. More explicitly its only off-diagonal entries are
+\[
+ F_{02}=F_{13}=t_0,\quad F_{15}=t_1,\quad
+ F_{35}=F_{46}=t_2,\quad F_{48}=t_3,\quad
+ F_{68}=F_{70}=t_4,\quad F_{72}=t_5.
+\]
+All others vanish. This can be checked column by column using the displayed
+partial permutation matrices $X,Y$: their nonzero columns specify all
+constraints, and the zero columns force the remaining entries to zero.
+If $r_0,\ldots,r_5$ are the six radical generators in the displayed order,
+the only nonzero products are
+\[
+ r_0r_2=r_1,\qquad r_2r_4=r_3,\qquad r_4r_0=r_5.
+\]
+Every product of three radical generators vanishes. Thus the listed space
+is a local algebra, not merely a seven-dimensional vector-space count.
+
+For clarity, the Euler equations used in the obstruction are
+\begin{align*}
+ d_1-d_0&=1,&d_3-d_2&=1,&d_4-d_3&=1,\\
+ d_6-d_5&=1,&d_7-d_6&=1,&d_0-d_8&=1,\\
+ d_1-d_2&=1,&d_4-d_5&=1,&d_7-d_8&=1,
+\end{align*}
+where $d_i=D_{ii}$. Subtract the last row from the first two rows after
+summing: the left side is zero and the right side is three. This is an
+identity in every characteristic-zero coefficient field. In characteristic
+three this particular obstruction disappears; no conclusion there is
+asserted. The closed walk
+\[
+ a_0b_0^{-1}a_0\,a_1b_1^{-1}a_1\,a_2b_2^{-1}a_2
+\]
+explains the computation: six forward steps and three backward steps have
+net lift displacement three. Arbitrary changes of basis cannot remove the
+Euler contradiction. This is an algebraic lift obstruction, not an
+assertion about the topological fundamental group of the compact torus.
+
+The Hom formula also has a constructive perfect-complex version. Each
+cover representable is finite support and pushes to its corresponding
+vertex projective. For a bounded complex $P^\bullet$ of finite sums of such
+representables and a bounded finite-support complex $N^\bullet$, decompose
+the entire Hom complex by deck displacement. The differential preserves
+that displacement, and only finitely many displacements occur across the
+finitely many degrees. Taking cohomology gives
+\[
+ \operatorname{Hom}_{D(B_L)}(FP^\bullet,FN^\bullet[q])
+ \simeq\bigoplus_g
+ \operatorname{Hom}_{D(\widetilde B_L)}(P^\bullet,T_gN^\bullet[q]).
+\]
+Bounded projective complexes compute these derived Hom spaces, which
+justifies the equality rather than assuming every module perfect. This
+elementary proof does not assert an equivalence of entire bounded derived
+categories or cover objects of infinite projective dimension. The broader
+precovering statement has its exact hypotheses in
+\cite[Theorem~4.28]{CoveringLecture2026}.
+
+Finally the branch involution $\sigma(a_i)=b_i$, $\sigma(b_i)=a_i$
+preserves $B_L$. In characteristic different from two one can study
+$B_L\#k[\Z/2]$ through equivariant representations. For the nine-dimensional
+module above, $\operatorname{rank}X=6$ and $\operatorname{rank}Y=3$, so
+$M\not\simeq\sigma M$. The sum $M\oplus\sigma M$ has canonical swap
+equivariance. This is an explicit orbit construction; it neither chooses a
+nonexistent fixed-object linearization nor identifies this skew group
+algebra with the particular GLS algebras in \cite{TameGLS2026}.
+
+\texttt{CoveringBand.lean} verifies the actual matrices' mixed products,
+cubic nilpotence and absence of an arbitrary Euler matrix. The general
+covering, module endomorphism classification, derived functors and the
+surface/Fukaya equivalence are not fully formalized by these three matrix
+statements. Exact rational code additionally checks thirty-six Hom pairs,
+the full radical multiplication and the two Hom-control defects.
