@@ -501,6 +501,158 @@ $H=\left(\begin{smallmatrix}2&-2\\-2&2\end{smallmatrix}\right)$,
 which is PSD and singular. Adding an arbitrary positive diagonal to $H$
 need not preserve $HC=C^TH$.
 
+\section{Euler-correction estimates and the shifted angular character}
+The immutable scalar input is the September manuscript's local identity,
+lines 3845--4206 at the pinned source in the project manifest. We verify
+its rational consequences, without claiming a new verification of the
+underlying Gauss identities. Write $Q=Np\ge2$ and retain its notation
+$V=Q^{-6z}$, $R=a_p^2Q^{4-6x-6z}$, $W=\chi_p(u)Q^{-w}$,
+$D=\eta(p)\overline{\chi_p(u)}Q^{-x}$.
+The unit phases have norm one. At $p\mid u$, $D=W=0$ by zero
+extension, while the local unit phase in $P_p^*$ is retained.
+
+\subsection{All valuation cases in the larger region}
+For $p\nmid u$, let $\mathcal E=P_p^*+D$. The $j=0$ formula gives
+\[
+ \mathcal E=\frac{R((1-Q^{-1})/(1-V)+W-D)
+             -DW(Q-1)V/(1-V)}{1-R}.
+\]
+In the region of the main-text proposition, the exponents of
+$R,QDWV,DV,DW,DVW,VW$ are respectively at most
+\[
+ -\frac{149}{100},\ -\frac{169}{100},\ -\frac{174}{100},\
+ -\frac{17}{10},\ -\frac{269}{100},\ -\frac{194}{100}.
+\]
+Each of $|R|,|V|,|D|,|W|$ is below $3/4$, so the inverses of the
+displayed $1-$factor denominators are at most $4$.
+Consequently $|\mathcal E|\le40Q^{-149/100}$. The exact defect identity
+\[
+ H_p-1=\frac{D(V+W-VW)-VW+(1-V)(1-W)\mathcal E}{1-D}
+\]
+then gives $|H_p-1|\le656Q^{-149/100}<1024Q^{-149/100}$.
+
+For $p\mid u$, $1\le j=v_p(u)\le5$, cancellation gives
+\[
+ H_p-1=\frac{R(1-Q^{-1})
+ -\eta(p)(Q-1)Q^{-x-w}V^{1_{j\le1}}+(1-V)J_j}{1-R}.
+\]
+The middle term has exponent at most $-7/10$. The $J_j$ exponents are
+\[
+\begin{array}{c|ccccc}
+ j&1&2&3&4&5\\\hline
+ \text{exponents}&-17/10&-3/4&-6/5,\,-1&-29/20&-3/2.
+\end{array}
+\]
+There are at most two such terms. Thus $|H_p-1|\le24Q^{-7/10}$,
+and the stated constant $32$ is safe. These calculations include every
+row valuation; primes in the excluded set $S$ have no factors here.
+The larger open region
+\[
+ \Rea x>74/100,\quad \Rea w>94/100,\quad \Rea z>31/200
+\]
+retains respective exponents $-137/100$ and $-68/100$ and the same
+denominator control. This proves convergence on neighborhoods, including
+the boundary of the stated closed region. For any $\epsilon>0$,
+the finite row product is $O_\epsilon(q_u^\epsilon)$ since, outside a
+fixed finite set, $1+32Q^{-68/100}\le Q^\epsilon$ on that open neighborhood.
+
+The source defines its full compensated correction as a finite sum over
+selected prime tuples. Each selected local replacement $G_p$ has only
+$1-V,1-R,1-D$ denominators, and its unselected factors are the $H_p$
+just bounded. That formula therefore also extends holomorphically to
+this neighborhood for each fixed $Z$. No quantitative principal-error
+estimate for the compensated expression follows merely from holomorphy.
+
+\subsection{Principal factor, tails and nonvanishing}
+At $u=1,w=1,z=1/6$, the source's $P_p^*$ becomes
+$(1+v)(r-d)/(1-r)$ with the main-text definitions. This proves the
+displayed principal formula. Its numerator cannot vanish on $\Rea s>1/2$:
+$0<v<1$, $|d|<1$, $|r|<1$ and the strict convexity estimate apply.
+To check convergence, direct subtraction gives
+\[
+ H_p-1=\frac{-v^2+r(1-v+v^3)+d(v+v^2-v^3)-rd}
+                  {(1-r)(1-d)}.
+\]
+For $\sigma=\Rea s>2/3$, $|r|<1/2$ and $|d|<2/3$.
+The numerator is at most $v^2+2|r|+2v|d|$, while the denominator
+reciprocal is less than $6$. This gives
+\[
+ |H_p-1|\le12\bigl(Q^{-2}+Q^{-\sigma-1}+Q^{3-6\sigma}\bigr).
+\]
+
+For completeness, the Eisenstein norm satisfies
+$a^2-ab+b^2\ge(a^2+b^2)/2$. The norm-Euclidean ring is a PID;
+counting generators in $|a|,|b|\le2\sqrt X$ bounds the number of
+ideals of norm at most $X\ge1$ by $25X$.
+Dyadic decomposition consequently gives
+\[
+ \sum_{Np>P_0}(Np)^{-1-\delta}
+ \le\frac{50}{1-2^{-\delta}}P_0^{-\delta}\qquad(\delta>0).
+\]
+For a fixed $\sigma_0>2/3$, use
+$\delta=\min(1,\sigma_0,6\sigma_0-4)>0$.
+Choosing $P_0$ so that the local defect sum is at most $1/4$ gives
+\[
+ |H_\eta(s)-1|\le e^{1/4}-1<1/3
+       \quad(\Rea s\ge\sigma_0).
+\]
+This choice is uniform in phases for that fixed half-plane. Its constants
+degenerate as $\sigma_0\downarrow2/3$; no uniform bound on the whole
+open half-plane is being inferred.
+
+\subsection{What the additional factor permits and prevents}
+Removing $1-r$ leaves
+\[
+ A_p-1=-v^2+\frac{(1-v^2)v(d-r)}{1-d}.
+\]
+On every fixed $\Rea s\ge\sigma_0>1/2$, this is
+$O_{\sigma_0}(Q^{-2}+Q^{-\sigma_0-1}+Q^{2-6\sigma_0})$.
+The product $A$ is thus normally convergent and nonzero there, by local
+nonvanishing and summable defects. The remaining Euler factors are exactly
+those of $L_F^S(6s-3,\theta)$ with
+$\theta=\alpha^{-6}\eta^6$. Units have sixth power one, so the angular
+character is well-defined on ideals; a finite-order twist cannot cancel
+its nonzero angular type.
+
+The stronger obstruction uses the following external classical inputs:
+the primitive completion $\Lambda_\theta$ is entire of order one,
+has gamma factor $\Gamma(s+3)$ times a nonzero exponential, obeys
+$\Lambda_\theta(s)=\epsilon_\theta\Lambda_{\bar\theta}(1-s)$, and
+$\Lambda_{\bar\theta}(\bar s)=\overline{\Lambda_\theta(s)}$.
+The nonvanishing Euler product holds on $\Rea s>1$.
+These are Hecke analytic theory, not GRH or Artin holomorphy assumptions;
+none is verified by the new Lean file. Tate's continuation/functional
+equation framework is~\cite[sections 4.4--4.5]{tate}.
+White's Theorem~2~\cite{white} records the pure angular case, including
+the gamma shift; it is not a citation for arbitrary finite-conductor
+twists or a substitute for the stated order-one input.
+
+Hadamard factorization with finitely many zeros would give
+$\Lambda_\theta(s)=e^{as+b}P(s)$. Along the positive real axis this
+has logarithmic modulus $\Rea(a)\sigma+O(\log\sigma)$, whereas
+Stirling and $L(\sigma,\theta)\to1$ give
+$\sigma\log\sigma+O(\sigma)$. Thus there are infinitely many zeros.
+Euler nonvanishing and the functional equation confine them to
+$0\le\Rea\rho\le1$. Conjugation and the functional equation reflect
+a zero to $1-\bar\rho$ for the same character, so some zero has
+$\Rea\rho\ge1/2$. Gamma is finite and nonzero there, as are the
+deleted Euler factors; hence $L_F^S(\rho,\theta)=0$.
+The unique continuation $A(s)L_F^S(6s-3,\theta)$ then vanishes at
+$(\rho+3)/6$. Enlarging finite $S$ cannot remove that zero.
+This proves the stated $7/12$ obstruction under the explicit classical
+data; a replacement normalization/probe would need new analytic estimates.
+
+The exact program \path{scripts/check_euler_correction.py} checks all
+exponents and evaluates the identities at primary prime representatives
+$-2-3\omega$ and $1-3\omega$, of norms $7$ and $13$, using only
+$\mathbb Q(\sqrt{-3})$ arithmetic. Lean checks scalar cancellation,
+convex local nonvanishing, genuine complex infinite-product components
+under explicit summability hypotheses, and shifted-zero transport.
+The arithmetic convergence estimates, source Gauss identification,
+multivariable holomorphy and classical Hecke completion theory remain
+prose/external dependencies. This does not establish the missing
+compensated contour bounds, mean-square estimates or GRH.
+
 \section{Research tasks with mathematical acceptance criteria}
 \paragraph{Track A: repair the determinant interface.}
 Start with the exact diagonal Euler transfer on $\Rea s>1$.

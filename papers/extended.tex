@@ -4,17 +4,20 @@
 \begin{document}\maketitle\begin{center}\status\end{center}
 \begin{abstract}
 We audit proposed surface-order and Hilbert--P\'olya arguments for GRH.
-We retain a conditional spectral-approximation criterion and prove three
-obstructions: integral hyperbolic matrices have no integer prime-power norms,
-integral cyclic induction fails already for the Klein four group, and
-absolute prime tails diverge throughout the proposed critical-strip range.
-We also exhibit determinant information lost by symmetrization and a direct
-failure of the supplied diagonal diagnostic. We supply convergent arithmetic replacements using Dirichlet partial sums
-and pole-subtracted zeta sums, with explicit errors. These results identify
-what a complete arithmetic spectral construction must still establish.
-They do not establish GRH. A Lean 4 companion verifies exact arithmetic
-obstructions, complex Euler-factor nonvanishing, and a local boundary-convergence
-lemma, spectral matrix criteria and Jensen metric components. The full arithmetic spectral bridge remains unresolved.
+We prove obstructions to the proposed prime/geodesic identification,
+integral cyclic induction, absolute prime-tail estimates and determinant
+preservation, and retain a conditional spectral closure criterion.
+We construct convergent arithmetic approximants with explicit errors and
+analyze coefficient-defined Jensen metrics. From the explicit scalar
+local factors of a separate exponent argument, we extend an Euler-correction
+region and isolate a shifted infinite-order angular Hecke factor.
+Under the stated classical analytic inputs, its zeros obstruct extending
+the unchanged correction's nonvanishing criterion below $7/12$.
+A pinned Lean 4 companion verifies selected arithmetic, complex-analytic,
+matrix and infinite-product components, with its remaining dependencies
+specified. These results do not establish GRH; the full arithmetic
+spectral bridge and the required mean-square and contour estimates
+remain unresolved.
 \end{abstract}
 \tableofcontents\newpage
 \input{core.tex}

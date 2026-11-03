@@ -379,6 +379,81 @@ Newton-sum metric has negative determinant. These are model coefficients,
 not the arithmetic $\xi$ coefficients.
 \end{proof}
 
+\section{Extending an Euler correction and locating an additional factor}
+We now test one missing analytic input of the September argument
+in~\cite{mathsource}. All deductions in this section use its displayed
+scalar local identity; its preceding Gauss/reciprocity derivation and
+main mean-square theorem are not certified here.
+\begin{proposition}[Extension of the explicit local product]
+The displayed correction product $\mathcal H_{\eta,u}(x,w,z)$ converges
+normally on a neighborhood of
+\[
+ \Rea x\ge3/4,\qquad \Rea w\ge19/20,\qquad \Rea z\ge33/200,
+\]
+and is $O_\epsilon(q_u^\epsilon)$ there. On the displayed closed region,
+for $Q=Np$, its local defects
+are at most $1024Q^{-149/100}$ when $p\nmid u$ and
+$32Q^{-7/10}$ when $p\mid u$. The latter is an upper bound,
+not a nonvanishing statement.
+\end{proposition}
+\begin{proof}
+Substitution in the explicit local formulas gives the exponent and
+denominator bounds detailed in the extended edition. All five positive
+row valuations are included. The ideal count sums the first bound;
+the divisor-product estimate handles the finitely many primes of $u$.
+The bounds retain a positive margin on a larger open region.
+\end{proof}
+
+For the principal row put $H_\eta(s)=\mathcal H_{\eta,1}(s,1,1/6)$.
+At a prime set
+\[
+ v=Q^{-1},\quad d=\eta(p)Q^{-s},\quad
+ \theta(p)=\alpha(p)^{-6}\eta(p)^6,\quad r=\theta(p)Q^{3-6s},
+\]
+where $\alpha(p)=p/|p|$ for a generator. Sixth powers remove unit
+ambiguity. Exact simplification gives
+\[
+ H_p=\frac{(1-v^2)[1-vr-(1-v)d]}{(1-r)(1-d)},\qquad A_p=(1-r)H_p.
+\]
+For $\Rea s>1/2$, the numerator is nonzero because
+$|vr+(1-v)d|<v+(1-v)=1$. Moreover
+\[
+ A_p-1=-v^2+\frac{(1-v^2)v(d-r)}{1-d}.
+\]
+Thus $A=\prod_{p\notin S}A_p$ is holomorphic and nonzero on
+$\Rea s>1/2$, while $H_\eta$ itself converges normally and is nonzero
+on $\Rea s>2/3$. On the latter region the exact factorization is
+\[
+ H_\eta(s)=A(s)L_F^S(6s-3,\theta).
+\]
+The character $\theta$ has nontrivial angular factor $\alpha^{-6}$;
+it has infinite order and is outside the source's finite-order target family.
+The correction can be made uniformly close to $1$ on each fixed
+$\Rea s\ge\sigma_0>2/3$ by a sufficiently large finite deletion.
+This supplies the proposed tiny perturbation's local Euler input;
+the compensated contour errors and mean squares remain unproved.
+
+\begin{proposition}[Limitation of the unchanged correction]
+Assume the scalar identity and the classical Hecke completion properties
+listed in the extended edition, including order one and conjugation.
+The analytic continuation of this unchanged $H_\eta$ has a zero with
+real part at least $7/12$. It therefore cannot be nonzero throughout
+$\Rea s>\sigma_0$ for any $\sigma_0<7/12$.
+\end{proposition}
+\begin{proof}
+The entire order-one completion of $L(s,\theta)$ has infinitely many
+zeros: otherwise Hadamard factorization would contradict its
+$\sigma\log\sigma+O(\sigma)$ logarithmic growth on the positive axis.
+Euler nonvanishing, the functional equation and conjugation give a zero
+$\rho$ with $1/2\le\Rea\rho\le1$. Neither gamma nor deleted Euler
+factors vanish there. Hence the displayed continuation vanishes at
+$(\rho+3)/6$, where $A$ is nonzero and $\Rea s\ge7/12$.
+\end{proof}
+The Hecke analytic inputs are classical external dependencies, not Lean
+theorems here~\cite{tate,white}. No GRH or Artin holomorphy premise is
+used. This limits the specified probe and nonvanishing criterion; it
+does not refute GRH, the claimed $7/8$ result, or different constructions.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

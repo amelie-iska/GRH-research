@@ -314,3 +314,9 @@ No explicit RH assumption was found in the inspected exponent chain. This does n
 - Ordinary fixed-ray prime normalizers and fixed-field prime ideal counting are not assertions of square-root prime cancellation. They must not be replaced by a GRH-level uniform prime estimate when extending the method.
 
 The main research priority is therefore to certify the first long-row mean square and its theta transformations, then either formalize the small perturbation interfaces above or attack a specific short-row input such as(MS_3/4). No inference in the inspected material currently establishes an unrestricted iteration to1/2.
+
+## 7. Subsequent resolution of the local Euler sub-obligation
+
+The later [Euler-correction report](euler-correction.md) derives the local extension in section3e from the displayed scalar factors, including all row valuations and normal convergence on a neighborhood of Re x>=3/4 with the same w,z lower bounds. Thus the local Euler holomorphy/nonvanishing input for sigma_t is no longer merely an unchecked exponent suggestion, conditional on that scalar arithmetic identity. The quantitative compensated principal approximation, row counts, general energy and shared contour interfaces remain unverified; the tiny refinement is still conditional.
+
+The same calculation isolates H_eta=A L^S(6s-3,alpha^(-6)eta^6), with A normally convergent and nonzero on Re>1/2. Under the listed classical Hecke completion inputs, the shifted factor gives zeros of H_eta with real part at least7/12. The unchanged correction therefore cannot support its required nonvanishing for targets below7/12, irrespective of the earlier small-parameter envelope obstruction. This does not rule out a new probe or a different argument, and does not refute GRH or establish the source's7/8 claim.

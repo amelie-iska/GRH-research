@@ -8,8 +8,8 @@ A private research workspace for auditing and developing surface-order and Hilbe
 
 | Edition | Source | Compiled PDF | Scope |
 |---|---|---|---|
-| Concise, 8 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
-| Extended, 18 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
+| Concise, 9 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
+| Extended, 21 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
 
 Both editions share [core.tex](papers/core.tex). They are research drafts with full proofs of their stated obstruction results; they do not claim a full proof of GRH or certification of all upstream results. Authorship, novelty assessment and submission venue require confirmation before journal submission.
 
@@ -43,10 +43,11 @@ python3 scripts/check_arithmetic_approximants.py
 python3 scripts/check_exponent_frontier.py
 python3 scripts/check_arithmetic_zero.py
 python3 scripts/check_jensen_metric.py
+python3 scripts/check_euler_correction.py
 sh scripts/build_papers.sh
 ```
 
-Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies twenty-five statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, and Jensen metric components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
+Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 33 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, and Euler-correction components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
 
 Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. Both PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
 
@@ -73,3 +74,5 @@ The [positive-pencil research note](research/positive-pencils.md) provides a val
 A [certified finite arithmetic test](research/arithmetic-zero-certificate.md) finds a simple off-line zero of the fifth Dirichlet partial sum for the primitive character modulo3. Exact rational enclosures and an explicit Rouche argument reject its direct positive-pencil identification on that disk. This is a zero of a finite approximant, not the full L-function; GRH and the limiting spectral construction remain unresolved.
 
 The [Jensen-metric report](research/jensen-metric.md) changes the arithmetic approximation class and proves an explicit compact error bound. Its coefficient-defined Newton-sum metric gives a conditional exact self-adjoint determinant, with positivity still unresolved. A smooth positive Gaussian-mixture counterexample rejects deriving that metric's positivity from ordinary kernel moment positivity. This part concerns zeta RH only; no general GRH conclusion follows. The model checker does not enclose actual xi coefficients.
+
+The [Euler-correction report](research/euler-correction.md) proves a larger convergence region for the explicit September local factors, inheriting their scalar arithmetic identity. The principal correction contains a shifted infinite-order angular Hecke factor. With the stated classical completion inputs, its zeros prevent the unchanged correction from satisfying the common-signal nonvanishing condition below7/12. This does not refute GRH or the source's claimed7/8 result. Quantitative compensated contours and mean squares remain open.
