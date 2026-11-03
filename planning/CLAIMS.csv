@@ -16,7 +16,7 @@ M03,math Siegel main theorem,uniform logarithmic real-zero gap,full text read; n
 L01,lean/GRHResearch.lean,7 finite arithmetic obstruction statements,Lean checked,build and axioms log,analytic interpretation remains prose
 P01,papers/core.tex closure,conditional GRH interface,prose checked,independent review,open arithmetic convergence
 P02,papers/details.tex canonical converse,RH implies centered approximants,prose checked conditional on RH,Hadamard product,not an independent construction
-A01,lean-analytic/,79 analytic spectral and certificate statements,Lean checked,pinned mathlib build and axiom report,full Hurwitz and arithmetic convergence remain prose
+A01,lean-analytic/,88 analytic spectral and certificate statements,Lean checked,pinned mathlib build and axiom report,full Hurwitz and arithmetic convergence remain prose
 A02,papers/core.tex Euler convergence,zero-free truncation no-go,prose checked,Rouche boundary margin,change approximation class
 A03,papers/core.tex arithmetic sums,compact-uniform arithmetic approximants,prose checked,Abel and Euler summation exact tails,establish spectral zero-location bridge
 A04,research/exponent-frontier.md,conditional exponent refinement,conditional only,exact rational checks,prove missing analytic extensions
@@ -49,3 +49,6 @@ CC02,lean-analytic/CentralContour.lean,ten actual height power integral and expo
 FC01,lean-analytic/FiniteCorrelation.lean,universal finite-field local correlation kernel and Gauss identities,Lean checked with actual finite fields and characters,sixteen declarations with standard foundations independently compiled,certify quotient-ring pairing reciprocity and global Gram steps
 FC02,research/finite-correlation.md,prime-power lifting Fourier normalization and common-factor CRT,prose independently reviewed with pairing and phase inputs explicit,exact multiplicity and unit-phase orientation plus actual Eisenstein tests,verify fixed reciprocity identification and Gram periodic-Poisson input
 FC03,papers/core.tex finite local kernel,genuine kernel bound cannot extend off coprime-residual locus,proved by actual F7 principal kernel36>7,Lean value and universal both-zero formula,retain artificial extension and complete Mobius masks in Gram
+GP01,research/gram-poisson.md,annular mean-zero periodic lattice Poisson bound,proved in prose with independent review,normalized q^-2 coefficient and dimension-four dual sum plus small-scale point count,formalize lattice theorem and verify source fixed period
+GP02,research/gram-poisson.md,quantitative Gram scale and dyadic reconstruction,conditional on explicit arithmetic representation period and smoothness inputs,no period-square loss and exact sixth-power exceptional count,certify reciprocity phase and fixed ray modulus
+GP03,lean-analytic/GramPoisson.lean,nine actual finite Fourier and infinite dyadic components,Lean checked,standard foundations with explicit finite group and field hypotheses,lattice Poisson and arithmetic identification remain prose or inputs

@@ -791,6 +791,88 @@ lifting, CRT and the source's arithmetic phase identification remain
 prose. No full Gram, reflection or moment estimate follows from this
 finite input alone.
 
+\section{Periodic cancellation in the Gram estimate}
+\begin{lemma}[Annular periodic Poisson]\label{lem:gram-poisson}
+Let $\mathcal O=\Z[\omega]\subset\C$, $r\in\mathcal O\setminus\{0\}$, $q=|r|^2$,
+and let $a:\mathcal O^2\to\C$ be periodic modulo $r$ in both columns,
+with $|a|\le M$ and complete mean zero. Let $W\in C_c^\infty(\C^2)$
+be supported on fixed annuli $0<c\le|z_j|\le C$, with sufficiently many
+fixed seminorms bounded by $K$. For $N>0$ and $A>2$,
+\[
+ \left|\sum_{m\in\mathcal O^2}a(m)W(m/\sqrt N)\right|
+ \ll_{A,c,C} KMN^2\min\{1,(q/N)^A\}.
+\]
+\end{lemma}
+\begin{proof}
+Normalize the finite Fourier coefficient by $q^{-2}$, the reciprocal
+number of residue pairs. Its norm is at most $M$, and its trivial
+coefficient is zero. Fourier inversion followed by lattice Poisson
+therefore gives $N^2/v^2$ times one sum over the dual of
+$(r\mathcal O)^2$, where $v$ is the covolume of $\mathcal O$.
+There is no additional $q^2$ factor. For $N\ge q$, remove the zero
+frequency and use Fourier decay of order $2A>4$. The dual spacing is
+comparable to $q^{-1/2}$, uniformly in the angle of $r$, giving
+$\sum_{\xi\ne0}(1+\sqrt N|\xi|)^{-2A}\ll(q/N)^A$.
+For $N<q$, fixed annular support makes the original sum empty below
+a fixed positive $N$, and otherwise allows $O(N^2)$ lattice pairs.
+\end{proof}
+
+The hypothesis at small $N$ matters: a mean-zero periodic coefficient
+with $a(0)=1$ and a smooth bump with $W(0)=1$ can leave the single
+origin contribution as $N\to0$. The source weights are annular;
+this example refutes dropping that condition, not the source estimate.
+
+\begin{proposition}[Conditional Gram reconstruction]\label{prop:gram-reconstruction}
+Retain the September source's exact column/row Poisson representation,
+artificial common kernel, original zero masks and fixed reciprocity/ray
+period identification. Assume the stated joint smooth seminorm bounds.
+Retain its prescribed fixed polynomial ranges, in particular
+$Z\ge2$ and $1\le Q,Y'\le Z^{K_0}$ for fixed $K_0$.
+For its fixed ray coefficients, put $P=Y'^2/Q\ge1$. Then the periodic
+cancellation and positive dyadic summation give
+\[
+ \sum_{q_m\ll Q}|A_m|^2
+ \ll (1+|\nu|)^J\frac Q{Y'}
+       \left(1+P^{1/6}+\frac{P^2}{Y'}\right)Z^\epsilon.
+\]
+\end{proposition}
+\begin{proof}
+Insert the full M\"obius sum before separating residual columns.
+For a nonexceptional frequency $k$, CRT isolates a nonprincipal
+residue-field character; its sum is zero. The joint period satisfies
+$q_r\ll q_Cq_k$. In the shell $q_Cq_k\asymp RP$, with dyads
+$q_C\asymp C_0$, $q_d\asymp D_0$, use
+$N=Y'/(C_0D_0)$ in Lemma~\ref{lem:gram-poisson}.
+The label counts and outer normalization give
+\[
+ \frac Q{Y'^3}\left(C_0D_0\frac{RP}{C_0}\right)C_0
+       \left(\frac{Y'}{C_0D_0}\right)^2
+ =\frac Q{Y'}\frac{RP}{C_0D_0}.
+\]
+For $\Lambda=Y'/(RP)$ and $A\ge2$, the remaining dyadic sum is
+\[
+ S_A(\Lambda)=\sum_{n\ge0}(n+1)2^{-n}
+       \min\{1,(2^n/\Lambda)^A\}
+ \ll\frac{1+\log(2+\Lambda)}{\Lambda}.
+\]
+Indeed, if $2^L\le\Lambda<2^{L+1}$, the head is at most
+$[L2^{L+1}+1]/\Lambda^2$ and the tail equals $(L+3)2^{-L}$;
+if $\Lambda<1$, the sum is $4$. Summation in $R$ with a sufficient
+smooth decay gives $P^2/Y'$. Exceptional $k$ have sixth-power ideals
+apart from primes of $C$ and a fixed modulus; their count is
+$\ll_\epsilon(RP/C_0)^{1/6}q_C^\epsilon$.
+The trivial column bound leaves summable factors
+$C_0^{-1/6+\epsilon}D_0^{-1}$, giving $P^{1/6}$.
+The exact zero-frequency diagonal gives $1$.
+\end{proof}
+
+Nine Lean declarations check the finite normalized Fourier bound,
+zero mode, independent-coordinate cancellation, exact dyadic head,
+infinite total and tail, head inequality and scale identity.
+The lattice argument above is prose. Applying it to the source still
+requires the listed arithmetic representation and fixed period; neither
+the full upstream theorem nor a GRH scope is certified by this reduction.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

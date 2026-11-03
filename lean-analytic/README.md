@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 79 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 88 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -82,3 +82,9 @@ The module does not formalize the contour deformation, arithmetic conductor iden
 `FiniteCorrelation.lean` adds sixteen declarations using actual arbitrary finite fields, complex MulChar/AddChar objects, finite sums and the mathlib Jacobi/Gauss theorems. They cover zero extension of character powers, principal sum, unit norm/diagonal, shifted autocorrelation, solved congruence, both-unit and one-zero local kernels, the both-zero corner and its actual F7 value36, nonprincipality of powers with6 not dividing the exponent, principal Gauss value, conjugation and nonprincipal Gauss norm squared. The symmetric a-zero case follows in prose by variable swap/conjugation. No desired field-correlation formula or analytic cancellation estimate is assumed as a premise.
 
 Prime-power quotient-ring lifting, CRT, the source trace pairing and the identification of the unit-phase ratio with its fixed reciprocity bicharacter remain prose or external arithmetic inputs. Finite tests do not certify Gram or reflected moments. The selective JacobiSum.Basic public cache graph was added at the unchanged mathlib/manifest pins without cleaning or upgrades; logs are retained locally. All sixteen full theorem types and standard axiom dependencies were independently reviewed.
+
+## Gram Fourier and dyadic components
+
+`GramPoisson.lean` adds nine declarations: the norm and trivial mode of an actual normalized finite additive Fourier coefficient; two nonprincipal finite-field independent-coordinate means allowing arbitrary coupling of the other labels; the exact finite dyadic head, actual infinite total and tail; a uniform finite head inequality; and the exact nonexceptional scale cancellation. All statements print standard foundational dependencies and assume no zero locations or arithmetic positivity.
+
+The lattice Poisson formula, annular point count, fixed source reciprocity/ray modulus, ideal counts, smooth seminorms and the full arithmetic Gram/moment theorem are not formalized here. The prose application retains their exact scope in research/gram-poisson.md. The already-cached SpecificLimits.Normed module supplies actual real tsums; no dependency, manifest or toolchain changed and no cache was downloaded. The finite checker is a diagnostic, not a substitute for the universal analytic argument.

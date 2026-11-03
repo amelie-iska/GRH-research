@@ -1283,6 +1283,112 @@ vanishing symbols. These samples complement the universal Lean field
 proofs; they do not establish the quantitative Gram estimate, the
 reflected-energy identity or any global zero-free theorem.
 
+\section{Gram cancellation: masks, frequency volume and tails}
+The exact audit target is lines 8345--8560 of the pinned September
+source~\cite{mathsource}, especially its periodic-Poisson equation.
+The following expands Proposition~\ref{prop:gram-reconstruction} and
+separates the surviving arithmetic inputs from the general analytic lemma.
+The prescribed fixed polynomial ranges in $Z$ are retained when
+logarithmic and arithmetic small-power losses are absorbed in $Z^\epsilon$.
+
+\paragraph{Complete extension before separation.}
+Write $s_i=Cn_i$ with $(n_1,n_2)=1$. The complete correlation expansion
+cancels the row Poisson denominator $q_{s_1}q_{s_2}$ and leaves
+$Q/Y'^3$. The source's artificial $L_C$ is bounded by $q_C$, periodic
+modulo $\operatorname{rad}(C)$ and zero when a prime of $C$ meets both
+residuals. Insert the entire M\"obius divisor sum for coprimality before
+taking absolute values. In a term $n_i=dm_i$, the original zero masks
+at primes of $k$, and the artificial zero at primes of $C$, force
+$(d,Ck)=1$. Principal character powers retain these zeros.
+No new coprimality condition is imposed on $m_1,m_2$.
+
+Assume that the exact earlier reciprocity/ray theorem supplies a fixed
+modulus $\mathfrak l$ independent of $C,d,k$. The joint period divides
+\[
+ \mathfrak r=\operatorname{lcm}
+  (\mathfrak l,\operatorname{rad}(C),\operatorname{rad}(k)),
+ \qquad N\mathfrak r\ll q_Cq_k.
+\]
+If a prime $\mathfrak p\nmid C\mathfrak l$ has
+$e=v_{\mathfrak p}(k)\not\equiv0\pmod6$, CRT leaves one
+nonprincipal factor $\chi_{\mathfrak p}(m_1)^e$; every other factor
+is independent of that coordinate. Multiplication by $d$ is invertible
+there. Arbitrary coupling among the remaining residues and the second
+column cannot change the vanishing complete mean. The finite inference
+is formalized; the source-specific fixed modulus is still an input.
+
+\paragraph{One dual sum, not two period volumes.}
+For a coefficient periodic modulo a generator $r$ of $\mathfrak r$,
+let $q=N\mathfrak r$ and
+\[
+ \widehat a(\psi)=q^{-2}\sum_{x\in(\mathcal O/(r))^2}
+                  a(x)\overline{\psi(x)}.
+\]
+There are $q^2$ pairs, so $|\widehat a|\le q_C$ in this application.
+Poisson applied after finite Fourier inversion yields
+\[
+ \frac{N^2}{v^2}\sum_{\xi\in(r\mathcal O)^{*2}}
+       \widehat a(\psi_{-\xi})\widehat W(\sqrt N\xi).
+\]
+The residue character and its ordinary dual-lattice translate already
+index this single lattice. Multiplying by an additional $q^2$ would
+count the same frequencies twice. The coefficient at zero vanishes;
+so do all frequencies restricting to the trivial character.
+Since principal ideals of $\Z[\omega]$ are similar to one fixed
+lattice, there is no changing lattice-shape constant. Fourier decay
+of order $2A>4$ controls the nonzero sum uniformly up to $N\asymp q$.
+
+For $N<q$, source support in both column annuli excludes zero
+coordinates and forces $N$ above a fixed positive threshold whenever
+the sum is nonempty. The direct count is then $O((1+N)^2)=O(N^2)$.
+For comparison, a coefficient
+$(-1)^{u_1}$, where $u_1$ is the first integral coordinate of the first
+Eisenstein column, has mean zero modulo $2$ and value $1$ at the origin.
+A smooth bump supported sufficiently near the origin leaves that term
+alone as $N\to0$. Thus an unrestricted Schwartz formulation allowing
+$a(0)W(0)\ne0$ cannot have the same $N^2$ bound. Appropriate vanishing
+and decay could replace annularity, but no such replacement is needed here.
+
+\paragraph{The exact dyadic tail.}
+For $2^L\le\Lambda<2^{L+1}$ and $A\ge2$,
+\begin{align*}
+ \sum_{n=0}^L(n+1)2^{-n}(2^n/\Lambda)^A
+ &\le\Lambda^{-2}\sum_{n=0}^L(n+1)2^n
+   =\frac{L2^{L+1}+1}{\Lambda^2},\\
+ \sum_{n=L+1}^\infty(n+1)2^{-n}&=(L+3)2^{-L}.
+\end{align*}
+The first expression is at most $2(L+1)/\Lambda$ and the second
+less than $2(L+3)/\Lambda$. Consequently
+$S_A(\Lambda)\le4(L+2)/\Lambda$.
+At the exact cutoff,
+\[
+ S_2(2^L)=3(L+1)2^{-L}+4^{-L}.
+\]
+For example $S_2(1)=4$, $S_2(2)=13/4$ and
+$S_2(4)=37/16$. These include the closed infinite tail, rather than
+silently replacing an infinite sum by a truncated experiment.
+The new Lean module proves the head, total, tail and head bound;
+the diagonal regrouping and full comparison remain prose.
+
+\paragraph{Exceptional frequencies and remaining scope.}
+With $K_R=RP/C_0$, exceptional ideals have
+$(k)=\mathfrak a_1^6\mathfrak e$, where $\mathfrak e$ has exponents
+$0,\ldots,5$ supported on $C\mathfrak l$.
+There are $O_\epsilon(q_C^\epsilon)$ choices and
+$O(K_R^{1/6})$ sixth-power parts in a nonempty shell.
+Their total before the outer $Q/Y'^3$ is
+\[
+ Y'^2(RP)^{1/6}C_0^{-1/6+\epsilon}D_0^{-1}.
+\]
+Choose $\epsilon<1/6$ before summing the two dyads. A sufficiently
+large fixed smooth decay order then sums the $R$ shells.
+This accounts for every scale in the claimed Gram bound and exposes
+no extra period loss. Exact diagnostics check the finite Fourier
+normalization, character cancellation, scale identity and dyadic series.
+They do not prove the source reciprocity theorem, its trace pairing,
+the reflected identity, moments, outer-row estimates or final closure.
+These and the arithmetic spectral bridge remain separate research tasks.
+
 \section{Computational examples and reproducibility}
 The Python checks use integers and \texttt{fractions.Fraction}, with
 no random choices, model weights, scientific datasets or floating-point
