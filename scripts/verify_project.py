@@ -23,6 +23,21 @@ for edition in ["concise","extended","resolutions-concise","resolutions-extended
     assert (root/f"outputs/papers/{edition}.pdf").read_bytes().startswith(b"%PDF")
     log=(root/f"outputs/papers/{edition}.log").read_text()
     assert not re.search(r"undefined references|Citation .* undefined|Reference .* undefined|Overfull",log)
-report={"source_pins_verified":3,"source_worktrees_clean":True,"credential_pattern_scan":"passed for indexed project files; source submodule contents excluded","local_admission_scan":"passed","pdf_final_logs":"resolved references; no overfull boxes","pdf_editions_verified":["concise","extended","resolutions-concise","resolutions-extended"],"scope":"Integrity checks only, not mathematical proof verification"}
+# Book/native HTML integrity supplements the historical four article editions.
+book=root/'outputs/book/surface-orders-book.pdf'
+assert book.read_bytes().startswith(b'%PDF')
+booklog=(root/'outputs/book/surface-orders-book.log').read_text()
+assert not re.search(r'undefined references|Citation .* undefined|Reference .* undefined|Overfull',booklog)
+import xml.etree.ElementTree as ET
+htmlbook=root/'web/book/main.html'
+ET.fromstring(htmlbook.read_text())
+assert htmlbook.read_text().count('class="reader-lab"')==26
+for row in json.loads((root/'book/source-provenance.json').read_text()):
+    import hashlib
+    original=Path(row['path'])
+    copy=root/'book/source-editions'/original.name
+    assert hashlib.sha256(copy.read_bytes()).hexdigest()==row['sha256']
+    if original.exists():assert hashlib.sha256(original.read_bytes()).hexdigest()==row['sha256']
+report={"source_pins_verified":3,"source_worktrees_clean":True,"credential_pattern_scan":"passed for indexed project files; source submodule contents excluded","local_admission_scan":"passed","pdf_final_logs":"resolved references; no overfull boxes","pdf_editions_verified":["concise","extended","resolutions-concise","resolutions-extended"],"book_pdf_and_native_html":"resolved references; no overfull boxes; XML-valid native MathML with26chapter panels", "supplied_source_copies":"both original hashes verified", "scope":"Integrity checks only, not mathematical proof verification"}
 (root/"outputs/checks/project-verification.json").write_text(json.dumps(report,indent=2)+"\n")
 print(json.dumps(report,indent=2))

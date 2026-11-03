@@ -162,3 +162,15 @@ The complete theta order, projective Nakayama decomposition, path-filtration int
 `ThetaTameDescent.lean` adds12printed components plus an auxiliary polynomial lemma. Actual PowerSeries/rescale operators satisfy the infinite coefficient formula, invariant-coefficient vanishing and order-three relation. Actual3-state matrices have the clock/shift commutator, formal comparison determinant and singular closed fiber, weighted-cycle cube and exact local characteristic polynomial, nonconstant-rotation noncommutation, trivial whole-column determinant actions and same-operator vC comparison. The full220printed declaration suite passes at unchanged pins with warnings-as-errors; two old reports are axiom-free, all others use only standard foundations. Two non-error ring tactic suggestions remain informational output.
 
 The formal file does not classify every invariant series by residue, construct the full theta module or invariant End order, formalize stack/vector-bundle descent, prove the general valuation/full-C6 rank theorem or its arbitrary-kernel filtration interface, or construct arithmetic/global positivity. These are proved prose results or open comparisons. The historical7standalone declarations are unchanged and were not rerun. Independent reviewer compiled the current12components and read their literal types/axioms; no unknown GRH-equivalent premise occurs.
+
+## Book, short-row and geometric interfaces (2026-11-03)
+
+The full suite now has **240 printed dependency reports**, all freshly checked with warnings as errors at unchanged Lean4.24/mathlib pins:238 standard-foundation reports and2 axiom-free reports. This count is not the number of all book theorems. The historical standalone seven-result layer remains unchanged and was not rerun.
+
+`ShortRowGram.lean` adds9 reports: finite-field common-factor zero masks, matched character sum and selected-row energy lower bound, actual complete character orthogonality, exact finite complex Gram expansion, Eisenstein norm multiplicativity/positivity identity, and actual omega→2 mod7 evaluation data. It does not formalize the full ideal CRT interface, lattice Poisson or the open original low-gcd estimate.
+
+`BookInterfaces.lean` adds8 reports: actual2×4 Plücker polynomial identity, nodal matrices and characteristic determinant, explicit clock/shift and distinct-site relations, and arbitrary finite complex rectangular Kraus PSD/trace-preservation interfaces with explicit completeness. It does not assert AR factorization, an infinite quantum realization or GRH.
+
+`HyperbolicCoordinates.lean` adds3 reports: actual rational disk-to-Lorentz identity, inverse disk defect and four-coordinate norm preservation under a unit-circle plane rotation. Nonzero denominator and orthogonality hypotheses are explicit. The full infinite tiling, compact quotient and uniformization theorem are not formalized by these coordinate identities.
+
+Types, standard axiom dependencies, focused checks and the full suite are under `outputs/checks/2026-11-03-book/`. See `book/VERIFICATION.md` for the exact per-topic boundary and the all-book formalization backlog.

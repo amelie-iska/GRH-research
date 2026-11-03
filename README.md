@@ -4,14 +4,26 @@ A private research workspace for auditing and developing surface-order and Hilbe
 
 **Current result:** a corrected conditional spectral criterion, convergent arithmetic approximants with explicit errors, an explicit arithmetic Abel trace-class family, and rigorous obstructions to several supplied proof steps. **A complete proof of GRH has not been established.** In particular, the claimed prime/geodesic identification is false, and the absolute prime-tail bound used in the separate GRH PDF diverges in the asserted range. These require mathematical replacements. See [audit](planning/AUDIT.md) and [open obligations](planning/OPEN_OBLIGATIONS.md).
 
+## Research book and interactive companion (2026-11-03)
+
+The new [book TeX](book/main.tex), [PDF](outputs/book/surface-orders-book.pdf), and [native-MathML on-page edition](web/book/main.html) develop the supplied manuscripts with corrected physics, full category-labelled AR diagrams, Hom-control, determinant relations, ToricGT/hybrid interfaces and higher-genus examples. Both **complete original TeX sources** are preserved byte-identically in [source-editions](book/source-editions/) with [provenance](book/source-provenance.json). Preservation is distinct from endorsement: the original unconditional GRH claims do not survive the recorded audits. [Full inclusion and verification ledger](book/VERIFICATION.md).
+
+The private local page is **[http://127.0.0.1:8765](http://127.0.0.1:8765)**; the [on-page book](http://127.0.0.1:8765/book/main.html) has interactive chapter panels, complete code views and local mathematics. The atlas includes genus1/2/3/5/9/16 dessins, 4D rotations of complex sheet coordinates, and finite windows of the infinite {7,3} tiling in disk/hyperboloid views. A generated Manim clip is included. Source windows are labelled as projections or finite patches, with no claimed arithmetic identification.
+
+Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuQuantum/CUDA-Q sources are forked and cloned, but GPU adapters are not executed on this Apple machine. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
+
+The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **240 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
+
+Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `python3 scripts/prepare_companion.py`. Start/restart the loopback-only server with `python3 scripts/serve_book.py`; no public deployment or external scripts are needed. The preview is running as a separate local process, so a chat interruption need not stop it.
+
 ## Infinite dessin orders and determinant development (2026-11-03)
 
 The current focused editions use **infinite-dimensional locally gentle algebras and completed surface orders from explicit cellular dessins** throughout: the nodal interval, spherical loop, two theta dessins, elliptic square, and a Chebyshev family. [Shared core](papers/dessin-core.tex), [expanded proofs](papers/dessin-details.tex), and [pinned primary references](papers/dessin-references.tex) form the new account. Earlier general bodies and source clones remain intact; [previous focused PDFs](outputs/papers/archive/c465a95/) are preserved.
 
 | Current focused edition | TeX | PDF |
 |---|---|---|
-| Concise, 22 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
-| Extended, 49 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
+| Concise, 23 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
+| Extended, 50 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
 
 The paper gives complete explicit resolution/order/Cartan calculations; presentation semi-invariant weights and their precise Hom/Ext scope; positive-degree Schur module functors, Young tableaux and natural Littlewood–Richardson maps; the cyclic monodromy invariant ring and a convergent local positive Cauchy kernel. Schur functors fail termwise exactness and fixed order-base action in displayed examples. On continuous finite-length completed modules cycle traces are nilpotent, so nonconstant parameters require semi-invariants, flags or pp data.
 

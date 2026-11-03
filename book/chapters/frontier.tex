@@ -1,0 +1,43 @@
+\chapter{The remaining arithmetic theorem and a verifiable research loop}
+\label{book:frontier}
+\section{A precise positive spectral target}
+For a primitive nonprincipal Dirichlet character $\chi$, choose the completed $L$-function with its parity, conductor and gamma factor fixed. A sufficient spectral program requires holomorphic functions $F_N$ on a connected domain containing the critical strip, compact-uniform convergence $F_N\to\Lambda(s,\chi)$, and a proved zero-location property for every $F_N$. A self-adjoint determinant representation must include its domain, determinant regularization, nowhere-zero normalization and coefficient comparison. Self-adjointness of an unrelated finite matrix does not establish any of these identifications.
+
+If every $F_N$ is zero-free off the critical line, Hurwitz on each connected off-line component shows that the nonzero holomorphic limit is zero-free there. The limit cannot be identically zero on an open component if it is a nonzero holomorphic function on the connected containing domain. This last connected-domain hypothesis matters: componentwise convergence alone does not rule out an identically zero limit on a disconnected component. The conclusion is conditional until the arithmetic approximants and positive representation are constructed. General Artin functions also need their own holomorphy statement; Brauer quotients do not supply it. Hecke, Dedekind and elliptic-curve normalization and critical centers must remain distinct.
+
+The original modular-geodesic argument fails at its prime identification. Integer hyperbolic traces and $e^{\ell/2}+e^{-\ell/2}=\sqrt p+1/\sqrt p$ cannot match all rational primes. An asymptotic similarity between prime and geodesic counts does not give a termwise equality of Euler factors. Nor does finite-field purity for a family of curves prove number-field GRH. The local Jacobi theta construction is a positive arithmetic benchmark with its own coefficient and symmetry obstructions, treated in the earlier chapters.
+
+\section{A surviving short-row reduction}
+Write $\mathcal O=\Z[\omega]$. For squarefree primary column ideals $n$ of norm about $D$, good away from a fixed set containing 2 and 3, let $\chi_n$ be the cubic residue character extended by zero at nonunits. At the unit ideal take $\chi_1(u)=1$, including $u=0$. For row-independent coefficients $|c_n|\le1$, the normalized Gram expansion is
+\[
+ \mathcal E=D^{-1}\sum_{n,m}c_n\overline{c_m}K_H(n,m),\qquad
+ K_H(n,m)=\sum_{0<Nu\le H}\chi_n(u)\overline{\chi_m(u)}.
+\]
+For $n=ha,m=hb$ with $h,a,b$ squarefree and pairwise coprime,
+\[
+ \chi_n(u)\overline{\chi_m(u)}
+ =\mathbf1_{(u,h)=1}\psi_{a,b}(u),\qquad \psi_{a,b}=\chi_a\overline{\chi_b}.
+\]
+The oscillatory primitive conductor is $ab$; its zero-preserving periodic modulus is $hab$. Cancelling $h$ without its coprimality mask would change the row family. M\"obius inversion gives
+\[
+ K_H(ha,hb)=\sum_{d\mid h}\mu(d)\psi_{a,b}(d)
+  \sum_{0<Nv\le H/Nd}\psi_{a,b}(v).
+\]
+A row weight has to be evaluated at $dv$ in this identity.
+
+For a fixed nonnegative radial Schwartz profile $\Phi$, replace the sharp row cutoff by $\Phi(u/\sqrt H)$. For an off-diagonal pair, $\psi_{a,b}$ is primitive nonprincipal. If $Q=N(ab)$, its complete Gauss transform and lattice Poisson summation give, for every $X>0$,
+\[
+ \left|\sum_{v\in\mathcal O}\psi_{a,b}(v)\Phi(v/\sqrt X)\right|\ll_\Phi\sqrt Q.
+\]
+Indeed the nonzero dual frequencies have Gauss modulus at most $\sqrt Q$ and the zero frequency vanishes. After scaling, Fourier decay bounds their sum by $O_\Phi(Q/X)$: for $X\le Q$ use planar annuli; for $X>Q$ use a decaying power greater than two. The Poisson prefactor is $X/\sqrt Q$. The ideal generator rotates and scales the Eisenstein lattice, so radiality preserves the profile in the divisor sum. This includes scales $X<1$.
+
+For $Nh\asymp G$, the mask costs $\tau(h)\ll_\varepsilon D^\varepsilon$, each kernel is $O_\varepsilon(D^{1+\varepsilon}/G)$, and there are $O(D^2/G)$ pairs. Thus the off-diagonal normalized contribution satisfies
+\[
+ |\mathcal E_G^{\rm off}|\ll_{\Phi,\varepsilon}\frac{D^{2+\varepsilon}}{G^2}.
+\]
+The diagonal is $O_\Phi(H)$ for $H\ge1$. At $H=D^{3/4}$, the dyadic range $G\ge D^{5/8}$ is therefore controlled by $O_{\Phi,\varepsilon}(HD^\varepsilon)$. The small-gcd range, especially $h=1$, remains open. This result is for one fixed smooth radial profile; it does not prove the source's stronger moving-profile or supremum uniformity. The derivation and surviving alternative routes are recorded in \texttt{research/short-row-high-gcd.md}.
+
+\section{Formal coverage and the next research step}
+The new Lean interface checks actual Pl\"ucker polynomials, nodal matrix relations and determinants, finite clock/shift identities and Kraus positivity/trace preservation. The short-row module checks finite-character masks, original finite Gram expansion, matched-row lower bounds and actual Eisenstein norm/evaluation identities. Full planar Poisson summation, ideal-character interfaces, the AR classifications, the derived functors and the complete physics program are not all formalized by these components. Their theorem types and axiom dependencies are printed in the verification logs.
+
+The next load-bearing research task is an estimate for the remaining low-gcd original arithmetic kernel, or an independently constructed positive arithmetic determinant family escaping the precisely stated finite-kernel obstructions. A learned ToricGT-style component may propose a family, choose a search ordering or discover a candidate identity. Acceptance still requires exact algebra, analytic estimates, Lean interfaces where available and independent critical review. A fitted zero picture or a small training loss is an observation, not the desired proof.

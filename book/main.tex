@@ -1,0 +1,54 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,longtable}
+\usepackage[margin=1in,headheight=15pt]{geometry}
+\usepackage{microtype,graphicx,tikz,tikz-cd,fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Surface Orders and Cyclic Time}
+\fancyhead[R]{\small\thechapter}
+\fancyfoot[C]{\thepage}
+\usetikzlibrary{arrows.meta,positioning,calc,decorations.markings}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Surface Orders, Cyclic Time and the Arithmetic Spectral Bridge},pdfauthor={Amelie Schreiber}}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}\newcommand{\Z}{\mathbb Z}\newcommand{\R}{\mathbb R}
+\newcommand{\gshift}[2]{#1\langle #2\rangle}
+\DeclareMathOperator{\tr}{tr}\DeclareMathOperator{\Rea}{Re}
+\newcommand{\status}{\textbf{Research book. GRH is not proved here.}}
+\setcounter{tocdepth}{1}
+\title{Surface Orders, Cyclic Time\ and the Arithmetic Spectral Bridge\\[1em]\large Dessins, resolutions, Auslander--Reiten theory, quantum models and verifiable research}
+\author{Amelie Schreiber\\\small Research development edition}
+\date{November 3, 2026}
+\begin{document}
+\frontmatter\hypersetup{pageanchor=false}\maketitle\clearpage\hypersetup{pageanchor=true}
+\chapter*{Reader's guide and mathematical status}
+This book develops the surface-order and cyclic-time constructions of the supplied \emph{Emergent cyclic time} manuscripts together with the subsequent projective-resolution, arithmetic and spectral work. The originals remain immutable. Their final unconditional GRH claims do not survive the identified arithmetic and operator-theoretic gaps. Here every construction has a specified category, coefficient field and determinant target. Established results, conditional implications, computed experiments and open comparisons play different roles.
+
+The first two parts give the shared article constructions and their expanded proofs. The next part develops entire AR components, corrects the face-unfolding and Hom-control claims, and relates valid meshes to derived triangles and determinantal semi-invariants. The physics part retains the original topics while replacing invalid positivity, hardware and continuum inferences by proved finite statements or explicit research models. Computational chapters supply trained finite neural architectures, higher-genus dessins and a local interactive companion. The final comparison problem remains an independent arithmetic theorem, not a consequence of the pictures or learned parameters.
+
+A reader may start with cellular dessins and the node, then projective resolutions, then the AR atlas. The more advanced arithmetic chapters use character sums and Fredholm determinants. The physics chapters can be read with finite-dimensional linear algebra and elementary quantum mechanics. Each computational claim has a script, seed and stated backend. The genus-two and genus-three sheet views are projections; the torus views are topological embeddings, not asserted uniformizing metrics.
+
+The provenance manifest records the source hashes and chapter inventory. Its location is \path{book/source-provenance.json}. The review records state the audit coverage. The supplied 2053 file is byte-identical to the pinned source called COMPLETED in the source clone; the other supplied COMPLETED file is a shorter, different version. This naming discrepancy is retained in the provenance record. No filename certifies a theorem.
+
+The companion is served on this machine at \url{http://127.0.0.1:8765}. It contains adjustable dessins, category-labelled AR diagrams, quantum carrier circuits, and saved training curves. The private repository remains the authoritative source. Selected lemmas are checked in Lean4; a full formalization of this entire book has not yet been completed.
+{\small\let\savedaddvspace\addvspace\renewcommand{\addvspace}[1]{\savedaddvspace{.6em}}\tableofcontents}
+\mainmatter
+\input{chapters/reviewed-mathematics}
+\part{AR components, derived categories and Hom-control}
+\input{chapters/ar-components}
+\input{chapters/physics}
+\part{Computational and learned constructions}
+\input{chapters/computations}
+\input{chapters/toricgt}
+\input{chapters/frontier}
+\backmatter
+\input{chapters/references}
+\end{document}
