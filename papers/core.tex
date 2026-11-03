@@ -582,6 +582,65 @@ under its explicit inputs. It does not certify those arithmetic moments,
 the earlier $7/8$ theorem, the low reflected-energy application or the
 remaining nonprincipal contours. Floor-bin rows need separate estimates.
 
+
+\section{The perturbed low estimate}
+\begin{proposition}[Conditional low interface]\label{prop:low-energy}
+Assume the source's general reflected-energy estimate, completed-row and
+sector identities, quantitative Gram bound and exact finite low separation,
+with their stated coefficient, support, smoothness and height uniformities.
+For $0\le t\le1/30$, put
+\[
+ \ell_t=1/6+t,\quad M_t=5/6-t,\quad
+ l_x=17/48-t/2,\quad l_y=23/48-t/2.
+\]
+For every fixed finite system of disjoint physical prime slots with
+positive lengths of total $\ell_t$ and the original admissible smooth
+weights, the same finite compensated probe satisfies
+\[
+ |I_{\eta,\mathrm{modified},t}(Z)|
+ \ll Z^{3/16-t/4+\epsilon}\qquad(\epsilon>0).
+\]
+The constant and threshold may depend on that slot system; the exponent
+has no mesh loss. No prior zero-free theorem is needed for this implication.
+\end{proposition}
+\begin{proof}
+For a rescaled subset of length $d$, put $M'=M_t-2d$ and
+$\ell'=\ell_t-d$. The retained dual-range calculation keeps
+$M'+\ell'-1=-3d$. The general energy formula gives
+\[
+ \sum_{0<q_m\ll Q}|B^J_m|^2\ll Z^{M'+s_t(d)+\epsilon},\qquad
+ s_t(d)=\left(\frac{-1/6+5t+d}{4}\right)_+.
+\]
+The extended edition verifies the support mapping and a uniform exponent
+bound including finite logarithmic offsets; the general arithmetic energy
+estimate remains a hypothesis. The tuple ratio $r_J=q_{p_J}/Z^d$ stays
+in a fixed compact subset of $(0,\infty)$, and
+\[
+ X'=Z^{l_x-d}/r_J,\quad Y'=Z^{l_y-d}/r_J,\quad
+ Q=q_{b_*}X'Y',\quad P_a=Y'^2/Q=q_{b_*}^{-1}Z^{1/8}.
+\]
+Uniformly over subsets, $l_x-d\ge11/80$, $l_y-d\ge21/80$,
+$M'\ge2/5$ and $l_y-d-11/48\ge1/30$.
+Thus $Q,Y',P_a\ge1$ eventually and $P_a^2/Y'\ll P_a^{1/6}$.
+The assumed Gram bound and Cauchy--Schwarz give the unscaled tuple bound
+$(X')^{1/2}P_a^{1/12}Z^{s_t(d)/2+\epsilon}$, with a fixed polynomial
+height cost integrated against the external smooth Mellin transform.
+The number of tuples, their coefficient and $X'^{1/2}$ contribute
+$d-3d/2-d/2=-d$. Since $t\le1/30$ and $d\ge0$,
+\[
+ s_t(d)\le d/4,\qquad -d+s_t(d)/2\le-7d/8\le0.
+\]
+Sum the finitely many subsets after allocating the small losses. The final
+exponent is $l_x/2+(1/8)/12=3/16-t/4$.
+\end{proof}
+
+The potential row loss must be retained in this proof, rather than
+set to zero for every subset. The real-power absorption and reflected
+exponent inequalities are kernel-checked components; the arithmetic
+energy and Gram bounds are not. This closes the conditional low interface
+at $t=10^{-5}$, leaving the nonprincipal contours and the deep source
+inputs unverified. It gives no unconditional new zero-free theorem.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

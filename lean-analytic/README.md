@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 46 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 53 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -64,3 +64,9 @@ The arithmetic inert-prime identification at s=3/5, fixed-ray prime theorem, pri
 `FrozenRowCount.lean` adds seven declarations: an actual finite complex moment-to-cardinality inequality, the exact kappa=3/4 plain capacity, real coefficient bounds, crossing bounds on the full parameter rectangle, the exact short-count crossing, balanced cutoff and supply inequality. The coefficient/cutoff statements permit the larger x<=1/2 domain where the formulas still hold; the crossing theorem keeps0<=x<=1/2. All theorem types and standard axiom dependencies are explicit.
 
 These check finite algebra and inequalities, not the arithmetic moment bounds, saturated detector witnesses, selection rounding theorem, floor-bin estimates or global7/8 theorem. The full conditional counting argument and quantifier order remain prose in research/frozen-row-count.md. No imports, pinned dependencies or cache artifacts were added.
+
+## Low-energy components
+
+`LowEnergy.lean` adds seven declarations: the hybrid minimum dichotomy, kernel quarter-range charge, the actual reflected real-exponent inequality with support offsets and retained-range slack, exact rescaling identities, universal scale/Gram margins, subset-loss absorption and an actual real-power bound. The generic exponent theorem uses explicit inequalities for the actual row and dual centers, including nonnegative v and ell_b and a permitted negative unit exponent. It assumes no L-function zero locations.
+
+These results do not establish the arithmetic reflected-energy or Gram estimates, sector/reflection identities, common Fourier-density summability or exact finite low separation. They verify the real inequalities used in their conditional application. The already-present `Mathlib.Analysis.SpecialFunctions.Pow.Real` module cache supplies real powers, at the same pinned mathlib commit; no dependency, manifest, cache download or global environment changed.
