@@ -1,0 +1,9 @@
+# Independent review: finite Gauss and correlation arithmetic
+
+2026-11-02. Read-only review by grh_pdf_audit. No reviewer files or Git mutations.
+
+The reviewer audited the local field case split, prime-power orthogonality/lift normalization, complete common-support CRT phase and the genuine/artificial distinction in source7055–7247. No counterexample to the genuine formulas was found. Exactly one coefficient vanishing is handled by character orthogonality; the principal both-zero corner is(P−1)^2 at zero and must not be identified with the artificial zero extension. The phase ratio orientation is chi_n2(n1)/chi_n1(n2); repeated common primes in one residual introduce no extra lift factor. The pairing/reciprocity identification and global Gram/reflection/moment estimates remain outside the certified field component.
+
+All sixteen literal FiniteCorrelation.lean declarations independently compile warningAsError with propext, Classical.choice and Quot.sound only. Full types use actual arbitrary finite fields and MulChar/AddChar sums; no desired correlation conclusion is a premise. Actual checker assertions were executed in memory with file writes disabled and bytecode disabled:108990field cases,2058independent raw pairs,24prime-power lifts,12overlapping residual correlations and6full CRT cases passed. The inert25field and Hensel embeddings for pi=1+3omega were independently checked.
+
+The new note and both paper sections received full literal review. A remaining ideal-versus-generator denominator in the research note was changed from p^n to pi^n; residue splittings and principal Gauss signs were clarified before final builds. No remaining mathematical correction was found. The primary agent separately ran the complete79-declaration suite. This is independent project review, not external peer review or a proof of any global zero-free region.

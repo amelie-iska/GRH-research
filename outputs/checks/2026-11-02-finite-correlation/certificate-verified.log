@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "finite_field_cases": 108990,
+  "independent_raw_pair_cases": 2058,
+  "residue_fields": [
+    {
+      "primary": "1+3omega",
+      "norm": 7
+    },
+    {
+      "primary": "4+3omega",
+      "norm": 13
+    },
+    {
+      "primary": "-5",
+      "norm": 25,
+      "model": "F5[omega]/(omega^2+omega+1)"
+    }
+  ],
+  "prime_power_lift_cases": 24,
+  "overlapping_residual_prime_cases": 12,
+  "complete_common_factor_CRT_cases": [
+    {
+      "k": [
+        0,
+        0
+      ],
+      "twice_Qsqrt_minus3_coordinates": [
+        0,
+        0
+      ]
+    },
+    {
+      "k": [
+        1,
+        0
+      ],
+      "twice_Qsqrt_minus3_coordinates": [
+        2,
+        0
+      ]
+    },
+    {
+      "k": [
+        -1,
+        0
+      ],
+      "twice_Qsqrt_minus3_coordinates": [
+        -2,
+        0
+      ]
+    },
+    {
+      "k": [
+        4,
+        3
+      ],
+      "twice_Qsqrt_minus3_coordinates": [
+        0,
+        0
+      ]
+    },
+    {
+      "k": [
+        -2,
+        3
+      ],
+      "twice_Qsqrt_minus3_coordinates": [
+        0,
+        0
+      ]
+    },
+    {
+      "k": [
+        2,
+        1
+      ],
+      "twice_Qsqrt_minus3_coordinates": [
+        1,
+        1
+      ]
+    }
+  ],
+  "principal_off_locus_corner": 36,
+  "arithmetic": "exact integers and sixth-root coordinates; no randomness",
+  "scope": "Finite arithmetic diagnostics complement the universal Lean field proofs; not a Gram, reflection, moment or GRH proof."
+}

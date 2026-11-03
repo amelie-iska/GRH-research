@@ -8,8 +8,8 @@ A private research workspace for auditing and developing surface-order and Hilbe
 
 | Edition | Source | Compiled PDF | Scope |
 |---|---|---|---|
-| Concise, 13 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
-| Extended, 32 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
+| Concise, 14 pages | [concise.tex](papers/concise.tex) | [concise.pdf](outputs/papers/concise.pdf) | Definitions, conditional closure, proved obstructions and consequences |
+| Extended, 35 pages | [extended.tex](papers/extended.tex) | [extended.pdf](outputs/papers/extended.pdf) | Same core plus calculations, examples, algebra/topology checks, convergence issues and alternate research tracks |
 
 Both editions share [core.tex](papers/core.tex). They are research drafts with full proofs of their stated obstruction results; they do not claim a full proof of GRH or certification of all upstream results. Authorship, novelty assessment and submission venue require confirmation before journal submission.
 
@@ -48,10 +48,11 @@ python3 scripts/check_principal_residue.py
 python3 scripts/check_frozen_row_count.py
 python3 scripts/check_low_energy.py
 python3 scripts/check_central_contour.py
+python3 scripts/check_finite_correlation.py
 sh scripts/build_papers.sh
 ```
 
-Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 63 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, frozen row-count components, the perturbed low-energy exponent, and central contour/integral components. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
+Lean4.24.0 is isolated under ignored `.tools/`; [lean/README.md](lean/README.md) records the official archive, checked digest, exact theorem scope and instructions for another machine. Mathlib4.24.0 and its pinned verification dependencies are isolated under `.tools/`; public build caches were downloaded without cleaning existing caches. No production library or global Lean configuration was changed. The standalone Lean build verifies seven arithmetic/finite-matrix statements. A [separate pinned mathlib layer](lean-analytic/README.md) verifies 79 statements about complex Euler factors, boundary convergence, Hermitian rigidity, positive spectral pencils, certificate geometry, Jensen metric components, Euler-correction components, principal-residue normalization, frozen row-count components, the perturbed low-energy exponent, central contour/integral components, and actual finite-field characters/Gauss sums. Both layers print axiom dependencies. They do not formalize the whole papers or prove GRH.
 
 Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks are deterministic and need no seed. Both PDFs compile with resolved references and representative rendered pages were inspected. Source data and upstream environments remain untouched. No MCP server was enabled.
 
@@ -87,4 +88,6 @@ The [frozen row-count report](research/frozen-row-count.md) reconstructs the per
 
 The [low-energy report](research/low-energy.md) verifies the perturbed low application under explicit general reflection, Gram and arithmetic-identity inputs. Its possible row loss is absorbed by the rescaled tuple saving. A universal real-exponent bound with support offsets and the actual real-power absorption are checked in Lean. The conditional central extension is described below; its deep source inputs remain unverified and GRH is unresolved.
 
-The [central-contour report](research/central-contour.md) reconstructs the nonprincipal deformation using the first Euler region below7/8. It keeps the full holomorphic correction for movement, spends conductor deficits simultaneously, and integrates only the original row sum after pointwise envelope bounds. Buffered arithmetic bounds and exact high identity remain inputs; outer rows and final closure are not certified. The next research target is the prime-power Fourier/correlation arithmetic feeding the Gram estimate.
+The [central-contour report](research/central-contour.md) reconstructs the nonprincipal deformation using the first Euler region below7/8. It keeps the full holomorphic correction for movement, spends conductor deficits simultaneously, and integrates only the original row sum after pointwise envelope bounds. Buffered arithmetic bounds and exact high identity remain inputs; outer rows and final closure are not certified. The finite arithmetic audit is described below; the quantitative Gram estimate still needs independent certification.
+
+The [finite-correlation report](research/finite-correlation.md) proves the universal local field kernel and finite Gauss identities with actual Lean MulChar/AddChar objects. Prime-power lifting and CRT bookkeeping received a separate prose audit. An exact F7 sum36>7 demonstrates why the genuine kernel cannot replace its artificial extension off the coprime-residual locus; the source already distinguishes them. Exact Eisenstein diagnostics include the inert field of size25. Reciprocity/pairing identification, Gram and global analytic bounds remain unverified; no new zero-free theorem or GRH proof is claimed.

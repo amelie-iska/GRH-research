@@ -721,6 +721,76 @@ Thus the conditional central interface covers $t=10^{-5}$ without a new
 $7/8$ restriction. It establishes neither negativity of every row
 exponent nor the underlying arithmetic inputs, outer rows or GRH.
 
+
+\section{A finite arithmetic input: local correlations}
+The following classical finite-field calculation is unconditional and
+is verified for actual finite fields and multiplicative characters.
+It does not establish a global character moment or GRH.
+\begin{theorem}[Zero-preserving local kernel]\label{thm:finite-kernel}
+Let $k$ be a finite field of size $P$, and let $A:k\to\C$ be a
+multiplicative character extended by zero at $0$, including when principal.
+Put
+\[
+ K_A(a,b;t)=\sum_{ax-by=t}A(x)\overline{A(y)}.
+\]
+For $a,b\ne0$,
+\[
+ K_A(a,b;t)=A(b/a)
+ \begin{cases}
+ P-1,&t=0,\\
+ P-2,&t\ne0,\ A=1,\\
+ -1,&t\ne0,\ A\ne1.
+ \end{cases}
+\]
+If exactly one coefficient is zero, the value is
+$(P-1)1_{A=1}1_{t\ne0}$. If both vanish, the value is
+$(P-1)^2$ when $A=1,t=0$, and zero otherwise.
+\end{theorem}
+\begin{proof}
+The autocorrelation $C_A(h)=\sum_yA(y+h)\overline{A(y)}$ equals
+$P-1$ at $h=0$. For $h\ne0$, scale $y=hz$ to reduce to $h=1$.
+Changing $z$ to $-z$ gives
+$C_A(1)=A^{-1}(-1)J(A^{-1},A)$.
+The Jacobi identities give $-1$ for nonprincipal $A$ and $P-2$ for
+principal $A$; the pinned formal proofs are recorded in~\cite{mathlibfinite}.
+For $a,b\ne0$, solve $x=(t+by)/a$ and factor $A(b/a)$ to obtain
+$A(b/a)C_A(t/b)$. If $b=0,a\ne0$, the fixed value $x=t/a$ and
+the remaining character sum give the stated result. Swapping $x,y$
+and conjugating gives the other case. With both coefficients zero,
+the sum is $|\sum A|^2$ at $t=0$ and empty otherwise.
+\end{proof}
+
+For a good prime $\mathfrak p$ and common exponent $c\ge1$, take
+$A=\chi_{\mathfrak p}^c$ and $(a,b)=(n_2,n_1)$ in the residue field.
+On the genuine coprime-residual locus at least one coefficient is a unit.
+Each field solution has exactly $P^{c-1}$ lifts modulo $\mathfrak p^c$,
+so the common-prime local factor is $P^{c-1}K_A(a,b;t)$.
+Its norm is at most $P^c$. A residual modulus meeting the common
+prime introduces no extra multiplicity. CRT multiplies these local
+congruence sums.
+
+The restriction matters. For the principal character on $\mathbb F_7$,
+$K_1(0,0;0)=36>7$, an actual sum checked in Lean. Thus the genuine
+kernel bound cannot hold on all residual pairs. The source explicitly
+uses an artificial zero extension off the coprime-residual locus; this
+is not a refutation of its stated finite identity.
+
+The Gauss normalization is also consistent. For nonprincipal $A$ and
+nontrivial additive $\psi$, the checked finite identity is
+$|g(A,\psi)|^2=P$. Choose the fixed primary generator $\pi$ of $\mathfrak p$.
+Splitting a residue as $x=x_0+\pi y$ gives the factor $P^{n/2-1}$ after additive orthogonality. Therefore
+\[
+ |G(\mathfrak p^n,t)|=P^{(n-1)/2}1_{v_{\mathfrak p}(t)=n-1}
+ \quad(6\nmid n),
+\]
+For $6\mid n$ the value, including its sign, is
+$G(\mathfrak p^n,t)=P^{n/2}1_{\mathfrak p^n\mid t}
+-P^{n/2-1}1_{\mathfrak p^{n-1}\mid t}$.
+Finite-field Gauss and kernel identities are formalized; quotient-ring
+lifting, CRT and the source's arithmetic phase identification remain
+prose. No full Gram, reflection or moment estimate follows from this
+finite input alone.
+
 \section{Consequences for a revised research article}
 Theorems~\ref{thm:norm}, \ref{thm:cyclic}, and \ref{thm:tail}
 require replacements for the associated proof steps, not additional exposition.

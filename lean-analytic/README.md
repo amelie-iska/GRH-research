@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 63 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 79 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -36,7 +36,7 @@ Lean4.24.0 is the same project-local toolchain as the standalone layer. Mathlib 
 For a fresh machine, obtain the official toolchain, clone the pinned mathlib tag into that path, confirm its hash, and from the mathlib directory run:
 
 ```sh
-lake exe cache get Mathlib.Analysis.Complex.LocallyUniformLimit Mathlib.Analysis.SpecialFunctions.Pow.Complex Mathlib.Analysis.Complex.AbsMax Mathlib.Analysis.Complex.OpenMapping Mathlib.Analysis.Complex.ReImTopology Mathlib.LinearAlgebra.Matrix.Hermitian Mathlib.LinearAlgebra.Matrix.PosDef Mathlib.LinearAlgebra.Matrix.ToLinearEquiv Mathlib.Analysis.SpecialFunctions.Log.Summable
+lake exe cache get Mathlib.Analysis.Complex.LocallyUniformLimit Mathlib.Analysis.SpecialFunctions.Pow.Complex Mathlib.Analysis.Complex.AbsMax Mathlib.Analysis.Complex.OpenMapping Mathlib.Analysis.Complex.ReImTopology Mathlib.LinearAlgebra.Matrix.Hermitian Mathlib.LinearAlgebra.Matrix.PosDef Mathlib.LinearAlgebra.Matrix.ToLinearEquiv Mathlib.Analysis.SpecialFunctions.Log.Summable Mathlib.NumberTheory.JacobiSum.Basic
 ```
 
 The cache command downloads public build artifacts for those imports and uses mathlib's default cache directory. No existing cache was cleaned or reindexed. All cache/tool artifacts are retained; no cache-clean or dependency-upgrade command is needed. Use the pinned manifest, not `lake update`.
@@ -76,3 +76,9 @@ These results do not establish the arithmetic reflected-energy or Gram estimates
 `CentralContour.lean` adds ten declarations: real retained-rectangle geometry, an actual finite cumulative height sum and buffer inclusion, strict and simultaneous real-power conductor credit, exact central normalization/reference/perturbation identities, an actual complex Bochner-integral envelope, and existence of a late real height exponent and natural tail order. The integral theorem explicitly uses integrability of the original function and kernel and an almost-everywhere norm bound. It does not assume measurable pointwise partition labels or integrate unverified pieces.
 
 The module does not formalize the contour deformation, arithmetic conductor identification, scalar/high identity, buffered L-function bounds, trace tails or row moments. Those are explicit inputs to the prose conditional interface. Both real-power and Bochner-integral modules were already cached at the pinned mathlib version; no download or dependency/manifest change occurred.
+
+## Genuine finite-field correlation and Gauss components
+
+`FiniteCorrelation.lean` adds sixteen declarations using actual arbitrary finite fields, complex MulChar/AddChar objects, finite sums and the mathlib Jacobi/Gauss theorems. They cover zero extension of character powers, principal sum, unit norm/diagonal, shifted autocorrelation, solved congruence, both-unit and one-zero local kernels, the both-zero corner and its actual F7 value36, nonprincipality of powers with6 not dividing the exponent, principal Gauss value, conjugation and nonprincipal Gauss norm squared. The symmetric a-zero case follows in prose by variable swap/conjugation. No desired field-correlation formula or analytic cancellation estimate is assumed as a premise.
+
+Prime-power quotient-ring lifting, CRT, the source trace pairing and the identification of the unit-phase ratio with its fixed reciprocity bicharacter remain prose or external arithmetic inputs. Finite tests do not certify Gram or reflected moments. The selective JacobiSum.Basic public cache graph was added at the unchanged mathlib/manifest pins without cleaning or upgrades; logs are retained locally. All sixteen full theorem types and standard axiom dependencies were independently reviewed.
