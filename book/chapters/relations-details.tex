@@ -1,0 +1,195 @@
+% Generated shared actual RG material.
+\section{Relation calculations, splitting functors and determinant limits}
+\label{rel:details}
+\subsection{Correct graphs and stable spaces}
+In the original basis let $f e_1=e_2$, $f e_2=e_3$, $f e_3=0$ and
+$g e_1=0$, $g e_2=e_1$, $g e_3=e_2$. Then
+\[
+\begin{split}
+ \Gamma_f&=\langle(e_1,e_2),(e_2,e_3),(e_3,0)\rangle,\\
+ \Gamma_{f^2}&=\langle(e_1,e_3),(e_2,0),(e_3,0)\rangle,\\
+ \Gamma_{gf^2}&=\langle(e_1,e_2),(e_2,0),(e_3,0)\rangle.
+\end{split}
+\]
+Each graph has dimension three. Omitting zero-output generators changes
+the relation into a partial graph and changes its powers and domain.
+The following are subspaces of $V$, not lists of pairs in $V\oplus V$:
+\[
+\begin{array}{c|cc}
+T&\bigcup_r\ker T^r&\bigcap_r\operatorname{im}T^r\\\hline
+f,g&V&0\\
+gf=\operatorname{diag}(1,1,0)&ke_3&ke_1\oplus ke_2\\
+fg=\operatorname{diag}(0,1,1)&ke_1&ke_2\oplus ke_3
+\end{array}
+\]
+For all four full graphs $\bigcup_r\Gamma_T^r(0)=0$. This corrects both
+the source's graph convention and its interchanged $gf,fg$ kernel entries.
+For an arbitrary multivalued relation there need not even be a linear map
+on its domain; its regular-part theorem requires the appropriate relation
+subquotients and finiteness conditions. We do not replace those hypotheses
+by the graph calculation.
+For comparison, in \cite[Section 4, Lemmas 4.2,4.5--4.6]{CrawleyBoeveyStrings}
+write $C'=\bigcup_n C^n(0)$ and let $C''$ consist of vectors with a
+compatible infinite backward chain. In finite dimension $C''=\bigcap_n C^nV$;
+this equality is not automatic for arbitrary infinite-dimensional spaces.
+The regular quotient is $C^\sharp/C^\flat$, where
+\[
+ C^\sharp=C''\cap(C^{-1})'',\qquad
+ C^\flat=(C''\cap(C^{-1})')+(C'\cap(C^{-1})'').
+\]
+The automorphism statement uses this quotient for an arbitrary relation.
+The splitting statement additionally requires its finite-dimensionality,
+rather than the source's unqualified $\iota/\kappa$ expression.
+
+\subsection{Proof of the dessin-category equivalence}
+Write $a_i:V_i\to V_{i-1}$ for $i=1,\ldots,m-1$ and
+$p_i=a_1\cdots a_i:V_i\to V_0$, with $p_0=1$; the rightmost map acts
+first. Every $p_i$ is an isomorphism. Conjugating the arrow maps by these
+identifications makes $a_i=1$ for $i\ne0$, and makes
+$T=p_{m-1}a_0$ at the remaining arrow. All $b$-relations vanish.
+An intertwiner is transported to maps $h_i$ with $h_i=h_{i-1}$ for
+$i\ne0$ and $h_{m-1}T=T'h_0$. Hence every $h_i=h$ and $hT=T'h$.
+This proves full faithfulness and essential surjectivity, with inverse
+given by $(V,T)\mapsto N_m(T)$. It is also an exact equivalence: kernels
+and cokernels of intertwiners are the usual invariant kernels/cokernels;
+the identity arrow maps remain identities. Finite dimension is a condition
+on modules, while $A_m$ itself is infinite dimensional through its
+arbitrarily long permitted branch paths.
+
+The sum of the full permitted turns on both branches is central in this
+closed dessin algebra. On the chosen modules the $b$-turns vanish and each
+$a$-turn equals $T$, so $u$ acts as $T$ at every vertex. If $T^n=0$,
+the action factors through $A_m/(u^n)$ and extends to the completion.
+If $T$ has a nonzero invertible Fitting summand, no power of $u$ kills
+that summand, precluding continuity. For $T=J_r(\lambda)$ with
+$\lambda\ne0$, the obstruction is stronger: $u-\lambda$ is a unit of
+$k[[u]]$ but its $r$th power annihilates the proposed module, impossible
+for a nonzero unital module. This rules out even an unqualified algebraic
+extension of that band, not just a chosen topology.
+
+\subsection{Functoriality and the actual filtration}
+Kernel dimensions are nondecreasing and at most $n$. Once two successive
+kernels agree, applying $T^{-1}$ shows that all later kernels agree. Thus
+they stabilize by $n$; rank-nullity gives image stabilization as well.
+On $K(T)$, $T^n=0$. On $I(T)$, $T(I(T))=I(T)$; finite dimension makes
+this a bijection. If $hT=T'h$, induction gives $hT^r=T'^rh$, hence
+\[
+ h(\ker T^r)\subseteq\ker T'^r,\qquad
+ h(\operatorname{im}T^r)\subseteq\operatorname{im}T'^r.
+\]
+This proves functoriality even when $\dim V\ne\dim V'$: choose a common
+stabilization exponent for the two finite objects. The decomposition
+projection onto $K(T)$ along $I(T)$ is canonical and commutes with all
+intertwiners; the existence of a Jordan basis is not needed.
+Finite dimension is essential. On $V=k[t]$, multiplication by $t$ has
+stable kernel zero and stable image $\bigcap_r t^rk[t]=0$, although
+$V\ne0$. The same construction $N_m(V,t)$ is an actual infinite-dimensional
+module of $A_m$. Thus the finite Fitting split cannot be extended to every
+module of our infinite algebra merely by repeating its notation.
+
+Let $k_r=\dim\ker T^r$, with $k_0=0$, and form
+$G_r=\ker T^r/\ker T^{r-1}$. For a nilpotent Jordan block of size $s$,
+$k_r=\min(r,s)$, so $\dim G_r$ counts the blocks of size at least $r$,
+and $2k_r-k_{r-1}-k_{r+1}$ counts blocks of size exactly $r$.
+For $J_3(0)\oplus J_1(0)\oplus J_2(1)$ the stable dimensions are
+$4$ and $2$; the kernel dimensions begin $0,2,3,4,4$.
+The $G_r$ are functorial subquotients. Their dimensions do not specify a
+natural choice of basis or split each filtration step.
+
+\begin{proposition}[What the source's splitting-functor assumptions imply]
+Let $\mathcal A,\mathcal B_i$ be additive categories with finite
+biproducts. Suppose additive functors $S_i:\mathcal B_i\to\mathcal A$
+and $F_i:\mathcal A\to\mathcal B_i$ satisfy
+$F_iS_i\cong1$, $F_iS_j\cong0$ for $i\ne j$; only finitely many
+$F_iM$ are nonzero for each $M$; the $F_i$ jointly reflect isomorphisms;
+and maps $\gamma_{i,M}:S_iF_iM\to M$ have invertible $F_i$-images.
+Then $M\cong\bigoplus_i S_iF_iM$. Every nonzero indecomposable is
+$S_iB$ for a unique index and an indecomposable $B$ up to isomorphism.
+\end{proposition}
+\begin{proof}
+Sum the finitely many nonzero $\gamma_{i,M}$ to a map $\gamma_M$.
+After applying $F_j$, all off-diagonal summands vanish, leaving the
+assumed isomorphism $F_j\gamma_{j,M}$, or $0\to0$. Joint reflection
+therefore makes $\gamma_M$ invertible. For an indecomposable $M$, exactly
+one of the nonzero summands can occur. Conversely, if $S_iB=X\oplus Y$
+and $B$ is indecomposable, applying $F_i$ makes one summand vanish, say
+$F_iX=0$; every other $F_jX$ also vanishes. Joint reflection applied to
+$0\to X$ gives $X=0$ up to isomorphism. Finally apply $F_i$ to an
+isomorphism $S_iB\cong S_jB'$ to recover both index and object.
+\end{proof}
+The direction of $\gamma$ matters: it is into $M$, contrary to one source
+diagram. Local finiteness is objectwise in $i$, not a finiteness assertion
+over all objects of a category. Abelian categories require kernels,
+cokernels and the usual exactness axioms; addition is on Hom groups, not
+on an alleged group of quiver vertices. The abstract assumptions above
+do not assert that the family $F_i$ is faithful on arbitrary morphisms.
+Our Fitting example is concrete: $\mathcal B_0$ consists of nilpotent
+pairs, $\mathcal B_\times$ of invertible pairs, $S$ are inclusions and
+$F_0,F_\times$ the two stable summands.
+
+\subsection{Strings, bands, Hom and one non-rigid string}
+In this branch category, Jordan normal form classifies indecomposables
+over an algebraically closed field. Over a general field replace Jordan
+eigenvalues by powers of monic irreducible polynomials. A Jordan block
+$J_r(0)$ is one directed string with $mr$ basis visits and $mr-1$ nonzero
+successor arrows; $J_r(\lambda)$ for $\lambda\ne0$ is a permitted
+cycle band. Formal inverse letters are reverse traversals, not inverse
+elements of $A_m$. Strings and their reverses describe the same string
+module under the usual isomorphism convention. Arbitrary infinite modules
+are not all classified by this finite calculation; the actual finiteness
+hypotheses in \cite{CrawleyBoeveyStrings} remain essential.
+
+Identify a Jordan pair with $k[t]/(t-\lambda)^r$. An intertwiner from
+size $r$ to size $s$ is determined by the image of $1$, annihilated by
+$(t-\lambda)^r$. For equal eigenvalues this subspace has dimension
+$\min(r,s)$. For different eigenvalues, Bezout's identity makes
+$t-\lambda$ invertible on the target, so only zero remains. Full
+faithfulness above transfers this Hom computation to $A_m$.
+The sequence $0\to J_1(0)\to J_2(0)\to J_1(0)\to0$ is not split:
+with $J_2(0)e_1=e_2$, a lift of the quotient generator has nonzero first
+coordinate and is not killed by $J_2(0)$. Its image under $N_m$ is a
+nonsplit ambient-$A_m$ self-extension. Thus even the string
+$N_m(J_1(0))$ is not rigid. No assertion that this exact full subcategory
+is derived fully faithful is needed for the nonsplitting argument.
+
+For this particular closed $A_m$, every oriented or inverse letter has
+exactly two admissible successors: continue on its branch in the same
+orientation, or switch branch and reverse orientation. Cancellation and
+forbidden pairs, including inverse forbidden pairs, remove the other
+choices. A fixed ordering of these choices identifies each first-letter
+cylinder with $\{0,1\}^{\mathbb N}$. The whole infinite-word space is a
+finite disjoint union of Cantor spaces, hence itself Cantor. There are no
+terminating words inside that space to remove. Arbitrary gentle quivers
+can have isolated or eventually forced paths, so this conclusion is not
+universal. Algebraic covers retain the lifted zero-relations and deck
+equivariance data; arbitrary periodic cover representations are not
+automatically bands or a unitary time evolution.
+
+\subsection{A determinant comparison with its exact limits}
+On $\bigoplus_iV_i$, $L^m=\operatorname{diag}(T,\ldots,T)$.
+For a direct determinant proof of~\eqref{rel:det}, successively eliminate
+the blocks $1$ at vertices $1,\ldots,m-1$ in $1-zL$.
+Block row additions preserve determinant and leave $1-z^mT$ at vertex
+zero. This works over $k[z]$ without inverting $z$ or $T$; the zero-size
+case gives one on both sides. The Fitting splitting separates a nilpotent
+factor $1$ and the determinant on the invertible summand. For instance
+$m=5$, $T=J_2(2)$ gives $(1-2z^5)^2$, whose complex roots have modulus
+$2^{-1/5}$, despite being a genuine genus-two dessin module.
+
+Under conjugation of $T$ this is an invariant polynomial. With independent
+source/target bases a presentation determinant is instead a semi-invariant
+with its determinant-character weight; those actions must not be conflated.
+The polynomial equality does not construct a positive Hermitian metric,
+an arithmetic Euler factor, a regularized determinant or a zero-preserving
+map to completed $L$-functions. Functorial kernel filtrations similarly do
+not construct an equivalence of derived/Fukaya categories. A fixed graded
+surface category and a determinant-compatible arithmetic realization remain
+separate obligations.
+
+The exact rational checker evaluates actual genus-two/four quivers, Hom
+equations, full-turn matrices, both filtration directions and the nonsplit
+extension. \path{lean-analytic/LinearRelations.lean} proves full graph
+identities, semiconjugacy and filtration preservation, actual finite-space
+Fitting splitting/stabilization and unit-power annihilation. It does not
+package the entire dessin category, Jordan classification, general
+splitting-functor proposition or determinant proof in Lean.

@@ -228,3 +228,18 @@ supply their stated Hamiltonian/data/functor before claiming applications.
 Sage source is supplied unexecuted; no GPU/hardware or new dependency run.
 Continue P4source construction and the coefficient-sensitive P7 arithmetic
 rotation with the new implementation preserved.
+
+
+## Linear relations: established slice and remaining interface
+
+The actual finite A_m branch category, functorial Fitting decomposition,
+Jordan filtration/Hom formula, nonsplit string extension and cyclic transport
+determinant now have reviewed prose proofs. Eleven general relation/Fitting
+statements are Lean checked. Whole categories, formal completion topology,
+Jordan/Hom and Cantor/determinant arguments are not fully packaged in Lean.
+The source's graph and rigidity assertions cannot be formalized as stated.
+A monodromy band with arbitrary eigenvalue supplies no zero-location theorem;
+finite torsion is not a nonzero completed-order lattice. All PR-B/PR-C,
+positive arithmetic comparison and signed low-gcd obligations remain open.
+Next arithmetic task retains the exact truncated Möbius identity before
+estimating original masks, conductors and coefficient-sensitive type-I/II terms.

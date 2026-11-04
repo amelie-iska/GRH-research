@@ -23,6 +23,7 @@ header='''<div class="reader-nav"><a href="/">Research atlas</a> · <a href="/bo
 s=re.sub(r'(<body\s*>)',r'\1'+header,s,count=1)
 count=0
 canonical={
+ 'linear relations, filtrations and actual branch modules':('relations','examples/relations/check_relations.py','Exact dessin-module relation and filtration code'),
  'cellular dessins and their infinite orders':('atlas','examples/sage/dessin_orders.sage','Exact Sage construction'),
  'almost-split geometry, hom control and determinant relations':('ar','lean/BookInterfaces.lean','Lean matrix and determinant interfaces'),
  'positive evolution, clocks and holonomy':('circuits','examples/quantum/backend_adapters.py','Six-backend carrier code'),
@@ -45,9 +46,10 @@ def panel(m):
  animation=(f'<video controls="controls" preload="metadata" style="width:100%" src="/media/{video}.mp4"></video>' if video else '')
  formal=('<details><summary>Lean: actual worked polynomial resolution and Hom differentials</summary><button class="load-code" data-source="/lean/PersistenceResolution.lean">Load kernel-checked source</button><pre class="source-code"></pre><p>Ungraded worked module only; general staircase, graded, CW, coefficient-cone and arithmetic interfaces remain separate.</p></details>' if section=='persistence' else ('<details><summary>Lean: actual DG algebra and ambient nodal resolution components</summary><button class="load-code" data-source="/lean/NodalDG.lean">Load kernel-checked components</button><pre class="source-code"></pre><p>Full graded/category/completion objects and higher transfers remain separately scoped.</p></details>' if section=='dg' else ''))
  if section=='rg':formal+='<details><summary>Lean: actual finite RG marginal, partition and error identities</summary><button class="load-code" data-source="/lean/FiniteRG.lean">Load kernel-checked RG source</button><pre class="source-code"></pre><p>Nine scalar finite identities; quantum spectral logs, optimization, continuum and categorical interfaces remain separately scoped.</p></details>'
- frame='/'+section+'.html?embed=book' if section in {'architecture','persistence','dg','rg','qtoken'} else '/?embed='+section
- standalone='/'+section+'.html' if section in {'architecture','persistence','dg','rg','qtoken'} else '/#'+section
- height=1100 if section in {'architecture','persistence','dg','rg','qtoken'} else 700
+ if section=='relations':formal+='<details><summary>Lean: graphs, intertwiners and finite Fitting splitting</summary><button class="load-code" data-source="/lean/LinearRelations.lean">Load kernel-checked relation source</button><pre class="source-code"></pre><p>Eleven general linear statements; the whole dessin category and infinite-word classification are not thereby formalized.</p></details>'
+ frame='/'+section+'.html?embed=book' if section in {'architecture','persistence','dg','rg','qtoken','relations'} else '/?embed='+section
+ standalone='/'+section+'.html' if section in {'architecture','persistence','dg','rg','qtoken','relations'} else '/#'+section
+ height=1100 if section in {'architecture','persistence','dg','rg','qtoken','relations'} else 700
  return heading+f'''<aside class="reader-lab" id="lab-{section}"><h3>Interactive {section} laboratory</h3><p>This is the canonical location of this tool. Related chapters link here instead of repeating it. Numerical illustrations are separate from proof.</p><p><a href="{standalone}">Open this laboratory separately</a>.</p><iframe loading="lazy" src="{frame}" title="Interactive {section} examples" height="{height}"></iframe>{animation}{formal}<details><summary>{label}</summary><button class="load-code" data-source="/{code}">Load complete source</button><pre class="source-code"></pre></details><p><a href="/verification.html">Exact formalization and execution coverage</a>.</p></aside>'''
 s=re.sub(r'<h2 class="chapterHead">.*?</h2>',panel,s,flags=re.S)
 s=s.replace('</body>','''<script>document.querySelectorAll('.load-code').forEach(button=>button.onclick=async()=>{const r=await fetch(button.dataset.source);const p=button.parentElement.querySelector('pre');p.textContent=r.ok?await r.text():'Source unavailable';button.hidden=true;});</script></body>''')

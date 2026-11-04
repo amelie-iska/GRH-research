@@ -1,0 +1,39 @@
+GRHResearch.LinearRelations.graph_zero_output.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R] [AddCommGroup V]
+  [Module R V] (f : V →ₗ[R] V) (x : V) : (x, 0) ∈ f.graph ↔ x ∈ LinearMap.ker f
+GRHResearch.LinearRelations.graph_zero_input.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R] [AddCommGroup V]
+  [Module R V] (f : V →ₗ[R] V) (y : V) : (0, y) ∈ f.graph ↔ y = 0
+GRHResearch.LinearRelations.inverse_graph_zero_input.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R]
+  [AddCommGroup V] [Module R V] (f : V →ₗ[R] V) (y : V) : (0, y) ∈ inverse f.graph ↔ y ∈ LinearMap.ker f
+GRHResearch.LinearRelations.graph_composition.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R] [AddCommGroup V]
+  [Module R V] (f g : V →ₗ[R] V) : compose g.graph f.graph = (g ∘ₗ f).graph
+GRHResearch.LinearRelations.inverse_involution.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R] [AddCommGroup V]
+  [Module R V] (C : Submodule R (V × V)) : inverse (inverse C) = C
+GRHResearch.LinearRelations.intertwine_power.{u_1, u_2, u_3} {R : Type u_1} {V : Type u_2} {W : Type u_3} [CommRing R]
+  [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W] (f : V →ₗ[R] V) (g : W →ₗ[R] W) (h : V →ₗ[R] W)
+  (hc : h ∘ₗ f = g ∘ₗ h) (n : ℕ) (x : V) : h ((f ^ n) x) = (g ^ n) (h x)
+GRHResearch.LinearRelations.kernel_filtration_functorial.{u_1, u_2, u_3} {R : Type u_1} {V : Type u_2} {W : Type u_3}
+  [CommRing R] [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W] (f : V →ₗ[R] V) (g : W →ₗ[R] W)
+  (h : V →ₗ[R] W) (hc : h ∘ₗ f = g ∘ₗ h) (n : ℕ) {x : V} (hx : x ∈ LinearMap.ker (f ^ n)) : h x ∈ LinearMap.ker (g ^ n)
+GRHResearch.LinearRelations.image_filtration_functorial.{u_1, u_2, u_3} {R : Type u_1} {V : Type u_2} {W : Type u_3}
+  [CommRing R] [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W] (f : V →ₗ[R] V) (g : W →ₗ[R] W)
+  (h : V →ₗ[R] W) (hc : h ∘ₗ f = g ∘ₗ h) (n : ℕ) {x : V} (hx : x ∈ LinearMap.range (f ^ n)) :
+  h x ∈ LinearMap.range (g ^ n)
+GRHResearch.LinearRelations.finite_kernel_stabilizes.{u_2, u_4} {V : Type u_2} [AddCommGroup V] {K : Type u_4} [Field K]
+  [Module K V] [FiniteDimensional K V] (f : V →ₗ[K] V) (n : ℕ) (hn : Module.finrank K V ≤ n) :
+  LinearMap.ker (f ^ n) = LinearMap.ker (f ^ Module.finrank K V)
+GRHResearch.LinearRelations.finite_dimensional_fitting.{u_2, u_4} {V : Type u_2} [AddCommGroup V] {K : Type u_4}
+  [Field K] [Module K V] [FiniteDimensional K V] (f : V →ₗ[K] V) :
+  IsCompl (LinearMap.ker (f ^ Module.finrank K V)) (LinearMap.range (f ^ Module.finrank K V))
+GRHResearch.LinearRelations.unit_power_annihilation.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R]
+  [AddCommGroup V] [Module R V] (a : R) (ha : IsUnit a) (n : ℕ) (x : V) (hx : a ^ n • x = 0) : x = 0
+'GRHResearch.LinearRelations.graph_zero_output' depends on axioms: [propext, Quot.sound]
+'GRHResearch.LinearRelations.graph_zero_input' depends on axioms: [propext, Quot.sound]
+'GRHResearch.LinearRelations.inverse_graph_zero_input' depends on axioms: [propext, Quot.sound]
+'GRHResearch.LinearRelations.graph_composition' depends on axioms: [propext, Quot.sound]
+'GRHResearch.LinearRelations.inverse_involution' depends on axioms: [propext, Quot.sound]
+'GRHResearch.LinearRelations.intertwine_power' depends on axioms: [propext, Quot.sound]
+'GRHResearch.LinearRelations.kernel_filtration_functorial' depends on axioms: [propext, Quot.sound]
+'GRHResearch.LinearRelations.image_filtration_functorial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.LinearRelations.finite_kernel_stabilizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.LinearRelations.finite_dimensional_fitting' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.LinearRelations.unit_power_annihilation' depends on axioms: [propext, Classical.choice]

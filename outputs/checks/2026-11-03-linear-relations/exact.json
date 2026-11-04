@@ -1,0 +1,308 @@
+{
+  "passed": true,
+  "arithmetic": "exact rational/integer SymPy",
+  "cases": [
+    {
+      "m": 5,
+      "genus": 2,
+      "lam": 0,
+      "size": 1,
+      "filtration": {
+        "kernel_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "image_dimensions": [
+          1,
+          0,
+          0
+        ],
+        "nilpotent_blocks": {
+          "1": 1
+        }
+      }
+    },
+    {
+      "m": 5,
+      "genus": 2,
+      "lam": 0,
+      "size": 3,
+      "filtration": {
+        "kernel_dimensions": [
+          0,
+          1,
+          2,
+          3,
+          3
+        ],
+        "image_dimensions": [
+          3,
+          2,
+          1,
+          0,
+          0
+        ],
+        "nilpotent_blocks": {
+          "3": 1
+        }
+      }
+    },
+    {
+      "m": 5,
+      "genus": 2,
+      "lam": 1,
+      "size": 2,
+      "filtration": {
+        "kernel_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "image_dimensions": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "nilpotent_blocks": {}
+      }
+    },
+    {
+      "m": 5,
+      "genus": 2,
+      "lam": 2,
+      "size": 2,
+      "filtration": {
+        "kernel_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "image_dimensions": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "nilpotent_blocks": {}
+      }
+    },
+    {
+      "m": 9,
+      "genus": 4,
+      "lam": 0,
+      "size": 1,
+      "filtration": {
+        "kernel_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "image_dimensions": [
+          1,
+          0,
+          0
+        ],
+        "nilpotent_blocks": {
+          "1": 1
+        }
+      }
+    },
+    {
+      "m": 9,
+      "genus": 4,
+      "lam": 0,
+      "size": 3,
+      "filtration": {
+        "kernel_dimensions": [
+          0,
+          1,
+          2,
+          3,
+          3
+        ],
+        "image_dimensions": [
+          3,
+          2,
+          1,
+          0,
+          0
+        ],
+        "nilpotent_blocks": {
+          "3": 1
+        }
+      }
+    },
+    {
+      "m": 9,
+      "genus": 4,
+      "lam": 1,
+      "size": 2,
+      "filtration": {
+        "kernel_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "image_dimensions": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "nilpotent_blocks": {}
+      }
+    },
+    {
+      "m": 9,
+      "genus": 4,
+      "lam": 2,
+      "size": 2,
+      "filtration": {
+        "kernel_dimensions": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "image_dimensions": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "nilpotent_blocks": {}
+      }
+    }
+  ],
+  "hom": [
+    {
+      "m": 5,
+      "lam": 0,
+      "mu": 0,
+      "r": 1,
+      "s": 2,
+      "dimension": 1
+    },
+    {
+      "m": 5,
+      "lam": 0,
+      "mu": 0,
+      "r": 2,
+      "s": 3,
+      "dimension": 2
+    },
+    {
+      "m": 5,
+      "lam": 1,
+      "mu": 1,
+      "r": 2,
+      "s": 3,
+      "dimension": 2
+    },
+    {
+      "m": 5,
+      "lam": 0,
+      "mu": 1,
+      "r": 2,
+      "s": 2,
+      "dimension": 0
+    },
+    {
+      "m": 5,
+      "lam": 1,
+      "mu": 2,
+      "r": 1,
+      "s": 2,
+      "dimension": 0
+    },
+    {
+      "m": 9,
+      "lam": 0,
+      "mu": 0,
+      "r": 1,
+      "s": 2,
+      "dimension": 1
+    },
+    {
+      "m": 9,
+      "lam": 0,
+      "mu": 0,
+      "r": 2,
+      "s": 3,
+      "dimension": 2
+    },
+    {
+      "m": 9,
+      "lam": 1,
+      "mu": 1,
+      "r": 2,
+      "s": 3,
+      "dimension": 2
+    },
+    {
+      "m": 9,
+      "lam": 0,
+      "mu": 1,
+      "r": 2,
+      "s": 2,
+      "dimension": 0
+    },
+    {
+      "m": 9,
+      "lam": 1,
+      "mu": 2,
+      "r": 1,
+      "s": 2,
+      "dimension": 0
+    }
+  ],
+  "mixed_fitting": {
+    "kernel_dimensions": [
+      0,
+      2,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "image_dimensions": [
+      6,
+      4,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "nilpotent_blocks": {
+      "1": 1,
+      "3": 1
+    }
+  },
+  "source_graph_ranks": [
+    3,
+    3,
+    3
+  ],
+  "source_kernel_gf": [
+    0,
+    0,
+    1
+  ],
+  "source_kernel_fg": [
+    1,
+    0,
+    0
+  ],
+  "nonsplit_string_extension": true,
+  "two_successors_per_letter": true,
+  "limitations": "Finite diagnostics; general relation/category/determinant proofs are in the article. No GRH or full formal category result."
+}

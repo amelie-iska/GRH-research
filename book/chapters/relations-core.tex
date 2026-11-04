@@ -1,0 +1,65 @@
+% Generated shared actual RG material.
+\section{Linear relations and functorial branch filtrations}\label{rel:core}
+The original linear-relations chapter mixes graphs, partial relations and
+stable kernels. We keep these different objects separate. For a field $k$,
+a linear relation is a subspace $C\subseteq V\oplus V$; its inverse swaps
+coordinates and $DC=\{(x,z):\exists y,(x,y)\in C,(y,z)\in D\}$.
+The full graph $\Gamma_T=\{(x,Tx):x\in V\}$ always has dimension
+$\dim V$, including pairs with zero output. In particular
+$\Gamma_T^n(0)=0$, whereas $(\Gamma_T^{-1})^n(0)=\ker T^n$.
+Thus the source's $\kappa(\Gamma_T)=\bigcup_n\Gamma_T^n(0)$ is zero,
+not the ordinary stable kernel.
+
+For odd $m\geq3$, use the actual clean dessin of
+$y^2=x^m-1$, $\beta=x^m$, on the compact smooth curve, in
+characteristic zero. Its genus is $(m-1)/2$; its infinite locally gentle
+algebra $A_m$ has vertices $i\in\mathbb Z/m$, arrows
+$a_i,b_i:i\to i-1$, and mixed consecutive branch products zero.
+Below paths act in their direction of travel on left representations over
+any coefficient field $k$. Let $\mathcal E_m$ be the full category of
+finite-dimensional representations with every $b_i=0$ and $a_i$ invertible
+for $i\ne0$.
+
+\begin{theorem}[A concrete relation category on an infinite dessin algebra]
+\label{rel:branch}
+The category $\mathcal E_m$ is equivalent to finite-dimensional pairs
+$(V,T)$ with intertwining maps. A normal form $N_m(T)$ puts $V$ at each
+vertex, $a_0=T$, and all other $a_i=1$. For $n=\dim V$,
+\[
+ V=K(T)\oplus I(T),\qquad K(T)=\ker T^n,\quad I(T)=\operatorname{im}T^n.
+\]
+These summands and their kernel/image filtrations are functorial. The first
+restriction is nilpotent and the second invertible. The central full-turn
+parameter $u$ acts as $T$. A finite $N_m(T)$ extends continuously to the
+$u$-adically completed order precisely when $T$ is nilpotent. Such modules
+are torsion, not nonzero order lattices.
+\end{theorem}
+\begin{proof}
+Transport all vertex spaces to vertex zero along the invertible arrows;
+the remaining map is the full-turn monodromy $T$. Arrow-compatible maps
+become exactly $hT=T'h$. Finite kernel/image chains stabilize by step $n$.
+If $v=T^nw$ and $T^nv=0$, then $w\in\ker T^{2n}=\ker T^n$, hence $v=0$;
+rank-nullity proves the direct sum. Stability gives the two restrictions,
+and $hT^r=T'^rh$ proves functoriality. Continuity on a finite-dimensional
+discrete space means some $u^r$ kills it. Conversely nilpotence makes every
+formal series act by a finite sum. This proves the completion assertion.
+\end{proof}
+
+Over an algebraically closed $k$, the indecomposable branch pairs are
+$J_r(\lambda)$. The value $\lambda=1$ is permitted for a polynomial band;
+it is not a forbidden deformation parameter. The nilpotent blocks are
+strings, but are not all rigid: $N_m(J_2(0))$ is a nonsplit self-extension
+of $N_m(J_1(0))$. The Hom dimension between two such Jordan pairs is
+$\min(r,s)$ for equal eigenvalues and zero otherwise. These assertions
+concern this specified full subcategory, not all infinite modules.
+
+If $L$ transports once along the $a$-arrows on $\bigoplus_iV$, then
+\begin{equation}\label{rel:det}
+ \det(1-zL)=\det(1-z^mT).
+\end{equation}
+Eliminating the identity arrow blocks leaves the final monodromy block;
+the eliminated identity blocks have determinant one. For $J_r(\lambda)$
+the answer is $(1-\lambda z^m)^r$. Nilpotent strings therefore contribute
+one, and arbitrary bands have no forced unit-circle zero location. This
+determinant is an actual cyclic-quiver invariant; it is not the missing
+arithmetic positive determinant comparison.

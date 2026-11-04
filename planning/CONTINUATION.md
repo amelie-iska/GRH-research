@@ -507,3 +507,60 @@ analysis recorded in the preceding checkpoint; the independent positive
 arithmetic determinant/zero-location bridge is open. Do not rerun completed
 pair-square/high-gcd audits or promote learned spectra to GRH. Preserve every
 source, trained checkpoint, partial exploratory run and pinned environment.
+
+
+## P4 linear relations, filtrations and genuine branch modules (2026-11-03)
+
+Resumed original2053 lines1097–1307; that exact chapter is identical in both
+preserved sources. Constructed the full finite branch category of actual
+infinite genus2/4 A_m with b=0 and a_i invertible except a0. Transport proves
+an exact equivalence with finite endomorphism pairs. Full finite Fitting
+splitting, functorial kernel/image filtrations, Jordan multiplicities/Hom,
+completed-torsion versus polynomial bands and the cyclic transport determinant
+have complete prose proofs. The general splitting-functor lemma has corrected
+gamma direction and objectwise local finiteness. General relation regular parts
+use the primary Csharp/Cflat quotient; finite splitting is separately scoped.
+
+Decisive corrections: the source graphs omit zero-output pairs, and gf/fg
+ordinary stable kernels are interchanged. Forward zero-orbits of any full
+graph are zero. A genuine string N_m(J1(0)) has a nonsplit extension through
+N_m(J2(0)), refuting blanket rigidity. Lambda1 is a valid polynomial band;
+nonzero-eigenvalue bands cannot extend to the completed order since u−lambda
+is a unit. For J2(2), det(1−zL)=(1−2z^5)^2 has roots off the unit circle.
+These are exact limits on possible geometry-to-positivity shortcuts, not a
+new theorem about zeros of arithmetic L-functions. Multiplication by t on
+k[t] gives an actual infinite module on which finite Fitting fails. The
+specific closed-quiver infinite-word space is Cantor, with two successors
+per letter; the source's universal Cantor-minus-points statement is corrected.
+
+Eleven actual Submodule/LinearMap statements compile with warnings-as-errors;
+full suite306reports passes,304 standard-only/two axiom-free. No missing cache
+was downloaded or upgraded: the final proof uses existing finite-dimensional
+lemmas. Whole category/Jordan/Hom/topology/Cantor/determinant statements are
+not thereby fully formalized. Production exact checker8modules/10fullHom,
+independent24transport/125Hom oracle and focused fresh Lean review pass.
+Unique orbitable relation lab has actual finite coefficient maps, both
+filtrations, genus2/4 controls and polynomial/completed labels. It is a
+projected module graph, not a uniformizing Riemann surface.
+
+The book165pages/35chapters/17diagrams has ten unique canonical tools; focused
+articles32/65pages. PDF pages and mobile/dark/source-loaded native book were
+visually inspected. Exact/JS/browser/companion/theme/nativeXML/source-hash
+checks pass. Fixed a native-dark-canvas double inversion and a harness-only
+HTML parsing race before the full iframe count. A subsequent launcher had
+to wait for the previous known Chrome process to finish closing; no unrelated
+process was replaced. Failed logs and all outputs remain preserved. Both
+original sources/clones, data, models, toolchains, environments and caches
+are intact. No dependency, GPU/hardware/cloud job, authentication or MCP
+activation was introduced; local preview and existing heartbeat remain active.
+
+Evidence: research/linear-relations.md, planning/LINEAR_RELATIONS_SOURCES.json,
+planning/reviews/linear-relations/REVIEW.md and
+outputs/checks/2026-11-03-linear-relations/milestone.json. P4 stays in progress;
+implementation/research completion gates are false. NEXT: rotate to P7's
+mu=2a−a*a*1+b*b*1 with a=mu1_(N<=U),b=mu−a. Prove the exact ideal convolution
+before bounding and retain total squarefreeness, cross-factor coprimality,
+nu,W,row zeros and actual type-I/II conductors. The identity alone is not a
+short-row bound. All independent positive arithmetic determinant/zero-location
+and scope-specific GRH obligations remain open. Do not repeat completed
+pair-square/high-gcd audits or use these band determinants as arithmetic proof.

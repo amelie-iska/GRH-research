@@ -242,3 +242,21 @@ types and standard dependencies print. The full pinned suite passes295reports,
 not substitute claims about neural state compression. Quantum spectral logs,
 partial-trace/operator dynamics, optimization, QEC channels and categorical/
 arithmetic comparisons remain separately scoped and not wholly formalized.
+
+
+## Linear relations and finite Fitting decomposition
+
+LinearRelations.lean adds11 printed statements. Relations are actual Submodule
+objects of V×V, with existential composition and coordinate-swap inverse.
+Graph zero-input/output identities correct the historical partial-graph
+mistake. Explicit h.comp f = g.comp h hypotheses imply power intertwinement
+and preservation of both kernel and image filtrations. The finite-dimensional
+Fitting theorem is proved at N=finrankK V using actual kernel stabilization,
+intersection zero and rank-nullity. A generic unit-power annihilation theorem
+is the algebraic component used in the prose completed-band obstruction.
+
+The full pinned suite passes306 reports,304 standard-foundation-only and2
+axiom-free. Entire A_m categories, the splitting-functor/Jordan/Hom theorems,
+formal topology, cyclic determinant and Cantor-word proof remain prose,
+not disguised as typeclass assumptions. Existing cached dependencies suffice;
+no cache download, compilation upgrade, manifest or toolchain change occurred.

@@ -4,9 +4,9 @@ The book is a developed critical edition of the two supplied manuscripts, not a 
 
 ## Current kernel-checked layer
 
-The working critical book has 34 chapters, with nine unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
+The working critical book has 35 chapters, with ten unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
 
-The pinned Lean 4.24/mathlib suite has **295 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 293 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
+The pinned Lean 4.24/mathlib suite has **306 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 304 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
 
 | Material | Actual formal/computational interface | Remaining boundary |
 |---|---|---|
@@ -83,3 +83,23 @@ Book proofs and evidence: research/actual-rg.md,
 planning/reviews/actual-rg/REVIEW.md, examples/rg/README.md,
 examples/quantum_tokengt/README.md and outputs/checks/2026-11-03-actual-rg/.
 Both complete historical manuscript copies and source-clone pins are preserved.
+
+
+## Linear-relation and Fitting source expansion
+
+Current book165pages/35chapters,17 vector diagrams,ten canonical tools;
+focused articles32/65pages. LinearRelations.lean checks11 statements using
+actual Submodule relations, graph composition/inverse, explicit intertwiners,
+both filtration directions, arbitrary finite-dimensional Fitting splitting
+at dimV, kernel stabilization and unit-power annihilation. Full-suite306
+reports pass (304 standard-only,two axiom-free). No custom axioms/admissions.
+
+The equivalence of the specified full A_m branch category with finite
+endomorphisms, Jordan/Hom classification, topology of continuous completed
+modules, abstract splitting-functor classification, Cantor coding and cyclic
+transport determinant are proved in prose rather than packaged in Lean.
+Finite rational checks cover8 modules/10 full-quiver Hom systems; an independent
+oracle checks24 transports/125 Hom cases. The interactive coefficient graph
+is a projection of a finite module, not a uniformizing Riemann surface or
+an arithmetic operator. The source's graph, stable kernel, rigidity, lambda=1,
+category and generic infinite-word assertions are explicitly corrected.
