@@ -89,15 +89,112 @@ as $(E_{24},0)$ are permitted, but $(E_{22},0)$ is not a stationary image:
 the stationary element is the shared pair $(E_{22},E_{22})$. This last
 distinction prevents a spurious extra idempotent in the proposed basis.
 
-The selector theorem is the faithfulness part of the intended quotient
-comparison, not its surjectivity or universal property. The formal task
-still required is to construct the normal path algebra with concatenation
-and mixed zero relations, prove that all these images lie in the generated
-subalgebra, and prove spanning there. Only then may the existing prose
-isomorphism be promoted to a checked algebra equivalence. Completion,
-module-category and almost-split universal properties require their own
-subsequent constructions. None of these finite-support identities supplies
-an arithmetic self-adjoint determinant or controls zeta zeros.
+The selector theorem alone gives the faithfulness part of the intended
+quotient comparison. The next construction proves membership and spanning
+inside the generated algebra without assuming that comparison. A separately
+defined path algebra, mixed-zero quotient and its universal algebra map
+still require formal packaging. Completion, module-category and almost-split
+universal properties require their own subsequent constructions. None of
+these finite-support identities supplies an arithmetic self-adjoint
+determinant or controls zeta zeros.
+
+\subsection{Constructing every normal image from actual arrows}
+We now prove Theorem~\ref{bre:normal-generated}. This closes the
+membership and spanning gap left by ambient coefficient recovery.
+Let $p(j)=j-1$ modulo five and, inside the actual generated algebra, define
+\[
+ W_b(0,j)=e_j,\qquad
+ W_b(n+1,j)=W_b(n,p(j))\,b_j.
+\]
+In this formula $b_j$ denotes the arrow in the chosen branch; it may be
+an $a$-arrow. The rightmost arrow acts first. This recursive definition
+is an element of $A$ for every $n$, because it uses only its generators
+and multiplication. Set
+\[
+ d_{ij}=\begin{cases}0&i<j,\\1&i\geq j,\end{cases}
+ \quad L_{ij}=j-i+5d_{ij},\quad
+ P_b(i,j)=W_b(L_{ij},j),\quad C_b(i)=P_b(i,i).
+\]
+The integer $L_{ij}$ lies between one and five. In particular $P_b(i,i)$
+is a positive full turn, whereas $W_b(0,i)$ is the shared stationary
+idempotent. These two elements are not interchangeable.
+
+Directly following the arrows, the path $P_b(i,j)$ crosses the weighted
+arrow $b_0$ exactly $d_{ij}$ times. Its image is therefore
+$t^{d_{ij}}E_{ij}$ in factor $b$, with zero in the other factor. The Lean
+proof checks all five-by-five endpoint pairs for each of the two branches;
+this is a finite verification of a finite combinatorial case split, not a
+bound on permitted path lengths. For all $n\in\mathbb N$, induction gives
+\[
+ \operatorname{view}\bigl(C_b(i)^nP_b(i,j)\bigr)
+       =t^{n+d_{ij}}E_{ij}\quad\text{in factor }b.
+\]
+For $n=0$ the power is the unit of the whole two-factor algebra, so
+multiplication by $P_b(i,j)$ still selects the correct branch. The induction
+step uses $C_b(i)$ with image $tE_{ii}$ and
+$E_{ii}E_{ij}=E_{ij}$. No assertion that a branch-only degree-zero diagonal
+belongs to the algebra is needed. Since a permitted slot satisfies
+$q\geq d_{ij}$, the choice $n=q-d_{ij}$ constructs its preimage in $A$.
+This proves membership at every polynomial degree.
+
+For clarity, if $i=2$, $j=4$, $q=2$, then $P_a(2,4)=a_3a_4$ and
+$C_a(2)^2P_a(2,4)$ realizes $(t^2E_{24},0)$ by a length-$12$ arrow word.
+For $i=4$, $j=0$, $q=1$, we have $P_a(4,0)=a_0$ and the exponent
+$q-d_{40}$ is zero. The corresponding exponent must never be replaced
+by a negative power or by an inverse arrow. The construction works over
+$\mathbb F_2$ as well as characteristic zero.
+
+\subsection{Spanning, multiplication and the inverse coordinate map}
+Let $S$ be the $k$-linear span of all normal images in the ambient space.
+Membership just proved gives $S\subseteq A$. We prove the reverse inclusion
+by showing that $S$ is closed under the operations used to generate $A$.
+The product rules are
+\[
+ e_ie_j=\delta_{ij}e_i,\qquad
+ e_rv_{b,i,j,q}=\delta_{ri}v_{b,i,j,q},\qquad
+ v_{b,i,j,q}e_r=\delta_{jr}v_{b,i,j,q},
+\]
+and for two positive images
+\[
+ v_{b,i,j,q}v_{c,r,l,s}=
+ \begin{cases}
+ v_{b,i,l,q+s}&b=c\text{ and }j=r,\\
+ 0&\text{otherwise}.
+ \end{cases}
+\]
+The displayed nonzero output is always an admissible positive image.
+If $q+s>0$ this follows from its degree. If $q+s=0$, nonnegativity gives
+$q=s=0$, so the input conditions imply $i<j=r<l$. Thus $i<l$ and the
+output is admissible even at degree zero. This explains why closure
+cannot be justified merely by ignoring the lower-triangular constraints.
+
+By bilinearity the product of two finite linear combinations lies in $S$.
+Every vertex is one of its normal images, and each arrow is a permitted
+image with degree zero except the wrap arrow, which has degree one.
+The sum of the shared vertices is the unit. Scalar multiples of this unit
+belong to $S$. Induction on the algebra generated by the arrows and vertices
+therefore gives $A\subseteq S$. In Lean this is actual
+\path{Algebra.adjoin_induction}, not a predicate that assumes the desired
+normal form for every element. Consequently $A=S$ as submodules of the
+polynomial matrix-pair space.
+
+Now lift each $v_x$ to an element $\widetilde v_x\in A$ using its proved
+membership. Their images under the injective inclusion are the already
+independent ambient images, so the lifts are independent. The equality
+$A=S$ gives surjectivity of finite expansion; independence gives injectivity.
+This constructs the linear equivalence $E$ on the genuine generated algebra.
+For any $a\in A$, apply the ambient coefficient recovery identity to
+$E^{-1}a$ to obtain
+\[
+ (E^{-1}a)_x=\lambda_x(\operatorname{view}(a)).
+\]
+The formula holds for every element of $A$, not only on a sampled list of
+paths or generators. Its finite support follows from the equivalence with
+finitely supported functions. No convergence of an infinite expansion is
+asserted. Although the product table has been used to prove span closure,
+we have not yet supplied the formal universal map from a separately
+constructed bound-quiver path quotient. The distinction between a linear
+coordinate equivalence and that algebraic quotient interface is retained.
 
 \subsection{Exactness for arbitrary algebra elements}
 In coordinates $M_2=k^5\oplus\epsilon k^5$ let
@@ -142,8 +239,10 @@ axiom reports cover the generators, infinite embedding, actions,
 exactness and absence of a module section. Eight additional reports in
 \path{NormalPath} cover slot extensionality, positive length, the length
 equation, recovery from start and length, biorthogonality, coefficient
-recovery, linear independence and injective normal expansion. The normal-form isomorphism
-with the path quotient above is proved in prose; it is not packaged as
+recovery, linear independence and injective normal expansion. Ten further printed reports now establish actual generated-algebra
+membership, equality with the normal span, lifted independence, bijective
+finite expansion and its explicit inverse coefficients. The normal-form isomorphism
+with the separately constructed path quotient above is proved in prose; it is not packaged as
 a Lean categorical equivalence. Nor is a Yoneda-Ext object or the
 universal factorization property of an almost-split sequence formalized
 by these maps alone.
@@ -166,3 +265,14 @@ over $\mathbb Q,\mathbb F_2,\mathbb F_3,\mathbb F_5$. Invalid constant
 slots are rejected. These are finite diagnostics of the code and
 conventions; the unbounded assertion is established by the Lean theorem,
 not by the size of the tests.
+
+
+A further deterministic checker,
+\path{examples/relations/check_normal_algebra.py}, constructs all 50 shortest
+arrow words and 375 actual preimages, including degree $1{,}000{,}003$,
+using sparse binary powers of the full turns. It checks 5,625 product
+round trips and 200 exact expansions over the four stated fields.
+Three ambient matrices with forbidden constant shapes fail reconstruction,
+as required. These diagnostics test the implementation independently of
+finite degree bounds; the general membership/span/equivalence result is
+the Lean theorem, not an extrapolation from these samples.

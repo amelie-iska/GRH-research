@@ -762,3 +762,46 @@ loaders, unique11frames, nativeMathML, mobile390/390/390 and legacy companion
 checks pass. Preview8765 stays live and ownCDPbrowser9242 is closed. Source
 pins/original hashes are preserved; no dependency/install/auth/MCP or Claude
 config change. Both completion gates remain false; keep existing heartbeat.
+
+## Latest frontier — actual generated-algebra coordinates
+
+The previous ambient-only frontier is advanced: all permitted polynomial
+normal images now belong to the actual genus-two generated algebra, their
+span equals that algebra, and actual A-valued finite expansion is bijective
+with explicit inverse selector coefficients. The new normalEquiv is a
+linear equivalence of the genuine infinite generated A over any field.
+It is not yet an algebra map from a separately constructed mixed-zero path
+quotient. Degree and support remain unbounded; no formal infinite sum or
+completed-order identification is implicit.
+
+Ten new public reports and a fresh360-report suite pass warnings as errors,
+357standard-only/three axiom-free. Independent frozen-source compile and
+literal proof/type/whole-branch review accepted. Exact production375preimages/
+5625products/200expansions and independent320preimages/105625products/
+400expressions pass, including characteristic2 and million-degree sparse
+powers. New source/data loaders, staged PDF/nativeMathML, changed proof-page
+visual review, mobile390/390/390 and legacy companion checks pass. Current
+book180pages/35chapters/18diagrams/11unique labs; focused36/78 and audit20/49.
+See research/normal-path-algebra.md and
+planning/reviews/normal-path-algebra/REVIEW.md.
+
+NEXT rotation: P7 original-family weighted moment before pointwise convexity.
+Use the exact Mellin representation from research/hecke-type-i.md, keeping
+primitive numerator and independently squared primitive denominator,
+d-dependent deletion factors, actual beta_U, principal/residual classes,
+height/profile dependence and original row multiplicities inside a fully
+specified moment. Preserve the short Vaughan term and II−I covariance at
+every scale. A conductor bound or scalar contour is not the required average.
+If no saving is obtained, record the precise failed inequality and rotate;
+do not repeat completed scalar/U1/high-gcd/finite-carrier audits as new proofs.
+The independent positive determinant/zero-location bridge remains open.
+
+Next category/formal task after that rotation: construct the separate normal
+concatenation/bound-quiver quotient algebra and universal algebra comparison,
+using the now-proved membership/spanning/bijection without circularity.
+Then package the true module-category sequence before universal AR claims.
+Whole-book formalization and every intended GRH scope remain incomplete.
+Keep both completion gates false and the existing heartbeat active. All
+source/checkpoint/history/environment/cache progress is preserved. No new
+dependencies, training, paid/cloud/GPU, authentication/MCP activation or Claude
+config changes. Preview8765 stays live; ownCDPbrowser9242 closed.

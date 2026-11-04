@@ -1,5 +1,5 @@
 # Complete source inclusion and development map
-Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical178-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
+Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical180-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
 
 ## emergent_cyclic_time_hilbert_polya_GRH_2053.tex
 SHA256 `08708269403c3095381c45eb4c82435a073aaca8819f427a232e8eba368e05dc`; 15556 lines.
@@ -195,5 +195,7 @@ The actual genus-two dessin chapter now expands the unbounded polynomial
 normal-image proof with explicit linear coefficient selectors, finite-support
 recovery and the start/length convention. Eight general Lean statements
 formalize this independence slice; no finite degree cutoff is assumed.
-Membership, spanning and the full path-quotient equivalence remain prose
-obligations. This is progress toward that comparison, not its completion.
+A further ten Lean reports now prove actual generated-algebra membership,
+spanning and bijective finite normal expansion with the selector inverse.
+The separately constructed path-quotient algebra comparison/universal map,
+completed order and categorical interfaces remain separate obligations.

@@ -317,7 +317,21 @@ recovery for arbitrary `Key →₀ k`, `LinearIndependent k (vector k)` and
 injectivity of `Finsupp.linearCombination`. Start and length also uniquely
 recover the row and degree. No degree cutoff or positivity premise occurs.
 
-The current full350-report suite has347standard-only reports andthree
-axiom-free. This family is proved independent in the ambient matrix pair
-space; membership/spanning in the generated subalgebra and the complete
-path quotient algebra equivalence are still separate formal work.
+At the preceding ambient-only milestone the350-report suite had347
+standard-only reports andthree axiom-free. Membership/spanning were still
+open then; the following construction now proves both. A separately
+defined path-quotient algebra comparison remains formal work.
+
+
+## Normal coordinates in the actual generated algebra
+
+Ten further `NormalPath` reports construct all normal images from actual
+short arrow walks and arbitrary full-turn powers, show the generated
+subalgebra equals their linear span, and lift independence to true elements
+of A. `lifted_expansion_bijective` proves actual A-valued Finsupp expansion
+bijective, and `normalEquiv_symm_coefficient` identifies every inverse
+coordinate with the polynomial selector. This discharges membership and
+spanning, previously open; it is not a formal algebra comparison from a
+separately constructed quiver-path quotient. No completion/category/AR or
+GRH claim is inferred. The fresh full suite is360reports,357standard-only
+andthree axiom-free.

@@ -300,12 +300,12 @@ independent positive arithmetic determinant comparison has been closed.
 
 ### Normal-path formalization frontier
 
-Unbounded normal-image independence and finite-support coefficient recovery
-are now Lean checked over every field. This discharges only the ambient
-faithfulness slice. Next: construct the mixed-zero path quotient/normal
-concatenation object, prove all permitted images belong to the generated
-polynomial matrix-pair algebra, prove it spans that algebra, and package
-the equivalence. Then construct the actual module-category sequence before
+Unbounded normal-image membership, independence, equality of the normal
+span with the actual generated algebra, and bijective A-valued finite
+expansion are now Lean checked over every field. Next: construct a separate
+mixed-zero path quotient/normal concatenation algebra and package its
+universal multiplicative comparison. The current linear equivalence alone
+is not this separately defined algebra-map interface. Then construct the actual module-category sequence before
 any assertion of universal almost-split factorization. Polynomial finite
 sums, formal completions and lattices must remain distinct. The positive
 arithmetic determinant/zero-location bridge and original signed low-gcd

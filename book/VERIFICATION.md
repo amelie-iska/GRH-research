@@ -6,7 +6,7 @@ The book is a developed critical edition of the two supplied manuscripts, not a 
 
 The working critical book has 35 chapters, with eleven unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
 
-The pinned Lean 4.24/mathlib suite has **350 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 347 reports use standard foundational axioms only and 3 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
+The pinned Lean 4.24/mathlib suite has **360 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 357 reports use standard foundational axioms only and 3 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
 
 | Material | Actual formal/computational interface | Remaining boundary |
 |---|---|---|
@@ -192,16 +192,15 @@ comparison and GRH remain open. Independent review:
 `planning/HECKE_TYPE_I_SOURCES.json`.
 
 
-## Unbounded normal-image faithfulness
+## Prior milestone: ambient normal-image faithfulness
 
-The current book has178pages/35chapters/18diagrams/11unique laboratories;
+At the ambient-only milestone the book had178pages/35chapters/18diagrams/11unique laboratories;
 focused articles35/76pages (audit20/49 unchanged). Eight new declarations
 in BranchExtension.NormalPath prove slot extensionality, positive path
 length, the length equation, recovery from start and length, selector
 biorthogonality, arbitrary finite-support coefficient recovery, actual
 LinearIndependent and injectivity of the Finsupp expansion. These use
-actual unbounded polynomial matrix pairs over every field. The full350
-reports are347standard-foundation only andthree axiom-free.
+actual unbounded polynomial matrix pairs over every field. That350-report suite had347standard-foundation only andthree axiom-free.
 
 An independent reviewer freshly compiled the final source with warnings
 as errors and checked literal theorem types and both TeX proofs. The
@@ -213,8 +212,36 @@ Lean proof. Source and finite exact evidence load inside the existing
 canonical relation lab; no duplicate iframe or replacement of the
 infinite algebra has been introduced.
 
-Generated-subalgebra membership and spanning, multiplication in a normal
-path quotient, the algebra equivalence and categorical/AR universal
-properties remain further formalization obligations. No claim of a full
+At that milestone generated-subalgebra membership and spanning remained
+open; the next subsection records their discharge. A separately defined
+normal-path quotient algebra and categorical/AR universal properties remain
+further formalization obligations. No claim of a full
 book formalization or arithmetic positive determinant/GRH theorem is made.
 Review: planning/reviews/normal-path-basis/REVIEW.md.
+
+
+## Actual generated-algebra normal coordinates
+
+Current book180pages/35chapters/18diagrams/11unique laboratories; focused
+articles36/78pages, audit20/49unchanged. Ten further Lean reports construct
+all permitted images as actual shortest arrow products times arbitrary
+cycle powers, prove the normal span equals the generated subalgebra, and
+prove actual A-valued finite expansion bijective with explicit inverse
+selector coordinates. `normalEquiv` is a genuine linear equivalence of
+the infinite generated algebra; degrees and finite supports are unbounded.
+The full360-report suite uses357standard-only reports andthree axiom-free.
+
+Production exact checks construct50shortest arrow words and375preimages
+through degree1000003, with5625product round trips and200expansions over
+Q/F2/F3/F5 (187product examples nonzero);three forbidden ambient constant
+shapes fail reconstruction. The independent no-production-import oracle
+checks320constructive preimages,105625products,400generated expressions
+and25invalid coordinate pairs. General membership/spanning/bijection is
+supported by Lean, not extrapolated from finite samples.
+
+A separately constructed mixed-zero path quotient and its universal
+multiplicative comparison, completed order/lattice and categorical/AR
+interfaces are still further formal work. No claimed full book
+formalization, spectral positivity or GRH follows. Independent final
+review and focused fresh compile are recorded in
+planning/reviews/normal-path-algebra/REVIEW.md.

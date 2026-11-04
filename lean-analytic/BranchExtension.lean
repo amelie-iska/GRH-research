@@ -471,3 +471,249 @@ end GRHResearch.BranchExtension.NormalPath
 #print axioms GRHResearch.BranchExtension.NormalPath.normal_vectors_independent
 #check GRHResearch.BranchExtension.NormalPath.normal_form_injective
 #print axioms GRHResearch.BranchExtension.NormalPath.normal_form_injective
+
+/-! Realize every permitted normal image inside the generated infinite algebra. -/
+namespace GRHResearch.BranchExtension.NormalPath
+noncomputable section
+open Polynomial Matrix
+variable (k : Type*) [Field k]
+
+def arrow (b : Bool) (j : Vertex) : A k :=
+  generator k (if b then Gen.b j else Gen.a j)
+
+def walk (b : Bool) : ℕ → Vertex → A k
+  | 0,j => generator k (.vertex j)
+  | n+1,j => walk b n (previous j) * arrow k b j
+
+def shortWalk (b : Bool) (i j : Vertex) : A k :=
+  walk k b (if i<j then j.val-i.val else 5+j.val-i.val) j
+
+def positive (b : Bool) (i j : Vertex) (q : ℕ) : Ambient k :=
+  if b then (0,Matrix.single i j (monomial q 1))
+  else (Matrix.single i j (monomial q 1),0)
+
+private theorem short_walk_view (b : Bool) (i j : Vertex) :
+    view k (shortWalk k b i j) = positive k b i j (if i<j then 0 else 1) := by
+  cases b <;> fin_cases i <;> fin_cases j <;>
+    simp [shortWalk,walk,arrow,rawGenerator,edge,previous,positive]
+  all_goals rw [Polynomial.monomial_one_one_eq_X]
+
+private theorem positive_product (b : Bool) (i j l : Vertex) (q r : ℕ) :
+    positive k b i j q * positive k b j l r=positive k b i l (q+r) := by
+  cases b <;> simp [positive,Polynomial.monomial_mul_monomial]
+
+theorem lifted_normal_power (b : Bool) (i j : Vertex) (n : ℕ) :
+    view k ((shortWalk k b i i)^n * shortWalk k b i j) =
+      positive k b i j (n+(if i<j then 0 else 1)) := by
+  induction n with
+  | zero => simp [short_walk_view]
+  | succ n ih =>
+    rw [pow_succ',mul_assoc,map_mul,ih,short_walk_view]
+    simp only [lt_self_iff_false,ite_false]
+    rw [positive_product]
+    congr 1
+    omega
+
+theorem positive_mem_surface (b : Bool) (s : Slot) :
+    positive k b s.row s.col s.degree ∈ surface k := by
+  let q₀ : ℕ := if s.row<s.col then 0 else 1
+  have hq : q₀≤s.degree := by
+    dsimp [q₀]
+    split_ifs with h
+    · exact Nat.zero_le _
+    · rcases s.allowed with h' | h'
+      · exact False.elim (h h')
+      · omega
+  have hp := lifted_normal_power k b s.row s.col (s.degree-q₀)
+  have he : s.degree-q₀+q₀=s.degree := Nat.sub_add_cancel hq
+  change view k ((shortWalk k b s.row s.row)^(s.degree-q₀) *
+      shortWalk k b s.row s.col) = positive k b s.row s.col (s.degree-q₀+q₀) at hp
+  rw [he] at hp
+  exact hp ▸ ((shortWalk k b s.row s.row)^(s.degree-q₀) *
+      shortWalk k b s.row s.col).property
+
+theorem vector_mem_surface (x : Key) : vector k x ∈ surface k := by
+  cases x with
+  | inl i => exact (generator k (.vertex i)).property
+  | inr bs =>
+    rcases bs with ⟨b,s⟩
+    exact positive_mem_surface k b s
+
+
+def lift (x : Key) : A k := ⟨vector k x,vector_mem_surface k x⟩
+
+@[simp] theorem view_lift (x : Key) : view k (lift k x)=vector k x := rfl
+
+theorem lifted_vectors_independent : LinearIndependent k (lift k) := by
+  apply LinearIndependent.of_comp (view k).toLinearMap
+  exact normal_vectors_independent k
+
+
+def normalSpan : Submodule k (Ambient k) := Submodule.span k (Set.range (vector k))
+
+private theorem vector_mem_normalSpan (x : Key) : vector k x ∈ normalSpan k :=
+  Submodule.subset_span ⟨x,rfl⟩
+
+theorem vector_mul_mem_normalSpan (x y : Key) :
+    vector k x * vector k y ∈ normalSpan k := by
+  cases x with
+  | inl i =>
+    cases y with
+    | inl j =>
+      by_cases h : i=j
+      · subst j
+        have he : vector k (.inl i)*vector k (.inl i)=vector k (.inl i) := by
+          simp [vector]
+        rw [he]
+        exact vector_mem_normalSpan k _
+      · simp [vector,Matrix.single_mul_single_of_ne,h]
+        exact (normalSpan k).zero_mem
+    | inr ct =>
+      rcases ct with ⟨c,t⟩
+      by_cases h : i=t.row
+      · have he : vector k (.inl i)*vector k (.inr (c,t))=vector k (.inr (c,t)) := by
+          rw [h]; cases c <;> simp [vector]
+        rw [he]
+        exact vector_mem_normalSpan k _
+      · cases c <;> simp [vector,Matrix.single_mul_single_of_ne,h]
+        all_goals exact (normalSpan k).zero_mem
+  | inr bs =>
+    rcases bs with ⟨b,s⟩
+    cases y with
+    | inl j =>
+      by_cases h : s.col=j
+      · have he : vector k (.inr (b,s))*vector k (.inl j)=vector k (.inr (b,s)) := by
+          rw [← h]; cases b <;> simp [vector]
+        rw [he]
+        exact vector_mem_normalSpan k _
+      · cases b <;> simp [vector,Matrix.single_mul_single_of_ne,h]
+        all_goals exact (normalSpan k).zero_mem
+    | inr ct =>
+      rcases ct with ⟨c,t⟩
+      by_cases bc : b=c
+      · subst c
+        by_cases hm : s.col=t.row
+        · have ha : s.row<t.col ∨ 0<s.degree+t.degree := by
+            rcases s.allowed with hs | hs <;> rcases t.allowed with ht | ht
+            · exact Or.inl (lt_trans hs (hm ▸ ht))
+            all_goals exact Or.inr (by omega)
+          let u : Slot := ⟨s.row,t.col,s.degree+t.degree,ha⟩
+          have he : vector k (.inr (b,s))*vector k (.inr (b,t))=vector k (.inr (b,u)) := by
+            change positive k b s.row s.col s.degree * positive k b t.row t.col t.degree = _
+            rw [hm,positive_product]
+            rfl
+          rw [he]
+          exact vector_mem_normalSpan k _
+        · cases b <;> simp [vector,Matrix.single_mul_single_of_ne,hm]
+          all_goals exact (normalSpan k).zero_mem
+      · cases b <;> cases c <;> simp_all [vector]
+        all_goals exact (normalSpan k).zero_mem
+
+private theorem normalSpan_mul_mem {a b : Ambient k}
+    (ha : a ∈ normalSpan k) (hb : b ∈ normalSpan k) : a*b ∈ normalSpan k := by
+  induction ha using Submodule.span_induction with
+  | mem a ha =>
+    rcases ha with ⟨x,rfl⟩
+    induction hb using Submodule.span_induction with
+    | mem b hb => rcases hb with ⟨y,rfl⟩; exact vector_mul_mem_normalSpan k x y
+    | zero => simp
+    | add b c hb hc ib ic => simpa [mul_add] using (normalSpan k).add_mem ib ic
+    | smul r b hb ib => simpa [mul_smul_comm] using (normalSpan k).smul_mem r ib
+  | zero => simp
+  | add a c ha hc ia ic => simpa [add_mul] using (normalSpan k).add_mem ia ic
+  | smul r a ha ia => simpa [smul_mul_assoc] using (normalSpan k).smul_mem r ia
+
+private theorem normalSpan_one : (1 : Ambient k) ∈ normalSpan k := by
+  have he : (∑ i : Vertex,vector k (.inl i))=1 := by
+    have h := congrArg (view k) (sum_vertices k)
+    simpa only [map_sum,map_one,view_generator,rawGenerator,vector] using h
+  rw [← he]
+  exact (normalSpan k).sum_mem fun i _ => vector_mem_normalSpan k (.inl i)
+
+private theorem rawGenerator_mem_normalSpan (g : Gen) : rawGenerator k g ∈ normalSpan k := by
+  cases g with
+  | vertex i => exact vector_mem_normalSpan k (.inl i)
+  | a i =>
+    let s : Slot := ⟨previous i,i,if i=0 then 1 else 0,by fin_cases i <;> decide⟩
+    have he : rawGenerator k (.a i)=vector k (.inr (false,s)) := by
+      by_cases h : i=0 <;> simp [rawGenerator,vector,edge,s,h]
+      rw [Polynomial.monomial_one_one_eq_X]
+    rw [he]
+    exact vector_mem_normalSpan k _
+  | b i =>
+    let s : Slot := ⟨previous i,i,if i=0 then 1 else 0,by fin_cases i <;> decide⟩
+    have he : rawGenerator k (.b i)=vector k (.inr (true,s)) := by
+      by_cases h : i=0 <;> simp [rawGenerator,vector,edge,s,h]
+      rw [Polynomial.monomial_one_one_eq_X]
+    rw [he]
+    exact vector_mem_normalSpan k _
+
+theorem surface_eq_normalSpan : (surface k).toSubmodule=normalSpan k := by
+  apply le_antisymm
+  · intro a ha
+    induction ha using Algebra.adjoin_induction with
+    | mem a ha => rcases ha with ⟨g,rfl⟩; exact rawGenerator_mem_normalSpan k g
+    | algebraMap r =>
+      rw [Algebra.algebraMap_eq_smul_one]
+      exact (normalSpan k).smul_mem r (normalSpan_one k)
+    | add a b ha hb ia ib => exact (normalSpan k).add_mem ia ib
+    | mul a b ha hb ia ib => exact normalSpan_mul_mem k ia ib
+  · exact Submodule.span_le.mpr (by rintro a ⟨x,rfl⟩; exact vector_mem_surface k x)
+
+
+theorem view_expansion (l : Key →₀ k) :
+    view k (Finsupp.linearCombination k (lift k) l)=
+      Finsupp.linearCombination k (vector k) l := by
+  classical
+  induction l using Finsupp.induction_linear with
+  | zero => simp
+  | add l m hl hm => simp [hl,hm]
+  | single x a => simp
+
+theorem lifted_expansion_bijective :
+    Function.Bijective (Finsupp.linearCombination k (lift k)) := by
+  refine ⟨lifted_vectors_independent k,?_⟩
+  intro a
+  have hs : view k a ∈ normalSpan k := by
+    rw [← surface_eq_normalSpan]
+    exact a.property
+  rw [normalSpan,← Finsupp.range_linearCombination] at hs
+  obtain ⟨l,hl⟩ := hs
+  refine ⟨l,view_injective k ?_⟩
+  rw [view_expansion,hl]
+
+
+def normalEquiv : (Key →₀ k) ≃ₗ[k] A k :=
+  LinearEquiv.ofBijective (Finsupp.linearCombination k (lift k)) (lifted_expansion_bijective k)
+
+theorem normalEquiv_symm_coefficient (a : A k) (x : Key) :
+    ((normalEquiv k).symm a) x = selector k x (view k a) := by
+  have h := coefficient_recovery k x ((normalEquiv k).symm a)
+  rw [← view_expansion] at h
+  change selector k x (view k (normalEquiv k ((normalEquiv k).symm a))) = _ at h
+  rw [LinearEquiv.apply_symm_apply] at h
+  exact h.symm
+
+end
+end GRHResearch.BranchExtension.NormalPath
+
+#check GRHResearch.BranchExtension.NormalPath.lifted_normal_power
+#print axioms GRHResearch.BranchExtension.NormalPath.lifted_normal_power
+#check GRHResearch.BranchExtension.NormalPath.positive_mem_surface
+#print axioms GRHResearch.BranchExtension.NormalPath.positive_mem_surface
+#check GRHResearch.BranchExtension.NormalPath.vector_mem_surface
+#print axioms GRHResearch.BranchExtension.NormalPath.vector_mem_surface
+#check GRHResearch.BranchExtension.NormalPath.view_lift
+#print axioms GRHResearch.BranchExtension.NormalPath.view_lift
+#check GRHResearch.BranchExtension.NormalPath.lifted_vectors_independent
+#print axioms GRHResearch.BranchExtension.NormalPath.lifted_vectors_independent
+#check GRHResearch.BranchExtension.NormalPath.vector_mul_mem_normalSpan
+#print axioms GRHResearch.BranchExtension.NormalPath.vector_mul_mem_normalSpan
+#check GRHResearch.BranchExtension.NormalPath.surface_eq_normalSpan
+#print axioms GRHResearch.BranchExtension.NormalPath.surface_eq_normalSpan
+#check GRHResearch.BranchExtension.NormalPath.view_expansion
+#print axioms GRHResearch.BranchExtension.NormalPath.view_expansion
+#check GRHResearch.BranchExtension.NormalPath.lifted_expansion_bijective
+#print axioms GRHResearch.BranchExtension.NormalPath.lifted_expansion_bijective
+#check GRHResearch.BranchExtension.NormalPath.normalEquiv_symm_coefficient
+#print axioms GRHResearch.BranchExtension.NormalPath.normalEquiv_symm_coefficient

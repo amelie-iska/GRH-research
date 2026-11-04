@@ -934,3 +934,43 @@ changes. All protected originals/histories/environments/caches preserved.
 Evidence: research/normal-path-basis.md,
 planning/reviews/normal-path-basis/REVIEW.md and
 outputs/checks/2026-11-03-normal-path-basis/milestone.json.
+
+## Milestone — basis of the actual generated infinite dessin algebra
+
+Closed the membership/spanning part of the recorded frontier. Recursive
+A-valued shortest walks and arbitrary cycle powers construct every permitted
+normal image. Their span is multiplicatively closed, contains all generators
+and the unit, and adjoin induction proves it equals the actual generated
+algebra. The lifted finite expansion is bijective, with inverse given by
+polynomial coefficient selectors. This is a genuine unbounded linear
+coordinate equivalence over every field, not a finite matrix surrogate.
+Ten new public Lean reports; the fresh360-report suite passes warnings as
+errors,357standard-only/three axiom-free. Independent fresh focused compile,
+literal type/proof and whole-diff review accepted with no remaining finding.
+
+Exact production diagnostics:50shortest arrow words,375preimages through
+degree1000003/pathlength5000019,5625products,200expansions overQ/F2/F3/F5
+andthree forbidden ambient controls. The independent no-import oracle checks
+320preimages/105625products/400expressions/25rejects. Unbounded membership,
+spanning and uniqueness are established by Lean, not extrapolated samples.
+
+Book180pages/35chapters/18diagrams/11unique tools; focused articles36/78pages;
+audit20/49unchanged. Staged PDF/nativeMathML builds and changed proof-page
+visual inspection pass. Actual source/data readers, dark/mobile390px and
+legacy ten-surface/five-AR/trained-checkpoint checks pass. The old350-report
+ambient-only coverage is marked historical so the ledger stays consistent.
+No duplicated tool or new runtime dependency. Preview8765 remains available;
+ownCDPbrowser9242 closed; originals, caches, tools and histories preserved.
+
+A separate mixed-zero path quotient, universal multiplicative comparison,
+completed/lattice/module categories and AR properties remain formal work.
+The positive arithmetic determinant bridge, signed short-row estimate and
+all intended GRH scopes remain open. Next rotation: the original weighted
+second-moment attempt before pointwise convexity, with all moving factors
+and signed covariance retained. The existing heartbeat remains active and
+both completion gates remain false. No installs/authentication/MCP/Claude
+configuration, paid/cloud/GPU or new training actions occurred.
+
+Evidence: research/normal-path-algebra.md,
+planning/reviews/normal-path-algebra/REVIEW.md and
+outputs/checks/2026-11-04-normal-path-algebra/milestone.json.
