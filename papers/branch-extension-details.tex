@@ -30,6 +30,75 @@ by the normal-form calculation. The finite modules below are annihilated
 by $u^2$, so their continuous completed actions require only a finite
 Taylor polynomial.
 
+\subsection{Coefficient selectors without a truncation}
+Here is an explicit proof of Theorem~\ref{bre:normal-faithful} and the
+coordinate convention used by the implementation. Let
+\[
+ \mathcal S=\{(i,j,q):0\leq i,j<5,\ q\in\mathbb N,
+                      \ i<j\text{ or }q>0\},\qquad
+ \mathcal K=\{0,\ldots,4\}\sqcup(\{a,b\}\times\mathcal S).
+\]
+For a stationary index set $v_i=(E_{ii},E_{ii})$; for a positive index
+set $v_{a,i,j,q}=(t^qE_{ij},0)$ and
+$v_{b,i,j,q}=(0,t^qE_{ij})$. These are elements of the ambient polynomial
+matrix-pair space, with no degree cutoff. For $M=(M_a,M_b)$ define
+\[
+ \lambda_i(M)=[t^0](M_a)_{ii},\qquad
+ \lambda_{b,i,j,q}(M)=[t^q](M_b)_{ij}.
+\]
+Here the subscript $b$ in the second formula denotes either branch.
+Every $\lambda_x$ is $k$-linear, since extraction of a fixed matrix entry
+and polynomial coefficient is linear.
+
+We verify $\lambda_x(v_y)=\delta_{xy}$, including the cases at degree
+zero. For two stationary indices this is the ordinary diagonal matrix-unit
+identity. A stationary selector vanishes on a positive image in the other
+factor. In its own factor it could see a constant diagonal only if
+$i=j$ and $q=0$, which the definition of $\mathcal S$ excludes. Conversely,
+a positive selector applied to a stationary image could be nonzero only
+at precisely the same forbidden slot. For two positive indices, different
+branches have disjoint supports. In one branch the matrix entry forces
+both endpoints to agree and the monomial coefficient forces the degrees
+to agree. These conditions give equality of the full indices. The witness
+of the condition defining $\mathcal S$ carries no extra algebraic data.
+This proves biorthogonality in every characteristic, using no division.
+
+For any finitely supported $c:\mathcal K\to k$, linearity now gives
+\[
+ \lambda_x\left(\sum_{y\in\mathcal K}c_yv_y\right)=c_x.
+\]
+If the sum vanishes, every $c_x$ vanishes; if two sums agree, their
+coefficients agree. This proves linear independence and injectivity of
+normal expansion on the actual $k$-module of finitely supported functions.
+It does not replace finite support by a convergent or formal infinite sum.
+
+The length formula also contains useful information beyond independence.
+If $i<j$ then $5q+j>i$ even at $q=0$; otherwise $q>0$ and $i\leq4$ give
+the same strict inequality. Hence $\ell=5q+j-i$ is a positive integer,
+and $\ell+i=5q+j$. For fixed starting vertex $j$ and length $\ell$,
+two such equations imply $i-i'=5(q-q')$. Since $i,i'\in\{0,\ldots,4\}$,
+this forces $i=i'$ and then $q=q'$. In Lean the subtraction is natural
+subtraction; positivity is proved before using the rearranged equation.
+
+For example the $a$-path of length $12$ from vertex $4$ ends at vertex
+$2$ and has image $(t^2E_{24},0)$. The length-$4$ $a$-path from $3$ to
+$4$ has image $(tE_{43},0)$. Their product, with the rightmost path first,
+is $(t^3E_{23},0)$, of length $16$. Replacing the second path by its
+$b$-branch version makes the product zero. Degree-zero upper entries such
+as $(E_{24},0)$ are permitted, but $(E_{22},0)$ is not a stationary image:
+the stationary element is the shared pair $(E_{22},E_{22})$. This last
+distinction prevents a spurious extra idempotent in the proposed basis.
+
+The selector theorem is the faithfulness part of the intended quotient
+comparison, not its surjectivity or universal property. The formal task
+still required is to construct the normal path algebra with concatenation
+and mixed zero relations, prove that all these images lie in the generated
+subalgebra, and prove spanning there. Only then may the existing prose
+isomorphism be promoted to a checked algebra equivalence. Completion,
+module-category and almost-split universal properties require their own
+subsequent constructions. None of these finite-support identities supplies
+an arithmetic self-adjoint determinant or controls zeta zeros.
+
 \subsection{Exactness for arbitrary algebra elements}
 In coordinates $M_2=k^5\oplus\epsilon k^5$ let
 $C(t)=\sum_{r\geq0}C_rt^r$ be the first component of an arbitrary
@@ -68,9 +137,12 @@ classification, division by two or positivity premise occurs.
 The file \path{lean-analytic/BranchExtension.lean} defines $B$ as the
 actual generated subalgebra of polynomial matrix pairs, proves its
 infinite dimensionality through injective polynomial evaluation, and
-constructs $i,p$ as $B$-linear maps. The 21 printed theorem types and
+constructs $i,p$ as $B$-linear maps. The original 21 printed theorem types and
 axiom reports cover the generators, infinite embedding, actions,
-exactness and absence of a module section. The normal-form isomorphism
+exactness and absence of a module section. Eight additional reports in
+\path{NormalPath} cover slot extensionality, positive length, the length
+equation, recovery from start and length, biorthogonality, coefficient
+recovery, linear independence and injective normal expansion. The normal-form isomorphism
 with the path quotient above is proved in prose; it is not packaged as
 a Lean categorical equivalence. Nor is a Yoneda-Ext object or the
 universal factorization property of an almost-split sequence formalized
@@ -84,3 +156,13 @@ for a hypothetical section has coefficient rank 49 and augmented rank 50
 over $\mathbb Q,\mathbb F_2,\mathbb F_3,\mathbb F_5$.
 These finite diagnostics complement the symbolic proof; their finite
 cutoffs do not establish infinite dimensionality by themselves.
+
+
+The separate exact checker \path{examples/relations/check_normal_paths.py}
+checks 475 normal images at degrees up to $1{,}000{,}003$ (length
+$5{,}000{,}019$), all 225,625 selector pairs, 1,030 direct arrow steps,
+15,625 composable-or-zero product comparisons and 200 finite expansions
+over $\mathbb Q,\mathbb F_2,\mathbb F_3,\mathbb F_5$. Invalid constant
+slots are rejected. These are finite diagnostics of the code and
+conventions; the unbounded assertion is established by the Lean theorem,
+not by the size of the tests.

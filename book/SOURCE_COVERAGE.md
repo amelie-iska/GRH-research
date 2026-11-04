@@ -1,5 +1,5 @@
 # Complete source inclusion and development map
-Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical177-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
+Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical178-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
 
 ## emergent_cyclic_time_hilbert_polya_GRH_2053.tex
 SHA256 `08708269403c3095381c45eb4c82435a073aaca8819f427a232e8eba368e05dc`; 15556 lines.
@@ -189,3 +189,11 @@ conductor and profile dependence. Seven finite Euler components are Lean
 checked. The scalar aggregate's loss is derived explicitly; classical CFT/
 Hecke analytic inputs remain external and the signed short-row/GRH obligations
 remain open. No previously refuted absolute pair-square/U1 audit is repeated.
+
+
+The actual genus-two dessin chapter now expands the unbounded polynomial
+normal-image proof with explicit linear coefficient selectors, finite-support
+recovery and the start/length convention. Eight general Lean statements
+formalize this independence slice; no finite degree cutoff is assumed.
+Membership, spanning and the full path-quotient equivalence remain prose
+obligations. This is progress toward that comparison, not its completion.

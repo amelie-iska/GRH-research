@@ -8,7 +8,7 @@ The latest arithmetic development is a [full-mask Hecke type-I expansion](resear
 
 ## Research book and interactive companion (2026-11-03)
 
-Current edition: **177 pages,35 chapters, eleven unique in-book laboratories**.
+Current edition: **178 pages,35 chapters, eleven unique in-book laboratories**.
 The learning section now leads with [actual RG](http://127.0.0.1:8765/rg.html):
 full effective actions, constants, generated interactions, partition functions,
 retained observables and explicit scales. [Quantum TokenGT](http://127.0.0.1:8765/qtoken.html)
@@ -40,7 +40,7 @@ The fixed top-left **Engage night** button transforms the page, book and embedde
 
 Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuQuantum/CUDA-Q sources are forked and cloned, but GPU adapters are not executed on this Apple machine. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
 
-The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **342 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
+The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **350 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open. The actual genus-two polynomial normal images now have kernel-checked unbounded coefficient recovery and linear independence; the path-quotient equivalence still needs formal membership and spanning.
 
 Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `python3 scripts/prepare_companion.py`. Start/restart the loopback-only server with `python3 scripts/serve_book.py`; no public deployment or external scripts are needed. The preview is running as a separate local process, so a chat interruption need not stop it.
 

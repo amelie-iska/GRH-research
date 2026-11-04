@@ -51,3 +51,25 @@ nonsplit sequence defines a nonzero Yoneda extension class in the ambient
 module category. No assertion that it is almost split in that entire
 category is needed or inferred. In particular it does not supply an
 arithmetic spectral determinant or a zero-location theorem.
+
+
+\begin{theorem}[Unbounded normal-image faithfulness]\label{bre:normal-faithful}
+In $M_5(k[t])^2$, index the stationary images by $i$ and the positive
+images by $(b,i,j,q)$, where $b\in\{a,b\}$, $0\leq i,j<5$, $q\geq0$
+and $i<j$ or $q>0$. The positive image is $t^qE_{ij}$ in factor $b$,
+with zero in the other factor. Its path length is $5q+j-i>0$.
+All these images, including the shared stationary images, are linearly
+independent over every field. Every finite normal expansion has uniquely
+recoverable coefficients, without a bound on degree or path length.
+\end{theorem}
+\begin{proof}
+Read a stationary coefficient from the first factor's constant diagonal;
+read a positive coefficient from the indicated factor, entry and degree.
+The index restriction ensures that no positive image contributes to a
+constant diagonal. These linear selectors are biorthogonal to the images,
+so applying each selector to a finite expansion recovers its coefficient.
+\end{proof}
+This theorem is now kernel checked for actual polynomial matrix pairs.
+The additional membership, spanning and quotient-identification steps in
+the prose normal-form argument remain separate formalization obligations;
+the theorem does not silently assume or certify them.

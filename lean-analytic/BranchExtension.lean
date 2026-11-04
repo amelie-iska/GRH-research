@@ -1,3 +1,4 @@
+import Mathlib.LinearAlgebra.LinearIndependent.Basic
 import Mathlib.Algebra.QuadraticAlgebra
 import Mathlib.Algebra.Algebra.Subalgebra.Lattice
 import Mathlib.LinearAlgebra.Matrix.ToLin
@@ -292,3 +293,181 @@ end GRHResearch.BranchExtension
 #print axioms GRHResearch.BranchExtension.a0_on_two
 #check GRHResearch.BranchExtension.no_module_section
 #print axioms GRHResearch.BranchExtension.no_module_section
+
+/-! Unbounded normal path-image coordinates. This does not assume that the
+ambient family spans the generated algebra or is a path-quotient equivalence. -/
+namespace GRHResearch.BranchExtension.NormalPath
+noncomputable section
+open Polynomial Matrix
+variable (k : Type*) [Field k]
+
+structure Slot where
+  row : Vertex
+  col : Vertex
+  degree : ℕ
+  allowed : row < col ∨ 0 < degree
+
+instance : DecidableEq Slot := Classical.decEq _
+abbrev Key := Vertex ⊕ (Bool × Slot)
+abbrev Ambient := Mat (P k) × Mat (P k)
+
+@[ext] theorem slot_ext {s t : Slot} (hr : s.row=t.row)
+    (hc : s.col=t.col) (hq : s.degree=t.degree) : s=t := by
+  cases s; cases t
+  cases hr; cases hc; cases hq
+  rfl
+
+def length (s : Slot) : ℕ := 5*s.degree+s.col.val-s.row.val
+
+theorem positive_length (s : Slot) : 0 < length s := by
+  have hi := s.row.isLt
+  have hj := s.col.isLt
+  rcases s.allowed with h | h
+  · have hv : s.row.val < s.col.val := h
+    unfold length
+    omega
+  · unfold length
+    omega
+
+theorem length_equation (s : Slot) :
+    length s+s.row.val=5*s.degree+s.col.val := by
+  have h := positive_length s
+  unfold length at *
+  omega
+
+theorem same_start_length {s t : Slot} (hc : s.col=t.col)
+    (hl : length s=length t) : s=t := by
+  have hs := length_equation s
+  have ht := length_equation t
+  have hi := s.row.isLt
+  have hj := t.row.isLt
+  have hv := congrArg Fin.val hc
+  apply slot_ext
+  · apply Fin.ext
+    omega
+  · exact hc
+  · omega
+
+def vector : Key → Ambient k
+  | .inl i => (Matrix.single i i 1,Matrix.single i i 1)
+  | .inr (b,s) => if b then
+      (0,Matrix.single s.row s.col (monomial s.degree 1)) else
+      (Matrix.single s.row s.col (monomial s.degree 1),0)
+
+def coefficient (x : Key) (M : Ambient k) : k :=
+  match x with
+  | .inl i => (M.1 i i).coeff 0
+  | .inr (b,s) => ((if b then M.2 else M.1) s.row s.col).coeff s.degree
+
+def selector (x : Key) : Ambient k →ₗ[k] k where
+  toFun := coefficient k x
+  map_add' M N := by
+    cases x with
+    | inl i => simp [coefficient]
+    | inr bs => rcases bs with ⟨b,s⟩; cases b <;> simp [coefficient]
+  map_smul' a M := by
+    cases x with
+    | inl i => simp [coefficient]
+    | inr bs => rcases bs with ⟨b,s⟩; cases b <;> simp [coefficient]
+
+private theorem single_coefficient (i j r c : Vertex) (q n : ℕ) :
+    (Matrix.single i j (monomial q (1:k)) r c).coeff n =
+      if i=r ∧ j=c ∧ q=n then 1 else 0 := by
+  by_cases hi : i=r <;> by_cases hj : j=c <;>
+    simp [Matrix.single,hi,hj,Polynomial.coeff_monomial]
+
+private theorem no_constant_diagonal (s : Slot) (i : Vertex) :
+    (Matrix.single s.row s.col (monomial s.degree (1:k)) i i).coeff 0=0 := by
+  rw [single_coefficient]
+  split_ifs with h
+  · rcases s.allowed with hlt | hpos
+    · have : s.row=s.col := h.1.trans h.2.1.symm
+      exact False.elim ((ne_of_lt hlt) this)
+    · exact False.elim ((Nat.ne_of_gt hpos) h.2.2)
+  · rfl
+
+private theorem positive_on_vertex (b : Bool) (s : Slot) (i : Vertex) :
+    coefficient k (.inr (b,s)) (vector k (.inl i))=0 := by
+  by_cases hr : i=s.row
+  · subst i
+    by_cases hc : s.row=s.col
+    · have hq : s.degree≠0 := by
+        rcases s.allowed with h | h
+        · exact False.elim ((ne_of_lt h) hc)
+        · exact Nat.ne_of_gt h
+      cases b <;> simp [coefficient,vector,Matrix.single,hc,Polynomial.coeff_one,hq]
+    · cases b <;> simp [coefficient,vector,Matrix.single,hc]
+  · cases b <;> simp [coefficient,vector,Matrix.single,hr]
+
+private theorem slot_coordinates {s t : Slot} :
+    (t.row=s.row ∧ t.col=s.col ∧ t.degree=s.degree) ↔ s=t := by
+  constructor
+  · rintro ⟨hr,hc,hq⟩
+    exact slot_ext hr.symm hc.symm hq.symm
+  · rintro rfl
+    exact ⟨rfl,rfl,rfl⟩
+
+theorem selector_vector (x y : Key) :
+    selector k x (vector k y) = if x=y then 1 else 0 := by
+  change coefficient k x (vector k y)=_
+  cases x with
+  | inl i =>
+    cases y with
+    | inl j =>
+      by_cases h : i=j
+      · subst j; simp [coefficient,vector,Matrix.single]
+      · simp [coefficient,vector,Matrix.single,h,Ne.symm h]
+    | inr bs =>
+      rcases bs with ⟨b,s⟩
+      cases b <;> simp [coefficient,vector,no_constant_diagonal]
+  | inr bs =>
+    rcases bs with ⟨b,s⟩
+    cases y with
+    | inl i => simp [positive_on_vertex]
+    | inr ct =>
+      rcases ct with ⟨c,t⟩
+      cases b <;> cases c <;>
+        simp [coefficient,vector,single_coefficient,slot_coordinates]
+
+
+theorem coefficient_recovery (x : Key) (l : Key →₀ k) :
+    selector k x (Finsupp.linearCombination k (vector k) l)=l x := by
+  classical
+  induction l using Finsupp.induction_linear with
+  | zero => simp
+  | add l m hl hm => simp [hl,hm]
+  | single y a =>
+    by_cases h : x=y
+    · subst y; simp [selector_vector]
+    · simp [selector_vector,h]
+
+theorem normal_vectors_independent : LinearIndependent k (vector k) := by
+  rw [linearIndependent_iff]
+  intro l hl
+  ext x
+  have h := congrArg (fun M => selector k x M) hl
+  simpa only [coefficient_recovery,map_zero,Finsupp.zero_apply] using h
+
+theorem normal_form_injective :
+    Function.Injective (Finsupp.linearCombination k (vector k)) :=
+  normal_vectors_independent k
+
+end
+end GRHResearch.BranchExtension.NormalPath
+
+#check GRHResearch.BranchExtension.NormalPath.slot_ext
+#print axioms GRHResearch.BranchExtension.NormalPath.slot_ext
+#check GRHResearch.BranchExtension.NormalPath.positive_length
+#print axioms GRHResearch.BranchExtension.NormalPath.positive_length
+#check GRHResearch.BranchExtension.NormalPath.length_equation
+#print axioms GRHResearch.BranchExtension.NormalPath.length_equation
+#check GRHResearch.BranchExtension.NormalPath.same_start_length
+#print axioms GRHResearch.BranchExtension.NormalPath.same_start_length
+#check GRHResearch.BranchExtension.NormalPath.selector_vector
+#print axioms GRHResearch.BranchExtension.NormalPath.selector_vector
+#check GRHResearch.BranchExtension.NormalPath.coefficient_recovery
+#print axioms GRHResearch.BranchExtension.NormalPath.coefficient_recovery
+#check GRHResearch.BranchExtension.NormalPath.normal_vectors_independent
+#print axioms GRHResearch.BranchExtension.NormalPath.normal_vectors_independent
+#check GRHResearch.BranchExtension.NormalPath.normal_form_injective
+#print axioms GRHResearch.BranchExtension.NormalPath.normal_form_injective

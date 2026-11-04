@@ -725,3 +725,40 @@ than the inherited788px automatic shrink. Future mobile checks must compare
 against clientWidth, not innerWidth alone. Focused/new source loaders and
 independent read-only renderer review passed. These are display-only changes;
 all source/checkpoint/scientific records retain their stated semantics.
+
+## Latest frontier — normal-image coefficient recovery
+
+Current book178pages/35chapters/18diagrams/11unique labs; focused35/76pages,
+audit20/49unchanged. The fresh350-report Lean suite passes with warnings as
+errors,347standard-only/three axiom-free. BranchExtension.NormalPath adds
+eight literal public reports over actual unbounded polynomial matrix pairs:
+slot extensionality, positive length/equation/start reconstruction,
+biorthogonal linear selectors, arbitrary Finsupp recovery, independence and
+injective expansion. Final independent compile/prose review accepted;
+Q/F2/F3/F5 exact production and separate no-import oracle pass. See
+research/normal-path-basis.md and planning/reviews/normal-path-basis/REVIEW.md.
+
+The claimed P4 slice is complete but P4 itself remains in progress. NEXT:
+construct the normal-path concatenation/mixed-zero algebra; show all images
+belong to the generated polynomial algebra and span it; package the actual
+algebra equivalence. The ambient coefficient recovery cannot be treated as
+a proof of membership, spanning or quotient universality. Keep polynomial
+finite support distinct from formal completion and lattice categories.
+Then package the true module-category sequence and only afterward attempt
+universal almost-split factorization. Do not rerun the completed independence
+or prior nonsplitting calculation as a new full categorical theorem.
+
+Arithmetic NEXT remains the exact weighted original-family second moment
+BEFORE pointwise convexity: primitive numerator/square-denominator ratio,
+full d-dependent deleted factors, actual beta_U and principal classes,
+height/profile/scale dependence, original row multiplicities, the short
+Vaughan term and II−I covariance must all remain explicit. The scalar
+contour and its losing H^(1.5−delta) envelope are finished; original signed
+low-gcd averaging and the independent positive determinant/zero bridge
+remain open. No intended GRH scope has been proved by these additions.
+
+PDF/HTML changes were staged/promoted and inspected; new in-book Lean/data
+loaders, unique11frames, nativeMathML, mobile390/390/390 and legacy companion
+checks pass. Preview8765 stays live and ownCDPbrowser9242 is closed. Source
+pins/original hashes are preserved; no dependency/install/auth/MCP or Claude
+config change. Both completion gates remain false; keep existing heartbeat.

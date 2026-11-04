@@ -296,3 +296,17 @@ The derived scalar envelope loses a power and supplies no short-row mean
 square. Original scale suprema also require cutoff compatibility and restoration
 of2a_U on small scales, plus signed covariance with typeII. No GRH scope or
 independent positive arithmetic determinant comparison has been closed.
+
+
+### Normal-path formalization frontier
+
+Unbounded normal-image independence and finite-support coefficient recovery
+are now Lean checked over every field. This discharges only the ambient
+faithfulness slice. Next: construct the mixed-zero path quotient/normal
+concatenation object, prove all permitted images belong to the generated
+polynomial matrix-pair algebra, prove it spans that algebra, and package
+the equivalence. Then construct the actual module-category sequence before
+any assertion of universal almost-split factorization. Polynomial finite
+sums, formal completions and lattices must remain distinct. The positive
+arithmetic determinant/zero-location bridge and original signed low-gcd
+mean square are unchanged and open.

@@ -1,0 +1,48 @@
+{
+  "source_sha256": {
+    "lean-analytic/BranchExtension.lean": "8b56c73a4960ec9a7c6d03e1aca3be24b93a0a1c491812c6e352687f265c7160",
+    "examples/relations/check_normal_paths.py": "1680aa056d7edce17598d6a74df950e837d0d90ac97d702833395c4ab46c705d",
+    "papers/branch-extension-core.tex": "bcf4bf8f7bb170cda307887e138558076957868db4662bf7e6e92d3ef7f01750",
+    "papers/branch-extension-details.tex": "a0e6cf9c6fbde41c59c3375d354883dc52ea72474109d6b4f966809382e87821",
+    "outputs/checks/2026-11-03-normal-path-basis/review/oracle.py": "5863e05c521f5cc66160f082b0dc3a2a1e712a40240448bb46c7d0fb1e455877",
+    "lean-analytic/mathlib-manifest.json": "d1208145605d20579ecc91977126e7647e0216a3f7b7d2b9a55d33d040bcd0b8"
+  },
+  "focused_lean_exit": 0,
+  "focused_reports": 29,
+  "new_normalpath_reports": 8,
+  "axioms": [
+    {
+      "theorem": "GRHResearch.BranchExtension.NormalPath.slot_ext",
+      "report": "does not depend on any axioms"
+    },
+    {
+      "theorem": "GRHResearch.BranchExtension.NormalPath.positive_length",
+      "report": "depends on axioms: [propext, Quot.sound]"
+    },
+    {
+      "theorem": "GRHResearch.BranchExtension.NormalPath.length_equation",
+      "report": "depends on axioms: [propext, Quot.sound]"
+    },
+    {
+      "theorem": "GRHResearch.BranchExtension.NormalPath.same_start_length",
+      "report": "depends on axioms: [propext, Quot.sound]"
+    },
+    {
+      "theorem": "GRHResearch.BranchExtension.NormalPath.selector_vector",
+      "report": "depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "theorem": "GRHResearch.BranchExtension.NormalPath.coefficient_recovery",
+      "report": "depends on axioms: [propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "theorem": "GRHResearch.BranchExtension.NormalPath.normal_vectors_independent",
+      "report": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    },
+    {
+      "theorem": "GRHResearch.BranchExtension.NormalPath.normal_form_injective",
+      "report": "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+    }
+  ],
+  "manifest_match": true
+}

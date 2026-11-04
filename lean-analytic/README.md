@@ -305,3 +305,19 @@ Euler products, Mellin inversion and uniform scalar contour theorem are
 proved prose using named classical external results, not asserted as formal
 consequences of a finite toy. The original signed mean square and GRH remain
 open. Full-suite342 reports pass,340standard-only/two axiom-free; pins unchanged.
+
+
+## Unbounded normal-path image coordinates
+
+`BranchExtension.NormalPath` adds eight printed declarations to the21
+existing algebra/module reports. The index uses all natural polynomial
+degrees with `row < col ∨ 0 < degree`, plus shared stationary vertices.
+Actual polynomial coefficient linear maps prove a Kronecker selector law,
+recovery for arbitrary `Key →₀ k`, `LinearIndependent k (vector k)` and
+injectivity of `Finsupp.linearCombination`. Start and length also uniquely
+recover the row and degree. No degree cutoff or positivity premise occurs.
+
+The current full350-report suite has347standard-only reports andthree
+axiom-free. This family is proved independent in the ambient matrix pair
+space; membership/spanning in the generated subalgebra and the complete
+path quotient algebra equivalence are still separate formal work.

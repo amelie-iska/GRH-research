@@ -895,3 +895,42 @@ nonblocking renderer observations remain documented: fitting tables also
 receive tab stops, and resize/toggle checks scan the finite MathML set.
 Heading scroll offsets keep anchored research titles below the fixed bar.
 No mathematical content was rewritten by this rendering repair.
+
+## Milestone — unbounded normal-image faithfulness
+
+Resumed P4 from the recorded path-quotient frontier. Added eight public
+Lean declarations for the actual genus-two polynomial matrix-pair images:
+positive length and endpoint/degree reconstruction, linear coefficient
+selectors, biorthogonality, arbitrary finite-support recovery, linear
+independence and injective expansion. There is no degree/path-length cutoff
+or desired positivity hypothesis. The full350-report suite passed with
+warnings as errors (347standard-only/three axiom-free). An independent
+reviewer freshly compiled the final source and checked literal types,
+dependencies and both full prose proofs.
+
+The deterministic exact diagnostic checks475normal images through
+polynomial degree1000003/path length5000019,225625selector pairs,
+1030direct arrow steps,15625product comparisons and200expansions over
+Q/F2/F3/F5;17invalid slots are rejected. The independent stdlib oracle
+checks525keys/275625pairs. These samples corroborate conventions; the
+unbounded proof is Lean, not finite numerical extrapolation.
+
+Both focused article editions now35/76pages; the book178pages/35chapters,
+18diagrams/11unique laboratories. Audit20/49pages unchanged. Rebuilt PDF
+and nativeMathML outputs from staging, visually reviewed changed proof
+pages, and passed new source/data loaders, dark/mobile390px checks and the
+legacy ten-surface/five-AR/trained-checkpoint companion checks. No duplicate
+lab was added. Preview8765 remains live; ownCDPbrowser9242 was closed.
+
+This completes the ambient independence slice, not the full path-quotient
+comparison. Membership and spanning in the generated algebra, normal
+concatenation and quotient algebra equivalence remain formal work; actual
+module-category/Ext/AR universal objects remain later tasks. The positive
+arithmetic determinant bridge, original signed short-row mean square and
+all intended GRH scopes remain open. No new dependencies, training, paid/
+cloud/GPU jobs, authentication or MCP activation; no Claude configuration
+changes. All protected originals/histories/environments/caches preserved.
+
+Evidence: research/normal-path-basis.md,
+planning/reviews/normal-path-basis/REVIEW.md and
+outputs/checks/2026-11-03-normal-path-basis/milestone.json.
