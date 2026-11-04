@@ -404,3 +404,13 @@ functorial-filtration source1097–1307 and its actual infinite-order module
 construction, replacing the next generic coverage row. Preserve all historical
 sources and context. Both completion gates are false and the existing hourly
 heartbeat must remain active.
+
+User-requested living-theme UI milestone: the fixed top-left Engage night
+button now controls all ten HTML documents and the seven book frames, with
+staggered dark transformations, distributed ambient lights/color accents,
+persisted preferences and a separate pause/reduced-motion path. Browser and
+companion checks are in outputs/checks/2026-11-03-living-theme/; generators
+retain the shared assets. Source manuscripts, research PDFs, numerical
+records and Lean content are unchanged. This does not replace the P7-low-gcd
+next task above or close either completion gate. No dependencies/infrastructure
+or MCP/Claude configuration changes; preview8765 remains available.

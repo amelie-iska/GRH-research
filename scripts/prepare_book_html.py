@@ -4,6 +4,7 @@
 Native MathML and SVG keep all mathematics local. Source manuscripts are copied
 byte-for-byte into explicitly historical source volumes, never endorsed as proof.
 """
+from theme_assets import install_theme
 from pathlib import Path
 import re,html,json,hashlib,shutil,sys,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1];WEB=ROOT/'web';BOOK=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else WEB/'book';p=BOOK/'main.html';s=p.read_text()
@@ -71,3 +72,7 @@ for row in rows:
  links.append(f'<li><a href="/sources/{edition}.html">Complete {edition} source: {len(lines)} lines</a></li>')
 (WEB/'source-volumes.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Complete source volumes</title><link rel="stylesheet" href="/style.css"></head><body><main><section><h1>Complete source volumes</h1><p>All text, formulas, source diagrams and code from both supplied TeX files is preserved here. These historical documents contain claims corrected or refuted by the audits. Preservation is distinct from endorsement, complete rewriting, execution or Lean formalization.</p><ul>'+''.join(links)+'</ul><p><a href="/book/main.html">Read the developed critical book</a> · <a href="/verification.html">See formalization coverage and outstanding work</a></p></section></main></body></html>')
 print('Native-MathML book prepared:',count,'chapter panels; both complete source volumes preserved')
+
+# Preserve the shared theme on regenerated book and historical HTML views.
+for themed_page in [BOOK/"main.html", WEB/"source-volumes.html", *online.glob("*.html")]:
+ install_theme(themed_page)

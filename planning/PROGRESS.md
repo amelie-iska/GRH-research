@@ -548,3 +548,28 @@ Primary download files remain in the existing ignored research/literature cache,
 unchanged locally; version URLs and exact hashes are tracked in
 planning/DG_SOURCES.json. The ignore policy was preserved rather than forcing
 raw cache downloads into the repository.
+
+## Living dark interface — user-requested UI milestone (2026-11-03)
+
+Added a fixed top-left theme switch and separate ambient-motion pause across
+all ten HTML documents. Shared head assets synchronize the native book's
+seven canonical embedded tools, remember preferences locally, and survive
+the existing HTML generators. The dark biomechanical/future-bridge skin has
+staggered material transitions, ribbed hulls, moving light rails, breathing
+panels, blinking indicators and slow cyan/violet/amber text accents. Scientific
+readouts remain steady. OS reduced motion stops decorative animation.
+
+The browser RED failed for the initially absent button; the final browser
+checks pass theme persistence, varied transition rates, actual color changes,
+pause/reduced-motion, route/frame synchronization, rapid toggling, keyboard,
+390px mobile layout and unchanged numerical readouts. The existing companion
+regression passes ten surfaces, five AR views, six saved models, the 32-chapter
+MathML book and PDF/video access. Architecture/book/mobile screenshots were
+inspected and pale legacy readout contrast corrected. No dependency, source
+manuscript, PDF, training record or Lean statement changed. Evidence is under
+outputs/checks/2026-11-03-living-theme/. Integrity checks cover source pins,
+original hashes and indexed credential patterns before the private push.
+
+This explicit UI request does not change either completion gate. Next resume
+the already recorded P7-low-gcd arithmetic rotation, then the next P4 source
+construction. The existing heartbeat and loopback preview remain active.

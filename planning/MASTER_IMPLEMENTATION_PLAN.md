@@ -35,6 +35,10 @@ The latest user-requested extension is in progress: deduplicate the on-page/PDF 
 
 ## Workstreams and dependency order
 
+### User interface amendment: living dark mode
+
+The user requested a fixed top-left dark-mode toggle with a biomechanical/future-starship aesthetic, staggered transformations and distributed living lights, motion and color-changing accents. Implement this across the project page, native book, source volumes and embedded laboratories, with persistent local preferences, a separate ambient-motion pause, reduced-motion support, accessible controls and unchanged scientific data. [Design and acceptance scope](living-theme-design.md); focused browser evidence is in `outputs/checks/2026-11-03-living-theme/`. This visual amendment does not close either completion gate or replace the next arithmetic research task.
+
 ### P0 — Preserve a working edition and remove duplicated visuals
 
 Files: `scripts/assemble_book.py`, `scripts/prepare_book_html.py`, `scripts/render_html_diagrams.py`, `scripts/verify_project.py`, book/HTML outputs.

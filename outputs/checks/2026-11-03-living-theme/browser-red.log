@@ -1,0 +1,10 @@
+file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_theme_browser.mjs:23
+async function until(expression){for(let i=0;i<150;i++){if(await evaluate(expression))return;await delay(30);}throw Error('Condition timeout: '+expression);}
+                                                                                                                    ^
+
+Error: Condition timeout: document.getElementById('themeToggle')
+    at until (file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_theme_browser.mjs:23:117)
+    at async navigate (file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_theme_browser.mjs:26:75)
+    at async file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_theme_browser.mjs:29:1
+
+Node.js v24.19.0
