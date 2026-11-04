@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "version": "v4",
+  "exact_fraction_reconstruction": [
+    {
+      "conductor": 3,
+      "parity": 1,
+      "integer_growth_bound": 4,
+      "all_exact_terms_match": true
+    },
+    {
+      "conductor": 4,
+      "parity": 1,
+      "integer_growth_bound": 10,
+      "all_exact_terms_match": true
+    },
+    {
+      "conductor": 5,
+      "parity": 0,
+      "integer_growth_bound": 6,
+      "all_exact_terms_match": true
+    }
+  ],
+  "negative_domain_controls": [
+    "zero_x",
+    "negative_x",
+    "floating_x",
+    "zero_L",
+    "negative_L",
+    "floating_L",
+    "small_conductor",
+    "floating_conductor",
+    "invalid_parity",
+    "floating_parity",
+    "zero_cutoff",
+    "floating_cutoff"
+  ],
+  "source_snapshot_hash_matches": true,
+  "web_copy_byte_identical": true,
+  "earlier_numeric_certificates_preserved": true,
+  "full_sample_oracle_certified": false,
+  "new_Lean_declarations": 0,
+  "GRH_proved": false,
+  "scope": "Exact rational growth/alias/Taylor arithmetic and assumed-eta term; no certified sample evaluation or coefficient rounding"
+}

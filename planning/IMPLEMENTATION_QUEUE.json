@@ -318,13 +318,19 @@
     {
       "id": "P11-analytic-gluing-formal",
       "priority": 6,
-      "status": "pending",
+      "status": "in_progress",
       "dependencies": [
         "P10-complementary-datasets"
       ],
       "objective": "Validated primitive theta/Mellin and readout error oracle; actual analytic/graph cell-attachment Lean interfaces",
       "acceptance": "Explicit certified arithmetic/rounding bounds and precise kernel-checked theorem types without admissions or HIT/univalence axioms; honest separation from arithmetic determinant/GRH bridge",
-      "evidence": []
+      "evidence": [
+        "planning/synthetic-training/review/RATIONAL_CONSTANTS_REVIEW.md",
+        "outputs/checks/2026-11-04-synthetic-training/review/rational-constants-review.json"
+      ],
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-04T15:57:36.516421+00:00",
+      "last_result": "Proved and implemented exact Fraction growth/alias/Taylor certificates for completed Dirichlet q3/4/5, M_r<4/10/6. Final v4 includes center, target, source hash, integer/Fraction guards and twelve independent negative controls; independent review and local browser/PDF checks pass. Full interval complex sample oracle, coefficient rounding and analytic Lean interfaces remain open."
     }
   ]
 }

@@ -1,0 +1,9 @@
+file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_public_browser.mjs:8
+const delay=t=>new Promise(r=>setTimeout(r,t));async function until(s){for(let i=0;i<600;i++){if(await ev(s))return;await delay(50);}throw Error('wait:'+s);}async function shot(name){const r=await send('Page.captureScreenshot',{format:'png'});writeFileSync(renders+'/'+name+'.png',Buffer.from(r.data,'base64'));}
+                                                                                                                                           ^
+
+Error: wait:!!window.quantumGameLab&&!!window.hubsSpokesLab&&!!window.analyticLearningLab&&!!window.learnedLab&&window.analyticLearningLab.snapshot().rational_growth_bound===4
+    at until (file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_public_browser.mjs:8:140)
+    at async file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_public_browser.mjs:15:77
+
+Node.js v24.19.0

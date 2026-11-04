@@ -206,3 +206,11 @@ Live views: `/datasets.html#electron-density-clouds`,
 `/learned.html#learned-games` and `/learned.html#hubs-spokes`.
 The last tool illustrates disk/punctured-disk gluing with pinned HoTT
 references and exact genus1/2/4 dessin permutations, not a new Lean4 HIT axiom.
+
+Publication update: both dataset repositories and the GRH research repo/site
+are now public at the owner's explicit request. Original private receipts
+are historical; card-only public commits are in outputs/publication/2026-11-04.
+All Parquet data remain frozen. No blanket source redistribution license is
+implied by visibility. New certify_learning_constants.py provides deterministic
+Fraction growth/tail certificates; latest output is rational-learning-v4.
+Full interval sample and coefficient-rounding certification remain unfinished.

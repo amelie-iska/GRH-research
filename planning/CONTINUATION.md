@@ -919,3 +919,11 @@ No active-model or credential file was published. See
 outputs/publication/2026-11-04/publication-verification.json.
 Continue P11 validated analytic constants/oracle and P7 arithmetic moment;
 both overall implementation and GRH research completion gates remain false.
+
+Latest P11 frontier: use outputs/experiments/2026-11-04-rational-learning-v4
+and certify_learning_constants.py. Growth/analytic-tail constants are exact
+Fraction certificates (M3<4,M4<10,M5<6), not a complete sample oracle. Floating
+parity and exponential inputs are rejected; old drafts preserved. The next
+step is interval complex sample quadrature with a proved derivative/truncation
+budget, then coefficient arithmetic certification and actual Lean interfaces.
+Public release and active heartbeat remain intended; do not revert visibility.

@@ -242,3 +242,40 @@ learner above deliberately proves approximation without asserting that
 spectral restriction. Its learned functions are evidence-bearing candidates,
 not a completed GRH proof. All new analytic/probabilistic statements here are
 prose proofs and scoped computations; no complete new Lean layer is claimed.
+
+
+\subsection{Exact rational constants without transcendental rounding}
+The next implementation step certifies growth and analytic-tail constants,
+while leaving sample evaluation and coefficient rounding separate. Put
+$\delta=3/q<\pi/q$ and, for an integer $L\ge1$, define
+\[
+ U_L(x)=(1+x/L)^{-L},\qquad x>0.
+\]
+The binomial coefficients give
+$(1+x/L)^L\le\sum_{j\ge0}x^j/j!=e^x$, so $e^{-x}\le U_L(x)<1$.
+Every evaluation of $U_L$ at a positive rational argument is exact rational.
+With the same $Q_k$ as above, choose $n_0\ge1$ and let
+\[
+ \widehat M=2\left[
+ \sum_{n=1}^{n_0-1} n^aU_L(\delta n^2)Q_k(\delta n^2)
+ +C_aQ_k(\delta n_0^2)
+ \frac{U_L(\delta n_0^2/2)}{1-U_L(\delta n_0)}\right],
+ \quad C_0=1,\quad C_1=\frac{1+\delta^{-1}}2.
+\]
+This rational number bounds $|\Lambda(s,\chi)|$ on the specified disk.
+Indeed decreasing $d$ to $\delta$ increases the positive integral majorant.
+For $a=1$, the maximum of $x e^{-\delta x^2/2}$ is
+$(\delta e)^{-1/2}\le\delta^{-1/2}\le(1+\delta^{-1})/2$.
+Split the Gaussian exponent into two halves, use
+$(n_0+j)^2\ge n_0^2+2n_0j$, and sum the resulting geometric tail.
+Replacing its numerator and ratio by $U_L$ increases the bound, since its
+denominator stays strictly positive. This proves the formula.
+
+For the actual conductors $3,4,5$, center $1/2$, radius $12/5$, $n_0=8$
+and $L=16$, exact fraction arithmetic gives respectively
+$\widehat M<4$, $\widehat M<10$, $\widehat M<6$.
+Using $\widehat M$ (or these integer upper bounds) and the rational radii
+$R=7/10$, $\rho=6/5$ makes the Cauchy-alias and Taylor terms exact rational
+certificates as well. Full numerator/denominator records and the executable
+\texttt{certify\_learning\_constants.py} are supplied. This certifies
+constants, not the complex sample oracle, floating optimizer or GRH.

@@ -25,6 +25,9 @@ New views include [coherent spatial density clouds](https://amelie-iska.github.i
 and [HoTT hubs/spokes applied to dessin face filling](https://amelie-iska.github.io/GRH-research/learned.html#hubs-spokes).
 These additions have explicit prose proofs and independent/focused checks;
 no new complete Lean4, Connes-embedding or GRH proof is claimed.
+The analytic tool now also supplies exact rational growth/alias/Taylor
+certificates (M_r<4/10/6 for the three worked conductors); complex sample and
+optimizer-rounding certification remain separate work.
 Generation, source-origin labels, split thresholds and native-admission limits:
 [dataset documentation](examples/synthetic_training/README.md).
 

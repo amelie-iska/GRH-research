@@ -350,3 +350,10 @@ outputs. New work adds no Lean declarations; prior360reports are not recast
 as complete formalization. Evidence: outputs/checks/2026-11-04-synthetic-training/
 {cloud-physics.json,density-cloud-browser.json,games-models.json,learning-browser.json}
 and planning/synthetic-training/review/. GRH remains unresolved.
+
+P11 continuation supplies exact rational growth, alias and Taylor constants
+for the q3/4/5 completed Dirichlet examples. The proof uses pi>3 and a rational
+exponential envelope; downloadable v4 certificates record center1/2, radius12/5,
+source hash and strict Fraction/integer inputs. M_r<4/10/6 is exact, not a
+floating estimate. Sample/optimizer rounding and analytic Lean remain open.
+The book remains212pages, articles42/108pages. No new Lean declaration.

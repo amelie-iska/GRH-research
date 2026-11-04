@@ -1095,3 +1095,19 @@ No active-model or credential file was published. See
 outputs/publication/2026-11-04/publication-verification.json.
 Continue P11 validated analytic constants/oracle and P7 arithmetic moment;
 both overall implementation and GRH research completion gates remain false.
+
+## Continued P11: exact rational analytic constants (2026-11-04)
+
+After public release, implemented and proved a transcendental-rounding-free
+majorant for the completed primitive Dirichlet examples. pi>3 and the exact
+rational upper envelope U_L(x)=(1+x/L)^(-L) turn the theta prefix/geometric
+tail into Fraction certificates. At center1/2 and radius12/5, q3/4/5 have
+certified M_r<4/10/6. The alias and Taylor terms are exact rational as well.
+No float enters the certificate path; strict integer/Fraction input guards
+reject floating parity/exponential arguments. Center, target, parameters,
+full numerators/denominators and generation-source hash are preserved.
+All v1–v4 iterations remain retained. Frontend exposes these certificates
+beside the unchanged floating training records, without treating them as
+sample or coefficient-rounding certificates. Book/articles rebuilt cleanly.
+P11 remains in progress: validated complex theta/Mellin samples and actual
+analytic Lean4 interfaces are the next concrete tasks; GRH remains open.

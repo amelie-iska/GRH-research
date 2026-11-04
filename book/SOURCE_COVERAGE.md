@@ -269,3 +269,5 @@ none is duplicated as an additional generic in-book panel. Shared TeX
 fragments feed both focused articles and the book. These additions are
 prose proofs, numerical training and exact finite combinatorial checks;
 no complete new analytic, topological, game or whole-book Lean claim is made.
+
+P11 now adds exact-rational completed Dirichlet growth/alias/Taylor constants with full numerator/denominator/source records and independent review. This augments the analytic learner; it does not certify sample values, optimizer rounding, all-conductor rates or GRH.
