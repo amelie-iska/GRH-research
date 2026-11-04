@@ -1,0 +1,338 @@
+\chapter[DG foundations and actual clock lifts]{DG foundations, clock lifts and endpoint-sensitive extensions}
+\label{dg:chapter}
+A derived construction begins with a differential and its cohomology, not
+with a proposed physical clock. This chapter develops the DG material of the
+original 2053 manuscript, lines1308--1478. Throughout this chapter $k$ is a
+field. We use the actual infinite nodal
+and theta dessin algebras. The source is preserved unchanged. Its unit-boundary
+example and self-extension count require corrections; its higher-product
+and physical interpretations require explicit additional data.
+
+\section{Degrees, maps and a decisive contracting homotopy}
+We use cohomological grading. A unital DG algebra is a graded algebra
+$B=\bigoplus_{n\in\mathbb Z}B^n$ with $d:B^n\to B^{n+1}$,
+$d^2=0$ and $d(ab)=d(a)b+(-1)^{|a|}a\,d(b)$ on homogeneous elements.
+A DG map preserves multiplication, the unit, degrees and the differential.
+It is a quasi-isomorphism when it induces isomorphisms on every cohomology
+group. A left DG module has the corresponding Leibniz rule for its action.
+The exterior generator's degree must be declared; the notation
+$\Lambda^\bullet(V)$ alone does not specify negative degrees.
+
+\begin{proposition}[A unit boundary is contractible]\label{dg:unit}
+If $\varepsilon\in B^{-1}$ satisfies $d\varepsilon=1$, the underlying
+$k$-complex of every unital left DG $B$-module is contractible. In particular $H^*(B)=0$; it is not a DG
+resolution of a nonzero field with zero differential.
+\end{proposition}
+\begin{proof}
+Define $h:M^n\to M^{n-1}$ by $h(m)=\varepsilon m$. Then
+$d_Mh(m)=m-\varepsilon d_Mm$, so $d_Mh+hd_M=1$. Every cocycle $m$
+is therefore $d_Mh(m)$. For a right module the correct formula is
+$h(m)=(-1)^n m\varepsilon$: its two compositions have opposite
+$d_Mm\varepsilon$ terms and again sum to $m$. Taking the regular module
+proves the algebra assertion. The displayed homotopy is $k$-linear; graded
+$B$-linearity would require an additional compatibility, such as graded
+centrality of $\varepsilon$. A unital chain map to a nonzero field would
+send $d\varepsilon$ both to zero and to one, which is impossible.
+\end{proof}
+The qualifier is essential for a general noncommutative DG algebra.
+Over our actual nodal algebra $A$, let $C=(A\xrightarrow{1}A)$ in degrees
+$-1,0$ and $B=\operatorname{End}_A(C)$ with commutator differential.
+The inverse-arrow homotopy $\varepsilon$ satisfies $d_B\varepsilon=1$.
+But a degree-$-1$ graded $B$-linear endomorphism of $C$ must commute with
+the even projection onto $C^0$; its only possible component $C^0\to C^{-1}$
+is then zero. Thus $C$ is acyclic and its underlying complex contracts,
+without being contractible by a $B$-linear homotopy. Derived and homotopy
+categories must not be conflated.
+
+For the source's two-piece example $k\oplus k\varepsilon$, the differential
+is the identity $k\varepsilon\to k$. Both cohomology groups vanish.
+The auxiliary identity $dh+hd=f$ for a Koszul relation $f$ is useful
+instead of assuming nonzero cohomology \cite{StacksKoszulDG}.
+
+\section{The genuine infinite node and its DG replacement}
+The clean interval dessin on the sphere gives
+$A=k[\xi,\eta]/(\xi\eta)$, with basis
+$1,\xi,\xi^2,\ldots,\eta,\eta^2,\ldots$. It remains infinite dimensional.
+The variables $\xi,\eta$ here are actual dessin loops; they are distinct
+from the auxiliary persistence parameters $x,y$ used later in the book.
+Set $R=k[\xi,\eta]$ and consider
+\[
+ K^0=R,\qquad K^{-1}=R\varepsilon,\qquad K^n=0\quad(n\ne0,-1),
+ \qquad d(b\varepsilon)=\xi\eta b.
+\]
+The product is ordinary coefficient multiplication, with
+$\varepsilon^2=0$ and $\varepsilon$ commuting with degree-zero coefficients.
+The odd square relation is imposed also in characteristic two.
+Proposition~\ref{thm:nodal-dg} proves all Leibniz cases and the cohomology.
+Explicitly, writing $p=a+b\varepsilon$ and $q=c+e\varepsilon$ gives
+\[
+ d(pq)=d(p)q+\varsigma(p)d(q),\quad
+ \varsigma(a+b\varepsilon)=a-b\varepsilon,\quad
+ h(a+b\varepsilon)=a\varepsilon,\quad dh+hd=(\xi\eta)\,1_K.
+\]
+This sign formula extends the homogeneous rule linearly; $d$ is not an
+ordinary ungraded derivation of this commutative square-zero algebra.
+
+\begin{center}
+\begin{tikzcd}[column sep=large]
+0\arrow[r]&R\varepsilon\arrow[r,"\xi\eta"]\arrow[d,"0"]&R\arrow[r]\arrow[d,"\pi"]&0\\
+0\arrow[r]&0\arrow[r]&A\arrow[r]&0
+\end{tikzcd}
+\end{center}
+The diagram compares cochain degrees $-1,0$. The map $\pi$ is quotient
+augmentation, not an inclusion of $A$ into $R$. Its kernel is $(\xi\eta)$,
+and multiplication by $\xi\eta$ is injective since $R$ is a domain.
+Thus the cohomology comparison is an isomorphism in every degree.
+The two ambient terms are free over $R$. They are not asserted to be free
+$A$-modules: the nonzero element $\xi\eta$ acts on them, so their action
+does not even factor through $A$. This DG replacement does not shorten the
+infinite projective resolution of a nodal residue simple over $A$.
+
+For an explicit calculation,
+$\xi^3\eta^2=d(\xi^2\eta\varepsilon)$, whereas $\xi^3$ and $\eta^2$
+survive in $H^0$. A polynomial has a unique normal form
+$a(\xi)+b(\eta)-c$, where $a(0)=b(0)=c$; remove every monomial divisible
+by $\xi\eta$. Their linear independence follows by setting each variable
+to zero. This identifies the quotient with the polynomial branch pullback.
+
+\section{Completion and the diagonal coefficient ring}
+Write $S=k[[\xi,\eta]]$. The same two-term construction over $S$ maps to
+\[
+ \Lambda=S/(\xi\eta)\cong
+ \{(a(\xi),b(\eta)):a(0)=b(0)\}.
+\]
+Here is a coefficientwise proof, avoiding an unjustified interchange of
+completion and arbitrary cohomology. The branch-evaluation map sends
+$F$ to $(F(\xi,0),F(0,\eta))$. Every equal-constant pair is the image of
+$a(\xi)+b(\eta)-a(0)$. Its kernel consists of series whose coefficients
+on both coordinate axes are zero. Such a series is uniquely $\xi\eta G$
+by shifting both exponents down one. The same shift proves multiplication
+by $\xi\eta$ injective. Consequently the completed Koszul model has
+$H^{-1}=0$, $H^0=\Lambda$ and no other cohomology. All these maps are
+continuous for the maximal-ideal topologies: evaluation preserves powers,
+and the product relation raises order by two. This is the actual completed
+surface order already used in the node chapter.
+
+An isomorphism $H^0(B)\cong\Lambda$ by itself is not this result.
+For example $B=\Lambda\oplus\Lambda\delta$, $|\delta|=-1$, $d=0$,
+$\delta^2=0$, has the same $H^0$ and nonzero $H^{-1}=\Lambda$.
+Projection to $\Lambda$ is not a quasi-isomorphism. A DG enhancement must
+specify the DG map or a justified zigzag and prove the required cohomology
+comparisons. Equivalences of derived DG-module categories use an external
+change-of-algebra theorem with its hypotheses; they do not follow from a
+single ordinary algebra isomorphism on $H^0$.
+
+\section{A clock that really lifts, and its semilinearity}
+For $q\in k^\times$, define $\sigma_q(\xi)=q\xi$,
+$\sigma_q(\eta)=q^{-1}\eta$. Substitution is a polynomial algebra
+automorphism, inverse to $\sigma_{q^{-1}}$, and fixes $\xi\eta$.
+It acts coefficientwise on $K$, fixing $\varepsilon$, so
+\[
+ \sigma_q d(b\varepsilon)=\sigma_q(\xi\eta b)
+ =\xi\eta\sigma_q(b)=d\sigma_q(b\varepsilon).
+\]
+Multiplicativity follows from the two-piece product formula. The completed
+substitution preserves each maximal-ideal power, so extends continuously,
+with continuous inverse, to the formal DG model and branch pullback.
+It is a semilinear chain automorphism over the ambient coefficient ring:
+$\sigma_q(rp)=\sigma_q(r)\sigma_q(p)$, not generally an $R$-linear map.
+
+The diagonal DVR $k[[u]]$, $u=\xi+\eta$, has branches $(F(\xi),F(\eta))$.
+The clock sends $u$ to the pair $(q\xi,q^{-1}\eta)$. If this is a diagonal
+series $G(u)$, its two linear coefficients must agree; hence $q=q^{-1}$.
+Conversely, if $q^2=1$, substitution sends $F(u)$ to $F(qu)$ and preserves
+the diagonal subring. It fixes that subring pointwise exactly when $q=1$,
+as the image of $u$ shows. In characteristic two these alternatives may
+coincide. Thus preserving the relation and order topology does not by itself
+preserve a chosen fixed coefficient action.
+
+For $k=\mathbb C$ and $q=e^{i\theta}$, the coefficient of
+$\xi^i\eta^j$ acquires phase $q^{i-j}$. A selected finite monomial space
+with its declared orthonormal basis then has a unitary diagonal action.
+Choosing that finite norm does not construct a canonical Hilbert completion
+of the order, a self-adjoint arithmetic generator or an $L$-function
+comparison. The positive-transfer and unitary-logarithm distinctions in
+the physics chapters still apply. Gluing DG clocks further requires actual
+compatible maps and coherences; no gluing theorem is inferred here.
+
+\section{Theta self extensions require endpoints}
+The source calls its double-three-cycle example spherical. Keep that
+rational theta distinct from the elliptic theta. Both have
+$\sigma=(012)(345)$, but their dart involutions are respectively
+$\alpha=(03)(15)(24)$ and $(03)(14)(25)$.
+Write vertices as the sorted $\alpha$-pairs $0,1,2$; for the elliptic
+case these are $\{0,3\},\{1,4\},\{2,5\}$.
+The simples $S_i$ are the residue simples of the actual infinite dessin
+algebra. The exact forbidden-word resolution of Theorem~\ref{thm:resolution}
+has two positive-degree arms. After Hom to a residue simple, every
+arrow differential vanishes, so Ext dimension counts the terminal vertices
+of these arms, not just arrows leaving the initial vertex.
+
+\begin{proposition}[Two different Ext tables]\label{dg:theta-ext}
+For $n=0$ the dimension matrix is the identity. For $n>0$, using right-module
+and path-travel conventions of the resolution chapter, the elliptic theta has
+\[
+ \dim_k\operatorname{Ext}^n(S_i,S_j)
+    =2\,\mathbf1_{j=i-n\bmod3}.
+\]
+For the spherical theta, positive even $n$ give $2$ on the diagonal and zero
+elsewhere; odd $n$ give zero on the diagonal and $1$ at each other vertex.
+\end{proposition}
+\begin{proof}
+For the elliptic involution, both initial arrows lower the vertex label by
+one modulo three; every next forbidden arrow does the same. Hence both
+length-$n$ indexing words end at $i-n$. For the spherical involution the
+forbidden dart permutation has cycles $(04),(13),(25)$. Each two-step arm
+returns to its initial vertex, while its first step reaches one of the two
+other vertices, one arm each. This proves all positive degrees; degree zero
+is Hom between pairwise distinct residue simples. Minimality of the exact
+resolution supplies the Hom differential vanishing already used above.
+\end{proof}
+Thus neither example has two-dimensional self $\operatorname{Ext}^1$.
+The two self-extension tables are
+\[
+\begin{array}{c|rrrrrrr}
+n&0&1&2&3&4&5&6\\\hline
+\text{elliptic}&1&0&0&2&0&0&2\\
+\text{spherical}&1&0&2&0&2&0&2
+\end{array}
+\]
+These are module Ext groups, not stable AR arrows, finite-cutoff quotient
+Ext groups or an asserted surface-intersection classification. The completed
+residue-simple calculation follows the earlier formal-series resolution;
+other continuous-module and derived equivalences need their own arguments.
+
+\section{Higher products and a usable derived interface}
+For an uncurved cohomological $A_\infty$ algebra, $m_n$ has degree $2-n$.
+With the graded tensor sign convention its identities are
+\[
+ \sum_{r+s+t=n}(-1)^{r+st}
+ m_{r+1+t}(1^{\otimes r}\otimes m_s\otimes1^{\otimes t})=0,
+ \qquad s\ge1.
+\]
+When $m_1=0$, the $n=3$ identity makes $m_2$ associative. The operation
+$m_3$ is therefore not its ordinary associator. Minimal-model existence
+over a field and the appropriate derived comparison are external results
+of Keller \cite[\S\S3.1,3.3,6.2]{KellerAinf}; they are not formalized here.
+For an ordinary algebra concentrated in degree zero, taking $m_2$ to be
+its product and all other operations zero already gives a minimal model.
+For our nodal DG resolution the cohomology is likewise concentrated in zero,
+so every higher $m_n$, $n\ge3$, has zero target by degree. This model
+therefore supplies no compulsory nonzero higher operation or physical
+curvature.
+
+The Ext algebra of a sum of simples is a different graded object. To build
+its derived composition data, choose an appropriate projective resolution
+$P$ and use the DG endomorphisms with
+$\partial f=d_Pf-(-1)^{|f|}fd_P$. Expanding twice cancels the mixed terms
+and leaves $d_P^2f-fd_P^2=0$. Bounded-above projective resolutions in the
+ordinary module category give the familiar derived-Hom model; completed
+and topological versions must specify their Hom spaces and admissible maps.
+
+There is also a useful grading test. Suppose an Ext minimal model is diagonal
+in cohomological/internal degree and its operations preserve internal weight.
+On inputs of cohomological degrees $a_1,\ldots,a_n$, $m_n$ has output
+degree $\sum a_i+2-n$ but internal weight $\sum a_i$. Diagonality forces
+$n=2$ unless the output vanishes. The polynomial quadratic-monomial theta
+resolutions are linear, so their Ext has this diagonal grading. A transfer
+using contractions chosen separately in each internal weight over a field
+retains it. Thus an internally compatible model can have every higher
+$m_n$ zero. This statement concerns that graded polynomial interface; it
+is not an identification of all ungraded or completed enhancements, nor
+an assertion that an arbitrary numerically fitted operation is a minimal
+model. No physical curvature or arithmetic positivity follows from the
+symbol $m_3$.
+
+
+\section{Derived traces and genuine filtered DG modules}
+The graded enveloping algebra is $B^e=B\otimes_k B^{\mathrm{op}}$ with
+Koszul signs; Hochschild objects are the derived tensor
+$B\otimes^{\mathbf L}_{B^e}B$ and derived Hom
+$\mathbf R\operatorname{Hom}_{B^e}(B,B)$, with their homological or
+cohomological conventions declared. Derived base tensor or flatness is
+needed beyond the field setting. Completed continuous Hochschild theory
+also requires its completed tensor and continuity conventions. These
+objects are not interchangeable with an arbitrary ordinary matrix trace.
+
+For the ordinary commutative nodal algebra, one concrete calculation is
+$HH_0(A)=A/[A,A]=A$: the degree-one Hochschild boundary sends
+$a\otimes b$ to $ab-ba=0$. This quotient of the infinite-dimensional algebra carries universal trace
+classes but chooses neither a functional nor a positive state. Over $\mathbb C$ declare
+$\xi,\eta$ self-adjoint and conjugate coefficients under $*$. The
+origin evaluation $\varphi(a)=a(0,0)$ is a clock-invariant positive state,
+since $\varphi(a^*a)=|a(0,0)|^2$. Its negative is still an invariant trace
+but is not positive, as its value at one shows. Even the positive choice
+has GNS null space $(\xi,\eta)$, so its GNS Hilbert space is just
+$\mathbb C$. This follows directly from the displayed seminorm, and
+shows that trace classes, positivity and a useful spectral representation
+are three separate choices. No arithmetic determinant is obtained here.
+
+A strict filtered DG module is a functor from a poset: its maps preserve
+degrees, actions and differentials, identities are identities, and every
+comparable triple has exactly the same composite map. A homotopy-coherent
+replacement must supply the higher coherences too; pairwise homotopies
+alone do not define it. For an actual example over our nodal DG model,
+\[
+ F_{a,b}=\xi^a\eta^b K,\qquad (a,b)\in(\mathbb N^2)^{\mathrm{op}},
+\]
+forms a family of DG $K$-submodules, with inclusion maps when
+$a\ge c$ and $b\ge d$. Indeed multiplying by the central degree-zero
+monomial commutes with $d$, and these ideals are closed under the $K$-action.
+Inclusions compose literally; the clock preserves each ideal up to its
+scalar $q^{a-b}$. Componentwise divisibility also gives
+$F_{a,b}\cap F_{c,d}=F_{\max(a,c),\max(b,d)}$. This is a decreasing
+module filtration indexed with the declared reversed order.
+
+The declared involution also matters. For self-adjoint $\xi,\eta$, a
+nonreal phase $q$ makes $\sigma_q$ an algebra automorphism which is not a
+$*$-automorphism. If a unitary implements it in a $*$-representation and
+$X=\pi(\xi)$ is self-adjoint, then $UXU^*=qX$ is self-adjoint, so
+$(q-\overline q)X=0$ and hence $X=0$; the same holds for $\pi(\eta)$.
+Thus this particular nonreal clock cannot act faithfully by unitary
+conjugation with those self-adjoint branch conventions. This does not
+exclude other involutions or graph-operator constructions with different
+adjoint generators; it forbids silently identifying their adjoints with
+these declared ones.
+
+The finite monomial windows below instead form increasing subcomplexes of
+$k$-vector spaces. They are not $R$-submodules or DG $K$-submodules, because
+multiplying by a variable leaves the box. Inverting both variables to
+manufacture increasing fractional modules would make $f=\xi\eta$ a unit:
+then $d(\varepsilon/f)=1$ and the localized DG algebra contracts. Such
+localization loses the node rather than improving its derived resolution.
+
+The remaining source interfaces need their own constructions: bar/cobar,
+Ginzburg and Fukaya enhancements are not selected by merely matching $H^0$;
+gluing up to homotopy requires coherent maps. Nor does a symbol $m_3$
+identify a Hochschild deformation or a measured curvature. The existing
+unitary-logarithm discussion is retained in the physics chapter. Its
+nonunitary counterpart needs care: a singular finite matrix cannot be an
+exponential, since every matrix exponential is invertible. An invertible
+unipotent matrix has a finite nilpotent logarithm in characteristic zero,
+which is not a self-adjoint generator unless the matrix is the identity.
+These observations delimit the operator interface without assuming a
+physical realization of the algebraic clock.
+
+\section{Executable windows and exact verification coverage}
+The canonical laboratory shows a finite subcomplex, not a finite parent
+algebra. For $d\varepsilon=\xi\eta$ it retains source monomials
+$0\le i,j\le N-1$ and target monomials $0\le i,j\le N$.
+Every source maps injectively to the distinct target $(i+1,j+1)$.
+The finite rank is $N^2$, negative cohomology vanishes, and the surviving
+$2N+1$ target monomials lie on the two axes. These windows exhaust the
+polynomial resolution. For $d\varepsilon=1$ both layers instead use the
+same box and contract; for $d=0$ both layers survive. The window is not an $R$-submodule and is not
+closed under multiplication, so it must not be advertised as a finite DG
+subalgebra. The phase weight $i-j$ is equal at the two ends of every arrow.
+The second view displays the exact endpoint-sensitive theta Ext matrices.
+
+\texttt{NodalDG.lean} uses the actual square-zero exterior-line coefficient
+algebra, with even/odd embeddings, differential and parity sign. It checks
+the Leibniz, homotopy, augmentation and semilinear-clock identities, as well
+as the exact ambient polynomial sequence for the nodal relation. These are
+actual algebra/module components. A categorical $\mathbb Z$-graded DG object,
+completed topology, A-infinity transfer and derived equivalence are not
+thereby kernel checked. Exact Python diagnostics check symbolic identities,
+normal forms and the two actual dart systems. Browser figures provide finite
+windows and phase illustrations; they are not numerical proofs of the
+infinite statements or of GRH.

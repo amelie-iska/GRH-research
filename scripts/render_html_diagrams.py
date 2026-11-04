@@ -9,7 +9,7 @@ import re,subprocess,json,hashlib,sys
 from concurrent.futures import ThreadPoolExecutor
 ROOT=Path(__file__).resolve().parents[1]
 OUT=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else ROOT/'web/book'
-text='\n'.join((ROOT/'book/chapters'/(n+'.tex')).read_text() for n in ['reviewed-mathematics','ar-components','coverings','physics','computations','architecture','toricgt','persistence','frontier'])
+text='\n'.join((ROOT/'book/chapters'/(n+'.tex')).read_text() for n in ['reviewed-mathematics','ar-components','coverings','dg-foundations','physics','computations','architecture','toricgt','persistence','frontier'])
 expressions=[m[0] for m in re.finditer(r'\\begin\{(tikzpicture|tikzcd)\}.*?\\end\{\1\}',text,re.S)]
 assert len(expressions)>=1
 preamble=r'''\documentclass[border=5pt]{standalone}
@@ -29,5 +29,5 @@ def render(pair):
  subprocess.run(['pdftocairo','-svg',str(work/'diagram.pdf'),str(output)],check=True)
  return dict(index=i,sha256=hashlib.sha256(output.read_bytes()).hexdigest(),bytes=output.stat().st_size)
 with ThreadPoolExecutor(max_workers=2) as executor:rows=list(executor.map(render,enumerate(expressions)))
-(ROOT/'outputs/checks/2026-11-03-book/diagram-exports.json').write_text(json.dumps(rows,indent=2)+'\n')
+(ROOT/'outputs/book/diagram-exports.json').write_text(json.dumps(rows,indent=2)+'\n')
 print('Exported',len(rows),'actual compiled book diagrams with preserved geometry')

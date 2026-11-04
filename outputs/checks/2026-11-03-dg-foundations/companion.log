@@ -1,0 +1,9 @@
+file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_companion.mjs:18
+const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+                                                                                                                                                       ^
+
+Error: {"exceptionId":1,"text":"Uncaught (in promise) Error: Expected six saved trained models; got 6","lineNumber":10,"columnNumber":37,"scriptId":"5","stackTrace":{"callFrames":[{"functionName":"","scriptId":"5","url":"","lineNumber":9,"columnNumber":36},{"functionName":"","scriptId":"5","url":"","lineNumber":18,"columnNumber":2}]},"exception":{"type":"object","subtype":"error","className":"Error","description":"Error: Expected six saved trained models; got 6\n    at <anonymous>:10:37\n    at <anonymous>:19:3","objectId":"4480052651508428795.2.1"}}
+    at evaluate (file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_companion.mjs:18:152)
+    at async file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_companion.mjs:22:14
+
+Node.js v24.19.0

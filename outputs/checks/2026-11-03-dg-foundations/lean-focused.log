@@ -1,0 +1,56 @@
+GRHResearch.NodalDG.odd_square_product.{u_1} {S : Type u_1} [CommRing S] (a b : S) : odd a * odd b = 0
+GRHResearch.NodalDG.differential_even.{u_1} {S : Type u_1} [CommRing S] (f a : S) : (differential f) (even a) = 0
+GRHResearch.NodalDG.differential_odd.{u_1} {S : Type u_1} [CommRing S] (f b : S) :
+  (differential f) (odd b) = even (f * b)
+GRHResearch.NodalDG.differential_square_zero.{u_1} {S : Type u_1} [CommRing S] (f : S) :
+  differential f ∘ₗ differential f = 0
+GRHResearch.NodalDG.sign_leibniz.{u_1} {S : Type u_1} [CommRing S] (f : S) (p q : Total S) :
+  (differential f) (p * q) = (differential f) p * q + sign p * (differential f) q
+GRHResearch.NodalDG.koszul_homotopy.{u_1} {S : Type u_1} [CommRing S] (f : S) (p : Total S) :
+  (differential f) (homotopy p) + homotopy ((differential f) p) = f • p
+GRHResearch.NodalDG.unit_contracts.{u_1} {S : Type u_1} [CommRing S] (p : Total S) :
+  (differential 1) (homotopy p) + homotopy ((differential 1) p) = p
+GRHResearch.NodalDG.unit_cycle_boundary.{u_1} {S : Type u_1} [CommRing S] (p : Total S) (hp : (differential 1) p = 0) :
+  ∃ q, (differential 1) q = p
+GRHResearch.NodalDG.boundary_range.{u_1} {S : Type u_1} [CommRing S] (f : S) : LinearMap.range (boundary f) = ideal f
+GRHResearch.NodalDG.augmentation_kernel.{u_1} {S : Type u_1} [CommRing S] (f : S) :
+  LinearMap.ker (augmentation f) = LinearMap.range (boundary f)
+GRHResearch.NodalDG.augmentation_surjective.{u_1} {S : Type u_1} [CommRing S] (f : S) :
+  Function.Surjective ⇑(augmentation f)
+GRHResearch.NodalDG.boundary_injective.{u_1} {S : Type u_1} [CommRing S] [IsDomain S] (f : S) (hf : f ≠ 0) :
+  Function.Injective ⇑(boundary f)
+GRHResearch.NodalDG.totalAugmentation_differential.{u_1} {S : Type u_1} [CommRing S] (f : S) (p : Total S) :
+  (totalAugmentation f) ((differential f) p) = 0
+GRHResearch.NodalDG.clock_semilinear.{u_1} {S : Type u_1} [CommRing S] (e : S ≃+* S) (r : S) (p : Total S) :
+  (clock e) (r • p) = e r • (clock e) p
+GRHResearch.NodalDG.clock_commutes.{u_1} {S : Type u_1} [CommRing S] (e : S ≃+* S) (f : S) (hf : e f = f)
+  (p : Total S) : (clock e) ((differential f) p) = (differential f) ((clock e) p)
+GRHResearch.NodalDG.relation_ne_zero.{u_2} (k : Type u_2) [Field k] : relation k ≠ 0
+GRHResearch.NodalDG.nodal_boundary_injective.{u_2} (k : Type u_2) [Field k] :
+  Function.Injective ⇑(boundary (relation k))
+GRHResearch.NodalDG.nodal_augmentation_exact.{u_2} (k : Type u_2) [Field k] :
+  LinearMap.ker (augmentation (relation k)) = LinearMap.range (boundary (relation k))
+GRHResearch.NodalDG.nodal_augmentation_surjective.{u_2} (k : Type u_2) [Field k] :
+  Function.Surjective ⇑(augmentation (relation k))
+GRHResearch.NodalDG.ambient_term_projective.{u_2} (k : Type u_2) [Field k] :
+  Module.Projective (PolynomialRing k) (PolynomialRing k)
+'GRHResearch.NodalDG.odd_square_product' depends on axioms: [propext]
+'GRHResearch.NodalDG.differential_even' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.differential_odd' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.differential_square_zero' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.sign_leibniz' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.koszul_homotopy' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.unit_contracts' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.unit_cycle_boundary' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.boundary_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.NodalDG.augmentation_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.NodalDG.augmentation_surjective' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.boundary_injective' depends on axioms: [propext]
+'GRHResearch.NodalDG.totalAugmentation_differential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.NodalDG.clock_semilinear' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.clock_commutes' depends on axioms: [propext, Quot.sound]
+'GRHResearch.NodalDG.relation_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.NodalDG.nodal_boundary_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.NodalDG.nodal_augmentation_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.NodalDG.nodal_augmentation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.NodalDG.ambient_term_projective' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -31,7 +31,7 @@ assert not re.search(r'undefined references|Citation .* undefined|Reference .* u
 import xml.etree.ElementTree as ET
 htmlbook=root/'web/book/main.html'
 ET.fromstring(htmlbook.read_text())
-assert htmlbook.read_text().count('class="reader-lab"')==6
+assert htmlbook.read_text().count('class="reader-lab"')==7
 iframes=re.findall(r'<iframe[^>]+src="([^"]+)"',htmlbook.read_text())
 assert len(iframes)==len(set(iframes)), 'Duplicate embedded visualizations'
 for row in json.loads((root/'book/source-provenance.json').read_text()):

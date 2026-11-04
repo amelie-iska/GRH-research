@@ -128,12 +128,21 @@
     {
       "id": "P4-source-expansion",
       "priority": 7,
-      "status": "pending",
+      "status": "in_progress",
       "dependencies": [
         "P0-deduplicate"
       ],
       "objective": "Expand every preserved source topic cohesively with corrected math/physics and chapter-specific examples",
-      "acceptance": "Every source topic mapped to corrected exposition, evidence and formal status; no historical false claim presented as theorem"
+      "acceptance": "Every source topic mapped to corrected exposition, evidence and formal status; no historical false claim presented as theorem",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-04T00:41:35.382012+00:00",
+      "last_result": "DG source1308-1478 slice implemented: corrected unit-boundary/H0/self-Ext claims; actual infinite-node DG and completed clock proofs;20 Lean components and282 full reports; one canonical3D laboratory; independent review, exact and browser checks pass. Whole source expansion and arithmetic bridge remain open; rotate P7-low-gcd next.",
+      "evidence": [
+        "outputs/checks/2026-11-03-dg-foundations/milestone.json",
+        "outputs/checks/2026-11-03-dg-foundations/formal-checks.json",
+        "outputs/checks/2026-11-03-dg-foundations/final-browser/dg-browser.json",
+        "planning/reviews/dg-foundations/REVIEW.md"
+      ]
     },
     {
       "id": "P5-larger-ablations",

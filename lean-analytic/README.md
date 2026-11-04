@@ -198,3 +198,21 @@ boundary calculation. General staircases, a packaged graded-minimal complex,
 Ext identifications, CW realization, Schur equivariance, tensoring with the
 actual surface-order coefficient E, channel norms and the arithmetic bridge
 remain separate formalization tasks. No source clone or pinned toolchain changed.
+
+## Nodal DG algebra and ambient resolution components
+
+`NodalDG.lean` adds20 printed declarations, bringing the full suite to282
+reports (280 standard-foundation,2 axiom-free), all warnings treated as errors.
+It uses QuadraticAlgebra S 0 0 for the actual exterior-line coefficient algebra,
+even/odd embeddings, actual differential/parity/homotopy maps, sign-Leibniz,
+unit-boundary acyclicity, a genuine ideal quotient augmentation and the exact
+ambient polynomial nodal boundary. Clock compatibility is stated for an actual
+coefficient ring automorphism e with e(f)=f and retains semilinearity explicitly.
+
+The concrete q-substitution, completed topology, full Z-graded DG categorical
+object, residue Ext table identification, A-infinity transfer, HH/GNS and global
+derived/Hilbert/arithmetic comparisons are not kernel checked by these20
+components. Full prose proofs and primary references are in the new DG chapter;
+its actual polynomial parent quotient is the infinite nodal dessin algebra.
+No finite scalar toy replaces it. The source's dε=1 example is correctly
+contractible at the underlying complex level, not a nonzero ground-field model.

@@ -357,3 +357,50 @@ especially gcd1 with every original mask/conductor/uniformity, or an actually
 independent positive determinant construction. No arithmetic cancellation or
 GRH proof was supplied by this formalized auxiliary polynomial example.
 Both completion gates remain unresolved; the existing hourly loop stays active.
+
+## Latest frontier: DG foundations P4 slice (2026-11-03)
+
+P4-source-expansion remains owned by grh-research-loop and in progress.
+The DG source1308–1478 slice is implemented: read research/dg-foundations.md,
+book/chapters/dg-foundations.tex and planning/reviews/dg-foundations/REVIEW.md.
+The actual infinite node has a proved Koszul DG/completed branch model and
+semilinear clock; source unit-boundary/H0-only/self-Ext/higher-product errors
+are corrected with full proofs and exact examples. Spherical and elliptic
+theta tables are distinct. HH0/state/GNS, genuine reverse DG-module filtration,
+finite-window and declared-star/unitary boundaries are explicit.
+
+NodalDG.lean final hash87a814c73605cd1dd37b156202f0b7d6c0a8dea8e387392d34aa1d4f615e1d83
+has20 focused printed components. Full pinned suite282 reports passes warnings
+as errors;280 standard foundations,2 axiom-free. This does not package full
+Z-graded DG/category/completion/A-infinity/Ext/HH/GNS objects, actual q-substitution
+or an arithmetic comparison. General formalization remains open. No new
+package/toolchain, source clone, saved training data or environment changes.
+Sage remains supplied unexecuted. Primary Keller v2 and Stacks snapshots are
+pinned in planning/DG_SOURCES.json.
+
+Book146pages/32chapters, focused articles27/55pages,16 vector diagrams and
+seven distinct tools. Open /dg.html or /book/main.html#lab-dg. Exact/symbolic/
+endpoint and new browser checks pass, as does the companion regression.
+The current diagram manifest is outputs/book/diagram-exports.json; historical
+outputs/checks/2026-11-03-book/diagram-exports.json is unchanged. Do not overwrite
+historical verification artifacts. Render/test profiles and failed probes
+are preserved. The known test browser closes; reader preview8765 stays live.
+
+NEXT: deliberately choose ready P7-low-gcd for one arithmetic run, even though
+research_loop.py next returns broad in-progress P4. The helper allows claiming
+any ready task; this rotation implements the master plan's active arithmetic
+lane instead of starving it behind a long book rewrite. Read
+research/short-row-high-gcd.md and its review notes, then attack the coprime
+h=1 original-family kernel, retaining column annular coefficients, every
+zero mask and conductor/moving-profile uniformity. High-gcd smoothing and
+finite-carrier obstructions are already done; do not rerun them as progress.
+A useful concrete trial is a rigorous averaged pair-kernel estimate at
+H=D^(3/4), with a fully stated coefficient norm and unchanged character
+family. If it fails, record the exact missing cancellation/operator estimate;
+do not assume GRH or desired positivity. Pin any added primary literature.
+
+After that arithmetic rotation, resume P4 with original linear-relations/
+functorial-filtration source1097–1307 and its actual infinite-order module
+construction, replacing the next generic coverage row. Preserve all historical
+sources and context. Both completion gates are false and the existing hourly
+heartbeat must remain active.

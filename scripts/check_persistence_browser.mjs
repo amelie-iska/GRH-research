@@ -56,9 +56,9 @@ await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScal
 await send('Fetch.enable',{patterns:[{urlPattern:'*data/persistence/quantum-*',requestStage:'Request'}]});corruptNext=true;
 await send('Page.navigate',{url:root+'/persistence.html'});await until(`document.body.dataset.ready==='error'`);assert(await evaluate(`document.getElementById('quantumTab').disabled`));assert.equal((await snap()).length,3);assert((await evaluate(`document.getElementById('quantumStatus').textContent`)).includes('checksum mismatch'));await send('Fetch.disable');
 await send('Emulation.setDeviceMetricsOverride',{width:1550,height:1100,deviceScaleFactor:1,mobile:false});
-console.log('Standalone checks passed; checking book.');await send('Page.navigate',{url:root+'/book/main.html'});await until(`document.querySelectorAll('iframe').length===6`);
+console.log('Standalone checks passed; checking book.');await send('Page.navigate',{url:root+'/book/main.html'});await until(`document.querySelectorAll('iframe').length===7`);
 console.log('Book frame count passed.');assert.equal(await evaluate(`document.querySelectorAll('#lab-persistence').length`),1);
-assert.equal(await evaluate(`new Set([...document.querySelectorAll('iframe')].map(f=>f.src)).size`),6);
+assert.equal(await evaluate(`new Set([...document.querySelectorAll('iframe')].map(f=>f.src)).size`),7);
 await evaluate(`document.getElementById('lab-persistence').scrollIntoView({block:'start'})`);await until(`document.querySelector('#lab-persistence iframe').contentDocument?.body?.dataset.ready==='true'`);
 await evaluate(`document.querySelector('#lab-persistence iframe').contentDocument.getElementById('quantumTab').click()`);await screenshot('book-canonical');
 const sourceSelector='#lab-persistence button[data-source="/lean/PersistenceResolution.lean"]';
@@ -67,6 +67,6 @@ await until(`document.querySelector('${sourceSelector}').parentElement.querySele
 const sourceText=await evaluate(`document.querySelector('${sourceSelector}').parentElement.querySelector('pre').textContent`);assert.equal(sourceText,readFileSync('lean-analytic/PersistenceResolution.lean','utf8'));report.kernel_checked_source_matches_file=true;
 await evaluate(`document.querySelector('${sourceSelector}').parentElement.scrollIntoView({block:'center'})`);await screenshot('book-lean-resolution');
 assert.equal(exceptions.length,0);
-Object.assign(report,{passed:true,staircase_presets:4,invalid_input_preserves_model:true,coefficient_rings_and_fibers:true,monotone_grade_controls:true,nontrivial_cycle_persists_then_dies:true,same_channel_inclusion:true,orbit_and_heatmap:true,mobile:true,checksum_failure_preserves_algebra:true,canonical_embeds:6,uncaughtExceptions:exceptions});
+Object.assign(report,{passed:true,staircase_presets:4,invalid_input_preserves_model:true,coefficient_rings_and_fibers:true,monotone_grade_controls:true,nontrivial_cycle_persists_then_dies:true,same_channel_inclusion:true,orbit_and_heatmap:true,mobile:true,checksum_failure_preserves_algebra:true,canonical_embeds:7,uncaughtExceptions:exceptions});
 writeFileSync(checkDirectory+'/browser.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }catch(error){console.error('Original failure:',error);throw error;}finally{try{await send('Browser.close');}catch(error){console.error('Test browser close failed:',error.message);}ws.close();}

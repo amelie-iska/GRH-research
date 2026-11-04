@@ -1,0 +1,45 @@
+\subsection{A correct DG model of the infinite node}
+Use cohomological degrees and an uncurved differential of degree $+1$.
+An odd element $\varepsilon$ with $d\varepsilon=1$ contracts the underlying $k$-complex of every unital
+left DG module: $h(m)=\varepsilon m$ satisfies $dh+hd=1$ by the graded
+Leibniz rule. Thus this example has zero cohomology, contrary to the
+original ground-field-resolution claim. An isomorphism on $H^0$ alone is
+also insufficient for a DG quasi-isomorphism; all degrees must be checked.
+
+\begin{proposition}[Nodal Koszul model]\label{thm:nodal-dg}
+Let $k$ be a field, $R=k[\xi,\eta]$ and $f=\xi\eta$ and $K=R\oplus R\varepsilon$, with
+$|\varepsilon|=-1$, $\varepsilon^2=0$, $dR=0$ and $d\varepsilon=f$.
+The augmentation $K\to A=R/(\xi\eta)$, $a+b\varepsilon\mapsto[a]$,
+is a DG-algebra quasi-isomorphism onto the actual infinite nodal dessin
+algebra. Branch rescaling $\xi\mapsto q\xi$, $\eta\mapsto q^{-1}\eta$,
+$\varepsilon\mapsto\varepsilon$ for $q\in k^\times$ lifts to a DG automorphism.
+\end{proposition}
+\begin{proof}
+Multiplication is $(a+b\varepsilon)(c+e\varepsilon)=ac+(ae+bc)\varepsilon$.
+The differential kills degree zero and sends $b\varepsilon$ to $fb$.
+Its square is zero. For two odd inputs the Leibniz right side is
+$fbc\varepsilon-bfc\varepsilon=0$; the other homogeneous cases follow
+by $R$-linearity. Multiplication by $f$ is injective in the polynomial
+domain. Hence $H^{-1}(K)=0$, $H^0(K)=R/(f)$, and all other groups vanish.
+The augmentation preserves products and kills boundaries. Rescaling fixes
+$f$, so its coefficientwise extension commutes with $d$ and has inverse
+obtained by replacing $q$ with $q^{-1}$. This is a one-relation Koszul
+construction \cite{StacksKoszulDG,StacksKoszulRegular}.
+\end{proof}
+Replacing $R$ by $k[[\xi,\eta]]$ gives the completed order: setting each
+variable separately to zero maps onto the branch pullback, and the kernel
+consists precisely of mixed monomials, hence equals $(\xi\eta)$.
+Rescaling is generally semilinear over the coefficient ring, rather than
+linear over the fixed diagonal DVR $k[[u]]$, $u=\xi+\eta$.
+It preserves that DVR as a subring exactly when $q^2=1$, and fixes it
+pointwise exactly when $q=1$. No Hilbert norm or arithmetic spectrum follows.
+
+The corresponding Lean file checks the actual exterior-line algebra,
+differential, sign-Leibniz, homotopy and polynomial ambient-resolution
+identities. Full graded/category/completion objects remain separately scoped.
+The two theta dessins likewise require endpoint-sensitive Ext: self
+$\operatorname{Ext}^1$ is zero in both; for the elliptic theta self
+$\operatorname{Ext}^3$ has dimension two, while for the spherical theta
+positive even self Ext has dimension two. Outdegree alone does not count
+self extensions. Minimal $A_\infty$ models use additional graded data
+\cite[\S3.3]{KellerAinf}; $m_3$ is not automatically a physical curvature.

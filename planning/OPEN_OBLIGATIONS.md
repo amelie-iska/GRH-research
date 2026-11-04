@@ -174,3 +174,13 @@ and dimensions, CW/Schur equivariance, and the actual nodal E tensor cone.
 The module quotient basis/Hilbert series and categorical ProjectiveResolution
 wrapper are not formalized by these19 declarations. Entire-book coverage and
 the original low-gcd/independent arithmetic positivity bridge remain open.
+
+The DG foundations P4 slice now has a genuine infinite-node model, correct
+completion/clock proofs and distinct spherical/elliptic endpoint Ext tables.
+Its20 Lean components check algebra and ambient sequence identities, not all
+graded/category/topological or derived constructions. Full q-substitution,
+HH/GNS/A-infinity objects and general DG gluing remain separate. P4 overall
+is still in progress; all source topics are not yet fully rewritten or
+formalized. The low-gcd original arithmetic kernel and positive determinant
+bridge remain unresolved; rotate an arithmetic run next rather than imply
+that this source correction proves GRH.

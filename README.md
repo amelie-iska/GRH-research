@@ -12,7 +12,7 @@ The private local page is **[http://127.0.0.1:8765](http://127.0.0.1:8765)**; th
 
 Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuQuantum/CUDA-Q sources are forked and cloned, but GPU adapters are not executed on this Apple machine. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
 
-The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **262 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
+The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **282 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
 
 Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `python3 scripts/prepare_companion.py`. Start/restart the loopback-only server with `python3 scripts/serve_book.py`; no public deployment or external scripts are needed. The preview is running as a separate local process, so a chat interruption need not stop it.
 
@@ -213,11 +213,11 @@ The [new persistence laboratory](http://127.0.0.1:8765/persistence.html)
 combines exact staircase resolutions and actual nodal-order coefficients with
 a fixed saved quantum channel's flag bifiltration. It has one
 [canonical book location](http://127.0.0.1:8765/book/main.html#lab-persistence).
-There are six distinct in-book tools, without repeated generic panels.
+There are seven distinct in-book tools, without repeated generic panels.
 The shared articles prove the general adjacent-syzygy resolution, its signed
 minors and Hilbert series, the coefficient cone ranks, channel contractivity
-and the induced homology-rank formula. The book is now 140 pages; the focused
-concise/extended articles are 27/54 pages. Original source volumes are intact.
+and the induced homology-rank formula. The book is now 146 pages; the focused
+concise/extended articles are 27/55 pages. Original source volumes are intact.
 
 [Reproduction and conventions](examples/persistence/README.md),
 [independent review](planning/reviews/persistence-tools/REVIEW.md) and
@@ -237,7 +237,8 @@ free-module maps. It proves kernel/image equalities, the stated ideal image,
 quotient augmentation, injectivity, projectivity and vanishing residue Hom
 differentials. Regular multiplication and the constant-coefficient residue
 action are separately fixed and checked. All 19 theorem types/dependencies
-are printed; the pinned full suite passes 262 dependency reports.
+are printed; the then-current pinned full suite passed 262 dependency reports; the DG
+extension below brings the current count to282.
 
 [Independent review](planning/reviews/persistence-formal/REVIEW.md) and
 [formal evidence](outputs/checks/2026-11-03-persistence-formal) describe scope.
@@ -246,3 +247,26 @@ loads the actual Lean source beside its numerical/algebraic examples.
 General staircases, graded minimality, categorical/CW/Schur interfaces,
 the actual surface-order tensor cone and arithmetic bridge are not thereby
 formalized. Both project completion gates remain unresolved; the loop stays active.
+
+## DG foundations and actual clock lifts
+
+The [new DG chapter and laboratory](http://127.0.0.1:8765/book/main.html#lab-dg)
+develop the genuine infinite nodal dessin algebra and distinguish the rational
+and elliptic theta extension tables. The original dε=1 example is corrected:
+it is acyclic, rather than a resolution of the ground field. A valid nodal
+Koszul model, completed branch comparison, semilinear clock lift, endpoint
+counts and the limits of higher-product/physical interpretations are proved.
+The [3D monomial laboratory](http://127.0.0.1:8765/dg.html) shows exact finite
+subcomplexes and phase conventions with one canonical book location.
+
+[NodalDG.lean](lean-analytic/NodalDG.lean) checks20 actual algebra/differential/
+homotopy/augmentation/clock and ambient resolution components. The complete
+pinned suite passes282 reports; the [review](planning/reviews/dg-foundations/REVIEW.md)
+and [scope ledger](book/VERIFICATION.md) distinguish those components from
+full graded/category/completion/A-infinity formalization. The book has32
+chapters/146pages,16 vector diagrams and seven unique tools; the focused
+articles are27/55pages. [Exact code and reproduction](examples/dg/README.md),
+[pinned literature](planning/DG_SOURCES.json) and
+[research report](research/dg-foundations.md) accompany the extension.
+P4 source expansion and both completion gates remain open. No new arithmetic
+positivity, GRH proof, training, dependency or hardware run is claimed.

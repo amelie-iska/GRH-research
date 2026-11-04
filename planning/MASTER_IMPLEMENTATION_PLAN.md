@@ -192,3 +192,11 @@ action. This closes the concrete interface task, not general staircase,
 graded/CW/Schur/cone/category formalization or either completion gate. Continue
 P4 source expansion with a precise corrected construction and source-topic map;
 retain the independent P7 arithmetic lane and the broader P6 formal backlog.
+
+P4 DG-foundations slice (2026-11-03): source1308–1478 now has an explicit
+corrected chapter, actual infinite nodal DG/completed model, clock and theta
+endpoint proofs, higher-operation/trace/filtration boundaries,20 checked Lean
+components and one canonical3D monomial tool. Whole P4 remains in progress.
+After this implementation slice rotate a run to ready P7-low-gcd to keep the
+independent arithmetic lane active; do not wait for every broad source topic
+to be completed first. Then resume P4 with the next precise source topic.

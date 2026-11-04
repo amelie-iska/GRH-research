@@ -484,3 +484,67 @@ the actual nodal E tensor cone remain separate formalization tasks. This is
 no full-book or GRH completion. Next ready implementation task is P4 source
 expansion; the independent original low-gcd/positive arithmetic lane stays
 open and the existing hourly loop remains active.
+
+## 2026-11-03 — DG foundations, actual clocks and distinct theta Ext tables
+
+Developed a concrete P4 source-expansion slice from original2053 lines1308–1478;
+P4 remains in progress. The new chapter proves a genuine nodal Koszul DG
+model for the infinite dessin algebra, its coefficientwise completed branch
+comparison and an actual semilinear clock lift. The original dε=1 example
+has zero cohomology; the claimed ground-field model is false. General module
+contraction is qualified at the underlying k-complex level: the homotopy
+need not be graded-module linear. A derived End example over the actual
+infinite node demonstrates the distinction. H0 isomorphism alone does not
+establish a quasi-isomorphism.
+
+Endpoint-sensitive forbidden-word resolutions distinguish the spherical and
+elliptic theta inputs. Both have self Ext1=0; elliptic positive self Ext
+occurs every third degree with dimension2, spherical positive even self Ext
+has dimension2. Higher operations/ordinary algebras/Ext minimal models are
+kept separate. The chapter develops HH0 of the node, origin-state positivity
+and one-dimensional GNS, a genuine reversed-order DG submodule filtration,
+and the boundary between that filtration and finite k-linear windows.
+Clock rescaling preserves diagonal k[[u]] iff q²=1, fixes it pointwise iff
+q=1, and nonreal phases do not preserve a declared self-adjoint-branch star.
+The corresponding unitary-implementation obstruction is explicitly limited
+to that adjoint convention; no general arithmetic no-go is claimed.
+
+NodalDG.lean adds20 actual exterior-line algebra/differential/sign-Leibniz/
+homotopy/augmentation/semilinear-clock/ambient nodal-resolution components.
+Focused and full pinned282-report suites pass warnings as errors:280 use
+standard foundations,2 are axiom-free. Independent review checked final
+types/source hash87a814c7…15e1d83, exact symbolic identities,64 monomial
+normal forms,234 matrix-power endpoint dimensions,27 windows and135
+inclusions. Concrete q-substitution, graded/category/completion/A-infinity,
+Ext/HH/GNS objects and the arithmetic bridge are not fully Lean formalized.
+Keller v2 and exact Stacks snapshots are pinned with hashes. Source Sage
+companion is supplied unexecuted; no new dependencies, training or hardware.
+
+One canonical /dg.html laboratory provides rotatable3D monomial subcomplexes,
+unit/node/zero comparisons, exact ranks, branch phases, correct signed
+complex values and both theta tables. Browser checks pass12 windows, four
+theta cases, clock/DVR cases, orbit/mobile/source equality and seven unique
+book embeds. The full companion regression passes ten surfaces/five AR views/
+six models and32-chapter native MathML with no broken images/exceptions.
+A broad test-count replacement mistakenly changed the six-model expectation;
+it was corrected, with the failing log preserved. No saved model changed.
+
+Book146pages/32chapters, focused articles27/55pages,16 vector diagrams and
+seven unique tools are compiled and visually inspected. An overfull staged
+candidate was rejected before promotion and corrected with an Ext table.
+The renderer now writes the current export manifest in outputs/book instead
+of overwriting a historical check manifest; the historical bytes are restored
+and verified, and the new manifest/figures are separately retained. Original
+source copies, cloned pins, environments, caches, profiles and outputs are
+preserved. Evidence: outputs/checks/2026-11-03-dg-foundations/, the independent
+review and research/dg-foundations.md. Both completion gates remain open.
+
+Next rotate a run to ready P7-low-gcd, retaining every original mask/conductor/
+uniformity and documenting a genuinely new low-gcd attempt; the independent
+arithmetic lane must not wait for the entire broad P4 rewrite. Then continue
+P4 on linear relations/functorial filtrations with a specific construction.
+
+Primary download files remain in the existing ignored research/literature cache,
+unchanged locally; version URLs and exact hashes are tracked in
+planning/DG_SOURCES.json. The ignore policy was preserved rather than forcing
+raw cache downloads into the repository.

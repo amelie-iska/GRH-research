@@ -1,5 +1,5 @@
 # Complete source inclusion and development map
-Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical140-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
+Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical146-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
 
 ## emergent_cyclic_time_hilbert_polya_GRH_2053.tex
 SHA256 `08708269403c3095381c45eb4c82435a073aaca8819f427a232e8eba368e05dc`; 15556 lines.
@@ -12,7 +12,7 @@ SHA256 `08708269403c3095381c45eb4c82435a073aaca8819f427a232e8eba368e05dc`; 15556
 | `\chapter{Linear Path Categories of Quivers}` | 1030 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
 | `\part{Representation Theory of Compact Gentle Surface Algebras}` | 1090 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
 | `\chapter{Linear Relations on Vector Spaces and Functorial Filtrations}\label{ch:6}` | 1097 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
-| `\chapter{DG and \texorpdfstring{$A_\infty$}{A-infty} foundations: making ``derived time'' honest}` | 1308 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
+| `\chapter{DG and \texorpdfstring{$A_\infty$}{A-infty} foundations: making ``derived time'' honest}` | 1308 | Full source read; corrected DG foundations chapter proves nodal Koszul/completion/clock, distinguishes theta endpoints, unit-boundary acyclicity, H0-only and higher-product errors; HH0 and genuine filtrations developed |20 actual algebra/differential/ambient-resolution components checked; categorical grading, completion, A-infinity/HH/GNS/Ext/derived objects remain separately scoped |
 | `\chapter{Explicit multiparameter persistence computations tied to surface orders}` | 1479 | Entire source preserved; corrected persistence chapter has monotone maps, reviewed replacement staircase/CW/order-coefficient constructions and executable examples | Replacement square-ideal underlying ungraded resolution and residue Hom boundaries checked; general source chapter and graded/category interfaces not certified |
 | `\part{Surface Orders, Twisted Shifts, and Classification}` | 1740 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
 | `\chapter{Compact Gentle Surface Orders}` | 1742 | Entire source preserved; corrected subject development and examples in critical edition | Partial selected interfaces only; not certified chapter-wide |
@@ -124,3 +124,13 @@ not general staircases, graded/Schur/CW/derived interfaces or the actual nodal
 coefficient tensor cone. Nineteen new printed dependencies use only standard
 foundations; primary algebra scope remains the infinite dessin/order setting,
 with k[x,y] auxiliary. No whole-source or GRH completion is inferred.
+
+The DG foundations expansion reads original2053 lines1308–1478 in full and
+replaces its generic topic row with explicit corrected proofs and examples.
+The new chapter covers the actual infinite node, continuous branch comparison,
+clock/DVR/adjoint boundaries, both genuine theta endpoint tables, higher
+products, HH0/state/GNS and strict filtered-module conventions. Twenty Lean
+component statements do not formalize those entire categories or every source
+assertion. Bar/cobar/Ginzburg/Fukaya choices still require actual constructions
+and hypotheses. Full source expansion remains in progress; all originals stay
+byte-identical. There are now seven unique canonical tools and16 vector figures.
