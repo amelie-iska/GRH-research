@@ -286,3 +286,56 @@ Keep string tokenisation separate from TokenGT graph token identities; a
 compressed finite path corpus neither changes the infinite algebra nor proves
 an arithmetic determinant or GRH. Do not infer downstream training improvements
 from these small examples or fabricate quantum speedups.
+
+## Learned functions, covers, generative physics and GPU extension (2026-11-04)
+
+The user requests a substantial extension, preserved alongside every prior
+requirement. Implement and distinguish: finite-width trained quantum and
+hybrid models; explicitly normalized infinite-width/random-feature/NTK
+limits with their hypotheses; real/complex embeddings versus finite-field
+algebraic coefficients and non-Archimedean valuations; tropical attention
+and its actual tropical/HMS boundaries. Keep arithmetic candidate discovery
+separate from exact spectral/determinant verification and the independent
+GRH comparison theorem.
+
+Add explicit universal-cover examples: distinguish the free group F2 from
+the field F_2, the four-regular Cayley tree from a theta graph's three-regular
+universal cover, and their punctured/compact-surface category hypotheses.
+Include finite-support string/path/geodesic examples with computed Hom,
+Ext/Tor and deck-sum covering functors; do not assume every covering is
+Hom-controlled, dense or an equivalence of derived categories.
+
+Add concrete quantum matter/materials and molecular benchmark applications,
+pants/Frobenius gluing and TQFT examples, carefully scoped CFT/string and
+holographic proposals, anabelian reconstruction hypotheses, and quantum
+nonlocal-game calculations with the current MIP*=RE/Connes-embedding status.
+No elementary CHSH or finite circuit is a constructive solution to the
+commuting-versus-tensor correlation separation or an arithmetic proof.
+
+Research current primary repositories for AI/manual classical and quantum
+chip design, including AlphaChip, placement/synthesis flows, superconducting
+layout and bare-metal control. Pin source revisions and audit scope. Provide
+several tropical/hybrid accelerator reference architectures and executable
+bit/operation-level models; distinguish those from synthesized/routed/taped
+out chips, physical resource estimates and hardware benchmarks.
+
+Include quantum-channel diffusion and trained hybrid quantum-feature score
+and flow-matching models, with actual physical target distributions,
+normalization/positivity/equilibrium and sampling checks, matched baselines,
+seeds/splits/checkpoints/costs, interactive paths and circuits. Separate CPTP
+quantum evolution from classical stochastic samplers containing quantum
+features. Relate learned renormalization to true marginal actions and
+explicit coarse observables rather than using unrelated compression targets.
+
+GPU deployment: the user explicitly requested RustDesk access to
+iska-linux-vscode and transfer of the project. Preserve the Mac copy and
+all existing Linux files. The saved host is reachable and has an RTX4090;
+copy into a new GRH-from-Mac-20261104 directory with resumable transfer and
+verification. Preserve copied macOS environments as archives, use separate
+Linux environments, never overwrite existing tokengt/other environments.
+Use existing CUDA-capable torch for initial simulations; an isolated
+cuQuantum environment requires the specified dependency approval. Do not
+claim cuQuantum execution before its actual backend checks pass.
+
+Deliver this extension through evidence-based slices in the same existing
+implementation/research loop; full implementation and GRH gates remain open.

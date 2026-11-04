@@ -4,7 +4,7 @@ The book is a developed critical edition of the two supplied manuscripts, not a 
 
 ## Current kernel-checked layer
 
-The working critical book has 35 chapters, with eleven unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
+The working critical book has 36 chapters (191 pages), with twelve unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
 
 The pinned Lean 4.24/mathlib suite has **360 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 357 reports use standard foundational axioms only and 3 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
 
@@ -19,11 +19,11 @@ The pinned Lean 4.24/mathlib suite has **360 printed theorem dependency reports*
 | Learned renormalization | Actual PennyLane three-architecture and larger nine-qubit training; NumPy comparison, analytic target/gradient checks; actual Strawberry Fields training | No optimizer convergence theorem, hardware run, general QFT RG theorem or quantum advantage claim |
 | ToricGT hybrid | Actual pinned upstream Weyl module, trained PennyLane surrogate, six exact rational 15-minor PSD certificates | No upstream language-model campaign reproduced; no inferred arithmetic L-function operator |
 | Persistence extension | Actual MvPolynomial worked ungraded free resolution: injectivity, kernel/image equalities, ideal quotient, projectivity and zero residue Hom boundaries; 19 new printed dependencies. General prose staircase/CW/Schur/flag/cone and exact finite laboratory remain independently reviewed | General staircases, graded minimality, CW/Schur/category interfaces, surface-order coefficient tensor cone and channel norms are not yet fully Lean formalized; quantum distances are not interval certificates; Sage source supplied unexecuted |
-| Numerical architecture inspector | 22 saved cases and 836 shape-labelled DAG nodes plus a computed clock; actual backend/reference checks, all-case browser tests, 3D/flat dependency views, exact coordinate values, gate/covariance/witness/expert/certificate panels and one canonical book embed | Optional upstream probes, full model campaigns, hardware/GPU execution and general mathematical formalization remain separate; numerical arrays are not kernel-checked theorems or new training |
+| Numerical architecture inspector | 22 saved cases and 836 shape-labelled DAG nodes plus a computed clock; actual backend/reference checks, all-case browser tests, 3D/flat dependency views, exact coordinate values, gate/covariance/witness/expert/certificate panels and one canonical book embed | Optional upstream probes, full model campaigns, upstream campaigns and general mathematical formalization remain separate; new GPU cases are scoped below; numerical arrays are not kernel-checked theorems or new training |
 | Covering/GLS/geometric extension | Actual theta finite-quotient cover, 36 exact Hom pairs, local endomorphism radical and higher-genus non-lifting proofs; three fresh Lean matrix statements with standard dependencies | General covering/module/AR/derived/Fukaya interfaces and uniform higher-genus obstruction are not fully Lean formalized; no GLS identification or arithmetic positivity inferred |
 | DG foundations | Actual exterior-line algebra, differential, parity Leibniz, contraction, ideal augmentation, semilinear clock and ambient polynomial nodal sequence:20 kernel-checked components; reviewed full prose node/completion/Ext/star/filtered-module constructions and one canonical finite-window tool | Full categorical Z-graded DGA, completed topology, concrete q-substitution, Ext identification, A-infinity transfer, HH/GNS and derived equivalence are not fully formalized; finite boxes are k-subcomplexes only |
 | Sage | Exact scripts supplied | Installed launcher points to missing app; Sage execution not passed |
-| NVIDIA | Two requested upstream-only public forks and pinned local clones; optional adapters | No supported NVIDIA GPU runtime on this Apple machine; GPU execution not passed |
+| NVIDIA | Executed cuStateVec7/11/23-qubit surface circuits and cuTensorNet contraction on the Linux RTX4090; isolated approved conda environment and explicit lock | Largest case has norm/inverse-echo checks; no independent large-state reference, physical hardware execution or speedup claim |
 
 The web book places selected Lean and executable code beside chapter content. These panels label scope rather than imply complete chapter formalization. The original manuscripts also contain experimental and proposed engineering statements: they need measurements or model validation, not a Lean proof that unperformed experiments happened.
 
@@ -245,3 +245,31 @@ interfaces are still further formal work. No claimed full book
 formalization, spectral positivity or GRH follows. Independent final
 review and focused fresh compile are recorded in
 planning/reviews/normal-path-algebra/REVIEW.md.
+
+## Learned generative physics extension (2026-11-04)
+
+Twelve trained hybrid diffusion/flow models across three seeds and one coherent
+four-qubit state flow ran on the Linux RTX4090. Exact partial trace of the
+seven-spin K2,5 Gibbs teacher defines the physical target. The four auxiliary
+feature qubits are not its physical spins or a faithful order representation.
+Matched controls show no entanglement advantage. Five additional inspector
+records contain250 nodes;3752 scalar witnesses independently replay with
+maximum error below2.8e-7. Known-teacher reverse-mixture control is separate
+from the DDPM Gaussian reverse-kernel approximation.
+
+The new chapter has complete prose proofs of the specified random-feature
+RBF/readout limit, mixture score/velocity identities, actual genus-two
+travel-order right-module resolutions and Hom/Ext/Tor computations, and
+dual-number Frobenius gluing. Exact checks cover coefficient learners over
+F2/F3/F5, finite cover trees, pants axioms and CHSH; source-pinned reviews
+separate graph covers, ribbon surfaces, compact covers and coefficient fields.
+These additions introduce no new Lean declarations: the previously checked
+360-report suite is preserved, and their general homological/probabilistic
+formalization remains open. Three digital accelerator reference models are
+tested specifications, not synthesized chips. CFT/string/anabelian/HMS and
+chemical/biochemical benchmark extensions retain explicit further obligations.
+
+Approved GPU environment creation and failed probes are recorded; existing
+Mac/Linux environments were preserved. The larger23-qubit circuit is untrained.
+Its447 gates and8,388,608 amplitudes are a finite matter simulation, not an
+arithmetic spectral construction. Both project completion gates remain false.

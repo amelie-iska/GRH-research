@@ -199,3 +199,23 @@ A further ten Lean reports now prove actual generated-algebra membership,
 spanning and bijective finite normal expansion with the selector inverse.
 The separately constructed path-quotient algebra comparison/universal map,
 completed order and categorical interfaces remain separate obligations.
+
+## Learned physics, width limits and geometry (2026-11-04)
+
+The latest user extension is developed in chapter33, with its canonical
+learned-physics lab and five original checkpoint/tensor replays. The source
+manuscripts' RG, cyclic/quantum channels and geometrical/physical proposals
+are connected to explicit K2,5 Gibbs partial trace, full-action classical RG
+random-feature fits, quantum-feature diffusion/flow, coherent purification,
+actual infinite genus-two modules, ribbon/graph/surface covers and Frobenius
+pants gluing. Both full historical manuscripts remain byte-identical.
+
+Pinned primary-source ledgers are in planning/learned-frontier/geometry and
+/hardware; the latter has20 repositories,24 focused document ranges and13
+primary papers. The book supplies exact coefficient-field examples and
+properly scoped RBF/readout-limit proofs, CHSH and three digital accelerator
+specifications. This is focused review, not full reproof of the literature.
+CFT/string/anabelian/holography/HMS comparisons, chemical/biochemical
+benchmarks, general covers/AR/derived functors, ASIC synthesis and general
+quantum generative models remain further research/implementation work.
+No new Lean layer or arithmetic-positive determinant theorem is claimed.

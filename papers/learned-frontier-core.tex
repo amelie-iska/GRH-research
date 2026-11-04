@@ -1,0 +1,94 @@
+\section{Learned fields, width limits and quantum geometry}\label{lf:core}
+Learned functions enter this program as candidate generators, physical
+surrogates and control laws. A network may suggest an arithmetic metric,
+operator or gluing datum; a successful fit does not establish its positivity,
+analytic domain or identification with a completed $L$-function. Those are
+independent mathematical obligations. This section gives explicit interfaces
+and executed examples rather than treating ``quantum'', ``tropical'' or
+``infinite width'' as a substitute for that comparison.
+
+\begin{proposition}[A specified quantum-feature width limit]\label{lf:kernel}
+Let $x\in\mathbb R^d$, $w\sim N(0,I_d)$ and
+$b\sim\mathrm{Unif}[0,2\pi]$ be independent, and set
+$\phi_{w,b}(x)=\sqrt2\langle Z\rangle_{R_Y(w\cdot x+b)|0\rangle}
+=\sqrt2\cos(w\cdot x+b)$. For independent features,
+\[
+ K_m(x,y)=m^{-1}\sum_{r=1}^m\phi_r(x)\phi_r(y)
+ \longrightarrow K(x,y)=e^{-\|x-y\|^2/2}
+\]
+almost surely on every specified finite set of pairs. Every $K_m$ is a
+positive semidefinite Gram kernel. For a readout
+$f_a(x)=m^{-1/2}\sum_r a_r\phi_r(x)$ with only $a$ trained, its tangent
+kernel is exactly $K_m$. These statements do not assert the same limit
+for a jointly trained finite quantum transformer.
+\end{proposition}
+\begin{proof}
+Uniform-phase integration gives
+$\mathbb E_b[2\cos(u+b)\cos(v+b)]=\cos(u-v)$.
+The Gaussian characteristic function then gives $K$. Products are bounded
+by two, so the strong law applies to each pair and hence any finite union.
+For any finite coefficient vector $c$, the Gram quadratic form is
+$m^{-1}\sum_r|\sum_i c_i\phi_r(x_i)|^2\geq0$.
+Differentiating with respect to $a_r$ gives the final assertion.
+\end{proof}
+The frozen-kernel squared-loss flow has residual
+$r(t)=\exp(-K_m t)r(0)$ when the loss normalization is absorbed into time.
+Null directions do not decay. A complex feature space instead uses the
+Hermitian kernel $\mathbb E[\phi(x)\overline{\phi(y)}]$.
+A finite coefficient field has neither this Gaussian law nor an ordered
+positive Hilbert metric; changing algebraic coefficients is a separate operation.
+
+\begin{proposition}[Tropical limit and a cancellation boundary]\label{lf:tropical}
+For real $s_1,\ldots,s_n$ and $\tau>0$,
+\[
+ 0\leq\tau\log\sum_j e^{s_j/\tau}-\max_j s_j\leq\tau\log n.
+\]
+An attention maximum therefore has a controlled log-sum-exp approximation.
+It does not by itself define a tropicalization of a variety or an HMS functor.
+In a valued coefficient field, valuation of a sum can increase by cancellation.
+\end{proposition}
+\begin{proof}
+After subtracting $M=\max s_j$, the exponential sum lies between one and $n$.
+For the second statement, both $1+T$ and $-1+T$ have valuation zero in
+$\mathbb Q((T))$, whereas their sum $2T$ has valuation one. In characteristic
+two that sum is zero. Thus replacing every addition by its tropical minimum
+without tracking leading coefficients loses information.
+\end{proof}
+Kontsevich--Soibelman constructions require valued analytic and
+integral-affine gluing data; appropriate gentle/Fukaya comparisons require
+specified categories, gradings, stops and smoothness hypotheses
+\cite{LFAffine,LFQNTK,LFFukaya}. Learned coefficients can propose such data,
+but the compatibility equations and arithmetic comparison still need proofs.
+
+\paragraph{Executed physical examples.}
+On the actual clean genus-two dessin, put seven quantum spins on its
+$K_{2,5}$ incidence graph and compute a normalized Gibbs state. Exact white-spin
+partial trace gives a two-spin quantum RG marginal. Twelve RTX4090 runs train
+four-qubit-feature diffusion and flow-matching models for its smoothed
+$Z$-measurement law: two objectives, entangled/product circuit controls, and
+three seeds. They have 5,810 nominal parameters and 2,000 steps each.
+A separate four-qubit variational purification flow learns the full known
+density interpolation, with 48 controls. Its minimum fidelity on a 33-point
+grid is $0.999903$; this is not a uniform theorem or universal noise inverse.
+The matched controls show no consistent entanglement advantage.
+
+Actual cuStateVec/cuTensorNet execution also covers 7-, 11- and 23-qubit
+finite circuits on genus-two, genus-four and genus-ten dessin incidence
+graphs. The 23-qubit case has 8,388,608 amplitudes and 447 gates. These larger
+circuits are untrained; the small cases have independent NumPy comparisons,
+while the largest has normalization and inverse-circuit checks.
+The exact environment and all failed/preliminary records are preserved.
+
+\paragraph{Geometric and hardware interfaces.}
+For the contracted $m$-edge dessin, the graph fundamental group is
+$F_{m-1}$, and its universal graph cover is the $m$-regular tree.
+The theta case $m=3$ has a three-regular cover, distinct from the four-regular
+Cayley graph of $F_2$. Neither is the coefficient field $\mathbb F_2$ or the
+universal cover of the filled compact surface. Explicit path modules over the
+infinite genus-two algebra give Hom, Ext and Tor computations; Frobenius
+pants tensors give exact TQFT gluing, with a heralded physical implementation.
+CHSH gives a finite game benchmark, distinct from the unrestricted
+correlation separation in MIP*$=$RE \cite{LFMIP}. Three executable tropical
+hardware references and a source-pinned chip-design survey complement the
+circuits. They are arithmetic/control designs, not synthesized chips,
+validated CFT/string dualities or a proof of GRH.

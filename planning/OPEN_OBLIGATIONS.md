@@ -310,3 +310,23 @@ any assertion of universal almost-split factorization. Polynomial finite
 sums, formal completions and lattices must remain distinct. The positive
 arithmetic determinant/zero-location bridge and original signed low-gcd
 mean square are unchanged and open.
+
+## Learned-generative and GPU extension boundaries (2026-11-04)
+
+The specific random-feature/readout RBF limit has a complete prose proof;
+it is not the limit of the trained four-qubit feature-learning networks.
+A learned Hermitian finite matrix or positive circuit supplies no independent
+arithmetic determinant comparison or control of infinite domains. The
+original-family signed low-gcd moment and every intended GRH scope remain
+open. Next arithmetic rotation is the original weighted Mellin moment before
+pointwise convexity, keeping all primitive numerator/denominator factors,
+row zeros, beta_U, conductors and II-I/short-term covariance.
+
+New homological, probabilistic and Frobenius constructions are prose/exact
+checks, not newly packaged Lean theorems. General path-quotient/category/AR
+interfaces, coefficient-field/valuation/HMS comparisons, continuum/CFT/string
+sewing, anabelian field hypotheses and chemical/biochemical applications
+remain open. The GPU simulations are classically executed finite circuits;
+matched three-seed runs show no entanglement advantage. No physical quantum
+processor, universal denoiser, fabricated ASIC, PPA or quantum speedup is
+inferred. The23-qubit case lacks an independent large-state reference.

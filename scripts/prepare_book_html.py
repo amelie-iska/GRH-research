@@ -24,6 +24,7 @@ header='''<div class="reader-nav"><a href="/">Research atlas</a> · <a href="/bo
 s=re.sub(r'(<body\s*>)',r'\1'+header,s,count=1)
 count=0
 canonical={
+ 'learned generative fields, width limits and quantum geometry':('learned','examples/learned_frontier/README.md','Quantum generative models, GPU runs and exact geometry'),
  'linear relations, filtrations and actual branch modules':('relations','examples/relations/check_relations.py','Exact dessin-module relation and filtration code'),
  'cellular dessins and their infinite orders':('atlas','examples/sage/dessin_orders.sage','Exact Sage construction'),
  'almost-split geometry, hom control and determinant relations':('ar','lean/BookInterfaces.lean','Lean matrix and determinant interfaces'),
@@ -53,9 +54,9 @@ def panel(m):
  if section=='relations':formal+='<details><summary>Lean: the actual infinite algebra and its nonsplit module extension</summary><button class="load-code" data-source="/lean/BranchExtension.lean">Load complete algebra and module proof</button><pre class="source-code"></pre><p>Actual infinite polynomial algebra: nonsplit module extension, unbounded normal-image membership and spanning, and bijective algebra-valued finite expansion with explicit inverse coefficients. The separately defined path-quotient algebra comparison, categorical/AR universality and GRH remain open formal interfaces.</p></details>'
  if section=='relations':formal+='<details><summary>Exact normal-path coordinates, including million-degree examples</summary><button class="load-code" data-source="/data/normal-paths.json">Load finite exact evidence</button><pre class="source-code"></pre><p><a href="/examples/relations/check_normal_paths.py">Executable exact checker</a>. Finite diagnostics validate conventions; the arbitrary finite-support independence statement is in the Lean source above.</p></details>'
  if section=='relations':formal+='<details><summary>Actual generator products and normal-coordinate round trips</summary><button class="load-code" data-source="/data/normal-algebra.json">Load constructive exact evidence</button><pre class="source-code"></pre><p><a href="/examples/relations/check_normal_algebra.py">Constructive arrow-product checker</a>. The Lean source proves membership and spanning at every degree, including arbitrary finite expansions in the actual generated algebra.</p></details>'
- frame='/'+section+'.html?embed=book' if section in {'architecture','persistence','dg','rg','qtoken','relations'} else '/?embed='+section
- standalone='/'+section+'.html' if section in {'architecture','persistence','dg','rg','qtoken','relations'} else '/#'+section
- height=1100 if section in {'architecture','persistence','dg','rg','qtoken','relations'} else 700
+ frame='/'+section+'.html?embed=book' if section in {'architecture','persistence','dg','rg','qtoken','relations','learned'} else '/?embed='+section
+ standalone='/'+section+'.html' if section in {'architecture','persistence','dg','rg','qtoken','relations','learned'} else '/#'+section
+ height=1100 if section in {'architecture','persistence','dg','rg','qtoken','relations','learned'} else 700
  return heading+f'''<aside class="reader-lab" id="lab-{section}"><h3>Interactive {section} laboratory</h3><p>This is the canonical location of this tool. Related chapters link here instead of repeating it. Numerical illustrations are separate from proof.</p><p><a href="{standalone}">Open this laboratory separately</a>.</p><iframe loading="lazy" src="{frame}" title="Interactive {section} examples" height="{height}"></iframe>{animation}{formal}<details><summary>{label}</summary><button class="load-code" data-source="/{code}">Load complete source</button><pre class="source-code"></pre></details><p><a href="/verification.html">Exact formalization and execution coverage</a>.</p></aside>'''
 s=re.sub(r'<h2 class="chapterHead">.*?</h2>',panel,s,flags=re.S)
 def token_panel(m):
@@ -65,7 +66,7 @@ def token_panel(m):
  count+=1
  return heading+'<aside class="reader-lab" id="lab-convextok"><h3>Certified vocabulary and surface-path laboratory</h3><p>Original small examples of ConvexTok: inspect the occurrence DAG, fractional capacities, vocabulary choices and shortest segmentations, with exact rational certificates. The genus-two and genus-four cases encode finite permitted words of the infinite dessin algebra; they do not replace it by a finite algebra.</p><p><a href="/convextok.html">Open the tokenisation laboratory separately</a> · <a href="https://arxiv.org/html/2605.22821v1">Primary paper v1</a></p><iframe loading="lazy" src="/convextok.html?embed=book" title="ConvexTok vocabulary, LP certificates and dessin paths" height="1100"></iframe><details><summary>Complete executable optimisation and certificate code</summary><button class="load-code" data-source="/examples/tokenization/model.py">Load complete source</button><pre class="source-code"></pre></details><p>Exact small-instance optimisation, not trained language-model evidence, a coherent quantum tokenizer or a GRH proof. LP and rounding examples are not yet formalized in Lean.</p></aside>'
 s=re.sub(r'<h3 class="sectionHead">.*?</h3>',token_panel,s,flags=re.S)
-assert count==11, 'Expected eleven unique canonical laboratories, including ConvexTok'
+assert count==12, 'Expected twelve unique canonical laboratories, including learned generative physics'
 
 s=s.replace('</body>','''<script>document.querySelectorAll('.load-code').forEach(button=>button.onclick=async()=>{const r=await fetch(button.dataset.source);const p=button.parentElement.querySelector('pre');p.textContent=r.ok?await r.text():'Source unavailable';button.hidden=true;});
 function fitReaderMath(){

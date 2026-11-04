@@ -1,0 +1,22 @@
+{
+  "id": "3f4a9486-688b-4fe4-8908-de8f65b36105",
+  "utc": "2026-11-04T11:03:24.005510+00:00",
+  "action": "checkpoint",
+  "owner": "grh-research-loop",
+  "task": {
+    "id": "P9-linux-gpu-transfer",
+    "priority": 0,
+    "status": "complete",
+    "dependencies": [],
+    "objective": "Copy all GRH project progress to the authorized Linux GPU host preserving originals and existing remote work",
+    "acceptance": "Resumable new-directory transfer; checksum/source pin/Git verification; unchanged Mac and prior Linux data; separate Linux environment and executed GPU evidence",
+    "owner": "grh-research-loop",
+    "updated_utc": "2026-11-04T11:03:24.005510+00:00",
+    "last_result": "Resumable13.44GB initial new-directory copy and integrated13.65GB snapshot completed; full checksum scientific/source/checkpoint content matches with live-preview-log and cross-platform symlink-permission boundaries recorded. Remote source pins and both manuscript hashes pass. Approved isolated native cuQuantum environment executed7/11/23-qubit checks; old environments and remote-only outputs preserved.",
+    "evidence": [
+      "outputs/checks/2026-11-04-learned-frontier/transfer/verification.json",
+      "outputs/checks/2026-11-04-learned-frontier/remote-integrity.json"
+    ]
+  },
+  "note": "Administrative checkpoint; scientific validity comes from reviewed evidence"
+}

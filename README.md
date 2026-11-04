@@ -8,7 +8,7 @@ The latest arithmetic development is a [full-mask Hecke type-I expansion](resear
 
 ## Research book and interactive companion (2026-11-03)
 
-Current edition: **180 pages,35 chapters, eleven unique in-book laboratories**.
+Current edition: **191 pages,36 chapters, twelve unique in-book laboratories**.
 The learning section now leads with [actual RG](http://127.0.0.1:8765/rg.html):
 full effective actions, constants, generated interactions, partition functions,
 retained observables and explicit scales. [Quantum TokenGT](http://127.0.0.1:8765/qtoken.html)
@@ -28,6 +28,18 @@ segmentation, including genuine genus-two/four permitted-path corpora.
 Sixteen rational primal/dual certificates and independent exhaustive checks
 include strict gaps10<11 and31/2<16. These examples do not replace TokenGT's
 graph tokens, reproduce NLP training, or close the GRH bridge.
+The [learned-physics laboratory](http://127.0.0.1:8765/learned.html) adds
+GPU-trained diffusion/flow samplers, coherent state preparation, a specified
+random-feature width limit, finite-field coefficient learners and exact
+cover/Hom/Ext/Tor/pants/game examples. Five new
+[checkpoint tensor/circuit replays](http://127.0.0.1:8765/architecture.html?collection=frontier)
+expose actual numerical states. Twelve matched generative runs across three
+seeds show no entanglement advantage; the separate coherent four-qubit flow
+has minimum sampled fidelity0.999903. Executed cuQuantum circuits reach23qubits
+on the Linux RTX4090. [Reproduction, environment and limitations](examples/learned_frontier/README.md).
+These are finite physical experiments; the independent arithmetic bridge and
+full formalization remain open.
+
 The original 22 records and six original training families remain unchanged.
 Their compression, covariance and finite spectral tasks are clearly labelled
 as auxiliary experiments, with complete preserved data.
@@ -38,7 +50,7 @@ The private local page is **[http://127.0.0.1:8765](http://127.0.0.1:8765)**; th
 
 The fixed top-left **Engage night** button transforms the page, book and embedded labs into a dark biomechanical interface at staggered rates. Moving light rails, breathing panels, blinking indicators and cyan/violet/amber text accents provide ambient motion. The adjacent pause button stops these effects; OS reduced-motion preferences are respected. Settings persist locally across pages. Scientific values and playback controls retain their existing behavior. Shared assets are installed by the HTML generators; `python3 scripts/prepare_theme.py` updates existing HTML editions.
 
-Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuQuantum/CUDA-Q sources are forked and cloned, but GPU adapters are not executed on this Apple machine. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
+Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuStateVec and cuTensorNet now run on the Linux RTX4090 in the separately approved isolated environment; the Apple machine remains the local preview and formalization workspace. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
 
 The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **360 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open. The actual infinite genus-two generated algebra now has kernel-checked normal-image membership, spanning and a bijective finite coordinate expansion with explicit inverse coefficients. The separately constructed path-quotient algebra comparison and categorical universal properties remain further formalization work.
 
@@ -82,8 +94,8 @@ The current focused editions use **infinite-dimensional locally gentle algebras 
 
 | Current focused edition | TeX | PDF |
 |---|---|---|
-| Concise, 30 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
-| Extended, 62 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
+| Concise, 38 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
+| Extended, 90 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
 
 The paper gives complete explicit resolution/order/Cartan calculations; presentation semi-invariant weights and their precise Hom/Ext scope; positive-degree Schur module functors, Young tableaux and natural Littlewood–Richardson maps; the cyclic monodromy invariant ring and a convergent local positive Cauchy kernel. Schur functors fail termwise exactness and fixed order-base action in displayed examples. On continuous finite-length completed modules cycle traces are nilpotent, so nonconstant parameters require semi-invariants, flags or pp data.
 

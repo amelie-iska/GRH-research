@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "created_at_utc": "2026-11-04T10:40:18.239745+00:00",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "seed": 20261104,
+  "format": {
+    "width": 8,
+    "fraction_bits": 4,
+    "signed": true,
+    "rounding_mac": "arithmetic shift/floor; saturate once at output"
+  },
+  "checks": {
+    "two_complement_all_8bit_patterns": 256,
+    "all_signed_8bit_additions": 65536,
+    "all_4bit_two_lane_masks_and_winners": 262144,
+    "random_masked_tiles_seed_20261104": 300,
+    "backward_unique_tie_and_clip_policy": true,
+    "mixed_jobs_three_buffer_sizes": {
+      "jobs": 200,
+      "capacities": [
+        1,
+        2,
+        4
+      ],
+      "ready": [
+        true,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    "completion_reordering_and_permanent_backpressure": true,
+    "readout_guard_cases": 6,
+    "readout_accumulator_boundaries": 66,
+    "malformed_inputs_rejected": 9
+  },
+  "negative_controls_detected": {
+    "zero_as_minus_infinity": true,
+    "wrapped_sum_before_max": true,
+    "saturation_before_winner": true,
+    "arithmetic_mean_substitution": true,
+    "per_product_rounding": true,
+    "negative_truncation_toward_zero": true,
+    "readout_bypass_empty": true,
+    "readout_bypass_overrun": true,
+    "readout_bypass_stale": true,
+    "readout_bypass_deadline": true,
+    "readout_bypass_low_margin": true,
+    "readout_bypass_clip": true
+  },
+  "reference_trace": {
+    "out_of_order_schedule": {
+      "outputs": [
+        [
+          0,
+          {
+            "raw": 16,
+            "valid": true,
+            "overflow": false,
+            "winner": null,
+            "adds": 0,
+            "multiplies": 1,
+            "compares": 0
+          }
+        ],
+        [
+          1,
+          {
+            "raw": 3,
+            "valid": true,
+            "overflow": false,
+            "winner": 0,
+            "adds": 1,
+            "multiplies": 0,
+            "compares": 0
+          }
+        ]
+      ],
+      "trace": [
+        {
+          "cycle": 0,
+          "finish": [],
+          "retire": null,
+          "launch": 0,
+          "occupancy": 1
+        },
+        {
+          "cycle": 1,
+          "finish": [],
+          "retire": null,
+          "launch": 1,
+          "occupancy": 2
+        },
+        {
+          "cycle": 2,
+          "finish": [
+            1
+          ],
+          "retire": null,
+          "launch": null,
+          "occupancy": 2
+        },
+        {
+          "cycle": 3,
+          "finish": [],
+          "retire": null,
+          "launch": null,
+          "occupancy": 2
+        },
+        {
+          "cycle": 4,
+          "finish": [],
+          "retire": null,
+          "launch": null,
+          "occupancy": 2
+        },
+        {
+          "cycle": 5,
+          "finish": [
+            0
+          ],
+          "retire": 0,
+          "launch": null,
+          "occupancy": 1
+        },
+        {
+          "cycle": 6,
+          "finish": [],
+          "retire": 1,
+          "launch": null,
+          "occupancy": 0
+        }
+      ],
+      "abstract_cycles": 7,
+      "latencies": {
+        "MAC": 5,
+        "MAXPLUS": 1
+      },
+      "capacity": 4
+    },
+    "readout": {
+      "sum_i": 32,
+      "sum_q": 0,
+      "samples": 4,
+      "acc_width": 10,
+      "score_raw": 16,
+      "score_wide": 256,
+      "overflow": false,
+      "valid": true,
+      "reasons": [],
+      "decision_cycle": 23,
+      "action": "RESET_REQUEST"
+    }
+  },
+  "source_sha256": {
+    "check_reference_designs.py": "fbcbd3e99df1d73c304b3e2f7a4f5ade17a1b3026b50b5cf150a32f1f0a3a933",
+    "fixed.py": "56e7d820c3e2f53fd6d6daed99c81b6abc8e64364fec04ffbb03dcbfc2471bf7",
+    "maxplus_tile.py": "8fc078b0ba1bf29088fa7dec9e0dcd7167d3898e159e487e4d6527bf19799e75",
+    "mixed_scheduler.py": "3023c9a81493d2e85e22b231cfd6306e0a9a01887fcedf25a22f4d70f88ca80b",
+    "readout_controller.py": "ef0b24931808ac683e3970bff6ecbafb6161c1a9199afd20463fd4bbbfa0d37c"
+  },
+  "limitations": [
+    "Integer Python specification; no RTL simulation/synthesis/PPA",
+    "No FPGA, ASIC, quantum-device or pulse execution",
+    "Synthetic readout; no measured fidelity or quantum advantage",
+    "Reference VJP is unsaturated integer subgradient, not QAT",
+    "No universal training/hardware speedup or GRH implication"
+  ]
+}

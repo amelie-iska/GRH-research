@@ -253,6 +253,51 @@
         "outputs/checks/2026-11-03-convextok/review/oracle.json"
       ],
       "updated_utc": "2026-11-04T06:20:00.135241+00:00"
+    },
+    {
+      "id": "P9-learned-generative-frontier",
+      "priority": 0,
+      "status": "in_progress",
+      "dependencies": [],
+      "objective": "Quantum learned kernels and limits; actual quantum channels and trained diffusion/flow models; covers and tropical/HMS/GRH interfaces",
+      "acceptance": "Pinned primary sources; normalized exact or finite error checks; executed checkpointed CPU/GPU cases and baselines; unique contextual on-page examples; honest scope",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-04T10:52:06.180013+00:00",
+      "last_result": "Implemented thirteen checkpointed GPU training runs, exact RG teachers, five actual tensor/circuit replays, specified RBF/readout-limit proof, coefficient-field and infinite-dessin module/cover/pants examples; independent review accepted. Full categorical/Lean/continuum and chemical benchmarks and arithmetic GRH comparison remain open.",
+      "evidence": [
+        "planning/learned-frontier/review/REVIEW.md",
+        "outputs/checks/2026-11-04-learned-frontier/web-computations.json"
+      ]
+    },
+    {
+      "id": "P9-linux-gpu-transfer",
+      "priority": 0,
+      "status": "complete",
+      "dependencies": [],
+      "objective": "Copy all GRH project progress to the authorized Linux GPU host preserving originals and existing remote work",
+      "acceptance": "Resumable new-directory transfer; checksum/source pin/Git verification; unchanged Mac and prior Linux data; separate Linux environment and executed GPU evidence",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-04T11:03:24.005510+00:00",
+      "last_result": "Resumable13.44GB initial new-directory copy and integrated13.65GB snapshot completed; full checksum scientific/source/checkpoint content matches with live-preview-log and cross-platform symlink-permission boundaries recorded. Remote source pins and both manuscript hashes pass. Approved isolated native cuQuantum environment executed7/11/23-qubit checks; old environments and remote-only outputs preserved.",
+      "evidence": [
+        "outputs/checks/2026-11-04-learned-frontier/transfer/verification.json",
+        "outputs/checks/2026-11-04-learned-frontier/remote-integrity.json"
+      ]
+    },
+    {
+      "id": "P9-tropical-chip-design",
+      "priority": 8,
+      "status": "complete",
+      "dependencies": [],
+      "objective": "Primary EDA and quantum-control research; executable tropical/hybrid accelerator reference architectures",
+      "acceptance": "Pinned repository revisions and scopes; multiple operation/bit-level checked examples and setup; no unsupported synthesis or fabricated-chip claims",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-04T10:52:28.505289+00:00",
+      "last_result": "Twenty pinned primary repositories, twenty-four focused document ranges and thirteen primary papers reviewed; three bit/operation-level tropical, mixed-retirement and fail-closed quantum readout references pass exhaustive tests and negative controls. Digital specification milestone only; no RTL synthesis, fabrication, PPA or physical controller claim.",
+      "evidence": [
+        "planning/learned-frontier/hardware/REVIEW.md",
+        "examples/learned_frontier/hardware/evidence-2026-11-04.json"
+      ]
     }
   ]
 }

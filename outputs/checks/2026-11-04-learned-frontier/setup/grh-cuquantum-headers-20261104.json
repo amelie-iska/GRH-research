@@ -1,0 +1,104 @@
+{
+  "success": true,
+  "actions": {
+    "FETCH": [
+      {
+        "name": "cuda-nvrtc-dev",
+        "version": "12.9.86",
+        "build": "hecca717_1",
+        "build_number": 1,
+        "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+        "subdir": "linux-64",
+        "fn": "cuda-nvrtc-dev-12.9.86-hecca717_1.conda",
+        "md5": "0d28090f4e63410e20397c7975612837",
+        "url": "https://conda.anaconda.org/conda-forge/linux-64/cuda-nvrtc-dev-12.9.86-hecca717_1.conda",
+        "sha256": "ae620051c16eabf7720a47c5115634d64f7703d32124555ad0afccfd4b8d7cf4",
+        "depends": [
+          "__glibc >=2.17,<3.0.a0",
+          "cuda-nvrtc 12.9.86 hecca717_1",
+          "cuda-version >=12.9,<12.10.0a0",
+          "libgcc >=14",
+          "libstdcxx >=14"
+        ],
+        "constrains": [
+          "cuda-nvrtc-static >=12.9.86"
+        ],
+        "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+        "timestamp": 1760723845000,
+        "size": 36819
+      },
+      {
+        "name": "cuda-cccl",
+        "version": "12.9.27",
+        "build": "ha770c72_0",
+        "build_number": 0,
+        "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+        "subdir": "linux-64",
+        "fn": "cuda-cccl-12.9.27-ha770c72_0.conda",
+        "md5": "6ffab2fb624588d718aeb81f8dd38c8a",
+        "url": "https://conda.anaconda.org/conda-forge/linux-64/cuda-cccl-12.9.27-ha770c72_0.conda",
+        "sha256": "501d37608d6f2fa5eff6270d782fd84cd3a8375aff23548dd16a1eae5149b176",
+        "depends": [
+          "cccl 2.8.2",
+          "cuda-cccl_linux-64 12.9.27",
+          "cuda-version >=12.9,<12.10.0a0"
+        ],
+        "constrains": [],
+        "license": "LicenseRef-NVIDIA-End-User-License-Agreement",
+        "timestamp": 1746189841000,
+        "size": 22042
+      },
+      {
+        "name": "cccl",
+        "version": "2.8.2",
+        "build": "h7ab4013_0",
+        "build_number": 0,
+        "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+        "subdir": "linux-64",
+        "fn": "cccl-2.8.2-h7ab4013_0.conda",
+        "md5": "64785cfe2c2f0d334de9f7ddf69f786e",
+        "url": "https://conda.anaconda.org/conda-forge/linux-64/cccl-2.8.2-h7ab4013_0.conda",
+        "sha256": "0b419894748995a213eacba0bd8a96ceef857e1b75b4b3b0d0b5c599f73d129d",
+        "depends": [],
+        "constrains": [],
+        "license": "Apache-2.0 AND BSD-3-Clause AND BSD-2-Clause AND BSL-1.0 AND NCSA AND MIT AND LicenseRef-NVIDIA-Software-License",
+        "timestamp": 1741997572000,
+        "size": 1137955
+      }
+    ],
+    "PREFIX": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/.tools/grh-cuda12",
+    "LINK": [
+      {
+        "base_url": "https://conda.anaconda.org/conda-forge",
+        "build_number": 0,
+        "build_string": "h7ab4013_0",
+        "channel": "conda-forge",
+        "dist_name": "cccl-2.8.2-h7ab4013_0",
+        "name": "cccl",
+        "platform": "linux-64",
+        "version": "2.8.2"
+      },
+      {
+        "base_url": "https://conda.anaconda.org/conda-forge",
+        "build_number": 0,
+        "build_string": "ha770c72_0",
+        "channel": "conda-forge",
+        "dist_name": "cuda-cccl-12.9.27-ha770c72_0",
+        "name": "cuda-cccl",
+        "platform": "linux-64",
+        "version": "12.9.27"
+      },
+      {
+        "base_url": "https://conda.anaconda.org/conda-forge",
+        "build_number": 1,
+        "build_string": "hecca717_1",
+        "channel": "conda-forge",
+        "dist_name": "cuda-nvrtc-dev-12.9.86-hecca717_1",
+        "name": "cuda-nvrtc-dev",
+        "platform": "linux-64",
+        "version": "12.9.86"
+      }
+    ]
+  },
+  "prefix": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/.tools/grh-cuda12"
+}

@@ -805,3 +805,40 @@ Keep both completion gates false and the existing heartbeat active. All
 source/checkpoint/history/environment/cache progress is preserved. No new
 dependencies, training, paid/cloud/GPU, authentication/MCP activation or Claude
 config changes. Preview8765 stays live; ownCDPbrowser9242 closed.
+
+## Learned physics and Linux GPU milestone (2026-11-04)
+
+Implemented and trained twelve matched quantum-feature diffusion/flow models
+(three seeds) and a separate coherent four-qubit purification flow on RTX4090.
+The target is the actual seven-spin genus-two K2,5 Gibbs state, with exact
+white-spin partial trace; full-action classical RG is the separate width-fit
+teacher. Exact score/velocity controls, GPU gradients and NumPy circuit
+checks pass. Product controls have lower mean errors: no entanglement
+advantage. The coherent flow has minimum33-grid fidelity0.999903, not a
+uniform theorem. Real cuQuantum circuits reach23qubits and447gates; small
+references and large norm/echo checks pass in the approved isolated prefix.
+
+The new RBF/readout limit, coefficient-field learners, actual infinite
+genus-two module resolutions and Hom/Ext/Tor, graph/ribbon/surface-cover
+distinctions, Frobenius pants/CHSH and three digital chip references are
+explained with explicit proofs or evidence labels. Independent review
+accepted after GP-initialization, ribbon and environment-status corrections.
+No new Lean declarations: the prior360-report suite remains separately
+scoped. Chemical/biochemical, continuum/CFT/string/HMS and categorical
+extensions remain further work.
+
+Book191pages/36chapters/12unique tools; focused articles38/90pages.
+Five actual checkpoint traces add250nodes and3752 independently replayed
+cells (max2.8e-7). New lab/mobile/night/controls, all5architectures, native
+MathML and legacy companion checks pass. PDF proof/figure pages inspected;
+no final overfull boxes or unresolved references. Preview8765 remains live.
+Sources/checkpoints/environments remain preserved. Initial Linux copy
+13.44GB and integrated incremental sync completed; final checksum evidence
+is recorded under outputs/checks/2026-11-04-learned-frontier/transfer.
+
+NEXT: resume P7 original-family weighted Mellin moment before pointwise
+convexity, keeping all masks/conductors/short-term and II-I covariance.
+P9 learned-frontier stays in progress; subsequent implementation can add
+physical OOD/chemical benchmarks and true categorical/Lean interfaces.
+Neither GRH nor complete book formalization has been established; both
+completion gates remain false and the existing heartbeat remains active.

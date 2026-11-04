@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "seed": 20261104,
+  "train_count": 96,
+  "test_count": 32,
+  "full_action_outputs": 32,
+  "ridge": 1e-05,
+  "feature": "sqrt(2)<Z> for RY(w dot x+b)|0>; w standard Gaussian,b uniform phase",
+  "exact_kernel": "exp(-||x-y||^2/2)",
+  "readout_only": true,
+  "rows": [
+    {
+      "width": 16,
+      "replicas": 8,
+      "kernel_relative_Frobenius_mean": 0.2989833730822116,
+      "kernel_relative_Frobenius_std": 0.14965919626555987,
+      "RG_full_action_test_MSE_mean": 0.02005344371316459,
+      "RG_full_action_test_MSE_std": 0.017366968464155398
+    },
+    {
+      "width": 64,
+      "replicas": 8,
+      "kernel_relative_Frobenius_mean": 0.1590666623210238,
+      "kernel_relative_Frobenius_std": 0.08545183605833645,
+      "RG_full_action_test_MSE_mean": 0.001665381851617788,
+      "RG_full_action_test_MSE_std": 0.0006061385099285604
+    },
+    {
+      "width": 256,
+      "replicas": 8,
+      "kernel_relative_Frobenius_mean": 0.06976072022004726,
+      "kernel_relative_Frobenius_std": 0.015607574262861091,
+      "RG_full_action_test_MSE_mean": 0.0007468465697208394,
+      "RG_full_action_test_MSE_std": 7.299417565539797e-05
+    },
+    {
+      "width": 1024,
+      "replicas": 8,
+      "kernel_relative_Frobenius_mean": 0.03414221528732292,
+      "kernel_relative_Frobenius_std": 0.007191676748266073,
+      "RG_full_action_test_MSE_mean": 0.0007224360199417556,
+      "RG_full_action_test_MSE_std": 6.403583497589271e-05
+    },
+    {
+      "width": 4096,
+      "replicas": 8,
+      "kernel_relative_Frobenius_mean": 0.017256505758775298,
+      "kernel_relative_Frobenius_std": 0.004344170848457305,
+      "RG_full_action_test_MSE_mean": 0.0007428678855894948,
+      "RG_full_action_test_MSE_std": 3.583914775333823e-05
+    }
+  ],
+  "exact_kernel_RG_test_MSE": 0.0007219759487729385,
+  "tropical": [
+    {
+      "tau": 1.0,
+      "maximum": 1.0,
+      "logsumexp": 1.5434055416160293,
+      "gap": 0.5434055416160293,
+      "upper_bound": 1.0986122886681098
+    },
+    {
+      "tau": 0.5,
+      "maximum": 1.0,
+      "logsumexp": 1.1219317401386988,
+      "gap": 0.12193174013869879,
+      "upper_bound": 0.5493061443340549
+    },
+    {
+      "tau": 0.2,
+      "maximum": 1.0,
+      "logsumexp": 1.0039250474267563,
+      "gap": 0.003925047426756256,
+      "upper_bound": 0.21972245773362198
+    },
+    {
+      "tau": 0.1,
+      "maximum": 1.0,
+      "logsumexp": 1.0000337665941748,
+      "gap": 3.376659417475558e-05,
+      "upper_bound": 0.10986122886681099
+    },
+    {
+      "tau": 0.03,
+      "maximum": 1.0,
+      "logsumexp": 1.0000000000000786,
+      "gap": 7.860379014346108e-14,
+      "upper_bound": 0.03295836866004329
+    }
+  ],
+  "valuation_examples": [
+    {
+      "field": "Q",
+      "f": "1+T",
+      "g": "-1+T",
+      "val_f": 0,
+      "val_g": 0,
+      "val_sum": 1,
+      "sum": "2T"
+    },
+    {
+      "field": "F2",
+      "f": "1+T",
+      "g": "1+T",
+      "val_f": 0,
+      "val_g": 0,
+      "val_sum": "infinity",
+      "sum": "0"
+    }
+  ],
+  "scope": "Specified frozen random-feature/readout experiment and elementary tropical limits; no universal trained-QNN infinite-width limit, HMS functor, arithmetic positivity or GRH proof"
+}

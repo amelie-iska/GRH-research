@@ -1,0 +1,30 @@
+{
+  "checked_utc_date": "2026-11-04",
+  "method": "Built-in web access to primary author/publisher/arXiv pages; no MCP activation; version URLs are content-version pins, not downloaded content hashes.",
+  "sources": [
+    {"key":"MIPRE2026","title":"MIP*=RE","url":"https://arxiv.org/abs/2001.04383v4","version":"v4","version_date":"2026-10-16","inspected":"Abstract/version history and HTML main-result discussion","scope":"MIP*=RE; 1 versus <=1/2 entangled-value undecidability; Cqa strictly contained in Cqc; negative Connes embedding consequence. External theorem; its advertised Lean formalization was not executed locally."},
+    {"key":"KS2004","title":"Affine structures and non-archimedean analytic spaces","url":"https://arxiv.org/abs/math/0406564v1","version":"v1","version_date":"2004-06-28","inspected":"Abstract/version page","scope":"Integral-affine/non-Archimedean gluing motivated by HMS/SYZ, K3 construction; no arbitrary learned-coefficient equivalence."},
+    {"key":"QNTK2021","title":"Representation Learning via Quantum Neural Tangent Kernels","url":"https://arxiv.org/abs/2111.04225v3","version":"v3","version_date":"2021-11-13","inspected":"Abstract/version page","scope":"Frozen/lazy variational dynamics, corrections and a specified hybrid large-width Gaussian regime; no universal finite-circuit QFT limit."},
+    {"key":"WideQNN2023","title":"Analytic theory for the dynamics of wide quantum neural networks","url":"https://arxiv.org/abs/2203.16711v3","version":"v3","version_date":"2023-04-12","inspected":"Abstract/version page","scope":"Many-qubit/many-parameter circuits and ensemble-average training behavior; width conventions differ from a fixed finite model."},
+    {"key":"QTK2022","title":"Quantum tangent kernel","url":"https://arxiv.org/abs/2111.02951v2","version":"v2","version_date":"2022-11-24","inspected":"Abstract/version page","scope":"Deep parameterized-circuit tangent-kernel regime and numerical ansatz-generated dataset; limited empirical comparison."},
+    {"key":"LP2019","title":"Derived equivalences of gentle algebras via Fukaya categories","url":"https://arxiv.org/abs/1801.06370v5","version":"v5","version_date":"2019-08-27","inspected":"Abstract/version page and author-hosted theorem summary","scope":"Homologically smooth graded gentle algebra; perfect category; surface with nonempty boundary, stops and line field. Not blanket equivalence for completed dessin lattices."},
+    {"key":"TropicalNN2018","title":"Tropical Geometry of Deep Neural Networks","url":"https://arxiv.org/abs/1805.07091v1","version":"v1","version_date":"2018-05-18","inspected":"Abstract/version page","scope":"ReLU networks and tropical rational maps; does not make every attention mechanism an algebraic tropicalization."},
+    {"key":"Abrams1996","title":"Two-dimensional topological quantum field theories and Frobenius algebras","url":"https://www.math.umd.edu/~jmr/AbramsTQFT.pdf","publication":"J. Knot Theory Ramifications 5 (1996), 569-587","inspected":"Author paper PDF search text/abstract","scope":"Oriented finite-dimensional 2D TQFT/Frobenius equivalence; does not imply positive Hilbert/dagger/unitary structure."},
+    {"key":"Tsirelson1980","title":"Quantum generalizations of Bell's inequality","url":"https://doi.org/10.1007/BF00417500","publication":"Letters in Mathematical Physics 4 (1980), 93-100","inspected":"Author archive page and university publication metadata","scope":"Quantum Bell bounds; review supplies independent full proof of the elementary CHSH instance."},
+    {"key":"Hatcher2002","title":"Algebraic Topology, Chapter 1","url":"https://pi.math.cornell.edu/~hatcher/AT/ATch1.pdf","locator":"Section 1.3","inspected":"Author-hosted PDF","scope":"Covering spaces and fundamental group. Theta voltage-tree construction and finite-support Hom example are independently proved here."},
+    {"key":"Segal2004","title":"The definition of conformal field theory","url":"https://www.cambridge.org/core/books/abs/topology-geometry-and-quantum-field-theory/definition-of-conformal-field-theory/90BD9D5C5C8A4BD7ABE4000694D84DFA","publication":"Topology, Geometry and Quantum Field Theory (2004)","inspected":"Primary publisher metadata; alternate author PDF URL returned 403, not claimed fully read","scope":"CFT has conformal/analytic sewing data beyond oriented topological Frobenius gluing; no detailed source-specific analytic theorem invoked."},
+    {"key":"RT2006","title":"Holographic Derivation of Entanglement Entropy from AdS/CFT","url":"https://arxiv.org/abs/hep-th/0603001v2","version":"v2","version_date":"2006-03-07","inspected":"Abstract/version page","scope":"Entropy proposal in an AdS/CFT setting; no identification with the finite pants tensor example."},
+    {"key":"MochizukiAnabelian","title":"The Absolute Anabelian Geometry of Hyperbolic Curves","url":"https://www.kurims.kyoto-u.ac.jp/~motizuki/Absolute%20Anabelian%20Geometry.pdf","locator":"Introduction; Theorem 1.3.4; Corollary 1.3.5","inspected":"Author-hosted PDF introduction","scope":"Arithmetic étale group and map to the ground-field Galois group; relative/absolute distinction and arithmetic-field hypotheses. No blanket discrete-free-group reconstruction."}
+  ],
+  "local_readonly_context": [
+    "README.md",
+    "examples/quantum/README.md",
+    "examples/quantum/requirements-cpu.lock",
+    "scripts/build_book.sh",
+    "papers/dessin-core.tex",
+    "examples/coverings/theta_cover.py",
+    "examples/relations/README.md",
+    "examples/relations/check_relations.py",
+    "examples/relations/check_extension.py"
+  ]
+}

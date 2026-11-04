@@ -1,0 +1,123 @@
+[
+  {
+    "objective": "diffusion",
+    "architecture": "matched-product-circuit-hybrid",
+    "seeds": [
+      20261104,
+      20261105,
+      20261106
+    ],
+    "parameters": 5810,
+    "steps": 2000,
+    "metrics": {
+      "total_variation": {
+        "mean": 0.038033644358317055,
+        "std": 0.011345457351898796
+      },
+      "sliced_W1_16directions": {
+        "mean": 0.07684067264199257,
+        "std": 0.030594078448465584
+      },
+      "dequantization_MSE": {
+        "mean": 0.050699797769387565,
+        "std": 0.0023863352657465683
+      },
+      "oracle_field_MSE": {
+        "mean": 0.012561079735557238,
+        "std": 0.0012603832190562346
+      }
+    },
+    "wall_seconds": 29.743161441001575
+  },
+  {
+    "objective": "diffusion",
+    "architecture": "entangled-quantum-feature-hybrid",
+    "seeds": [
+      20261104,
+      20261105,
+      20261106
+    ],
+    "parameters": 5810,
+    "steps": 2000,
+    "metrics": {
+      "total_variation": {
+        "mean": 0.045087714989980064,
+        "std": 0.013297700520149515
+      },
+      "sliced_W1_16directions": {
+        "mean": 0.09394431114196777,
+        "std": 0.01827923525855964
+      },
+      "dequantization_MSE": {
+        "mean": 0.04624398176868757,
+        "std": 0.003083065848046749
+      },
+      "oracle_field_MSE": {
+        "mean": 0.011793645409246286,
+        "std": 0.001808393181414855
+      }
+    },
+    "wall_seconds": 30.073237505101133
+  },
+  {
+    "objective": "flow",
+    "architecture": "matched-product-circuit-hybrid",
+    "seeds": [
+      20261104,
+      20261105,
+      20261106
+    ],
+    "parameters": 5810,
+    "steps": 2000,
+    "metrics": {
+      "total_variation": {
+        "mean": 0.02165493369102478,
+        "std": 0.007905272551181263
+      },
+      "sliced_W1_16directions": {
+        "mean": 0.04599356651306152,
+        "std": 0.007733744043467097
+      },
+      "dequantization_MSE": {
+        "mean": 0.06373064716657002,
+        "std": 0.0019827903841311795
+      },
+      "oracle_field_MSE": {
+        "mean": 0.02309790315727393,
+        "std": 0.0024108334983135413
+      }
+    },
+    "wall_seconds": 28.86841108300723
+  },
+  {
+    "objective": "flow",
+    "architecture": "entangled-quantum-feature-hybrid",
+    "seeds": [
+      20261104,
+      20261105,
+      20261106
+    ],
+    "parameters": 5810,
+    "steps": 2000,
+    "metrics": {
+      "total_variation": {
+        "mean": 0.029319604237874348,
+        "std": 0.012957091734407452
+      },
+      "sliced_W1_16directions": {
+        "mean": 0.05215036620696386,
+        "std": 0.015926167003114316
+      },
+      "dequantization_MSE": {
+        "mean": 0.06049859896302223,
+        "std": 0.0024375748993797327
+      },
+      "oracle_field_MSE": {
+        "mean": 0.0269669263313214,
+        "std": 0.004512331501562064
+      }
+    },
+    "wall_seconds": 30.86680959694786
+  }
+]
+geometry case keys: ['simple->S0', 'branch->S0', 'simple->S4', 'branch->S4', 'simple->B', 'branch->B']

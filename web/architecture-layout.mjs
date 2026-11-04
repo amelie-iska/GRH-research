@@ -136,7 +136,22 @@ export function cellDependencies(trace,node,indices){
  const out=tensorAt(node.tensor,indices),prefix=node.id.includes('.')?node.id.slice(0,node.id.lastIndexOf('.')+1):'',tail=node.id.split('.').at(-1);
  let formula=node.formula,result=null,resultImag=0,verified=false;
  const mode=aggregationMode(trace,node);
- if(node.gate&&indices.length===1&&['RY','RZ','RX','CZ','CNOT'].includes(node.gate)){
+ if(trace.category==='quantum-state-flow-rg'&&node.id==='reduced_density'){
+  const parent=byId.get(node.inputs[0]),[a,b]=indices;result=0;for(let c=0;c<4;c++){const x=tensorAt(parent.tensor,[4*a+c]),y=tensorAt(parent.tensor,[4*b+c]);refs.push({id:parent.id,indices:[4*a+c],...x},{id:parent.id,indices:[4*b+c],...y});const value=x.real*y.real+x.imag*y.imag;terms.push({label:`ancilla ${c}`,a:x.real,b:y.real,value});result+=value;resultImag+=x.imag*y.real-x.real*y.imag;}formula='Σancilla ψ[system=a,ancilla] conjugate(ψ[system=b,ancilla])';verified=true;
+ }else if(trace.category==='quantum-generative-rg'&&(['encoder','head.0','head.2','head.4'].includes(node.id))){
+  const sourceId=node.inputs[0],weightId=node.id==='encoder'?'weight.encoder.weight':`weight.${node.id}.weight`,biasId=node.id==='encoder'?'weight.encoder.bias':`weight.${node.id}.bias`,batch=indices[0],channel=indices[1],width=byId.get(sourceId).tensor.shape[1];
+  result=ref(biasId,[channel]);for(let k=0;k<width;k++){const a=ref(sourceId,[batch,k]),b=ref(weightId,[channel,k]);terms.push({label:`input ${k}`,a,b,value:a*b});result+=a*b;}formula='bias[out] + Σk input[batch,k] W[out,k]';verified=true;
+ }else if(trace.category==='quantum-generative-rg'&&node.id==='angles'){
+  const v=ref('encoder',indices);result=Math.PI*Math.tanh(v);formula='π tanh(encoder)';verified=true;
+ }else if(trace.category==='quantum-generative-rg'&&['head.1','head.3'].includes(node.id)){
+  const v=ref(node.inputs[0],indices);result=v/(1+Math.exp(-v));formula='SiLU(x)=x/(1+exp(−x))';verified=true;
+ }else if(trace.category==='quantum-generative-rg'&&node.id==='Z_features'){
+  const parent=byId.get(node.inputs[0]),mask=indices[1]+1;result=0;for(let j=0;j<parent.tensor.shape[0];j++){const v=tensorAt(parent.tensor,[j]),sign=((j&mask).toString(2).split('1').length-1)%2?-1:1;refs.push({id:parent.id,indices:[j],...v});const value=sign*(v.real*v.real+v.imag*v.imag);terms.push({label:`basis ${j}`,a:sign,b:v.real*v.real+v.imag*v.imag,value});result+=value;}formula='Σbasis (−1)^parity(basis & mask) |ψ[basis]|²';verified=true;
+ }else if(trace.category==='quantum-generative-rg'&&node.id==='joined'){
+  const [batch,channel]=indices;result=channel<7?ref('context',[batch,channel]):ref('Z_features',[batch,channel-7]);formula='Concatenate seven context channels and fifteen Z features';verified=true;
+ }else if(trace.category==='quantum-generative-rg'&&node.id==='context'){
+  const [batch,channel]=indices;if(channel<2)result=ref('retained_coordinates',[batch,channel]);else{const t=ref('time',[batch,0]);result=channel===2?t:channel===3?Math.sin(2*Math.PI*t):channel===4?Math.cos(2*Math.PI*t):channel===5?Math.sin(4*Math.PI*t):Math.cos(4*Math.PI*t);}formula='[x₀,x₁,t,sin2πt,cos2πt,sin4πt,cos4πt]';verified=true;
+ }else if(node.gate&&indices.length===1&&['RY','RZ','RX','CZ','CNOT'].includes(node.gate)){
   const parent=byId.get(node.inputs[0]),j=indices[0],qubits=Math.round(Math.log2(node.tensor.shape[0])),bit=q=>2**(qubits-1-q),angle=node.angle,c=Math.cos(angle/2),s=Math.sin(angle/2),q=node.wires[0],one=Boolean(j&bit(q));
   const add=(k,cr,ci=0)=>{const value=tensorAt(parent.tensor,[k]);refs.push({id:parent.id,indices:[k],...value});result=(result??0)+cr*value.real-ci*value.imag;resultImag+=cr*value.imag+ci*value.real;terms.push({label:`basis ${k} · Re`,a:value.real,b:cr,value:cr*value.real});if(ci)terms.push({label:`basis ${k} · Im→Re`,a:value.imag,b:-ci,value:-ci*value.imag});};
   if(node.gate==='RY'){add(j,c);add(j^bit(q),one?s:-s);formula=`RY(${angle}): c ψ[j] ${one?'+':'−'} s ψ[j⊕${bit(q)}], c=cos(θ/2), s=sin(θ/2)`;}
