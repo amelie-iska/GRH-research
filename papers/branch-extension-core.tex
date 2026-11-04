@@ -1,0 +1,53 @@
+\section{A kernel-checked extension over the infinite dessin algebra}
+\label{bre:core}
+The preceding branch example can be realized on every element of the
+infinite algebra, rather than verified only on sampled arrow matrices.
+Use the complex genus-two clean dessin $y^2=x^5-1$, $\beta=x^5$, and any
+coefficient field $k$. Put $H\subseteq M_5(k[t])$ equal to the matrices
+whose reduction modulo $t$ is upper triangular. Let
+\[
+ B=H\mathbin{\times}_{k^5}H,
+\]
+where each map to $k^5$ takes the constant diagonal. Equivalently, $B$ is
+generated inside $M_5(k[t])^2$ by
+\[
+ e_i=(E_{ii},E_{ii}),\quad
+ a_i=(w_iE_{i-1,i},0),\quad b_i=(0,w_iE_{i-1,i}),
+ \qquad w_0=t,\quad w_i=1\ (i\ne0).
+\]
+Indices are modulo five. Matrix multiplication acts on left column
+modules. The path-normal-form proof below identifies $B$ with $A_5$;
+this is a polynomial algebra, not an arrow-truncated finite quotient.
+
+\begin{theorem}[An ambient module extension]\label{bre:extension}
+Let $D=k[\epsilon]/(\epsilon^2)$, $M_1=k^5$ and $M_2=D^5$.
+For $(C(t),D'(t))\in B$, act on $M_1$ by $C(0)$ and on $M_2$ by
+$C(\epsilon)$. These are unital $B$-modules, and
+\[
+ 0\longrightarrow M_1\xrightarrow{\ i\ }M_2
+ \xrightarrow{\ p\ }M_1\longrightarrow0,
+ \qquad i(x)=\epsilon x,\quad p(x+\epsilon y)=x,
+\]
+is exact and nonsplit. Moreover $B$ is infinite dimensional over $k$.
+The assertions hold in every characteristic, including two.
+\end{theorem}
+\begin{proof}
+Evaluation of polynomials gives both actions. Multiplying
+$C(\epsilon)=C_0+\epsilon C_1$ proves $B$-linearity of $i,p$;
+their kernel and image follow coordinatewise. If $s$ were a $B$-linear
+section, the constant coefficient of $(s e_0)_0$ would be one. But $a_0$ kills
+$M_1$, while $(a_0s e_0)_4=\epsilon(s e_0)_0$ has nonzero
+$\epsilon$ coefficient, a contradiction. Finally the permitted turn
+$c=a_1a_2a_3a_4a_0$ has first component $tE_{00}$.
+The unital algebra map $k[t]\to B$, $f\mapsto f(c)$, is injective:
+its $(0,0)$ first-component entry is $f(t)$. Thus $B$ cannot be
+finite dimensional.
+\end{proof}
+
+In the preceding notation these modules are $N_5(J_1(0))$ and
+$N_5(J_2(0))$. They are finite torsion modules over an infinite algebra;
+they are not nonzero lattices over its completed surface order. The
+nonsplit sequence defines a nonzero Yoneda extension class in the ambient
+module category. No assertion that it is almost split in that entire
+category is needed or inferred. In particular it does not supply an
+arithmetic spectral determinant or a zero-location theorem.

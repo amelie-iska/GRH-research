@@ -261,3 +261,19 @@ full zero extension, including sixth-power rows. Establish exactly which
 Mellin contour/residue and moving-d/profile uniformities follow without GRH
 before summing the actual beta_U. No square-root Mobius cancellation, Artin
 holomorphy or desired spectral positivity may be assumed.
+
+
+## Frontier update: actual branch extension and certified path vocabulary
+
+The specific N5(J1(0)) self-extension now has actual ambient-algebra maps,
+exactness and no section verified in Lean over any coefficient field; the
+polynomial generated algebra is proved infinite dimensional. The path-normal-
+form quotient isomorphism, general branch/category equivalence, Yoneda Ext
+packaging and universal almost-split factorization remain separate obligations.
+This closes a selected formalization gap, not the arithmetic positive bridge.
+
+ConvexTok supplies certified small finite vocabulary optimization. No trained
+TokenGT checkpoint has been changed to consume compressed path tokens, and
+no categorical/geometric equivalence or arithmetic positivity follows from
+shorter word encodings. The original-family signed low-gcd mean square,
+full-mask Mellin/contour uniformity and all GRH scope obligations are unchanged.

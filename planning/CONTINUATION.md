@@ -632,3 +632,47 @@ contour/residue/profile/scale uniformity before summing beta_U. Do not assume
 RH-level cancellation or desired positivity. The fixedU1 obstruction is
 finished; original signed MS, positive determinant bridge and all GRH scopes
 remain open.
+
+## Latest handoff — actual extension + reference explorer + ConvexTok
+
+Current book173pages/35chapters/18diagrams/11unique labs; article pairs20/49
+and33/71pages. All335 printed Lean reports pass,333standard-only andtwo
+axiom-free. New BranchExtension.lean defines the actual infinite polynomial
+matrix-pair genus2algebra, proves polynomial injection/nonfiniteness and a
+true algebra-module exact sequence with no section over every field.
+Independent review accepted; normal-form path-quotient map/isomorphism is
+still proved prose, and universal almost-split/Ext/category objects remain
+unformalized. Do not replace these by a finite matrix sample in a future run.
+
+Latest user amendments delivered: original reference-informed tensor solids,
+heads/semantic lanes, guided stage navigation, overview/focus, cell picking,
+numerical dependencies and diagnostic labels. Pinned llm-viz study is
+planning/reference-inspector/REVIEW.md +source-manifest.json.34saved cases,
+55,299coordinates,37,701 supported formulas and final browser/compatibility
+checks pass; all checkpoints and preserved trace bytes unchanged. Native
+night renderer filter fixed; root visually confirmed final dark screenshot.
+No upstream renderer/assets copied. CDPtest browser closed; preview8765 stays.
+
+ConvexTok v1 has an exact-certificate Python/JS lab and cohesive original
+exposition inside the architecture chapter. Sources:planning/convextok/.
+Independent oracle verifies16 rational LP certificates and2,486at-most-K
+vocabularies; production2,312exact-size agrees. Gaps10<11,31/2<16 andactual
+genus2/4 restricted path optima19/31.64browserstates/manualbudget/source
+loaders/mobile/theme pass. Emptyword API guarded, travel order explicit.
+LP bound is saved for the chosen corpus/budget; manual vocabulary only
+recomputes discrete paths. No LP solver runs in browser, no NLP training,
+Lean optimization theorem, arbitrary token-algebra homomorphism or GRH claim.
+
+NEXT concrete formal task: define permitted path normal forms and formalize
+the isomorphism with the actual generated polynomial matrix-pair algebra;
+then package the existing sequence in the true module category before
+attempting universal almost-split factorization. Next implementation rotation
+can extend a specifically justified diagram/category interface rather than
+redo finished UI/reference audits. Full original-topic coverage remains open.
+NEXT arithmetic target unchanged: original type-I squarefree Euler ratio
+L(s,theta_u)/L(2s,theta_u²) with identical full zero-extension presentation,
+all S/d/row zeros and conductor defects when squaring changes primitive
+conductor. Prove Mellin/contour/profile/scaleuniformities before summing beta_U.
+The original signed low-gcd estimate, positive arithmetic determinant/zero
+bridge and scope-specific GRH obligations remain open; don't rerun completed
+pair-square/high-gcd/U1 audits as a new proof. Keep existing heartbeat active.

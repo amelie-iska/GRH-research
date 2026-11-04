@@ -33,7 +33,7 @@ def main():
     out.write_text('\n'.join(chunks))
     (ROOT/'book/chapters/short-row-pair.tex').write_text('% Generated from the shared arithmetic article fragments.\n'+(P/'short-row-pair-core.tex').read_text()+'\n'+(P/'short-row-pair-details.tex').read_text().replace(r'\section{',r'\subsection{',1))
     (ROOT/'book/chapters/mobius-split.tex').write_text('% Generated from the shared signed arithmetic fragments.\n'+(P/'mobius-split-core.tex').read_text()+'\n'+(P/'mobius-split-details.tex').read_text().replace(r'\subsection{',r'\subsubsection{').replace(r'\section{',r'\subsection{',1))
-    for name in ['rg-core','rg-details','relations-core','relations-details']:
-        (ROOT/f'book/chapters/{name}.tex').write_text('% Generated shared actual RG material.\n'+(P/f'{name}.tex').read_text())
+    for name in ['rg-core','rg-details','relations-core','relations-details','branch-extension-core','branch-extension-details','convextok']:
+        (ROOT/f'book/chapters/{name}.tex').write_text(('% Generated shared actual RG material.\n' if name in ['rg-core','rg-details','relations-core','relations-details'] else '% Generated shared reviewed material.\n')+(P/f'{name}.tex').read_text())
     print(out)
 if __name__=='__main__': main()

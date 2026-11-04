@@ -1,0 +1,57 @@
+{
+  "cases": 5,
+  "exact_primal_dual_certificates": 16,
+  "exhaustive_vocabulary_subsets": 2312,
+  "focused": {
+    "greedy_counterexample": {
+      "word": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "vocabulary": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "b",
+          "c",
+          "d"
+        ]
+      ],
+      "dp": [
+        [
+          "a"
+        ],
+        [
+          "b",
+          "c",
+          "d"
+        ]
+      ],
+      "greedy": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "c"
+        ],
+        [
+          "d"
+        ]
+      ]
+    },
+    "independent_segmentations": 29,
+    "repeated_capacity_occurrences": 2,
+    "corrupt_certificate_rejections": 3,
+    "boundary_crossing_rejected": true,
+    "integral_colour_does_not_mean_universally_forced": true
+  },
+  "sources": {
+    "examples/tokenization/check.py": "0a29a3b02b15b146974e3e60ac01ff953fa6a12ccf8b1988ed9f96a506abdf5e",
+    "examples/tokenization/model.py": "70d326f9c961bf4f3b8c936662df481c9b10e020fd87da1bd4f7f6994d6faa73"
+  }
+}

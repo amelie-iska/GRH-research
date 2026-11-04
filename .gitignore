@@ -222,3 +222,28 @@ outputs/renders/2026-11-03-linear-relations/
 
 # Preserve local signed-arithmetic PDF/browser inspections.
 outputs/renders/2026-11-03-mobius-split/
+
+# Preserve source-review caches and visual diagnostics locally; manifests and
+# original implementation/review records remain tracked.
+planning/reference-inspector/upstream-*
+outputs/renders/2026-11-03-reference-inspector/
+outputs/renders/2026-11-03-branch-extension/
+outputs/checks/2026-11-03-branch-extension/lean-first.log
+outputs/checks/2026-11-03-branch-extension/lean-second.log
+outputs/checks/2026-11-03-branch-extension/lean-third.log
+outputs/checks/2026-11-03-branch-extension/lean-fourth.log
+outputs/checks/2026-11-03-branch-extension/lean-fifth.log
+outputs/checks/2026-11-03-branch-extension/lean-sixth.log
+outputs/checks/2026-11-03-branch-extension/lean-seventh.log
+outputs/checks/2026-11-03-branch-extension/lean-eighth.log
+outputs/checks/2026-11-03-reference-inspector/chrome-profile-*/
+outputs/checks/2026-11-03-reference-inspector/chrome.log
+outputs/checks/2026-11-03-reference-inspector/chrome-process.json
+outputs/renders/2026-11-03-convextok/
+# Retain intermediate compile diagnostics and isolated process metadata locally.
+outputs/checks/2026-11-03-branch-extension/*build*.log
+outputs/checks/2026-11-03-convextok/*build*.log
+outputs/checks/2026-11-03-convextok/*-process.json
+outputs/checks/2026-11-03-convextok/convextok-review.*
+outputs/checks/2026-11-03-convextok/browser-*/*.png
+outputs/checks/2026-11-03-reference-inspector/*-process.json

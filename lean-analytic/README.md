@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 203 declarations print their axioms. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 335 currently checked declarations print their theorem types and axiom dependencies. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -278,3 +278,15 @@ For example (7) is a squarefree product of two distinct ideal primes of norm7,
 with ideal Möbius+1, although its integer norm49 has Nat Möbius0. The generic
 ring algebra applies to the prose ideal convolution once that ring is supplied;
 no full ideal ring object is claimed constructed here.
+
+## Actual infinite dessin algebra and ambient module extension
+
+`BranchExtension.lean` defines the generated algebra inside actual polynomial
+matrix pairs for the genus-two clean dessin. Its 21 public theorem reports
+include an injective unital polynomial evaluation and non-finite-dimensionality,
+true module actions by evaluation at zero/dual epsilon, algebra-linear maps,
+exact image/kernel equality and absence of a module section over any field.
+The path-normal-form quotient isomorphism is separately proved prose; Ext
+objects, ambient almost-split universality and the arithmetic bridge are not
+formalized by this sequence. Independent symbolic and characteristic2 checks
+pass; no new dependency or cache was needed.

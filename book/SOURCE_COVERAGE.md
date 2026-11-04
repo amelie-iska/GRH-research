@@ -168,3 +168,16 @@ zero/conductor ledger and a fixed-cutoff separate-piece obstruction. Eight
 actual Nat Dirichlet statements are formalized; ideal-character and classical
 prime-ideal analytic inputs remain named prose dependencies. The signed
 low-gcd mean square and independent positive spectral comparison remain open.
+
+The linear-relations rigidity correction now has an actual ambient-algebra
+Lean realization: `BranchExtension.lean` proves the generated polynomial
+dessin algebra infinite dimensional and its N5(J1)/N5(J2) extension exact
+and nonsplit over any field. Its normal-form path-quotient identification
+is prose; it does not establish universal almost-split factorization.
+
+The architecture chapter additionally includes original tensor-dimensional
+walkthroughs informed by pinned llm-viz code and ConvexTok v1 tokenisation
+with exact rational certificate examples. Its higher-genus application
+compresses finite permitted arrow words without changing the infinite
+algebra/order or TokenGT node/edge tokens. The finite LP duality proof is
+prose plus independently checked exact rational witnesses, not Lean.

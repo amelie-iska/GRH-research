@@ -1,0 +1,210 @@
+\section{ConvexTok: certified path vocabularies}
+\label{convextok:section}
+The words ``token'' and ``graph'' have two different roles here. A TokenGT
+position represents a node or edge with features and incidence metadata.
+A tokenisation position instead represents a boundary in a word; an edge
+jumps across a contiguous substring. ConvexTok, introduced by Tempus,
+Whittington, Schmidt, Komm and Pimentel,
+\emph{Tokenisation via Convex Relaxations},
+\href{https://arxiv.org/html/2605.22821v1}{arXiv:2605.22821v1},
+optimises the second representation. We derive its small finite
+formulation, reproduce its six-word example, and give new certified
+examples for finite arrow-word corpora of our infinite surface algebras.
+This supplies an auditable compression layer; it does not identify the two
+kinds of token or change a trained graph model.
+
+\subsection{A vocabulary controls many occurrences}
+Let $\mathcal D=(w_1,\ldots,w_N)$ be a finite multiset of nonempty words over
+a mandatory alphabet $\Sigma$. For each word introduce boundary vertices
+$0,\ldots,|w_n|$. Include an edge $(i,j)$ for each allowed contiguous token
+$w_n[i:j]$. All single-symbol edges are free in the vocabulary budget,
+but cost one each in the segmentation objective. Longer candidates form
+a finite set $C$. Equal strings have the same colour even when they occur
+in different words or positions. Candidates never cross word boundaries.
+
+Write $x_e$ for occurrence flow and $c_t$ for selection of token type $t$.
+Use incidence entries $-1$ at an edge's source and $+1$ at its target.
+For each word let $d$ be $-1$ at its initial boundary and $+1$ at its final
+boundary. Separate unit-flow equations are equivalent to joining adjacent
+word terminals as in the paper: each word boundary must carry one unit,
+and there are no edges across words. The finite programme is
+\begin{equation}\label{convextok:lp}
+ \begin{aligned}
+ L_K=\min\quad &\sum_e x_e\\
+ \text{subject to}\quad &Bx=d,\qquad 0\le x_e,c_t\le1,\\
+ &x_e\le c_t\quad(e\text{ an occurrence of }t\in C),\qquad
+ \sum_{t\in C}c_t\le K.
+ \end{aligned}
+\end{equation}
+Requiring $x_e,c_t\in\{0,1\}$ gives the integer problem. On the acyclic
+position graph its flow is one path per word, hence one segmentation.
+Conversely any segmentation with at most $K$ extra token types gives such
+an integer point. Consequently the LP optimum is a lower bound for the
+integer optimum $I_K$. The constraint is per occurrence: selecting
+$\mathtt{ab}$ once permits both occurrences in $\mathtt{abab}$, whose
+cost is two. Replacing these constraints by
+$\sum_{e:\,t(e)=t}x_e\le c_t$ would incorrectly prohibit that reuse.
+
+For a fixed discrete vocabulary $V\supseteq\Sigma$, the exact segmenter is
+the backward recurrence
+\[
+ D(n)=0,\qquad
+ D(i)=1+\min_{t\in V:\,w[i:i+|t|]=t}D(i+|t|).
+\]
+It returns a shortest path and a decoding by concatenation. Longest-first
+greedy need not do so: for $w=\mathtt{abcd}$ and extra vocabulary
+$\{\mathtt{ab},\mathtt{bcd}\}$ it returns
+$\mathtt{ab}|\mathtt c|\mathtt d$, whereas the optimum is
+$\mathtt a|\mathtt{bcd}$. This segmentation issue is separate from BPE's
+greedy construction of the vocabulary itself.
+
+\subsection{An exact lower bound needs a feasible certificate}
+A floating solver's proposed objective alone is insufficient for an
+exact lower-bound claim. Our original CPU checker writes the LP in the
+form
+\[
+ \min q^{\mathsf T}v,\qquad Av=b,\quad Gv\le h,\quad v\ge0,
+\]
+where $v=(x,c)$ and $G$ includes every upper-bound row $v_i\le1$.
+It uses SciPy/HiGHS from the already approved environment to propose
+primal and dual solutions, reconstructs rational entries, and then checks
+\emph{every} condition with exact rational arithmetic:
+\[
+ Av=b,\quad Gv\le h,\quad v\ge0,\qquad
+ z\le0,\quad A^{\mathsf T}y+G^{\mathsf T}z\le q,
+ \qquad q^{\mathsf T}v=b^{\mathsf T}y+h^{\mathsf T}z.
+\]
+These are executable rational witnesses, not a claim that floating-point
+optimisation itself is a proof assistant.
+\begin{proposition}[Finite rational certificate]
+Every feasible primal $v'$ obeys
+$q^{\mathsf T}v'\ge b^{\mathsf T}y+h^{\mathsf T}z$ for any dual pair
+satisfying the displayed inequalities. Equality with one feasible $v$
+certifies the exact LP optimum.
+\end{proposition}
+\begin{proof}
+Since $v'\ge0$, the componentwise dual inequality gives
+\[
+ q^{\mathsf T}v'\ge y^{\mathsf T}Av'+z^{\mathsf T}Gv'
+ \ge y^{\mathsf T}b+z^{\mathsf T}h.
+\]
+The second inequality uses $z\le0$ and $Gv'\le h$. Equality therefore
+matches a lower and an upper bound.
+\end{proof}
+Independently, our checker exhausts every size-$K$ subset of $C$ and runs
+the shortest-path segmenter on each. This covers the at-most-$K$ problem,
+because adding candidate tokens cannot increase a shortest-path cost.
+For $K>|C|$, all candidates suffice. Every stored witness is checked;
+deliberately perturbed primal and dual witnesses are rejected.
+
+\subsection{Three rounding rules and worked numerical gaps}
+The paper's Det rule chooses the $K$ largest $c_t$; Bias chooses the
+$K$ largest $c_t/|t|$; Int retains only values essentially equal to one.
+Our certificates are rational, so Int uses exact equality to one and
+Det/Bias use lexicographic tie-breaking. After choosing tokens we
+recompute a discrete shortest path; a fractional flow is not itself a
+tokenisation. An integral colour in one LP solution need not be present
+in every optimum. For example, with word $\mathtt{abc}$ and candidates
+$\mathtt{ab},\mathtt{bc}$, either single-token choice is optimal.
+
+The paper's example is
+\[
+ \mathcal D_0=(\mathtt{abc},\mathtt{abd},\mathtt{abe},
+              \mathtt{bc},\mathtt{bd},\mathtt{be}),\qquad K=3.
+\]
+The mandatory-symbol count is fifteen. BPE first creates $\mathtt{ab}$,
+saving three positions, then two merges save only one each: its cost is
+ten. Choosing $\mathtt{bc},\mathtt{bd},\mathtt{be}$ instead gives nine.
+Our exact primal/dual pair has value nine, and all $\binom73=35$
+candidate vocabularies confirm $L_3=I_3=9$. All three rounding rules give
+nine on the saved LP solution.
+
+Our first new example is
+\[
+ \mathcal D_1=(\mathtt{cbcbc},\mathtt{cbca},
+              \mathtt{cbabac},\mathtt{caaab}),\qquad K=2.
+\]
+One optimal fractional vocabulary has
+\[
+ c_{\mathtt{cbc}}=\tfrac12,\qquad
+ c_{\mathtt{caaab}}=\tfrac12,\qquad
+ c_{\mathtt{cbabac}}=1,
+\]
+with all other values zero. Its per-word costs are $3,3,1,3$, totalling
+ten; the rational dual certifies optimality. The integer optimum is
+eleven, witnessed by vocabulary
+$\{\mathtt{caaab},\mathtt{cbabac}\}$ with costs $5,4,1,1$ and confirmed
+by all $\binom{30}{2}=435$ vocabularies. Det and Bias also yield eleven,
+while Int yields fifteen. The LP is therefore genuinely fractional even
+though its objective is an integer.
+
+A second original corpus,
+\[
+ (\mathtt{aaaab},\mathtt{baaccb},\mathtt{aac},
+   \mathtt{babaab},\mathtt{cbbbca}),\qquad K=2,
+\]
+has $L_2=31/2<I_2=16$. Its nonzero colour weights are
+$c_{\mathtt{aa}}=c_{\mathtt{babaab}}=1/2$ and
+$c_{\mathtt{cbbbca}}=1$. The per-word fractional costs are
+$7/2,11/2,5/2,3,1$. Exhausting $\binom{42}{2}=861$ vocabularies certifies
+the integer value. These examples demonstrate a relaxation gap; they do
+not supply a universal approximation ratio for rounding.
+
+\subsection{Application to permitted paths on actual higher-genus dessins}
+Set $m=2g+1$ for $g=2,4$, and retain the existing clean dessin of
+$y^2=x^m-1$, $\beta=x^m$. On $H=\{0,\ldots,2m-1\}$ put
+\[
+ \sigma=(0\ \cdots\ m-1)(m\ \cdots\ 2m-1),\qquad
+ \alpha(h)=h+m\pmod{2m},\qquad \tau=\sigma^{-1},\quad\phi=\alpha\tau.
+\]
+There are two vertex cycles, $m$ edges and one face, so
+$2-2g=2-m+1$. Its polynomial algebra is the infinite locally gentle
+algebra
+\[
+ A_g=kQ/(a_h a_{\phi h}:h\in H),\qquad
+ a_h:[h]\longrightarrow[\tau h].
+\]
+Here products are written in travel order: $ab$ traverses $a$ first and
+then $b$. A left-operator matrix convention reverses these products.
+Define the nonzero permitted word
+$P(h,r)=a_h a_{\tau h}\cdots a_{\tau^{r-1}h}$. Our finite multiset is
+\[
+ \big(P(0,m+2),P(0,m+2),P(m-1,4),
+      P(m,m+2),P(2m-1,4)\big).
+\]
+Each arrow label is one alphabet symbol, even when its printed label has
+several characters. The duplicate first word retains its multiplicity.
+We allow every occurring subpath of length two or three as an extra
+candidate. The LP bound consequently concerns this explicitly restricted
+candidate set, not arbitrary-length vocabularies.
+\begin{center}\small
+\begin{tabular}{rrrrrr}
+\toprule
+$g$ & $m$ & $|C|$ & symbol count & $L_2=I_2$ & subsets checked\\
+\midrule
+2&5&20&29&19&190\\
+4&9&36&41&31&630\\
+\bottomrule
+\end{tabular}
+\end{center}
+The exact witnesses attain these values, and Det/Bias/Int all attain
+them on the saved LP solutions. A token names a finite permitted subpath;
+concatenation recovers every original arrow, hence its quiver endpoints
+and original path length. This is finite corpus compression, not a
+finite-dimensional quotient of $A_g$. Arbitrary token concatenations may
+fail composability and need their own endpoint checks. Neither an algebra
+homomorphism on a freely generated token algebra nor a representation of
+arbitrary completed formal sums is asserted. The completed order still
+has rank $2m^2$ over $k[[u]]$; its rank, coefficients, multiplication,
+relations and modules are not reduced by counting tokens.
+
+The companion laboratory at
+\url{http://127.0.0.1:8765/convextok.html} exposes the position DAG,
+literal fractional flows, vocabularies and discrete segmentations.
+Its five corpora and sixteen budget cases have sixteen exact
+primal/dual certificates and 2,312 exhausted integer vocabularies in
+total. The browser independently recomputes segmentation costs from
+local arrays; it does not solve a new LP when a user changes a vocabulary.
+The primary paper's NLP training and large GPU experiments are not
+reproduced. Compression of a finite path corpus proves no module or
+Fukaya equivalence, arithmetic determinant comparison, or GRH statement.

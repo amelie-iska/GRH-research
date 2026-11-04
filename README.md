@@ -6,7 +6,7 @@ A private research workspace for auditing and developing surface-order and Hilbe
 
 ## Research book and interactive companion (2026-11-03)
 
-Current edition: **168 pages,35 chapters, ten unique in-book laboratories**.
+Current edition: **173 pages,35 chapters, eleven unique in-book laboratories**.
 The learning section now leads with [actual RG](http://127.0.0.1:8765/rg.html):
 full effective actions, constants, generated interactions, partition functions,
 retained observables and explicit scales. [Quantum TokenGT](http://127.0.0.1:8765/qtoken.html)
@@ -16,6 +16,16 @@ training and an executed ideal QEC memory layer. Every architecture has a
 [synchronized tensor/surface/order inspector](http://127.0.0.1:8765/architecture.html),
 with separate [actual-RG](http://127.0.0.1:8765/architecture.html?collection=rg)
 and [TokenGT](http://127.0.0.1:8765/architecture.html?collection=qtoken) collections.
+The inspector now uses dimensioned tensor planes, parallel Q/K/V/head lanes,
+source-cell highlights, numerical calculation terms, guided stages and
+model overview/focus, following a pinned study of Bycroft's reference.
+Its original Canvas2D rendering preserves the actual model semantics.
+The new [ConvexTok laboratory](http://127.0.0.1:8765/convextok.html) explains
+certified vocabulary selection, fractional flows, rounding and exact shortest
+segmentation, including genuine genus-two/four permitted-path corpora.
+Sixteen rational primal/dual certificates and independent exhaustive checks
+include strict gaps10<11 and31/2<16. These examples do not replace TokenGT's
+graph tokens, reproduce NLP training, or close the GRH bridge.
 The original 22 records and six original training families remain unchanged.
 Their compression, covariance and finite spectral tasks are clearly labelled
 as auxiliary experiments, with complete preserved data.
@@ -28,7 +38,7 @@ The fixed top-left **Engage night** button transforms the page, book and embedde
 
 Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuQuantum/CUDA-Q sources are forked and cloned, but GPU adapters are not executed on this Apple machine. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
 
-The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **314 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
+The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **335 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
 
 Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `python3 scripts/prepare_companion.py`. Start/restart the loopback-only server with `python3 scripts/serve_book.py`; no public deployment or external scripts are needed. The preview is running as a separate local process, so a chat interruption need not stop it.
 

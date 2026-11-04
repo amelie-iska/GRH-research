@@ -1,0 +1,86 @@
+\section{Normal forms and the full module action}\label{bre:details}
+\subsection{Why the polynomial matrix algebra is the path algebra}
+With our convention a path from $j$ to $i$ acts as $E_{ij}$; the
+rightmost arrow acts first. Every nonzero positive path uses only the
+$a$-branch or only the $b$-branch, because mixed consecutive arrows
+are the defining quadratic zero relations. Along either branch the path
+of length $\ell$ starting at $j$ is unique. Write
+\[
+ \ell=j-i+5q,\qquad 0\leq i,j<5.
+\]
+Its image is $t^qE_{ij}$ in the chosen factor and zero in the other.
+For $i<j$, $q\geq0$; for $i>j$, $q\geq1$; for $i=j$ and
+positive length, $q\geq1$. The stationary path is the shared
+$(E_{ii},E_{ii})$.
+
+These images are linearly independent: off-diagonal matrix units,
+positive diagonal monomials, branch factors and degrees are independent;
+the shared constant diagonal units are independent of all positive
+paths. They span $H\times_{k^5}H$, since upper entries permit all
+polynomials, lower entries are divisible by $t$, and only the constant
+diagonals of the two factors must agree. Products of paths agree with
+matrix products. Thus the arrow assignment induces a bijective algebra
+map from $kQ/(a_ib_{i+1},b_ia_{i+1})$ to $B$. This argument includes
+arbitrarily long paths; it imposes no nilpotence relation on a full turn.
+
+The central parameter $u$, the sum of all full turns on both branches,
+has image $(tI_5,tI_5)$. Completing in this parameter is a separate
+operation. The polynomial algebra and its completion are not identified
+by the normal-form calculation. The finite modules below are annihilated
+by $u^2$, so their continuous completed actions require only a finite
+Taylor polynomial.
+
+\subsection{Exactness for arbitrary algebra elements}
+In coordinates $M_2=k^5\oplus\epsilon k^5$ let
+$C(t)=\sum_{r\geq0}C_rt^r$ be the first component of an arbitrary
+$B$-element. Its action is
+\[
+ (x,y)\longmapsto(C_0x,C_1x+C_0y),\qquad
+ \rho_2(C)=\begin{pmatrix}C_0&0\\C_1&C_0\end{pmatrix}.
+\]
+Evaluation is multiplicative: the constant coefficient of a product is
+$C_0C'_0$ and the linear coefficient is $C_0C'_1+C_1C'_0$.
+Consequently the formula is a representation of the entire algebra.
+The second branch acts by zero but has not been removed from the algebra.
+Both maps in the sequence commute with this general block action,
+not merely with a finite test list of generators.
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth,every node/.style={font=\small},
+ box/.style={draw,rounded corners,align=center,minimum width=2.1cm,minimum height=.9cm}]
+\node (z) at (0,0) {$0$};
+\node[box] (l) at (2,0) {$k^5$\\$C_0$};
+\node[box] (m) at (5,0) {$k^5\oplus\epsilon k^5$\\$\left(\begin{smallmatrix}C_0&0\\C_1&C_0\end{smallmatrix}\right)$};
+\node[box] (r) at (8,0) {$k^5$\\$C_0$};
+\node (e) at (10,0) {$0$};
+\draw[->] (z)--(l);\draw[->] (l)--node[above] {$i$}(m);
+\draw[->] (m)--node[above] {$p$}(r);\draw[->] (r)--(e);
+\end{tikzpicture}
+\end{center}
+Every vector in $\ker p$ is $(0,y)=i(y)$, $i$ is injective, and
+$p$ is surjective by $x=p(x,0)$. The section obstruction uses only
+$a_0$: it is zero on $M_1$, while on $M_2$ it sends the coordinate-zero
+constant coefficient to the coordinate-four infinitesimal part. A section commuting
+with this arrow would force $1=0$. No algebraic closure, eigenvalue
+classification, division by two or positivity premise occurs.
+
+\subsection{Formal and computational coverage}
+The file \path{lean-analytic/BranchExtension.lean} defines $B$ as the
+actual generated subalgebra of polynomial matrix pairs, proves its
+infinite dimensionality through injective polynomial evaluation, and
+constructs $i,p$ as $B$-linear maps. The 21 printed theorem types and
+axiom reports cover the generators, infinite embedding, actions,
+exactness and absence of a module section. The normal-form isomorphism
+with the path quotient above is proved in prose; it is not packaged as
+a Lean categorical equivalence. Nor is a Yoneda-Ext object or the
+universal factorization property of an almost-split sequence formalized
+by these maps alone.
+
+The exact checker \path{examples/relations/check_extension.py} independently
+uses unbounded normal paths and polynomial matrix pairs. It checks
+405 distinct paths through length 40, 7,225 products, 30 distinct loop
+powers and 80 whole-polynomial module actions. The full generator system
+for a hypothetical section has coefficient rank 49 and augmented rank 50
+over $\mathbb Q,\mathbb F_2,\mathbb F_3,\mathbb F_5$.
+These finite diagnostics complement the symbolic proof; their finite
+cutoffs do not establish infinite dimensionality by themselves.

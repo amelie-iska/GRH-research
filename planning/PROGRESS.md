@@ -794,3 +794,47 @@ contour/residue/profile/scale uniformity before summing beta_U. Do not assume
 RH-level cancellation or desired positivity. The fixedU1 obstruction is
 finished; original signed MS, positive determinant bridge and all GRH scopes
 remain open.
+
+## 2026-11-03 — reference fidelity, certified vocabularies and actual extension
+
+Resumed P4 at the recorded actual-module frontier, then incorporated the
+user's two live amendments: study Bycroft's reference more faithfully and
+utilize ConvexTok v1. Completed a genuine infinite-algebra Lean construction,
+not just a sampled matrix model: generated polynomial matrix pairs, injective
+k[t] evaluation/nonfiniteness, all-element module actions and an exact
+nonsplit N5(J1)→N5(J2) extension over every coefficient field.21 new statements;
+fresh full335 reports pass (333standard-only,two axiom-free). Normal-form
+path-quotient identification is prose; ambient AR factorization is not claimed.
+Independent fresh Lean and Q/F2/F3/F5 checks accepted. One overlapping arrow
+label in the new diagram was caught visually, shortened to i/p and recompiled.
+
+Pinned llm-viz source study distinguishes live overview/self-attention from
+source-confirmed picking after a reference renderer crash. The local original
+explorer now has dimensioned grids/head planes, QKV/expert/residual semantic
+lanes, full overview/operation focus, guided narrative/camera, literal-cell
+picking, source-coordinate highlights and supported scalar/complex terms.
+Diagnostic-only comparisons are dashed and labelled, not active model paths.
+34saved cases/55,299coordinates/37,701 formula checks and final all-collection,
+race/hash/mobile/native-dark browser checks pass. Original22/optional12
+saved records and all trained checkpoints are unchanged. No renderer/assets
+were copied; the local scene is axonometric Canvas2D.
+
+ConvexTok v1 fully reviewed and pinned; implemented small occurrence-capacity
+LP, rational primal/dual certificates, exact fixed-vocabulary segmentation,
+rounding and exhaustive integer comparison.16certificates across5corpora,
+2,312exact-size vocabularies and independently2,486at-most-K vocabularies pass.
+The paper's example is9vsBPE10; original strict gaps are10<11 and31/2<16.
+Actual genus2/4 finite permitted-arrow corpora have restricted optima19/31.
+Initial empty-input and travel-order ambiguities were corrected and reviewed.
+48JavaScript replays,64browsercontrol states, manual-budget guards, mobile,
+links, unique book embed and actual code/Lean loaders pass. Tokenisation is
+finite corpus compression; no TokenGT checkpoint or algebra was changed.
+
+Both article pairs20/49 and33/71pages compile; book173pages/35chapters,
+18source-aligned diagrams and11unique tools, valid nativeMathML, final PDF
+references resolved/nooverfull. Live preview remains loopback-only. Existing
+CPU/Lean tools, sources, originals, histories, outputs and caches preserved;
+no install/upgrade/training/paid/cloud/GPU/MCP or Claude configuration change.
+Evidence: outputs/checks/2026-11-03-reference-inspector/final/milestone.json,
+planning/reviews/{branch-extension,convextok}/REVIEW.md and primary source
+manifests. Full source expansion, comprehensive Lean and GRH gates stay false.

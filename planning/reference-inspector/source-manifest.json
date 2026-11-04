@@ -1,0 +1,73 @@
+{
+  "repository": "https://github.com/bbycroft/llm-viz",
+  "commit": "9da93742382f1bf36c020c38a1ace454e82c4490",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "97780c03931db18c9770a3932a264182d3d3603d142a72cba8033c94786e0f93",
+      "bytes": 1077,
+      "read_scope": "complete"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c9917bdc7ff83a355494b3ec768c8e374311f39981076c402bb3de7695e4cf85",
+      "bytes": 1822,
+      "read_scope": "complete"
+    },
+    {
+      "path": "src/llm/GptModelLayout.ts",
+      "sha256": "63e82f90d0ee7f5dc4cf8ed64ba12f1eac7fc79010f3b3e004348123b0261fb6",
+      "bytes": 34598,
+      "read_scope": "1\u2013115,195\u2013220,368\u2013690; dependency types, semantic axes, QKV/head placement, softmax aggregates, projection/residual/MLP"
+    },
+    {
+      "path": "src/llm/Camera.ts",
+      "sha256": "9b95f851667e804357867044793f601d43098eb93dff06344e4a6a4d82e20e2f",
+      "bytes": 6782,
+      "read_scope": "complete"
+    },
+    {
+      "path": "src/llm/Interaction.ts",
+      "sha256": "f62026084a751983ea133ae3de54ed86244a5d507b5927c64795bea9a2fa9b0e",
+      "bytes": 8933,
+      "read_scope": "complete"
+    },
+    {
+      "path": "src/llm/render/blockRender.ts",
+      "sha256": "2f1eb08e35d6a45d0bd9682e25dcfa067df3ed23b3e6dd201e38452dcbd1c5cb",
+      "bytes": 20725,
+      "read_scope": "140\u2013230; value textures, camera-distance LOD and nested16/256 grids; all function signatures searched"
+    },
+    {
+      "path": "src/llm/components/BlockInfo.ts",
+      "sha256": "e7ef5f53147e3728d7387a16298e5b580521bc2e5b3f787967c2c8ae7b705590",
+      "bytes": 1575,
+      "read_scope": "complete"
+    },
+    {
+      "path": "src/llm/walkthrough/Walkthrough.ts",
+      "sha256": "03f4e9cdac8e6d4a856d1b8b225fe2e9d7d4e011e6fff092e976388160305e3f",
+      "bytes": 17973,
+      "read_scope": "phase table and phase dispatch signatures searched; not full prose audit"
+    },
+    {
+      "path": "src/llm/walkthrough/Walkthrough04_SelfAttention.tsx",
+      "sha256": "ff560159a3f991efcebe00006c1e2410dda17a4f3fc519bb850d176f79a13b67",
+      "bytes": 33839,
+      "read_scope": "1\u2013145 and focusSelfAttentionHead section at end; QKV narrative/timers and focus transformations"
+    },
+    {
+      "path": "src/llm/walkthrough/WalkthroughTools.ts",
+      "sha256": "1da9c4efe270b055f3ea17a1ae80a60c55232f3e9a1719f1bf82df67df6c9f71",
+      "bytes": 13987,
+      "read_scope": "commentary timing, breakAfter, setInitialCamera, moveCameraTo, dimension color semantics"
+    },
+    {
+      "path": "src/llm/components/DataFlow.ts",
+      "sha256": "381119b5fa8c713d66fcdb210d6a6ebedb6def0922508740b0a73a835cc17915",
+      "bytes": 31272,
+      "read_scope": "235\u2013335,370\u2013650,727\u2013866 plus function signature index; coordinate lookup, dot/add/LayerNorm/softmax/attention formulas and exact source-arrow mapping"
+    }
+  ],
+  "note": "Whole-file bytes preserved as a local research snapshot; read_scope describes selected analysis. Original local implementation, no upstream code/assets incorporated."
+}

@@ -261,3 +261,28 @@ Hecke and analytic interfaces remain explicit. Next P4 finite categorical
 formalization can construct the actual genus-two nonsplit branch extension;
 next P7 analytic lane is the type-I squarefree Euler ratio with all masks,
 primitive/imprimitive conductors and uniform Mellin/residue contracts retained.
+
+
+## Latest reference-fidelity and ConvexTok amendments (2026-11-03)
+
+The user's follow-up requires substantially closer study of bbycroft.net/llm,
+not merely generic block diagrams. Pin the primary llm-viz source revision,
+inspect the live overview and self-attention walkthrough, and implement
+original tensor-dimensional solids, parallel semantic lanes, overview/focus,
+cell picking, supported numerical dependency expansions and guided navigation.
+Keep actual model semantics and preserved checkpoint/reference categories.
+A source-confirmed interaction is not claimed as a live observation when the
+reference renderer crashes. The local implementation need not copy upstream
+WebGL machinery or assets; describe projection and rendering differences.
+
+The further requested paper is arXiv:2605.22821v1, Tokenisation via Convex
+Relaxations. Review and pin the complete primary source; explain its coloured
+segmentation graph, occurrence capacities, vocabulary budget, IP/LP distinction
+and rounding. Provide executable small examples with exact rational primal/dual
+certificates and exhaustive integer comparisons, including a fractional-gap
+case and a permitted-word corpus from the actual higher-genus dessin algebra.
+Add one canonical contextual interactive tool to the architecture chapter.
+Keep string tokenisation separate from TokenGT graph token identities; a
+compressed finite path corpus neither changes the infinite algebra nor proves
+an arithmetic determinant or GRH. Do not infer downstream training improvements
+from these small examples or fabricate quantum speedups.

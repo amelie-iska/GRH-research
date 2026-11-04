@@ -97,6 +97,37 @@ the fifteen exact rational principal-minor certificates. Rejected proposals
 are labelled as repaired. The carrier uses backward $V$, so $VU=iUV$;
 the live forward-clock example instead has $UV=\omega VU$.
 
+\section{Spatial calculations and guided navigation}
+The interaction reference is Brendan Bycroft's \emph{LLM Visualization},
+reviewed at the pinned source revision recorded in
+\path{planning/reference-inspector/source-manifest.json}.
+Its model overview and self-attention walkthrough place the narrative
+beside dimensioned tensor planes, parallel query/key/value projections,
+attention heads and residual paths. The source's picking code maps a
+selected output cell to input rows or columns and dot-product terms;
+its camera code interpolates toward walkthrough targets. These specific
+mechanisms motivate the local redesign. Reference hover inspection was
+limited by a renderer crash; source inspection is distinguished from
+successful live observation.
+
+The local implementation uses original browser code and the project's
+own immutable records. Its spatial scene follows dependency ranks and
+semantic lanes, rather than putting every operation in an identical card.
+A tensor's dimensions determine its grid; head planes, selected literal
+coordinates and level-of-detail windows remain labelled. Overview retains
+the whole recorded computation, while a focused step moves toward its
+neighbourhood. The narrative gives the actual operation and evidence type.
+Supported cell expansions show numerical input terms and their computed
+result; other operations retain graph dependencies without inventing a
+scalar derivation. Surface and circuit views explain a separate geometric
+or physical interpretation of the finite carrier.
+
+The rendering is a lightweight axonometric projection rather than a copy
+of the reference's WebGL engine. Neither perspective effects nor a
+quantum-state array make an attention model a coherent quantum transformer.
+Checkpoint replay, fixed-weight reference calculations and separately
+proposed extensions keep their different status throughout the interface.
+
 \section{A reproducible way to explore}
 Choose an evidence category and example, then a step. Clicking an input
 follows its recorded dependency. Head/token/coordinate controls select
@@ -114,3 +145,5 @@ panels. These computational checks do not imply complete Lean formalization,
 generalization beyond the samples, quantum advantage or the arithmetic
 positive-determinant comparison. The general path/category and arithmetic
 interfaces remain the research obligations described in the final chapters.
+
+\input{chapters/convextok}
