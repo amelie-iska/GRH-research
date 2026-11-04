@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><script src="/GRH-research/public-base.js"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ConvexTok · certified path vocabularies</title>
+<link rel="stylesheet" href="/GRH-research/style.css"><link rel="stylesheet" href="/GRH-research/convextok.css">
+<link rel="stylesheet" href="/GRH-research/theme.css" data-site-theme="palette"><script src="/GRH-research/theme.js" data-site-theme="controller"></script>
+</head><body>
+<header><a class="brand" href="/GRH-research/">SURFACE / ORDER</a><nav><a href="/GRH-research/book/main.html#lab-convextok">Book</a><a href="/GRH-research/architecture.html">Tensor inspector</a><a href="/GRH-research/relations.html">Dessin modules</a></nav><span class="badge">EXACT FINITE CERTIFICATES</span></header>
+<main id="convexLab"><section>
+<p class="eyebrow">WORDS → FLOW → VOCABULARY → SHORTEST PATH</p>
+<h1>Choose a vocabulary. See the gap.</h1>
+<p>ConvexTok relaxes discrete token choices into fractional capacities. Here, five tiny CPU examples compare an exact rational LP lower bound, an exhaustively optimal vocabulary, and three rounding rules. Arrow words come from actual genus-two and genus-four infinite locally gentle algebras.</p>
+<div class="ct-controls"><label>Corpus<select id="ctCase"></select></label><label>Extra-token budget K<select id="ctBudget"></select></label><label>Vocabulary<select id="ctScheme"><option value="Det">Det · largest colour weights</option><option value="Bias">Bias · weight / length</option><option value="Int">Int · exactly integral colours</option><option value="integer">Exhaustive optimum</option></select></label><button id="ctReset" type="button">Reset manual choices</button></div>
+<p id="ctStatus" role="status" aria-live="polite">Loading exact finite evidence…</p>
+<div class="ct-metrics" id="ctMetrics"></div>
+<p id="ctContext"></p>
+<p class="ct-formula">min Σ<sub>e</sub> x<sub>e</sub> &nbsp; subject to &nbsp; Bx = d, &nbsp; 0 ≤ x,c ≤ 1, &nbsp; x<sub>e</sub> ≤ c<sub>token(e)</sub>, &nbsp; Σ<sub>t</sub> c<sub>t</sub> ≤ K.</p>
+<p class="small">Single symbols are always available and still cost one token per use. K counts additional token <em>types</em>. A token can occur repeatedly: each occurrence has its own capacity constraint. Edges never cross corpus-word boundaries.</p>
+</section><section class="ct-grid"><div>
+<div class="ct-controls"><label>Word to inspect<select id="ctWord"></select></label><label>DAG overlay<select id="ctOverlay"><option value="discrete">Selected vocabulary · shortest path</option><option value="lp">LP · fractional flow</option></select></label></div>
+<div class="ct-dag"><svg id="ctDag" role="img" aria-label="Tokenization position DAG with literal flow and discrete path" viewBox="0 0 900 290"></svg></div>
+<p class="small">Vertices are positions in one word, not nodes of the surface quiver. Cyan edges follow the optimal discrete segmentation; amber edges carry fractional LP flow. Hover or focus an edge for its flow and capacity. Arc height encodes span, not a metric.</p>
+<h2>Encode and recover every symbol</h2><div id="ctSegments"></div>
+<h2>A fixed-vocabulary trap</h2><p>With tokens {ab, bcd} and word <code>abcd</code>, longest-first greedy gives <code>ab | c | d</code> (3). The shortest-path recurrence gives <code>a | bcd</code> (2). This is distinct from BPE's choice of which tokens to create.</p>
+<details><summary>How the two bounds are checked</summary><p>For min qx with Ax=b, Gx≤h and x≥0, the saved witnesses satisfy x≥0, Ax=b, Gx≤h, z≤0 and Aᵀy+Gᵀz≤q, with qx=by+hz. All upper bounds appear as rows of G. Python checks every entry using exact fractions after SciPy proposes a solution. Equality of feasible primal and dual values certifies this finite LP optimum. The integer optimum separately exhausts every size-K subset; adding tokens cannot increase its shortest-path cost.</p><pre id="ctCertificate"></pre><p><a href="/GRH-research/data/convextok.json">All literal rational witnesses</a> · <a href="/GRH-research/examples/tokenization/check.py">Executable checks</a></p></details>
+</div><aside>
+<h2>Colour weights and chosen tokens</h2><p class="small">Toggle tokens to test a manual vocabulary within K. Fractional colour weights belong to the saved LP; manual choices update the discrete counts and paths only. Equal weights use lexicographic ties. Int keeps exact ones; they need not occur in every optimum.</p>
+<div class="ct-table"><table><thead><tr><th scope="col">Use</th><th scope="col">Token</th><th scope="col">c<sub>t</sub></th><th scope="col">c<sub>t</sub>/length</th></tr></thead><tbody id="ctColours"></tbody></table></div>
+<p id="ctManual" aria-live="polite"></p>
+</aside></section><section>
+<h2>What transfers to the surface-order project</h2><p>For m=2g+1, the clean dessin on y²=xᵐ−1, β=xᵐ has σ=(0 … m−1)(m … 2m−1), α(h)=h+m mod 2m, permitted successor τ=σ⁻¹, and forbidden successor φ=ατ. The corpus follows permitted arrows a<sub>h</sub>a<sub>τh</sub>… in the infinite polynomial algebra A<sub>g</sub>=kQ/(a<sub>h</sub>a<sub>φh</sub>). Products here use travel order: ab traverses a first, then b; left-operator matrix products reverse this order. Vocabulary tokens name finite subpaths; decoding recovers the same arrow sequence, endpoints and length.</p>
+<p>The genus-two/four examples restrict candidate tokens to two or three arrows, so their lower bounds concern that candidate set. They compress a finite path corpus and preserve the algebra's relations. The completed order has rank 2m² over k[[u]]; this is unrelated to the number of tokens. Idempotents, arbitrary formal sums, path multiplication and module maps require their own representation. TokenGT's node/edge feature tokens have a different meaning; replacing them would require explicit incidence metadata, model changes and new evaluation.</p>
+<p><a href="https://arxiv.org/html/2605.22821v1">Tempus et al., Tokenisation via Convex Relaxations, v1</a> supplies the formulation and rounding rules. The six-word vocabulary trap reproduces its small example; the gap and surface corpora, rational certificates and this interface are original adaptations. No language model is trained here; the paper's downstream benchmarks, GPU-scale optimization and its empirical near-optimality results are not reproduced. This tool establishes no arithmetic determinant bridge or GRH result.</p>
+<p><a href="/GRH-research/examples/tokenization/source-review.md">Primary-source review and limits</a> · <a href="/GRH-research/examples/tokenization/README.md">Reproduction instructions</a> · <a href="/GRH-research/book/main.html#lab-convextok">Mathematical exposition in the book</a></p>
+</section></main><script type="module" src="/GRH-research/convextok.mjs"></script></body></html>

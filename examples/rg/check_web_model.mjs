@@ -1,0 +1,6 @@
+import assert from 'node:assert/strict';import {readFileSync,writeFileSync} from 'node:fs';import {flow,predict,errorStats,chain} from '../../web/rg-model.mjs';
+const lab=JSON.parse(readFileSync('web/data/rg/lab.json','utf8'));let max=0;
+for(const c of lab.classical){const f=flow(c.m,c.parameters);assert.equal(f.length,c.flow.length);f.forEach((s,i)=>{max=Math.max(max,Math.abs(s.logZ-c.flow[i].logZ),...s.c.map((x,j)=>Math.abs(x-c.flow[i].couplings[j])));});}
+for(const e of lab.training.examples){const p=predict(lab.training,e.parameters);max=Math.max(max,...p.map((x,j)=>Math.abs(x-e.predicted_logweights[j])));const a=flow(5,e.parameters,p),b=flow(5,e.parameters),eps=errorStats(p,b[1].v).sup;a.forEach((s,i)=>assert(Math.max(...s.v.map((x,j)=>Math.abs(x-b[i+1].v[j])))<=eps+1e-10));}
+for(const [k,h]of[[0,0],[.7,0],[1.2,.2]]){const c=chain(k,h);assert(c.every(s=>Math.abs(s.logZ-c[0].logZ)<1e-9));assert(c.every(s=>Math.abs(s.physicalXi-c[0].physicalXi)<1e-9));}
+assert(max<1e-10);const result={passed:true,max_python_JS_difference:max,full_action_and_partition_compared:true,learned_later_sup_error_contracts:true};writeFileSync('outputs/checks/2026-11-03-actual-rg/web-model.json',JSON.stringify(result,null,2)+'\n');console.log(result);

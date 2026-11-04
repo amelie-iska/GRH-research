@@ -1,0 +1,355 @@
+<!doctype html><html lang="en"><head><script src="/GRH-research/public-base.js"></script><meta charset="utf-8"><title>Verification coverage</title><link rel="stylesheet" href="/GRH-research/style.css"><link rel="stylesheet" href="/GRH-research/theme.css" data-site-theme="palette" />
+<script src="/GRH-research/theme.js" data-site-theme="controller"></script>
+</head><body><main><section><h1>Verification and inclusion</h1><p><a href="/GRH-research/book/main.html">On-page book</a> · <a href="/GRH-research/source-volumes.html">Complete original sources</a></p><pre># Verification and inclusion ledger
+
+The book is a developed critical edition of the two supplied manuscripts, not a certification of every original assertion. Both complete originals are preserved byte-identically in `book/source-editions` and on the local page. Their hashes, all chapter headings and original line positions are recorded in `source-provenance.json`. The coverage review documents what was read in this run versus earlier audits. Historical false claims are retained as sources, with corrections in the critical text; they cannot consistently be formalized as valid theorems.
+
+## Current kernel-checked layer
+
+The working critical book has 37 chapters (202 pages), with thirteen unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
+
+The pinned Lean 4.24/mathlib suite has **360 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 357 reports use standard foundational axioms only and 3 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
+
+| Material | Actual formal/computational interface | Remaining boundary |
+|---|---|---|
+| Nodal/projective resolutions | Existing PowerSeries/module resolution layer; BranchExtension actual infinite polynomial algebra and nonsplit module maps; exact path/matrix diagnostics | General dessin category interfaces and all module classifications not fully formalized |
+| Semi-invariants/AR | BookInterfaces Plücker and actual nodal matrices; nine-module/twelve-map/four-mesh exact checker | Almost-split universal factorization, whole component classification, Ringel quilt and derived equivalences remain prose/primary theorems |
+| Clock/shift and channels | BookInterfaces explicit clock/shift, distinct-site matrices, arbitrary finite complex Kraus positivity and trace preservation | Infinite operator domains, C* completions, physical implementations and QFT reconstruction not fully formalized |
+| Arithmetic character/Gram | ShortRowGram actual finite-field masks, complete orthogonality, finite energy expansion, Eisenstein norm and mod7 evaluation; ShortRowPairBarrier universal finite complex Gram duality and weighted pair-square inequalities | Planar Poisson, full CRT/ideal-character interface and low-gcd short-row estimate remain separate; seven finite Hecke Euler-restoration identities do not formalize infinite continuation/contours |
+| Theta arithmetic/descent | Existing Jacobi/projective/tame power-series and matrix layers | Full order functor, arithmetic descent and global positive determinant comparison remain open |
+| Higher genus/hyperbolic geometry | HyperbolicCoordinates formal disk/Lorentz and 4D norm identities; uniform prose passport proof; exact permutation/ramification checks through genus16; bounded reflection diagnostics | No formalized general uniformization or certified compact hyperbolic quotient; displayed patch is numerical and finite |
+| Learned renormalization | Actual PennyLane three-architecture and larger nine-qubit training; NumPy comparison, analytic target/gradient checks; actual Strawberry Fields training | No optimizer convergence theorem, hardware run, general QFT RG theorem or quantum advantage claim |
+| ToricGT hybrid | Actual pinned upstream Weyl module, trained PennyLane surrogate, six exact rational 15-minor PSD certificates | No upstream language-model campaign reproduced; no inferred arithmetic L-function operator |
+| Persistence extension | Actual MvPolynomial worked ungraded free resolution: injectivity, kernel/image equalities, ideal quotient, projectivity and zero residue Hom boundaries; 19 new printed dependencies. General prose staircase/CW/Schur/flag/cone and exact finite laboratory remain independently reviewed | General staircases, graded minimality, CW/Schur/category interfaces, surface-order coefficient tensor cone and channel norms are not yet fully Lean formalized; quantum distances are not interval certificates; Sage source supplied unexecuted |
+| Numerical architecture inspector | 22 saved cases and 836 shape-labelled DAG nodes plus a computed clock; actual backend/reference checks, all-case browser tests, 3D/flat dependency views, exact coordinate values, gate/covariance/witness/expert/certificate panels and one canonical book embed | Optional upstream probes, full model campaigns, upstream campaigns and general mathematical formalization remain separate; new GPU cases are scoped below; numerical arrays are not kernel-checked theorems or new training |
+| Covering/GLS/geometric extension | Actual theta finite-quotient cover, 36 exact Hom pairs, local endomorphism radical and higher-genus non-lifting proofs; three fresh Lean matrix statements with standard dependencies | General covering/module/AR/derived/Fukaya interfaces and uniform higher-genus obstruction are not fully Lean formalized; no GLS identification or arithmetic positivity inferred |
+| DG foundations | Actual exterior-line algebra, differential, parity Leibniz, contraction, ideal augmentation, semilinear clock and ambient polynomial nodal sequence:20 kernel-checked components; reviewed full prose node/completion/Ext/star/filtered-module constructions and one canonical finite-window tool | Full categorical Z-graded DGA, completed topology, concrete q-substitution, Ext identification, A-infinity transfer, HH/GNS and derived equivalence are not fully formalized; finite boxes are k-subcomplexes only |
+| Sage | Exact scripts supplied | Installed launcher points to missing app; Sage execution not passed |
+| NVIDIA | Executed cuStateVec7/11/23-qubit surface circuits and cuTensorNet contraction on the Linux RTX4090; isolated approved conda environment and explicit lock | Largest case has norm/inverse-echo checks; no independent large-state reference, physical hardware execution or speedup claim |
+
+The web book places selected Lean and executable code beside chapter content. These panels label scope rather than imply complete chapter formalization. The original manuscripts also contain experimental and proposed engineering statements: they need measurements or model validation, not a Lean proof that unperformed experiments happened.
+
+## Book-wide formalization backlog
+
+1. Connect the existing actual path/order definitions to each general dessin resolution and prove its exactness uniformly.
+2. Formalize the exact-category AR factorization properties and separate quotient, lattice, stable and derived interfaces.
+3. Develop determinant-functor maps with their perfection, linearity and symmetry hypotheses.
+4. Formalize the analytic lattice Poisson and low-gcd kernel estimates; the latter is still an unresolved mathematical problem.
+5. Formalize operator domains, regularized determinant convergence and the precise spectral zero-location bridge once independently constructed.
+6. Formalize physical finite-channel statements further, and treat continuum, hardware, measurement and learning claims according to their actual evidential type.
+
+A complete GRH proof and complete Lean formalization of all material have **not** been established. No fitted spectrum, trained network, finite numerical check or restatement of an open bridge is accepted as completion.
+
+## Coprime pair-square arithmetic trial
+
+The current book is148pages,32chapters; focused articles28/57pages. Four new
+ShortRowPairBarrier declarations prove actual finite-complex frame duality,
+row-diagonal and weighted/unimodular lower bounds, with printed standard
+axiom dependencies. They do not formalize the full ideal-character passage,
+lattice count or fixed-field prime-ideal theorem. The resulting prose
+application rules out a proposed absolute pair-square route at the3/4
+short-row endpoint; it does not settle the signed original-family mean square.
+The character is sextic in the pinned original; its square is cubic. Earlier
+high-gcd exposition has this label corrected. The approved CPU environment
+runs deterministic exact integer sextic diagnostics, not training or a GRH
+certificate. No sources, environments, pins or checkpoints changed.
+
+## Actual RG and quantum-feature TokenGT correction
+
+Current book159pages/34chapters with nine unique tools; focused articles30/62
+pages. The new actual-RG chapter precedes auxiliary compression/covariance
+benchmarks. FiniteRG.lean checks9 full finite scalar Gibbs marginal/action,
+partition, retained-observable, nesting, sandwich and transfer-trace
+identities. All9printed types use only standard foundations. Quantum
+spectral-log/partial-trace/operator and full learned/QEC/categorical programs
+are not all kernel checked. Full pinned suite295passes,293standard-only and2
+axiom-free. The standalone historical7-result suite is unchanged, not rerun.
+
+New exact/full-action and floating-point checks cover all generated constants,
+Walsh/Pauli terms, nested partition/observable comparisons, Γ=0 classical
+limits, quantum tensor ordering, trained-heldout/OOD action/constant/partition/
+observable errors and matched classical baselines. The12RG circuit angles
+are nominal;3finalRZ parameters are structurally inactive for itsZ readout.
+A five-qubit generation/dephasing/sampling example reports learned-distribution
+shot error separately from teacher bias. Sage source is supplied unexecuted.
+
+Every original architecture has actual passport/quiver/order/forbidden-pair
+context and selected tensor/gate/token supports. Four matched TokenGT variants (three quantum-feature, one classical), a concept critic and continuous GFlowNet are explicitly bounded
+finite hybrids. Actual F2Rips homology, ideal bit-flip QEC logical-channel
+memory evaluation and exactCSS [[10,4,1]] ranks/distances are checked by
+separate code and independent review. These computations don&#x27;t certify
+semantic reasoning, global GFN distribution accuracy, physical topological
+phase, coherent quantum attention, HMS/materials results or GRH.
+
+Book proofs and evidence: research/actual-rg.md,
+planning/reviews/actual-rg/REVIEW.md, examples/rg/README.md,
+examples/quantum_tokengt/README.md and outputs/checks/2026-11-03-actual-rg/.
+Both complete historical manuscript copies and source-clone pins are preserved.
+
+
+## Linear-relation and Fitting source expansion
+
+Current book165pages/35chapters,17 vector diagrams,ten canonical tools;
+focused articles32/65pages. LinearRelations.lean checks11 statements using
+actual Submodule relations, graph composition/inverse, explicit intertwiners,
+both filtration directions, arbitrary finite-dimensional Fitting splitting
+at dimV, kernel stabilization and unit-power annihilation. Full-suite306
+reports pass (304 standard-only,two axiom-free). No custom axioms/admissions.
+
+The equivalence of the specified full A_m branch category with finite
+endomorphisms, Jordan/Hom classification, topology of continuous completed
+modules, abstract splitting-functor classification, Cantor coding and cyclic
+transport determinant are proved in prose rather than packaged in Lean.
+Finite rational checks cover8 modules/10 full-quiver Hom systems; an independent
+oracle checks24 transports/125 Hom cases. The interactive coefficient graph
+is a projection of a finite module, not a uniformizing Riemann surface or
+an arithmetic operator. The source&#x27;s graph, stable kernel, rigidity, lambda=1,
+category and generic infinite-word assertions are explicitly corrected.
+
+
+## Original-family signed ideal split
+
+Current book168pages/35chapters/17diagrams/ten unique labs; audit papers20/49
+and focused papers33/69pages. MobiusSplit.lean adds8 printed statements in
+an actual natural-number ArithmeticFunction Dirichlet ring, plus the generic
+commutative-ring inverse identity. Full suite314passes,312 standard-only,
+two axiom-free. This does not formalize an ideal convolution ring or identify
+ideal Möbius with Möbius of the integer norm; those are different objects.
+
+Prose proves the full-mask ideal type-I/type-II regrouping and a fixed-U=1
+obstruction to an all-cutoff separate-piece bound, using the named classical
+fixed-field prime-ideal theorem. It does not refute the signed original MS
+or moving cutoffs. The exact checker covers307 good ideals including inert
+primes and three-prime squarefree products,1535coeff/regroup cases,19680zero
+encounters and900conductor exponent ledgers. A norm637/U7 sign control stops
+extrapolation of the U1 positivity argument. Its rational finite weight is
+not a certificate of the smooth-weight/supremum analytic input. Independent
+review includes a separate convolution/regrouping/weighted-row oracle.
+
+
+## Actual infinite polynomial algebra and module extension
+
+`BranchExtension.lean` now checks 21 actual generated-algebra and module
+statements. Polynomial evaluation injects k[t] into the algebra, proving
+non-finite-dimensionality. Evaluation at zero and dual epsilon gives true
+module structures on k^5 and (k[epsilon]/epsilon^2)^5; algebra-linear
+injection/projection have exact image/kernel and no module section.
+All coefficient fields are permitted, including characteristic2. The fresh
+full suite has335 reports:333 standard-foundation only andtwo axiom-free.
+The normal-form path-quotient/pullback identification remains proved prose;
+Ext objects, ambient AR universality, whole-book formalization and GRH are
+not inferred. Independent fresh Lean/whole-polynomial and Q/F2/F3/F5 checks
+pass; source and theorem-type review is recorded in
+`planning/reviews/branch-extension/REVIEW.md`.
+
+
+## Reference-informed inspector and ConvexTok
+
+Current edition173pages/35chapters,18source-aligned vector diagrams andeleven
+unique laboratories; articles20/49 and33/71pages. The expanded architecture
+chapter pins Bycroft&#x27;s reference source and distinguishes successful live
+observations from source-confirmed picking and walkthrough mechanisms. The
+original inspector now uses tensor-dimensional planes, semantic lanes,
+guided operation focus and exact coordinate picking. Its34saved cases pass
+55,299coordinate checks and37,701 recomputed scalar/complex formula checks.
+Source/training/trace hashes remain unchanged. Diagnostic-only max-plus or
+softmax branches are labelled and dashed; unsupported cell derivations are
+explicitly unavailable. Final root browser checks cover theme/mobile,
+all collections, loading races, checksums, camera and unique book embedding.
+
+ConvexTok v1 is pinned and fully reviewed; its small LP/rounding formulation
+is used in five original/reproduced finite corpora. Sixteen rational primal/
+dual pairs certify LP optima;2,312exact-size vocabulary subsets and a separate
+2,486at-most-K enumeration certify integer comparisons. Examples include
+LP10&lt;IP11, LP31/2&lt;IP16 and restricted genus2/4 path-corpus optima19/31.
+Python and48JavaScript replays plus64browsercontrol states pass; deliberately
+corrupt certificates fail. This is exact small-instance optimization, not
+formal Lean optimization, upstream NLP training or a quantum speedup. No
+Fukaya equivalence, arithmetic spectral comparison or GRH follows from
+compression. The full book and both intended completion gates remain open.
+
+
+## Full-mask Hecke type-I scalar expansion
+
+Current book177pages/35chapters/18diagrams/11unique labs; focused articles35/75
+pages (audit20/49 unchanged). Seven new complex local/finite Euler restoration
+statements and the fresh342-report suite pass,340standard-only/two axiom-free.
+Independent focused compilation and literal theorem-type review accepted.
+The exact good-ideal checker covers1488cases/93rows/128squarefree columns over
+7split/inert primes,78016nonzero terms and29120originalzero encounters.
+An independent no-production-import oracle checks288local and3072support cases.
+
+The full primitive Euler ratio, residue, scalar Mellin estimate, actual-beta
+aggregation and explicit losing energy envelope have reviewed prose proofs.
+Classical abelian reciprocity and Hecke continuation/functional equation,
+polynomial strip growth, Stirling, Mellin inversion and ideal/lattice counts
+are external dependencies; infinite Hecke objects and contours are not Lean
+formalized by the seven finite identities. The same full deleted set is kept
+when squaring reduces primitive conductors, including good valuations3and6.
+Profile seminorm uniformity does not interchange a scale/profile supremum
+with the row mean square; shrinking scale with fixedU requires the short
+Vaughan term again. TypeII/signed low-gcd averaging, positive determinant
+comparison and GRH remain open. Independent review:
+`planning/reviews/hecke-type-i/REVIEW.md`; exact source pins:
+`planning/HECKE_TYPE_I_SOURCES.json`.
+
+
+## Prior milestone: ambient normal-image faithfulness
+
+At the ambient-only milestone the book had178pages/35chapters/18diagrams/11unique laboratories;
+focused articles35/76pages (audit20/49 unchanged). Eight new declarations
+in BranchExtension.NormalPath prove slot extensionality, positive path
+length, the length equation, recovery from start and length, selector
+biorthogonality, arbitrary finite-support coefficient recovery, actual
+LinearIndependent and injectivity of the Finsupp expansion. These use
+actual unbounded polynomial matrix pairs over every field. That350-report suite had347standard-foundation only andthree axiom-free.
+
+An independent reviewer freshly compiled the final source with warnings
+as errors and checked literal theorem types and both TeX proofs. The
+production exact checker verifies475normal keys through degree1000003,
+225625selector pairs,1030arrow steps,15625products and200finite expansions
+over Q/F2/F3/F5. A separate stdlib oracle checks525keys/275625pairs.
+These finite diagnostics complement, rather than replace, the universal
+Lean proof. Source and finite exact evidence load inside the existing
+canonical relation lab; no duplicate iframe or replacement of the
+infinite algebra has been introduced.
+
+At that milestone generated-subalgebra membership and spanning remained
+open; the next subsection records their discharge. A separately defined
+normal-path quotient algebra and categorical/AR universal properties remain
+further formalization obligations. No claim of a full
+book formalization or arithmetic positive determinant/GRH theorem is made.
+Review: planning/reviews/normal-path-basis/REVIEW.md.
+
+
+## Actual generated-algebra normal coordinates
+
+Current book180pages/35chapters/18diagrams/11unique laboratories; focused
+articles36/78pages, audit20/49unchanged. Ten further Lean reports construct
+all permitted images as actual shortest arrow products times arbitrary
+cycle powers, prove the normal span equals the generated subalgebra, and
+prove actual A-valued finite expansion bijective with explicit inverse
+selector coordinates. `normalEquiv` is a genuine linear equivalence of
+the infinite generated algebra; degrees and finite supports are unbounded.
+The full360-report suite uses357standard-only reports andthree axiom-free.
+
+Production exact checks construct50shortest arrow words and375preimages
+through degree1000003, with5625product round trips and200expansions over
+Q/F2/F3/F5 (187product examples nonzero);three forbidden ambient constant
+shapes fail reconstruction. The independent no-production-import oracle
+checks320constructive preimages,105625products,400generated expressions
+and25invalid coordinate pairs. General membership/spanning/bijection is
+supported by Lean, not extrapolated from finite samples.
+
+A separately constructed mixed-zero path quotient and its universal
+multiplicative comparison, completed order/lattice and categorical/AR
+interfaces are still further formal work. No claimed full book
+formalization, spectral positivity or GRH follows. Independent final
+review and focused fresh compile are recorded in
+planning/reviews/normal-path-algebra/REVIEW.md.
+
+## Learned generative physics extension (2026-11-04)
+
+Twelve trained hybrid diffusion/flow models across three seeds and one coherent
+four-qubit state flow ran on the Linux RTX4090. Exact partial trace of the
+seven-spin K2,5 Gibbs teacher defines the physical target. The four auxiliary
+feature qubits are not its physical spins or a faithful order representation.
+Matched controls show no entanglement advantage. Five additional inspector
+records contain250 nodes;3752 scalar witnesses independently replay with
+maximum error below2.8e-7. Known-teacher reverse-mixture control is separate
+from the DDPM Gaussian reverse-kernel approximation.
+
+The new chapter has complete prose proofs of the specified random-feature
+RBF/readout limit, mixture score/velocity identities, actual genus-two
+travel-order right-module resolutions and Hom/Ext/Tor computations, and
+dual-number Frobenius gluing. Exact checks cover coefficient learners over
+F2/F3/F5, finite cover trees, pants axioms and CHSH; source-pinned reviews
+separate graph covers, ribbon surfaces, compact covers and coefficient fields.
+These additions introduce no new Lean declarations: the previously checked
+360-report suite is preserved, and their general homological/probabilistic
+formalization remains open. Three digital accelerator reference models are
+tested specifications, not synthesized chips. CFT/string/anabelian/HMS and
+chemical/biochemical benchmark extensions retain explicit further obligations.
+
+Approved GPU environment creation and failed probes are recorded; existing
+Mac/Linux environments were preserved. The larger23-qubit circuit is untrained.
+Its447 gates and8,388,608 amplitudes are a finite matter simulation, not an
+arithmetic spectral construction. Both project completion gates remain false.
+
+## Complementary dataset verification (2026-11-04)
+
+Default records: Aster16,384/6,144 parents/99 components;
+Mora22,951/517 parents/31 components. Static all-row spectra, MMFF energy and
+force recomputation, geometry CIP, parent/component grouping and typed
+condition/target projections pass. Maximum spectral discrepancy1.87e-14;
+MMFF stored/recomputed differences zero. Mora cross-split Morgan maximum
+.6470588235, nearest applicable geometry descriptor .1003620684Å; the declared
+limits are .65 and .10Å. Giant peptide components are preserved.
+
+Source anchors:576 Aster,266 Mora (74 PubChem-derived MMFF,192 PDB effective).
+All train; independent anchors-vs-default-heldout chemistry and geometry audit
+has zero threshold crossings. Maximum Morgan.320754717; no equal-element
+geometry pair applies. Source atom order, formal charges, isotope/chiral/bond
+stereo metadata and actual PDB HEADER/replacement provenance are preserved.
+Force diagnostics are evaluation-only; selected PubChem anchors have zero
+assigned E/Z bonds. This does not certify geometric E/Z for future corpora.
+
+174 Aster and241 Mora electronic trajectories pass522/723 independent SciPy
+expm comparisons. Twelve Mora NVE trajectories use .05fs steps for20fs;
+recomputed forces/energies agree, maximum energy drift .00253903kcal/mol.
+Read-only native checks reject Mora computed labels at its current observed
+supervision gate and verify Aster condition-only tokenization. No model
+enrollment, optimizer run or source-repository change occurred.
+
+Sixteen actual web examples,14 full Givens density replays (max2.78e-15),
+wavelet zero-sum and structure exports pass; desktop/mobile control tests
+have no uncaught exceptions and390px viewport has390px scroll width.
+Independent reviews and receipts: `planning/synthetic-training/review/` and
+`outputs/checks/2026-11-04-synthetic-training/`. No new Lean coverage is claimed.
+
+## Molecular, orbital and periodic generative extension
+
+Parser/mesh checks cover actual1L2Y/1HRW/1AZU, covalent links, first-model
+selection, source HELIX/SHEET and explicit peptide-link/TER negative controls.
+Nine full-source atom/stick/cartoon views and mobile controls pass.
+Five finite Schrödinger experiments have independent expm and Krylov/current
+checks (max4.74e-14). Hydrogen radial norms, phase vortex/current and Lz
+checks pass; the renderer distinguishes isosurface threshold from probability.
+Eight2400-update CPU models retain actual weights/history. Literal Pauli
+features match independent Kronecker calculations6.66e-16; parameter FD error
+3.53e-10; wrapped score FD error2.55e-8; independent intrinsic poses match
+RDKit4.44e-15Å. All8 browser models,5 propagation cases and4 WebGL orbital
+modes pass. Diffusion reference is the correct positive-noise q_.03, with
+exact-score64/128-step controls; no zero-noise recovery or advantage claim.
+The torus conditional-field proof is independently reviewed, including smooth
+positive density and uniform Lipschitz bounds. No new Lean declarations.
+Evidence: orbital-verification.json, torsion-verification-v2.json,
+orbital-chemistry-browser.json and planning/synthetic-training/review/.
+
+## Analytic/game/gluing and spatial cloud checks (2026-11-04)
+
+Current book212pages/37chapters,13unique canonical laboratories; focused
+articles42/108pages. Both original source volumes remain byte-identical.
+H2plus6-Gaussian Coulomb and Trp-cage20-orbital coherent fields preserve
+full-space particle count analytically; independent integral/exponential
+checks and8browser volume/isosurface/delta views pass. Quantized display
+charge errors .00158/.00141 are explicit. These are different physical scopes.
+
+Twelve actual q3/4/5 holomorphic readouts have four-part conditional uniform
+budgets and specified infinite-feature/source-condition proofs. Floating
+high-precision demonstrations are not interval certificates. Twelve trained
+finite game runs preserve one stalled tilted classical solution.72 initial/
+final/noise replay cases agree with stored scores1.34e-15, normalization
+1.78e-15 and no-signalling2.23e-16. CHSH SOS, tilted attainment, magic-square
+parity/classical enumeration and six dessin face/Euler cases have independent
+review. Vector-state Gram positivity is not tracial microstate realization.
+HoTT cell gluing is a conceptual reference, not a new Lean4 axiom.
+
+New desktop/mobile browser checks cover12game runs,12analytic models,6dessin
+cases and explicit source links with no JS exceptions. PDF/HTML are built in
+staging; failed overfull/TOC attempts are preserved and did not replace live
+outputs. New work adds no Lean declarations; prior360reports are not recast
+as complete formalization. Evidence: outputs/checks/2026-11-04-synthetic-training/
+{cloud-physics.json,density-cloud-browser.json,games-models.json,learning-browser.json}
+and planning/synthetic-training/review/. GRH remains unresolved.
+</pre></section></main></body></html>

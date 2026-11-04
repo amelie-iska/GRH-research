@@ -1,0 +1,1084 @@
+{
+  "passed": true,
+  "conventions": "columns; vertex residues mod3; deck shift +3; homogeneous degree=target_grade-source_grade",
+  "quotient": "B_L=A/J^L of actual infinite elliptic theta algebra; examples use L=3 or5",
+  "source_dessin": {
+    "sigma": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        4,
+        5
+      ]
+    ],
+    "alpha": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "genus": 1
+  },
+  "band": {
+    "X": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "Y": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "vertex": [
+      0,
+      1,
+      0,
+      1,
+      2,
+      1,
+      2,
+      0,
+      2
+    ],
+    "end_dimension": 7,
+    "radical_dimension": 6,
+    "radical_cube_zero": true,
+    "nonzero_radical_products": {
+      "r0r2": "r1",
+      "r2r4": "r3",
+      "r4r0": "r5"
+    },
+    "euler_obstruction": "0=6-3=3; characteristic zero",
+    "arbitrary_euler_system_ranks": [
+      60,
+      61
+    ]
+  },
+  "hom_cases": [
+    {
+      "source_grades": [
+        -3,
+        -2
+      ],
+      "target_grades": [
+        -3,
+        -2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        -3,
+        -2
+      ],
+      "target_grades": [
+        0,
+        1,
+        2
+      ],
+      "hom_dimension": 0,
+      "homogeneous_dimensions": {}
+    },
+    {
+      "source_grades": [
+        -3,
+        -2
+      ],
+      "target_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "2": 1
+      }
+    },
+    {
+      "source_grades": [
+        -3,
+        -2
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "2": 1
+      }
+    },
+    {
+      "source_grades": [
+        -3,
+        -2
+      ],
+      "target_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "3": 1
+      }
+    },
+    {
+      "source_grades": [
+        -3,
+        -2
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2
+      ],
+      "target_grades": [
+        -3,
+        -2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "-1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2
+      ],
+      "target_grades": [
+        0,
+        1,
+        2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2
+      ],
+      "target_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2
+      ],
+      "target_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "2": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        -3,
+        -2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "-1": 1
+      }
+    },
+    {
+      "source_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        -3,
+        -2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "-1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_grades": [
+        -3,
+        -2
+      ],
+      "hom_dimension": 0,
+      "homogeneous_dimensions": {}
+    },
+    {
+      "source_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_grades": [
+        0,
+        1,
+        2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        -3,
+        -2
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "-2": 1,
+        "-1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2
+      ],
+      "hom_dimension": 1,
+      "homogeneous_dimensions": {
+        "0": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hom_dimension": 2,
+      "homogeneous_dimensions": {
+        "1": 1,
+        "2": 1
+      }
+    },
+    {
+      "source_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "target_grades": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hom_dimension": 9,
+      "homogeneous_dimensions": {
+        "-1": 2,
+        "0": 5,
+        "1": 2
+      }
+    }
+  ],
+  "hom_control_counterexample": [
+    {
+      "module": "five_simples",
+      "cover_end": 5,
+      "pushdown_end": 9,
+      "defect": 4
+    },
+    {
+      "module": "five_chain",
+      "cover_end": 1,
+      "pushdown_end": 2,
+      "defect": 1
+    }
+  ],
+  "higher_genus": [
+    {
+      "m": 3,
+      "genus": 1,
+      "dimension": 9,
+      "euler_rhs": 3,
+      "mixed_and_cubic_zero": true,
+      "diagonal_coefficients": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "m": 5,
+      "genus": 2,
+      "dimension": 15,
+      "euler_rhs": 5,
+      "mixed_and_cubic_zero": true,
+      "diagonal_coefficients": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "m": 9,
+      "genus": 4,
+      "dimension": 27,
+      "euler_rhs": 9,
+      "mixed_and_cubic_zero": true,
+      "diagonal_coefficients": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "m": 19,
+      "genus": 9,
+      "dimension": 57,
+      "euler_rhs": 19,
+      "mixed_and_cubic_zero": true,
+      "diagonal_coefficients": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "scope": "Exact checks supplement general prose proofs; neither full AR classification, completed-order equivalence nor GRH"
+}
