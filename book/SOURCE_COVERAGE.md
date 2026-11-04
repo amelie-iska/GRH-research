@@ -134,3 +134,13 @@ component statements do not formalize those entire categories or every source
 assertion. Bar/cobar/Ginzburg/Fukaya choices still require actual constructions
 and hypotheses. Full source expansion remains in progress; all originals stay
 byte-identical. There are now seven unique canonical tools and16 vector figures.
+
+### Arithmetic frontier correction and new research attempt
+
+The final arithmetic chapter now distinguishes the pinned original sextic
+row family from its cubic square, preserves full element rows and all zeros,
+and proves the prime-column pair-square obstruction with full derivation.
+Four universal finite-complex matrix statements are Lean checked. The
+ideal-character, lattice and prime-ideal comparison remains prose/external;
+original signed mean-square and GRH obligations remain open. This research
+addition does not certify any otherwise unmapped historical source chapter.

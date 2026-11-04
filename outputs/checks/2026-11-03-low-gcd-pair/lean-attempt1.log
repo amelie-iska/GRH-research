@@ -1,0 +1,143 @@
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:10:4: error: failed to compile definition, compiler IR check failed at `GRHResearch.ShortRowPairBarrier.columnGram._redArg._closed_0`. Error: depends on declaration 'Complex.instNormedAddCommGroup', which has no executable code; consider marking definition as 'noncomputable'
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:12:4: error: failed to compile definition, compiler IR check failed at `GRHResearch.ShortRowPairBarrier.rowGram._redArg._closed_0`. Error: depends on declaration 'Complex.instNormedAddCommGroup', which has no executable code; consider marking definition as 'noncomputable'
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:24:61: error: unsolved goals
+U : Type u_1
+I : Type u_2
+inst✝¹ : Fintype U
+inst✝ : Fintype I
+A : U → I → ℂ
+i : I
+a✝ : i ∈ univ
+⊢ ∑ y, ∑ x, ∑ i_1, A i_1 i * star (A i_1 x) * (A y x * star (A y i)) =
+    ∑ u, ∑ j, ∑ v, A u i * star (A u j) * (star (A v i) * A v j)
+Try this:
+  ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:41:15: error: unsolved goals
+U : Type u_1
+I : Type u_2
+inst✝¹ : Fintype U
+inst✝ : Fintype I
+A : U → I → ℂ
+u : U
+a✝³ : u ∈ univ
+v : U
+a✝² : v ∈ univ
+i : I
+a✝¹ : i ∈ univ
+j : I
+a✝ : j ∈ univ
+⊢ A u i * star (A u j) * star (A v i) * A v j = A u j * star (A v j) * A v i * star (A u i)
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:70:16: error: failed to synthesize
+  Decidable (i = j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:98:8: error: `simp` made no progress
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:107:49: error: unsolved goals
+U : Type u_1
+I : Type u_2
+inst✝¹ : Fintype U
+inst✝ : Fintype I
+A : U → I → ℂ
+w : U → ℝ
+hw : ∀ (u : U) (i : I), ‖A u i‖ ^ 2 = w u
+hc : ∀ (i : I), columnGram A i i = ↑(∑ u, w u)
+hr : ∀ (u : U), rowGram A u u = ↑↑(Fintype.card I) * ↑(w u)
+hd :
+  ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2 =
+    (∑ i, ∑ j, if i = j then 0 else ‖columnGram A i j‖ ^ 2) + ↑(Fintype.card I) * (∑ u, w u) ^ 2
+h : ∑ u, ‖rowGram A u u‖ ^ 2 ≤ ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2
+⊢ ∑ x, ‖↑↑(Fintype.card I) * ↑(w x)‖ ^ 2 = ∑ i, ↑(Fintype.card I) ^ 2 * w i ^ 2
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:111:2: error: linarith failed to find a contradiction
+case h
+U : Type u_1
+I : Type u_2
+inst✝¹ : Fintype U
+inst✝ : Fintype I
+A : U → I → ℂ
+w : U → ℝ
+hw : ∀ (u : U) (i : I), ‖A u i‖ ^ 2 = w u
+hc : ∀ (i : I), columnGram A i i = ↑(∑ u, w u)
+hr : ∀ (u : U), rowGram A u u = ↑↑(Fintype.card I) * ↑(w u)
+hd :
+  ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2 =
+    (∑ i, ∑ j, if i = j then 0 else ‖columnGram A i j‖ ^ 2) + ↑(Fintype.card I) * (∑ u, w u) ^ 2
+h :
+  ↑(Fintype.card I) ^ 2 * ∑ u, w u ^ 2 ≤
+    (∑ i, ∑ j, if i = j then 0 else ‖columnGram A i j‖ ^ 2) + ↑(Fintype.card I) * (∑ u, w u) ^ 2
+he : ∑ u, ‖rowGram A u u‖ ^ 2 = ↑(Fintype.card I) ^ 2 * ∑ u, w u ^ 2
+a✝ : ∑ i, ∑ j, sorry < ↑(Fintype.card I) ^ 2 * ∑ u, w u ^ 2 - ↑(Fintype.card I) * (∑ u, w u) ^ 2
+⊢ False
+failed
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:108:19: error: This simp argument is unused:
+  Complex.norm_real
+
+Hint: Omit it from the simp argument list.
+  simp only [hr, C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵_̵r̵e̵a̵l̵,̵ ̵Real.norm_eq_abs, sq_abs, mul_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:108:38: error: This simp argument is unused:
+  Real.norm_eq_abs
+
+Hint: Omit it from the simp argument list.
+  simp only [hr, Complex.norm_real, R̵e̵a̵l̵.̵n̵o̵r̵m̵_̵e̵q̵_̵a̵b̵s̵,̵ ̵sq_abs, mul_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:108:56: error: This simp argument is unused:
+  sq_abs
+
+Hint: Omit it from the simp argument list.
+  simp only [hr, Complex.norm_real, Real.norm_eq_abs, s̵q̵_̵a̵b̵s̵,̵ ̵mul_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:108:64: error: This simp argument is unused:
+  mul_pow
+
+Hint: Omit it from the simp argument list.
+  simp only [hr, Complex.norm_real, Real.norm_eq_abs, sq_abs,̵ ̵m̵u̵l̵_̵p̵o̵w̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:118:16: error: failed to synthesize
+  Decidable (i = j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+/Users/amelieschreiber/Documents/LaTeX-projects/GRH/lean-analytic/ShortRowPairBarrier.lean:121:2: error: linarith failed to find a contradiction
+case h
+U : Type u_1
+I : Type u_2
+inst✝¹ : Fintype U
+inst✝ : Fintype I
+A : U → I → ℂ
+hA : ∀ (u : U) (i : I), ‖A u i‖ = 1
+h :
+  ↑(Fintype.card I) ^ 2 * ↑(Fintype.card U) - ↑(Fintype.card I) * ↑(Fintype.card U) ^ 2 ≤
+    ↑(Fintype.card I) * (↑(Fintype.card I) * sorry)
+a✝ : ∑ i, ∑ j, sorry < ↑(Fintype.card I) * ↑(Fintype.card U) * (↑(Fintype.card I) - ↑(Fintype.card U))
+⊢ False
+failed
+GRHResearch.ShortRowPairBarrier.frame_potential_duality.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]
+  (A : U → I → ℂ) : ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2 = ∑ u, ∑ v, ‖rowGram A u v‖ ^ 2
+GRHResearch.ShortRowPairBarrier.row_diagonal_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]
+  (A : U → I → ℂ) : ∑ u, ‖rowGram A u u‖ ^ 2 ≤ ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2
+GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]
+  [Fintype I] (A : U → I → ℂ) (w : U → ℝ) (hw : ∀ (u : U) (i : I), ‖A u i‖ ^ 2 = w u) :
+  ↑(Fintype.card I) ^ 2 * ∑ u, w u ^ 2 - ↑(Fintype.card I) * (∑ u, w u) ^ 2 ≤ ∑ i, ∑ j, sorry
+GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]
+  [Fintype I] (A : U → I → ℂ) (hA : ∀ (u : U) (i : I), ‖A u i‖ = 1) :
+  ↑(Fintype.card I) * ↑(Fintype.card U) * (↑(Fintype.card I) - ↑(Fintype.card U)) ≤ ∑ i, ∑ j, sorry
+'GRHResearch.ShortRowPairBarrier.frame_potential_duality' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.ShortRowPairBarrier.row_diagonal_lower' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

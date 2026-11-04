@@ -204,3 +204,13 @@ components and one canonical3D monomial tool. Whole P4 remains in progress.
 After this implementation slice rotate a run to ready P7-low-gcd to keep the
 independent arithmetic lane active; do not wait for every broad source topic
 to be completed first. Then resume P4 with the next precise source topic.
+
+P7 arithmetic rotation (2026-11-03): a proposed absolute coprime pair-square
+input is refuted for the unchanged sextic row family by the classical frame
+bound on actual prime columns. Four weighted/unimodular finite Gram statements
+are kernel checked and independently reviewed; the original signed estimate
+is still open. Its next attempt must retain the exact truncated Möbius
+convolution, total squarefreeness, all row zeros and conductors before Cauchy.
+The prior high-gcd prose's cubic label is corrected to sextic (the cubic is
+its square), without changing that derivation. Resume P4 linear relations
+next, alternating with this explicit coefficient-sensitive P7 research lane.

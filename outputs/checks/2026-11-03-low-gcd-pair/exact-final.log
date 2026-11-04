@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "D": 128,
+      "H": 4,
+      "rows": 18,
+      "prime_ideal_columns": 22,
+      "all_original_row_masks_checked": true,
+      "off_diagonal_pair_square": 6840,
+      "frame_lower_bound": 1584,
+      "weighted_pair_square": 52680,
+      "weighted_frame_lower_bound": 20240,
+      "full_row_column_potential_identity": true,
+      "scalar_oracle_pairs": 64,
+      "endpoint_3over4": false
+    },
+    {
+      "D": 1024,
+      "H": 9,
+      "rows": 36,
+      "prime_ideal_columns": 138,
+      "all_original_row_masks_checked": true,
+      "off_diagonal_pair_square": 651672,
+      "frame_lower_bound": 506736,
+      "weighted_pair_square": 5371224,
+      "weighted_frame_lower_bound": 4365216,
+      "full_row_column_potential_identity": true,
+      "scalar_oracle_pairs": 64,
+      "endpoint_3over4": false
+    },
+    {
+      "D": 4096,
+      "H": 81,
+      "rows": 300,
+      "prime_ideal_columns": 456,
+      "all_original_row_masks_checked": true,
+      "off_diagonal_pair_square": 60080328,
+      "frame_lower_bound": 21340800,
+      "weighted_pair_square": 457460920,
+      "weighted_frame_lower_bound": 212065536,
+      "full_row_column_potential_identity": true,
+      "scalar_oracle_pairs": 64,
+      "endpoint_3over4": false
+    },
+    {
+      "D": 256,
+      "H": 64,
+      "rows": 240,
+      "prime_ideal_columns": 40,
+      "all_original_row_masks_checked": true,
+      "off_diagonal_pair_square": 363672,
+      "frame_lower_bound": -1920000,
+      "weighted_pair_square": 2906648,
+      "weighted_frame_lower_bound": -11189760,
+      "full_row_column_potential_identity": true,
+      "scalar_oracle_pairs": 64,
+      "endpoint_3over4": true
+    }
+  ],
+  "character": "original sextic residue symbol; zeta6=1+omega",
+  "rows": "all nonzero Eisenstein elements in norm ball; no quotient by units",
+  "specialization": "nu=1; fixed excluded set only primes above2,3; kernel checks, not signed energy",
+  "columns": "both prime ideals above each split rational prime in [D,2D]",
+  "seed": "none; exhaustive deterministic integer computations",
+  "collision_control": "norm7 element 1+3omega vanishes at one prime above7; no unit replacement",
+  "scope": "Finite diagnostics of a universal matrix theorem; not an MS_3/4 or GRH certificate",
+  "script_sha256": "fd4a3a8403c7496e23677972415c2233a27462bc2617002cbe07bc58914d12ed"
+}

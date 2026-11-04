@@ -1,0 +1,59 @@
+\section{Weighted profiles, exact arithmetic examples and the surviving task}
+The finite matrix proof also retains an arbitrary row profile. Suppose
+$|A_{ui}|^2=w_u$ for every column, set $S=\sum_u w_u$ and
+$Q=\sum_u w_u^2$. The row diagonals are $Nw_u$ and column diagonals are
+$S$, so the same identity proves
+\[
+ \sum_{i\ne j}|K_{ij}|^2\ge N^2Q-NS^2.
+\]
+This is a finite statement. Applying it to an infinite Schwartz tail would
+require its convergence and every newly encountered prime collision;
+these are not discarded. If a weighted pair-square attempt includes the
+annular $W$, one can instead choose a closed subannulus on which a nonzero
+$|W|$ is bounded below. Its prime count still has order $D/\log D$.
+The fixed $\nu$ has unit modulus outside its conductor. These facts do not
+replace the original coefficients in a signed estimate.
+
+Here are exact sextic computations with all nonzero elements of the
+Eisenstein norm ball, and both prime ideals above each split rational prime
+in the column annulus. These kernel diagnostics use $\nu=1$ and exclude
+only primes above2,3; they do not compute a signed M\"obius energy.
+Values are integer norms in $\Z[\omega]$.
+\begin{center}\small
+\begin{tabular}{rrrrrr}
+$D$&$H$&$R$&$N$&$\sum_{i\ne j}|K_{ij}|^2$&$NR(N-R)$\\\hline
+128&4&18&22&6840&1584\\
+1024&9&36&138&651672&506736\\
+4096&81&300&456&60080328&21340800\\
+256&64&240&40&363672&$-1920000$
+\end{tabular}
+\end{center}
+The final row has $H=D^{3/4}$ but $N<R$; its negative lower bound is
+correctly vacuous. The asymptotic theorem follows from the proof, not an
+extrapolation of these examples. For $p\equiv1\pmod3$ and
+$w^2+w+1=0$ in $\mathbf F_p$, evaluate $a+b\omega$ as $a+bw$ and take
+its $(p-1)/6$ power, lifting the six roots via $\zeta_6=1+\omega$.
+Every zero is tested before a unit value is assigned. For instance
+$1+3\omega$ has norm7 and vanishes at $\omega=2$ modulo7, so the
+unimodularity hypothesis cannot be used beyond its stated domain.
+
+\texttt{ShortRowPairBarrier.lean} verifies the finite frame identity,
+row-diagonal bound, weighted inequality and unimodular specialization,
+with actual complex sums and explicit hypotheses. It does not formalize
+the ideal-character comparison or prime-ideal theorem. The deterministic
+integer checker also verifies weighted profiles and256 scalar pair sums
+independently of its matrix computation. No numerical model or learned
+coefficient is used.
+
+The next signed route must retain $\mu,\nu,W$ before Cauchy. An exact
+starting identity in ideal Dirichlet convolution is
+\[
+ \mu=2a-a*a*\mathbf1+b*b*\mathbf1,\qquad
+ a=\mu\,\mathbf1_{Nn\le U},\quad b=\mu-a.
+\]
+Indeed $\mu*\mathbf1=\delta$ implies
+$(\mu-a)*(\mu-a)*\mathbf1=\mu-2a+a*a*\mathbf1$.
+On squarefree $n$, each divisor factorization retains pairwise
+coprimality; the original row zeros still multiply along it. Estimating
+these type-I/type-II kernels with their true conductors is a new open
+arithmetic task. The identity alone supplies no cancellation or GRH proof.

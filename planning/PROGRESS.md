@@ -573,3 +573,45 @@ original hashes and indexed credential patterns before the private push.
 This explicit UI request does not change either completion gate. Next resume
 the already recorded P7-low-gcd arithmetic rotation, then the next P4 source
 construction. The existing heartbeat and loopback preview remain active.
+
+## P7 arithmetic rotation: the coprime pair-square route fails (2026-11-03)
+
+Attempted claim: an absolute pair-square bound sufficient to close the
+original h=1 short-row quadratic form by Cauchy. For actual distinct good
+prime columns and H<D, norms prove every original mask is1. Universal finite
+frame duality gives sum_off|K|²>=NR(N-R); with all Eisenstein element rows
+and the classical fixed-field prime-ideal theorem, B1>>D^(11/4)/log²D at
+H=D^(3/4). This refutes the proposed H²D^epsilon input for epsilon<5/4.
+It is not a lower bound on the original signed μνW energy. Prime/composite
+cross terms remain essential. The source family is sextic; an earlier
+cubic label in the current high-gcd/book prose is corrected. Its Gauss
+argument survives unchanged for the actual sextic characters.
+
+Four new actual finite complex Gram/profile inequalities pass Lean with
+printed types/standard dependencies. The full pinned suite passes286 reports:
+284 standard-only and2 axiom-free. The ideal-character/prime count/lattice
+application remains prose or explicit classical input. Deterministic exact
+sextic computations preserve every zero, weighted profiles and full element
+rows. Independent review reran the checks and a separate unbounded-integer
+oracle on all462 ordered prime pairs of the small case; no remaining blocker.
+A vacuous finite negative bound is expressly labelled; no numerical GRH
+certificate is claimed. W is supported[1,2] for this trial; finite diagnostics
+specialize ν=1 and fixedS to primes above2,3.
+
+Both article pairs and the148-page/32-chapter book were rebuilt and visually
+inspected; focused editions28/57pages. Seven unique native-MathML book tools
+and the living dark theme survive regeneration. Companion regression passes.
+A theme test exposed a harness-only load race: its iframe document existed
+before documentElement; the wait predicate now checks both before accessing
+dataset. The failed log is retained and the corrected regression is rerun.
+No source clone, manuscript original, trained record, environment or pin
+changed. Evidence: outputs/checks/2026-11-03-low-gcd-pair/, research note and
+planning/reviews/short-row-pair/REVIEW.md. Source download remains in the
+existing ignored literature cache; version/hash is in SHORT_ROW_PAIR_SOURCES.
+
+Next resume P4 on original linear-relations/functorial-filtration1097–1307.
+Next arithmetic attempt: exact truncated Möbius convolution
+μ=2a-a*a*1+b*b*1, a=μ1_(Nn<=U), b=μ-a, retaining total squarefreeness,
+cross-factor coprimality, ν,W, row zeros and actual type-I/type-II conductors.
+The identity alone gives no bound. Both completion gates remain false;
+P7-low-gcd stays in progress and the existing heartbeat remains active.

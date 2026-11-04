@@ -272,3 +272,24 @@ articles are27/55pages. [Exact code and reproduction](examples/dg/README.md),
 [research report](research/dg-foundations.md) accompany the extension.
 P4 source expansion and both completion gates remain open. No new arithmetic
 positivity, GRH proof, training, dependency or hardware run is claimed.
+
+## Coprime short-row pair-square obstruction
+
+The [new arithmetic trial](research/short-row-pair-barrier.md) proves that
+absolute coprime kernel squares are too large for a Frobenius/Cauchy approach
+to the missing short-row estimate. Actual distinct prime-ideal columns of the
+**original sextic** family give a lower bound of order
+D^(11/4)/(log D)^2 at H=D^(3/4). This corrects an earlier cubic/sextic label;
+it does not refute the original signed Möbius estimate or establish GRH.
+The next signed approach retains the exact truncated Möbius convolution,
+all annular coefficients, zero masks and conductors before estimating.
+
+Four universal finite-complex Gram/profile inequalities are now checked in
+[ShortRowPairBarrier.lean](lean-analytic/ShortRowPairBarrier.lean).
+The complete pinned suite has286 printed dependency reports; ideal-character,
+prime-ideal and planar asymptotic arguments remain prose/external inputs.
+Both article pairs and the148-page book include the proof; the focused
+concise/extended editions are28/57pages. [Exact deterministic sextic checks](scripts/check_short_row_pair_barrier.py)
+and [independent review](planning/reviews/short-row-pair/REVIEW.md) record the
+scope. The live book retains32chapters,16 diagrams, seven unique tools and
+the living dark theme. Both completion gates remain open.

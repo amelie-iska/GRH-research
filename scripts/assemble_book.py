@@ -31,5 +31,6 @@ def main():
             chunks.append(block)
     out=ROOT/'book/chapters/reviewed-mathematics.tex'
     out.write_text('\n'.join(chunks))
+    (ROOT/'book/chapters/short-row-pair.tex').write_text('% Generated from the shared arithmetic article fragments.\n'+(P/'short-row-pair-core.tex').read_text()+'\n'+(P/'short-row-pair-details.tex').read_text().replace(r'\section{',r'\subsection{',1))
     print(out)
 if __name__=='__main__': main()

@@ -2,7 +2,7 @@
 
 2026-11-03. Unconditional reduction, not MS_3/4 or GRH. Independent derivations are preserved in planning/reviews/book/short-row-*.md. Work on this branch was interrupted by the expanded book request; its surviving results are recorded here rather than discarded.
 
-Let O=Z[omega]. Columns n are squarefree primary ideals coprime to S (including 2,3), Nn in [D,2D], and χ_n is their primitive cubic residue character extended by zero on nonunits modulo n. For the unit ideal χ_1(u)=1 even at u=0. Fix row-independent coefficients |c_n|≤1, absorbing a fixed bounded annular profile and the actual μ(n)ν(n) coefficient. The original unweighted row energy has the exact identity
+Let O=Z[omega]. Columns n are squarefree primary ideals coprime to S (including 2,3), Nn in [D,2D], and χ_n is their primitive sextic residue character extended by zero on nonunits modulo n. For the unit ideal χ_1(u)=1 even at u=0. Fix row-independent coefficients |c_n|≤1, absorbing a fixed bounded annular profile and the actual μ(n)ν(n) coefficient. The original unweighted row energy has the exact identity
 
 E = D^(-1) sum_(n,m) c_n conjugate(c_m) K_H(n,m),
 K_H(n,m)=sum_(0<Nu≤H) χ_n(u) conjugate(χ_m(u)).
@@ -36,3 +36,7 @@ Similarly an arbitrary completely multiplicative column twist can cancel μν on
 ## Formal scope
 
 ShortRowGram.lean checks finite-field zero masks, complete orthogonality, actual finite Gram expansion, matched-row energy lower bound, Eisenstein norm identities and evaluation omega→2 mod7. It does not formalize planar Poisson summation, the uniform analytic estimates above, the full ideal CRT interface, or MS_3/4. Failed elaboration probes remain locally preserved; only a successful final log is evidence of kernel checking.
+
+## Original-family label correction and next attempted route
+
+The original pinned family is sextic, as specified in October paper2.tex:251–263; its square is cubic. The earlier cubic label is corrected without changing the high-gcd derivation, whose primitive nonprincipal Gauss inputs hold in both cases. The new coprime pair-square attempt is decisively obstructed by the classical frame inequality applied to actual prime columns; see [the derivation and next signed task](short-row-pair-barrier.md). This does not settle the signed low-gcd mean square.

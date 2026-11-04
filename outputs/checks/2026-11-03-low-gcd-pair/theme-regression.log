@@ -1,0 +1,10 @@
+file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_theme_browser.mjs:17
+async function evaluate(expression){const result=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(result.exceptionDetails)throw Error(JSON.stringify(result.exceptionDetails));return result.result.value;}
+                                                                                                                                                                   ^
+
+Error: {"exceptionId":1,"text":"Uncaught","lineNumber":0,"columnNumber":73,"scriptId":"46","stackTrace":{"callFrames":[{"functionName":"","scriptId":"46","url":"","lineNumber":0,"columnNumber":73}]},"exception":{"type":"object","subtype":"error","className":"TypeError","description":"TypeError: Cannot read properties of null (reading 'dataset')\n    at <anonymous>:1:74","objectId":"-2252803201362313120.10.2"}}
+    at evaluate (file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_theme_browser.mjs:17:164)
+    at async until (file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_theme_browser.mjs:19:60)
+    at async file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/scripts/check_theme_browser.mjs:45:85
+
+Node.js v24.19.0

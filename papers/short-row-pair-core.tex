@@ -1,0 +1,57 @@
+\section{Why an absolute coprime pair-square estimate cannot close the short rows}
+\label{sec:pair-barrier}
+Keep the original sextic family
+\[
+ M_u(D)=D^{-1/2}\sum_n\mu(n)\nu(n)W(Nn/D)\chi_n(u),
+ \qquad \chi_n(u)=(u/n)_6,
+\]
+with squarefree primary column ideals outside the fixed excluded set,
+their full annular coefficients (fix $W$ supported in $[1,2]$), and all
+nonzero Eisenstein element rows
+$Nu\le H$. The cubic symbol is $\chi_n^2$, not $\chi_n$.
+The following classical frame inequality \cite{WelchGeometry} gives a new
+obstruction to one proposed estimate in this arithmetic program.
+
+\begin{proposition}[Coprime pair-square obstruction]\label{prop:pair-barrier}
+Let $A$ be an $R$-by-$N$ complex matrix with $|A_{ui}|=1$, and put
+$K_{ij}=\sum_u A_{ui}\overline{A_{uj}}$. Then
+\[
+ \sum_{i\ne j}|K_{ij}|^2\ge NR(N-R).
+\]
+For the original character kernels, let $B_1(H,D)$ be the sum of
+$|K_H(n,m)|^2$ over all distinct coprime squarefree column ideals in
+$[D,2D]$. At $H=D^{3/4}$,
+\[
+ B_1(H,D)\gg \frac{D^{11/4}}{(\log D)^2}.
+\]
+In particular the proposed sufficient input
+$B_1(H,D)\ll H^2D^\varepsilon$ fails for each fixed $\varepsilon<5/4$.
+This does not refute the signed M\"obius mean square.
+\end{proposition}
+\begin{proof}
+Set $F_{uv}=\sum_i A_{ui}\overline{A_{vi}}$. Reordering four finite sums
+proves $\sum_{i,j}|K_{ij}|^2=\sum_{u,v}|F_{uv}|^2$.
+The row diagonal contributes $RN^2$; the column diagonal contributes
+$NR^2$. Removing the latter and retaining the former gives the inequality.
+
+Restrict the column pairs in the nonnegative sum $B_1$ to distinct prime
+ideals $p,q$ of norm in $[D,2D]$, outside the same fixed set. If $H<D$,
+no such prime divides a nonzero row element: divisibility would imply
+$Nu\ge Np$. Thus all original zero masks are exactly one on this ball,
+$|\chi_p(u)|=1$, and the residual primitive finite character conductor is
+$pq$, of norm between $D^2$ and $4D^2$. All these pairs have common divisor1.
+The lattice count gives $R=(2\pi/\sqrt3)H+O(\sqrt H+1)$.
+The classical unconditional fixed-field prime-ideal theorem gives
+$N\sim D/\log D$; this is an external analytic input, not a GRH hypothesis.
+At the stated endpoint $R=o(N)$, and the bound is therefore
+$(1-o(1))N^2R\gg D^{11/4}/(\log D)^2$.
+\end{proof}
+
+To see the exact failed step, write $c_n=\mu(n)\nu(n)W(Nn/D)$ and
+$C_D=\sum_n|c_n|^2=O(D)$. Cauchy over coprime pairs bounds the absolute
+signed contribution by $D^{-1}C_DB_1^{1/2}$. The hoped-for pair-square
+upper bound would have closed this particular route, but is false.
+A large absolute pair-square mass is not a lower bound on the quadratic
+form with the fixed $c_n$. Nor is the prime part a positive summand of the
+full M\"obius energy: prime--composite cross terms can cancel. The original
+low-gcd estimate and the positive arithmetic determinant bridge remain open.

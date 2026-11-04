@@ -184,3 +184,17 @@ is still in progress; all source topics are not yet fully rewritten or
 formalized. The low-gcd original arithmetic kernel and positive determinant
 bridge remain unresolved; rotate an arithmetic run next rather than imply
 that this source correction proves GRH.
+
+## Arithmetic rotation: signed low-gcd structure remains essential
+
+The absolute pair-square target B1(H,D)<<H²D^epsilon is now refuted for the
+original sextic kernels at H=D^(3/4): actual prime columns force
+B1>>D^(11/4)/(log D)². This was a proposed sufficient route, not a claim of
+the source manuscripts. Four finite complex Gram inequalities are checked
+in Lean. It supplies no lower bound on the original signed μνW quadratic
+form and does not close its estimate, the determinant bridge or any GRH
+scope. Do not repeat this disproved absolute route as progress. A next
+arithmetic task is the exact truncated Möbius convolution with every
+squarefree/coprimality/row-zero factor retained, followed by a genuine
+coefficient-sensitive type-I/type-II estimate. The broad P4 linear-relations
+construction can proceed on the next implementation rotation.

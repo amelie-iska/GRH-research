@@ -1,0 +1,29 @@
+../../lean-analytic/ShortRowPairBarrier.lean:127:29: error: This simp argument is unused:
+  Complex.norm_natCast
+
+Hint: Omit it from the simp argument list.
+  simp only [hr, norm_mul, C̵o̵m̵p̵l̵e̵x̵.̵n̵o̵r̵m̵_̵n̵a̵t̵C̵a̵s̵t̵,̵ ̵Complex.norm_real, Real.norm_eq_abs, mul_pow, sq_abs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+GRHResearch.ShortRowPairBarrier.frame_potential_duality.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]
+  (A : U → I → ℂ) : ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2 = ∑ u, ∑ v, ‖rowGram A u v‖ ^ 2
+GRHResearch.ShortRowPairBarrier.row_diagonal_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]
+  (A : U → I → ℂ) : ∑ u, ‖rowGram A u u‖ ^ 2 ≤ ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2
+GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]
+  [Fintype I] (A : U → I → ℂ) (w : U → ℝ) (hw : ∀ (u : U) (i : I), ‖A u i‖ ^ 2 = w u) :
+  ↑(Fintype.card I) ^ 2 * ∑ u, w u ^ 2 - ↑(Fintype.card I) * (∑ u, w u) ^ 2 ≤
+    ∑ i, ∑ j, if i = j then 0 else ‖columnGram A i j‖ ^ 2
+GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]
+  [Fintype I] (A : U → I → ℂ) (hA : ∀ (u : U) (i : I), ‖A u i‖ = 1) :
+  ↑(Fintype.card I) * ↑(Fintype.card U) * (↑(Fintype.card I) - ↑(Fintype.card U)) ≤
+    ∑ i, ∑ j, if i = j then 0 else ‖columnGram A i j‖ ^ 2
+'GRHResearch.ShortRowPairBarrier.frame_potential_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowPairBarrier.row_diagonal_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+../../lean-analytic/ShortRowPairBarrier.lean:150:0: error: Unexpected name `GRHResearch.ShortRowPairBarrier` after `end`: The current section is unnamed
+
+Hint: Delete the name `GRHResearch.ShortRowPairBarrier` to end the current unnamed scope; outer named scopes can then be closed using additional `end` command(s):
+  end ̵G̵R̵H̵R̵e̵s̵e̵a̵r̵c̵h̵.̵S̵h̵o̵r̵t̵R̵o̵w̵P̵a̵i̵r̵B̵a̵r̵r̵i̵e̵r̵

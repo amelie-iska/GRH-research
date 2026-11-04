@@ -414,3 +414,42 @@ retain the shared assets. Source manuscripts, research PDFs, numerical
 records and Lean content are unchanged. This does not replace the P7-low-gcd
 next task above or close either completion gate. No dependencies/infrastructure
 or MCP/Claude configuration changes; preview8765 remains available.
+
+## Latest frontier: arithmetic coprime pair-square rotation (2026-11-03)
+
+Read research/short-row-pair-barrier.md and its independent review. The
+absolute h=1 pair-square Cauchy route is now decisively blocked, including
+on actual original prime columns. N prime columns, R full-element rows and
+H<D yield sum_off|K|²>=NR(N-R), so B1>>D^(11/4)/log²D at H=D^(3/4).
+This does not refute the signed μνW estimate. The original character is
+sextic; its square is cubic. An earlier high-gcd/book label was corrected,
+without changing the primitive Gauss proof. Do not repeat the false absolute
+pair-square target or infer that a prime energy is a positive subenergy of
+the full signed sum. Annular W is fixed supported[1,2] in this trial.
+
+Four universal finite-complex statements, including the arbitrary common
+row-profile bound N²Q-NS², are checked in ShortRowPairBarrier.lean. Literal
+source hash88e2f6458416b15313631f694e5e921f049adeb79f3f5fc88041a28c8ce80e7d;
+full286-report pinned suite passes (284 standard-only,2 axiom-free).
+The arithmetic ideal/character and asymptotic interfaces remain prose and
+classical external inputs. Exact sextic diagnostics and independent462-pair
+integer oracle pass. Full original sources, environments, pins/checkpoints
+and historical failures are preserved. Primary source/version/hash pins are
+in planning/SHORT_ROW_PAIR_SOURCES.json. No MCP was enabled.
+
+Book148pages,32chapters,16 diagrams/seven unique tools; focused articles
+28/57pages. Both article pairs, bookPDF and nativeMathML are synchronized.
+Browser/visual checks and source/integrity/privacy preflight are recorded
+under outputs/checks/2026-11-03-low-gcd-pair/. A harness-only iframe
+load-state dereference was corrected; its original failure is retained.
+The live theme and loopback8765 preview stay usable.
+
+NEXT IMPLEMENTATION: P4-source-expansion, original2053 lines1097–1307,
+linear relations/functorial filtrations on an actual infinite dessin-order
+module, replacing the next generic coverage row. Do not repeat the DG slice.
+NEXT ARITHMETIC: expand the exact truncated Möbius identity from the research
+note into type-I/type-II original-family sums, retaining total squarefreeness,
+cross-factor coprimality, ν,W and every row-zero/conductor dependence before
+any Cauchy step. Proving the identity is not the mean-square estimate.
+P7-low-gcd remains in_progress, both completion gates are unresolved, and
+the existing hourly heartbeat must remain active.

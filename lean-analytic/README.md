@@ -216,3 +216,17 @@ components. Full prose proofs and primary references are in the new DG chapter;
 its actual polynomial parent quotient is the infinite nodal dessin algebra.
 No finite scalar toy replaces it. The source's dε=1 example is correctly
 contractible at the underlying complex level, not a nonzero ground-field model.
+
+## Coprime pair-square obstruction
+
+`ShortRowPairBarrier.lean` adds four reports: universal finite complex
+frame-potential duality, row diagonal lower bound, arbitrary common row-weight
+pair-square inequality, and its unimodular specialization. All types and
+axiom dependencies are printed with standard foundations only. In the
+original sextic prime-column application, H<D implies unit modulus by the
+actual norm/divisibility argument. That ideal argument, exact finite
+character conductors, planar lattice count, prime-ideal theorem and asymptotic
+comparison are not fully formalized by the matrix statements. The full suite
+now passes286 reports,284 standard-only and2 axiom-free, at unchanged pins.
+This rejects an absolute Frobenius/Cauchy route, not the signed low-gcd
+Möbius estimate or GRH. See research/short-row-pair-barrier.md and the review.
