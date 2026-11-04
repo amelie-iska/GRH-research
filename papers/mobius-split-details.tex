@@ -1,0 +1,148 @@
+\section{Exact factorization, retained zeros and the failed Cauchy route}
+\label{sec:mobius-split-details}
+\subsection{Proof of the regrouping with original coefficients}
+The monoid consists of nonzero integral ideals prime to the fixed excluded
+set $S$. Every divisor of a good ideal is good, so the identity
+$\mu*\zeta_0=\delta$ holds on this same monoid. Expanding convolution
+in~\eqref{eq:mobius-split} gives finite divisor sums. Multiply the identity
+by $\mu(n)^2\nu(n)\chi_n(u)W(Nn/D)$ and sum. The extra squarefree
+indicator does not change $\mu(n)$, since $\mu(n)^3=\mu(n)$.
+On its support $n=abc$ forces each factor to be squarefree and any two
+to be coprime. Sextic multiplicativity, including zeros, gives
+$\chi_n(u)=\chi_a(u)\chi_b(u)\chi_c(u)$; a collision with any factor
+makes both sides zero. The fixed character also satisfies
+$\nu(n)=\nu(a)\nu(b)\nu(c)$ on these good ideals.
+
+In the small-factor piece group $d=ab$. The remaining variable $c$ is
+squarefree and coprime to $d$; $Nd\le U^2$ is necessary, but not sufficient
+for a nonzero $\beta_U(d)$: its specified truncated factorizations must
+still exist. For each such factorization on squarefree $d$,
+$\mu(a)\mu(b)=\mu(d)$, proving the coefficient formula.
+In the large-factor piece group $s=bc$. The condition $Nb>U$ implies
+$Ns>U$, and summing that divisor gives exactly $g_U(s)$.
+Since $Ns>U\ge1$, $s$ is not the unit ideal; its complete M\"obius
+divisor sum vanishes, proving the alternative formula for $g_U$.
+This regrouping never replaces the two-variable weight by $W(Ns/D)$,
+never deletes $(a,s)=1$, and never replaces the resulting coefficients
+by a favorable arbitrary family.
+
+One can instead keep the unrestricted convolution identity on nonsquarefree
+columns, but then both individual pieces and their local conductor
+description change. For $U=1$ and a good prime $p$, the column $p^2$
+contributes one to each of $a_U*a_U*\zeta_0$ and
+$b_U*b_U*\zeta_0$, even though $\mu(p^2)=0$; these cancel only after
+the pieces are recombined. Its squared sextic symbol has a cubic local
+component. Thus dropping total squarefreeness is not a harmless
+piecewise simplification, although the full unrestricted algebraic
+identity still holds.
+
+\subsection{The two conductor scales are unchanged}
+For a squarefree $n=as$ with $(a,s)=1$, every prime of $n$ has one
+nontrivial sextic local component in the row variable. Hence its primitive
+finite conductor is the ideal $as$; $NaNs\asymp D$ on the column support.
+On multiplying a column by the conjugate of another, the local exponent
+is zero at common primes, $1$ at a prime of $n/h$, and $-1$ at a prime
+of $n'/h$. The common prime still imposes its original zero on rows.
+Writing $n=h r$, $n'=h t$ therefore gives exactly
+\[
+ \chi_n(u)\overline{\chi_{n'}(u)}
+ =\mathbf1_{(u,h)=1}\chi_r(u)\overline{\chi_t(u)},\qquad
+ q=rt,\quad\mathfrak l=hrt.
+\]
+Here $q$ is the primitive oscillatory conductor and $\mathfrak l$ a
+period of the full zero extension. These are ideals, not necessarily
+squarefree rational norms. In particular, conjugate primes over one split
+rational prime are distinct coprime ideal factors. Full defining moduli
+of $\nu$ and primary conventions remain fixed in $S$; this row-conductor
+calculation does not assert a new uniform reciprocity theorem in the
+column variable. In the coprime bulk $Nq\asymp D^2$ remains large.
+
+\subsection{Why a first generic Cauchy step does not supply the saving}
+On one type-II dyad let $Na\asymp A$, $Ns\asymp B$, $AB\asymp D$.
+Keep the full profile and coprimality restrictions in
+\[
+ X_a(u)=\nu(a)\chi_a(u)
+  \sum_{s\ {\rm squarefree}\atop Ns\asymp B,\,(a,s)=1}
+  g_U(s)\nu(s)\chi_s(u)W(NaNs/D).
+\]
+The exact elementary Cauchy inequality is
+\[
+ \sum_{0<Nu\le H}\left|D^{-1/2}\sum_{Na\asymp A}\mu(a)X_a(u)\right|^2
+ \le \frac{\sum_{Na\asymp A}|\mu(a)|^2}{D}
+       \sum_{Na\asymp A}\sum_{0<Nu\le H}|X_a(u)|^2.
+\]
+The $a$-mask has been kept inside $X_a$. Even if one granted an optimistic
+uniform slice bound $(H+B)\sum_{Ns\asymp B}|g_U(s)|^2D^\varepsilon$,
+the ordinary divisor estimate $|g_U(s)|\le\tau(s)$ and the fixed-field
+ideal count would only yield the envelope
+\[
+ A(H+B)D^\varepsilon\asymp(AH+D)D^\varepsilon.
+\]
+That hypothetical slice estimate is not established here. This is an
+insufficiency of the generic upper-bound calculation, not a lower bound
+on the signed energy. At balanced $A,B\asymp D^{1/2}$ and $H=D^{3/4}$,
+the $AH$ term loses $D^{1/2}$ relative to the target; the $D$ term also
+exceeds $H$. A sharper use of the actual $g_U$, cross-factor constraints
+or covariance between the original pieces is required. This calculation
+does not refute all bilinear, moving-cutoff or dispersion methods.
+
+The fixed-$U=1$ lower bounds in
+Proposition~\ref{prop:mobius-unit-cutoff} are different: they are genuine
+energy lower bounds for the separate pieces. If $W\ge w_0>0$ on
+$[c_1,c_2]\subset(1,2)$, count primes in
+$[c_1D,c_2D]$ for $I_1$ and in
+$[c_1D/Nq_0,c_2D/Nq_0]$ for $II_1$. Removing $S$ and $q_0$ removes
+finitely many primes. The prime-ideal theorem gives positive constants
+times $D/\log D$ in both cases; the latter contribution has coefficient
+two. Because every coefficient of $II_1$ is nonnegative, keeping these
+products is valid. This is unlike isolating the prime part of the full
+signed M\"obius energy, where uncontrolled cross terms remain.
+For the exact requested bound $H(HD)^\varepsilon$ at $H=D^{3/4}$,
+the competing power is $D^{3/4+7\varepsilon/4}$, giving the threshold
+$\varepsilon<1/7$. Replacing $(HD)^\varepsilon$ by $D^\varepsilon$
+reparametrizes the loss and gives the equivalent $1/4$ formulation.
+The positivity argument is specific to $U=1$. For a concrete control,
+the primary element $7-21\omega$ has norm $637=7\cdot7\cdot13$ and
+three distinct ideal prime factors. At $U=7$ its type-I coefficient is
+$-1$, its type-II coefficient is $-2$, and its M\"obius value is $-1$.
+Thus the separate pieces need not have nonnegative coefficients at another
+cutoff; no moving-cutoff obstruction follows from the preceding positivity
+proof.
+
+\subsection{Exact finite checks and formal boundaries}
+The deterministic checker represents every good ideal of norm at most
+$1024$ once by its primary generator, including inert prime ideals and
+squarefree products of three distinct prime ideals.
+It checks $1535$ coefficient/regrouping cases at five cutoffs, retains
+$19680$ encountered original zeros in actual sextic sums, and verifies
+$900$ pair-conductor exponent ledgers. It evaluates principal $\nu$ and
+the fixed Kummer character $\nu(n)=\chi_n(2)$ on the same good ideals.
+The finite diagnostic weight is the rational profile
+$((Nn-D)(2D-Nn))^2/D^4$ on $[D,2D]$, zero elsewhere; it is not claimed
+to be the smooth analytic weight of the theorem. Every identity is
+algebraic for arbitrary finite weights; these samples do not prove
+seminorm or scale-supremum estimates.
+
+For example, at $D=128$, $H=16$, principal $\nu$ and $U=1$, the unit-row
+normalized sums have the following exact common scaling:
+\[
+\begin{array}{c|r}
+ D^{9/2}M_1&-122721831\\
+ D^{9/2}I_1&314726661\\
+ D^{9/2}II_1&192004830
+\end{array}
+\]
+Their exact difference is $II_1-I_1=M_1$. The lower-bound theorem uses
+the prime-ideal proof, not extrapolation from these small numbers.
+An independent no-production-import oracle also checks convolution,
+squarefree regrouping and weighted sextic sums.
+
+\path{MobiusSplit.lean} proves eight actual statements: the inverse-ring
+identity, natural-number arithmetic truncation/tail, the M\"obius Dirichlet
+identity, the unit cutoff, its exact tail convolution and coefficient,
+and nonnegativity. The natural-number Dirichlet ring is an actual
+arithmetic object; it is not the ideal convolution ring. Ideal arithmetic,
+sextic/Hecke character construction, analytic prime counting and the
+unproved signed mean square remain prose or named classical inputs.
+No new zero-free region, full GRH proof or positive determinant bridge
+has been obtained.

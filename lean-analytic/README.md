@@ -260,3 +260,21 @@ axiom-free. Entire A_m categories, the splitting-functor/Jordan/Hom theorems,
 formal topology, cyclic determinant and Cantor-word proof remain prose,
 not disguised as typeclass assumptions. Existing cached dependencies suffice;
 no cache download, compilation upgrade, manifest or toolchain change occurred.
+
+
+## Exact truncated Möbius split
+
+MobiusSplit.lean adds8 reports: the universal commutative-ring inverse split,
+actual ArithmeticFunction(Z) truncation/tail, full Möbius Dirichlet identity,
+unit cutoff, unit-tail identity/coefficient and nonnegativity. The convolution
+inverse is the existing proved mathlib moebius_mul_coe_zeta, not a GRH premise.
+Types and standard axiom dependencies print. The full pinned suite passes314
+reports,312 standard-foundation-only and2 axiom-free, warnings as errors.
+
+Ideal convolution, primary generators, Kummer/Hecke characters, primitive
+conductors, prime-ideal asymptotics and the unproved signed mean square are
+not formalized by substituting integer norms into these Nat declarations.
+For example (7) is a squarefree product of two distinct ideal primes of norm7,
+with ideal Möbius+1, although its integer norm49 has Nat Möbius0. The generic
+ring algebra applies to the prose ideal convolution once that ring is supplied;
+no full ideal ring object is claimed constructed here.

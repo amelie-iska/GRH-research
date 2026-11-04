@@ -564,3 +564,71 @@ nu,W,row zeros and actual type-I/II conductors. The identity alone is not a
 short-row bound. All independent positive arithmetic determinant/zero-location
 and scope-specific GRH obligations remain open. Do not repeat completed
 pair-square/high-gcd audits or use these band determinants as arithmetic proof.
+
+
+## P7 exact signed ideal split and fixed-cutoff obstruction (2026-11-03)
+
+Resumed the recorded coefficient-sensitive route without rerunning prior
+absolute pair-square/high-gcd audits. Proved the exact good-ideal Vaughan
+identity mu=2a−a*a*zeta0+b*b*zeta0, then its original squarefree type-I/type-II
+regrouping. Every nu,W,total-squarefree/cross-coprimality/row-zero condition
+is retained. beta_U(d) is the actual short divisor coefficient, and
+ g_U(s)=−sum_(b|s,Nb<=U)mu(b) for Ns>U; it is not a free favorable weight.
+Factoring a column does not reduce its primitive row conductor as; pair
+conductors remain nn'/h² and zero-preserving periods nn'/h.
+
+Attempted all-cutoff separate-piece MS3/4 bound is refuted at U1 with the
+allowed principalnu and positive smooth W. TypeI has coefficient1 and TypeII
+has1+mu(n)≥0 on squarefree annular columns. The actual rowu1, prime columns
+and fixed-good-primeq0 times variableprime columns give energy>>D/log²D for
+each piece via the named unconditional fixed-field prime-ideal theorem.
+This violates H D^epsilon atH=D^3/4 for epsilon<1/4, equivalently the exact
+H(HD)^epsilon form for epsilon<1/7. It is not a counterexample to original
+signed M=II−I, a moving-cutoff method or a supplied paper's stated assertion.
+The first generic-Cauchy envelope is only AH+D even if an optimistic
+unproved slice estimate is granted; this is an insufficient upper bound,
+not an energy lower bound. Coefficient-sensitive/covariance work is still needed.
+
+A deliberate three-prime control stops extrapolating U1 positivity: the
+squarefree primary element7−21omega has norm637, with distinct ideal prime
+norms7,7,13; atU7 its I coefficient is−1, II is−2 and mu is−1. Both independent
+factorization and exact production replay pass. The earlier norm512 test
+was extended to1024 precisely to include such three-prime columns. Final
+307ideals include inert primes,1535coeff/group cases,19680 encounteredzeros
+and900 conductor exponent ledgers. All nonzero element rows are kept,
+without dividing byunits. Diagnostic S is primes above2,3, nu is principal
+or fixedKummer chi_n(2), and W is an explicit rational finite profile, not a
+smooth-weight/supremum certificate. The proof retains arbitrary fixedS.
+
+Eight actual Nat ArithmeticFunction/inverse-ring Lean statements and a fresh
+full314-report suite pass with warnings-as-errors,312standard-only/two
+axiom-free. Ideal convolution and Hecke/analytic applications are not falsely
+formalized via integer norms. Independent review's separate292convolution,
+152regrouping/792weighted-row oracle and final fresh compile/replays pass;
+wording, positive-W and normalization refinements are resolved. Primary
+Green–TaoVaughan Lemma4.1/proof was focused-read and pinned, not full-audited
+or misapplied as a nilsequence estimate for the moving family.
+
+Both article pairs20/49 and33/69pages and the168page/35chapter book compile.
+Ten unique labs and17source-aligned diagrams remain; one arithmetic reader
+loads actual Lean and exact JSON data. Focused dark/mobile/source-data and
+legacy companion checks pass, with valid nativeMathML and resolved PDF
+references/nooverfull boxes. Final proof/data PDF pages were visually inspected.
+All originals, sourceclones, trained data, histories, environments/toolchains
+and caches are preserved; no dependency, paid/cloud/GPU/hardware/training,
+authentication or MCP activation. Preview and existing heartbeat stay active.
+
+Evidence: research/mobius-split.md, planning/MOBIUS_SPLIT_SOURCES.json,
+planning/reviews/mobius-split/REVIEW.md and
+outputs/checks/2026-11-03-mobius-split/milestone.json. P7 stays in progress;
+both completion gates remain false. NEXT implementation rotation: construct
+actual genus-two N5(J2(0)) and its exact nonsplit sequence as modules over
+the actual infinite path/relations algebra in Lean, not merely matrix samples.
+NEXT arithmetic route: derive the type-I squarefree Dirichlet Euler ratio
+L(s,theta_u)/L(2s,theta_u²) with the same full zero-extension presentation;
+restore local defects if squaring reduces the primitive conductor. Retain
+all S,d,row zeros including sixth-power valuations, and prove exact Mellin
+contour/residue/profile/scale uniformity before summing beta_U. Do not assume
+RH-level cancellation or desired positivity. The fixedU1 obstruction is
+finished; original signed MS, positive determinant bridge and all GRH scopes
+remain open.

@@ -1,0 +1,72 @@
+\section{A signed M\"obius decomposition and its termwise obstruction}
+\label{sec:mobius-split}
+Keep the original squarefree good-ideal family, its fixed $\nu$, its
+full $W(Nn/D)$ and every zero-extended sextic symbol. In ideal Dirichlet
+convolution, write $\zeta_0(n)=1$ for every good ideal and let $\delta$
+be the convolution unit. For $1\le U<D$ put
+$a_U=\mu\mathbf1_{Nn\le U}$ and $b_U=\mu-a_U$. The classical Vaughan
+algebra gives
+\begin{equation}\label{eq:mobius-split}
+ \mu=2a_U-a_U*a_U*\zeta_0+b_U*b_U*\zeta_0.
+\end{equation}
+Indeed $\mu*\zeta_0=\delta$, and expansion of the last product proves the
+identity without an analytic assumption. This is a classical decomposition,
+not a new cancellation theorem; compare \cite[Lemma4.1]{GreenTaoVaughan}.
+
+On squarefree $n$ all factors in $n=d c=a b c$ are pairwise coprime.
+Define the actual, nonarbitrary coefficient functions
+\[
+ \beta_U(d)=\sum_{ab=d\atop Na,Nb\le U}\mu(a)\mu(b),\qquad
+ g_U(s)=\sum_{b\mid s\atop Nb>U}\mu(b).
+\]
+For squarefree $d$, $\beta_U(d)$ is $\mu(d)$ times the number of the
+displayed ordered factorizations. For $Ns>U$,
+$g_U(s)=-\sum_{b\mid s,\,Nb\le U}\mu(b)$. The two regrouped pieces are
+\begin{align*}
+ I_u&=D^{-1/2}\sum_{d,c\ {\rm squarefree}\atop(d,c)=1}
+  \beta_U(d)\nu(dc)\chi_d(u)\chi_c(u)W(NdNc/D),\\
+ II_u&=D^{-1/2}\sum_{a,s\ {\rm squarefree}\atop Na,Ns>U,\,(a,s)=1}
+  \mu(a)g_U(s)\nu(as)\chi_a(u)\chi_s(u)W(NaNs/D).
+\end{align*}
+Then $M_u=-I_u+II_u$. All ideals here remain outside the same fixed
+excluded set. The short $2a_U$ term vanishes because $U<D$ and $W$ is
+supported in $[1,2]$. No phase or coprimality mask was removed.
+
+\begin{proposition}[An all-cutoff separate-piece bound is false]
+\label{prop:mobius-unit-cutoff}
+Take the allowed principal $\nu$, $U=1$, and a fixed nonnegative smooth
+$W$ supported in $[1,2]$, bounded below by a positive constant on a closed
+subinterval of $(1,2)$ of positive length.
+For each of the two pieces,
+\[
+ \sum_{0<Nu\le H}|I_u|^2\gg_W\frac{D}{\log^2D},\qquad
+ \sum_{0<Nu\le H}|II_u|^2\gg_W\frac{D}{\log^2D}
+ \quad(H\ge1).
+\]
+Consequently a proposed bound $H D^\varepsilon$ for each piece at
+$H=D^{3/4}$ fails for $\varepsilon<1/4$. In the exact original notation
+$H(HD)^\varepsilon$, it fails for $\varepsilon<1/7$.
+This refutes an all-cutoff termwise strengthening, not the original signed
+mean square or a specified moving-cutoff argument.
+\end{proposition}
+\begin{proof}
+At $U=1$, $a_U=\delta$, so $a_U*a_U*\zeta_0=\zeta_0$ and
+$b_U*b_U*\zeta_0=\mu+\zeta_0-2\delta$.
+On the annulus the two coefficients are $1$ and $1+\mu(n)$, respectively.
+On squarefree ideals the latter is zero or two. At the actual unit row
+$u=1$, every original character equals one. A fixed-field prime-ideal
+theorem gives $\gg D/\log D$ good prime columns in the subinterval,
+so $I_1\gg_W\sqrt D/\log D$. Fix a good prime ideal $q_0$.
+Products $q_0p$ with varying distinct good primes in the rescaled
+subinterval have $\mu(q_0p)=1$. Their nonnegative contributions give
+$II_1\gg_W\sqrt D/\log D$. Keeping that one row in each nonnegative
+energy proves the result. The prime-ideal theorem is a classical
+unconditional external input, with the field and $q_0$ fixed.
+\end{proof}
+
+The factorization does not shorten the primitive row conductor:
+for squarefree coprime $a,s$ it is $as$, not $a$ or $s$ separately.
+For two resulting columns $n,n'$ with common factor $h$, the oscillatory
+conductor is $nn'/h^2$ and a zero-preserving period is $nn'/h$.
+The signed low-gcd estimate and the independent positive arithmetic
+determinant comparison therefore remain open.

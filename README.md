@@ -6,7 +6,7 @@ A private research workspace for auditing and developing surface-order and Hilbe
 
 ## Research book and interactive companion (2026-11-03)
 
-Current edition: **165 pages,35 chapters, ten unique in-book laboratories**.
+Current edition: **168 pages,35 chapters, ten unique in-book laboratories**.
 The learning section now leads with [actual RG](http://127.0.0.1:8765/rg.html):
 full effective actions, constants, generated interactions, partition functions,
 retained observables and explicit scales. [Quantum TokenGT](http://127.0.0.1:8765/qtoken.html)
@@ -28,7 +28,7 @@ The fixed top-left **Engage night** button transforms the page, book and embedde
 
 Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuQuantum/CUDA-Q sources are forked and cloned, but GPU adapters are not executed on this Apple machine. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
 
-The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **306 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
+The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **314 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
 
 Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `python3 scripts/prepare_companion.py`. Start/restart the loopback-only server with `python3 scripts/serve_book.py`; no public deployment or external scripts are needed. The preview is running as a separate local process, so a chat interruption need not stop it.
 
@@ -365,3 +365,24 @@ and [independent review](planning/reviews/linear-relations/REVIEW.md).
 Both focused articles (32/65pages) and the165-page/35-chapter book are rebuilt;
 ten unique labs avoid repeated generic panels. No new dependency, hardware,
 training, source mutation, or arithmetic GRH result is claimed.
+
+
+## Signed Möbius decomposition: surviving construction and failed shortcut
+
+The [arithmetic chapter and exact reader](http://127.0.0.1:8765/book/main.html#mobius-proof)
+now develops the original ideal Vaughan split with all squarefree support,
+nu, W, sextic zeros and conductors retained. A proposed separate-piece
+short-row bound for every cutoff is false: at U=1 and principal nu, each
+piece has energy at least order D/log²D from the actual unit row. This does
+not refute the original signed mean square or a moving-cutoff approach.
+At U=7 a norm637 squarefree ideal already has negative coefficients in
+both pieces, so the U=1 positivity argument cannot simply be repeated.
+
+[Eight new Lean statements](lean-analytic/MobiusSplit.lean) concern the actual
+natural-number Dirichlet ring and a universal inverse identity, with explicit
+boundaries to the ideal/character application. The full pinned suite passes
+314 reports (312 standard-only, two axiom-free). [Exact ideal/sextic checks](scripts/check_mobius_split.py)
+and [independent review](planning/reviews/mobius-split/REVIEW.md) accompany the
+[research handoff](research/mobius-split.md). The audit articles are20/49pages,
+focused articles33/69pages and book168pages. Full GRH and the signed low-gcd
+estimate remain open; no new dependency, hardware or training was introduced.

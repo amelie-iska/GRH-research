@@ -6,7 +6,7 @@ The book is a developed critical edition of the two supplied manuscripts, not a 
 
 The working critical book has 35 chapters, with ten unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
 
-The pinned Lean 4.24/mathlib suite has **306 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 304 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
+The pinned Lean 4.24/mathlib suite has **314 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 312 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
 
 | Material | Actual formal/computational interface | Remaining boundary |
 |---|---|---|
@@ -103,3 +103,23 @@ oracle checks24 transports/125 Hom cases. The interactive coefficient graph
 is a projection of a finite module, not a uniformizing Riemann surface or
 an arithmetic operator. The source's graph, stable kernel, rigidity, lambda=1,
 category and generic infinite-word assertions are explicitly corrected.
+
+
+## Original-family signed ideal split
+
+Current book168pages/35chapters/17diagrams/ten unique labs; audit papers20/49
+and focused papers33/69pages. MobiusSplit.lean adds8 printed statements in
+an actual natural-number ArithmeticFunction Dirichlet ring, plus the generic
+commutative-ring inverse identity. Full suite314passes,312 standard-only,
+two axiom-free. This does not formalize an ideal convolution ring or identify
+ideal Möbius with Möbius of the integer norm; those are different objects.
+
+Prose proves the full-mask ideal type-I/type-II regrouping and a fixed-U=1
+obstruction to an all-cutoff separate-piece bound, using the named classical
+fixed-field prime-ideal theorem. It does not refute the signed original MS
+or moving cutoffs. The exact checker covers307 good ideals including inert
+primes and three-prime squarefree products,1535coeff/regroup cases,19680zero
+encounters and900conductor exponent ledgers. A norm637/U7 sign control stops
+extrapolation of the U1 positivity argument. Its rational finite weight is
+not a certificate of the smooth-weight/supremum analytic input. Independent
+review includes a separate convolution/regrouping/weighted-row oracle.

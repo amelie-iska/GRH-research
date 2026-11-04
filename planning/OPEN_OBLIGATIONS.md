@@ -243,3 +243,21 @@ finite torsion is not a nonzero completed-order lattice. All PR-B/PR-C,
 positive arithmetic comparison and signed low-gcd obligations remain open.
 Next arithmetic task retains the exact truncated Möbius identity before
 estimating original masks, conductors and coefficient-sensitive type-I/II terms.
+
+
+## Signed Vaughan split frontier
+
+The exact good-ideal convolution/regrouping is established in prose, with8
+actual Nat Dirichlet formal components. The proposed all-cutoff separate-piece
+short-row bound is false at U1/principalnu; original signed MS3/4 and moving
+cutoffs remain open. A U7/norm637 negative-coefficient control prevents
+recycling the same positivity proof. The generic one-Cauchy envelope loses
+powers even if an unproved optimistic slice estimate were supplied.
+
+Next analytic construction: for the actual type-I squarefree inner sum,
+derive its Euler ratio L(s,theta_u)/L(2s,theta_u²) with every removed local
+factor from S,d and original row zeros. Distinguish primitive conductor from
+full zero extension, including sixth-power rows. Establish exactly which
+Mellin contour/residue and moving-d/profile uniformities follow without GRH
+before summing the actual beta_U. No square-root Mobius cancellation, Artin
+holomorphy or desired spectral positivity may be assumed.

@@ -160,3 +160,11 @@ search/analogy with F2persistence, continuousGFN densities/training, idealQEC
 feature-memory and exactCSS obstruction, plus specified Fukaya/HMS/tropical/
 materials research boundaries. These additions do not certify all historical
 physics source assertions, every category or a GRH proof.
+
+
+The current arithmetic frontier additionally develops the original October
+sextic family with an exact signed ideal Vaughan decomposition, its full
+zero/conductor ledger and a fixed-cutoff separate-piece obstruction. Eight
+actual Nat Dirichlet statements are formalized; ideal-character and classical
+prime-ideal analytic inputs remain named prose dependencies. The signed
+low-gcd mean square and independent positive spectral comparison remain open.

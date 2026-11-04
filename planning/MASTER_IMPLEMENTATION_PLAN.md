@@ -250,3 +250,14 @@ transport determinant and one canonical relation lab. Eleven actual general
 Lean statements supplement the prose categories. Whole-source expansion and
 both completion gates stay open. Rotate next to the recorded signed Möbius
 arithmetic attempt, preserving all masks and conductor uniformities.
+
+
+P7 signed-split attempt (2026-11-03): the unchanged ideal Möbius family now
+has an exact full-mask Vaughan/type-I/type-II construction. A proposed
+all-cutoff separate-piece bound fails at U1 by a genuine principal/unit-row
+lower bound; this is not a refutation of original signed MS or moving U.
+Eight actual Nat Dirichlet components are checked; the remaining ideal,
+Hecke and analytic interfaces remain explicit. Next P4 finite categorical
+formalization can construct the actual genus-two nonsplit branch extension;
+next P7 analytic lane is the type-I squarefree Euler ratio with all masks,
+primitive/imprimitive conductors and uniform Mellin/residue contracts retained.
