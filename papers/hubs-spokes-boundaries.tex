@@ -1,0 +1,34 @@
+The once-punctured torus and closed torus both have $H_1\cong\mathbb Z^2$,
+but their groups are $F_2$ and $\mathbb Z^2$; only the closed torus has
+$H_2\cong\mathbb Z$. The analogous genus-two groups are $F_4$ and the
+four-generator surface group, with $H_1\cong\mathbb Z^4$ in both cases.
+Indeed the standard closed-surface cellular complex has one vertex,
+$2g$ edges and one face. The face word is a product of commutators, so its
+abelianized boundary is zero. Removing the face leaves the wedge of circles.
+This computes the stated homology and also explains why $H_1$ alone misses
+the face relation. The torus group is abelian while $F_2$ is not; in higher
+genus the closed surface has nonzero $H_2$ while the graph does not.
+
+Consequently the graph's universal cover is a tree, whereas the universal
+cover of the filled genus-two surface includes lifted faces and is a disk.
+Collapsing a spanning tree changes the combinatorial cover graph; the Cayley
+tree of a free basis is not literally the original biregular dessin cover.
+This distinction matters when lifting strings, periodic paths and boundary
+conditions in the infinite locally gentle algebra.
+
+The gluing language organizes local patches and their compatibility maps.
+It does not reconstruct the ribbon cyclic order, complex structure, Belyi
+map, quadratic zero relations, coefficient ring or polynomial/formal/operator
+completion from the homotopy type alone. These data are retained explicitly
+in the existing dessin and order constructions. Descent of modules, derived
+categories, Hom-control, AR meshes or Fukaya categories needs a separately
+defined functor and hypotheses; a homotopy pushout of underlying spaces is
+not such a theorem. Nor does it imply an arithmetic determinant identity.
+
+The accompanying tool computes the same one-face genus-one/two/four dart
+families and draws local disk/annulus patches and their surface polygon
+presentations, peripheral loops and face words. These
+are exact finite combinatorial checks plus the topological proof above.
+HoTT is referenced as a conceptual foundation; no univalence or higher
+inductive-type axiom is added to the pinned Lean4 development. Its complete
+cell-attachment and categorical formalization remains an explicit task.

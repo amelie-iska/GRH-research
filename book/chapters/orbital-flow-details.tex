@@ -1,0 +1,223 @@
+% Generated shared reviewed material.
+\section{Geometry, orbitals and generative time}
+\subsection{Chemical connectivity and source secondary structure}
+An atomic coordinate cloud does not determine chemical bonds merely by
+looking connected. SDF graphs retain their explicit bond indices. For the PDB
+source view we select the first model, blank/A alternate locations and positive
+occupancy; solvent is omitted from the display. Standard amino-acid templates,
+explicit \texttt{CONECT}, qualified ligand/hydrogen proximity and geometrically
+valid peptide C--N links have separate provenance. The complete original file
+remains available. Display connectivity is not a newly measured bond label.
+
+The parser follows the wwPDB3.3 record definitions \cite{VisPDB}. A class-one
+\texttt{HELIX} is an alpha helix; class five is a $3_{10}$ helix, not another
+alpha helix. \texttt{SHEET} retains strand identity, sheet membership and
+parallel/antiparallel sense. Ribbon patches follow the actual CA trace and
+carbonyl orientation, with strand arrows and narrower coils. A peptide bond
+must connect neighboring residues before a patch or spline-control neighbor
+is allowed: spatially nearby disconnected fragments and TER-separated chains
+must not acquire a phantom ribbon. Regression tests include these controls.
+Backbone recognition in a short synthetic SDF peptide supplies a trace, not a
+DSSP assignment or evidence of a stable secondary structure.
+
+The full-source geometry is distinct from the capped effective contact graph.
+In the full-source view, only mapped modeled CA sites carry its electronic
+field. Nuclear display interpolation adds no new integration steps. An NMR
+model index, a ribbon parameter and a generative time are not physical time.
+
+\subsection{What the complex transport animation computes}
+For a finite Hermitian matrix $H=V\operatorname{diag}(E_k)V^*$ and a normalized
+initial vector $\psi_0$, the continuously evaluated browser state is
+\[
+ \psi_j(t)=\sum_k V_{jk}e^{-itE_k}(V^*\psi_0)_k.
+\]
+Unitarity gives $\sum_j|\psi_j(t)|^2=1$. Differentiating gives
+$\dot n_i=2\operatorname{Im}\sum_jH_{ij}\psi_j\bar\psi_i$ and hence
+$\dot n_i+\sum_jJ_{ij}=0$ for
+$J_{ij}=-2\operatorname{Im}(H_{ij}\psi_j\bar\psi_i)$.
+The actual complex one-particle coherence is
+$\rho_{ij}=\psi_i\bar\psi_j$. A common phase cancels from both current and
+coherence; node colors therefore use a stated phase reference. The probability
+height is a display encoding, not another physical coordinate. Current arrows
+are fluxes, not classical electron paths.
+
+Two48-site SSH controls use the same initial endpoint orbital and exchanged
+strong/weak hoppings. Their periodic bulk winding is respectively zero and
+one for $q(k)=t_1+t_2e^{ik}$, with gap $2|t_1-t_2|$. A separate61-site domain-wall chain starts and ends
+with strong bonds and has two weak bonds adjacent to its central even site.
+Its sublattices have sizes31 and30. At zero energy, set the odd-site amplitudes
+to zero and solve the tridiagonal recurrence on even sites. The amplitudes
+decay away from the wall by the weak/strong ratio. The nonzero off-diagonal
+entries determine this vector up to scale, so the nullspace is one-dimensional.
+This proves a finite interface zero mode; it does not identify an arithmetic
+Hilbert--P\'olya spectrum.
+
+The QWZ examples have a $12\times10$ rectangle and two orbitals per site.
+They use the same unfiltered corner spinor for masses $-1$ and $-3$.
+Their bulk Chern numbers are $-1$ and0 in the existing link-product convention;
+32/64 meshes and gauge controls agree. Finite boundary probability, spectral
+weights and coherence remain measurements of the particular finite state,
+not definitions or proofs of that bulk invariant. Independent matrix-exponential
+checks reproduce the five propagated states. The hydrogen phase winding below,
+chemical torsion torus, dessin genus and persistent-homology classes are also
+different invariants.
+
+\subsection{An analytic orbital benchmark with actual nodes}
+In atomic units, take $h=-\frac12\Delta-r^{-1}$ on the usual hydrogen domain.
+The displayed normalized eigenfunctions are
+\[
+ \phi_{1s}=\pi^{-1/2}e^{-r},\qquad
+ \phi_{2s}=\frac{(2-r)e^{-r/2}}{4\sqrt{2\pi}},\qquad
+ \phi_{2p_j}=\frac{x_j e^{-r/2}}{4\sqrt{2\pi}}.
+\]
+Their energies are $E_1=-1/2$, $E_2=-1/8$. The angular integrals and
+$\int_0^\infty r^n e^{-ar}\,dr=n!a^{-n-1}$ give their unit norms;
+opposite angular parity gives orthogonality of $1s$ and $2p_z$.
+Consequently
+\[
+ \psi(t)=\sqrt{1-a}\,\phi_{1s}
+       +\sqrt a\,e^{-3it/8}\phi_{2p_z},\qquad 0\le a\le1,
+\]
+has unit norm after removing its unobservable common ground-state phase.
+Its density has the interference term
+$2\sqrt{a(1-a)}\phi_{1s}\phi_{2p_z}\cos(3t/8)$: this is the actual quantum
+beat shown in the volume. The $2s$ radial node is $r=2$; the $2p_z$ nodal
+plane is $z=0$.
+
+The state $(\phi_{2p_x}+i\phi_{2p_y})/\sqrt2$ is proportional to
+$(x+iy)e^{-r/2}$. On a circle avoiding the nodal axis its phase winds once,
+and $L_z\psi=\psi$. Its current is
+$\operatorname{Im}(\bar\psi\nabla\psi)$ and has an azimuthal component.
+This stationary density with nonzero current need not show a moving classical
+particle. A finite-radius ray-marched volume and its opacity/exposure curve
+are rendering choices, distinct from the analytic density and normalization.
+These are nonrelativistic isolated-hydrogen benchmarks, not many-electron
+molecular orbitals or ab-initio peptide density.
+
+\subsection{A useful periodic chemical target}
+Butane has one selected torsion; pentane has two. All other internal coordinates
+are held at the recorded MMFF reference geometry. The finite grids have72 and
+$24^2$ points, respectively. At300K define
+\[
+ p_k=Z^{-1}\exp[-(E_k-E_{\min})/(k_BT)],\qquad
+ q_0(\theta)=\sum_k p_k\,K_{\sigma^2/2}(\theta-\theta_k),\quad \sigma=.05,
+\]
+where the product wrapped heat kernel is used on $\mathbb T^d$ and $d=1,2$.
+Thus $q_0$ is an explicitly softened finite-grid Gibbs target. It is positive,
+smooth and normalized; it is not a full solvent or molecular-equilibrium
+distribution. No affinity, redox, efficacy or electronic-density label is inferred.
+The molecular animation rotates downstream atoms about each actual bond axis;
+its poses agree with independent RDKit dihedral assignments to numerical
+precision and preserve the bond graph and fixed bond lengths.
+
+\subsection{Score diffusion on the torus}
+For the unit circle,
+\[
+ K_\tau(x)=\sum_{m\in\mathbb Z}\frac{e^{-(x+2\pi m)^2/(4\tau)}}{\sqrt{4\pi\tau}},
+ \qquad \partial_\tau K_\tau=\partial_x^2K_\tau.
+\]
+The product kernel gives $q_\tau=q_0*K_\tau$ and
+$\partial_\tau q_\tau=\Delta q_\tau$. A forward sample is
+$X_\tau=\operatorname{wrap}(X_0+\sqrt{2\tau}\,\xi)$.
+Conditioning the wrapped Gaussian mixture shows
+\[
+ \nabla\log q_\tau(x)
+ =\mathbb E[-\xi/\sqrt{2\tau}\mid X_\tau=x].
+\]
+Indeed, differentiate each image term and divide by the mixture density;
+the Gaussian score is the stated latent-noise target. Conditional least
+squares therefore identifies the marginal score. The implemented weighted
+DSM loss uses weight $2\tau$, not an unlabelled Euclidean proxy on cut angles.
+The periodic-input network is trained over the full normalized time interval.
+
+With reverse clock $u$, the ideal SDE is
+$dY_u=2\nabla\log q_{T-u}(Y_u)\,du+\sqrt2\,dW_u$.
+Its Fokker--Planck equation at density $q_{T-u}$ is
+$-2\Delta q+\Delta q=-\Delta q$, as required. This connection to score SDEs
+is the standard method \cite{VisScore}; the periodic mixture here supplies an
+explicit control. Initialization is sampled from the actual $q_T$, with $T=2$,
+rather than silently assuming it is uniform. Sampling stops at $\tau=.03$,
+so the ideal endpoint is $q_{.03}$, whose Gaussian component variance is
+$\sigma^2+.06$. It is not $q_0$. The initial run exposed this distinction;
+its source and outputs are preserved. The corrected run uses the proper endpoint
+reference and no excluded small-time training interval.
+
+Exact wrapped-mixture scores, finite-difference checks, nested64/128-step
+Brownian controls and stored learned trajectories accompany the experiment.
+A finite Euler diagnostic is neither a convergence theorem nor a guarantee
+that a learned score recovers equilibrium. Remaining noise and learned-field
+error are shown separately from the MMFF target.
+
+\subsection{Wrapped-geodesic flow matching}
+Let $X_0$ be uniform on $\mathbb T^d$, independently let $X_1\sim q_0$, put
+$D=\operatorname{wrap}(X_1-X_0)$ and
+$X_t=\operatorname{wrap}(X_0+tD)$. The cut locus has probability zero under
+these continuous laws. For every smooth periodic test function $f$,
+\[
+ \frac d{dt}\mathbb Ef(X_t)
+ =\mathbb E\langle\nabla f(X_t),D\rangle
+ =\int\langle\nabla f(x),v_t(x)\rangle\rho_t(x)\,dx,
+ \quad v_t(x)=\mathbb E[D\mid X_t=x].
+\]
+This is the weak continuity equation with the correct uniform and $q_0$
+endpoints. Writing $B=[-\pi,\pi]^d$, the conditional formulas are explicitly
+\[
+ \begin{aligned}
+ \rho_t(x)&=(2\pi)^{-d}\int_Bq_0(x+(1-t)D)\,dD,\\
+ \rho_t(x)v_t(x)&=(2\pi)^{-d}\int_BD\,q_0(x+(1-t)D)\,dD.
+ \end{aligned}
+\]
+Because $q_0$ is smooth and strictly positive on the compact torus,
+these integrals are jointly smooth through both endpoints and
+$\rho_t\ge\min q_0>0$. Division gives a smooth bounded periodic $v_t$
+with a uniform spatial Lipschitz bound. In particular $v_1=0$ by symmetry. The usual unique flow of this globally Lipschitz
+time-dependent field transports the stated marginals. Conditional regression
+targets $D$ and learns an approximation to $v_t$, following the flow-matching
+and manifold formulation \cite{VisFlow,VisRFM}. Neither the regression loss
+nor a visualization replaces endpoint-error measurement.
+
+\subsection{Physical state preparation, RG and phase-conditioned design}
+The earlier seven-spin dessin experiment supplies an actual quantum Gibbs
+state and its partial trace; its learned circuits approximate specified
+state/field targets. The exact coarse action in the RG chapter is produced
+by integrating out physical spins. Here the chemical learner transports a
+classical probability law on internal coordinates. A quantum channel, an RG
+partial trace and a score/noise schedule are three different constructions,
+with different states, clocks and acceptance tests.
+
+A concrete materials-design constraint already appears in the QWZ controls.
+Any continuous mass path from $m=-3$ to $m=-1$ passes through $m=-2$.
+The explicit bulk gap formula then gives zero gap. Thus such a generator
+cannot both change between these two Chern sectors and preserve the gap
+throughout that path. Sector-conditioned sampling, explicit transition
+states and gap/invariant checks are meaningful design tasks. Merely drawing
+a continuous latent interpolation does not meet them. The finite transport
+controls and the earlier learned thermal-state experiments provide distinct
+physics benchmarks for these requirements, rather than unverified
+predictions of a synthesized topological material.
+
+\subsection{What the quantum hybrid actually contributes}
+Each hybrid has two re-uploading two-qubit layers: periodic $R_z$ angle/time
+encoding, trainable $R_y$ rotations and CZ, followed by eight actual Pauli
+expectations and a two-layer64-unit tanh classical readout. The angles and
+readout are trained together. Integer coordinate frequencies preserve
+$2\pi$ periodicity of the measured features, and composition preserves it in
+the vector field. These are classically simulated quantum-feature hybrids,
+not coherent quantum chemical evolution or quantum-assisted measurements.
+The matched classical controls use periodic first/second harmonics and the
+same readout width. Parameter counts and individual seeds remain explicit.
+
+Eight2400-update CPU runs retain heldout objectives, checkpoint weights,
+periodicity errors, independent Kronecker/Pauli calculations, parameter
+finite differences, exact-score comparisons and actual endpoint histograms.
+The limited runs do not establish quantum advantage. Flow and diffusion have
+different positive-noise endpoint laws and must not be ranked as though their
+targets were identical. Generative interpolation time is not molecular time.
+
+The chemical torus is a concrete internal-coordinate space. Drawing it next
+to a dessin, a noncommutative torus or a Fukaya construction does not construct
+a functor or prove homological mirror symmetry. Likewise none of these finite
+learners constructs the missing arithmetic self-adjoint determinant bridge.
+Adding heat/noise is also distinct from integrating out physical degrees of
+freedom in the earlier actual RG chapter; a noise schedule alone is not an RG
+construction. New source, operator-domain, arithmetic and Lean obligations remain explicit.

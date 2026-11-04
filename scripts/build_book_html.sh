@@ -21,7 +21,7 @@ export PATH="$root/outputs/html-work/bin:$PATH"
 cd outputs/html-work
 make4ht -f html5+mathml -d ../html-staging main.tex 'mathml,svg'
 cd "$root"
-for name in dessin-carriers training-curves photonic-angle learned-generative learned-width-flow learned-covers; do
+for name in dessin-carriers training-curves photonic-angle learned-generative learned-width-flow learned-covers complementary-datasets orbital-flow orbital-atlas; do
   pdftocairo -svg "book/figures/$name.pdf" "outputs/html-staging/figures/$name-.svg"
 done
 python3 scripts/render_html_diagrams.py outputs/html-staging

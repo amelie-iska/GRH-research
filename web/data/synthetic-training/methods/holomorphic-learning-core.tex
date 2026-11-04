@@ -1,0 +1,22 @@
+\section{Learning objectives with explicit analytic guarantees}
+A useful learned contribution must distinguish approximation of known
+$L$-functions from proof of their zero locations. We propose holomorphic
+coefficient/readout learning, certified contour losses, arithmetic trace and
+functional-equation residuals, Schatten-controlled operator refinement,
+certificate search for the original signed moment, and exact-algebra
+representation constraints. Each has a different acceptance test.
+
+For an analytic target on $|s-c|\le r$, let $|F|\le M_r$ there and choose
+$R<\rho<r$. A degree-$N$ holomorphic readout trained on $m>N$ equally spaced
+points of the radius-$\rho$ circle has the explicit uniform error budget
+\[
+ \|p_k-F\|_{|s-c|\le R}
+ \le E_{\rm opt}(k)+E_{\rm oracle}+E_{\rm alias}+E_{\rm Taylor}.
+\]
+The following proofs give all four terms, a primitive-Dirichlet arithmetic
+bound for $M_r$, and an infinite-feature kernel limit with its actual rates.
+Thus known analytic families can be approximated to arbitrary requested
+accuracy with independently certified evaluation error. This does not prove
+GRH. Uniform approximation by an already-real-zero determinant class is a
+different, potentially GRH-equivalent requirement; it must not be assumed
+through an alleged universal-approximation theorem.

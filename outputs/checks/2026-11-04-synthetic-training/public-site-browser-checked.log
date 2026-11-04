@@ -1,0 +1,10 @@
+file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_public_browser.mjs:7
+const ev=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+                                                                                                                                                 ^
+
+Error: {"exceptionId":1,"text":"Uncaught","lineNumber":0,"columnNumber":14,"scriptId":"647","stackTrace":{"callFrames":[{"functionName":"","scriptId":"647","url":"","lineNumber":0,"columnNumber":14}]},"exception":{"type":"object","subtype":"error","className":"TypeError","description":"TypeError: Cannot read properties of null (reading 'dataset')\n    at <anonymous>:1:15","objectId":"-8379809729081707773.62.2"}}
+    at ev (file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_public_browser.mjs:7:146)
+    at async until (file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_public_browser.mjs:8:98)
+    at async file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_public_browser.mjs:15:77
+
+Node.js v24.19.0

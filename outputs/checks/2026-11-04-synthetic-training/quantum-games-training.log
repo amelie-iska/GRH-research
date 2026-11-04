@@ -1,0 +1,15 @@
+/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/synthetic_training/train_quantum_games.py:42: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  score,E,state,A,B=bell_values(p,alpha);bound=math.sqrt(8+2*alpha*alpha);assert float(score)<bound+1e-9
+CHSH-seed17 2.82842712474619
+CHSH-seed29 2.8284271247461903
+CHSH-seed43 2.82842712474619
+tilted-CHSH-1.0-seed17 3.162277660168379
+tilted-CHSH-1.0-seed29 3.162277660168379
+tilted-CHSH-1.0-seed43 3.16227766016838
+tilted-CHSH-1.5-seed17 3.5355339059327373
+tilted-CHSH-1.5-seed29 3.535533905932737
+tilted-CHSH-1.5-seed43 3.5
+magic-square-seed17 0.9999999999998428
+magic-square-seed29 0.9999999999999996
+magic-square-seed43 0.9999999999997814

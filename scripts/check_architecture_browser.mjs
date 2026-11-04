@@ -89,10 +89,10 @@ await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScal
 assert(await evaluate('document.documentElement.scrollWidth<=window.innerWidth+1'));
 await send('Emulation.setDeviceMetricsOverride',{width:1550,height:1100,deviceScaleFactor:1,mobile:false});
 await send('Page.navigate',{url:root+'/architecture.html?trace=not-a-record&node=invalid'});await until(`document.body.dataset.ready==='true'`);assert.equal(await evaluate('window.architectureInspector.snapshot().trace'),'qcnn-4-0');
-await send('Page.navigate',{url:root+'/book/main.html'});await until(`document.querySelectorAll('iframe').length===12`);
+await send('Page.navigate',{url:root+'/book/main.html'});await until(`document.querySelectorAll('iframe').length===13`);
 const book=await evaluate(`({chapters:document.querySelectorAll('h2.chapterHead').length,sources:[...document.querySelectorAll('iframe')].map(f=>f.getAttribute('src')),canonical:document.querySelectorAll('#lab-architecture').length})`);
 const toc=readFileSync('outputs/book/surface-orders-book.toc','utf8'),expectedChapters=(toc.match(/\\contentsline \{chapter\}\{\\numberline/g)||[]).length;
-assert.equal(book.chapters,expectedChapters);assert.equal(new Set(book.sources).size,12);assert.equal(book.canonical,1);
+assert.equal(book.chapters,expectedChapters);assert.equal(new Set(book.sources).size,13);assert.equal(book.canonical,1);
 await evaluate(`document.getElementById('lab-architecture').scrollIntoView({block:'start'})`);
 await until(`document.querySelector('#lab-architecture iframe').contentDocument?.body?.dataset.ready==='true'`);
 await evaluate(`(()=>{const d=document.querySelector('#lab-architecture iframe').contentDocument;const s=d.getElementById('traceSelect');s.value='photonic-0';s.dispatchEvent(new Event('change',{bubbles:true}));})()`);

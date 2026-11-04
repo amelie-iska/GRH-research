@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "quantum_features_independent_Kronecker_max_error": 6.661338147750939e-16,
+  "quantum_gradient_FD_max_error": 3.5254738017798104e-10,
+  "wrapped_mixture_score_FD_max_error": 2.5477655540839805e-08,
+  "oracle_periodicity_max_error": 3.019806626980426e-14,
+  "learned_score_oracle_metrics": [
+    {
+      "name": "classical-score-T1",
+      "score_oracle_MSE": 1.4239586756461664,
+      "zero_score_MSE": 1.4902668213133987
+    },
+    {
+      "name": "quantum-hybrid-score-T1",
+      "score_oracle_MSE": 1.3452149272612763,
+      "zero_score_MSE": 1.4902668213133987
+    },
+    {
+      "name": "classical-score-T2",
+      "score_oracle_MSE": 0.8610296603605536,
+      "zero_score_MSE": 1.9671808808135873
+    },
+    {
+      "name": "quantum-hybrid-score-T2",
+      "score_oracle_MSE": 0.8973674573410511,
+      "zero_score_MSE": 1.9671808808135873
+    }
+  ],
+  "exact_score_controls": [
+    {
+      "dimension": 1,
+      "exact_score_Euler_controls": [
+        {
+          "steps": 64,
+          "TV_to_correct_positive_noise_endpoint": 0.25228875
+        },
+        {
+          "steps": 128,
+          "TV_to_correct_positive_noise_endpoint": 0.19461375
+        }
+      ],
+      "nested_path_RMS_radian": 0.06729404516717882,
+      "scope": "Finite stochastic weak/distribution diagnostics with256 samples; no monotone convergence theorem or recovery of zero-noise target"
+    },
+    {
+      "dimension": 2,
+      "exact_score_Euler_controls": [
+        {
+          "steps": 64,
+          "TV_to_correct_positive_noise_endpoint": 0.3518075
+        },
+        {
+          "steps": 128,
+          "TV_to_correct_positive_noise_endpoint": 0.30596625
+        }
+      ],
+      "nested_path_RMS_radian": 0.09078328429906186,
+      "scope": "Finite stochastic weak/distribution diagnostics with256 samples; no monotone convergence theorem or recovery of zero-noise target"
+    }
+  ],
+  "scores_target_positive_noise_endpoint": true,
+  "models": 8,
+  "CPU_only": true,
+  "active_models_unchanged": true,
+  "GRH_proved": false
+}

@@ -1,0 +1,102 @@
+% Generated shared reviewed material.
+\section{Exact game calculations and the embedding boundary}
+\subsection{CHSH bounds and a constructive tilted strategy}
+For deterministic signs, either $B_0=B_1$ or $B_0=-B_1$, so the CHSH term is
+at most $2$; choosing $A_0=1$ gives the tilted classical maximum $2+\alpha$.
+Convex mixtures cannot improve a linear objective. For self-adjoint
+involutions, with operators of different parties commuting, write
+$\mathcal B=A_0(B_0+B_1)+A_1(B_0-B_1)$. The exact identity
+\[
+ 2\sqrt2I-\mathcal B=\frac1{\sqrt2}
+ \left[\left(A_0-\frac{B_0+B_1}{\sqrt2}\right)^2+
+       \left(A_1-\frac{B_0-B_1}{\sqrt2}\right)^2\right]
+\]
+proves the CHSH quantum bound by positivity. Expanding the squares uses only
+the involution and cross-party commutation relations.
+
+For the tilted case take
+$|\psi_\theta\rangle=\cos\theta|00\rangle+\sin\theta|11\rangle$,
+$A_0=Z$, $A_1=X$ and $B_{0,1}=\cos\mu Z\mathbin{\pm}\sin\mu X$.
+Then $S_\alpha=\alpha\cos2\theta+2\cos\mu+
+2\sin\mu\sin2\theta$. Choosing
+\[
+ \sin2\theta=\sqrt{\frac{4-\alpha^2}{4+\alpha^2}},\qquad
+ \tan\mu=\sin2\theta
+\]
+with $0\le\theta\le\pi/4$ and $0\le\mu\le\pi/4$,
+gives $\sqrt{8+2\alpha^2}$ by direct substitution (including the endpoints).
+This verifies attainment; the universal tilted upper bound uses the
+sum-of-squares theorem in \cite{GameTilted} for $\alpha<2$; the endpoint
+follows by continuity since $\|\mathcal B_2-\mathcal B_\alpha\|\le2-\alpha$.
+This is not an unproved inference from
+our restricted two-qubit parametrization.
+
+\subsection{A full magic-square strategy}
+On two local qubits arrange the observables
+\[
+ \begin{pmatrix}
+ Z\otimes I&I\otimes Z&Z\otimes Z\\
+ I\otimes X&X\otimes I&X\otimes X\\
+ Z\otimes X&X\otimes Z&Y\otimes Y
+ \end{pmatrix}=(O_{ij}).
+\]
+Entries commute within each row and column. Pauli multiplication gives row
+products $+I$ and column products $+I,+I,-I$. Alice measures a row, Bob the
+transpose of a column, and they share
+$|\Phi_4\rangle=\frac12\sum_{k=0}^3|k,k\rangle$.
+The identity $\langle\Phi_4|A\otimes B|\Phi_4\rangle=
+\operatorname{Tr}(A^TB)/4$ gives correlation one at every intersection.
+The product identities force the required parities. Thus they win every
+question pair and the quantum value is one.
+
+A classical perfect table would have total product $+1$ by multiplying the
+rows and $-1$ by multiplying the columns, a contradiction. At least one of
+the nine question pairs fails for any deterministic assignment. Conversely,
+Alice can output all $+1$; Bob outputs all $+1$ in the first two columns and
+$(-1,+1,+1)$ in the last, failing only one cell. The uniform classical value
+is exactly $8/9$; shared randomness cannot improve it.
+Our learner conjugates Alice's observables by one local unitary $U_A$ and
+Bob's transposed observables by $U_B$, preserving each party's parity and
+commutation constraints at every optimization step. The exact score is
+$1/2+\sum_{ij}\operatorname{Tr}(A_{ij}^TB_{ij})/72$.
+
+\subsection{Which learning objectives carry proofs?}
+\paragraph{Finite strategies and noisy experimental laws.}
+Unitary parametrization preserves valid projective measurements, so negative
+Born loss searches inside the chosen finite strategy class. Mixing the state
+with $I/d$ with visibility $v\in[0,1]$ preserves positivity, normalization and
+no-signalling. For $K$ joint outcomes, $N$ ideal independent samples and
+$\delta\in(0,1)$, Hoeffding plus a union bound gives maximum frequency error
+at most $\sqrt{\log(2K/\delta)/(2N)}$ with probability at least $1-\delta$.
+Browser sampling is an illustration of this conditional IID statement.
+With dimension fixed, compactness and explicit matrix-product Lipschitz
+bounds permit exhaustive finite nets for arbitrary-accuracy global value
+approximation. Local gradient descent alone has no such guarantee.
+
+\paragraph{Moment and dual-certificate learning.}
+For words $u,v$ in measurement generators, define
+$\Gamma_{u,v}=\langle\psi|u^*v|\psi\rangle$ (or its mixed-state trace).
+For every $c$, $c^*\Gamma c=\|\sum_v c_vv\psi\|^2\ge0$; the mixed case
+follows by convexity. We compute these actual finite word Gram matrices,
+not an optimized outer relaxation. NPA learning may propose PSD moment
+matrices obeying word relations, while an independently checked identity
+$\beta I-\mathcal B=\sum_jP_j^*P_j$ proves an upper bound. A small residual
+is not an exact certificate. Successive NPA levels converge to the
+commuting-operator value under the hierarchy's hypotheses \cite{GameNPA}.
+Each level defines an outer relaxation; a validated optimized value or a
+dual-feasible certificate yields an upper bound. One feasible primal moment
+matrix alone does not bound the optimum and is not a realization theorem.
+
+\paragraph{Tracial moments and Connes embedding.}
+General vector-state moments need not be cyclic. A microstate learner for a
+tracial algebra must additionally preserve cyclic identities, positivity,
+norm bounds and compatibility across increasing word lengths, and compare
+with normalized matrix traces. Our displayed state moments do not fulfill
+that separate task merely because they are PSD. The external undecidability
+result \cite{GameMIP} also precludes a single computable dimension/error
+schedule deciding all promised nonlocal games. It neither forbids certified
+solutions of specified finite games nor establishes any impossibility result
+for GRH. The valid connection to our program is certificate search with
+exact relation checks; neither Bell violation nor kernel positivity gives
+the missing arithmetic determinant/zero-location bridge. These new game
+proofs and computations are not claimed as complete Lean4 formalization.

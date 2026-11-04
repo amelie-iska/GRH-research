@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/synthetic_training/dynamics.py", line 197, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--source',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();augment(a.source,a.output)
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/synthetic_training/dynamics.py", line 136, in augment
+    resultmd=nuclear_md(p);md.append(dict(record_id=r['record_id']+'-nuclear-md',family=r['family'],group_id=r['group_id'],split=r['split'],payload_json=canonical(dict(parent_record_id=r['record_id'],conditions=p['conditions'],targets=resultmd)),
+             ^^^^^^^^^^^^^
+  File "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/synthetic_training/dynamics.py", line 104, in nuclear_md
+    drift=float(np.max(abs(np.array(energies)-energies[0])));assert drift<.05 and maxmomentum<1e-8,(drift,maxmomentum)
+                                                                                  ^^^^^^^^^^^^^^^^
+AssertionError: (7.095085823427372, 3.703634621210483e-16)

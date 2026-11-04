@@ -298,6 +298,33 @@
         "planning/learned-frontier/hardware/REVIEW.md",
         "examples/learned_frontier/hardware/evidence-2026-11-04.json"
       ]
+    },
+    {
+      "id": "P10-complementary-datasets",
+      "priority": 0,
+      "status": "complete",
+      "dependencies": [],
+      "objective": "Additional Aster topological-response and Mora-3 conformer/force datasets with similarity-safe splits, Parquet, public HF cards and interactive examples; active models read-only",
+      "acceptance": "Executed independent physical checks; parent and similarity component audit; no target leakage; public HF commit/hash and card links; explicit native-admission boundaries; no active-model modifications",
+      "owner": "grh-research-loop",
+      "updated_utc": "2026-11-04T15:32:44.036555+00:00",
+      "last_result": "Frozen private Aster16384/Mora22951 releases and all configs load at exact commits; provenance/similarity/native-admission audits pass. Added reviewed molecular ribbons, coherent clouds, eight trained chemistry models, twelve game runs, analytic readout error proofs and HoTT/dessin gluing. Book212pages/37chapters/13unique labs, articles42/108pages; independent mathematical and browser checks pass. No new Lean or GRH completion claim; broader implementation/research gates remain false. Subsequently made public at explicit owner request; Parquet data unchanged, public card-only commits verified.",
+      "evidence": [
+        "outputs/checks/2026-11-04-synthetic-training/delivery-milestone.json",
+        "planning/synthetic-training/review/GAMES_HUBS_REVIEW.md",
+        "planning/synthetic-training/review/HOLOMORPHIC_CLOUD_REVIEW.md"
+      ]
+    },
+    {
+      "id": "P11-analytic-gluing-formal",
+      "priority": 6,
+      "status": "pending",
+      "dependencies": [
+        "P10-complementary-datasets"
+      ],
+      "objective": "Validated primitive theta/Mellin and readout error oracle; actual analytic/graph cell-attachment Lean interfaces",
+      "acceptance": "Explicit certified arithmetic/rounding bounds and precise kernel-checked theorem types without admissions or HIT/univalence axioms; honest separation from arithmetic determinant/GRH bridge",
+      "evidence": []
     }
   ]
 }

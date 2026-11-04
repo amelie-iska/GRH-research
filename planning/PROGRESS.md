@@ -1011,3 +1011,87 @@ P9 learned-frontier stays in progress; subsequent implementation can add
 physical OOD/chemical benchmarks and true categorical/Lean interfaces.
 Neither GRH nor complete book formalization has been established; both
 completion gates remain false and the existing heartbeat remains active.
+
+## Complementary dataset release milestone (2026-11-04)
+
+Delivered additional Aster16,384-row and Mora22,951-row default static corpora;
+source anchors576/266, electronic trajectories174/241, and12 Mora20fs/.05fs
+MMFF trajectories are separate configurations. No frame-count inflation.
+Source origins distinguish48 existing MP20 structures,32 existing PubChem
+identities and8 new public PDB anchors from new computed labels. Both active
+model repositories/training processes were read only and remain unmodified.
+
+All-row physical/split checks pass, including independent spectra, MMFF force
+and energy reconstruction, atom-order/CIP, geometry/chemical thresholds,
+normal/BdG continuity and Wick correlations, exact Hubbard exchange, all
+dynamic expm comparisons and MD energy/momentum. Independent review identified
+and resolved BdG/gap, source stereo, role diagnostic and historical PDB issues;
+failed drafts remain preserved. Source-vs-heldout audit has zero crossings under
+the declared applicable relation. Giant peptide components stay intact; no
+universal leakage guarantee, protein-fold blindness or global model-corpus
+exposure claim. Mora's current observed-only supervision gate remains intact.
+
+Two new PRIVATE HF dataset commits have remote Git/LFS hashes and sizes
+verified: Aster2b8ce36571298a3517b8c88bb23269341d9b8908,
+Mora53a6b66acaa69ef79584648f3f6dc068363c4837. Both have cards and typed
+Parquet. Both official-loader checks now pass every configuration with exact row counts
+and origin columns. Final presentation/Git integration incorporates the latest
+requested molecule, orbital and diffusion/flow improvements.
+A stalled Mora Xet uploader was superseded by a verified HTTP transfer; only
+our obsolete upload process was terminated, with all caches/data/logs retained.
+
+The canonical explorer has16 real examples and14 checked full-density Givens
+replays, with SDF/XYZ, actual MP20 CIF and historical/public PDB downloads,
+CPK representations, signed heat wavelets and3D/time projections. The book
+and both article editions include the physical methods, proofs and limits.
+No new Lean declarations; previous360 reports retain their earlier scope.
+GRH and complete-book formalization are still unresolved; existing loop stays
+active. Next mathematical frontier remains the original signed low-gcd Mellin
+moment before pointwise convexity, retaining masks/conductors and covariance.
+
+## 2026-11-04 — coherent fields, learned certificates and hubs/spokes
+
+Delivered the frozen private Aster/Mora releases with exact remote/load
+receipts and explicit origins/similarity-component scopes. Extended visible
+bonds and deposited ribbons;5actual SSH/QWZ packets; analytic hydrogen;
+6-basis H2plus Coulomb and effective20-orbital protein coherent densities;
+8trained periodic chemistry flow/DSM models. Full-space particle count,
+independent integral/kinetic/exponential checks, positive-heat DSM reference,
+exact molecular rotations and browser controls are documented.
+
+The analytic claim attempted was compact-uniform approximation of known
+primitive Dirichlet functions without zero-location assumptions. A proved
+four-term readout error bound and specified infinite-feature/source-condition
+rate survive independent review; numerical q3/4/5 examples do not implement
+interval certification. The explicit real-rooted approximation obstruction
+prevents promoting this to a GRH proof.12trained game runs include one stalled
+tilted seed; exact CHSH/magic-square proofs, independent Born/no-signalling/
+PSD checks and NPA/Connes boundaries are retained. HoTT's pinned hubs/spokes
+reference now motivates disk and punctured-disk gluing of actual clean-dessin
+families, with exact face permutations and surface-group proofs. It introduces
+no Lean4 axiom and no automatic Hom-controlled functor.
+
+Book212pages/37chapters/13unique tools, focused42/108pages. New browser
+checks cover12games/12analyticmodels/6dessincases, mobile390 and source links;
+all pass. Earlier failed PDF/TOC builds were blocked in staging and corrected.
+No new Lean declaration or GRH completion claim. Evidence is recorded in
+outputs/checks/2026-11-04-synthetic-training and the independent review directory.
+
+## Public release amendment (4 November 2026)
+
+The owner explicitly requested that all project releases become public.
+GRH-research is PUBLIC; GitHub Pages is live at
+https://amelie-iska.github.io/GRH-research/. Both complementary HF datasets
+are PUBLIC, with card-only commits1131639f28f39ea29389dd08d0e703254f8ff0e3
+andc9f71be7fcef0f76e0639e2f2f53690c9808c8de. Frozen data commits and every
+Parquet file are unchanged. Earlier PRIVATE receipts remain historical.
+Reachable Git history1998blobs and staged files pass configured credential
+patterns. Public bundle preserves166numerical/image assets byte-for-byte,
+including trace checksums; a project-path adapter handles root URLs without
+changing the local8765 preview. Nine live hosted pages, four architecture
+collections, PDFs, source/Lean links and mobile390 have browser checks with
+no exceptions. The existing heartbeat is ACTIVE with updated public intent.
+No active-model or credential file was published. See
+outputs/publication/2026-11-04/publication-verification.json.
+Continue P11 validated analytic constants/oracle and P7 arithmetic moment;
+both overall implementation and GRH research completion gates remain false.

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/synthetic_training/check_native_interfaces.py", line 62, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/synthetic_training/check_native_interfaces.py", line 47, in main
+    scalar_available.append(len(task.available_targets(record)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iska/Documents/amelie/bio/Mora-3/src/mora3/data/tasks.py", line 76, in available_targets
+    raise ValueError('source predictions are not observed supervision')
+ValueError: source predictions are not observed supervision

@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "pure_function_source": "AST-selected electronic/hubbard/visual helpers, without PyArrow import",
+  "gaussian_explicit_Fock_comparisons": [
+    {
+      "bdg": false,
+      "max_occupation_error": 3.774758283725532e-15,
+      "max_bond_current_error": 2.942091015256665e-15,
+      "max_connected_correlation_error": 2.9282132274488504e-15,
+      "max_independent_pair_source_error": 0.0
+    },
+    {
+      "bdg": true,
+      "max_occupation_error": 3.219646771412954e-15,
+      "max_bond_current_error": 2.858824288409778e-15,
+      "max_connected_correlation_error": 2.1371793224034263e-15,
+      "max_independent_pair_source_error": 6.661338147750939e-16
+    }
+  ],
+  "exact_Hubbard_comparisons": [
+    {
+      "U_over_t": 2,
+      "t": 0.7,
+      "max_occupation_error": 5.162537064506978e-15,
+      "max_current_error": 1.0186296250935811e-14,
+      "max_connected_correlation_error": 3.635980405647388e-15,
+      "max_spin_swap_error": 8.548717289613705e-15
+    },
+    {
+      "U_over_t": 8,
+      "t": 1.0,
+      "max_occupation_error": 1.2212453270876722e-15,
+      "max_current_error": 1.5543122344752192e-15,
+      "max_connected_correlation_error": 6.661338147750939e-16,
+      "max_spin_swap_error": 9.992007221626409e-16
+    },
+    {
+      "U_over_t": 16,
+      "t": 1.0,
+      "max_occupation_error": 7.771561172376096e-16,
+      "max_current_error": 6.106226635438361e-16,
+      "max_connected_correlation_error": 4.440892098500626e-16,
+      "max_spin_swap_error": 6.661338147750939e-16
+    }
+  ],
+  "givens_full_Fock_recomposition_error": 9.309503074677275e-16,
+  "graph_wavelets_zero_sum": true,
+  "scope": "Normal Slater/BdG dynamics, exact Hubbard dimer, Givens circuit and graph wavelets; no nuclear MD or ab-initio chemistry validation"
+}

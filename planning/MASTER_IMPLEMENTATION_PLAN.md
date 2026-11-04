@@ -4,7 +4,7 @@ Updated 2026-11-03. This is the governing plan for all instructions in this conv
 
 ## Objective and completion contract
 
-Develop a coherent, didactic research book from both complete Amelie Schreiber source manuscripts, with concise and extended TeX/PDF papers, a private repository, an on-page interactive book, exact mathematical constructions, useful physics and quantum/hybrid implementations, meaningful training experiments, and progressively complete Lean4 verification. Continue independent research toward a complete rigorous proof of the intended GRH scopes.
+Develop a coherent, didactic research book from both complete Amelie Schreiber source manuscripts, with concise and extended TeX/PDF papers, a public repository, an on-page interactive book, exact mathematical constructions, useful physics and quantum/hybrid implementations, meaningful training experiments, and progressively complete Lean4 verification. Continue independent research toward a complete rigorous proof of the intended GRH scopes.
 
 There are two distinct acceptance gates:
 
@@ -15,14 +15,14 @@ Neither gate is inferred from time spent or a scheduled run ending. Refuted asse
 
 ## Non-negotiable working constraints
 
-- Root: `/Users/amelieschreiber/Documents/LaTeX-projects/GRH`. Private remote: `amelie-iska/GRH-research`.
+- Root: `/Users/amelieschreiber/Documents/LaTeX-projects/GRH`. Public remote: `amelie-iska/GRH-research`.
 - Preserve the three pinned source clones, both original source paths, all data/history/outputs/caches/checkpoints/environments and unrelated changes. No deletion, cleanup, migration, broad upgrade or history rewriting.
 - Preserve the two complete source TeX files, with hashes, in historical source volumes. Maintain `book/SOURCE_COVERAGE.md` mapping every source topic to corrected development, examples, formal status and any refutation.
 - Use actual infinite locally gentle algebras and completed surface orders of cellular dessins as primary algebra examples. Explicit finite quotients/support strata must retain their category labels.
 - Keep polynomial, formal, Laurent and operator-norm completions distinct; module, lattice, stable, perfect and bounded-derived categories are not interchangeable.
 - Maintain Dirichlet, Hecke, Dedekind, elliptic-curve and general Artin scopes, critical centers, holomorphy and normalization separately. Do not assume the desired positivity or GRH to claim an unconditional result.
 - Existing Lean4.24/mathlib pins and environments stay unchanged. The new approved CPU environment is `.tools/book-quantum-cpu`, with its lockfile. Ask before further production dependencies/infrastructure, paid or cloud/GPU jobs, OAuth/account linking, broad access or irreversible actions.
-- Use existing GitHub CLI authentication. Never reuse chat credentials in files, commands, URLs, logs or commits. Research stays private; upstream-only public forks contain no private research.
+- Use existing GitHub CLI authentication. Never reuse chat credentials in files, commands, URLs, logs or commits. Research is public by explicit owner instruction of 4 November 2026; credentials and unrelated model data remain protected.
 - Keep the local preview available at `http://127.0.0.1:8765`. Restart only its known process when needed; do not expose the server publicly or enable public Pages without explicit authorization.
 - Keep MCP servers disabled unless an exact server materially helps; enable only that server and disable/verify after use. Do not change Claude configuration.
 - Preserve requested periodic links on substantive progress; avoid no-op/repetitive status commits and repetitive visualizations.
@@ -135,7 +135,7 @@ Acceptance of each research attempt: a complete derivation, precise counterexamp
 
 Keep the concise and extended articles, critical book, native-MathML on-page edition, full historical sources, source code, Sage/Macaulay-style examples, Lean coverage, README and project page synchronized. Compile and inspect changed content; do not multiply the same visualization across chapters. Keep canonical example/tool anchors and cross-references.
 
-Before each milestone: inspect relevant staged changes; run focused scientific/browser/Lean checks, source-pin and credential scans, PDF/HTML integrity and private visibility. Push substantive verified work only. Preserve unrelated/concurrent edits and raw failed probes. Keep a concise handoff with evidence, remaining risks and the next concrete task.
+Before each milestone: inspect relevant staged changes; run focused scientific/browser/Lean checks, source-pin and credential scans, PDF/HTML integrity and intended public visibility. Push substantive verified work only. Preserve unrelated/concurrent edits and raw failed probes. Keep a concise handoff with evidence, remaining risks and the next concrete task.
 
 ## Automated iteration protocol
 
@@ -339,3 +339,81 @@ claim cuQuantum execution before its actual backend checks pass.
 
 Deliver this extension through evidence-based slices in the same existing
 implementation/research loop; full implementation and GRH gates remain open.
+
+## Additional complementary synthetic corpora (2026-11-04)
+
+The user explicitly requests two ADDITIONAL complementary datasets, one for
+HolonForge/Aster and one for Mora-3. Read the two remote projects only; do not
+change, enroll sources, train models, interrupt jobs or modify their data/splits.
+Work entirely in the GRH project. Implement simulated nontrivial diverse
+physical/chemical response data, curation, exact/numerical tests and contextual
+interactive examples. Design and limitations: planning/synthetic-training/DESIGN.md.
+
+The user further requires private Hugging Face storage with proper dataset
+cards and Parquet shards, and verified dataset links on the project page/book.
+Authorized credential source is a protected copy of exactly HolonForge/keys.txt;
+never display, commit or upload any credentials. Ignore secret paths and upload
+only explicitly reviewed dataset files. No new production dependencies.
+
+Leakage policy: similarity-connected whole groups before task projection,
+parent/conformer/gauge/intervention linkage, structural/scaffold/fingerprint
+and appropriate topological/geometric audits, thresholds and cross-split
+nearest-neighbor reports. Do not call finite threshold checks a guarantee
+against every leakage or overfitting mechanism. Preserve giant components;
+do not force independence by breaking a known similarity group. Protein
+RMSD/TM-score analogies do not turn small-molecule geometry into protein data.
+Computed/synthetic labels retain their provenance; never relabel them as
+observed to bypass a current model's admission rule. Source construction and
+actual training admission remain separate gates.
+
+### Large-source dataset acceptance amendment
+
+The user requested at least10K rows per additional dataset and explicit labels
+for planned-training-source examples versus newly computed/synthetic examples.
+The defaults contain16,384 Aster and22,951 Mora static rows; dynamic frames
+are not counted as independent systems. Origin columns apply to every config.
+576 Aster anchors derive from48 existing MP20 train structures;74 Mora rows
+derive from32 existing PubChem train identities, and192 from8 public PDB
+source anchors. Existing-source presence is not a statement of prior optimizer
+exposure; new simulation is not a claim of chemical novelty against all corpora.
+
+Validate source stereochemistry/forces, preserve charged/isotopic/stereo graph
+metadata and source atom order, keep validation diagnostics out of scientific
+conditions, and audit all molecular anchors against frozen default heldouts.
+Quarantine whole conflicting source parents without moving heldouts. Record
+historical PDB1HRW actual HEADER and1LE0 replacement. Native synthetic-label
+admission and global exposure evaluation remain future owning-model decisions.
+Keep the private HF cards, Parquet configurations, exact remote hashes and
+commit-pinned official-loader receipts linked from book and explorer.
+
+### Latest visualization and chemistry amendment
+
+The user requested visible peptide bonds, traditional alpha/3-10/beta cartoon
+views, more informative orbital/current/coherence dynamics, further nontrivial
+topological examples and deeper, better animated physical/chemical diffusion
+and flow matching. Implementation/design: planning/synthetic-training/
+VISUALIZATION_PLAN.md. Use source secondary annotations and actual connectivity;
+never invent secondary structure or confuse a contact graph with chemical bonds.
+Keep phase winding, Chern/winding, chemical torsion torus and dessin genus
+distinct. Retain actual quantum-feature and classical chemistry checkpoints,
+correct positive-noise references, matched controls, visible errors and smooth
+source-preserving display animation. No new dependencies/active-model changes.
+
+## 2026-11-04 accepted additions: coherent clouds, certificates and gluing
+
+Keep the two complementary private HF releases frozen. Extend their companion
+with deposited peptide bonds/ribbons, exact finite SSH/QWZ phase/current
+benchmarks, coherent spatial density clouds, and trained periodic chemistry
+flow/DSM models with correctly distinct endpoint laws. Preserve failed pilots
+and the stalled game seed. The new learned-GRH lane must separate analytic
+approximation, certified contour counts and zero-location obligations;
+infinite-feature readout rates must retain initialization/source assumptions.
+Add trained CHSH/tilted/magic-square examples, exact strategy/moment/SOS
+checks and the external Connes/NPA boundary. Add pinned HoTT hubs-and-spokes
+references, actual clean-dessin rotations, disk/punctured-disk and
+spine/filled-surface-cover calculations. Homotopy gluing must not be equated
+with a module-category/Hom-controlled/HMS or arithmetic determinant theorem.
+No new Lean4 HIT or univalence axiom is permitted. Full analytic/topological
+formalization and a validated oracle remain separate implementation work.
+
+Publication amendment (4 November 2026): the latest explicit user request supersedes earlier private-research wording. The research repository, project page and both reviewed HF datasets are public. Preserve original private-release receipts as historical evidence; protect credentials and unrelated model repositories. Continue the existing implementation/research queue and local8765 preview.

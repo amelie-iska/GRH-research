@@ -330,3 +330,34 @@ remain open. The GPU simulations are classically executed finite circuits;
 matched three-seed runs show no entanglement advantage. No physical quantum
 processor, universal denoiser, fabricated ASIC, PPA or quantum speedup is
 inferred. The23-qubit case lacks an independent large-state reference.
+
+## Complementary datasets: downstream limits (2026-11-04)
+
+The two additional corpora exceed10K default static rows each. Finite
+component/threshold checks are not universal leakage or overfitting guarantees.
+Existing-source anchors are train only; molecular anchors also face all default
+heldouts under the declared chemical/geometric thresholds. Full historical
+model-corpus overlap, protein sequence/fold splitting and native synthetic-label
+admission remain separate future evaluation decisions. Neither active model was
+modified or trained. Mora's observed-only scalar/array gate remains in force.
+
+MMFF94 is empirical, and source-contact orbital models are dimensionless and
+uncalibrated. No ab-initio density, CISS, affinity, efficacy, new physical phase
+or measured training gain follows. The tested normal Givens compiler does not
+cover BdG pairing. The dataset constructions have no new Lean declarations;
+360 existing reports retain their previous scope. GRH's arithmetic bridge and
+all original-family low-gcd uniformities remain open.
+
+## Learned certificates and gluing (2026-11-04)
+
+The finite holomorphic readout theorem proves arbitrary-accuracy compact
+approximation under independently certified constants, oracle and arithmetic
+error. The numerical q3/4/5 experiment does not yet implement a validated
+interval oracle. The Szegő readout limit has an explicit source-condition
+rate, with vanishing Gram eigenvalues; no general quantum-network or
+all-conductor rate follows. Real-zero restricted approximation still needs
+the independent arithmetic positivity/determinant bridge; the 7/16 Rouché
+obstruction is retained. Game moment PSD and learned finite Bell violations
+do not discharge O1–O8. Surface homotopy cell gluing does not automatically
+supply an exact, Hom-controlled or determinant-preserving categorical functor.
+New analytic/topological/game full Lean implementations remain open.

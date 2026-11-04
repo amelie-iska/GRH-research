@@ -1,0 +1,4 @@
+  File "/Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_electron_clouds.py", line 12
+    C=expm(-1j*h*t)@C0;D=L@C;error=float(np.max(abs(D.conj().T@S@D-np.eye(C.shape[1])))));state_error=max(state_error,error);assert error<1e-10
+                                                                                        ^
+SyntaxError: unmatched ')'

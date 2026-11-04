@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "finite_propagation": [
+    {
+      "case": "SSH_trivial_control",
+      "Krylov_state_error": 4.738800542643119e-14,
+      "current_error": 3.758104938356155e-14,
+      "continuity_residual": 1.1102230246251565e-16
+    },
+    {
+      "case": "SSH_topological_edge",
+      "Krylov_state_error": 1.6800142009331008e-14,
+      "current_error": 5.960509863456309e-15,
+      "continuity_residual": 1.3877787807814457e-17
+    },
+    {
+      "case": "SSH_domain_wall_zero_mode",
+      "Krylov_state_error": 2.5798659069768754e-14,
+      "current_error": 2.2537527399890678e-14,
+      "continuity_residual": 1.3877787807814457e-17
+    },
+    {
+      "case": "QWZ_Chern_edge_packet",
+      "Krylov_state_error": 1.231574356764554e-14,
+      "current_error": 2.2724877535296173e-15,
+      "continuity_residual": 1.214306433183765e-17
+    },
+    {
+      "case": "QWZ_trivial_bulk_control",
+      "Krylov_state_error": 3.27464371317994e-14,
+      "current_error": 3.6312099160884515e-15,
+      "continuity_residual": 2.7755575615628914e-17
+    }
+  ],
+  "hydrogen_basis_norms": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "hydrogen_vortex_current_FD_error": 2.151035426167791e-14,
+  "hydrogen_Lz_FD_error": 5.316714997219414e-13,
+  "torus_conditional_integral_continuity_residual": 1.5265566588595902e-11,
+  "scope": "Independent local NumPy/SciPy checks; no Torch, browser GPU, remote or training action"
+}

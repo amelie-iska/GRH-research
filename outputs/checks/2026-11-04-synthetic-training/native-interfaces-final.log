@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "Aster_condition_only_tokenization": [
+    {
+      "family": "dessin_classical_rg",
+      "tokens": 403,
+      "target_poison_invariance": true
+    },
+    {
+      "family": "harper_photonic",
+      "tokens": 360,
+      "target_poison_invariance": true
+    },
+    {
+      "family": "kitaev",
+      "tokens": 365,
+      "target_poison_invariance": true
+    },
+    {
+      "family": "qwz",
+      "tokens": 312,
+      "target_poison_invariance": true
+    },
+    {
+      "family": "rice_mele_pump",
+      "tokens": 360,
+      "target_poison_invariance": true
+    },
+    {
+      "family": "ssh",
+      "tokens": 332,
+      "target_poison_invariance": true
+    }
+  ],
+  "Mora_scalar_graph_checks": 17,
+  "Mora_available_computed_scalar_targets": [
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected",
+    "computed_target_rejected"
+  ],
+  "Mora_computed_array_target_rejections": 17,
+  "source_labels_preserved": true,
+  "native_model_admission": false,
+  "neural_updates": 0,
+  "no_model_repo_writes_by_this_program": true,
+  "inspected_source_hashes_unchanged": true,
+  "source_hashes_before": {
+    "/home/iska/Documents/amelie/quantum-mat/holonforge/src/holonforge/aster/tokenization.py": "64f3119987d0d5323d644e564d42534b6d7f4b8c44353c3168fdb9bd3f5b55df",
+    "/home/iska/Documents/amelie/quantum-mat/holonforge/src/holonforge/aster/data.py": "7975bd775e52d5465808cc07c40120ae64d82099ff2ecbd0aacf06e9e89859ad",
+    "/home/iska/Documents/amelie/bio/Mora-3/src/mora3/data/schema.py": "cf2173e43271be3b53afcafa95648bb4629213dc46cd89ebe7c0a2c31a32eb28",
+    "/home/iska/Documents/amelie/bio/Mora-3/src/mora3/data/tasks.py": "53634fda7677854eb6c9005b94d5d1ae3668f57782ef0ca61efd0983c6535abb",
+    "/home/iska/Documents/amelie/bio/Mora-3/src/mora3/data/array_tasks.py": "18cd34a885459e123f1b3848b801369bfc67442805f5b9fa4bfdee1329a3b790"
+  },
+  "source_hashes_after": {
+    "/home/iska/Documents/amelie/quantum-mat/holonforge/src/holonforge/aster/tokenization.py": "64f3119987d0d5323d644e564d42534b6d7f4b8c44353c3168fdb9bd3f5b55df",
+    "/home/iska/Documents/amelie/quantum-mat/holonforge/src/holonforge/aster/data.py": "7975bd775e52d5465808cc07c40120ae64d82099ff2ecbd0aacf06e9e89859ad",
+    "/home/iska/Documents/amelie/bio/Mora-3/src/mora3/data/schema.py": "cf2173e43271be3b53afcafa95648bb4629213dc46cd89ebe7c0a2c31a32eb28",
+    "/home/iska/Documents/amelie/bio/Mora-3/src/mora3/data/tasks.py": "53634fda7677854eb6c9005b94d5d1ae3668f57782ef0ca61efd0983c6535abb",
+    "/home/iska/Documents/amelie/bio/Mora-3/src/mora3/data/array_tasks.py": "18cd34a885459e123f1b3848b801369bfc67442805f5b9fa4bfdee1329a3b790"
+  },
+  "boundary": "Reader compatibility and target exclusion only; array supervised admission requires owning model policy review. No observed relabel, source enrollment, model or vocabulary changes."
+}

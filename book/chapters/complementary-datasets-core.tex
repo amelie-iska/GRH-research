@@ -1,0 +1,46 @@
+% Generated shared reviewed material.
+\section{Complementary physical datasets and checked dynamics}
+The learned program now has two additional, separately constructed corpora:
+16,384 effective-material response records and22,951 molecular conformer/force
+records in their default configurations. Time samples are not counted as
+independent systems. Source-linked and dynamical configurations are additional.
+The active HolonForge/Aster and Mora-3 repositories were read only; no data,
+vocabulary, checkpoint, source enrollment or training process was changed.
+
+The material corpus covers SSH, Kitaev, QWZ, Rice--Mele, Harper and actual
+clean-dessin classical RG models. The molecular corpus includes designed
+amides and peptides, with explicit-H MMFF94 calculations, geometric persistence,
+and method-labelled conformations. Forty-eight existing Aster MP20 structures,
+32 existing Mora PubChem identities and eight public PDB structures supply
+separately labelled anchors. Their new computed responses are not new
+experimental observations, DFT labels, binding affinities or CISS measurements.
+
+All conformer, gauge, intervention and task descendants share a partition.
+Specified physical/chemical similarity edges are closed transitively before
+component-level stratification. Large components are kept intact even when
+80/10/10 proportions or rare-class coverage become impossible. This gives a
+finite, threshold-relative separation statement; it cannot guarantee every
+kind of statistical independence or prevent overfitting. Source anchors are
+train only. Molecular anchors are also checked against every default heldout
+using the same chemical and applicable geometric thresholds; conflicting parent
+groups are excluded. Global exposure to the models' previous corpora is a separate
+evaluation gate.
+
+For a number-conserving one-particle Hamiltonian $H$, write
+$P_{ij}=\langle c_j^\dagger c_i\rangle$ and $U(t)=e^{-itH}$.
+The data use $P(t)=U(t)P(0)U(t)^*$, occupations $n_i=P_{ii}$ and
+outgoing currents $J_{ij}=-2\operatorname{Im}(H_{ij}P_{ji})$.
+Then $\dot n_i=-\sum_jJ_{ij}$, directly from $i\dot P=[H,P]$.
+Paired BdG evolution includes its independently computed condensate source;
+it is not falsely treated as electron-number-conserving normal transport.
+An exact interacting Hubbard dimer supplements Gaussian exchange correlations.
+Molecular nuclear dynamics uses MMFF94, with a separately labelled,
+uncalibrated effective $\pi$-orbital model for charge modulation.
+
+Parquet configurations retain condition, target and evaluation roles, source
+versions/hashes, units, failures and audit evidence. The local
+\href{http://127.0.0.1:8765/datasets.html}{dataset explorer} shows actual
+structures, currents, time evolution, graph wavelets and checked circuit
+compilations. These computations support candidate discovery and model
+validation; the independent arithmetic determinant/zero-location bridge remains
+open. No new whole-chapter Lean formalization is asserted.

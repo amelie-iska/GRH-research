@@ -1,0 +1,216 @@
+% Generated shared reviewed material.
+\section{Construction, curation and interpretation}
+\subsection{A record is an evidence-bearing physical task}
+Each default Parquet row has a persistent record identity, parent/similarity
+group, partition, evidence class, lossless scientific payload and typed numeric
+columns. Forward inputs have the prefix \texttt{condition\_}; supervision uses
+\texttt{target\_}; \texttt{evaluation\_} fields are excluded from inputs.
+The full payload, source hash, record identifier and audit text are not
+automatically fed into a model. Otherwise an apparent condition/target mask
+could still leak the target through metadata or a duplicated representation.
+An inverse task needs an explicit desired-condition contract and role change.
+
+The origin fields distinguish a new simulation from a reused planned-source
+identity or geometry with new labels. The source-anchor configuration preserves
+existing train assignments. New public PDB coordinates retain their own source
+identity rather than being called members of PDBbind or newly acquired
+experimental quantum measurements. All anchors are train only: they do not
+establish blind performance on a model that may have encountered the parent.
+
+The actual native interfaces are tested without changing either model.
+Aster accepts condition-only Hamiltonian records through its existing tokenizer.
+Changing a hidden target leaves those input tokens unchanged. Mora-3's scalar
+graphs preserve computed/predicted evidence. Its existing scalar/array
+supervision interfaces reject those targets under their observed-only policy.
+That rejection is recorded, not bypassed by changing the evidence label.
+Source construction is therefore distinct from the owning model's future
+admission, scaling, objective and evaluation decisions.
+
+\subsection{Effective material families and gap guards}
+The two-band QWZ model uses
+\[
+ H(k_x,k_y)=\sin k_x\,\sigma_x+\sin k_y\,\sigma_y
+ +(m+\cos k_x+\cos k_y)\sigma_z.
+\]
+Its continuum band gap is
+$2\min\{|m+2|,|m|,|m-2|\}$. To see this, put
+$u=\cos k_x$, $v=\cos k_y$. The squared positive energy is
+$2+m^2+2m(u+v)+2uv$, a bilinear function on $[-1,1]^2$;
+its minimum occurs at a corner. Thus an odd mesh that misses $\pi$ cannot
+certify a gap near $m=0$ or2. The corrected release uses this analytic guard,
+even32/64 meshes, random gauge checks and an unavailable label near closure.
+The occupied-band integer uses the oriented link-product convention of
+Fukui--Hatsugai--Suzuki \cite{DSFHS}; the sign convention is retained in the row.
+
+For the Rice--Mele pump, take
+$t_1=1+\delta\cos\theta$, $t_2=1-\delta\cos\theta$ and
+$\Delta=r\sin\theta$. With positive $t_1,t_2$, minimization over $k$ first
+gives $(t_1-t_2)^2+\Delta^2$ at $k=\pi$; minimization over $\theta$ gives
+the exact gap $2\min(2\delta,r)$. Harper's direct gap has a conservative
+mesh/Lipschitz guard, explicitly distinguished from interval certification.
+The displayed bulk slice has $k_y=0$; an open strip is evaluated separately at
+$k_y=.37$. A single strip is not a proof of its entire edge dispersion.
+
+The SSH winding, Kitaev sign invariant and classical dessin RG retain their
+own hypotheses. Surface genus is not an electronic phase index. In the
+Kitaev row, a physical onsite defect changes particle and hole diagonals with
+opposite signs. Its gauge change has the form $\operatorname{diag}(G,\bar G)$.
+These preserve the recorded particle--hole symmetry; arbitrary independent
+diagonal perturbations would not. A quarantined draft revealed this error
+before release. No failed draft replaces a verified artifact.
+
+\subsection{Molecular geometry and forces}
+The molecular set contains explicit chemical graphs, atom order, hydrogens,
+stereochemistry, method-labelled optimized references and bounded coordinate
+perturbations. MMFF94 supplies empirical molecular-mechanics energies, analytic
+forces and partial charges \cite{DSRDKit}. It supplies neither ab-initio
+electron density nor experimental affinity, ADMET, redox or biological efficacy.
+An optimization convergence code is not a theorem of a unique global minimum.
+Absolute MMFF energies are not cross-molecule atomization energies.
+
+The checker reconstructs the stored bond graph in its \emph{actual atom order}.
+A canonical SMILES string determines chemical identity but need not give the
+coordinate-array order. Geometry-assigned stereochemistry is checked against
+that identity; mirror controls fail. Energies and forces are recalculated on
+every accepted record. Central energy differences check force signs/units,
+and proper rotations/translations check the expected scalar/vector behavior.
+Missing or unsupported labels are not imputed.
+
+For the heavy-atom point cloud, the complete finite Vietoris--Rips2-skeleton
+gives $H_0,H_1$ over $\mathbb F_2$. All edges and triangles, including ties,
+are ordered explicitly. Independent boundary-rank calculations verify selected
+Betti numbers against the barcodes. These are geometric distance-filtration
+features; a molecular loop or persistence bar is not an electronic topological
+phase. MMFF and the idealized $\pi$-orbital Hamiltonian retain separate labels.
+
+\subsection{What the split certificate proves}
+Let $V$ be the finite parent set and connect two parents whenever a declared
+similarity test passes. Add edges for all shared source/variant lineages.
+Assign a partition to each connected component and inherit it for every row.
+If an accepted similarity edge joined two partitions, its endpoints would lie
+in one component with two assignments, a contradiction. This proves the exact
+finite no-crossing property for the declared relation.
+
+For materials, normalized parameter and relative finite-spectrum thresholds
+are family/size-specific. SSH hopping swaps, Kitaev chemical-potential sign
+and the classical RG global-sign symmetry are folded conservatively. For
+molecules, stereo-agnostic constitution, nonempty Murcko scaffold and
+radius-two Morgan Tanimoto threshold $.65$ form chemical components. A second
+all-conformer pass adds edges for equal heavy-element multisets with sorted
+pair-distance RMS at most $.10$\AA. This descriptor is rotation/permutation
+invariant but is not a complete congruence invariant or a certified RMSD
+optimizer; conservative false-positive grouping is possible.
+
+Whole-component allocation balances row counts and declared family/topology
+or molecular-size/persistence strata. It never breaks a component to manufacture
+an80/10/10 result. The large peptide component makes the molecular training
+partition much larger than80\%; rare/held-out peptide coverage can consequently
+be absent. Exact distributions and cross-partition nearest witnesses accompany
+the release. Protein TM-score, homology separation and global overlap with the
+models' complete historical corpora are not certified by small-molecule
+fingerprints. Threshold separation cannot itself guarantee freedom from all
+leakage or overfitting.
+
+\subsection{Motion, charge modulation and exchange}
+For normal free fermions, $P(t)=UP(0)U^*$ preserves Hermiticity, trace and the
+spectrum: $P^*=P$ follows by adjoints, trace follows by cyclicity, and
+$P(t)=U P(0)U^{-1}$ is a similarity. Thus $0\leq P\leq I$ and projector
+occupancy remain valid. Computing the diagonal of $-i[H,P]$ gives
+\[
+ \dot n_i=2\operatorname{Im}\sum_jH_{ij}P_{ji},\qquad
+ J_{ij}=-2\operatorname{Im}(H_{ij}P_{ji})=-J_{ji}.
+\]
+The currents therefore obey site continuity and conserve total particle number.
+Their arrows represent probability/particle flux, not measured trajectories of
+individual electrons. Charge modulation is $-[n_i(t)-n_i(0)]$ in the declared
+electron-charge convention.
+
+For a paired model, put $\Psi=(c,c^\dagger)$ and
+$R=\langle\Psi\Psi^\dagger\rangle$. From an initial Slater projector use
+$R_0=\operatorname{diag}(I-P_0,P_0^{\mathsf T})$. Evolve with the full BdG
+Hamiltonian and recover $P=I-R_{11}$, $F=R_{12}$.
+The independently computed pairing source is
+\[
+ S_i=-2\operatorname{Im}(\Delta F^*)_{ii},\qquad
+ \dot n_i=-\sum_jJ_{ij}+S_i.
+\]
+The commutator derivative and this separate source formula agree in the
+checks; the source is not defined as the residual of the desired equation.
+For a Gaussian state, Wick's rule gives, for $i\ne j$,
+$\operatorname{Cov}(n_i,n_j)=|F_{ij}|^2-|P_{ij}|^2$; on the diagonal it is
+$n_i(1-n_i)$. The negative term is an exchange hole, not a computed Coulomb
+exchange-energy functional. Explicit small Fock-space evolution independently
+checks the covariance, current and pairing conventions.
+
+The interacting control is the two-site Hubbard model at two electrons:
+\[
+ H=-t\sum_\sigma(c_{0\sigma}^\dagger c_{1\sigma}+\mathrm{h.c.})
+   +U\sum_{a=0}^1n_{a\uparrow}n_{a\downarrow}.
+\]
+In its singlet/doubly-occupied symmetric sector the matrix is
+$\left(\begin{smallmatrix}0&-2t\\-2t&U\end{smallmatrix}\right)$;
+the triplet energy is zero. Diagonalizing gives the exact exchange gap
+$J=(\sqrt{U^2+16t^2}-U)/2$, approaching $4t^2/U$ for large positive $U$.
+The full six-state two-electron sector supplies density, spin-swap and current
+trajectories; a separate16-state Jordan--Wigner calculation checks them.
+This finite dimer is not a thermodynamic phase classification.
+
+For nuclei, velocity Verlet uses actual MMFF forces and masses, with explicit
+time/energy units, finite energy drift and momentum checks. A Grad-only RDKit
+loop initially reused stale distance information. Refreshing energy at the same
+coordinates before the gradient restored the expected second-order step-size
+behavior in independent refinement tests. Failed trajectories are retained and
+excluded. The finite isolated trajectories are not equilibrium sampling.
+MMFF charges remain fixed. The separate uncalibrated $\pi$ graph has its own
+dimensionless electronic time; it is not self-consistent TDDFT coupled to the
+nuclear femtosecond trajectory.
+
+\subsection{Source-backed peptides and genuine boundaries}
+Public wwPDB coordinates are supplied under CC0 \cite{DSPDB}. The source packet
+includes Trp-cage1L2Y, villin1VII, historical Trp-zipper1HRW (superseded by
+1LE0, with the actual file HEADER identity retained), pancreatic polypeptide1PPT,
+azurin1AZU, crambin1CRN, ubiquitin1UBQ and engrailed homeodomain1ENH.
+The full source file, checksum, DOI, first-model/chain selection and bounded
+residue-subsystem mapping remain explicit. An NMR ensemble's model order is
+not physical time. Azurin's electron-transport classification does not calibrate
+our coarse contact Hamiltonian or turn it into an electronic-structure result.
+
+The CISS review and peptide-bridge charge-transfer preprint motivate future
+spin, environment and lead benchmarks \cite{DSCISS,DSBridge}; the source review is
+focused, not an independent reproduction of their experiments. A spinless
+contact graph cannot supply their spin polarization, electron-transfer rates
+or measured quantum-biological mechanism. Synthetic strain, vacancy, mirror,
+coupling and conformer variants have their own provenance and share the parent
+group. They are additional training candidates, not newly observed systems.
+
+\subsection{Circuits and geometric visualization}
+For a normal one-particle unitary $U$, adjacent row elimination gives Givens
+matrices $G_k$ and diagonal phases $D$ with
+$U=G_1^*\cdots G_m^*D$. For $a,b$ in one column, the eliminating block is
+\[
+ G=\frac1{\sqrt{|a|^2+|b|^2}}
+ \begin{pmatrix}\bar a&\bar b\\-b&a\end{pmatrix}.
+\]
+Direct multiplication gives $G(a,b)^{\mathsf T}=(r,0)^{\mathsf T}$ and
+$G^*G=I$. A two-mode second-quantized gate acts as $1$ on the vacuum, as its
+one-particle block on the single-occupation sector and as the determinant on
+double occupation. The exported circuit verifies these matchgates and numerical
+recomposition. Browser replay applies the actual gates to the saved initial
+correlation matrix. BdG pairing needs a different Bogoliubov compiler; it is
+not passed by a number-conserving Givens circuit. The Hubbard example instead
+includes Jordan--Wigner parity and measured product-formula convergence.
+
+Actual molecular structures use CPK colors and explicit atom/bond order, with
+SDF/XYZ views, ball-and-stick, sticks and space-filling representations.
+Effective material-site layouts are labelled schematic. Electron-colored
+Gaussian splats are declared kernels on discrete site values, not ab-initio
+volumetric density. For the symmetric graph Laplacian $L$, localized wavelets
+are $sLe^{-sL}\delta_i$; since $\mathbf1^{\mathsf T}L=0$, they have zero sum.
+Their signed colors are not probabilities. Time as a fourth projection
+coordinate is a visualization operation, not a new spatial dimension.
+
+The dataset page links the checked public releases and source code. The full
+new probabilistic/homological/physical interfaces are not yet packaged in Lean;
+the existing $360$ printed reports retain their earlier scope. Neither a simulated
+transport law, dataset split certificate nor a compiled finite circuit closes
+the arithmetic comparison required for GRH.

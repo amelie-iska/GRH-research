@@ -842,3 +842,80 @@ P9 learned-frontier stays in progress; subsequent implementation can add
 physical OOD/chemical benchmarks and true categorical/Lean interfaces.
 Neither GRH nor complete book formalization has been established; both
 completion gates remain false and the existing heartbeat remains active.
+
+## Latest complementary-dataset frontier (2026-11-04)
+
+Resume P10 final integration, not generation from scratch. Both PRIVATE HF
+releases exist and all Git/LFS hashes and sizes match the sealed release-v2
+manifests: Aster2b8ce36571298a3517b8c88bb23269341d9b8908 and
+Mora53a6b66acaa69ef79584648f3f6dc068363c4837. Defaults16,384/22,951;
+source576/266; electronic174/241; nuclear12. Exact source labels, row roles,
+CIP/forces, all default split metrics and source-heldout conflict checks pass.
+The source-selected PubChem packet has zero assigned E/Z bonds; no future
+geometric E/Z checker is claimed. Historical1HRW and1LE0 replacement explicit.
+
+Both official-loader receipts now pass every configuration at the exact
+private HF commits, with matching row counts and origin columns. Do not upload another dataset or regenerate scientific
+values to repeat this milestone. Preserve every pilot/failed/intermediate and
+final namespace. A stalled own Xet upload was superseded by HTTP, without
+changing datasets, dependencies, credentials or any active model process.
+
+The live explorer selects `web/data/synthetic-training/large-v2`, whose two
+manifest hashes equal the actual uploaded releases.16 examples include MP20
+CIF, PDB source downloads, MMFF trajectories, currents, graph wavelets and14
+Givens replays. Book198pages/37chapters/13unique labs, articles39/95pages;
+PDF/HTML/reference/asset checks pass. Final receipt/Git checks and checkpoint
+should be updated after loader completion. No new Lean declarations.
+
+After dataset delivery, continue the existing arithmetic lane at the original
+signed low-gcd weighted Mellin moment before pointwise convexity, preserving
+primitive factors, row zeros, beta_U, conductor powers, short terms and II-I
+covariance. Native synthetic-label admission, full historical exposure audit,
+protein fold/sequence evaluation and learned improvement are distinct future
+model-owner decisions; do not alter active HolonForge or Mora training.
+GRH and complete-book formalization gates remain unresolved; heartbeat stays active.
+
+
+## Latest delivery handoff: learning certificates and dessin gluing
+
+P10 dataset release is verified, not an upload-in-progress task. Defaults are
+Aster16384/Mora22951; all separate source/dynamic configs and private hashes
+remain unchanged. Do not regenerate or re-upload to repeat this milestone.
+New independent-checked material includes peptide bonds/ribbons,5finite
+SSH/QWZ packets, hydrogen and coherent H2plus/effective-protein clouds,
+8CPU-trained chemistry flow/DSM models,12actual nonlocal-game runs,
+12analytic Dirichlet readouts and6exact dessin face cases. Retain the
+stalled tilted seed and all v1/v2 pilots. Corrected tilted angle branches,
+NPA primal/dual wording, DSM endpoint law, finite-source split qualifications
+and HoTT disk/star distinctions must survive subsequent edits.
+
+Book212pages/37chapters/13unique labs; articles42/108pages. Canonical new
+views are /datasets.html and /learned.html#certified-learning, #learned-games,
+#hubs-spokes. New prose proofs and experiments do not increase the prior360
+Lean-report count. No new dependency/MCP/active-model changes. Both overall
+completion gates remain false; keep heartbeat active.
+
+NEXT arithmetic: original-family signed low-gcd weighted Mellin moment,
+retaining legal masks, primitive factors, conductor/short-term powers and
+II–I covariance. NEXT implementation: validated theta/Mellin evaluation and
+coefficient-error enclosures plus actual analytic Lean interfaces; then
+classical surface cell-attachment/category formalization without HIT axioms.
+
+## Public release amendment (4 November 2026)
+
+The owner explicitly requested that all project releases become public.
+GRH-research is PUBLIC; GitHub Pages is live at
+https://amelie-iska.github.io/GRH-research/. Both complementary HF datasets
+are PUBLIC, with card-only commits1131639f28f39ea29389dd08d0e703254f8ff0e3
+andc9f71be7fcef0f76e0639e2f2f53690c9808c8de. Frozen data commits and every
+Parquet file are unchanged. Earlier PRIVATE receipts remain historical.
+Reachable Git history1998blobs and staged files pass configured credential
+patterns. Public bundle preserves166numerical/image assets byte-for-byte,
+including trace checksums; a project-path adapter handles root URLs without
+changing the local8765 preview. Nine live hosted pages, four architecture
+collections, PDFs, source/Lean links and mobile390 have browser checks with
+no exceptions. The existing heartbeat is ACTIVE with updated public intent.
+No active-model or credential file was published. See
+outputs/publication/2026-11-04/publication-verification.json.
+Continue P11 validated analytic constants/oracle and P7 arithmetic moment;
+both overall implementation and GRH research completion gates remain false.

@@ -1,6 +1,6 @@
 # GRH research
 
-A private research workspace for auditing and developing surface-order and Hilbert–Pólya approaches to the generalized Riemann hypothesis, with synchronized concise and extended manuscripts and exact Lean4 checks.
+A public research workspace for auditing and developing surface-order and Hilbert–Pólya approaches to the generalized Riemann hypothesis, with synchronized concise and extended manuscripts and exact Lean4 checks.
 
 **Current result:** a corrected conditional spectral criterion, convergent arithmetic approximants with explicit errors, an explicit arithmetic Abel trace-class family, and rigorous obstructions to several supplied proof steps. **A complete proof of GRH has not been established.** In particular, the claimed prime/geodesic identification is false, and the absolute prime-tail bound used in the separate GRH PDF diverges in the asserted range. These require mathematical replacements. See [audit](planning/AUDIT.md) and [open obligations](planning/OPEN_OBLIGATIONS.md).
 
@@ -8,31 +8,50 @@ The latest arithmetic development is a [full-mask Hecke type-I expansion](resear
 
 ## Research book and interactive companion (2026-11-03)
 
-Current edition: **191 pages,36 chapters, twelve unique in-book laboratories**.
-The learning section now leads with [actual RG](http://127.0.0.1:8765/rg.html):
+Public project page: **[amelie-iska.github.io/GRH-research](https://amelie-iska.github.io/GRH-research/)**.
+The repository and both complementary Hugging Face datasets were made public
+at the owner’s request on 4 November 2026. Frozen data and credentials remain
+separate; the local preview is retained.
+
+Current edition: **212 pages,37 chapters, thirteen unique in-book laboratories**.
+
+New complementary datasets: **16,384 Aster material-response rows** and
+**22,951 Mora conformer/force rows**, plus separately labelled source anchors
+and electronic/nuclear dynamics. [Explore actual structures and circuits](https://amelie-iska.github.io/GRH-research/datasets.html).
+New views include [coherent spatial density clouds](https://amelie-iska.github.io/GRH-research/datasets.html#electron-density-clouds),
+[trained chemistry flows](https://amelie-iska.github.io/GRH-research/datasets.html#torsion-generative),
+[analytic readout error/convergence budgets](https://amelie-iska.github.io/GRH-research/learned.html#certified-learning),
+[twelve trained quantum-game runs](https://amelie-iska.github.io/GRH-research/learned.html#learned-games),
+and [HoTT hubs/spokes applied to dessin face filling](https://amelie-iska.github.io/GRH-research/learned.html#hubs-spokes).
+These additions have explicit prose proofs and independent/focused checks;
+no new complete Lean4, Connes-embedding or GRH proof is claimed.
+Generation, source-origin labels, split thresholds and native-admission limits:
+[dataset documentation](examples/synthetic_training/README.md).
+
+The learning section now leads with [actual RG](https://amelie-iska.github.io/GRH-research/rg.html):
 full effective actions, constants, generated interactions, partition functions,
-retained observables and explicit scales. [Quantum TokenGT](http://127.0.0.1:8765/qtoken.html)
+retained observables and explicit scales. [Quantum TokenGT](https://amelie-iska.github.io/GRH-research/qtoken.html)
 trains on that same physical teacher and includes tropical/hybrid attention,
 concept steering, latent search/analogy with persistence, continuous GFlowNet
 training and an executed ideal QEC memory layer. Every architecture has a
-[synchronized tensor/surface/order inspector](http://127.0.0.1:8765/architecture.html),
-with separate [actual-RG](http://127.0.0.1:8765/architecture.html?collection=rg)
-and [TokenGT](http://127.0.0.1:8765/architecture.html?collection=qtoken) collections.
+[synchronized tensor/surface/order inspector](https://amelie-iska.github.io/GRH-research/architecture.html),
+with separate [actual-RG](https://amelie-iska.github.io/GRH-research/architecture.html?collection=rg)
+and [TokenGT](https://amelie-iska.github.io/GRH-research/architecture.html?collection=qtoken) collections.
 The inspector now uses dimensioned tensor planes, parallel Q/K/V/head lanes,
 source-cell highlights, numerical calculation terms, guided stages and
 model overview/focus, following a pinned study of Bycroft's reference.
 Its original Canvas2D rendering preserves the actual model semantics.
-The new [ConvexTok laboratory](http://127.0.0.1:8765/convextok.html) explains
+The new [ConvexTok laboratory](https://amelie-iska.github.io/GRH-research/convextok.html) explains
 certified vocabulary selection, fractional flows, rounding and exact shortest
 segmentation, including genuine genus-two/four permitted-path corpora.
 Sixteen rational primal/dual certificates and independent exhaustive checks
 include strict gaps10<11 and31/2<16. These examples do not replace TokenGT's
 graph tokens, reproduce NLP training, or close the GRH bridge.
-The [learned-physics laboratory](http://127.0.0.1:8765/learned.html) adds
+The [learned-physics laboratory](https://amelie-iska.github.io/GRH-research/learned.html) adds
 GPU-trained diffusion/flow samplers, coherent state preparation, a specified
 random-feature width limit, finite-field coefficient learners and exact
 cover/Hom/Ext/Tor/pants/game examples. Five new
-[checkpoint tensor/circuit replays](http://127.0.0.1:8765/architecture.html?collection=frontier)
+[checkpoint tensor/circuit replays](https://amelie-iska.github.io/GRH-research/architecture.html?collection=frontier)
 expose actual numerical states. Twelve matched generative runs across three
 seeds show no entanglement advantage; the separate coherent four-qubit flow
 has minimum sampled fidelity0.999903. Executed cuQuantum circuits reach23qubits
@@ -46,7 +65,7 @@ as auxiliary experiments, with complete preserved data.
 
 The new [book TeX](book/main.tex), [PDF](outputs/book/surface-orders-book.pdf), and [native-MathML on-page edition](web/book/main.html) develop the supplied manuscripts with corrected physics, full category-labelled AR diagrams, Hom-control, determinant relations, ToricGT/hybrid interfaces and higher-genus examples. Both **complete original TeX sources** are preserved byte-identically in [source-editions](book/source-editions/) with [provenance](book/source-provenance.json). Preservation is distinct from endorsement: the original unconditional GRH claims do not survive the recorded audits. [Full inclusion and verification ledger](book/VERIFICATION.md).
 
-The private local page is **[http://127.0.0.1:8765](http://127.0.0.1:8765)**; the [on-page book](http://127.0.0.1:8765/book/main.html) has interactive chapter panels, complete code views and local mathematics. The atlas includes genus1/2/3/5/9/16 dessins, 4D rotations of complex sheet coordinates, and finite windows of the infinite {7,3} tiling in disk/hyperboloid views. A generated Manim clip is included. Source windows are labelled as projections or finite patches, with no claimed arithmetic identification.
+The public project page is **[amelie-iska.github.io/GRH-research](https://amelie-iska.github.io/GRH-research/)**; the [on-page book](https://amelie-iska.github.io/GRH-research/book/main.html) has interactive chapter panels, complete code views and local mathematics. The atlas includes genus1/2/3/5/9/16 dessins, 4D rotations of complex sheet coordinates, and finite windows of the infinite {7,3} tiling in disk/hyperboloid views. A generated Manim clip is included. Source windows are labelled as projections or finite patches, with no claimed arithmetic identification.
 
 The fixed top-left **Engage night** button transforms the page, book and embedded labs into a dark biomechanical interface at staggered rates. Moving light rails, breathing panels, blinking indicators and cyan/violet/amber text accents provide ambient motion. The adjacent pause button stops these effects; OS reduced-motion preferences are respected. Settings persist locally across pages. Scientific values and playback controls retain their existing behavior. Shared assets are installed by the HTML generators; `python3 scripts/prepare_theme.py` updates existing HTML editions.
 
@@ -58,11 +77,11 @@ Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `p
 
 ## Governing implementation plan and active loop
 
-[Master implementation plan](planning/MASTER_IMPLEMENTATION_PLAN.md), [dependency queue](planning/IMPLEMENTATION_QUEUE.json) and [versioned loop prompt](planning/IMPLEMENTATION_LOOP_PROMPT.md) consolidate every instruction and accepted correction. The existing `grh-research-loop` heartbeat is active hourly. It resumes one ready concrete task, checks evidence, updates the book/page/coverage and privately pushes substantive milestones. Implementation completion and a complete rigorous GRH proof are separate gates.
+[Master implementation plan](planning/MASTER_IMPLEMENTATION_PLAN.md), [dependency queue](planning/IMPLEMENTATION_QUEUE.json) and [versioned loop prompt](planning/IMPLEMENTATION_LOOP_PROMPT.md) consolidate every instruction and accepted correction. The existing `grh-research-loop` heartbeat is active hourly. It resumes one ready concrete task, checks evidence, updates the book/page/coverage and pushes verified substantive milestones. Implementation completion and a complete rigorous GRH proof are separate gates.
 
-The [live plan and queue](http://127.0.0.1:8765/implementation-plan.html) tracks ongoing work. The latest extension deduplicates the book's generic panels, introduces corrected Manim theta/HLS/bifiltration/pooling scenes, and adds a fully worked persistence/Schur/surface-coefficient chapter. Both complete original sources and the old clock schematic remain preserved.
+The [live plan and queue](https://amelie-iska.github.io/GRH-research/implementation-plan.html) tracks ongoing work. The latest extension deduplicates the book's generic panels, introduces corrected Manim theta/HLS/bifiltration/pooling scenes, and adds a fully worked persistence/Schur/surface-coefficient chapter. Both complete original sources and the old clock schematic remain preserved.
 
-The [step-through architecture inspector](http://127.0.0.1:8765/architecture.html)
+The [step-through architecture inspector](https://amelie-iska.github.io/GRH-research/architecture.html)
 now displays the [22 numerical cases and 836 DAG nodes](examples/architecture/README.md)
 from six trained CPU model families and six fixed-weight references, plus an
 adjustable computed clock/shift carrier. Orbit/zoom the 3D dependency scene,
@@ -86,7 +105,7 @@ The bounded-derived push-down is consequently not dense. A separate actual
 theta example has unequal Hom-control defects 4 and 1 at the same K0 class.
 Exact code checks 36 Hom pairs and the radical multiplication; three new
 Lean statements verify the actual matrix relations and Euler obstruction.
-The [new book chapter](http://127.0.0.1:8765/book/main.html#x1-8400022)
+The [new book chapter](https://amelie-iska.github.io/GRH-research/book/main.html#x1-8400022)
 distinguishes coverings, GLS equivariance, graded/Fukaya categories and
 completions. These results do not establish the arithmetic determinant bridge.
 
@@ -209,7 +228,7 @@ Evidence is saved in [outputs/checks](outputs/checks/). Exact rational checks ar
 
 The [implementation plan](planning/IMPLEMENTATION_PLAN.md), [claim ledger](planning/CLAIMS.csv), [background sources](planning/BIBLIOGRAPHY.md), and [progress record](planning/PROGRESS.md) define the continuation. The principal target is an arithmetic determinant identity preserved by a self-adjoint realization, followed by independently proved compact-uniform convergence. Alternative tracks include precise Weil/Li positivity and adelic trace formulations. None is assumed solved.
 
-Milestone commits are pushed to the private GitHub repository. Credentials are never placed in tracked files or remote URLs. This repository contains no token from the chat.
+Milestone commits are pushed to the public GitHub repository. Credentials are never placed in tracked files or remote URLs. This repository contains no token from the chat.
 
 ## Continued research
 
@@ -219,7 +238,7 @@ The next unresolved target is zero location/self-adjoint realization for the con
 
 ## Scheduled research loop
 
-An active hourly research loop is attached to this chat. It resumes the latest recorded proof obligation, performs research and verification, and pushes substantive private milestones. See [loop workflow](planning/RESEARCH_LOOP.md). It reports meaningful findings or required actions rather than routine unchanged status. Keep the desktop app running and the machine on for local scheduled work.
+An active hourly research loop is attached to this chat. It resumes the latest recorded proof obligation, performs research and verification, and pushes substantive verified milestones. See [loop workflow](planning/RESEARCH_LOOP.md). It reports meaningful findings or required actions rather than routine unchanged status. Keep the desktop app running and the machine on for local scheduled work.
 
 The [Hermitian-rigidity research note](research/hermitian-rigidity.md) proves that an entrywise holomorphic matrix family Hermitian at every complex parameter must be constant. The associated Lean theorem rules out that particular pointwise extraction shortcut; fixed self-adjoint operators and real-axis Hermitian pencils remain possible, with their arithmetic and zero-location obligations still open.
 
@@ -249,10 +268,10 @@ The [reflected-identity report](research/reflected-identity.md) verifies the exa
 
 ## Executable two-parameter persistence
 
-The [new persistence laboratory](http://127.0.0.1:8765/persistence.html)
+The [new persistence laboratory](https://amelie-iska.github.io/GRH-research/persistence.html)
 combines exact staircase resolutions and actual nodal-order coefficients with
 a fixed saved quantum channel's flag bifiltration. It has one
-[canonical book location](http://127.0.0.1:8765/book/main.html#lab-persistence).
+[canonical book location](https://amelie-iska.github.io/GRH-research/book/main.html#lab-persistence).
 There are seven distinct in-book tools, without repeated generic panels.
 The shared articles prove the general adjacent-syzygy resolution, its signed
 minors and Hilbert series, the coefficient cone ranks, channel contractivity
@@ -282,7 +301,7 @@ extension below brings the current count to282.
 
 [Independent review](planning/reviews/persistence-formal/REVIEW.md) and
 [formal evidence](outputs/checks/2026-11-03-persistence-formal) describe scope.
-The [canonical book laboratory](http://127.0.0.1:8765/book/main.html#lab-persistence)
+The [canonical book laboratory](https://amelie-iska.github.io/GRH-research/book/main.html#lab-persistence)
 loads the actual Lean source beside its numerical/algebraic examples.
 General staircases, graded minimality, categorical/CW/Schur interfaces,
 the actual surface-order tensor cone and arithmetic bridge are not thereby
@@ -290,13 +309,13 @@ formalized. Both project completion gates remain unresolved; the loop stays acti
 
 ## DG foundations and actual clock lifts
 
-The [new DG chapter and laboratory](http://127.0.0.1:8765/book/main.html#lab-dg)
+The [new DG chapter and laboratory](https://amelie-iska.github.io/GRH-research/book/main.html#lab-dg)
 develop the genuine infinite nodal dessin algebra and distinguish the rational
 and elliptic theta extension tables. The original dε=1 example is corrected:
 it is acyclic, rather than a resolution of the ground field. A valid nodal
 Koszul model, completed branch comparison, semilinear clock lift, endpoint
 counts and the limits of higher-product/physical interpretations are proved.
-The [3D monomial laboratory](http://127.0.0.1:8765/dg.html) shows exact finite
+The [3D monomial laboratory](https://amelie-iska.github.io/GRH-research/dg.html) shows exact finite
 subcomplexes and phase conventions with one canonical book location.
 
 [NodalDG.lean](lean-analytic/NodalDG.lean) checks20 actual algebra/differential/
@@ -371,8 +390,8 @@ remain open. The existing implementation/research loop stays active.
 
 ## Linear relations and functorial branch modules
 
-The [new relation laboratory](http://127.0.0.1:8765/relations.html) and
-[canonical book chapter](http://127.0.0.1:8765/book/main.html#lab-relations)
+The [new relation laboratory](https://amelie-iska.github.io/GRH-research/relations.html) and
+[canonical book chapter](https://amelie-iska.github.io/GRH-research/book/main.html#lab-relations)
 correct the source graph/stable-kernel conventions and develop an actual
 full branch subcategory of the infinite genus-two/four dessin algebras.
 Functorial Fitting splitting, Jordan kernel filtrations, Hom dimensions,
@@ -393,7 +412,7 @@ training, source mutation, or arithmetic GRH result is claimed.
 
 ## Signed Möbius decomposition: surviving construction and failed shortcut
 
-The [arithmetic chapter and exact reader](http://127.0.0.1:8765/book/main.html#mobius-proof)
+The [arithmetic chapter and exact reader](https://amelie-iska.github.io/GRH-research/book/main.html#mobius-proof)
 now develops the original ideal Vaughan split with all squarefree support,
 nu, W, sextic zeros and conductors retained. A proposed separate-piece
 short-row bound for every cutoff is false: at U=1 and principal nu, each
@@ -410,3 +429,16 @@ and [independent review](planning/reviews/mobius-split/REVIEW.md) accompany the
 [research handoff](research/mobius-split.md). The audit articles are20/49pages,
 focused articles33/69pages and book168pages. Full GRH and the signed low-gcd
 estimate remain open; no new dependency, hardware or training was introduced.
+
+Private Parquet releases with cards, origin fields and pinned commits:
+
+- [Aster complementary topological response](https://huggingface.co/datasets/AmelieSchreiber/GRH-Aster-TopoResponse-20261104) — 16,384 default rows; commit `2b8ce36571298a3517b8c88bb23269341d9b8908`.
+- [Mora complementary conformer response](https://huggingface.co/datasets/AmelieSchreiber/GRH-Mora-ConformerResponse-20261104) — 22,951 default rows; commit `53a6b66acaa69ef79584648f3f6dc068363c4837`.
+
+The dataset laboratory now also contains deposited PDB cartoon ribbons and
+visible covalent bonds, five actual complex SSH/QWZ propagations, analytic
+hydrogen isosurfaces/volumes and eight CPU-trained periodic chemistry score/flow
+models. [Topological transport](https://amelie-iska.github.io/GRH-research/datasets.html#orbital-laboratory),
+[3D orbital nodes and phase](https://amelie-iska.github.io/GRH-research/datasets.html#hydrogen-orbitals),
+[trained chemistry](https://amelie-iska.github.io/GRH-research/datasets.html#torsion-generative).
+These additional lab fixtures are distinct from the frozen HF default corpora.

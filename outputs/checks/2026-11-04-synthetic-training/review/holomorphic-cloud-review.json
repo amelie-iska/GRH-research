@@ -1,0 +1,155 @@
+{
+  "passed": true,
+  "finite_bound_diagnostics": [
+    {
+      "step": 0,
+      "observed": 2.298376655973766,
+      "four_term_budget": 4.370565074403933
+    },
+    {
+      "step": 1,
+      "observed": 0.6918925326339344,
+      "four_term_budget": 1.4491228827562574
+    },
+    {
+      "step": 2,
+      "observed": 0.20519021987975442,
+      "four_term_budget": 0.572690225261955
+    },
+    {
+      "step": 3,
+      "observed": 0.06394125256556327,
+      "four_term_budget": 0.30976042801366416
+    },
+    {
+      "step": 4,
+      "observed": 0.016822296425304018,
+      "four_term_budget": 0.2308814888391769
+    },
+    {
+      "step": 5,
+      "observed": 0.007466718640702753,
+      "four_term_budget": 0.2072178070868307
+    },
+    {
+      "step": 6,
+      "observed": 0.002708073833734151,
+      "four_term_budget": 0.20011870256112685
+    },
+    {
+      "step": 7,
+      "observed": 0.0037614792130216132,
+      "four_term_budget": 0.1979889712034157
+    },
+    {
+      "step": 8,
+      "observed": 0.003339989859650516,
+      "four_term_budget": 0.19735005179610235
+    },
+    {
+      "step": 9,
+      "observed": 0.003454915457561206,
+      "four_term_budget": 0.19715837597390834
+    },
+    {
+      "step": 10,
+      "observed": 0.0034159544714089563,
+      "four_term_budget": 0.19710087322725015
+    },
+    {
+      "step": 11,
+      "observed": 0.0034276365161806416,
+      "four_term_budget": 0.19708362240325267
+    },
+    {
+      "step": 12,
+      "observed": 0.003424131335096436,
+      "four_term_budget": 0.19707844715605344
+    },
+    {
+      "step": 13,
+      "observed": 0.003425182838470652,
+      "four_term_budget": 0.19707689458189367
+    },
+    {
+      "step": 14,
+      "observed": 0.0034248673828689287,
+      "four_term_budget": 0.19707642880964574
+    },
+    {
+      "step": 15,
+      "observed": 0.003424962019136392,
+      "four_term_budget": 0.19707628907797137
+    }
+  ],
+  "infinite_source_condition_diagnostics": [
+    {
+      "time": 0.01,
+      "coefficient_error": 1.2706673802616006,
+      "source_condition_bound": 19.176785856437455
+    },
+    {
+      "time": 1.0,
+      "coefficient_error": 0.612933377231789,
+      "source_condition_bound": 6.064232150764511
+    },
+    {
+      "time": 100.0,
+      "coefficient_error": 0.005786465173124583,
+      "source_condition_bound": 1.9176785856437455
+    },
+    {
+      "time": 1000000.0,
+      "coefficient_error": 3.546874993069524e-07,
+      "source_condition_bound": 0.19176785856437456
+    }
+  ],
+  "primitive_theta_tail_diagnostics": [
+    {
+      "q": 3,
+      "a": 1,
+      "n0": 2,
+      "direct_tail": 0.011554748823238075,
+      "majorant": 0.03162503350935281
+    },
+    {
+      "q": 3,
+      "a": 1,
+      "n0": 4,
+      "direct_tail": 1.4223020744636756e-08,
+      "majorant": 9.305007779247319e-06
+    },
+    {
+      "q": 4,
+      "a": 1,
+      "n0": 2,
+      "direct_tail": 0.05107900923333461,
+      "majorant": 0.10515312622161291
+    },
+    {
+      "q": 4,
+      "a": 1,
+      "n0": 4,
+      "direct_tail": 1.301622568385717e-06,
+      "majorant": 0.00012456365339040263
+    },
+    {
+      "q": 5,
+      "a": 0,
+      "n0": 2,
+      "direct_tail": 0.06896445687818624,
+      "majorant": 0.3343823281256104
+    },
+    {
+      "q": 5,
+      "a": 0,
+      "n0": 4,
+      "direct_tail": 5.2301057978714485e-06,
+      "majorant": 0.0008655501928353002
+    }
+  ],
+  "Gaussian_integral_max_error": 8.881784197001252e-16,
+  "Lowdin_overlap_error": 2.709602080377929e-15,
+  "initial_local_Gaussian_error": 8.884839019872091e-16,
+  "scope": "Ordinary NumPy/SciPy diagnostic computations, not interval certification or proof of GRH"
+}

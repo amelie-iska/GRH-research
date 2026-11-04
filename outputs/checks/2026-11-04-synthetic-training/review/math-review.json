@@ -1,0 +1,171 @@
+{
+  "completed": true,
+  "manifest_integrity": [
+    {
+      "dataset": "aster-topological-response-v1",
+      "checked_files": 6
+    },
+    {
+      "dataset": "mora-conformer-response-v1",
+      "checked_files": 7
+    }
+  ],
+  "persistence_square": {
+    "H0": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "H1": [
+      [
+        1.0,
+        1.4142135623730951
+      ]
+    ],
+    "H0_essential": 1,
+    "metric": "Euclidean heavy-atom distances in angstrom",
+    "coefficient_field": "F2",
+    "max_simplex_dimension": 2
+  },
+  "persistence_rigid_permutation_invariance": true,
+  "saved_biomolecule_example_topology": true,
+  "regular_qwz_reference_cases": [
+    {
+      "mass": -3,
+      "chern": -2.208718528794109e-18,
+      "gauge_error": 2.418546789029549e-16
+    },
+    {
+      "mass": -1,
+      "chern": -1.0,
+      "gauge_error": 3.3306690738754696e-16
+    },
+    {
+      "mass": 1,
+      "chern": 1.0000000000000002,
+      "gauge_error": 2.220446049250313e-16
+    },
+    {
+      "mass": 3,
+      "chern": 2.1645441582182266e-16,
+      "gauge_error": 5.963540027744093e-17
+    }
+  ],
+  "strip_bloch_conventions_agree": true,
+  "connected_component_toy_allocation": {
+    "component_count": 3,
+    "largest_component_rows": 3,
+    "split_rows": {
+      "train": 3,
+      "validation": 2,
+      "test": 1
+    },
+    "policy": "Whole-component greedy squared-deficit balance: row counts plus family/topology or molecular size/VR strata;80/10/10 targets; no component broken",
+    "stratum_totals": {
+      "ssh|0": 3,
+      "ssh|1": 3
+    },
+    "allocated_strata": {
+      "train": {
+        "ssh|0": 2,
+        "ssh|1": 1
+      },
+      "validation": {
+        "ssh|1": 1,
+        "ssh|0": 1
+      },
+      "test": {
+        "ssh|1": 1
+      }
+    },
+    "stratification_limit": "Large components and rare strata can prevent proportions or coverage; exact observed distributions are reported"
+  },
+  "counterexamples": {
+    "gapless_qwz_accepted_by_initial_guard": [
+      {
+        "mass": 0.0,
+        "mesh17": {
+          "value": 1.0000000000000002,
+          "gap": 0.3690734378532075,
+          "minimum_link_overlap": 0.09226835946330181,
+          "gauge_error": 3.3306690738754696e-16
+        },
+        "mesh33": {
+          "value": 1.0,
+          "gap": 0.19032766329496914,
+          "minimum_link_overlap": 0.04758191582374255,
+          "gauge_error": 6.661338147750939e-16
+        },
+        "initial_generator_accepts_as_gapped": true,
+        "true_bulk_gap": 0.0
+      },
+      {
+        "mass": 2.0,
+        "mesh17": {
+          "value": 1.4135798584282297e-16,
+          "gap": 0.5241657445241588,
+          "minimum_link_overlap": 0.7130508980153915,
+          "gauge_error": 2.1203697876423444e-16
+        },
+        "mesh33": {
+          "value": -7.067899292141149e-17,
+          "gap": 0.2694684892749417,
+          "minimum_link_overlap": 0.7087022819358751,
+          "gauge_error": 7.774689221355263e-16
+        },
+        "initial_generator_accepts_as_gapped": true,
+        "true_bulk_gap": 0.0
+      }
+    ],
+    "kitaev_base_PHS_residual": 0.0,
+    "kitaev_initial_boundary_defect_PHS_residual": 0.15000000000000002
+  },
+  "revised_generator_regressions": {
+    "qwz_null_cases": [
+      {
+        "mass": 0.0,
+        "descendants_checked": 3,
+        "chern": null
+      },
+      {
+        "mass": 2.0,
+        "descendants_checked": 3,
+        "chern": null
+      },
+      {
+        "mass": 0.03269341357763622,
+        "descendants_checked": 3,
+        "chern": null
+      },
+      {
+        "mass": 0.03026983176640119,
+        "descendants_checked": 3,
+        "chern": null
+      }
+    ],
+    "kitaev_variants": [
+      {
+        "id": "kitaev-0000-base",
+        "PHS_residual": 0.0
+      },
+      {
+        "id": "kitaev-0000-gauge",
+        "PHS_residual": 0.0
+      },
+      {
+        "id": "kitaev-0000-boundary_defect",
+        "PHS_residual": 0.0
+      }
+    ]
+  },
+  "limitation": "No local pyarrow or RDKit: all-row Parquet inspection and MMFF rerun not performed; no dependency or remote execution"
+}

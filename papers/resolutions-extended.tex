@@ -6,6 +6,12 @@
 \date{November 3, 2026}
 \title{Infinite dessin orders, projective resolutions and spectral determinants\\\large Extended proofs, Schur functors and Auslander--Reiten calculations}
 \author{Research working draft}
+% Wider TOC number columns retain readable S10+ supplemental labels.
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{2.4em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2.4em}{3.2em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{5.6em}{4em}}
+\makeatother
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -20,6 +26,10 @@ We work throughout with infinite-dimensional locally gentle algebras and complet
 \input{relations-core}
 \input{branch-extension-core}
 \input{learned-frontier-core}
+\input{complementary-datasets-core}
+% Supplemental sections use decimal labels: the expanded edition exceeds 26.
+\let\standardappendix\appendix
+\renewcommand{\appendix}{\standardappendix\renewcommand{\thesection}{S\arabic{section}}}
 \input{dessin-details}
 \input{short-row-pair-details}
 \input{mobius-split-details}
@@ -28,5 +38,14 @@ We work throughout with infinite-dimensional locally gentle algebras and complet
 \input{relations-details}
 \input{branch-extension-details}
 \input{learned-frontier-details}
+\input{complementary-datasets-details}
+\input{orbital-flow-core}
+\input{orbital-flow-details}
+\input{holomorphic-learning-core}
+\input{holomorphic-learning-details}
+\input{quantum-games-core}
+\input{quantum-games-details}
+\input{hubs-spokes-core}
+\input{electron-clouds}
 \input{dessin-references}
 \end{document}

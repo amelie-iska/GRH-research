@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "default_static_rows": {
+    "Aster": 16384,
+    "Mora": 22951
+  },
+  "source_origins": {
+    "Aster_planned_MP20": 576,
+    "Mora_planned_PubChem": 74,
+    "Mora_new_public_PDB": 192
+  },
+  "default_splits": {
+    "Aster": {
+      "train": 12160,
+      "validation": 2126,
+      "test": 2098
+    },
+    "Mora": {
+      "train": 22067,
+      "validation": 434,
+      "test": 450
+    }
+  },
+  "physical_methods": "Finite effective Hamiltonians and empirical MMFF94; not ab-initio or experimental biology",
+  "independence_scope": "Finite declared within-release relations; full prior-model exposure not certified",
+  "model_training_changed": false,
+  "new_Lean_declarations": 0,
+  "GRH_proved": false
+}

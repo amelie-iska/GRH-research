@@ -1,0 +1,48 @@
+% Generated shared reviewed material.
+\section{Coherent electron-density clouds in an explicit spatial basis}
+The density viewer now evolves spatial functions, including interference
+terms, instead of drawing independent spheres around occupied sites. Let
+$g_i(\mathbf r)$ be normalized real Gaussian basis functions, let
+$S_{ij}=\int g_i g_j$ be their positive-definite overlap, and set
+$L=S^{-1/2}$. For a Hermitian orthonormal-basis Hamiltonian $h$ and a matrix
+$C_0$ of $p$ orthonormal occupied columns, put
+\[
+ C(t)=e^{-ith}C_0,\qquad
+ \rho(\mathbf r,t)=\sum_{a=1}^p
+       \left|\sum_i g_i(\mathbf r)(LC(t))_{ia}\right|^2.
+\]
+This density is nonnegative and has integral $p$: unitarity preserves
+$C(t)^*C(t)=I$, and integration yields
+$\operatorname{Tr}(C(t)^*L^*SL C(t))=p$. The cross terms carry coherence.
+Replacing them by a sum of atomic densities generally changes the model.
+The displayed gain/loss field is $\rho(t)-\rho(0)$, whose full-space integral
+is zero; positive and negative colors indicate redistribution, not particles
+with negative probability. Time interpolation of saved density frames is a
+display operation and is not an extra time-integration step.
+
+For fixed-nuclei $\mathrm H_2^+$ at separation $2a_0$, six normalized $s$
+Gaussians (exponents $0.3,1.2,4.8$ at each nucleus) give an explicitly
+integrated one-electron Coulomb Galerkin model. We start in one normalized
+left-center Gaussian, then evolve with its time-independent Hamiltonian.
+The electronic ground energy is approximately $-1.08675615$ Hartree;
+adding nuclear repulsion gives $-0.58675615$ Hartree. This small basis is not
+a chemical-accuracy or basis-convergence result. Independent Coulomb
+quadrature, kinetic-integral and matrix-exponential checks pass.
+
+The second example uses the deposited Trp-cage CA geometry, a specified
+twenty-orbital contact Hamiltonian and ten occupied model orbitals. Its
+spatial Gaussians have exponent $0.25\,\text{\AA}^{-2}$. The resulting field
+is the exact density of this finite effective basis model, not a calibrated
+protein electron density, valence count or transfer-time prediction.
+The first example uses atomic units; the second retains its effective model
+time and length convention. These examples are separate from the fixed
+private dataset release and do not change its labels.
+
+The viewer offers orbit/zoom, volume and isosurface rendering, time scrubbing,
+exposure and density/gain-loss palettes. The $64^3$ grid and 41 saved frames
+are encoded as 8-bit square-root-density atlases. The maximum decoded
+integrated-charge errors are $0.00158$ electron for $\mathrm H_2^+$ and
+$0.00141$ model particle for Trp-cage; analytical full-space charge
+conservation is exact. Rendering thresholds, finite boxes and quantization
+are explicit display limitations. The separate hydrogen viewer retains exact
+analytic hydrogen orbitals and their coherent time-dependent superpositions.

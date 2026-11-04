@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "source_batch_checks": [
+    {
+      "method": "flow",
+      "training_batch_equations": true,
+      "minimum_sampled_t": 0.00017175044229722491
+    },
+    {
+      "method": "score",
+      "training_batch_equations": true,
+      "minimum_sampled_t": 0.00017175044229722491
+    }
+  ],
+  "wrapped_score_finite_difference_max_error": 9.187495209062035e-11,
+  "Pauli_readout_max_error": 1.6653345369377348e-16,
+  "score_endpoint_total_wrapped_variance": 0.0625,
+  "scope": "AST-selected batch math and independent NumPy score/readout formulas; no Torch/RDKit/training execution"
+}

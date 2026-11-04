@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert((await ev('window.orbitalLab.snapshot().time'))>3.75)
+
+    at file:///Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/synthetic_training/check_orbital_browser.mjs:15:277 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

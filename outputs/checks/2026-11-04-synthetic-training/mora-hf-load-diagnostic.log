@@ -1,0 +1,93 @@
+{"stage": "load_configuration", "configuration": "default"}
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 22067 examples [00:00, 46484.85 examples/s]Generating train split: 22067 examples [00:00, 46037.81 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 434 examples [00:00, 49269.96 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 450 examples [00:00, 47979.99 examples/s]
+{"stage": "load_configuration", "configuration": "source_anchors"}
+Timeout (0:01:30)!
+Thread 0x0000781d91eb56c0 (most recent call first):
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/threading.py", line 331 in wait
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/threading.py", line 629 in wait
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x0000781d92ffe6c0 (most recent call first):
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/threading.py", line 331 in wait
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/threading.py", line 629 in wait
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/tqdm/_monitor.py", line 60 in run
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/threading.py", line 1045 in _bootstrap_inner
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/threading.py", line 1002 in _bootstrap
+
+Thread 0x0000781df21e5740 (most recent call first):
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/ssl.py", line 1169 in read
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/ssl.py", line 1296 in recv
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128 in read
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217 in _receive_event
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 203 in _receive_response_body
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 334 in __iter__
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 403 in __iter__
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpx/_transports/default.py", line 127 in __iter__
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpx/_client.py", line 153 in __iter__
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpx/_models.py", line 951 in iter_raw
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/httpx/_models.py", line 897 in iter_bytes
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 421 in http_get
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88 in _inner_fn
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1858 in _download_to_tmp_and_move
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1216 in _hf_hub_download_to_cache_dir
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 997 in hf_hub_download
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88 in _inner_fn
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 6167 in hf_hub_download
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 88 in _inner_fn
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/utils/file_utils.py", line 188 in cached_path
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/download/download_manager.py", line 229 in _download_single
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/download/download_manager.py", line 220 in <listcomp>
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/download/download_manager.py", line 219 in _download_batched
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 388 in <listcomp>
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 388 in _single_map_nested
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 407 in <listcomp>
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 407 in _single_map_nested
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 520 in <listcomp>
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/utils/py_utils.py", line 519 in map_nested
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/download/download_manager.py", line 159 in download
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/packaged_modules/parquet/parquet.py", line 110 in _split_generators
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/builder.py", line 921 in _download_and_prepare
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/builder.py", line 882 in download_and_prepare
+  File "/home/iska/miniconda3/envs/tokengt/lib/python3.11/site-packages/datasets/load.py", line 1708 in load_dataset
+  File "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/synthetic_training/verify_hf_load.py", line 21 in main
+  File "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/synthetic_training/verify_hf_load.py", line 31 in <module>
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 266 examples [00:00, 1904.94 examples/s]Generating train split: 266 examples [00:00, 1900.57 examples/s]
+{"stage": "load_configuration", "configuration": "electronic_dynamics"}
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 84 examples [00:00, 10635.16 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 69 examples [00:00, 13169.23 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 88 examples [00:00, 17338.35 examples/s]
+{"stage": "load_configuration", "configuration": "nuclear_md"}
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 4 examples [00:00, 841.09 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 4 examples [00:00, 1021.20 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 4 examples [00:00, 1075.26 examples/s]
+{
+  "passed": true,
+  "repo_id": "AmelieSchreiber/GRH-Mora-ConformerResponse-20261104",
+  "commit": "53a6b66acaa69ef79584648f3f6dc068363c4837",
+  "official_datasets_loader": true,
+  "all_config_rows": {
+    "default": {
+      "train": 22067,
+      "validation": 434,
+      "test": 450
+    },
+    "source_anchors": {
+      "train": 266
+    },
+    "electronic_dynamics": {
+      "train": 84,
+      "validation": 69,
+      "test": 88
+    },
+    "nuclear_md": {
+      "train": 4,
+      "validation": 4,
+      "test": 4
+    }
+  },
+  "origin_columns_every_configuration": true
+}

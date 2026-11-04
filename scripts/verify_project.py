@@ -12,7 +12,7 @@ for row in manifest["sources"]:
     assert git("ls-files","--stage",row["repository"]).startswith("160000 "+row["commit"])
 for path in [*(root/"lean").glob("*.lean"), *(root/"lean-analytic").glob("*.lean")]:
     assert not re.search(r"\b(sorry|admit|axiom)\b",path.read_text()), f"Admission token: {path}"
-patterns=[rb"gh[pousr]_[A-Za-z0-9]{30,}",rb"github_pat_[A-Za-z0-9_]{30,}",rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"]
+patterns=[rb"hf_[A-Za-z0-9]{20,}",rb"gh[pousr]_[A-Za-z0-9]{30,}",rb"github_pat_[A-Za-z0-9_]{30,}",rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"]
 files=git("ls-files","-z").split("\0")
 for name in filter(None,files):
     path=root/name
@@ -31,7 +31,7 @@ assert not re.search(r'undefined references|Citation .* undefined|Reference .* u
 import xml.etree.ElementTree as ET
 htmlbook=root/'web/book/main.html'
 ET.fromstring(htmlbook.read_text())
-assert htmlbook.read_text().count('class="reader-lab"')==12
+assert htmlbook.read_text().count('class="reader-lab"')==13
 iframes=re.findall(r'<iframe[^>]+src="([^"]+)"',htmlbook.read_text())
 assert len(iframes)==len(set(iframes)), 'Duplicate embedded visualizations'
 for row in json.loads((root/'book/source-provenance.json').read_text()):
