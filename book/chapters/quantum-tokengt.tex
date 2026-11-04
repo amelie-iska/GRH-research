@@ -1,0 +1,285 @@
+\chapter{Quantum TokenGT, concept navigation and error correction}
+\label{qtoken:chapter}
+This chapter connects executed finite methods through the same physical RG
+teacher. The completed order, ribbon dessin, physical Hamiltonian, token
+sequence and auxiliary quantum circuit retain their different dimensions.
+The surface is not reconstructed from a neural embedding, and the network
+is not silently declared a module over its completed order.
+
+\section{Node and edge tokens with a quantum feature map}
+The genus-two clean dessin of Chapter~\ref{rg:chapter} has five quiver
+vertices and DVR-rank 50. Its physical $ K_{2,5}$ incidence model has seven
+spin nodes and ten incidence edges. Our TokenGT-style input has these 17
+valid node/edge tokens and one masked padding position. Each token carries
+its type and endpoint metadata through an explicit three-angle encoding.
+The normalized auxiliary state uses $ R_y $ data gates, fixed $ R_z $ rotations,
+CNOT $_{01}$, CNOT $_{12}$ and fixed $ R_x $ rotations. The measured features are
+\[
+ (\langle Z_0\rangle,\langle Z_1\rangle,\langle Z_2\rangle,
+   \langle Z_0 Z_1\rangle,\langle Z_1 Z_2\rangle,\langle Z_0 Z_2\rangle).
+\]
+These are three feature qubits per token, not the seven physical spin sites
+or a faithful representation of the infinite order. The quantum feature map
+is frozen; the Q/K/V matrices and nonlinear readout are trained. A separate
+literal replay of the pinned elliptic-theta fixture is retained with its
+own input hash and category boundary. The physical RG training input is the
+genus-two incidence graph, not that different theta fixture.
+
+With $ Q=XW_Q $, $ K=XW_K $, $ V=XW_V $ and $ S=QK^{\mathsf{T}}/\sqrt{6}$, define,
+on valid query/key indices,
+\[
+ C^{\rm soft}=\operatorname{softmax}(S)V,
+ \qquad C^{\rm trop}_{ir}=\max_j(S_{ij}+V_{jr}),
+ \qquad C^{\rm hybrid}=\tfrac 12(C^{\rm soft}+C^{\rm trop}).
+\]
+Padding is masked in both softmax and max-plus operations and in pooling.
+The tropical output is a componentwise max-plus aggregation, with actual
+maximizing-key witnesses. It is not merely an argmax-key copy. A tanh
+context/residual pool and classical head predict all 32 coarse logweights,
+including the constant. These are quantum--classical transformers on measured
+features, not a coherent softmax unitary. TokenGT \cite{QTokenGT} motivates
+the node/edge organization; no general upstream expressivity or benchmark
+theorem is asserted for this compressed feature map. Numerical token-row
+permutation transport is checked, separately from arbitrary graph-relabel
+invariance and information lost by the encoding.
+
+\section{Matched training on an actual effective action}
+Four models use the same 120/40 split,40 OOD cases, seed 20261103, shared
+initialization/batches,900 Adam updates and 1,076 trained parameters each.
+The fourth uses six classical trigonometric features and the same hybrid
+head. The teacher is exactly $\mathcal RV $ from the seven-spin physical
+model, so partition, constant and retained-observable errors have physical
+meanings. The controlled input has three tied parameters, not 31 freely
+varied output couplings.
+\begin{center}\small
+\begin{tabular}{lrrrr}
+Features/context&action RMSE&log $ Z $ RMSE&magnetization RMSE&mean TV\\\hline
+Quantum/softmax&.10261&.09247&.01773&.03420\\
+Quantum/tropical&.06530&.05923&.01846&.02167\\
+Quantum/hybrid&.10125&.09653&.02709&.03212\\
+Classical/hybrid&.04878&.04712&.01565&.01663
+\end{tabular}
+\end{center}
+The classical baseline has lower held-out full-action error. Quantum OOD
+RMSE ranges from.555 to.763, versus.591 for the classical hybrid. One seeded
+experiment establishes neither quantum advantage nor general OOD robustness.
+The raw cases, every optimizer step and saved parameters are preserved.
+The tensor inspector replays actual token states, gates, Q/K/V, masks, scores,
+contexts and readout, and separately exposes the trained concept critic and
+continuous-GFlowNet MLP/density computations, with synchronized physical and algebraic support labels.
+
+\section{A defined mutual-information objective for concept directions}
+Let $ z\in\R^6$ be a pooled embedding. We learn three normalized directions
+$ B_1,B_2,B_3$ and a critic; their span need not be the whole embedding space.
+Choose $ C $ uniformly among the six direction/sign codes and define
+\[
+ \Delta=\tanh(0.3 z+0.7\operatorname{sign}(C)B_{\operatorname{dir}(C)})
+             -\tanh(0.3 z).
+\]
+A fixed vector is not a random variable: the random objects here are the
+intervention code and its induced embedding change. The GraphCG-inspired
+\cite{QGraphCG} objective is cross entropy for predicting $ C $ from $\Delta $,
+plus $0.08\|BB^{\mathsf{T}}-I\|_F^2$. For any normalized critic $ q $,
+\[
+ I(C;\Delta)\ge\log 6-\mathbb E[-\log q(C\mid\Delta)].
+\]
+Indeed the conditional cross entropy is conditional entropy plus an
+average nonnegative KL divergence. The held-out empirical functional is
+approximately 1.78844 nats. Its sampling estimate is not a certified lower
+confidence bound on an unknown population MI, nor proof of semantic
+identification: deliberately injected codes can already be distinguishable.
+The orthogonality penalty concerns the learned directions; it does not
+replace this probability model by ill-defined ``MI between basis vectors.''
+A training-only ridge decoder maps steered embeddings back to physical
+couplings, whose effects are evaluated with the exact RG teacher.
+
+\section{Latent forests, analogy and persistent homology}
+The latent forest branches along both signs of each learned direction,
+keeps a width-three beam and searches depthfour. All 61 candidates are scored
+by exact coarse log $ Z $ and the five retained magnetizations. Its best saved
+reward changes from $-1.60383$ to $-0.70865$; the residual is substantial.
+This is finite branching optimization in embedding space, without a claim
+of human or general language-model reasoning.
+
+A distinct analogy test estimates a mean displacement from transformed
+training pairs for $(J_+,J_-,b)\mapsto(J_++0.07,J_--0.04,b+0.06)$, clipped
+to the training domain, and transfers it to 40 held-out embeddings. Decoded
+couplings go back through the exact physical teacher. Log $ Z $ RMSE is.09578
+versus.15417 without transfer; magnetization RMSE is.02332 versus.04012.
+These are measured transformation-transfer results, not unrestricted
+``emergent analogical reasoning.''
+
+For an explicit finite point cloud with chosen metric, the Rips filtration
+contains each simplex at the maximum distance between its vertices. The
+implementation reduces the full boundary matrices of vertices, edges and
+triangles over $\mathbf F_2$, with faces ordered before cofaces at ties.
+A zero reduced edge column creates a one-cycle; a later triangle pivot
+kills its class. Triangles suffice to compute $ H_1$. The 12-point learned
+embedding cloud has one positive-length interval approximately
+$[2.50049,2.97133)$. The target and transferred physical-observable clouds,
+scaled as $(\log Z/3,m_0/.25,\ldots,m_4/.25)$, both have empty positive-length
+$ H_1$ barcodes and pair-distance RMSE.29095. Empty matching barcodes alone
+are not faithful analogy. The 67-radius independent checks test this finite
+calculation, not a physical topological-order invariant or a mirror theorem.
+
+\section{Continuous embedding-chart GFlowNets}
+The executed GFlowNet \cite{QContinuousGFN} has root measure $\delta_0$,
+three time steps, Lebesgue measure on each later $\R^2$ chart and deterministic
+termination at step 3. The forward MLP gives normalized Gaussian means and
+learned diagonal variances. At $ t=2,3$ the backward kernel is
+\[
+ p_B(x_{t-1}\mid x_t)
+ =\mathcal N\!\left(\frac{t-1}{t}x_t,\frac{t-1}{3 t}I\right);
+\]
+the final backward transition to the singleton root has unit probability.
+The positive terminal reward is
+\[
+ R(x)=\exp\!\left[-\frac{\|x\|^2}{2}
+ +.35\{\log Z_{K_{2,5}}(.62+.35\tanh x_0,
+                 .58+.34\tanh x_1,.12)-7\}\right].
+\]
+The physical controls lie in a compact box, so the log-partition factor is
+bounded and the Gaussian confinement makes $ R $ integrable.
+
+For a path, the trajectory-balance residual is
+\[
+ \delta=\log Z_\theta+\sum_{t=1}^3\log p_F(x_t\mid x_{t-1})
+             -\sum_{t=1}^3\log p_B(x_{t-1}\mid x_t)-\log R(x_3).
+\]
+If this identity vanished almost everywhere for every path, exponentiating
+and integrating the normalized backward kernels would give
+$ Z_\theta p_F^{\rm terminal}(x)=R(x)$. This proves the desired terminal
+law under the exact density identity. A small empirical squared residual
+is not that identity and supplies no automatic global sampling guarantee.
+
+Training uses 10,000 fixed continuous off-policy trajectories and 1,800
+updates. Fresh held-out TB MSE is.002579 and on-policy MSE.002782.
+Learned log-normalization 1.70832 compares with finite-box quadrature 1.70734.
+Ten thousand new terminal samples give approximate histogram TV.04859
+against a 20-by 20 midpoint histogram comparator on $[-5,5]^2$, with cell
+width.5. The separate log-normalizer quadrature uses a 201-by 201 grid
+with spacing.05. Both grids are verification, not the state space or policy. Tail/quadrature/sampling errors
+are not interval certified. The two-dimensional physical latent chart is
+not a full-support flow on all six pooled embedding coordinates.
+
+\section{A genuine error-correction layer and a surface-code obstruction}
+For a logical qubit, use the repetition isometry
+$|0\rangle\mapsto|000\rangle $, $|1\rangle\mapsto|111\rangle $.
+Measure $ Z_0 Z_1$ and $ Z_1 Z_2$, and apply the X correction specified by the
+two syndrome bits. Under independent X noise of probability $ p $ on each
+physical qubit and ideal encoding/recovery, the weight-zero/one errors
+recover the state. Weight-two/three errors leave a logical X. Hence
+\[
+ p_L=3 p^2(1-p)+p^3=3 p^2-2 p^3,
+ \qquad\mathcal N_L(\rho)=(1-p_L)\rho+p_LX\rho X.
+\]
+The same channel identity holds with an entangled reference. The executed
+four-qubit Bell-reference density calculation compares actual BitFlip noise,
+syndrome projection and corrections with an independent eight-pattern sum.
+At $ p=.1$ its entanglement fidelity is.972, versus.9 without coding.
+It corrects one X error under the stated ideal assumptions, with no phase
+protection or universal fault-tolerance claim.
+
+Applied independently to each auxiliary token-feature qubit, this is an
+explicit physical feature-memory layer. For a measured Z product of weight
+$ r $, the unencoded X channel multiplies its expectation by $(1-2 p)^r $;
+the recovered channel replaces $ p $ by $ p_L $. This follows by conjugating Z
+by X and tensoring the single-qubit channel identity, even for entangled
+feature states. It distinguishes actual syndrome recovery from embedding
+regularization or persistence diagnostics. The resulting attention/readout
+is evaluated on all 40 held-out physical RG actions. At $ p=.1$, hybrid
+full-action RMSE is.89766 without coding,.31589 after one ideal recovery
+level and.10608 after two, compared with clean.10125. Tropical RMSE changes
+from.32676 to.11810 and.06733, compared with clean.06530. Seventy-five
+explicit logical-X density-mixture comparisons on actual entangled token
+states agree with the attenuation rule within $4.45\times 10^{-16}$. The
+separately checksummed evaluation preserves every trained checkpoint.
+The three auxiliary feature qubits require 3,9 and 27 total physical qubits
+at zero, one and two recovery levels. The reported evaluations use the
+proved logical-channel identity, not a full noisy 9/27-qubit gate simulation;
+encoding and recovery gates are ideal throughout.
+Concatenating ideal
+blocks gives the noise recursion $ p\mapsto 3 p^2-2 p^3$, improving $ p<1/2$;
+it is not an RG theorem about the physical Hamiltonian.
+
+\begin{proposition}[The one-face dessin is not a useful quantum memory]
+The CSS construction with qubits on the 10 clean edges of the genus-two
+$ K_{2,5}$ dessin, vertex X checks and its single face Z check has parameters
+$[[10,4,1]]$, with X-distance 1 and Z-distance 4.
+\end{proposition}
+\begin{proof}
+The connected graph incidence matrix over $\mathbf F_2$ has rank $7-1=6$.
+Every edge occurs twice in its single face boundary, so the face boundary
+is zero. The chain relation holds. For independent commuting Pauli checks that do
+not generate $-I $, the projector is $\prod_j(I+S_j)/2$. Only its identity
+term has nonzero trace, so its rank is $2^{n-r_X-r_Z}$. Thus the CSS logical
+dimension is $10-6-0=4=2 g $.
+All single-edge X operators commute with the zero face check. No singleton
+edge set is a cut/coboundary, since each edge lies on a four-cycle; thus it is not
+an X stabilizer, and the X-distance is 1. A Z logical operator is a nonzero
+cycle because the face-boundary subspace is zero. The simple bipartite graph
+has girth 4, proving Z-distance 4. Exact enumeration independently checks the
+ranks, commuting checks and shortest logical witnesses.
+\end{proof}
+Genus and logical dimension therefore do not imply noise protection.
+Useful surface-code families require controlled cellulations, local checks,
+growing primal and dual systoles, a stated noise model and verified decoders.
+
+\section{Tropical, categorical and physical applications}
+For real numbers $ a_j $ and $\tau>0$,
+\[
+ \max_j a_j\le\tau\log\sum_j e^{a_j/\tau}
+       \le\max_j a_j+\tau\log N.
+\]
+Factor out the maximum; the remaining sum lies between 1 and $ N $. This is a
+precise zero-temperature max-plus limit. Replacing the finite-temperature
+RG sum by a maximum discards entropy, including its normalization. An
+attention semiring alone supplies neither the physical energy calibration
+nor the valuations and curve/disk counts needed for tropical geometry and
+mirror symmetry \cite{QGrossSiebert}.
+
+For a categorical connection, Section~\ref{rg:cut} gives an actual
+25-dimensional finite gentle cut with global dimension 4, kills $ u $, and
+proves that restriction to the original completed order is not derived fully
+faithful. It is a constructive starting point, with a proved obstruction to
+transporting comparisons indiscriminately. Choose its grading and verify the
+relevant homological smoothness before invoking a geometric model.
+The partially wrapped Fukaya comparison for smooth graded gentle algebras
+requires boundary, stops and a line field \cite{LekiliPolishchuk}; it is not
+a blanket statement for the complete order on the original closed surface.
+One could then compute specified Hom/Ext or arc-intersection data and use
+them in a categorical learning objective. No such equivalence or learned
+categorical functor is produced by the three-qubit feature circuit. Physical
+RG marginalization is not automatically a derived equivalence either.
+
+For materials models, one must supply a physical Hamiltonian/data family,
+symmetries, locality constraints and validated observables. The executed
+finite spin problem is a reproducible statistical-mechanics testbed, not a
+materials-discovery result. An executed five-qubit generative example uses a saved learned coarse
+action to compute $ p(s)=e^{\widehat V(s)}/Z $ and prepares
+$|\psi\rangle=\sum_s\sqrt{p(s)}|s\rangle $. Born probabilities reproduce
+$ p $ to $2.78\times 10^{-17}$. This coherent pure state is not the mixed Gibbs
+state. Applying the explicit local projector-Kraus dephasing channel gives
+$\operatorname{diag}(p)$ with the same residual. From 4096 seeded quantum
+Born samples, the maximum five-magnetization sampling error is.04377; the
+simultaneous 95\% Hoeffding radius is.05086. The union bound uses
+$10\exp(-N\epsilon^2/2)$ for five observables in $[-1,1]$. This bound controls
+shot error relative to the learned distribution, separately from its physical
+teacher bias. All 32 amplitudes are computed classically, with no efficient
+many-body preparation or quantum advantage claim. Sampling latent coupling
+controls, predicting a full action and generating physical configurations is
+therefore a concrete finite hybrid route, with its costs and errors exposed. Quantum-information uses of the physical feature-memory
+code require the stated noise/recovery model. None of these numerical,
+categorical or physical interfaces establishes the missing arithmetic
+Frobenius/determinant comparison for GRH.
+
+\section{Verification boundary}
+All optimizer histories, source hashes, parameters, held-out/OOD data,
+barcodes, candidate rewards and density checks are preserved. The six-panel
+laboratory and four trained architecture passes display literal arrays and
+gate states; the original 22 architecture records remain unchanged. Exact
+finite CSS enumeration and the bit-flip channel proof are distinguished
+from floating-point learned diagnostics. The finite classical RG identities
+are kernel checked in \texttt{FiniteRG.lean}; general neural optimization,
+continuous GFlowNet sampling, quantum recovery and categorical interfaces
+are not thereby wholly Lean formalized.

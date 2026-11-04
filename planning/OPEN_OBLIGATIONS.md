@@ -198,3 +198,33 @@ arithmetic task is the exact truncated Möbius convolution with every
 squarefree/coprimality/row-zero factor retained, followed by a genuine
 coefficient-sensitive type-I/type-II estimate. The broad P4 linear-relations
 construction can proceed on the next implementation rotation.
+
+## Actual-RG and quantum-token implementation boundary
+
+The physical implementation now carries full actions/constants/scale maps,
+with genuine clean-dessin incidence models, quantum thermal effective
+Hamiltonians and matched trained approximations. Nine finite scalarRG
+identities are kernel checked; the whole quantum/log/operator/channel,
+optimization, continuousGFN and categorical program is not. Original
+auxiliary compression/covariance data remain preserved and correctly scoped.
+No trained residual or finite spectrum provides an arithmetic positive
+realization or proves GRH. Both original signed-low-gcd and determinant
+bridges remain open.
+
+QuantumTokenGT executes measured-feature hybrid attention, defined concept
+MI, finite latent search/analogy/persistence and a continuous-state GFN.
+General semantic emergence, population MI guarantees, exact GFN sampling,
+coherent quantum attention, material discovery and quantum advantage are
+not established. Ideal independent-X memory recovery has an actual tested
+physical-prediction layer; realistic gates/syndromes, phase errors and
+fault-tolerance need another code/noise/decoder treatment. The actual
+one-face genus2CSS code hasdistance1, not useful topological protection.
+
+A constructive finitegentle m5cut hasdimension25/gldim4 but killsu and is
+not derived fullyfaithful in the completedorder. HMS comparisons require the
+actual graded/stopped surface and appropriate category; the learned carriers
+are not faithful order modules. Future categorical/materials extensions must
+supply their stated Hamiltonian/data/functor before claiming applications.
+Sage source is supplied unexecuted; no GPU/hardware or new dependency run.
+Continue P4source construction and the coefficient-sensitive P7 arithmetic
+rotation with the new implementation preserved.

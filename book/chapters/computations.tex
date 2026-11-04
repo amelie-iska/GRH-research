@@ -62,9 +62,9 @@ Applying the two sides to $e_j$ proves the first identity, including the wraparo
 
 The photonic cutoff two is exact for this passive, single-photon computation: photon number is preserved and no mode ever contains more than one photon. This justification does not extend to arbitrary squeezing or multiphoton simulations. Separate NVIDIA cuQuantum and CUDA-Q adapters and pinned upstream forks are provided. GPU execution is not performed on this Mac; source availability is distinct from a successful accelerator run.
 
-\chapter{Trained quantum coarse-graining architectures}
+\chapter{Quantum feature models and auxiliary compression}
 \label{book:learning}
-These experiments implement small, nontrivial versions of the original graph-quantum renormalization proposal. They use specified finite physical models, exact labels where available, held-out samples and recorded seeds. A learned approximation is tested against its target; it is not promoted to a new exact renormalization theorem. The classical optimizer, feature readout and data generation are explicit parts of each hybrid architecture.
+These preserved experiments have distinct objectives. Local Ising regressors approximate selected coarse couplings but omit normalization and a full iterated action. QCNN compression, photonic principal-axis alignment and the Harper surrogate are auxiliary benchmarks. Actual partition-preserving RG and a trained full-action approximation are developed in Chapter~\ref{rg:chapter}. Here the exact targets, held-out samples, recorded seeds, classical optimizer and feature readouts are retained without calling these different objectives a complete RG flow.
 
 \section{Exact teacher data from Ising decimation}
 For spins $s_1,s_2,s_3\in\{-1,1\}$, summing the middle spin gives

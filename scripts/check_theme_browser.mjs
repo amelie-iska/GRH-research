@@ -41,7 +41,7 @@ assert(await evaluate(`document.getAnimations().filter(a=>a.animationName?.start
 await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]});await until(`document.documentElement.dataset.themeMotion==='live'`);
 for(const path of ['/architecture.html','/persistence.html','/dg.html','/verification.html','/implementation-plan.html','/sources/2053.html']){await navigate(path);assert.equal(await evaluate('document.documentElement.dataset.theme'),'biomech');assert.equal(await evaluate(`document.querySelectorAll('#themeToggle').length`),1);}
 await navigate('/architecture.html');await until(`document.body.dataset.ready==='true'`);assert.equal(await evaluate(`getComputedStyle(document.getElementById('selectedCell')).backgroundColor`),'rgb(16, 35, 46)');const numeric=await evaluate(`document.querySelector('#tensorGrid button')?.dataset.real`);assert(Number.isFinite(Number(numeric)));await screenshot('architecture-dark');
-await navigate('/book/main.html');await until(`document.querySelectorAll('iframe').length===7`);
+await navigate('/book/main.html');await until(`document.querySelectorAll('iframe').length===9`);
 await evaluate(`document.getElementById('lab-dg').scrollIntoView({block:'start'})`);await until(`document.querySelector('#lab-dg iframe')?.contentDocument?.documentElement?.dataset.theme==='biomech'`);
 assert.equal(await evaluate(`document.querySelector('#lab-dg iframe').contentDocument.querySelectorAll('#themeToggle').length`),0);await screenshot('book-dark');
 await evaluate(`document.getElementById('themeToggle').click()`);await until(`document.querySelector('#lab-dg iframe')?.contentDocument?.documentElement?.dataset.theme==='light'`);

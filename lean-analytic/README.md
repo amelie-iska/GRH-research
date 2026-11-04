@@ -230,3 +230,15 @@ comparison are not fully formalized by the matrix statements. The full suite
 now passes286 reports,284 standard-only and2 axiom-free, at unchanged pins.
 This rejects an absolute Frobenius/Cauchy route, not the signed low-gcd
 Möbius estimate or GRH. See research/short-row-pair-barrier.md and the review.
+
+## Actual finite renormalization
+
+FiniteRG.lean adds9 statements on actual finite scalar Gibbs weights and
+Real.exp/log actions: positivity, exponentiating the effective action,
+partition and retained-observable equality, nested elimination, general
+weight/error sandwiches and even-chain transfer-matrix trace. Their literal
+types and standard dependencies print. The full pinned suite passes295reports,
+293standard-only and2axiom-free. These full finite scalar RG identities are
+not substitute claims about neural state compression. Quantum spectral logs,
+partial-trace/operator dynamics, optimization, QEC channels and categorical/
+arithmetic comparisons remain separately scoped and not wholly formalized.

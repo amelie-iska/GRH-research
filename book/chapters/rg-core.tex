@@ -1,0 +1,104 @@
+% Generated shared actual RG material.
+\section{Actual renormalization retains the effective action}
+\label{sec:actual-rg}
+A compression score does not specify an RG transformation. Following the
+real-space formulation of Wilson and Kogut \cite{WilsonKogutRG}, we specify
+the eliminated variables, effective action, normalization and scale map.
+Our exact finite decimation is distinct from an approximate tensor-network
+truncation such as Levin--Nave TRG \cite{LevinNaveRG}.
+
+\begin{definition}[Finite classical RG step]
+Let the fine configuration be $(s,t)\in S\times E $, with finite nonempty
+sets $ S,E $, and dimensionless log Boltzmann weight $ V(s,t)=-\beta H(s,t)$.
+Define
+\[
+ (\mathcal RV)(s)=\log\sum_{t\in E}e^{V(s,t)},\qquad
+ Z(V)=\sum_{s,t}e^{V(s,t)}.
+\]
+The full action includes its additive constant. A truncation or a learned
+approximation is a further operation with its own error, not this identity.
+\end{definition}
+\begin{proposition}[Partition, observables and composition]\label{rg:exact}
+One has $ Z(\mathcal RV)=Z(V)$, and the normalized expectation of every
+observable depending only on $ s $ agrees in the two descriptions. Eliminating
+$ E_1$ and then $ E_2$ equals eliminating $ E_1\times E_2$ at once, with the
+same tensor labels and inverse temperature.
+\end{proposition}
+\begin{proof}
+Exponentiating the definition gives $ e^{\mathcal RV(s)}=\sum_te^{V(s,t)}$.
+Sum over $ s $, optionally multiplying by an observable $ O(s)$, and divide
+both sides by the same strictly positive $ Z $. Reordering finite sums proves
+the composition statement. No projection onto pair interactions is used.
+\end{proof}
+
+For an even homogeneous periodic Ising chain, write the transfer matrix as
+$ T_{ab}=\exp(C+Kab+h(a+b)/2)$, $ a,b\in\{-1,1\}$.
+Its partition function is $\operatorname{tr}T^N $. Summing alternate spins
+replaces $ T $ by $ T^2$ and $ N $ by $ N/2$; the physical spacing doubles.
+Writing $ P=T^2$, its positive entries determine
+\[
+ K'=\tfrac 14\log\frac{P_{++}P_{--}}{P_{+-}^2},\quad
+ h'=\tfrac 12\log\frac{P_{++}}{P_{--}},\quad
+ C'=\tfrac 14\log(P_{++}P_{--}P_{+-}^2).
+\]
+These three parameters reproduce every entry of $ P $, so no normalization
+is lost. At $ h=0$, $\tanh K'=\tanh^2 K $ and the eigenvalue-ratio correlation length of the homogeneous extension
+in blocked units halves. Its product with the spacing stays fixed. The
+fixed points in $ t=\tanh K $ are $ t=0,1$; the latter is zero temperature,
+not a positive-temperature transition. Odd dessin examples below use the
+full-action definition, not this even-chain shortcut.
+
+\subsection{Genuine dessin incidence models}
+For odd $ m $, the clean dessin $ y^2=x^m-1$, $\beta=x^m $ has two black
+vertices, $ m $ white vertices and one face; its genus is $(m-1)/2$.
+Its incidence graph is $ K_{2,m}$ with $2 m $ clean edges. Its infinite
+locally gentle order quiver instead has $ m $ vertices and completed
+DVR-rank $2 m^2$. We place physical spins $ B_+,B_-,s_0,\ldots,s_{m-1}$
+on the incidence vertices; this is a specified finite spin model, not a
+faithful representation of that infinite algebra or order. The abstract
+incidence graph alone does not recover the ribbon embedding or genus.
+
+With $\eta_j=(-1)^j $ and fixed nonuniform fields $ h_j $, choose
+\[
+ V=J_+B_+\sum_js_j+J_-B_-\sum_j\eta_js_j
+       +bB_+-\tfrac 35 bB_-+\sum_jh_js_j.
+\]
+Summing the two black spins gives the \emph{entire} effective action
+\[
+ V'(s)=\sum_jh_js_j+
+ \log\!\left[2\cosh\!\left(b+J_+\sum_js_j\right)\right]+
+ \log\!\left[2\cosh\!\left(-\tfrac 35 b+J_-\sum_j\eta_js_j\right)\right].
+\]
+Every one of the $2 m $ physical edges is present, although its couplings
+belong to a tied three-parameter family. The Walsh expansion
+$ V'(s)=\sum_{A\subseteq\{0,\ldots,m-1\}}c_A\prod_{j\in A}s_j $,
+with $ c_A=2^{-m}\sum_sV'(s)\prod_{j\in A}s_j $, is unique by Boolean
+orthogonality. It retains the constant $ c_\varnothing $ and genuinely
+generated higher-body interactions. Our genus-two and genus-four examples
+use $ m=5,9$ and continue by exact nested marginalization. Dropping all terms
+of degree greater than two is displayed as a measured approximation.
+
+\subsection{Quantum thermal effective Hamiltonians}
+For a finite Hermitian Hamiltonian $ H $ on nonzero finite-dimensional
+$\mathcal H_S\otimes\mathcal H_E $
+and $\beta>0$, define
+\[
+ W'=\operatorname{Tr}_E e^{-\beta H},\qquad
+ H_{\mathrm{eff}}(\beta)=-\beta^{-1}\log W'.
+\]
+The matrix $ W'$ is strictly positive: for $ v\ne 0$, sum the strictly
+positive quadratic forms of $ v\otimes e_j $ over an orthonormal basis of
+$\mathcal H_E $. Its Hermitian spectral logarithm is therefore defined.
+The identity $ e^{-\beta H_{\mathrm{eff}}}=W'$ proves partition and retained
+\emph{equal-time} observable preservation by the partial-trace property.
+Repeated traces compose. The full Pauli expansion, including its identity
+coefficient, is retained. It is generally nonlocal and depends on $\beta $;
+this statement does not preserve all fine real-time dynamics or supply a
+local zero-temperature/thermodynamic RG fixed point.
+
+\texttt{FiniteRG.lean} checks nine actual finite scalar marginal,
+exponential-action, partition, observable, composition, error-sandwich and
+transfer-trace statements. The quantum spectral-log and complete
+thermodynamic/field-theory interfaces are not formalized by these lemmas.
+These physics constructions give no arithmetic determinant comparison or
+new GRH conclusion.

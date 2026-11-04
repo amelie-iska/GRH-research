@@ -1,5 +1,8 @@
+import {architectureCollection} from './surface-bridge-model.mjs';
+import {mountSurfaceBridge} from './surface-bridge.mjs';
 import {validateTrace,flatTensor,tensorAt,sliceTensor,maskReason,tropicalWitness,visibleNodes,circuitGroups,covarianceMarginal,clockTrace} from './architecture-model.mjs';
 const $=id=>document.getElementById(id),state={trace:null,node:null,manifest:null,nodes:[],leading:[],row:0,col:0,request:0,abort:null,timer:null,yaw:-.45,pitch:.9,hits:[],circuitHits:[],generation:0,loading:true};
+const surfaceBridge=mountSurfaceBridge(),collection=architectureCollection(new URLSearchParams(location.search).get('collection'));
 const text=(id,value)=>$(id).textContent=value;
 const fmt=(x,d=4)=>Math.abs(x)<1e-14?'0':Number(x).toPrecision(d).replace(/\.0+(?=e|$)/,'');
 const compact=x=>x!==0&&(Math.abs(x)<.001||Math.abs(x)>=1000)?x.toExponential(0):fmt(x,3);
@@ -23,7 +26,7 @@ async function loadTrace(id,nodeId=null){
   else{
    entry=state.manifest.traces.find(t=>t.id===id);if(!entry)throw Error('Unknown trace');
    if(!/^records\/[a-zA-Z0-9_-]+\.json$/.test(entry.file))throw Error('Unexpected record path');
-   trace=validateTrace(await verifiedJSON('/data/architecture/'+entry.file,entry.sha256,state.abort.signal));
+   trace=validateTrace(await verifiedJSON(collection.base+entry.file,entry.sha256,state.abort.signal));
   }
   if(request!==state.request)return;
   pause();state.trace=trace;state.generation++;state.yaw=-.45;state.pitch=.9;$('zoom').value=1;$('traceSelect').value=id;$('clockControls').hidden=id!=='clock-carrier';
@@ -32,7 +35,7 @@ async function loadTrace(id,nodeId=null){
   text('traceSummary',trace.title+' · '+(trace.provenance.split??'A finite reference pass; no optimizer or hardware run'));
   text('conventions',JSON.stringify({input:trace.input,conventions:trace.conventions,surface:trace.surface_context},null,2));
   text('provenance',JSON.stringify(trace.provenance,null,2));text('checks',JSON.stringify(trace.checks,null,2));
-  $('recordLink').href=entry?'/data/architecture/'+entry.file:'/data/architecture/manifest.json';text('recordLink',entry?'Hash-verified raw record':'Saved-record manifest');
+  $('recordLink').href=entry?collection.base+entry.file:collection.manifest;text('recordLink',entry?'Hash-verified raw record':'Saved-record manifest');
   const source=trace.provenance.training_source?.path;
   $('codeLink').href=source?.startsWith('examples/')?'/'+source:'/examples/architecture/README.md';
   const groups=circuitGroups(trace);$('circuitGroup').replaceChildren();
@@ -116,6 +119,7 @@ function inspectCell(cell,button){
  if(state.node.id.endsWith('.moe.combine'))extra+='\nCombine sums over EXPERT-SLOTS for each valid token.';
  if(state.node.id.endsWith('.weights')&&state.node.mode!=='softmax')extra+='\nSoftmax comparison diagnostic; this tropical layer uses max-plus aggregation.';
  text('selectedCell',exact+extra);
+ surfaceBridge.update(state.trace,state.node,cell.indices);
 }
 function canvasContext(canvas){
  const rect=canvas.getBoundingClientRect(),ratio=Math.min(devicePixelRatio||1,2),width=rect.width,height=rect.height;
@@ -218,11 +222,12 @@ $('circuit').onclick=e=>{const r=$('circuit').getBoundingClientRect(),x=e.client
 new ResizeObserver(()=>{renderScene();renderCircuit();renderCovariance();}).observe($('scene'));
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
 const mobileLayout=matchMedia('(max-width:650px)');$('stepPanel').open=!mobileLayout.matches;mobileLayout.addEventListener('change',e=>$('stepPanel').open=!e.matches);
-window.architectureInspector={snapshot:()=>({trace:state.trace?.id,node:state.node?.id,shape:state.node?.tensor.shape,generation:state.generation,playing:Boolean(state.timer),loading:state.loading,yaw:state.yaw,zoom:Number($('zoom').value),nodes:state.nodes.length,drawOrder:state.hits.map(h=>({id:h.id,depth:h.depth})),checks:state.trace?.checks}),load:loadTrace,select:selectNode};
+window.architectureSurface=surfaceBridge;
+window.architectureInspector={snapshot:()=>({collection:collection.id,trace:state.trace?.id,node:state.node?.id,shape:state.node?.tensor.shape,generation:state.generation,playing:Boolean(state.timer),loading:state.loading,yaw:state.yaw,zoom:Number($('zoom').value),nodes:state.nodes.length,drawOrder:state.hits.map(h=>({id:h.id,depth:h.depth})),checks:state.trace?.checks}),load:loadTrace,select:selectNode};
 busy(true);
 try{
  if(new URLSearchParams(location.search).has('embed'))document.body.classList.add('embed');
- state.manifest=await verifiedJSON('/data/architecture/manifest.json');$('traceSelect').replaceChildren();
+ state.manifest=await verifiedJSON(collection.manifest);$('traceSelect').replaceChildren();
  for(const [kind,label] of [['trained-checkpoint-replay','Trained CPU model replay'],['fixed-weight-reference','Fixed-weight miniature reference']]){
   const group=document.createElement('optgroup');group.label=label;
   for(const entry of state.manifest.traces.filter(t=>t.kind===kind)){const option=new Option(entry.title+' · '+entry.id,entry.id);group.append(option);}$('traceSelect').append(group);

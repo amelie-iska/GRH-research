@@ -1,0 +1,70 @@
+../../lean-analytic/FiniteRG.lean:12:2: error(lean.unknownIdentifier): Unknown constant `Real.log`
+../../lean-analytic/FiniteRG.lean:14:0: error: automatically included section variable(s) unused in theorem `GRHResearch.FiniteRG.marginal_nonneg`:
+  [Fintype U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+../../lean-analytic/FiniteRG.lean:18:0: error: automatically included section variable(s) unused in theorem `GRHResearch.FiniteRG.gibbs_marginal_pos`:
+  [Fintype U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+../../lean-analytic/FiniteRG.lean:25:8: error(lean.unknownIdentifier): Unknown constant `Real.exp_log`
+../../lean-analytic/FiniteRG.lean:37:37: error: Application type mismatch: The argument
+  u
+has type
+  V × W
+of sort `Type (max u_2 u_3)` but is expected to have type
+  U
+of sort `Type u_1` in the application
+  w u
+../../lean-analytic/FiniteRG.lean:37:53: error: unsolved goals
+U : Type u_1
+V : Type u_2
+W : Type u_3
+inst✝² : Fintype U
+inst✝¹ : Fintype V
+inst✝ : Fintype W
+w : U → V → W → ℝ
+u : U
+⊢ ∑ x, ∑ x_1, w u x x_1 = ∑ x, ∑ x_1, w sorry x x_1
+../../lean-analytic/FiniteRG.lean:41:0: error: automatically included section variable(s) unused in theorem `GRHResearch.FiniteRG.marginal_sandwich`:
+  [Fintype U]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype U] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+GRHResearch.FiniteRG.marginal_nonneg.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype U] [Fintype V] (w : U → V → ℝ)
+  (hw : ∀ (u : U) (v : V), 0 ≤ w u v) (u : U) : 0 ≤ marginal w u
+GRHResearch.FiniteRG.gibbs_marginal_pos.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype U] [Fintype V] [Nonempty V]
+  (A : U → V → ℝ) (u : U) : 0 < marginal (fun u v => Real.exp (A u v)) u
+GRHResearch.FiniteRG.exp_effective_action.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype U] [Fintype V] [Nonempty V]
+  (A : U → V → ℝ) (u : U) : Real.exp (effectiveAction A u) = marginal (fun u v => Real.exp (A u v)) u
+GRHResearch.FiniteRG.partition_exact.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype U] [Fintype V] [Nonempty V]
+  (A : U → V → ℝ) : ∑ u, Real.exp (effectiveAction A u) = ∑ p, Real.exp (A p.1 p.2)
+GRHResearch.FiniteRG.retained_observable_exact.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype U] [Fintype V]
+  (w : U → V → ℝ) (O : U → ℝ) : ∑ u, marginal w u * O u = ∑ p, w p.1 p.2 * O p.1
+GRHResearch.FiniteRG.nested_marginal.{u_1, u_2, u_3} {U : Type u_1} {V : Type u_2} {W : Type u_3} [Fintype U]
+  [Fintype V] [Fintype W] (w : U → V → W → ℝ) (u : U) :
+  marginal (fun u v => marginal (fun v z => w u v z) v) u = marginal (fun u p => w sorry p.1 p.2) sorry
+GRHResearch.FiniteRG.marginal_sandwich.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype U] [Fintype V]
+  (w wh : U → V → ℝ) (lo hi : ℝ) (hlo : ∀ (u : U) (v : V), lo * w u v ≤ wh u v)
+  (hhi : ∀ (u : U) (v : V), wh u v ≤ hi * w u v) (u : U) :
+  lo * marginal w u ≤ marginal wh u ∧ marginal wh u ≤ hi * marginal w u
+GRHResearch.FiniteRG.gibbs_error_sandwich.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype U] [Fintype V]
+  (A Ah : U → V → ℝ) (ε : ℝ) (h : ∀ (u : U) (v : V), |Ah u v - A u v| ≤ ε) (u : U) :
+  Real.exp (-ε) * marginal (fun u v => Real.exp (A u v)) u ≤ marginal (fun u v => Real.exp (Ah u v)) u ∧
+    marginal (fun u v => Real.exp (Ah u v)) u ≤ Real.exp ε * marginal (fun u v => Real.exp (A u v)) u
+GRHResearch.FiniteRG.transfer_partition_step.{u_4} {I : Type u_4} [Fintype I] [DecidableEq I] (T : Matrix I I ℝ)
+  (n : ℕ) : ((T * T) ^ n).trace = (T ^ (2 * n)).trace
+'GRHResearch.FiniteRG.marginal_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.gibbs_marginal_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.exp_effective_action' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.partition_exact' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.retained_observable_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.nested_marginal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.marginal_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.gibbs_error_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.transfer_partition_step' depends on axioms: [propext, Classical.choice, Quot.sound]

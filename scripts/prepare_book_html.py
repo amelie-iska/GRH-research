@@ -26,7 +26,9 @@ canonical={
  'cellular dessins and their infinite orders':('atlas','examples/sage/dessin_orders.sage','Exact Sage construction'),
  'almost-split geometry, hom control and determinant relations':('ar','lean/BookInterfaces.lean','Lean matrix and determinant interfaces'),
  'positive evolution, clocks and holonomy':('circuits','examples/quantum/backend_adapters.py','Six-backend carrier code'),
- 'trained quantum coarse-graining architectures':('learning','examples/quantum/train_pennylane.py','PennyLane training code'),
+ 'quantum feature models and auxiliary compression':('auxiliary-training','examples/quantum/train_pennylane.py','Preserved auxiliary training code'),
+ 'actual renormalization: effective actions and scale':('rg','examples/rg/rg_math.py','Actual finite RG definitions and checks'),
+ 'quantum tokengt, concept navigation and error correction':('qtoken','examples/quantum_tokengt/EXPOSITION.md','Executed quantum TokenGT and learning methods'),
  'dg foundations, clock lifts and endpoint-sensitive extensions':('dg','examples/dg/check_nodal_dg.py','Exact DG and theta endpoint checks'),
  'two-parameter persistence, schur syzygies':('persistence','examples/persistence/check_tool.py','Exact staircase and finite homology checks'),
  'reading an architecture from its tensors':('architecture','examples/architecture/README.md','Numerical architecture records and reproduction')}
@@ -39,12 +41,13 @@ def panel(m):
    return heading+'<aside class="reader-covering"><h3>Exact covering calculation</h3><p>The displayed quiver window is a cover of a finite theta quotient, not an AR component. <a href="/data/theta-cover.json">Exact Hom/radical and higher-genus results</a>.</p><details><summary>Complete exact Python source</summary><button class="load-code" data-source="/examples/coverings/theta_cover.py">Load complete source</button><pre class="source-code"></pre></details><details><summary>Lean matrix obstruction and theorem dependencies</summary><button class="load-code" data-source="/lean/CoveringBand.lean">Load Lean source</button><pre class="source-code"></pre></details><p>Three matrix statements are kernel checked; the general categorical results remain separately scoped.</p></aside>'
   return heading
  count+=1;section,code,label=selected
- video={'atlas':'ThetaDessin','ar':'HLSDiamond','learning':'QCNNPooling','persistence':'Bifiltration'}.get(section)
+ video={'atlas':'ThetaDessin','ar':'HLSDiamond','auxiliary-training':'QCNNPooling','persistence':'Bifiltration'}.get(section)
  animation=(f'<video controls="controls" preload="metadata" style="width:100%" src="/media/{video}.mp4"></video>' if video else '')
  formal=('<details><summary>Lean: actual worked polynomial resolution and Hom differentials</summary><button class="load-code" data-source="/lean/PersistenceResolution.lean">Load kernel-checked source</button><pre class="source-code"></pre><p>Ungraded worked module only; general staircase, graded, CW, coefficient-cone and arithmetic interfaces remain separate.</p></details>' if section=='persistence' else ('<details><summary>Lean: actual DG algebra and ambient nodal resolution components</summary><button class="load-code" data-source="/lean/NodalDG.lean">Load kernel-checked components</button><pre class="source-code"></pre><p>Full graded/category/completion objects and higher transfers remain separately scoped.</p></details>' if section=='dg' else ''))
- frame='/'+section+'.html?embed=book' if section in {'architecture','persistence','dg'} else '/?embed='+section
- standalone='/'+section+'.html' if section in {'architecture','persistence','dg'} else '/#'+section
- height=1100 if section in {'architecture','persistence','dg'} else 700
+ if section=='rg':formal+='<details><summary>Lean: actual finite RG marginal, partition and error identities</summary><button class="load-code" data-source="/lean/FiniteRG.lean">Load kernel-checked RG source</button><pre class="source-code"></pre><p>Nine scalar finite identities; quantum spectral logs, optimization, continuum and categorical interfaces remain separately scoped.</p></details>'
+ frame='/'+section+'.html?embed=book' if section in {'architecture','persistence','dg','rg','qtoken'} else '/?embed='+section
+ standalone='/'+section+'.html' if section in {'architecture','persistence','dg','rg','qtoken'} else '/#'+section
+ height=1100 if section in {'architecture','persistence','dg','rg','qtoken'} else 700
  return heading+f'''<aside class="reader-lab" id="lab-{section}"><h3>Interactive {section} laboratory</h3><p>This is the canonical location of this tool. Related chapters link here instead of repeating it. Numerical illustrations are separate from proof.</p><p><a href="{standalone}">Open this laboratory separately</a>.</p><iframe loading="lazy" src="{frame}" title="Interactive {section} examples" height="{height}"></iframe>{animation}{formal}<details><summary>{label}</summary><button class="load-code" data-source="/{code}">Load complete source</button><pre class="source-code"></pre></details><p><a href="/verification.html">Exact formalization and execution coverage</a>.</p></aside>'''
 s=re.sub(r'<h2 class="chapterHead">.*?</h2>',panel,s,flags=re.S)
 s=s.replace('</body>','''<script>document.querySelectorAll('.load-code').forEach(button=>button.onclick=async()=>{const r=await fetch(button.dataset.source);const p=button.parentElement.querySelector('pre');p.textContent=r.ok?await r.text():'Source unavailable';button.hidden=true;});</script></body>''')

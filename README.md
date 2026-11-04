@@ -6,6 +6,20 @@ A private research workspace for auditing and developing surface-order and Hilbe
 
 ## Research book and interactive companion (2026-11-03)
 
+Current edition: **159 pages,34 chapters, nine unique in-book laboratories**.
+The learning section now leads with [actual RG](http://127.0.0.1:8765/rg.html):
+full effective actions, constants, generated interactions, partition functions,
+retained observables and explicit scales. [Quantum TokenGT](http://127.0.0.1:8765/qtoken.html)
+trains on that same physical teacher and includes tropical/hybrid attention,
+concept steering, latent search/analogy with persistence, continuous GFlowNet
+training and an executed ideal QEC memory layer. Every architecture has a
+[synchronized tensor/surface/order inspector](http://127.0.0.1:8765/architecture.html),
+with separate [actual-RG](http://127.0.0.1:8765/architecture.html?collection=rg)
+and [TokenGT](http://127.0.0.1:8765/architecture.html?collection=qtoken) collections.
+The original 22 records and six original training families remain unchanged.
+Their compression, covariance and finite spectral tasks are clearly labelled
+as auxiliary experiments, with complete preserved data.
+
 The new [book TeX](book/main.tex), [PDF](outputs/book/surface-orders-book.pdf), and [native-MathML on-page edition](web/book/main.html) develop the supplied manuscripts with corrected physics, full category-labelled AR diagrams, Hom-control, determinant relations, ToricGT/hybrid interfaces and higher-genus examples. Both **complete original TeX sources** are preserved byte-identically in [source-editions](book/source-editions/) with [provenance](book/source-provenance.json). Preservation is distinct from endorsement: the original unconditional GRH claims do not survive the recorded audits. [Full inclusion and verification ledger](book/VERIFICATION.md).
 
 The private local page is **[http://127.0.0.1:8765](http://127.0.0.1:8765)**; the [on-page book](http://127.0.0.1:8765/book/main.html) has interactive chapter panels, complete code views and local mathematics. The atlas includes genus1/2/3/5/9/16 dessins, 4D rotations of complex sheet coordinates, and finite windows of the infinite {7,3} tiling in disk/hyperboloid views. A generated Manim clip is included. Source windows are labelled as projections or finite patches, with no claimed arithmetic identification.
@@ -14,7 +28,7 @@ The fixed top-left **Engage night** button transforms the page, book and embedde
 
 Six actual local CPU experiments are displayed: three PennyLane architectures (QCNN compression, quantum graph convolution and quantum-feature attention), Strawberry Fields Gaussian pooling, a ToricGT/PennyLane Harper surrogate followed by exact rational PSD certificates, and a larger genus-four nine-qubit QCNN. [Reproduction and dependencies](examples/quantum/README.md), [saved results](outputs/experiments/), and [independent reviews](planning/reviews/book/). Cirq, Qiskit, PennyLane and Strawberry Fields cross-backend carrier tests pass. NVIDIA cuQuantum/CUDA-Q sources are forked and cloned, but GPU adapters are not executed on this Apple machine. Sage source is supplied; the installed launcher lacks its target app, so its execution is not passed.
 
-The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **282 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
+The user approved the new isolated CPU environment; existing environments/toolchains were preserved. **295 printed Lean reports pass** at the pinned environment, with no admissions or custom axioms. This does not formalize the whole book: [coverage and outstanding work](book/VERIFICATION.md) are explicit. GRH and the independent positive arithmetic determinant bridge remain open.
 
 Rebuild with `sh scripts/build_book.sh`, `sh scripts/build_book_html.sh`, and `python3 scripts/prepare_companion.py`. Start/restart the loopback-only server with `python3 scripts/serve_book.py`; no public deployment or external scripts are needed. The preview is running as a separate local process, so a chat interruption need not stop it.
 
@@ -56,8 +70,8 @@ The current focused editions use **infinite-dimensional locally gentle algebras 
 
 | Current focused edition | TeX | PDF |
 |---|---|---|
-| Concise, 23 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
-| Extended, 50 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
+| Concise, 30 pages | [resolutions-concise.tex](papers/resolutions-concise.tex) | [resolutions-concise.pdf](outputs/papers/resolutions-concise.pdf) |
+| Extended, 62 pages with calculations and diagrams | [resolutions-extended.tex](papers/resolutions-extended.tex) | [resolutions-extended.pdf](outputs/papers/resolutions-extended.pdf) |
 
 The paper gives complete explicit resolution/order/Cartan calculations; presentation semi-invariant weights and their precise Hom/Ext scope; positive-degree Schur module functors, Young tableaux and natural Littlewood–Richardson maps; the cyclic monodromy invariant ring and a convergent local positive Cauchy kernel. Schur functors fail termwise exactness and fixed order-base action in displayed examples. On continuous finite-length completed modules cycle traces are nilpotent, so nonconstant parameters require semi-invariants, flags or pp data.
 
@@ -293,3 +307,39 @@ concise/extended editions are28/57pages. [Exact deterministic sextic checks](scr
 and [independent review](planning/reviews/short-row-pair/REVIEW.md) record the
 scope. The live book retains32chapters,16 diagrams, seven unique tools and
 the living dark theme. Both completion gates remain open.
+
+## Actual RG and quantum TokenGT implementation
+
+[Methods and checks](research/actual-rg.md), [RG reproduction](examples/rg/README.md),
+[TokenGT reproduction](examples/quantum_tokengt/README.md),
+[primary pins](planning/ACTUAL_RG_SOURCES.json) and
+[independent review](planning/reviews/actual-rg/REVIEW.md) distinguish exact
+finite identities, floating-point computations, learned approximations and
+research interfaces. Nine new finite RG statements bring the pinned full
+Lean suite to295 reports (293 standard-only,2 axiom-free). This does not fully
+formalize quantum thermal logarithms, all learned methods or the whole book.
+
+Exact finite RG runs on genus-two/genus-four clean dessins; quantum thermal
+elimination retains all Pauli terms. The3qubit full-action learner and four
+matched TokenGT variants predict the full32-state coarse action, including
+its constant. Classical baselines perform better on several important metrics;
+no quantum advantage is claimed. GFlowNet trajectories are continuous, with
+explicit root/forward/backward densities. Their finite losses/histograms do
+not certify the target law. Concept MI and analogy results are scoped empirical
+measurements, not semantic or mirror-symmetry theorems.
+
+The ideal repetition layer reduces measured physical-prediction damage from
+independentXmemory noise. At p = 0.1 the hybrid action RMSE changes .898→.316→.106
+for zero/one/two ideal recovery levels (clean.101). Logical-channel evaluation
+is distinguished from full9/27-wire noisy hardware simulation; phase errors
+and faulty recovery are outside this code. The actual genus-two one-face
+cellulation yields [[10,4,1]], showing that genus alone provides no useful
+protection. The executed five-qubit generative example distinguishes a
+coherent amplitude state from a dephased mixed Gibbs state and reports shot
+versus model errors. All sources, checkpoints, environments and pins survive;
+no new dependency, GPU/cloud job, MCP activation or public deployment.
+
+The book includes full finite derivations and the explicit hypotheses needed
+for possible Fukaya/HMS, tropical-geometric and materials applications.
+Those comparisons and the independent arithmetic determinant/GRH bridge
+remain open. The existing implementation/research loop stays active.

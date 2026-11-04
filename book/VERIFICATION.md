@@ -4,9 +4,9 @@ The book is a developed critical edition of the two supplied manuscripts, not a 
 
 ## Current kernel-checked layer
 
-The working critical book has 32 chapters, with seven unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
+The working critical book has 34 chapters, with nine unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
 
-The pinned Lean 4.24/mathlib suite has **286 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution and nodal DG component modules. The full suite passed with warnings treated as errors: 284 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
+The pinned Lean 4.24/mathlib suite has **295 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 293 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
 
 | Material | Actual formal/computational interface | Remaining boundary |
 |---|---|---|
@@ -51,3 +51,35 @@ The character is sextic in the pinned original; its square is cubic. Earlier
 high-gcd exposition has this label corrected. The approved CPU environment
 runs deterministic exact integer sextic diagnostics, not training or a GRH
 certificate. No sources, environments, pins or checkpoints changed.
+
+## Actual RG and quantum-feature TokenGT correction
+
+Current book159pages/34chapters with nine unique tools; focused articles30/62
+pages. The new actual-RG chapter precedes auxiliary compression/covariance
+benchmarks. FiniteRG.lean checks9 full finite scalar Gibbs marginal/action,
+partition, retained-observable, nesting, sandwich and transfer-trace
+identities. All9printed types use only standard foundations. Quantum
+spectral-log/partial-trace/operator and full learned/QEC/categorical programs
+are not all kernel checked. Full pinned suite295passes,293standard-only and2
+axiom-free. The standalone historical7-result suite is unchanged, not rerun.
+
+New exact/full-action and floating-point checks cover all generated constants,
+Walsh/Pauli terms, nested partition/observable comparisons, Γ=0 classical
+limits, quantum tensor ordering, trained-heldout/OOD action/constant/partition/
+observable errors and matched classical baselines. The12RG circuit angles
+are nominal;3finalRZ parameters are structurally inactive for itsZ readout.
+A five-qubit generation/dephasing/sampling example reports learned-distribution
+shot error separately from teacher bias. Sage source is supplied unexecuted.
+
+Every original architecture has actual passport/quiver/order/forbidden-pair
+context and selected tensor/gate/token supports. Four matched TokenGT variants (three quantum-feature, one classical), a concept critic and continuous GFlowNet are explicitly bounded
+finite hybrids. Actual F2Rips homology, ideal bit-flip QEC logical-channel
+memory evaluation and exactCSS [[10,4,1]] ranks/distances are checked by
+separate code and independent review. These computations don't certify
+semantic reasoning, global GFN distribution accuracy, physical topological
+phase, coherent quantum attention, HMS/materials results or GRH.
+
+Book proofs and evidence: research/actual-rg.md,
+planning/reviews/actual-rg/REVIEW.md, examples/rg/README.md,
+examples/quantum_tokengt/README.md and outputs/checks/2026-11-03-actual-rg/.
+Both complete historical manuscript copies and source-clone pins are preserved.

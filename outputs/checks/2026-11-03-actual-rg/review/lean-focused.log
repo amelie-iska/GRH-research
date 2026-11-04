@@ -1,0 +1,31 @@
+GRHResearch.FiniteRG.marginal_nonneg.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] (w : U → V → ℝ)
+  (hw : ∀ (u : U) (v : V), 0 ≤ w u v) (u : U) : 0 ≤ marginal w u
+GRHResearch.FiniteRG.gibbs_marginal_pos.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] [Nonempty V]
+  (A : U → V → ℝ) (u : U) : 0 < marginal (fun u v => Real.exp (A u v)) u
+GRHResearch.FiniteRG.exp_effective_action.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] [Nonempty V]
+  (A : U → V → ℝ) (u : U) : Real.exp (effectiveAction A u) = marginal (fun u v => Real.exp (A u v)) u
+GRHResearch.FiniteRG.partition_exact.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] [Fintype U] [Nonempty V]
+  (A : U → V → ℝ) : ∑ u, Real.exp (effectiveAction A u) = ∑ p, Real.exp (A p.1 p.2)
+GRHResearch.FiniteRG.retained_observable_exact.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] [Fintype U]
+  (w : U → V → ℝ) (O : U → ℝ) : ∑ u, marginal w u * O u = ∑ p, w p.1 p.2 * O p.1
+GRHResearch.FiniteRG.nested_marginal.{u_1, u_2, u_3} {U : Type u_1} {V : Type u_2} {W : Type u_3} [Fintype V]
+  [Fintype W] (w : U → V → W → ℝ) (u : U) :
+  marginal (fun u v => marginal (fun v z => w u v z) v) u = marginal (fun u p => w u p.1 p.2) u
+GRHResearch.FiniteRG.marginal_sandwich.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] (w wh : U → V → ℝ)
+  (lo hi : ℝ) (hlo : ∀ (u : U) (v : V), lo * w u v ≤ wh u v) (hhi : ∀ (u : U) (v : V), wh u v ≤ hi * w u v) (u : U) :
+  lo * marginal w u ≤ marginal wh u ∧ marginal wh u ≤ hi * marginal w u
+GRHResearch.FiniteRG.gibbs_error_sandwich.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] (A Ah : U → V → ℝ)
+  (ε : ℝ) (h : ∀ (u : U) (v : V), |Ah u v - A u v| ≤ ε) (u : U) :
+  Real.exp (-ε) * marginal (fun u v => Real.exp (A u v)) u ≤ marginal (fun u v => Real.exp (Ah u v)) u ∧
+    marginal (fun u v => Real.exp (Ah u v)) u ≤ Real.exp ε * marginal (fun u v => Real.exp (A u v)) u
+GRHResearch.FiniteRG.transfer_partition_step.{u_4} {I : Type u_4} [Fintype I] [DecidableEq I] (T : Matrix I I ℝ)
+  (n : ℕ) : ((T * T) ^ n).trace = (T ^ (2 * n)).trace
+'GRHResearch.FiniteRG.marginal_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.gibbs_marginal_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.exp_effective_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.partition_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.retained_observable_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.nested_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.marginal_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.gibbs_error_sandwich' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.FiniteRG.transfer_partition_step' depends on axioms: [propext, Classical.choice, Quot.sound]

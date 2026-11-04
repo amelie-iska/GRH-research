@@ -1,0 +1,550 @@
+{
+  "passed": true,
+  "cases": 23,
+  "nodes": 843,
+  "exact_forbidden_products": 1300,
+  "checks": [
+    "record SHA256 unchanged",
+    "all saved nodes at first and last coordinate",
+    "square has two quiver vertices",
+    "genus-four passport and rank",
+    "token endpoint relabelling and padding",
+    "gate wire support",
+    "attention patch support",
+    "quadrature branches",
+    "auxiliary Weyl sites",
+    "nodal central nilpotence",
+    "whitelisted optional collection paths",
+    "genus-two m5 profile/rank/passport",
+    "physical spins vs quiver vertices vs parameter registers",
+    "full boundary configurations",
+    "new qtoken avoids old theta dictionary"
+  ],
+  "optional_collection_schema_fixtures": 2,
+  "optionalSavedCollections": [
+    {
+      "id": "rg",
+      "cases": 6,
+      "nodes": 180,
+      "hashes_verified": true
+    },
+    {
+      "id": "qtoken",
+      "cases": 6,
+      "nodes": 239,
+      "hashes_verified": true
+    }
+  ],
+  "profiles": [
+    {
+      "id": "qcnn-4-0",
+      "kind": "square",
+      "genus": 1,
+      "edges": 2,
+      "arrows": 4,
+      "rank": 16,
+      "passport": [
+        [
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "id": "qcnn-9-0",
+      "kind": "nine",
+      "genus": 4,
+      "edges": 9,
+      "arrows": 18,
+      "rank": 162,
+      "passport": [
+        [
+          9,
+          9
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          18
+        ]
+      ]
+    },
+    {
+      "id": "quantum-convolution-0",
+      "kind": "convolution",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "quantum-attention-0",
+      "kind": "attention",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "photonic-0",
+      "kind": "node",
+      "genus": 0,
+      "edges": 1,
+      "arrows": 2,
+      "rank": 2,
+      "passport": [
+        [
+          1,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    {
+      "id": "qcnn-4-8",
+      "kind": "square",
+      "genus": 1,
+      "edges": 2,
+      "arrows": 4,
+      "rank": 16,
+      "passport": [
+        [
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "id": "qcnn-9-2",
+      "kind": "nine",
+      "genus": 4,
+      "edges": 9,
+      "arrows": 18,
+      "rank": 162,
+      "passport": [
+        [
+          9,
+          9
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          18
+        ]
+      ]
+    },
+    {
+      "id": "quantum-convolution-29",
+      "kind": "convolution",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "quantum-attention-24",
+      "kind": "attention",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "photonic-3",
+      "kind": "node",
+      "genus": 0,
+      "edges": 1,
+      "arrows": 2,
+      "rank": 2,
+      "passport": [
+        [
+          1,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    {
+      "id": "toricgt-quantum-hybrid-0",
+      "kind": "harper",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "toricgt-quantum-hybrid-1",
+      "kind": "harper",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "toricgt-quantum-hybrid-2",
+      "kind": "harper",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "toricgt-quantum-hybrid-3",
+      "kind": "harper",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "toricgt-quantum-hybrid-4",
+      "kind": "harper",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "toricgt-quantum-hybrid-5",
+      "kind": "harper",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "tokengt-softmax",
+      "kind": "tokens",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "tropical-attention",
+      "kind": "tokens",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "tropical-ring",
+      "kind": "tokens",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "attention-hybrid",
+      "kind": "tokens",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "toricgt-soft-moe",
+      "kind": "tokens",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "causal-soft-moe",
+      "kind": "tokens",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "id": "clock-carrier",
+      "kind": "clock",
+      "genus": 1,
+      "edges": 3,
+      "arrows": 6,
+      "rank": 18,
+      "passport": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          6
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+\chapter{Actual renormalization: effective actions and scale}
+\label{rg:chapter}
+Renormalization changes the description while preserving a specified set of
+physical predictions. To make that claim testable, we carry the effective
+action, its constant, observables and scale convention. Neural state
+compression and principal-axis alignment can be useful auxiliary techniques,
+but their training losses do not replace these objects.
+\input{chapters/rg-core}
+\begin{center}
+\begin{tikzpicture}[scale=.85,every node/.style={font=\small}]
+\node[draw,circle] (p) at (0,1.5) {$ B_+$};
+\node[draw,circle] (n) at (0,-1.5) {$ B_-$};
+\foreach \j in {0,...,4}{
+ \node[draw,circle,fill=white] (w\j) at (2,{2-\j}) {$ s_{\j}$};
+ \draw[brown] (p)--(w\j);\draw[blue] (n)--(w\j);
+}
+\draw[-{Latex},thick] (3,0)--(4.5,0);
+\node[draw,rounded corners,text width=55 mm,align=center] at (8,0)
+ {Sum both black spins\\$ V'=c_\varnothing+\sum_Ac_A\prod_{j\in A}s_j $\\All generated interactions retained};
+\end{tikzpicture}
+\end{center}
+This incidence schematic displays the physical elimination, not a planar
+uniformization of the genus-two surface. The explicit $\sigma,\alpha $ and
+face cycle determine the ribbon embedding; the interactive laboratory
+shows actual radial lifts and labels its four-real-coordinate projection.
+\input{chapters/rg-details}

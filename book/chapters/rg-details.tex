@@ -1,0 +1,148 @@
+% Generated shared actual RG material.
+\section{Controlled errors and a trained full-action RG approximation}
+\label{sec:rg-details}
+\begin{proposition}[Classical action-error propagation]
+If $|\widehat V(s,t)-V(s,t)|\le\varepsilon $ at every finite configuration,
+then $|\mathcal R\widehat V(s)-\mathcal RV(s)|\le\varepsilon $.
+The partition ratio lies in $[e^{-\varepsilon},e^{\varepsilon}]$.
+Every further \emph{exact} marginalization preserves the same action bound.
+\end{proposition}
+\begin{proof}
+The pointwise inequalities
+$ e^{-\varepsilon}e^V\le e^{\widehat V}\le e^\varepsilon e^V $
+survive finite summation. Taking logarithms proves the first assertion;
+summing also over the retained variables proves the second. Iterate the
+same argument. For normalized measures the likelihood ratio lies between
+$ e^{-2\varepsilon}$ and $ e^{2\varepsilon}$, so a bounded observable error
+is at most $\|O\|_\infty\min(2,e^{2\varepsilon}-1)$. Per-step learned
+errors would add; a single initial error does not grow under subsequent
+exact elimination. This scalar proof is not an assertion that the matrix
+exponential is operator-monotone.
+\end{proof}
+
+\subsection{Executed finite calculations}
+The implementation checks full enumeration against the closed black-spin
+formula, Walsh reconstruction, raw partition equality, retained-spin
+magnetizations and two-stage versus direct elimination. At the quantum
+$\Gamma=0$, $\beta=1$ limit, every Pauli coefficient agrees with the
+classical effective action, with the required minus sign between energy
+and logweight. At nonzero transverse field the model is
+\[
+ H=-J_+Z_+\sum_jZ_j-J_-Z_-\sum_j\eta_jZ_j-bZ_+
+       +\tfrac 35 bZ_--\sum_jh_jZ_j-\Gamma\sum_iX_i.
+\]
+At general $\beta $, the classical zero-transverse-field limit uses $\beta V $, including the fixed white fields, rather than scaling only the three varied controls.
+For $ m=5$, its full dimension is 128 and the first retained dimension is 32.
+Every one of the 1024 five-spin Pauli coefficients is computed; later
+retained dimensions are 8,4,2. Spectral-log/exponential and full Pauli
+reconstruction residuals, exact-trace composition and retained-observable
+comparisons are recorded separately. Floating-point residuals are numerical
+checks of the proved finite identities, not interval certificates.
+
+The local laboratory exposes every scale, coupling/field controls for the
+classical model, selected generated interaction supports on actual dessin
+radial lifts, the even-chain $ K,h,C $ trajectory and physical correlation
+length, and three fixed quantum matrix calculations. Live quantum parameter
+sliders are not offered for uncomputed Hamiltonians. Pair truncation carries
+the identity term and reports both partition and probability/density errors.
+A late-scale floating-point loss of the small eigenvalue is avoided by
+transporting the exact log-eigenratio coordinate $\log r\mapsto 2\log r $;
+this is explicitly the transfer RG identity, not a newly diagonalized value.
+
+\subsection{A quantum-feature model trained on actual RG}
+The learner targets all 32 unnormalized logweights of the $7\to 5$ spin
+$ m=5$ decimation. Its three inputs are $(J_+,J_-,b)$, with ranges
+$[0.15,1.1]^2\times[-0.6,0.6]$. Fixed fields are
+$ h_j=0.045\cos(1.7 j)+0.02 j/5$. Seed 20261103 fixes 160 input samples, a
+120/40 train/test split, and 40 OOD samples with $ J_\pm\in[1.15,1.5]$,
+$ b\in[-0.8,0.8]$. The three feature qubits encode the couplings by
+$ R_y(1.5 J_+)\otimes R_y(1.5 J_-)\otimes R_y(2 b)|000\rangle $.
+Two local $ R_y,R_z $ layers, with a CZ triangle after each, contain 12
+nominal optimizer angles. The final three $ R_z $ phases commute with the
+measured $ Z $ products and are structurally inactive for this loss; they
+still change the displayed state phases. We count them as nominal
+parameters, not additional effective expressive directions. Seven nonempty Pauli-$ Z $ products feed an affine
+$8\times 32$ readout. There are 268 parameters. Feature registers are not
+the seven physical spin sites or five quiver vertices.
+
+The training objective is full-action MSE, including the constant; KL alone
+would ignore that constant. A training-only ridge fit initializes the head,
+then 120 Adam updates optimize both circuit and head. Actual PennyLane
+analytic expectation calls implement the feature circuit. Parameter-shift
+derivatives of each feature are combined with the classical head gradient;
+full-loss finite differences agree to $6.46\times 10^{-11}$. All data,
+parameters, intermediate checkpoints and complete loss curves are preserved.
+
+The held-out full-action MSE is approximately 0.00985, mean
+$ D_{\mathrm{KL}}(p_{\rm exact}\Vert p_{\rm learned})=0.00300$, mean TV 0.0290,
+and mean absolute log-partition error 0.0610. A classical quadratic-feature
+baseline with the same 256 readout parameters obtains 0.00613,0.00240,0.0233
+and 0.0138, respectively. OOD action MSE increases to 0.267 for the quantum
+hybrid, versus 0.0555 for the baseline. The quantum-feature constant MAE is 0.0444 and higher-body coefficient
+RMSE is 0.00900, versus 0.0124 and 0.0130 for the classical baseline; different
+metrics favor different aspects. The aggregate results show no quantum
+advantage. They expose genuine full-action approximation errors rather
+than substituting state-compression success for RG.
+
+Each saved example computes its maximum error over all 32 coarse states;
+the proposition then applies to its subsequent exact marginalizations.
+These per-example finite bounds are not uniform over the input parameter
+box. The synchronized architecture inspector shows literal gate outputs,
+Pauli features, head, logweights, generated interactions and partition
+value, linked to the exact genus-two dessin/order context. No full order
+representation, continuum universality, material-specific accuracy or
+arithmetic zero-location bridge is inferred.
+
+\subsection{Quantum TokenGT and the geometric error-correction boundary}
+A further executed node/edge-token hybrid uses the same exact RG teacher,
+with frozen three-qubit features, trained Q/K/V and a full-action head.
+Softmax, componentwise max-plus and hybrid variants are compared with a
+matched classical feature model; the latter has lower held-out action error.
+An explicit intervention-code/change variational MI objective learns concept
+directions; a 61-candidate latent forest and a held-out analogy transfer are
+scored on exact physical observables. Rips $ H_1$ is actually reduced over
+$\mathbf F_2$, and a continuous Gaussian GFlowNet trains a trajectory-balance
+objective with specified root/Lebesgue measures. Empirical residuals do not
+prove exact terminal sampling, semantic reasoning or categorical equivalence.
+
+The physical bit-flip repetition channel is separately executed and has
+$ p_L=3 p^2-2 p^3$ under ideal recovery. A genuine cellular CSS calculation on
+the genus-two one-face dessin gives $[[10,4,1]]$: vertex-incidence rank 6,
+zero face boundary, X-distance 1 and Z-distance 4. Thus this cellulation
+provides no useful protection merely from its genus. These finite layers,
+full formulas, proofs, parameters and scope are developed in the research
+book and interactive laboratories; the physical models are not faithful
+representations of the infinite completed order and supply no GRH bridge.
+
+\subsection{An actual finite gentle cut for the categorical interface}
+\label{rg:cut}
+On the genuine $ m=5$ dessin quiver write
+$ a_i,b_i:i\to i-1$ with indices modulo 5; cross-branch consecutive pairs
+are forbidden. Remove both arrows with source 0. The surviving algebra $ B $
+has vertices 0 through 4, arrows $ a_i,b_i $ for $ i=1,\ldots,4$, and relations
+$ a_i b_{i-1}=b_i a_{i-1}=0$ for $ i=2,\ldots,4$. It is an explicit finite
+gentle quotient, not the completed order itself.
+
+Every surviving positive path stays on one branch and has length at most 4.
+For length $\ell=1,\ldots,4$ there are $2(5-\ell)$ paths, while length 0
+contributes five idempotents. Therefore $\dim_kB=5+2(4+3+2+1)=25$.
+The forbidden-chain resolution already proved for monomial gentle algebras
+has two alternating chains of length $ n $ from vertex $ i $ to $ i-n $ when
+$1\le n\le i $, and none for $ n>i $. Applying Hom to simples kills its
+arrow differentials. Hence $\operatorname{pd}_B S_i=i $ and
+$\operatorname{Ext}^4_B(S_4,S_0)\cong k^2$. The split finite-dimensional
+simple-module criterion gives $\operatorname{gldim}B=4$.
+
+Every full branch cycle crosses a removed arrow, so the common completed
+order parameter $ u $ maps to zero. Thus $ B $ is a finite $ u $-torsion quotient,
+not a DVR-free surface order. The difference is visible in derived Hom:
+$ S_0$ is projective over $ B $, whereas in the original completed order the
+two forbidden arms of length 5 return to vertex 0 and give
+$\operatorname{Ext}^5_\Lambda(S_0,S_0)\cong k^2$. The exact restriction along
+$\Lambda\twoheadrightarrow B $ is consequently not derived fully faithful.
+This supplies a concrete cut on which to investigate graded gentle/Fukaya
+models, while proving why its equivalence cannot simply be transported to
+the original completed order. Boundary/stops/line-field data and an actual
+module-valued neural decoder would still have to be supplied. Exact path
+and endpoint enumeration accompanies the prose proof; this cut/category
+comparison is not claimed wholly Lean formalized.

@@ -1,0 +1,33 @@
+{"epoch": 0, "train": 0.01472549966338311, "test": 0.018565135099982883}
+{"epoch": 20, "train": 0.011697318481003168, "test": 0.01311901952782934}
+{"epoch": 40, "train": 0.010654176570957555, "test": 0.011954618071776498}
+{"epoch": 60, "train": 0.009496341481024743, "test": 0.011209566701544901}
+{"epoch": 80, "train": 0.008194689897445274, "test": 0.01070562470792347}
+{"epoch": 100, "train": 0.007258715176046296, "test": 0.010369935957945347}
+{"epoch": 120, "train": 0.006721002617605456, "test": 0.009847537526468397}
+{
+  "final": {
+    "logweight_mse": 0.009847537526468397,
+    "KL_target_to_prediction": 0.0030049005195171676,
+    "mean_TV": 0.02903643073147516,
+    "mean_abs_logZ_error": 0.061008683831271227,
+    "max_logweight_error": 0.49303188574002155,
+    "max_magnetization_error": 0.07219618008131819
+  },
+  "ood": {
+    "logweight_mse": 0.2674222405039288,
+    "KL_target_to_prediction": 0.04486731908303896,
+    "mean_TV": 0.10333408718955665,
+    "mean_abs_logZ_error": 0.5559500944611988,
+    "max_logweight_error": 2.0342930905185606,
+    "max_magnetization_error": 0.2814738993761665
+  },
+  "baseline": {
+    "logweight_mse": 0.0061321400242341775,
+    "KL_target_to_prediction": 0.0023992022607506993,
+    "mean_TV": 0.023334811705574183,
+    "mean_abs_logZ_error": 0.013796055586689148,
+    "max_logweight_error": 0.43426647960779463,
+    "max_magnetization_error": 0.09203244249188622
+  }
+}

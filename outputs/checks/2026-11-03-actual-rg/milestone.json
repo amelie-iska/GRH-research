@@ -1,0 +1,54 @@
+{
+  "utc": "2026-11-04T03:35:21.945436+00:00",
+  "scope": "Verified finite actual-RG, quantum-feature TokenGT and surface-inspector milestone; no GRH completion",
+  "book": {
+    "pages": 159,
+    "chapters": 34,
+    "vector_diagrams": 17,
+    "unique_labs": 9
+  },
+  "focused_articles_pages": [
+    30,
+    62
+  ],
+  "lean": {
+    "printed_reports": 295,
+    "standard_foundations_only": 293,
+    "axiom_free": 2,
+    "new_finite_scalar_rg": 9
+  },
+  "architecture_catalogues": {
+    "original": 22,
+    "rg": 6,
+    "quantum_tokengt": 6
+  },
+  "review": "planning/reviews/actual-rg/REVIEW.md",
+  "checks": [
+    "lean-full.log",
+    "browser-release.log",
+    "companion-final.log",
+    "theme-final.log",
+    "collections-final.log",
+    "html-alignment-final.json"
+  ],
+  "limitations": [
+    "Classical baseline better on several heldout metrics; one seed and finite CPU experiments",
+    "Quantum features plus trained classical attention, not coherent quantum attention",
+    "Ideal X-only repetition recovery; no noisy physical gate/hardware simulation",
+    "Empirical MI/TB/topology diagnostics, no population/global convergence certificate",
+    "Sage supplied unexecuted; full-book formalization and arithmetic GRH bridge open"
+  ],
+  "implementation_complete": false,
+  "research_complete": false,
+  "no_new_dependencies": true,
+  "no_mcp_servers_enabled": true,
+  "preview": "http://127.0.0.1:8765/rg.html",
+  "evidence_sha256": {
+    "lean-full.log": "7e4a14bdcef65cd4f82a4ef38736f8fc6376a0a51921a510e9077640b444df28",
+    "browser-release.log": "da7ec649d9c6f19e3fd7474d30f1102b971538764a5b71581c99cd49adc1d7a3",
+    "companion-final.log": "e7d0188cd51f8151d92513b3480a98baaf95b5a1ae12f3f5d31665538515794d",
+    "theme-final.log": "244c5c06f9d63f1da06a9e0434bfd6732cef2e701d3e9802bb0437f2b9defa36",
+    "collections-final.log": "9b4f3ba71309fee9c34fae6025bf01668e51d19850108fb339fc603531ef44ec",
+    "html-alignment-final.json": "8d307984b5c3eb68848a0d8f47d4ab376c36cc0b62ba5f3e37d8032fdd400880"
+  }
+}

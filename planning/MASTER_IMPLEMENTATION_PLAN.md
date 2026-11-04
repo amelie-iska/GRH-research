@@ -214,3 +214,30 @@ convolution, total squarefreeness, all row zeros and conductors before Cauchy.
 The prior high-gcd prose's cubic label is corrected to sextic (the cubic is
 its square), without changing that derivation. Resume P4 linear relations
 next, alternating with this explicit coefficient-sensitive P7 research lane.
+
+## Latest explicit correction: actual RG and quantum TokenGT
+
+Renormalization presentation must lead with a full effective action, constants,
+partition/observable comparisons and scale maps. Compression and covariance
+benchmarks retain their own evidence category. The actual clean K2,m dessin
+physical graph, infinite gentle quiver and completed-order carrier are distinct.
+Every architecture needs a bbycroft-style original step-through tensor view
+synchronized with actual dessin/quiver/order geometry and precise index maps.
+
+The user additionally requires a quantum TokenGT version with tropical
+attention, GraphCG-style learned concept steering, latent forest search,
+measured analogical transfer/persistent homology and continuous embedding
+GFlowNet training. Implemented finite quantum-classical versions retain exact
+physical RG teachers, heldout/OOD and matched classical comparisons, explicit
+MI random variables and GFN state measures, and separately executed idealQEC
+feature-memory layers. No semantic/mirror/quantum-advantage theorem or complete
+GFN law is inferred from training. QEC must refer to an actual recovery/noise
+model; the one-face genus-two CSS [[10,4,1]] counterexample is retained.
+
+The new book explains concrete Fukaya/HMS/tropical and materials/generative
+interfaces with their actual missing hypotheses. See ACTUAL_RG_DESIGN.md,
+research/actual-rg.md and independent review. New scalarFiniteRG components
+are kernel checked; whole learned/physical/categorical formalization and both
+completion gates remain open. Preserve original22record hashes, all source
+manuscripts, checkpoints/environments and existing shared theme. Continue P4
+and the coefficient-sensitive P7 arithmetic lane after this user correction.

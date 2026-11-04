@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "panels": [
+    {
+      "name": "tokens",
+      "title": "Quantum-feature TokenGT",
+      "max": 16
+    },
+    {
+      "name": "concepts",
+      "title": "A learned intervention basis",
+      "max": 26
+    },
+    {
+      "name": "forest",
+      "title": "Finite latent forest search",
+      "max": 60
+    },
+    {
+      "name": "gfn",
+      "title": "A trained continuous GFlowNet",
+      "max": 29
+    },
+    {
+      "name": "topology",
+      "title": "Measured transfer and embedding topology",
+      "max": 100
+    },
+    {
+      "name": "qec",
+      "title": "Actual three-qubit bit-flip correction",
+      "max": 9
+    }
+  ],
+  "tensor_tables": [
+    {
+      "name": "features",
+      "rows": 18,
+      "columns": 6
+    },
+    {
+      "name": "query",
+      "rows": 18,
+      "columns": 6
+    },
+    {
+      "name": "key",
+      "rows": 18,
+      "columns": 6
+    },
+    {
+      "name": "value",
+      "rows": 18,
+      "columns": 6
+    },
+    {
+      "name": "scores",
+      "rows": 18,
+      "columns": 18
+    },
+    {
+      "name": "weights",
+      "rows": 18,
+      "columns": 18
+    },
+    {
+      "name": "context",
+      "rows": 18,
+      "columns": 6
+    },
+    {
+      "name": "basis",
+      "rows": 3,
+      "columns": 6
+    }
+  ],
+  "mobile": true,
+  "qec_layer_table_cases": 5,
+  "qec_mobile": true,
+  "qec_layer_checksum_rejection": true,
+  "checksum_rejection": true,
+  "exceptions": 0
+}

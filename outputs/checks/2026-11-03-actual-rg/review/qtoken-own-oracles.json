@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "record_sha256": "5952ba0b9eeaba65c4dddd861cb7a86cbde660d09b3c6d89dd3fddd6c9d62c44",
+  "source_hashes_valid": true,
+  "independent_all_four_heldout_metrics": {
+    "quantum-softmax": {
+      "logweight_rmse": 0.1026135240402938,
+      "logZ_rmse": 0.09247358812668964,
+      "retained_magnetization_rmse": 0.017725222423132188,
+      "mean_TV": 0.03420229155721844,
+      "identity_coefficient_rmse": 0.04433280424487223
+    },
+    "quantum-tropical": {
+      "logweight_rmse": 0.06530007163346305,
+      "logZ_rmse": 0.05923464510359064,
+      "retained_magnetization_rmse": 0.0184634784183823,
+      "mean_TV": 0.021667858489042523,
+      "identity_coefficient_rmse": 0.031117553865627937
+    },
+    "quantum-hybrid": {
+      "logweight_rmse": 0.10125428795587245,
+      "logZ_rmse": 0.09653336279885132,
+      "retained_magnetization_rmse": 0.027088048865494457,
+      "mean_TV": 0.032121074215672105,
+      "identity_coefficient_rmse": 0.04424246332044621
+    },
+    "classical-hybrid": {
+      "logweight_rmse": 0.04878321956585736,
+      "logZ_rmse": 0.0471188993897707,
+      "retained_magnetization_rmse": 0.015651196097402308,
+      "mean_TV": 0.01662507868480642,
+      "identity_coefficient_rmse": 0.024006099577088883
+    }
+  },
+  "CSS": {
+    "qubits": 10,
+    "rank_X": 6,
+    "rank_Z": 0,
+    "logical": 4,
+    "d_X": 1,
+    "d_Z": 4
+  },
+  "SDK_Bell_mixture_error": 2.6922908347160046e-14,
+  "arbitrary_path_bridge_identity_error": 1.0658141036401503e-14,
+  "GFN_record_samples_outside_box": 0,
+  "GFN_recorded_heldout_TB_mse": 0.0025790424919608186
+}

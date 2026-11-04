@@ -144,3 +144,19 @@ Four universal finite-complex matrix statements are Lean checked. The
 ideal-character, lattice and prime-ideal comparison remains prose/external;
 original signed mean-square and GRH obligations remain open. This research
 addition does not certify any otherwise unmapped historical source chapter.
+
+### Actual RG and architecture-to-surface correction
+
+The original learned-physics and renormalization proposals now have a dedicated
+corrected effective-action RG chapter: clean dessin incidence models, exact
+finite partition/observable identities, generated interactions/constants,
+quantum thermal Hamiltonians and controlled learned full-action errors.
+QCNN compression, covariance alignment and the Harper surrogate retain their
+full original records as distinct auxiliary tasks. Nine actual finiteRG
+identities are Lean checked; quantum/continuum/optimizer interfaces remain
+explicitly incomplete. A separate quantumTokenGT chapter gives executed
+node/edge-token hybrids, tropical aggregation, defined conceptMI, latent
+search/analogy with F2persistence, continuousGFN densities/training, idealQEC
+feature-memory and exactCSS obstruction, plus specified Fukaya/HMS/tropical/
+materials research boundaries. These additions do not certify all historical
+physics source assertions, every category or a GRH proof.

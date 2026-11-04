@@ -453,3 +453,57 @@ cross-factor coprimality, ν,W and every row-zero/conductor dependence before
 any Cauchy step. Proving the identity is not the mean-square estimate.
 P7-low-gcd remains in_progress, both completion gates are unresolved, and
 the existing hourly heartbeat must remain active.
+
+
+## Actual RG and quantum TokenGT surface laboratories (2026-11-03)
+
+Implemented the latest user corrections with finite effective actions as the
+primary RG object. Clean genus-two/four dessins supply K2,5/K2,9 incidence
+models; all generated interactions, constants, retained observables and
+partition sums survive exact elimination. A separate even-chain benchmark
+performs spatial rescaling. Quantum thermal partial traces retain the full
+Pauli expansion; they do not assert preserved real-time dynamics.
+
+Trained a full-action PennyLane learner and four matched TokenGT-style
+quantum-feature/classical-attention models on a seeded 120/40+40 OOD split.
+The classical baseline is better on several heldout metrics. Tropical max-plus
+attention, a defined intervention-code MI functional, finite latent forest,
+analogy transfer, F2 Rips H1 and continuous-density trajectory-balance training
+all have replayable data, losses and explicit limits. These are finite
+experiments, not general semantic reasoning or a GRH argument. Ideal bit-flip
+recovery improves noisy feature predictions: at p=.1 the hybrid action RMSE
+is .898 unprotected, .316 at one level and .106 at two, versus clean .101.
+Phase noise and faulty recovery are not covered. The actual one-face genus-two
+CSS cellulation is [[10,4,1]], an explicit failure of genus alone as protection.
+
+All 22 original architecture records remain unchanged. Separate six-case RG
+and six-case quantum-TokenGT catalogues include gate/tensor/MLP/Gaussian traces,
+literal values and synchronized dessin/quiver/order views. Physical spin,
+quiver-vertex, feature-qubit, Weyl and optical carriers remain distinguished.
+A finite gentle cut has dimension25/global dimension4, with a concrete Ext
+obstruction to treating its restriction as a derived equivalence of the order.
+The necessary graded/stopped HMS identification remains open.
+
+The book is 159 pages/34 chapters with 17 source-aligned vector diagrams and
+nine distinct canonical interactive labs. Focused articles are 30/62 pages.
+A renderer input-order bug and malformed new TeX4ht transpose markup were
+corrected before valid HTML promotion. Full Lean verification passes295 printed
+reports (293 standard-foundation-only, two axiom-free); the nine new FiniteRG
+statements cover actual finite scalar Gibbs/marginal identities, not all
+quantum, categorical, learning or book material. Independent review and focused
+physics, gradient, density, decoder, browser, mobile, dark-mode, original22,
+optional-catalogue and native-MathML checks pass. A browser startup readiness
+race in the final harness invocation was handled by waiting for the known
+headless instance; the completed release browser check reports no exceptions.
+Sage companion supplied but unexecuted; no hardware/cloud/GPU runs, new
+dependencies, MCP activation or source/environment changes were made.
+
+Evidence: research/actual-rg.md, planning/reviews/actual-rg/REVIEW.md and
+outputs/checks/2026-11-03-actual-rg/. The current finite user-facing correction
+is complete; full implementation and research gates remain false. Next resume
+P4 original linear-relations/functorial-filtration1097–1307. The arithmetic
+lane remains the coefficient-sensitive truncated Möbius identity/type-I/type-II
+analysis recorded in the preceding checkpoint; the independent positive
+arithmetic determinant/zero-location bridge is open. Do not rerun completed
+pair-square/high-gcd audits or promote learned spectra to GRH. Preserve every
+source, trained checkpoint, partial exploratory run and pinned environment.

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/rg/generative_rg.py", line 38, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/amelieschreiber/Documents/LaTeX-projects/GRH/examples/rg/generative_rg.py", line 27, in main
+    rho=np.asarray(dephased());dephase_error=float(np.max(abs(rho-np.diag(p))));assert dephase_error<1e-10
+                                                                                       ^^^^^^^^^^^^^^^^^^^
+AssertionError

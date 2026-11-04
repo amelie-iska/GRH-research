@@ -1,0 +1,88 @@
+{
+  "accessed": "2026-11-03",
+  "primary_references": [
+    {
+      "title": "TokenGT",
+      "url": "https://arxiv.org/abs/2207.02505v2",
+      "version": "v2 (2022-10-22)",
+      "read_scope": "Abstract and metadata read; independent original miniature implementation, not upstream benchmark reproduction."
+    },
+    {
+      "title": "GraphCG",
+      "url": "https://arxiv.org/html/2401.17123v1",
+      "version": "v1 (2024-01-29)",
+      "read_scope": "HTML conceptual formulation and Appendix D MI definitions/lower-bound context read. Replaced vague vector-MI wording with explicit sampled code/change variables; no molecular benchmark reproduction."
+    },
+    {
+      "title": "Trajectory balance",
+      "url": "https://arxiv.org/abs/2201.13259v3",
+      "version": "v3 (2023-10-04)",
+      "read_scope": "Abstract and metadata read. Mathematical continuous density formulation taken from the separate continuous GFlowNet primary reference."
+    },
+    {
+      "title": "Continuous GFlowNets",
+      "url": "https://arxiv.org/html/2301.12594v2",
+      "version": "v2 (2023-05-25)",
+      "read_scope": "HTML state-measure and trajectory-balance definitions, especially Definition6 and table of density/kernel forms read. Original finite-horizon Gaussian implementation."
+    },
+    {
+      "title": "Ripser",
+      "url": "https://arxiv.org/abs/1908.02518v2",
+      "version": "v2 (2021-02-26)",
+      "read_scope": "Abstract and metadata read for Rips persistence context; own elementary F2 boundary-column reduction, no Ripser package execution or efficiency claim."
+    },
+    {
+      "title": "IBM repetition codes",
+      "url": "https://quantum.cloud.ibm.com/docs/en/tutorials/repetition-codes",
+      "version": "live official tutorial accessed2026-11-03, no immutable revision claimed",
+      "read_scope": "Background, stabilizer/syndrome and scope of bit-flip-only code read. No hardware or IBM Runtime execution; independent local Bell-reference density-channel implementation."
+    },
+    {
+      "title": "Gentle/Fukaya surface equivalences",
+      "url": "https://arxiv.org/abs/1801.06370v2",
+      "version": "v2 (2018-02-09)",
+      "read_scope": "Abstract and hypotheses read: homologically smooth graded gentle algebra, surface with nonempty boundary, stops, line field. Used only to delimit a proposed categorical interface."
+    },
+    {
+      "title": "Gross\u2013Siebert logarithmic degeneration",
+      "url": "https://arxiv.org/abs/0709.2290v2",
+      "version": "v2 (2009-12-08)",
+      "read_scope": "Abstract and metadata read. Motivation for requiring explicit degeneration and affine/valuation data; no mirror theorem applied to attention."
+    },
+    {
+      "title": "Kitaev anyonic quantum computation",
+      "url": "https://arxiv.org/abs/quant-ph/9707021",
+      "version": "arXiv primary abstract page accessed2026-11-03; no unchecked revision pin",
+      "read_scope": "Primary abstract and metadata read for topological QEC context. Local cellular CSS rank/distance is derived and enumerated independently; no anyon dynamics simulated."
+    }
+  ],
+  "local_read_scope": "Existing tokenizer/attention formulas, trace schema, RG black_decimation definitions, approved environment lockfile. Source clone is not trained or modified.",
+  "local_sources": [
+    {
+      "path": "examples/architecture/classical_traces.py",
+      "sha256": "7817fa2e7ebabfa7d3ecce8aebaed982d083ba1397260869f261ee0b139fe4ae"
+    },
+    {
+      "path": "examples/architecture/trace_schema.py",
+      "sha256": "b42b3b32ff5a963ad4eb3e0ab59516eccf6b11ca0406430027b5e46aacbe5889"
+    },
+    {
+      "path": "external/ToricGT/src/toricgt/graph_tokenizer.py",
+      "sha256": "d7ce65a90da423a540d83046fa2e12ac925e116eda197f177c9f1ce73ee06408"
+    },
+    {
+      "path": "external/ToricGT/src/toricgt/tropical_attention.py",
+      "sha256": "dad393e642ece8b0f8b723da4e04ff4e193f33fd73e9d890efc29a4948a1c013"
+    },
+    {
+      "path": "examples/rg/rg_math.py",
+      "sha256": "92c63422d8d11dd9755838d0dd14e259b535bd08e9a370dbf12762b2ebf70d84"
+    },
+    {
+      "path": "examples/quantum/requirements-cpu.lock",
+      "sha256": "bbda0be638105efc4f453c239c925d9e77171898fa84866146a6f55031ca7b5a"
+    }
+  ],
+  "ToricGT_commit": "a5199bc989a6fb170e21220e5e87bf95bc2fc0b4",
+  "boundaries": "Original finite prototype; no unseen fulltext, benchmark, upstream checkpoint, categorical equivalence, quantum advantage or physical topological-order claim"
+}
