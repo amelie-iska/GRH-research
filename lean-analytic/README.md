@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 335 currently checked declarations print their theorem types and axiom dependencies. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 342 currently checked declarations print their theorem types and axiom dependencies. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -290,3 +290,18 @@ The path-normal-form quotient isomorphism is separately proved prose; Ext
 objects, ambient almost-split universality and the arithmetic bridge are not
 formalized by this sequence. Independent symbolic and characteristic2 checks
 pass; no new dependency or cache was needed.
+
+
+## Full-mask Hecke type-I Euler components
+
+`HeckeTypeI.lean` adds seven actual complex local and finite-product statements.
+Primitive coefficient arrays are independently specified at deleted primes;
+only outside the full deleted set must the second equal the square of the
+first. This permits quadratic conductor collapse and preserves sixth-power
+row zeros. The finite restoration identity compiles with explicit nonzero
+local denominators; these are not global desired positivity assumptions.
+The primitive ideal characters, Kummer/CFT conductor comparison, infinite
+Euler products, Mellin inversion and uniform scalar contour theorem are
+proved prose using named classical external results, not asserted as formal
+consequences of a finite toy. The original signed mean square and GRH remain
+open. Full-suite342 reports pass,340standard-only/two axiom-free; pins unchanged.

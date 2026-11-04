@@ -1,5 +1,5 @@
 # Complete source inclusion and development map
-Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical146-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
+Both supplied manuscripts are preserved in full, byte-identically. The source volumes include every original formula, diagram instruction and code block. The critical177-page working book develops and corrects their material; it is not yet a complete rewrite/formalization of every source assertion. Refuted assertions remain historical claims with corrections.
 
 ## emergent_cyclic_time_hilbert_polya_GRH_2053.tex
 SHA256 `08708269403c3095381c45eb4c82435a073aaca8819f427a232e8eba368e05dc`; 15556 lines.
@@ -181,3 +181,11 @@ with exact rational certificate examples. Its higher-genus application
 compresses finite permitted arrow words without changing the infinite
 algebra/order or TokenGT node/edge tokens. The finite LP duality proof is
 prose plus independently checked exact rational witnesses, not Lean.
+
+The arithmetic frontier now includes the original-family type-I squarefree
+Hecke Euler ratio with full zero-extension/primitive conductor restoration,
+its principal residue and a scalar contour/convexity proof retaining divisor,
+conductor and profile dependence. Seven finite Euler components are Lean
+checked. The scalar aggregate's loss is derived explicitly; classical CFT/
+Hecke analytic inputs remain external and the signed short-row/GRH obligations
+remain open. No previously refuted absolute pair-square/U1 audit is repeated.

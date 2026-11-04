@@ -277,3 +277,22 @@ TokenGT checkpoint has been changed to consume compressed path tokens, and
 no categorical/geometric equivalence or arithmetic positivity follows from
 shorter word encodings. The original-family signed low-gcd mean square,
 full-mask Mellin/contour uniformity and all GRH scope obligations are unchanged.
+
+
+## Type-I scalar contour frontier (2026-11-03)
+
+The selected primitive-factor restoration and scalar Mellin estimate are now
+proved in prose using classical CFT/Hecke theory, with explicit good/wild
+conductor and M4-profile dependence. Quadratic conductor drops and sixth-power
+row zeros are restored before using primitive L-functions. Seven finite Euler
+identities are Lean checked. Do not repeat this scalar derivation as a new
+solution or report those finite identities as full Hecke formalization.
+
+What remains is a useful ORIGINAL-family average before pointwise convexity:
+the primitive numerators, independently squared primitive denominators,
+d-dependent deletion factors, actual beta_U, principal/residual classes and
+quantitative height/profile uniformities must stay inside the weighted moment.
+The derived scalar envelope loses a power and supplies no short-row mean
+square. Original scale suprema also require cutoff compatibility and restoration
+of2a_U on small scales, plus signed covariance with typeII. No GRH scope or
+independent positive arithmetic determinant comparison has been closed.

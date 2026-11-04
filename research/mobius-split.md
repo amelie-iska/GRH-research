@@ -102,3 +102,11 @@ by6. Then prove exactly the available Mellin contour/residue bounds and
 uniformities in primitive conductor, d, profiles and scale suprema before
 summing the actual beta_U. No desired cancellation or zero location may be
 assumed. This is a different analytic attempt; the U1 argument is finished.
+
+
+Follow-up: the full-mask Euler ratio and scalar contour target above is now
+completed with explicit classical dependencies in [hecke-type-i.md](hecke-type-i.md).
+Its pointwise convexity aggregate is insufficient for the signed mean square;
+next arithmetic work must average the retained Mellin expression instead.
+The actual branch extension implementation mentioned above is also complete
+in its stated ambient-module scope; category/AR universality remains separate.

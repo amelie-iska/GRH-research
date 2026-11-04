@@ -676,3 +676,52 @@ conductor. Prove Mellin/contour/profile/scaleuniformities before summing beta_U.
 The original signed low-gcd estimate, positive arithmetic determinant/zero
 bridge and scope-specific GRH obligations remain open; don't rerun completed
 pair-square/high-gcd/U1 audits as a new proof. Keep existing heartbeat active.
+
+## Latest frontier — full-mask Hecke type-I scalar contour
+
+New verified slice: original squarefree inner series has an exact primitive
+Euler ratio and full zero-extension restoration; valuations3and6 are retained.
+Primitive psi_u is defined globally fromnu*Kummer(u) befored; psi_(u,2) is
+independently primitively induced. Q_u<<nu Nu uses goodtameexponent1 andfixed
+wild classes. The conductor divisibility product runs overALLgoodp|u,p∤6,
+not merelyp∉S; extra fixedgoodS primes canramify. PrimaryCFT/Heckesources and
+coverage/limitations pinned in planning/HECKE_TYPE_I_SOURCES.json.
+
+Prose proves a scalar Mellin shift to sigma=.5+delta with M4 profile control,
+principal residue and error Y^(.5+delta)Q_u^(.25−delta/2+eps)(NradT)^eps.
+The actual beta_U sum forU²<=D yields D^delta U^(1−2delta+eps)
+Nu^(.25−delta/2+eps). The resulting H^(1.5−delta) error envelope is too weak;
+it is NOT an energy lower bound. FixedU plus a shrinking scale can reintroduce
+short2a_U; scalar profile uniformity doesnot prove the original scale supremum.
+No original signed MS3/4, typeII/covariance or positive determinant theorem.
+
+Seven newfiniteEulerLeanstatements; fresh342reports340std/twofree pass.
+Actualideal/phase1488cases/93rows/7split-inert primes and independent288local/
+3072support checks pass. Independent final literal review accepted all stated
+scopes. Book177pages/35chapters/18diagrams/11unique tools; articles20/49 and
+35/75pages. PDF/nativeMathML/source-data dark/mobile checks pass; preview8765
+is live and isolatedtestbrowserclosed. All originalsource/checkpoint data,
+environments/caches and historicaloutputs preserved. No installs/paid/cloud/
+GPUtraining/authentication/MCP activation or Claudeconfiguration changes.
+
+NEXT implementation rotation: P4/P6 actual path normal forms and their
+isomorphism to BranchExtension's generated polynomial matrix-pair algebra,
+then actual module-category packaging before universal AR factorization.
+NEXT P7 research: keep the exact Mellin representation, primitive numerator
+and square denominator, d-dependent deleted factors, actual beta_U, principal
+classes, height/profile dependence and original row multiplicities INSIDE a
+specified weighted second moment BEFOREpointwiseconvexity. A conductor bound
+alone is not an averaged large-sieve theorem. Any proposed new moment must
+state these weights/quantifiers explicitly and preserve the short term and
+II−I covariance at every scale. Scalar ratio/contour work is finished; do not
+rerun it or earlier absolute/U1 obstructions as a complete GRH solution.
+Keep both completion gates false and the existing heartbeat active.
+
+Renderer QA follow-up: book tables now have accessible horizontal scroll
+wrappers; only oversized inlineMathML is wrapped after measuring. Long
+hashes/paths may wrap visually. The323 table subtrees and4541MathMLtrees
+are unchanged; final mobile inner/client/scrollwidths are390/390/390 rather
+than the inherited788px automatic shrink. Future mobile checks must compare
+against clientWidth, not innerWidth alone. Focused/new source loaders and
+independent read-only renderer review passed. These are display-only changes;
+all source/checkpoint/scientific records retain their stated semantics.

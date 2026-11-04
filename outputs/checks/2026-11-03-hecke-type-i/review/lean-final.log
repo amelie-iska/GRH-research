@@ -1,0 +1,21 @@
+GRHResearch.HeckeTypeI.squarefree_local (z : ℂ) : (1 + z) * (1 - z) = 1 - z ^ 2
+'GRHResearch.HeckeTypeI.squarefree_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.HeckeTypeI.unramified_ratio (a z : ℂ) (h : 1 - a * z ≠ 0) :
+  GRHResearch.HeckeTypeI.ratio a (a ^ 2) z = 1 + a * z
+'GRHResearch.HeckeTypeI.unramified_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.HeckeTypeI.deleted_local (a b z : ℂ) (ha : 1 - a * z ≠ 0) (hb : 1 - b * z ^ 2 ≠ 0) :
+  GRHResearch.HeckeTypeI.ratio a b z * GRHResearch.HeckeTypeI.restore a b z = 1
+'GRHResearch.HeckeTypeI.deleted_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.HeckeTypeI.quadratic_collapse (z : ℂ) : GRHResearch.HeckeTypeI.restore 0 1 z = (1 - z ^ 2)⁻¹
+'GRHResearch.HeckeTypeI.quadratic_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.HeckeTypeI.sixth_power_mask (z : ℂ) (hm : 1 - z ≠ 0) (hp : 1 + z ≠ 0) :
+  GRHResearch.HeckeTypeI.restore 1 1 z = (1 + z)⁻¹
+'GRHResearch.HeckeTypeI.sixth_power_mask' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.HeckeTypeI.zero_square_is_not_unramified : 0 ^ 2 ≠ 1
+'GRHResearch.HeckeTypeI.zero_square_is_not_unramified' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.HeckeTypeI.finite_restoration.{u_1} {I : Type u_1} [DecidableEq I] (P T : Finset I) (a b z : I → ℂ)
+  (ha : ∀ p ∈ P, 1 - a p * z p ≠ 0) (hb : ∀ p ∈ P, 1 - b p * z p ^ 2 ≠ 0) (hsquare : ∀ p ∈ P, p ∉ T → b p = a p ^ 2) :
+  ((∏ p ∈ P, GRHResearch.HeckeTypeI.ratio (a p) (b p) (z p)) *
+      ∏ p ∈ P, if p ∈ T then GRHResearch.HeckeTypeI.restore (a p) (b p) (z p) else 1) =
+    ∏ p ∈ P with p ∉ T, (1 + a p * z p)
+'GRHResearch.HeckeTypeI.finite_restoration' depends on axioms: [propext, Classical.choice, Quot.sound]

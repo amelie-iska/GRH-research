@@ -838,3 +838,60 @@ no install/upgrade/training/paid/cloud/GPU/MCP or Claude configuration change.
 Evidence: outputs/checks/2026-11-03-reference-inspector/final/milestone.json,
 planning/reviews/{branch-extension,convextok}/REVIEW.md and primary source
 manifests. Full source expansion, comprehensive Lean and GRH gates stay false.
+
+## 2026-11-03 — full-mask type-I Hecke contour, with its precise loss
+
+Selected P7-low-gcd via the queue helper after the actual-module/UI milestone.
+Attempted the recorded squarefree Euler/Mellin construction rather than
+repeating finished pair-square/high-gcd/U1 audits. Proved the same-full-mask
+primitive ratio L(s,psi_u)/L(2s,psi_(u,2)) with explicit deleted products.
+At goodvaluation3 the primitive square can become unramified; atvaluation6
+both primitive conductors can forget a prime still deleted by the original
+row. Exact norm7 examples require49/48 and7/8 corrections respectively.
+The primitive character is defined befored and its conductor is independentd.
+
+Using named classical abelian reciprocity and Hecke FE, derived the scalar
+Mellin expansion at sigma=.5+delta with principal residue, fourth-derivative
+profile control, Q_u^(.25−delta/2+eps), all deleted primes and Y=D/Nd.
+Q_u<<nu Nu uses tame exponent1 plus fixed wild sixth-power classes. The
+actual beta_U double sum yields normalized remainder
+D^delta U^(1−2delta+eps) Nu^(.25−delta/2+eps), forU²<=D. Its elementary
+energy envelope is H^(1.5−delta) times the displayedD/U factors; atH=D^.75
+the power excess overH is3/8+5delta/4+(2−4delta)a forU=D^a. This is an
+insufficient upper bound, not an actual energy lower bound or a GRH result.
+Shrinking scale at fixedU can restore the short2a_U term; no scale-supremum
+or II−I covariance estimate is inferred from scalar profile uniformity.
+
+Seven complex local/finite product Lean statements and fresh342full reports
+pass (340standard-only,two axiom-free). The exact checker covers1488cases,
+93actualrows,128squarefree columns over7split/inert primes,78016nonzero
+terms/29120zeros; separateoracle288local/3072support checks and freshfocused
+Lean pass. Independent literal review accepted after correcting a conductor
+product that initially omitted extra goodS primes and clarifying the
+nu/Kummer product and principal examples. Classical Hecke/CFT and contour
+objects remain explicit external/prose dependencies, not finite-Lean claims.
+
+Both focused articles35/75pages and book177pages/35chapters compile through
+staging (audit20/49 unchanged);18diagrams/11unique labs remain. One initial
+overfull inline seminorm was moved to display; final logs have nooverfull or
+unresolvedrefs. Final PDF theorem/contour and nativeMathML/source-data reader
+were inspected; focused actualLean/JSON loaders, dark/mobile and existing
+preview pass. Initial isolatedChrome readiness check expired before startup;
+the known browser then became ready and the focused rerun passed. No sources,
+checkpoints, histories, environments or caches deleted/updated; no dependency,
+training/GPU/cloud/payment/auth/MCP/Claude config change. All GRH gates open.
+Evidence: research/hecke-type-i.md, planning/HECKE_TYPE_I_SOURCES.json,
+planning/reviews/hecke-type-i/REVIEW.md, outputs/checks/2026-11-03-hecke-type-i/.
+
+Additional book QA found an inherited mobile viewport defect: wide native
+MathML equation tables forced a390px device to an788px layout, and long
+inline formulas/paths still forced501px after table containment. The old
+scrollWidth<=innerWidth check hid that automatic shrinking. Added exact
+outer-table scroll boxes, measured oversized-inline-math containers and
+text wrapping; all323 table trees and4541MathMLtrees match the raw TeX4ht
+source unchanged. Strong client/inner/scroll assertions now give390/390/390;
+source-reader/night/mobile and independent renderer review pass. Two
+nonblocking renderer observations remain documented: fitting tables also
+receive tab stops, and resize/toggle checks scan the finite MathML set.
+Heading scroll offsets keep anchored research titles below the fixed bar.
+No mathematical content was rewritten by this rendering repair.

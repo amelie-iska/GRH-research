@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "full_reports": 342,
+  "standard_foundations_only": 340,
+  "axiom_free": 2,
+  "focused_statements": 7,
+  "source_sha256": "a506fb6d63050d0c29ddf3b55a5174df653136f578dd2c4469a69349e32a3447",
+  "mathlib": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "scope": "Actual complex finite Euler-restoration identities only; ideal Hecke functions/conductor/contours remain prose and classical external inputs",
+  "book_pages": 177,
+  "focused_article_pages": [
+    35,
+    75
+  ],
+  "book_chapters": 35,
+  "unique_labs": 11,
+  "vector_diagrams": 18,
+  "independent_review": "planning/reviews/hecke-type-i/REVIEW.md",
+  "exact_checks": "outputs/checks/2026-11-03-hecke-type-i/exact.json",
+  "primary_source_pins": "planning/HECKE_TYPE_I_SOURCES.json",
+  "remaining": [
+    "Original signed low-gcd moment and typeII covariance",
+    "Small-scale short-term reassembly and scale suprema",
+    "Infinite Hecke/conductor/contour Lean formalization",
+    "Independent positive determinant and GRH scopes"
+  ],
+  "sources": {
+    "papers/hecke-type-i-core.tex": "f458146de1081ae38d4a3828cee7d21a1ff73e1a67f30cedc3477edbe8a474d0",
+    "papers/hecke-type-i-details.tex": "ba95943f488c8926427dab80089e63335017d8db8506b785a18a633c40b308cc",
+    "lean-analytic/HeckeTypeI.lean": "a506fb6d63050d0c29ddf3b55a5174df653136f578dd2c4469a69349e32a3447",
+    "scripts/check_hecke_type_i.py": "57c8dd46a611a23006174cfd0ef170e32666394ebc8d05ce33991f027bf3741a",
+    "scripts/prepare_book_html.py": "b24e19db379e388515e0daaed7dc7a4475aae165a5ac9ede06f08823d3a71649",
+    "web/book/reader.css": "9eceb875dc3a24bac9f1e110a509b08f869f737e46f30219e439bb15c9bcbb45",
+    "web/book/main.html": "2523c251b4fa0ac937bfb00170987f85db2cf336f64afcfa82172e8ae8f482a5"
+  },
+  "browser": {
+    "passed": true,
+    "chapters": 35,
+    "unique_labs": 11,
+    "actual_lean_and_exact_sources": true,
+    "quadratic_and_sixth_masks": true,
+    "native_mathml": true,
+    "mobile_night": true,
+    "mobile_viewport": {
+      "inner": 390,
+      "client": 390,
+      "scroll": 390,
+      "body": 390,
+      "source": 362
+    },
+    "errors": []
+  },
+  "classical_inputs": "Named established degree-one CFT/Hecke theorems and complex-analytic tools; no desired zero-location or positivity premise",
+  "math_preservation": {
+    "passed": true,
+    "tables": 323,
+    "native_mathml": 4541,
+    "table_subtrees_unchanged": true,
+    "all_mathml_subtrees_unchanged": true,
+    "wrappers": 323,
+    "scope": "Original native MathML and mathematical table trees unchanged, ignoring outer tails relocated after scroll wrappers. Viewport separately browser checked."
+  },
+  "mobile_renderer_review": "planning/reviews/hecke-type-i/MOBILE_REVIEW.md",
+  "legacy_companion": "outputs/checks/2026-11-03-hecke-type-i/companion/companion-checks.json"
+}

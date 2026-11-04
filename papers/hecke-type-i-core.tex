@@ -1,0 +1,93 @@
+\section{A full-mask Hecke expansion for the type-I piece}
+\label{hti:core}
+We now continue the signed decomposition through its actual squarefree
+inner sum. Fix $K=\mathbb Q(\sqrt{-3})$, the finite-order Hecke character
+$\nu$, and the same finite excluded prime set $S$, containing primes above
+$6$ and the conductor of $\nu$. For $u\in\mathcal O_K\setminus\{0\}$,
+let $\psi_u$ be the primitive Hecke character induced by
+$\nu(n)(u/n)_6$ away from $S\cup\operatorname{supp}(u)$.
+It is defined before, and independently of, the type-I divisor $d$.
+The abelian Kummer extension $K(u^{1/6})/K$ constructs the sextic
+factor; multiplying by $\nu$ gives the stated character.
+This uses classical abelian reciprocity, not general Artin holomorphy.
+Write $\psi_{u,2}$ for the primitive character inducing its square and
+$\mathfrak f_u,\mathfrak f_{u,2}$ for the two primitive conductors.
+For a squarefree good ideal $d$ put
+\[
+ T=T(u,d)=S\cup\operatorname{supp}(u)\cup\operatorname{supp}(d),\qquad
+ R_T=\prod_{p\in T}Np,\quad Q_u=|D_K|N\mathfrak f_u.
+\]
+All primes in $T$ are deleted even if absent from either primitive conductor.
+
+\begin{theorem}[Restoration and a uniform scalar contour bound]
+\label{hti:theorem}
+For $\Re s>1$ the original type-I inner Dirichlet series is
+\begin{align}
+ F_{u,d}(s)
+ &=\sum_{c\ {\rm squarefree}\atop(c,T)=1}
+       \frac{\psi_u(c)}{(Nc)^s}
+   =\frac{L(s,\psi_u)}{L(2s,\psi_{u,2})}\,C_T(s),\label{hti:ratio}\\
+ C_T(s)
+ &=\frac{\displaystyle\prod_{p\in T,\ p\nmid\mathfrak f_u}
+             (1-\psi_u(p)(Np)^{-s})}
+          {\displaystyle\prod_{p\in T,\ p\nmid\mathfrak f_{u,2}}
+             (1-\psi_{u,2}(p)(Np)^{-2s})}.
+ \label{hti:restore}
+\end{align}
+It continues meromorphically to $\Re s>1/2$, with only a possible
+simple pole at $s=1$ when $\psi_u=1$. In that case its residue is
+\[
+ \rho_T=\frac{\operatorname*{res}_{s=1}\zeta_K(s)}{\zeta_K(2)}
+             \prod_{p\in T}(1+(Np)^{-1})^{-1}.
+\]
+Fix $0<\delta<1/2$, $\varepsilon>0$ and
+$W\in C_c^\infty((0,\infty))$ supported in $[1,2]$. Set
+\[\mathcal M_4(W)=\sum_{j=0}^4\sup_x|(x\partial_x)^jW(x)|.\]
+Uniformly for $Y\ge1$, $u$ and $d$,
+\begin{align}
+ \sum_{c\ {\rm squarefree}\atop(c,T)=1}\psi_u(c)W(Nc/Y)
+ ={}&\mathbf1_{\psi_u=1}\rho_TY\widehat W(1)\notag\\
+ &+O_{\nu,S,\delta,\varepsilon}\!\left(
+ \mathcal M_4(W)Y^{1/2+\delta}
+ Q_u^{1/4-\delta/2+\varepsilon}R_T^\varepsilon\right).
+ \label{hti:scalar}
+\end{align}
+Here $\widehat W(s)=\int_0^\infty W(x)x^{s-1}\,dx$.
+The continuation and functional equation of degree-one Hecke functions
+are classical external inputs; the contour argument is given below.
+\end{theorem}
+
+At a good prime with $v_p(u)=3$, $\psi_u$ is ramified while its square
+is unramified; the second product in~\eqref{hti:restore} must restore a
+factor invisible to squaring the zero-extended primitive value.
+At $v_p(u)=6$ both characters can forget the prime, but the original row
+still vanishes on columns divisible by it. In particular, for principal
+$\nu$, $u=\pi^3$ and $u=\pi^6$ at $N\pi=7$, the deleted local factors are
+\[
+\begin{array}{c|ccc}
+ &\text{primitive ratio at }s=1&\text{restoration}&\text{full masked factor}\\\hline
+v_p(u)=3&48/49&49/48&1\\
+v_p(u)=6&8/7&7/8&1
+\end{array}
+\]
+These are exact local calculations, not numerical evidence about zeros.
+
+For $1\le U$, $U^2\le D$, insert $Y=D/Nd$ into~\eqref{hti:scalar}
+and retain the actual $\beta_U(d)$ and outer $\nu(d)\chi_d(u)$.
+Classical tame Kummer conductors give $Q_u\ll_\nu Nu$. Thus the normalized
+$I_u$ equals its displayed principal-residue sum plus an error $E_u$ with
+\begin{equation}\label{hti:outer}
+ |E_u|\ll_{\nu,S,\delta,\varepsilon}\mathcal M_4(W)
+ D^\delta U^{1-2\delta+\varepsilon}
+ (Nu)^{1/4-\delta/2+\varepsilon}.
+\end{equation}
+The resulting elementary energy envelope is only
+\begin{equation}\label{hti:energy}
+ \sum_{0<Nu\le H}|E_u|^2
+ \ll\mathcal M_4(W)^2D^{2\delta}U^{2-4\delta+\varepsilon}
+ H^{3/2-\delta+\varepsilon}.
+\end{equation}
+It does not prove the short-row target of order $H$ up to small losses.
+This is an insufficient upper bound, not a lower bound on the actual
+error or a counterexample to coefficient-sensitive averaging. The
+original signed mean square and positive determinant bridge stay open.

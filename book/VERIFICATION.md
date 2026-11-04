@@ -4,16 +4,16 @@ The book is a developed critical edition of the two supplied manuscripts, not a 
 
 ## Current kernel-checked layer
 
-The working critical book has 35 chapters, with ten unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
+The working critical book has 35 chapters, with eleven unique canonical on-page interactive tools, full-source code views and complete historical source volumes. Larger examples include genus4/5/9/16, finite depth-capped hyperbolic lattice windows and a nine-qubit QCNN.
 
-The pinned Lean 4.24/mathlib suite has **314 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 312 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
+The pinned Lean 4.24/mathlib suite has **342 printed theorem dependency reports** including covering-obstruction, worked persistence-resolution, nodal DG and actual finite RG modules. The full suite passed with warnings treated as errors: 340 reports use standard foundational axioms only and 2 are axiom-free. There are no admissions or custom project axioms. This is a report count, not a count of all book theorems. The historical standalone seven-result suite is unchanged and was not rerun for this milestone.
 
 | Material | Actual formal/computational interface | Remaining boundary |
 |---|---|---|
-| Nodal/projective resolutions | Existing PowerSeries/module resolution layer; exact path and matrix diagnostics | General dessin category interfaces and all module classifications not fully formalized |
+| Nodal/projective resolutions | Existing PowerSeries/module resolution layer; BranchExtension actual infinite polynomial algebra and nonsplit module maps; exact path/matrix diagnostics | General dessin category interfaces and all module classifications not fully formalized |
 | Semi-invariants/AR | BookInterfaces Plücker and actual nodal matrices; nine-module/twelve-map/four-mesh exact checker | Almost-split universal factorization, whole component classification, Ringel quilt and derived equivalences remain prose/primary theorems |
 | Clock/shift and channels | BookInterfaces explicit clock/shift, distinct-site matrices, arbitrary finite complex Kraus positivity and trace preservation | Infinite operator domains, C* completions, physical implementations and QFT reconstruction not fully formalized |
-| Arithmetic character/Gram | ShortRowGram actual finite-field masks, complete orthogonality, finite energy expansion, Eisenstein norm and mod7 evaluation; ShortRowPairBarrier universal finite complex Gram duality and weighted pair-square inequalities | Planar Poisson, full CRT/ideal-character interface and low-gcd short-row estimate remain separate |
+| Arithmetic character/Gram | ShortRowGram actual finite-field masks, complete orthogonality, finite energy expansion, Eisenstein norm and mod7 evaluation; ShortRowPairBarrier universal finite complex Gram duality and weighted pair-square inequalities | Planar Poisson, full CRT/ideal-character interface and low-gcd short-row estimate remain separate; seven finite Hecke Euler-restoration identities do not formalize infinite continuation/contours |
 | Theta arithmetic/descent | Existing Jacobi/projective/tame power-series and matrix layers | Full order functor, arithmetic descent and global positive determinant comparison remain open |
 | Higher genus/hyperbolic geometry | HyperbolicCoordinates formal disk/Lorentz and 4D norm identities; uniform prose passport proof; exact permutation/ramification checks through genus16; bounded reflection diagnostics | No formalized general uniformization or certified compact hyperbolic quotient; displayed patch is numerical and finite |
 | Learned renormalization | Actual PennyLane three-architecture and larger nine-qubit training; NumPy comparison, analytic target/gradient checks; actual Strawberry Fields training | No optimizer convergence theorem, hardware run, general QFT RG theorem or quantum advantage claim |
@@ -165,3 +165,28 @@ corrupt certificates fail. This is exact small-instance optimization, not
 formal Lean optimization, upstream NLP training or a quantum speedup. No
 Fukaya equivalence, arithmetic spectral comparison or GRH follows from
 compression. The full book and both intended completion gates remain open.
+
+
+## Full-mask Hecke type-I scalar expansion
+
+Current book177pages/35chapters/18diagrams/11unique labs; focused articles35/75
+pages (audit20/49 unchanged). Seven new complex local/finite Euler restoration
+statements and the fresh342-report suite pass,340standard-only/two axiom-free.
+Independent focused compilation and literal theorem-type review accepted.
+The exact good-ideal checker covers1488cases/93rows/128squarefree columns over
+7split/inert primes,78016nonzero terms and29120originalzero encounters.
+An independent no-production-import oracle checks288local and3072support cases.
+
+The full primitive Euler ratio, residue, scalar Mellin estimate, actual-beta
+aggregation and explicit losing energy envelope have reviewed prose proofs.
+Classical abelian reciprocity and Hecke continuation/functional equation,
+polynomial strip growth, Stirling, Mellin inversion and ideal/lattice counts
+are external dependencies; infinite Hecke objects and contours are not Lean
+formalized by the seven finite identities. The same full deleted set is kept
+when squaring reduces primitive conductors, including good valuations3and6.
+Profile seminorm uniformity does not interchange a scale/profile supremum
+with the row mean square; shrinking scale with fixedU requires the short
+Vaughan term again. TypeII/signed low-gcd averaging, positive determinant
+comparison and GRH remain open. Independent review:
+`planning/reviews/hecke-type-i/REVIEW.md`; exact source pins:
+`planning/HECKE_TYPE_I_SOURCES.json`.

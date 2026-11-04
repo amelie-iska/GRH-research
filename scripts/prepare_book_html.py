@@ -6,6 +6,7 @@ byte-for-byte into explicitly historical source volumes, never endorsed as proof
 """
 from theme_assets import install_theme
 from pathlib import Path
+from html.parser import HTMLParser
 import re,html,json,hashlib,shutil,sys,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1];WEB=ROOT/'web';BOOK=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else WEB/'book';p=BOOK/'main.html';s=p.read_text()
 s=re.sub(r'<aside class="reader-lab"[^>]*>.*?</aside>','',s,flags=re.S)
@@ -39,7 +40,7 @@ def panel(m):
  selected=next((v for title,v in canonical.items() if title in text),None)
  if selected is None:
   if 'the remaining arithmetic theorem and a verifiable research loop' in text:
-   return heading+'<aside class="reader-covering" id="mobius-proof"><h3>Signed arithmetic: exact split and a fixed-cutoff obstruction</h3><p>The two Vaughan pieces retain the original squarefree support, character zeros, conductors and annular weight. A separate-piece short-row bound for every cutoff is false at U=1; the original signed estimate and moving-cutoff approaches remain open.</p><details><summary>Lean: eight actual arithmetic-function identities and coefficient statements</summary><button class="load-code" data-source="/lean/MobiusSplit.lean">Load kernel-checked source</button><pre class="source-code"></pre></details><details><summary>Exact finite ideal/sextic evidence, with explicit profile and component order</summary><button class="load-code" data-source="/data/mobius-split.json">Load exact computed record</button><pre class="source-code"></pre></details><p><a href="https://github.com/amelie-iska/GRH-research/blob/main/scripts/check_mobius_split.py">Complete Python checker in the private repository</a>. The natural-number Dirichlet statements do not formalize the full ideal-character or prime-counting application.</p></aside>'
+   return heading+'<aside class="reader-covering" id="mobius-proof"><h3>Signed arithmetic: exact split and a fixed-cutoff obstruction</h3><p>The two Vaughan pieces retain the original squarefree support, character zeros, conductors and annular weight. A separate-piece short-row bound for every cutoff is false at U=1; the original signed estimate and moving-cutoff approaches remain open.</p><details><summary>Lean: eight actual arithmetic-function identities and coefficient statements</summary><button class="load-code" data-source="/lean/MobiusSplit.lean">Load kernel-checked source</button><pre class="source-code"></pre></details><details><summary>Exact finite ideal/sextic evidence, with explicit profile and component order</summary><button class="load-code" data-source="/data/mobius-split.json">Load exact computed record</button><pre class="source-code"></pre></details><p><a href="https://github.com/amelie-iska/GRH-research/blob/main/scripts/check_mobius_split.py">Complete Python checker in the private repository</a>. The natural-number Dirichlet statements do not formalize the full ideal-character or prime-counting application.</p><h3 id="hecke-type-i-proof">Full-mask Hecke type-I expansion</h3><p>The squarefree inner series now has explicit primitive Euler restoration, including quadratic conductor drops and sixth-power row zeros. A classical scalar Mellin/convexity argument retains the moving divisor and profile, but its resulting error envelope does not prove the short-row mean square.</p><details><summary>Lean: seven actual complex local and finite-product restoration statements</summary><button class="load-code" data-source="/lean/HeckeTypeI.lean">Load kernel-checked Euler source</button><pre class="source-code"></pre><p>Infinite Hecke continuation, class field theory and the scalar contour proof remain named prose/external dependencies.</p></details><details><summary>Exact split/inert ideal-symbol and deleted-factor checks</summary><button class="load-code" data-source="/data/hecke-type-i.json">Load exact full-mask evidence</button><pre class="source-code"></pre></details></aside>'
   if 'coverings, equivariant ar theory and graded surfaces' in text:
    return heading+'<aside class="reader-covering"><h3>Exact covering calculation</h3><p>The displayed quiver window is a cover of a finite theta quotient, not an AR component. <a href="/data/theta-cover.json">Exact Hom/radical and higher-genus results</a>.</p><details><summary>Complete exact Python source</summary><button class="load-code" data-source="/examples/coverings/theta_cover.py">Load complete source</button><pre class="source-code"></pre></details><details><summary>Lean matrix obstruction and theorem dependencies</summary><button class="load-code" data-source="/lean/CoveringBand.lean">Load Lean source</button><pre class="source-code"></pre></details><p>Three matrix statements are kernel checked; the general categorical results remain separately scoped.</p></aside>'
   return heading
@@ -64,9 +65,52 @@ def token_panel(m):
 s=re.sub(r'<h3 class="sectionHead">.*?</h3>',token_panel,s,flags=re.S)
 assert count==11, 'Expected eleven unique canonical laboratories, including ConvexTok'
 
-s=s.replace('</body>','''<script>document.querySelectorAll('.load-code').forEach(button=>button.onclick=async()=>{const r=await fetch(button.dataset.source);const p=button.parentElement.querySelector('pre');p.textContent=r.ok?await r.text():'Source unavailable';button.hidden=true;});</script></body>''')
+s=s.replace('</body>','''<script>document.querySelectorAll('.load-code').forEach(button=>button.onclick=async()=>{const r=await fetch(button.dataset.source);const p=button.parentElement.querySelector('pre');p.textContent=r.ok?await r.text():'Source unavailable';button.hidden=true;});
+function fitReaderMath(){
+ const targets=[];
+ for(const math of document.querySelectorAll('math')){
+  if(math.closest('.reader-table-scroll,.reader-inline-math'))continue;
+  const parent=math.closest('p,li,dd,dt,div,section,article,aside,body');
+  if(!parent)continue;
+  const style=getComputedStyle(parent);
+  const width=parent.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight);
+  if(math.getBoundingClientRect().width>width+1)targets.push(math);
+ }
+ for(const math of targets){
+  const box=document.createElement('span');box.className='reader-inline-math';
+  box.tabIndex=0;box.setAttribute('aria-label','Scrollable mathematical expression');
+  math.replaceWith(box);box.append(math);
+ }
+}
+fitReaderMath();
+addEventListener('resize',()=>requestAnimationFrame(fitReaderMath));
+document.addEventListener('toggle',fitReaderMath,true);
+if(document.fonts)document.fonts.ready.then(fitReaderMath);
+</script></body>''')
+# TeX4ht equation tables retain their intrinsic width on small screens.
+# An outer scroll box preserves all MathML/table geometry without allowing
+# mobile browsers to shrink the entire book to the widest equation.
+if 'class="reader-table-scroll"' not in s:
+ class TableScroll(HTMLParser):
+  def __init__(self, source):
+   super().__init__(convert_charrefs=False)
+   self.source=source;self.depth=0;self.edits=[]
+   self.starts=[0]+[m.end() for m in re.finditer('\n',source)]
+  def source_offset(self):
+   line,column=self.getpos();return self.starts[line-1]+column
+  def handle_starttag(self,tag,attrs):
+   if tag=='table':
+    if self.depth==0:self.edits.append((self.source_offset(),'<div class="reader-table-scroll" tabindex="0" aria-label="Scrollable mathematical or data table">'))
+    self.depth+=1
+  def handle_endtag(self,tag):
+   if tag=='table':
+    self.depth-=1
+    if self.depth==0:self.edits.append((self.source.index('>',self.source_offset())+1,'</div>'))
+ scroll=TableScroll(s);scroll.feed(s);assert scroll.depth==0
+ for offset,markup in sorted(scroll.edits,reverse=True):s=s[:offset]+markup+s[offset:]
+ET.fromstring(s)
 p.write_text(s)
-(BOOK/'reader.css').write_text('''body{max-width:960px;margin:90px auto 60px;padding:0 32px;background:#f5f3ec;color:#182c2b;font:18px/1.7 Georgia,serif}h1,h2,h3,h4{color:#145e4d}h2.chapterHead{margin-top:95px;padding-top:25px;border-top:1px solid #bdc9bc}a{color:#145e4d}img{max-width:100%;height:auto}math[display=block]{overflow-x:auto;padding:12px 0}.reader-nav{position:fixed;z-index:10;top:0;left:0;right:0;padding:14px 4vw;background:#f5f3ecef;border-bottom:1px solid #d4ded3;font:13px/1.5 system-ui}.reader-nav span{float:right;color:#56706a}.reader-lab,.reader-covering{background:#e9eee5;border:1px solid #d4ded3;border-radius:10px;padding:20px;margin:25px 0 45px;font:14px/1.6 system-ui}.reader-lab iframe{width:100%;border:0;border-radius:8px;background:#f5f3ec}.reader-lab pre,.reader-covering pre{white-space:pre-wrap;max-height:650px;overflow:auto;padding:15px;background:white;font:12px/1.7 monospace}button,summary{cursor:pointer}figure,table{max-width:100%}@media(max-width:700px){body{padding:0 14px}.reader-nav span{display:none}}''')
+(BOOK/'reader.css').write_text('''body{max-width:960px;margin:90px auto 60px;padding:0 32px;background:#f5f3ec;color:#182c2b;overflow-wrap:anywhere;font:18px/1.7 Georgia,serif}h1,h2,h3,h4{color:#145e4d}.reader-covering h3[id],h2.chapterHead{scroll-margin-top:100px}h2.chapterHead{margin-top:95px;padding-top:25px;border-top:1px solid #bdc9bc}a{color:#145e4d}img{max-width:100%;height:auto}math[display=block]{overflow-x:auto;padding:12px 0}.reader-nav{position:fixed;z-index:10;top:0;left:0;right:0;padding:14px 4vw;background:#f5f3ecef;border-bottom:1px solid #d4ded3;font:13px/1.5 system-ui}.reader-nav span{float:right;color:#56706a}.reader-lab,.reader-covering{background:#e9eee5;border:1px solid #d4ded3;border-radius:10px;padding:20px;margin:25px 0 45px;font:14px/1.6 system-ui}.reader-lab iframe{width:100%;border:0;border-radius:8px;background:#f5f3ec}.reader-lab pre,.reader-covering pre{white-space:pre-wrap;max-height:650px;overflow:auto;padding:15px;background:white;font:12px/1.7 monospace}button,summary{cursor:pointer}figure,table{max-width:100%}.reader-table-scroll{max-width:100%;overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}.reader-inline-math{display:inline-block;max-width:100%;overflow-x:auto;vertical-align:middle}.reader-inline-math:focus-visible,.reader-table-scroll:focus-visible{outline:2px solid #078b96;outline-offset:3px}@media(max-width:700px){body{padding:0 14px}.reader-nav span{display:none}}''')
 # Preserve both supplied sources in full; trust neither filename nor source claims.
 rows=json.loads((ROOT/'book/source-provenance.json').read_text());dest=ROOT/'book/source-editions';dest.mkdir(exist_ok=True);online=WEB/'sources';online.mkdir(exist_ok=True)
 links=[]

@@ -1,0 +1,161 @@
+\section{Primitive conductors, deleted factors and the scalar contour}
+\label{hti:details}
+\subsection{Constructing the column character without losing its zeros}
+Let $\alpha^6=u$. Since $K$ contains $\mu_6$, the extension $K(\alpha)/K$
+is abelian, with character $g\mapsto g(\alpha)/\alpha$. At $p\nmid6u$,
+arithmetic Frobenius gives the residue $u^{(Np-1)/6}$, exactly the
+source's sextic symbol. Abelian reciprocity makes it a finite-order Hecke
+character; multiply by $\nu$ and take its primitive inducing character.
+The classical reciprocity input is \cite[Theorem~0.8 and Chapter~I,\S1]{MilneCFTTypeI}.
+The finite-order archimedean character is trivial, since $\mathbb C^\times$
+is connected.
+
+At $p\nmid6$, write $u=\pi^e v$ with $v$ a local unit. A sixth root of
+$v$ lies in an unramified extension: its residue root is separable and
+lifts by Hensel's lemma. Inertia acts on a sixth root of $\pi$ through
+$\mu_6$, so on $\alpha$ the inertia character has order
+$6/\gcd(6,e)$. It is trivial exactly when $6\mid e$; its square is
+trivial exactly when $3\mid e$. A nontrivial tame one-dimensional
+character has conductor exponent one. Since $\nu$ is unramified outside
+$S$, it cannot cancel this inertia there. At primes above $6$, the groups
+$K_p^\times/(K_p^\times)^6$ are finite; their finitely many characters
+have a uniform maximum conductor. Consequently
+\[
+ \mathfrak f_u\mid \mathfrak c_\nu
+       \prod_{p\mid u,\ p\nmid6}p,\qquad
+ Q_u\ll_\nu Nu.
+\]
+The fixed ideal $\mathfrak c_\nu$ includes the wild and fixed $\nu$ factors.
+No assertion identifies $\mathfrak f_u$ with the larger full zero modulus.
+
+For $p\notin T$ put $z=\psi_u(p)(Np)^{-s}$. Its squarefree factor
+$1+z=(1-z^2)/(1-z)$ proves the ratio using the \emph{same} deleted set
+in numerator and denominator. Restoring the primitive Euler factors yields
+\eqref{hti:restore}. At a prime where the primitive square becomes
+unramified its value cannot be obtained by squaring the sentinel zero
+$\psi_u(p)=0$. For principal $\nu$, $u=\pi^3$ has a quadratic Kummer character
+whose primitive square is globally principal. Its local value in that
+square is one, not zero. For $u=\pi^6$ both primitive characters are
+principal, although the full family still deletes $p$. These two cases
+prove the local table directly.
+
+\subsection{Why the half-plane above one half is available}
+For a character $\eta$ write $L^T(s,\eta)$ for its Euler product with
+all primes of $T$ removed. For $\sigma>1/2$ the product
+$1/L^T(2s,\psi_{u,2})$ converges absolutely and is bounded by
+$\zeta_K(2\sigma)$, uniformly in the character, $T$ and $t=\Im s$.
+Every deleted finite factor is nonzero there. Therefore
+\[
+ F_{u,d}(s)=L(s,\psi_u)
+  \prod_{p\in T,p\nmid\mathfrak f_u}(1-\psi_u(p)(Np)^{-s})
+  \big/L^T(2s,\psi_{u,2})
+\]
+has just the stated possible principal pole. This uses absolute convergence
+at $2\sigma>1$, not a conjectural zero-free assertion on the critical line.
+For any fixed $\sigma>0$ and $\eta>0$,
+\[
+ \prod_{p\in T}(1+(Np)^{-\sigma})\ll_{\sigma,\eta}R_T^\eta.
+\]
+Indeed $1+q^{-\sigma}\le q^\eta$ for all sufficiently large $q$;
+the remaining finitely many prime ideals give a uniform fixed constant.
+This controls every moving deleted prime; the denominator has already
+been bounded by the full convergent zeta product.
+
+We use the classical completed Hecke functional equation in the form
+\[
+ \Lambda(s,\psi_u)=Q_u^{s/2}(2\pi)^{-s}\Gamma(s)L(s,\psi_u),
+ \qquad\Lambda(s,\psi_u)=w_u\Lambda(1-s,\overline{\psi_u}),
+ \quad |w_u|=1.
+\]
+This is a named external theorem, not a newly formalized analytic result;
+compare \cite[Theorem~4.3, Corollary~4.4]{KudlaTateTypeI}. The cited notes
+sketch some of Tate's calculations; their incomplete displayed epsilon
+formulas are not used as independently checked constants here.
+At $\Re s=1+\eta$, absolute convergence bounds $L$ by $\zeta_K(1+\eta)$.
+The functional equation and Stirling's formula give on $\Re s=-\eta$
+the bound $Q_u^{1/2+\eta}(1+|t|)^{1+2\eta}$ up to a fixed constant.
+Phragm\'en--Lindel\"of on this strip therefore gives, for fixed
+$0<\sigma<1$,
+\[
+ |L(\sigma+it,\psi_u)|
+ \ll_{\sigma,\eta}Q_u^{(1-\sigma)/2+\eta}
+                      (1+|t|)^{1-\sigma+2\eta}.
+\]
+For the principal character apply the strip argument to
+$(s-1)L(s,1)/(s+1)$, then divide back on the fixed line $\sigma<1$.
+The constants need not be uniform as $\sigma\to1$. Polynomial vertical
+strip growth and finite order, as supplied by classical Hecke theory,
+justify this application. No Lindel\"of or subconvexity bound is inserted.
+
+\subsection{Mellin inversion, residues and profile uniformity}
+Initially, absolute convergence and compact smooth support give
+\[
+ S_{u,d}(Y)=\frac1{2\pi i}\int_{(1+\eta)}
+       \widehat W(s)Y^sF_{u,d}(s)\,ds.
+\]
+Four integrations by parts using $x\partial_x$ give
+$|\widehat W(\sigma+it)|\ll_\sigma\mathcal M_4(W)(1+|t|)^{-4}$.
+Choose $0<\eta<\min(\varepsilon/8,1/8)$, decreasing it further
+when distributing the small losses, and shift to
+$\sigma=1/2+\delta$. The convergent reciprocal Euler product, the finite
+factor bound and convexity above control the complete integrand.
+Their polynomial $t$ growth is integrable against this Mellin decay and
+makes the horizontal edges tend to zero. The only crossed pole is $s=1$
+when $\psi_u=1$; evaluating its finite factors gives exactly $\rho_T$.
+Taking absolute values on the new vertical line proves
+\eqref{hti:scalar}, after renaming the small losses. This also proves
+uniformity over any family of profiles with bounded $\mathcal M_4$;
+it does not interchange a profile supremum with an arithmetic mean square.
+
+In the original $I_u$, the inner profile is exactly $W(Nc/Y)$ with
+$Y=D/Nd$; no $d$-dependent derivative enlargement occurs. On the support
+of $\beta_U$, $Nd\le U^2\le D$, hence $Y\ge1$. Also
+$R_T\le C_S Nu\,Nd$. The principal term is explicitly
+\[
+ P_u=\mathbf1_{\psi_u=1}\sqrt D\,\widehat W(1)
+ \sum_{d\ {\rm squarefree}\atop(d,S)=1}
+       \frac{\beta_U(d)\nu(d)\chi_d(u)}{Nd}\rho_{T(u,d)}.
+\]
+This sum retains all original phases and zeros; no positivity of it is
+assumed. For the error use the actual truncated factorizations, not a free
+coefficient bound:
+\[
+ \sum_{d\ {\rm squarefree}}\frac{|\beta_U(d)|}{(Nd)^{1/2+\delta-\eta}}
+ \le\left(\sum_{Na\le U}(Na)^{-1/2-\delta+\eta}\right)^2
+ \ll_{\delta,\eta}U^{1-2\delta+2\eta}.
+\]
+The fixed-field ideal count is $O_K(X)$; dyadic summation proves the last
+inequality for sufficiently small $\eta<\delta+1/2$. Inserting this and
+the conductor/radical bounds proves~\eqref{hti:outer}.
+The elementary lattice count $\#\{u:0<Nu\le H\}=O_K(H)$ then gives
+\eqref{hti:energy}. Rows are not divided by units.
+
+At $H=D^{3/4}$ and $U=D^a$ with $0\le a\le1/2$, the power of the
+resulting error envelope \emph{relative to} $H$ is
+\[
+ \frac38+\frac54\delta+(2-4\delta)a
+\]
+up to the arbitrarily small losses. It remains positive for every
+$0<\delta<1/2$. Thus this scalar convexity argument alone supplies no
+short-row saving. This is a limitation of the estimate just derived,
+not an obstruction to averaging the numerators over Kummer rows, retaining
+signed coefficients, or exploiting covariance with type II.
+
+The seminorm uniformity is not a proof of the original scale supremum.
+For each independently chosen scale $D'$ the displayed outer argument
+requires $U^2\le D'$. If a fixed cutoff is retained while $D'$ shrinks,
+then eventually even $D'\le U$: the short $2a_U$ term in the Vaughan
+identity can meet the support and must be restored. Neither that term nor
+the covariance with type II may be omitted in a supremum or reassembly.
+
+\subsection{Verification boundaries}
+\path{HeckeTypeI.lean} checks seven actual complex local/finite-product
+statements, including independent primitive coefficient arrays and their
+full deleted-factor restoration. It does not identify an ideal Hecke
+series with an abstract finite product or formalize a Mellin contour.
+The exact checker includes split and inert prime ideals, actual sextic
+phases, conductor drops, sixth-power rows and original mask zeros.
+The analytic theorem above uses classical abelian reciprocity, Hecke
+continuation/functional equation and standard complex-analytic tools as
+external inputs. Full ideal-character/formal analytic objects, the original
+signed low-gcd mean square and every GRH completion obligation remain open.
