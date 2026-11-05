@@ -19,3 +19,21 @@ The reviewed analytic result is a U-independent envelope for the original residu
 `sum_{0<Nu<=H}|E_u|^2 <= C ||W||_infinity^2 (HD)^epsilon [H + D H^(1/3) + (HD)^(2/3)]`.
 
 It uses the pinned BGL classical large sieve, exact row orientation/conductor masks and a principal-residue upper bound. At H=D^(3/4) it still loses exponent 1/2. The exact cutoff converges to the incomplete reciprocal L-function with a proved rate only on Re s>=1+kappa. Extending actual cutoff convergence locally uniformly to Re s>1/2 would itself require zero-freeness; a family mean bound does not supply it. These analytic results are independently reviewed prose and are not new Lean declarations.
+
+## Actual signed covariance fixture (5 November 2026)
+
+Run the exact smooth-profile original-family fixture with a fresh output directory:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 nice -n 15 python3 examples/arithmetic_cutoff/signed_covariance.py --output outputs/checks/NEW-signed-covariance
+```
+
+The complete four active ideal columns and all72B7 rows give covariance-27/25
+although coefficient overlap is nonnegative. A second246-row guaranteed
+nonprincipal subset atH89 gives-69/50 with raw zeros retained. The report
+contains all character values and full complex Gram matrices; independent
+finite-field exponentiation reproduces them. The smooth profile has exact
+integer-norm values, so no exponential approximation is used. This is a finite
+counterexample to an automatic covariance-sign shortcut, not toBT_sigma orGRH.
+High-cutoff coefficients are odd/nonzero; their lower norm is not an energy
+lower bound. See research/signed-cutoff-covariance.md and shared TeX proofs.
