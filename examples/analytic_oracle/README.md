@@ -25,3 +25,25 @@ The independent review and acceptance receipt are under `planning/analytic-oracl
 Proof editions: `papers/validated-oracle-concise.tex` and `papers/validated-oracle-extended.tex`; compiled copies are under `outputs/papers/validated-oracle-20261104/`. The independent arithmetic moment development is documented separately in `research/validated-oracle-and-masked-moment.md`.
 
 The implementation is not kernel-checked Lean. It does not construct a self-adjoint arithmetic determinant, force real-rooted polynomials, settle the original signed short-row/covariance problem, prove Artin holomorphy, or prove GRH. These are separate explicit research obligations.
+
+## Requested-error extension and executed readout training
+
+`adaptive_readout.py` reuses the immutable final-v5 labels, selects a degree
+and executes exact rational GD updates for an explicitly stated midpoint
+Fourier objective. Its certified perturbation from ideal-root least squares
+is included in the five-term budget. The actual loop trace is saved in full.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 examples/analytic_oracle/adaptive_readout.py --tolerance 1e-15 --output outputs/experiments/NEW-requested-readout
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s examples/analytic_oracle -p test_adaptive_readout.py -v
+```
+
+The final-v3 examples at1e-12/1e-15 use degrees23–30 and98–123 updates.
+Requested1e-18 is refused by the fixed-data majorant. This is not an arbitrary-
+accuracy theta API: sample/truncation/alias floors remain. Exact endpoints,
+source pins, normalized coefficients and all updates are in the linked
+[research record](../../research/requested-readout-training.md). The
+[interactive replay](https://amelie-iska.github.io/GRH-research/readout.html)
+uses display-only decimal projections; complete exact certificates supply
+its proof. No additional dependency, Lean theorem, zero-location or GRH
+claim is introduced.

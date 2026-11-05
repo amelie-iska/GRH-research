@@ -1,0 +1,67 @@
+% Generated shared reviewed material.
+\section{Objective semantics, precision floors and replay}\label{ar:semantics}
+The original true-circle sample-label least-squares objective is
+\[
+ \mathcal L_y(b)=\frac1{2m}\sum_{j=0}^{m-1}
+ \left|\sum_{n=0}^d b_n\zeta_j^n-y_j\right|^2.
+\]
+With $d<m$, Fourier orthogonality gives $A^*A=mI$ and the real Euclidean
+coordinate gradient $\nabla\mathcal L_y(b)=b-b^*$. The executed objective
+$J$ instead has the exact rational midpoint target $t$.
+The difference $\nabla\mathcal L_y-\nabla J=t-b^*$ is enclosed
+coefficientwise by $e_n$.
+Consequently this is an actual rational GD run for $J$ and a certified
+perturbed-gradient implementation for $\mathcal L_y$. It is not the exact
+optimizer trajectory of the ideal-root objective, nor a replay of neural or
+quantum training. An interval enclosure of an ideal-root GD trajectory
+would be a different explicitly labelled object.
+
+Each actual update contracts $b^k-t$ by $3/4$, so the exact stored losses
+satisfy $J(b^{k+1})=(9/16)J(b^k)$. A replay recomputes every rational
+coordinate update, loss and weighted residual. The closed form
+$b^k=(1-(3/4)^k)t$ is an independent check on the executed trace, not its
+producer. Exact rational loop coordinates introduce no further midpoint or
+floating export error. The arithmetic budget covers the difference between
+the certified Fourier rectangles and their midpoint targets, including the
+inherited root enclosure and outward interval operations. A subsequent
+float conversion requires its own exact conversion-error bound.
+
+The normalized polynomial convention is essential: a stored coefficient
+with index $n$ multiplies $((s-1/2)/(6/5))^n$, not $(s-1/2)^n$.
+The input certificate is pinned by SHA-256, including its source hashes,
+all $192$ sample enclosures, root rectangles and analytic radius components.
+Producing source is captured at entry, checked unchanged before emission,
+and copied into a fresh output directory. An existing output is never
+overwritten. An independent replay should also check the fixed input hash,
+all dimensions, degree choice, the first stopping iterate, all five exact
+terms and their literal sum against the requested rational tolerance.
+
+The attainable boundary of this majorant is
+\[
+ C_{\min,q}=\min_{0\le d<64}C_{q,d}.
+\]
+Every request $\varepsilon>C_{\min,q}$ has strict budget slack for some
+degree and the proved finite stop rule. At or below that boundary this
+interface refuses. The degree minimizing $C_d$ need not be $63$:
+Taylor error decreases with degree while the oracle and arithmetic sums
+increase. In particular $C_d\ge\eta$ and
+$C_d\ge M_q2^{-64}/(1-2^{-64})$. Increasing the number of optimization
+steps does not lower these fixed-data budgets. Approximate boundary values
+on the stated compact are $7.2929\cdot10^{-17}$,
+$1.7370\cdot10^{-16}$ and $3.3741\cdot10^{-16}$ for $q=3,4,5$;
+only the exact exported rational minima are used for acceptance.
+These are certificate floors, not lower bounds on the actual errors.
+
+A full adaptive theta oracle would separately need proof-preserving choices
+of omitted-$n$ cutoff, time cutoff, quadrature order, whole-panel discard
+budget, primitive series lengths, interval precision and serialized-bound
+precision. The present $N=11$, $T=128$, $224$-bit arithmetic,
+$60/92/60$ primitive series lengths, $2^{-90}$ discard threshold and
+$180$-bit rounded budgets cannot support every positive request.
+Increasing a nominal bit count alone leaves the fixed primitive remainders
+and analytic tails in place. The preserved labels are not recomputed here.
+The classical identity, finite arithmetic and informal proof are not new
+Lean declarations. No zero-location, all-conductor, positive arithmetic
+determinant, quantum-advantage or GRH conclusion follows.
+
+The interactive replay is available at \href{https://amelie-iska.github.io/GRH-research/readout.html}{the certified readout laboratory}. All decimal graphics are illustrative views of the linked exact records.
