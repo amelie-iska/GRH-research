@@ -1,0 +1,423 @@
+\section{Proof of the unequal-product bound and the local-completion limit}
+\label{upq:details}
+
+\subsection{The original expansion before absolute Cauchy}
+Let $\mathcal P_U$ consist of the ordered pairs of good squarefree ideals
+$(a,b)$ with
+\[
+ (a,b)=1,\qquad Na,Nb>U,\qquad D\le Na\,Nb\le2D.
+\]
+The hyperbolic and coprimality conditions are part of this set. The cutoff
+window implies $Na,Nb\asymp\sqrt D$, with constants independent of $U$.
+Put
+\[
+ c_{a,b}=\mu(a)\mu(b)\nu(ab)W(Nab/D),\qquad
+ \mathcal C(u)=\sum_{(a,b)\in\mathcal P_U}c_{a,b}x_a(u)x_b(u),
+ \qquad
+ \mathcal M(u)=\sum_n\lambda_nx_n(u).
+\]
+Because $ab$ is squarefree, $\mu(a)\mu(b)=\mu(ab)$ and
+$x_a(u)x_b(u)=x_{ab}(u)$ including every zero. Hence
+$\mathcal C(u)=\sum_mr_m\lambda_mx_m(u)$ is exactly the original
+$C_U$ polynomial. In particular, the exact expansions are
+\begin{align}
+ \frac1D\sum_{u\in B_A}|\mathcal C(u)|^2
+ &=\frac1D\sum_{\substack{(a,b)\in\mathcal P_U\\
+                          (c,d)\in\mathcal P_U}}
+ c_{a,b}\overline{c_{c,d}}
+ \sum_{u\in B_A}x_a(u)x_b(u)
+       \overline{x_c(u)x_d(u)},                         \label{upq:four}\\
+ \frac1D\sum_{u\in B_A}\mathcal C(u)\overline{\mathcal M(u)}
+ &=\frac1D\sum_{\substack{(a,b)\in\mathcal P_U\\n}}
+ c_{a,b}\overline{\lambda_n}
+ \sum_{u\in B_A}x_a(u)x_b(u)\overline{x_n(u)}.           \label{upq:mixed}
+\end{align}
+Grouping the two squarefree products gives the sectors in the core.
+No internal mask or common profile has been discarded before this
+grouping. An unmasked product of four transforms would change the
+support; signed coefficients do not give pointwise domination merely
+by allowing additional factorizations.
+
+\subsection{Relation to the previously controlled high-gcd sector}
+The fixed-radial-profile result in
+\path{research/short-row-high-gcd.md}, with independent derivations in
+\path{planning/reviews/book/short-row-hybrid.md} and
+\path{planning/reviews/book/short-row-formal.md}, already proves
+\[
+ |\text{off-diagonal tail with }Nh\ge G_0|
+ \ll_{\Phi,\epsilon}\|W\|_\infty^2D^{2+\epsilon}G_0^{-2}.
+\]
+It uses one fixed globally nonnegative radial Schwartz profile $\Phi$
+on the full element lattice, the exact common-prime deletion and
+primitive Poisson completion. The estimate is absolute over pairs,
+so the actual row-independent factors $r_mr_n$ or $r_m$ are absorbed
+in $D^\epsilon$ by the divisor estimate below.
+For annular columns,
+\[
+ Nq=\frac{Nm\,Nn}{(Nh)^2},\qquad
+ Nq\le Y\ \Longrightarrow\ Nh\ge D/\sqrt Y;
+ \qquad Nh\ge2D/\sqrt Y\ \Longrightarrow\ Nq\le Y.
+\]
+Consequently the prior fixed-profile proof gives
+$O_{\Phi,\epsilon}(\|W\|_\infty^2D^\epsilon Y)$ for the $Nq\le Y$
+off-diagonal sector in that scope. At $Y=P^2$ this is stronger than
+$R_0P$, since $P\le R_0$.
+At $H=D^{3/4}$ on the full face, $P\le D^{1/4}$, so
+$Nh\ge D^{3/4}$; this lies inside the previously controlled
+$Nh\ge D^{5/8}$ range.
+
+The original row block here has its sharp cutoff and factor masks;
+it is not that fixed radial weight. The selected off-diagonal piece
+need not be positive, so a smooth majorant of the full energy cannot
+be invoked to transfer the prior pairwise bound to that piece.
+The elementary counting argument below proves the literal-block
+bookkeeping statement directly. It recovers a known high-gcd sector,
+not a new cancellation estimate or an advance on the small-gcd
+problem. The complete $A_3$ face and slack identity are inherited from
+the accepted covariance-budget analysis. The subsequent conductor,
+deletion and local-completion calculations clarify the attempted
+large-conductor step; their algebra is not asserted as a new global
+analytic theorem.
+
+\subsection{A legal annular norm-pair count}
+For $m\ne n$ in the annulus, write uniquely
+\[
+ h=(m,n),\qquad m=hr,\qquad n=ht.
+\]
+Squarefreeness makes $h,r,t$ pairwise coprime and squarefree. The conditions
+$D\le Nm,Nn\le2D$ imply
+\[
+ \frac12\le\frac{Nr}{Nt}\le2,\qquad
+ Nh\max(Nr,Nt)\le2D.
+\]
+If $Nr\,Nt\le Y$ and $V=\max(Nr,Nt)$, then
+\[
+ V^2\le2Y,\qquad V\le2D.
+\]
+On a dyad $V_0\le V<2V_0$, elementary ideal counting gives
+$O_K(V_0^2)$ pairs $(r,t)$. For each such pair there are separately
+$O_K(D/V_0)$ choices of $h$. This last estimate remains valid on every
+nonempty terminal range, since $V_0\le2D$; an upper norm limit below one
+contains no ideals. Enlarging the positive count to arbitrary ideals
+can only increase it. Thus this dyad contributes $O_K(DV_0)$, and
+\[
+ \sum_{\substack{V_0\ {\rm dyadic}\\V_0\le\sqrt{2Y}}}
+       DV_0\ll_K D\sqrt Y.
+\]
+We have proved
+\begin{equation}\label{upq:paircount}
+ \#\{(m,n):m\ne n,\ D\le Nm,Nn\le2D,\
+             N(mn/(m,n)^2)\le Y\}\ll_K D\sqrt Y.
+\end{equation}
+The sum is geometric, so no logarithm is needed. The independent
+$O_K(D^2)$ count can be used when $Y$ exceeds the possible conductor
+range. This is an unequal-product annular count, not the earlier
+coefficient-diagonal multiplicative-energy estimate.
+
+For every $\delta>0$, on squarefree ideals
+\[
+ r_U(m)\le2^{\omega(m)}\ll_{K,\delta}(Nm)^\delta.
+\]
+To see the last inequality, choose a finite prime set so that
+$2\le(Np)^\delta$ outside it; the remaining finite product is a constant.
+Choose $\delta$ small enough to absorb both factor multiplicities into
+$D^\epsilon$. The exact row kernel satisfies
+$|K_A(m,n)|\le\#B_A\ll_K R_0$, retaining all literal row restrictions.
+Multiplying~\eqref{upq:paircount} by this bound, the actual multiplicities,
+and $\|W\|_\infty^2$, then dividing by $D$, proves~\eqref{upq:sc}.
+For the mixed expression only one multiplicity $r_U(m)$ occurs.
+The estimate bounds its complex absolute value, hence also its real part.
+Its constants are uniform in the high cutoff window and use no derivative
+of the possibly complex common $W$.
+
+\subsection{The whole saturation face and its neighborhood}
+Write $C=H^{1/3}$. On~\eqref{upq:face},
+\[
+ R_0=CT,\qquad P=\max(T,C/T),\qquad
+ R_0P=\max(CT^2,C^2)\le C^3=H.
+\]
+This proves the face assertion at $Y=P^2$ for every $1\le T\le C$;
+the endpoint $A_3=1$ is not singled out.
+
+For completeness, let $x_j=\log A_j$, $r_0=\sum_jx_j$,
+$c_0=\sum_jjx_j\le\log H$. The accepted exact slack identity is
+\[
+ \log H-3\{r_0-\max(x_1,x_2)\}
+ =\log H-c_0+
+ \begin{cases}
+ x_1-x_2+x_4+2x_5+3x_6,&x_1\ge x_2,\\
+ 2(x_2-x_1)+x_4+2x_5+3x_6,&x_2\ge x_1.
+ \end{cases}
+\]
+All terms are nonnegative. If $R_0/M\ge H^{1/3}D^{-\eta}$, then
+$A_1/A_2\le D^{3\eta}$ in the first branch; in the other branch that ratio
+is already at most one. For every $j\ge2$,
+$R_0A_j\le\prod_iA_i^i\le H$, whereas
+\[
+ \frac{R_0A_1}{\prod_iA_i^i}
+ =\frac{A_1}{A_2A_3^2A_4^3A_5^4A_6^5}
+ \le\frac{A_1}{A_2}.
+\]
+Consequently $R_0P\le H\max(1,A_1/A_2)\le HD^{3\eta}$.
+This proves the claimed neighboring bound with the complete $A_3$
+direction, both wedges and the $A_4,A_5,A_6$ slack retained.
+No principal residue has been redefined.
+
+\subsection{Original versus arbitrary four-transform conductors}
+At a good prime $p$ let
+\[
+ (\alpha,\beta,\gamma,\delta)
+ =(\mathbf1_{p\mid a},\mathbf1_{p\mid b},
+   \mathbf1_{p\mid c},\mathbf1_{p\mid d}),\qquad
+ e=\alpha+\beta-\gamma-\delta.
+\]
+For $p\nmid u$ the local product in~\eqref{upq:four} is
+$\chi_p(u)^e$. For $p\mid u$ it is zero whenever any membership is
+nonzero, including when $e=0$. For four arbitrary individually squarefree
+factors, $e\in\{0,\pm1,\pm2\}$. The nonzero exponents have nontrivial tame
+local characters, so their conductor exponent is one. At $e=\pm1$
+the order is six, and at $e=\pm2$ it is three.
+
+On the original support, $\alpha+\beta,\gamma+\delta\in\{0,1\}$.
+Thus $e=\pm2$ cannot occur and
+\[
+ q=\prod_{\substack{p\mid L\\e_p\ne0}}p
+   =\operatorname{supp}(ab)\mathbin{\triangle}
+       \operatorname{supp}(cd),\qquad
+ L=\operatorname{rad}(abcd).
+\]
+Here the support expression denotes its squarefree ideal product.
+With $h=(ab,cd)$, $L=hq$ and the exact kernel factor is
+\begin{equation}\label{upq:rawpair}
+ x_{ab}(u)\overline{x_{cd}(u)}
+ =\mathbf1_{(u,h)=1}\theta_{ab/h,\,cd/h}(u).
+\end{equation}
+The primitive character on the right already vanishes at primes of $q$;
+the explicit indicator supplies every canceled common-prime zero.
+Split conjugate prime ideals are distinct ideal factors even when their
+rational norms agree. The defining fixed $S$ data are unchanged.
+
+For an unrestricted membership $(1,1,0,0)$, $e=2$ is cubic, although the
+parity symmetric difference of the four supports is empty.
+For $(1,1,1,0)$, $e=1$, although $p$ lies in both nonsquarefree product
+supports. Neither relaxed convention is the original two-squarefree-product
+formula. In~\eqref{upq:mixed} the original $(a,b)=1$ similarly restricts
+$e=\mathbf1_{p\mid a}+\mathbf1_{p\mid b}-\mathbf1_{p\mid n}$
+to $0,\pm1$.
+
+Fix the other row factors and pivot in direction $j$. The local exponent
+becomes $je$ modulo six. The complete order/conductor table is
+\[
+ \begin{array}{c|c|c}
+ j&e=\pm1&e=\pm2\\ \hline
+ 1,5&\text{order }6,\ \text{conductor }p&
+       \text{order }3,\ \text{conductor }p\\
+ 2,4&\text{order }3,\ \text{conductor }p&
+       \text{order }3,\ \text{conductor }p\\
+ 3&\text{order }2,\ \text{conductor }p&
+       \text{trivial,\ conductor }1\\
+ 6&\text{trivial,\ conductor }1&
+       \text{trivial,\ conductor }1
+ \end{array}
+\]
+Every cell retains a raw zero at $p\mid a_j$ if $p\mid L$.
+For general four factors the primitive support is $Q_j$ and the additional
+deleted ideal is $Z_j=L/Q_j$ as in the core. If a fixed other row factor
+meets $L$, the whole original summand is zero before the pivot is summed.
+For the original unequal products, $Q_j=q$ for $j=1,\ldots,5$.
+In particular the full $a_3$ direction is quadratic with conductor $q$,
+not primitive-principal. Its smaller character order does not shorten its
+conductor. In a relaxed $\pm2$ channel the $j=3$ component is
+primitive-principal, but still requires its union deletion.
+
+\subsection{Complete local sums and the full deletion union}
+Let $\chi$ be the order-six character on a good residue field
+$\mathbb F_Q$ and $\rho$ a nontrivial additive character. Define
+\[
+ G_k(t)=\sum_{z\in\mathbb F_Q^\times}\chi(z)^k\rho(tz).
+\]
+For $k\not\equiv0\pmod6$, character orthogonality gives $G_k(0)=0$.
+For $t\ne0$, substitution gives
+$G_k(t)=\overline{\chi(t)^k}G_k(1)$. Expanding its square and putting
+$x=ay$ yields
+\[
+ |G_k(t)|^2
+ =\sum_{a\ne0}\chi(a)^k
+       \sum_{y\ne0}\rho\{t(a-1)y\}
+ =(Q-1)-\sum_{a\ne0,1}\chi(a)^k=Q.
+\]
+For $k=0$ the omitted zero gives $G_0(0)=Q-1$ and $G_0(t)=-1$
+when $t\ne0$. This proof applies both to split prime fields and to inert
+quadratic residue fields.
+
+The Chinese remainder theorem expresses the full period-$L$ transform
+as these local factors. Its additive identifications may introduce unit
+twists, which change phases but not magnitudes. It is zero if any local
+frequency on $Q_j$ vanishes; otherwise its magnitude is
+\begin{equation}\label{upq:gaussunion}
+ (NQ_j)^{1/2}
+ \prod_{p\mid Z_j}
+ \left|-1+Np\,\mathbf1_{\text{local frequency at }p\text{ is }0}\right|.
+\end{equation}
+Thus the full transform is not uniformly bounded by $\sqrt{NQ_j}$
+when $Z_j\ne1$. A canceled prime supplies a Ramanujan factor.
+The zero full frequency vanishes for $Q_j>1$, but a short original
+row window has nonzero-frequency contributions.
+
+For a fixed pivot, with its remaining support and restrictions denoted
+by $F$, exact deletion gives
+\begin{align}
+ \mathbf1_{(r,Z_j)=1}
+ &=\sum_{\substack{d\mid Z_j\\d\mid r}}\mu(d),\nonumber\\
+ \sum_r\theta_j(r)F(r)\mathbf1_{(r,Z_j)=1}
+ &=\sum_{d\mid Z_j}\mu(d)\theta_j(d)
+       \sum_z\theta_j(z)F(dz).                         \label{upq:lift}
+\end{align}
+Use fixed primary generators for ideal multiplication and retain all
+literal unit choices. The scaled $F(dz)$ includes the actual ray class,
+window and row masks; this identity asserts no independence.
+
+For a squarefree pivot let $E$ be the radical of $Z_j$ and its other
+fixed excluded primes, including the relevant other $a_i$ with $i\le5$.
+Remove primes of $Q_j$, where $\theta_j$ already vanishes. Pointwise,
+\[
+ \mu(r)^2\mathbf1_{(r,E)=1}
+ =\sum_{\substack{h^2\mid r\\(h,E)=1}}\mu(h)
+       \sum_{\substack{d\mid E\\d\mid r}}\mu(d).
+\]
+If $(r,E)>1$, the second sum is zero; otherwise the first is exactly
+the squarefree indicator. Since $(d,h)=1$, the pivot sum becomes
+\begin{equation}\label{upq:sflift}
+ \sum_{d\mid E}\mu(d)\theta_j(d)
+ \sum_{(h,E)=1}\mu(h)\theta_j(h)^2
+       \sum_z\theta_j(z)F(dh^2z).
+\end{equation}
+Terms with $Nh>\sqrt{O(A_j/Nd)}$ vanish. The factor $dh^2$ is valid
+because of this coprimality; overlapping divisibility conditions have
+not been multiplied incorrectly. An arbitrary $a_6$ pivot has no
+squarefree expansion.
+
+The divisor triangle costs at most
+$\tau(E)\ll_{S,\epsilon}(HD)^\epsilon$.
+The elementary length bound in~\eqref{upq:sflift} is
+$O(A_j/(Nd\,Nh^2))$ on its nonempty ranges. The reciprocal
+norm-square sum over $h$ converges by ideal counting. Restoring the
+deletion and squarefree restrictions therefore returns at best
+$O((HD)^\epsilon A_j)$ by this calculation; it does not produce a power
+saving.
+
+\subsection{An exact completion identity and the favorable smooth trial}
+For the literal sharp window one can periodize its remaining weight
+$F$ modulo $L$. Finite Fourier inversion is exact:
+\[
+ \sum_r F(r)f_L(r)
+ =\frac1{NL}\sum_t\widehat F_L(t)G_L(t),
+ \qquad
+ f_L(r)=\theta_j(r)\mathbf1_{(r,Z_j)=1},
+\]
+with mutually dual additive signs. Here $\widehat F_L$ includes every
+actual restriction not already in $f_L$.
+Although $G_L(0)=0$ for $Q_j>1$, the nonzero frequencies and
+their factors~\eqref{upq:gaussunion} still require a bound.
+The completed zero mean alone is not such a bound.
+
+To test the best elementary local scale, consider instead an unmasked
+smooth primitive sum
+\[
+ S_\theta(Y)=\sum_{z\in\mathbb Z[\omega]}
+       \theta(z)V(z/\sqrt Y),\qquad Y\ge1,
+\]
+where $V$ is a fixed compactly supported smooth function on the
+Eisenstein plane and $\theta$ has squarefree conductor $Q>1$.
+A finite fixed-modulus decomposition retains the specified primary/ray
+restrictions. Since the Eisenstein ring is a PID, the lattice of $Q$
+is a rotated and scaled copy of the fixed lattice, with scale
+$\sqrt{NQ}$. Periodization and Poisson inversion, the complete Gauss
+bound, and rapid Fourier decay give, for any fixed $A>2$,
+\[
+ |S_\theta(Y)|
+ \ll_{K,A,V}\frac{Y}{\sqrt{NQ}}
+       \sum_{\substack{\xi\in\mathcal L^*\\\xi\ne0}}
+       \left(1+\sqrt{\frac{Y}{NQ}}|\xi|\right)^{-A}.
+\]
+The fixed dual lattice $\mathcal L^*$ absorbs the Fourier normalization;
+rotations do not affect the stated bound. If $Y\le NQ$, the lattice sum
+is $O_A(NQ/Y)$ by planar counting. If $Y\ge NQ$, absence of the zero
+frequency gives $O_A((NQ/Y)^{A/2})$. Together with the elementary
+length estimate this proves the favorable bound
+\begin{equation}\label{upq:smoothpoisson}
+ |S_\theta(Y)|\ll_{K,V}\min(Y,\sqrt{NQ}).
+\end{equation}
+Bounded terminal norm scales are absorbed in constants.
+
+This is a smooth local trial, not a replacement of the original sharp
+cutoff in~\eqref{upq:four}--\eqref{upq:mixed}.
+Its constant depends on fixed smooth seminorms of $V$ and need not remain
+bounded when a sharp boundary is approximated. For the original sharp
+masked kernel the unconditional bound obtained here is still
+$|K_A(m,n)|\ll_KR_0$.
+
+Even the favorable trial gives no improvement for the remaining
+$Nq>P^2$ sector. On the original support $Q_j=q$ for $1\le j\le5$. For precisely those pivots,
+\[
+ \sqrt{Nq}>P\ge A_j\ge
+       \frac{A_j}{Nd\,Nh^2}.
+\]
+Thus every scaled minimum in~\eqref{upq:smoothpoisson} takes its length
+term when inserted into~\eqref{upq:lift} or~\eqref{upq:sflift};
+the remaining masks must still be accounted for. Per-conductor
+absolute summation loses the signed column information and returns
+$R_0$ up to divisor losses. In the coprime-product subsector $(m,n)=1$,
+$Nq=Nm\,Nn\in[D^2,4D^2]$. At $H=D^{3/4}$ on the complete face,
+$A_1,A_2,A_3\le D^{1/4}$ but $\sqrt{Nq}\ge D$.
+Neither the sextic, cubic nor quadratic local order changes that
+conductor comparison.
+
+\subsection{The failed inference and the remaining signed sum}
+The accepted balanced-factor count gives
+$\#\mathcal P_U=\sum_mr_U(m)\ll_KD$, and there are $O_K(D)$
+single columns. Using only $|K_A|\ll R_0$ in the absolute off-diagonal
+expansions therefore costs $O(\|W\|_\infty^2DR_0)$ for each expression.
+At $B_X$ this is $DX^2$, whereas the inherited powered-BGL middle
+term is $DX$. On the full face with $C=D^{1/4}$,
+\[
+ \begin{array}{c|c}
+ \text{calculation}&\text{bound apart from constants and }\epsilon\\ \hline
+ \text{fully absolute unequal products}&DCT\\
+ \text{inherited middle monomial}&DC=D^{5/4}\\
+ \text{recovered }Nq\le P^2\text{ sector}&
+       \max(CT^2,C^2)\le D^{3/4}.
+ \end{array}
+\]
+These are upper estimates, not lower bounds for the actual signed sums.
+
+The unsupported step would be to infer short masked cancellation from
+the complete mean zero. Its nonzero additive frequencies have not been
+estimated at a useful scale, canceled-prime Ramanujan factors cannot be
+omitted, and the exact sharp boundary cannot be silently smoothed with
+a uniform constant. This is a failure of the displayed pointwise
+completion calculation, not a disproof of the original signed target.
+
+The surviving target is the original sum
+\[
+ \frac1D\sum_{\substack{m\ne n\\N(mn/(m,n)^2)>P^2}}
+ r_mr_n\lambda_m\overline{\lambda_n}K_A(m,n),
+\]
+jointly with the expression having only $r_m$.
+Keep the factor realization of each $r_m$, its full hyperbolic support,
+and~\eqref{upq:rawpair} on every actual row block, including the full
+face and neighboring region. A useful bound must combine the signed
+column correlations with the nonzero dual frequencies before the
+per-conductor absolute estimate. No such long-conductor bound is
+proved here. Principal centering, the independently primitive
+$\psi_u,\psi_{u,2}$, and all deleted sets retain their previous meanings.
+
+The standard-library diagnostic in
+\path{planning/unequal-product-20261105/attempt/}
+checks exact finite split/inert residue arithmetic, Gauss/Ramanujan
+identities, the original fourth and mixed expansions, union deletions,
+squarefree lifts and the full face. Its common complex norm profiles
+are realizable by smooth disjoint bumps. These finite controls do not
+establish an asymptotic saving. No complete $BT_\sigma$ bound, improved
+full exponent, new Lean theorem, zero-location result or GRH conclusion
+is asserted.

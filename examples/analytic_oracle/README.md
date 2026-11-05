@@ -47,3 +47,22 @@ source pins, normalized coefficients and all updates are in the linked
 uses display-only decimal projections; complete exact certificates supply
 its proof. No additional dependency, Lean theorem, zero-location or GRH
 claim is introduced.
+
+## Fresh adaptive sampler and end-to-end family driver
+
+The separate `precision.py`, `adaptive_theta.py` and `adaptive_family.py`
+implement new sampling/precision/node/degree choices, retaining the old
+fixed-source/API certificates unchanged. See
+[full proof and reproduction](../../research/adaptive-theta-and-readouts.md).
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 examples/analytic_oracle/adaptive_family.py --tolerance 1e-24 --output outputs/experiments/NEW-adaptive-family
+PYTHONDONTWRITEBYTECODE=1 python3 examples/analytic_oracle/adaptive_theta.py --sample-error 1e-32 --m 64 --output outputs/experiments/NEW-adaptive-samples
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s examples/analytic_oracle -p 'test_adaptive*.py' -v
+```
+
+The mathematical arbitrary-request termination statement is for fixed q = 3, 4, 5
+and the stated compact/domain with unbounded resources. Extreme requests can
+be computationally impractical. Output coefficients and compressed executed
+trajectories remain exact; graphics are decimal projections. No new Lean,
+quantum-advantage, zero-location or GRH claim.

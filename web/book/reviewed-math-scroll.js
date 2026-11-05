@@ -2,6 +2,9 @@
    scroll container. Keep full-size equations in focusable HTML containers. */
 (() => {
   'use strict';
+  // Defer initial MathML layout until the streamed chapter subtree is complete.
+  // With scripts disabled the pending class is never added, so content stays visible.
+  document.documentElement.classList.remove('native-math-pending');
   function fitReviewedReaderMath() {
     for (const math of document.querySelectorAll('math')) {
       if (math.closest('.reader-table-scroll,.reader-inline-math,.reader-display-math')) continue;

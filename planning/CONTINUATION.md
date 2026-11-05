@@ -1148,3 +1148,20 @@ is now counted by O(DlogD), but its negative-part budget still costs DX.
 Do not infer BT_sigma from small commutator loss alone. Continue actual
 analytic/category Lean when the pinned toolchain is available; no fallback
 toolchain substitution or claim of whole-book formalization. Gates false.
+
+## Next after adaptive theta/family release preparation
+
+Read research/adaptive-theta-and-readouts.md and governing independent
+outputs/checks/2026-11-05-adaptive-theta/review/final-acceptance-v2.json.
+New fixed-family arbitrary-request sampler/readout construction is accepted;
+don't rerun its264 labels / 590 updates or192 samples at eta = 1e-32 as new research.
+Preserved fixed-label floors apply only to their original interface. General
+conductor/height uniformities and actual analytic/category Lean are unfinished.
+
+For arithmetic, read the UNEQUAL_PRODUCT attempt together with its governing
+NOVELTY_AND_SCOPE.md and review, not the frozen draft's superseded novelty
+wording. Small-conductor control recovers known high-gcd. Next attack large
+conductor/common divisor 1 joint signed sums, summing conductors and dual
+frequencies before per-conductor absolute completion, retaining full union
+zeros, squarefree/ray restrictions and all A3 near-face blocks. No new global
+exponent or GRH claim; heartbeat and both open completion gates persist.

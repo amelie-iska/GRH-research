@@ -115,3 +115,14 @@ quadruples plus mixed Mobius covariance, retaining union masks and the full
 A1=A2,A1*A3=H^(1/3) near-saturating face. Completed book243pages/40chapters/
 6601MathML; all6412prior math subtrees unchanged, focused53/138pages and
 notes11/30pages. Keepbothgatesfalse andheartbeatACTIVE.
+
+
+Latestfixed-familyadaptivefrontier: fresh theta sampling and end-to-end
+requested-error readouts for q3/q4/q5 are independently accepted (1e-24
+complete examples;192sample1e-32run). Arbitraryrequest termination is a fixed-
+family unbounded-resource statement, not runtime/all-conductor/Lean/GRH.
+Oldfixed-labelfloorsremainonlyforoldinterface. Arithmetictrialsmallconductor
+is knownhighgcdrecovery; use governingNOVELTY_AND_SCOPE.md and accepted
+mask/conductorcorrection. Nextjointlargeconductor/dualfrequency signed
+estimate retains commondivisor1/fullunionzeros/A3nearface. Book251/40/6890,
+focused56/146,notes14/38; bothgatesfalse andheartbeatACTIVE.

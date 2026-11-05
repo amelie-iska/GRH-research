@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checks": 7157,
+  "experiment": "outputs/experiments/2026-11-05-adaptive-family-1e-24-final-v2",
+  "family_certificate_sha256": "e69f6d1bf99d6642ff0157d860c4ccac3b5d9bb37ba7bb2bd5b086633c384b01",
+  "source_sha256": {
+    "precision.py": "897716c550e96ab667661a4fc89257e6e9fb0b3ffb0fec4b85a3597033cf20bd",
+    "adaptive_theta.py": "63c1ea69c68c864eaaeeb23b0860dc670d0779d9ea841398fd7f761f3f12b0d4",
+    "adaptive_family.py": "b87cdabcbf701fd8c98cbaef3cfa507d843247fe854f8ba47652f0c25a0a0a56",
+    "adaptive_readout.py": "dc64e37cdadac8ffadaa666cdd0e6a0941580f89f3674817c803e8c89ee7e274",
+    "theta_oracle.py": "c50857831de0fc5faa6829cf539c7d31dc32958b76412c27689235aeba95d2c1",
+    "dyadic.py": "82e995ae9f67395980cec3f06bf493931de0413c7ce024562283882c01425170"
+  },
+  "families": [
+    {
+      "q": 3,
+      "requested_tolerance": "1/1000000000000000000000000",
+      "degree": 48,
+      "sample_count": 88,
+      "steps": 196,
+      "coefficient_states_checked": 9653,
+      "uniform_bound": "21/77371252455336267181195264"
+    },
+    {
+      "q": 4,
+      "requested_tolerance": "1/1000000000000000000000000",
+      "degree": 48,
+      "sample_count": 88,
+      "steps": 197,
+      "coefficient_states_checked": 9702,
+      "uniform_bound": "63/154742504910672534362390528"
+    },
+    {
+      "q": 5,
+      "requested_tolerance": "1/1000000000000000000000000",
+      "degree": 48,
+      "sample_count": 88,
+      "steps": 197,
+      "coefficient_states_checked": 9702,
+      "uniform_bound": "13/38685626227668133590597632"
+    }
+  ],
+  "producer_imported": false,
+  "author_arithmetic_imported": false,
+  "exact_integer_fourier_reconstruction": true,
+  "all_executed_gd_states_reconstructed": true,
+  "five_component_budget_reconstructed": true
+}

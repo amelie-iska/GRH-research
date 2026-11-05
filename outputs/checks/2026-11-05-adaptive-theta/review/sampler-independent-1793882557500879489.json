@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "checks": 1151,
+  "failures": [],
+  "source_sha256": {
+    "precision.py": "897716c550e96ab667661a4fc89257e6e9fb0b3ffb0fec4b85a3597033cf20bd",
+    "adaptive_theta.py": "63c1ea69c68c864eaaeeb23b0860dc670d0779d9ea841398fd7f761f3f12b0d4"
+  },
+  "plans": [
+    {
+      "q": 3,
+      "eta": "1/1000000",
+      "N": 6,
+      "J": 6,
+      "K": 6,
+      "active_pairs": 43,
+      "discarded_pairs": 53
+    },
+    {
+      "q": 3,
+      "eta": "1/1000000000000000000000000",
+      "N": 12,
+      "J": 7,
+      "K": 19,
+      "active_pairs": 71,
+      "discarded_pairs": 153
+    },
+    {
+      "q": 3,
+      "eta": "1/100000000000000000000000000000000",
+      "N": 14,
+      "J": 7,
+      "K": 25,
+      "active_pairs": 84,
+      "discarded_pairs": 196
+    },
+    {
+      "q": 3,
+      "eta": "17/10000000000000000000000000000000",
+      "N": 13,
+      "J": 7,
+      "K": 24,
+      "active_pairs": 79,
+      "discarded_pairs": 173
+    },
+    {
+      "q": 4,
+      "eta": "1/1000000",
+      "N": 7,
+      "J": 6,
+      "K": 6,
+      "active_pairs": 38,
+      "discarded_pairs": 58
+    },
+    {
+      "q": 4,
+      "eta": "1/1000000000000000000000000",
+      "N": 14,
+      "J": 8,
+      "K": 20,
+      "active_pairs": 65,
+      "discarded_pairs": 159
+    },
+    {
+      "q": 4,
+      "eta": "1/100000000000000000000000000000000",
+      "N": 16,
+      "J": 8,
+      "K": 26,
+      "active_pairs": 72,
+      "discarded_pairs": 184
+    },
+    {
+      "q": 4,
+      "eta": "17/10000000000000000000000000000000",
+      "N": 15,
+      "J": 8,
+      "K": 24,
+      "active_pairs": 71,
+      "discarded_pairs": 185
+    },
+    {
+      "q": 5,
+      "eta": "1/1000000",
+      "N": 7,
+      "J": 6,
+      "K": 6,
+      "active_pairs": 64,
+      "discarded_pairs": 80
+    },
+    {
+      "q": 5,
+      "eta": "1/1000000000000000000000000",
+      "N": 16,
+      "J": 8,
+      "K": 20,
+      "active_pairs": 111,
+      "discarded_pairs": 305
+    },
+    {
+      "q": 5,
+      "eta": "1/100000000000000000000000000000000",
+      "N": 18,
+      "J": 8,
+      "K": 26,
+      "active_pairs": 129,
+      "discarded_pairs": 351
+    },
+    {
+      "q": 5,
+      "eta": "17/10000000000000000000000000000000",
+      "N": 17,
+      "J": 8,
+      "K": 24,
+      "active_pairs": 122,
+      "discarded_pairs": 326
+    }
+  ],
+  "exact_tail_and_discard_reconstruction": true,
+  "independent_recurrence_convolution": true
+}

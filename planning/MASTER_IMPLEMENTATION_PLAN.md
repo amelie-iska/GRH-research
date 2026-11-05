@@ -519,3 +519,23 @@ It leaves the old DX middle term and D^(1/2) relative loss. Next estimate
 the unequal-product coupled fourth moment and mixed Mobius term with all
 union masks and the full A3 saturation direction. A negative-part budget
 alone does not supply BT_sigma. Both gates remainfalse; no new Lean/GRH.
+
+## Adaptive sampler/family acceptance — 5 November 2026
+
+A separate variable-precision theta sampler and adaptive family driver now
+implement requested positive rational errors for fixed q = 3, 4, 5/domain and
+compact. Do not apply the preserved fixed-label floor to this new API, nor
+claim all-conductor/height or practical extreme-tolerance complexity.
+Actual1e-24 degree 48 / 88-node examples and192eta1e-32 samples are source-bound
+and independently accepted. Exact executed midpoint-objective states have
+lossless shared-vector/scale compression; their true-root perturbation and
+all sampling/alias/Taylor/rounding terms remain explicit. No new Lean.
+
+Arbitrary four-column moments may have exponents ±2; original internally
+coprime C-C factors have only 0, ±1. Primitive conductor collapse never
+restores full-union zeros. The small-conductor attempted estimate is a
+known high-gcd recovery, not new analytic progress; governing novelty
+addendum/review supersede the preserved draft's optimistic language.
+Next arithmetic target remains the signed large-conductor/common divisor 1
+sum over conductors and dual frequencies with all masks and A3 neighborhood.
+Both completion gates remain false; keep heartbeat active.

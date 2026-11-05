@@ -1,0 +1,56 @@
+\section{An end-to-end adaptive analytic readout}\label{at:family}
+The new driver changes the sample truncations, interval precision, circle
+size and degree; it does not reuse the frozen labels to assert a smaller
+error. Its scope is still the three stated primitive quadratic characters
+and the fixed compact $|s-1/2|\le7/10$.
+
+\begin{theorem}[Requested-error construction in the stated finite family]\label{at:requested}
+Given a positive rational $\varepsilon$ and $q\in\{3,4,5\}$, the specified
+exact-arithmetic algorithm terminates in the mathematical unbounded-resource
+model and returns a normalized rational polynomial $P$ with
+\[
+ \sup_{|s-1/2|\le7/10}|P(s)-\Lambda_q(s)|\le\varepsilon.
+\]
+Its sample enclosures, rational optimizer updates and all error budgets are
+explicit. This is an approximation theorem, with the stated classical theta
+identity as an input; it supplies no zero-location or positive determinant
+conclusion and is not a Lean theorem or a practical runtime bound.
+\end{theorem}
+\begin{proof}
+Put $u=7/12$, $v=7/24$. Choose $d\ge0$ so
+$10v^{d+1}/(1-v)\le\varepsilon/8$, and choose $m>d$ so
+\[
+ 10\frac{2^{-m}}{1-2^{-m}}\frac1{1-v}\le\varepsilon/8.
+\]
+The driver rounds $m$ upward to a multiple of eight, which only decreases
+this bound. Set the requested sample error
+$\eta=\varepsilon(1-u)/8$. The adaptive sampler gives all $m$ true circle
+nodes and labels with error at most $\eta$. Form their outward Fourier
+rectangles through degree $d$, and refine the nodes and finite evaluation
+arithmetic if their weighted midpoint radii exceed $\varepsilon/8$.
+This refinement terminates: for these fixed finite $d,m$, node uncertainty
+and every finite-expression arithmetic width tend to zero with precision.
+Merely lifting fixed boxes would not suffice, so the driver regenerates the
+nodes and samples on this retry.
+
+Choose rational midpoint targets $t_n$ and execute the previously specified
+quadratic-objective updates until
+$\sum_{n=0}^d|b_n^k-t_n|_1u^n\le\varepsilon/4$.
+Their geometric contraction proves finite termination. The oracle,
+aliasing, Taylor and Fourier-midpoint terms are each at most
+$\varepsilon/8$, and the optimization term is at most $\varepsilon/4$.
+Hence the raw five-term sum is at most $3\varepsilon/4$.
+Choose a serialization precision $B$ with $5\,2^{-B}\le\varepsilon/8$,
+round each term upward, then add the five reported rationals exactly.
+The printed bound is at most $7\varepsilon/8\le\varepsilon$.
+The polynomial uses $((s-1/2)/(6/5))^n$, and the preceding Fourier/Cauchy
+proof gives its asserted compact-uniform bound.
+\end{proof}
+
+The trace is losslessly encoded by the fixed target vector and a rational
+scale extracted from each \emph{executed} coefficient state, together with
+its objective, weighted residual and full-state hash. Every coefficient
+can be recovered exactly; a separate replay expands the states and checks
+every update. The producer does not generate its trace from a closed form.
+The saved objective remains the rational Fourier-midpoint quadratic, with
+its perturbation from ideal-root least squares explicitly budgeted.

@@ -415,3 +415,20 @@ moment, analytic Lean or the independent determinant/zero-location bridge.
 Both complete original manuscripts remain immutable. Current243-page book
 has40chapters/6601MathML and13unique canonical embedded labs; all6412old
 math subtrees stay ordered and unchanged. No new global GRH scope is settled.
+
+## Adaptive theta, family approximation and conductor-scope mapping
+
+New shared adaptive-theta-{core,details} give the full five-part adaptive
+sample proof, point/circle semantics, primitive tail/refinement and growing-
+order width estimates; adaptive-family-{core,details} supply requested-error
+degree/circle/precision/GD choices, lossless exact trace and explicit scopes.
+They extend chapter38 and all paired article/note editions, leaving all
+earlier fixed certificates and their proven floor boundaries immutable.
+
+New unequal-product-{core,details} extend chapter40 with the original-vs-
+generic fourth-moment conductor distinction, full raw union mask, Gauss/
+Ramanujan and deletion interfaces, and precise failed completion route.
+The known high-gcd recovery is explicitly not a new analytic saving.
+Current251-page / 40-chapter / 6,890-MathML book retains all 6,601 old math subtrees,
+19 vector diagrams, 13 unique embedded labs and both complete original volumes.
+No new analytic/category Lean or complete GRH scope is supplied.

@@ -1,0 +1,21 @@
+To justify convergence despite a growing exponential Taylor order, write
+$\epsilon_p=2^{-p}$, $\delta_p=2^{-p-16}$, and let $d(X)$ be the sum of a
+rectangle's coordinate widths and $m(X)$ its $\ell^1$ magnitude bound.
+The rounded reduced input $W$ satisfies $a=m(W)\le1/2+2\epsilon_p<3/5$
+and $d(W)\le2^{-k}d(Z)+4\epsilon_p$; the remainder is at most $2^{-H}$,
+so the first accepted order satisfies $H\le p+18$.
+For the computed term boxes, outward multiplication and integer division give
+$m_j\le a m_{j-1}+6\epsilon_p$ and
+$d_j\le a d_{j-1}+m_{j-1}d(W)+12\epsilon_p$.
+Thus $m_j\le a^j+15\epsilon_p$ and
+$\sum_{j=0}^H d_j\le(25/4)d(W)+75H\epsilon_p$; adding the remainder
+increases width by at most $4(\delta_p+\epsilon_p)$.
+The pre-squaring width is therefore $O(d(Z)+p2^{-p})$ and its magnitude
+is bounded (indeed below $3$ for $p\ge32$).
+Each outward square has width at most $2m(X)d(X)+8\epsilon_p$;
+the bounded number of squarings consequently preserves convergence to zero.
+Finally, exact rational partial sums and endpoint rounding give Machin width
+at most $20\delta_p+40\epsilon_p$, and logarithm width at most
+$(1+|k|)(\delta_p+2\epsilon_p)$ for fixed $x=2^kv$.
+These estimates justify the primitive-width step without assuming a fixed
+Taylor order or asserting a global arithmetic complexity bound.

@@ -1,0 +1,409 @@
+{
+  "scope": "Exact output-budget design check, conditional on successful interval radius<=eta/4; not an executed sampler acceptance",
+  "records": [
+    {
+      "q": 3,
+      "eta": {
+        "numerator": "1",
+        "denominator": "1000000000000000000000000",
+        "display": 1e-24
+      },
+      "N": 12,
+      "J": 7,
+      "T": 128,
+      "K": 19,
+      "active_pairs": 71,
+      "potential_pairs": 336,
+      "discarded_pairs": 153,
+      "budget_rounding_bits": 87,
+      "raw_interval_radius_acceptance": {
+        "numerator": "1",
+        "denominator": "4000000000000000000000000",
+        "display": 2.5e-25
+      },
+      "rounded_budgets_with_worst_interval": {
+        "n_tail": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "time_tail": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "quadrature": {
+          "numerator": "1",
+          "denominator": "19342813113834066795298816",
+          "display": 5.169878828456423e-26
+        },
+        "discard": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "interval_arithmetic": {
+          "numerator": "39",
+          "denominator": "154742504910672534362390528",
+          "display": 2.520315928872506e-25
+        }
+      },
+      "literal_reported_radius_majorant": {
+        "numerator": "25",
+        "denominator": "77371252455336267181195264",
+        "display": 3.2311742677852644e-25
+      },
+      "maximum_allowed_majorant": {
+        "numerator": "7",
+        "denominator": "8000000000000000000000000",
+        "display": 8.75e-25
+      },
+      "raw_analytic_display": {
+        "n_tail": 6.191788792270852e-28,
+        "time_tail": 9.781288493192254e-35,
+        "quadrature": 5.1523362018353605e-26,
+        "discard": 6.002771056763548e-28
+      },
+      "raw_analytic_exact_reconstruction": "q,N,J,K and exact formulas in check_design.py; whole-pair set follows from q,N,J,eta threshold"
+    },
+    {
+      "q": 4,
+      "eta": {
+        "numerator": "1",
+        "denominator": "1000000000000000000000000",
+        "display": 1e-24
+      },
+      "N": 14,
+      "J": 8,
+      "T": 256,
+      "K": 20,
+      "active_pairs": 65,
+      "potential_pairs": 448,
+      "discarded_pairs": 159,
+      "budget_rounding_bits": 87,
+      "raw_interval_radius_acceptance": {
+        "numerator": "1",
+        "denominator": "4000000000000000000000000",
+        "display": 2.5e-25
+      },
+      "rounded_budgets_with_worst_interval": {
+        "n_tail": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "time_tail": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "quadrature": {
+          "numerator": "1",
+          "denominator": "77371252455336267181195264",
+          "display": 1.2924697071141057e-26
+        },
+        "discard": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "interval_arithmetic": {
+          "numerator": "39",
+          "denominator": "154742504910672534362390528",
+          "display": 2.520315928872506e-25
+        }
+      },
+      "literal_reported_radius_majorant": {
+        "numerator": "11",
+        "denominator": "38685626227668133590597632",
+        "display": 2.8434333556510326e-25
+      },
+      "maximum_allowed_majorant": {
+        "numerator": "7",
+        "denominator": "8000000000000000000000000",
+        "display": 8.75e-25
+      },
+      "raw_analytic_display": {
+        "n_tail": 7.237232954735969e-28,
+        "time_tail": 2.8132823082516786e-53,
+        "quadrature": 6.873429560600967e-27,
+        "discard": 3.174073204974922e-29
+      },
+      "raw_analytic_exact_reconstruction": "q,N,J,K and exact formulas in check_design.py; whole-pair set follows from q,N,J,eta threshold"
+    },
+    {
+      "q": 5,
+      "eta": {
+        "numerator": "1",
+        "denominator": "1000000000000000000000000",
+        "display": 1e-24
+      },
+      "N": 16,
+      "J": 8,
+      "T": 256,
+      "K": 20,
+      "active_pairs": 111,
+      "potential_pairs": 512,
+      "discarded_pairs": 305,
+      "budget_rounding_bits": 87,
+      "raw_interval_radius_acceptance": {
+        "numerator": "1",
+        "denominator": "4000000000000000000000000",
+        "display": 2.5e-25
+      },
+      "rounded_budgets_with_worst_interval": {
+        "n_tail": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "time_tail": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "quadrature": {
+          "numerator": "1",
+          "denominator": "77371252455336267181195264",
+          "display": 1.2924697071141057e-26
+        },
+        "discard": {
+          "numerator": "1",
+          "denominator": "154742504910672534362390528",
+          "display": 6.462348535570529e-27
+        },
+        "interval_arithmetic": {
+          "numerator": "39",
+          "denominator": "154742504910672534362390528",
+          "display": 2.520315928872506e-25
+        }
+      },
+      "literal_reported_radius_majorant": {
+        "numerator": "11",
+        "denominator": "38685626227668133590597632",
+        "display": 2.8434333556510326e-25
+      },
+      "maximum_allowed_majorant": {
+        "numerator": "7",
+        "denominator": "8000000000000000000000000",
+        "display": 8.75e-25
+      },
+      "raw_analytic_display": {
+        "n_tail": 1.5095053333985143e-28,
+        "time_tail": 1.9383136633128512e-41,
+        "quadrature": 1.2847014493011145e-26,
+        "discard": 2.4946815169604847e-28
+      },
+      "raw_analytic_exact_reconstruction": "q,N,J,K and exact formulas in check_design.py; whole-pair set follows from q,N,J,eta threshold"
+    },
+    {
+      "q": 3,
+      "eta": {
+        "numerator": "1",
+        "denominator": "100000000000000000000000000000000",
+        "display": 1e-32
+      },
+      "N": 14,
+      "J": 7,
+      "T": 128,
+      "K": 25,
+      "active_pairs": 84,
+      "potential_pairs": 392,
+      "discarded_pairs": 196,
+      "budget_rounding_bits": 114,
+      "raw_interval_radius_acceptance": {
+        "numerator": "1",
+        "denominator": "400000000000000000000000000000000",
+        "display": 2.5e-33
+      },
+      "rounded_budgets_with_worst_interval": {
+        "n_tail": {
+          "numerator": "1",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 4.81482486096809e-35
+        },
+        "time_tail": {
+          "numerator": "3",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 1.4444474582904269e-34
+        },
+        "quadrature": {
+          "numerator": "13",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 6.2592723192585165e-34
+        },
+        "discard": {
+          "numerator": "1",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 4.81482486096809e-35
+        },
+        "interval_arithmetic": {
+          "numerator": "13",
+          "denominator": "5192296858534827628530496329220096",
+          "display": 2.5037089277034066e-33
+        }
+      },
+      "literal_reported_radius_majorant": {
+        "numerator": "35",
+        "denominator": "10384593717069655257060992658440192",
+        "display": 3.370377402677663e-33
+      },
+      "maximum_allowed_majorant": {
+        "numerator": "7",
+        "denominator": "800000000000000000000000000000000",
+        "display": 8.75e-33
+      },
+      "raw_analytic_display": {
+        "n_tail": 1.727275296962763e-36,
+        "time_tail": 9.781288493192254e-35,
+        "quadrature": 5.778851418084796e-34,
+        "discard": 4.1142391388779084e-37
+      },
+      "raw_analytic_exact_reconstruction": "q,N,J,K and exact formulas in check_design.py; whole-pair set follows from q,N,J,eta threshold"
+    },
+    {
+      "q": 4,
+      "eta": {
+        "numerator": "1",
+        "denominator": "100000000000000000000000000000000",
+        "display": 1e-32
+      },
+      "N": 16,
+      "J": 8,
+      "T": 256,
+      "K": 26,
+      "active_pairs": 72,
+      "potential_pairs": 512,
+      "discarded_pairs": 184,
+      "budget_rounding_bits": 114,
+      "raw_interval_radius_acceptance": {
+        "numerator": "1",
+        "denominator": "400000000000000000000000000000000",
+        "display": 2.5e-33
+      },
+      "rounded_budgets_with_worst_interval": {
+        "n_tail": {
+          "numerator": "1",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 4.81482486096809e-35
+        },
+        "time_tail": {
+          "numerator": "1",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 4.81482486096809e-35
+        },
+        "quadrature": {
+          "numerator": "1",
+          "denominator": "10384593717069655257060992658440192",
+          "display": 9.62964972193618e-35
+        },
+        "discard": {
+          "numerator": "1",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 4.81482486096809e-35
+        },
+        "interval_arithmetic": {
+          "numerator": "13",
+          "denominator": "5192296858534827628530496329220096",
+          "display": 2.5037089277034066e-33
+        }
+      },
+      "literal_reported_radius_majorant": {
+        "numerator": "57",
+        "denominator": "20769187434139310514121985316880384",
+        "display": 2.744450170751811e-33
+      },
+      "maximum_allowed_majorant": {
+        "numerator": "7",
+        "denominator": "800000000000000000000000000000000",
+        "display": 8.75e-33
+      },
+      "raw_analytic_display": {
+        "n_tail": 3.3488173703798286e-35,
+        "time_tail": 2.8132823082516786e-53,
+        "quadrature": 7.79252429924416e-35,
+        "discard": 1.14520172888701e-36
+      },
+      "raw_analytic_exact_reconstruction": "q,N,J,K and exact formulas in check_design.py; whole-pair set follows from q,N,J,eta threshold"
+    },
+    {
+      "q": 5,
+      "eta": {
+        "numerator": "1",
+        "denominator": "100000000000000000000000000000000",
+        "display": 1e-32
+      },
+      "N": 18,
+      "J": 8,
+      "T": 256,
+      "K": 26,
+      "active_pairs": 129,
+      "potential_pairs": 576,
+      "discarded_pairs": 351,
+      "budget_rounding_bits": 114,
+      "raw_interval_radius_acceptance": {
+        "numerator": "1",
+        "denominator": "400000000000000000000000000000000",
+        "display": 2.5e-33
+      },
+      "rounded_budgets_with_worst_interval": {
+        "n_tail": {
+          "numerator": "1",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 4.81482486096809e-35
+        },
+        "time_tail": {
+          "numerator": "1",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 4.81482486096809e-35
+        },
+        "quadrature": {
+          "numerator": "1",
+          "denominator": "5192296858534827628530496329220096",
+          "display": 1.925929944387236e-34
+        },
+        "discard": {
+          "numerator": "1",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 4.81482486096809e-35
+        },
+        "interval_arithmetic": {
+          "numerator": "13",
+          "denominator": "5192296858534827628530496329220096",
+          "display": 2.5037089277034066e-33
+        }
+      },
+      "literal_reported_radius_majorant": {
+        "numerator": "59",
+        "denominator": "20769187434139310514121985316880384",
+        "display": 2.840746667971173e-33
+      },
+      "maximum_allowed_majorant": {
+        "numerator": "7",
+        "denominator": "800000000000000000000000000000000",
+        "display": 8.75e-33
+      },
+      "raw_analytic_display": {
+        "n_tail": 2.8731226821599914e-35,
+        "time_tail": 1.9383136633128512e-41,
+        "quadrature": 1.4564349551144645e-34,
+        "discard": 2.1900370225442146e-37
+      },
+      "raw_analytic_exact_reconstruction": "q,N,J,K and exact formulas in check_design.py; whole-pair set follows from q,N,J,eta threshold"
+    }
+  ],
+  "controls": 78,
+  "source_sha256": {
+    "planning/adaptive-theta-20261105/design/check_serialized_design.py": "e1f043e6627250ebf52bfe351e9d0aa01f005610f49df72a8d81d11faccb06e5",
+    "planning/adaptive-theta-20261105/design/check_design.py": "1a33fc7e9b6634f3aff1ce802ad4eff1486afe899d3f4a1943aea0671adb2070",
+    "planning/adaptive-theta-20261105/design/DESIGN.md": "ea11b549ab737ac383d953d2725f72f8179c90464aa3c5fc0e2a0a122dbc0d35",
+    "planning/adaptive-theta-20261105/design/adaptive-theta-core-proposal.tex": "584b765bfb950ef28ac408c3eb869fc090ee540c98b1d62d5138814a1370e280",
+    "planning/adaptive-theta-20261105/design/adaptive-theta-details-proposal.tex": "4feaa00af270d2f1dd2960d4260f3024cf752c52562d205e7b01ce9dd752eba3",
+    "examples/analytic_oracle/adaptive_theta.py": "249dab1c4334525d589d6de2b1bd60573901f77780029ee5a0844a2d950824b3",
+    "examples/analytic_oracle/precision.py": "577f67afd28575716d0bf8dcf3841829635931795570f758f56073eb6a8a928e"
+  },
+  "special_functions_used": false,
+  "integer_string_limit_changed": false,
+  "new_Lean_declarations": 0,
+  "GRH_proved": false
+}

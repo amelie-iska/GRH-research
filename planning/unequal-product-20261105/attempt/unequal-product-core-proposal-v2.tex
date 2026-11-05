@@ -1,0 +1,122 @@
+\section{Unequal products: conductor bookkeeping and the known high-gcd sector}
+\label{upq:core}
+Retain $K=\mathbb Q(\omega)$, the original raw sextic symbols
+$x_m(u)=(u/m)_6$, fixed finite-order $\nu$, fixed $S$, and one possibly
+complex common $W\in C_c^\infty$ supported in $[1,2]$.
+All columns are squarefree and prime to $S$; every original shared-prime
+zero is retained. Suppose $D\ge2$ and $2D/7\le U^2\le D$. Put
+\[
+ \lambda_m=\mu(m)\nu(m)W(Nm/D),\qquad r_m=r_U(m).
+\]
+Thus the actual long--long coefficient is $C_U(m)=\mu(m)r_m$.
+
+For one accepted six-factor literal row block $B_A$, retain the fixed
+$S$-part, all units, all ray restrictions, the pairwise-coprime squarefree
+factors $a_1,\ldots,a_5$, the arbitrary $a_6$, and the original cutoff in
+\[
+ u=\varepsilon u_S\prod_{j=1}^6a_j^j,\qquad
+ Na_j\asymp A_j,\qquad \prod_{j=1}^6A_j^j\le H.
+\]
+Write
+\[
+ R_0=\prod_jA_j,\qquad M=\max(A_1,A_2),\qquad
+ P=\max(A_1,\ldots,A_5),\qquad
+ K_A(m,n)=\sum_{u\in B_A}x_m(u)\overline{x_n(u)}.
+\]
+There are $O_K(R_0)$ literal rows in this fixed block. For squarefree
+columns $m,n$, let
+\[
+ h=(m,n),\qquad m=hr,\quad n=ht,\qquad
+ q=rt=\frac{mn}{h^2},\qquad L=hrt.
+\]
+Here $q$ is the oscillatory conductor outside fixed $S$, whereas $L$
+retains the complete raw zero set. Define the unequal-product sectors
+\begin{align*}
+ \mathcal T_{CC}(Y)
+ &=\frac1D\sum_{\substack{m\ne n\\Nq\le Y}}
+       r_mr_n\lambda_m\overline{\lambda_n}K_A(m,n),\\
+ \mathcal T_{C\mu}(Y)
+ &=\frac1D\sum_{\substack{m\ne n\\Nq\le Y}}
+       r_m\lambda_m\overline{\lambda_n}K_A(m,n).
+\end{align*}
+The annular support in $\lambda$ is understood. These are portions of the
+exact original fourth-moment and mixed expansions, respectively.
+
+The recorded fixed-radial-profile high-gcd argument already controls
+this analytic sector. The estimate below recovers it by elementary
+conductor counting for the present literal block. It is not a new
+analytic advance toward the small-gcd frontier. The fixed radial
+estimate is not silently transferred to a sharp block; the displayed
+block bound has its own counting proof.
+
+\begin{proposition}[Conductor-form recovery on literal row blocks]
+\label{upq:small}
+For $Y\ge1$ and every $\epsilon>0$, uniformly in the stated cutoff window,
+\begin{equation}\label{upq:sc}
+ |\mathcal T_{CC}(Y)|+|\mathcal T_{C\mu}(Y)|
+ \ll_{K,\nu,S,\epsilon}
+ \|W\|_\infty^2D^\epsilon R_0\sqrt Y.
+\end{equation}
+In particular the sector $Nq\le P^2$ is
+$O(\|W\|_\infty^2D^\epsilon H)$ on the complete face
+\begin{equation}\label{upq:face}
+ A_1=A_2=T,\qquad A_3=H^{1/3}/T,\qquad
+ A_4=A_5=A_6=1,\qquad 1\le T\le H^{1/3}.
+\end{equation}
+If $R_0/M\ge H^{1/3}D^{-\eta}$, the corresponding bound is
+$O(\|W\|_\infty^2H D^{3\eta+\epsilon})$ throughout this neighboring region.
+\end{proposition}
+
+The input is the annular pair count
+\[
+ \#\{m\ne n:D\le Nm,Nn\le2D,\ N(mn/(m,n)^2)\le Y\}
+ \ll_K D\sqrt Y.
+\]
+Indeed $Nr/Nt\in[1/2,2]$ and
+$\max(Nr,Nt)\le\sqrt{2Y}$; counting $h$ separately on each dyad gives a
+geometric sum. The actual factor multiplicities satisfy
+$r_mr_n\ll_\epsilon D^\epsilon$. No coefficient-diagonal
+$ab=cd$ moment or cancellation of M\"obius signs is used.
+
+There is a necessary distinction in the four-column conductor.
+For four individually squarefree factors set
+\[
+ e_p=\mathbf1_{p\mid a}+\mathbf1_{p\mid b}
+       -\mathbf1_{p\mid c}-\mathbf1_{p\mid d}.
+\]
+Without the internal masks, $e_p$ can be $0,\pm1,\pm2$; the $\pm2$
+components are cubic and still have conductor $p$. On the original
+support $(a,b)=(c,d)=1$, only $0,\pm1$ occur. Thus the
+symmetric-difference conductor is correct for the two squarefree
+products $ab,cd$. It is not a formula for four arbitrary factor supports.
+Canceled common primes remain raw zeros. In row direction $j$ the exact
+primitive support and extra deletion are
+\[
+ Q_j=\prod_{\substack{p\mid L\\je_p\not\equiv0\ (6)}}p,\qquad
+ Z_j=L/Q_j.
+\]
+On the original unequal-product support $Q_j=q$ for every $1\le j\le5$,
+including the quadratic $j=3$ direction. For a relaxed $\pm2$ component,
+$j=3$ removes its oscillation but not its zero.
+
+At a good residue field of size $Q$, the complete zero-extended local sum
+\[
+ G_k(t)=\sum_{z\in\mathbb F_Q^\times}\chi(z)^k\rho(tz)
+\]
+has $G_k(0)=0$ and $|G_k(t)|=\sqrt Q$ for $k\not\equiv0\pmod6$, $t\ne0$;
+for $k=0$ it is $Q-1$ at $t=0$ and $-1$ otherwise.
+The full period therefore contains Ramanujan factors at $Z_j$, not just
+a square-root conductor factor. Exact divisor deletion restores these
+zeros before a row estimate.
+
+Even favorable smooth primitive Poisson completion costs
+$\min(A_j,\sqrt{Nq})$. On the remaining sector $Nq>P^2$, every pivot with $1\le j\le5$
+is in its trivial length regime. The original sharp cutoff cannot be
+replaced by that smooth trial at a uniform derivative cost.
+At $B_X$, $X\asymp D^{1/4}$, the recovered small sector costs $X^3\asymp H$,
+whereas the fully absolute off-diagonal calculation still costs
+$DX^2=D^{3/2}$, worse than the inherited $DX=D^{5/4}$ term.
+The signed $Nq>P^2$ fourth-moment and mixed sums remain open.
+No complete $BT_\sigma$ bound, improved full analytic exponent, energy
+lower bound, new Lean formalization, zero-location result or GRH
+conclusion follows.

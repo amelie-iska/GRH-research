@@ -1,0 +1,108 @@
+\section{Scope of the raw fourth-moment reduction}
+\label{upq:details}
+Write $c_{a,b}=\mu(a)\mu(b)\nu(ab)W(Nab/D)$ on the exact factor support
+in the core. Before absolute Cauchy, the normalized energy is
+\[
+ \frac1D\sum_{\substack{(a,b),(c,d)\ {\rm on\ that\ support}}}
+ c_{a,b}\overline{c_{c,d}}
+ \sum_{u\in B}x_a(u)x_b(u)\overline{x_c(u)x_d(u)}.
+\]
+Squarefreeness of $ab$ and $cd$ forces each positive and negative
+prime multiplicity to be at most one, proving $e_p\in\{0,\pm1\}$.
+For the mixed term against the actual $\mu$ polynomial the exponent is
+$\mathbf1_{p\mid a}+\mathbf1_{p\mid b}-\mathbf1_{p\mid n}$,
+with the same conclusion and the same full union mask.
+The common possibly complex $W$, $\nu$, hyperbolic support and all raw
+zeros stay in these identities.
+
+In contrast, unrestricted four-column memberships $(1,1,0,0)$ give
+$e_p=2$, a cubic component; $(1,1,1,0)$ give $e_p=1$ although both
+product supports contain $p$. Neither the parity symmetric difference
+of four supports nor the symmetric difference of two nonsquarefree
+product supports gives the general conductor.
+For the interface in the core, its local character order is
+\[
+ \begin{array}{c|cccc}
+ j&1,5&2,4&3&6\\ \hline
+ e_p=\pm1&6&3&2&1\\
+ e_p=\pm2&3&3&1&1
+ \end{array}
+\]
+Nontrivial entries have tame conductor exponent one; trivial entries
+remain deleted at $p\mid v$. Multiplying the interface over all six
+row factors, with the fixed unit/$S$ phase, preserves every original
+zero, including those at sixth-power factors. All inter-factor,
+squarefree, ray and capacity restrictions remain external restrictions
+on the same row sum; this identity asserts no independence.
+
+At a residue field of size $Q$, let $\chi$ have order six and $\rho$
+be nontrivial additive. The zero-extended complete sum
+$G_k(t)=\sum_{z\ne0}\chi(z)^k\rho(tz)$ satisfies
+\[
+ \begin{array}{c|cc}
+ &t=0&t\ne0\\ \hline
+ k\not\equiv0\ (6)&0&|G_k(t)|=\sqrt Q\\
+ k\equiv0\ (6)&Q-1&-1.
+ \end{array}
+\]
+For $t\ne0$, substitution gives
+$G_k(t)=\overline{\chi(t)^k}G_k(1)$; for nontrivial $k$,
+expanding the norm square gives
+$(Q-1)-\sum_{a\ne0,1}\chi(a)^k=Q$.
+The proof applies at split and inert primes. By CRT the full period-$L$
+transform vanishes if any local frequency on $Q_j$ is zero; otherwise
+its magnitude is
+\[
+ (NQ_j)^{1/2}
+ \prod_{p\mid Z_j}
+ \left|-1+Np\,\mathbf1_{\text{local frequency at }p\text{ is }0}\right|.
+\]
+Canceled common primes thus supply Ramanujan factors.
+
+Exact deletion, with all remaining restrictions kept in $F$, gives
+\[
+ \sum_r\theta(r)F(r)\mathbf1_{(r,Z)=1}
+ =\sum_{d\mid Z}\mu(d)\theta(d)\sum_z\theta(z)F(dz).
+\]
+For a squarefree pivot let $E$ be the radical of its fixed excluded
+primes, including $Z$ and the relevant other row factors, with
+conductor primes omitted since $\theta$ already vanishes there.
+The additional squarefree identity is
+\[
+ \mu(r)^2\mathbf1_{(r,E)=1}
+ =\sum_{\substack{h^2\mid r\\(h,E)=1}}\mu(h)
+       \sum_{\substack{d\mid E\\d\mid r}}\mu(d).
+\]
+Since $(d,h)=1$, its lifted row sum has terms
+$\mu(d)\mu(h)\theta(d)\theta(h)^2\sum_z\theta(z)F(dh^2z)$.
+The scaled $F$ retains the exact window, primary/ray restrictions and
+other masks. Divisor triangles cost at most $(HD)^\epsilon$;
+they do not restore a forbidden nonzero.
+
+The previous fixed-radial-profile high-gcd proof
+(\path{research/short-row-high-gcd.md}, independently reviewed in
+\path{planning/reviews/book/short-row-formal.md})
+already bounds its off-diagonal tail by
+$O_{\Phi,\epsilon}(D^{2+\epsilon}/G_0^2)$ for $Nh\ge G_0$.
+For annular $m=hr,n=ht$, $Nq\le Y$ implies $Nh\ge D/\sqrt Y$,
+so the old smooth-scope bound is $O_{\Phi,\epsilon}(D^\epsilon Y)$.
+The present elementary count $O(D\sqrt Y)$, factor multiplicities
+$r_U(m)r_U(n)\ll_\epsilon D^\epsilon$, and $\#B_A=O(R_0)$ give only
+$O(\|W\|_\infty^2D^\epsilon R_0\sqrt Y)$ on a literal sharp block.
+This is a weaker conductor-form recovery in its own bookkeeping scope,
+not a new high-gcd theorem; the smooth estimate is not silently
+transferred to a selected sharp off-diagonal piece.
+The full $A_3$ face and neighborhood slack are also inherited.
+
+Finally, primitive smooth Poisson completion has bound
+$O_V(\min(A_j,\sqrt{Nq}))$ on the original support.
+For $Nq>P^2$ and $1\le j\le5$, every scaled length
+$A_j/(Nd\,Nh^2)$ is below $\sqrt{Nq}$, so even this favorable trial
+takes its trivial length term. Its constant uses fixed smooth
+seminorms and need not stay bounded when a sharp boundary is approached.
+In the admissible subsector $(m,n)=1$, $Nq=Nm\,Nn\asymp D^2$.
+A complete zero mean does not control the nonzero frequencies of the
+short original masked row window. The unresolved target is their
+joint signed sum with weights $r_U(m)r_U(n)\lambda_m\overline{\lambda_n}$
+and $r_U(m)\lambda_m\overline{\lambda_n}$, before per-conductor absolute
+estimates. No new global analytic conclusion is claimed.

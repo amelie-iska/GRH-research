@@ -546,3 +546,19 @@ open. Both completion gates remainfalse; the existing heartbeat stays active.
 - No new analytic/categorical Lean theorem was added. Short/principal
   assembly, scope-specific positive determinant/zero-location comparison and
   every complete GRH scope remain unresolved. Both completion gates false.
+
+## Frontier after adaptive sampling
+
+Fixed q = 3, 4, 5 requested-error sampling/readout construction is implemented
+and proved in prose; all-conductor/height extensions, efficient extreme-
+request complexity, analytic/category Lean and physical/quantum architecture
+comparisons remain separate. Preserved fixed-label APIs still have floors.
+The new arbitrary-request theorem does not constrain output zeros or identify
+an arithmetic determinant. Positive scope-specific determinant/zero-location
+comparisons, short/principal assembly and GRH remain open.
+
+Do not repackage small-conductor/high-gcd recovery as a fresh saving. The
+next hard arithmetic input is the joint signed large-conductor/dual-frequency
+sum on original common-divisor1 and neighboring A3 face blocks, with original
+union masks. Generic±2 fourth-column cancellations and original ±1 factor
+expansions must not be conflated. Both completion gates remain false.

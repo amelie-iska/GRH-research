@@ -1,0 +1,106 @@
+{
+  "field_checks": {
+    "field_sizes": [
+      7,
+      13,
+      19,
+      25,
+      121
+    ],
+    "local_values": 17760,
+    "complete_Gauss_Ramanujan_sums": 1110,
+    "negative_controls": 11
+  },
+  "ideal_and_moment_checks": {
+    "canonical_ideals": 77,
+    "squarefree_columns": 37,
+    "ordered_long_pairs": 10,
+    "literal_balanced_and_A3_rows": 96,
+    "small_conductor_strata": [
+      {
+        "Y": 1,
+        "unequal_pairs": 0,
+        "dyad_counts": {},
+        "multiplicity_CC": 0,
+        "multiplicity_CM": 0
+      },
+      {
+        "Y": 7,
+        "unequal_pairs": 0,
+        "dyad_counts": {},
+        "multiplicity_CC": 0,
+        "multiplicity_CM": 0
+      },
+      {
+        "Y": 13,
+        "unequal_pairs": 0,
+        "dyad_counts": {},
+        "multiplicity_CC": 0,
+        "multiplicity_CM": 0
+      },
+      {
+        "Y": 49,
+        "unequal_pairs": 10,
+        "dyad_counts": {
+          "2": 10
+        },
+        "multiplicity_CC": 0,
+        "multiplicity_CM": 0
+      },
+      {
+        "Y": 169,
+        "unequal_pairs": 30,
+        "dyad_counts": {
+          "2": 10,
+          "3": 20
+        },
+        "multiplicity_CC": 16,
+        "multiplicity_CM": 24
+      },
+      {
+        "Y": 1024,
+        "unequal_pairs": 82,
+        "dyad_counts": {
+          "4": 52,
+          "2": 10,
+          "3": 20
+        },
+        "multiplicity_CC": 64,
+        "multiplicity_CM": 48
+      },
+      {
+        "Y": 65536,
+        "unequal_pairs": 1332,
+        "dyad_counts": {
+          "7": 1250,
+          "4": 52,
+          "2": 10,
+          "3": 20
+        },
+        "multiplicity_CC": 80,
+        "multiplicity_CM": 360
+      }
+    ],
+    "pair_triple_controls": 1454,
+    "raw_kernel_moment_controls": 131424,
+    "canceled_prime_zero_controls": 2844
+  },
+  "deletion_checks": {
+    "valuation_squarefree_deletion_cases": 10000,
+    "lift_terms": 83521
+  },
+  "face_checks": {
+    "near_face_blocks": 8547,
+    "including_nonunit_A4_A5_A6": 7506,
+    "full_A3_face_points": 11
+  },
+  "scope": "Exact finite review controls; proof of asymptotic count and face bounds is separately audited prose. No long-conductor saving, zero-location, Lean or GRH claim.",
+  "source_sha256": {
+    "planning/unequal-product-20261105/attempt/UNEQUAL_PRODUCT_MOMENT.md": "d81eeb3ed5ce06a4aaf4ae1047b924a6d3e745175f29e730e00782e6b007cadd",
+    "planning/unequal-product-20261105/attempt/check_unequal_product_v3.py": "c80462cb1fbbc69f8124644c7fde034bcdb89fd706865518fe2facfe44e12237",
+    "planning/unequal-product-20261105/attempt/source-pins-v1.json": "1e89bf4d2eb0765f7b2a78f19fd53e81b3fa7dae9102b469b21907d5583d7c17",
+    "papers/covariance-budget-core.tex": "3ef10a3f3903b9a0363deb612a6e569afef977d6980cbbd4c7fb4b65f65c57db",
+    "papers/covariance-budget-details.tex": "3eadf1e65cb89d1b98d19f9c2dd1efcd768fc4852609f4fcc2ba90288107e696"
+  },
+  "checker_sha256": "d687a99c1b9c8432b45bb58fc723f3b943d2894fe9a94928c54f66fe8d6a68ab"
+}

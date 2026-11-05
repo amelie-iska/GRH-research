@@ -536,3 +536,33 @@ preserved. Focused browser controls/refusal/source links and four viewport
 widths pass, with representative PDF and stable-night views inspected.
 Inherited amsmath/underfull/3old malformed munder diagnostics remain scoped;
 there are no new overfull, unresolved-reference or malformed MathML failures.
+
+## Adaptive theta/family checks — 5 November 2026
+
+Governing scientific receipt: outputs/checks/2026-11-05-adaptive-theta/review/final-acceptance-v2.json
+(and sampler-final-acceptance.json). Exact primitives/tails/guards/source
+captures,192 samples at eta = 1e-32 and full1e-24 family certificates pass independent
+review; sampler 7,241 checks / family 8,666 checks, plus 17 focused unit tests.
+All 590 updates / 593 states / 29,057 complex coordinates reconstruct exactly from
+lossless rational records. High-precision comparisons remain diagnostics.
+The variable Taylor-order convergence addendum is separately checked and
+source-bound; no formal Lean theorem is claimed.
+
+Arithmetic acceptance: outputs/checks/2026-11-05-unequal-product/review/acceptance-v1.json.
+It accepts only the conductor/mask correction and novelty addendum, not a
+new small-conductor/global power saving. Full primitive/raw zero scopes and
+known high-gcd overlap are explicit.
+
+Source-preserving staged builds: book 251 pages / 6,890 MathML, focused 56/146 pages,
+notes 14/38 pages,40chapters/13labs / 19 source-matched vector diagrams. All 6,601
+old math subtrees remain ordered and unchanged. Initial MathML parse/layout
+warning is diagnosed by preserving final-DOM and controlled hidden-layout
+evidence; the final v5 HTML passed strict browser checks before promotion.
+Inherited 3 malformed TeX4ht munder nodes remain isolated; no theorem or zero-
+location result is inferred from rendering/numeric checks.
+
+Final promotion: `outputs/checks/2026-11-05-adaptive-theta/promotion/promotion.json`.
+The v5 browser record confirms no new page errors across four viewport widths.
+The parse guard restores formulas even if the external layout helper is blocked;
+its lifecycle fallback has independent checks. All 6,601 previous MathML subtrees
+are preserved. Three inherited malformed munder nodes remain disclosed.

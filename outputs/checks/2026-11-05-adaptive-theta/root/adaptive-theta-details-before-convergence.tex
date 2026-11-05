@@ -1,0 +1,156 @@
+\section{Adaptive sampling parameters and precision termination}\label{at:details}
+The primitive theta/Mellin identity with root number one yields
+\[
+ \Lambda_q(s)=\sum_{n\ge1}\chi_q(n)n^a
+ \int_1^\infty e^{-\pi n^2t/q}
+ \bigl(t^{(s+a)/2-1}+t^{(1-s+a)/2-1}\bigr)\,dt.
+\]
+On $D=[-1,2]+i[-4/3,4/3]$, both exponents $p$ satisfy
+$|\Re p|\le2$ and $|\Im p|\le2/3$.
+For exact $x\ge0$, put $E(x)=2^{-\lfloor x\rfloor}$.
+The elementary inequality $e>2$ gives
+$e^{-x}\le e^{-\lfloor x\rfloor}\le E(x)$ and
+$E(x)\le2e^{-x\log2}$.
+Use this solely as a pointwise nonincreasing upper bound; it is not
+multiplicative and has no asserted exponential integral identity.
+
+Integration by parts gives
+$\int_1^\infty t^2e^{-xt}\,dt=e^{-x}Q(x)$ for
+$Q(x)=x^{-1}+2x^{-2}+2x^{-3}$.
+For $a=0$ the bound $n^ae^{-\delta n^2/2}\le C_0=1$ is immediate.
+For $a=1$, $n\le(1+n^2)/2$ and
+$n^2e^{-\delta n^2/2}\le2/(e\delta)\le1/\delta$ give
+$C_1=(1+1/\delta)/2$.
+For $n=n_0+j$, the inequality
+$n^2\ge n_0^2+2n_0j$ therefore bounds the omitted-$n$ sum by
+\[
+ 2C_aQ(\delta n_0^2)
+ \frac{e^{-\delta n_0^2/2}}{1-e^{-\delta n_0}}
+ \le2C_aQ(\delta n_0^2)
+ \frac{E(\delta n_0^2/2)}{1-E(\delta n_0)}=B_n.
+\]
+Take $n_0=N+1\ge2$; then $\delta n_0\ge6/5$ and the latter denominator
+is positive. Substituting $t=Tu$ in each retained-$n$ time tail gives
+\[
+ B_t=\sum_{n=1}^N2n^aT^3E(\delta n^2T)Q(\delta n^2T).
+\]
+The two tails are disjoint because the omitted-$n$ tail uses the whole
+integral and the time tail uses only retained $n$.
+
+For $j=0,\ldots,J-1$ and $\ell=0,\ldots,3$ take
+\[
+ m=2^j\left(1+\frac{2\ell+1}{8}\right),\qquad h=\frac{2^j}{8},
+ \qquad T=2^J.
+\]
+These panels cover $[1,T]$ and have $h/m\le1/9$.
+On $|z-m|=\rho=m/2$, principal log is analytic,
+$\Re z\ge m/2$, and $|\arg z|\le1$.
+For $f(z)=e^{-\pi n^2z/q}z^p$, the angular multiplier is at most
+$e^{2/3}\le3$, whence
+\[
+ |f(z)|\le3B(m)E(\delta n^2m/2),\qquad
+ B(m)=\max\{(3m/2)^2,(m/2)^{-2},1\}.
+\]
+Cauchy's coefficient estimate, cancellation of odd terms, and geometric
+summation yield the $B_Q$ in Theorem~\ref{at:sample}.
+Including zero-character or later discarded terms in that sum is harmless.
+Gaussian, time, and geometric decay prove termination of the sequential
+first-success searches with $B_n,B_t,B_Q\le\eta/8$.
+For fixed q and $L=\max\{1,\log(1/\eta)\}$ their asymptotic scales can be
+chosen as $N=O(\sqrt L)$, $T=O(L)$, $J=O(\log L)$, and $K=O(L)$.
+Polynomial prefactors in $N,T,J$ contribute only $O(\log L)$ to the
+logarithm of the error estimates; this is a truncation-size statement,
+not a rational-arithmetic bit-complexity bound.
+
+For real $t\in[m-h,m+h]$, $t\ge1$ and $t^{\Re p}\le(m+h)^2$.
+The bound for a whole pair, including both powers, is therefore
+$4hn^a(m+h)^2E(\delta n^2(m-h))$.
+There are $P=4JN$ potential pairs; summing only bounds at most
+$\eta/(8P)$ gives $B_{\rm discard}\le\eta/8$.
+No partial recurrence or isolated exponential is discarded.
+For active pairs retain the coefficient recurrence
+\[
+ r_{-1}=0,\quad r_0=1,\quad
+ r_{j+1}=\frac{(h/m)(p-\lambda m-j)r_j-
+                   \lambda m(h/m)^2r_{j-1}}{j+1},
+ \qquad\lambda=\pi n^2/q.
+\]
+Coefficient comparison in $t f'=(-\lambda t+p)f$ proves that the
+integrated Taylor polynomial is
+\[
+ 2he^{p\log m-\lambda m}\sum_{j=0}^K\frac{r_{2j}}{2j+1}.
+\]
+Outward arithmetic encloses its exact value, including the signed
+character weight and both powers.
+
+Use an isolated p-bit dyadic context, with all primitive remainders
+refined as p increases. Put $\delta_p=2^{-p-16}$.
+Each arctangent series separately stops when its next-term bound is at
+most $\delta_p$, giving total weighted analytic tail width at most
+$20\delta_p$ in Machin's formula, before outward dyadic rounding.
+Each reduced logarithm series separately has tail at most $\delta_p$;
+for $x=2^kv$, the combined bound is $(1+|k|)\delta_p$, before rounding.
+For the complex exponential, after reduction to $A\le1/2$, choose the
+Taylor order so the bound
+\[
+ \frac{A^{H+1}}{(H+1)!}\frac1{1-A/(H+2)}.
+\]
+is at most $\delta_p$. Choose H by finite exact search; its denominator
+is positive. Add a symmetric exponential error enclosure to each coordinate
+before outward squaring. The fixed guard16 is not itself an acceptance
+bound: the final complete rectangle radius must satisfy
+$R_{\rm arith}\le\eta/4$. All interval caches must include p and preserve
+exact input-type guards. The successful p and retry precisions/radii are
+recorded. Individual series lengths are determined by these, the exact
+inputs and the pinned source and are reconstructible by replay; they are
+not explicitly stored.
+
+For fixed N,J,K and exact target point, the expression has finitely many
+operations and only nonzero fixed integer denominators. Each primitive
+input is bounded for sufficiently large p; exponential halving counts
+are consequently bounded. Exact primitive tails and dyadic rounding
+widths tend to zero. Induction through the finite continuous expression,
+including finitely many outward squarings, gives $R_{\rm arith}\to0$.
+Doubling p after a failed comparison terminates. The argument also covers
+true roots and nodes regenerated at every p, since their widths tend to zero.
+A fixed nondegenerate s rectangle has no corresponding shrinking-input
+claim.
+
+For serialization, initialize
+\[
+ B=\max\{32,\operatorname{bitlen}(\operatorname{den}\eta)
+             -\operatorname{bitlen}(\operatorname{num}\eta)+8\}
+\]
+and increase B until $5\,2^{-B}\le\eta/8$.
+Write $\widehat x=2^{-B}\lceil2^Bx\rceil$ for each of the five raw
+components. Their exact reported sum is at most
+$3\eta/4+5\,2^{-B}\le7\eta/8$, and every component remains an upper
+bound. The output records B, the raw interval radius and complete rectangle,
+N/J/K, discard threshold/pair counts, exact target metadata and source hashes.
+These reconstruct all raw analytic bounds and pair sets without serializing
+huge exact tail denominators. For the practical requests below B is87
+and114, respectively. Exact endpoints remain rational; the mathematical
+specification assumes an integer representation sufficient for the requested
+size. Dynamic rounding removes the old fixed reporting floor. For rational s, validate its exact coordinates in closed D before
+conversion: an outward dyadic enclosure of $\Im s=4/3$ extends beyond D,
+but the analytic bounds concern the true point. Circle nodes satisfy the
+strict exact bounds $-7/10\le\Re s\le17/10$, $|\Im s|\le6/5$.
+
+The exact parameter-design checker gives
+\[
+\begin{array}{c|c|rrrr|r}
+\eta&q&N&J&T&K&\text{active pairs}\\\hline
+10^{-24}&3&12&7&128&19&71\\
+10^{-24}&4&14&8&256&20&65\\
+10^{-24}&5&16&8&256&20&111\\
+10^{-32}&3&14&7&128&25&84\\
+10^{-32}&4&16&8&256&26&72\\
+10^{-32}&5&18&8&256&26&129
+\end{array}
+\]
+with exact rational budgets and no special-function oracle.
+The arithmetic precision is selected from the actual interval radius,
+not inferred from this table. This extension retains the existing
+classical theta identity; it adds no zero-location, positive determinant,
+all-conductor, Lean or GRH claim. The following end-to-end adaptive readout supplies its own node-count,
+alias, degree, Fourier and optimization choices.

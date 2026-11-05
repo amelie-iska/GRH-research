@@ -1,0 +1,1168 @@
+{
+  "passed": true,
+  "checks": 142,
+  "samples": [
+    {
+      "certificate": {
+        "q": 3,
+        "requested_sample_error": {
+          "numerator": "1",
+          "denominator": "1000000000000000000000000",
+          "display": 1e-24
+        },
+        "target_kind": "exact_rational_point",
+        "point_real": {
+          "numerator": "1",
+          "denominator": "2",
+          "display": 0.5
+        },
+        "point_imag": {
+          "numerator": "0",
+          "denominator": "1",
+          "display": 0.0
+        },
+        "N": 12,
+        "J": 7,
+        "T": 128,
+        "K": 19,
+        "bits": 128,
+        "center_real": {
+          "numerator": "12106184050227135813264080562551807957",
+          "denominator": "21267647932558653966460912964485513216",
+          "display": 0.5692300384422752
+        },
+        "center_imag": {
+          "numerator": "0",
+          "denominator": "1",
+          "display": 0.0
+        },
+        "radius": {
+          "numerator": "3",
+          "denominator": "38685626227668133590597632",
+          "display": 7.754818242684634e-26
+        },
+        "budget": {
+          "n_tail": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "time_tail": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "quadrature": {
+            "numerator": "1",
+            "denominator": "19342813113834066795298816",
+            "display": 5.169878828456423e-26
+          },
+          "discard": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "interval_arithmetic": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          }
+        },
+        "node_box": {
+          "real": {
+            "lo": "170141183460469231731687303715884105728",
+            "hi": "170141183460469231731687303715884105728",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "0",
+            "hi": "0",
+            "dyadic_bits": 128
+          }
+        },
+        "root_box": null,
+        "quadrature_sum_box": {
+          "real": {
+            "lo": "193698944803634173012225289000828852626",
+            "hi": "193698944803634173012225289000829001998",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "-99320",
+            "hi": "99320",
+            "dyadic_bits": 128
+          }
+        },
+        "active_pairs": 71,
+        "discarded_pairs": 153,
+        "per_pair_discard_threshold": {
+          "numerator": "1",
+          "denominator": "2688000000000000000000000000",
+          "display": 3.720238095238095e-28
+        },
+        "precision_attempts": [
+          {
+            "bits": 32,
+            "interval_radius": {
+              "numerator": "49623",
+              "denominator": "1073741824",
+              "display": 4.621502012014389e-05
+            }
+          },
+          {
+            "bits": 64,
+            "interval_radius": {
+              "numerator": "189521",
+              "denominator": "18446744073709551616",
+              "display": 1.0273953996581264e-14
+            }
+          },
+          {
+            "bits": 128,
+            "interval_radius": {
+              "numerator": "87003",
+              "denominator": "170141183460469231731687303715884105728",
+              "display": 5.113576750229574e-34
+            }
+          }
+        ],
+        "budget_rounding_bits": 87,
+        "raw_interval_radius": {
+          "numerator": "87003",
+          "denominator": "170141183460469231731687303715884105728",
+          "display": 5.113576750229574e-34
+        },
+        "scope": "Known rational point or true-circle node in fixed domain; primitive quadratic q3/4/5, classical theta identity. Not all-conductor/zero-location/Lean/GRH."
+      },
+      "mpmath_target_real": "0.56923003844227513115386875466624103914260797533413013404517741422525454052134707922120827634104134063846397796527307366606515774108805362188",
+      "mpmath_target_imag": "0.0",
+      "mpmath_distance_to_center": "0.000000000000000000000000000000000035472463962762435001630106328719334220559377187740314185386399373091711070147596189029247342258911946378116145385355577269935960471940337371",
+      "diagnostic_error_to_certified_radius_ratio": "0.0000000004574248274126183838614100002469592591977445391084898609843048711762156052830554809459983671318940957549040667695494110145818951715035186499"
+    },
+    {
+      "certificate": {
+        "q": 4,
+        "requested_sample_error": {
+          "numerator": "1",
+          "denominator": "1000000000000000000000000",
+          "display": 1e-24
+        },
+        "target_kind": "exact_rational_point",
+        "point_real": {
+          "numerator": "1",
+          "denominator": "2",
+          "display": 0.5
+        },
+        "point_imag": {
+          "numerator": "0",
+          "denominator": "1",
+          "display": 0.0
+        },
+        "N": 14,
+        "J": 8,
+        "T": 256,
+        "K": 20,
+        "bits": 128,
+        "center_real": {
+          "numerator": "166859774931573250271740366695871185547",
+          "denominator": "170141183460469231731687303715884105728",
+          "display": 0.9807136140577135
+        },
+        "center_imag": {
+          "numerator": "0",
+          "denominator": "1",
+          "display": 0.0
+        },
+        "radius": {
+          "numerator": "3",
+          "denominator": "77371252455336267181195264",
+          "display": 3.877409121342317e-26
+        },
+        "budget": {
+          "n_tail": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "time_tail": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "quadrature": {
+            "numerator": "1",
+            "denominator": "77371252455336267181195264",
+            "display": 1.2924697071141057e-26
+          },
+          "discard": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "interval_arithmetic": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          }
+        },
+        "node_box": {
+          "real": {
+            "lo": "170141183460469231731687303715884105728",
+            "hi": "170141183460469231731687303715884105728",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "0",
+            "hi": "0",
+            "dyadic_bits": 128
+          }
+        },
+        "root_box": null,
+        "quadrature_sum_box": {
+          "real": {
+            "lo": "333719549863146500543480733391741128822",
+            "hi": "333719549863146500543480733391743613366",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "-1656088",
+            "hi": "1656088",
+            "dyadic_bits": 128
+          }
+        },
+        "active_pairs": 65,
+        "discarded_pairs": 159,
+        "per_pair_discard_threshold": {
+          "numerator": "1",
+          "denominator": "3584000000000000000000000000",
+          "display": 2.7901785714285715e-28
+        },
+        "precision_attempts": [
+          {
+            "bits": 32,
+            "interval_radius": {
+              "numerator": "1656023",
+              "denominator": "2147483648",
+              "display": 0.0007711458019912243
+            }
+          },
+          {
+            "bits": 64,
+            "interval_radius": {
+              "numerator": "826267",
+              "denominator": "4611686018427387904",
+              "display": 1.7916809529061606e-13
+            }
+          },
+          {
+            "bits": 128,
+            "interval_radius": {
+              "numerator": "362295",
+              "denominator": "42535295865117307932921825928971026432",
+              "display": 8.517514516623213e-33
+            }
+          }
+        ],
+        "budget_rounding_bits": 87,
+        "raw_interval_radius": {
+          "numerator": "362295",
+          "denominator": "42535295865117307932921825928971026432",
+          "display": 8.517514516623213e-33
+        },
+        "scope": "Known rational point or true-circle node in fixed domain; primitive quadratic q3/4/5, classical theta identity. Not all-conductor/zero-location/Lean/GRH."
+      },
+      "mpmath_target_real": "0.98071361405771350407137194920328270732263908458091829401455178946019455929302437343894816139441970149343037353016476178800122808534880491588",
+      "mpmath_target_imag": "0.0",
+      "mpmath_distance_to_center": "0.0000000000000000000000000000000010518290181745770839286519751330512857357392463739488797913179938469038773763074721858438347094146511950841226300441681266027867925563743588",
+      "diagnostic_error_to_certified_radius_ratio": "0.000000027127109501677894134180800773046140689215513067435134929061882622987477880243231365122545480360196486514494178809831420449822927625358223334"
+    },
+    {
+      "certificate": {
+        "q": 5,
+        "requested_sample_error": {
+          "numerator": "1",
+          "denominator": "1000000000000000000000000",
+          "display": 1e-24
+        },
+        "target_kind": "exact_rational_point",
+        "point_real": {
+          "numerator": "-1",
+          "denominator": "1",
+          "display": -1.0
+        },
+        "point_imag": {
+          "numerator": "4",
+          "denominator": "3",
+          "display": 1.3333333333333333
+        },
+        "N": 16,
+        "J": 8,
+        "T": 256,
+        "K": 20,
+        "bits": 128,
+        "center_real": {
+          "numerator": "637832819258418310957353728729684174237",
+          "denominator": "680564733841876926926749214863536422912",
+          "display": 0.9372110947591549
+        },
+        "center_imag": {
+          "numerator": "-205872711361781430298820090929413840123",
+          "denominator": "680564733841876926926749214863536422912",
+          "display": -0.3025027614928018
+        },
+        "radius": {
+          "numerator": "3",
+          "denominator": "77371252455336267181195264",
+          "display": 3.877409121342317e-26
+        },
+        "budget": {
+          "n_tail": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "time_tail": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "quadrature": {
+            "numerator": "1",
+            "denominator": "77371252455336267181195264",
+            "display": 1.2924697071141057e-26
+          },
+          "discard": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "interval_arithmetic": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          }
+        },
+        "node_box": {
+          "real": {
+            "lo": "-340282366920938463463374607431768211456",
+            "hi": "-340282366920938463463374607431768211456",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "453709822561251284617832809909024281941",
+            "hi": "453709822561251284617832809909024281942",
+            "dyadic_bits": 128
+          }
+        },
+        "root_box": null,
+        "quadrature_sum_box": {
+          "real": {
+            "lo": "318916409629209155478676864364841813741",
+            "hi": "318916409629209155478676864364842360496",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "-102936355680890715149410045464707193417",
+            "hi": "-102936355680890715149410045464706646706",
+            "dyadic_bits": 128
+          }
+        },
+        "active_pairs": 111,
+        "discarded_pairs": 305,
+        "per_pair_discard_threshold": {
+          "numerator": "1",
+          "denominator": "4096000000000000000000000000",
+          "display": 2.44140625e-28
+        },
+        "precision_attempts": [
+          {
+            "bits": 32,
+            "interval_radius": {
+              "numerator": "2177305",
+              "denominator": "8589934592",
+              "display": 0.0002534716622903943
+            }
+          },
+          {
+            "bits": 64,
+            "interval_radius": {
+              "numerator": "948413",
+              "denominator": "18446744073709551616",
+              "display": 5.1413571750674736e-14
+            }
+          },
+          {
+            "bits": 128,
+            "interval_radius": {
+              "numerator": "546733",
+              "denominator": "340282366920938463463374607431768211456",
+              "display": 1.6067038822703043e-33
+            }
+          }
+        ],
+        "budget_rounding_bits": 87,
+        "raw_interval_radius": {
+          "numerator": "546733",
+          "denominator": "340282366920938463463374607431768211456",
+          "display": 1.6067038822703043e-33
+        },
+        "scope": "Known rational point or true-circle node in fixed domain; primitive quadratic q3/4/5, classical theta identity. Not all-conductor/zero-location/Lean/GRH."
+      },
+      "mpmath_target_real": "0.93721109475915484239448842176069034483949730594083258218011317094940824366954971180064494186594846754209240952668324254884437823948790333182",
+      "mpmath_target_imag": "-0.30250276149280179504453509183311278943465355522470754014230208289500825809634521495861571038826053088732942546484586847246163986697030004889",
+      "mpmath_distance_to_center": "0.000000000000000000000000000000000057732394733497291165204032514770020278668497687440371500387560556098278565717814452217159721875449296460819981961066910836208974895250369251",
+      "diagnostic_error_to_certified_radius_ratio": "0.0000000014889425625921816231474425833269335785373287472059724698353425321633161742651286557966713420991558068012405912281932849610539813755246965379"
+    },
+    {
+      "certificate": {
+        "q": 5,
+        "requested_sample_error": {
+          "numerator": "1",
+          "denominator": "1000000000000000000000000",
+          "display": 1e-24
+        },
+        "target_kind": "true_circle_node",
+        "node_index": 7,
+        "node_count": 64,
+        "circle_center": {
+          "numerator": "1",
+          "denominator": "2",
+          "display": 0.5
+        },
+        "circle_radius": {
+          "numerator": "6",
+          "denominator": "5",
+          "display": 1.2
+        },
+        "N": 16,
+        "J": 8,
+        "T": 256,
+        "K": 20,
+        "bits": 128,
+        "center_real": {
+          "numerator": "326518118875140255145602467178140126749",
+          "denominator": "340282366920938463463374607431768211456",
+          "display": 0.9595505104471187
+        },
+        "center_imag": {
+          "numerator": "36231760684745919025783159649418487819",
+          "denominator": "340282366920938463463374607431768211456",
+          "display": 0.10647557501315971
+        },
+        "radius": {
+          "numerator": "3",
+          "denominator": "77371252455336267181195264",
+          "display": 3.877409121342317e-26
+        },
+        "budget": {
+          "n_tail": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "time_tail": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "quadrature": {
+            "numerator": "1",
+            "denominator": "77371252455336267181195264",
+            "display": 1.2924697071141057e-26
+          },
+          "discard": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          },
+          "interval_arithmetic": {
+            "numerator": "1",
+            "denominator": "154742504910672534362390528",
+            "display": 6.462348535570529e-27
+          }
+        },
+        "node_box": {
+          "real": {
+            "lo": "485791375530349049837355487680383827045",
+            "hi": "485791375530349049837355487680383827104",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "259047417952743357200470845905083889414",
+            "hi": "259047417952743357200470845905083889478",
+            "dyadic_bits": 128
+          }
+        },
+        "root_box": {
+          "real": {
+            "lo": "263041826724899848421390153303749767765",
+            "hi": "263041826724899848421390153303749767812",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "215872848293952797667059038254236574512",
+            "hi": "215872848293952797667059038254236574564",
+            "dyadic_bits": 128
+          }
+        },
+        "quadrature_sum_box": {
+          "real": {
+            "lo": "326518118875140255145602467178139860617",
+            "hi": "326518118875140255145602467178140392881",
+            "dyadic_bits": 128
+          },
+          "imag": {
+            "lo": "36231760684745919025783159649418221750",
+            "hi": "36231760684745919025783159649418753888",
+            "dyadic_bits": 128
+          }
+        },
+        "active_pairs": 111,
+        "discarded_pairs": 305,
+        "per_pair_discard_threshold": {
+          "numerator": "1",
+          "denominator": "4096000000000000000000000000",
+          "display": 2.44140625e-28
+        },
+        "precision_attempts": [
+          {
+            "bits": 32,
+            "interval_radius": {
+              "numerator": "1035",
+              "denominator": "4194304",
+              "display": 0.0002467632293701172
+            }
+          },
+          {
+            "bits": 64,
+            "interval_radius": {
+              "numerator": "923223",
+              "denominator": "18446744073709551616",
+              "display": 5.004801911442924e-14
+            }
+          },
+          {
+            "bits": 128,
+            "interval_radius": {
+              "numerator": "532201",
+              "denominator": "340282366920938463463374607431768211456",
+              "display": 1.5639981725049306e-33
+            }
+          }
+        ],
+        "budget_rounding_bits": 87,
+        "raw_interval_radius": {
+          "numerator": "532201",
+          "denominator": "340282366920938463463374607431768211456",
+          "display": 1.5639981725049306e-33
+        },
+        "scope": "Known rational point or true-circle node in fixed domain; primitive quadratic q3/4/5, classical theta identity. Not all-conductor/zero-location/Lean/GRH."
+      },
+      "mpmath_target_real": "0.95955051044711873914423221003102619748331651935859739764437997793433604070089248504188344191907101406749592913888529894876126776572155725529",
+      "mpmath_target_imag": "0.10647557501315970800786243390095096350903026824207602389691850463918041005768042181646898215218703311385215408639437096222775970692978039422",
+      "mpmath_distance_to_center": "0.000000000000000000000000000000000020764985639276155960598315540363043194366189071237123334561870051003603563134721365786981371130551458479496016460340900731671395692646449924",
+      "diagnostic_error_to_certified_radius_ratio": "0.00000000053553764870928920315929494484081103976699089669472455047778683657405734098699108498434765711372318065410805039436354866587221017112803334914"
+    },
+    {
+      "certificate": {
+        "q": 3,
+        "requested_sample_error": {
+          "numerator": "1",
+          "denominator": "100000000000000000000000000000000",
+          "display": 1e-32
+        },
+        "target_kind": "exact_rational_point",
+        "point_real": {
+          "numerator": "1",
+          "denominator": "2",
+          "display": 0.5
+        },
+        "point_imag": {
+          "numerator": "0",
+          "denominator": "1",
+          "display": 0.0
+        },
+        "N": 14,
+        "J": 7,
+        "T": 128,
+        "K": 25,
+        "bits": 256,
+        "center_real": {
+          "numerator": "16478083851967212598247308220680600287945589272402985298216209626519426929595",
+          "denominator": "28948022309329048855892746252171976963317496166410141009864396001978282409984",
+          "display": 0.5692300384422752
+        },
+        "center_imag": {
+          "numerator": "0",
+          "denominator": "1",
+          "display": 0.0
+        },
+        "radius": {
+          "numerator": "19",
+          "denominator": "20769187434139310514121985316880384",
+          "display": 9.14816723583937e-34
+        },
+        "budget": {
+          "n_tail": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "time_tail": {
+            "numerator": "3",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 1.4444474582904269e-34
+          },
+          "quadrature": {
+            "numerator": "13",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 6.2592723192585165e-34
+          },
+          "discard": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "interval_arithmetic": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          }
+        },
+        "node_box": {
+          "real": {
+            "lo": "57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "hi": "57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "0",
+            "hi": "0",
+            "dyadic_bits": 256
+          }
+        },
+        "root_box": null,
+        "quadrature_sum_box": {
+          "real": {
+            "lo": "65912335407868850392989232882722401151782357089611941192864838506077662805118",
+            "hi": "65912335407868850392989232882722401151782357089611941192864838506077752631642",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "-59884038",
+            "hi": "59884038",
+            "dyadic_bits": 256
+          }
+        },
+        "active_pairs": 84,
+        "discarded_pairs": 196,
+        "per_pair_discard_threshold": {
+          "numerator": "1",
+          "denominator": "313600000000000000000000000000000000",
+          "display": 3.188775510204081e-36
+        },
+        "precision_attempts": [
+          {
+            "bits": 32,
+            "interval_radius": {
+              "numerator": "119767933",
+              "denominator": "4294967296",
+              "display": 0.027885644929483533
+            }
+          },
+          {
+            "bits": 64,
+            "interval_radius": {
+              "numerator": "119758961",
+              "denominator": "18446744073709551616",
+              "display": 6.49214628454034e-12
+            }
+          },
+          {
+            "bits": 128,
+            "interval_radius": {
+              "numerator": "13099661",
+              "denominator": "42535295865117307932921825928971026432",
+              "display": 3.0797155006374075e-31
+            }
+          },
+          {
+            "bits": 256,
+            "interval_radius": {
+              "numerator": "26199325",
+              "denominator": "28948022309329048855892746252171976963317496166410141009864396001978282409984",
+              "display": 9.05047146918799e-70
+            }
+          }
+        ],
+        "budget_rounding_bits": 114,
+        "raw_interval_radius": {
+          "numerator": "26199325",
+          "denominator": "28948022309329048855892746252171976963317496166410141009864396001978282409984",
+          "display": 9.05047146918799e-70
+        },
+        "scope": "Known rational point or true-circle node in fixed domain; primitive quadratic q3/4/5, classical theta identity. Not all-conductor/zero-location/Lean/GRH."
+      },
+      "mpmath_target_real": "0.56923003844227513115386875466624103914260797533413013404517741422525454052134707922120827634104134063846397796527307366606515774108805362188",
+      "mpmath_target_imag": "0.0",
+      "mpmath_distance_to_center": "1.2675311204581176357235880237108780814045511759194746210362225541833826392404042195428082296495574677800033182599873318491963919463352566176e-52",
+      "diagnostic_error_to_certified_radius_ratio": "0.00000000000000000013855574431262767123800405446388848720754291671875547281804398711100725949383691109381614736863416049003632395069357819078485069692836157957"
+    },
+    {
+      "certificate": {
+        "q": 4,
+        "requested_sample_error": {
+          "numerator": "1",
+          "denominator": "100000000000000000000000000000000",
+          "display": 1e-32
+        },
+        "target_kind": "exact_rational_point",
+        "point_real": {
+          "numerator": "1",
+          "denominator": "2",
+          "display": 0.5
+        },
+        "point_imag": {
+          "numerator": "0",
+          "denominator": "1",
+          "display": 0.0
+        },
+        "N": 16,
+        "J": 8,
+        "T": 256,
+        "K": 26,
+        "bits": 256,
+        "center_real": {
+          "numerator": "113558878315221636888211073798440895029813635017610325438666206421077816309325",
+          "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "display": 0.9807136140577135
+        },
+        "center_imag": {
+          "numerator": "0",
+          "denominator": "1",
+          "display": 0.0
+        },
+        "radius": {
+          "numerator": "3",
+          "denominator": "10384593717069655257060992658440192",
+          "display": 2.8888949165808538e-34
+        },
+        "budget": {
+          "n_tail": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "time_tail": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "quadrature": {
+            "numerator": "1",
+            "denominator": "10384593717069655257060992658440192",
+            "display": 9.62964972193618e-35
+          },
+          "discard": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "interval_arithmetic": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          }
+        },
+        "node_box": {
+          "real": {
+            "lo": "57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "hi": "57896044618658097711785492504343953926634992332820282019728792003956564819968",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "0",
+            "hi": "0",
+            "dyadic_bits": 256
+          }
+        },
+        "root_box": null,
+        "quadrature_sum_box": {
+          "real": {
+            "lo": "113558878315221636888211073798440895029813635017610325438666206421077808544754",
+            "hi": "113558878315221636888211073798440895029813635017610325438666206421077824073896",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "-10352456",
+            "hi": "10352456",
+            "dyadic_bits": 256
+          }
+        },
+        "active_pairs": 72,
+        "discarded_pairs": 184,
+        "per_pair_discard_threshold": {
+          "numerator": "1",
+          "denominator": "409600000000000000000000000000000000",
+          "display": 2.44140625e-36
+        },
+        "precision_attempts": [
+          {
+            "bits": 32,
+            "interval_radius": {
+              "numerator": "5176197",
+              "denominator": "1073741824",
+              "display": 0.004820709116756916
+            }
+          },
+          {
+            "bits": 64,
+            "interval_radius": {
+              "numerator": "20697811",
+              "denominator": "18446744073709551616",
+              "display": 1.1220305825947186e-12
+            }
+          },
+          {
+            "bits": 128,
+            "interval_radius": {
+              "numerator": "18117015",
+              "denominator": "340282366920938463463374607431768211456",
+              "display": 5.324112196565661e-32
+            }
+          },
+          {
+            "bits": 256,
+            "interval_radius": {
+              "numerator": "18117027",
+              "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+              "display": 1.5646169888919704e-70
+            }
+          }
+        ],
+        "budget_rounding_bits": 114,
+        "raw_interval_radius": {
+          "numerator": "18117027",
+          "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "display": 1.5646169888919704e-70
+        },
+        "scope": "Known rational point or true-circle node in fixed domain; primitive quadratic q3/4/5, classical theta identity. Not all-conductor/zero-location/Lean/GRH."
+      },
+      "mpmath_target_real": "0.98071361405771350407137194920328270732263908458091829401455178946019455929302437343894816139441970149343037353016476178800122808534880491588",
+      "mpmath_target_imag": "0.0",
+      "mpmath_distance_to_center": "5.3884531509128699982283921969340990204882869694649825420370531321756386119648453324998215286768617384502112758705965840666353362409945768501e-54",
+      "diagnostic_error_to_certified_radius_ratio": "0.000000000000000000018652298911897992229142771522060821530466600471984070339982698948404541883514083047190983047023141494895989367745651232981004078204564207239"
+    },
+    {
+      "certificate": {
+        "q": 5,
+        "requested_sample_error": {
+          "numerator": "1",
+          "denominator": "100000000000000000000000000000000",
+          "display": 1e-32
+        },
+        "target_kind": "exact_rational_point",
+        "point_real": {
+          "numerator": "-1",
+          "denominator": "1",
+          "display": -1.0
+        },
+        "point_imag": {
+          "numerator": "4",
+          "denominator": "3",
+          "display": 1.3333333333333333
+        },
+        "N": 18,
+        "J": 8,
+        "T": 256,
+        "K": 26,
+        "bits": 256,
+        "center_real": {
+          "numerator": "217043261437109724784652143246148064651562072949029550195769316989678113468031",
+          "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+          "display": 0.9372110947591549
+        },
+        "center_imag": {
+          "numerator": "-35027426753309082773752200859656135653056583885087867626038745302264486743271",
+          "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "display": -0.3025027614928018
+        },
+        "radius": {
+          "numerator": "1",
+          "denominator": "2596148429267413814265248164610048",
+          "display": 3.851859888774472e-34
+        },
+        "budget": {
+          "n_tail": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "time_tail": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "quadrature": {
+            "numerator": "1",
+            "denominator": "5192296858534827628530496329220096",
+            "display": 1.925929944387236e-34
+          },
+          "discard": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "interval_arithmetic": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          }
+        },
+        "node_box": {
+          "real": {
+            "lo": "-115792089237316195423570985008687907853269984665640564039457584007913129639936",
+            "hi": "-115792089237316195423570985008687907853269984665640564039457584007913129639936",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "154389452316421593898094646678250543804359979554187418719276778677217506186581",
+            "hi": "154389452316421593898094646678250543804359979554187418719276778677217506186582",
+            "dyadic_bits": 256
+          }
+        },
+        "root_box": null,
+        "quadrature_sum_box": {
+          "real": {
+            "lo": "108521630718554862392326071623074032325781036474514775097884658494839055672234",
+            "hi": "108521630718554862392326071623074032325781036474514775097884658494839057795797",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "-35027426753309082773752200859656135653056583885087867626038745302264487805098",
+            "hi": "-35027426753309082773752200859656135653056583885087867626038745302264485681444",
+            "dyadic_bits": 256
+          }
+        },
+        "active_pairs": 129,
+        "discarded_pairs": 351,
+        "per_pair_discard_threshold": {
+          "numerator": "1",
+          "denominator": "460800000000000000000000000000000000",
+          "display": 2.170138888888889e-36
+        },
+        "precision_attempts": [
+          {
+            "bits": 32,
+            "interval_radius": {
+              "numerator": "8482529",
+              "denominator": "8589934592",
+              "display": 0.0009874963434413075
+            }
+          },
+          {
+            "bits": 64,
+            "interval_radius": {
+              "numerator": "463375",
+              "denominator": "2305843009213693952",
+              "display": 2.0095687267018825e-13
+            }
+          },
+          {
+            "bits": 128,
+            "interval_radius": {
+              "numerator": "1061575",
+              "denominator": "170141183460469231731687303715884105728",
+              "display": 6.239377077370849e-33
+            }
+          },
+          {
+            "bits": 256,
+            "interval_radius": {
+              "numerator": "4247217",
+              "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+              "display": 1.833984095103128e-71
+            }
+          }
+        ],
+        "budget_rounding_bits": 114,
+        "raw_interval_radius": {
+          "numerator": "4247217",
+          "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+          "display": 1.833984095103128e-71
+        },
+        "scope": "Known rational point or true-circle node in fixed domain; primitive quadratic q3/4/5, classical theta identity. Not all-conductor/zero-location/Lean/GRH."
+      },
+      "mpmath_target_real": "0.93721109475915484239448842176069034483949730594083258218011317094940824366954971180064494186594846754209240952668324254884437823948790333182",
+      "mpmath_target_imag": "-0.30250276149280179504453509183311278943465355522470754014230208289500825809634521495861571038826053088732942546484586847246163986697030004889",
+      "mpmath_distance_to_center": "5.9805129154287046048420091808576450410210822999778507380459164290748116937639987940770379402718489078877183238504766895024429968433683920726e-54",
+      "diagnostic_error_to_certified_radius_ratio": "0.000000000000000000015526299211603713091343017345791467700726820852513130309877757055938287085530002619915192733166559354153353272693476154181014601284487994695"
+    },
+    {
+      "certificate": {
+        "q": 5,
+        "requested_sample_error": {
+          "numerator": "1",
+          "denominator": "100000000000000000000000000000000",
+          "display": 1e-32
+        },
+        "target_kind": "true_circle_node",
+        "node_index": 7,
+        "node_count": 64,
+        "circle_center": {
+          "numerator": "1",
+          "denominator": "2",
+          "display": 0.5
+        },
+        "circle_radius": {
+          "numerator": "6",
+          "denominator": "5",
+          "display": 1.2
+        },
+        "N": 18,
+        "J": 8,
+        "T": 256,
+        "K": 26,
+        "bits": 256,
+        "center_real": {
+          "numerator": "222216716666810158585224885326322767335853942374263526303080208821113617184929",
+          "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+          "display": 0.9595505104471187
+        },
+        "center_imag": {
+          "numerator": "12329029283518343448520520665442969515627021115513953749868439877209711552751",
+          "denominator": "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "display": 0.10647557501315971
+        },
+        "radius": {
+          "numerator": "1",
+          "denominator": "2596148429267413814265248164610048",
+          "display": 3.851859888774472e-34
+        },
+        "budget": {
+          "n_tail": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "time_tail": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "quadrature": {
+            "numerator": "1",
+            "denominator": "5192296858534827628530496329220096",
+            "display": 1.925929944387236e-34
+          },
+          "discard": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          },
+          "interval_arithmetic": {
+            "numerator": "1",
+            "denominator": "20769187434139310514121985316880384",
+            "display": 4.81482486096809e-35
+          }
+        },
+        "node_box": {
+          "real": {
+            "lo": "165306239095245642429186092271803604167946648859655881753141483438762186499337",
+            "hi": "165306239095245642429186092271803604167946648859655881753141483438762186499425",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "88149268525717116832513425372330599081085562591518230104713903695345451088269",
+            "hi": "88149268525717116832513425372330599081085562591518230104713903695345451088359",
+            "dyadic_bits": 256
+          }
+        },
+        "root_box": {
+          "real": {
+            "lo": "89508495397156287264500499806216375201093047105696333111177242862338018066141",
+            "hi": "89508495397156287264500499806216375201093047105696333111177242862338018066213",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "73457723771430930693761187810275499234237968826265191753928253079454542573558",
+            "hi": "73457723771430930693761187810275499234237968826265191753928253079454542573632",
+            "dyadic_bits": 256
+          }
+        },
+        "quadrature_sum_box": {
+          "real": {
+            "lo": "111108358333405079292612442663161383667926971187131763151540104410556807558202",
+            "hi": "111108358333405079292612442663161383667926971187131763151540104410556809626727",
+            "dyadic_bits": 256
+          },
+          "imag": {
+            "lo": "12329029283518343448520520665442969515627021115513953749868439877209710518551",
+            "hi": "12329029283518343448520520665442969515627021115513953749868439877209712586951",
+            "dyadic_bits": 256
+          }
+        },
+        "active_pairs": 129,
+        "discarded_pairs": 351,
+        "per_pair_discard_threshold": {
+          "numerator": "1",
+          "denominator": "460800000000000000000000000000000000",
+          "display": 2.170138888888889e-36
+        },
+        "precision_attempts": [
+          {
+            "bits": 32,
+            "interval_radius": {
+              "numerator": "8262235",
+              "denominator": "8589934592",
+              "display": 0.0009618507465347648
+            }
+          },
+          {
+            "bits": 64,
+            "interval_radius": {
+              "numerator": "7221305",
+              "denominator": "36893488147419103232",
+              "display": 1.957338642295109e-13
+            }
+          },
+          {
+            "bits": 128,
+            "interval_radius": {
+              "numerator": "2067963",
+              "denominator": "340282366920938463463374607431768211456",
+              "display": 6.0771970605237754e-33
+            }
+          },
+          {
+            "bits": 256,
+            "interval_radius": {
+              "numerator": "4136925",
+              "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+              "display": 1.7863590799892043e-71
+            }
+          }
+        ],
+        "budget_rounding_bits": 114,
+        "raw_interval_radius": {
+          "numerator": "4136925",
+          "denominator": "231584178474632390847141970017375815706539969331281128078915168015826259279872",
+          "display": 1.7863590799892043e-71
+        },
+        "scope": "Known rational point or true-circle node in fixed domain; primitive quadratic q3/4/5, classical theta identity. Not all-conductor/zero-location/Lean/GRH."
+      },
+      "mpmath_target_real": "0.95955051044711873914423221003102619748331651935859739764437997793433604070089248504188344191907101406749592913888529894876126776572155725529",
+      "mpmath_target_imag": "0.10647557501315970800786243390095096350903026824207602389691850463918041005768042181646898215218703311385215408639437096222775970692978039422",
+      "mpmath_distance_to_center": "3.7973546083775761474448374498447669393296320674121955284571482100131604271099181430014506146048073031204967086046175118815849295822254973518e-54",
+      "diagnostic_error_to_certified_radius_ratio": "0.0000000000000000000098584962019108196339607524394841679964962454385936317432762351141050725291622185904052491360256403580870955195684003293046096442078858666977"
+    }
+  ],
+  "source_sha256": {
+    "precision.py": "897716c550e96ab667661a4fc89257e6e9fb0b3ffb0fec4b85a3597033cf20bd",
+    "adaptive_theta.py": "63c1ea69c68c864eaaeeb23b0860dc670d0779d9ea841398fd7f761f3f12b0d4"
+  },
+  "mpmath_version": "1.4.1",
+  "mpmath_digits": 140,
+  "mpmath_is_secondary_diagnostic_not_interval_proof": true,
+  "certificates_exactly_reconstructed": true
+}

@@ -494,3 +494,21 @@ uses actual balanced-divisor moments and retains negative covariance, but
 the required coupled-moment power gain remains open. The current book is
 243pages/40chapters/6601MathML; focused articles53/138pages, notes11/30pages.
 No new Lean declaration, zero-location or GRH proof is claimed.
+
+## Fresh adaptive theta samples and end-to-end requested error
+
+The [readout laboratory](https://amelie-iska.github.io/GRH-research/readout.html)
+now separates fresh adaptive sampling from preserved fixed-label certificates.
+New degree 48 / 88-node runs certify requested 1e-24 error for q = 3, 4, 5, with
+all 590 updates / 593 vector states exactly replayable. A separate 192-sample run
+certifies requested sample error 1e-32. The fixed-label API retains its old
+floor; the new driver changes truncations, primitive precision and circle size.
+[Proof, reproduction and scope](research/adaptive-theta-and-readouts.md).
+
+The arbitrary-request construction is proved for these three conductors and
+this compact in an unbounded-resource model, with no practical extreme-
+precision runtime guarantee. It is not a zero-location or quantum-advantage
+result. The [arithmetic conductor-scope audit](research/unequal-product-conductor-scope.md)
+retains shared-prime zeros and classifies a small-conductor trial as known
+high-gcd recovery, with no new analytic saving. The current book has 251 pages / 40 chapters /
+6,890 MathML expressions; focused articles have 56/146 pages and notes have 14/38 pages. GRH remains open.

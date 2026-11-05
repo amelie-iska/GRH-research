@@ -1,0 +1,59 @@
+% Generated shared reviewed material.
+\section{Termination, compression and the boundary of the guarantee}\label{at:family-details}
+The degree and circle-size choices use only rational comparisons. Since
+$0<v<1$, the Taylor test succeeds at finite $d$; since $2^{-m}\to0$, the
+alias test succeeds at finite $m>d$. The common growth bound10 is safe for
+all three families; the certificate also recomputes the previously proved
+exact conductor-specific majorants below $4,10,6$.
+
+At fixed $d,m,\eta$, the analytic truncation parameters are fixed while
+precision is doubled. The computed sample centers stay bounded: their
+underlying finite expression is fixed and the true completed-function
+values are bounded on the sample circle. Its arithmetic widths tend to
+zero, as do the regenerated true-root enclosures. Fourier computation is
+a finite composition of additions, products and division by the positive
+integer $m$. Its midpoint-radius sum therefore tends to zero. This proves
+the driver's additional precision retry, without pretending that changing
+a box's nominal precision shrinks its uncertainty.
+
+The accepted sampler error may remain above its actual arithmetic width
+because its analytic tails and output bounds are fixed for this $\eta$.
+That causes no problem: the oracle allocation uses the total certified
+sample radius, whereas the Fourier-midpoint allocation uses only finite
+coefficient-rectangle width. No analytic sample error is silently moved
+into the latter term or removed by numerical convergence.
+
+For the stored training trace, the exact loop gives $b^{k+1}=3b^k/4+t/4$
+from $b^0=0$. Inductively every state is a rational scalar multiple of the
+same target vector. The producer first executes the actual vector updates,
+then extracts this scalar from a nonzero target coordinate, checks all
+coordinates, and records a canonical full-vector SHA-256 hash. If the
+entire target vector is zero, its zero state needs only scale0. The compressed
+record is thus an exact representation of the executed states, not a
+floating-point sketch. Hashes are integrity aids; exact vector reconstruction
+and the independently checked recurrence establish the mathematical claim.
+
+Coefficient export uses exact rational numerators and denominators. A
+chunked decimal integer encoder/parser handles endpoints beyond Python's
+usual digit-conversion guard without changing global interpreter settings.
+No fixed $180$-bit serialization floor remains. The decimal graphics are
+separate approximate projections, not polynomial coefficients to which the
+exact certificate may be applied without a conversion-error bound.
+
+All producing source bytes are captured, copied into fresh output paths and
+checked unchanged. Historical fixed producers are pinned and untouched.
+For the new modules the run also checks the import-time source snapshots,
+so a stale imported module cannot be attributed to later source bytes.
+After output creation, a failed evaluation, final provenance check or
+serialization emits uncertified failure metadata. Invalid requests and stale
+import-time sources are refused before creating output artifacts. Old
+outputs are never overwritten. Extreme requests can be
+computationally impractical: the termination proof gives no machine-time or
+memory guarantee, and finite test runs establish only their reported cases.
+
+Nothing requires the output polynomials to be real-rooted, to equal an
+arithmetic Fredholm determinant, or to have a self-adjoint realization.
+Consequently arbitrary compact approximation of these known functions does
+not imply GRH. Uniformity in changing conductor, general Hecke/Dedekind/
+elliptic/Artin scopes, the independent determinant comparison, and actual
+analytic/category Lean objects remain separate obligations.

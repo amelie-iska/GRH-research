@@ -171,6 +171,11 @@ def main():
     assert restored==old
     for change in reversed(editorial_changes):restored=restored.replace(change['new'],change['old'],1)
     assert restored==old_original
+    # Firefox may lay out a streamed msub before its second child arrives.
+    # Gate initial math layout; no-JS readers never receive the pending class.
+    # Release at DOMContentLoaded even if the deferred scroll helper fails to load.
+    parse_guard='<script>document.documentElement.classList.add("native-math-pending");document.addEventListener("DOMContentLoaded",()=>{document.documentElement.classList.remove("native-math-pending");},{once:true});</script><style>html.native-math-pending math{display:none!important}</style>'
+    combined=combined.replace('<head>','<head>'+parse_guard,1)
     parsed=ET.fromstring(combined);old_tree=ET.fromstring(old_original)
     chapter_sequence=[]
     for el in parsed.iter('h2'):

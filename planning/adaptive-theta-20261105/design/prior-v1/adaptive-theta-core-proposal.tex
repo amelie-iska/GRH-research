@@ -1,0 +1,67 @@
+\section{Requested-error theta samples for three fixed conductors}
+For the primitive characters $\chi_3=(0,1,-1)$, $\chi_4=(0,1,0,-1)$,
+$\chi_5=(0,1,-1,-1,1)$ with parities $a=1,1,0$, retain the classical
+primitive theta/Mellin identity and root number one already stated above.
+Put $D=[-1,2]+i[-4/3,4/3]$ and $\delta=3/q$.
+The following is the mathematical specification of an adaptive extension;
+implementation acceptance is a separate check.
+\begin{theorem}[Finite adaptive sample specification]\label{at:sample}
+For every supported conductor, exact rational $s\in D$, and rational
+$\eta>0$, the choices below terminate and give a rational complex midpoint
+$y$ and exact rational radius $R\le\eta$ with
+$|y-\Lambda_q(s)|\le R$.
+The same conclusion holds for a specified true circle node when its
+root and node enclosures are refined on every precision retry.
+\end{theorem}
+\begin{proof}
+For $x\ge0$ define the exact rational bound $E(x)=2^{-\lfloor x\rfloor}$.
+Since $e>2$, $e^{-x}\le E(x)$; this bound is nonincreasing and tends to zero.
+Let $Q(x)=x^{-1}+2x^{-2}+2x^{-3}$ and
+$C_0=1$, $C_1=(1+\delta^{-1})/2$.
+For $N\ge1$, $n_0=N+1$, $J\ge1$, $T=2^J$, use
+\begin{align*}
+ B_n&=2C_aQ(\delta n_0^2)
+       \frac{E(\delta n_0^2/2)}{1-E(\delta n_0)},\\
+ B_t&=\sum_{n=1}^N2n^aT^3E(\delta n^2T)Q(\delta n^2T).
+\end{align*}
+Here $\delta n_0\ge6/5$ ensures a positive denominator; $E(x)$ equals
+one for $0\le x<1$, so this safeguard is essential.
+On the four panels of each $[2^j,2^{j+1}]$, write midpoint $m$,
+halfwidth $h$, $\rho=m/2$, $v=h/\rho\le2/9$,
+and $B(m)=\max\{(m+\rho)^2,(m-\rho)^{-2},1\}$.
+Use the Cauchy remainder
+\[
+ B_Q=\sum_{\mathrm{panels}}\sum_{n=1}^N
+ \frac{2n^a\,2h\,3B(m)E(\delta n^2m/2)v^{2K+2}}
+ {(2K+3)(1-v^2)}.
+\]
+Choose in turn the first $N\ge1$, first $J\ge1$, and first $K\ge0$
+for which their respective budgets are at most $\eta/8$.
+Gaussian decay, then exponential time decay, then $v\le2/9$ prove
+termination. These are the accepted tail and Cauchy arguments with each
+true exponential separately replaced by its upper bound $E$.
+
+There are $P=4JN$ potential pairs. A nonzero-character pair may be
+omitted only if its entire two-power contribution has bound
+\[
+ b=4hn^a(m+h)^2E(\delta n^2(m-h))\le\eta/(8P).
+\]
+Add every omitted bound to $B_{\rm discard}$, giving
+$B_{\rm discard}\le\eta/8$.
+Evaluate all other integrated Taylor polynomials by the stated exact
+coefficient recurrence using outward rectangles. Refine both interval
+precision and all primitive series remainders until the final rectangle's
+sum of coordinate halfwidths satisfies $R_{\rm arith}\le\eta/2$.
+For this fixed finite expression all input and primitive intervals shrink;
+continuity and outward arithmetic imply $R_{\rm arith}\to0$.
+Precision doubling therefore terminates, and its rational midpoint obeys
+\[
+ |y-\Lambda_q(s)|\le R_{\rm arith}+B_n+B_t+B_Q+B_{\rm discard}\le\eta.
+\]
+All budgets and midpoint coordinates are retained as exact rationals.
+No fixed reporting precision or conversion to decimal is used in the proof.
+\end{proof}
+
+This fixed-conductor sample result uses no hypothesis on zeros.
+It does not remove a downstream fixed-node Fourier alias floor, supply
+an all-conductor theorem or a positive arithmetic determinant, or prove GRH.

@@ -1288,3 +1288,31 @@ proof. New evidence: outputs/checks/2026-11-05-adaptive-readout/ and
 outputs/checks/2026-11-05-covariance-budget/. Required full analytic/category
 Lean, arbitrary-accuracy sampling and arithmetic determinant bridge remain
 open. Preserve completed publication receipts; keep heartbeat active.
+
+## Adaptive true samples and end-to-end1e-24 readouts — 5 November 2026
+
+P11 claim b1b278b1 continues the validated oracle. New immutable-context
+primitives adapt series lengths and dyadic precision; exact N/J/K/discard
+searches and a request-dependent upward output scale eliminate fixed sample
+and reporting floors. Chunked decimal endpoints avoid global interpreter
+limit changes. Explicit growing-order width bounds justify precision retry.
+The full driver also chooses degree/node count, regenerates samples when
+Fourier widths require it, and executes rational midpoint-objective GD.
+Final-v2 q = 3, 4, 5: degree 48, 88 nodes, 196/197/197 updates; bounds below 1e-24.
+All 590 updates / 593 states / 29,057 complex coordinates reconstruct exactly.
+Independent sampler 7,241 / family 8,666 checks pass; 17 focused tests pass.
+
+The parallel arithmetic trial recovered a known high-gcd sector rather than
+improving the hard estimate. Independent novelty review caught this overlap.
+Accepted scope correction distinguishes original 0, ±1 from generic ±2 local
+exponents and retains full-union zeros under primitive conductor drops.
+The sharp large-conductor signed completion remains unresolved.
+
+New staged editions:251-page / 40-chapter / 6,890-MathML book, focused 56/146 pages,
+notes 14/38 pages. All 6,601 old math subtrees remain ordered/unchanged; 13 canonical
+embedded labs / 19 source-matched diagrams remain. The expanded readout lab
+separates fresh/fixed datasets and shows actual sampler parameters and exact-
+state gradient projections. Initial streamed-MathML warning was traced with
+controlled parse/layout experiments; failed candidates and serialization
+pilot remain preserved. No source clone/environment/model data changed.
+No new dependency, GPU job, Lean declaration or GRH proof.
