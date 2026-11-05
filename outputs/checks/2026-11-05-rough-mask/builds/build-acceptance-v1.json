@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "decision": "ACCEPT_FOUR_EXACT_SOURCE_STAGING_BUILDS",
+  "governing_run_receipt": "outputs/checks/2026-11-05-rough-mask/builds/four-builds-v1.json",
+  "governing_run_receipt_sha256": "93b53661ecd2720de8b671512f11e5e32be597c5c3a090fe60897c0cc9536897",
+  "handoff": "planning/rough-mask-20261105/builds/BUILD-HANDOFF-v1.md",
+  "handoff_sha256": "47e2701e2fa27960529b8075cfb53d961f91338d81b504acb8bc15d38bd3e74f",
+  "canonical_acceptance_sha256": "89fa533319df7095e213a87cc9cdf4c5a55d7be756ecf5dc49e25632374cf7e6",
+  "canonical_core_sha256": "f6de95347abdb5370493a7ee6cbb938a337464c9e86766bc3e0b7d4534a9d767",
+  "canonical_details_sha256": "a7d91548a76fdbf0d98a5d71087a0a6afd4a6ece6f13118eeddf67398a73389e",
+  "build_records": {
+    "concise-v1": {
+      "path": "outputs/rough-mask-articles-20261105/concise-v1/build-record.json",
+      "sha256": "04a4c5eafac7d5f523f5a67bcb74a53f08412739ef9ba1c6a1dbd208c500368b",
+      "pages": 67
+    },
+    "extended-v1": {
+      "path": "outputs/rough-mask-articles-20261105/extended-v1/build-record.json",
+      "sha256": "85d5d38e58c1e720fac6940f57e2f8ff8e163ed5837e0dcf9b303ff4fa3322cd",
+      "pages": 183
+    },
+    "notes-concise-v1": {
+      "path": "outputs/rough-mask-articles-20261105/notes-concise-v1/build-record.json",
+      "sha256": "16994b3d960279efdb865b8c3b784b0483ee81ee8a64c33db0e4210e9c83dd12",
+      "pages": 25
+    },
+    "notes-extended-v1": {
+      "path": "outputs/rough-mask-articles-20261105/notes-extended-v1/build-record.json",
+      "sha256": "c3ab251679363e9c31ba35460c9e1a3f72d21dc676cc97eeec14291edb9046d0",
+      "pages": 74
+    }
+  },
+  "all_recursive_sources_current": true,
+  "all4_recursive_preflights_before_staging_writes": true,
+  "all10_protected_HEAD_index_states_unchanged": true,
+  "no_rejected_log_diagnostics": true,
+  "warning_lines_AND_multiplicities_exactly_inherited": true,
+  "underfull_counts": [
+    7,
+    7,
+    0,
+    0
+  ],
+  "CPU_affinity_count": 1,
+  "pdflatex_nice_increment": 15,
+  "production_promoted": false,
+  "new_dependencies_or_Lean_or_science_runs": false,
+  "PDF_visual_review_performed_here": false
+}

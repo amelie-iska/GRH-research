@@ -1,0 +1,13 @@
+# Independent strong rough-prime mask proof review
+
+Accepted governing analyticv3 at89963b1280412a863e9178f2d8e3f750c3d23c38bd31e56e5ec04cccfb2b9fd2. This is an A–A correction theorem, not an estimate of the signed clean main or a new global exponent.
+
+The exact raw definitions KS/KT retain mu(f), AU(fa), all residual rawzeros, the smooth-f masks, literal/ray/capacity row restrictions and the one common complex W. Delta=(KS−KT)/D divides once. The deleted-prime union is partitioned disjointly into p|u and p∤u with a residual collision. In the latter part, supportFP²Nc<2D and the minimum nonunit good norm7 force f1,c1,a=p. Thus T−T^(p)=z only there and the exact residual correction is2Re(Tbarz)−|z|², including the intersection. Artificial p² columns are not relabeled as original SF columns.
+
+The proper-divisor lemma is valid for every U>=1: Ng<=7U means each proper ideal divisor has norm<=U. The unrestricted assignment sum is mu(g); ifg>U exactly the two full-divisor short assignments are removed, yielding−mu(g). Unitg1 and the cutoff equality are included. Active rough terms have Nfa<2D/P<7U, so|AU(fa)|=1 exactly. Other channels do not acquire this invariance.
+
+Euclidean lattice counting gives#ideals<=16X, including the subunit residual interval's genuine unit column. Consequently|T|<=32BD/(FP) and sum F^-2<=64. The normalized row-mask constant is32²·64·(7/2)=229376 times weighted rough-prime incidence. The residual intersection uses(64+2)·16sqrt2=1056sqrt2<2048. Unordered distinct rough pairs give Ctwo/D<=512(D/U²)B²mass<=1792B²mass. Distinct conjugates with equal rational norm remain included. No prime theorem, cancellation, derivative of W or epsilon loss is used.
+
+For general capacities kappa<=2log(Nu)/log(2U) is valid even at U1. At H<=D^(3/4), kappa>=2 implies H>=49 and H>U²>=2D/7; henceD^(1/4)<7/2 andH<343/8<49, contradiction. Therefore kappa<=1 and the clean correction is<=233216B²mass<2^18B²mass. Arbitrary nonnegative weights are legitimate here because only triangle/counting is used; no unweighted sieve constant is applied to them. For natural two-pivot families, the separate tuple count gives mass<<H.
+
+The actual raw slice equals(K0−KS)/D plus this bounded correction. That clean main remains signed and unestimated. Principal residue assembly stays separate where applicable, and original column-pair gcdh1 is distinct from smoothf. No full moment/GRH/determinant/Lean conclusion is inferred. Fresh B data and canonical TeX are outside THIS receipt and will receive separate gates. No old scientific experiment or accepted checker was rerun for this proof review.

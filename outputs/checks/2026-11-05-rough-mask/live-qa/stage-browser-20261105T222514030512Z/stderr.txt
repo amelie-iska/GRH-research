@@ -1,0 +1,16 @@
+node:internal/process/esm_loader:40
+      internalBinding('errors').triggerUncaughtException(
+                                ^
+
+AssertionError [ERR_ASSERTION]: new-rma-unit-endpoint-and-subunit-length-scope: undefined
+    at check (file:///home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/rough-mask-20261105/live-qa/check_browser_v2.mjs:10:159)
+    at file:///home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/rough-mask-20261105/live-qa/check_browser_v2.mjs:54:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
+
+Node.js v18.19.1

@@ -1,0 +1,161 @@
+% Generated shared reviewed material.
+% Actual A--A rough-prime mask budget; no global exponent or Lean claim.
+\section{A target-sized budget for rough-prime masks}\label{rma:core}
+The actual signed divisor mean admits a useful quantitative simplification:
+the rough-prime coprimality mask can be restored with an explicit correction
+bound.
+The remaining main term still retains the M\"obius sign and the coherent
+row mean; it is not estimated by this result.
+
+Work over $\mathbb Z[\omega]$. Fix a finite $S$ containing the primes above $2,3$,
+a unitary multiplicative $\nu$ on good ideals, and one common complex
+profile $W$ supported on $[1,2]$, smooth and zero at both endpoints.
+Put $B=\|W\|_\infty$ and assume
+\begin{equation}\label{rma:window}
+ 1\le U,\qquad U^2\le D,\qquad 2D\le7U^2,\qquad H\ge1.
+\end{equation}
+Let $\mathcal R$ be the actual finite family of nonzero literal rows,
+with original weights $w_u\ge0$, $1\le Nu\le H$, and $R_w=\sum_u w_u$. All original internal
+squarefree/coprime conditions, unit and $S$-ray classes, capacity and
+sixth-factor masks remain in this family. Write $S_1^{AA}$ for the raw
+form~\eqref{sd:form} with $x_m=A_U(m)\nu(m)W(Nm/D)$, where
+\begin{equation}\label{rma:AU}
+ A_U(g)=\sum_{\substack{xy\mid g,\ (x,y)=1\\Nx\le U,\ Ny\le U}}
+                  \mu(x)\mu(y).
+\end{equation}
+Here the columns in~\eqref{sd:form} are the COMPLETE original good
+squarefree annulus $[D,2D]$, with the common $W$ as its norm cutoff and
+the original full-good-ideal/$\nu,S$ formulation. No selected-column
+indicator or additional column-ray filter is allowed in this reduction;
+all actual row unit/ray/capacity filters remain.
+Principal-row residues, if present, require their separate assembly.
+For the intended $A_1>1$ blocks the defining conductor of $\nu$ is
+supported in $S$, and the rows are nonprincipal.
+
+Let $f$ range over good squarefree $U$-smooth ideals, put $F=Nf$, and set
+\begin{equation}\label{rma:T}
+ T_f(t;u)=\sum_{\substack{a\ \mathrm{good\ squarefree}\\(a,f)=1}}
+ A_U(fa)\nu(a)\chi_a(u)W(FtNa/D).
+\end{equation}
+Here $\chi_a(u)=0$ on $(a,u)>1$. For a prime ideal $p$, let
+$T_f^{(p)}(t;u)$ impose the additional condition $(a,p)=1$.
+The smooth factor $f$ is distinct from the original column-pair gcd
+sector $h=1$. Define the following \emph{unnormalized} expressions:
+\begin{align}
+ K_0&=\sum_u w_u\sum_{\substack{f\ \mathrm{good\ SF},\ U\text{-smooth}\\
+                              (f,u)=1}}
+                       \mu(f)|T_f(1;u)|^2,\label{rma:Kzero}\\
+ K_T&=\sum_u w_u\sum_{\substack{f\ \mathrm{good\ SF},\ U\text{-smooth}\\
+                              (f,u)=1}}\mu(f)
+       \sum_{\substack{p\notin S,\ Np>U\\p\nmid u}}
+                       |T_f^{(p)}(Np;u)|^2,\label{rma:KT}\\
+ K_S&=\sum_u w_u\sum_{\substack{f\ \mathrm{good\ SF},\ U\text{-smooth}\\
+                              (f,u)=1}}\mu(f)
+       \sum_{p\notin S,\ Np>U}|T_f(Np;u)|^2.\label{rma:KS}
+\end{align}
+Throughout, $p$ denotes a prime ideal. None of these expressions is
+declared positive, since the $\mu(f)$ signs remain.
+
+The exact decomposition of the common ideal divisor $d=fe$ has at most
+one rough prime when the residual pair is nonunit. The unit residual
+pair also permits two distinct rough primes, necessarily with $f=1$.
+Its exact correction is
+\begin{equation}\label{rma:Ctwo}
+ C_2=\sum_{\substack{\{p,q\}\ \mathrm{unordered},\ p\ne q\\
+                     p,q\notin S,\ Np,Nq>U}}
+ |W(NpNq/D)|^2\sum_{\substack{u\in\mathcal R\\(u,pq)=1}}w_u.
+\end{equation}
+Conjugate primes of equal rational norm are included. One has
+\begin{equation}\label{rma:exact}
+ DS_1^{AA}=K_0-K_T+C_2.
+\end{equation}
+In $K_S$, terms with $p\mid a$ or $p\mid u$ are explicitly auxiliary:
+$ fpa$ can fail to be squarefree. They use $A_U(fa)$ as written, not a
+new original column or a substitution for $A_U(fpa)$.
+
+\begin{theorem}[Explicit rough-prime mask budget]\label{rma:mask}
+Put $\kappa_U(u)=\#\{p\notin S:p\mid u,\ Np>U\}$ and
+$\Delta=(K_S-K_T)/D$. Under~\eqref{rma:window},
+\begin{align}
+ |\Delta|&\le B^2\left(229376\sum_u w_u\kappa_U(u)+2048R_w\right),
+                    \label{rma:delta}\\
+ 0\le C_2/D&\le1792B^2R_w.\label{rma:Cbound}
+\end{align}
+Consequently
+\begin{align}
+ S_1^{AA}&=\frac{K_0-K_S}{D}+E,\label{rma:clean}\\
+ |E|&\le B^2\left(229376\sum_u w_u\kappa_U(u)+3840R_w\right).
+                    \label{rma:error}
+\end{align}
+If $H\le D^{3/4}$, then every row has $\kappa_U(u)\le1$, and in particular
+\begin{equation}\label{rma:critical-error}
+ |E|\le233216B^2R_w\le2^{18}B^2R_w.
+\end{equation}
+\end{theorem}
+Only the rough-prime deletion has been restored; the smooth-divisor
+mask, literal row family and original coefficients remain. The explicit
+bound uses the exact restricted identity
+\[
+ A_U(g)=\mu(g)\bigl(2\mathbf1_{Ng\le U}-1\bigr)
+ \quad(Ng\le7U,\ g\ \mathrm{good\ squarefree}).
+\]
+Every active term of $T_f(Np;u)$ has $N(fa)<7U$, hence
+$|A_U(fa)|=1$ there. This is not a shrinkage or proxy for the whole
+original coefficient family. Only absolute correction bounds use it;
+the signed coefficients in the clean main remain unchanged.
+
+For general $H$, one has
+$\kappa_U(u)\le2\log(2H)/\log(2U)$, also at $U=1$.
+For an actual two-pivot block with $R_w\ll A_1A_2\le H$ and
+$H\le D^{3/4}$, \eqref{rma:critical-error} gives an $O(B^2H)$
+error with no divisor-power or profile-derivative loss. The remaining
+target problem for this raw A--A slice is the clean signed main
+$(K_0-K_S)/D$. It has not been bounded here; the $7/6$ envelope and
+missing $5/12$ improvement for the complete original remainder are
+unchanged. The argument neither deletes a coherent mean nor treats the
+coprime-truncated form as positive.
+
+
+\paragraph{Three exact finite controls.}
+These use principal $\nu$, $S$ above $2,3$, literal unit class one and
+complete original good squarefree annuli. The first two row variables are squarefree, good and coprime and may
+include the unit ideal; all other factors equal one.
+\begin{center}
+\begin{tabular}{r|rrrrrr}
+ $D$ & $U$ & $H$ & $A_1$ & $A_2$ & columns & rows\\\hline
+ $200$ & $10$ & $53$ & $13$ & $1$ & $52$ & $5$\\
+ $512$ & $16$ & $107$ & $19$ & $1$ & $139$ & $7$\\
+ $900$ & $30$ & $384$ & $7$ & $7$ & $250$ & $2$\\
+\end{tabular}
+\end{center}
+Put $\eta_0(t)=\exp(-1/t)$ for $t>0$ and $\eta_0(t)=0$ for $t\le0$,
+and define
+\[
+ s(t)=\frac{\eta_0(t)}{\eta_0(t)+\eta_0(1-t)}.
+\]
+Choose once $\delta=1/4096$ and
+$W_\delta(t)=s((t-1)/\delta)s((2-t)/\delta)$. For integer $D\le1024$, strict integer norm nodes have
+weight one and endpoints have weight zero; its derivatives cost
+$O_k(4096^k)$. The following numbers are RAW, before division by $D$:
+\begin{center}
+\begin{tabular}{r|rrrrrrr}
+ $D$ & $K_0$ & $K_S$ & $K_T$ & $E_{\rm row}$ & $E_{\rm res}$ & $C_2$
+        & $DS_1^{AA}$\\\hline
+ $200$ & $339$ & $235$ & $209$ & $20$ & $6$ & $21$ & $151$\\
+ $512$ & $366$ & $781$ & $711$ & $48$ & $22$ & $89$ & $-256$\\
+ $900$ & $436$ & $410$ & $366$ & $0$ & $44$ & $28$ & $98$\\
+\end{tabular}
+\end{center}
+In every case $K_S-K_T=E_{\rm row}+E_{\rm res}$ and
+$DS_1^{AA}=K_0-K_T+C_2$. The displayed nonnegative values of
+$E_{\rm row},E_{\rm res}$ are finite observations; no general
+nonnegativity is assumed for either signed correction. Only $C_2$ is
+nonnegative by definition. The first two capacities are
+$\lfloor D^{3/4}\rfloor$. The third $H=384$ is a declared noncritical
+fixture capacity, not $\lfloor900^{3/4}\rfloor$; both of its rows have
+$\kappa_U=0$. All ideal and raw-zero masks, unit residual states and
+explicitly auxiliary non-squarefree $p^2$ terms are retained. The
+\href{https://amelie-iska.github.io/GRH-research/data/rough-mask-controls.json}{exact control summary}
+records the scopes and exact fractions after one division by $D$.
+These are finite identities, not a proof or numerical fit of the analytic
+bounds, and do not estimate the signed clean main.

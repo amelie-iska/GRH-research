@@ -563,3 +563,12 @@ The [signed divisor inspector](https://amelie-iska.github.io/GRH-research/signed
 The [derivation and scope](research/signed-divisor-incidence.md) give exact divisor-incidence error certificates and a mean-retaining analytic expansion with nine zeta factors and eight short-divisor states. These reductions preserve the unresolved signed estimate; the current7/6 upper power and5/12 excess at H=D^(3/4) remain. No new Lean, determinant or GRH conclusion follows.
 
 Current delivered edition:279pages/40chapters/8176MathML; focused64/175pages and notes23/66pages. All7891 prior literal math subtrees remain ordered and byte-identical. The signed-divisor exact finite reference and new workflow add no asymptotic power saving or Lean theorem.
+
+
+## An explicit budget for rough-prime masks
+
+The new [mask-budget derivation](research/rough-prime-mask-budget.md) replaces the rough-prime full-union filter by a defined auxiliary kernel with an explicit accounted error. In the stated high-cutoff window and critical capacity range, the error is at most233216 times the profile supnorm squared and actual row mass. The coherent signed main term remains unestimated; the global7/6 envelope and5/12 deficit are unchanged.
+
+[Fresh exact controls](https://amelie-iska.github.io/GRH-research/data/rough-mask-controls.json) retain all original raw zeros, conjugate/inert ideal primes and unit-sector corrections in three new cases. They check finite identities rather than an asymptotic saving or GRH. No new Lean or quantum/upstream training is claimed.
+
+Current delivered edition:288pages/40chapters/8552MathML; focused67/183pages, notes25/74pages. All8176 prior formulas,386tables,13canonical labs and29SVGrefs/assets are retained. The rough-mask bound controls an explicit correction; its signed main remains open.

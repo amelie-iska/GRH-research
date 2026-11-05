@@ -1,0 +1,171 @@
+{
+  "cases": [
+    {
+      "D": 200,
+      "actual_original_coefficient_and_phase_checks": 355,
+      "auxiliary_nonSF_terms_checked": 10,
+      "coefficient_sign_negative": {
+        "actual_F": [
+          3,
+          1
+        ],
+        "actual_coefficient": 1,
+        "f": 0,
+        "norms_same_but_complex_values_differ": true,
+        "p": 3,
+        "row": 0,
+        "wrong_mu_p_factor": -1,
+        "wrong_sign_F": [
+          -3,
+          -1
+        ]
+      },
+      "full_complex_F_transfer_checks": 505,
+      "passed": true
+    },
+    {
+      "D": 512,
+      "actual_original_coefficient_and_phase_checks": 1414,
+      "auxiliary_nonSF_terms_checked": 21,
+      "coefficient_sign_negative": {
+        "actual_F": [
+          -2,
+          3
+        ],
+        "actual_coefficient": 1,
+        "f": 0,
+        "norms_same_but_complex_values_differ": true,
+        "p": 5,
+        "row": 0,
+        "wrong_mu_p_factor": -1,
+        "wrong_sign_F": [
+          2,
+          -3
+        ]
+      },
+      "full_complex_F_transfer_checks": 1862,
+      "passed": true
+    },
+    {
+      "D": 900,
+      "actual_original_coefficient_and_phase_checks": 702,
+      "auxiliary_nonSF_terms_checked": 8,
+      "coefficient_sign_negative": {
+        "actual_F": [
+          -3,
+          -1
+        ],
+        "actual_coefficient": 1,
+        "f": 0,
+        "norms_same_but_complex_values_differ": true,
+        "p": 7,
+        "row": 0,
+        "wrong_mu_p_factor": -1,
+        "wrong_sign_F": [
+          3,
+          1
+        ]
+      },
+      "full_complex_F_transfer_checks": 986,
+      "passed": true
+    }
+  ],
+  "checker_sha256": "8ced42c822f9b2bea956443f9955002cacb5850e70f813ab575a4ed58d0415e9",
+  "input_manifest_sha256": "d8ebdc9410e0e24c3dfd999ea33c10864d28b4e9f008913e08d26233217268cf",
+  "old_diagnostics_or_helpers_imported": false,
+  "passed": true,
+  "raw_evaluator_rerun": false,
+  "scope": "Fresh saved-output complex phase/coefficient transfer and normalization bookkeeping. No analytic bound validation.",
+  "tables": [
+    {
+      "D": 200,
+      "mixed_capacity_scope": "floorD^.75",
+      "normalized_exactly_once": {
+        "Ctwo": "21/200",
+        "Delta": "13/100",
+        "Eres": "3/100",
+        "Erow": "1/10",
+        "K0": "339/200",
+        "KS": "47/40",
+        "KT": "209/200",
+        "S_only_with_unit_correction": "5/8",
+        "clean_S_only_main": "13/25",
+        "original_AA": "151/200",
+        "original_minus_clean": "47/200"
+      },
+      "raw_numerators": {
+        "Ctwo": 21,
+        "Delta": 26,
+        "Eres": 6,
+        "Erow": 20,
+        "K0": 339,
+        "KS": 235,
+        "KT": 209,
+        "S_only_with_unit_correction": 125,
+        "clean_S_only_main": 104,
+        "original_AA": 151,
+        "original_minus_clean": 47
+      }
+    },
+    {
+      "D": 512,
+      "mixed_capacity_scope": "floorD^.75",
+      "normalized_exactly_once": {
+        "Ctwo": "89/512",
+        "Delta": "35/256",
+        "Eres": "11/256",
+        "Erow": "3/32",
+        "K0": "183/256",
+        "KS": "781/512",
+        "KT": "711/512",
+        "S_only_with_unit_correction": "-163/256",
+        "clean_S_only_main": "-415/512",
+        "original_AA": "-1/2",
+        "original_minus_clean": "159/512"
+      },
+      "raw_numerators": {
+        "Ctwo": 89,
+        "Delta": 70,
+        "Eres": 22,
+        "Erow": 48,
+        "K0": 366,
+        "KS": 781,
+        "KT": 711,
+        "S_only_with_unit_correction": -326,
+        "clean_S_only_main": -415,
+        "original_AA": -256,
+        "original_minus_clean": 159
+      }
+    },
+    {
+      "D": 900,
+      "mixed_capacity_scope": "explicit fixture H384, notfloorD^.75",
+      "normalized_exactly_once": {
+        "Ctwo": "7/225",
+        "Delta": "11/225",
+        "Eres": "11/225",
+        "Erow": "0",
+        "K0": "109/225",
+        "KS": "41/90",
+        "KT": "61/150",
+        "S_only_with_unit_correction": "3/50",
+        "clean_S_only_main": "13/450",
+        "original_AA": "49/450",
+        "original_minus_clean": "2/25"
+      },
+      "raw_numerators": {
+        "Ctwo": 28,
+        "Delta": 44,
+        "Eres": 44,
+        "Erow": 0,
+        "K0": 436,
+        "KS": 410,
+        "KT": 366,
+        "S_only_with_unit_correction": 54,
+        "clean_S_only_main": 26,
+        "original_AA": 98,
+        "original_minus_clean": 72
+      }
+    }
+  ]
+}

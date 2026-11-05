@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "scope": "Auxiliary bbox-text parser assumption only; no PDF/product defect asserted",
+  "renderer_sha256": "fb790a025e37da9036078f93f7af00cfe7935149a0af4d39480e40616a139633",
+  "reason": "pdftotext -bbox emitted XML-incompatible math-font control text U0001 and delimiter codes U0012/U0013 inside word bodies. Coordinate attributes are valid. V1 stopped after preserving concise pages59/60 renders. V2 parses EVERY strict coordinate tag without interpreting text bodies and resumes existing unchanged PNGs.",
+  "preserved_first_PNG_sha256": {
+    "concise-v1-page060.png": "27cf64b3e223c26bfa5a0f1728cf0448753c2745abbc790c0c82b7cf1c799c18",
+    "concise-v1-page059.png": "baa40dfaa2bbab78aa6a44e4edaf1ae0244f2590bfb2c18047bfaa2b4874afba"
+  },
+  "source_PDFs_modified": false,
+  "recompiled": false
+}

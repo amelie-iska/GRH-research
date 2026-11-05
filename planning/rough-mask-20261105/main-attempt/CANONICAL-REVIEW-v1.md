@@ -1,0 +1,13 @@
+# Independent final rough-mask canonical review
+
+Accepted exact final coref6de9534… and detailsa7d91548… for source integration/build. The complete565 lines were read independently against governing analyticv5, accepted roughv3, independently reconstructed finite data and the separately root-reviewed PITv2. No compilation or canonical edit occurred here.
+
+The theorem uses COMPLETE original goodSFannular columns with the one common W and no extra selected-column/column-ray indicator; all actual row unit/ray/capacity/rawzero masks remain. Generic principal residue assembly is separate. The smooth factor f is distinct from original column-pair gcdh1. Exact common phases, overlapping residuals, rough invariance, unit distinct-prime correction and the rawK normalization agree with the accepted identities.
+
+The disjoint row/residual mask identity, support-forced f1/a=p auxiliary p² state, original complex intersection subtraction, allU proper-divisor coefficient lemma and explicit ideal-count constants are valid. Criticalkappa<=1 follows from the exact capacity contradiction. All scaled comparisons are weak at B0/Rw0; that correction is disclosed in the bounded domain addendum, preserving the historical earlier acceptance. Arbitrary nonnegative weights are permitted in the elementary mask theorem; no unweighted sieve is applied to them.
+
+Both tables and their parameters exactly match the independent fresh D200/512/900 reconstruction. Pure row variables may include the unit, mixedH384 is declarednoncritical and aggregate Erow/Eres signs are finite observations only. The smoothstep is fully defined, the delta1/4096 profile is common and fixed, unit residuals/subunitL/rawzero/nonsquarefree auxiliary states are retained. No all-nine-channel or asymptotic assertion is introduced.
+
+The PIT subsection preserves raw G/J/E definitions, the lower endpoint atNp=U, fixed finiteS, weighted true-operator abstraction, direct subunit norm, M1(W)^2 and the actual UNWEIGHTED A6=1 classical-input restriction. The Bop summation and critical5/6 inherited error majorant agree with the author's independently root-reviewed note; they prove no actual-error lower bound or target-sized clean main. The primary theorem is specialized to absolute[K:Q]2/discriminant3, with fixed exceptionalzero/threshold qualifications and analyticU>=7. Only the citation/SHA record is public; the full publisher cache is excluded.
+
+All40 rma labels are unique,44 reference uses resolve, TeX groups/environments/math delimiters pass and no stray Na/Nu control exists. The clean signed K0−KS and K0−J estimates, full original remainder's7/6 envelope/missing5/12 saving, determinant/zero-location bridges and GRH remain unchanged.

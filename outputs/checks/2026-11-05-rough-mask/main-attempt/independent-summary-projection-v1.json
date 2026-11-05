@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "D": 200,
+      "all_public_projection_fields_math_checked": true,
+      "source_counts": {
+        "masked_f_states": 0,
+        "nonreal_oriented_samples": 12,
+        "raw_residual_zeros": 16,
+        "raw_row_residual_intersection_pairs": 14,
+        "subunit_L_unit_residual_states": 225
+      }
+    },
+    {
+      "D": 512,
+      "all_public_projection_fields_math_checked": true,
+      "source_counts": {
+        "masked_f_states": 0,
+        "nonreal_oriented_samples": 12,
+        "raw_residual_zeros": 33,
+        "raw_row_residual_intersection_pairs": 27,
+        "subunit_L_unit_residual_states": 840
+      }
+    },
+    {
+      "D": 900,
+      "all_public_projection_fields_math_checked": true,
+      "source_counts": {
+        "masked_f_states": 100,
+        "nonreal_oriented_samples": 12,
+        "raw_residual_zeros": 100,
+        "raw_row_residual_intersection_pairs": 0,
+        "subunit_L_unit_residual_states": 446
+      }
+    }
+  ],
+  "no_projector_or_scientific_evaluator_executed": true,
+  "passed": true,
+  "projection": {
+    "bytes": 12783,
+    "path": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/web/data/rough-mask-controls.json",
+    "sha256": "7596718fc8c3c55a61197f0a17c7c8bca77816f6a7bae4b9ef005d2413cbb9f9"
+  }
+}

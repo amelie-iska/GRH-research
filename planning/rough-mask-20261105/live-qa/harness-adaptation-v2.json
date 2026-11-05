@@ -1,0 +1,113 @@
+{
+  "browser_executed": false,
+  "error_filters_unchanged": true,
+  "exact_adaptations": [
+    {
+      "new": "assert(base&&out&&expected.schema==='rough-mask-release-expectations-v1'&&Number.isInteger(expected.book_pages)&&Number.isInteger(expected.math_nodes)&&expected.old_math_nodes===8176&&expected.rma_anchors.length===40);",
+      "occurrences": 1,
+      "old": "assert(base&&out&&expected.book_pages===279&&expected.math_nodes===8176);"
+    },
+    {
+      "new": "document.querySelectorAll('math').length===${expected.math_nodes}",
+      "occurrences": 1,
+      "old": "document.querySelectorAll('math').length===8176"
+    },
+    {
+      "new": "book.math===expected.math_nodes",
+      "occurrences": 1,
+      "old": "book.math===8176"
+    },
+    {
+      "new": "book.visible===expected.math_nodes",
+      "occurrences": 1,
+      "old": "book.visible===8176"
+    },
+    {
+      "new": "bm.visible===expected.math_nodes",
+      "occurrences": 1,
+      "old": "bm.visible===8176"
+    },
+    {
+      "new": "sdBook.math===expected.math_nodes",
+      "occurrences": 1,
+      "old": "sdBook.math===8176"
+    },
+    {
+      "new": "sdBook.visible===expected.math_nodes",
+      "occurrences": 1,
+      "old": "sdBook.visible===8176"
+    },
+    {
+      "new": "landing.includes(String(expected.book_pages)+' pages')",
+      "occurrences": 1,
+      "old": "landing.includes('279 pages')"
+    },
+    {
+      "new": "new RegExp(String.raw`focused articles\\s*${expected.focused_pages.join('/')}\\s*pages`).test(landing)",
+      "occurrences": 1,
+      "old": "/focused articles\\s*64\\/175\\s*pages/.test(landing)"
+    },
+    {
+      "new": "new RegExp(String.raw`notes\\s*${expected.notes_pages.join('/')}\\s*pages`).test(landing)",
+      "occurrences": 1,
+      "old": "/notes\\s*23\\/66\\s*pages/.test(landing)"
+    },
+    {
+      "new": "landing.includes(expected.math_nodes.toLocaleString('en-US'))",
+      "occurrences": 1,
+      "old": "landing.includes('8,176')"
+    },
+    {
+      "new": "'book-all-current-MathML-visible-and-proof-source-PDF-navigation'",
+      "occurrences": 1,
+      "old": "'new-book-all8176-visible-and-proof-source-PDF-navigation'"
+    },
+    {
+      "new": "'book-320-focusable-table-source-figure-and-all-currentMathML-visible'",
+      "occurrences": 1,
+      "old": "'new-book-320-focusable-table-source-figure-and-all8176-visible'"
+    },
+    {
+      "new": " // New rough-mask proof/data checks, additive to the entire141-group baseline.\n const rmaProof=await b.evaluate(`(()=>{const core=document.getElementById('rma:core'),details=document.getElementById('rma:details');const between=e=>!!(core.compareDocumentPosition(e)&Node.DOCUMENT_POSITION_FOLLOWING)&&!!(details.compareDocumentPosition(e)&Node.DOCUMENT_POSITION_PRECEDING);const clean=e=>{const c=e.cloneNode(true);c.querySelectorAll('annotation').forEach(n=>n.remove());return c.textContent.replace(/\\s+/g,'').replace(/\u2212/g,'-')};const tables=[...document.querySelectorAll('table')].filter(between).map(t=>({rows:[...t.tBodies[0].rows].map(r=>[...r.cells].map(c=>Number(clean(c)))),wrapped:!!t.closest('.reader-table-scroll'),tabindex:t.closest('.reader-table-scroll')?.tabIndex}));const range=document.createRange();range.setStartBefore(core);range.setEndAfter(document.body.lastChild);const f=range.cloneContents();f.querySelectorAll('annotation').forEach(n=>n.remove());const text=f.textContent.replace(/\\s+/g,' ');return{anchors:${JSON.stringify(expected.rma_anchors)}.map(id=>({id,present:!!document.getElementById(id)})),tables,totalTables:document.querySelectorAll('table').length,sourceCore:!!document.querySelector('a[href$=\"sources/rough-mask-core.tex\"]'),sourceDetails:!!document.querySelector('a[href$=\"sources/rough-mask-details.tex\"]'),summaryLink:!!document.querySelector('a[href$=\"data/rough-mask-controls.json\"]'),raw:text}})()`);\n check(rmaProof.anchors.length===40&&rmaProof.anchors.every(x=>x.present),'new-rma-all40-proof-anchors',rmaProof.anchors);check(rmaProof.tables.length===2&&JSON.stringify(rmaProof.tables[0].rows)===JSON.stringify(expected.summary.parameters)&&JSON.stringify(rmaProof.tables[1].rows)===JSON.stringify(expected.summary.raw)&&rmaProof.tables.every(t=>t.wrapped&&t.tabindex===0)&&rmaProof.totalTables===expected.tables,'new-rma-both-actual3case-tables-allraw-values',rmaProof.tables);check(rmaProof.sourceCore&&rmaProof.sourceDetails&&rmaProof.summaryLink,'new-rma-proof-source-and-control-download-links');\n const compactRma=rmaProof.raw.replace(/\\s+/g,'');check(compactRma.includes('2L\u22641')&&compactRma.includes('2L=1')&&rmaProof.raw.includes('unit ideal must not be dropped'),'new-rma-unit-endpoint-and-subunit-length-scope');check(rmaProof.raw.includes('Choose once')&&compactRma.includes('\u03b70(t)=0')&&compactRma.includes('t\u22640')&&compactRma.includes('\u03b70(1\u2212t)')&&rmaProof.raw.includes('weight one and endpoints have weight zero'),'new-rma-fixed-smooth-definition-zeroedge-and-nodal-endpoints');check(rmaProof.raw.includes('COMPLETE original good squarefree')&&rmaProof.raw.includes('No selected-column')&&rmaProof.raw.includes('additional column-ray')&&rmaProof.raw.includes('Principal-row residues'),'new-rma-complete-original-columns-and-principal-scope');check(rmaProof.raw.includes('neither is assumed nonnegative')&&rmaProof.raw.includes('not an oscillatory saving or a lower bound')&&rmaProof.raw.includes('not a shrinkage or proxy')&&rmaProof.raw.includes('coherent signed'),'new-rma-signed-corrections-restricted-coefficients-cleanmain-scope');check(rmaProof.raw.includes('This subsection requires')&&compactRma.includes('U\u22657')&&rmaProof.raw.includes('does not extend the prime-density')&&compactRma.includes('U\u22651'),'new-rma-PIT-only-U7-general-mask-U1');check(compactRma.includes('M1(W)')&&rmaProof.raw.includes('prime-substitution error requires')&&rmaProof.raw.includes('arbitrary nonnegative weights')&&rmaProof.raw.includes('fixed-field')&&rmaProof.raw.includes('exceptional real zero'),'new-rma-M1-weights-fixedfield-exceptionalzero-qualifications');check(rmaProof.raw.includes('declared noncritical')&&rmaProof.raw.includes('auxiliary')&&rmaProof.raw.includes('not a proof or numerical fit')&&rmaProof.raw.includes('signed clean main'),'new-rma-finite-H384-auxiliary-and-no-finite-proof-scope');\n const preservedImages=await b.evaluate(`({svg:[...document.querySelectorAll('img[src$=\".svg\"]')].map(e=>{const u=new URL(e.src);return u.pathname.split('/book/').at(-1)}),frames:[...document.querySelectorAll('iframe')].map(e=>{const u=new URL(e.src);return '/'+u.pathname.split('/GRH-research/').at(-1)+u.search})})`);check(JSON.stringify(preservedImages.svg)===JSON.stringify(expected.legacy_svg_srcs)&&JSON.stringify(preservedImages.frames)===JSON.stringify(expected.legacy_iframe_srcs),'all-old29SVGrefs-and13lab-URLs-exact',preservedImages);\n await b.viewport(320,844);await b.evaluate(`(()=>{fitReviewedReaderMath();document.getElementById('rma:core').scrollIntoView({block:'start'});return true})()`);let rmaMobile=await b.evaluate(`({client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,math:document.querySelectorAll('math').length,visible:[...document.querySelectorAll('math')].filter(e=>getComputedStyle(e).display!=='none').length})`);check(rmaMobile.scroll<=rmaMobile.client+1&&rmaMobile.math===expected.math_nodes&&rmaMobile.visible===expected.math_nodes,'new-rma-320-allMathML-visible-no-overflow',rmaMobile);await b.screenshot(out+'/book-rough-mask-core-mobile.png');const rmaScroll=await b.evaluate(`(()=>{const c=document.getElementById('rma:core'),d=document.getElementById('rma:details');const t=[...document.querySelectorAll('table')].find(t=>(c.compareDocumentPosition(t)&Node.DOCUMENT_POSITION_FOLLOWING)&&(d.compareDocumentPosition(t)&Node.DOCUMENT_POSITION_PRECEDING)&&t.closest('.reader-table-scroll').scrollWidth>t.closest('.reader-table-scroll').clientWidth+1);if(!t)return false;const w=t.closest('.reader-table-scroll');w.scrollIntoView({block:'center'});w.scrollLeft=0;w.focus();return true})()`);check(rmaScroll,'new-rma-actual-wide-table-local-wrapper');await key('\\uE014');await b.until(`document.activeElement.classList.contains('reader-table-scroll')&&document.activeElement.scrollLeft>0`);check(true,'new-rma-native-table-keyboard-scroll');await b.screenshot(out+'/book-rough-mask-table-mobile.png');await b.viewport(1440,1000);await b.evaluate(`document.getElementById('rma:Stieltjes').scrollIntoView({block:'start'})`);await b.screenshot(out+'/book-rough-mask-PIT-desktop.png');\n const rmaSummary=await b.evaluate(`(async()=>{const path=${JSON.stringify(expected.summary.path)},r=await fetch(new URL(path,${JSON.stringify(base+'/')})),bytes=await r.arrayBuffer(),hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))].map(b=>b.toString(16).padStart(2,'0')).join(''),d=JSON.parse(new TextDecoder().decode(bytes));const head=await fetch(new Request(new URL(path,${JSON.stringify(base+'/')}),{method:'HEAD'}));return{status:r.status,HEAD:head.status,bytes:bytes.byteLength,sha256:hash,schema:d.schema,raw:d.cases.map(c=>[c.D,...['K0','KS','KT','Erow','Eres','Ctwo','original_AA'].map(k=>c.raw_numerators[k])]),delta:d.cases.map(c=>c.normalized_exactly_once.Delta),parameters:d.cases.map(c=>[c.D,c.parameters.U,c.parameters.H,c.parameters.A1,c.parameters.A2,c.counts.original_columns,c.counts.actual_rows]),kappa:d.cases.map(c=>c.rows.map(r=>r.kappa)),critical:d.cases.map(c=>c.rows.map(r=>r.H_critical)),profile:d.profile,negative:d.out_of_domain_norm247_negative,limitations:d.limitations}})()`);check(rmaSummary.status===200&&rmaSummary.HEAD===200&&rmaSummary.bytes===expected.summary.bytes&&rmaSummary.sha256===expected.summary.sha256&&rmaSummary.schema===expected.summary.schema,'new-rma-summary-exactSHA-nativeURL-Request',rmaSummary);check(JSON.stringify(rmaSummary.raw)===JSON.stringify(expected.summary.raw)&&JSON.stringify(rmaSummary.parameters)===JSON.stringify(expected.summary.parameters)&&JSON.stringify(rmaSummary.delta)===JSON.stringify(expected.summary.normalized_Delta),'new-rma-summary-all3raw-normalized-parameters');check(JSON.stringify(rmaSummary.kappa)==='[[1,1,1,1,1],[1,1,1,1,1,1,1],[0,0]]'&&rmaSummary.critical[2].every(x=>!x)&&rmaSummary.profile.delta==='1/4096'&&rmaSummary.profile.fixed_once&&rmaSummary.negative.norm===247&&rmaSummary.negative.actual_A===1&&rmaSummary.negative.blind_out_of_domain_formula===-1&&rmaSummary.limitations.some(s=>s.includes('No finite proof')),'new-rma-summary-H384-fixedprofile-coefficient-negative-scope');\n const citation=await b.evaluate(`(async()=>{const u='https://raw.githubusercontent.com/amelie-iska/GRH-research/main/'+${JSON.stringify(expected.PUBLIC_CITATION.path)};return u})()`);report.newPublicCitationMetadataURL=citation;\n\n for(const page of['implementation-plan.html','verification.html'])",
+      "occurrences": 1,
+      "old": " for(const page of['implementation-plan.html','verification.html'])"
+    },
+    {
+      "new": "check(/signed[ -]divisor/i.test(text),'new-signed-divisor-synchronized-'+page);check(/rough[ -](?:prime[ -])?mask/i.test(text),'new-rough-mask-synchronized-'+page);",
+      "occurrences": 1,
+      "old": "check(/signed[ -]divisor/i.test(text),'new-signed-divisor-synchronized-'+page);"
+    },
+    {
+      "new": "check(links.signed&&links.signedProof&&links.profile&&links.proof&&links.cover,'landing-profile-proof-cover-links',links);check(await b.evaluate(`!!document.querySelector('a[href$=\"book/main.html#rma:core\"]')&&!!document.querySelector('a[href$=\"data/rough-mask-controls.json\"]')`),'landing-new-rma-proof-and-summary-links');",
+      "occurrences": 1,
+      "old": "check(links.signed&&links.signedProof&&links.profile&&links.proof&&links.cover,'landing-profile-proof-cover-links',links);"
+    },
+    {
+      "new": "const paths=['/book/sources/rough-mask-core.tex','/book/sources/rough-mask-details.tex','/data/rough-mask-controls.json','/book/sources/signed-divisor-core.tex'",
+      "occurrences": 1,
+      "old": "const paths=['/book/sources/signed-divisor-core.tex'"
+    },
+    {
+      "new": "const assetHashes={'/data/rough-mask-controls.json':expected.summary.sha256,'/book/sources/rough-mask-core.tex':expected.assets['/book/sources/rough-mask-core.tex'],'/book/sources/rough-mask-details.tex':expected.assets['/book/sources/rough-mask-details.tex'],",
+      "occurrences": 1,
+      "old": "const assetHashes={"
+    },
+    {
+      "new": "report.bound_expectations={book_pages:expected.book_pages,math_nodes:expected.math_nodes,tables:expected.tables,focused_pages:expected.focused_pages,notes_pages:expected.notes_pages,rma_anchors:expected.rma_anchors.length,summary_sha256:expected.summary.sha256};report.strict_integration_groups=report.integration.length;",
+      "occurrences": 1,
+      "old": "report.strict_integration_groups=report.integration.length;"
+    },
+    {
+      "new": "report.scope='NEW rough-mask adds40rma labels,exact3case tables/summary,S-only mask and restrictedcoefficient/zeroedge/PIT-M1-U7 scopes; rootbound newbook counts preserve old8176MathML/29SVGrefs/13labs and all141predecessor groups. Retained signed-divisor:",
+      "occurrences": 1,
+      "old": "report.scope='NEW signed-divisor:"
+    }
+  ],
+  "expected_new_count_source": "Explicit root-supplied candidate counts in expectations-v1.json, SHA bound by runner",
+  "global_WS_block_byte_identical": true,
+  "legacy_groups_retained": 141,
+  "new_harness_sha256": "f7cde7912f85f6321a33ed2477c12dd60800862b7d0bd12c7860bc7cce59d261",
+  "passed": true,
+  "prepared_only": true,
+  "prior_harness_sha256": "cf3c42ecfddf2121e1fa40ecfd4beca9666440246156b51207905aca4117660d"
+}

@@ -1,0 +1,17 @@
+from pathlib import Path
+import json,hashlib
+R=Path('/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104');p=R/'outputs/checks/2026-11-05-rough-mask/promotion-v1/promotion-v1.json';d=json.loads(p.read_text());assert d['passed'];O=R/'outputs/checks/2026-11-05-rough-mask/root/frontier-final-v1';O.mkdir(parents=True,exist_ok=False)
+text='''
+
+Final rough-mask promotion: outputs/checks/2026-11-05-rough-mask/promotion-v1/promotion-v1.json binds bookPDF/nativev1 and four focused/notev1 builds. Current edition288pages/40chapters/8552MathML; ALL8176previous literal math subtrees remain ordered/byte-identical, all386previous tables retained in388,13canonical iframes and29SVGrefs/assets unchanged. Focused67/183pages; notes25/74pages. Source-bound detailed proof, independent new ideal/phase/data checks, nativeQA at all widths and rootPDFvisual review pass; no new malformednode/overfull/unresolvedref/Lean declaration. Three inherited munder nodes and old amsmath/hyperref/underfull diagnostics remain disclosed. Exact zero/domain/full-column qualifiers supersede historical weaker/strict-scaled drafts without rewriting them. The explicit mask error has target size; the signed clean main, global5/12 saving, principal/determinant/zero-location bridges and full Lean remain open. Original sourceHEAD/index, all earlier releases/environments/cache/history and Macpreview remain preserved. Publication is a separate concrete gate.
+'''
+changed=[]
+for name in ['planning/MASTER_IMPLEMENTATION_PLAN.md','planning/PROGRESS.md','planning/CONTINUATION.md','planning/OPEN_OBLIGATIONS.md','book/SOURCE_COVERAGE.md','book/VERIFICATION.md','planning/COVERAGE.md']:
+ q=R/name;(O/name.replace('/','__')).write_bytes(q.read_bytes());q.write_text(q.read_text()+text);changed.append(name)
+q=R/'README.md';(O/'README.md').write_bytes(q.read_bytes());q.write_text(q.read_text()+'\nCurrent delivered edition:288pages/40chapters/8552MathML; focused67/183pages, notes25/74pages. All8176 prior formulas,386tables,13canonical labs and29SVGrefs/assets are retained. The rough-mask bound controls an explicit correction; its signed main remains open.\n');changed.append('README.md')
+q=R/'web/index.html';before=q.read_bytes();(O/'web__index.html').write_bytes(before);s=before.decode()
+a='279 pages · 40 chapters · 8,176 MathML expressions';assert s.count(a)==1;s=s.replace(a,'288 pages · 40 chapters · 8,552 MathML expressions')
+a='focused articles64/175pages and notes23/66pages';assert s.count(a)==1;s=s.replace(a,'focused articles67/183pages and notes25/74pages')
+a='The signed asymptotic estimate and GRH bridge remain open.';assert s.count(a)==1;s=s.replace(a,'An explicit rough-prime mask budget now isolates the coherent signed main in its stated cutoff window; that main is still unestimated. The signed asymptotic estimate and GRH bridge remain open. <a href="/book/main.html#rma:core">Read the explicit correction theorem ↗</a> · <a href="/data/rough-mask-controls.json">New exact controls ↗</a>')
+q.write_text(s);changed.append('web/index.html')
+r={'passed':True,'promotion_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'changed':changed,'sha256':{n:hashlib.sha256((R/n).read_bytes()).hexdigest()for n in changed},'scope':'Final accepted edition counts/proof/data links only; no new global exponent or publication assertion.'};(O/'record.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps({'passed':True,'documents':len(changed)}))

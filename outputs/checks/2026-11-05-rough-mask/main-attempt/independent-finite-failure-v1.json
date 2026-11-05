@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/rough-mask-20261105/main-attempt/audit_finite_v1.py\", line 191, in <module>\n    try:main()\n        ^^^^^^\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/rough-mask-20261105/main-attempt/audit_finite_v1.py\", line 186, in main\n    case=run_case(D);cases.append(case);p=OUT/f'independent-finite-D{D}-v1.json';assert not p.exists();p.write_text(json.dumps(case,indent=2,sort_keys=True)+'\\n');print(json.dumps({'D':D,'passed':True,'AA':case['all_raw_totals']['original_AA_raw'],'Delta':case['all_raw_totals']['Delta_raw']}),flush=True)\n         ^^^^^^^^^^^\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/rough-mask-20261105/main-attempt/audit_finite_v1.py\", line 154, in run_case\n    assert len(own_smooth)==len(d['smooth_states']) and len(own_rough)==len(d['rough_states'])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "checker_sha256": "239215a7b6797d3eeefcb0cd0bbbc5fd83affe6c925a219a943ba0d162280965",
+  "source_data_changed": false
+}
