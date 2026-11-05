@@ -1316,3 +1316,11 @@ state gradient projections. Initial streamed-MathML warning was traced with
 controlled parse/layout experiments; failed candidates and serialization
 pilot remain preserved. No source clone/environment/model data changed.
 No new dependency, GPU job, Lean declaration or GRH proof.
+
+## Cube-factor sector and exact joint completion — 5 November 2026
+
+Claimed P7-low-gcd (5f5e8490) without changing protected HEAD/index. Independently reviewed four shared TeX fragments: GL cube-factor application, necessary near-face condition, exact joint Gauss/CRT identity, original coefficient/orientation Parseval and finite-height tail budget. All raw zeros and overlapping arbitrary r6 are retained. No global power improvement; remaining full-face range a>=1/8 still costs5/4 at H=D^(3/4).
+
+Root exact exponent checks pass3167 assertions on996 six-factor states and1001 face positions; author and independent cyclotomic checkers each pass991 Gauss/CRT/orientation assertions. Inspector passes1037 independent numerical cases, complete-face/crossover controls, both palettes and320/390/768/1440 keyboard/browser states. Earlier regex/harness failures are preserved. All new work ran on Linux; no environment/model/data/authentication change. Pinned Linux Lean compiler approval is pending after an incompatible Mac binary was identified; no fallback version was used.
+
+Valid staged editions: book255pages/40chapters/7065MathML, focused57/150pages, notes15/41pages; all6890previous mathematical subtrees unchanged and ordered. Three prior canonical chapters rerendered with13unique embedded labs/19SVGs retained; readout certificates unchanged. Failed missing-fragment/overfull candidates and native paragraph-label mismatch remain preserved; the source digest wraps without mathematical change, and unnumbered headings now validate their enclosing PDF counter. Only passing candidates may promote.

@@ -1,0 +1,39 @@
+{
+  "status": "accepted",
+  "version": 3,
+  "reviewer": "independent subagent lean_frontier_feasibility",
+  "production": {
+    "papers/quadratic-pivot-core.tex": {
+      "sha256": "765fb451718fbc0fc3e940297e5baf374838e3416ce1b070e216202bbb2f19d8",
+      "unchanged_from_v2": true
+    },
+    "papers/quadratic-pivot-details.tex": {
+      "sha256": "db825e05f3d8751bc600617086c1daf2a5a0f7baf16703f1e3e8d42a1fe0326b",
+      "mathematically_identical_to_v2": true
+    },
+    "book/chapters/quadratic-pivot-details.tex": {
+      "sha256": "98a31bc30ac33343c54a0b855ce147b7665803662293884b0705c94d3545f2b8",
+      "equals_current_production_details_plus_one_generated_comment_header": true
+    }
+  },
+  "previous_details_sha256": "ca4470f996b3639053e0fb21837dfb9dbc36d439547ddb26f8b2dea5afd8a6e8",
+  "only_production_change": "One 64-digit GL SHA256 texttt is split into two 32-digit texttt groups separated by allowbreak.",
+  "checks": {
+    "forward_exact_byte_comparison": "passed",
+    "reverse_exact_byte_comparison": "passed",
+    "hash_digit_sequence_preserved": "passed",
+    "original_single_digest_occurs_exactly_once": "passed",
+    "replacement_occurs_exactly_once": "passed",
+    "core_unchanged_from_v2": "passed",
+    "generated_book_details_equals_header_plus_production": "passed"
+  },
+  "gl_pdf_sha256": "5cc5f03388d3996b4333f07be51f989f60779fe172f8bd24c7aa6ddad64dd304",
+  "mathematical_review": "All previous v2 mathematics and scope remain accepted; this change affects line wrapping only.",
+  "not_run": [
+    "TeX build",
+    "Lean build",
+    "PDF visual inspection",
+    "publication"
+  ],
+  "protected_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c"
+}

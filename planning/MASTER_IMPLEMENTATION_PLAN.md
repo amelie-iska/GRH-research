@@ -539,3 +539,9 @@ addendum/review supersede the preserved draft's optimistic language.
 Next arithmetic target remains the signed large-conductor/common divisor 1
 sum over conductors and dual frequencies with all masks and A3 neighborhood.
 Both completion gates remain false; keep heartbeat active.
+
+## Cube-factor and joint-dual refinement — 5 November 2026
+
+The original r3³ pivot admits the already-classical GL quadratic family bound R0+D R0/A3 after exact raw-zero-preserving freezing and fixed finite S/ray partition. This is a refinement of the application, not a new large sieve. With the old powered bound it improves the A3-dominant sector; at H=D^(3/4), the full face has leading power min(5/4,1+2a), 0<=a<=1/4. All a>=1/8 remain at5/4; even a=0 costs D above the H target. Near-saturated middle monomials necessarily have A3<=M D^eta plus the old capacity/imbalance/high-power slack. This is not an actual row-energy lower bound.
+
+The exact joint six-coordinate completion keeps mu(q), CRT generator phases, all common-prime Ramanujan factors and actual cutoff/factor-count coefficients. Its orientation Parseval and finite tail budget do not estimate the actual signed h,q,K weight; coherent fibers and fixed length-one factors prevent automatic cancellation. Preserve arbitrary overlapping r6, all literal units/S factors, common profile, ray/squarefree/capacity masks. Do not reuse a generic four-column conductor or claim a new global exponent/GRH/Lean result. The new standalone quadratic-pivot.html is linked to the proof without duplicating canonical embedded tools. Both gates remain false.

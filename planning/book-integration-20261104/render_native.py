@@ -81,7 +81,12 @@ def main():
     for m in re.finditer(r'<h([1-6])\b([^>]*)>.*?</h\1>',fragment,re.S):
         attrs=dict(re.findall(r'([\w-]+)="([^"]*)"',m[2]));ident=attrs.get('id')
         if ident in source_labels:
-            assert attrs.get('data-number')==labels[ident],(ident,attrs,labels[ident])
+            if int(m[1])>=5:
+                # PDF paragraph headings are unnumbered. Their label retains
+                # the enclosing counter; Pandoc appends a paragraph suffix.
+                assert attrs.get('data-number','').startswith(labels[ident]+'.'),(ident,attrs,labels[ident])
+            else:
+                assert attrs.get('data-number')==labels[ident],(ident,attrs,labels[ident])
             section_numbers[ident]=labels[ident]
     existing_ids=set(re.findall(r'\bid="([^"]+)"',fragment));equation_numbers={}
     def equation(m):

@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "local": {
+    "assertions": 408,
+    "fields": [
+      {
+        "characteristic": 7,
+        "field_order": 7,
+        "inert": false,
+        "generator": 3,
+        "cyclotomic_order": 42,
+        "degree": 12
+      },
+      {
+        "characteristic": 13,
+        "field_order": 13,
+        "inert": false,
+        "generator": 2,
+        "cyclotomic_order": 78,
+        "degree": 24
+      },
+      {
+        "characteristic": 19,
+        "field_order": 19,
+        "inert": false,
+        "generator": 2,
+        "cyclotomic_order": 114,
+        "degree": 36
+      },
+      {
+        "characteristic": 5,
+        "field_order": 25,
+        "inert": true,
+        "generator": [
+          1,
+          3
+        ],
+        "cyclotomic_order": 30,
+        "degree": 8
+      }
+    ]
+  },
+  "masked_crt": {
+    "assertions": 558,
+    "q_generator": [
+      3,
+      1
+    ],
+    "h_generator": [
+      4,
+      1
+    ],
+    "L_generator": [
+      11,
+      6
+    ],
+    "norms": [
+      7,
+      13,
+      91
+    ],
+    "omega_mod_L": 74,
+    "additive_exponent": "-6*k*x/91",
+    "tau_q_exponent": "-x/7",
+    "full_period_transforms": 546,
+    "mixed_frequency_tuples": 12,
+    "cyclotomic_order": 546,
+    "cyclotomic_degree": 144
+  },
+  "composite_orientation": {
+    "assertions": 25,
+    "q_generator": [
+      11,
+      6
+    ],
+    "q_norm": 91,
+    "orientations": 4,
+    "uniform_unit_products": 72,
+    "orthogonality_entries": 16,
+    "cubic_coherent_diagonal": [
+      1,
+      8,
+      27,
+      34,
+      57,
+      64,
+      83,
+      90
+    ],
+    "diagonal_cardinality": 8,
+    "exact_parseval_norm": [
+      1296,
+      0
+    ],
+    "local_five_frequency_tuples": 7776,
+    "fiber_cardinality": 1296
+  },
+  "assertions": 991,
+  "elapsed_seconds": 0.228,
+  "checker_sha256": "91c6f346f1b5a93d660e0ff0e7aea5f34580d15ca385a24a134ebb72ecfb16b1",
+  "scope": "Exact finite Gauss/CRT/orientation identities only; not an incomplete signed-moment estimate, exponent saving, Lean or GRH result."
+}

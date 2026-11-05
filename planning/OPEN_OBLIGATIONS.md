@@ -562,3 +562,9 @@ next hard arithmetic input is the joint signed large-conductor/dual-frequency
 sum on original common-divisor1 and neighboring A3 face blocks, with original
 union masks. Generic±2 fourth-column cancellations and original ±1 factor
 expansions must not be conflated. Both completion gates remain false.
+
+## After the quadratic pivot and joint completion
+
+The classical quadratic pivot improves only the A3-dominant part. At H=D^(3/4), the remaining face a>=1/8 still has5/4; a necessary neighboring condition is A3<=max(A1,A2) D^eta with the previous small slack. The exact complete Gauss-phase balance and orientation Parseval do not prove actual weighted incomplete cancellation. Estimate the original joint signed h,q,K weight, especially h=1, retaining coherent cubic-residue fibers, fixed length-one factors and all masks. GL is an explicit classical dependency, not a newly proved sieve.
+
+No short/principal assembly, independent arithmetic positive determinant/zero-location bridge or full analytic/category Lean has been supplied. Compiler approval remains pending; do not install/substitute automatically or rerun the completed inventory. Both completion gates remain false.

@@ -1,0 +1,733 @@
+{
+  "verdict": "approved_with_stated_scope",
+  "review_kind": "independent_classical_proof_audit_not_Lean",
+  "source_sha256": {
+    "papers/covariance-budget-core.tex": "3ef10a3f3903b9a0363deb612a6e569afef977d6980cbbd4c7fb4b65f65c57db",
+    "papers/covariance-budget-details.tex": "3eadf1e65cb89d1b98d19f9c2dd1efcd768fc4852609f4fcc2ba90288107e696",
+    "papers/uniform-cutoff-moment-core.tex": "ca7bfa59c85e3fbf915a3c41962689f999d16733530ff610fe0b559f04b1f430",
+    "papers/uniform-cutoff-moment-details.tex": "2f6e063599637a66c07241d6bc3bd9834bfa5aeebe3db0363967b6f7e369a28d",
+    "papers/masked-moment-core.tex": "63a6ee49d2dcee3b87977541f90995fa5a9c2d3ad584328ebed5059223cea0ff",
+    "papers/masked-moment-details.tex": "cb5c0f58189a2c5f5b47658902b10026556603281799b94313617bc89804a76c",
+    "planning/reviews/book/short-row-hybrid.md": "01bfb3f14f524d3035f679d0e3b7b311953be4419f770199e0316073c20bfb15",
+    "outputs/checks/2026-11-05-joint-dual/sources/goldmakher-louvel-1112.1642v2.pdf": "5cc5f03388d3996b4333f07be51f989f60779fe172f8bd24c7aa6ddad64dd304",
+    "outputs/checks/2026-11-05-joint-dual/sources/goldmakher-louvel-1112.1642v2.txt": "e88da4b0922e9bc958a9bcc1f0a660950b0fc238721e7c0b2d362153a1c56882"
+  },
+  "expected_pdf_sha256": "5cc5f03388d3996b4333f07be51f989f60779fe172f8bd24c7aa6ddad64dd304",
+  "exact_fraction_face_cases": [
+    {
+      "a": "0",
+      "b": "1/4",
+      "old": "5/4",
+      "quadratic": "1",
+      "minimum": "1"
+    },
+    {
+      "a": "1/400",
+      "b": "99/400",
+      "old": "5/4",
+      "quadratic": "201/200",
+      "minimum": "201/200"
+    },
+    {
+      "a": "1/200",
+      "b": "49/200",
+      "old": "5/4",
+      "quadratic": "101/100",
+      "minimum": "101/100"
+    },
+    {
+      "a": "3/400",
+      "b": "97/400",
+      "old": "5/4",
+      "quadratic": "203/200",
+      "minimum": "203/200"
+    },
+    {
+      "a": "1/100",
+      "b": "6/25",
+      "old": "5/4",
+      "quadratic": "51/50",
+      "minimum": "51/50"
+    },
+    {
+      "a": "1/80",
+      "b": "19/80",
+      "old": "5/4",
+      "quadratic": "41/40",
+      "minimum": "41/40"
+    },
+    {
+      "a": "3/200",
+      "b": "47/200",
+      "old": "5/4",
+      "quadratic": "103/100",
+      "minimum": "103/100"
+    },
+    {
+      "a": "7/400",
+      "b": "93/400",
+      "old": "5/4",
+      "quadratic": "207/200",
+      "minimum": "207/200"
+    },
+    {
+      "a": "1/50",
+      "b": "23/100",
+      "old": "5/4",
+      "quadratic": "26/25",
+      "minimum": "26/25"
+    },
+    {
+      "a": "9/400",
+      "b": "91/400",
+      "old": "5/4",
+      "quadratic": "209/200",
+      "minimum": "209/200"
+    },
+    {
+      "a": "1/40",
+      "b": "9/40",
+      "old": "5/4",
+      "quadratic": "21/20",
+      "minimum": "21/20"
+    },
+    {
+      "a": "11/400",
+      "b": "89/400",
+      "old": "5/4",
+      "quadratic": "211/200",
+      "minimum": "211/200"
+    },
+    {
+      "a": "3/100",
+      "b": "11/50",
+      "old": "5/4",
+      "quadratic": "53/50",
+      "minimum": "53/50"
+    },
+    {
+      "a": "13/400",
+      "b": "87/400",
+      "old": "5/4",
+      "quadratic": "213/200",
+      "minimum": "213/200"
+    },
+    {
+      "a": "7/200",
+      "b": "43/200",
+      "old": "5/4",
+      "quadratic": "107/100",
+      "minimum": "107/100"
+    },
+    {
+      "a": "3/80",
+      "b": "17/80",
+      "old": "5/4",
+      "quadratic": "43/40",
+      "minimum": "43/40"
+    },
+    {
+      "a": "1/25",
+      "b": "21/100",
+      "old": "5/4",
+      "quadratic": "27/25",
+      "minimum": "27/25"
+    },
+    {
+      "a": "17/400",
+      "b": "83/400",
+      "old": "5/4",
+      "quadratic": "217/200",
+      "minimum": "217/200"
+    },
+    {
+      "a": "9/200",
+      "b": "41/200",
+      "old": "5/4",
+      "quadratic": "109/100",
+      "minimum": "109/100"
+    },
+    {
+      "a": "19/400",
+      "b": "81/400",
+      "old": "5/4",
+      "quadratic": "219/200",
+      "minimum": "219/200"
+    },
+    {
+      "a": "1/20",
+      "b": "1/5",
+      "old": "5/4",
+      "quadratic": "11/10",
+      "minimum": "11/10"
+    },
+    {
+      "a": "21/400",
+      "b": "79/400",
+      "old": "5/4",
+      "quadratic": "221/200",
+      "minimum": "221/200"
+    },
+    {
+      "a": "11/200",
+      "b": "39/200",
+      "old": "5/4",
+      "quadratic": "111/100",
+      "minimum": "111/100"
+    },
+    {
+      "a": "23/400",
+      "b": "77/400",
+      "old": "5/4",
+      "quadratic": "223/200",
+      "minimum": "223/200"
+    },
+    {
+      "a": "3/50",
+      "b": "19/100",
+      "old": "5/4",
+      "quadratic": "28/25",
+      "minimum": "28/25"
+    },
+    {
+      "a": "1/16",
+      "b": "3/16",
+      "old": "5/4",
+      "quadratic": "9/8",
+      "minimum": "9/8"
+    },
+    {
+      "a": "13/200",
+      "b": "37/200",
+      "old": "5/4",
+      "quadratic": "113/100",
+      "minimum": "113/100"
+    },
+    {
+      "a": "27/400",
+      "b": "73/400",
+      "old": "5/4",
+      "quadratic": "227/200",
+      "minimum": "227/200"
+    },
+    {
+      "a": "7/100",
+      "b": "9/50",
+      "old": "5/4",
+      "quadratic": "57/50",
+      "minimum": "57/50"
+    },
+    {
+      "a": "29/400",
+      "b": "71/400",
+      "old": "5/4",
+      "quadratic": "229/200",
+      "minimum": "229/200"
+    },
+    {
+      "a": "3/40",
+      "b": "7/40",
+      "old": "5/4",
+      "quadratic": "23/20",
+      "minimum": "23/20"
+    },
+    {
+      "a": "31/400",
+      "b": "69/400",
+      "old": "5/4",
+      "quadratic": "231/200",
+      "minimum": "231/200"
+    },
+    {
+      "a": "2/25",
+      "b": "17/100",
+      "old": "5/4",
+      "quadratic": "29/25",
+      "minimum": "29/25"
+    },
+    {
+      "a": "33/400",
+      "b": "67/400",
+      "old": "5/4",
+      "quadratic": "233/200",
+      "minimum": "233/200"
+    },
+    {
+      "a": "17/200",
+      "b": "33/200",
+      "old": "5/4",
+      "quadratic": "117/100",
+      "minimum": "117/100"
+    },
+    {
+      "a": "7/80",
+      "b": "13/80",
+      "old": "5/4",
+      "quadratic": "47/40",
+      "minimum": "47/40"
+    },
+    {
+      "a": "9/100",
+      "b": "4/25",
+      "old": "5/4",
+      "quadratic": "59/50",
+      "minimum": "59/50"
+    },
+    {
+      "a": "37/400",
+      "b": "63/400",
+      "old": "5/4",
+      "quadratic": "237/200",
+      "minimum": "237/200"
+    },
+    {
+      "a": "19/200",
+      "b": "31/200",
+      "old": "5/4",
+      "quadratic": "119/100",
+      "minimum": "119/100"
+    },
+    {
+      "a": "39/400",
+      "b": "61/400",
+      "old": "5/4",
+      "quadratic": "239/200",
+      "minimum": "239/200"
+    },
+    {
+      "a": "1/10",
+      "b": "3/20",
+      "old": "5/4",
+      "quadratic": "6/5",
+      "minimum": "6/5"
+    },
+    {
+      "a": "41/400",
+      "b": "59/400",
+      "old": "5/4",
+      "quadratic": "241/200",
+      "minimum": "241/200"
+    },
+    {
+      "a": "21/200",
+      "b": "29/200",
+      "old": "5/4",
+      "quadratic": "121/100",
+      "minimum": "121/100"
+    },
+    {
+      "a": "43/400",
+      "b": "57/400",
+      "old": "5/4",
+      "quadratic": "243/200",
+      "minimum": "243/200"
+    },
+    {
+      "a": "11/100",
+      "b": "7/50",
+      "old": "5/4",
+      "quadratic": "61/50",
+      "minimum": "61/50"
+    },
+    {
+      "a": "9/80",
+      "b": "11/80",
+      "old": "5/4",
+      "quadratic": "49/40",
+      "minimum": "49/40"
+    },
+    {
+      "a": "23/200",
+      "b": "27/200",
+      "old": "5/4",
+      "quadratic": "123/100",
+      "minimum": "123/100"
+    },
+    {
+      "a": "47/400",
+      "b": "53/400",
+      "old": "5/4",
+      "quadratic": "247/200",
+      "minimum": "247/200"
+    },
+    {
+      "a": "3/25",
+      "b": "13/100",
+      "old": "5/4",
+      "quadratic": "31/25",
+      "minimum": "31/25"
+    },
+    {
+      "a": "49/400",
+      "b": "51/400",
+      "old": "5/4",
+      "quadratic": "249/200",
+      "minimum": "249/200"
+    },
+    {
+      "a": "1/8",
+      "b": "1/8",
+      "old": "5/4",
+      "quadratic": "5/4",
+      "minimum": "5/4"
+    },
+    {
+      "a": "51/400",
+      "b": "49/400",
+      "old": "5/4",
+      "quadratic": "251/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "13/100",
+      "b": "3/25",
+      "old": "5/4",
+      "quadratic": "63/50",
+      "minimum": "5/4"
+    },
+    {
+      "a": "53/400",
+      "b": "47/400",
+      "old": "5/4",
+      "quadratic": "253/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "27/200",
+      "b": "23/200",
+      "old": "5/4",
+      "quadratic": "127/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "11/80",
+      "b": "9/80",
+      "old": "5/4",
+      "quadratic": "51/40",
+      "minimum": "5/4"
+    },
+    {
+      "a": "7/50",
+      "b": "11/100",
+      "old": "5/4",
+      "quadratic": "32/25",
+      "minimum": "5/4"
+    },
+    {
+      "a": "57/400",
+      "b": "43/400",
+      "old": "5/4",
+      "quadratic": "257/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "29/200",
+      "b": "21/200",
+      "old": "5/4",
+      "quadratic": "129/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "59/400",
+      "b": "41/400",
+      "old": "5/4",
+      "quadratic": "259/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "3/20",
+      "b": "1/10",
+      "old": "5/4",
+      "quadratic": "13/10",
+      "minimum": "5/4"
+    },
+    {
+      "a": "61/400",
+      "b": "39/400",
+      "old": "5/4",
+      "quadratic": "261/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "31/200",
+      "b": "19/200",
+      "old": "5/4",
+      "quadratic": "131/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "63/400",
+      "b": "37/400",
+      "old": "5/4",
+      "quadratic": "263/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "4/25",
+      "b": "9/100",
+      "old": "5/4",
+      "quadratic": "33/25",
+      "minimum": "5/4"
+    },
+    {
+      "a": "13/80",
+      "b": "7/80",
+      "old": "5/4",
+      "quadratic": "53/40",
+      "minimum": "5/4"
+    },
+    {
+      "a": "33/200",
+      "b": "17/200",
+      "old": "5/4",
+      "quadratic": "133/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "67/400",
+      "b": "33/400",
+      "old": "5/4",
+      "quadratic": "267/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "17/100",
+      "b": "2/25",
+      "old": "5/4",
+      "quadratic": "67/50",
+      "minimum": "5/4"
+    },
+    {
+      "a": "69/400",
+      "b": "31/400",
+      "old": "5/4",
+      "quadratic": "269/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "7/40",
+      "b": "3/40",
+      "old": "5/4",
+      "quadratic": "27/20",
+      "minimum": "5/4"
+    },
+    {
+      "a": "71/400",
+      "b": "29/400",
+      "old": "5/4",
+      "quadratic": "271/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "9/50",
+      "b": "7/100",
+      "old": "5/4",
+      "quadratic": "34/25",
+      "minimum": "5/4"
+    },
+    {
+      "a": "73/400",
+      "b": "27/400",
+      "old": "5/4",
+      "quadratic": "273/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "37/200",
+      "b": "13/200",
+      "old": "5/4",
+      "quadratic": "137/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "3/16",
+      "b": "1/16",
+      "old": "5/4",
+      "quadratic": "11/8",
+      "minimum": "5/4"
+    },
+    {
+      "a": "19/100",
+      "b": "3/50",
+      "old": "5/4",
+      "quadratic": "69/50",
+      "minimum": "5/4"
+    },
+    {
+      "a": "77/400",
+      "b": "23/400",
+      "old": "5/4",
+      "quadratic": "277/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "39/200",
+      "b": "11/200",
+      "old": "5/4",
+      "quadratic": "139/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "79/400",
+      "b": "21/400",
+      "old": "5/4",
+      "quadratic": "279/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "1/5",
+      "b": "1/20",
+      "old": "5/4",
+      "quadratic": "7/5",
+      "minimum": "5/4"
+    },
+    {
+      "a": "81/400",
+      "b": "19/400",
+      "old": "5/4",
+      "quadratic": "281/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "41/200",
+      "b": "9/200",
+      "old": "5/4",
+      "quadratic": "141/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "83/400",
+      "b": "17/400",
+      "old": "5/4",
+      "quadratic": "283/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "21/100",
+      "b": "1/25",
+      "old": "5/4",
+      "quadratic": "71/50",
+      "minimum": "5/4"
+    },
+    {
+      "a": "17/80",
+      "b": "3/80",
+      "old": "5/4",
+      "quadratic": "57/40",
+      "minimum": "5/4"
+    },
+    {
+      "a": "43/200",
+      "b": "7/200",
+      "old": "5/4",
+      "quadratic": "143/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "87/400",
+      "b": "13/400",
+      "old": "5/4",
+      "quadratic": "287/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "11/50",
+      "b": "3/100",
+      "old": "5/4",
+      "quadratic": "36/25",
+      "minimum": "5/4"
+    },
+    {
+      "a": "89/400",
+      "b": "11/400",
+      "old": "5/4",
+      "quadratic": "289/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "9/40",
+      "b": "1/40",
+      "old": "5/4",
+      "quadratic": "29/20",
+      "minimum": "5/4"
+    },
+    {
+      "a": "91/400",
+      "b": "9/400",
+      "old": "5/4",
+      "quadratic": "291/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "23/100",
+      "b": "1/50",
+      "old": "5/4",
+      "quadratic": "73/50",
+      "minimum": "5/4"
+    },
+    {
+      "a": "93/400",
+      "b": "7/400",
+      "old": "5/4",
+      "quadratic": "293/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "47/200",
+      "b": "3/200",
+      "old": "5/4",
+      "quadratic": "147/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "19/80",
+      "b": "1/80",
+      "old": "5/4",
+      "quadratic": "59/40",
+      "minimum": "5/4"
+    },
+    {
+      "a": "6/25",
+      "b": "1/100",
+      "old": "5/4",
+      "quadratic": "37/25",
+      "minimum": "5/4"
+    },
+    {
+      "a": "97/400",
+      "b": "3/400",
+      "old": "5/4",
+      "quadratic": "297/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "49/200",
+      "b": "1/200",
+      "old": "5/4",
+      "quadratic": "149/100",
+      "minimum": "5/4"
+    },
+    {
+      "a": "99/400",
+      "b": "1/400",
+      "old": "5/4",
+      "quadratic": "299/200",
+      "minimum": "5/4"
+    },
+    {
+      "a": "1/4",
+      "b": "0",
+      "old": "5/4",
+      "quadratic": "3/2",
+      "minimum": "5/4"
+    }
+  ],
+  "assertions": [
+    "All 101 grid cases have old leading exponent 5/4.",
+    "Combined exponent strictly improves exactly for a<1/8.",
+    "Combined exponent never drops below 1, so does not reach target 3/4.",
+    "No claim of analytic verification by this finite diagnostic."
+  ],
+  "protected_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+  "lean_feasibility": "separate note; pinned existing Darwin binary unusable on Linux, exit126"
+}

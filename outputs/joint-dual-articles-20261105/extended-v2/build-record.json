@@ -1,0 +1,172 @@
+{
+  "passed": true,
+  "builder_sha256": "ee282c130136a5e720a237787d32184a7a62ac5e9687d655d0bc357e9cce0152",
+  "edition": "extended",
+  "pages": 150,
+  "pdf_sha256": "a7855915dd28662110614d94f822ebe553ef677eaecfa957ad9203baf9d51737",
+  "new_proof_markers": [
+    "A finite, validated approximation result",
+    "An arithmetic-family moment with every original row retained",
+    "Recombining the actual weighted cutoff",
+    "A cutoff-uniform envelope for the original masked remainder"
+  ],
+  "diagram_records": [
+    {
+      "source_sha256": "dd2a7bb5cd4f6a3c8d94e8bd3616cc9442d0ce31655c67d34226b99af16ae0d4",
+      "source": "\\begin{tikzcd}[column sep=large,row sep=large]\n0\\arrow[r]&Y\\arrow[r,hook]\\arrow[d,\"u\"]&\\Lambda\\arrow[r,\"x\"]\\arrow[d,\"u\"]&X\\arrow[r]\\arrow[d,\"u\"]&0\\\\\n0\\arrow[r]&Y\\arrow[r,hook]\\arrow[d]&\\Lambda\\arrow[r,\"x\"]\\arrow[d]&X\\arrow[r]\\arrow[d]&0\\\\\n0\\arrow[r]&Y/uY\\arrow[r,hook]&\\Lambda/u\\Lambda\\arrow[r]&X/uX\\arrow[r]&0\n\\end{tikzcd}",
+      "pdf_sha256": "c78399933083048948500143a0dd20fa2e22daf85be0d63818f97e44004bb8b7",
+      "accepted_svg_sha256": null,
+      "method": "explicit source-correct standard LaTeX picture grid; no TikZ macro shim",
+      "trim": "0pt 0pt 0pt 0pt"
+    },
+    {
+      "source_sha256": "5cebac09f8e9accfd86178b4ea896294573b28039291334f28aa9f46ce34b722",
+      "source": "\\begin{tikzcd}[column sep=large,row sep=large]\n A\\arrow[r,\"p\"]\\arrow[d,\"-p\"']&B\\arrow[r,\"i\"]\\arrow[d,\"p\"]&C\\arrow[d,\"-p\"]\\\\\n D\\arrow[r,\"p\"]\\arrow[d,\"-i\"']&E\\arrow[r,\"i\"]\\arrow[d,\"i\"]&F\\arrow[d,\"-i\"]\\\\\n G\\arrow[r,\"p\"]&H\\arrow[r,\"i\"]&I.\n\\end{tikzcd}",
+      "pdf_sha256": "2000e018aac8d848c9557da611dd77d8a4a24eae8c0057fc97551eafd093a293",
+      "accepted_svg_sha256": null,
+      "method": "explicit source-correct standard LaTeX picture grid; no TikZ macro shim",
+      "trim": "0pt 0pt 0pt 0pt"
+    },
+    {
+      "source_sha256": "ed1c169ee725c2f377023759658c03712f6f2bdbbe3459f24bc9821382cf410c",
+      "source": "\\begin{tikzpicture}[>=Stealth,every node/.style={font=\\small},\n box/.style={draw,rounded corners,align=center,minimum width=2.1cm,minimum height=.9cm}]\n\\node (z) at (0,0) {$0$};\n\\node[box] (l) at (2,0) {$k^5$\\\\$C_0$};\n\\node[box] (m) at (5,0) {$k^5\\oplus\\epsilon k^5$\\\\$\\left(\\begin{smallmatrix}C_0&0\\\\C_1&C_0\\end{smallmatrix}\\right)$};\n\\node[box] (r) at (8,0) {$k^5$\\\\$C_0$};\n\\node (e) at (10,0) {$0$};\n\\draw[->] (z)--(l);\\draw[->] (l)--node[above] {$i$}(m);\n\\draw[->] (m)--node[above] {$p$}(r);\\draw[->] (r)--(e);\n\\end{tikzpicture}",
+      "pdf_sha256": "2fcf3aa31a42a576a3e608ec5bb4fa4de3bb226a5f789bb7ab54979501af390d",
+      "accepted_svg_sha256": "7e47093b14c2b2bd176f97269170cda5c9c73980169f760f59bb337761c4e065",
+      "method": "exact-source cached standalone PDF",
+      "trim": "5pt 5pt 5pt 5pt"
+    },
+    {
+      "source_sha256": "3667c0b10605da38015eb0f87a64df21254f7ab7002b67dae645ab113048e0a6",
+      "source": "\\begin{tikzpicture}[scale=.9]\n \\fill[cyan!9] (0,0) circle (1.4);\n \\draw[thick] (0,0) circle (1.4);\n \\foreach \\a in {0,30,...,330}{\\draw[cyan!65!black] (0,0)--(\\a:1.4);}\n \\fill (0,0) circle (.06);\n \\node[align=center,text width=4cm,font=\\small] at (0,-1.95) {disk\\\\coherent circle of spokes};\n \\begin{scope}[xshift=6cm]\n  \\fill[cyan!9,even odd rule] (0,0) circle (1.4) (0,0) circle (.48);\n  \\draw[thick] (0,0) circle (1.4);\n  \\draw[dashed,thick] (0,0) circle (.48);\n  \\foreach \\a in {0,30,...,330}{\\draw[cyan!65!black] (\\a:.48)--(\\a:1.4);}\n  \\draw[->,thick] (20:.75) arc (20:315:.75);\n  \\node[align=center,text width=4cm,font=\\small] at (0,-1.95) {punctured disk\\\\peripheral loop};\n \\end{scope}\n\\end{tikzpicture}",
+      "pdf_sha256": "c6c871a0424f640ff84cbe49110322c245f1ab9ef8e749c748e47c00a998600d",
+      "accepted_svg_sha256": "7fa40fb4ec0b1621ba6556e34b22b173a22dc4142bf87eb367974d4c6f6c0455",
+      "method": "exact-source accepted vector SVG via existing librsvg/cairo",
+      "trim": "5pt 5pt 5pt 5pt"
+    }
+  ],
+  "figure_records": [
+    {
+      "path": "papers/figures/learned-generative.pdf",
+      "exists": false,
+      "scope": "May be an inactive IfFileExists branch; compilation must reject any active missing figure"
+    },
+    {
+      "path": "book/figures/learned-generative.pdf",
+      "sha256": "bbd0d2769d27f3ba679d901c97385e7045c21d3285b5876c030bb7e594cbc349",
+      "exists": true
+    },
+    {
+      "path": "papers/figures/learned-width-flow.pdf",
+      "exists": false,
+      "scope": "May be an inactive IfFileExists branch; compilation must reject any active missing figure"
+    },
+    {
+      "path": "book/figures/learned-width-flow.pdf",
+      "sha256": "b8a53ccfd8f43565361945d89a460225a2a9feca69378bbe6d8e4d3a4ca9ce5c",
+      "exists": true
+    },
+    {
+      "path": "papers/figures/learned-covers.pdf",
+      "exists": false,
+      "scope": "May be an inactive IfFileExists branch; compilation must reject any active missing figure"
+    },
+    {
+      "path": "book/figures/learned-covers.pdf",
+      "sha256": "ad2030bf4b1d9738e02f847f169e25dd80e98bbd6abc7ed526c4212cd1a610dd",
+      "exists": true
+    }
+  ],
+  "removed_unused_packages": [
+    "tikz-cd"
+  ],
+  "removed_drawing_library_declarations": 0,
+  "source_sha256": {
+    "book/figures/article-grids/grid-manifest.json": "0bfaf20e810844ae991101f569f1993ff06a3cc3037d0d076ecbed7c0ba08bfe",
+    "book/figures/article-grids/root-acceptance.json": "734421e426003558028a862d0769a3bed028a508cd9f4b6f3525a11abae9221b",
+    "papers/resolutions-extended.tex": "73ab6fc52225071fa99f76e336bb74521004d24eb8680e657f31e20feec09c29",
+    "papers/preamble.tex": "3206bb6ca4dd20c75b3fad21a60f8cdee6a4a34f9c6e7ac91112f09b4f3a644e",
+    "papers/dessin-core.tex": "fa1d3130bac0335ec9aba9b09efcb1e290a8d204dd4235749021d89c6f7536d9",
+    "papers/dg-core.tex": "ce6c1880a60ccd0ce3dc891026a7f3801f0df902f84a4214dbe0fc2e6e795dfe",
+    "papers/dessin-string-scope.tex": "a80a1e9d8c73fd88a44fff58231a516d6a217fba4d5f82b9cb558ae697404823",
+    "papers/dessin-gluing-core.tex": "f34979291c371e40cdedf0d8d41146d01510382a2bb42441520b794e1d53cd98",
+    "papers/theta-jacobi-core.tex": "d6b5a9ec322ce701a4ca0700875457e42f9171f31ed0ce87e8220cd3f5ad32e9",
+    "papers/theta-projective-core.tex": "bed3eea4ef1e195d225d507747f80fa56e384db1a8164140e4d5ad5f0965bde2",
+    "papers/theta-tame-core.tex": "429a1261516ad3ffda779c860dccf52a3f89304bf6b51128fa3a528d3f15443e",
+    "papers/ar-component-update.tex": "dae36d27ed53c3be7e7add06b5ac849e80e1e0fbca6487b3fe0a219115b416da",
+    "papers/covering-core.tex": "424b54b83eb4f59920f6292e35a99ccc4e864e7b32a20cbac55e7e81bc6ecb0d",
+    "papers/short-row-pair-core.tex": "29e2d0d39b5af0870158c6c370e11152ca6affad38113b4dad1de6cdf2bfcb3e",
+    "papers/mobius-split-core.tex": "96d6f3ae72634f537784c34bc13036138d4bea187e4cb4739e919d367729b811",
+    "papers/hecke-type-i-core.tex": "f458146de1081ae38d4a3828cee7d21a1ff73e1a67f30cedc3477edbe8a474d0",
+    "papers/rg-core.tex": "e0632028e67e8992e295c6a5b0787e8d5fdf7714f52cd1de8c747ac1fd81bba7",
+    "papers/relations-core.tex": "daff8bd277b0817bc393af0c6664170b832732a6b014940ea64fccc8ab80f158",
+    "papers/branch-extension-core.tex": "3b00bb388dd04d09f36d1197a60409bafeeccdeaae00f6f07fcb29546f64e49c",
+    "papers/learned-frontier-core.tex": "032c2e0f2a129ee90f2c4a18edfa319b960fea34bd83be572a49390adc6cc7d1",
+    "papers/complementary-datasets-core.tex": "243903859ec65043ad189e50832736fa189d30617dd507a35360609e9b9b823d",
+    "papers/dessin-details.tex": "b0f04941d024f10d04dbec88cf2ee874cb19395156631206ebf94185cf388a43",
+    "papers/dessin-gluing-details.tex": "6aaf39ab197b76e5a04c2afd2c7ad7e093cf1afb93a177d35d8d92d8e3fbb3f8",
+    "papers/theta-jacobi-details.tex": "f27e1297c381f9f3ec2eeaf785637ae7958616b7b82cba6219a16ca7362eaa07",
+    "papers/theta-projective-details.tex": "334ca986c313274e334c3a3d8dc02ec034a6dfbb9d7ec9651e2af369f88089f7",
+    "papers/theta-tame-details.tex": "6ac3e3daa7fcc95714b698782bfa75cea13ee30f0a28f34544d26c5e9cf38817",
+    "papers/covering-details.tex": "e585ce2dfb2bcd04153c991c4084d90e7e1ce781a076715c0e461bee93275bc1",
+    "papers/short-row-pair-details.tex": "22c8eaeeef36314a0fdb8cf92bbfe71572677d3788f9f6602018487d7a23a4f7",
+    "papers/mobius-split-details.tex": "2bf74927a71b71fea2d4856191d4467ff0bbfeb1590f0ebbad5ace502767fb7d",
+    "papers/hecke-type-i-details.tex": "ba95943f488c8926427dab80089e63335017d8db8506b785a18a633c40b308cc",
+    "papers/rg-details.tex": "ce7bba18100e4fd11cad38d053a5b8624c0427a5ae0ecc89594e84bfdeadfc5b",
+    "papers/relations-details.tex": "13f9616fccd05caa8a53a8b8ed87d8bc8fc169de05f86bd83f57564b1a2d7853",
+    "papers/branch-extension-details.tex": "ceaf52c36abbead7e8310c131a686dd10001a5d73f0da915205b1d93b1ec9c76",
+    "papers/learned-frontier-details.tex": "e1d6b89f3bdd29fdf12ed085cd9a2a8e599a3f836b66f5db7c50a88348e3b5c2",
+    "papers/complementary-datasets-details.tex": "e2de4e299378040fff9975ff80e4c76fd86e5846776a825113892b15c3c5b868",
+    "papers/orbital-flow-core.tex": "4116c896cee462eecb5f372edfbd729ec2235641d3d436e50ad029eaea916256",
+    "papers/orbital-flow-details.tex": "35a9ce0bf9ceb0aecb2fb2db8f5d180a9a7a358b27f365f5e247f4cac1609b4e",
+    "papers/holomorphic-learning-core.tex": "798895b2ce95592aa3847d0d21d70e6466ed32715024b27dec5a5f812e926872",
+    "papers/holomorphic-learning-details.tex": "d419ba3498645c049a5e2eab590b7448ad8b7f1483377aeaef4ca50095965e76",
+    "papers/quantum-games-core.tex": "f0a70dd6c65c72e56ee182877ae2be9d92ba4c9e4c5d8ad81978984af39193c1",
+    "papers/quantum-games-details.tex": "2fad74a8445f312226a18276fa9ee63e526d695868c1f0e8176fe0b2e998331e",
+    "papers/hubs-spokes-core.tex": "4dd3e8a69535b2ee48a99fe1e431477c6d168cb31644e77cf7393fe72aaa5ff4",
+    "papers/hubs-spokes-boundaries.tex": "b4efcf7d5e3e7f1a6bb72df8578cb260aef76432c3edd944905110d57c5983e7",
+    "papers/electron-clouds.tex": "95bc3742d590e8f112a925950985a3458236def9fc871cc9811aff706ba32fea",
+    "papers/validated-oracle-core.tex": "450580029c85cf4019a06e6e11ffb642f2c152ce6110e1cb56377b7e023fc9a1",
+    "papers/validated-oracle-results.tex": "f1a2016900a0a9567252d08272fb59842117812fe08ab7d8bc71159fd0f051f2",
+    "papers/validated-oracle-details.tex": "c14bb57244015572944785c7d3253049c2dbdd32ab4d2bc2fa910f1615e74431",
+    "papers/adaptive-readout-core.tex": "190650d9119789027397a615eaf0db70d5bb3d6c550efa87fe9657bf93eb1eeb",
+    "papers/adaptive-readout-details.tex": "c8d99706a0095d61c3e0915f306b3607b55b95d8b7e7d378f4eeee61bd8567b9",
+    "papers/adaptive-theta-core.tex": "ca6336f50af25bfceedca735767d64ced5a5f4078f77342bfa052d03cbad33cd",
+    "papers/adaptive-theta-details.tex": "8d1713f38ff3d54d5b9338277a08ff228886a16913e88c37680e7fd5f5c46ec2",
+    "papers/adaptive-family-core.tex": "1c6106a2f88c6a88a5ebec1c482ad52c51f62c9e173ea6d5196f202ea60b3f48",
+    "papers/adaptive-family-details.tex": "65427a714a6d6eb2c312aed08e76aa095ac4517a8a7d05bea7fd9def2b121049",
+    "papers/masked-moment-core.tex": "63a6ee49d2dcee3b87977541f90995fa5a9c2d3ad584328ebed5059223cea0ff",
+    "papers/masked-moment-details.tex": "cb5c0f58189a2c5f5b47658902b10026556603281799b94313617bc89804a76c",
+    "papers/weighted-cutoff-core.tex": "e358e0a3686caaa1f3d676f360a99b9969ef2d66ed666163e9f8057c58d3f1f2",
+    "papers/weighted-cutoff-details.tex": "4f85502fdd6ffe71ef5be7cee274d7273a3919ff1410e6c3ac6ea96511e5674b",
+    "papers/uniform-cutoff-moment-core.tex": "ca7bfa59c85e3fbf915a3c41962689f999d16733530ff610fe0b559f04b1f430",
+    "papers/uniform-cutoff-moment-details.tex": "2f6e063599637a66c07241d6bc3bd9834bfa5aeebe3db0363967b6f7e369a28d",
+    "papers/signed-bilinear-core.tex": "51452c2ca5eb360499f3c3032bd246a2b0e644c82867e67d6107317acc1b459c",
+    "papers/signed-bilinear-details.tex": "c3dd1a612d6e56cd77f652d90331083a7fb2351e226d24fb1a4ca3b227d14b72",
+    "papers/covariance-budget-core.tex": "3ef10a3f3903b9a0363deb612a6e569afef977d6980cbbd4c7fb4b65f65c57db",
+    "papers/covariance-budget-details.tex": "3eadf1e65cb89d1b98d19f9c2dd1efcd768fc4852609f4fcc2ba90288107e696",
+    "papers/unequal-product-core.tex": "90ef676d539dff6a69fa7bbbda78a49c2bb883aae05acb0c07cb6919a0c1ea88",
+    "papers/unequal-product-details.tex": "81651c2d4add1fd4e8cc90fa6ddf2dd92b984cc7f4152f2a866dd57953d3739b",
+    "papers/quadratic-pivot-core.tex": "765fb451718fbc0fc3e940297e5baf374838e3416ce1b070e216202bbb2f19d8",
+    "papers/quadratic-pivot-details.tex": "db825e05f3d8751bc600617086c1daf2a5a0f7baf16703f1e3e8d42a1fe0326b",
+    "papers/joint-gauss-core.tex": "60a50bf986f664aab7e7067bf86648fa455263f2906129cb4aac5ab42af75c7c",
+    "papers/joint-gauss-details.tex": "c13a87a003d795a8e607c3ea9970697b64d2c6241557799be7c0424486afbfb8",
+    "papers/dessin-references.tex": "a77e088d9af89e1605574319ef7a3d0948b3abd29d86ec445dce6e735a1f389d",
+    "outputs/book/diagram-exports.json": "457211c0707065d15bf528a2aff0d111d804ddd2b07c35550da0e0c19d9eb871",
+    "book/figures/article-grids/quotient-grid/diagram.pdf": "c78399933083048948500143a0dd20fa2e22daf85be0d63818f97e44004bb8b7",
+    "book/figures/article-grids/signed-diamond/diagram.pdf": "2000e018aac8d848c9557da611dd77d8a4a24eae8c0057fc97551eafd093a293",
+    "web/book/main8x.svg": "7e47093b14c2b2bd176f97269170cda5c9c73980169f760f59bb337761c4e065",
+    "outputs/html-diagrams/ed1c169ee725c2f3/diagram.tex": "b1c1f00a2756aa760bc3490e791dde813b4dd630cb0fd36678c72ca53b058492",
+    "outputs/html-diagrams/ed1c169ee725c2f3/diagram.pdf": "2fcf3aa31a42a576a3e608ec5bb4fa4de3bb226a5f789bb7ab54979501af390d",
+    "web/book/main15x.svg": "7fa40fb4ec0b1621ba6556e34b22b173a22dc4142bf87eb367974d4c6f6c0455",
+    "book/figures/learned-generative.pdf": "bbd0d2769d27f3ba679d901c97385e7045c21d3285b5876c030bb7e594cbc349",
+    "book/figures/learned-width-flow.pdf": "b8a53ccfd8f43565361945d89a460225a2a9feca69378bbe6d8e4d3a4ca9ce5c",
+    "book/figures/learned-covers.pdf": "ad2030bf4b1d9738e02f847f169e25dd80e98bbd6abc7ed526c4212cd1a610dd"
+  },
+  "source_unchanged": true,
+  "production_edited": false,
+  "production_promoted": false,
+  "new_Lean_declarations": 0,
+  "complete_book_formalization": false,
+  "compile_input": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/joint-dual-articles-20261105/extended-v2/resolutions-extended.expanded.tex",
+  "compile_output": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/joint-dual-articles-20261105/extended-v2"
+}

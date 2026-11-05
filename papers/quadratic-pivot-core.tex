@@ -1,0 +1,71 @@
+% Independently reviewed proposal; classical GL input, no new sieve/global exponent.
+\section{A quadratic pivot on the cube factor}\label{qp:core}
+Retain the original zero-extended sextic symbols
+$\chi_m(u)=(u/m)_6$ over $K=\mathbb Q(\omega)$, the fixed $S$ containing
+all primes above $6$ and comparison moduli, and the squarefree good columns
+$D\le Nm\le2D$. Write an outside-$S$ row ideal uniquely as
+$r_1r_2^2r_3^3r_4^4r_5^5r_6^6$: only $r_1,\ldots,r_5$ are pairwise-coprime
+squarefree ideals; $r_6$ is arbitrary and may overlap them. Use primary
+generators. Fix one literal unit and one $S$-supported row factor, retaining
+their original values. Let $A_j\le Nr_j<2A_j$, $A_j\ge1$,
+$R_0=\prod_jA_j$ and $\prod_jA_j^j\le H$; the actual capacity restriction
+on rows is retained. Coefficients $b_m\in\mathbb C$ are arbitrary and fixed
+independently of every variable row.
+
+\begin{proposition}[The cube-factor block norm]\label{qp:bound}
+For every $\varepsilon>0$, the raw Gram on this actual block obeys
+\[
+ \sum_{u\ \mathrm{in\ the\ block}}
+       \left|\sum_m b_m\chi_m(u)\right|^2
+ \ll_{\nu,S,\varepsilon}(HD)^\varepsilon
+       \left\{R_0+\frac{DR_0}{A_3}\right\}\sum_m|b_m|^2.
+\]
+The constant is uniform in the fixed unit/$S$-factor, frozen good factors,
+$H,D$ and the coefficient sequence. There is no rational-norm-squarefree
+restriction. Consequently, with $M=\max(A_1,A_2)$, the old powered-BGL
+bound and this bound give
+\begin{equation}\label{qp:min}
+ \Lambda_A\ll_{\nu,S,\varepsilon}(HD)^\varepsilon
+ \left\{R_0+\min\left(
+  \frac{DR_0}{M}+\frac{D^{2/3}R_0}{M^{1/3}},
+  \frac{DR_0}{A_3}\right)\right\}.
+\end{equation}
+\end{proposition}
+The external analytic input is Goldmakher--Louvel,
+\href{https://arxiv.org/pdf/1112.1642v2}{arXiv:1112.1642v2},
+Corollary~1.2 with $n=6$, already an explicit classical cube-power sieve.
+The refinement is this application, not a new large-sieve theorem.
+For the original normalized coefficients
+$b_m=D^{-1/2}A_U(m)\nu(m)W(Nm/D)$, the accepted divisor bound gives
+$\sum_m|b_m|^2\ll_\eta\|W\|_\infty^2D^\eta$, uniformly in
+$U\ge1$ with $U^2\le D$ (and the common $W$ may be complex).
+Choosing smaller internal exponents yields the corresponding uniform
+block energy envelope. General cutoff or factor-count weights remain
+inside the arbitrary coefficient norm; that norm is not silently replaced
+by one. Summing $S$-supported row factors uses the reduced capacity
+$H/N\mathfrak b$ and the established convergent geometric sums.
+
+On the complete old saturated face $A_1=A_2=A$, $A_3=B$,
+$A_4=A_5=A_6=1$, $AB=H^{1/3}$, the new bound is
+$A^2B+DA^2$ in place of the old middle monomial $DAB$.
+For $H=D^{3/4}$ put $A=D^a$, $B=D^{1/4-a}$,
+$0\le a\le1/4$. When $a<1/8$, its leading exponent is $1+2a<5/4$;
+the gain requires $B/A$ to grow by a power for a power improvement.
+For $a\ge1/8$, the combined bound still has leading exponent $5/4$.
+Thus the $A_3$-dominant part improves, while no new global exponent,
+$BT_\sigma$ estimate, signed covariance theorem, Lean theorem or GRH
+conclusion follows.
+
+\paragraph{Inspecting the surviving sector.}
+The \href{https://amelie-iska.github.io/GRH-research/quadratic-pivot.html}{quadratic-pivot inspector} plots the complete face, the five monomial powers and the remaining target gap. These are analytic bound exponents, not measured operator norms or trained-network predictions. The refined norm can be inserted in the earlier covariance budget; it does not remove its within-level energies.
+
+\paragraph{A necessary near-face condition.}\label{qp:near}
+Put $\mathcal M_A=DR_0/\max(M,A_3)$.
+The combined envelope is at most
+$(HD)^\varepsilon\{R_0+\mathcal M_A+D^{2/3}R_0/M^{1/3}\}$.
+If $\mathcal M_A\ge DH^{1/3}D^{-\eta}$, then the earlier
+near-face slack is at most $3\eta\log D$ and, additionally,
+$A_3\le M D^\eta$. Thus a uniform remaining leading-term estimate
+may focus on this smaller neighborhood; it must still cover the entire
+$B\le A$ part of the face. This is a necessary condition on explicit
+upper-bound monomials, not a lower bound for actual arithmetic energy.

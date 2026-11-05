@@ -1,0 +1,37 @@
+{
+  "status": "accepted_exact_finite_identity_with_stated_scope",
+  "reviewer": "independent subagent lean_frontier_feasibility",
+  "research_v2_sha256": {
+    "JOINT_GAUSS_ORIENTATION_IDENTITY-v2.md": "6aa048cde7358d4d7bbce31d4701d2e348ac77febaab02f8b696f8e0e8911b10",
+    "joint-gauss-core-proposal-v2.tex": "3ab1d06365ba30b03c9cf32b34add5e135bbd1e7f23fbdd80d87ab0d94326745",
+    "joint-gauss-details-proposal-v2.tex": "4b91b8936f3487692f072420d165496bda412e2b771db53ad05c87dd028ffb7c"
+  },
+  "production": {
+    "papers/joint-gauss-core.tex": {
+      "sha256": "60a50bf986f664aab7e7067bf86648fa455263f2906129cb4aac5ab42af75c7c",
+      "equivalent_to_reviewed_v2_after_declared_layout_changes": true
+    },
+    "papers/joint-gauss-details.tex": {
+      "sha256": "c13a87a003d795a8e607c3ea9970697b64d2c6241557799be7c0424486afbfb8",
+      "equivalent_to_reviewed_v2_after_declared_layout_changes": true
+    }
+  },
+  "mathematical_findings": [
+    "Exact GB/JD/OP and finite norm/tail formulas approved.",
+    "V2 fixes unit-ideal alpha=1 convention.",
+    "Original h and L deletion masks, literal units/S factors and arbitrary overlapping sixth row factor remain.",
+    "Common F condition is essential for orientation Parseval.",
+    "No small incomplete-moment, covariance or global exponent bound follows."
+  ],
+  "independent_checker_receipt": "outputs/checks/2026-11-05-joint-dual/review-quadratic/joint-gauss-independent-check-v1.json",
+  "independent_checker_assertions": 991,
+  "checker_sha256": "91c6f346f1b5a93d660e0ff0e7aea5f34580d15ca385a24a134ebb72ecfb16b1",
+  "review_report_sha256": "d8a1c9530128349e7d6d2b25f7aa0650c23e245017258a26b59dc6a81ea81185",
+  "not_run": [
+    "TeX build",
+    "Lean build",
+    "browser inspection",
+    "publication"
+  ],
+  "protected_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c"
+}

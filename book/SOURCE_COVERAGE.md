@@ -432,3 +432,9 @@ The known high-gcd recovery is explicitly not a new analytic saving.
 Current251-page / 40-chapter / 6,890-MathML book retains all 6,601 old math subtrees,
 19 vector diagrams, 13 unique embedded labs and both complete original volumes.
 No new analytic/category Lean or complete GRH scope is supplied.
+
+## Cube-factor pivot and joint dual completion
+
+New quadratic-pivot-{core,details}.tex and joint-gauss-{core,details}.tex extend chapter40 and all paired article/note editions. They preserve original sextic symbols, all common-prime zeros, only first-five squarefree/pairwise restrictions, arbitrary overlapping sixth factor, original coefficients and full capacity. GL arXiv:1112.1642v2 Cor1.2 is the source-pinned external sieve; joint Gauss/CRT/Parseval algebra is derived explicitly. Its unestimated signed weight and unchanged worst global exponent are stated.
+
+Candidate255-page book has40chapters/7065MathML, all6890old mathematical subtrees unchanged,13unique embedded labs/19source-matched SVGs and both original source volumes. The distinct new standalone exponent inspector is linked at its proof. No new analytic/category Lean or GRH scope is settled.

@@ -126,3 +126,5 @@ is knownhighgcdrecovery; use governingNOVELTY_AND_SCOPE.md and accepted
 mask/conductorcorrection. Nextjointlargeconductor/dualfrequency signed
 estimate retains commondivisor1/fullunionzeros/A3nearface. Book251/40/6890,
 focused56/146,notes14/38; bothgatesfalse andheartbeatACTIVE.
+
+Cube-factor/joint-dual frontier5Nov2026: GLquadraticpivotrefinesA3dominantsectorbutglobal5/4remainsfora>=1/8atH=D^(3/4). NecessarynearfaceA3<=M D^eta plusoldslack. ExactfivepowerGaussphasebalance/CRT/OP/tailbudgetretainsmu(q),commonprimemasks,actualF andcoefficients,coherentfibersandlength-oneobstruction. Nextquantitativeactualsignedh,q,K estimate; h1andallmasksremain. No newglobalexponent/Lean/GRH. Compilerapprovalpending; no install/substitutionwithoutreply. Bookcandidate255/40/7065,focused57/150,notes15/41,all6890oldmathpreserved. Readlatestrelease receiptwhenpublished; priorcandidatesnotdelivery. KeepheartbeatACTIVE.

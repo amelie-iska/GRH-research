@@ -1,0 +1,27 @@
+% Compact selected proposal; exact algebra, no new analytic exponent.
+\subsection{Joint completion before conductor absolute values}\label{jdq:core}
+In the original C--C expansion write $m=hr,n=ht$ with $h,r,t$
+pairwise coprime squarefree, $q=rt\ne1$, $L=hq$, $Q=Nq$, $\ell=NL$.
+Set $\theta=x_r\overline{x_t}$ and $\xi_q=x_q^3$.
+The original internal masks give $\theta^3=\xi_q$ and primitive
+$\theta^j$ on $q$ for $1\le j\le5$, while
+$\mu(hr)\mu(ht)=\mu(q)$. Fix generators $\alpha$ of $h$, $\beta$ of
+$q$, choosing $\alpha=1$ for $h=1$. With $\delta=1+2\omega$, put
+$e_\beta(z)=\exp(2\pi i\operatorname{Tr}(z/(\delta\beta)))$,
+$\tau_\beta(\eta)=\sum_{z\bmod q}\eta(z)e_\beta(z)$, and
+$c_h(k)=\prod_{p\mid h}(Np\mathbf1_{k\in p}-1)$, $c_1=1$.
+For $f_j(v)=\theta(v)^j\mathbf1_{(v,h)=1}$, $1\le j\le5$,
+$f_6(v)=\mathbf1_{(v,L)=1}$ and
+$G_j(k)=\sum_{v\bmod L}f_j(v)e_{\alpha\beta}(kv)$, joint completion gives
+\begin{equation}\label{jdq:gauss}
+ \prod_{j=1}^6G_j(k_j)=Q^2\xi_q(-\alpha)\tau_\beta(\xi_q)
+ \overline{\theta(\prod_{j=1}^5k_j^j)}
+ \prod_{j=1}^5c_h(k_j)c_L(k_6).
+\end{equation}
+This holds when the first five frequencies are $q$-units; otherwise
+the left side is zero. The mixed Gauss phase is orientation-independent,
+with every common-prime zero retained. The exact row Fourier weight
+still contains all squarefree, ray, inter-factor, capacity and profile
+restrictions, including the full $A_3$ face. Its weighted joint
+conductor/frequency estimate remains open. This identity and its finite
+Parseval budget give no improved global exponent or GRH conclusion.

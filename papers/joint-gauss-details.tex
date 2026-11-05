@@ -1,0 +1,59 @@
+% Compact selected derivation; longer research notes remain preserved.
+\section{The surviving joint identity and its missing estimate}\label{jdq:details}
+CRT gives $G_j(k)=\theta(\alpha)^j\tau_\beta(\theta^j)
+\overline{\theta(k)^j}c_h(k)$ for $q$-unit $k$, and $G_6=c_L$.
+Pairing Gauss powers $1,5$ and $2,4$ yields
+$\prod_{j=1}^5\tau_\beta(\theta^j)=Q^2\xi_q(-1)\tau_\beta(\xi_q)$;
+the CRT factors multiply to $\theta(\alpha)^{15}=\xi_q(\alpha)$.
+This proves~\eqref{jdq:gauss}, with all additive-generator phases explicit.
+
+On a fixed literal class write $u=u_0\prod_{j=1}^6v_j^j$ and let $F(v)$
+be its exact finite row weight. Only $v_1,\ldots,v_5$ are squarefree and
+pairwise coprime; $v_6$ is arbitrary with its permitted overlaps.
+Retain every original mask and the sharp capacity boundary in $F$.
+Define $\widehat F_L(k)=\sum_vF(v)e_{\alpha\beta}(-\sum_jk_jv_j)$ and,
+with $t=q/r$, put
+\begin{align*}
+ a(r)&=r_U(hr)r_U(ht)\nu(r)\overline{\nu(t)}\\
+ &\qquad{}\times W(Nh\,Nr/D)\overline{W(Nh\,Nt/D)}\theta_{r,t}(u_0),\\
+ A(K)&=\sum_{r\mid q}a(r)\overline{\theta_{r,q/r}(K)},\\
+ B(K)&=\sum_{\substack{k\bmod L,\ (k_1\cdots k_5,q)=1\\
+                   \prod_{j=1}^5k_j^j=K\bmod q}}
+       \widehat F_L(k)\prod_{j=1}^5c_h(k_j)c_L(k_6).
+\end{align*}
+Set $a(r)=0$ at excluded orientations; the actual factor counts and
+common possibly complex $W$ remain. Fourier inversion gives exactly
+\begin{equation}\label{jdq:joint}
+ E_{\mathcal T}=\frac1D\sum_{(h,q)\in\mathcal T}
+ \mu(q)\frac{Q^2\xi_q(-\alpha)\tau_\beta(\xi_q)}{\ell^6}
+ \sum_{K\in(\mathcal O/q)^\times}B(K)A(K).
+\end{equation}
+Sum the original $u_0$ classes and blocks. This retains low gcd,
+including $h=1$, before conductor absolute values. For C--$\mu$ replace
+the second $r_U(ht)$ by $1$. A column-orientation-dependent restriction
+cannot be hidden in a common $F$ when applying the next identity.
+
+Distinct orientations have nontrivial cubic quotient, so
+\[
+ \sum_K|A(K)|^2=\varphi(q)\sum_{r\mid q}|a(r)|^2,\qquad
+ |E_{h,q}|\le\frac{Q^{5/2}}{D\ell^6}
+  \left(\varphi(q)\sum_{r\mid q}|a(r)|^2\right)^{1/2}\|B\|_2.
+\]
+The product-frequency fibers have size $\varphi(q)^4$ under uniform
+averaging. The actual $B$ is not uniform: all orientations agree on
+the coherent set $x_p(K)^2=1$ for every $p\mid q$, of size
+$\varphi(q)/3^{\omega(q)}$. Centered representatives have
+$|k_j|\le\sqrt\ell$. Restricting to any frequency subset $\Omega$ has
+error bounded by the same displayed budget with $\|B-B_\Omega\|_2$;
+no small lower-height tail is proved.
+
+The full face $A_1=A_2=A$, $AA_3=H^{1/3}$, $A_4=A_5=A_6=1$ remains.
+At its pure $A_3$ endpoint, inversion in the fixed factors leaves
+$(\sum_ra(r))\sum_vF_3(v)\xi_q(v)\mathbf1_{(v,h)=1}$:
+the actual row character there is orientation-independent. Literal
+length-one Fourier factors can undo complete phase balance.
+A quantitative signed estimate for the actual $h,q,K$ sum is still
+required. Exact split/inert Gauss, full-mask CRT and orientation tests
+pass $991$ assertions; receipt:
+\path{outputs/checks/2026-11-05-joint-dual/research/joint-gauss-check-v1.json}.
+These diagnostics do not prove an incomplete-moment saving or GRH.

@@ -512,3 +512,9 @@ result. The [arithmetic conductor-scope audit](research/unequal-product-conducto
 retains shared-prime zeros and classifies a small-conductor trial as known
 high-gcd recovery, with no new analytic saving. The current book has 251 pages / 40 chapters /
 6,890 MathML expressions; focused articles have 56/146 pages and notes have 14/38 pages. GRH remains open.
+
+## Cube-factor refinement and joint completion
+
+The [new exponent inspector](https://amelie-iska.github.io/GRH-research/quadratic-pivot.html) retains the complete saturation face. A classical quadratic large sieve improves its cube-factor-dominant sector, while the remaining sector still has the old worst exponent. The [derivation and scope](research/quadratic-pivot-sector.md) also gives an exact joint Gauss-phase identity with every common-prime zero retained. No new global signed estimate, determinant bridge, Lean theorem or GRH proof is claimed.
+
+Current edition: 255 pages / 40 chapters / 7,065 MathML; focused 57/150 pages and notes 15/41 pages. All 6,890 previous math subtrees remain unchanged.

@@ -1,0 +1,85 @@
+% Generated shared reviewed material.
+% Independently reviewed proof proposal; all raw collision zeros retained.
+\section{Proof and scope of the quadratic pivot}\label{qp:details}
+Freeze all factors except $r_3$, and write the actual literal row
+$u=Fr_3^3$. Multiplicativity of the original numerator gives the exact
+zero-preserving identity
+\[
+ \chi_m(u)=\chi_m(F)\chi_m(r_3)^3.
+\]
+Put $c_m=b_m\chi_m(F)$, a coefficient sequence independent of $r_3$ with
+$\sum|c_m|^2\le\sum|b_m|^2$. In particular the arbitrary sixth-power
+factor is the coefficient mask
+\[
+ \chi_m(r_6^6)=\mathbf1_{(m,r_6)=1},
+\]
+not the constant one. No condition $(r_3,r_6)=1$ is introduced.
+The actual capacity and coprimality of $r_3$ with
+$r_1,r_2,r_4,r_5$ only restrict this positive outer row sum; after freezing,
+it may be enlarged to all squarefree good pivot ideals in the dyad.
+The variable collision mask $(m,r_3)$ remains in the original symbol.
+
+Apply the previously proved literal comparison
+\eqref{wc:literal-reciprocity} to the primary generator of $r_3$ itself:
+\[
+ \chi_m(r_3)^3=
+ \eta_{r_3}(m)^3 C([r_3],[m])^3\vartheta_m(r_3)^3.
+\]
+The twist $\eta_{r_3}$ ranges over a fixed finite set of $S$-unit Kummer
+characters, and $[r_3]$ over the fixed finite reciprocity group.
+Partition pivot rows by $(\eta_{r_3},[r_3])$. On each part the first two
+factors are one fixed modulus-one column multiplier. Thus its coefficient
+sequence is independent of the pivot row and has squared norm at most
+$\sum|b_m|^2$. This finite partition, rather than an assertion that arbitrary
+row-dependent phases may be absorbed, resolves the fixed-$S$ phase issue.
+
+Goldmakher--Louvel Definition~1 and Remark~3 identify the cubic powers
+of a sixth-order Hecke family as a quadratic Hecke family; their
+Corollary~1.2 gives directly
+\[
+ \sum_{a\ \mathrm{sf,good}\atop Na\le2A_3}
+ \left|\sum_{m\ \mathrm{sf,good}\atop Nm\le2D}
+                z_m\vartheta_m(a)^3\right|^2
+ \ll_{K,S,\eta}(A_3D)^\eta(A_3+D)\sum_m|z_m|^2.
+\]
+This is the required column-indexed orientation and allows arbitrary
+complex coefficients and squarefree ideals of nonsquarefree rational norm.
+The canonical family has primitive trivial-infinity-type characters, a
+fixed finite reciprocity group, and the same-class primitive-product
+property required by Definition~1. At each $p\mid m$ outside $S$, the
+local tame sextic character has order six, so its cube has order two and
+conductor exponent one. Thus its outside-$S$ primitive conductor is
+exactly $m$; the $S$-part has only finitely many fixed conductor types.
+Accordingly both sides of the comparison are zero at $(m,a)>1$.
+No conductor-drop value replaces the raw zero, and no global formula
+for the full conductor is required. The fixed $\nu$ stays in coefficients.
+
+Enlarge the positive row sum separately on each finite part and apply
+this sieve. Ideal counting gives $O_K(A_j)$ possibilities for each frozen
+$r_j$, including arbitrary $r_6$, hence $O_K(R_0/A_3)$ frozen tuples.
+Summing gives $(A_3D)^\eta(R_0+DR_0/A_3)\sum|b_m|^2$.
+Since $A_3\le H$, adjust $\eta$ to obtain
+Proposition~\ref{qp:bound}; literal unit multiplicity is at most six.
+Together with the prior block bound this proves
+\eqref{qp:min}. It does not change the actual coefficient
+normalization or principal residues.
+
+On the face in the core, the old bound has exponents
+$a+1/4$, $5/4$, $11/12+2a/3$, whereas the quadratic bound has
+$a+1/4$ and $1+2a$. Its improvement for $a<1/8$ leaves the balanced
+point and $a\ge1/8$ with the old $5/4$ leading exponent. Even the
+improved endpoint $a=0$ costs $D$, above the target $D^{3/4}$.
+The pinned GL PDF has SHA256
+\texttt{5cc5f03388d3996b4333f07be51f989f}\allowbreak\texttt{60779fe172f8bd24c7aa6ddad64dd304}.
+This proof invokes that classical result; finite exponent checks do not
+reprove it, and no new formalization is claimed.
+
+For the last condition, use $R_0/M\le H^{1/3}$ from the exact
+capacity inequalities. The hypothesis implies
+$R_0/A_3\ge H^{1/3}D^{-\eta}$, so
+$A_3/M=(R_0/M)/(R_0/A_3)\le D^\eta$.
+It also implies $R_0/M\ge H^{1/3}D^{-\eta}$, which is exactly
+the previous slack hypothesis. Finally
+$\min(a+b,c)\le\min(a,c)+b$ for nonnegative $a,b,c$
+proves the separated envelope, with no replacement of a signed moment
+by a positive lower bound.

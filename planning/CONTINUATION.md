@@ -1165,3 +1165,9 @@ conductor/common divisor 1 joint signed sums, summing conductors and dual
 frequencies before per-conductor absolute completion, retaining full union
 zeros, squarefree/ray restrictions and all A3 near-face blocks. No new global
 exponent or GRH claim; heartbeat and both open completion gates persist.
+
+## Next after cube-factor/joint-dual integration
+
+Read research/quadratic-pivot-sector.md and planning/joint-dual-20261105/{research,review-quadratic,qa-pivot}. Governing proof receipts are production-acceptance-v3.json (quad/digest wrap), joint-gauss-production-acceptance-v2.json and renderer-paragraph-acceptance-v1.json in outputs/checks/2026-11-05-joint-dual/review-quadratic/. Do not rerun the3167/991/1037 finite checks as new research.
+
+The refined block bound is R0+min(DR0/M+D^(2/3)R0/M^(1/3),DR0/A3), M=max(A1,A2). Retain the old full face, but its still-leading neighborhood also satisfies A3<=M D^eta; along H=D^(3/4), a>=1/8 remains open. Next pursue a quantitative signed conductor/dual-product estimate for actual B(K)A(K), including h=1 and all masks/coherent fibers. Completing fixed length-one factors can undo phase balance; uniform orientation orthogonality is not the needed weight estimate. No new global exponent, full Lean or GRH conclusion. Preserve every release worktree/output and keep heartbeat active.

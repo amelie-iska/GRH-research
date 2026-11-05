@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "baseline": {
+    "client": 378,
+    "scroll": 799,
+    "inner": 390,
+    "math": 5356
+  },
+  "viewports": [
+    {
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "client": 378,
+      "scroll": 378,
+      "inner": 390,
+      "math": 7065,
+      "scrollableExpressions": 142
+    },
+    {
+      "requested": {
+        "width": 320,
+        "height": 740
+      },
+      "client": 308,
+      "scroll": 308,
+      "inner": 320,
+      "math": 7065,
+      "scrollableExpressions": 187
+    },
+    {
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "client": 756,
+      "scroll": 756,
+      "inner": 768,
+      "math": 7065,
+      "scrollableExpressions": 10
+    },
+    {
+      "requested": {
+        "width": 1440,
+        "height": 1000
+      },
+      "client": 1428,
+      "scroll": 1428,
+      "inner": 1440,
+      "math": 7065,
+      "scrollableExpressions": 0
+    },
+    {
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "client": 378,
+      "scroll": 378,
+      "inner": 390,
+      "math": 7065,
+      "scrollableExpressions": 142
+    }
+  ],
+  "uniform": {
+    "number": "(40.4)",
+    "mathFont": "18px",
+    "box": {
+      "client": 302,
+      "scroll": 672
+    }
+  },
+  "oldSubtrees": {
+    "math": {
+      "count": 5356,
+      "sha256": "ca6fe223790447c26a7bb4a0d3a694db44156b4d1ce6202eaef16a9f5dc0e588"
+    },
+    "table": {
+      "count": 384,
+      "sha256": "4b18549ea9326057d6044554ed2927134e268ae08c9bd55aa22869279d291f2e"
+    },
+    "iframe": {
+      "count": 13,
+      "sha256": "35fb4b6ab21ecafd7cd014a8f0eff241160a3fa5769e3de9232d9b0ef9b89169"
+    }
+  },
+  "sourceDownloads": 5,
+  "newPageErrors": 0,
+  "inheritedMathMLDiagnostics": {
+    "baselineEvents": 6,
+    "candidateEvents": 21,
+    "messages": [
+      "Invalid markup: Incorrect number of children for <munder/> tag."
+    ],
+    "oldMalformedMunderNodes": 3,
+    "newMalformedMunderNodes": 0,
+    "scope": "Three old TeX4ht lim-leftarrow munder nodes have three children. Preserved by the required unchanged-old-MathML policy. Reflow repeats Firefox diagnostics; no new distinct diagnostic or new malformed node."
+  }
+}

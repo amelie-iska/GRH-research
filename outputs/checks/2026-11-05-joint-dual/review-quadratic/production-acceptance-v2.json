@@ -1,0 +1,32 @@
+{
+  "status": "accepted",
+  "version": 2,
+  "production": {
+    "papers/quadratic-pivot-core.tex": {
+      "sha256": "765fb451718fbc0fc3e940297e5baf374838e3416ce1b070e216202bbb2f19d8",
+      "previous_accepted_bytes_unchanged": true
+    },
+    "papers/quadratic-pivot-details.tex": {
+      "sha256": "ca4470f996b3639053e0fb21837dfb9dbc36d439547ddb26f8b2dea5afd8a6e8",
+      "previous_accepted_bytes_unchanged": true
+    }
+  },
+  "reviewer": "independent subagent lean_frontier_feasibility",
+  "new_addition": "necessary near-face condition only",
+  "proof_review": [
+    "With a=DR0/M,b=D^(2/3)R0/M^(1/3),c=DR0/A3, min(a+b,c)<=min(a,c)+b and min(a,c)=DR0/max(M,A3).",
+    "MA>=DH^(1/3)D^(-eta) implies each of R0/M and R0/A3 is >=H^(1/3)D^(-eta).",
+    "The exact capacity bound R0/M<=H^(1/3) then gives A3/M=(R0/M)/(R0/A3)<=D^eta.",
+    "Writing h=logH,r=sumlogAj,m=max(logA1,logA2), the first inequality gives 0<=h-3(r-m)<=3eta logD. This is exactly the prior nonnegative slack.",
+    "The original face portion B<=A remains allowed, including A=B. No energy lower bound or signed covariance conclusion was introduced."
+  ],
+  "scope": "Necessary condition for an explicit upper-bound middle monomial to remain near its old maximum; not a sufficient condition or arithmetic energy lower bound.",
+  "verification": "Exact byte-prefix comparison against production-acceptance.json and independent algebraic implication review.",
+  "not_run": [
+    "TeX build",
+    "Lean build",
+    "numerical operator-norm test",
+    "publication"
+  ],
+  "protected_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c"
+}

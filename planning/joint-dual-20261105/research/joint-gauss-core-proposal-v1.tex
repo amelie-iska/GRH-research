@@ -1,0 +1,55 @@
+% Research-only exact joint completion; no new analytic exponent.
+\subsection{A joint Gauss phase identity with the full raw mask}
+\label{jdq:core}
+For the original C--C expansion write $m=hr,n=ht$, where $h,r,t$
+are pairwise coprime squarefree ideals, and set $q=rt$, $L=hq$,
+$Q=Nq$, $\ell=NL$. Exclude $q=1$. Put
+$\theta_{r,t}=x_r\overline{x_t}$ and $\xi_q=x_q^3$.
+The internal coprimality gives local exponents $0,\pm1$, so
+$\theta_{r,t}^j$ is primitive on $q$ for $1\le j\le5$ and
+$\theta_{r,t}^3=\xi_q$ is independent of the orientation $r,t$.
+Also $\mu(hr)\mu(ht)=\mu(q)$: the M\"obius sign is constant among
+orientations of one conductor.
+
+Fix generators $\alpha$ of $h$ and $\beta$ of $q$, use
+$\alpha\beta$ for $L$, and put $\delta=1+2\omega$,
+$e_\beta(z)=\exp(2\pi i\operatorname{Tr}_{K/\mathbb Q}
+(z/(\delta\beta)))$. Let $\tau_\beta(\eta)=\sum_{z\bmod q}
+\eta(z)e_\beta(z)$ and
+$c_h(k)=\prod_{p\mid h}(Np\,\mathbf1_{k\in p}-1)$, with $c_1=1$.
+Define the full-mask row factors
+\[
+ f_j(v)=\theta_{r,t}(v)^j\mathbf1_{(v,h)=1}\quad(1\le j\le5),
+ \qquad f_6(v)=\mathbf1_{(v,L)=1},
+ \qquad
+ G_j(k)=\sum_{v\bmod L}f_j(v)e_{\alpha\beta}(kv).
+\]
+For $k_1,\ldots,k_5$ units modulo $q$, write
+$K(k)=\prod_{j=1}^5k_j^j\bmod q$. Joint completion gives exactly
+\begin{equation}\label{jdq:gauss}
+ \prod_{j=1}^6G_j(k_j)
+ =Q^2\xi_q(-\alpha)\tau_\beta(\xi_q)
+   \overline{\theta_{r,t}(K(k))}
+   \prod_{j=1}^5c_h(k_j)\,c_L(k_6).
+\end{equation}
+The left side is zero if any of the first five frequencies is nonunit
+modulo $q$. The five-power Gauss phase is orientation-independent;
+every canceled-prime zero remains in the Ramanujan factors.
+All additive-generator and unit/ray phases are explicit.
+
+Let $F(v_1,\ldots,v_6)$ retain the exact finite literal row window,
+all squarefree, ray, inter-factor, capacity and profile restrictions,
+and let $u=u_0\prod_jv_j^j$ on a fixed unit/$S$-supported class.
+Fourier inversion of this \emph{same} $F$ gives an exact joint sum over
+$h,q,k$, before per-conductor absolute values, with multiplier
+\eqref{jdq:gauss}. Distinct orientations obey the exact diagonal
+\begin{equation}\label{jdq:orientation}
+ \sum_{K\in(\mathcal O/q)^\times}
+ \overline{\theta_{r,q/r}(K)}\theta_{s,q/s}(K)
+ =\varphi(q)\mathbf1_{r=s}.
+\end{equation}
+The remaining Fourier weight is coupled to the conductor and need not
+be uniform on $K$. The full $A_3$ face and its neighborhood remain in
+$F$; literal length-one factors can undo the complete Gauss balance
+under inversion. These are exact reductions and a finite Parseval
+budget, not an improved global exponent, $BT_\sigma$, Lean or GRH result.

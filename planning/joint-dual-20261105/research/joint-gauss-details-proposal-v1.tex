@@ -1,0 +1,131 @@
+% Research-only exact identity; standard Gauss/CRT ingredients.
+\subsection{Derivation and boundary of the joint phase cancellation}
+\label{jdq:details}
+Keep the notation of Section~\ref{jdq:core}. The actual factor count is
+$r_U(m)$ and the common possibly complex profile is $W$. After fixing
+$u_0$, let $F$ be the exact finite weight on $\mathcal O^6$ containing
+all literal row restrictions. Only $v_1,\ldots,v_5$ are squarefree and
+pairwise coprime; $v_6$ is arbitrary and retains its permitted overlaps.
+No independence, factorization or smoothing of $F$ is assumed. A
+restriction depending on the column orientation must instead be
+partitioned explicitly or retained in an orientation-indexed transform;
+the common-weight Parseval step below then requires separate checking.
+
+CRT gives, for $1\le j\le5$ and $(k,q)=1$,
+\[
+ G_j(k)=\theta_{r,t}(\alpha)^j
+       \tau_\beta(\theta_{r,t}^j)
+       \overline{\theta_{r,t}(k)^j}\,c_h(k),
+ \qquad G_6(k)=c_L(k).
+\]
+Indeed the $q$-frequency is $k\alpha^{-1}$ and the $h$-frequency is
+$k\beta^{-1}$. The former contributes $\theta(\alpha)^j$;
+the latter leaves $c_h(k)$ unchanged under unit scaling. A nonunit
+$q$-frequency gives zero by primitivity. The usual exact Gauss identity
+$\tau_\beta(\eta)\tau_\beta(\bar\eta)=\eta(-1)Q$ pairs powers
+$1,5$ and $2,4$. Therefore
+\[
+ \prod_{j=1}^5\tau_\beta(\theta^j)
+ =Q^2\theta(-1)^3\tau_\beta(\theta^3)
+ =Q^2\xi_q(-1)\tau_\beta(\xi_q).
+\]
+Multiplying the five CRT factors contributes
+$\theta(\alpha)^{15}=\xi_q(\alpha)$, proving
+\eqref{jdq:gauss}. Its modulus is $Q^{5/2}$ times the displayed
+Ramanujan magnitudes. Generator changes require corresponding changes
+to the additive characters; the formulas are covariant under doing so.
+
+Define the unnormalized finite Fourier transform
+\[
+ \widehat F_L(k)=\sum_{v\in\mathcal O^6}F(v)
+             e_{\alpha\beta}\!\left(-\sum_{j=1}^6k_jv_j\right).
+\]
+Inversion of the periodization of $F$ has factor $\ell^{-6}$.
+For $t=q/r$ put
+\begin{align*}
+ a_{h,q}(r;u_0)={}&r_U(hr)r_U(ht)\nu(r)\overline{\nu(t)}
+ W(Nh\,Nr/D)\overline{W(Nh\,Nt/D)}\theta_{r,t}(u_0),\\
+ A_{h,q}(K;u_0)={}&\sum_{r\mid q}a_{h,q}(r;u_0)
+                         \overline{\theta_{r,q/r}(K)},\\
+ B_{h,q,F}(K)={}&
+ \sum_{\substack{k\bmod L,\ (k_1\cdots k_5,q)=1\\K(k)=K}}
+ \widehat F_L(k)\prod_{j=1}^5c_h(k_j)c_L(k_6).
+\end{align*}
+Set $a_{h,q}=0$ for every excluded orientation, retaining the original
+annuli, column support and actual long-long factor counts.
+The common $\nu(h)$ phase cancels since $\nu$ is unitary on good ideals.
+The normalized original C--C contribution of any chosen off-diagonal
+sector $\mathcal T$ is exactly
+\begin{equation}\label{jdq:joint}
+ \frac1D\sum_{(h,q)\in\mathcal T}
+ \mu(q)\frac{Q^2\xi_q(-\alpha)\tau_\beta(\xi_q)}{\ell^6}
+ \sum_{K\in(\mathcal O/q)^\times}B_{h,q,F}(K)A_{h,q}(K;u_0).
+\end{equation}
+Sum all original $u_0$ classes and literal blocks afterwards.
+This applies in particular to $h=1$ and to the original
+low-gcd/large-conductor sector. No signed pieces have been discarded.
+For C--$\mu$, replace the second $r_U(ht)$ by $1$ and change nothing else.
+
+If $r\ne s$, the quotient of their orientation characters has
+exponents $\pm2$ at the flipped primes, hence is a nontrivial cubic
+character. Unit-group orthogonality proves
+\eqref{jdq:orientation}, and so
+\[
+ \sum_K|A_{h,q}(K)|^2=\varphi(q)\sum_{r\mid q}|a_{h,q}(r)|^2.
+\]
+One normalized conductor term in \eqref{jdq:joint} consequently has the
+finite bound
+\begin{equation}\label{jdq:budget}
+ |E_{h,q}|\le\frac{Q^{5/2}}{D\ell^6}
+ \left(\varphi(q)\sum_{r\mid q}|a_{h,q}(r)|^2\right)^{1/2}
+ \|B_{h,q,F}\|_2.
+\end{equation}
+The product map from five unit frequencies to $K$ has every fiber of
+cardinality $\varphi(q)^4$, because $k_1$ is uniquely solvable.
+All orientations agree pointwise exactly on
+$\{K:x_p(K)^2=1\text{ for every }p\mid q\}$, of cardinality
+$\varphi(q)/3^{\omega(q)}$; the common value is $x_q(K)\in\{\pm1\}$.
+Thus neither uniform orthogonality nor five-frequency counting is an
+independence statement for the true $\widehat F_L$ weight.
+
+Centered fundamental-parallelogram representatives satisfy
+$|k_j|\le|\alpha\beta|=\sqrt\ell$. This gives exact conductor-sized
+finite completion. For any frequency subset $\Omega$, restrict $B$ to
+$B_\Omega$. The error in one conductor term is at most the right side
+of \eqref{jdq:budget} with $\|B-B_\Omega\|_2$ in place of $\|B\|_2$.
+There is no proved small tail below that height: the smooth column
+profile does not remove the original sharp row, ray or squarefree masks.
+
+No $A_3$ assumption entered. In particular the full face
+$A_1=A_2=A$, $AA_3=H^{1/3}$, $A_4=A_5=A_6=1$ and its neighborhood
+are retained in $F$. On the pure $A_3$ endpoint where the other literal
+factors equal $1$, inverse summation in their frequencies leaves
+\[
+ \left(\sum_{r\mid q}a_{h,q}(r)\right)
+ \sum_vF_3(v)\xi_q(v)\mathbf1_{(v,h)=1}.
+\]
+There is no orientation cancellation in that row character.
+On the general face keep $\theta(v_1)\theta(v_2)^2\xi_q(v_3)$
+and all coupled masks. If only powers $1,2,3$ are completed after the
+others are fixed, their Gauss product is
+\[
+ \tau(\theta)\tau(\theta^2)\tau(\theta^3)
+ =\xi_q(-1)QJ(\theta,\theta^2),\qquad |J(\theta,\theta^2)|=\sqrt Q,
+\]
+whose phase can depend on orientation. Complete five-power phase
+balance therefore does not remove every actual near-face phase.
+The remaining task is a quantitative signed bound for the actual
+$h,q,K$ sum, especially $h=1$, with $Q\asymp D^2/(Nh)^2$.
+No estimate of $B$ sufficient for a new global exponent is supplied.
+The old small-conductor/high-gcd sector is unchanged.
+
+An exact standard-library checker under
+\path{planning/joint-dual-20261105/research/} passes $991$ assertions:
+local split/inert Gauss products, all $546$ complete raw transforms for
+$q=(3+\omega)$, $h=(4+\omega)$, $L=(11+6\omega)$, twelve mixed
+frequency products, the four orientations at conductor norm $91$,
+orientation Parseval, the coherent cubic diagonal and $7776$ product
+fibers. The receipt is
+\path{outputs/checks/2026-11-05-joint-dual/research/joint-gauss-check-v1.json}.
+These finite diagnostics do not prove an incomplete-moment exponent,
+$BT_\sigma$, a new Lean theorem, zero location or GRH.

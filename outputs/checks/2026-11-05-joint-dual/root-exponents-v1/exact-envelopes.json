@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "assertions": 3167,
+  "grid_denominator": 24,
+  "capacity_units": 18,
+  "feasible_states": 996,
+  "strictly_refined_states": 108,
+  "near_saturation_states": 55,
+  "remaining_worst_states": [
+    [
+      3,
+      3,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      4,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      5,
+      5,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      6,
+      6,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "face_checkpoints": [
+    {
+      "a": "0",
+      "b": "1/4",
+      "old": "5/4",
+      "quadratic": "1",
+      "combined": "1"
+    },
+    {
+      "a": "499/4000",
+      "b": "501/4000",
+      "old": "5/4",
+      "quadratic": "2499/2000",
+      "combined": "2499/2000"
+    },
+    {
+      "a": "1/8",
+      "b": "1/8",
+      "old": "5/4",
+      "quadratic": "5/4",
+      "combined": "5/4"
+    },
+    {
+      "a": "501/4000",
+      "b": "499/4000",
+      "old": "5/4",
+      "quadratic": "2501/2000",
+      "combined": "5/4"
+    },
+    {
+      "a": "1/4",
+      "b": "0",
+      "old": "5/4",
+      "quadratic": "3/2",
+      "combined": "5/4"
+    }
+  ],
+  "checker_sha256": "380a572586a6a964e6138e0cac8d3b80a1d28f6aab8f12011d2e8ef068617d9e",
+  "scope": "Exact exponents/slack/masks bookkeeping only; external GL theorem and arithmetic phase bounds are separate."
+}
