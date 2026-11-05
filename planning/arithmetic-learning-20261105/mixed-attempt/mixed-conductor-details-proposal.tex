@@ -1,0 +1,226 @@
+% Proof proposal; full raw zeros and arbitrary fixed coefficients retained.
+\section{Proof of the ordinary-conductor refinement}\label{mcs:details}
+\subsection{Primitive Gauss sums at every conductor}
+Let $\mathcal O=\mathbb Z[\omega]$, $\delta=1+2\omega$, and choose one
+generator $f$ of each nonzero ideal $\mathfrak f$. Write
+$e_f(x)=\exp(2\pi i\operatorname{Tr}(x/(\delta f)))$,
+$U(\mathfrak f)=(\mathcal O/\mathfrak f)^\times$, and
+$\varphi(\mathfrak f)=|U(\mathfrak f)|$.
+This additive character is primitive, since the different is $(\delta)$.
+For a primitive multiplicative character $\rho$ modulo $\mathfrak f$,
+extended by zero at nonunits, set
+$\tau_f(\rho)=\sum_{x\bmod\mathfrak f}\rho(x)e_f(x)$.
+We verify the full-modulus identity
+\begin{equation}\label{mcs:gauss}
+ |\tau_f(\rho)|^2=N\mathfrak f,\qquad
+ \sum_{x\bmod\mathfrak f}\rho(x)e_f(zx)
+       =\overline{\rho(z)}\tau_f(\rho)\quad(z\in\mathcal O).
+\end{equation}
+No squarefree-conductor hypothesis is used, so this includes wild
+prime powers in the fixed $S$-part.
+
+The Ramanujan sum is
+\[
+ c_{\mathfrak f}(y)=\sum_{x\in U(\mathfrak f)}e_f(xy)
+   =\sum_{\mathfrak d\mid(\mathfrak f,(y))}
+                   N\mathfrak d\,\mu(\mathfrak f/\mathfrak d).
+\]
+Indeed insert $\mathbf1_{(x,\mathfrak f)=1}
+=\sum_{\mathfrak b\mid(x,\mathfrak f)}\mu(\mathfrak b)$;
+the complete additive sum with $\mathfrak b\mid x$ is
+$N(\mathfrak f/\mathfrak b)$ when
+$\mathfrak f/\mathfrak b\mid(y)$ and zero otherwise.
+Changing variables $x=ay$ in the Gauss square now gives
+\begin{align*}
+ |\tau_f(\rho)|^2
+ &=\sum_{a\in U(\mathfrak f)}\rho(a)c_{\mathfrak f}(a-1)\\
+ &=\sum_{\mathfrak d\mid\mathfrak f}N\mathfrak d\,
+       \mu(\mathfrak f/\mathfrak d)
+       \sum_{\substack{a\in U(\mathfrak f)\\a\equiv1\pmod{\mathfrak d}}}
+                  \rho(a)=N\mathfrak f.
+\end{align*}
+For every proper $\mathfrak d\mid\mathfrak f$, the reduction
+$U(\mathfrak f)\to U(\mathfrak d)$ is surjective by local lifting and CRT.
+Primitivity says $\rho$ is nontrivial on its kernel, so that inner sum
+vanishes. For $\mathfrak d=\mathfrak f$ it equals one.
+For unit $z$, substitution proves the second identity in~\eqref{mcs:gauss}.
+For all frequencies together, finite additive Parseval gives
+\[
+ \sum_{z\bmod\mathfrak f}
+   \left|\sum_x\rho(x)e_f(zx)\right|^2
+       =N\mathfrak f\,\varphi(\mathfrak f).
+\]
+The unit frequencies already exhaust this quantity by the first identity;
+every nonunit-frequency sum is therefore zero. This proves the asserted
+zero extension. For $\mathfrak f=\mathcal O$ there is one residue class
+and one character; take $\tau_1=1$ and the single frequency zero.
+
+\subsection{The classical ordinary sieve in these lattice conventions}
+For $D,Q\ge1$, coefficients $z_\alpha$ supported on any subset of
+$\{\alpha\in\mathcal O:|\alpha|^2\le C_0D\}$ satisfy
+\begin{equation}\label{mcs:ordinary}
+ \sum_{N\mathfrak f\le Q}\ \sum_{\rho\ \mathrm{primitive}\bmod\mathfrak f}
+ \left|\sum_\alpha z_\alpha\rho(\alpha)\right|^2
+ \ll_{\mathcal O,C_0}(D+Q^2)\sum_\alpha|z_\alpha|^2.
+\end{equation}
+Here the primitive characters may be restricted to the unit-trivial
+subfamily. We give the standard proof to make the conductor comparison
+explicit.
+
+First the reduced fractions $x/f$, with $x\in U(\mathfrak f)$ and
+$N\mathfrak f\le Q$, are distinct modulo $\mathcal O$.
+Their denominator ideal is intrinsic:
+$\{a\in\mathcal O:a(x/f)\in\mathcal O\}=\mathfrak f$.
+Thus equality modulo $\mathcal O$ forces the same denominator ideal
+and residue numerator. For different fractions and every $k\in\mathcal O$,
+\[
+ \left|\frac{x}{f}-\frac{y}{g}-k\right|
+   =\frac{|xg-yf-kfg|}{|fg|}\ge\frac1Q,
+\]
+because the numerator is a nonzero Eisenstein integer and
+$|fg|=(N\mathfrak f N\mathfrak g)^{1/2}\le Q$.
+The fixed codifferent factor $1/\delta$ changes only the lattice constants.
+The modulus-one frequency zero obeys the same separation from all others.
+
+For completeness, a $\rho_0$-separated set $t_r$ in a fixed
+two-dimensional torus obeys the additive bound
+\begin{equation}\label{mcs:additive}
+ \sum_r\left|\sum_{|\alpha|\ll\sqrt D}
+        z_\alpha\exp(2\pi i\operatorname{Tr}(\alpha t_r))\right|^2
+       \ll(D+\rho_0^{-2})\sum_\alpha|z_\alpha|^2.
+\end{equation}
+Use fixed linear coordinates to write the lattice as $\mathbb Z^2$ and
+its additive pairing as $e(n\cdot t)$. The support lies in
+$|n_i|\le T$ with $T\asymp\max(1,\sqrt D)$.
+To prove the dual inequality, majorize this box indicator by
+$e^{2\pi}\exp(-\pi\|n\|^2/T^2)$, expand the square, and apply Gaussian
+Poisson summation. Up to fixed constants the resulting kernel is
+\[
+ T^2\sum_{\ell\in\mathbb Z^2}
+       \exp(-cT^2\|t_r-t_s+\ell\|^2).
+\]
+Take $\rho_0$ at most a fixed torus constant. The lifted points are
+$c'\rho_0$-separated, so disjoint disks bound their count in a disk
+of radius $L$ by $O(1+(L/\rho_0)^2)$.
+Gaussian annular summation bounds every absolute kernel row sum by
+$O(T^2+\rho_0^{-2})$. Schur's inequality and finite-dimensional duality
+prove~\eqref{mcs:additive}, with constants independent of the number
+of frequencies.
+
+Put $\mathcal S(x/f)=\sum_\alpha z_\alpha e_f(\alpha x)$.
+By~\eqref{mcs:gauss},
+\[
+ \rho(\alpha)=\tau_f(\overline\rho)^{-1}
+       \sum_{x\in U(\mathfrak f)}\overline{\rho(x)}e_f(\alpha x).
+\]
+After taking squared absolute values, enlarging the primitive-character
+sum to all characters of $U(\mathfrak f)$ and using orthogonality yields
+\[
+ \sum_{\rho\ \mathrm{primitive}\bmod\mathfrak f}
+       \left|\sum_\alpha z_\alpha\rho(\alpha)\right|^2
+ \le\frac{\varphi(\mathfrak f)}{N\mathfrak f}
+       \sum_{x\in U(\mathfrak f)}|\mathcal S(x/f)|^2
+ \le\sum_{x\in U(\mathfrak f)}|\mathcal S(x/f)|^2.
+\]
+Apply~\eqref{mcs:additive} with $\rho_0\gg Q^{-1}$ to prove
+\eqref{mcs:ordinary}.
+
+Finally $\mathcal O$ has class number one. Choose one generator
+$\alpha_m$ of each ideal column, with $|\alpha_m|^2=Nm$; these are an
+injective subset of the lattice disk. A primitive trivial-infinity-type
+Hecke character is a unit-trivial primitive residue character on
+$\mathcal O/\mathfrak f$, and its ideal value equals its value on
+$\alpha_m$. Descent of the residue character to a proper divisor would
+preserve unit-triviality and contradict primitive Hecke conductor.
+Thus~\eqref{mcs:ordinary} applies to arbitrary ideal coefficients of
+norm at most $2D$, including squarefree ideals of nonsquarefree rational norm.
+
+\subsection{Raw zeros, tuple multiplicity and block transfer}
+Freeze $r_6$ and the literal unit/$S$-factor, putting
+\[
+ c_m=b_m\chi_m(u_0)\mathbf1_{(m,r_6)=1},\qquad
+       \sum_m|c_m|^2\le\sum_m|b_m|^2.
+\]
+This is independent of every first-five variable. In particular the
+arbitrary overlapping sixth-power factor is not replaced by one.
+Let $v=\prod_{j=1}^5r_j^j$ denote the chosen literal product.
+Every outside-$S$ valuation is between one and five.
+BGL, \href{https://arxiv.org/pdf/1112.1650v1}{arXiv:1112.1650v1},
+Lemma~2.1, together with the established finite $S$-unit comparison
+in~\eqref{wc:literal-reciprocity}, gives its primitive literal Kummer
+character $\kappa_v$ of trivial infinity type, with
+\[
+ q=r_1\cdots r_5\mid\operatorname{cond}(\kappa_v)\mid\mathfrak c_Sq,
+ \qquad \kappa_v(m)=\chi_m(v)\quad((m,S)=1).
+\]
+The equality includes collisions with $q$: both sides are zero.
+The fixed $\mathfrak c_S$ includes all wild conductor types and literal
+comparison twists. No row-dependent phase enters the coefficients.
+
+A fixed primitive character determines its outside-$S$ conductor $q$.
+Each prime of $q$ has at most five assignments to the pairwise-coprime
+$r_1,\ldots,r_5$, so tuple multiplicity is at most
+$5^{\omega(q)}\ll_\eta(Nq)^\eta$.
+All conductors in the dyadic block have norm at most $C_SQ$.
+Enlarge the positive row sum, apply~\eqref{mcs:ordinary}, and count
+$O(A_6)$ possibilities for the frozen arbitrary $r_6$.
+This proves~\eqref{mcs:block-bound}; the actual capacity, squarefree,
+ray and inter-factor restrictions only shrink the positive sum.
+Equivalently $\mathcal E_A(b)\le\Lambda_A\sum_m|b_m|^2$;
+there is no coefficient norm factor in the definition of $\Lambda_A$.
+
+\subsection{Uniform coefficient and principal-residue assembly}
+The other block estimate is exactly the accepted powered-BGL input
+\eqref{wc:block}, whose squarefree powers are justified in BGL
+Section~3.2. The capacity comparisons and elementary minimum in
+Section~\ref{mcs:core} give
+\[
+ \Lambda_A\ll(HD)^\varepsilon
+          \{H+DH^{1/6}+(DH)^{2/3}\}.
+\]
+Sum logarithmically many blocks with smaller internal exponents.
+An $S$-supported literal factor $\mathfrak b$ reduces capacity to
+$H/N\mathfrak b$; the required sums over $\mathfrak b$ converge
+at powers $1$, $1/6$, $2/3$. Literal units have multiplicity at most six.
+This proves the raw bound with arbitrary fixed $b_m$.
+
+For the actual coefficients use~\eqref{wc:l2}:
+$|A_U(m)|\le3^{\omega(m)}\ll_\eta(Nm)^\eta$ gives
+\[
+ b_m=D^{-1/2}A_U(m)\nu(m)W(Nm/D),\qquad
+       \sum_m|b_m|^2\ll_\eta\|W\|_\infty^2D^\eta,
+\]
+uniformly for $U\ge1$, $U^2\le D$. The common $W$ is not optimized
+separately for different rows. If the primitive $\psi_u$ is principal,
+$\nu$ is unramified outside $S$, so tame Kummer inertia forces every
+outside-$S$ valuation of $u$ to be divisible by six. Ideal counting and
+the convergent $S$-supported sum at power $1/6$ give
+$O_{\nu,S}(H^{1/6})$ such literal rows.
+In the exact formula~\eqref{wc:principal}, $|\rho_T|\ll_K1$,
+$|\widehat W(1)|\le\|W\|_\infty$, and
+\[
+ \sum_d\frac{|\beta_U(d)|}{Nd}
+ \le\left(\sum_{Na\le U}\frac1{Na}\right)^2
+ \ll\log^2(2U).
+\]
+Thus $|P_u|\ll\sqrt D\|W\|_\infty\log^2(2U)$ on principal rows,
+and
+\[
+ \sum_{0<Nu\le H}|P_u|^2
+       \ll DH^{1/6}\|W\|_\infty^2\log^4(2U).
+\]
+This fits the new envelope. The exact identity $E_u=I_u-P_u$ and
+$|E_u|^2\le2|I_u|^2+2|P_u|^2$, with smaller internal exponents,
+prove~\eqref{mcs:uniform}. No cutoff limit or profile supremum occurs.
+
+The ordinary comparison is an application refinement. A direct BGL
+radical relabelling would additionally require reciprocity of its mixed
+family, not just its conductor count: for pairwise-coprime $a,b,a',b'$,
+the quotient after the original fixed ray phases is
+$\vartheta_b(a')/\vartheta_a(b')$, which varies outside $S$.
+GL, \href{https://arxiv.org/pdf/1112.1642v2}{arXiv:1112.1642v2},
+Definition~1(2), is therefore not supplied by that shortcut.
+This does not rule out a different mixed-family theorem; it is simply
+unneeded for the proved weaker ordinary comparison.
+The remaining exponent gap and every independent signed, spectral,
+formal and GRH obligation stated in Section~\ref{mcs:core} remain open.

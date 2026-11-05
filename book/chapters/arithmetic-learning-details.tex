@@ -1,0 +1,116 @@
+% Generated shared reviewed material.
+\section{Finite phase features, gradients and exact verification}\label{arl:details}
+For each block let $G_q=(\mathbb Z/6\mathbb Z)^{\omega(q)}$.
+A literal admissible row determines local phases $e_p$ at every prime of $q$;
+rows with a $q$-collision or a common-prime collision with $h$ are deleted
+before forming the exact sparse histogram $n(e)$. Orientation $r$ has
+\[
+ \theta_r(e)=\zeta_6^{\sum_{p\mid q}s_p e_p},\qquad
+ s_p=1\ (p\mid r),\quad s_p=-1\ (p\mid t),\qquad
+ \Gamma_r=\sum_e n(e)\theta_r(e).
+\]
+Different active orientations have distinct exponent vectors modulo $6$,
+so their characters are orthonormal for the uniform measure on $G_q$.
+The model and target projection are
+\[
+ F_g(e)=\sum_{r\in J_q}g_r\overline{\theta_r(e)},\qquad
+ F_\Gamma(e)=\sum_{r\in J_q}\Gamma_r\overline{\theta_r(e)}.
+\]
+Indeed $F_\Gamma$ is the orthogonal projection of $|G_q|n$ onto this
+character subspace, and $\mathbb E_{G_q}F_g\theta_r=g_r$.
+The positive spectral metric assigns weight $\lambda_r$ to this orthonormal
+basis. Its squared error is exactly $\sum_r\lambda_r|g_r-\Gamma_r|^2$.
+Thus the run evaluates the full finite feature-projection loss by Parseval;
+it does not claim to have executed a sampled or stochastic training loss.
+This projection need not be a nonnegative density. A Hermitian readout matrix
+need not be positive semidefinite.
+
+\paragraph{Gradient and contraction.}
+Use $\zeta_6$ coordinates $g=a+b\zeta_6$, so
+$|g|^2=a^2+ab+b^2$ and
+$M=\left(\begin{smallmatrix}1&1/2\\1/2&1\end{smallmatrix}\right)$.
+For the objective $L/2$, the ordinary real-coordinate gradient in block $i$
+is $\lambda_i M(x_i-x_i^*)$.
+In the block metric $\lambda_iM$, the gradient is $x_i-x_i^*$.
+A metric step of size $1/2$ therefore halves every complex error and quarters
+$L$. Conjugate initial coordinates and this step preserve the Hermitian
+reverse orientations. The ordinary trajectory treats all ordered coordinates
+independently; asymmetric weights need not preserve that symmetry.
+For ordinary steps $\eta=2/(3\lambda_{\max})$, the Hessian eigenvalues
+lie between $\lambda_{\min}/2$ and $3\lambda_{\max}/2$, whence
+\[
+ L_{t+1}\le\left(1-\frac{\lambda_{\min}}{3\lambda_{\max}}\right)^2L_t.
+\]
+This last bound is conservative; the saved $50$ ordinary steps per case are
+not asserted to attain the requested tolerance.
+
+\begin{proof}[Proof of Proposition~\ref{arl:certificate}]
+Subtract~\eqref{arl:observable} with the same exact diagonal. Weighted
+Cauchy--Schwarz, applied only to the error, gives
+\[
+ \left|\sum_i\mu(q_i)d_i^X(g_i-\Gamma_i)\right|^2
+ \le\left(\sum_i\frac{|d_i^X|^2}{\lambda_i}\right)
+     \left(\sum_i\lambda_i|g_i-\Gamma_i|^2\right).
+\]
+Here $|\mu(q_i)|=1$ because $q_i$ is squarefree; the predicted sum itself
+keeps its signs and phases. Each summand in the second factor is nonnegative,
+which proves the coordinate bound. The exact affine update gives
+$g^{(t)}-\Gamma=2^{-t}(g^{(0)}-\Gamma)$, proving contraction.
+For finite rational positive $\lambda_i,K_X,L_0$ and $\tau>0$, some integer
+$t$ makes all three bounds at most $\tau^2$. The zero-error case stops
+immediately. No varying-family constants enter this finite assertion.
+\end{proof}
+
+\paragraph{The activated original family.}
+Let
+\[
+ \phi(t)=\begin{cases}\exp(1-1/(1-t^2)),&|t|<1,\\0,&|t|\ge1,\end{cases}
+ \qquad W(y)=\sum_{N\in\{7507,7519,8281,10507\}}
+                     w_N\phi(4(6000y-N)).
+\]
+These disjoint bumps are supported in $(1,2)$ and $\phi(0)=1$.
+For the real case $w_N=1$; for the complex case
+$w_N=1+\zeta_6(4N-30000)/6000$.
+At integer norms $W(n/6000)=w_n$ at the four activated norms and is zero
+elsewhere. Hence all active original squarefree columns are present, rather
+than an undeclared column submatrix. No exponential evaluation is needed
+at these exact nodes. The profile is a fixed finite demonstration and does
+not establish a profile-uniform analytic estimate.
+The counts $r_U$ are $0,2,4,2$ at the four norms.
+The guaranteed nonprincipal subset removes precisely those literal rows whose
+outside-$S$ norm is $1$; no classification of the omitted $114$ rows as a
+whole is asserted. Every nonunit outside-$S$ factor has a prime exponent
+from $1$ to $3$, since its prime norm is at least $7$ and $7^4>625$;
+its nonzero residue modulo $6$ gives a nontrivial local character.
+All six units and all original $S$-power rows belong to
+the separately saved full literal case.
+
+The seed $20261105$ selects deterministic rational conjugate initial
+coordinates by SHA256 of the ordered column identifiers. There is no random
+sampling. Exact $\mathbb Q(\zeta_6)$ arithmetic stores every metric and
+ordinary state. Training accepts only when both observable certificates and
+the uniform-coordinate certificate are at most $\tau^2$, preventing a
+scalar cancellation from masquerading as accurate correlation learning.
+The real full-row targets are $E_{CC}=2393/125$ and $E_{C\mu}=431/50$;
+the guaranteed-subset targets are $4293/250$ and $771/100$.
+Complex-profile targets and the complete phase histograms are saved alongside.
+Each case has $64$ nonzero negative-$\mu(q)$ C--C target orientations.
+Replacing all signs by plus is an explicit failing control, not an estimator.
+
+\paragraph{Reproduction and scope.} The complete run is reproducible.
+
+The source is \texttt{examples/}\allowbreak\texttt{arithmetic\_learning/}\allowbreak\texttt{learn.py}; its README
+states the exact smooth profile, CLI, resource guard and loss convention.
+The accepted immutable output is
+\texttt{outputs/experiments/}\allowbreak\texttt{2026-11-05-arithmetic-learning-v2/}.
+All source/helper hashes, exact input bytes and artifact hashes are bound
+before and after execution and checked on replay. Existing outputs,
+nonpositive or binary-float tolerances, and stale source/input/case bytes
+are refused. The preserved v1 logging failure is not the accepted run.
+The focused verifier independently reconstructs $31668$ local symbols and
+$450$ Gram targets, then checks the full saved metric trajectory.
+Independent mathematical review and exact code checks are recorded separately;
+finite arithmetic checks are not a proof of an asymptotic signed estimate.
+Full exact training labels are supervision, so this is a certified finite
+reference architecture, without an efficiency, generalization, PSD,
+zero-location or GRH claim. Analytic and categorical Lean remain unfinished.

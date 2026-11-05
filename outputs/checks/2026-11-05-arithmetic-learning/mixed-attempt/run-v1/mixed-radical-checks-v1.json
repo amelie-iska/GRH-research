@@ -1,0 +1,97 @@
+{
+  "passed": true,
+  "assertions": 189819,
+  "categories": {
+    "capacity_envelope": 157800,
+    "face": 3003,
+    "gauss": 80,
+    "character_domination": 28,
+    "reduced_fraction": 28890,
+    "source_integrity": 18
+  },
+  "feasible_capacity_states": 19725,
+  "grid_denominator": 48,
+  "capacity_units": 36,
+  "worst_envelope_states": [
+    [
+      "5/12",
+      "1/6",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "3/4",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "old_worst_exponent": "5/4",
+  "new_worst_exponent": "7/6",
+  "old_face_new_exponent": "1",
+  "new_target_gap_exponent": "5/12",
+  "primitive_gauss_fields": [
+    {
+      "norm": 7,
+      "primitive_root": 3,
+      "tested_powers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "norm": 13,
+      "primitive_root": 2,
+      "tested_powers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "norm": 19,
+      "primitive_root": 2,
+      "tested_powers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "norm": 31,
+      "primitive_root": 3,
+      "tested_powers": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "reduced_fractions": 108,
+  "seed_parameters": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "checker_sha256": "1dc8b739a89aa5ae7523afe8117adc4fae16fe112e9ae63aeff14f71d89d8f92",
+  "source_head": "dba37ffaa78c82ade1385f7ee56c907ab0c67d3a",
+  "protected_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+  "scope": "Exact finite capacity/envelope, primitive-Gauss, character-domination and fraction-bookkeeping checks only. Infinite ordinary large-sieve proof is prose; no Lean/GRH/generalization claim."
+}

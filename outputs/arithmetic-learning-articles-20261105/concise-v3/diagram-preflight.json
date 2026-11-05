@@ -1,0 +1,13 @@
+{
+  "matched": [
+    {
+      "source_sha256": "3667c0b10605da38015eb0f87a64df21254f7ab7002b67dae645ab113048e0a6",
+      "source": "\\begin{tikzpicture}[scale=.9]\n \\fill[cyan!9] (0,0) circle (1.4);\n \\draw[thick] (0,0) circle (1.4);\n \\foreach \\a in {0,30,...,330}{\\draw[cyan!65!black] (0,0)--(\\a:1.4);}\n \\fill (0,0) circle (.06);\n \\node[align=center,text width=4cm,font=\\small] at (0,-1.95) {disk\\\\coherent circle of spokes};\n \\begin{scope}[xshift=6cm]\n  \\fill[cyan!9,even odd rule] (0,0) circle (1.4) (0,0) circle (.48);\n  \\draw[thick] (0,0) circle (1.4);\n  \\draw[dashed,thick] (0,0) circle (.48);\n  \\foreach \\a in {0,30,...,330}{\\draw[cyan!65!black] (\\a:.48)--(\\a:1.4);}\n  \\draw[->,thick] (20:.75) arc (20:315:.75);\n  \\node[align=center,text width=4cm,font=\\small] at (0,-1.95) {punctured disk\\\\peripheral loop};\n \\end{scope}\n\\end{tikzpicture}",
+      "pdf_sha256": "fd047b66c910dd8b19a98fcab50f8e5bbe3f5a9d097b3eb07d6de6eba04e0572",
+      "accepted_svg_sha256": "7fa40fb4ec0b1621ba6556e34b22b173a22dc4142bf87eb367974d4c6f6c0455",
+      "method": "exact-source accepted vector SVG via existing librsvg/cairo",
+      "trim": "5pt 5pt 5pt 5pt"
+    }
+  ],
+  "unknown": []
+}

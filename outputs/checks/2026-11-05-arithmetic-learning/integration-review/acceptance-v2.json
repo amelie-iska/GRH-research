@@ -1,0 +1,158 @@
+{
+  "verdict": "PASS",
+  "scope": "Five-document prose-only delta and four source-bound rebuilt editions over acceptance-v1; no math/code reruns",
+  "prior_acceptance": {
+    "path": "outputs/checks/2026-11-05-arithmetic-learning/integration-review/acceptance-v1.json",
+    "bytes": 6801,
+    "sha256": "9ce4bfc8742ee5257994ccdbb57f0d6c387f1fd1cb5b6a859db39734d5d1eae8"
+  },
+  "review": {
+    "path": "planning/arithmetic-learning-20261105/integration-review/REVIEW-v2.md",
+    "bytes": 2478,
+    "sha256": "6476d3a0a24901deb711185d1672d7cff8985ba48a3a53c655418f44f728a417"
+  },
+  "prose_corrections_record": {
+    "path": "outputs/checks/2026-11-05-arithmetic-learning/final-diff-fixes/corrections.json",
+    "bytes": 761,
+    "sha256": "8a141358a92ffc6f826edb1f9e24a7122f682b751b26b26e6e8ec16f6f6d962c"
+  },
+  "five_prose_files": [
+    {
+      "path": "web/index.html",
+      "bytes": 14278,
+      "sha256": "817b1f48ec394e9c412f43400c625e94b8af6683a49af49d5dd0d7ba4e984bfd",
+      "previous_sha256": "693feeccd0304c4aeb4c0b2a7cb18a143902a7a8e897ef88a7242e5d1da5e9aa",
+      "added_URLs": [
+        "/book/main.html#mcs:core",
+        "/book/main.html#arl:core"
+      ],
+      "removed_URLs": [
+        "/book/main.html#sb:core"
+      ],
+      "scripts_unchanged": true,
+      "new_anchors_resolve": true
+    },
+    {
+      "path": "papers/resolutions-concise.tex",
+      "bytes": 3156,
+      "sha256": "b422015cc3106f34305ee3e4f613f659341f8f246c56b4c52b8cb47510ce21a5",
+      "previous_sha256": "b035b164293bbf69f2cb18ee0f1e8afabc5d455f1944001f066882e86b805e8c",
+      "abstract_only": true
+    },
+    {
+      "path": "papers/resolutions-extended.tex",
+      "bytes": 4487,
+      "sha256": "d5ebd0399eda6c67cf65262f0c1d1a14320388c7d576791626571b29dde22981",
+      "previous_sha256": "19e4a5374debc73b42ec9c3077ba2b015727c7d4c61ccab6ee95cc83715164fe",
+      "abstract_only": true
+    },
+    {
+      "path": "papers/validated-oracle-concise.tex",
+      "bytes": 2359,
+      "sha256": "b4e264f8c6e973d308d3ea19903534c5e8ae0828ee2bc588906114927b49a592",
+      "previous_sha256": "b250c98a4e80a60b4653c0aa93e1c6e1fd4bd6000e126f3986cf5d8f8845fab6",
+      "abstract_only": true
+    },
+    {
+      "path": "papers/validated-oracle-extended.tex",
+      "bytes": 2814,
+      "sha256": "afeb4f37bee7cc96ffa454408784e2219b05e29430a960a06de859f81a58df30",
+      "previous_sha256": "d590cafc5e7d67fc5962a35a6ce5ea99f095175651af9bf7127a9fb1dc52532d",
+      "abstract_only": true
+    }
+  ],
+  "new_build_records": [
+    {
+      "path": "outputs/arithmetic-learning-articles-20261105/concise-v3/build-record.json",
+      "bytes": 6723,
+      "sha256": "0156f1d31645b1ac36e56f52998e1d035730ef23d779af4597c3a56dcb278ff8",
+      "pages": 59,
+      "pdf_sha256": "fcbbcdcc036ae947860fef4b099dc12e655fe5a761954a5aba8ca3cbf4a29444",
+      "source_files_checked": 42
+    },
+    {
+      "path": "outputs/arithmetic-learning-articles-20261105/extended-v5/build-record.json",
+      "bytes": 14844,
+      "sha256": "98866ea7bbd5d1b2c5e6a70535e9e54a68bcff988b9dc645f60cf5f691751c47",
+      "pages": 157,
+      "pdf_sha256": "2d144f969841e35385dc0ee2672c128318a40f8c7fa5c5426e9ea1f0ac8b0214",
+      "source_files_checked": 84
+    },
+    {
+      "path": "outputs/arithmetic-learning-articles-20261105/notes-concise-v3/build-record.json",
+      "bytes": 1938,
+      "sha256": "bbdeee5c8ddd3c34c15cfcd167bf1b996cedf626f41a28e0de4f707d4d09677c",
+      "pages": 17,
+      "pdf_sha256": "107f20f713a22e6f7413485cec25f3c808010e033543598fd2f06d014e1c2c2c",
+      "source_files_checked": 16
+    },
+    {
+      "path": "outputs/arithmetic-learning-articles-20261105/notes-extended-v4/build-record.json",
+      "bytes": 3486,
+      "sha256": "4d1c30682c1824e0e236a9809d69a59399efac56cc6143fd86c409c5582f2f43",
+      "pages": 48,
+      "pdf_sha256": "d330410b18eb53693c50a9341459471192a5aefd1ead970c9996ab474cbcbd0f",
+      "source_files_checked": 30
+    }
+  ],
+  "complete_promotion_v2": {
+    "path": "outputs/checks/2026-11-05-arithmetic-learning/final-diff-fixes/promotion/promotion-v2.json",
+    "bytes": 8300,
+    "sha256": "9d0bd4ad6da41c2f18d565642cc8e056266a3d47252782dba9cb19601ca45ba6"
+  },
+  "governing_current_candidate_v2": {
+    "path": "outputs/checks/2026-11-05-arithmetic-learning/root/current-candidate-v2.json",
+    "bytes": 3136,
+    "sha256": "0c630b2d2f44cd09468ce440189a20315515635406e415968891fb31f8dc600e"
+  },
+  "root_integrity_v2": {
+    "path": "outputs/checks/2026-11-05-arithmetic-learning/root/project-verification-v2.json",
+    "bytes": 655,
+    "sha256": "a3625fcbf0b45a792e91fb8cdf370a1025e52141031cb8eaeb7e73d8fb7ae366"
+  },
+  "current_root_metadata": {
+    "README.md": {
+      "path": "README.md",
+      "bytes": 55074,
+      "sha256": "3338c6ba147f27b62f80ccdf92f11c773603fccb8010075c3470e5bb7a49cb20"
+    },
+    "research/mixed-conductor-and-learning.md": {
+      "path": "research/mixed-conductor-and-learning.md",
+      "bytes": 5398,
+      "sha256": "2da121a627f0c6096750e3e25f744e6e135716de2839377edadaafd7880d8f4d"
+    },
+    "book/VERIFICATION.md": {
+      "path": "book/VERIFICATION.md",
+      "bytes": 47409,
+      "sha256": "3ba2d851ec4ad6d6e43974d9237ed514fd89bdbf45d3186667cfce225b3c005d"
+    },
+    "planning/CONTINUATION.md": {
+      "path": "planning/CONTINUATION.md",
+      "bytes": 112697,
+      "sha256": "e2f9eb20e034bb4dd8c2e00b637b2203bec2129c6634de944647092683ad05ab"
+    },
+    "planning/OPEN_OBLIGATIONS.md": {
+      "path": "planning/OPEN_OBLIGATIONS.md",
+      "bytes": 57435,
+      "sha256": "55e08f17521b1599ceabdbeaa07fc7292947c39af4ed6000acff4caecc986513"
+    },
+    "planning/PROGRESS.md": {
+      "path": "planning/PROGRESS.md",
+      "bytes": 148566,
+      "sha256": "10e37a33f0358c28632a69be0f4f15ea235c96121e599b42aa9de1c9baf8da6b"
+    },
+    "web/verification.html": {
+      "path": "web/verification.html",
+      "bytes": 47950,
+      "sha256": "b1692de8e3e8f9be42b7e6999959e49200d0ea214e556a944eaa86bd54eb3d30"
+    }
+  },
+  "current_targets_verified": 18,
+  "changed_article_PDF_log_targets": 8,
+  "unchanged_book_native_math_fragments_frozen_learner_UI": true,
+  "v1_receipts_preserved": true,
+  "protected_checkout_and_five_prior_release_indices_preserved": true,
+  "blocking_findings": [],
+  "no_browser_production_or_index_writes_by_reviewer": true,
+  "publication_is_separate": true
+}

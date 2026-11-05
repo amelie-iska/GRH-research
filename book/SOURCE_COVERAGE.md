@@ -438,3 +438,66 @@ No new analytic/category Lean or complete GRH scope is supplied.
 New quadratic-pivot-{core,details}.tex and joint-gauss-{core,details}.tex extend chapter40 and all paired article/note editions. They preserve original sextic symbols, all common-prime zeros, only first-five squarefree/pairwise restrictions, arbitrary overlapping sixth factor, original coefficients and full capacity. GL arXiv:1112.1642v2 Cor1.2 is the source-pinned external sieve; joint Gauss/CRT/Parseval algebra is derived explicitly. Its unestimated signed weight and unchanged worst global exponent are stated.
 
 Candidate255-page book has40chapters/7065MathML, all6890old mathematical subtrees unchanged,13unique embedded labs/19source-matched SVGs and both original source volumes. The distinct new standalone exponent inspector is linked at its proof. No new analytic/category Lean or GRH scope is settled.
+
+## Ordinary conductor refinement and finite arithmetic learning — 5 November 2026
+
+This accepted frontier supersedes earlier descriptions of5/4 as the best
+available global unsigned exponent. A classical ordinary all-primitive-character
+comparison gives Lambda_A << (HD)^epsilon A6[D+(A1 A2 A3 A4 A5)^2],
+with the arbitrary overlapping r6 retained as its actual coefficient mask.
+Combining with the powered-family bound and exact capacity yields
+H + D H^(1/6) + (DH)^(2/3) for the original residue-subtracted energy,
+with fixed nu/S and one common possibly complex W. At H=D^(3/4), power7/6
+improves5/4 by1/12 but still exceeds the target3/4 by5/12.
+The whole old A1=A2=A,A3=B,AB=H^(1/3) face now costsD; it is no longer
+the worst upper-bound face. New upper-envelope witnesses are
+(log_D A1,log_D A2)=(5/12,1/6) and pure log_D A1=3/4.
+They are not actual-energy lower bounds. The proof includes all-modulus
+primitive Gauss completion, nonunit vanishing, reduced Eisenstein fractions,
+a lattice large sieve, raw conductor/zero transfer and principal assembly.
+It is a refined application of classical sieves, not a new classical sieve.
+Independent exact-production proof receipt: outputs/checks/2026-11-05-arithmetic-learning/review-mixed/acceptance-v1.json.
+
+A separate finite Fourier-feature learner targets all210 actual original
+coupled correlation coordinates,95(h,q) blocks including65 h1 blocks.
+D6000/U60/H625 and one stated common smooth four-bump profile activate all15
+squarefree ideal columns; principal nu,2262 literal rows and a separately
+labelled2148 guaranteed nonprincipal subset retain4530 raw column zeros.
+Four tau1e-12 runs execute216 metric-gradient updates and200 budget-limited
+ordinary updates, saving every exact rational state. Both signed observables
+and the full-vector tolerance are certified; weighted spectral loss and
+metric/ordinary gradient conventions are distinct. Exact labels are supplied
+before training, so no speedup, unseen-conductor generalization or uniform
+analytic saving is asserted. Immutable v2 manifest binds source/input/output.
+Independent acceptance-v2 in outputs/checks/2026-11-05-arithmetic-learning/review-learning/
+reconstructs31668 symbols/450 Gram targets/186552 histogram cells and every
+saved update/certificate. The failed logging-only v1 remains preserved.
+
+Next substantive arithmetic research must estimate the actual signed joint
+conductor/dual-frequency weights before per-conductor absolute Cauchy,
+including h1 and the new remaining upper-envelope neighborhoods, with all
+coherent fibers, raw common-prime zeros, ray/squarefree/capacity restrictions,
+fixed profiles and conductor uniformities. A finite learned Gamma certificate
+is not this varying-family saving. Short/principal target assembly, independent
+positive arithmetic determinant/zero-location comparisons and scope-specific
+Dirichlet/Hecke/Dedekind/elliptic/Artin obligations remain open.
+No new analytic/category Lean declaration, PSD or GRH proof is supplied.
+Pinned Linux4.24 compiler approval remains pending; do not install/substitute
+or repeat the completed inventory without an explicit reply/changed state.
+Keep both completion gates false and the existing heartbeat ACTIVE.
+
+Evidence and reproduction: research/mixed-conductor-and-learning.md;
+shared papers/mixed-conductor-{core,details}.tex and
+arithmetic-learning-{core,details}.tex; examples/arithmetic_learning/README.md.
+Do not rerun accepted author/reviewer grids or frozen216/200 traces as new
+research. Preserve all earlier sources/runs/releases and original HEAD/index.
+
+New shared fragments extend chapters38/40 and every paired edition. Staged
+book261pages/40chapters/7352MathML, focused59/157 and notes17/48 pass final
+source-preserving builds. All7065 previous MathML subtrees remain unchanged
+and ordered;13 unique canonical iframes and19 source-matched SVGs remain.
+Nativev6 / PDFv5 pass four-width/night browser QA: all7352 formulas visible,
+zero new page errors or malformed nodes. Three inherited malformed munder
+nodes and old amsmath/underfull diagnostics remain disclosed. Failed shell,
+undefined-reference and overfull candidates are preserved. The final proof
+bytes and full source bindings govern, not those failed candidates.

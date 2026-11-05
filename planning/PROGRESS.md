@@ -1324,3 +1324,78 @@ Claimed P7-low-gcd (5f5e8490) without changing protected HEAD/index. Independent
 Root exact exponent checks pass3167 assertions on996 six-factor states and1001 face positions; author and independent cyclotomic checkers each pass991 Gauss/CRT/orientation assertions. Inspector passes1037 independent numerical cases, complete-face/crossover controls, both palettes and320/390/768/1440 keyboard/browser states. Earlier regex/harness failures are preserved. All new work ran on Linux; no environment/model/data/authentication change. Pinned Linux Lean compiler approval is pending after an incompatible Mac binary was identified; no fallback version was used.
 
 Valid staged editions: book255pages/40chapters/7065MathML, focused57/150pages, notes15/41pages; all6890previous mathematical subtrees unchanged and ordered. Three prior canonical chapters rerendered with13unique embedded labs/19SVGs retained; readout certificates unchanged. Failed missing-fragment/overfull candidates and native paragraph-label mismatch remain preserved; the source digest wraps without mathematical change, and unnumbered headings now validate their enclosing PDF counter. Only passing candidates may promote.
+
+## Ordinary conductor refinement and finite arithmetic learning — 5 November 2026
+
+This accepted frontier supersedes earlier descriptions of5/4 as the best
+available global unsigned exponent. A classical ordinary all-primitive-character
+comparison gives Lambda_A << (HD)^epsilon A6[D+(A1 A2 A3 A4 A5)^2],
+with the arbitrary overlapping r6 retained as its actual coefficient mask.
+Combining with the powered-family bound and exact capacity yields
+H + D H^(1/6) + (DH)^(2/3) for the original residue-subtracted energy,
+with fixed nu/S and one common possibly complex W. At H=D^(3/4), power7/6
+improves5/4 by1/12 but still exceeds the target3/4 by5/12.
+The whole old A1=A2=A,A3=B,AB=H^(1/3) face now costsD; it is no longer
+the worst upper-bound face. New upper-envelope witnesses are
+(log_D A1,log_D A2)=(5/12,1/6) and pure log_D A1=3/4.
+They are not actual-energy lower bounds. The proof includes all-modulus
+primitive Gauss completion, nonunit vanishing, reduced Eisenstein fractions,
+a lattice large sieve, raw conductor/zero transfer and principal assembly.
+It is a refined application of classical sieves, not a new classical sieve.
+Independent exact-production proof receipt: outputs/checks/2026-11-05-arithmetic-learning/review-mixed/acceptance-v1.json.
+
+A separate finite Fourier-feature learner targets all210 actual original
+coupled correlation coordinates,95(h,q) blocks including65 h1 blocks.
+D6000/U60/H625 and one stated common smooth four-bump profile activate all15
+squarefree ideal columns; principal nu,2262 literal rows and a separately
+labelled2148 guaranteed nonprincipal subset retain4530 raw column zeros.
+Four tau1e-12 runs execute216 metric-gradient updates and200 budget-limited
+ordinary updates, saving every exact rational state. Both signed observables
+and the full-vector tolerance are certified; weighted spectral loss and
+metric/ordinary gradient conventions are distinct. Exact labels are supplied
+before training, so no speedup, unseen-conductor generalization or uniform
+analytic saving is asserted. Immutable v2 manifest binds source/input/output.
+Independent acceptance-v2 in outputs/checks/2026-11-05-arithmetic-learning/review-learning/
+reconstructs31668 symbols/450 Gram targets/186552 histogram cells and every
+saved update/certificate. The failed logging-only v1 remains preserved.
+
+Next substantive arithmetic research must estimate the actual signed joint
+conductor/dual-frequency weights before per-conductor absolute Cauchy,
+including h1 and the new remaining upper-envelope neighborhoods, with all
+coherent fibers, raw common-prime zeros, ray/squarefree/capacity restrictions,
+fixed profiles and conductor uniformities. A finite learned Gamma certificate
+is not this varying-family saving. Short/principal target assembly, independent
+positive arithmetic determinant/zero-location comparisons and scope-specific
+Dirichlet/Hecke/Dedekind/elliptic/Artin obligations remain open.
+No new analytic/category Lean declaration, PSD or GRH proof is supplied.
+Pinned Linux4.24 compiler approval remains pending; do not install/substitute
+or repeat the completed inventory without an explicit reply/changed state.
+Keep both completion gates false and the existing heartbeat ACTIVE.
+
+Evidence and reproduction: research/mixed-conductor-and-learning.md;
+shared papers/mixed-conductor-{core,details}.tex and
+arithmetic-learning-{core,details}.tex; examples/arithmetic_learning/README.md.
+Do not rerun accepted author/reviewer grids or frozen216/200 traces as new
+research. Preserve all earlier sources/runs/releases and original HEAD/index.
+
+Final PDFv5/nativev6 and paired article/note artifacts are promoted after
+source-bound build/browser acceptance. Previous production bytes are preserved
+under outputs/checks/2026-11-05-arithmetic-learning/promotion/previous/;
+promotion.json is the authoritative18-file manifest. Independent integration
+checks compare all7065 prior MathML subtrees against7352, rather than only the
+older5356 baseline. Root independently inspected physical PDF pages217/248
+(printed209/240), desktop-night replay and mobile layout. Final integrity
+checks pass in root/project-verification.json; publication remains a separate
+verified transition. No new Lean or GRH proof is asserted.
+
+P9 claim6c42eeaa / checkpointcc2be552-dd45-4de1-8686-4d60f41f54cc retain in_progress. Exact substantive implementation/research evidence is bound by the checkpoint; both completion gates remain false.
+
+Final diff corrections: landing-page source now states261/7352 and public
+status; four article/note abstracts now distinguish the stronger unsigned
+comparison from the open signed estimate. These exposition-only fixes rebuilt
+concise-v3/extended-v5 and notes-concise-v3/notes-extended-v4 with unchanged
+59/157/17/48 page counts. Governing current complete artifact promotion is
+outputs/checks/2026-11-05-arithmetic-learning/final-diff-fixes/promotion/promotion-v2.json;
+the first promotion and every previous byte remain preserved. BookPDFv5,
+nativev6, all4 mathematical fragments and frozen learner bytes are unchanged.
+Root integrity passed again in root/project-verification-v2.json.

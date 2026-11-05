@@ -545,3 +545,56 @@ Both completion gates remain false; keep heartbeat active.
 The original r3³ pivot admits the already-classical GL quadratic family bound R0+D R0/A3 after exact raw-zero-preserving freezing and fixed finite S/ray partition. This is a refinement of the application, not a new large sieve. With the old powered bound it improves the A3-dominant sector; at H=D^(3/4), the full face has leading power min(5/4,1+2a), 0<=a<=1/4. All a>=1/8 remain at5/4; even a=0 costs D above the H target. Near-saturated middle monomials necessarily have A3<=M D^eta plus the old capacity/imbalance/high-power slack. This is not an actual row-energy lower bound.
 
 The exact joint six-coordinate completion keeps mu(q), CRT generator phases, all common-prime Ramanujan factors and actual cutoff/factor-count coefficients. Its orientation Parseval and finite tail budget do not estimate the actual signed h,q,K weight; coherent fibers and fixed length-one factors prevent automatic cancellation. Preserve arbitrary overlapping r6, all literal units/S factors, common profile, ray/squarefree/capacity masks. Do not reuse a generic four-column conductor or claim a new global exponent/GRH/Lean result. The new standalone quadratic-pivot.html is linked to the proof without duplicating canonical embedded tools. Both gates remain false.
+
+## Ordinary conductor refinement and finite arithmetic learning — 5 November 2026
+
+This accepted frontier supersedes earlier descriptions of5/4 as the best
+available global unsigned exponent. A classical ordinary all-primitive-character
+comparison gives Lambda_A << (HD)^epsilon A6[D+(A1 A2 A3 A4 A5)^2],
+with the arbitrary overlapping r6 retained as its actual coefficient mask.
+Combining with the powered-family bound and exact capacity yields
+H + D H^(1/6) + (DH)^(2/3) for the original residue-subtracted energy,
+with fixed nu/S and one common possibly complex W. At H=D^(3/4), power7/6
+improves5/4 by1/12 but still exceeds the target3/4 by5/12.
+The whole old A1=A2=A,A3=B,AB=H^(1/3) face now costsD; it is no longer
+the worst upper-bound face. New upper-envelope witnesses are
+(log_D A1,log_D A2)=(5/12,1/6) and pure log_D A1=3/4.
+They are not actual-energy lower bounds. The proof includes all-modulus
+primitive Gauss completion, nonunit vanishing, reduced Eisenstein fractions,
+a lattice large sieve, raw conductor/zero transfer and principal assembly.
+It is a refined application of classical sieves, not a new classical sieve.
+Independent exact-production proof receipt: outputs/checks/2026-11-05-arithmetic-learning/review-mixed/acceptance-v1.json.
+
+A separate finite Fourier-feature learner targets all210 actual original
+coupled correlation coordinates,95(h,q) blocks including65 h1 blocks.
+D6000/U60/H625 and one stated common smooth four-bump profile activate all15
+squarefree ideal columns; principal nu,2262 literal rows and a separately
+labelled2148 guaranteed nonprincipal subset retain4530 raw column zeros.
+Four tau1e-12 runs execute216 metric-gradient updates and200 budget-limited
+ordinary updates, saving every exact rational state. Both signed observables
+and the full-vector tolerance are certified; weighted spectral loss and
+metric/ordinary gradient conventions are distinct. Exact labels are supplied
+before training, so no speedup, unseen-conductor generalization or uniform
+analytic saving is asserted. Immutable v2 manifest binds source/input/output.
+Independent acceptance-v2 in outputs/checks/2026-11-05-arithmetic-learning/review-learning/
+reconstructs31668 symbols/450 Gram targets/186552 histogram cells and every
+saved update/certificate. The failed logging-only v1 remains preserved.
+
+Next substantive arithmetic research must estimate the actual signed joint
+conductor/dual-frequency weights before per-conductor absolute Cauchy,
+including h1 and the new remaining upper-envelope neighborhoods, with all
+coherent fibers, raw common-prime zeros, ray/squarefree/capacity restrictions,
+fixed profiles and conductor uniformities. A finite learned Gamma certificate
+is not this varying-family saving. Short/principal target assembly, independent
+positive arithmetic determinant/zero-location comparisons and scope-specific
+Dirichlet/Hecke/Dedekind/elliptic/Artin obligations remain open.
+No new analytic/category Lean declaration, PSD or GRH proof is supplied.
+Pinned Linux4.24 compiler approval remains pending; do not install/substitute
+or repeat the completed inventory without an explicit reply/changed state.
+Keep both completion gates false and the existing heartbeat ACTIVE.
+
+Evidence and reproduction: research/mixed-conductor-and-learning.md;
+shared papers/mixed-conductor-{core,details}.tex and
+arithmetic-learning-{core,details}.tex; examples/arithmetic_learning/README.md.
+Do not rerun accepted author/reviewer grids or frozen216/200 traces as new
+research. Preserve all earlier sources/runs/releases and original HEAD/index.

@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "run": "outputs/experiments/2026-11-05-arithmetic-learning-v2",
+  "run_manifest_sha256": "1eb22dfdadaf4a92e6b6231b7edd2fbfab0e68e0751237ce45e7a11bdb6dc3b4",
+  "input_sha256": "61a43821bdba19b5ca353042e216b2107977e60211e959cd1d2e65cf1acb2ed6",
+  "focused_tests": 11,
+  "skips": 0,
+  "independent_local_symbols": 31668,
+  "independent_Gram_targets": 450,
+  "metric_updates": 216,
+  "ordinary_updates": 200,
+  "all_cases_certified": true,
+  "columns": 15,
+  "offdiagonal_coordinates": 210,
+  "blocks": 95,
+  "h1_blocks": 65,
+  "raw_zero_entries": {
+    "all_literal": 4530,
+    "guaranteed_nonprincipal": 4530
+  },
+  "checks": [
+    {
+      "name": "existing_output_refused",
+      "command": [
+        "/usr/bin/python3",
+        "examples/arithmetic_learning/learn.py",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/experiments/2026-11-05-arithmetic-learning-v2"
+      ],
+      "expected_failure": true,
+      "returncode": 1,
+      "observed_reason": "Refusing existing output",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/arithmetic_learning/learn.py\", line 322, in <module>\n    else: run(a.output,a.tau,a.seed)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/arithmetic_learning/learn.py\", line 288, in run\n    output=Path(output); refuse_existing(output); tau=parse_tau(tau)\n                         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/arithmetic_learning/learn.py\", line 72, in refuse_existing\n    if output.exists(): raise FileExistsError('Refusing existing output; preserve prior progress: '+str(output))\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: Refusing existing output; preserve prior progress: /home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/experiments/2026-11-05-arithmetic-learning-v2\n"
+    },
+    {
+      "name": "zero_tau_refused",
+      "command": [
+        "/usr/bin/python3",
+        "examples/arithmetic_learning/learn.py",
+        "--tau",
+        "0",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/experiments/2026-11-05-arithmetic-learning-invalid-zero-v2"
+      ],
+      "expected_failure": true,
+      "returncode": 1,
+      "observed_reason": "tau must be strictly positive",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/arithmetic_learning/learn.py\", line 322, in <module>\n    else: run(a.output,a.tau,a.seed)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/arithmetic_learning/learn.py\", line 288, in run\n    output=Path(output); refuse_existing(output); tau=parse_tau(tau)\n                                                      ^^^^^^^^^^^^^^\n  File \"/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/examples/arithmetic_learning/learn.py\", line 68, in parse_tau\n    if tau <= 0: raise ValueError('tau must be strictly positive')\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: tau must be strictly positive\n"
+    }
+  ],
+  "evidence_sha256": {
+    "cli-v2.txt": "5cb30b8900f07da077a854d7f653272a4731b33a804502744ead0d36c547d357",
+    "focused-replay-v2.txt": "6383aa38fae846467b87f95b62a46c18bd63bf77ac3bbde8efe725fac40047f7",
+    "binding-v2.txt": "2687f39347831c57e8f4f43bf7999d2e47af318c383fd354f4300c988fbaf799"
+  },
+  "source_sha256": {
+    "examples/arithmetic_learning/README.md": "f3cb62eab1c19d05f061af90f8289dc0f8ed3b8015d5e202243892f1293fd24f",
+    "examples/arithmetic_learning/learn.py": "5c53724df205e017533c20229fe981ce70cde615eeefb7077e73be401dbbdd2e",
+    "examples/arithmetic_learning/test_learning.py": "e8c777a86a840a3d223423d235fbbc4b2adb0d0918d9126ce8f785dcd1c95cdf",
+    "scripts/check_finite_correlation.py": "5f8da7467f93071fc19b4a1a1e8c415a880a95305d847cce9a42c386d1f3d3e8",
+    "scripts/check_mobius_split.py": "a3f1d3d89acafc187d6ca6851f370712b2544c92802b4d95dc5187e18a770638",
+    "scripts/check_reciprocity_period.py": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925"
+  },
+  "scope": "Finite exact feature readout/certification only. No global saving, PSD, determinant, Lean or GRH claim.",
+  "preserved_failure": "v1 completed its first case but failed CLI logging; partial input/case and cli-v1.txt retained unchanged; v2 is the accepted full run"
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "payloadBytes": 3701277,
+  "states": 424,
+  "coordinateStates": 89040,
+  "featureSamples": 1520,
+  "checks": [
+    "payload and all8 decoded trajectory hashes",
+    "exact decoded-object match to source-derived extractor baseline",
+    "all saved coordinates and separately extracted residuals",
+    "complex basis geometry, signed errors and certificates",
+    "all saved feature samples",
+    "53/55/53/55 metric and50 ordinary updates",
+    "corrupt trajectory refusal"
+  ],
+  "scope": "Display checks only; source scientific tests and independent mathematical acceptance are separate."
+}

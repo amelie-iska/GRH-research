@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "structural_checks": 35,
+  "proposal_files": {
+    "planning/arithmetic-learning-20261105/mixed-attempt/mixed-conductor-core-proposal.tex": {
+      "bytes": 4080,
+      "sha256": "aebdea3c68f703a891f48dd481cfecd9bc5b734d50ecb3f8241643cb009a96ff"
+    },
+    "planning/arithmetic-learning-20261105/mixed-attempt/mixed-conductor-details-proposal.tex": {
+      "bytes": 10564,
+      "sha256": "2362bd5def75d9b9dedc9e64d719f8f98546fb6f8685670fc0cfee88fd79763c"
+    }
+  },
+  "labels": [
+    "mcs:core",
+    "mcs:block",
+    "mcs:block-bound",
+    "mcs:uniform",
+    "mcs:details",
+    "mcs:gauss",
+    "mcs:ordinary",
+    "mcs:additive"
+  ],
+  "references_resolved_in_proposals_or_uniform_cutoff": [
+    "mcs:additive",
+    "mcs:block-bound",
+    "mcs:core",
+    "mcs:gauss",
+    "mcs:ordinary",
+    "mcs:uniform",
+    "wc:block",
+    "wc:l2",
+    "wc:literal-reciprocity",
+    "wc:principal"
+  ],
+  "initial_probe": "A harness-only norm-factor assertion matched the legitimate Lambda definition; corrected to inspect the labelled block-bound equation. Proposal bytes unchanged.",
+  "not_run": "No TeX/PDF build or Lean; root owns integration/build. Structural check is not mathematical review. Exact TeX byte review pending root agent."
+}

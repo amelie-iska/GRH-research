@@ -1,0 +1,85 @@
+{
+  "artifact_sha256": {
+    "all_literal-complex.json": "cecf3f758ae65bc74ebc8c6be7680136f45b7edfc21b1e3d21b4f9ef414766fd",
+    "all_literal-real.json": "fb51af890b64c0c09749fe6498d956d1c46a4811fa672ce4c45aa43686e26b95",
+    "guaranteed_nonprincipal-complex.json": "5a9cafb8bacd908befbb1ecd52901622eff25cf457d786757286b23aa04c11a7",
+    "guaranteed_nonprincipal-real.json": "dcd5a472d628322614a4e947fe9905e3f5211e5cb7a627ab00c6e1db3847fc96",
+    "input.json": "61a43821bdba19b5ca353042e216b2107977e60211e959cd1d2e65cf1acb2ed6"
+  },
+  "blocks": 95,
+  "cases": [
+    {
+      "accepted": true,
+      "certificate_CC_squared": "383107804193/235113692125530163554396536907497472000000",
+      "certificate_CM_squared": "413920265179/624520744708439496941365801160540160000000",
+      "file": "all_literal-real.json",
+      "final_loss": "1256701581/2596148429267413814265248164610048",
+      "ordinary_budget_limited": true,
+      "ordinary_updates": 50,
+      "profile": "real",
+      "row_set": "all_literal",
+      "uniform_certificate_squared": "1256701581/2596148429267413814265248164610048",
+      "updates": 53
+    },
+    {
+      "accepted": true,
+      "certificate_CC_squared": "31032546122130698154492836451901061489083958679244512225152923905500514597702137632312666313505093244783361188094416567/10210860092419361969710445012293543509005739966478981699797887420518347365734055003871740149073230020900672799256346958073293701120000000000000000000",
+      "certificate_CM_squared": "11276175433775539335475579596516080211418543989533432095862395260278282665112905970993002252360482576687822735970369761987517738538873016784161378329784980109917/8775925331570384224449269439969112109248978111287641912580421743628104300077253316444151898082515838516215260876625187036817718353200046796566191317440650741295341035847680000000000000000000",
+      "file": "all_literal-complex.json",
+      "final_loss": "7633919934676646938651/8762000948777521623145212555558912000000000000",
+      "ordinary_budget_limited": true,
+      "ordinary_updates": 50,
+      "profile": "complex",
+      "row_set": "all_literal",
+      "uniform_certificate_squared": "7633919934676646938651/8762000948777521623145212555558912000000000000",
+      "updates": 55
+    },
+    {
+      "accepted": true,
+      "certificate_CC_squared": "42416507753/26123743569503351506044059656388608000000",
+      "certificate_CM_squared": "45827967859/69391193856493277437929533462282240000000",
+      "file": "guaranteed_nonprincipal-real.json",
+      "final_loss": "1252242909/2596148429267413814265248164610048",
+      "ordinary_budget_limited": true,
+      "ordinary_updates": 50,
+      "profile": "real",
+      "row_set": "guaranteed_nonprincipal",
+      "uniform_certificate_squared": "1252242909/2596148429267413814265248164610048",
+      "updates": 53
+    },
+    {
+      "accepted": true,
+      "certificate_CC_squared": "2880239438597916850910494172399420306970527723526182455125163149932978892442274117623056360135573908296497835576542757/928260008401760179064585910208503955364158178770816518163444310956213396884914091261067286279384547354606618114213359824844881920000000000000000000",
+      "certificate_CM_squared": "1046581388233165442468678317970752465878571727366713435330127933159576860426586254860961154857439549973347845881148406355902699613496688545697559945144426595607/797811393779125838586297221815373828113543464662512901143674703966191300007023028767650172552955985319655932806965926094256156213927276981506017392494604612845031003258880000000000000000000",
+      "file": "guaranteed_nonprincipal-complex.json",
+      "final_loss": "7793839699283215255931/8762000948777521623145212555558912000000000000",
+      "ordinary_budget_limited": true,
+      "ordinary_updates": 50,
+      "profile": "complex",
+      "row_set": "guaranteed_nonprincipal",
+      "uniform_certificate_squared": "7793839699283215255931/8762000948777521623145212555558912000000000000",
+      "updates": 55
+    }
+  ],
+  "columns": 15,
+  "input_sha256": "61a43821bdba19b5ca353042e216b2107977e60211e959cd1d2e65cf1acb2ed6",
+  "metric_GD_total_updates": 216,
+  "offdiagonal_coordinates": 210,
+  "ordinary_GD_total_updates": 200,
+  "passed": true,
+  "profile_formula": "phi(t)=exp(1-1/(1-t^2)) if |t|<1 else0; W(y)=sum_(N in{7507,7519,8281,10507}) w_N phi(4*(6000*y-N)); w_N=1 for real, 1+zeta6*(4N-30000)/6000 for complex. Integer nodes other than the four norms have W=0 exactly.",
+  "resource": "stdlib exact Fraction CPU; no GPU, package installation or upstream model training",
+  "schema": "arithmetic-learning-run-v1",
+  "scope": "Fixed finite original-family coupled-character Fourier readout on the complete 15 active squarefree columns of an explicitly specified smooth four-bump profile; literal rows and a separately labelled guaranteed nonprincipal subset. No asymptotic saving, generalization, PSD/determinant, Lean, quantum or GRH theorem.",
+  "seed": 20261105,
+  "source_bytes_checked_before_and_after": true,
+  "source_sha256": {
+    "examples/arithmetic_learning/README.md": "f3cb62eab1c19d05f061af90f8289dc0f8ed3b8015d5e202243892f1293fd24f",
+    "examples/arithmetic_learning/learn.py": "5c53724df205e017533c20229fe981ce70cde615eeefb7077e73be401dbbdd2e",
+    "examples/arithmetic_learning/test_learning.py": "e8c777a86a840a3d223423d235fbbc4b2adb0d0918d9126ce8f785dcd1c95cdf",
+    "scripts/check_finite_correlation.py": "5f8da7467f93071fc19b4a1a1e8c415a880a95305d847cce9a42c386d1f3d3e8",
+    "scripts/check_mobius_split.py": "a3f1d3d89acafc187d6ca6851f370712b2544c92802b4d95dc5187e18a770638",
+    "scripts/check_reciprocity_period.py": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925"
+  },
+  "tau": "1/1000000000000"
+}

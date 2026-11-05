@@ -1,0 +1,332 @@
+{
+  "passed": true,
+  "status": "static source/build/native integration guards passed; UI final-byte review and root finalization pending",
+  "checks": 7428,
+  "accepted_paper_sha256": {
+    "papers/mixed-conductor-core.tex": "fe3adf4b3e9c4ced71c1d9d341522c4f9ae05065ca1aac5469a84b051e339fe8",
+    "papers/mixed-conductor-details.tex": "2362bd5def75d9b9dedc9e64d719f8f98546fb6f8685670fc0cfee88fd79763c",
+    "papers/arithmetic-learning-core.tex": "1843bf4dc55f66d705336cf48a644133e3e272da2e5a054b5194953771974846",
+    "papers/arithmetic-learning-details.tex": "264954599ae10cbe4af708ba120453d82b5091dd91a6d0b20425eb4f568e5cd3"
+  },
+  "wrappers": {
+    "resolutions-concise": [
+      "mixed-conductor-core",
+      "arithmetic-learning-core"
+    ],
+    "resolutions-extended": [
+      "mixed-conductor-core",
+      "mixed-conductor-details",
+      "arithmetic-learning-core",
+      "arithmetic-learning-details"
+    ],
+    "validated-oracle-concise": [
+      "mixed-conductor-core",
+      "arithmetic-learning-core"
+    ],
+    "validated-oracle-extended": [
+      "mixed-conductor-core",
+      "mixed-conductor-details",
+      "arithmetic-learning-core",
+      "arithmetic-learning-details"
+    ]
+  },
+  "original_source_editions": [
+    "book/source-editions/emergent_cyclic_time_hilbert_polya_GRH_2053.tex",
+    "book/source-editions/emergent_cyclic_time_hilbert_polya_GRH_COMPLETED.tex"
+  ],
+  "old_math_count": 7065,
+  "candidate_math_count": 7352,
+  "old_math_exact_ordered_subsequence": true,
+  "new_math_count": 287,
+  "math_subsequence_positions_sha256": "8b3f3abd28aff0f481f96a0df943ac1fc93a5d3e02b904c701f2b4c90e586a98",
+  "inherited_malformed_fixed_arity_nodes": 3,
+  "new_malformed_fixed_arity_nodes": 0,
+  "canonical_iframes_unchanged": 13,
+  "required_anchor_ids": [
+    "mcs:core",
+    "mcs:details",
+    "mcs:block",
+    "mcs:block-bound",
+    "mcs:uniform",
+    "mcs:gauss",
+    "mcs:ordinary",
+    "mcs:additive",
+    "arl:core",
+    "arl:details",
+    "arl:observable",
+    "arl:certificate"
+  ],
+  "new_internal_proof_links_checked": 19,
+  "candidate_source_copy_sha256": {
+    "mixed-conductor-core.tex": "b564c241160bb82f538d5e4d7c520d034e0b3f0a595984ad21ba71a80901e988",
+    "mixed-conductor-details.tex": "6742ce878d92d47fad94556bcbbf55a2d10180bd41f836e1e2f6b74acf9c9994",
+    "arithmetic-learning-core.tex": "ea83097a168c1520951fb11e638dedf517232f1d199d020b0c7026c09e4a964e",
+    "arithmetic-learning-details.tex": "1043dc7e9f73249e77f9c350cb28ef41cbed393abaeeb57523bba04af5d92e2f"
+  },
+  "builds": {
+    "outputs/arithmetic-learning-book-20261105/v5/pdf/build-record.json": {
+      "source_count": 75,
+      "pages": 261,
+      "pdf_sha256": "c30dfe6f5c68ce294a94c1af2e03ae52eb5be1424933b21f8a5e5fd196306e4d"
+    },
+    "outputs/arithmetic-learning-articles-20261105/concise-v2/build-record.json": {
+      "source_count": 42,
+      "pages": 59,
+      "pdf_sha256": "26a347345c9d9b016f6e1f9dc0f34f708d95f2ae0d735f7de2d92cb213c929cf"
+    },
+    "outputs/arithmetic-learning-articles-20261105/extended-v4/build-record.json": {
+      "source_count": 84,
+      "pages": 157,
+      "pdf_sha256": "95629f0f557625d1747f320a3a7706309aa1ddd6f50b5b028eaf0801e576819b"
+    },
+    "outputs/arithmetic-learning-articles-20261105/notes-concise-v2/build-record.json": {
+      "source_count": 16,
+      "pages": 17,
+      "pdf_sha256": "4dd90b58af4773b75b16829f7c90a367b69fb17a56ef7dd0dda088eaab908d45"
+    },
+    "outputs/arithmetic-learning-articles-20261105/notes-extended-v3/build-record.json": {
+      "source_count": 30,
+      "pages": 48,
+      "pdf_sha256": "c5f046dff42e7d49c6b89124fb7f1f991aa333a6e38bbe732b494bb82cab67bd"
+    },
+    "outputs/arithmetic-learning-book-20261105/v6-native/native-build-record.json": {
+      "source_count": 33,
+      "pages": null,
+      "pdf_sha256": null
+    }
+  },
+  "protected_checkout_and_five_release_indices": [
+    {
+      "path": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104",
+      "HEAD": "dba37ffaa78c82ade1385f7ee56c907ab0c67d3a",
+      "index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+      "index_bytes": 168699
+    },
+    {
+      "path": "/home/iska/Documents/LaTeX-projects/GRH-publication-20261105",
+      "HEAD": "38816daa63af5cb7986c0694e34b4948a3a4ea39",
+      "index_sha256": "bebd94840021932d5249188921656fb336db4c027d2dd0c5317d5351a7ff355f",
+      "index_bytes": 285297
+    },
+    {
+      "path": "/home/iska/Documents/LaTeX-projects/GRH-publication-20261105-adaptive-theta",
+      "HEAD": "f42c5f5afb0886b15cb92598d30d6fd488e59d02",
+      "index_sha256": "e433fdf371fdb9f35bbe583029e50e885ddb8f38a00975747c0bda9ad09af4c4",
+      "index_bytes": 343574
+    },
+    {
+      "path": "/home/iska/Documents/LaTeX-projects/GRH-publication-20261105-joint-dual",
+      "HEAD": "d8d144469762b4bc0e5b0cf5cbe082bd2ae3424d",
+      "index_sha256": "d91debeecec5a1a4f5e66e5dc1a8a07fa7d6b41053f9fbb10f7911f30dd0047d",
+      "index_bytes": 361722
+    },
+    {
+      "path": "/home/iska/Documents/LaTeX-projects/GRH-publication-20261105-readout",
+      "HEAD": "80086d551bf073ad2e5f0ae751416ade6cde3f33",
+      "index_sha256": "320e0754f099e77d7a14050c6ed1ea25b8dc54c7ec0f96d5e96b3d8831c31791",
+      "index_bytes": 314141
+    },
+    {
+      "path": "/home/iska/Documents/LaTeX-projects/GRH-publication-20261105-signed",
+      "HEAD": "290f6a2ce5b9f2acb4e321c8b957ecaa3d82c385",
+      "index_sha256": "750018fccd12971cdb66aef5822b70465cc1ad022c3a72fe2a6ed4d10ea03f20",
+      "index_bytes": 296826
+    }
+  ],
+  "pins": {
+    "outputs/checks/2026-11-05-arithmetic-learning/review-mixed/acceptance-v1.json": {
+      "sha256": "b97dc51ee600d78e69f53ea608d5951ac394d75dcc72157a6c65c9391e4ee715",
+      "bytes": 8009
+    },
+    "outputs/checks/2026-11-05-arithmetic-learning/review-learning/acceptance-v2.json": {
+      "sha256": "791bf40269094a72741fc5d6ebf0d578ca500faa5b34e8baf2c6d42e772225f3",
+      "bytes": 2902
+    },
+    "papers/mixed-conductor-core.tex": {
+      "sha256": "fe3adf4b3e9c4ced71c1d9d341522c4f9ae05065ca1aac5469a84b051e339fe8",
+      "bytes": 4090
+    },
+    "papers/mixed-conductor-details.tex": {
+      "sha256": "2362bd5def75d9b9dedc9e64d719f8f98546fb6f8685670fc0cfee88fd79763c",
+      "bytes": 10564
+    },
+    "papers/arithmetic-learning-core.tex": {
+      "sha256": "1843bf4dc55f66d705336cf48a644133e3e272da2e5a054b5194953771974846",
+      "bytes": 3487
+    },
+    "papers/arithmetic-learning-details.tex": {
+      "sha256": "264954599ae10cbe4af708ba120453d82b5091dd91a6d0b20425eb4f568e5cd3",
+      "bytes": 6353
+    },
+    "examples/arithmetic_learning/README.md": {
+      "sha256": "f3cb62eab1c19d05f061af90f8289dc0f8ed3b8015d5e202243892f1293fd24f",
+      "bytes": 5779
+    },
+    "examples/arithmetic_learning/learn.py": {
+      "sha256": "5c53724df205e017533c20229fe981ce70cde615eeefb7077e73be401dbbdd2e",
+      "bytes": 18833
+    },
+    "examples/arithmetic_learning/test_learning.py": {
+      "sha256": "e8c777a86a840a3d223423d235fbbc4b2adb0d0918d9126ce8f785dcd1c95cdf",
+      "bytes": 10784
+    },
+    "scripts/check_finite_correlation.py": {
+      "sha256": "5f8da7467f93071fc19b4a1a1e8c415a880a95305d847cce9a42c386d1f3d3e8",
+      "bytes": 7222
+    },
+    "scripts/check_mobius_split.py": {
+      "sha256": "a3f1d3d89acafc187d6ca6851f370712b2544c92802b4d95dc5187e18a770638",
+      "bytes": 7636
+    },
+    "scripts/check_reciprocity_period.py": {
+      "sha256": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925",
+      "bytes": 4802
+    },
+    "outputs/experiments/2026-11-05-arithmetic-learning-v2/all_literal-complex.json": {
+      "sha256": "cecf3f758ae65bc74ebc8c6be7680136f45b7edfc21b1e3d21b4f9ef414766fd",
+      "bytes": 17367327
+    },
+    "outputs/experiments/2026-11-05-arithmetic-learning-v2/all_literal-real.json": {
+      "sha256": "fb51af890b64c0c09749fe6498d956d1c46a4811fa672ce4c45aa43686e26b95",
+      "bytes": 3949705
+    },
+    "outputs/experiments/2026-11-05-arithmetic-learning-v2/guaranteed_nonprincipal-complex.json": {
+      "sha256": "5a9cafb8bacd908befbb1ecd52901622eff25cf457d786757286b23aa04c11a7",
+      "bytes": 17370349
+    },
+    "outputs/experiments/2026-11-05-arithmetic-learning-v2/guaranteed_nonprincipal-real.json": {
+      "sha256": "dcd5a472d628322614a4e947fe9905e3f5211e5cb7a627ab00c6e1db3847fc96",
+      "bytes": 3953864
+    },
+    "outputs/experiments/2026-11-05-arithmetic-learning-v2/input.json": {
+      "sha256": "61a43821bdba19b5ca353042e216b2107977e60211e959cd1d2e65cf1acb2ed6",
+      "bytes": 36040313
+    },
+    "outputs/experiments/2026-11-05-arithmetic-learning-v2/manifest.json": {
+      "sha256": "1eb22dfdadaf4a92e6b6231b7edd2fbfab0e68e0751237ce45e7a11bdb6dc3b4",
+      "bytes": 5703
+    },
+    "book/chapters/mixed-conductor-core.tex": {
+      "sha256": "b564c241160bb82f538d5e4d7c520d034e0b3f0a595984ad21ba71a80901e988",
+      "bytes": 4128
+    },
+    "book/chapters/mixed-conductor-details.tex": {
+      "sha256": "6742ce878d92d47fad94556bcbbf55a2d10180bd41f836e1e2f6b74acf9c9994",
+      "bytes": 10602
+    },
+    "book/chapters/arithmetic-learning-core.tex": {
+      "sha256": "ea83097a168c1520951fb11e638dedf517232f1d199d020b0c7026c09e4a964e",
+      "bytes": 3525
+    },
+    "book/chapters/arithmetic-learning-details.tex": {
+      "sha256": "1043dc7e9f73249e77f9c350cb28ef41cbed393abaeeb57523bba04af5d92e2f",
+      "bytes": 6391
+    },
+    "papers/resolutions-concise.tex": {
+      "sha256": "b035b164293bbf69f2cb18ee0f1e8afabc5d455f1944001f066882e86b805e8c",
+      "bytes": 3194
+    },
+    "papers/resolutions-extended.tex": {
+      "sha256": "19e4a5374debc73b42ec9c3077ba2b015727c7d4c61ccab6ee95cc83715164fe",
+      "bytes": 4525
+    },
+    "papers/validated-oracle-concise.tex": {
+      "sha256": "b250c98a4e80a60b4653c0aa93e1c6e1fd4bd6000e126f3986cf5d8f8845fab6",
+      "bytes": 2372
+    },
+    "papers/validated-oracle-extended.tex": {
+      "sha256": "d590cafc5e7d67fc5962a35a6ce5ea99f095175651af9bf7127a9fb1dc52532d",
+      "bytes": 2827
+    },
+    "book/chapters/validated-oracle.tex": {
+      "sha256": "d0559855df186fc2e947898f0f34d745bd1f6dbc0f97527d1ad6f1eacde5c15e",
+      "bytes": 475
+    },
+    "book/chapters/weighted-cutoff.tex": {
+      "sha256": "c4f4750271a0d5e7816acd3f374a30e977a652bc554d42a84dffc180141ba0a4",
+      "bytes": 696
+    },
+    "book/source-provenance.json": {
+      "sha256": "c5c519a8cd326e9c6f314b4a201e09852eedb8e56a5167d8ea70d10afa135395",
+      "bytes": 9666
+    },
+    "book/source-editions/emergent_cyclic_time_hilbert_polya_GRH_2053.tex": {
+      "sha256": "08708269403c3095381c45eb4c82435a073aaca8819f427a232e8eba368e05dc",
+      "bytes": 928044
+    },
+    "book/source-editions/emergent_cyclic_time_hilbert_polya_GRH_COMPLETED.tex": {
+      "sha256": "7c91fe980d5aed525a94b2c391a512682395edd0c8498fd4c1bd4cba95899379",
+      "bytes": 830074
+    },
+    "/home/iska/Documents/LaTeX-projects/GRH-publication-20261105-joint-dual/web/book/main.html": {
+      "sha256": "3a4e71c5499873b26d454e2d67be090a0de96acb1e3dc4d9ee67fcc3290fa620",
+      "bytes": 3469519
+    },
+    "outputs/arithmetic-learning-book-20261105/v6-native/book/main.html": {
+      "sha256": "d0a3b4b13dfaea8b109579eb84a493b83fc40bae567cc2c361761672372470f3",
+      "bytes": 3601067
+    },
+    "outputs/arithmetic-learning-book-20261105/v6-native/book/sources/mixed-conductor-core.tex": {
+      "sha256": "b564c241160bb82f538d5e4d7c520d034e0b3f0a595984ad21ba71a80901e988",
+      "bytes": 4128
+    },
+    "outputs/arithmetic-learning-book-20261105/v6-native/book/sources/mixed-conductor-details.tex": {
+      "sha256": "6742ce878d92d47fad94556bcbbf55a2d10180bd41f836e1e2f6b74acf9c9994",
+      "bytes": 10602
+    },
+    "outputs/arithmetic-learning-book-20261105/v6-native/book/sources/arithmetic-learning-core.tex": {
+      "sha256": "ea83097a168c1520951fb11e638dedf517232f1d199d020b0c7026c09e4a964e",
+      "bytes": 3525
+    },
+    "outputs/arithmetic-learning-book-20261105/v6-native/book/sources/arithmetic-learning-details.tex": {
+      "sha256": "1043dc7e9f73249e77f9c350cb28ef41cbed393abaeeb57523bba04af5d92e2f",
+      "bytes": 6391
+    },
+    "outputs/arithmetic-learning-book-20261105/v5/pdf/build-record.json": {
+      "sha256": "a1447f9e842b44d6c9ab7072b678e5b77079c2af918feec5dc60f38c845fa4d2",
+      "bytes": 20303
+    },
+    "outputs/arithmetic-learning-book-20261105/v5/pdf/main.pdf": {
+      "sha256": "c30dfe6f5c68ce294a94c1af2e03ae52eb5be1424933b21f8a5e5fd196306e4d",
+      "bytes": 2195812
+    },
+    "outputs/arithmetic-learning-articles-20261105/concise-v2/build-record.json": {
+      "sha256": "57dd3473aa5b9881cf0f32395f0fb41005fea5f2403fae3ac06d8435100093a7",
+      "bytes": 6723
+    },
+    "outputs/arithmetic-learning-articles-20261105/concise-v2/resolutions-concise.pdf": {
+      "sha256": "26a347345c9d9b016f6e1f9dc0f34f708d95f2ae0d735f7de2d92cb213c929cf",
+      "bytes": 758219
+    },
+    "outputs/arithmetic-learning-articles-20261105/extended-v4/build-record.json": {
+      "sha256": "f53d8de2b243e772b8dcd12dc1863571f89be8a06ecd573c36cd7c92ea51df12",
+      "bytes": 14844
+    },
+    "outputs/arithmetic-learning-articles-20261105/extended-v4/resolutions-extended.pdf": {
+      "sha256": "95629f0f557625d1747f320a3a7706309aa1ddd6f50b5b028eaf0801e576819b",
+      "bytes": 1458659
+    },
+    "outputs/arithmetic-learning-articles-20261105/notes-concise-v2/build-record.json": {
+      "sha256": "5e1ab1011746df9be6214ca48c348362a298c1f7e842a4985998e683f0f684ca",
+      "bytes": 1938
+    },
+    "outputs/arithmetic-learning-articles-20261105/notes-concise-v2/validated-oracle-concise.pdf": {
+      "sha256": "4dd90b58af4773b75b16829f7c90a367b69fb17a56ef7dd0dda088eaab908d45",
+      "bytes": 434692
+    },
+    "outputs/arithmetic-learning-articles-20261105/notes-extended-v3/build-record.json": {
+      "sha256": "2353f423bfc79611fbe1decedb01e2a1c6ba5bd3e732d474de8116f510ca363c",
+      "bytes": 3486
+    },
+    "outputs/arithmetic-learning-articles-20261105/notes-extended-v3/validated-oracle-extended.pdf": {
+      "sha256": "c5f046dff42e7d49c6b89124fb7f1f991aa333a6e38bbe732b494bb82cab67bd",
+      "bytes": 661152
+    },
+    "outputs/arithmetic-learning-book-20261105/v6-native/native-build-record.json": {
+      "sha256": "63f8afda77eb84da44f7671f558470d075be942de96ced0337a194e7270e0043",
+      "bytes": 15119
+    }
+  },
+  "checker_sha256": "e5224f2564f57d80488210180681f3439d6e91fb480bb567196118b53ddff243",
+  "no_browser_or_production_writes": true
+}

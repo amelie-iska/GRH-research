@@ -1,5 +1,12 @@
 # The cube-factor sector and a joint dual-frequency identity
 
+**Historical sector analysis:** the stronger ordinary-conductor comparison now
+improves the global unsigned envelope to7/6 and controls the whole old face
+byD. Read [the current refinement](mixed-conductor-and-learning.md) and its
+proof; the cube-factor inequalities below remain valid but no longer describe
+the best global envelope.
+
+
 5 November 2026. This refines a sector of the original arithmetic bound. It supplies neither a new large sieve nor the missing signed estimate or GRH.
 
 [Interactive full-face inspector](https://amelie-iska.github.io/GRH-research/quadratic-pivot.html) · [book proof](https://amelie-iska.github.io/GRH-research/book/main.html#qp:core) · [joint completion](https://amelie-iska.github.io/GRH-research/book/main.html#jdq:core).

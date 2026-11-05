@@ -1,0 +1,82 @@
+% Fresh proposal; ordinary classical sieve application, no new GRH/Lean theorem.
+\section{A radical-conductor refinement of the raw envelope}\label{mcs:core}
+Retain the original literal symbols $\chi_m(u)=(u/m)_6$, extended by zero,
+the fixed good set $S$, and the squarefree ideal columns $D\le Nm\le2D$.
+On an actual dyadic row block write
+\[
+ u=u_0r_1r_2^2r_3^3r_4^4r_5^5r_6^6,\qquad
+ A_j\le Nr_j<2A_j,\qquad \prod_{j=1}^6A_j^j\le H.
+\]
+Only $r_1,\ldots,r_5$ are pairwise-coprime squarefree ideals;
+$r_6$ is arbitrary and may overlap them. Fix primary generators,
+a literal unit and an $S$-supported factor in $u_0$. Put
+$R=\prod_jA_j$, $M=\max(A_1,A_2)$ and $Q=R/A_6$.
+For arbitrary complex coefficients $b_m$, independent of every variable row,
+define
+\[
+ \mathcal E_A(b)=\sum_{u\ \mathrm{in\ the\ actual\ block}}
+       \left|\sum_m b_m\chi_m(u)\right|^2,
+ \qquad \Lambda_A=\sup_{b\ne0}\frac{\mathcal E_A(b)}{\sum_m|b_m|^2}.
+\]
+\begin{proposition}[An ordinary conductor comparison]\label{mcs:block}
+For every $\varepsilon>0$,
+\begin{equation}\label{mcs:block-bound}
+ \Lambda_A\ll_{S,\varepsilon}(HD)^\varepsilon
+             A_6\{D+Q^2\}.
+\end{equation}
+Consequently the original residue-subtracted remainder satisfies,
+uniformly for $H,D,U\ge1$ and $U^2\le D$,
+\begin{equation}\label{mcs:uniform}
+ \sum_{0<Nu\le H}|E_u|^2
+ \ll_{\nu,S,\varepsilon}\|W\|_\infty^2(HD)^\varepsilon
+       \{H+DH^{1/6}+(DH)^{2/3}\}.
+\end{equation}
+Here $\nu,S$ are fixed and $W\in C_c^\infty((0,\infty))$ is one common,
+possibly complex profile supported in $[1,2]$; there is no profile supremum.
+\end{proposition}
+The input to~\eqref{mcs:block-bound} is the classical ordinary sieve for
+\emph{all} primitive characters of conductor norm at most $Q$, with constant
+$D+Q^2$, not a higher-order-family theorem for arbitrary conductor labels.
+The following section gives its standard Gauss-sum and two-dimensional
+lattice proof, including prime-power conductors at $S$.
+For fixed $r_6$, the first five factors have primitive outside-$S$
+conductor $q=r_1\cdots r_5$. The literal primitive character agrees with
+the raw symbol even at collisions with $q$; the sixth-power factor instead
+remains the coefficient mask $\mathbf1_{(m,r_6)=1}$.
+At most $5^{\omega(q)}\ll_\eta(Nq)^\eta$ tuples give the same primitive
+character. Applying the ordinary sieve and then counting $r_6$ proves
+\eqref{mcs:block-bound}. No rational-norm-squarefree restriction is imposed.
+
+To obtain~\eqref{mcs:uniform}, combine this with the accepted powered-BGL
+block bound from Section~\ref{wc:core}. With
+$S_A=R/M$ and $T_A=D^{2/3}R/M^{1/3}$, capacity gives
+$R\le H$, $A_6\le H^{1/6}$, $RS_A\le H$ and
+$T_A\le(DH)^{2/3}$. Hence
+\begin{align*}
+ \min(R+DS_A+T_A,DA_6+R^2/A_6)
+ &\le R+T_A+DA_6+\min(DS_A,H^2/S_A^2)\\
+ &\le H+DH^{1/6}+2(DH)^{2/3}.
+\end{align*}
+Dyadic and fixed-$S$ summation, the uniform actual coefficient norm,
+and the principal-residue estimate give the assertion for $E_u=I_u-P_u$.
+
+At $H=D^{3/4}$ the new envelope has exponent $7/6$, improving the old
+$5/4$ by $1/12$; its excess above the target $H$ is still $D^{5/12}$.
+On the \emph{entire} old face $A_1=A_2=A$, $A_3=B$,
+$A_4=A_5=A_6=1$, $AB=H^{1/3}$, one has
+$Q=A^2B=AH^{1/3}\le H^{2/3}$, so~\eqref{mcs:block-bound} costs
+$D^{1+\varepsilon}$ there. This includes $B\le A$.
+The new combined upper bounds reach $7/6$ at
+$(\log_D A_1,\log_D A_2)=(5/12,1/6)$ with other coordinates zero;
+the pure point $\log_D A_1=3/4$ also retains the old BGL cross term.
+These are upper-envelope witnesses, not arithmetic energy lower bounds
+or counterexamples to signed cancellation.
+
+The simpler proposed replacement of the radicand $ab^2$ by its radical
+$ab$ inside BGL remains unjustified: after the existing fixed reciprocity
+phases, the mixed reciprocity quotient is
+$\vartheta_b(a')/\vartheta_a(b')$, which varies outside $S$.
+The present application does not require that replacement.
+No target signed moment, type-II covariance estimate, positive arithmetic
+determinant comparison, zero-location result, new Lean theorem or GRH
+conclusion follows from~\eqref{mcs:uniform}.

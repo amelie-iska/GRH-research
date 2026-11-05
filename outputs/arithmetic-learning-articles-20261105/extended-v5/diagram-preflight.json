@@ -1,0 +1,37 @@
+{
+  "matched": [
+    {
+      "source_sha256": "dd2a7bb5cd4f6a3c8d94e8bd3616cc9442d0ce31655c67d34226b99af16ae0d4",
+      "source": "\\begin{tikzcd}[column sep=large,row sep=large]\n0\\arrow[r]&Y\\arrow[r,hook]\\arrow[d,\"u\"]&\\Lambda\\arrow[r,\"x\"]\\arrow[d,\"u\"]&X\\arrow[r]\\arrow[d,\"u\"]&0\\\\\n0\\arrow[r]&Y\\arrow[r,hook]\\arrow[d]&\\Lambda\\arrow[r,\"x\"]\\arrow[d]&X\\arrow[r]\\arrow[d]&0\\\\\n0\\arrow[r]&Y/uY\\arrow[r,hook]&\\Lambda/u\\Lambda\\arrow[r]&X/uX\\arrow[r]&0\n\\end{tikzcd}",
+      "pdf_sha256": "c78399933083048948500143a0dd20fa2e22daf85be0d63818f97e44004bb8b7",
+      "accepted_svg_sha256": null,
+      "method": "explicit source-correct standard LaTeX picture grid; no TikZ macro shim",
+      "trim": "0pt 0pt 0pt 0pt"
+    },
+    {
+      "source_sha256": "5cebac09f8e9accfd86178b4ea896294573b28039291334f28aa9f46ce34b722",
+      "source": "\\begin{tikzcd}[column sep=large,row sep=large]\n A\\arrow[r,\"p\"]\\arrow[d,\"-p\"']&B\\arrow[r,\"i\"]\\arrow[d,\"p\"]&C\\arrow[d,\"-p\"]\\\\\n D\\arrow[r,\"p\"]\\arrow[d,\"-i\"']&E\\arrow[r,\"i\"]\\arrow[d,\"i\"]&F\\arrow[d,\"-i\"]\\\\\n G\\arrow[r,\"p\"]&H\\arrow[r,\"i\"]&I.\n\\end{tikzcd}",
+      "pdf_sha256": "2000e018aac8d848c9557da611dd77d8a4a24eae8c0057fc97551eafd093a293",
+      "accepted_svg_sha256": null,
+      "method": "explicit source-correct standard LaTeX picture grid; no TikZ macro shim",
+      "trim": "0pt 0pt 0pt 0pt"
+    },
+    {
+      "source_sha256": "ed1c169ee725c2f377023759658c03712f6f2bdbbe3459f24bc9821382cf410c",
+      "source": "\\begin{tikzpicture}[>=Stealth,every node/.style={font=\\small},\n box/.style={draw,rounded corners,align=center,minimum width=2.1cm,minimum height=.9cm}]\n\\node (z) at (0,0) {$0$};\n\\node[box] (l) at (2,0) {$k^5$\\\\$C_0$};\n\\node[box] (m) at (5,0) {$k^5\\oplus\\epsilon k^5$\\\\$\\left(\\begin{smallmatrix}C_0&0\\\\C_1&C_0\\end{smallmatrix}\\right)$};\n\\node[box] (r) at (8,0) {$k^5$\\\\$C_0$};\n\\node (e) at (10,0) {$0$};\n\\draw[->] (z)--(l);\\draw[->] (l)--node[above] {$i$}(m);\n\\draw[->] (m)--node[above] {$p$}(r);\\draw[->] (r)--(e);\n\\end{tikzpicture}",
+      "pdf_sha256": "2fcf3aa31a42a576a3e608ec5bb4fa4de3bb226a5f789bb7ab54979501af390d",
+      "accepted_svg_sha256": "7e47093b14c2b2bd176f97269170cda5c9c73980169f760f59bb337761c4e065",
+      "method": "exact-source cached standalone PDF",
+      "trim": "5pt 5pt 5pt 5pt"
+    },
+    {
+      "source_sha256": "3667c0b10605da38015eb0f87a64df21254f7ab7002b67dae645ab113048e0a6",
+      "source": "\\begin{tikzpicture}[scale=.9]\n \\fill[cyan!9] (0,0) circle (1.4);\n \\draw[thick] (0,0) circle (1.4);\n \\foreach \\a in {0,30,...,330}{\\draw[cyan!65!black] (0,0)--(\\a:1.4);}\n \\fill (0,0) circle (.06);\n \\node[align=center,text width=4cm,font=\\small] at (0,-1.95) {disk\\\\coherent circle of spokes};\n \\begin{scope}[xshift=6cm]\n  \\fill[cyan!9,even odd rule] (0,0) circle (1.4) (0,0) circle (.48);\n  \\draw[thick] (0,0) circle (1.4);\n  \\draw[dashed,thick] (0,0) circle (.48);\n  \\foreach \\a in {0,30,...,330}{\\draw[cyan!65!black] (\\a:.48)--(\\a:1.4);}\n  \\draw[->,thick] (20:.75) arc (20:315:.75);\n  \\node[align=center,text width=4cm,font=\\small] at (0,-1.95) {punctured disk\\\\peripheral loop};\n \\end{scope}\n\\end{tikzpicture}",
+      "pdf_sha256": "42ddc4f835c49aa82ecede330691a5bebc892b1f7e9c2061b45276a930db6d33",
+      "accepted_svg_sha256": "7fa40fb4ec0b1621ba6556e34b22b173a22dc4142bf87eb367974d4c6f6c0455",
+      "method": "exact-source accepted vector SVG via existing librsvg/cairo",
+      "trim": "5pt 5pt 5pt 5pt"
+    }
+  ],
+  "unknown": []
+}

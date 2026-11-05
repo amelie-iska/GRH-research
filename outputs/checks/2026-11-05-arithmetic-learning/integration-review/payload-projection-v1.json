@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "scope": "Independent static payload-to-frozen-source mapping only; no training rerun, no browser or protected-source writes",
+  "checks": {
+    "frozen_binding": 1,
+    "runtime_payload_hash": 1,
+    "embedded_source_binding": 12,
+    "input_mapping": 9,
+    "case_binding": 4,
+    "target_mapping": 4,
+    "scope_mapping": 4,
+    "exact_feature_mapping": 4,
+    "histogram_mapping": 4,
+    "observable_mapping": 4,
+    "weight_mapping": 4,
+    "compressed_state_hash": 8,
+    "state_count": 8,
+    "optimizer_mapping": 8,
+    "certified_scope": 8,
+    "all_coordinate_and_residual_projections": 424,
+    "loss_mapping": 424,
+    "log_mapping": 1272,
+    "exact_audit_mapping": 424,
+    "acceptance_mapping": 424,
+    "signed_prediction_error_mapping": 848,
+    "certificate_projection_mapping": 848,
+    "uniform_projection_mapping": 424,
+    "final_acceptance_scope": 8,
+    "complete_payload_counts": 1,
+    "rounding_negative_control": 1
+  },
+  "total_grouped_check_units": 5181,
+  "saved_states": 424,
+  "coordinate_states": 89040,
+  "decoded_trajectory_blocks": 8,
+  "rounded_away_components_preserved_by_exact_difference": 510,
+  "rounding_example": {
+    "case": "all_literal-complex",
+    "step": 55,
+    "coordinate": 0,
+    "component": 0,
+    "rounded_g_equals_target": -6.0,
+    "separately_extracted_exact_residual_float": 1.4224732503009818e-16
+  },
+  "cases": [
+    {
+      "id": "all_literal-real",
+      "metric_states": 54,
+      "ordinary_states": 51,
+      "raw_zeros": 4530,
+      "negative_mu_nonzero": 64
+    },
+    {
+      "id": "all_literal-complex",
+      "metric_states": 56,
+      "ordinary_states": 51,
+      "raw_zeros": 4530,
+      "negative_mu_nonzero": 64
+    },
+    {
+      "id": "guaranteed_nonprincipal-real",
+      "metric_states": 54,
+      "ordinary_states": 51,
+      "raw_zeros": 4530,
+      "negative_mu_nonzero": 64
+    },
+    {
+      "id": "guaranteed_nonprincipal-complex",
+      "metric_states": 56,
+      "ordinary_states": 51,
+      "raw_zeros": 4530,
+      "negative_mu_nonzero": 64
+    }
+  ],
+  "payload_sha256": "0a33dfeae6a854c80cc7e6c21a4d1bd2bb66338223674432f396a253d94508ff",
+  "payload_bytes": 3701277,
+  "runtime_sha256": "e8973198f010177d6980759ef3918528822d7424919d0714fe09d0331471430a",
+  "extractor_sha256": "b8d3f5409bc5df4a4c4619da4bea10718aefc2fd195d8a55d082d0600cfb285d",
+  "reviewer_sha256": "13ea9dbaabcb643c477f80553cf9a9e08ffdcda83113f90077bb82fc35388e8c",
+  "elapsed_seconds": 3.334,
+  "final_UI_freeze_pending": true
+}

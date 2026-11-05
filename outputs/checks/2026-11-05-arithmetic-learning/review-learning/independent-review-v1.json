@@ -1,0 +1,188 @@
+{
+  "verdict": "PASS",
+  "scope": "Independent exact code/math and immutable v2 artifact review; no analytic/Lean/GRH/generalization or PSD claim",
+  "counts": {
+    "binding": 24,
+    "scope": 1,
+    "column_support": 18,
+    "factorization": 23,
+    "row_support": 4,
+    "phase_embedding": 14,
+    "local_phase_row": 2262,
+    "raw_phase_row": 2262,
+    "row_S_classification": 2262,
+    "guaranteed_scope": 1,
+    "orientation_structure": 421,
+    "signed_mu": 210,
+    "orientation_unique": 95,
+    "phase_orthogonality": 524,
+    "Gram_target": 450,
+    "Gamma_orientation_vector": 2,
+    "raw_zero_count": 2,
+    "sparse_histogram": 190,
+    "case_binding": 4,
+    "weights": 4,
+    "direct_readout": 4,
+    "signed_readout": 4,
+    "certificate_constant": 4,
+    "metric_state": 220,
+    "metric_loss": 220,
+    "metric_prediction": 220,
+    "metric_actual_error": 220,
+    "metric_certificate": 220,
+    "uniform_certificate": 220,
+    "acceptance": 220,
+    "first_accepted_state": 4,
+    "ordinary_step_parameters": 4,
+    "ordinary_state": 204,
+    "ordinary_loss": 204,
+    "ordinary_contraction": 200,
+    "ordinary_scope": 4,
+    "feature_structure": 380,
+    "feature_value": 1520,
+    "negative_mu_nonzero": 4,
+    "negative_unsigned_mu": 4,
+    "negative_scalar_only_fit": 4,
+    "negative_W_conjugation": 2,
+    "negative_norm_keys": 1,
+    "negative_Euclidean_norm": 1,
+    "negative_drop_units": 1,
+    "negative_drop_common_h": 2,
+    "tamper_refusal": 3,
+    "author_binding_restore": 1
+  },
+  "total_check_units": 12868,
+  "local_symbols_reconstructed": 31668,
+  "Gram_entries_reconstructed": 450,
+  "histogram_cells_reconstructed": 186552,
+  "metric_updates_replayed": 216,
+  "ordinary_updates_replayed": 200,
+  "cases": [
+    {
+      "file": "all_literal-real.json",
+      "metric_updates": 53,
+      "ordinary_updates": 50,
+      "CC": [
+        "2393/125",
+        "0"
+      ],
+      "CM": [
+        "431/50",
+        "0"
+      ],
+      "nonzero_negative_mu_CC_orientations": 64,
+      "final_certificates_le_tau_squared": true
+    },
+    {
+      "file": "all_literal-complex.json",
+      "metric_updates": 55,
+      "ordinary_updates": 50,
+      "CC": [
+        "22315751693/281250000",
+        "0"
+      ],
+      "CM": [
+        "854250559/22500000",
+        "0"
+      ],
+      "nonzero_negative_mu_CC_orientations": 64,
+      "final_certificates_le_tau_squared": true
+    },
+    {
+      "file": "guaranteed_nonprincipal-real.json",
+      "metric_updates": 53,
+      "ordinary_updates": 50,
+      "CC": [
+        "4293/250",
+        "0"
+      ],
+      "CM": [
+        "771/100",
+        "0"
+      ],
+      "nonzero_negative_mu_CC_orientations": 64,
+      "final_certificates_le_tau_squared": true
+    },
+    {
+      "file": "guaranteed_nonprincipal-complex.json",
+      "metric_updates": 55,
+      "ordinary_updates": 50,
+      "CC": [
+        "871509637/12500000",
+        "0"
+      ],
+      "CM": [
+        "12484051249/375000000",
+        "0"
+      ],
+      "nonzero_negative_mu_CC_orientations": 64,
+      "final_certificates_le_tau_squared": true
+    }
+  ],
+  "common_zero_negative_control": {
+    "pair": 31,
+    "row": [
+      -9,
+      -8
+    ],
+    "h": [
+      [
+        1,
+        9
+      ]
+    ],
+    "q": [
+      [
+        -11,
+        -9
+      ],
+      [
+        -2,
+        9
+      ]
+    ]
+  },
+  "in_memory_tamper_controls": [
+    {
+      "path": "examples/arithmetic_learning/learn.py",
+      "refused": true,
+      "message": "Stale source bytes: examples/arithmetic_learning/learn.py"
+    },
+    {
+      "path": "outputs/experiments/2026-11-05-arithmetic-learning-v2/input.json",
+      "refused": true,
+      "message": "Stale artifact bytes: input.json"
+    },
+    {
+      "path": "outputs/experiments/2026-11-05-arithmetic-learning-v2/all_literal-complex.json",
+      "refused": true,
+      "message": "Stale artifact bytes: all_literal-complex.json"
+    }
+  ],
+  "protected_bytes_mutated": false,
+  "reviewer_code_sha256": "9a8d2b6c861c6983ae56b24042ca5f3b4605b7fac3008758021cb96b347120e9",
+  "run_manifest_sha256": "1eb22dfdadaf4a92e6b6231b7edd2fbfab0e68e0751237ce45e7a11bdb6dc3b4",
+  "input_sha256": "61a43821bdba19b5ca353042e216b2107977e60211e959cd1d2e65cf1acb2ed6",
+  "source_sha256": {
+    "examples/arithmetic_learning/README.md": "f3cb62eab1c19d05f061af90f8289dc0f8ed3b8015d5e202243892f1293fd24f",
+    "examples/arithmetic_learning/learn.py": "5c53724df205e017533c20229fe981ce70cde615eeefb7077e73be401dbbdd2e",
+    "examples/arithmetic_learning/test_learning.py": "e8c777a86a840a3d223423d235fbbc4b2adb0d0918d9126ce8f785dcd1c95cdf",
+    "scripts/check_finite_correlation.py": "5f8da7467f93071fc19b4a1a1e8c415a880a95305d847cce9a42c386d1f3d3e8",
+    "scripts/check_mobius_split.py": "a3f1d3d89acafc187d6ca6851f370712b2544c92802b4d95dc5187e18a770638",
+    "scripts/check_reciprocity_period.py": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925"
+  },
+  "artifact_sha256": {
+    "all_literal-complex.json": "cecf3f758ae65bc74ebc8c6be7680136f45b7edfc21b1e3d21b4f9ef414766fd",
+    "all_literal-real.json": "fb51af890b64c0c09749fe6498d956d1c46a4811fa672ce4c45aa43686e26b95",
+    "guaranteed_nonprincipal-complex.json": "5a9cafb8bacd908befbb1ecd52901622eff25cf457d786757286b23aa04c11a7",
+    "guaranteed_nonprincipal-real.json": "dcd5a472d628322614a4e947fe9905e3f5211e5cb7a627ab00c6e1db3847fc96",
+    "input.json": "61a43821bdba19b5ca353042e216b2107977e60211e959cd1d2e65cf1acb2ed6"
+  },
+  "elapsed_seconds": 5.387,
+  "limitations": [
+    "Weights define a Fourier-coordinate/RKHS norm; unweighted phase L2 Parseval alone gives sum|delta g|^2, not sum lambda|delta g|^2.",
+    "verify_run is a hash-binding check against the manifest, not a mathematical replay or authentication signature; this review pins the external immutable manifest hash.",
+    "All15 active columns of the specified four-bump W; principal nu; two specified finite row sets. No range/conductor/profile generalization.",
+    "Metric training uses exact supervised Gamma labels. Ordinary50-step trajectories remain budget limited and unrequested-error-certified."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "utc": "2026-11-05T15:50:12.877236+00:00",
+  "source": "scripts/build_public_site.py",
+  "before_sha256": "375f857263710dcbcb12bf5ebf07a036a2a9f75af3c65bb9a9d7219c4490beca",
+  "source_sha256": "6588259e8d907f85e7751072d399a5a3508f0146653c424af6fa6c16402b5e9d",
+  "test": "planning/arithmetic-learning-20261105/qa-public-adapter/test_adapter.mjs",
+  "test_sha256": "4826ff8d921283e417aa39697d7290c5c4948f8d77d329bcac705fc232003e3d",
+  "test_report": "outputs/checks/2026-11-05-arithmetic-learning/adapter/node-vm.json",
+  "patch_sha256": "ebd1da0e0e08a585b60172f76f63b59b426d870414b9a03c73bed3a0631e328f",
+  "exact_scope": "Two authorized constructor-base fixes only. Native fetch input init is forwarded unchanged. No frozen bundle/UI/scientific-source edit; no actual network in unit tests.",
+  "browser_integration": "Pending fresh worker-built bundle-v2; bundle-v1 first failed pass preserved unchanged."
+}

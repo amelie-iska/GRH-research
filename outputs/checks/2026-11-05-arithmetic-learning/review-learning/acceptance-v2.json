@@ -1,0 +1,55 @@
+{
+  "verdict": "PASS",
+  "scope": "Exact finite learner code, frozen v2 artifacts and final paper bytes; no mixed-conductor theorem audit",
+  "paper_sha256": {
+    "papers/arithmetic-learning-core.tex": {
+      "sha256": "1843bf4dc55f66d705336cf48a644133e3e272da2e5a054b5194953771974846",
+      "bytes": 3487
+    },
+    "papers/arithmetic-learning-details.tex": {
+      "sha256": "264954599ae10cbe4af708ba120453d82b5091dd91a6d0b20425eb4f568e5cd3",
+      "bytes": 6353
+    }
+  },
+  "run_manifest_sha256": "1eb22dfdadaf4a92e6b6231b7edd2fbfab0e68e0751237ce45e7a11bdb6dc3b4",
+  "input_sha256": "61a43821bdba19b5ca353042e216b2107977e60211e959cd1d2e65cf1acb2ed6",
+  "source_sha256": {
+    "examples/arithmetic_learning/README.md": "f3cb62eab1c19d05f061af90f8289dc0f8ed3b8015d5e202243892f1293fd24f",
+    "examples/arithmetic_learning/learn.py": "5c53724df205e017533c20229fe981ce70cde615eeefb7077e73be401dbbdd2e",
+    "examples/arithmetic_learning/test_learning.py": "e8c777a86a840a3d223423d235fbbc4b2adb0d0918d9126ce8f785dcd1c95cdf",
+    "scripts/check_finite_correlation.py": "5f8da7467f93071fc19b4a1a1e8c415a880a95305d847cce9a42c386d1f3d3e8",
+    "scripts/check_mobius_split.py": "a3f1d3d89acafc187d6ca6851f370712b2544c92802b4d95dc5187e18a770638",
+    "scripts/check_reciprocity_period.py": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925"
+  },
+  "artifact_sha256": {
+    "all_literal-complex.json": "cecf3f758ae65bc74ebc8c6be7680136f45b7edfc21b1e3d21b4f9ef414766fd",
+    "all_literal-real.json": "fb51af890b64c0c09749fe6498d956d1c46a4811fa672ce4c45aa43686e26b95",
+    "guaranteed_nonprincipal-complex.json": "5a9cafb8bacd908befbb1ecd52901622eff25cf457d786757286b23aa04c11a7",
+    "guaranteed_nonprincipal-real.json": "dcd5a472d628322614a4e947fe9905e3f5211e5cb7a627ab00c6e1db3847fc96",
+    "input.json": "61a43821bdba19b5ca353042e216b2107977e60211e959cd1d2e65cf1acb2ed6"
+  },
+  "review": {
+    "path": "planning/arithmetic-learning-20261105/review-learning/REVIEW-v2.md",
+    "sha256": "39ac34eab71b1b954b1868743ae975c9f2d85e0c0138a02fc15ff1e0dd573664"
+  },
+  "independent_execution": {
+    "path": "outputs/checks/2026-11-05-arithmetic-learning/review-learning/independent-review-v1.json",
+    "sha256": "1228c0f8c164c0a1aced8e956df270cdf88acb0e30d7ee4e5154ab3c7ee68659",
+    "reviewer_code_sha256": "9a8d2b6c861c6983ae56b24042ca5f3b4605b7fac3008758021cb96b347120e9",
+    "metric_updates": 216,
+    "ordinary_updates": 200,
+    "local_symbols": 31668,
+    "Gram_targets": 450,
+    "histogram_cells": 186552,
+    "grouped_check_units": 12868
+  },
+  "protected_bytes_mutated": false,
+  "blocking_findings": [],
+  "remaining_limits": [
+    "fixed finite principal-nu fixture only",
+    "exact supervised targets; no efficiency/generalization claim",
+    "ordinary GD budget limited",
+    "hash verification trusts externally pinned manifest",
+    "no analytic/PSD/Lean/GRH conclusion"
+  ]
+}

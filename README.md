@@ -4,12 +4,14 @@ A public research workspace for auditing and developing surface-order and Hilber
 
 **Current result:** a corrected conditional spectral criterion, convergent arithmetic approximants with explicit errors, an explicit arithmetic Abel trace-class family, and rigorous obstructions to several supplied proof steps. **A complete proof of GRH has not been established.** In particular, the claimed prime/geodesic identification is false, and the absolute prime-tail bound used in the separate GRH PDF diverges in the asserted range. These require mathematical replacements. See [audit](planning/AUDIT.md) and [open obligations](planning/OPEN_OBLIGATIONS.md).
 
-The latest [weighted-cutoff result](research/weighted-cutoff-moment.md) bounds
-the original full-mask type-I remainder independently of the truncated cutoff.
-It still loses a factor D^(1/2) relative to the desired energy at H=D^(3/4).
-The signed covariance and positive arithmetic determinant/zero-location bridge
-remain open. These are independently reviewed prose results with explicit
-classical inputs; no new Lean or GRH proof is claimed.
+The latest [ordinary-conductor comparison](research/mixed-conductor-and-learning.md)
+bounds the original full-mask remainder by `H + D H^(1/6) + (DH)^(2/3)`,
+independently of the cutoff. At `H=D^(3/4)` its leading power is7/6,
+leaving a factor `D^(5/12)` above the target. The signed covariance and positive
+arithmetic determinant/zero-location bridge remain open. A separate executed
+finite learner certifies every correlation and both signed-observable errors.
+These are independently reviewed prose and exact finite results; no new
+analytic/category Lean or GRH proof is claimed.
 
 ## Research book and interactive companion (2026-11-03)
 
@@ -18,7 +20,7 @@ The repository and both complementary Hugging Face datasets were made public
 at the owner’s request on 4 November 2026. Frozen data and credentials remain
 separate; the local preview is retained.
 
-Current edition: **237 pages,40 chapters, thirteen unique in-book laboratories**.
+Current edition: **261 pages,40 chapters,7,352 MathML expressions and thirteen unique in-book laboratories**.
 
 New complementary datasets: **16,384 Aster material-response rows** and
 **22,951 Mora conformer/force rows**, plus separately labelled source anchors
@@ -518,3 +520,23 @@ high-gcd recovery, with no new analytic saving. The current book has 251 pages /
 The [new exponent inspector](https://amelie-iska.github.io/GRH-research/quadratic-pivot.html) retains the complete saturation face. A classical quadratic large sieve improves its cube-factor-dominant sector, while the remaining sector still has the old worst exponent. The [derivation and scope](research/quadratic-pivot-sector.md) also gives an exact joint Gauss-phase identity with every common-prime zero retained. No new global signed estimate, determinant bridge, Lean theorem or GRH proof is claimed.
 
 Current edition: 255 pages / 40 chapters / 7,065 MathML; focused 57/150 pages and notes 15/41 pages. All 6,890 previous math subtrees remain unchanged.
+
+## Current arithmetic bound and exact learned correlations
+
+An ordinary conductor comparison improves the global unsigned envelope to
+`H + D H^(1/6) + (DH)^(2/3)`: at `H=D^(3/4)`, power **7/6** replaces5/4.
+The remaining excess is5/12 above the target exponent; GRH remains open.
+The [current inspector](https://amelie-iska.github.io/GRH-research/quadratic-pivot.html)
+shows the improved whole old face and the new upper-bound witnesses.
+
+The distinct [arithmetic learning replay](https://amelie-iska.github.io/GRH-research/arithmetic-learning.html)
+shows every saved update for four exact finite correlation readouts, retaining
+all signs/phases/raw zeros and certifying1e-12 full-vector and signed-observable
+error. It is supervised finite reference training, without an asymptotic
+speedup, generalization, PSD or determinant claim.
+[Derivation, data, reproduction and limits](research/mixed-conductor-and-learning.md).
+
+Current edition:261 pages /40 chapters /7,352 MathML; focused59/157 pages,
+notes17/48 pages. All7,065 previous math subtrees remain ordered/unchanged.
+The previous cube-only sector/frontier discussion is historical and is
+superseded by this stronger unsigned comparison. No new Lean or GRH result.

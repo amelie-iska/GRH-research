@@ -20,10 +20,11 @@ def main(output):
         source=ROOT/p
         if not source.is_file():continue
         target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target);files.append((source,target))
-    for source,name in [('outputs/book/surface-orders-book.pdf','book.pdf'),('outputs/papers/resolutions-concise.pdf','concise.pdf'),('outputs/papers/resolutions-extended.pdf','extended.pdf')]:shutil.copyfile(ROOT/source,output/name)
+    for source,name in [('outputs/book/surface-orders-book.pdf','book.pdf'),('outputs/papers/resolutions-concise.pdf','concise.pdf'),('outputs/papers/resolutions-extended.pdf','extended.pdf'),('papers/dessin-core.tex','papers/dessin-core.tex')]:
+        (output/name).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/source,output/name)
     runtime=r'''// Project-path adapter only; saved scientific records remain byte-identical.
 (()=>{const base='/GRH-research/';const map=value=>{if(typeof value!=='string')return value;if(value.startsWith('http://127.0.0.1:8765/'))return base+value.slice(22);if(value.startsWith(location.origin+'/'))value=value.slice(location.origin.length);if(value.startsWith('/')&&!value.startsWith('//')&&!value.startsWith(base))return base+value.slice(1);return value;};
-const native=window.fetch;window.fetch=(input,init)=>native(typeof input==='string'?map(input):input instanceof URL?new URL(map(input.href)):input instanceof Request?new Request(map(input.url),input):input,init);
+const native=window.fetch;window.fetch=(input,init)=>native(typeof input==='string'?map(input):input instanceof URL?new URL(map(input.href),location.origin):input instanceof Request?new Request(new URL(map(input.url),location.origin),input):input,init);
 for(const [type,key]of[[HTMLAnchorElement,'href'],[HTMLImageElement,'src'],[HTMLIFrameElement,'src'],[HTMLMediaElement,'src'],[HTMLSourceElement,'src']]){const d=Object.getOwnPropertyDescriptor(type.prototype,key);if(d?.set)Object.defineProperty(type.prototype,key,{...d,set(v){d.set.call(this,map(v));}});}
 const original=Element.prototype.setAttribute;Element.prototype.setAttribute=function(k,v){return original.call(this,k,['href','src','poster','data-source'].includes(k)?map(v):v);};
 const patch=node=>{if(node.nodeType!==1)return;for(const a of ['href','src','poster','data-source']){const v=node.getAttribute(a);if(v&&map(v)!==v)original.call(node,a,map(v));}node.querySelectorAll('[href],[src],[poster],[data-source]').forEach(el=>{for(const a of ['href','src','poster','data-source']){const v=el.getAttribute(a);if(v&&map(v)!==v)original.call(el,a,map(v));}});};

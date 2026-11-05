@@ -1,0 +1,63 @@
+% Original finite arithmetic learning construction; no asymptotic or GRH claim.
+\section{Learning the actual signed arithmetic correlations}\label{arl:core}
+The unsigned refinement in Section~\ref{mcs:core} leaves a signed problem.
+Here is a separate, executed finite learning objective on the original
+correlations, with a certificate for every coordinate and observable.
+It is not a uniform estimate for an expanding family.
+For ordered distinct squarefree columns $m=hr,n=ht$, put $q=rt$ and
+\[
+ \Gamma_i=\sum_{u\in\mathcal R}\chi_r(u)\overline{\chi_t(u)}
+                         \mathbf1_{(u,h)=1},\qquad i=(h,q,r).
+\]
+The symbols vanish at every collision with $q$; the common-prime mask is
+retained separately. With principal $\nu$, actual complementary divisor counts
+$r_U(m)$, and one common complex profile $W_m=W(Nm/D)$, define
+\[
+ d_i^{CC}=r_U(m)r_U(n)W_m\overline{W_n},\qquad
+ d_i^{C\mu}=r_U(m)W_m\overline{W_n},\qquad
+ \lambda_i=1+|d_i^{CC}|^2+|d_i^{C\mu}|^2.
+\]
+The exact diagonal $\Delta_X$ and these offdiagonal coordinates give
+\begin{equation}\label{arl:observable}
+ E_X=\Delta_X+D^{-1}\sum_i\mu(q_i)d_i^X\Gamma_i,
+       \qquad X\in\{CC,C\mu\}.
+\end{equation}
+Thus $E_{CC}=\sum_{u\in\mathcal R}|C_u|^2$ and
+$E_{C\mu}=\sum_{u\in\mathcal R}C_u\overline{M_u}$ for the actual normalized
+row sums. Neither the M\"obius sign nor a complex conjugate is discarded.
+
+\begin{proposition}[A finite supervised certificate]\label{arl:certificate}
+Let $g_i$ be complex readout coordinates and
+$L(g)=\sum_i\lambda_i|g_i-\Gamma_i|^2$.
+For $K_X=\sum_i|d_i^X|^2/\lambda_i$ and
+$\lambda_{\min}=\min_i\lambda_i$, the substituted readouts satisfy
+\begin{align*}
+ |\widehat E_X-E_X|^2&\le D^{-2}K_X L(g),\\
+ \max_i|g_i-\Gamma_i|^2&\le L(g)/\lambda_{\min}.
+\end{align*}
+The executed metric-gradient update $g^{(t+1)}=(g^{(t)}+\Gamma)/2$
+gives $L(g^{(t)})=4^{-t}L(g^{(0)})$. Therefore every positive rational
+requested tolerance on these three squared bounds is attained after finitely
+many updates on this fixed exact instance, with unrestricted resources.
+\end{proposition}
+The implementation's resource guard refuses requests beyond its update budget;
+termination in this proposition is not a practical runtime guarantee.
+The labels $\Gamma_i$ are computed exactly before training, so no speedup over
+exact label evaluation or generalization to unseen conductors is claimed.
+
+The supplied instance uses $D=6000,U=60,H=625$, $S$ above $2,3$, principal
+$\nu$, and all $15$ good squarefree ideal columns at activated norms
+$7507,7519,8281,10507$ (respectively $2,4,1,8$ ideals).
+One explicitly specified common smooth four-bump profile is zero at every
+other integer norm. Both the $2262$ literal rows and the separately labelled
+$2148$ guaranteed nonprincipal subset are evaluated; the latter is not
+asserted to be the whole nonprincipal family.
+There are $95$ offdiagonal $(h,q)$ blocks, $65$ with $h=1$, and $210$
+ordered learned coordinates. Every row case retains $4530$ raw column zeros.
+Real and complex profiles give four requested-$10^{-12}$ certificates,
+using $53,55,53,55$ metric updates respectively: $216$ executed updates,
+with every full rational state saved. A separate $200$ executed ordinary
+coordinate updates are budget-limited and carry no requested-error claim.
+The standalone replay is linked from the book and project page.
+No analytic saving, positive determinant, zero-location assertion,
+upstream quantum training, new Lean declaration or GRH conclusion follows.
