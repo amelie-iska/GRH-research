@@ -554,3 +554,12 @@ superseded by this stronger unsigned comparison. No new Lean or GRH result.
 The [profile inspector](https://amelie-iska.github.io/GRH-research/profile-uniformity.html#fixed-h1) now exposes an exact twenty-row matrix in the remaining row sector, with every raw zero and signed pairing. A fixed common profile gives a negative coprime slice while the complete selected two-column Gram remains positive.
 
 The [new derivation](research/signed-coprime-weights.md) bounds the actual signed coprime slice by gcd–Mobius inversion and identifies its exact conductor-12 Hecke column character. This retains the current power7/6 and the unresolved5/12 excess at H=D^(3/4); neither a phase gauge nor centering supplies the missing saving. No new Lean declaration, determinant comparison or GRH proof is claimed.
+
+
+## Complete-column signed divisor laboratory
+
+The [signed divisor inspector](https://amelie-iska.github.io/GRH-research/signed-divisor.html) steps through all16953 ideal columns,21750 divisor buckets and20 actual rows of a new exact reference. It retains raw zeros, orientation means and all nine signed pairings. The negative finite coprime slice is not an asymptotic counterexample.
+
+The [derivation and scope](research/signed-divisor-incidence.md) give exact divisor-incidence error certificates and a mean-retaining analytic expansion with nine zeta factors and eight short-divisor states. These reductions preserve the unresolved signed estimate; the current7/6 upper power and5/12 excess at H=D^(3/4) remain. No new Lean, determinant or GRH conclusion follows.
+
+Current delivered edition:279pages/40chapters/8176MathML; focused64/175pages and notes23/66pages. All7891 prior literal math subtrees remain ordered and byte-identical. The signed-divisor exact finite reference and new workflow add no asymptotic power saving or Lean theorem.

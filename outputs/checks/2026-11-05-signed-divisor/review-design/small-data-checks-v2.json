@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "D": 144,
+      "columns": 41,
+      "divisors": 53,
+      "rows": 5,
+      "all9_direct_h1_numerators": [
+        [
+          [
+            -76,
+            0
+          ],
+          [
+            -50,
+            0
+          ],
+          [
+            26,
+            0
+          ]
+        ],
+        [
+          [
+            -50,
+            0
+          ],
+          [
+            -8,
+            0
+          ],
+          [
+            42,
+            0
+          ]
+        ],
+        [
+          [
+            26,
+            0
+          ],
+          [
+            42,
+            0
+          ],
+          [
+            16,
+            0
+          ]
+        ]
+      ],
+      "ordered_pair_incidence_checks": 1681,
+      "raw_values": 205,
+      "F_values": 795,
+      "Z_values": 477,
+      "output": "outputs/checks/2026-11-05-signed-divisor/review-design/independent-D144-v1.json",
+      "sha256": "3024ff4d3480e640d566cee21ff025acd24d046b783e4401bd2c106f2ea61adb",
+      "preserved_completed_v1_case": true
+    },
+    {
+      "D": 576,
+      "columns": 164,
+      "divisors": 212,
+      "rows": 11,
+      "all9_direct_h1_numerators": [
+        [
+          [
+            -442,
+            0
+          ],
+          [
+            -406,
+            0
+          ],
+          [
+            36,
+            0
+          ]
+        ],
+        [
+          [
+            -406,
+            0
+          ],
+          [
+            -252,
+            0
+          ],
+          [
+            154,
+            0
+          ]
+        ],
+        [
+          [
+            36,
+            0
+          ],
+          [
+            154,
+            0
+          ],
+          [
+            118,
+            0
+          ]
+        ]
+      ],
+      "ordered_pair_incidence_checks": 26896,
+      "raw_values": 1804,
+      "F_values": 6996,
+      "Z_values": 1908,
+      "output": "outputs/checks/2026-11-05-signed-divisor/review-design/independent-D576-v2.json",
+      "sha256": "b6db6d31758f7955b3480dbe67011f12fd19a8348b34f3968551c4d0c63ff446"
+    }
+  ],
+  "old_checks_or_author_checkers_imported_or_run": false,
+  "D144_completed_case_reused_without_rerun": true,
+  "harness_diagnostic_sha256": "32437d187d7c95d724f9ff762958b527bd8fedb5118de9494126da22b1ff99c0",
+  "method": "Independent lattice ideal enumeration/factorization; direct finite-field powers; original ordered-divisor A/C/mu; direct ordered pair and exact gcd classes; separate divisor buckets.",
+  "checker_sha256": {
+    "planning/signed-divisor-20261105/review-design/run_small_review_v2.py": "5338cd0f02cbe71d91454bd5789dd058d668f8e4a9b96a436dc191095b4f6caa",
+    "planning/signed-divisor-20261105/review-design/independent_small_family_v1.py": "2832ab817013e20acdea7fc53f02885e358eff21dfafe5ff5eb700e974a944c7"
+  },
+  "elapsed_seconds": 0.738
+}

@@ -1,0 +1,1147 @@
+{
+  "passed": true,
+  "tested_base": "https://amelie-iska.github.io/GRH-research",
+  "layouts": [
+    {
+      "width": 320,
+      "scroll": 308,
+      "theme": "light",
+      "canvas": 276,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 390,
+      "scroll": 378,
+      "theme": "light",
+      "canvas": 339,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 768,
+      "scroll": 756,
+      "theme": "light",
+      "canvas": 426.20001220703125,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 1440,
+      "scroll": 1428,
+      "theme": "light",
+      "canvas": 977,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 320,
+      "scroll": 308,
+      "theme": "biomech",
+      "canvas": 276,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 390,
+      "scroll": 378,
+      "theme": "biomech",
+      "canvas": 339,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 768,
+      "scroll": 756,
+      "theme": "biomech",
+      "canvas": 426.20001220703125,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 1440,
+      "scroll": 1428,
+      "theme": "biomech",
+      "canvas": 977,
+      "filter": "none",
+      "clock": "none"
+    }
+  ],
+  "cases": [
+    {
+      "D": 256,
+      "max": 30,
+      "N": 259,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=256, U=16: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=37/8; principal residue0."
+    },
+    {
+      "D": 1024,
+      "max": 114,
+      "N": 1057,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=1024, U=32: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=147/16; principal residue0."
+    },
+    {
+      "D": 4096,
+      "max": 412,
+      "N": 4123,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=4096, U=64: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=1145/64; principal residue0."
+    },
+    {
+      "D": 16384,
+      "max": 1570,
+      "N": 16387,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=16384, U=128: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=1163/32; principal residue0."
+    },
+    {
+      "D": 65536,
+      "max": 5912,
+      "N": 65611,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=65536, U=256: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=18539/256; principal residue0."
+    },
+    {
+      "D": 262144,
+      "max": 22438,
+      "N": 262171,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=262144, U=512: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=9265/64; principal residue0."
+    }
+  ],
+  "controls": [
+    {
+      "norm49": [
+        {
+          "v": "28",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-8, -5)Nv / squarefree49 / nou=εβ_v⁶ · omega basis(-25271, -128231)Nu=(Nv)⁶13841287201Allowed ideal columns64 / 74T_v=Σ allowed |A_U|64Exact E_u amplitude64/16Exact |E_u|²=T_v²/D16"
+        },
+        {
+          "v": "29",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-8, -3)Nv / squarefree49 / nou=εβ_v⁶ · omega basis(-128231, -25271)Nu=(Nv)⁶13841287201Allowed ideal columns64 / 74T_v=Σ allowed |A_U|64Exact E_u amplitude64/16Exact |E_u|²=T_v²/D16"
+        },
+        {
+          "v": "30",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-7, -7)Nv / squarefree49 / yesu=εβ_v⁶ · omega basis(117649, 117649)Nu=(Nv)⁶13841287201Allowed ideal columns54 / 74T_v=Σ allowed |A_U|54Exact E_u amplitude54/16Exact |E_u|²=T_v²/D729/64"
+        }
+      ],
+      "commonWUnchanged": true
+    },
+    {
+      "nativeNormSlider": true
+    },
+    {
+      "jointValid": "3/1000",
+      "jointInvalid": "-3/4000",
+      "orientations": 4
+    }
+  ],
+  "integration": [
+    {
+      "name": "fixed-h1-source-ready",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-all20rows40rawvalues-and-six-collisions",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-all18pairings-and-compensated-gauge",
+      "passed": true,
+      "detail": [
+        {
+          "slice": "full",
+          "x": "A",
+          "y": "A",
+          "numerator": "[28,0]",
+          "compensatedGauge": "[28,0]"
+        },
+        {
+          "slice": "full",
+          "x": "A",
+          "y": "C",
+          "numerator": "[32,-4]",
+          "compensatedGauge": "[32,-4]"
+        },
+        {
+          "slice": "full",
+          "x": "A",
+          "y": "mu",
+          "numerator": "[4,-4]",
+          "compensatedGauge": "[4,-4]"
+        },
+        {
+          "slice": "full",
+          "x": "C",
+          "y": "A",
+          "numerator": "[36,4]",
+          "compensatedGauge": "[36,4]"
+        },
+        {
+          "slice": "full",
+          "x": "C",
+          "y": "C",
+          "numerator": "[80,0]",
+          "compensatedGauge": "[80,0]"
+        },
+        {
+          "slice": "full",
+          "x": "C",
+          "y": "mu",
+          "numerator": "[44,-4]",
+          "compensatedGauge": "[44,-4]"
+        },
+        {
+          "slice": "full",
+          "x": "mu",
+          "y": "A",
+          "numerator": "[8,4]",
+          "compensatedGauge": "[8,4]"
+        },
+        {
+          "slice": "full",
+          "x": "mu",
+          "y": "C",
+          "numerator": "[48,4]",
+          "compensatedGauge": "[48,4]"
+        },
+        {
+          "slice": "full",
+          "x": "mu",
+          "y": "mu",
+          "numerator": "[40,0]",
+          "compensatedGauge": "[40,0]"
+        },
+        {
+          "slice": "h1",
+          "x": "A",
+          "y": "A",
+          "numerator": "[-6,0]",
+          "compensatedGauge": "[-6,0]"
+        },
+        {
+          "slice": "h1",
+          "x": "A",
+          "y": "C",
+          "numerator": "[-8,-4]",
+          "compensatedGauge": "[-8,-4]"
+        },
+        {
+          "slice": "h1",
+          "x": "A",
+          "y": "mu",
+          "numerator": "[-2,-4]",
+          "compensatedGauge": "[-2,-4]"
+        },
+        {
+          "slice": "h1",
+          "x": "C",
+          "y": "A",
+          "numerator": "[-4,4]",
+          "compensatedGauge": "[-4,4]"
+        },
+        {
+          "slice": "h1",
+          "x": "C",
+          "y": "C",
+          "numerator": "[0,0]",
+          "compensatedGauge": "[0,0]"
+        },
+        {
+          "slice": "h1",
+          "x": "C",
+          "y": "mu",
+          "numerator": "[4,-4]",
+          "compensatedGauge": "[4,-4]"
+        },
+        {
+          "slice": "h1",
+          "x": "mu",
+          "y": "A",
+          "numerator": "[2,4]",
+          "compensatedGauge": "[2,4]"
+        },
+        {
+          "slice": "h1",
+          "x": "mu",
+          "y": "C",
+          "numerator": "[8,4]",
+          "compensatedGauge": "[8,4]"
+        },
+        {
+          "slice": "h1",
+          "x": "mu",
+          "y": "mu",
+          "numerator": "[6,0]",
+          "compensatedGauge": "[6,0]"
+        }
+      ]
+    },
+    {
+      "name": "fixed-h1-selected-two-column-fullAA28overD",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-coprimeAA-minus6overD-indefinite",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-mean-deletion-explicitly-invalid",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-coefficient-only-gauge-explicitly-invalid",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-linear-first-Cmu",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-conjugate-muC",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-all20row-selections-and-nonprincipal-witness-labels",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-native-keyboard",
+      "passed": true
+    },
+    {
+      "name": "preserved-all40-ideal-selectors",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-both-palettes-four-widths-no-overflow",
+      "passed": true,
+      "detail": [
+        {
+          "theme": "light",
+          "width": 320,
+          "scroll": 308,
+          "gram": 276,
+          "filter": "none"
+        },
+        {
+          "theme": "light",
+          "width": 390,
+          "scroll": 378,
+          "gram": 339,
+          "filter": "none"
+        },
+        {
+          "theme": "light",
+          "width": 768,
+          "scroll": 756,
+          "gram": 620,
+          "filter": "none"
+        },
+        {
+          "theme": "light",
+          "width": 1440,
+          "scroll": 1428,
+          "gram": 620,
+          "filter": "none"
+        },
+        {
+          "theme": "biomech",
+          "width": 320,
+          "scroll": 308,
+          "gram": 276,
+          "filter": "none"
+        },
+        {
+          "theme": "biomech",
+          "width": 390,
+          "scroll": 378,
+          "gram": 339,
+          "filter": "none"
+        },
+        {
+          "theme": "biomech",
+          "width": 768,
+          "scroll": 756,
+          "gram": 620,
+          "filter": "none"
+        },
+        {
+          "theme": "biomech",
+          "width": 1440,
+          "scroll": 1428,
+          "gram": 620,
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "name": "fixed-h1-proof-links-type1-and-selected-q-scope",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-native-Request-HEAD",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "old-arithmetic-saved-display-ready",
+      "passed": true
+    },
+    {
+      "name": "old-all210-correlations",
+      "passed": true
+    },
+    {
+      "name": "old-case-0-metric",
+      "passed": true,
+      "detail": {
+        "step": 53,
+        "max": 53,
+        "certified": "true"
+      }
+    },
+    {
+      "name": "old-case-0-ordinary",
+      "passed": true,
+      "detail": {
+        "step": 50,
+        "max": 50,
+        "certified": "false"
+      }
+    },
+    {
+      "name": "old-case-1-metric",
+      "passed": true,
+      "detail": {
+        "step": 55,
+        "max": 55,
+        "certified": "true"
+      }
+    },
+    {
+      "name": "old-case-1-ordinary",
+      "passed": true,
+      "detail": {
+        "step": 50,
+        "max": 50,
+        "certified": "false"
+      }
+    },
+    {
+      "name": "old-case-2-metric",
+      "passed": true,
+      "detail": {
+        "step": 53,
+        "max": 53,
+        "certified": "true"
+      }
+    },
+    {
+      "name": "old-case-2-ordinary",
+      "passed": true,
+      "detail": {
+        "step": 50,
+        "max": 50,
+        "certified": "false"
+      }
+    },
+    {
+      "name": "old-case-3-metric",
+      "passed": true,
+      "detail": {
+        "step": 55,
+        "max": 55,
+        "certified": "true"
+      }
+    },
+    {
+      "name": "old-case-3-ordinary",
+      "passed": true,
+      "detail": {
+        "step": 50,
+        "max": 50,
+        "certified": "false"
+      }
+    },
+    {
+      "name": "old-saved-state-step",
+      "passed": true
+    },
+    {
+      "name": "old-coordinate-selection",
+      "passed": true
+    },
+    {
+      "name": "old-readout-root-string-load",
+      "passed": true,
+      "detail": {
+        "max": 196,
+        "status": "Conductor 3: degree 48, 196 executed updates; final certified uniform bound ≈ 2.71419e-25 ≤ 1e-24.",
+        "download": "https://github.com/amelie-iska/GRH-research/blob/main/outputs/experiments/2026-11-05-adaptive-family-1e-24-final-v2/family-certificates.json"
+      }
+    },
+    {
+      "name": "old-readout-exact-certificate-download-link",
+      "passed": true,
+      "detail": "https://github.com/amelie-iska/GRH-research/blob/main/outputs/experiments/2026-11-05-adaptive-family-1e-24-final-v2/family-certificates.json"
+    },
+    {
+      "name": "old-pivot-face-0",
+      "passed": true,
+      "detail": {
+        "power": 1,
+        "valid": "true"
+      }
+    },
+    {
+      "name": "old-pivot-face-500",
+      "passed": true,
+      "detail": {
+        "power": 1,
+        "valid": "true"
+      }
+    },
+    {
+      "name": "old-pivot-face-1000",
+      "passed": true,
+      "detail": {
+        "power": 1,
+        "valid": "true"
+      }
+    },
+    {
+      "name": "old-pivot-upper-mixed",
+      "passed": true,
+      "detail": 1.1666666666666667
+    },
+    {
+      "name": "old-pivot-upper-pure",
+      "passed": true,
+      "detail": 1.1666666666666665
+    },
+    {
+      "name": "new-book-all7891-visible-and-proof-source-PDF-navigation",
+      "passed": true,
+      "detail": {
+        "math": 7891,
+        "visible": 7891,
+        "frames": 13,
+        "pending": false,
+        "anchors": [
+          {
+            "id": "prf:core",
+            "present": true
+          },
+          {
+            "id": "prf:unit",
+            "present": true
+          },
+          {
+            "id": "prf:profile",
+            "present": true
+          },
+          {
+            "id": "prf:lower",
+            "present": true
+          },
+          {
+            "id": "prf:lower-bound",
+            "present": true
+          },
+          {
+            "id": "prf:row",
+            "present": true
+          },
+          {
+            "id": "prf:details",
+            "present": true
+          },
+          {
+            "id": "prf:triple",
+            "present": true
+          },
+          {
+            "id": "mcs:core",
+            "present": true
+          },
+          {
+            "id": "arl:core",
+            "present": true
+          },
+          {
+            "id": "x1-8700022",
+            "present": true
+          },
+          {
+            "id": "sw:core",
+            "present": true
+          },
+          {
+            "id": "sw:slice",
+            "present": true
+          },
+          {
+            "id": "sw:budget",
+            "present": true
+          },
+          {
+            "id": "sw:bound",
+            "present": true
+          },
+          {
+            "id": "sw:mobius",
+            "present": true
+          },
+          {
+            "id": "sw:twist",
+            "present": true
+          },
+          {
+            "id": "sw:character",
+            "present": true
+          },
+          {
+            "id": "sw:details",
+            "present": true
+          },
+          {
+            "id": "sw:divisor-budget",
+            "present": true
+          },
+          {
+            "id": "sw:target",
+            "present": true
+          },
+          {
+            "id": "sw:dual",
+            "present": true
+          }
+        ],
+        "source": true,
+        "pdf": true
+      }
+    },
+    {
+      "name": "new-book-mobile-visible",
+      "passed": true,
+      "detail": {
+        "client": 378,
+        "scroll": 378,
+        "visible": 7891
+      }
+    },
+    {
+      "name": "synchronized-implementation-plan.html",
+      "passed": true
+    },
+    {
+      "name": "synchronized-verification.html",
+      "passed": true
+    },
+    {
+      "name": "landing-current-public-counts",
+      "passed": true
+    },
+    {
+      "name": "landing-profile-proof-cover-links",
+      "passed": true,
+      "detail": {
+        "profile": true,
+        "proof": true,
+        "cover": true
+      }
+    },
+    {
+      "name": "new-and-preserved-download-links",
+      "passed": true,
+      "detail": [
+        {
+          "path": "/book.pdf",
+          "status": 200,
+          "bytes": 2265433
+        },
+        {
+          "path": "/concise.pdf",
+          "status": 200,
+          "bytes": 775779
+        },
+        {
+          "path": "/extended.pdf",
+          "status": 200,
+          "bytes": 1530764
+        },
+        {
+          "path": "/book/sources/profile-uniformity-core.tex",
+          "status": 200,
+          "bytes": 4902
+        },
+        {
+          "path": "/book/sources/profile-uniformity-details.tex",
+          "status": 200,
+          "bytes": 12354
+        },
+        {
+          "path": "/book/sources/signed-weights-core.tex",
+          "status": 200,
+          "bytes": 5068
+        },
+        {
+          "path": "/book/sources/signed-weights-details.tex",
+          "status": 200,
+          "bytes": 15071
+        },
+        {
+          "path": "/data/fixed-h1.json",
+          "status": 200,
+          "bytes": 9025
+        },
+        {
+          "path": "/profile-uniformity.mjs",
+          "status": 200,
+          "bytes": 29704
+        },
+        {
+          "path": "/data/profile-uniformity.json",
+          "status": 200,
+          "bytes": 1063574
+        },
+        {
+          "path": "/arithmetic-learning.mjs",
+          "status": 200,
+          "bytes": 18248
+        },
+        {
+          "path": "/data/arithmetic-learning.json",
+          "status": 200,
+          "bytes": 3701277
+        },
+        {
+          "path": "/quadratic-pivot.mjs",
+          "status": 200,
+          "bytes": 14140
+        },
+        {
+          "path": "/examples/analytic_oracle/adaptive_family.py",
+          "status": 200,
+          "bytes": 8612
+        },
+        {
+          "path": "/papers/dessin-core.tex",
+          "status": 200,
+          "bytes": 47255
+        }
+      ]
+    },
+    {
+      "name": "new-runtime-and-payload-hashes-match-frozen-bytes",
+      "passed": true,
+      "detail": [
+        {
+          "path": "/profile-uniformity.mjs",
+          "status": 200,
+          "expected": "c23957110dc3d401e9f20f0c8cffdd08740e35eba62f36fe33fed8c0f8c79831",
+          "sha256": "c23957110dc3d401e9f20f0c8cffdd08740e35eba62f36fe33fed8c0f8c79831"
+        },
+        {
+          "path": "/profile-uniformity.css",
+          "status": 200,
+          "expected": "b026807938abdd4e3b2ae01032d96021ad57de015367524f13aae36f5aa0fea9",
+          "sha256": "b026807938abdd4e3b2ae01032d96021ad57de015367524f13aae36f5aa0fea9"
+        },
+        {
+          "path": "/data/fixed-h1.json",
+          "status": 200,
+          "expected": "bdb7e93b2a1e377094b69ea5ababf5ad43d198365c47712aa767ca3791b9d8fe",
+          "sha256": "bdb7e93b2a1e377094b69ea5ababf5ad43d198365c47712aa767ca3791b9d8fe"
+        },
+        {
+          "path": "/data/profile-uniformity.json",
+          "status": 200,
+          "expected": "a5dc22785f8abf8d2bcf50fc93c0636101d9e91427ab64512146eff72bac8d43",
+          "sha256": "a5dc22785f8abf8d2bcf50fc93c0636101d9e91427ab64512146eff72bac8d43"
+        },
+        {
+          "path": "/public-base.js",
+          "status": 200,
+          "expected": "3486c2656be40d49b4e07463a7ace445bb52c785cf0e61259a5add0f9b570185",
+          "sha256": "3486c2656be40d49b4e07463a7ace445bb52c785cf0e61259a5add0f9b570185"
+        }
+      ]
+    },
+    {
+      "name": "no-new-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no-browser-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "global-WS-log-has-no-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "every-parent-departure-after-global-network-idle",
+      "passed": true,
+      "detail": {
+        "departures": 9,
+        "idleWaits": 10
+      }
+    }
+  ],
+  "initial": {
+    "theme": "biomech",
+    "motion": "live"
+  },
+  "fixedH1": {
+    "layouts": [
+      {
+        "theme": "light",
+        "width": 320,
+        "scroll": 308,
+        "gram": 276,
+        "filter": "none"
+      },
+      {
+        "theme": "light",
+        "width": 390,
+        "scroll": 378,
+        "gram": 339,
+        "filter": "none"
+      },
+      {
+        "theme": "light",
+        "width": 768,
+        "scroll": 756,
+        "gram": 620,
+        "filter": "none"
+      },
+      {
+        "theme": "light",
+        "width": 1440,
+        "scroll": 1428,
+        "gram": 620,
+        "filter": "none"
+      },
+      {
+        "theme": "biomech",
+        "width": 320,
+        "scroll": 308,
+        "gram": 276,
+        "filter": "none"
+      },
+      {
+        "theme": "biomech",
+        "width": 390,
+        "scroll": 378,
+        "gram": 339,
+        "filter": "none"
+      },
+      {
+        "theme": "biomech",
+        "width": 768,
+        "scroll": 756,
+        "gram": 620,
+        "filter": "none"
+      },
+      {
+        "theme": "biomech",
+        "width": 1440,
+        "scroll": 1428,
+        "gram": 620,
+        "filter": "none"
+      }
+    ],
+    "pairings": [
+      {
+        "slice": "full",
+        "x": "A",
+        "y": "A",
+        "numerator": "[28,0]",
+        "compensatedGauge": "[28,0]"
+      },
+      {
+        "slice": "full",
+        "x": "A",
+        "y": "C",
+        "numerator": "[32,-4]",
+        "compensatedGauge": "[32,-4]"
+      },
+      {
+        "slice": "full",
+        "x": "A",
+        "y": "mu",
+        "numerator": "[4,-4]",
+        "compensatedGauge": "[4,-4]"
+      },
+      {
+        "slice": "full",
+        "x": "C",
+        "y": "A",
+        "numerator": "[36,4]",
+        "compensatedGauge": "[36,4]"
+      },
+      {
+        "slice": "full",
+        "x": "C",
+        "y": "C",
+        "numerator": "[80,0]",
+        "compensatedGauge": "[80,0]"
+      },
+      {
+        "slice": "full",
+        "x": "C",
+        "y": "mu",
+        "numerator": "[44,-4]",
+        "compensatedGauge": "[44,-4]"
+      },
+      {
+        "slice": "full",
+        "x": "mu",
+        "y": "A",
+        "numerator": "[8,4]",
+        "compensatedGauge": "[8,4]"
+      },
+      {
+        "slice": "full",
+        "x": "mu",
+        "y": "C",
+        "numerator": "[48,4]",
+        "compensatedGauge": "[48,4]"
+      },
+      {
+        "slice": "full",
+        "x": "mu",
+        "y": "mu",
+        "numerator": "[40,0]",
+        "compensatedGauge": "[40,0]"
+      },
+      {
+        "slice": "h1",
+        "x": "A",
+        "y": "A",
+        "numerator": "[-6,0]",
+        "compensatedGauge": "[-6,0]"
+      },
+      {
+        "slice": "h1",
+        "x": "A",
+        "y": "C",
+        "numerator": "[-8,-4]",
+        "compensatedGauge": "[-8,-4]"
+      },
+      {
+        "slice": "h1",
+        "x": "A",
+        "y": "mu",
+        "numerator": "[-2,-4]",
+        "compensatedGauge": "[-2,-4]"
+      },
+      {
+        "slice": "h1",
+        "x": "C",
+        "y": "A",
+        "numerator": "[-4,4]",
+        "compensatedGauge": "[-4,4]"
+      },
+      {
+        "slice": "h1",
+        "x": "C",
+        "y": "C",
+        "numerator": "[0,0]",
+        "compensatedGauge": "[0,0]"
+      },
+      {
+        "slice": "h1",
+        "x": "C",
+        "y": "mu",
+        "numerator": "[4,-4]",
+        "compensatedGauge": "[4,-4]"
+      },
+      {
+        "slice": "h1",
+        "x": "mu",
+        "y": "A",
+        "numerator": "[2,4]",
+        "compensatedGauge": "[2,4]"
+      },
+      {
+        "slice": "h1",
+        "x": "mu",
+        "y": "C",
+        "numerator": "[8,4]",
+        "compensatedGauge": "[8,4]"
+      },
+      {
+        "slice": "h1",
+        "x": "mu",
+        "y": "mu",
+        "numerator": "[6,0]",
+        "compensatedGauge": "[6,0]"
+      }
+    ],
+    "controls": []
+  },
+  "pageErrors": [],
+  "fetchErrors": [],
+  "projectPrefix": {
+    "fixedH1HEAD": 200,
+    "nativeURL": true,
+    "actualFixedAdapter": true,
+    "RequestHEAD": 200
+  },
+  "externalDownloads": [
+    "https://github.com/amelie-iska/GRH-research/blob/main/outputs/experiments/2026-11-05-adaptive-family-1e-24-final-v2/family-certificates.json"
+  ],
+  "inheritedMathMLWarnings": [
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907102717
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907102805
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907102843
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907103112
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907103121
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907103124
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907103682
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907103723
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "bdc1d09e-7500-4a35-8d26-670d65499612",
+          "context": "d46c9233-2b1f-4930-b403-64d148a440b5",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793907103745
+      }
+    }
+  ],
+  "strict_integration_groups": 46,
+  "scope": "New fixed-h1 section: all20rows/40raw values,18pairings, valid/gauge/invalid controls, keyboard, both palettes/four widths, source/payload/runtime hashes, sw proof anchors and272page/7891formula book. Existing strict global WS log/750ms quiet waits/30s idle timeout/zero network failures retained. Complete exact-display source checked separately. Real Firefox native decode/hash load, both palettes/four widths, all six cases, norm navigation/zoom, all3norm49 ideals/raw mask, ball/dyadic/capacity boundaries, valid and deliberately invalid joint control, keyboard and actual public adapter URL/Request loading."
+}

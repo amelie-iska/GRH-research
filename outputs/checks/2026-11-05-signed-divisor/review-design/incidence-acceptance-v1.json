@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "verdict": "PASS",
+  "source_path": "planning/signed-divisor-20261105/root/DIVISOR_INCIDENCE_LIFT-v2.md",
+  "source_sha256": "a062a9b85603c0e7b300c219db10724c4b33f57c060eb51e6a5b5f201faa3732",
+  "review_path": "planning/signed-divisor-20261105/review-design/INCIDENCE-REVIEW-v2.md",
+  "review_sha256": "f3d2952d0bba0802be7359bb69a84a0d0c3781e502df662709e7eb67615f3eae",
+  "reviewed_sections": "Entire exact source; version2 diff contains only phase-storage and integer-row-multiplicity accounting clarifications.",
+  "conditional_part": "The classical-sieve lambda choice relies on its explicitly stated existing arbitrary-coefficient positive-row input; no new analytic estimate.",
+  "unconditional_finite_part": "E_d exact squared Frobenius count gives a valid finite lambda; incidence norm and coefficient perturbation certificates follow.",
+  "data_acceptance": "Pending separate independent direct-pair checks of B small full-column cases.",
+  "scope": [
+    "linear-first arbitrary coefficient identity",
+    "raw d-row mask retained",
+    "ideal divisor count",
+    "L<1 unit-column endpoint",
+    "weightedB norm",
+    "finite coefficient-tail certificate",
+    "exact arithmetic operation/storage/bit-growth limits",
+    "fixedWdelta derivative cost and no asymptotic gain"
+  ],
+  "no_new_signed_gain": true,
+  "old_controls_or_experiments_rerun": false,
+  "canonical_or_source_edited": false,
+  "timestamp_utc": "2026-11-05T20:00:07.656472+00:00"
+}

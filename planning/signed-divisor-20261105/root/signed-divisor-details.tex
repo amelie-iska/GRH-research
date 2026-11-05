@@ -1,0 +1,367 @@
+% Full proofs for actual divisor incidence, signed common-d series and finite laboratory.
+\section{Proofs and limits of the signed-divisor development}\label{sd:details}
+\subsection{Actual divisor incidence and a finite error certificate}
+The identity
+$\mathbf1_{(m,n)=1}=\sum_{d\mid m,\ d\mid n}\mu(d)$ is an identity of
+ideal divisors. Expanding the finite sums proves~\eqref{sd:incidence}.
+When $m=da$ is squarefree, $(d,a)=1$. If $(d,u)=1$, multiplication by
+$\chi_d(u)$ is a rowwise unit phase; if $(d,u)>1$ it is the original zero.
+For original $x_m=X_U(m)\nu(m)W(Nm/D)$, precisely
+$F_d(x;u)=\nu(d)\chi_d(u)T_d^X(u)$ on $(d,u)=1$, and it is zero
+otherwise. Thus their row norms agree on the actual restricted support.
+For general vectors the coefficient $x_{da}$ remains unfactored.
+No identity $X_U(da)=X_U(d)X_U(a)$ is used. Residual $a,b$ may overlap.
+
+Write $\|x_d\|_2^2=\sum_{d\mid m}|x_m|^2$.
+The hypotheses of Proposition~\ref{sd:lift} give
+\[
+ \begin{split}
+ |DQ_1(x,y)|&\le\sum_d |Z_d(x,y)|
+ \le\sum_d\lambda_d\|x_d\|_2\|y_d\|_2\\
+ &\le\left(\sum_d\lambda_d\|x_d\|_2^2\right)^{1/2}
+       \left(\sum_d\lambda_d\|y_d\|_2^2\right)^{1/2}
+ =\|x\|_B\|y\|_B.
+ \end{split}
+\]
+This is a divisor-incidence lift of positive-row bounds to an indefinite
+coprime form. It is not an inference from positivity of a larger Gram
+matrix. In particular $B(m)\le\lambda_{\max}\tau_{\rm ideal}(m)$,
+with $\tau_{\rm ideal}(m)=2^{\omega(m)}$ on squarefree ideals.
+The subpolynomial divisor bound recovers the existing exponent; this
+triangle does not supply the desired signed cancellation.
+
+For the original unweighted two-pivot block ($w_u=1$), the accepted
+arbitrary-coefficient inputs
+at $L=D/Nd\ge1$ allow
+\[
+ \lambda_d\ll_\epsilon(HD)^\epsilon
+ \min\left\{R+\frac{LR}{M}+\frac{L^{2/3}R}{M^{1/3}},\ L+R^2\right\},
+ \qquad R=A_1A_2,\quad M=\max(A_1,A_2).
+\]
+Their constants are classical-input constants, not computed numbers.
+Any removal of a $d$-row mask occurs only inside the positive norm.
+For $1/2\le L<1$, $Na\in[L,2L]$ permits at most the unit ideal; its
+operator norm is bounded directly by the actual row measure.
+For an empty subsequence take $\lambda_d=0$.
+
+For the fully computable choice $\lambda_d=E_d$, the matrix entries are
+$\sqrt{w_u}\chi_m(u)$ on $d$-divisible columns. The squared Frobenius
+norm is precisely the stated raw nonzero-entry count. It is valid for
+arbitrary coefficient vectors, not just the saved trajectory. No unknown
+sieve constant enters that finite certificate.
+For approximations $t_x,t_y$ with errors $e_x=x-t_x,e_y=y-t_y$,
+\[
+ |Q_1(x,y)-Q_1(t_x,t_y)|
+ \le D^{-1}\bigl(\|e_x\|_B\|y\|_B+
+                    \|t_x\|_B\|e_y\|_B\bigr).
+\]
+The AA specialization follows by expanding three terms. To verify it
+without floating square roots, put $T=\|t\|_B^2,E=\|e\|_B^2$ and
+$L=D|Q_1(x,x)-Q_1(t,t)|-E$.
+If $L>0$, the certificate is the equivalent real inequality
+$L^2\le4TE$; if $L\le0$ it is immediate. In the saved exact
+$\mathbf Z[\omega]$ computations with rational weights, these are
+integer/rational checks rather than floating-root tests.
+These are finite coefficient-error statements. They do not prove a
+varying-family remainder estimate, spectral positivity or a determinant
+comparison.
+
+\subsection{A signed common-divisor Euler product}
+From here restore ALL original annular squarefree good columns, not an
+arbitrary subset from the vector lemma, and use the actual unweighted
+raw row block of Section~\ref{sw:core}.
+On the stated nonprincipal blocks it is the corresponding component of
+the residue-subtracted moment. On a block containing principal rows the
+raw identity remains valid, but the original principal correction is
+additional and is not discarded.
+Expand the exact $d$ identity while keeping its sign. For fixed $a,b,u$
+the inner sum is
+\begin{equation}\label{sd:inner}
+ \sum_{\substack{d\ \mathrm{squarefree}\\(d,Sabu)=1}}
+ \mu(d)A_U(da)A_U(db)
+       W(Nd\,Na/D)\overline{W(Nd\,Nb/D)}.
+\end{equation}
+The exact outer coefficient is
+$\nu(a)\overline{\nu(b)}\chi_a(u)\overline{\chi_b(u)}$.
+The residual $a,b$ are individually squarefree but need not be coprime.
+If their quotient character loses a common prime, that prime remains in
+$\mathcal T=S\cup\operatorname{supp}(abu)$ and in every original zero.
+The common $d$ character cancels only to $\mathbf1_{(d,u)=1}$.
+
+For $\Re s>1$ the series $\mathcal Z$ is absolutely convergent, with
+coefficient majorant
+$3^{\omega(a)+\omega(b)}9^{\omega(d)}$, uniformly in $U$.
+Use four positive Perron variables. Write $\mathcal E_{\mathcal T}(s;v,w)
+=\prod_{p\notin\mathcal T}(1-(Np)^{-s}P_pQ_p)$.
+The fixed residual prefactor is
+$P_a(v)Q_b(w)=\prod_{p\mid a}P_p(v)\prod_{p\mid b}Q_p(w)$;
+a common prime of $a,b$ contributes both factors.
+The common $d$ prime has nine joint cutoff positions and the sign
+$\mu(p)=-1$, giving local factor $1-zPQ$ with
+$z=(Np)^{-s}$, $\alpha_i=(Np)^{-v_i}$ and $\beta_j=(Np)^{-w_j}$.
+Thus the exact correction in~\eqref{sd:nine} is
+\begin{equation}\label{sd:local-correction}
+ H_p=\frac{(1-zPQ)\prod_{i=1}^2(1-z\alpha_i)
+                           \prod_{j=1}^2(1-z\beta_j)}
+                {(1-z)\prod_{i,j=1}^2(1-z\alpha_i\beta_j)}.
+\end{equation}
+The linear coefficient of numerator and denominator is
+$-1-\sum_{i,j}\alpha_i\beta_j$, fixing all nine zeta signs.
+At all four auxiliary variables zero the product is
+$1/\zeta_K^{\mathcal T}(s)$ and $H_p=1$.
+At $v_2=w_2=0$ it is $1/\zeta_K^{\mathcal T}(s+v_1+w_1)$, again
+with $H_p=1$. These are generating-function checks, not finite-cutoff
+identifications.
+
+For $\Re s\ge1/2+\eta$, $\Re v_i,\Re w_j\ge0$, the degree-five
+numerator and denominator of~\eqref{sd:local-correction} have equal
+constant and linear coefficients. The sums of absolute coefficient
+majorants in degrees two through five are at most $146$ and $26$.
+Since $|PQ|\le9$ and $|\alpha_i|,|\beta_j|\le1$,
+\begin{equation}\label{sd:normal}
+ |H_p-1|\le C_\eta(Np)^{-1-2\eta},\qquad
+ C_\eta=\frac{172}{(1-7^{-1/2-\eta})^5}.
+\end{equation}
+Indeed the five denominator factors have modulus at least $1-|z|$;
+good prime ideal norms are at least seven. Ideal counting proves normal
+convergence, uniform in deleted primes and vertical phases, and
+\[
+ |\mathcal H_{\mathcal T}|
+ \le\exp\left(C_\eta\sum_p(Np)^{-1-2\eta}\right).
+\]
+Local correction factors can vanish; no inverse-correction bound is
+asserted. Normal convergence controls neither the four numerator nor
+five reciprocal zeta factors in the critical region. Their poles, zeros
+and crossed residues cannot be suppressed.
+
+\subsection{Finite Perron heights and the exact eight-state numerator}
+Set $V=\lfloor U\rfloor+1/2$ and
+$\Delta_V=\min_{n\ge1}|\log(V/n)|\ge1/(2V+1)$.
+For four finite vertical heights $T_j$ on positive real lines $c_j$,
+let $I_T(s)$ be the fourfold integral of
+$P_aQ_b\mathcal E_{\mathcal T}(s;v,w)$ against
+$\prod_j V^{z_j}\,dz_j/(2\pi i z_j)$.
+In the initial half-plane $\sigma=\Re s>1$, finite-height Fubini is
+justified by the absolute placement majorant. Put
+\[
+ \begin{split}
+ A_{\rm abs}(\sigma,c)={}&
+ \prod_{p\mid a}(1+q^{-c_1}+q^{-c_2})
+ \prod_{p\mid b}(1+q^{-c_3}+q^{-c_4})\\
+ &{}\cdot\prod_{p\notin\mathcal T}
+ \{1+q^{-\sigma}(1+q^{-c_1}+q^{-c_2})
+                     (1+q^{-c_3}+q^{-c_4})\},\quad q=Np.
+ \end{split}
+\]
+Then
+\begin{equation}\label{sd:perron-error}
+ |I_T(s)-\mathcal Z_{U;a,b,\mathcal T}(s)|
+ \le V^{\sum c_j}A_{\rm abs}(\sigma,c)
+ \left\{\prod_{j=1}^4
+    \left(1+\frac{2}{\pi T_j\Delta_V}\right)-1\right\},
+\end{equation}
+and $A_{\rm abs}\le3^{\omega(a)+\omega(b)}\zeta_K(\sigma)^9$.
+For one short integer norm $n$, the indicator is at most $(V/n)^c$,
+and the truncated Perron error is at most
+$2(V/n)^c/(\pi T\Delta_V)$. Expand the difference of four products and
+sum every nonempty error subset to prove~\eqref{sd:perron-error}.
+Consequently successive Perron limits recover the exact cutoffs.
+The half-integer gap also gives a height-uniform $C_U(V/n)^c$ bound,
+allowing dominated convergence in the initial absolutely convergent
+series. Four infinite Perron integrals are not declared absolutely
+convergent or interchanged silently with Mellin inversion.
+
+There is an entirely finite alternative. Partition
+$a=a_0a_1a_2$ and $b=b_0b_1b_2$, internally coprime in each column.
+Cross-column overlaps remain allowed. A common $d$ prime occupies one
+state $(i,j)\in\{0,1,2\}^2$. Separate its $(0,0)$ part $e$ from eight
+pairwise coprime squarefree atomic ideals $h_{ij}$ avoiding $\mathcal T$,
+and let $h$ be their product. Define
+\[
+ h_i^L=\prod_{j=0}^2h_{ij}\ (i=1,2),\qquad
+ h_j^R=\prod_{i=0}^2h_{ij}\ (j=1,2).
+\]
+An atomic $h_{ij}$ with both indices nonzero belongs to one short
+factor in each column. These four short factors must not be forced
+globally disjoint. Let $\mathcal A_U$ comprise precisely these tuples
+satisfying
+$N(a_i h_i^L)\le U$ and $N(b_jh_j^R)\le U$ for $i,j=1,2$.
+The numerator in~\eqref{sd:finite-numerator} is exactly
+\begin{equation}\label{sd:eight}
+ \mathcal N_{U;a,b,\mathcal T}(s)=
+ \sum_{\mathcal A_U}
+ \frac{\mu(a_1a_2)\mu(b_1b_2)
+       \mu(h_{11}h_{12}h_{21}h_{22})}{(Nh)^s}
+       \prod_{p\mid h}(1-(Np)^{-s})^{-1}.
+\end{equation}
+At a common prime the sign is
+$(-1)^{1+\mathbf1_{i>0}+\mathbf1_{j>0}}$.
+It is negative for $(0,0)$, positive for the four single-short states,
+and negative for the four double-short states. Summing the remaining
+squarefree $e$, coprime to $\mathcal T h$, gives
+$1/\zeta_K^{\mathcal T}(s)$ times the local product in~\eqref{sd:eight}.
+This proves the exact identity, including its sign.
+
+Multiplying the four cutoff inequalities yields $Nh\le U^4$; double
+states are counted twice in that product. Hence the numerator is finite
+and holomorphic on $\Re s>0$. At $U=1$ it equals one: this boundary is
+not a high-window counterexample or a global pole obstruction.
+For $\sigma\ge\sigma_0>0$ and every $\epsilon>0$,
+\begin{equation}\label{sd:numerator-bound}
+ |\mathcal N_{U;a,b,\mathcal T}(\sigma+i\tau)|
+ \ll_{K,\sigma_0,\epsilon}(Na\,Nb)^\epsilon
+               U^{4\max(1-\sigma,0)+\epsilon}.
+\end{equation}
+There are at most $3^{\omega(a)+\omega(b)}$ residual partitions and
+$8^{\omega(h)}$ atomic placements at fixed $h$. The finite local product
+is $\ll_{\sigma_0,\epsilon}(Nh)^\epsilon$. Apply the ideal-divisor bound
+and ideal counting up to $U^4$, using smaller internal exponents; a
+logarithm at the transition is absorbed in $U^\epsilon$.
+Uniformity as $\sigma_0\to0$ is not claimed. For
+$\sigma=1/2+\eta$ with $0<\eta<1/2$, the old-type cutoff cost is
+$U^{2-4\eta+\epsilon}$, not a new saving.
+
+\subsection{A uniform common-profile Mellin embedding of the actual mean}
+For residual $a,b$ put $M=\max(Na,Nb)$ and
+$\varrho=\min(Na,Nb)/M$. At $\varrho\le1/2$ the product of the two
+profile values vanishes, including equality because of endpoint
+vanishing. Otherwise put
+\[
+ \Phi_\varrho(t)=W(t)\overline{W(\varrho t)}
+\]
+when $Na\ge Nb$, and use its conjugate for the reversed orientation.
+It is supported in $[1/\varrho,2]\subset[1,2]$.
+With $M_k(W)=\max_{j\le k}\|(t\,d/dt)^jW\|_\infty$,
+\begin{equation}\label{sd:profile-mellin}
+ |\widehat\Phi_\varrho(\sigma+i\tau)|
+ \le C_{I,k}M_k(W)^2(1+|\tau|)^{-k}
+\end{equation}
+uniformly for $\sigma$ in any fixed compact strip $I$ and all
+$\varrho\in[1/2,1]$. Leibniz and log-coordinate integration by parts
+prove this bound; no ratio-dependent change of $W$ is made.
+The transform is entire. For $c>1$, ordinary Mellin inversion after the
+finite numerator identity gives the exact scalar~\eqref{sd:inner} as
+\begin{equation}\label{sd:mellin}
+ \frac1{2\pi i}\int_{\Re s=c}
+ \widehat\Phi_\varrho(s)(D/M)^s
+ \frac{\mathcal N_{U;a,b,\mathcal T}(s)}
+                      {\zeta_K^{\mathcal T}(s)}\,ds.
+\end{equation}
+This integral is vertically absolutely convergent in its initial
+half-plane. The original profile forces $M\le2D$, so the residual $a,b$
+and actual row sums are finite.
+
+Keep the full local deletion factor
+\[
+ \frac1{\zeta_K^{\mathcal T}(s)}=
+ \frac1{\zeta_K(s)}\prod_{p\in\mathcal T}(1-(Np)^{-s})^{-1}.
+\]
+At fixed $\sigma_0>0$ it costs
+$\ll_{S,\sigma_0,\epsilon}(N\operatorname{rad}(abu))^\epsilon$,
+hence at most $(HD^2)^\epsilon$ on actual support.
+This estimates the finite mask dependence, not the central reciprocal.
+Multiplying~\eqref{sd:mellin} by every original outer coefficient and
+summing the actual rows and residuals gives
+\begin{equation}\label{sd:coherent}
+ DS_1^{AA}=\frac1{2\pi i}\int_{\Re s=c}
+                   \frac{D^s\mathcal A_{D,H,U,W}(s)}{\zeta_K(s)}\,ds.
+\end{equation}
+Explicitly, with each profile orientation retained,
+\[
+ \begin{split}
+ \mathcal A_{D,H,U,W}(s)
+ ={}&\sum_{u\in\mathcal R}
+ \sum_{\substack{a,b\ \mathrm{squarefree,good}\\Na,Nb\le2D,\ \varrho>1/2}}
+ \nu(a)\overline{\nu(b)}\chi_a(u)\overline{\chi_b(u)}\,M^{-s}\,\widehat\Phi_\varrho(s)\\
+ &{}\cdot\mathcal N_{U;a,b,\mathcal T}(s)
+       \prod_{p\in\mathcal T}(1-(Np)^{-s})^{-1}.
+ \end{split}
+\]
+This is a \emph{finite coherent sum}, not an independent marginal
+moment or a positive sum. All raw zeros remain in its outer coefficients.
+For fixed finite $D,H,U$ it is holomorphic on $\Re s>0$ and rapidly
+decreasing on fixed vertical strips there, with constants depending on
+those finite parameters. No uniform target estimate for it is supplied.
+This is an exact signed embedding, not a zero-location theorem.
+
+\subsection{A nonzero short-state correction and the unproved step}
+An actual annular control uses good prime ideals of norms
+$7,13,19,31,43$ with primary generators
+$(1,3),(4,3),(-2,3),(1,6),(7,6)$ in the $1,\omega$ basis.
+Take $D=1500,U=25$, $d=p_7$, $a=p_{13}p_{19}$,
+$b=p_{13}p_{31}$ and the nonprincipal row $u=p_{43}$ in the pure block
+$A_1=37,A_2=1,H=241$, literal class one.
+The full raw supports are disjoint from $u$, and
+$N(da)=1729,N(db)=2821$ lie in the annulus. A single fixed smooth
+profile with plateau $[1.1,1.9]$ equals one at both nodes.
+Direct assignments give
+$A_U(a)=A_U(b)=-1$, $A_U(da)=1$, $A_U(db)=-1$.
+The actual signed $d$ coefficient is $+1$. The $(0,0)$ state alone
+would give $-1$; states $(1,0)$ and $(2,0)$ each contribute $+1$.
+Dropping all short states therefore misses a nonzero $e=1$ correction.
+This illustrates the new eight-state identity, not a new discovery of
+coefficient nonmultiplicativity.
+
+The original pair has gcd $p_7p_{13}$. Its contributions across
+$d=1,p_7,p_{13},p_7p_{13}$ cancel exactly. Thus a fixed-residual
+reciprocal does not prove an uncancelled pole or an obstruction in the
+complete coherent mean. The missing step is to estimate that full mean
+by $DH(HD)^\epsilon$, retaining fixed-profile/seminorm dependence,
+raw masks and conductor/ray/capacity restrictions. Scalar Mertens
+cancellation in the long state, a normal correction product, or an
+absolute cutoff numerator bound does not prove it. Principal and short
+assembly, independent positive determinant/zero-location bridges and
+separate Dirichlet, Hecke, Dedekind, elliptic and Artin obligations remain
+open. No holomorphy or desired zero location is assumed to close them.
+
+\subsection{Exact arithmetic and source-bound computational scope}
+The evaluator streams each actual row and accumulates original
+$x_m\chi_m(u)$ into every ideal-divisor bucket $d\mid m$. It then
+forms all nine cross products for $A_U,C_U,\mu$ and sums with $\mu(d)$.
+Write $n_{\rm col}=|\mathcal C|$,
+$I=\sum_m\tau_{\rm ideal}(m)$, $K$ for the distinct divisors and $r$
+for the listed rows. This bucket stage costs $O(r(I+K))$ arithmetic operations with a
+fixed three channels. Its streaming storage is $O(K)$ plus incidences
+and either a streamed row or separately retained phase table.
+Character construction, factorization and integer bit lengths are
+additional costs, not declared free.
+For coefficients bounded by $C$, bucket coordinates are $O(n_{\rm col}C)$,
+products $O(n_{\rm col}^2C^2)$ and accumulated values
+$O(r n_{\rm col}^2C^2)$ for unit row
+weights. For compressed integer multiplicities replace $r$ in this
+bit-size bound by $\sum_u w_u$ and account for weight multiplication.
+
+For $D=60000$, the actual phase table has shape $20\times16953$;
+the incidence has $73420$ nonzeros over $21750$ divisor buckets, and
+$F_d$ has $20\times21750\times3$ complex states.
+There are $271688516$ ordered coprime column pairs.
+The naive all-pair row loop would visit $5748084180$ pairs and was
+\emph{not executed} at this size. This is an operation count, not an
+unexecuted timing benchmark. Independent direct pair evaluation covers
+the two complete small families; the large family is checked linearly
+from literal field arithmetic and divisor-poset inversion.
+
+The exact large results also include
+\[
+ S_1^{CC}=\frac{661}{7500},\qquad
+ S_1^{C\mu}=\frac{13931}{30000},\qquad
+ S_1^{\mu\mu}=-\frac{229}{1250}.
+\]
+For the ordered vectors $(A_U,C_U,\mu)$ the full pairing table is
+\[
+ \frac1{30000}
+ \begin{pmatrix}
+ -30714&-11287&19427\\
+ -11287&2644&13931\\
+ 19427&13931&-5496
+ \end{pmatrix}.
+\]
+This is the table of three original coefficient vectors, not a spectral
+carrier for GRH. The conjugate $\mu C$ entry and the AA identity retain
+their actual linear-first convention. All three saved computations use source v1.
+A separate v2 helper fixes its unused $N=U=1$ high-window assertion;
+every one of the $17158$ executed columns has $N>U$, so no accepted
+row/table or source snapshot was silently replaced.
+The fixed-profile flat-node implementation refuses requests above its
+stated $D\le60000$ certificate. Neither these three different finite
+blocks nor their measured runtimes imply an asymptotic saving.

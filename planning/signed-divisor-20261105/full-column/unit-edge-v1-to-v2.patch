@@ -1,0 +1,11 @@
+--- full_column_v1.py
++++ full_column_v2.py
+@@ -164,7 +164,7 @@
+         divnorm += [v*q for v in divnorm]
+     r=sum(d>U and N//d>U for d in divnorm)
+     assert (2*mu if N<=U else 0)-A+C==mu
+-    if U*U<=N<=7*U*U: # Actual squarefree high-window simplification is checked after direct convolution.
++    if N>U and U*U<=N<=7*U*U: # Actual squarefree high-window simplification is checked after direct convolution.
+         assert C==mu*r and A==mu*(r-1)
+     return A,C,mu,r
+ 

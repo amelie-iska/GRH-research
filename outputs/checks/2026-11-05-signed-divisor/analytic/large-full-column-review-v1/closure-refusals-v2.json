@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "parent_receipt": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-05-signed-divisor/analytic/large-full-column-review-v1/independent-large-v1.json",
+  "parent_receipt_sha256": "5c17b8795f53abdfd3da4b3281c7ca69cfce096a5a28a09f32c91baec4226d6a",
+  "checker_sha256": "c501dbb9d0cb3d822c53adb7e2ef4dea06c388278702944c01b7603702e0a0b4",
+  "manifest_sha256": "fecbec83a4fadd301d7845daddcb7e31f216705a6b29c5ba98436642ae0b2e4f",
+  "column_generators_unique_complete_by_injection_with_parent": 16953,
+  "divisor_ids_unique_sequential_complete": 21750,
+  "gcd_prime_id_lists_have_no_repetitions": 21750,
+  "all_manifest_crosspins_and_resource_parameter_tables_exact": true,
+  "actual_raw_refusal_cells": {
+    "raw_zero": {
+      "row": 0,
+      "column": 9,
+      "actual_phase": null,
+      "wrong_phase_rejected": 0
+    },
+    "phase_zero_plus_one": {
+      "row": 0,
+      "column": 8,
+      "actual_phase": 0,
+      "wrong_phase_rejected": null
+    }
+  },
+  "wrong_complex_conjugation_refused": {
+    "channels": [
+      0,
+      1
+    ],
+    "correct": [
+      9000,
+      960
+    ],
+    "wrong": [
+      8040,
+      -960
+    ]
+  },
+  "Fd_coordinate_tamper_refused": true,
+  "Z_coordinate_tamper_refused": true,
+  "source_byte_tamper_refused": true,
+  "all_inputs_unchanged": true,
+  "scope": "Bounded closure and in-memory negative controls only; no numeric trajectory, full field table, or pair loop rerun"
+}

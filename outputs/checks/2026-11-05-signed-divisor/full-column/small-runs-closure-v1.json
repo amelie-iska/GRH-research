@@ -1,0 +1,50 @@
+{
+  "current_protected_HEAD": "dba37ffaa78c82ade1385f7ee56c907ab0c67d3a",
+  "current_protected_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+  "no_auth_ref_writes": true,
+  "no_old_science_runs": true,
+  "passed": true,
+  "records": [
+    {
+      "D": 144,
+      "all_artifact_pins_recomputed": true,
+      "command": [
+        "python3",
+        "planning/signed-divisor-20261105/full-column/full_column_v1.py",
+        "--D",
+        "144",
+        "--U",
+        "12",
+        "--A1",
+        "13",
+        "--A2",
+        "1",
+        "--literal-pairs",
+        "--out",
+        "outputs/experiments/2026-11-05-signed-divisor-D144-v1"
+      ],
+      "manifest_sha256": "b2db0dfb8f7b3f7ddc6cdd3c4fb3efd88b0e4bec6a805b341240b3722c075380"
+    },
+    {
+      "D": 576,
+      "all_artifact_pins_recomputed": true,
+      "command": [
+        "python3",
+        "planning/signed-divisor-20261105/full-column/full_column_v1.py",
+        "--D",
+        "576",
+        "--U",
+        "24",
+        "--A1",
+        "37",
+        "--A2",
+        "1",
+        "--literal-pairs",
+        "--out",
+        "outputs/experiments/2026-11-05-signed-divisor-D576-v1"
+      ],
+      "manifest_sha256": "ea68ea46eec092da39e3e6d282152f69e6c944cb6a15ae1e1efac439ef4a8675"
+    }
+  ],
+  "source": "Author module small direct-pair check plus full artifact closure; independent reconstruction pending"
+}

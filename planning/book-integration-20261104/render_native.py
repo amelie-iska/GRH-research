@@ -67,6 +67,37 @@ def main():
     (out/'conversion.log').write_text(run.stdout+run.stderr)
     if run.stderr.strip():raise RuntimeError('Native conversion warnings: '+run.stderr)
     fragment=(out/'fragment-unresolved.html').read_text()
+    # One explicitly source-bound reviewed workflow image; no generic PDF-image fallback.
+    figure_assets=[]
+    figure_pdf='figures/signed-divisor-workflow.pdf'
+    if figure_pdf in raw_source:
+        receipt_path=ROOT/'outputs/checks/2026-11-05-signed-divisor/ui/figure-receipt-v1.json'
+        receipt=json.loads(read(receipt_path));assert receipt['passed'] is True
+        expected={'book/figures/signed-divisor-workflow.pdf',
+                  'book/figures/signed-divisor-workflow-.svg',
+                  'book/figures/signed-divisor-workflow.tex'}
+        assert set(receipt['files'])==expected
+        for name,meta in receipt['files'].items():
+            data=(ROOT/name).read_bytes();assert sha(data)==meta['sha256'] and len(data)==meta['bytes'],name
+            sources[name]=sha(data)
+            if name.endswith('.pdf'):assert data.startswith(b'%PDF')
+            if name.endswith('.svg'):
+                svg=ET.fromstring(data);assert svg.tag.rsplit('}',1)[-1]=='svg'
+                for el in svg.iter():
+                    assert el.tag.rsplit('}',1)[-1]!='script'
+                    assert all(not k.lower().startswith('on') for k in el.attrib)
+                    assert all(not (k.rsplit('}',1)[-1]=='href' and not v.startswith('#')) for k,v in el.attrib.items())
+            figure_assets.append(dict(source=name,sha256=sha(data),bytes=len(data),native_target='figures/'+Path(name).name))
+        figure_svg='figures/signed-divisor-workflow-.svg'
+        pattern=r'<(?:img|embed)\b[^>]*\bsrc="figures/signed-divisor-workflow\.pdf"[^>]*>'
+        # Raw regex backslashes above are literal because this is generated Python source.
+        pattern=pattern.replace('\\\\','\\')
+        def reviewed_figure(m):
+            img=m[0].replace('src="'+figure_pdf+'"','src="'+figure_svg+'"')
+            if img.startswith('<embed'):img=img.replace('<embed','<img',1)
+            if ' alt=' not in img:img=img.replace('<img ','<img alt="Exact complete-column divisor workflow, with actual state dimensions and signed masses" ',1)
+            return '<span class="reader-figure-scroll" tabindex="0" aria-label="Exact divisor workflow; horizontal scrolling on small screens">'+img+'</span><span class="source-links"><a href="figures/signed-divisor-workflow.tex">Original figure TeX</a> · <a href="'+figure_pdf+'">Source-matched figure PDF</a></span>'
+        fragment,nfig=re.subn(pattern,reviewed_figure,fragment);assert nfig==1,('Expected one reviewed workflow image',nfig)
     assert 'class="math inline"' not in fragment and 'class="math display"' not in fragment
     tree=ET.fromstring('<div>'+fragment+'</div>')
     actual_math=[x for x in tree.iter(MATHNS+'math')]
@@ -149,7 +180,12 @@ def main():
     assert not re.search(r'\[(?:mm|rc|wc):[^\]]+\]',re.sub(r'<annotation.*?</annotation>','',fragment,flags=re.S))
     source_count=len(re.findall(r'\\begin\{(?:theorem|lemma|proposition|corollary|definition|example|remark)\}',body));assert source_count==len(theorem_records)
     proof_count=len(re.findall(r'\\begin\{proof\}',body));assert proof_count==len(re.findall(r'<em>Proof',fragment))
-    css='<style>.reader-display-math{display:block;min-width:0;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.reader-display-math:focus-visible{outline:2px solid #078b96;outline-offset:3px}.new-reviewed-chapters{margin-top:3rem}.reader-equation{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;max-width:100%;position:relative}.reader-equation>math{min-width:0;max-width:100%;overflow-x:auto}.reader-equation-number{font-size:.85em;white-space:nowrap}.equation-alias{position:absolute;width:0;height:0}.new-reviewed-chapters nav{padding:1rem;border:1px solid currentColor;border-radius:.5rem}.new-reviewed-chapters table{max-width:100%}.new-reviewed-chapters .source-links{font-size:.85em}.new-reviewed-chapters .paragraphHead{font-size:1em;font-weight:700}</style>'
+    # A finite-case table exceeds the 320px reading column at its natural width.
+    # Keep its complete table subtree and font size, containing scroll locally.
+    table_subtrees=re.findall(r'<table\b[^>]*>.*?</table>',fragment,re.S)
+    fragment=re.sub(r'<table\b[^>]*>.*?</table>',lambda m:'<div class="reader-table-scroll" tabindex="0" aria-label="Reviewed data table; horizontal scrolling on small screens">'+m[0]+'</div>',fragment,flags=re.S)
+    assert re.findall(r'<table\b[^>]*>.*?</table>',fragment,re.S)==table_subtrees
+    css='<style>.reader-table-scroll{display:block;max-width:100%;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch}.reader-table-scroll:focus-visible{outline:2px solid #078b96;outline-offset:3px}.reader-figure-scroll{display:block;min-width:0;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.reader-figure-scroll>img{display:block;min-width:720px;width:100%;max-width:none;height:auto}.reader-figure-scroll:focus-visible{outline:2px solid #078b96;outline-offset:3px}.reader-display-math{display:block;min-width:0;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.reader-display-math:focus-visible{outline:2px solid #078b96;outline-offset:3px}.new-reviewed-chapters{margin-top:3rem}.reader-equation{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;max-width:100%;position:relative}.reader-equation>math{min-width:0;max-width:100%;overflow-x:auto}.reader-equation-number{font-size:.85em;white-space:nowrap}.equation-alias{position:absolute;width:0;height:0}.new-reviewed-chapters nav{padding:1rem;border:1px solid currentColor;border-radius:.5rem}.new-reviewed-chapters table{max-width:100%}.new-reviewed-chapters .source-links{font-size:.85em}.new-reviewed-chapters .paragraphHead{font-size:1em;font-weight:700}</style>'
     chapter_links=[]
     for match in re.finditer(r'<h2 class="chapterHead"([^>]*)>(.*?)</h2>',fragment,re.S):
         ident=re.search(r'\bid="([^"]+)"',match[1])[1]
@@ -203,12 +239,15 @@ def main():
         preservation[tag]={'old_count':len(before),'new_count':len(after),'old_subtrees_unchanged':True,'old_serialized_sha256':sha('\n'.join(before).encode())}
     target=out/'book';shutil.copytree(ROOT/'web/book',target);(target/'main.html').write_text(combined);srcdir=target/'sources';srcdir.mkdir(exist_ok=True)
     responsive=(Path(__file__).parent/'reviewed-math-scroll.js').read_bytes();(target/'reviewed-math-scroll.js').write_bytes(responsive)
+    for item in figure_assets:
+        dest=target/item['native_target'];dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((ROOT/item['source']).read_bytes());assert sha(dest.read_bytes())==item['sha256']
     for name in sources:
         if name.startswith('book/chapters/'):(srcdir/Path(name).name).write_bytes((ROOT/name).read_bytes())
     (out/'fragment-resolved.html').write_text(fragment)
     assert all(sha((ROOT/name).read_bytes())==value for name,value in sources.items()),'Source changed during conversion'
     assert Path(__file__).read_bytes()==producer
     record=dict(passed=True,new_chapters=[38,39,40],math_nodes=len(math_nodes),raw_TeX_nodes=0,conversion_warnings=0,source_sha256=sources,normalizations=changes,
+        accepted_figure_assets=figure_assets,
         explicit_labels=len(source_labels),equation_numbers=equation_numbers,theorems=theorem_records,resolved_references=references,proof_environments=proof_count,
         old_HTML_sha256=sha(old_original.encode()),new_HTML_sha256=sha(combined.encode()),preservation=preservation,canonical_labs=13,
         baseline=str(baseline),intentional_old_prose_changes=editorial_changes,numbered_chapter_sequence=chapter_sequence,new_toc_entries=3,

@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "all_acceptance_records_sha256": {
+    "outputs/checks/2026-11-05-signed-divisor/review-design/incidence-acceptance-v1.json": "2ec9dc7967e373da2b99fe3c71e847404975344dfbcff06e2921f902add51434",
+    "outputs/checks/2026-11-05-signed-divisor/review-design/analytic-acceptance-v1.json": "69c748be5733835bcddd689b5b2096606ec8d7b1ed532996a033aa15e4860303",
+    "outputs/checks/2026-11-05-signed-divisor/review-design/canonical-acceptance-v1.json": "7380ac5b188a1f0a3db8fb87509d9d0ab3e81c072d8a270aef1b4d09654047f2",
+    "outputs/checks/2026-11-05-signed-divisor/review-design/small-data-acceptance-v1.json": "90b93e8e9b99c6d733fd359a1541d34072dab8b7f05109b2cc1d02983b68c9d2",
+    "outputs/checks/2026-11-05-signed-divisor/review-design/unit-edge-compatibility-v1.json": "51e0888826bdba55e06df33f827e1daf5bc463dbdf47d1a5d236278a6ddc8a85",
+    "outputs/checks/2026-11-05-signed-divisor/full-column/implementation-closure-v1.json": "c5a93c9f23beea502e936c9954930b50726e5b66815de0a724970686a9d7f2dd",
+    "outputs/checks/2026-11-05-signed-divisor/analytic/large-full-column-review-v1/acceptance-v1.json": "9180417cdef0073ea89efac75c2526929496a02c70f445586bebe8dbb95ec094",
+    "outputs/checks/2026-11-05-signed-divisor/analytic/article-builds-v1/build-acceptance-v1.json": "5af508bc883701a0b96b7ad690e9a1ad680a180e34f6b10ed58a44fa259d77e3",
+    "outputs/checks/2026-11-05-signed-divisor/review-integration/integration-acceptance-v1.json": "53390fdad7c65d274a67efdc7fd50ec5f10b126c1a4cacdd6268bbc552f2902c",
+    "outputs/checks/2026-11-05-signed-divisor/root/native-qa-v3/browser.json": "6a29154a9b38a1a8a716f52c94359441e9e57492cbb4ada9715e7b539d586376",
+    "outputs/checks/2026-11-05-signed-divisor/root/visual-v1/root-inspection-v1.json": "249e7c71ba0ef5ec2caee1b4522a4f778ccc0374697f1100ac241d20e929b9bc",
+    "outputs/checks/2026-11-05-signed-divisor/ui/frozen-receipt-v1.json": "fc01825e94405855319246a18913201f8e026525fa6951f411cd8f2ee201e5a3"
+  },
+  "build_records_sha256": {
+    "outputs/signed-divisor-book-20261105/v1/pdf/build-record.json": "de3417ee1585594924ae85d6179a8b67df84efa40f451fe29e2f83d6e6fff146",
+    "outputs/signed-divisor-book-20261105/v3/native/native-build-record.json": "2b8a3d06b2f49e337adb0d6f75afeaa17f361d30f0181d62010c4d69aa289dcc",
+    "outputs/signed-divisor-articles-20261105/concise-v1/build-record.json": "0f00a1f57e0f9a95be138eeb877e2f2bfcf4c7be06af653154d7744221494a6a",
+    "outputs/signed-divisor-articles-20261105/notes-concise-v1/build-record.json": "382ceedb0cd7e70b6881d21b90c8a4ea459a6553a700d52f84c946dbbc7c40d8",
+    "outputs/signed-divisor-articles-20261105/extended-v1/build-record.json": "42029d78ca2876457d260498d72110a89562f58fc96dd08b41413f73c4663cea",
+    "outputs/signed-divisor-articles-20261105/notes-extended-v1/build-record.json": "24a106ba899c48815cc93e4aaca17c337941b57faeaf0410508d42f567f608b9"
+  },
+  "changed_artifacts": [
+    {
+      "source": "outputs/signed-divisor-book-20261105/v1/pdf/main.pdf",
+      "target": "outputs/book/surface-orders-book.pdf",
+      "before_sha256": "828ecba670a04f857f7ec728d20bc4613459c46e5c33699d52d9b06c30f6e32c",
+      "after_sha256": "e97f836d7b63671244a5c8515fa90da272273120b3d9ea3428fcbf12c5d70fc1"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v1/pdf/main.log",
+      "target": "outputs/book/surface-orders-book.log",
+      "before_sha256": "a1d99245b13044f0722cbda79fd88cf7c2abf808d83a6cf8a203b52e23eb9777",
+      "after_sha256": "9dd32ecc944b2bef4c71423223514834336544150b1152f87af240758e5778ca"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v1/pdf/main.toc",
+      "target": "outputs/book/surface-orders-book.toc",
+      "before_sha256": "3080a7284ecc6054e2885531891fe2887cff0ff81dcb0a0c7305189d8cfab1cd",
+      "after_sha256": "6985de6b5f9022d506e11e4a8782a33a9a8e073d55820df0884c91ba3f3e1abf"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v3/native/book/main.html",
+      "target": "web/book/main.html",
+      "before_sha256": "c08728c6f28dd00f751f4eb03279682c37f4e38e38dd7c5005dfd5bc1c6897ae",
+      "after_sha256": "3cff28493a15124d1d1d2638eaa5361d5f79a94bf32a8d325122c4577ef096a4"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v3/native/book/sources/weighted-cutoff.tex",
+      "target": "web/book/sources/weighted-cutoff.tex",
+      "before_sha256": "74a744874be7045ca1a1983fb072dcd9b04c8719978bf237e5ddda7d9aafaac2",
+      "after_sha256": "db1f144ba66efa3a2318cf1c71078f3df508ba371f191470b10123135574170d"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v3/native/book/sources/signed-divisor-core.tex",
+      "target": "web/book/sources/signed-divisor-core.tex",
+      "before_sha256": null,
+      "after_sha256": "37181eec7c9e18256683108055f09eab773f9ceea2d10d9a4b197a3170b5011b"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v3/native/book/sources/signed-divisor-figure.tex",
+      "target": "web/book/sources/signed-divisor-figure.tex",
+      "before_sha256": null,
+      "after_sha256": "5a2b811f73d17feeebfd524c1d5762821c224e95097681cc6fe5657564e2dd8a"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v3/native/book/sources/signed-divisor-details.tex",
+      "target": "web/book/sources/signed-divisor-details.tex",
+      "before_sha256": null,
+      "after_sha256": "21d13f55b7939b31e3d11cdb4331a40968ff79872bd1a2e20d7cbeac883fa39c"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v3/native/book/figures/signed-divisor-workflow.pdf",
+      "target": "web/book/figures/signed-divisor-workflow.pdf",
+      "before_sha256": null,
+      "after_sha256": "7e228426f1b17af17d3ed4474e457a1ab6f65c8f8f31ec5fbb2371e5450e3784"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v3/native/book/figures/signed-divisor-workflow.tex",
+      "target": "web/book/figures/signed-divisor-workflow.tex",
+      "before_sha256": null,
+      "after_sha256": "7fb6444025651ac762f9fde713c196b717dc9e111f03a603d5cbbac19f2e581d"
+    },
+    {
+      "source": "outputs/signed-divisor-book-20261105/v3/native/book/figures/signed-divisor-workflow-.svg",
+      "target": "web/book/figures/signed-divisor-workflow-.svg",
+      "before_sha256": null,
+      "after_sha256": "39ac56b58bc45c9e6f24aef37f74b7dc7be13ce1ddc10b41fc1d4d79b6aa7be8"
+    },
+    {
+      "source": "outputs/signed-divisor-articles-20261105/concise-v1/resolutions-concise.pdf",
+      "target": "outputs/papers/resolutions-concise.pdf",
+      "before_sha256": "2eb9f77bb025acaf01626973b0a16872bebcbe6d5761007e67ea770300aa9a95",
+      "after_sha256": "b32af15e9f8f361abab917d9190f98beb3af9d4e91805a5ab337117ec63beb21"
+    },
+    {
+      "source": "outputs/signed-divisor-articles-20261105/concise-v1/resolutions-concise.log",
+      "target": "outputs/papers/resolutions-concise.log",
+      "before_sha256": "2da1b9c4b17485a117aaaa2b1e3ae14c737bb871be6f9c3995d25cc28ac26673",
+      "after_sha256": "026c3fbeb11b199104f0fd55487c90239c3f89bda0ed6c1e31b8524270e6b203"
+    },
+    {
+      "source": "outputs/signed-divisor-articles-20261105/notes-concise-v1/validated-oracle-concise.pdf",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-concise.pdf",
+      "before_sha256": "b9c6b5260934833a4c083dad6cf98b67dfefc9175f9aaac77c0adbef62902367",
+      "after_sha256": "94b8703a84f3f9ef761bc7129a435224dd0fc1f9319a5f0a5dfe5e56e1c125b2"
+    },
+    {
+      "source": "outputs/signed-divisor-articles-20261105/notes-concise-v1/validated-oracle-concise.log",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-concise.log",
+      "before_sha256": "2fcd094ac000d2adf3c1cd4cd1b804c708042c8b8bafb1af27c59a45fd9a6c1e",
+      "after_sha256": "df5a72c472c95b9258f2e3336d12e960b76b30b612668a57dda26d4b77e0ab6a"
+    },
+    {
+      "source": "outputs/signed-divisor-articles-20261105/extended-v1/resolutions-extended.pdf",
+      "target": "outputs/papers/resolutions-extended.pdf",
+      "before_sha256": "6d9fbfa774bc75be842c18ee3f09a975d17c8d59a9bbb9bbd8a3c349c6e968b6",
+      "after_sha256": "e813fc4bc8ddb0eb8e4e0800ad3d8c30c90c61851b34ce738c165f1eda4bddf1"
+    },
+    {
+      "source": "outputs/signed-divisor-articles-20261105/extended-v1/resolutions-extended.log",
+      "target": "outputs/papers/resolutions-extended.log",
+      "before_sha256": "5c059872c0005b8236b632c609a212cbf78a600717de51d40fd85e35cca1324e",
+      "after_sha256": "449085813e9e6c62a3f31e7a93a39b65718d673b6676da9d2a71808a2970faea"
+    },
+    {
+      "source": "outputs/signed-divisor-articles-20261105/notes-extended-v1/validated-oracle-extended.pdf",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-extended.pdf",
+      "before_sha256": "b0274042570707dcb6c14da4832929dc79b09fe397fbaf37a4061da45df136b1",
+      "after_sha256": "56e0b56f2b678ba5cb4964ccfcb48fec25169387800db6ca2d58142046d3102c"
+    },
+    {
+      "source": "outputs/signed-divisor-articles-20261105/notes-extended-v1/validated-oracle-extended.log",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-extended.log",
+      "before_sha256": "6e0c52b2f50e314e540fff1ccd2e5244f36b1f2d0b0ce7f97c7c4e2a83c224c7",
+      "after_sha256": "1b039a6a9d90b6d0d1bd15732eff06f37173256ebea331b2c03d4ebddd15d591"
+    }
+  ],
+  "edition": {
+    "book_pages": 279,
+    "chapters": 40,
+    "MathML": 8176,
+    "old_MathML_literal_preserved": 7891,
+    "old_tables_literal_preserved": 385,
+    "canonical_iframes": 13,
+    "old_SVG_refs_preserved": 28,
+    "new_source_matched_SVGs": 1,
+    "focused_pages": [
+      64,
+      175
+    ],
+    "notes_pages": [
+      23,
+      66
+    ]
+  },
+  "scope": "Only accepted PDFv1/nativev3 and four articlev1 artifacts promoted. Exact source-bound figure3asset allowlist. Every prior byte backed up. New fixed-profile finite data and exact analytic reduction; no asymptotic saving, new Lean or GRH."
+}

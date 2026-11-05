@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "verdict": "PASS",
+  "v1_source_sha256": "0e3539b5d6b0efc723f37fbc067c88297edb5556eff9314b2d8b79b88f25b95e",
+  "v2_source_sha256": "9977e3cfea4b785089d52e1ded4490774818e0e13ac54d0922a65734671517a8",
+  "only_change": "Add N>U to the optional high-window simplification assertion.",
+  "independent_boundary_reason": "At empty-prime/unit ideal N=U=1, original A=1,C=0,mu=1,r=0, so A=C-mu is inapplicable; direct general identity2mu-A+C=mu remains correct. N>U excludes precisely this domain issue.",
+  "frozen_cases": [
+    {
+      "D": 144,
+      "columns": 41,
+      "all_N_gt_U": true,
+      "manifest_sha256": "b2db0dfb8f7b3f7ddc6cdd3c4fb3efd88b0e4bec6a805b341240b3722c075380"
+    },
+    {
+      "D": 576,
+      "columns": 164,
+      "all_N_gt_U": true,
+      "manifest_sha256": "ea68ea46eec092da39e3e6d282152f69e6c944cb6a15ae1e1efac439ef4a8675"
+    },
+    {
+      "D": 60000,
+      "columns": 16953,
+      "all_N_gt_U": true,
+      "manifest_sha256": "fecbec83a4fadd301d7845daddcb7e31f216705a6b29c5ba98436642ae0b2e4f"
+    }
+  ],
+  "all_17158_actual_columns_unchanged": true,
+  "reused_author_boundary_control": {
+    "path": "outputs/checks/2026-11-05-signed-divisor/full-column/unit-edge-control-v2.json",
+    "sha256": "02c026f987ac934d6fc6d22c965ac61133979f40740fc79c6ac78847f80f110b"
+  },
+  "author_boundary_or_fulltable_rerun": false,
+  "v1_source_snapshots_outputs_preserved": true,
+  "scope": "Bounded literal patch/domain compatibility only, not a new full-table run or broad acceptance of the large data."
+}

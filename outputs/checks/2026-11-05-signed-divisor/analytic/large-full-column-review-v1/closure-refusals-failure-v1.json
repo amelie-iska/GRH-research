@@ -1,0 +1,13 @@
+{
+  "passed": false,
+  "checker_sha256": "eae9af646ae4c163f12b8fdd061a0e7a19129217431a30aff71331e3cf696711",
+  "failure": "Reviewer metadata supplement incorrectly assumed global norm ordering of divisor records. IDs are sequential; the author stores prime divisors first, then composite divisors. Main independent arithmetic joins by exact generator and did not assume author ordering.",
+  "first_ordering_transition": {
+    "line_zero_based": 7216,
+    "previous_norm": 119983,
+    "current_norm": 49,
+    "id": 7216
+  },
+  "resolution": "Preserve failed v1; v2 checks unique exact divisor keys and sequential IDs, without inventing a schema ordering requirement.",
+  "scientific_data_or_main_audit_defect_found": false
+}

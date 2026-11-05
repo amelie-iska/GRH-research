@@ -1,0 +1,66 @@
+{
+  "reviewer_failure_only": true,
+  "first_case_D144_completed_PASS": {
+    "D": 144,
+    "columns": 41,
+    "divisors": 53,
+    "rows": 5,
+    "all9_direct_h1_numerators": [
+      [
+        [
+          -76,
+          0
+        ],
+        [
+          -50,
+          0
+        ],
+        [
+          26,
+          0
+        ]
+      ],
+      [
+        [
+          -50,
+          0
+        ],
+        [
+          -8,
+          0
+        ],
+        [
+          42,
+          0
+        ]
+      ],
+      [
+        [
+          26,
+          0
+        ],
+        [
+          42,
+          0
+        ],
+        [
+          16,
+          0
+        ]
+      ]
+    ],
+    "ordered_pair_incidence_checks": 1681,
+    "raw_values": 205,
+    "F_values": 795,
+    "Z_values": 477,
+    "output": "outputs/checks/2026-11-05-signed-divisor/review-design/independent-D144-v1.json",
+    "sha256": "3024ff4d3480e640d566cee21ff025acd24d046b783e4401bd2c106f2ea61adb",
+    "preserved_completed_v1_case": true
+  },
+  "D576_prior_checks": "Complete columns/coefficient/row/rawphase/masks/divisorF/all9Z matched before observed-gcdclass count assertion.",
+  "cause": "Author gcd ledger correctly includes8 zero-count classes in full active divisor universe; directpair map stores observedclasses only.",
+  "correction": "Require full author divisor-indexed gcd ledger; compare observedclasses directly and require exact0count/all9zero contributions for unobservedclasses.",
+  "data_or_author_code_changed": false,
+  "old_controls_run": false,
+  "failed_driver_sha256": "08835040f953fa4bb592f738b2f1c7bbd2ca6d07920bf363e59672cc476361f3"
+}

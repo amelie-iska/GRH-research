@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "source_path": "planning/signed-divisor-20261105/root/DIVISOR_INCIDENCE_LIFT-v2.md",
+  "source_sha256": "a062a9b85603c0e7b300c219db10724c4b33f57c060eb51e6a5b5f201faa3732",
+  "independent_data_sha256": {
+    "outputs/checks/2026-11-05-signed-divisor/review-design/independent-D144-v1.json": "3024ff4d3480e640d566cee21ff025acd24d046b783e4401bd2c106f2ea61adb",
+    "outputs/checks/2026-11-05-signed-divisor/review-design/independent-D576-v2.json": "b6db6d31758f7955b3480dbe67011f12fd19a8348b34f3968551c4d0c63ff446"
+  },
+  "checks": [
+    {
+      "D": 144,
+      "label": "A_single-prime-truncation",
+      "T_integer": 5148,
+      "E_integer": 3372,
+      "D_times_absolute_pairing_error": 60,
+      "L_integer": -3312,
+      "nonvacuous_squared_check": false,
+      "squared_check_passed": true
+    },
+    {
+      "D": 144,
+      "label": "C_half-annulus-truncation",
+      "T_integer": 856,
+      "E_integer": 3376,
+      "D_times_absolute_pairing_error": 8,
+      "L_integer": -3368,
+      "nonvacuous_squared_check": false,
+      "squared_check_passed": true
+    },
+    {
+      "D": 144,
+      "label": "mu_alternate-column-truncation",
+      "T_integer": 4367,
+      "E_integer": 4153,
+      "D_times_absolute_pairing_error": 63,
+      "L_integer": -4090,
+      "nonvacuous_squared_check": false,
+      "squared_check_passed": true
+    },
+    {
+      "D": 144,
+      "label": "A_scaled-actual-vector-one-entry-error",
+      "T_integer": 337321914,
+      "E_integer": 198,
+      "D_times_absolute_pairing_error": 1393,
+      "L_integer": 1195,
+      "nonvacuous_squared_check": true,
+      "squared_check_passed": true
+    },
+    {
+      "D": 144,
+      "label": "mu_scaled-actual-vector-one-entry-error",
+      "T_integer": 337479522,
+      "E_integer": 198,
+      "D_times_absolute_pairing_error": 2189,
+      "L_integer": 1991,
+      "nonvacuous_squared_check": true,
+      "squared_check_passed": true
+    },
+    {
+      "D": 576,
+      "label": "A_single-prime-truncation",
+      "T_integer": 152163,
+      "E_integer": 149159,
+      "D_times_absolute_pairing_error": 148,
+      "L_integer": -149011,
+      "nonvacuous_squared_check": false,
+      "squared_check_passed": true
+    },
+    {
+      "D": 576,
+      "label": "C_half-annulus-truncation",
+      "T_integer": 15000,
+      "E_integer": 66900,
+      "D_times_absolute_pairing_error": 252,
+      "L_integer": -66648,
+      "nonvacuous_squared_check": false,
+      "squared_check_passed": true
+    },
+    {
+      "D": 576,
+      "label": "mu_alternate-column-truncation",
+      "T_integer": 150597,
+      "E_integer": 150725,
+      "D_times_absolute_pairing_error": 87,
+      "L_integer": -150638,
+      "nonvacuous_squared_check": false,
+      "squared_check_passed": true
+    },
+    {
+      "D": 576,
+      "label": "A_scaled-actual-vector-one-entry-error",
+      "T_integer": 922792505249,
+      "E_integer": 1749,
+      "D_times_absolute_pairing_error": 21000,
+      "L_integer": 19251,
+      "nonvacuous_squared_check": true,
+      "squared_check_passed": true
+    },
+    {
+      "D": 576,
+      "label": "mu_scaled-actual-vector-one-entry-error",
+      "T_integer": 922804748249,
+      "E_integer": 1749,
+      "D_times_absolute_pairing_error": 24500,
+      "L_integer": 22751,
+      "nonvacuous_squared_check": true,
+      "squared_check_passed": true
+    }
+  ],
+  "count": 10,
+  "nonvacuous_squared_checks": 4,
+  "exact_arithmetic": "Integer Z[omega] only; L=D*abs(Qx-Qt)-E, if L>0 check L\u00b2<=4TE. No square-root floats or field/author rerun.",
+  "scope": "Finite coefficient-error certificate for actual small-family phase tables. Three literal A/C/mu truncations and two scaled actual-vector one-entry perturbations per family; the scaled controls are lemma tests, not original-family energy measurements or an asymptotic bound.",
+  "checker_sha256": "7c753527d4572d188d24290becf9421607b04c224076b438c6f7b09d303c7eaf"
+}

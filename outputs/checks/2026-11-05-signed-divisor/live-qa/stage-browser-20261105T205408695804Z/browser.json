@@ -1,0 +1,2637 @@
+{
+  "passed": true,
+  "tested_base": "http://127.0.0.1:41371/GRH-research",
+  "layouts": [
+    {
+      "width": 320,
+      "scroll": 308,
+      "theme": "light",
+      "canvas": 276,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 390,
+      "scroll": 378,
+      "theme": "light",
+      "canvas": 339,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 768,
+      "scroll": 756,
+      "theme": "light",
+      "canvas": 426.20001220703125,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 1440,
+      "scroll": 1428,
+      "theme": "light",
+      "canvas": 977,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 320,
+      "scroll": 308,
+      "theme": "biomech",
+      "canvas": 276,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 390,
+      "scroll": 378,
+      "theme": "biomech",
+      "canvas": 339,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 768,
+      "scroll": 756,
+      "theme": "biomech",
+      "canvas": 426.20001220703125,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 1440,
+      "scroll": 1428,
+      "theme": "biomech",
+      "canvas": 977,
+      "filter": "none",
+      "clock": "none"
+    }
+  ],
+  "cases": [
+    {
+      "D": 256,
+      "max": 30,
+      "N": 259,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=256, U=16: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=37/8; principal residue0."
+    },
+    {
+      "D": 1024,
+      "max": 114,
+      "N": 1057,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=1024, U=32: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=147/16; principal residue0."
+    },
+    {
+      "D": 4096,
+      "max": 412,
+      "N": 4123,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=4096, U=64: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=1145/64; principal residue0."
+    },
+    {
+      "D": 16384,
+      "max": 1570,
+      "N": 16387,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=16384, U=128: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=1163/32; principal residue0."
+    },
+    {
+      "D": 65536,
+      "max": 5912,
+      "N": 65611,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=65536, U=256: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=18539/256; principal residue0."
+    },
+    {
+      "D": 262144,
+      "max": 22438,
+      "N": 262171,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=262144, U=512: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=9265/64; principal residue0."
+    }
+  ],
+  "controls": [
+    {
+      "norm49": [
+        {
+          "v": "28",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-8, -5)Nv / squarefree49 / nou=εβ_v⁶ · omega basis(-25271, -128231)Nu=(Nv)⁶13841287201Allowed ideal columns64 / 74T_v=Σ allowed |A_U|64Exact E_u amplitude64/16Exact |E_u|²=T_v²/D16"
+        },
+        {
+          "v": "29",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-8, -3)Nv / squarefree49 / nou=εβ_v⁶ · omega basis(-128231, -25271)Nu=(Nv)⁶13841287201Allowed ideal columns64 / 74T_v=Σ allowed |A_U|64Exact E_u amplitude64/16Exact |E_u|²=T_v²/D16"
+        },
+        {
+          "v": "30",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-7, -7)Nv / squarefree49 / yesu=εβ_v⁶ · omega basis(117649, 117649)Nu=(Nv)⁶13841287201Allowed ideal columns54 / 74T_v=Σ allowed |A_U|54Exact E_u amplitude54/16Exact |E_u|²=T_v²/D729/64"
+        }
+      ],
+      "commonWUnchanged": true
+    },
+    {
+      "nativeNormSlider": true
+    },
+    {
+      "jointValid": "3/1000",
+      "jointInvalid": "-3/4000",
+      "orientations": 4
+    }
+  ],
+  "integration": [
+    {
+      "name": "signed-divisor-initial-verified",
+      "passed": true,
+      "detail": "Verified D144: 41 columns · 53 divisors · 5 rows. 5,761 compressed bytes; all saved states addressable."
+    },
+    {
+      "name": "signed-divisor-large-not-eager",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-complete-shapes-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-column-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-divisor-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-row-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-0-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-0-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-0-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-1-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-1-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-1-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-2-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-2-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-144-2-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-rawzero-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-invalid-zero-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-one-distinct-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-invalid-sign-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-bounded-dom-144",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-complete-shapes-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-column-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-divisor-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-row-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-0-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-0-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-0-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-1-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-1-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-1-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-2-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-2-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-576-2-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-rawzero-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-invalid-zero-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-one-distinct-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-invalid-sign-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-bounded-dom-576",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-complete-shapes-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-column-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-divisor-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-last-row-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-0-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-0-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-0-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-1-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-1-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-1-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-2-0",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-2-1",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-nine-60000-2-2",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-rawzero-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-invalid-zero-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-one-distinct-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-invalid-sign-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-bounded-dom-60000",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-eight-equal-norm-distinct-ideals",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-keyboard-column",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-keyboard-step",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-inert25",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-sf-split49",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-layout-light-320-0",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-320-2",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-320-4",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-390-0",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-390-2",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-390-4",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-768-0",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scroll": 756,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-768-2",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scroll": 756,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-768-4",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scroll": 756,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-1440-0",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-1440-2",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-light-1440-4",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-320-0",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-320-2",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-320-4",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-390-0",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-390-2",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-390-4",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-768-0",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scroll": 756,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-768-2",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scroll": 756,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-768-4",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scroll": 756,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-1440-0",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-1440-2",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-layout-biomech-1440-4",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    },
+    {
+      "name": "signed-divisor-exact-global-masses-and-independent-acceptance",
+      "passed": true
+    },
+    {
+      "name": "signed-divisor-all-four-native-Request-payload-assets",
+      "passed": true,
+      "detail": [
+        {
+          "path": "index-v1.json",
+          "status": 200
+        },
+        {
+          "path": "D144-v1.json.gz",
+          "status": 200
+        },
+        {
+          "path": "D576-v1.json.gz",
+          "status": 200
+        },
+        {
+          "path": "D60000-v1.json.gz",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "signed-divisor-profile-v1-v2-rowblock-scope",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-source-ready",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-all20rows40rawvalues-and-six-collisions",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-all18pairings-and-compensated-gauge",
+      "passed": true,
+      "detail": [
+        {
+          "slice": "full",
+          "x": "A",
+          "y": "A",
+          "numerator": "[28,0]",
+          "compensatedGauge": "[28,0]"
+        },
+        {
+          "slice": "full",
+          "x": "A",
+          "y": "C",
+          "numerator": "[32,-4]",
+          "compensatedGauge": "[32,-4]"
+        },
+        {
+          "slice": "full",
+          "x": "A",
+          "y": "mu",
+          "numerator": "[4,-4]",
+          "compensatedGauge": "[4,-4]"
+        },
+        {
+          "slice": "full",
+          "x": "C",
+          "y": "A",
+          "numerator": "[36,4]",
+          "compensatedGauge": "[36,4]"
+        },
+        {
+          "slice": "full",
+          "x": "C",
+          "y": "C",
+          "numerator": "[80,0]",
+          "compensatedGauge": "[80,0]"
+        },
+        {
+          "slice": "full",
+          "x": "C",
+          "y": "mu",
+          "numerator": "[44,-4]",
+          "compensatedGauge": "[44,-4]"
+        },
+        {
+          "slice": "full",
+          "x": "mu",
+          "y": "A",
+          "numerator": "[8,4]",
+          "compensatedGauge": "[8,4]"
+        },
+        {
+          "slice": "full",
+          "x": "mu",
+          "y": "C",
+          "numerator": "[48,4]",
+          "compensatedGauge": "[48,4]"
+        },
+        {
+          "slice": "full",
+          "x": "mu",
+          "y": "mu",
+          "numerator": "[40,0]",
+          "compensatedGauge": "[40,0]"
+        },
+        {
+          "slice": "h1",
+          "x": "A",
+          "y": "A",
+          "numerator": "[-6,0]",
+          "compensatedGauge": "[-6,0]"
+        },
+        {
+          "slice": "h1",
+          "x": "A",
+          "y": "C",
+          "numerator": "[-8,-4]",
+          "compensatedGauge": "[-8,-4]"
+        },
+        {
+          "slice": "h1",
+          "x": "A",
+          "y": "mu",
+          "numerator": "[-2,-4]",
+          "compensatedGauge": "[-2,-4]"
+        },
+        {
+          "slice": "h1",
+          "x": "C",
+          "y": "A",
+          "numerator": "[-4,4]",
+          "compensatedGauge": "[-4,4]"
+        },
+        {
+          "slice": "h1",
+          "x": "C",
+          "y": "C",
+          "numerator": "[0,0]",
+          "compensatedGauge": "[0,0]"
+        },
+        {
+          "slice": "h1",
+          "x": "C",
+          "y": "mu",
+          "numerator": "[4,-4]",
+          "compensatedGauge": "[4,-4]"
+        },
+        {
+          "slice": "h1",
+          "x": "mu",
+          "y": "A",
+          "numerator": "[2,4]",
+          "compensatedGauge": "[2,4]"
+        },
+        {
+          "slice": "h1",
+          "x": "mu",
+          "y": "C",
+          "numerator": "[8,4]",
+          "compensatedGauge": "[8,4]"
+        },
+        {
+          "slice": "h1",
+          "x": "mu",
+          "y": "mu",
+          "numerator": "[6,0]",
+          "compensatedGauge": "[6,0]"
+        }
+      ]
+    },
+    {
+      "name": "fixed-h1-selected-two-column-fullAA28overD",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-coprimeAA-minus6overD-indefinite",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-mean-deletion-explicitly-invalid",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-coefficient-only-gauge-explicitly-invalid",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-linear-first-Cmu",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-conjugate-muC",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-all20row-selections-and-nonprincipal-witness-labels",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-native-keyboard",
+      "passed": true
+    },
+    {
+      "name": "preserved-all40-ideal-selectors",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-both-palettes-four-widths-no-overflow",
+      "passed": true,
+      "detail": [
+        {
+          "theme": "light",
+          "width": 320,
+          "scroll": 308,
+          "gram": 276,
+          "filter": "none"
+        },
+        {
+          "theme": "light",
+          "width": 390,
+          "scroll": 378,
+          "gram": 339,
+          "filter": "none"
+        },
+        {
+          "theme": "light",
+          "width": 768,
+          "scroll": 756,
+          "gram": 620,
+          "filter": "none"
+        },
+        {
+          "theme": "light",
+          "width": 1440,
+          "scroll": 1428,
+          "gram": 620,
+          "filter": "none"
+        },
+        {
+          "theme": "biomech",
+          "width": 320,
+          "scroll": 308,
+          "gram": 276,
+          "filter": "none"
+        },
+        {
+          "theme": "biomech",
+          "width": 390,
+          "scroll": 378,
+          "gram": 339,
+          "filter": "none"
+        },
+        {
+          "theme": "biomech",
+          "width": 768,
+          "scroll": 756,
+          "gram": 620,
+          "filter": "none"
+        },
+        {
+          "theme": "biomech",
+          "width": 1440,
+          "scroll": 1428,
+          "gram": 620,
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "name": "fixed-h1-proof-links-type1-and-selected-q-scope",
+      "passed": true
+    },
+    {
+      "name": "fixed-h1-native-Request-HEAD",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "old-arithmetic-saved-display-ready",
+      "passed": true
+    },
+    {
+      "name": "old-all210-correlations",
+      "passed": true
+    },
+    {
+      "name": "old-case-0-metric",
+      "passed": true,
+      "detail": {
+        "step": 53,
+        "max": 53,
+        "certified": "true"
+      }
+    },
+    {
+      "name": "old-case-0-ordinary",
+      "passed": true,
+      "detail": {
+        "step": 50,
+        "max": 50,
+        "certified": "false"
+      }
+    },
+    {
+      "name": "old-case-1-metric",
+      "passed": true,
+      "detail": {
+        "step": 55,
+        "max": 55,
+        "certified": "true"
+      }
+    },
+    {
+      "name": "old-case-1-ordinary",
+      "passed": true,
+      "detail": {
+        "step": 50,
+        "max": 50,
+        "certified": "false"
+      }
+    },
+    {
+      "name": "old-case-2-metric",
+      "passed": true,
+      "detail": {
+        "step": 53,
+        "max": 53,
+        "certified": "true"
+      }
+    },
+    {
+      "name": "old-case-2-ordinary",
+      "passed": true,
+      "detail": {
+        "step": 50,
+        "max": 50,
+        "certified": "false"
+      }
+    },
+    {
+      "name": "old-case-3-metric",
+      "passed": true,
+      "detail": {
+        "step": 55,
+        "max": 55,
+        "certified": "true"
+      }
+    },
+    {
+      "name": "old-case-3-ordinary",
+      "passed": true,
+      "detail": {
+        "step": 50,
+        "max": 50,
+        "certified": "false"
+      }
+    },
+    {
+      "name": "old-saved-state-step",
+      "passed": true
+    },
+    {
+      "name": "old-coordinate-selection",
+      "passed": true
+    },
+    {
+      "name": "old-readout-root-string-load",
+      "passed": true,
+      "detail": {
+        "max": 196,
+        "status": "Conductor 3: degree 48, 196 executed updates; final certified uniform bound ≈ 2.71419e-25 ≤ 1e-24.",
+        "download": "https://github.com/amelie-iska/GRH-research/blob/main/outputs/experiments/2026-11-05-adaptive-family-1e-24-final-v2/family-certificates.json"
+      }
+    },
+    {
+      "name": "old-readout-exact-certificate-download-link",
+      "passed": true,
+      "detail": "https://github.com/amelie-iska/GRH-research/blob/main/outputs/experiments/2026-11-05-adaptive-family-1e-24-final-v2/family-certificates.json"
+    },
+    {
+      "name": "old-pivot-face-0",
+      "passed": true,
+      "detail": {
+        "power": 1,
+        "valid": "true"
+      }
+    },
+    {
+      "name": "old-pivot-face-500",
+      "passed": true,
+      "detail": {
+        "power": 1,
+        "valid": "true"
+      }
+    },
+    {
+      "name": "old-pivot-face-1000",
+      "passed": true,
+      "detail": {
+        "power": 1,
+        "valid": "true"
+      }
+    },
+    {
+      "name": "old-pivot-upper-mixed",
+      "passed": true,
+      "detail": 1.1666666666666667
+    },
+    {
+      "name": "old-pivot-upper-pure",
+      "passed": true,
+      "detail": 1.1666666666666665
+    },
+    {
+      "name": "new-book-all8176-visible-and-proof-source-PDF-navigation",
+      "passed": true,
+      "detail": {
+        "math": 8176,
+        "visible": 8176,
+        "frames": 13,
+        "pending": false,
+        "anchors": [
+          {
+            "id": "prf:core",
+            "present": true
+          },
+          {
+            "id": "prf:unit",
+            "present": true
+          },
+          {
+            "id": "prf:profile",
+            "present": true
+          },
+          {
+            "id": "prf:lower",
+            "present": true
+          },
+          {
+            "id": "prf:lower-bound",
+            "present": true
+          },
+          {
+            "id": "prf:row",
+            "present": true
+          },
+          {
+            "id": "prf:details",
+            "present": true
+          },
+          {
+            "id": "prf:triple",
+            "present": true
+          },
+          {
+            "id": "mcs:core",
+            "present": true
+          },
+          {
+            "id": "arl:core",
+            "present": true
+          },
+          {
+            "id": "x1-8700022",
+            "present": true
+          },
+          {
+            "id": "sw:core",
+            "present": true
+          },
+          {
+            "id": "sw:slice",
+            "present": true
+          },
+          {
+            "id": "sw:budget",
+            "present": true
+          },
+          {
+            "id": "sw:bound",
+            "present": true
+          },
+          {
+            "id": "sw:mobius",
+            "present": true
+          },
+          {
+            "id": "sw:twist",
+            "present": true
+          },
+          {
+            "id": "sw:character",
+            "present": true
+          },
+          {
+            "id": "sw:details",
+            "present": true
+          },
+          {
+            "id": "sw:divisor-budget",
+            "present": true
+          },
+          {
+            "id": "sw:target",
+            "present": true
+          },
+          {
+            "id": "sw:dual",
+            "present": true
+          },
+          {
+            "id": "sd:core",
+            "present": true
+          },
+          {
+            "id": "sd:form",
+            "present": true
+          },
+          {
+            "id": "sd:incidence",
+            "present": true
+          },
+          {
+            "id": "sd:lift",
+            "present": true
+          },
+          {
+            "id": "sd:weighted",
+            "present": true
+          },
+          {
+            "id": "sd:certificate",
+            "present": true
+          },
+          {
+            "id": "sd:nine",
+            "present": true
+          },
+          {
+            "id": "sd:finite-numerator",
+            "present": true
+          },
+          {
+            "id": "sd:workflow",
+            "present": true
+          },
+          {
+            "id": "sd:details",
+            "present": true
+          },
+          {
+            "id": "sd:inner",
+            "present": true
+          },
+          {
+            "id": "sd:local-correction",
+            "present": true
+          },
+          {
+            "id": "sd:normal",
+            "present": true
+          },
+          {
+            "id": "sd:perron-error",
+            "present": true
+          },
+          {
+            "id": "sd:eight",
+            "present": true
+          },
+          {
+            "id": "sd:numerator-bound",
+            "present": true
+          },
+          {
+            "id": "sd:profile-mellin",
+            "present": true
+          },
+          {
+            "id": "sd:mellin",
+            "present": true
+          },
+          {
+            "id": "sd:coherent",
+            "present": true
+          }
+        ],
+        "source": true,
+        "pdf": true
+      }
+    },
+    {
+      "name": "new-book-mobile-visible",
+      "passed": true,
+      "detail": {
+        "client": 378,
+        "scroll": 378,
+        "visible": 8176
+      }
+    },
+    {
+      "name": "new-book-320-focusable-table-source-figure-and-all8176-visible",
+      "passed": true,
+      "detail": {
+        "client": 308,
+        "scroll": 308,
+        "math": 8176,
+        "visible": 8176,
+        "tables": [
+          {
+            "wrapped": true,
+            "tabindex": 0,
+            "overflow": "auto"
+          },
+          {
+            "wrapped": true,
+            "tabindex": 0,
+            "overflow": "auto"
+          }
+        ],
+        "figure": true,
+        "source": true,
+        "details": true,
+        "figureTex": true,
+        "figurePDF": true,
+        "standalone": true
+      }
+    },
+    {
+      "name": "new-book-table-has-genuine-horizontal-overflow",
+      "passed": true,
+      "detail": {
+        "width": 244,
+        "scroll": 290
+      }
+    },
+    {
+      "name": "new-book-table-native-keyboard-scroll",
+      "passed": true
+    },
+    {
+      "name": "synchronized-implementation-plan.html",
+      "passed": true
+    },
+    {
+      "name": "new-signed-divisor-synchronized-implementation-plan.html",
+      "passed": true
+    },
+    {
+      "name": "synchronized-verification.html",
+      "passed": true
+    },
+    {
+      "name": "new-signed-divisor-synchronized-verification.html",
+      "passed": true
+    },
+    {
+      "name": "landing-current-public-counts",
+      "passed": true
+    },
+    {
+      "name": "landing-new-signed-divisor-frontier",
+      "passed": true
+    },
+    {
+      "name": "landing-profile-proof-cover-links",
+      "passed": true,
+      "detail": {
+        "signed": true,
+        "signedProof": true,
+        "profile": true,
+        "proof": true,
+        "cover": true
+      }
+    },
+    {
+      "name": "new-and-preserved-download-links",
+      "passed": true,
+      "detail": [
+        {
+          "path": "/book/sources/signed-divisor-core.tex",
+          "status": 200,
+          "bytes": 6636
+        },
+        {
+          "path": "/book/sources/signed-divisor-details.tex",
+          "status": 200,
+          "bytes": 17544
+        },
+        {
+          "path": "/book/sources/signed-divisor-figure.tex",
+          "status": 200,
+          "bytes": 427
+        },
+        {
+          "path": "/book/figures/signed-divisor-workflow-.svg",
+          "status": 200,
+          "bytes": 2618
+        },
+        {
+          "path": "/book/figures/signed-divisor-workflow.tex",
+          "status": 200,
+          "bytes": 1400
+        },
+        {
+          "path": "/book/figures/signed-divisor-workflow.pdf",
+          "status": 200,
+          "bytes": 100787
+        },
+        {
+          "path": "/signed-divisor.html",
+          "status": 200,
+          "bytes": 11555
+        },
+        {
+          "path": "/signed-divisor.css",
+          "status": 200,
+          "bytes": 9008
+        },
+        {
+          "path": "/signed-divisor.mjs",
+          "status": 200,
+          "bytes": 21038
+        },
+        {
+          "path": "/data/signed-divisor/index-v1.json",
+          "status": 200,
+          "bytes": 2276
+        },
+        {
+          "path": "/data/signed-divisor/D144-v1.json.gz",
+          "status": 200,
+          "bytes": 5761
+        },
+        {
+          "path": "/data/signed-divisor/D576-v1.json.gz",
+          "status": 200,
+          "bytes": 16233
+        },
+        {
+          "path": "/data/signed-divisor/D60000-v1.json.gz",
+          "status": 200,
+          "bytes": 1355608
+        },
+        {
+          "path": "/book.pdf",
+          "status": 200,
+          "bytes": 2409549
+        },
+        {
+          "path": "/concise.pdf",
+          "status": 200,
+          "bytes": 788258
+        },
+        {
+          "path": "/extended.pdf",
+          "status": 200,
+          "bytes": 1574341
+        },
+        {
+          "path": "/book/sources/profile-uniformity-core.tex",
+          "status": 200,
+          "bytes": 4902
+        },
+        {
+          "path": "/book/sources/profile-uniformity-details.tex",
+          "status": 200,
+          "bytes": 12354
+        },
+        {
+          "path": "/book/sources/signed-weights-core.tex",
+          "status": 200,
+          "bytes": 5068
+        },
+        {
+          "path": "/book/sources/signed-weights-details.tex",
+          "status": 200,
+          "bytes": 15071
+        },
+        {
+          "path": "/data/fixed-h1.json",
+          "status": 200,
+          "bytes": 9025
+        },
+        {
+          "path": "/profile-uniformity.mjs",
+          "status": 200,
+          "bytes": 29704
+        },
+        {
+          "path": "/data/profile-uniformity.json",
+          "status": 200,
+          "bytes": 1063574
+        },
+        {
+          "path": "/arithmetic-learning.mjs",
+          "status": 200,
+          "bytes": 18248
+        },
+        {
+          "path": "/data/arithmetic-learning.json",
+          "status": 200,
+          "bytes": 3701277
+        },
+        {
+          "path": "/quadratic-pivot.mjs",
+          "status": 200,
+          "bytes": 14140
+        },
+        {
+          "path": "/examples/analytic_oracle/adaptive_family.py",
+          "status": 200,
+          "bytes": 8612
+        },
+        {
+          "path": "/papers/dessin-core.tex",
+          "status": 200,
+          "bytes": 47255
+        }
+      ]
+    },
+    {
+      "name": "new-runtime-and-payload-hashes-match-frozen-bytes",
+      "passed": true,
+      "detail": [
+        {
+          "path": "/signed-divisor.html",
+          "status": 200,
+          "expected": "63f1cf0180751d43f2e86d898c342d9e6b2170091f4e43a92edaeafa35859cd8",
+          "sha256": "63f1cf0180751d43f2e86d898c342d9e6b2170091f4e43a92edaeafa35859cd8"
+        },
+        {
+          "path": "/book.pdf",
+          "status": 200,
+          "expected": "e97f836d7b63671244a5c8515fa90da272273120b3d9ea3428fcbf12c5d70fc1",
+          "sha256": "e97f836d7b63671244a5c8515fa90da272273120b3d9ea3428fcbf12c5d70fc1"
+        },
+        {
+          "path": "/signed-divisor.css",
+          "status": 200,
+          "expected": "b564ba89d6ad69fb450085b34b53fb0abfe2d9d751b58c487043cfcee5bbb17f",
+          "sha256": "b564ba89d6ad69fb450085b34b53fb0abfe2d9d751b58c487043cfcee5bbb17f"
+        },
+        {
+          "path": "/signed-divisor.mjs",
+          "status": 200,
+          "expected": "a721d958ce73fdb351276ca7469c5a7aecd0faea10f1b2946b4299272c71eb3c",
+          "sha256": "a721d958ce73fdb351276ca7469c5a7aecd0faea10f1b2946b4299272c71eb3c"
+        },
+        {
+          "path": "/data/signed-divisor/index-v1.json",
+          "status": 200,
+          "expected": "6f7ab18bdfe7d5981765ea8f4cde557ec275c12612e338a0ab44f6b18347ceab",
+          "sha256": "6f7ab18bdfe7d5981765ea8f4cde557ec275c12612e338a0ab44f6b18347ceab"
+        },
+        {
+          "path": "/data/signed-divisor/D144-v1.json.gz",
+          "status": 200,
+          "expected": "0f05d05d6837cc778c7e7654a79af2a62835832604de64a53b795b1c79a31ccb",
+          "sha256": "0f05d05d6837cc778c7e7654a79af2a62835832604de64a53b795b1c79a31ccb"
+        },
+        {
+          "path": "/data/signed-divisor/D576-v1.json.gz",
+          "status": 200,
+          "expected": "1d92deb82d8b08748611ae306dda60d8fc167e5ca846e8513340cd986fd09435",
+          "sha256": "1d92deb82d8b08748611ae306dda60d8fc167e5ca846e8513340cd986fd09435"
+        },
+        {
+          "path": "/data/signed-divisor/D60000-v1.json.gz",
+          "status": 200,
+          "expected": "5fdf61a62653e1c0421e6d3755ed1447861ce1a5fa96771c42ae9fdea8f8f62d",
+          "sha256": "5fdf61a62653e1c0421e6d3755ed1447861ce1a5fa96771c42ae9fdea8f8f62d"
+        },
+        {
+          "path": "/book/figures/signed-divisor-workflow-.svg",
+          "status": 200,
+          "expected": "39ac56b58bc45c9e6f24aef37f74b7dc7be13ce1ddc10b41fc1d4d79b6aa7be8",
+          "sha256": "39ac56b58bc45c9e6f24aef37f74b7dc7be13ce1ddc10b41fc1d4d79b6aa7be8"
+        },
+        {
+          "path": "/book/figures/signed-divisor-workflow.pdf",
+          "status": 200,
+          "expected": "7e228426f1b17af17d3ed4474e457a1ab6f65c8f8f31ec5fbb2371e5450e3784",
+          "sha256": "7e228426f1b17af17d3ed4474e457a1ab6f65c8f8f31ec5fbb2371e5450e3784"
+        },
+        {
+          "path": "/profile-uniformity.mjs",
+          "status": 200,
+          "expected": "c23957110dc3d401e9f20f0c8cffdd08740e35eba62f36fe33fed8c0f8c79831",
+          "sha256": "c23957110dc3d401e9f20f0c8cffdd08740e35eba62f36fe33fed8c0f8c79831"
+        },
+        {
+          "path": "/profile-uniformity.css",
+          "status": 200,
+          "expected": "b026807938abdd4e3b2ae01032d96021ad57de015367524f13aae36f5aa0fea9",
+          "sha256": "b026807938abdd4e3b2ae01032d96021ad57de015367524f13aae36f5aa0fea9"
+        },
+        {
+          "path": "/data/fixed-h1.json",
+          "status": 200,
+          "expected": "bdb7e93b2a1e377094b69ea5ababf5ad43d198365c47712aa767ca3791b9d8fe",
+          "sha256": "bdb7e93b2a1e377094b69ea5ababf5ad43d198365c47712aa767ca3791b9d8fe"
+        },
+        {
+          "path": "/data/profile-uniformity.json",
+          "status": 200,
+          "expected": "a5dc22785f8abf8d2bcf50fc93c0636101d9e91427ab64512146eff72bac8d43",
+          "sha256": "a5dc22785f8abf8d2bcf50fc93c0636101d9e91427ab64512146eff72bac8d43"
+        },
+        {
+          "path": "/public-base.js",
+          "status": 200,
+          "expected": "3486c2656be40d49b4e07463a7ace445bb52c785cf0e61259a5add0f9b570185",
+          "sha256": "3486c2656be40d49b4e07463a7ace445bb52c785cf0e61259a5add0f9b570185"
+        }
+      ]
+    },
+    {
+      "name": "no-new-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no-browser-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "global-WS-log-has-no-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "every-parent-departure-after-global-network-idle",
+      "passed": true,
+      "detail": {
+        "departures": 10,
+        "idleWaits": 11
+      }
+    },
+    {
+      "name": "initial-navigation-counted-separately-from-real-departures",
+      "passed": true,
+      "detail": {
+        "navigations": 10,
+        "initial": 1,
+        "actual_departures": 9
+      }
+    }
+  ],
+  "signedDivisor": {
+    "cases": [
+      {
+        "D": 144,
+        "M": 41,
+        "K": 53,
+        "R": 5,
+        "I": 112,
+        "zero": 6,
+        "one": 14,
+        "net": [
+          -76,
+          -50,
+          26,
+          -50,
+          -8,
+          42,
+          26,
+          42,
+          16
+        ]
+      },
+      {
+        "D": 576,
+        "M": 164,
+        "K": 212,
+        "R": 11,
+        "I": 498,
+        "zero": 30,
+        "one": 5,
+        "net": [
+          -442,
+          -406,
+          36,
+          -406,
+          -252,
+          154,
+          36,
+          154,
+          118
+        ]
+      },
+      {
+        "D": 60000,
+        "M": 16953,
+        "K": 21750,
+        "R": 20,
+        "I": 73420,
+        "zero": 9,
+        "one": 8,
+        "net": [
+          -61428,
+          -22574,
+          38854,
+          -22574,
+          5288,
+          27862,
+          38854,
+          27862,
+          -10992
+        ]
+      }
+    ],
+    "layouts": [
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 768,
+        "scroll": 756,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 768,
+        "scroll": 756,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 768,
+        "scroll": 756,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 768,
+        "scroll": 756,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 768,
+        "scroll": 756,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 768,
+        "scroll": 756,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "flowFilter": "none",
+        "massFilter": "none"
+      }
+    ]
+  },
+  "initial": {
+    "theme": "biomech",
+    "motion": "paused"
+  },
+  "fixedH1": {
+    "layouts": [
+      {
+        "theme": "light",
+        "width": 320,
+        "scroll": 308,
+        "gram": 276,
+        "filter": "none"
+      },
+      {
+        "theme": "light",
+        "width": 390,
+        "scroll": 378,
+        "gram": 339,
+        "filter": "none"
+      },
+      {
+        "theme": "light",
+        "width": 768,
+        "scroll": 756,
+        "gram": 620,
+        "filter": "none"
+      },
+      {
+        "theme": "light",
+        "width": 1440,
+        "scroll": 1428,
+        "gram": 620,
+        "filter": "none"
+      },
+      {
+        "theme": "biomech",
+        "width": 320,
+        "scroll": 308,
+        "gram": 276,
+        "filter": "none"
+      },
+      {
+        "theme": "biomech",
+        "width": 390,
+        "scroll": 378,
+        "gram": 339,
+        "filter": "none"
+      },
+      {
+        "theme": "biomech",
+        "width": 768,
+        "scroll": 756,
+        "gram": 620,
+        "filter": "none"
+      },
+      {
+        "theme": "biomech",
+        "width": 1440,
+        "scroll": 1428,
+        "gram": 620,
+        "filter": "none"
+      }
+    ],
+    "pairings": [
+      {
+        "slice": "full",
+        "x": "A",
+        "y": "A",
+        "numerator": "[28,0]",
+        "compensatedGauge": "[28,0]"
+      },
+      {
+        "slice": "full",
+        "x": "A",
+        "y": "C",
+        "numerator": "[32,-4]",
+        "compensatedGauge": "[32,-4]"
+      },
+      {
+        "slice": "full",
+        "x": "A",
+        "y": "mu",
+        "numerator": "[4,-4]",
+        "compensatedGauge": "[4,-4]"
+      },
+      {
+        "slice": "full",
+        "x": "C",
+        "y": "A",
+        "numerator": "[36,4]",
+        "compensatedGauge": "[36,4]"
+      },
+      {
+        "slice": "full",
+        "x": "C",
+        "y": "C",
+        "numerator": "[80,0]",
+        "compensatedGauge": "[80,0]"
+      },
+      {
+        "slice": "full",
+        "x": "C",
+        "y": "mu",
+        "numerator": "[44,-4]",
+        "compensatedGauge": "[44,-4]"
+      },
+      {
+        "slice": "full",
+        "x": "mu",
+        "y": "A",
+        "numerator": "[8,4]",
+        "compensatedGauge": "[8,4]"
+      },
+      {
+        "slice": "full",
+        "x": "mu",
+        "y": "C",
+        "numerator": "[48,4]",
+        "compensatedGauge": "[48,4]"
+      },
+      {
+        "slice": "full",
+        "x": "mu",
+        "y": "mu",
+        "numerator": "[40,0]",
+        "compensatedGauge": "[40,0]"
+      },
+      {
+        "slice": "h1",
+        "x": "A",
+        "y": "A",
+        "numerator": "[-6,0]",
+        "compensatedGauge": "[-6,0]"
+      },
+      {
+        "slice": "h1",
+        "x": "A",
+        "y": "C",
+        "numerator": "[-8,-4]",
+        "compensatedGauge": "[-8,-4]"
+      },
+      {
+        "slice": "h1",
+        "x": "A",
+        "y": "mu",
+        "numerator": "[-2,-4]",
+        "compensatedGauge": "[-2,-4]"
+      },
+      {
+        "slice": "h1",
+        "x": "C",
+        "y": "A",
+        "numerator": "[-4,4]",
+        "compensatedGauge": "[-4,4]"
+      },
+      {
+        "slice": "h1",
+        "x": "C",
+        "y": "C",
+        "numerator": "[0,0]",
+        "compensatedGauge": "[0,0]"
+      },
+      {
+        "slice": "h1",
+        "x": "C",
+        "y": "mu",
+        "numerator": "[4,-4]",
+        "compensatedGauge": "[4,-4]"
+      },
+      {
+        "slice": "h1",
+        "x": "mu",
+        "y": "A",
+        "numerator": "[2,4]",
+        "compensatedGauge": "[2,4]"
+      },
+      {
+        "slice": "h1",
+        "x": "mu",
+        "y": "C",
+        "numerator": "[8,4]",
+        "compensatedGauge": "[8,4]"
+      },
+      {
+        "slice": "h1",
+        "x": "mu",
+        "y": "mu",
+        "numerator": "[6,0]",
+        "compensatedGauge": "[6,0]"
+      }
+    ],
+    "controls": []
+  },
+  "pageErrors": [],
+  "fetchErrors": [],
+  "projectPrefix": {
+    "fixedH1HEAD": 200,
+    "nativeURL": true,
+    "actualFixedAdapter": true,
+    "RequestHEAD": 200
+  },
+  "externalDownloads": [
+    "https://github.com/amelie-iska/GRH-research/blob/main/outputs/experiments/2026-11-05-adaptive-family-1e-24-final-v2/family-certificates.json"
+  ],
+  "inheritedMathMLWarnings": [
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911351817
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911351891
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911351931
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911352207
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911352214
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911352217
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911352779
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911352822
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911352846
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911353488
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911353523
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911353542
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911353995
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911354037
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911354060
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911354482
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911354512
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911354528
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911354901
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911354943
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793911354966
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912049121
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912049162
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "716b679f-e3fc-4e6d-bb3c-379ec88732ea",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912049184
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912082752
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912082826
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912082863
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912083133
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912083140
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912083143
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912083645
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912083685
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912083707
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912084310
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912084344
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912084362
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912084858
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912084896
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "414321a8-4e18-4370-aa0c-d81d28106c10",
+          "context": "69f5227a-9a27-4318-bbb3-7eabafd9a2c2",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793912084918
+      }
+    }
+  ],
+  "navigation_count": 10,
+  "initial_navigation_count": 1,
+  "actual_departure_count": 9,
+  "strict_integration_groups": 141,
+  "scope": "NEW signed-divisor:all3cases/all9exactglobals/fullstatecursors/rawzero controls/nativeURL+Request/all4payloads/oldleaves preserved; book279pages8176MathML, focusable320pxlocaltable scroll, sd proof/source/workflow links. Initial navigation and real departures counted separately. Preserved prior fixed-h1 section: all20rows/40raw values,18pairings, valid/gauge/invalid controls, keyboard, both palettes/four widths, source/payload/runtime hashes, sw proof anchors and279page/8176formula book. Existing strict global WS log/750ms quiet waits/30s idle timeout/zero network failures retained. Complete exact-display source checked separately. Real Firefox native decode/hash load, both palettes/four widths, all six cases, norm navigation/zoom, all3norm49 ideals/raw mask, ball/dyadic/capacity boundaries, valid and deliberately invalid joint control, keyboard and actual public adapter URL/Request loading."
+}

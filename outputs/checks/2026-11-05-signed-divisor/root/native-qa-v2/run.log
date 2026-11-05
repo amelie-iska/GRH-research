@@ -1,0 +1,10 @@
+file:///home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/book-integration-20261104/qa-integrated-native.mjs:9
+const check=(condition,message,detail)=>{if(!condition)throw Error(message+' '+JSON.stringify(detail??''));};
+                                                             ^
+
+Error: Viewport overflow {"width":320,"client":308,"scroll":322,"inner":320,"math":8176}
+    at check (file:///home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/book-integration-20261104/qa-integrated-native.mjs:9:62)
+    at file:///home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/book-integration-20261104/qa-integrated-native.mjs:53:3
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.19.1

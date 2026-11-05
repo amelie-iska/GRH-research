@@ -1,0 +1,42 @@
+{
+  "HEAD": "dba37ffaa78c82ade1385f7ee56c907ab0c67d3a",
+  "cases": [
+    {
+      "all_artifact_and_captured_source_pins_match": true,
+      "manifest_sha256": "b2db0dfb8f7b3f7ddc6cdd3c4fb3efd88b0e4bec6a805b341240b3722c075380",
+      "path": "outputs/experiments/2026-11-05-signed-divisor-D144-v1"
+    },
+    {
+      "all_artifact_and_captured_source_pins_match": true,
+      "manifest_sha256": "ea68ea46eec092da39e3e6d282152f69e6c944cb6a15ae1e1efac439ef4a8675",
+      "path": "outputs/experiments/2026-11-05-signed-divisor-D576-v1"
+    },
+    {
+      "all_artifact_and_captured_source_pins_match": true,
+      "manifest_sha256": "e567006c64a9250103c4abd2b27bf9ebd453ebc2ef4ce53c188486eca7966f41",
+      "path": "outputs/experiments/2026-11-05-signed-divisor-D60000-estimate-v1"
+    },
+    {
+      "all_artifact_and_captured_source_pins_match": true,
+      "manifest_sha256": "fecbec83a4fadd301d7845daddcb7e31f216705a6b29c5ba98436642ae0b2e4f",
+      "path": "outputs/experiments/2026-11-05-signed-divisor-D60000-v1"
+    }
+  ],
+  "current_source_files": {
+    "planning/signed-divisor-20261105/full-column/HANDOFF-v1.md": "40fe1202cd5b156bfe0bd8badb5542f43edf642394d746f19e79aa0ee0174f20",
+    "planning/signed-divisor-20261105/full-column/README.md": "038cd9228b8c99850e3d630eb3e7bfc35fe44517339adf1266c9ac4aae24479d",
+    "planning/signed-divisor-20261105/full-column/full_column_v1.py": "0e3539b5d6b0efc723f37fbc067c88297edb5556eff9314b2d8b79b88f25b95e",
+    "planning/signed-divisor-20261105/full-column/full_column_v2.py": "9977e3cfea4b785089d52e1ded4490774818e0e13ac54d0922a65734671517a8",
+    "planning/signed-divisor-20261105/full-column/test_full_column_v1.py": "518390bcfe2b7a1c289f838f45bf063f76a2963a6de789264992872165243f60",
+    "planning/signed-divisor-20261105/full-column/test_unit_boundary_v2.py": "2299392b1807fc4349d9e7c5ef0285e445c883aa9427c956eb2837c02e8281ce",
+    "planning/signed-divisor-20261105/full-column/unit-edge-v1-to-v2.patch": "6650d844721af93cac15e7847cfd372d5f2c6283f1dc88f7c5325407553bd826"
+  },
+  "handoff_sha256": "40fe1202cd5b156bfe0bd8badb5542f43edf642394d746f19e79aa0ee0174f20",
+  "independent_small_receipt_sha256": "0e4b33823b9c3f4fe064f0c10cace1bfa6c74ae1c1070024742579dd4e14e04d",
+  "index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+  "no_auth_ref_or_canonical_writes": true,
+  "no_old_science_rerun": true,
+  "passed": true,
+  "scope": "Author full-column implementation/data closure, with separate independent small acceptance; no large literal pair loop, asymptotic saving or GRH claim",
+  "unit_edge_control_sha256": "02c026f987ac934d6fc6d22c965ac61133979f40740fc79c6ac78847f80f110b"
+}

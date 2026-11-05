@@ -1,0 +1,144 @@
+% Actual signed divisor variable; no new asymptotic saving or Lean declaration.
+\section{The signed divisor mean and a complete-column laboratory}\label{sd:core}
+The preceding signed-slice estimate loses the sign of the common ideal
+ divisor. We now retain that variable in an exact analytic reduction and
+in a complete finite computation. Neither supplies the missing
+$5/12$ saving at $H=D^{3/4}$. The computations below use a new fixed
+profile; they do not fill in the uncomputed columns of the earlier
+broad-plateau profile.
+
+Let $\mathcal C$ be original squarefree good ideal columns in $[D,2D]$,
+and let $\mathcal R$ be an actual finite literal row block, with
+nonnegative multiplicities $w_u$. All shared-prime zeros of the original
+$\chi_m(u)$ remain. For arbitrary complex coefficient vectors define the
+linear-first form
+\begin{equation}\label{sd:form}
+ DQ_1(x,y)=\sum_{u\in\mathcal R}w_u
+ \sum_{\substack{m,n\in\mathcal C\\(m,n)=1}}
+ x_m\overline{y_n}\chi_m(u)\overline{\chi_n(u)}.
+\end{equation}
+The original component is obtained with
+$x_m=X_U(m)\nu(m)W(Nm/D)$ and the corresponding $y_m$.
+On the nonprincipal row blocks used below the original residue term
+vanishes. Equation~\eqref{sd:form} is a raw coprime form on a generic
+block; principal rows would still require their separate residue assembly.
+
+For every ideal divisor of an active column put
+\[
+ F_d(x;u)=\sum_{m\in\mathcal C,\ d\mid m}x_m\chi_m(u),\qquad
+ Z_d(x,y)=\sum_u w_uF_d(x;u)\overline{F_d(y;u)}.
+\]
+The exact identity is
+\begin{equation}\label{sd:incidence}
+ DQ_1(x,y)=\sum_d\mu(d)Z_d(x,y).
+\end{equation}
+There is no extra $\mu(q)$: the vectors already contain the original
+coefficients. Full divisors $d=m$ are essential to cancel self-pairs.
+Divisors and squarefreeness refer to ideals, including distinct ideals
+with the same rational norm.
+
+\begin{proposition}[A weighted divisor-incidence lift]\label{sd:lift}
+Suppose $\lambda_d\ge0$ is an arbitrary-coefficient bound
+\[
+ \sum_u w_u|F_d(x;u)|^2\le\lambda_d
+                 \sum_{m\in\mathcal C,\ d\mid m}|x_m|^2.
+\]
+With $B(m)=\sum_{d\mid m}\lambda_d$ and
+$\|x\|_B^2=\sum_mB(m)|x_m|^2$, one has
+\begin{equation}\label{sd:weighted}
+ |DQ_1(x,y)|\le\|x\|_B\|y\|_B.
+\end{equation}
+For a finite literal phase table one may take the exactly computed
+\[
+ \lambda_d=E_d:=\sum_u w_u\#\{m\in\mathcal C:d\mid m,\ \chi_m(u)\ne0\}.
+\]
+This last choice is a Frobenius certificate, not a new analytic estimate.
+For $x=t+e$ it gives the finite perturbation bound
+\begin{equation}\label{sd:certificate}
+ |Q_1(x,x)-Q_1(t,t)|\le
+ D^{-1}\bigl(2\|t\|_B\|e\|_B+\|e\|_B^2\bigr).
+\end{equation}
+\end{proposition}
+\begin{proof}
+Insert ideal-divisor inversion in~\eqref{sd:form}. Apply row Cauchy to
+each $Z_d$ and weighted Cauchy to the resulting sum over $d$.
+Then $\sum_d\lambda_d\|x_d\|_2^2=\|x\|_B^2$.
+The squared Frobenius norm of the actual $F_d$ matrix is exactly $E_d$.
+Expand $Q_1(t+e,t+e)-Q_1(t,t)$ to obtain the last assertion.
+Positivity of the coprime-truncated matrix was never assumed.
+\end{proof}
+Using an accepted positive-row sieve bound for $\lambda_d$ only recovers
+the old exponent up to ideal-divisor factors. It does not estimate the
+signed sum before the triangle in~\eqref{sd:incidence}.
+
+There is also a genuinely signed scalar expansion. Fix squarefree residual
+ideals $a,b$, which may overlap, and an actual row $u$.
+Keep the full deleted set $\mathcal T=S\cup\operatorname{supp}(abu)$ and set
+\[
+ \mathcal Z_{U;a,b,\mathcal T}(s)=
+ \sum_{\substack{d\ \mathrm{squarefree}\\(d,\mathcal T)=1}}
+ \frac{\mu(d)A_U(da)A_U(db)}{(Nd)^s},\qquad\Re s>1.
+\]
+For four positive cutoff variables put
+$P_p=1-(Np)^{-v_1}-(Np)^{-v_2}$ and
+$Q_p=1-(Np)^{-w_1}-(Np)^{-w_2}$.
+The common-divisor Euler factor is $1-(Np)^{-s}P_pQ_p$.
+Its first-order factorization has four numerator and five denominator
+zeta factors:
+\begin{equation}\label{sd:nine}
+ \prod_{p\notin\mathcal T}(1-(Np)^{-s}P_pQ_p)
+ =\frac{\prod_{i=1}^2\zeta_K^{\mathcal T}(s+v_i)
+                         \zeta_K^{\mathcal T}(s+w_i)}
+ {\zeta_K^{\mathcal T}(s)
+       \prod_{i,j=1}^2\zeta_K^{\mathcal T}(s+v_i+w_j)}\,
+       \mathcal H_{\mathcal T}(s;v,w).
+\end{equation}
+The correction is normally convergent at
+$\Re s\ge\tfrac12+\eta$, $\Re v_i,\Re w_j\ge0$, for each fixed
+$\eta>0$. This says nothing about zeros or residues of the zeta ratio.
+Finite-height Perron kernels, with their explicit endpoint/error costs,
+recover the cutoffs by successive limits.
+
+A direct finite cutoff expansion gives more explicit information:
+\begin{equation}\label{sd:finite-numerator}
+ \mathcal Z_{U;a,b,\mathcal T}(s)
+       =\frac{\mathcal N_{U;a,b,\mathcal T}(s)}
+                    {\zeta_K^{\mathcal T}(s)}.
+\end{equation}
+The numerator is a finite sum over eight nonzero joint short-divisor
+states, holomorphic on $\Re s>0$. Uniformly for $\sigma\ge\sigma_0>0$,
+\[
+ |\mathcal N_{U;a,b,\mathcal T}(\sigma+i\tau)|
+ \ll_{K,\sigma_0,\epsilon}(Na\,Nb)^\epsilon
+             U^{4\max(1-\sigma,0)+\epsilon}.
+\]
+The costs near $\sigma=1/2$ persist. The remaining long state has the
+M\"obius sign, but the eight finite short states cannot be omitted.
+A fixed-residual reciprocal zeta factor also does not prove an
+uncancelled pole in the complete coherent sum.
+
+\paragraph{Exact complete-column reference.}
+Choose once $\delta=1/240000$ and
+$W_\delta(y)=s((y-1)/\delta)s((2-y)/\delta)$, where $s$ is the smooth
+step from zero to one. For the finite grid $D\le60000$ every strict
+integer norm node has $W_\delta=1$; endpoints vanish. Its derivatives
+cost $O_k(\delta^{-k})$. The three cases have different declared row
+blocks, not a common asymptotic scaling experiment. They use principal
+$\nu$, $S$ above $2,3$, literal class one and nonprincipal actual rows.
+\begin{center}
+\begin{tabular}{r|r|r|r|r}
+ $D$ & columns & divisors & rows & $S_1^{AA}$\\\hline
+ $144$ & $41$ & $53$ & $5$ & $-19/36$\\
+ $576$ & $164$ & $212$ & $11$ & $-221/288$\\
+ $60000$ & $16953$ & $21750$ & $20$ & $-5119/5000$
+\end{tabular}
+\end{center}
+In the last case the exact even/odd M\"obius masses are
+$543416$ and $604844$, giving numerator $-61428$ before division by $D$.
+All $339060$ raw column--row values, including $47908$ zeros, and all nine
+cross components are retained. In particular $1361$ columns have
+nonsquarefree rational norm while remaining squarefree as ideals.
+The \href{https://amelie-iska.github.io/GRH-research/signed-divisor.html}{signed-divisor inspector}
+exposes the actual states and dimensions. These finite negative slices
+are neither whole-family asymptotic counterexamples nor a positive
+arithmetic determinant or GRH result.
