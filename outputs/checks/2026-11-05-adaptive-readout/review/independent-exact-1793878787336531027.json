@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "frozen_certificate_sha256": "85e3bed76ad4067084ab5f8413b7159e4c5169e5d7cef0469d36164e82dfbca8",
+  "independent_outward_DFT_rectangles": 192,
+  "all_degree_base_budgets_recomputed": 192,
+  "experiments": [
+    {
+      "directory": "outputs/experiments/2026-11-05-adaptive-readout-1e-12-v3",
+      "certificate_sha256": "6693f112a696ad599dd0e4e962aecd8b76d01d9c555e936fbf2385e7af478fdf",
+      "source_sha256": {
+        "adaptive_readout.py": "dc64e37cdadac8ffadaa666cdd0e6a0941580f89f3674817c803e8c89ee7e274",
+        "dyadic.py": "82e995ae9f67395980cec3f06bf493931de0413c7ce024562283882c01425170"
+      },
+      "executed_updates_checked": 298,
+      "coefficient_states_checked": 7424,
+      "models": [
+        {
+          "q": 3,
+          "degree": 23,
+          "steps": 100,
+          "uniform_bound": 9.989301666305405e-13,
+          "minimum_base_degree": 56,
+          "minimum_base_budget": 7.292853591735253e-17,
+          "actual_optimization": 1.8769920991924357e-13
+        },
+        {
+          "q": 4,
+          "degree": 24,
+          "steps": 100,
+          "uniform_bound": 9.18398196847804e-13,
+          "minimum_base_degree": 56,
+          "minimum_base_budget": 1.7369759965161748e-16,
+          "actual_optimization": 3.267551038190964e-13
+        },
+        {
+          "q": 5,
+          "degree": 24,
+          "steps": 98,
+          "uniform_bound": 9.143586403704558e-13,
+          "minimum_base_degree": 55,
+          "minimum_base_budget": 3.374091218773938e-16,
+          "actual_optimization": 5.591395943189613e-13
+        }
+      ]
+    },
+    {
+      "directory": "outputs/experiments/2026-11-05-adaptive-readout-1e-15-v3",
+      "certificate_sha256": "bbe5c4803f16b5ada8f6116b010ebf278d954ce74a6e730394dfa045d71a57a8",
+      "source_sha256": {
+        "adaptive_readout.py": "dc64e37cdadac8ffadaa666cdd0e6a0941580f89f3674817c803e8c89ee7e274",
+        "dyadic.py": "82e995ae9f67395980cec3f06bf493931de0413c7ce024562283882c01425170"
+      },
+      "executed_updates_checked": 368,
+      "coefficient_states_checked": 11378,
+      "models": [
+        {
+          "q": 3,
+          "degree": 29,
+          "steps": 122,
+          "uniform_bound": 9.071220239720254e-16,
+          "minimum_base_degree": 56,
+          "minimum_base_budget": 7.292853591735253e-17,
+          "actual_optimization": 3.348191111762154e-16
+        },
+        {
+          "q": 4,
+          "degree": 30,
+          "steps": 123,
+          "uniform_bound": 9.749757063325698e-16,
+          "minimum_base_degree": 56,
+          "minimum_base_budget": 1.7369759965161748e-16,
+          "actual_optimization": 4.371509614241538e-16
+        },
+        {
+          "q": 5,
+          "degree": 30,
+          "steps": 123,
+          "uniform_bound": 9.76662240021149e-16,
+          "minimum_base_degree": 55,
+          "minimum_base_budget": 3.374091218773938e-16,
+          "actual_optimization": 4.207768439057665e-16
+        }
+      ]
+    }
+  ],
+  "arithmetic_imports": "Python standard library only; no author arithmetic imports",
+  "analytic_scope": "Reuses the independently reviewed fixed-label theta/Mellin and growth theorem; bounded finite certificate only",
+  "GRH_proved": false,
+  "new_Lean_declarations": 0,
+  "diagnostics": [
+    {
+      "directory": "outputs/experiments/2026-11-05-adaptive-readout-1e-12-v3",
+      "mpmath_version": "1.4.1",
+      "dps": 110,
+      "Fourier_coefficients_contained": 74,
+      "boundary_diagnostics": 144,
+      "models": [
+        {
+          "q": 3,
+          "observed_48_boundary_max": 1.876992099192447e-13,
+          "certificate": 9.989301666305405e-13
+        },
+        {
+          "q": 4,
+          "observed_48_boundary_max": 3.267551038191026e-13,
+          "certificate": 9.18398196847804e-13
+        },
+        {
+          "q": 5,
+          "observed_48_boundary_max": 5.591395943189656e-13,
+          "certificate": 9.143586403704558e-13
+        }
+      ],
+      "diagnostics_not_proof": true
+    },
+    {
+      "directory": "outputs/experiments/2026-11-05-adaptive-readout-1e-15-v3",
+      "mpmath_version": "1.4.1",
+      "dps": 110,
+      "Fourier_coefficients_contained": 92,
+      "boundary_diagnostics": 144,
+      "models": [
+        {
+          "q": 3,
+          "observed_48_boundary_max": 3.348191111773541e-16,
+          "certificate": 9.071220239720254e-16
+        },
+        {
+          "q": 4,
+          "observed_48_boundary_max": 4.3715096143034636e-16,
+          "certificate": 9.749757063325698e-16
+        },
+        {
+          "q": 5,
+          "observed_48_boundary_max": 4.2077684391011133e-16,
+          "certificate": 9.76662240021149e-16
+        }
+      ],
+      "diagnostics_not_proof": true
+    }
+  ]
+}

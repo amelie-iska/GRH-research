@@ -1,0 +1,716 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern,amsmath,amssymb,amsthm,geometry,hyperref}
+\geometry{margin=1in}
+\hypersetup{hidelinks,pdftitle={Validated Dirichlet approximation and weighted arithmetic moments},pdfauthor={GRH research working note}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\title{Validated Dirichlet approximation and weighted arithmetic moments}
+\author{GRH research working note}
+\date{5 November 2026}
+\begin{document}\maketitle
+\begin{abstract}Exact outward dyadic arithmetic and theta-integral quadrature certify three finite Dirichlet readouts. Separately, a fixed-twist sextic Hecke-family moment improves an original masked remainder estimate, while retaining a positive cutoff loss. We give the precise external analytic inputs and distinguish these results from zero-location and spectral determinant claims. No proof of GRH or complete Lean formalization is asserted.\end{abstract}
+\section{A finite, validated approximation result}
+Let $\chi_3=(0,1,-1)$, $\chi_4=(0,1,0,-1)$ and
+$\chi_5=(0,1,-1,-1,1)$, extended periodically, with parities $a=1,1,0$.
+We approximate the completed functions
+\[
+ \Lambda_q(s)=(q/\pi)^{(s+a)/2}\Gamma((s+a)/2)L(s,\chi_q).
+\]
+The primitive theta/Mellin identity is the explicit classical analytic input;
+no hypothesis about zeros is used. These three examples do not assert a
+uniform result for all conductors, general Hecke functions or Artin holomorphy.
+
+\begin{theorem}[Scope of the supplied finite certificate]
+For each $q=3,4,5$, the supplied exact-rational calculation constructs a
+complex polynomial $P_q$ of degree $28$ satisfying
+\[
+ \sup_{|s-1/2|\le7/10}|P_q(s)-\Lambda_q(s)|<5\cdot10^{-15}.
+\]
+The computation includes enclosures of all $64$ true Fourier-circle nodes,
+completed-function sample error, analytic truncation, Fourier aliasing,
+the exact closed-form $180$-step gradient-descent iterate and coefficient
+midpoint rounding. The Python implementation and informal analytic proof
+have independent checks; this is not a kernel-checked Lean theorem.
+\end{theorem}
+\begin{proof}
+Write $F(c+z)=\sum_{n\ge0}a_nz^n$, with $c=1/2$, $R=7/10$,
+$\rho=6/5$, $r=12/5$. The independently recomputed rational theta majorants
+are strictly below $M_q=4,10,6$, respectively, on $|z|\le r$.
+Use true roots $\zeta_j=e^{2\pi i j/64}$ and rational labels $y_j$
+with proved error $|y_j-F(c+\rho\zeta_j)|\le\eta$.
+Use the real Euclidean gradient on complex coefficient coordinates for
+\[
+ \mathcal L(b)=\frac1{128}\sum_{j=0}^{63}
+ \left|\sum_{n=0}^{28}b_n\zeta_j^n-y_j\right|^2.
+\]
+Discrete Fourier orthogonality gives the least-squares optimum
+$b_n^*=64^{-1}\sum_jy_j\bar\zeta_j^n$, $0\le n\le28$,
+and gradient $\nabla\mathcal L(b)=b-b^*$.
+For step $1/4$ and zero initialization, the exact $180$-step iterate is
+$b_n^{180}=(1-(3/4)^{180})b_n^*$. The code evaluates this closed form;
+it does not claim an explicit180-update optimizer run.
+
+Set $u=R/\rho=7/12$, $v=R/r=7/24$ and $w=(\rho/r)^{64}=2^{-64}$.
+Let $\widehat b_n$ be an outward rectangle enclosing $b_n^*$ and
+$\epsilon_n$ the sum of the coordinate halfwidths of the rectangle
+for $b_n^{180}$. Choose each actual polynomial coefficient as that
+rectangle's exact rational midpoint $c_n$. The normalized basis is explicit:
+\[
+ P_q(s)=\sum_{n=0}^{28}c_n\left(\frac{s-1/2}{6/5}\right)^n.
+\]
+Thus the exported coefficient with index $n$ multiplies the normalized
+variable, rather than the raw power $(s-1/2)^n$. Its error on the compact disk is bounded by
+\begin{align*}
+ E_{\rm opt}&=(3/4)^{180}\sum_{n=0}^{28}|\widehat b_n|_1u^n,&
+ E_{\rm arithmetic}&=\sum_{n=0}^{28}\epsilon_nu^n,\\
+ E_{\rm oracle}&=\eta\frac{1-u^{29}}{1-u},&
+ E_{\rm alias}&=M_q\frac{w}{1-w}\frac{1-v^{29}}{1-v},\\
+ E_{\rm Taylor}&=M_q\frac{v^{29}}{1-v}.&&
+\end{align*}
+Here $|\widehat b_n|_1$ is the sum of the maximum absolute real and imaginary
+coordinates, a safe upper bound for every enclosed complex modulus.
+Cauchy's estimate $|a_n|\le M_qr^{-n}$ and the Fourier identity
+$b_n^*=a_n\rho^n+\sum_{\ell\ge1}a_{n+64\ell}\rho^{n+64\ell}$
+for exact labels prove the alias and Taylor bounds. Label perturbations
+contribute at most $\eta$ per Fourier coefficient. The remaining two
+terms follow directly from the exact iterate and coefficient rectangles.
+Each term is rounded upward to a $180$-bit dyadic rational; the reported total
+is the exact sum of those reported terms. The certified totals below are
+strictly below the asserted threshold. Detailed sample enclosures are proved
+in the extended edition and encoded with exact integer endpoints.
+\end{proof}
+
+\begin{center}\begin{tabular}{c|cc}Conductor & Maximum sample radius & Uniform polynomial bound\\\hline
+3 & $3.026\times10^{-17}$ & $1.786\times10^{-15}$ \\
+4 & $7.206\times10^{-17}$ & $4.455\times10^{-15}$ \\
+5 & $1.404\times10^{-16}$ & $2.906\times10^{-15}$ \\
+\end{tabular}\end{center}
+The displayed values are rounded upward; exact rational records establish the strict inequalities.
+
+
+\section{What this does and does not certify}
+The final JSON records exact rational centers, interval endpoints, source
+hashes and all five error terms. Float values are display summaries only.
+A high-precision comparison is an independent diagnostic, not the reason
+an interval contains its mathematical target. Arithmetic uses outward
+integer operations, and invalid float/order inputs are rejected, including
+through typed caches. Earlier pilots and failed validation probes are retained.
+
+This is a fixed finite tolerance/configuration. Increasing accuracy needs
+new truncation and precision choices; the fixed $N=11,T=128$ interface is
+not an arbitrary-accuracy oracle. The broader approximation existence theorem
+is separate. The certificate says nothing about the location of zeros:
+$P_q$ is not required to be real-rooted or a self-adjoint spectral determinant.
+The independent arithmetic determinant identity, positivity and original
+signed short-row/covariance estimates remain open. No GRH proof or complete
+new Lean4 formalization is claimed.
+
+\section{Requested-error readouts from preserved certified labels}\label{ar:requested}
+The accepted final-v5 sample certificate is preserved unchanged. For each
+$q=3,4,5$, it supplies $m=64$ rational complex labels $y_j$, bounds
+$|y_j-\Lambda_q(c+\rho\zeta_j)|\le\eta_j$, and outward rectangles enclosing
+the true roots $\zeta_j=e^{2\pi i j/m}$, where $c=1/2$, $\rho=6/5$.
+The classical primitive theta/Mellin identity and accepted growth bounds
+$M_q=4,10,6$ on $|s-c|\le r=12/5$ remain the analytic inputs.
+This extension accepts an exact rational error request $\varepsilon>0$ on
+the fixed compact $|s-c|\le R=7/10$. It changes the finite readout, while
+retaining the certified sample errors and the $64$-node alias budget.
+It is not an arbitrary-accuracy theta-sampling interface.
+
+\begin{theorem}[Executed rational readout with explicit refusal]\label{ar:returned}
+For each supported conductor and rational request, the finite-data
+selection below either returns a normalized rational polynomial $P$ and an
+executed, exactly replayable gradient-descent trace with
+\[
+ \sup_{|s-c|\le R}|P(s)-\Lambda_q(s)|\le\varepsilon,
+\]
+or refuses the request with the exact minimum base budget over all
+$64$ allowed degrees. Refusal concerns attainability by this particular
+fixed-data majorant; it is not an impossibility theorem for approximation.
+\end{theorem}
+\begin{proof}
+Let $B_n$ be an outward rectangle enclosing
+$b_n^*=m^{-1}\sum_j y_j\bar\zeta_j^n$, $0\le n<64$, computed from the
+preserved root rectangles. Put $t_n=\operatorname{mid}(B_n)$ and let
+$e_n$ be the sum of its coordinate halfwidths. These are exact rationals,
+and $|t_n-b_n^*|\le e_n$.
+For a selected $d<64$ execute, using exact rational operations,
+\[
+ b_n^0=0,\qquad b_n^{k+1}=\tfrac34 b_n^k+\tfrac14 t_n,
+ \qquad 0\le n\le d.
+\]
+This is genuine gradient descent with step $1/4$ for the explicitly
+specified real Euclidean objective
+$J(b)=\frac12\sum_{n=0}^d|b_n-t_n|^2$, whose gradient is $b-t$.
+All iterates and exact objective values are retained. The output is literally
+\[
+ P_k(s)=\sum_{n=0}^d b_n^k\left(\frac{s-c}{\rho}\right)^n.
+\]
+Set $u=R/\rho=7/12$, $v=R/r=7/24$, $w=(\rho/r)^{64}=2^{-64}$,
+$S_d(x)=\sum_{n=0}^d x^n$ and $\eta=\max_j\eta_j$. The five budgets are
+\begin{align*}
+ E_{\rm opt}(k)&=\sum_{n=0}^d|b_n^k-t_n|_1u^n,&
+ E_{\rm oracle}&=\eta S_d(u),\\
+ E_{\rm alias}&=M_q\frac{w}{1-w}S_d(v),&
+ E_{\rm Taylor}&=M_q\frac{v^{d+1}}{1-v},\\
+ E_{\rm arithmetic}&=\sum_{n=0}^d e_nu^n.&&
+\end{align*}
+Here $|x+iy|_1=|x|+|y|$. Cauchy's estimate and true-root Fourier
+orthogonality give the alias and Taylor terms; certified label errors give
+the oracle term. Triangle inequality applied to
+$b_n^k-b_n^*=(b_n^k-t_n)+(t_n-b_n^*)$ gives the other two.
+Thus their exact sum bounds the compact-uniform error.
+
+Define $C_d=E_{\rm oracle}+E_{\rm alias}+E_{\rm Taylor}
++E_{\rm arithmetic}$. Select the smallest $d<64$ with $C_d<\varepsilon$;
+if none exists, report $\min_{d<64}C_d$ and refuse. For a selected degree,
+$E_{\rm opt}(k)=(3/4)^k\sum_n|t_n|_1u^n\longrightarrow0$.
+Therefore executing updates until
+$E_{\rm opt}(k)\le\varepsilon-C_d$ terminates after finitely many steps.
+The serialized coefficients, budgets, targets and trace use exact rational
+endpoints; displayed decimal approximations are not proof inputs.
+\end{proof}
+
+% Accepted prose AFM proof; explicit external inputs, not a Lean theorem.
+\section{An arithmetic-family moment with every original row retained}
+\label{mm:core}
+Let $K=\mathbb Q(\sqrt{-3})$, $\mathcal O=\mathbb Z[\omega]$, and write
+$N$ for the ideal or element norm. Fix a finite-order Hecke character
+$\nu$ and a finite set $S$ of prime ideals containing those above $6$ and
+those dividing its conductor. For $0\ne u\in\mathcal O$, let $\kappa_u$
+be the character of $K(u^{1/6})/K$ defined using arithmetic Frobenius, and
+put $\psi_u=\operatorname{prim}(\nu\kappa_u)$. Here
+$\operatorname{prim}$ means the underlying primitive Hecke character:
+it is formed before introducing any divisor variable or evaluating
+conductor-dependent zero extensions. The rows below are all actual
+Eisenstein elements, including units and prime powers supported in $S$.
+
+The external inputs are abelian Kummer reciprocity and character
+uniqueness, the primitive Hecke functional equation and its usual
+vertical growth, Stirling's formula, scalar Dedekind-zeta convexity, and
+Blomer--Goldmakher--Louvel's large sieve for their specified sixth-order
+family. We use the pinned
+\href{https://arxiv.org/pdf/1112.1650v1}{arXiv:1112.1650v1},
+Theorem~1.3, Lemma~2.1 and Appendix~II; its Section~5 supplies the
+all-ideal decomposition whose fixed-twist proof is redone here.
+No statement about all primitive characters of comparable conductor,
+Artin holomorphy, Lindel\"of bounds or zero locations is assumed.
+
+\begin{theorem}[The original-family numerator moment]
+\label{mm:afm}
+For every $\varepsilon>0$, uniformly for $H\ge1$ and $t\in\mathbb R$,
+\begin{equation}\label{mm:central}
+ \sum_{0<Nu\le H}|L(1/2+it,\psi_u)|^2
+ \ll_{\nu,S,\varepsilon}H^{1+\varepsilon}(1+|t|)^{1+\varepsilon}.
+\end{equation}
+For every fixed $0<\delta<1/2$, the same estimate holds with
+$1/2+it$ replaced by $1/2+\delta+it$, with the constant also depending
+on $\delta$. If the central bound has constant $C_0$ at an exponent
+$0<\varepsilon_0\le1/4$, an admissible off-central constant is
+\begin{equation}\label{mm:poisson-constant}
+ 200 C_0\left(\frac{3/2+\delta}{1/2-\delta}\right)^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For the canonical BGL character $\vartheta_{\mathfrak a}$,
+Appendix~II gives a radicand $\alpha_{\mathfrak a}$ with
+$(\alpha_{\mathfrak a})_S=\mathfrak a\mathfrak g^{-6}$.
+Since $\mathcal O_S$ is principal, comparison with any literal $u$
+whose outside-$S$ ideal is $\mathfrak a$ gives
+$\kappa_u=\eta\vartheta_{\mathfrak a}$ for one of finitely many fixed
+$S$-unit Kummer twists $\eta$. This is an equality of primitive
+characters, established outside a finite set and extended by uniqueness.
+For each outside-$S$ ideal $\mathfrak a$ and $S$-supported integral
+ideal $\mathfrak b$, at most six elements generate
+$\mathfrak a\mathfrak b$. The resulting $S$-supported multiplicity sum
+converges at exponent $1+\varepsilon$.
+
+For each fixed $\xi=\nu\eta$, split the canonical parameter as
+$\mathfrak a=\mathfrak a_0\mathfrak a_1\mathfrak a_2^6$, where
+$\mathfrak a_0$ is squarefree, $\mathfrak a_1$ is squarefull and
+sixth-power-free, and $(\mathfrak a_0,\mathfrak a_1)=1$.
+The primitive conductor is at most a fixed multiple of
+$N(\mathfrak a_0\mathfrak a_1)$.
+The common-gamma approximate functional equation, with
+$X=H/(N\mathfrak a_2)^6$ and $T=1+|t|$, has common maximal length
+$B=X^{1/2}T(HT)^\eta$ for any sufficiently small fixed $\eta>0$.
+Mellin inversion removes its row-dependent conductor weight.
+Split a column as $\mathfrak b_S\mathfrak b_1\mathfrak b_2$, with
+$\mathfrak b_S$ supported in $S$, $\mathfrak b_1$ squarefree and
+$\mathfrak b_2$ squarefull, the last two coprime and prime to $S$.
+The original primitive values at $\mathfrak b_S$ remain bounded row
+multipliers. The $S$-supported and squarefull column weights are summable
+at $1/2+\eta$. Multiplying squarefree column coefficients by the fixed
+$\xi$ preserves their squared norm, whatever its finite order.
+BGL's large sieve therefore bounds the energy for fixed
+$\mathfrak a_1,\mathfrak a_2$ by
+\[
+ (HT)^{O(\eta)}\{M+B+(MB)^{2/3}\},\qquad
+ M=X/N\mathfrak a_1.
+\]
+Squarefull counting and summation give
+$X+B\sqrt X+(XB)^{2/3}\ll (HT)^{O(\eta)}XT$.
+The $\mathfrak a_2$ sum converges at exponent $6$.
+Principal rows are separated before the pole-free functional equation
+and bounded by scalar zeta convexity. This proves~\eqref{mm:central}.
+
+For the off-central statement divide each $L(s,\psi)$ by
+$(s+1)^{5/4}$ and, on principal rows, also multiply by $(s-1)/(s+1)$.
+These are bounded analytic functions on $\operatorname{Re}s>1/2$,
+continuous on the boundary. Poisson representation and Jensen's
+inequality transfer the central squared moment. The convolution of
+$P_\delta(y)=\delta/[\pi(\delta^2+y^2)]$ with
+$(1+|t|)^{-3/2+\varepsilon_0}$ is at most eleven times that weight
+when $0<\varepsilon_0\le1/4$. Restoring the denominator and the
+principal pole-removal factor gives~\eqref{mm:poisson-constant}.
+The extended edition gives the detailed derivation with all primitive local values.
+\end{proof}
+
+\paragraph{Separate fixed-unitary extension.}
+The moment theorem also holds for any one fixed unitary Hecke character
+$\nu$. For precision choose
+$\nu(\mathfrak a)=\nu_0(\mathfrak a)(N\mathfrak a)^{-i\tau}$, with
+angular parameter $m\in\mathbb Z$ and completed gamma factor
+\[
+ \gamma_\nu(s)=2(2\pi)^{-(s+|m|/2+i\tau)}
+                    \Gamma(s+|m|/2+i\tau).
+\]
+All finite Kummer twists have this same infinity type. Use
+$T_\nu=1+|t+\tau|+|m|$, comparable to $1+|t|$ with
+$\nu$-dependent constants. Pure norm rows have
+$L(s,\psi)=\zeta_K(s+i\tau)$ and are separated before the pole-free
+functional equation; their pole at $1-i\tau$ is removed by
+$(s-1+i\tau)/(s+1+i\tau)$. No uniformity in $m$, $\tau$ or the
+conductor of $\nu$ is asserted. This extension of the moment is separate
+from the following finite-order type-I residue formula.
+
+\subsection{The exact masked remainder and the remaining loss}
+Retain the original zero-extended symbol $\chi_d(u)=(u/d)_6$ on good
+squarefree ideals. Let $\mu$ be the ideal M\"obius function and set
+\[
+ \beta_U(d)=\sum_{ab=d\atop Na,Nb\le U}\mu(a)\mu(b),\quad
+ T(u,d)=S\cup\operatorname{supp}(u)\cup\operatorname{supp}(d).
+\]
+Let $\psi_{u,2}=\operatorname{prim}(\psi_u^2)$, formed independently
+of squaring any zero sentinel. With $\mathfrak f_u$ and
+$\mathfrak f_{u,2}$ the primitive conductors, the full-mask series is
+\begin{align}
+ F_{u,d}(s)
+ &=\frac{L(s,\psi_u)}{L(2s,\psi_{u,2})}C_{T(u,d)}(s),\label{mm:masked}\\
+ C_T(s)
+ &=\frac{\prod_{p\in T,\ p\nmid\mathfrak f_u}
+              (1-\psi_u(p)(Np)^{-s})}
+         {\prod_{p\in T,\ p\nmid\mathfrak f_{u,2}}
+              (1-\psi_{u,2}(p)(Np)^{-2s})}.\notag
+\end{align}
+Initially it equals
+$\sum_{c\ \mathrm{squarefree},\ (c,T)=1}\psi_u(c)(Nc)^{-s}$
+for $\operatorname{Re}s>1$. Every prime of $T$ remains deleted,
+including those forgotten by either primitive conductor.
+
+For finite-order $\nu$, $D\ge1$, $U\ge1$, $U^2\le D$, and
+$W\in C_c^\infty((0,\infty))$ supported in $[1,2]$, put
+\[
+ \widehat W(s)=\int_0^\infty W(x)x^{s-1}\,dx,\qquad
+ \mathcal M_4(W)=\sum_{j=0}^4\sup_x|(x\partial_x)^jW(x)|.
+\]
+On $\sigma=1/2+\delta$, the exact residue-subtracted type-I remainder is
+\begin{equation}\label{mm:remainder}
+ E_u=\frac{D^\delta}{2\pi}\int_{\mathbb R}
+ \widehat W(\sigma+it)D^{it}
+ \sum_{d\ \mathrm{squarefree}\atop(d,S)=1}
+ \frac{\beta_U(d)\nu(d)\chi_d(u)}{(Nd)^{\sigma+it}}
+ F_{u,d}(\sigma+it)\,dt.
+\end{equation}
+This definition retains the actual $\beta_U$, all phases, $d$-masks,
+conductors and the independently primitive square.
+
+\begin{theorem}[An improved masked residual estimate]
+\label{mm:residual}
+Under the preceding finite-order hypotheses, for every $\varepsilon>0$,
+\begin{equation}\label{mm:energy}
+ \sum_{0<Nu\le H}|E_u|^2
+ \ll_{\nu,S,\delta,\varepsilon}
+ \mathcal M_4(W)^2D^{2\delta}U^{2-4\delta}H(HD)^\varepsilon.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The same deleted set in both factors of~\eqref{mm:masked} gives
+$|F_{u,d}(\sigma+it)|\ll (Nu\,Nd)^\eta|L(\sigma+it,\psi_u)|$:
+the reciprocal incomplete Euler product at $2\sigma>1$ is bounded
+by $\zeta_K(2\sigma)$, and its remaining finite numerator is bounded
+by a small power of its radical. Apply Minkowski to~\eqref{mm:remainder}
+in the exact row space and use Theorem~\ref{mm:afm}. The actual coefficient
+sum is at most
+\[
+ \sum_d\frac{|\beta_U(d)|}{(Nd)^{\sigma-\eta}}
+ \le\left(\sum_{Na\le U}(Na)^{-\sigma+\eta}\right)^2
+ \ll U^{1-2\delta+2\eta}.
+\]
+Four Mellin integrations by parts bound the remaining height integral
+by a constant times $\mathcal M_4(W)$. Square the result and absorb
+the small losses using $U^2\le D$.
+\end{proof}
+
+At $H=D^{3/4}$ and $U=D^a$ with fixed $0<a\le1/2$, the upper bound's excess
+over $H$ is $2\delta+(2-4\delta)a$, up to small losses; as
+$\delta\downarrow0$ it still leaves $2a$. This is a limitation of the
+upper bound, not an energy lower bound. The extracted principal residue,
+the original short term at smaller scales and the signed type-II minus
+type-I covariance are not controlled by~\eqref{mm:energy}. The next
+arithmetic task is to estimate the complete $d$-weighted moment before
+its absolute coefficient sum, or establish sufficient signed covariance.
+No positive arithmetic determinant, zero-location theorem or GRH proof
+follows. The analytic argument uses the external classical inputs above;
+finite diagnostics and selected existing Lean local identities do not
+formalize the Hecke functions, approximate functional equation, Poisson
+transfer or these moment bounds.
+
+\section{Recombining the actual weighted cutoff}
+\label{rc:core}
+Keep the finite-order Eisenstein family and original masks of
+Section~\ref{mm:core}. For $U\ge1$ and a squarefree ideal $m$, put
+\[
+ A_U(m)=\sum_{d\mid m}\beta_U(d)
+ =\sum_{ab\mid m\atop(a,b)=1,\ Na,Nb\le U}\mu(a)\mu(b).
+\]
+Every summation variable here is an integral ideal. The last formula
+uses squarefreeness of $m$; an unconstrained square of a M\"obius
+polynomial would also include forbidden overlapping supports.
+\begin{theorem}[Exact recombination and an absolute-half-plane rate]
+\label{rc:recombination}
+Write $T_0=S\cup\operatorname{supp}(u)$ and
+$J_{u,U}(s)=\sum_{d\ \mathrm{squarefree},\ (d,S)=1}
+\beta_U(d)\nu(d)\chi_d(u)(Nd)^{-s}F_{u,d}(s)$.
+For $\operatorname{Re}s>1$,
+\begin{align*}
+ J_{u,U}(s)&=\sum_{m\ \mathrm{squarefree},\ (m,T_0)=1}
+                   A_U(m)\psi_u(m)(Nm)^{-s},\\
+ |A_U(m)|&\le3^{\omega(m)},\qquad
+ A_U(m)=\mu(m)\quad(Nm\le U).
+\end{align*}
+For every $\kappa>0$ and $0<\epsilon<\kappa$, uniformly for
+$\operatorname{Re}s\ge1+\kappa$, all original rows and all $U\ge1$,
+\[
+ \left|J_{u,U}(s)-\frac1{L^{T_0}(s,\psi_u)}\right|
+ \le U^{-\kappa+\epsilon}
+ \{\zeta_K(1+\epsilon)^3+\zeta_K(1+\epsilon)\}.
+\]
+Here $L^{T_0}$ removes every prime of $T_0$, including conductor-drop
+primes; the bound is in the absolute-convergence half-plane only.
+\end{theorem}
+\begin{proof}
+On a surviving term $m=dc$, the two squarefree ideals $c,d$ are
+coprime, and both avoid $T_0$. The original product
+$\nu(d)\chi_d(u)\psi_u(c)$ is then $\psi_u(m)$. Grouping by $m$
+gives $A_U$. Each prime of $m$ has three possible positions in
+$(a,b,m/(ab))$, so the absolute sum is at most $3^{\omega(m)}$.
+When $Nm\le U$ all divisors fit both cutoffs; the primewise sum is
+$1-1-1=-1$, giving $\mu(m)$.
+
+The same bound justifies absolute convergence and regrouping for
+$\operatorname{Re}s>1$, because on squarefree ideals
+$3^{\omega(m)}=\tau_3(m)$ and
+$\sum_m\tau_3(m)(Nm)^{-v}=\zeta_K(v)^3$ for $v>1$,
+where this latter sum runs over all nonzero integral ideals.
+Subtract the absolutely convergent M\"obius series for $1/L^{T_0}$.
+Only $Nm>U$ remain. Rankin's inequality with exponent
+$\eta=\kappa-\epsilon$ bounds their absolute sum by
+\[
+ U^{-\eta}\sum_m\{\tau_3(m)+1\}
+                  (Nm)^{-1-\epsilon},
+\]
+which proves the stated constant independently of deleted primes,
+row multiplicities or character phases.
+\end{proof}
+
+For $W$ supported in $[1,2]$, the same exact regrouping gives the
+original normalized type-I polynomial
+\[
+ I_u=D^{-1/2}\sum_{m\ \mathrm{squarefree},\ (m,S)=1}
+ A_U(m)\nu(m)\chi_m(u)W(Nm/D).
+\]
+This formula retains all original zero sentinels. It permits a direct
+family large sieve before any absolute $d$ sum; its quantitative moment
+is developed separately below. The displayed absolute-half-plane rate
+alone is not that critical-strip moment.
+
+% Original masked cutoff family; no new Lean or GRH theorem.
+\section{A cutoff-uniform envelope for the original masked remainder}
+\label{wc:core}
+Fix $K=\mathbb Q(\omega)$, $\mathcal O=\mathbb Z[\omega]$, a finite-order
+Hecke character $\nu$, and a finite set $S$ containing the primes above $6$
+and the conductor of $\nu$. All unspecified ideal sums below are over
+nonzero integral ideals. Let $\chi_m(u)=(u/m)_6$ be the original symbol,
+zero when $(m,u)>1$, and put
+\[
+ \beta_U(d)=\sum_{ab=d\atop Na,Nb\le U}\mu(a)\mu(b),\qquad
+ A_U(m)=\sum_{d\mid m}\beta_U(d).
+\]
+The columns $d,c,m$ are squarefree and prime to $S$ where indicated.
+Retain the primitive characters $\psi_u=\operatorname{prim}(\nu\kappa_u)$,
+$\psi_{u,2}=\operatorname{prim}(\psi_u^2)$, and the full deleted set
+$T(u,d)=S\cup\operatorname{supp}(u)\cup\operatorname{supp}(d)$.
+For $H,D,U\ge1$, $U^2\le D$, and $W\in C_c^\infty((0,\infty))$
+supported in $[1,2]$, the original normalized type-I piece is
+\begin{equation}\label{wc:polynomial}
+ I_u=D^{-1/2}\sum_{m\ \mathrm{squarefree}\atop(m,S)=1}
+     A_U(m)\nu(m)\chi_m(u)W(Nm/D).
+\end{equation}
+Its exact principal residue is
+\begin{align}\label{wc:principal}
+ P_u&=\mathbf1_{\psi_u=1}\sqrt D\,\widehat W(1)
+ \sum_{d\ \mathrm{squarefree}\atop(d,S)=1}
+ \frac{\beta_U(d)\nu(d)\chi_d(u)}{Nd}\rho_{T(u,d)},\notag\\
+ \rho_T&=\frac{\operatorname*{res}_{s=1}\zeta_K(s)}{\zeta_K(2)}
+               \prod_{p\in T}(1+(Np)^{-1})^{-1}.
+\end{align}
+Define $E_u=I_u-P_u$; this is the same residue-subtracted remainder as the
+fully masked Mellin contour, with no cutoff limit or profile supremum.
+
+\begin{theorem}[Uniformity in the actual truncated cutoff]
+\label{wc:uniform}
+For every $\varepsilon>0$,
+\begin{equation}\label{wc:bound}
+ \sum_{0<Nu\le H}|E_u|^2
+ \ll_{\nu,S,\varepsilon}\|W\|_\infty^2(HD)^\varepsilon
+       \{H+DH^{1/3}+(HD)^{2/3}\}.
+\end{equation}
+The sum is over every actual nonzero Eisenstein element, including units,
+$S$-supported powers and sixth-power rows. The constant is independent of
+$U$ under $U^2\le D$. This is an application of the classical sextic
+large sieve with exact original coefficients, not a zero-location theorem.
+\end{theorem}
+\begin{proof}
+On an absolutely convergent line, expand the restored squarefree series
+$F_{u,d}$. Its condition $(c,T(u,d))=1$ includes $(c,d)=1$, and the
+original symbols multiply. Grouping $m=cd$ gives~\eqref{wc:polynomial}
+by Mellin inversion. Each prime of $m$ may belong to the first truncated
+M\"obius divisor, to the second, or to neither. Consequently
+$|A_U(m)|\le3^{\omega(m)}\ll_\eta(Nm)^\eta$, uniformly in $U$.
+The length-$D$ coefficient sequence in~\eqref{wc:polynomial} therefore
+has squared norm $\ll_\eta\|W\|_\infty^2D^\eta$.
+
+The all-ideal row norm in Section~3 of
+\href{https://arxiv.org/pdf/1112.1650v1}{Blomer--Goldmakher--Louvel,
+arXiv:1112.1650v1} gives
+\[
+ B_2^1(X,D)\ll_\eta(XD)^\eta
+                 \{X+DX^{1/3}+(XD)^{2/3}\}.
+\]
+For completeness, split $a=a_1a_2^2\cdots a_5^5a_6^6$ dyadically;
+$a_1,\ldots,a_5$ are squarefree and pairwise coprime. If their dyadic
+sizes are $A_j$, put $R=\prod_{j=1}^6A_j$ and $M=\max(A_1,A_2)$.
+Pivot on the first or second variable, using the squarefree powered
+sieve proved simultaneously in that paper's Section~3.2. The other
+variables are bounded column multipliers. The block energy is at most
+\[
+ (XD)^\eta\{R+DR/M+D^{2/3}R/M^{1/3}\}\sum_m|\lambda_m|^2.
+\]
+The inequalities $R\le X$, $R^3\le XM^3$ and $R^3\le X^2M$
+follow from $\prod_jA_j^j\le X$ and the pivot choice. Summing the
+logarithmically many blocks proves the displayed bound.
+
+Finite $S$-unit and ray-class partitions convert the original literal
+symbol into the canonical column value $\vartheta_m(a)$ with fixed
+modulus-one coefficient multipliers. On noncoprime pairs both values
+are zero: squarefree $m$ has outside-$S$ conductor exactly $m$.
+This orientation preserves sixth-power zeros. At most six elements
+generate each outside-$S$ ideal times an $S$-supported ideal; the
+$S$-supported sums converge at powers $1$, $1/3$ and $2/3$.
+Thus~\eqref{wc:bound} holds first with $I_u$ in place of $E_u$.
+
+A principal $\psi_u$ requires every outside-$S$ valuation of $u$ to
+be divisible by $6$. There are $O_{\nu,S}(H^{1/6})$ such literal
+rows. Equation~\eqref{wc:principal}, $|\rho_T|\ll_K1$, and the actual
+coefficient sum
+\[
+ \sum_d\frac{|\beta_U(d)|}{Nd}
+ \le\left(\sum_{Na\le U}\frac1{Na}\right)^2\ll\log^2(2U)
+\]
+give $\sum|P_u|^2\ll DH^{1/6}\|W\|_\infty^2\log^4(2U)$.
+This is absorbed by the right side of~\eqref{wc:bound}, using
+$U^2\le D$ and a smaller internal exponent. Finally
+$|E_u|^2\le2|I_u|^2+2|P_u|^2$. The extended proof specifies the
+canonical-family transfer and the powered-sieve input precisely.
+\end{proof}
+
+Combining this with the previously proved fixed-twist AFM transfer yields
+\begin{equation}\label{wc:minimum}
+ \sum_{0<Nu\le H}|E_u|^2\ll_{\nu,S,\delta,\varepsilon}
+ \mathcal M_4(W)^2(HD)^\varepsilon
+ \min\{D^{2\delta}U^{2-4\delta}H,\ H+DH^{1/3}+(HD)^{2/3}\}.
+\end{equation}
+At $H=D^{3/4}$ and $U=D^a$, $0\le a\le1/2$, the excess over $H$
+is at most $\min\{2\delta+(2-4\delta)a,1/2\}$, up to arbitrarily
+small losses. The new envelope improves the old one for $a>1/4$ as
+$\delta\downarrow0$, but still leaves an exponent loss of $1/2$.
+It does not settle the original signed short-row bound, type-II covariance,
+positive arithmetic determinant comparison or GRH. The principal-residue
+bound used here is sufficient for this envelope, not the stronger target
+needed to reassemble the full signed argument.
+
+\section{High cutoffs, actual bilinear factors and a signed covariance test}\label{sb:core}
+Retain the original Eisenstein family, fixed finite-order $\nu$, fixed $S$,
+common $W\in C_c^\infty((0,\infty))$ supported in $[1,2]$, and every raw
+shared-prime zero. Put
+\[
+ C_U(m)=\sum_{\substack{abc=m\\Na>U,\,Nb>U}}\mu(a)\mu(b),\qquad
+ r_U(m)=\#\{(a,b):ab=m,\ Na,Nb>U\}.
+\]
+All factors are ideals, squarefree and pairwise coprime; on the active
+annulus $A_U=C_U-\mu$. A coefficient identity is different from a row-energy bound.
+
+\begin{proposition}[The high-cutoff window]\label{sb:window}
+If $D>1$ and $2D/7\le U^2\le D$, then for every surviving squarefree
+column $D\le Nm\le2D$,
+\[
+ C_U(m)=\mu(m)r_U(m),\qquad
+ A_U(m)=\mu(m)(r_U(m)-1),\qquad |A_U(m)|\ge1.       
+\]
+For each fixed nonzero $W$, the normalized squared coefficient norm satisfies
+\begin{equation}
+ D^{-1}\sum_{\substack{m\ {\rm sf}\\(m,S)=1}}
+ |A_U(m)W(Nm/D)|^2\gg_{W,S}1                     \label{sb:coefficient-lower}
+\end{equation}
+for large $D$, uniformly in this window. This is not a lower bound for row energy.
+\end{proposition}
+\begin{proof}
+The least norm of a nonunit ideal outside $S$ is at least $7$. A long-long
+term with $c\ne1$ would have $Nm>7U^2\ge2D$. Thus $ab=m$, including both
+endpoints. The fixed-point-free swap $(a,b)\mapsto(b,a)$ makes $r_U$ even,
+so $A_U$ is an odd nonzero integer. The last claim follows by counting
+squarefree ideals on a fixed interval where $|W|$ is bounded below; the
+constant and error are proved in the extended proof.
+\end{proof}
+
+The exact remaining polynomial is genuinely bilinear, with $(a,b)=1$,
+$U<Na,Nb<2D/U$, $D\le Na\,Nb\le2D$, and
+$x_{ab}(u)=x_a(u)x_b(u)$, including zeros. Both factors see the same row
+$u=\varepsilon\alpha\beta^2$. Cauchy followed by the accepted powered BGL
+bound gives only
+\begin{equation}
+ Q_{B_X}(C_U,C_U)\ll_{\nu,S,\epsilon}
+ (DX)^\epsilon\|W\|_\infty^2
+ \{\sqrt D\,X^2+DX+D^{5/6}X^{5/3}\}.              \label{sb:factor-bound}
+\end{equation}
+At $X\asymp D^{1/4}$ the exponents are $1,5/4,5/4$; the earlier regrouped
+bound has $1/2,5/4,13/12$ and is stronger. No $BT_\sigma$ saving is obtained.
+Multiplying two marginal operator norms does not supply a coupled fourth moment.
+
+\paragraph{A finite test in the original family.}
+There is no automatic nonnegative signed covariance, even when
+$C_U(m)\mu(m)\ge0$. Take $\nu=1$, $S$ the primes above $2,3$, $D=400$,
+$U=17$, and all $72$ literal rows of $B_7$. Choose the common nonnegative
+smooth profile constructed in the extended proof, with values $10$ at $439/400$, $1$ at
+$475/400$, and zero at every other integer norm divided by $400$.
+There are exactly four active squarefree ideal columns, of norms
+$439,439,475,475$. In that order,
+\[
+ A=(1,1,1,1),\quad C=(0,0,2,2),\quad
+ \mu=(-1,-1,1,1),\qquad
+ \Re G_{B_7}=
+ \begin{pmatrix}72&0&0&18\\0&72&18&0\\0&18&72&0\\18&0&0&72\end{pmatrix}.
+\]
+Exact raw-symbol enumeration, independently reproducible from the ideal
+and residue-field definitions, gives
+\begin{equation}
+ Q(C,\mu)=-\frac{27}{25},\qquad
+ Q(C,C)=\frac{36}{25},\quad
+ Q(\mu,\mu)=\frac{864}{25},\quad
+ Q(A,A)=\frac{954}{25}.                          \label{sb:covariance-example}
+\end{equation}
+The real Gram matrix is positive definite, with eigenvalues $54,90$;
+its positivity does not force a cross covariance to be positive.
+This fixed finite example refutes that shortcut, not the asymptotic
+$BT_\sigma$ target or the original signed mean-square estimate.
+
+\paragraph{The two-cutoff contour remains coupled.}
+For $T_0=S\cup\operatorname{supp}(u)$, $\psi=\psi_u$ and independently
+primitive $\psi_2=\operatorname{prim}(\psi^2)$, put $q_p=\psi(p)(Np)^{-s}$,
+$\alpha_p=(Np)^{-z}$, $\beta_p=(Np)^{-w}$ outside $T_0$. The actual
+three-placement Euler factor is $1+q_p-q_p\alpha_p-q_p\beta_p$. Its exact
+factorization is
+\begin{equation}
+ \mathcal F(s,z,w)=
+ \frac{L^{T_0}(s,\psi)}{L^{T_0}(s+z,\psi)L^{T_0}(s+w,\psi)}
+ \prod_{p\notin T_0}\left(1-
+ \frac{q_p^2(1-\alpha_p)(1-\beta_p)}
+ {(1-q_p\alpha_p)(1-q_p\beta_p)}\right).           \label{sb:perron-factor}
+\end{equation}
+Exact double Perron inversion is valid on positive auxiliary lines
+$c,d>1-\Re s$ for $1/2<\Re s<1$, retaining the original principal pole
+exclusion. These safe lines reproduce the previous $U^{2-4\delta}$
+energy loss at $\Re s=1/2+\delta$, with the same common-profile derivative
+and fixed-margin dependencies. The correction product alone does not
+justify moving those lines through reciprocal-$L$ poles. In fact
+$\mathcal F(s,z,0)=1/L^{T_0}(s+z,\psi)$ as a meromorphic identity.
+No zero-free region, reciprocal moment, analytic saving, new Lean
+formalization or GRH proof is supplied by this construction.
+
+\section{A quantitative covariance budget without a new exponent}\label{cbq:core}
+Retain the original Eisenstein sextic symbols, fixed finite-order $\nu$,
+fixed $S$, one possibly complex common $W\in C_c^\infty$ supported in
+$[1,2]$, all squarefree columns prime to $S$, and every raw shared-prime
+zero. In the accepted window $2D/7\le U^2\le D$, put $r_m=r_U(m)$,
+$\lambda_m=\mu(m)\nu(m)W(Nm/D)$ and $v_m=\overline{\lambda_m}$.
+Thus $C_U=\mu r$ and $A_U=\mu(r-1)$ on the active annulus.
+For a finite literal row block $B$, let
+\[
+ G_{mn}=\sum_{u\in B}x_m(u)\overline{x_n(u)},\qquad
+ R=\operatorname{diag}(r_m),\qquad
+ M_j=\sum_mr_m^j|W(Nm/D)|^2\quad(0\le j\le2).
+\]
+The primitive $\psi_u,\psi_{u,2}$ and full deleted sets retain their
+previous meanings; no conductor-drop value replaces a raw zero.
+
+\begin{proposition}[An actual-vector lower budget]\label{cbq:budget}
+If $0\le G\le\Lambda_B I$, then
+\begin{equation}\label{cbq:vector}
+ \Re Q_B(C_U,\mu)\ge
+ -\frac{\Lambda_B}{2D}\{\sqrt{M_0M_2}-M_1\}.
+\end{equation}
+In this high window, uniformly in $U$,
+\begin{equation}\label{cbq:moments}
+ \sum_{D\le Nm\le2D}r_m\ll_K D,\qquad
+ \sum_{D\le Nm\le2D}r_m^2\ll_K D\log(2D).
+\end{equation}
+Consequently
+\[
+ \Re Q_B(C_U,\mu)\ge
+ -C_K\|W\|_\infty^2\Lambda_B\sqrt{\log(2D)}.
+\]
+\end{proposition}
+The vector inequality is sharp among positive contractions with the
+specified $v,Rv$; no such sharpness is asserted for the arithmetic Gram.
+The moment bound counts actual balanced ideal factorizations, rather than
+assuming independence of the two row factors.
+
+On $B_X$, inserting the previously accepted powered-BGL norm gives only
+\[
+ \Re Q_{B_X}(C_U,\mu)\ge
+ -C_{\nu,S,\epsilon}\|W\|_\infty^2(DX)^\epsilon
+ \{X^2+DX+D^{2/3}X^{5/3}\}.
+\]
+At $X\asymp D^{1/4}$ the exponents remain $1/2,5/4,13/12$.
+At $H=D^{3/4}$ this budget still has the old $D^{1/2}$ excess over $H$;
+it supplies no $BT_\sigma$ saving. A negative-part budget is weaker than
+$2\Re Q(C_U,\mu)\ge Q(C_U,C_U)+Q(\mu,\mu)-R_\sigma$.
+
+For $S_R=\sqrt R$, the exact identity
+\[
+ \tfrac12(RG+GR)=S_RGS_R+\tfrac12[S_R,[S_R,G]]
+\]
+localizes the commutator to unequal factor-count levels, with entry
+$(\sqrt{r_m}-\sqrt{r_n})^2G_{mn}$. If $B$ retains all six literal units,
+the actual unit sum further gives $G_{mn}=0$ unless $Nm\equiv Nn\pmod{36}$.
+These are exact deletions, not a power saving. Even zero different-level
+pairings leave the nonnegative within-level energies
+$\sum_k(k-1)^2Q_B(\mu\mathbf1_{r=k},\mu\mathbf1_{r=k})$.
+The unequal-product coupled fourth moment and its mixed M\"obius term
+remain unestimated. No new analytic exponent, energy lower bound,
+Lean formalization or GRH conclusion follows.
+
+\paragraph{Classical reference}NIST Digital Library of Mathematical Functions, Section25.15, \href{https://dlmf.nist.gov/25.15#E5}{Dirichlet L-functions, equations 25.15.5--6}; primitive functional equation and finite Gauss sums (snapshot pinned 4 November 2026). The normalization and explicit finite Gauss sums used here are stated above.\end{document}

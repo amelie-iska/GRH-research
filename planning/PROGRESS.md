@@ -1262,3 +1262,29 @@ pole-free contour shift as if these missing inputs had been established.
 The best global envelope here still losesD^(1/2) atH=D^(3/4); short/principal
 assembly, analytic/category Lean and the positive determinant bridge remain
 open. Both completion gates remainfalse; the existing heartbeat stays active.
+
+## Executed requested-error readouts and lower covariance budget — 5 November2026
+
+Claimed P11 with research_loop.py; old source HEAD/index preserved. New
+final-v3 requested1e-15 runs choose degrees29/30/30 and122/123/123 exact
+updates; bounds are below1e-15 on the fixed radius7/10 disk. Requested1e-12
+is also certified;1e-18 is explicitly refused by fixed-data budgets.
+Independent review reconstructs192 DFT rectangles/192 base budgets, all666
+updates/18,802 coefficient states,68negative controls and7focused tests.
+Three API defects were caught/fixed; earlier versions/failures are preserved.
+Display-only numerical projections and every update replay are in readout.html.
+
+Parallel independently checked arithmetic proves the sharp actual-vector
+lower covariance budget and high-window sum r²<<DlogD. The commutator and
+six-unit filter preserve complex phases/raw zeros. The full near-saturating
+face includes A3, and the inherited DX still precludes a new power saving.
+See research/quantitative-covariance-budget.md for the exact failed step.
+
+Staged builds:243-page40-chapter book/6601MathML; all6412previous math
+subtrees ordered and unchanged. Focused articles53/138pages; notes11/30pages.
+Source-matched diagrams and13canonical in-book labs retained; standalone
+readout replay added. No new dependency, GPU job, Lean declaration or GRH
+proof. New evidence: outputs/checks/2026-11-05-adaptive-readout/ and
+outputs/checks/2026-11-05-covariance-budget/. Required full analytic/category
+Lean, arbitrary-accuracy sampling and arithmetic determinant bridge remain
+open. Preserve completed publication receipts; keep heartbeat active.

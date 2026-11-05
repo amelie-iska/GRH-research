@@ -1,0 +1,63 @@
+% Generated shared reviewed material.
+\section{A quantitative covariance budget without a new exponent}\label{cbq:core}
+Retain the original Eisenstein sextic symbols, fixed finite-order $\nu$,
+fixed $S$, one possibly complex common $W\in C_c^\infty$ supported in
+$[1,2]$, all squarefree columns prime to $S$, and every raw shared-prime
+zero. In the accepted window $2D/7\le U^2\le D$, put $r_m=r_U(m)$,
+$\lambda_m=\mu(m)\nu(m)W(Nm/D)$ and $v_m=\overline{\lambda_m}$.
+Thus $C_U=\mu r$ and $A_U=\mu(r-1)$ on the active annulus.
+For a finite literal row block $B$, let
+\[
+ G_{mn}=\sum_{u\in B}x_m(u)\overline{x_n(u)},\qquad
+ R=\operatorname{diag}(r_m),\qquad
+ M_j=\sum_mr_m^j|W(Nm/D)|^2\quad(0\le j\le2).
+\]
+The primitive $\psi_u,\psi_{u,2}$ and full deleted sets retain their
+previous meanings; no conductor-drop value replaces a raw zero.
+
+\begin{proposition}[An actual-vector lower budget]\label{cbq:budget}
+If $0\le G\le\Lambda_B I$, then
+\begin{equation}\label{cbq:vector}
+ \Re Q_B(C_U,\mu)\ge
+ -\frac{\Lambda_B}{2D}\{\sqrt{M_0M_2}-M_1\}.
+\end{equation}
+In this high window, uniformly in $U$,
+\begin{equation}\label{cbq:moments}
+ \sum_{D\le Nm\le2D}r_m\ll_K D,\qquad
+ \sum_{D\le Nm\le2D}r_m^2\ll_K D\log(2D).
+\end{equation}
+Consequently
+\[
+ \Re Q_B(C_U,\mu)\ge
+ -C_K\|W\|_\infty^2\Lambda_B\sqrt{\log(2D)}.
+\]
+\end{proposition}
+The vector inequality is sharp among positive contractions with the
+specified $v,Rv$; no such sharpness is asserted for the arithmetic Gram.
+The moment bound counts actual balanced ideal factorizations, rather than
+assuming independence of the two row factors.
+
+On $B_X$, inserting the previously accepted powered-BGL norm gives only
+\[
+ \Re Q_{B_X}(C_U,\mu)\ge
+ -C_{\nu,S,\epsilon}\|W\|_\infty^2(DX)^\epsilon
+ \{X^2+DX+D^{2/3}X^{5/3}\}.
+\]
+At $X\asymp D^{1/4}$ the exponents remain $1/2,5/4,13/12$.
+At $H=D^{3/4}$ this budget still has the old $D^{1/2}$ excess over $H$;
+it supplies no $BT_\sigma$ saving. A negative-part budget is weaker than
+$2\Re Q(C_U,\mu)\ge Q(C_U,C_U)+Q(\mu,\mu)-R_\sigma$.
+
+For $S_R=\sqrt R$, the exact identity
+\[
+ \tfrac12(RG+GR)=S_RGS_R+\tfrac12[S_R,[S_R,G]]
+\]
+localizes the commutator to unequal factor-count levels, with entry
+$(\sqrt{r_m}-\sqrt{r_n})^2G_{mn}$. If $B$ retains all six literal units,
+the actual unit sum further gives $G_{mn}=0$ unless $Nm\equiv Nn\pmod{36}$.
+These are exact deletions, not a power saving. Even zero different-level
+pairings leave the nonnegative within-level energies
+$\sum_k(k-1)^2Q_B(\mu\mathbf1_{r=k},\mu\mathbf1_{r=k})$.
+The unequal-product coupled fourth moment and its mixed M\"obius term
+remain unestimated. No new analytic exponent, energy lower bound,
+Lean formalization or GRH conclusion follows.

@@ -501,3 +501,21 @@ pole-free contour shift as if these missing inputs had been established.
 The best global envelope here still losesD^(1/2) atH=D^(3/4); short/principal
 assembly, analytic/category Lean and the positive determinant bridge remain
 open. Both completion gates remainfalse; the existing heartbeat stays active.
+
+## Accepted extension: requested-error training and covariance budget (5 November2026)
+
+P11 now includes a bounded requested-rational-tolerance readout API over the
+preserved q3/q4/q5 samples, exact executed midpoint-objective GD and a
+certified perturbation from ideal-root least squares. Strict-floor refusal
+is required; do not describe this as arbitrary-precision theta sampling.
+Final-v3 certificates and independent acceptance are under the dated
+adaptive-readout experiment/check/review paths. A new source-backed replay
+is readout.html, linked from the canonical analytic laboratory and book.
+
+The arithmetic lane proves an actual-vector negative covariance budget,
+cutoff-uniform high-window balanced-factor moments sum r<<D, sum r²<<DlogD,
+exact normmod36/equal-level deletions and full saturation-face identities.
+It leaves the old DX middle term and D^(1/2) relative loss. Next estimate
+the unequal-product coupled fourth moment and mixed Mobius term with all
+union masks and the full A3 saturation direction. A negative-part budget
+alone does not supply BT_sigma. Both gates remainfalse; no new Lean/GRH.

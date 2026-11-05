@@ -1,0 +1,9 @@
+# Quantitative covariance attempt handoff
+
+Remote-only writes are confined to this new attempt directory and outputs/checks/2026-11-05-covariance-budget/attempt/. Production, original sources, queue/build/publication, credentials, environments, caches and old outputs were untouched.
+
+Proved: sharp positive-contraction actual-vector lower covariance budget; high-window actual ideal moments sum r=O(D), sum r^2=O(D log(2D)); exact coefficient-adapted double-commutator budget; raw unit norm-mod-36 filter; exact full near-saturating face and slack formulas. Detailed proof: QUANTITATIVE_COVARIANCE_BUDGET.md. Proposed shared TeX: covariance-budget-core-proposal.tex and covariance-budget-details-proposal.tex. manifest-v1.json pins every artifact and both preserved check receipts.
+
+The new lower budget still costs the inherited block norm, whose DX term has exponent 5/4 at X=D^(1/4), leaving the existing D^(1/2) excess over H=D^(3/4). No BT_sigma or new analytic exponent was proved. Bounding a negative commutator alone also leaves within-level energies; the remaining task is signed control of unequal-product coupled character quadruples and the mixed Mobius covariance, uniformly on the whole A1=A2, A1*A3=H^(1/3) face and its neighboring blocks.
+
+The final v2 exact stdlib check passed 9 ideal moment cases, 8 Gram cases, 27,000 direct residue-field phase values, 5,184 preserved raw zeros, and 227 exponent-grid cases, including all five saturating grid points. It verifies exact radical identities/budgets and common complex norm profiles; no project helper is imported. The v1 evidence is preserved, not overwritten. A final source-bound manifest check passed. No Lean, production build, analytic asymptotic test, GPU or GRH test was relevant or run; parent owns any integration/build and independent acceptance.

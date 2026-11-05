@@ -1132,3 +1132,19 @@ pole-free contour shift as if these missing inputs had been established.
 The best global envelope here still losesD^(1/2) atH=D^(3/4); short/principal
 assembly, analytic/category Lean and the positive determinant bridge remain
 open. Both completion gates remainfalse; the existing heartbeat stays active.
+
+## Next after exact requested-error training (5 November2026)
+
+Read research/requested-readout-training.md and quantitative-covariance-budget.md,
+plus their independent acceptance records. Final-v3 readout certificates are
+accepted; fixed-label floor refusal and exact midpoint-objective semantics
+are required. Do not rerun their666 updates as new research.
+
+Next analytic task: proof-preserving adaptive theta truncations and primitive
+precision for smaller requested errors; next arithmetic task: unequal-product
+character quadruples with union masks and mixed Mobius covariance over the
+full near-saturating face (including A3). The high-window coefficient diagonal
+is now counted by O(DlogD), but its negative-part budget still costs DX.
+Do not infer BT_sigma from small commutator loss alone. Continue actual
+analytic/category Lean when the pinned toolchain is available; no fallback
+toolchain substitution or claim of whole-book formalization. Gates false.

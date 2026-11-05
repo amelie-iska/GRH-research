@@ -1,0 +1,554 @@
+{
+  "passed": true,
+  "seed": "none; exact enumeration",
+  "implementation": "Independent stdlib Eisenstein ring, ideal factorization and residue-field exponentiation; exact rational radical arithmetic; no project helper imports.",
+  "moment_cases": [
+    {
+      "D": 128,
+      "U": 7,
+      "columns": 37,
+      "r_histogram": {
+        "0": 32,
+        "2": 5
+      },
+      "sum_r": 10,
+      "sum_r_squared": 20,
+      "quadruple_dyadic_counts": {
+        "0": 10,
+        "3": 2,
+        "4": 8
+      }
+    },
+    {
+      "D": 128,
+      "U": 11,
+      "columns": 37,
+      "r_histogram": {
+        "0": 32,
+        "2": 5
+      },
+      "sum_r": 10,
+      "sum_r_squared": 20,
+      "quadruple_dyadic_counts": {
+        "0": 10,
+        "3": 2,
+        "4": 8
+      }
+    },
+    {
+      "D": 400,
+      "U": 11,
+      "columns": 119,
+      "r_histogram": {
+        "0": 89,
+        "2": 30
+      },
+      "sum_r": 60,
+      "sum_r_squared": 120,
+      "quadruple_dyadic_counts": {
+        "0": 60,
+        "4": 24,
+        "5": 36
+      }
+    },
+    {
+      "D": 400,
+      "U": 17,
+      "columns": 119,
+      "r_histogram": {
+        "0": 107,
+        "2": 12
+      },
+      "sum_r": 24,
+      "sum_r_squared": 48,
+      "quadruple_dyadic_counts": {
+        "0": 24,
+        "4": 16,
+        "5": 8
+      }
+    },
+    {
+      "D": 400,
+      "U": 20,
+      "columns": 119,
+      "r_histogram": {
+        "0": 117,
+        "2": 2
+      },
+      "sum_r": 4,
+      "sum_r_squared": 8,
+      "quadruple_dyadic_counts": {
+        "0": 4,
+        "4": 4
+      }
+    },
+    {
+      "D": 1024,
+      "U": 18,
+      "columns": 294,
+      "r_histogram": {
+        "0": 229,
+        "2": 65
+      },
+      "sum_r": 130,
+      "sum_r_squared": 260,
+      "quadruple_dyadic_counts": {
+        "0": 130,
+        "5": 62,
+        "6": 68
+      }
+    },
+    {
+      "D": 1024,
+      "U": 32,
+      "columns": 294,
+      "r_histogram": {
+        "0": 286,
+        "2": 8
+      },
+      "sum_r": 16,
+      "sum_r_squared": 32,
+      "quadruple_dyadic_counts": {
+        "0": 16,
+        "5": 16
+      }
+    },
+    {
+      "D": 5000,
+      "U": 40,
+      "columns": 1416,
+      "r_histogram": {
+        "0": 1143,
+        "2": 272,
+        "6": 1
+      },
+      "sum_r": 550,
+      "sum_r_squared": 1124,
+      "quadruple_dyadic_counts": {
+        "0": 550,
+        "2": 4,
+        "3": 20,
+        "6": 308,
+        "7": 242
+      }
+    },
+    {
+      "D": 5000,
+      "U": 70,
+      "columns": 1416,
+      "r_histogram": {
+        "0": 1324,
+        "2": 91,
+        "4": 1
+      },
+      "sum_r": 186,
+      "sum_r_squared": 380,
+      "quadruple_dyadic_counts": {
+        "0": 186,
+        "2": 4,
+        "3": 4,
+        "6": 170,
+        "7": 16
+      }
+    }
+  ],
+  "Gram_cases": [
+    {
+      "name": "accepted_smooth_four_column_x1",
+      "D": 400,
+      "U": 17,
+      "rows": 72,
+      "columns": 4,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "r_histogram": {
+        "0": 2,
+        "2": 2
+      },
+      "raw_zero_entries": 0,
+      "phase_values": 288,
+      "unit_class_vanishing_pairs": 0,
+      "nonzero_cross_level_pairs": 8,
+      "Gram_psd_upper_bound": 153,
+      "real_covariance": "27/50",
+      "energy_A": "9/10",
+      "energy_C": "36/25",
+      "energy_mu": "27/50",
+      "weighted_moments": [
+        "4",
+        "4",
+        "8"
+      ],
+      "positive_S_energy": {
+        "1": "18/25"
+      },
+      "double_commutator_quadratic": {
+        "1": "-9/25"
+      },
+      "Schur_budget": {
+        "1": "9/50",
+        "3": "3/25"
+      },
+      "Schur_budget_interval": [
+        "242403810567665797014558475612940427/625000000000000000000000000000000000",
+        "969615242270663188058233902451761711/2500000000000000000000000000000000000"
+      ],
+      "vector_specific_lower_budget": {
+        "1": "153/200",
+        "2": "-153/200"
+      }
+    },
+    {
+      "name": "accepted_smooth_four_column_x4",
+      "D": 400,
+      "U": 17,
+      "rows": 72,
+      "columns": 4,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "r_histogram": {
+        "0": 2,
+        "2": 2
+      },
+      "raw_zero_entries": 0,
+      "phase_values": 288,
+      "unit_class_vanishing_pairs": 0,
+      "nonzero_cross_level_pairs": 8,
+      "Gram_psd_upper_bound": 153,
+      "real_covariance": "0",
+      "energy_A": "171/25",
+      "energy_C": "36/25",
+      "energy_mu": "27/5",
+      "weighted_moments": [
+        "34",
+        "4",
+        "8"
+      ],
+      "positive_S_energy": {
+        "1": "18/25"
+      },
+      "double_commutator_quadratic": {
+        "1": "-36/25"
+      },
+      "Schur_budget": {
+        "1": "18/25",
+        "3": "12/25"
+      },
+      "Schur_budget_interval": [
+        "242403810567665797014558475612940427/156250000000000000000000000000000000",
+        "969615242270663188058233902451761711/625000000000000000000000000000000000"
+      ],
+      "vector_specific_lower_budget": {
+        "1": "153/200",
+        "17": "-153/200"
+      }
+    },
+    {
+      "name": "accepted_smooth_four_column_x8",
+      "D": 400,
+      "U": 17,
+      "rows": 72,
+      "columns": 4,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "r_histogram": {
+        "0": 2,
+        "2": 2
+      },
+      "raw_zero_entries": 0,
+      "phase_values": 288,
+      "unit_class_vanishing_pairs": 0,
+      "nonzero_cross_level_pairs": 8,
+      "Gram_psd_upper_bound": 153,
+      "real_covariance": "-18/25",
+      "energy_A": "621/25",
+      "energy_C": "36/25",
+      "energy_mu": "549/25",
+      "weighted_moments": [
+        "130",
+        "4",
+        "8"
+      ],
+      "positive_S_energy": {
+        "1": "18/25"
+      },
+      "double_commutator_quadratic": {
+        "1": "-72/25"
+      },
+      "Schur_budget": {
+        "1": "36/25",
+        "3": "24/25"
+      },
+      "Schur_budget_interval": [
+        "242403810567665797014558475612940427/78125000000000000000000000000000000",
+        "969615242270663188058233902451761711/312500000000000000000000000000000000"
+      ],
+      "vector_specific_lower_budget": {
+        "1": "153/200",
+        "65": "-153/200"
+      }
+    },
+    {
+      "name": "accepted_smooth_four_column_x10",
+      "D": 400,
+      "U": 17,
+      "rows": 72,
+      "columns": 4,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "r_histogram": {
+        "0": 2,
+        "2": 2
+      },
+      "raw_zero_entries": 0,
+      "phase_values": 288,
+      "unit_class_vanishing_pairs": 0,
+      "nonzero_cross_level_pairs": 8,
+      "Gram_psd_upper_bound": 153,
+      "real_covariance": "-27/25",
+      "energy_A": "954/25",
+      "energy_C": "36/25",
+      "energy_mu": "864/25",
+      "weighted_moments": [
+        "202",
+        "4",
+        "8"
+      ],
+      "positive_S_energy": {
+        "1": "18/25"
+      },
+      "double_commutator_quadratic": {
+        "1": "-18/5"
+      },
+      "Schur_budget": {
+        "1": "9/5",
+        "3": "6/5"
+      },
+      "Schur_budget_interval": [
+        "242403810567665797014558475612940427/62500000000000000000000000000000000",
+        "969615242270663188058233902451761711/250000000000000000000000000000000000"
+      ],
+      "vector_specific_lower_budget": {
+        "1": "153/200",
+        "101": "-153/200"
+      }
+    },
+    {
+      "name": "all_annular_columns_B7",
+      "D": 400,
+      "U": 11,
+      "rows": 72,
+      "columns": 119,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "r_histogram": {
+        "0": 89,
+        "2": 30
+      },
+      "raw_zero_entries": 1728,
+      "phase_values": 8568,
+      "unit_class_vanishing_pairs": 11724,
+      "nonzero_cross_level_pairs": 628,
+      "Gram_psd_upper_bound": 508,
+      "real_covariance": "306159607791/1280000000000",
+      "energy_A": "32160744009/64000000000",
+      "energy_C": "165731570127/320000000000",
+      "energy_mu": "296303907627/640000000000",
+      "weighted_moments": [
+        "19101557547/5120000000",
+        "11372688783/6400000000",
+        "11372688783/3200000000"
+      ],
+      "positive_S_energy": {
+        "1": "165731570127/640000000000"
+      },
+      "double_commutator_quadratic": {
+        "1": "-25303532463/640000000000"
+      },
+      "Schur_budget": {
+        "1": "357555128121/1280000000000",
+        "3": "28587318093/640000000000",
+        "7": "919917/204800000",
+        "21": "4814127837/320000000000"
+      },
+      "Schur_budget_interval": [
+        "22401624853101318199146346823946858413390823/51200000000000000000000000000000000000000000",
+        "14001015533188323874466466764966786528914421571/32000000000000000000000000000000000000000000000"
+      ],
+      "vector_specific_lower_budget": {
+        "1": "1444331475441/1280000000000",
+        "26819267808962456210": "-1143/2560000000000"
+      }
+    },
+    {
+      "name": "all_annular_columns_B7",
+      "D": 400,
+      "U": 17,
+      "rows": 72,
+      "columns": 119,
+      "nu_numerator": [
+        2,
+        0
+      ],
+      "r_histogram": {
+        "0": 107,
+        "2": 12
+      },
+      "raw_zero_entries": 1728,
+      "phase_values": 8568,
+      "unit_class_vanishing_pairs": 11724,
+      "nonzero_cross_level_pairs": 332,
+      "Gram_psd_upper_bound": 508,
+      "real_covariance": "230763322413/1280000000000",
+      "energy_A": "1488460037553/2560000000000",
+      "energy_C": "138315620169/320000000000",
+      "energy_mu": "1304988365853/2560000000000",
+      "weighted_moments": [
+        "19101557547/5120000000",
+        "2795181147/3200000000",
+        "2795181147/1600000000"
+      ],
+      "positive_S_energy": {
+        "1": "138315620169/640000000000"
+      },
+      "double_commutator_quadratic": {
+        "1": "-1834716717/25600000000"
+      },
+      "Schur_budget": {
+        "1": "69491712213/320000000000",
+        "3": "49910507451/1280000000000",
+        "7": "919917/204800000",
+        "21": "4814127837/320000000000"
+      },
+      "Schur_budget_interval": [
+        "146209531880247474355955286911927509297891347/400000000000000000000000000000000000000000000",
+        "46787050201679191793905691811816803050241731089/128000000000000000000000000000000000000000000000"
+      ],
+      "vector_specific_lower_budget": {
+        "1": "354988005669/640000000000",
+        "3295821823068516445": "-1143/1280000000000"
+      }
+    },
+    {
+      "name": "all_annular_columns_B7",
+      "D": 400,
+      "U": 20,
+      "rows": 72,
+      "columns": 119,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "r_histogram": {
+        "0": 117,
+        "2": 2
+      },
+      "raw_zero_entries": 1728,
+      "phase_values": 8568,
+      "unit_class_vanishing_pairs": 11724,
+      "nonzero_cross_level_pairs": 60,
+      "Gram_psd_upper_bound": 508,
+      "real_covariance": "1013553/81920000",
+      "energy_A": "141815602251/320000000000",
+      "energy_C": "81/16384",
+      "energy_mu": "296303907627/640000000000",
+      "weighted_moments": [
+        "19101557547/5120000000",
+        "225/16384",
+        "225/8192"
+      ],
+      "positive_S_energy": {
+        "1": "81/32768"
+      },
+      "double_commutator_quadratic": {
+        "1": "811053/40960000"
+      },
+      "Schur_budget": {
+        "1": "494991/40960000",
+        "3": "52353/10240000",
+        "7": "919917/204800000"
+      },
+      "Schur_budget_interval": [
+        "336119386369683682060166141278885312052337/10240000000000000000000000000000000000000000",
+        "672238772739367364120332282557770626071651/20480000000000000000000000000000000000000000"
+      ],
+      "vector_specific_lower_budget": {
+        "1": "1143/131072",
+        "21223952830": "-1143/819200000"
+      }
+    },
+    {
+      "name": "three_count_levels_complex_common_profile",
+      "D": 5000,
+      "U": 40,
+      "rows": 24,
+      "columns": 6,
+      "nu_numerator": [
+        2,
+        0
+      ],
+      "r_histogram": {
+        "0": 1,
+        "2": 4,
+        "6": 1
+      },
+      "raw_zero_entries": 0,
+      "phase_values": 144,
+      "unit_class_vanishing_pairs": 0,
+      "nonzero_cross_level_pairs": 18,
+      "Gram_psd_upper_bound": 114,
+      "real_covariance": "147/20000",
+      "energy_A": "931/20000",
+      "energy_C": "147/2500",
+      "energy_mu": "49/20000",
+      "weighted_moments": [
+        "283/72",
+        "205/24",
+        "101/4"
+      ],
+      "positive_S_energy": {
+        "1": "49/5000"
+      },
+      "double_commutator_quadratic": {
+        "1": "-49/10000"
+      },
+      "Schur_budget": {
+        "1": "49/20000",
+        "13": "21/2500",
+        "39": "-7/2500"
+      },
+      "Schur_budget_interval": [
+        "762531815919099754291507895406037069/50000000000000000000000000000000000000",
+        "3812659079595498771457539477030185373/250000000000000000000000000000000000000"
+      ],
+      "vector_specific_lower_budget": {
+        "1": "779/8000",
+        "57166": "-19/40000"
+      }
+    }
+  ],
+  "near_saturating_exponent_grid": {
+    "grid_denominator": 12,
+    "admissible_cases": 227,
+    "saturating_cases": 5,
+    "saturation": "A1=A2, A1*A3=H^(1/3), A4=A5=A6=1; not only A3=1"
+  },
+  "source_sha256": {
+    "planning/covariance-budget-20261105/attempt/check_covariance_budget.py": "3e4763f3c19a49aead09b64268a61f347f99732aaf27cceeb6e90e1ea67be176",
+    "papers/signed-bilinear-core.tex": "51452c2ca5eb360499f3c3032bd246a2b0e644c82867e67d6107317acc1b459c",
+    "papers/signed-bilinear-details.tex": "c3dd1a612d6e56cd77f652d90331083a7fb2351e226d24fb1a4ca3b227d14b72",
+    "research/signed-cutoff-covariance.md": "8ed1b4a1b337f59bfee2cb1128aa3926bbf847ed4d5ccaa2f5c4c469863451a0",
+    "planning/weighted-moment-20261105/frontier/CENTERING_AND_SIGNED_TARGET.md": "7dc97b2e61a8d3bc286356bf9eae28fb986d29978582a97f9bfbfd7e329ab9c1"
+  },
+  "scope": "Finite diagnostics of new covariance budgets and ideal moment bookkeeping; not proof of a new analytic saving, BT_sigma, energy lower bound, Lean or GRH."
+}

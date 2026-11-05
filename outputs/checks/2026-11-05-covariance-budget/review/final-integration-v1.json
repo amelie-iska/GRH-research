@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "scope": "Authorized review-only polish and final production/proposal byte-identity verification; no production math edits",
+  "prior_review_sha256": "3c79dde446495797ddc194158796be6d94cda83dd8e746562b22c18b9f99f168",
+  "preserved_prior_review": "planning/covariance-budget-20261105/review/versions/REVIEW-pre-polish-3c79dde446495797ddc194158796be6d94cda83dd8e746562b22c18b9f99f168.md",
+  "final_review_sha256": "1663a3f64c5e17a561f2605d75a797fd0b640a613585a8d18d3dafa4d694bb96",
+  "review_changes": [
+    "Removed trailing literal heredoc artifact",
+    "Stated complete-unit-orbit assumption as sufficient for Gram vanishing"
+  ],
+  "production_proposal_bindings": [
+    {
+      "production": "papers/covariance-budget-core.tex",
+      "proposal": "planning/covariance-budget-20261105/attempt/covariance-budget-core-proposal.tex",
+      "sha256": "3ef10a3f3903b9a0363deb612a6e569afef977d6980cbbd4c7fb4b65f65c57db",
+      "byte_identical": true
+    },
+    {
+      "production": "papers/covariance-budget-details.tex",
+      "proposal": "planning/covariance-budget-20261105/attempt/covariance-budget-details-proposal.tex",
+      "sha256": "3eadf1e65cb89d1b98d19f9c2dd1efcd768fc4852609f4fcc2ba90288107e696",
+      "byte_identical": true
+    }
+  ],
+  "independent_checks": "outputs/checks/2026-11-05-covariance-budget/review/exact-v1/independent-review.json"
+}

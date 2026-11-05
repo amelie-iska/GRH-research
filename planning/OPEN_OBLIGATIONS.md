@@ -533,3 +533,16 @@ pole-free contour shift as if these missing inputs had been established.
 The best global envelope here still losesD^(1/2) atH=D^(3/4); short/principal
 assembly, analytic/category Lean and the positive determinant bridge remain
 open. Both completion gates remainfalse; the existing heartbeat stays active.
+
+## Frontier after requested-error readouts and lower covariance budget
+
+- The readout API has fixed-label certificate floors. Fully adaptive positive
+  tolerances require proved N/T/quadrature/discard/primitive-series/precision
+  rules and new validated labels. Ideal-root LS is not the saved surrogate GD.
+- The high-window coefficient moment sum r²<<DlogD and negative covariance
+  budget do not save an arithmetic power. Estimate the unequal-product
+  row-coupled fourth moment plus mixed Mobius term with union masks and the
+  full A1=A2,A1*A3=H^(1/3) face; also retain within-level energies.
+- No new analytic/categorical Lean theorem was added. Short/principal
+  assembly, scope-specific positive determinant/zero-location comparison and
+  every complete GRH scope remain unresolved. Both completion gates false.

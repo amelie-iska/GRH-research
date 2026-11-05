@@ -480,3 +480,17 @@ coefficient overlap. Independent finite-field arithmetic reproduces it.
 High-cutoff coefficients stay odd/nonzero; a double-Perron derivation retains
 the reciprocal-L pole problem. These rule out specific shortcuts while the
 required uniform estimate and GRH remain open. [Read chapter40](https://amelie-iska.github.io/GRH-research/book/main.html#sb:core).
+
+## Requested-error readouts and a quantitative covariance budget
+
+The [new interactive readout replay](https://amelie-iska.github.io/GRH-research/readout.html)
+selects a degree and executes exact rational updates for requested1e-12/1e-15
+compact error, explicitly certifying its midpoint-target perturbation.
+All666 updates and18,802 coefficient states have independent exact checks.
+Fixed samples impose an explicit refusal floor; this is not an arbitrary-
+accuracy theta oracle. [Derivation and limits](research/requested-readout-training.md).
+The [new arithmetic lower budget](research/quantitative-covariance-budget.md)
+uses actual balanced-divisor moments and retains negative covariance, but
+the required coupled-moment power gain remains open. The current book is
+243pages/40chapters/6601MathML; focused articles53/138pages, notes11/30pages.
+No new Lean declaration, zero-location or GRH proof is claimed.

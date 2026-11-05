@@ -1,0 +1,40 @@
+{
+  "accepted": true,
+  "date": "2026-11-05",
+  "review": "planning/adaptive-readout-20261105/review/README.md",
+  "producer_sha256": {
+    "examples/analytic_oracle/adaptive_readout.py": "dc64e37cdadac8ffadaa666cdd0e6a0941580f89f3674817c803e8c89ee7e274",
+    "examples/analytic_oracle/dyadic.py": "82e995ae9f67395980cec3f06bf493931de0413c7ce024562283882c01425170"
+  },
+  "certificate_sha256": {
+    "outputs/experiments/2026-11-05-adaptive-readout-1e-12-v3/readout-certificates.json": "6693f112a696ad599dd0e4e962aecd8b76d01d9c555e936fbf2385e7af478fdf",
+    "outputs/experiments/2026-11-05-adaptive-readout-1e-15-v3/readout-certificates.json": "bbe5c4803f16b5ada8f6116b010ebf278d954ce74a6e730394dfa045d71a57a8"
+  },
+  "live_sources_match_output_snapshots": true,
+  "proof_sha256": {
+    "papers/adaptive-readout-core.tex": "190650d9119789027397a615eaf0db70d5bb3d6c550efa87fe9657bf93eb1eeb",
+    "papers/adaptive-readout-details.tex": "c8d99706a0095d61c3e0915f306b3607b55b95d8b7e7d378f4eeee61bd8567b9"
+  },
+  "evidence_sha256": {
+    "outputs/checks/2026-11-05-adaptive-readout/review/independent-exact-1793878787336531027.json": "02fed94be040597b00b67fa5174b25727c7b3cec7e83d589bfe989ca6c14e6db",
+    "outputs/checks/2026-11-05-adaptive-readout/review/independent-guards-1793878793049647292.json": "8893d47fc7c1b0265f2995f766301cdb5ac927963809db3218df7e551a627e5c"
+  },
+  "review_script_sha256": {
+    "planning/adaptive-readout-20261105/review/check_adaptive_independent.py": "aa8dbe6b9588d6a95ac0d080aff3609b458c6609c4e5eca13ecbca2747147199",
+    "planning/adaptive-readout-20261105/review/check_guards_independent.py": "74f3f7dc7a325d9f18b7aa6fad8f0aa199c9acb9d3e36f62619be64e11d801e6"
+  },
+  "independent_outward_DFT_rectangles": 192,
+  "independent_degree_base_budgets": 192,
+  "exact_vector_updates": 666,
+  "exact_complex_coefficient_states": 18802,
+  "focused_unit_tests": 7,
+  "negative_controls": 68,
+  "numerical_DFT_coefficient_diagnostics": 166,
+  "numerical_compact_boundary_diagnostics": 288,
+  "numerical_diagnostics_are_proof": false,
+  "reviewed_objective": "Exact rational Fourier-midpoint quadratic; certified perturbation from true-root label LS; normalized polynomial basis",
+  "fixed_label_floors_only": true,
+  "GRH_proved": false,
+  "new_Lean_declarations": 0,
+  "scope": "Fixed q3/4/5, immutable 64-circle labels; exact rational executed surrogate GD, independent exact five-budget verification, source/proof pinning; inherited classical analytic theorem and final-v5 enclosures; no arbitrary-accuracy theta oracle or quantum/zero-location/Lean/GRH conclusion"
+}

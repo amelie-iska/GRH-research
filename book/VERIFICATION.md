@@ -514,3 +514,25 @@ pole-free contour shift as if these missing inputs had been established.
 The best global envelope here still losesD^(1/2) atH=D^(3/4); short/principal
 assembly, analytic/category Lean and the positive determinant bridge remain
 open. Both completion gates remainfalse; the existing heartbeat stays active.
+
+## Requested-error training and lower covariance budget — 5 November2026
+
+Independent exact readout acceptance: outputs/checks/2026-11-05-adaptive-readout/review/final-acceptance.json.
+It binds final-v3 producer/proofs/certificates and checks192 DFT rectangles,
+192degree budgets,666updates/18,802states,68negative controls and7tests.
+Separate166Fourier/288boundary comparisons are diagnostics, not proof.
+Refusals at/below the fixed certificate floor and strict-slack termination
+are tested; actual optimization is the stated rational midpoint objective.
+
+Independent arithmetic review is under planning/covariance-budget-20261105/review/
+and its exact-v1 receipt. The high-window O(DlogD) coefficient moment and
+negative covariance budget are proved in prose; the original-family coupled
+row saving and GRH remain open. No new Lean declaration was run or asserted.
+
+Candidate source-preserving builds pass at243pages/6601MathML, focused53/138
+pages, notes11/30pages. Old6412math subtrees are ordered/unchanged;19source-
+matched vector diagrams,13canonical embedded labs and both originals stay
+preserved. Focused browser controls/refusal/source links and four viewport
+widths pass, with representative PDF and stable-night views inspected.
+Inherited amsmath/underfull/3old malformed munder diagnostics remain scoped;
+there are no new overfull, unresolved-reference or malformed MathML failures.

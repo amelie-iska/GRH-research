@@ -1,0 +1,65 @@
+\section{Requested-error readouts from preserved certified labels}\label{ar:requested}
+The accepted final-v5 sample certificate is preserved unchanged. For each
+$q=3,4,5$, it supplies $m=64$ rational complex labels $y_j$, bounds
+$|y_j-\Lambda_q(c+\rho\zeta_j)|\le\eta_j$, and outward rectangles enclosing
+the true roots $\zeta_j=e^{2\pi i j/m}$, where $c=1/2$, $\rho=6/5$.
+The classical primitive theta/Mellin identity and accepted growth bounds
+$M_q=4,10,6$ on $|s-c|\le r=12/5$ remain the analytic inputs.
+This extension accepts an exact rational error request $\varepsilon>0$ on
+the fixed compact $|s-c|\le R=7/10$. It changes the finite readout, while
+retaining the certified sample errors and the $64$-node alias budget.
+It is not an arbitrary-accuracy theta-sampling interface.
+
+\begin{theorem}[Executed rational readout with explicit refusal]\label{ar:returned}
+For each supported conductor and rational request, the finite-data
+selection below either returns a normalized rational polynomial $P$ and an
+executed, exactly replayable gradient-descent trace with
+\[
+ \sup_{|s-c|\le R}|P(s)-\Lambda_q(s)|\le\varepsilon,
+\]
+or refuses the request with the exact minimum base budget over all
+$64$ allowed degrees. Refusal concerns attainability by this particular
+fixed-data majorant; it is not an impossibility theorem for approximation.
+\end{theorem}
+\begin{proof}
+Let $B_n$ be an outward rectangle enclosing
+$b_n^*=m^{-1}\sum_j y_j\bar\zeta_j^n$, $0\le n<64$, computed from the
+preserved root rectangles. Put $t_n=\operatorname{mid}(B_n)$ and let
+$e_n$ be the sum of its coordinate halfwidths. These are exact rationals,
+and $|t_n-b_n^*|\le e_n$.
+For a selected $d<64$ execute, using exact rational operations,
+\[
+ b_n^0=0,\qquad b_n^{k+1}=\tfrac34 b_n^k+\tfrac14 t_n,
+ \qquad 0\le n\le d.
+\]
+This is genuine gradient descent with step $1/4$ for the explicitly
+specified real Euclidean objective
+$J(b)=\frac12\sum_{n=0}^d|b_n-t_n|^2$, whose gradient is $b-t$.
+All iterates and exact objective values are retained. The output is literally
+\[
+ P_k(s)=\sum_{n=0}^d b_n^k\left(\frac{s-c}{\rho}\right)^n.
+\]
+Set $u=R/\rho=7/12$, $v=R/r=7/24$, $w=(\rho/r)^{64}=2^{-64}$,
+$S_d(x)=\sum_{n=0}^d x^n$ and $\eta=\max_j\eta_j$. The five budgets are
+\begin{align*}
+ E_{\rm opt}(k)&=\sum_{n=0}^d|b_n^k-t_n|_1u^n,&
+ E_{\rm oracle}&=\eta S_d(u),\\
+ E_{\rm alias}&=M_q\frac{w}{1-w}S_d(v),&
+ E_{\rm Taylor}&=M_q\frac{v^{d+1}}{1-v},\\
+ E_{\rm arithmetic}&=\sum_{n=0}^d e_nu^n.&&
+\end{align*}
+Here $|x+iy|_1=|x|+|y|$. Cauchy's estimate and true-root Fourier
+orthogonality give the alias and Taylor terms; certified label errors give
+the oracle term. Triangle inequality applied to
+$b_n^k-b_n^*=(b_n^k-t_n)+(t_n-b_n^*)$ gives the other two.
+Thus their exact sum bounds the compact-uniform error.
+
+Define $C_d=E_{\rm oracle}+E_{\rm alias}+E_{\rm Taylor}
++E_{\rm arithmetic}$. Select the smallest $d<64$ with $C_d<\varepsilon$;
+if none exists, report $\min_{d<64}C_d$ and refuse. For a selected degree,
+$E_{\rm opt}(k)=(3/4)^k\sum_n|t_n|_1u^n\longrightarrow0$.
+Therefore executing updates until
+$E_{\rm opt}(k)\le\varepsilon-C_d$ terminates after finitely many steps.
+The serialized coefficients, budgets, targets and trace use exact rational
+endpoints; displayed decimal approximations are not proof inputs.
+\end{proof}

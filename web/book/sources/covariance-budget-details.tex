@@ -1,0 +1,134 @@
+% Generated shared reviewed material.
+\section{Proof and arithmetic boundary of the covariance budget}\label{cbq:details}
+\subsection{The positive-contraction calculation}
+Since $G$ is the exact raw Gram, it is positive semidefinite. If
+$\Lambda_B>0$, put $T=2G/\Lambda_B-I$, a self-adjoint contraction. Then
+\[
+ \Re(v^*RGv)=\frac{\Lambda_B}{2}
+ \{M_1+\Re(v^*RTv)\}
+ \ge\frac{\Lambda_B}{2}\{M_1-\|Rv\|_2\|v\|_2\},
+\]
+which is~\eqref{cbq:vector}; $\Lambda_B=0$ is immediate.
+The Hermitian rank-two matrix
+$\{(Rv)v^*+v(Rv)^*\}/2$ has possible nonzero eigenvalues
+$(M_1\pm\sqrt{M_0M_2})/2$. Its negative spectral projection realizes
+the lower bound among all $0\le G\le\Lambda_B I$, a linear-algebra
+sharpness statement only. If $a\le r_m\le b$ on the weighted support,
+$a+b>0$, the pointwise inequality $r_m^2\le(a+b)r_m-ab$ also gives
+\[
+ \Re Q_B(C_U,\mu)\ge
+ -\frac{\Lambda_B M_0(b-a)^2}{8D(a+b)}.
+\]
+For $a=b=0$ the covariance is zero. The constant follows by maximizing
+$\sqrt{(a+b)t-ab}-t$ on $[a,b]$.
+
+\subsection{The balanced-divisor second moment}
+Set $T_0=\sqrt D$. The high-window factor restrictions imply
+\[
+ \sqrt{2/7}\,T_0<Na,Nb<\sqrt{14}\,T_0.
+\]
+The elementary ideal count $\#\{a:Na\le Y\}\ll_K Y$ proves the
+first assertion of~\eqref{cbq:moments}. For the second, two ordered
+factorizations $ab=cd=m$ have the unique form
+\[
+ a=gh,\quad c=gk,\quad b=k\ell,\quad d=h\ell,
+ \qquad g=(a,c).
+\]
+Squarefreeness makes $g,h,k,\ell$ pairwise coprime and squarefree.
+To upper-bound this positive count, enlarge to arbitrary ideals.
+For $M=\max(Nh,Nk)$ the individual bounds are
+\[
+ Ng\le\frac{\sqrt{14}\,T_0}{M},\qquad
+ N\ell\le\frac{\sqrt{14}\,T_0}{M},\qquad
+ 1\le M\le\sqrt{14}\,T_0.
+\]
+On $2^j\le M<2^{j+1}$ there are $O_K(2^{2j})$ choices of $(h,k)$
+and $O_K((T_0/2^j)^2)$ choices of $(g,\ell)$, with bounded terminal
+ranges absorbed in the constant. Each dyadic range contributes $O_K(D)$;
+there are $O(\log(2D))$ ranges. This proves the second moment with no
+extra logarithm from counting only $NgN\ell$. Restricting to primes
+outside fixed $S$ decreases the count. Hence
+\[
+ M_0,M_1\ll_K\|W\|_\infty^2D,\qquad
+ M_2\ll_K\|W\|_\infty^2D\log(2D).
+\]
+These constants are independent of the cutoff in the stated window.
+Only the common supremum norm is used, including for complex $W$.
+
+\subsection{What the commutator actually controls}
+Write
+\[
+ t_{mn}=D^{-1}\Re\{\lambda_m\overline{\lambda_n}G_{mn}\},\qquad
+ \delta_{mn}=(\sqrt{r_m}-\sqrt{r_n})^2.
+\]
+The exact commutator identity proves
+\[
+ \Re Q_B(C_U,\mu)\ge
+ Q_B(\sqrt r\,\mu,\sqrt r\,\mu)
+ -\tfrac12\sum_{m,n}\delta_{mn}|t_{mn}|.
+\]
+The displayed loss retains the actual character and profile phases before
+taking absolute values; it is at most the phase-blind loss obtained from
+$|t_{mn}|\le D^{-1}|\lambda_m\lambda_nG_{mn}|$.
+On the accepted four-column smooth $B_7$ fixture at amplitude $x\ge0$,
+the positive term is $18/25$, this coefficient-adapted loss is $9x/50$,
+and the lower bound is attained. Purely imaginary entries of the full
+complex Gram make the phase-blind loss larger. This calibrates the new
+budget and does not give an asymptotic obstruction.
+
+For the unit deletion let $\zeta_6=1+\omega$. Every good prime norm $q$
+is $1\pmod6$, and direct residue-field exponentiation gives
+$x_p(\zeta_6)=\zeta_6^{(q-1)/6}$. Multiplying over $p\mid m$ and reducing
+$Nm=\prod_{p\mid m}(1+6e_p)$ modulo $36$ gives
+\[
+ x_m(\zeta_6)=\zeta_6^{(Nm-1)/6\bmod6}.
+\]
+Multiplication of all literal rows by $\zeta_6$ preserves their raw zeros
+and proves the norm-congruence deletion in the core. The vector budget
+may be applied separately on these six classes. No D-dependent number
+of classes or conductor saving is produced.
+
+The moment proof above counts the coefficient diagonal $ab=cd$.
+It has not estimated the unequal-product character quadruples in the
+coupled row fourth moment. Replacing the inherited $DX$ norm by
+$D^{1-\sigma}X$ merely because equal-level and different-class entries
+vanish is the unsupported step. Small negative commutator loss alone
+also leaves the within-level energies in the core. Principal residues
+are unchanged; this covariance is used on the nonprincipal blocks where
+the original residue is zero, not as a new centering prescription.
+
+\subsection{The complete near-saturating face}
+For a six-factor row block let $R_0=\prod_{j=1}^6A_j$,
+$M=\max(A_1,A_2)$ and $\prod_j A_j^j\le H$.
+The accepted exact-mask block norm is
+\[
+ \Lambda_A\ll_{\nu,S,\epsilon}(HD)^\epsilon
+ \{R_0+DR_0/M+D^{2/3}R_0/M^{1/3}\}.
+\]
+The column moment and covariance proofs apply to every such block.
+Write $x_j=\log A_j$, $h=\log H$, $c_0=\sum_jjx_j$ and
+$r_0=\sum_jx_j$. Then, for $x_1\ge x_2$,
+\[
+ h-3(r_0-\max(x_1,x_2))
+ =h-c_0+(x_1-x_2)+x_4+2x_5+3x_6;
+\]
+for $x_2\ge x_1$ replace $x_1-x_2$ by $2(x_2-x_1)$.
+All terms are nonnegative. Thus the middle monomial is saturated on
+\[
+ A_1=A_2,\qquad A_1A_3=H^{1/3},\qquad A_4=A_5=A_6=1,
+\]
+with full capacity. The balanced $A_3=1$ case is only an endpoint.
+The $a_3$ direction remains nonprincipal by its outside-$S$ valuation
+$3\pmod6$. If $R_0/M\ge H^{1/3}D^{-\eta}$, the total displayed slack
+is at most $3\eta\log D$. Therefore a fixed power gain must be uniform
+on this full neighboring region. The proved budget still costs $DR_0/M$;
+it gives no global improvement over the accepted envelope.
+
+The independent standard-library diagnostic checks nine ideal moment
+cases, eight raw Gram cases with $27\,000$ phase values and $5\,184$ raw
+zeros, exact radical commutator/vector budgets, and $227$ exponent cases.
+Finite tables use common norm profiles realizable by smooth disjoint bumps;
+they are not tests of an infinite analytic estimate. Full derivation,
+source bindings and preserved checks are under
+\path{planning/covariance-budget-20261105/attempt/} and
+\path{outputs/checks/2026-11-05-covariance-budget/attempt/}.

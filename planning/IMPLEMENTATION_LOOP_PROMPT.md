@@ -101,3 +101,17 @@ pole-free contour shift as if these missing inputs had been established.
 The best global envelope here still losesD^(1/2) atH=D^(3/4); short/principal
 assembly, analytic/category Lean and the positive determinant bridge remain
 open. Both completion gates remainfalse; the existing heartbeat stays active.
+
+
+Latest frontier,5November2026: final-v3 requested-error rational readouts are
+accepted on frozen64nodeq3/q4/q5 labels. All666updates/18,802states and
+fixed-floor refusals were independently checked. Actual objective is the
+Fourier-midpoint quadratic with certified true-root perturbation, not ideal-
+root LS or quantum checkpoint replay. Arbitrary-accuracy theta sampling and
+actual analytic/category Lean remain unfinished. New high-window coefficient
+moments sumr<<D,sumr²<<DlogD and sharp lower covariance budget retain DX:
+no new exponent or GRH. Next arithmetic target is unequal-product coupled
+quadruples plus mixed Mobius covariance, retaining union masks and the full
+A1=A2,A1*A3=H^(1/3) near-saturating face. Completed book243pages/40chapters/
+6601MathML; all6412prior math subtrees unchanged, focused53/138pages and
+notes11/30pages. Keepbothgatesfalse andheartbeatACTIVE.

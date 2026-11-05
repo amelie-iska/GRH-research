@@ -396,3 +396,22 @@ pole-free contour shift as if these missing inputs had been established.
 The best global envelope here still losesD^(1/2) atH=D^(3/4); short/principal
 assembly, analytic/category Lean and the positive determinant bridge remain
 open. Both completion gates remainfalse; the existing heartbeat stays active.
+
+## Requested-error and quantitative covariance coverage — 5 November2026
+
+New shared sources adaptive-readout-{core,details}.tex define the rational
+midpoint objective, true-root gradient perturbation, normalized polynomial,
+five exact error terms, strict-slack parameter rule and finite-data refusal.
+They extend chapter38 and both article/note editions. Final-v5 theta sources
+and sample certificates remain byte-identical; new final-v3 readout traces
+are source-bound. The canonical learning lab links the distinct readout replay.
+
+New covariance-budget-{core,details}.tex extend chapter40 with a sharp
+positive-contraction lower covariance budget, actual high-window factor
+second moment, exact unit/level deletions and full saturation-face geometry.
+They use the previously pinned sieve as an external input and explicitly
+retain its DX loss. They do not cover the missing unequal-product coupled
+moment, analytic Lean or the independent determinant/zero-location bridge.
+Both complete original manuscripts remain immutable. Current243-page book
+has40chapters/6601MathML and13unique canonical embedded labs; all6412old
+math subtrees stay ordered and unchanged. No new global GRH scope is settled.

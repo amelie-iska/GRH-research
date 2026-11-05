@@ -1,0 +1,183 @@
+# Independent mathematical review: quantitative covariance budget
+
+5 November2026. Review accepted within the exact scope below. No required
+mathematical correction was found in the bound note or shared TeX proposals.
+This reviewer wrote only the fresh covariance review/check directories, used
+only the existing Linux standard-library Python through SSH, imported no
+attempt/project arithmetic helper, and changed no production or accepted
+artifact, dependency, environment, queue, credential, GPU or publication.
+
+## Verdict and immutable reviewed targets
+
+Accepted as informal mathematics, with independently reconstructed finite
+checks, for the original Eisenstein family, fixed finite-order nu and fixed
+S, common possibly complex smooth W supported[1,2], squarefree columns prime
+to S, exact raw zeros, and the explicit high window2D/7<=U²<=D:
+
+1. The sharp actual-vector lower covariance budget under an independently
+   proved0<=G<=Lambda I.
+2. The uniform high-window ideal sums sum r<<D and sum r²<<Dlog(2D).
+3. The exact coefficient-adapted double-commutator lower budget.
+4. The mod36 norm-class Gram deletion for complete six-unit row sets.
+5. The full near-saturating face and its logarithmic slack identities.
+
+These results do not give BT_sigma, improve the accepted analytic exponent,
+prove an arithmetic energy lower bound, alter the original principal
+centering, supply a reciprocal-L shift, add Lean declarations, or prove GRH.
+The note and TeX correctly retain these distinctions. Integration as a
+scoped quantitative-budget appendix/note is mathematically defensible.
+
+Reviewed byte bindings (also independently verified against manifest-v1):
+
+* `attempt/QUANTITATIVE_COVARIANCE_BUDGET.md`:
+  2f4d0dfc6f719e9d9d83845b92a8c15e7afeb43e91f398657c1e96c24683ec0b
+* `attempt/covariance-budget-core-proposal.tex`:
+  3ef10a3f3903b9a0363deb612a6e569afef977d6980cbbd4c7fb4b65f65c57db
+* `attempt/covariance-budget-details-proposal.tex`:
+  3eadf1e65cb89d1b98d19f9c2dd1efcd768fc4852609f4fcc2ba90288107e696
+* v2 exact-budget.json:
+  8f0c7f742ed10b6b27b78893488193930505f413a0480eb8ee99fc977b2786a3
+
+The v1 script/report remain valid earlier evidence for the phase-blind
+budget, but do not contain the later coefficient-adapted budget. Cite v2
+when citing that sharper finite calibration; do not relabel v1 as containing
+it. This is a provenance distinction, not a mathematical defect.
+
+## Sharp vector bound and complex convention
+
+The note deliberately uses v=conjugate(lambda), where
+lambda_m=mu(m)nu(m)W(Nm/D), because its raw Gram is
+G_mn=sum x_m conjugate(x_n). This makes the covariance exactly
+D^-1 Re(v* R G v). It avoids a transpose/conjugation ambiguity for complex
+W; the real parts of v*RGv and v*GRv are equal since G,R are Hermitian.
+The identities M_j=v*R^jv=sum r_m^j |W|² require the stated squarefreeness,
+prime-to-S support and unitary nu, all of which are retained.
+
+For Lambda>0, B=2G/Lambda-I is a self-adjoint contraction. Therefore
+
+    Re(v*RGv) = Lambda/2 [M1 + Re((Rv)*Bv)]
+              >= Lambda/2 [M1-sqrt(M0M2)].
+
+Lambda=0 and zero vectors are immediate. Sharpness is also correct: the
+rank-at-most-two Hermitian matrix H=((Rv)v*+v(Rv)*)/2 has eigenvalues
+(M1 +/-sqrt(M0M2))/2 (with possible zeros/degeneracies), so G=Lambda times
+its negative spectral projection minimizes Tr(GH). This is sharp only over
+all positive contractions; the text does not pretend an actual arithmetic
+Gram realizes the minimizer.
+
+The range specialization follows from r²<=(a+b)r-ab. With t=M1/M0,
+maximize sqrt((a+b)t-ab)-t on[a,b]. Its maximum is
+(b-a)²/[4(a+b)], giving the displayed denominator8D(a+b).
+For a=b=0 covariance is0. No coefficient support or smooth-profile derivative
+condition has been silently changed in this calculation.
+
+The independent checker includes an exact sharpness example:
+v=(3,4), R=diag(0,1), Lambda=7, D=11 and
+G=(7/10)[[9,-3],[-3,1]]. It checks G²=7G, G>=0 and
+Re(v*GRv)/11=-14/11, exactly attaining the vector bound.
+
+## Why the high-window second moment has one logarithm
+
+The squarefree quadruple decomposition is unique:
+
+    ab=cd=m,
+    g=(a,c), a=gh, c=gk, b=kell, d=hell.
+
+Squarefreeness implies the four ideals g,h,k,ell are pairwise coprime.
+Dropping their restrictions is legitimate only for this positive upper
+count; their original arithmetic masks stay in the covariance identities.
+
+Every counted factor has U<Na,Nb,Nc,Nd<2D/U. With T=sqrt(D) and the stated
+window, all are between sqrt(2/7)T and sqrt14 T. Thus for
+M=max(Nh,Nk), each of Ng and Nell is separately bounded by sqrt14 T/M.
+This is the load-bearing estimate. The product estimate Ng*Nell<<D/M²
+alone would give an avoidable additional divisor-count logarithm.
+
+For 2^j<=M<2^(j+1), lattice ideal counting bounds h,k by O_K(2^(2j))
+possibilities and g,ell by O_K(D/2^(2j)). The latter bound remains valid in
+the terminal bounded ranges because their actual upper limit is
+sqrt14 T/2^j>=1 whenever they contain ideals. Each block contributes O_K(D).
+There are only O(log(2D)) nonempty j, since1<=M<=sqrt14 T. Consequently
+sum r²<<_K Dlog(2D), uniformly throughout the high window. The first moment
+is the direct O(T)*O(T) factor count. Restriction away from fixed S only
+reduces these positive sums; W enters only through its common supremum norm.
+This is coefficient multiplicative energy, not the shared-row coupled
+fourth moment or a row-energy lower bound.
+
+## Commutator and mod36 selection
+
+With S_R=sqrt(R), expanding both commutators gives
+
+    (RG+GR)/2 = S_R G S_R + [S_R,[S_R,G]]/2,
+    [S_R,[S_R,G]]_mn=(sqrt(r_m)-sqrt(r_n))²G_mn.
+
+The coefficient-adapted loss forms the actual real phased contributions
+before applying absolute values. It is bounded by the phase-blind loss
+because |Re z|<=|z|, and the old four-column calibration attains the sharper
+lower budget18/25-9x/50. The full complex Gram has imaginary entries, so
+using only its real matrix to identify the phase-blind loss would be wrong;
+the new note explicitly avoids that mistake. Equal-r entries vanish in the
+commutator, but within-level positive energies remain. No sign of the double
+commutator is inferred from positivity of G.
+
+For epsilon=1+omega and each good prime norm q, q==1mod6 and
+x_p(epsilon)=epsilon^((q-1)/6). As Nm=product(1+6e_p), its reductionmod36
+gives x_m(epsilon)=epsilon^((Nm-1)/6 mod6). When the row family contains complete unit orbits, unit multiplication
+permutes the rows and
+forces G_mn=0 unless Nm==Nn mod36. Raw zeros are invariant under this
+permutation, and fixed column phases/complex W do not change the conclusion.
+The report does not extend this deletion to incomplete unit row sets.
+There are six fixed norm classes, so this alone supplies no power saving.
+
+## Full saturation face, neighboring blocks and analytic limit
+
+For x_j=log A_j, c=sum j*x_j<=h=log H and r=sum x_j, direct subtraction gives
+
+    h-3(r-max(x1,x2))
+      =h-c+(x1-x2)+x4+2x5+3x6       if x1>=x2,
+      =h-c+2(x2-x1)+x4+2x5+3x6     if x2>=x1.
+
+All terms are nonnegative for dyadic A_j>=1. Exact saturation requires
+capacity c=h, x1=x2 and x4=x5=x6=0, leaving the entire segment
+x1+x3=h/3. Thus A1=A2, A1*A3=H^(1/3), A4=A5=A6=1 is the whole face;
+the balanced A3=1 block is just one endpoint. The a3 direction retains
+nontrivial outside-S valuation3mod6, so principal subtraction does not
+remove it. If R0/M>=H^(1/3)D^-eta, total nonnegative slack is at most
+3eta*log D. Both wedges and all neighboring directions must therefore be
+controlled uniformly in a proposed power-saving argument.
+
+Inserting the inherited powered-BGL Lambda leaves its D*R0/M monomial on
+these blocks. At H=D^(3/4) this remains the5/4 exponent, while the independent
+mixed term reaches7/6. Nothing in the sharp vector inequality, logarithmic
+coefficient moment, unit deletion or commutator identity replaces that norm
+by D^(1-sigma)*R0/M. Nor would a small negative commutator budget alone
+supply the substantially stronger positive covariance budget equivalent to
+BT_sigma. The note and both TeX proposals correctly state this limitation.
+
+## Independent finite checks and remaining boundary
+
+Executed:
+
+    PYTHONDONTWRITEBYTECODE=1 python3 \
+      planning/covariance-budget-20261105/review/check_independent.py \
+      --output outputs/checks/2026-11-05-covariance-budget/review/exact-v1
+
+Receipt: `outputs/checks/2026-11-05-covariance-budget/review/exact-v1/independent-review.json`.
+All32,654exact assertions passed. The reviewer independently implemented the
+Eisenstein ideal enumeration/factorization, literal row families, residue
+fields and raw Gram, with no imports of attempt or project arithmetic code.
+Checks cover all9complete-annulus moment counts and their individual norm
+bounds, a full119-column B7 Gram with nu=kappa2 and all raw zeros, the old
+four-column x10 calibration, and the six-column complex-profile r={0,2,6}
+case. They reproduce moments, energies, covariance, the exact radical
+commutator and coefficient-adapted loss, norm-class deletion, raw-zero counts
+and the certified Lambda values. Exact radical-free squaring checks the
+vector inequality. The sharp7-projector fixture is separate from arithmetic.
+Recursive exhaustive enumeration reproduces227exponent cases and all5
+saturating points at denominator12, including the full a3 direction.
+
+The analytical proofs above, not finite enumeration, justify the asymptotic
+moment and covariance statements. The inherited classical sieve is an
+explicit accepted input, not reproved by the diagnostic. No new Lean or
+GRH check was attempted; neither is claimed. Production TeX compilation and
+layout are a separate integration check, not a missing mathematical proof.
