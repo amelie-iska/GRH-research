@@ -1,0 +1,47 @@
+{
+  "status": "PASS: exact application independently accepted; no analytic saving claimed",
+  "current_proof": "planning/signed-weights-20261105/quadratic-phase/TWO_PIVOT_APPLICATION-v3.md",
+  "current_proof_sha256": "f1113869c23041e1f12b3d7869559e670234cec9a4b5188c33e0f030f7ff30d4",
+  "source_HEAD": "dba37ffaa78c82ade1385f7ee56c907ab0c67d3a",
+  "source_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+  "pinned_source_files_unchanged": 12,
+  "notes_sha256": {
+    "source-pins-v1.json": "f2db0db142b967f184374821949cf1baa39ad26ee8768658dc1a6ad4534a19c0",
+    "TWO_PIVOT_APPLICATION-v1.md": "7a9993ce0e958a8b054de83d0eee15f21f02d594924333bcac9c560ed14ea3e7",
+    "TWO_PIVOT_APPLICATION-v2.md": "c001afbb0a4e3a9ef6bdaccaf6c6630e1759019225812aa18a9b45509db9f809",
+    "TWO_PIVOT_APPLICATION-v3.md": "f1113869c23041e1f12b3d7869559e670234cec9a4b5188c33e0f030f7ff30d4"
+  },
+  "reused_results": [
+    "Accepted period4 quadratic Gaussian law with inverse-different pairing",
+    "Existing elementary Gauss--Jacobi norm method and theta raw J"
+  ],
+  "new_application": [
+    "Fullsix h1 scalar mu(q)Q^-7/2 xi_q(-1)Gamma(beta)",
+    "Two-pivot identity Gamma(beta)/Q with exact original F and theta(Z) zero branches",
+    "j(p) generates positively oriented p and -j(p) is unique1mod2delta generator",
+    "Explicit multiplicative Psi with exact conductor(2delta), norm12, principal value alpha on alpha=1mod2delta",
+    "mu(s)j(s)=Psi(s) ONLY for squarefree good s; actual normalized coefficient is fixed spin-one twist",
+    "Normalized Jacobi column gauges preserve arbitrary-coefficient operator norms exactly",
+    "Length-one second-pivot inversion returns original one-pivot formula"
+  ],
+  "failed_shortcut": "Discarding actual Fourier factor while keeping free central/Jacobi phase; no justified signed gain remains",
+  "surviving_bound": "For fixedq, |S_q| <= sqrt(phi(q))/(D Q) (sum_r|a_g(r)|^2)^1/2 ||B2_q||_2; counting norms",
+  "new_analytic_upper_bound": false,
+  "global_exponent_changed": false,
+  "fixed_W_counterexample": false,
+  "GRH_claim": false,
+  "new_external_sources": [],
+  "new_downloads_or_dependencies": false,
+  "old_audits_or_trajectories_rerun": false,
+  "production_or_queue_or_frozen_data_edited": false,
+  "seed": "deterministic proof application; fresh independent finite controls assigned separately",
+  "independent_review_sha256": {
+    "outputs/checks/2026-11-05-signed-weights/review-phase/acceptance-v1.json": "fe16ad0779ac43afe96158c8ff5e459b56ccd810ad9cb29fed48ac091c9d3f3a",
+    "planning/signed-weights-20261105/review-phase/REVIEW-v1.md": "9ef411307fb5a41da2ada1cfec6640e6a1570dbed78184e8fe81e5dcfff08987",
+    "outputs/checks/2026-11-05-signed-weights/review-phase/exact-jacobi-controls-v1.json": "5605158000e706164e346c26cbace37869c4e8a759fcd41a246b3097a17e8aa0",
+    "outputs/checks/2026-11-05-signed-weights/review-phase/exact-ray-extension-v1.json": "5e332b0fefccb55b0e3dfc2b091fdd583d1aa42162b5856e8906364a6e686c7f"
+  },
+  "independent_fresh_exact_controls": 642,
+  "independent_fresh_ray_controls": 58,
+  "supersedes_status_from": "author-result-v1.json; original bytes preserved"
+}

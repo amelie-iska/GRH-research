@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Independent postpromotion administrative/current-page binding only; publication candidate/preflight review follows separately",
+  "input_sha256": {
+    "outputs/checks/2026-11-05-signed-weights/root/final-metadata-v1/record.json": "8b3924f06b7eb4a894cad4e00795b79b105534affe5549d011303f653423280a",
+    "outputs/checks/2026-11-05-signed-weights/root/checkpoint-v1.json": "3d80d07f696af931f993e83a206c1a48ef0e14336b3ea0e6f88890fd1bc4abfb",
+    "outputs/checks/2026-11-05-signed-weights/promotion-v1/promotion-v1.json": "25c12e0776aeaad2ae789305bc08956cb8af90b965541e57df405e973309bbd5",
+    "outputs/checks/2026-11-05-signed-weights/root/final-metadata-v1/verification-page-v1.json": "4648c31aea1f6501d65b33b5d4c4f1d731f53056836706efc4b427361d0136bc",
+    "planning/IMPLEMENTATION_QUEUE.json": "9ddf1d4425ed5863e9edf77284829916df2b174bab189c34daabd60ae992b8ed",
+    "web/implementation-plan.html": "f93c7a06b8e7e95bda171bd6eaa32c76eb332c126910c743cc756422527ad2a4",
+    "web/index.html": "960c7dd5fa47fa093d3da99548b7481045dd3d7db6a51f4e58930c2d94fb5816",
+    "web/book/main.html": "c08728c6f28dd00f751f4eb03279682c37f4e38e38dd7c5005dfd5bc1c6897ae",
+    "web/verification.html": "e0ac1eee9df0221ec5ee1709edaaf09e0839818a08346e3e094c47565e892026",
+    "README.md": "423f7aa2ecf89ef01c60ae080b76a45433c93a171f543c6256039d6bcbc4558b",
+    "book/VERIFICATION.md": "5e07771eaf7affce230ca6c8e8b31f0a572a98a7f3539cf8c46d33834363bcea",
+    "book/SOURCE_COVERAGE.md": "7589ace4fe8a5869d7597eccbf10a46a08420c2f9c9e12c3bb242724e39ec123"
+  },
+  "final_metadata_guards": 4,
+  "promotion_targets_match_accepted_sources": 15,
+  "accepted_science_receipts_bound": 8,
+  "source_bound_build_records": 6,
+  "current_counts": {
+    "book_pages": 272,
+    "chapters": 40,
+    "MathML": 7891,
+    "iframes": 13,
+    "focused_pages": [
+      62,
+      168
+    ],
+    "notes_pages": [
+      20,
+      59
+    ]
+  },
+  "queue_checkpoint_exact": true,
+  "P7_status": "in_progress",
+  "completion_gates_false": true,
+  "generated_plan_last_result_exact": true,
+  "landing_new_links_resolve_in_current_sources": true,
+  "verification_page_exact_current_ledger_characters": 56871,
+  "verification_page_terminal_LF": true,
+  "resolved_finding": "Prior generated verification page lacked the new ledger append; root regenerated via existing renderer and preserved previous bytes. This review binds the new final pagee0ac1eee.",
+  "science_sources_or_rows_or_traces_rerun": false,
+  "source_HEAD_index_unchanged": true,
+  "auth_ref_mutation_or_publication": false,
+  "blockers": []
+}

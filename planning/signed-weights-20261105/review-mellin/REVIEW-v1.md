@@ -1,0 +1,22 @@
+# Independent review of the actual gauged coefficient Mellin barrier
+
+Verdict: PASS for root/GAUGED_MELLIN_BARRIER-v2.md, SHA6660dc397516f1fd6b4d0486b14caccfaaa677c213e7e7debd3ec5c1611c76ec. This review independently derives the signs, finite numerator, Euler expansion and normal domain. It does not rerun the181 author controls or the700 phase controls, and it is not a signed-kernel estimate.
+
+On squarefree m, multiplying the actual A_U ternary placement sum by mu(m) changes mu(a)mu(b) into mu(c), because the three factors are disjoint. Therefore B_U=sum_shorta,b mu(c), and the exact gauged coefficient rho A=lambda B follows from the accepted squarefree identity rho=mu lambda. The small-norm B=1 statement and the high-window B=r_U-1 statement have different domains, correctly distinguished in the note. Neither is substituted throughout a global series. The unfactored original cutoffs and squarefree/coprime conditions remain.
+
+For fixed a,b in the absolute half-plane, summing squarefree c avoiding ab and FULL T gives product_(p outsideT,notdividingab)(1-x_p). Factoring product_(p outsideT)(1-x_p) yields the FINITE numerator in(3) with one(1-x_p)^-1 per prime of ab and no missing signs. On Re(s)>0 these finitely many denominators are nonzero, so N_U is holomorphic there. For U=1, a=b=1 exactly and N_U=1; Jsharp_1=1/L^T is a genuine identity. For general U no vanishing/nonvanishing of the finite numerator at an L zero is inferred. Meromorphic use requires the stated continuation; no continuation theorem is smuggled into the identity.
+
+The opposite-sign generating local factor is1+x(alpha+beta-1): a,b placements are positive and c is negative. Multiplication by(1-x alpha)(1-x beta) and subtracting1-x cancels the linear term, leaving exactly
+
+    x^2(alpha+beta-alpha^2-beta^2-alpha beta)
+      +x^3(alpha^2 beta+alpha beta^2-alpha beta).
+
+This independently verifies(6)--(7). Its five quadratic and three cubic monomials have exactly the eight listed real exponents. On any compact subset of sigma>0 with all eight exponents>1, |1-x| has a uniform positive lower bound, each monomial is O((Np)^(-1-epsilon)), and elementary ideal counting proves locally uniform normal convergence. Deleted primes only remove factors and |Xi(p)|=1 outside FULL T, so the argument is phase/deletion uniform at those margins. For sigma>=1/2+eta and nonnegative auxiliary real parts, all eight conditions hold and the bound O_eta((Np)^(-1-2eta)) follows. Local H may vanish elsewhere in that domain; no zero-free product is claimed.
+
+At v=w=0, the local factor is1+x and H_p=1-x^2, giving L^T(s,Xi)/L^T(2s,Xi^2). At v=0 it is1+x beta, giving the same squarefree Euler product at s+w. Thus the central reciprocal does cancel in these special slices, exactly as stated. It cannot be discarded for general independent v,w or finiteU on that basis. FULL T is retained even if Xi or Xi^2 has conductor drops. The note correctly refrains from asserting that a particular off-line zero or uncanceled pole actually exists.
+
+The character lambda has fixed nonzero infinity type. It is infinite order: for example principal generators1+n*(2delta) are1 modulo the conductor and have infinitely many distinct arguments. Thus their unitary values have infinite image. Multiplying lambda by the original finite-order nu and fixed-row kappa_z retains that nonzero archimedean type. The previous AFM theorem stated for finite-order twists does not automatically apply. Its conductor at good row primes may vary with z while the fixed S/zero deletions stay explicit; no uniform reciprocal-moment theorem is assumed.
+
+Finally(9) remains the actual q-dependent signed kernel with the compensating inverse column phases. A diagonal unitary conjugation preserves operator norms even for an indefinite coprime-truncated matrix. A fixed-z coefficient series cannot be substituted for the product-frequency/capacity/ray/squarefree T_(q,F); the note explicitly says so and retains the pure-A1 length-one undoing. The reciprocal bottleneck is a retained analytic dependency, not a proof that every conceivable representation must estimate a denominator separately. No new fixed-profile saving, GRH, positivity, zero-location or determinant result follows.
+
+All calculations are fresh paper algebra. No author test script, old trajectories or table was executed. No production/source/queue/compiler/dependency/auth/publication changes occurred. Source HEAD/index are unchanged. The accepted exact phase/Hecke proof is reused, not reaudited here.

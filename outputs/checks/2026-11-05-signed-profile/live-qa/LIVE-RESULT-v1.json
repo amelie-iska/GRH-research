@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "scope": "Bounded new-release hosted bytes, public Git trees and UI validation. Root owns the final combined PUBLIC_RELEASE_VERIFIED and publication.",
+  "main_commit": "63edb8a38c026e918077d9864a896cb37badf9da",
+  "pages_commit": "b180d6493dc7d475871092c79fceacacf73764ea",
+  "receipts_sha256": {
+    "outputs/checks/2026-11-05-signed-profile/live-qa/hosted-20261105T175307000798Z/receipt.json": "707af5c06a7bede8bb0634dde7c3c9a3ba35233e591c6f31f7f6ac5e05ba0d2c",
+    "outputs/checks/2026-11-05-signed-profile/live-qa/stage-browser-20261105T174222249611Z/receipt.json": "be8a3d40b387db85c5a91e7c72a2f483c3a27bd975ff60af1e8fc2a7de64ee19",
+    "outputs/checks/2026-11-05-signed-profile/live-qa/live-browser-20261105T175810840178Z/receipt.json": "ce05a3ebee59e801ffbd870583eef14752d79866005cad7aa0e654b22a6c318c",
+    "outputs/checks/2026-11-05-signed-profile/live-qa/synchronization-analysis-v1.json": "16c562a421f63484f4c9673b8c0f379c0aa979ac3ea01376b1b5a718352b51bc",
+    "outputs/checks/2026-11-05-signed-profile/live-qa/live-browser-20261105T175810840178Z/browser.json": "63b45de4bfe1e1d55ec04d36dec59f587c04e24d8d914398f9b56cac73bb73a3",
+    "outputs/checks/2026-11-05-signed-profile/live-qa/live-browser-20261105T175810840178Z/network-navigation-timing.json": "1f7db9f594858c0bbb9b65579ca07f1f05a8f923f56f4040ffd301c001fffe9b",
+    "outputs/checks/2026-11-05-signed-profile/live-qa/live-failure-analysis-v1.json": "89e9db735036190e0fccf7a66576809d3164951ea2af012eac0af7781923f74e",
+    "outputs/checks/2026-11-05-signed-profile/live-qa/inherited-math-markup-v1.json": "0e2893cd0cee738c3aea8dfe961b4f1fe9d511d902e5fa0b2e519ed1521dee68"
+  },
+  "counts": {
+    "changed_hosted_files_SHA256_GitBlob_size": 19,
+    "selected_main_tree_blobs_modes_sizes": 149,
+    "selected_Pages_tree_blobs_modes_sizes": 588,
+    "profile_cases": 6,
+    "palette_width_layouts": 8,
+    "integration_assertions_including_unchanged_strict_network_check": 28,
+    "visible_MathML": 7605,
+    "in_book_labs": 13,
+    "global_protocol_events": 293,
+    "global_fetch_errors": 0,
+    "pending_requests_at_end": 0,
+    "network_idle_timeouts": 0
+  },
+  "visual_review": {
+    "passed": true,
+    "screenshots_sha256": {
+      "outputs/checks/2026-11-05-signed-profile/live-qa/live-browser-20261105T175810840178Z/profile-light-1440.png": "dc1d04625783cc5813f82f667497ebed57d644ed2737e3eafd38b747898e09cb",
+      "outputs/checks/2026-11-05-signed-profile/live-qa/live-browser-20261105T175810840178Z/mask-biomech-1440.png": "c29f22bb0594b51c05ff689f3d415c6c457d44e072ca161c5b9b2faa8d6b6fb2",
+      "outputs/checks/2026-11-05-signed-profile/live-qa/live-browser-20261105T175810840178Z/joint-320.png": "3fa083be1bc6494912a1eca188f1d4dc6661ecd92dc145733fddba34e0d72e73",
+      "outputs/checks/2026-11-05-signed-profile/live-qa/live-browser-20261105T175810840178Z/book-profile-mobile.png": "b82d2d847820d1f472a43926aa8d454c80bc247c73bfb36a18356381b70f45d8"
+    },
+    "checked": [
+      "light desktop norm profile",
+      "night desktop raw mask",
+      "mobile joint/negative-control layout",
+      "mobile proof text/math readability"
+    ]
+  },
+  "frozen_harness_runner_verifier_unchanged": {
+    "planning/signed-profile-20261105/live-qa/check_browser_v2.mjs": "646153de3db3e7b04612c6ab64b9eb0c82908f91c5abc248169ce61b71921415",
+    "planning/signed-profile-20261105/live-qa/run_browser_v1.py": "23f7c53df3b6bd922ad785c69493374ddd4f62233713338aa448291d3e2b6c64",
+    "planning/signed-profile-20261105/live-qa/verify_hosted_v1.py": "5776267d519f22715752f5fc0400020d709e612c3f3f75568cccccb8e1ef3b90"
+  },
+  "new_postrelease_harness": {
+    "path": "planning/signed-profile-20261105/live-qa/check_browser_v3.mjs",
+    "sha256": "6517754677b79abb754e0df1cba4b26601118735d2281bc50f5b3073f956de94",
+    "change": "Protocol timing and bounded genuine network-idle departure synchronization only; all functional assertions and strict no-fetch-error test retained, no error filter added."
+  },
+  "failed_attempts_preserved": [
+    "live-browser-20261105T175324950181Z",
+    "live-browser-20261105T175412369289Z"
+  ],
+  "failure_cause_evidence": "Original immediate departure aborted one old lazy auxiliary-training iframe. Instrumented run observed it pending at departure point, held961ms until genuine completion/idle, then passed strict network checks with zero global fetch errors.",
+  "bundle_inventory_before_after": "1abba0687e1606b0b4935782306c7d6bba14558397feab88148337309d1ef7d8",
+  "bundle_or_production_edited": false,
+  "raw_arithmetic_rerun": false,
+  "auth_or_publication_performed": false,
+  "browser9335_released": true,
+  "MCP_servers_enabled": false
+}

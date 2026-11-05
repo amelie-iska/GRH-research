@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "files": {
+    "web/profile-uniformity.html": {
+      "sha256": "6293973a7b02764c0eaf2c5d4ac753c51d0a1a45fd33cfdc67ee963055167a60",
+      "bytes": 16569
+    },
+    "web/profile-uniformity.css": {
+      "sha256": "b026807938abdd4e3b2ae01032d96021ad57de015367524f13aae36f5aa0fea9",
+      "bytes": 14137
+    },
+    "web/profile-uniformity.mjs": {
+      "sha256": "c23957110dc3d401e9f20f0c8cffdd08740e35eba62f36fe33fed8c0f8c79831",
+      "bytes": 29704
+    },
+    "web/data/fixed-h1.json": {
+      "sha256": "bdb7e93b2a1e377094b69ea5ababf5ad43d198365c47712aa767ca3791b9d8fe",
+      "bytes": 9025
+    }
+  },
+  "frozen_snapshots": "outputs/checks/2026-11-05-signed-weights/ui/frozen",
+  "before_manifest": {
+    "path": "planning/signed-weights-20261105/ui/before-manifest-v1.json",
+    "sha256": "90417b91caa531a78849ed8c08444e14029b1c5a8107cb6ca66baf75c8830942"
+  },
+  "old_HTML_recovered_exactly_by_deleting_insert": true,
+  "old_CSS_module_prefixes_unchanged": true,
+  "old_payload": {
+    "path": "web/data/profile-uniformity.json",
+    "sha256": "a5dc22785f8abf8d2bcf50fc93c0636101d9e91427ab64512146eff72bac8d43",
+    "unchanged": true
+  },
+  "qa_sha256": {
+    "outputs/checks/2026-11-05-signed-weights/ui/payload-v1.json": "6a9b4c41041d31220c6484dbfa948bcdf3b91236812329bd68f26d95931a2d67",
+    "outputs/checks/2026-11-05-signed-weights/ui/display-checks-v1.json": "616a9e247508142da1298b14fdea8da8048acdc6147b69290d3a9c611ace15c9",
+    "outputs/checks/2026-11-05-signed-weights/ui/browser-20261105T184714294617/browser.json": "46c91eef3730cdaa81a57742cd35d09010ae8ae0fb9fabb302cd2540a4c831ff",
+    "outputs/checks/2026-11-05-signed-weights/ui/browser-20261105T184910034086/style.json": "a5481ef3668b441ef3fa447422425143b81d63b8899357b6d37f34442d198ad4",
+    "outputs/checks/2026-11-05-signed-weights/ui/browser-20261105T184957389816/style.json": "a5481ef3668b441ef3fa447422425143b81d63b8899357b6d37f34442d198ad4"
+  },
+  "checker_sha256": {
+    "planning/signed-weights-20261105/ui/check_display_v1.mjs": "974fc16ae8520c57edab5862fa1ecce9fe9526537c1dc72ebd459c33d8f6d102",
+    "planning/signed-weights-20261105/ui/check_browser_v1.mjs": "9b07a4fe7089e8860cd1e288e0b41983fd9579d957e21e8d563601cd5a19f510",
+    "planning/signed-weights-20261105/ui/run_style_v2.py": "488092bd8d0ddd316c36440661a2fac2cfbe2f791d523c40c5e768aa7d19a2e6",
+    "planning/signed-weights-20261105/ui/check_style_v2.mjs": "66268cf1c9586bdaff9716024aed30474975a1a5c195ee08e01be7c1b66b2d6a",
+    "planning/signed-weights-20261105/ui/run_browser_v1.py": "d69d155d4cdb58fdb5f097eb6a206952ebdfa277d78e2d06573e14828589b743",
+    "planning/signed-weights-20261105/ui/run_style_v1.py": "c06d0b838eea08bf0bb2479ed71e6f90ba357209d90200c40622008169914f15",
+    "planning/signed-weights-20261105/ui/build_payload_v1.py": "7d2096156b770207fc5c5247e9d7f23db4e1aa834dbfffc8706d6d12d432945d",
+    "planning/signed-weights-20261105/ui/check_style_v1.mjs": "785415db94f395858cf56b1f5d0d1bf5bd0417b78db0f79f2fe53a842be9bafd"
+  },
+  "handoff": {
+    "path": "planning/signed-weights-20261105/ui/HANDOFF-v1.md",
+    "sha256": "e1e289f41c9b330fbfa0755ca727ed966034e02248c5149162c5666b16180585"
+  },
+  "convention": "Linear first X^T G conjugate(Y); compensated kernel diag(conjugate(rho)) G diag(rho).",
+  "scope": "One selected q/two columns and20rows of one literal unit class; not whole h1/energy family.",
+  "limitations": [
+    "Root will provide new sw:core/sw:details anchors and verify them in final bundle.",
+    "Gauge floats are explicitly approximate projections; valid exact energies derive from the exact invariant.",
+    "No scientific/oldphase rerun, dependency, browser training, canonical proof edit or publication."
+  ],
+  "browser9335": "Released; websocket sessions closed, Firefox process preserved.",
+  "timestamp_utc": "2026-11-05T18:51:49.458724+00:00"
+}

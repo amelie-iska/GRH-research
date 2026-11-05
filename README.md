@@ -27,7 +27,7 @@ The repository and both complementary Hugging Face datasets were made public
 at the owner’s request on 4 November 2026. Frozen data and credentials remain
 separate; the local preview is retained.
 
-Current edition: **266 pages,40 chapters,7,605 MathML expressions and thirteen unique in-book laboratories**.
+Current edition: **272 pages,40 chapters,7,891 MathML expressions and thirteen unique in-book laboratories**.
 
 New complementary datasets: **16,384 Aster material-response rows** and
 **22,951 Mora conformer/force rows**, plus separately labelled source anchors
@@ -547,3 +547,10 @@ Current edition:261 pages /40 chapters /7,352 MathML; focused59/157 pages,
 notes17/48 pages. All7,065 previous math subtrees remain ordered/unchanged.
 The previous cube-only sector/frontier discussion is historical and is
 superseded by this stronger unsigned comparison. No new Lean or GRH result.
+
+
+## Signed coprime slice and fixed-profile matrix
+
+The [profile inspector](https://amelie-iska.github.io/GRH-research/profile-uniformity.html#fixed-h1) now exposes an exact twenty-row matrix in the remaining row sector, with every raw zero and signed pairing. A fixed common profile gives a negative coprime slice while the complete selected two-column Gram remains positive.
+
+The [new derivation](research/signed-coprime-weights.md) bounds the actual signed coprime slice by gcd–Mobius inversion and identifies its exact conductor-12 Hecke column character. This retains the current power7/6 and the unresolved5/12 excess at H=D^(3/4); neither a phase gauge nor centering supplies the missing saving. No new Lean declaration, determinant comparison or GRH proof is claimed.

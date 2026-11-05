@@ -1,0 +1,34 @@
+{
+  "prior_harness": {
+    "path": "planning/signed-profile-20261105/live-qa/check_browser_v3.mjs",
+    "sha256": "6517754677b79abb754e0df1cba4b26601118735d2281bc50f5b3073f956de94"
+  },
+  "new_harness": {
+    "path": "planning/signed-weights-20261105/live-qa/check_browser_v1.mjs",
+    "sha256": "940090432e38665bc767f057095678a534c2aeef82acffa176eecaf0ad24c4b3"
+  },
+  "strict_network_prefix_sha256": "7d9d68b191bf6416cf02b9a315feed842ddc584194633410b5b63e6616eaca9c",
+  "strict_network_prefix_byte_identical": true,
+  "expected_book": {
+    "pages": 272,
+    "MathML": 7891,
+    "focused_pages": [
+      62,
+      168
+    ],
+    "note_pages": [
+      20,
+      59
+    ]
+  },
+  "browser_run": false,
+  "browser9335": "Not used; awaiting frozen bundle and root go.",
+  "source_or_bundle_edits": false,
+  "runner": {
+    "path": "planning/signed-weights-20261105/live-qa/run_browser_v1.py",
+    "sha256": "0c1510629b55ec9babc554376962ce3c7fc2b9e19a941fb3ca44eeb52c1826d5"
+  },
+  "inventory_serialization": "SHA256(UTF8(json.dumps(sorted file rows {path,bytes,sha256}, separators=(comma,colon), sort_keys=True)+newline)); rows sorted by bundle-relative path via sorted(bundle.rglob).",
+  "ready_for_stage": true,
+  "stage_and_live_execution_authorized_only_by_root": true
+}

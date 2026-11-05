@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "protocol_events": 293,
+  "global_fetch_errors": 0,
+  "pending_at_end": 0,
+  "network_idle_timeouts": 0,
+  "parent_navigations": 9,
+  "all_parent_navigations_pending_zero": true,
+  "idle_quiet_ms": 750,
+  "book_departure_wait": {
+    "reason": "before-parent-navigation",
+    "from": "https://amelie-iska.github.io/GRH-research/book/main.html#prf:core",
+    "target": "https://amelie-iska.github.io/GRH-research/implementation-plan.html",
+    "start_ms": 1793901505357,
+    "end_ms": 1793901506318,
+    "duration_ms": 961,
+    "pending_at_entry": [
+      {
+        "event": "network.beforeRequestSent",
+        "observed_ms": 1793901505322,
+        "timestamp_ms": 1793901505322,
+        "context": "51539607587",
+        "navigation": "fce61347-3316-4e6c-b0ef-6c029e784664",
+        "request": "3665-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+        "url": "https://amelie-iska.github.io/GRH-research/?embed=auxiliary-training",
+        "request_method": "GET",
+        "error": null
+      }
+    ],
+    "pending_at_exit": []
+  },
+  "auxiliary_training_events": [
+    {
+      "event": "browsingContext.navigationStarted",
+      "observed_ms": 1793901505321,
+      "timestamp_ms": 1793901505321,
+      "context": "51539607587",
+      "navigation": "fce61347-3316-4e6c-b0ef-6c029e784664",
+      "request": null,
+      "url": "https://amelie-iska.github.io/GRH-research/?embed=auxiliary-training",
+      "request_method": null,
+      "error": null
+    },
+    {
+      "event": "network.beforeRequestSent",
+      "observed_ms": 1793901505322,
+      "timestamp_ms": 1793901505322,
+      "context": "51539607587",
+      "navigation": "fce61347-3316-4e6c-b0ef-6c029e784664",
+      "request": "3665-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "https://amelie-iska.github.io/GRH-research/?embed=auxiliary-training",
+      "request_method": "GET",
+      "error": null
+    },
+    {
+      "event": "network.responseCompleted",
+      "observed_ms": 1793901505490,
+      "timestamp_ms": 1793901505489,
+      "context": "51539607587",
+      "navigation": "fce61347-3316-4e6c-b0ef-6c029e784664",
+      "request": "3665-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "https://amelie-iska.github.io/GRH-research/?embed=auxiliary-training",
+      "request_method": "GET",
+      "error": null
+    },
+    {
+      "event": "browsingContext.navigationCommitted",
+      "observed_ms": 1793901505492,
+      "timestamp_ms": 1793901505492,
+      "context": "51539607587",
+      "navigation": "fce61347-3316-4e6c-b0ef-6c029e784664",
+      "request": null,
+      "url": "https://amelie-iska.github.io/GRH-research/?embed=auxiliary-training",
+      "request_method": null,
+      "error": null
+    },
+    {
+      "event": "browsingContext.load",
+      "observed_ms": 1793901505538,
+      "timestamp_ms": 1793901505538,
+      "context": "51539607587",
+      "navigation": "fce61347-3316-4e6c-b0ef-6c029e784664",
+      "request": null,
+      "url": "https://amelie-iska.github.io/GRH-research/?embed=auxiliary-training",
+      "request_method": null,
+      "error": null
+    }
+  ],
+  "parent_departure": {
+    "event": "harness.parentNavigate",
+    "observed_ms": 1793901506319,
+    "from": "https://amelie-iska.github.io/GRH-research/book/main.html#prf:core",
+    "url": "https://amelie-iska.github.io/GRH-research/implementation-plan.html",
+    "pending": 0
+  },
+  "all_started_auxiliary_requests_completed_before_parent_departure": true,
+  "auxiliary_last_completion_to_parent_departure_ms": 829,
+  "functional_checks": 28,
+  "all_functional_and_strict_checks_passed": true,
+  "cases": 6,
+  "layouts": 8,
+  "script_sha256": "6517754677b79abb754e0df1cba4b26601118735d2281bc50f5b3073f956de94",
+  "timing_sha256": "1f7db9f594858c0bbb9b65579ca07f1f05a8f923f56f4040ffd301c001fffe9b",
+  "interpretation": "The separate WS log retained network/navigation events across resets. The synchronized run held parent departure until the old started auxiliary-training iframe completed, then passed the unchanged strict no-fetch-error test. Together with two preserved immediate-departure aborts, this supports a harness synchronization cause; no release bytes changed."
+}

@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "verdict": "PASS",
+  "scope": "Independent finite reconstruction of NEW20-row selected-q A6=1 fixed-common-profile diagnostic only; analytic budget reviewed separately.",
+  "review": {
+    "path": "planning/signed-weights-20261105/review-diagnostic/REVIEW-v1.md",
+    "sha256": "6939c9d2da724aa747226f81149f30d4f9854cefe1ac663009ff1a8953061a3a"
+  },
+  "independent_receipt": {
+    "path": "outputs/checks/2026-11-05-signed-weights/review-diagnostic/independent-diagnostic-v1.json",
+    "sha256": "e399b1544de643812ba019662b2faf9efd1e59222a27c553d5c892a5f87280f4"
+  },
+  "reviewer_checker": {
+    "path": "planning/signed-weights-20261105/review-diagnostic/check_diagnostic_v1.py",
+    "sha256": "c7cf0aaa52105484dedafc280237729b658ea45ff36fbcd8afbd75b2aebf6179"
+  },
+  "accepted_report": {
+    "path": "outputs/checks/2026-11-05-signed-weights/joint-budget/fixed-profile-h1-v1.json",
+    "sha256": "e4ebc41b81e040cd8cf7ba6ae2644bb725fba6c6939af25c7a8a1074289db35d",
+    "block_index": 1
+  },
+  "accepted_prose_finite_section": {
+    "path": "planning/signed-weights-20261105/joint-budget/ACTUAL_SIGNED_BUDGET-v1.md",
+    "sha256": "401a3fa655391db9726d83e9ae17f924a1ef2f490d98548b86f19b06eb73bdeb",
+    "section": 5
+  },
+  "source_pins": {
+    "path": "planning/signed-weights-20261105/review-diagnostic/input-pins-v1.json",
+    "sha256": "6d2b062c08ea5af60138c35bbfd890e67560a7b2046399c446540960e7b7236f"
+  },
+  "rows": 20,
+  "all_rows_nonprincipal": true,
+  "all_rows_capacity_squarefree_coprime": true,
+  "raw_zero_pair_evaluations": 12,
+  "Gamma_omega": [
+    [
+      -4,
+      -2
+    ],
+    [
+      -2,
+      2
+    ]
+  ],
+  "mean_omega": [
+    -3,
+    0
+  ],
+  "actual_h1_AA": "-1/10000",
+  "centered_only_pairing": "0",
+  "all_bound_inputs_unchanged": true,
+  "old_phase_or_fixture_tests_run": false,
+  "canonical_edits": false,
+  "new_dependencies": false,
+  "publication": false,
+  "limitations": [
+    "Selected q and literal class only, not full h1/row energy.",
+    "No asymptotic endpoint evidence or fixed-W target obstruction.",
+    "No analytic budget acceptance implied; root/A review that separately."
+  ],
+  "timestamp_utc": "2026-11-05T18:35:34.920313+00:00"
+}

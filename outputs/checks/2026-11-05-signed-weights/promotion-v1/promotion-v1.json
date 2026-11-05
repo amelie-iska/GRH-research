@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "all_acceptance_records_sha256": {
+    "outputs/checks/2026-11-05-signed-weights/review-production/acceptance-v1.json": "98b10f4e774174549e578afbb9716e0ef636ca958852c29e04155f2ea483b5f1",
+    "outputs/checks/2026-11-05-signed-weights/review-integration/acceptance-v1.json": "9b0158a15319f704c0cb72dad1fdbd5b5d30c916e535a9cf6d64ef0a7dea98c5",
+    "outputs/checks/2026-11-05-signed-weights/native-qa-v1/browser.json": "e114917a7900117ead46923e4bdce9c48ee677bde475e6766e0d033a6d9f303f",
+    "outputs/checks/2026-11-05-signed-weights/ui/frozen-receipt-v1.json": "a4f0d1bedb785af58fb9aa8ffabbab574478c6679035ffc40f55a82d7c356294",
+    "outputs/checks/2026-11-05-signed-weights/review-phase/acceptance-v1.json": "fe16ad0779ac43afe96158c8ff5e459b56ccd810ad9cb29fed48ac091c9d3f3a",
+    "outputs/checks/2026-11-05-signed-weights/review-budget/acceptance-v2.json": "51152ef42029a1427d8d0b2b10d28d6eaa57c9791affb805d987bba304f89fa6",
+    "outputs/checks/2026-11-05-signed-weights/review-mellin/acceptance-v1.json": "b3b5b31b1103237c49ac0b22020e65d21de564281b876fe273393c85eff3cf61",
+    "outputs/checks/2026-11-05-signed-weights/review-diagnostic/acceptance-v1.json": "5b7ccac4d0f8d88ea13fa899452a85e7c26a0ed170d9456b4ee6f2c53f5160a1"
+  },
+  "build_records_sha256": {
+    "outputs/signed-weights-book-20261105/v1/pdf/build-record.json": "ca2450441cc3017a41b2c2b0f392acc29a53062afffb0b8bc283fd18803ba725",
+    "outputs/signed-weights-book-20261105/v1/native/native-build-record.json": "421be68034dc21d190969cd6949bf0e25fd7d92fa9cbd38d391a9aa2d3135e19",
+    "outputs/signed-weights-articles-20261105/concise-v1/build-record.json": "e9b806a30131ae30987365a929d0449fd99e10f871f5dea8bdbe61a069a2676a",
+    "outputs/signed-weights-articles-20261105/notes-concise-v1/build-record.json": "d70ff4a4dad9fb43f421aecbf0c04f65da0549d2462dd58b400ade1f4cc4c22d",
+    "outputs/signed-weights-articles-20261105/extended-v1/build-record.json": "65cf25bd83ab5d0634d0a39e26790d910d6e32434f4366044c3b0ab194f7b701",
+    "outputs/signed-weights-articles-20261105/notes-extended-v1/build-record.json": "6123199c02b421e24b36ecbe12b08e8b352b9ca98648a0f8bbbef8758605fd8c"
+  },
+  "changed_artifacts": [
+    {
+      "source": "outputs/signed-weights-book-20261105/v1/pdf/main.pdf",
+      "target": "outputs/book/surface-orders-book.pdf",
+      "before_sha256": "641f4ddc6c63b5a08a2eb6d626e599aee616960f71795e6672fd932a31e93ffd",
+      "after_sha256": "828ecba670a04f857f7ec728d20bc4613459c46e5c33699d52d9b06c30f6e32c"
+    },
+    {
+      "source": "outputs/signed-weights-book-20261105/v1/pdf/main.log",
+      "target": "outputs/book/surface-orders-book.log",
+      "before_sha256": "e92a35e70c54d33523f583ebdffffe81124544f4ef786b7e8413c9710d012bb1",
+      "after_sha256": "a1d99245b13044f0722cbda79fd88cf7c2abf808d83a6cf8a203b52e23eb9777"
+    },
+    {
+      "source": "outputs/signed-weights-book-20261105/v1/pdf/main.toc",
+      "target": "outputs/book/surface-orders-book.toc",
+      "before_sha256": "7021627fec23bfde952150dd44d4e67e2242609e46bba6962fa0be1ef9d1cbc6",
+      "after_sha256": "3080a7284ecc6054e2885531891fe2887cff0ff81dcb0a0c7305189d8cfab1cd"
+    },
+    {
+      "source": "outputs/signed-weights-book-20261105/v1/native/book/main.html",
+      "target": "web/book/main.html",
+      "before_sha256": "92e69d423af82e5443a9d2bf3e5527790fd222ad332760a7463046ec98e92369",
+      "after_sha256": "c08728c6f28dd00f751f4eb03279682c37f4e38e38dd7c5005dfd5bc1c6897ae"
+    },
+    {
+      "source": "outputs/signed-weights-book-20261105/v1/native/book/sources/weighted-cutoff.tex",
+      "target": "web/book/sources/weighted-cutoff.tex",
+      "before_sha256": "ec3edd063beeb46b42bb956a6d9541338519f72aab8c83c89785112879a44428",
+      "after_sha256": "74a744874be7045ca1a1983fb072dcd9b04c8719978bf237e5ddda7d9aafaac2"
+    },
+    {
+      "source": "outputs/signed-weights-book-20261105/v1/native/book/sources/signed-weights-details.tex",
+      "target": "web/book/sources/signed-weights-details.tex",
+      "before_sha256": null,
+      "after_sha256": "140202286783773a011d5689251933d41aad396eeef43b43ec601464e08f9691"
+    },
+    {
+      "source": "outputs/signed-weights-book-20261105/v1/native/book/sources/signed-weights-core.tex",
+      "target": "web/book/sources/signed-weights-core.tex",
+      "before_sha256": null,
+      "after_sha256": "a1d6079f0f8023d47a258e5354874425ba048a1c9f67690ee39930776f596174"
+    },
+    {
+      "source": "outputs/signed-weights-articles-20261105/concise-v1/resolutions-concise.pdf",
+      "target": "outputs/papers/resolutions-concise.pdf",
+      "before_sha256": "53c944eb9775b6fe9a00a014d0367b473fd7f7bea230f126df862a718538661f",
+      "after_sha256": "2eb9f77bb025acaf01626973b0a16872bebcbe6d5761007e67ea770300aa9a95"
+    },
+    {
+      "source": "outputs/signed-weights-articles-20261105/concise-v1/resolutions-concise.log",
+      "target": "outputs/papers/resolutions-concise.log",
+      "before_sha256": "b4968e33c73f607e917fc1c949bd6aa3fe97aad8133bfa349d4c4f47e0c4c1e7",
+      "after_sha256": "2da1b9c4b17485a117aaaa2b1e3ae14c737bb871be6f9c3995d25cc28ac26673"
+    },
+    {
+      "source": "outputs/signed-weights-articles-20261105/notes-concise-v1/validated-oracle-concise.pdf",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-concise.pdf",
+      "before_sha256": "c3126454ca9296c55fb05d97b88f0f665a429f09604e357853d19ee35a64f110",
+      "after_sha256": "b9c6b5260934833a4c083dad6cf98b67dfefc9175f9aaac77c0adbef62902367"
+    },
+    {
+      "source": "outputs/signed-weights-articles-20261105/notes-concise-v1/validated-oracle-concise.log",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-concise.log",
+      "before_sha256": "0a3dcdca22b7011d374165dd84e8fde24ef5a27b4f3921c0d69f620b6d7d9760",
+      "after_sha256": "2fcd094ac000d2adf3c1cd4cd1b804c708042c8b8bafb1af27c59a45fd9a6c1e"
+    },
+    {
+      "source": "outputs/signed-weights-articles-20261105/extended-v1/resolutions-extended.pdf",
+      "target": "outputs/papers/resolutions-extended.pdf",
+      "before_sha256": "362371b4e18491f355f1057eb1e566440b4fcd6c97413e5823a13483e8fdf7a9",
+      "after_sha256": "6d9fbfa774bc75be842c18ee3f09a975d17c8d59a9bbb9bbd8a3c349c6e968b6"
+    },
+    {
+      "source": "outputs/signed-weights-articles-20261105/extended-v1/resolutions-extended.log",
+      "target": "outputs/papers/resolutions-extended.log",
+      "before_sha256": "4b29d29e0e3c52234c5b74fa3c903b6cacc395014f47d7509446d9d669fe1ce8",
+      "after_sha256": "5c059872c0005b8236b632c609a212cbf78a600717de51d40fd85e35cca1324e"
+    },
+    {
+      "source": "outputs/signed-weights-articles-20261105/notes-extended-v1/validated-oracle-extended.pdf",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-extended.pdf",
+      "before_sha256": "d2d66139b6a87dd848b2eb3e41d20b4bf19e5f5969cdb0ff1aa7845762397566",
+      "after_sha256": "b0274042570707dcb6c14da4832929dc79b09fe397fbaf37a4061da45df136b1"
+    },
+    {
+      "source": "outputs/signed-weights-articles-20261105/notes-extended-v1/validated-oracle-extended.log",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-extended.log",
+      "before_sha256": "8175ed10f4ea01bbb96c3d168dcca816b623c73f10f0f8de931e18ba17ba9fd3",
+      "after_sha256": "6e0c52b2f50e314e540fff1ccd2e5244f36b1f2d0b0ce7f97c7c4e2a83c224c7"
+    }
+  ],
+  "scope": "Only independently accepted staged source-bound PDF/native artifacts promoted; all prior bytes backed up. Not GRH or complete formalization."
+}

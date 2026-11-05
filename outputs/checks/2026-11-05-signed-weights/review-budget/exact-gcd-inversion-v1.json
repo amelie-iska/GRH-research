@@ -1,0 +1,141 @@
+{
+  "passed": true,
+  "assertions": 52,
+  "D": 40000,
+  "U": 200,
+  "prime_norms": [
+    7,
+    13,
+    19,
+    31,
+    37,
+    43,
+    211,
+    223
+  ],
+  "prime_primary_generators": [
+    [
+      1,
+      3
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      -2,
+      3
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      1,
+      15
+    ],
+    [
+      -11,
+      6
+    ]
+  ],
+  "column_norms": [
+    53599,
+    63973,
+    74347,
+    47053
+  ],
+  "rows": [
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      40,
+      33
+    ],
+    [
+      -8,
+      -3
+    ],
+    [
+      1,
+      15
+    ],
+    [
+      -8,
+      -45
+    ]
+  ],
+  "nu": "norm quadratic character modulo4; S above2,3",
+  "W": "one fixed smooth plateau on[1.1,1.9] times(1+omega*y); all columns in plateau",
+  "actual_A": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "exact_signed_slices": {
+    "A-A": [
+      "2242670609/64000000000000",
+      "0"
+    ],
+    "A-C": [
+      "2242670609/32000000000000",
+      "0"
+    ],
+    "A-mu": [
+      "2242670609/64000000000000",
+      "0"
+    ],
+    "C-A": [
+      "2242670609/32000000000000",
+      "0"
+    ],
+    "C-C": [
+      "2242670609/16000000000000",
+      "0"
+    ],
+    "C-mu": [
+      "2242670609/32000000000000",
+      "0"
+    ],
+    "mu-A": [
+      "2242670609/64000000000000",
+      "0"
+    ],
+    "mu-C": [
+      "2242670609/32000000000000",
+      "0"
+    ],
+    "mu-mu": [
+      "2242670609/64000000000000",
+      "0"
+    ]
+  },
+  "negative_controls": [
+    "omit raw(d,u)mask",
+    "omit mu(d)sign",
+    "factor actual X(dc) intoX(d)X(c)"
+  ],
+  "endpoint_d_over_D": [
+    "53599/40000",
+    "63973/40000",
+    "74347/40000",
+    "47053/40000"
+  ],
+  "scope": "NEW exact gcd-inversion diagnostic and boundary cases; no phase/old table rerun or analytic saving",
+  "checker_sha256": "53d6e918414c54b57e1bf3b0950db03958d35032fd2f9ff87f08c508df1ef039"
+}

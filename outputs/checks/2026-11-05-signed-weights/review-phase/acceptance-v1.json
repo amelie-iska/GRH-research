@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "verdict": "PASS",
+  "scope": "Independent exact review of two-pivot application/Hecke column gauge and its failed free-gain shortcut; no signed upper estimate.",
+  "review_path": "planning/signed-weights-20261105/review-phase/REVIEW-v1.md",
+  "review_sha256": "9ef411307fb5a41da2ada1cfec6640e6a1570dbed78184e8fe81e5dcfff08987",
+  "accepted_proposal": {
+    "path": "planning/signed-weights-20261105/quadratic-phase/TWO_PIVOT_APPLICATION-v3.md",
+    "sha256": "f1113869c23041e1f12b3d7869559e670234cec9a4b5188c33e0f030f7ff30d4"
+  },
+  "v2_to_v3_only_removed_literal_EOF_artifact": true,
+  "evidence": [
+    {
+      "path": "outputs/checks/2026-11-05-signed-weights/review-phase/exact-jacobi-controls-v1.json",
+      "sha256": "5605158000e706164e346c26cbace37869c4e8a759fcd41a246b3097a17e8aa0",
+      "assertions": 642
+    },
+    {
+      "path": "outputs/checks/2026-11-05-signed-weights/review-phase/exact-ray-extension-v1.json",
+      "sha256": "5e332b0fefccb55b0e3dfc2b091fdd583d1aa42162b5856e8906364a6e686c7f",
+      "assertions": 58
+    }
+  ],
+  "fresh_assertions": 700,
+  "checker_sha256": {
+    "planning/signed-weights-20261105/review-phase/check_jacobi_connection_v1.py": "3c0591a9402b884861a0b7e3cc5fc595a0324d7623ba82eb962a908936567222",
+    "planning/signed-weights-20261105/review-phase/check_ray_extension_v1.py": "c7e10b3ac88e6d61f443f93b972aa8f11a938447222c491e6d40da418b888a93"
+  },
+  "known_phase_source": {
+    "path": "research/reciprocity-period.md",
+    "sha256": "3621aba5c3e8390e3781ff05e8e3f5ba0f960e6a3882c8fc7f23a6bb33ea2420",
+    "old_phase_tests_rerun": false
+  },
+  "conductors": {
+    "Psi_finite_ideal_generator_omega": [
+      2,
+      4
+    ],
+    "Psi_finite_norm": 12,
+    "infinity_type": [
+      1,
+      0
+    ],
+    "growing_row_conductor_q_unchanged": true,
+    "raw_S_and_collision_masks_retained": true
+  },
+  "limitations": [
+    "Known Gauss/Jacobi/CM facts are not claimed historically new.",
+    "mu(s)j(s)=Psi(s) is asserted only on squarefree good columns.",
+    "The diagonal unitary gauge alone changes no operator norm or unsigned envelope.",
+    "Actual signed coupled estimate, remaining h and signed/principal assembly remain open."
+  ],
+  "canonical_edits": false,
+  "old_experiments_rerun": false,
+  "new_dependencies": false,
+  "new_compilation": false,
+  "publication": false,
+  "timestamp_utc": "2026-11-05T18:26:00.699160+00:00"
+}

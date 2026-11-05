@@ -1456,3 +1456,67 @@ Both completion gates remain false; keep this existing heartbeat ACTIVE.
 Final source-bound production promotion: outputs/checks/2026-11-05-signed-profile/promotion-final-v2/promotion-v1.json. Only checked bookPDFv3/nativev3 and focused concise-v1/extended-v2 plus notes-concise-v1/notes-extended-v2 promoted. Current book266pages/40chapters/7605MathML, all7352 previous subtrees byte-identical/in-order,13canonical iframes and28SVG references/assets preserved. Focused61/162pages and notes19/53pages pass. Independent production-proof acceptance-v1 and build-acceptance-v1 govern; UI frozen-receipt plus final browser-20261105T172508737117 and root native-qa-v2 pass. Root inspected new proof pages and desktop/mobile/night inspector screenshots. Three inherited munder nodes and old amsmath/underfull warnings remain; no new malformed MathML, unresolved reference, overfull box or Lean declaration. The failed mathscr first build, earlier wording candidates and two schema-mismatch promotion guards are preserved; the guards stopped before any promotion. The successful script's terminal summary prints the historical directory name; the actual record above is authoritative and binds15changed artifacts. Original source HEAD/index and all earlier outputs remain preserved. Publication is a separate verified transition.
 
 P7 current claimc6d73f31 / checkpoint00470eb4-febb-41a4-b603-788124e72b1d retain in_progress; independent integration-v2 passes all42 scoped checks. The current administrative result supersedes the stale5/4/P7 last-result description while preserving its history. Publication remains a separate transition.
+
+
+## Signed coprime slice and exact character twist — 5 November 2026
+
+The actual signed h=1 slice on the A6=1 two-pivot row blocks now has a
+separate unconditional baseline. Gcd–Mobius inversion retains the actual
+X(da), common complex W, nu, full common-prime raw zeros and every original
+row/capacity/ray mask. Positive subsequence norms may be enlarged only
+inside the exact divisor decomposition. With R=A1*A2, M=max(A1,A2),
+|S1(X,Y)| << (HD)^epsilon ||W||infinity^2 min{
+R+DR/M+D^(2/3)R/M^(1/3), D+R^2}, X,Y in {A_U,C_U,mu}.
+The L=D/Nd in [1/2,1) endpoint is counted directly, not passed to a sieve
+outside its domain. At H=D^(3/4), the remaining mixed and pure upper-bound
+neighborhoods still cost D^(7/6). No new power saving follows: the sufficient
+A-A signed divisor budget sum mu(d)Gd << D H still lacks 5/12 powers.
+It is sufficient for this slice, not asserted necessary for all later signed
+assembly. Principal/residue assembly and all other row sectors remain separate.
+
+The actual Jacobi column gauge is mu(m)j(m)=Psi(m) on squarefree columns.
+Psi is the normalized Eisenstein generator character of exact conductor
+(2(1+2omega)), norm12, infinity type(1,0). Its unitary normalization is
+infinite order, so the earlier finite-order moment input does not automatically
+apply. The exact TWO-factor completion has central quadratic Gauss phase
+and one orientation-dependent Jacobi phase; column gauging and changing the
+additive generator preserve the matrix norm and do not estimate the kernel.
+The central quadratic phase law is inherited, not a new theorem of this run.
+A gauged Euler product has reciprocal L(s,Xi); no pole-free contour shift or
+unproved reciprocal moment is used. Actual q-dependent Fourier/capacity
+weights remain outside that auxiliary fixed-twist series.
+
+A NEW fixed common smooth plateau W, independent of D, at D60000/U244,
+H3833/A1=37/A2=7 gives exactly20 original nonprincipal rows after masks.
+For TWO selected columns and their complete two-orientation q fiber,
+Gamma=-3 +/- i*sqrt(3), selected h1AA=-1/10000. Centering gives zero pairing
+but nonzero centered squared norm6 (average variance3); the omitted mean
+has squared contribution36 against naive variance budget12. The complete
+selected two-column Gram is positive with eigenvalues17 +/- sqrt(21);
+its coprime off-diagonal slice is indefinite. This finite remaining-sector
+control is not an asymptotic lower bound, whole-family covariance or GRH
+counterexample. The inspector exposes all20 rows, actual zeros, phase gauge,
+and all18 signed pairings. No browser training or new data inference occurs.
+
+Sources: papers/signed-weights-{core,details}.tex and
+research/signed-coprime-weights.md; independent phase/budget/Mellin/diagnostic/
+canonical reviews under outputs/checks/2026-11-05-signed-weights/.
+The new core/details are shared verbatim with chapter40 and all four focused
+wrappers. All prior moving-profile, learning, fixed-family adaptive theta,
+source distinctions and scope limitations remain valid. No new Lean theorem,
+conductor-uniform theta construction, determinant bridge or zero-location
+result is asserted. Pinned Linux4.24 approval remains unanswered; do not
+install/substitute/reinventory or ask again absent an explicit reply/change.
+
+Next: estimate the actual mean-retaining signed joint h,q,K weights or the
+signed gcd divisor sum before absolute Cauchy, especially h1 and the mixed/
+pure A6=1 neighborhoods. Preserve full union/common-prime zeros, coherent
+fibers, conductor, literal-ray, squarefree/capacity and common-profile
+uniformity. Do not rebrand this D^(7/6) baseline, the exact character gauge,
+finite centering control or reciprocal Euler identity as the missing signed
+saving. Short/principal assembly, independent positive determinant/zero
+comparison and separate Dirichlet/Hecke/Dedekind/elliptic/Artin obligations
+remain open. Both completion gates remain false; keep the existing heartbeat.
+
+
+Final signed-weights promotion: outputs/checks/2026-11-05-signed-weights/promotion-v1/promotion-v1.json binds15promoted artifacts from bookPDFv1/nativev1 and all four focusedv1builds. Delivered272pages/40chapters/7891MathML, all7605previous literal mathsubtrees byte-identical/in-order;385oldtables,13canonical iframes and28SVGrefs/assets retained. Focused62/168pages; notes20/59. Independent review-integration/acceptance-v1 and rootnative-qa-v1 pass; all20newrows/18pairings and preserved oldcontrols pass desktop/mobile/night/keyboard. Root inspected new proof PDF and matrix screenshots. No new malformed node, overfull box, unresolved reference or Lean declaration. Three inherited munder nodes and unchanged oldamsmath/hyperref/underfull warnings remain disclosed. The native record's2535math count is its new-chapter segment, not the complete7891formula book. Original sourceHEAD/index, oldoutputs and all prior releases are preserved; publication is separate.

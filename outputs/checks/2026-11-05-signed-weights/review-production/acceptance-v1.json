@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "verdict": "PASS",
+  "source_sha256": {
+    "planning/signed-weights-20261105/root/signed-weights-core.tex": "c6c62c9ceb05ee45e41c3a884ae55dde875cf34a42c4253b91fba3ab764be2cc",
+    "planning/signed-weights-20261105/root/signed-weights-details.tex": "50826ac34ad9c411e4ff6ab164062492d85e1c624eecfc36401b95bda692399b"
+  },
+  "review_path": "planning/signed-weights-20261105/review-production/REVIEW-v1.md",
+  "review_sha256": "7ea108eb611bc9644725e27e3feaecab41e6c3d70286e4827c4355a6fe173b84",
+  "static_checks_path": "outputs/checks/2026-11-05-signed-weights/review-production/static-structure-v1.json",
+  "static_checks_sha256": "d3ab830290a034bc8bb3d182d99ecf00081d70f74131e3b68a6d18b628f902c1",
+  "reused_acceptance_sha256": {
+    "outputs/checks/2026-11-05-signed-weights/review-phase/acceptance-v1.json": "fe16ad0779ac43afe96158c8ff5e459b56ccd810ad9cb29fed48ac091c9d3f3a",
+    "outputs/checks/2026-11-05-signed-weights/review-budget/acceptance-v2.json": "51152ef42029a1427d8d0b2b10d28d6eaa57c9791affb805d987bba304f89fa6",
+    "outputs/checks/2026-11-05-signed-weights/review-mellin/acceptance-v1.json": "b3b5b31b1103237c49ac0b22020e65d21de564281b876fe273393c85eff3cf61",
+    "outputs/checks/2026-11-05-signed-weights/review-diagnostic/acceptance-v1.json": "5b7ccac4d0f8d88ea13fa899452a85e7c26a0ed170d9456b4ee6f2c53f5160a1"
+  },
+  "frozen_fixture_sha256": "e4ebc41b81e040cd8cf7ba6ae2644bb725fba6c6939af25c7a8a1074289db35d",
+  "source_HEAD": "dba37ffaa78c82ade1385f7ee56c907ab0c67d3a",
+  "source_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+  "canonical_proposals_edited_by_reviewer": false,
+  "data_or_accepted_controls_rerun": false,
+  "new_signed_gain": false,
+  "TeX_build_or_browser_QA_performed": false,
+  "scope": "Final complete canonical TeX mathematical/static acceptance only; integration/build/UI checks owned by root",
+  "limitations": [
+    "No signed5/12saving",
+    "No finite-order AFM transfer to infinitytype1",
+    "No fixed-z coefficient bound for actualTq",
+    "Current runtime link/build not tested here",
+    "No new Lean/GRH/determinant claim"
+  ]
+}
