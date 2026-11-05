@@ -1,0 +1,172 @@
+% Generated shared reviewed material.
+\section{Validated primitive operations}
+Real intervals are closed dyadic intervals $[l2^{-224},h2^{-224}]$ with
+integer endpoints; complex intervals are Cartesian products. Addition is
+exact at this scale. For multiplication take the minimum/maximum of all four
+integer endpoint products, divide by $2^{224}$ and round down/up. For a
+reciprocal whose interval omits zero, reverse the endpoint order and round
+$2^{448}/h$ down and $2^{448}/l$ up. Negative denominators and scalar division
+use the same endpoint rules. Each operation encloses all represented real
+values by monotonicity; induction proves inclusion for every expression
+built from them. Rectangular complex multiplication uses these real rules.
+The sum of coordinate halfwidths bounds the complex distance from its exact
+rational center. Binary floating arguments are never silently converted.
+
+For $0<x<1$, the alternating arctangent sum and the endpoint obtained by
+adding the next signed term enclose $\arctan x$. Sixty terms at $1/5$ and
+$1/239$, together with Machin's identity
+$\pi=16\arctan(1/5)-4\arctan(1/239)$, give the interval for $\pi$.
+The negative coefficient reverses the second interval. The identity follows
+from tangent addition and the range of the two angles; no decimal value of
+$\pi$ is a trusted input.
+
+For rational $x>0$, range-reduce $x=2^kv$, $1\le v<2$. With
+$z=(v-1)/(v+1)\le1/3$,
+\[
+ \log v=2\sum_{j=0}^{J-1}\frac{z^{2j+1}}{2j+1}+\mathcal R,
+ \qquad 0\le\mathcal R\le
+ \frac{2z^{2J+1}}{(2J+1)(1-z^2)}.
+\]
+The geometric tail bounds each remaining denominator below by $2J+1$.
+Use $J=92$, the analogous expression for $\log2$, and sign-aware interval
+multiplication by $k$. This covers negative $k$ as well.
+
+For complex $z$, repeatedly halve until its interval $\ell^1$ magnitude
+bound is $A\le1/2$. The degree $60$ Taylor polynomial for $e^z$ then has remainder
+at most
+\[
+ \frac{A^{61}}{61!}\frac1{1-A/62}.
+\]
+Successive absolute terms have ratio at most $A/62$, so geometric comparison
+proves this bound. Add its symmetric interval to each coordinate, then square
+outward the required number of times. The identity $e^{2z}=(e^z)^2$ and
+interval inclusion prove the final enclosure. Caches are type-sensitive:
+otherwise a cached exact argument can accidentally bypass rejection of an
+equal-valued float. No implementation change is allowed during the recorded run;
+the producer verifies source bytes again before emitting its certificate.
+
+\section{Recomputing the compact growth constants}
+For the larger growth disk, $c=1/2$, $r=12/5$, take $k=2$ when $a=1$
+and $k=1$ when $a=0$. Both real Mellin exponents on that disk are at most
+$k$. Define
+\[
+ Q_k(x)=\sum_{j=0}^k\frac{k!}{(k-j)!x^{j+1}},\qquad
+ U_{16}(x)=(1+x/16)^{-16},\qquad \delta=3/q.
+\]
+Integration by parts gives
+$\int_1^\infty t^ke^{-xt}\,dt=e^{-x}Q_k(x)$.
+The same Gaussian split and geometric-tail comparison used below, now
+with cutoff $n_0=8$, imply the exact rational majorant
+\[
+ \widehat M_q=2\left[
+ \sum_{n=1}^{7}n^aU_{16}(\delta n^2)Q_k(\delta n^2)
+ +C_aQ_k(64\delta)\frac{U_{16}(32\delta)}{1-U_{16}(8\delta)}\right],
+ \quad C_0=1,\quad C_1=(1+\delta^{-1})/2.
+\]
+Replacing the actual $d=\pi/q$ by the smaller positive $\delta$ increases
+the integral majorant. Exact fraction comparison gives
+$\widehat M_3<4$, $\widehat M_4<10$, $\widehat M_5<6$.
+The producer recomputes these fractions, asserts the strict comparisons and
+exports them; the constants in the readout proof are thus checked rather
+than supplied by a floating growth estimate.
+
+\section{The completed-function integral and its tails}
+Let $d=\pi/q$ and $\theta_q(t)=\sum_{n\ge1}\chi_q(n)n^ae^{-dn^2t}$.
+The standard primitive theta transformation, followed by splitting the Mellin
+integral at1, gives
+\[
+ \Lambda_q(s)=\int_1^\infty\theta_q(t)t^{(s+a)/2-1}\,dt+
+              \int_1^\infty\theta_q(t)t^{(1-s+a)/2-1}\,dt.
+\]
+The second root-number coefficient is1 for these three characters: their
+finite Gauss sums are $i\sqrt3$, $2i$ and $\sqrt5$, respectively.
+For the last, $2\cos(2\pi/5)-2\cos(4\pi/5)=\sqrt5$; the first two are direct
+conjugate-root differences. Division by $i^a\sqrt q$ gives the claimed
+normalization. Exponential decay makes the two integrals entire. This classical
+theta identity, not an assumption of Artin holomorphy or desired positivity,
+is the analytic input of the implementation.
+
+The actual circle nodes are enclosed by computing $e^{2\pi i j/64}$ with
+the validated primitives. All input boxes fit
+$D=[-1,2]+i[-4/3,4/3]$. Thus both exponents
+$p=(s+a)/2-1$ and $p'=(1-s+a)/2-1$ satisfy
+$|\Re p|\le2$, $|\Im p|\le2/3$. The domain guard precedes all term discards.
+Retain $1\le n\le11$ and integrate $1\le t\le128$.
+
+Put $\delta=3/q<d$, $U(x)=(1+x/128)^{-128}$ and
+$Q(x)=x^{-1}+2x^{-2}+2x^{-3}$. Since $(1+x/128)^{128}\le e^x$,
+$e^{-x}\le U(x)<1$ for $x>0$. Integration by parts gives
+$\int_1^\infty t^2e^{-xt}\,dt=e^{-x}Q(x)$.
+With $C_0=1$, $C_1=(1+\delta^{-1})/2$ the omitted-$n$ tail of both integrals is
+\[
+ 2C_aQ(\delta12^2)
+ \frac{U(\delta12^2/2)}{1-U(12\delta)}.
+\]
+Indeed $n^ae^{-\delta n^2/2}\le C_a$, the function $Q$ decreases, and
+$(12+j)^2\ge12^2+24j$. These inequalities yield a geometric bound after
+splitting the exponent in halves. The retained-$n$ time tail is at most
+\[
+ \sum_{n=1}^{11}2n^a128^3U(128\delta n^2)Q(128\delta n^2).
+\]
+It follows by substituting $t=128u$ and majorizing $t^{\Re p}$ by $t^2$.
+The two tails are disjoint: omitted $n$ use the full integral, whereas
+retained $n$ contribute only $t>128$.
+
+\section{High-order integration with a certified remainder}
+Split each dyadic interval $[2^j,2^{j+1}]$, $j=0,\ldots,6$, into four equal
+panels. For its midpoint $m$ and halfwidth $h$, $h/m\le1/9$.
+For $f(z)=e^{-\lambda z}z^p$, $\lambda=\pi n^2/q$, the principal logarithm
+is analytic on $|z-m|\le\rho=m/2$. On that circle,
+\[
+ |f(z)|\le M_\rho=3\max\{(3m/2)^2,(m/2)^{-2},1\}
+ U(\delta n^2m/2).
+\]
+Here $\Re z\ge m/2$, $|\arg z|\le1$ and
+$e^{|\Im p|}\le e^{2/3}\le3$. The maximum handles both signs of $\Re p$.
+Cauchy's coefficient estimate and cancellation of odd powers on $[-h,h]$
+therefore bound the error after degree $2K$ by
+\[
+ \frac{2hM_\rho(h/\rho)^{2K+2}}
+ {(2K+3)(1-(h/\rho)^2)}.
+\]
+Indeed integrate each remaining even term, replace its denominator by the
+first omitted denominator, then sum a geometric series. Here $K=12$.
+Multiply by $2n^a$ for both Mellin terms and sum all $28$ panels and retained $n$.
+Keeping this majorant even for later discarded terms only overcounts error.
+
+To evaluate the polynomial stably, set $u=h/m$, $q_{-1}=0$, $q_0=1$ and use
+\[
+ q_{j+1}=\frac{u(p-\lambda m-j)q_j-(\lambda m)u^2q_{j-1}}{j+1}.
+\]
+Multiplying $f'=(-\lambda+p/t)f$ by $t=m+x$ and matching coefficients proves
+this recurrence, with $q_j=f^{(j)}(m)h^j/(j!f(m))$. The integrated polynomial is
+$2he^{-\lambda m}m^p\sum_{j=0}^{K}q_{2j}/(2j+1)$; all its arithmetic is outward.
+
+Fixed absolute exponential-rounding errors can be amplified by high-order
+coefficients in late panels. The code therefore first bounds a complete
+$(n,\text{panel})$ pair, including both powers, by
+\[
+ 4hn^a(m+h)^2U(\delta n^2(m-h)).
+\]
+For real $t\ge1$ its phase has modulus1 and $t^{\Re p}\le(m+h)^2$, proving
+the bound. If it is below $2^{-90}$, skip that pair entirely and add its bound
+to the final radius. This is controlled truncation, not numerical underflow.
+The final sample radius is the interval-sum halfwidth plus the omitted-$n$,
+time, Cauchy and discard bounds. All are recorded separately and checked as
+nonnegative. No high-precision special-function routine is trusted here.
+
+\section{Reproduction and remaining interfaces}
+Run the preserved source on the existing Linux Python environment with no new
+packages: \texttt{python3} on \path{examples/analytic_oracle/theta_oracle.py}, with argument \texttt{--output NEW}.
+It refuses to overwrite an existing experiment directory. The final-v5
+experiment contains $192$ samples, three rational degree $28$ polynomials, copied
+source and SHA-256 hashes. Independent validation checks rational endpoint
+arithmetic, transcendental enclosures, $1160$ exact coefficient identities, high-
+precision completed-function comparisons and the exported component sums.
+
+The fixed-parameter oracle solves a concrete evaluation/certification gap.
+It does not identify a positive arithmetic operator, force real-rooted
+polynomials, prove the signed original-family short-row bound or supply
+complete Lean4 verification. Surface/order and neural architectures may use
+these certificates as independent targets, but a small learned loss is not a
+substitute for the remaining arithmetic and categorical theorems.
