@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-11-05T10:57:41.994858+00:00",
+  "verdict": "ACCEPT final v3 TeX: one editorial cross-reference phrase only; all mathematics unchanged",
+  "review_method": "Manual unified-diff review and exact whole-file single-phrase substitution against accepted core bytes.",
+  "change": "'smooth profile described below' -> 'smooth profile constructed in the extended proof'",
+  "exact_single_phrase_substitution_only": true,
+  "core_mathematics_byte_identical": true,
+  "core_perron_tail_byte_identical": true,
+  "details_byte_identical_to_v2": true,
+  "paths_sha256": {
+    "outputs/checks/2026-11-05-signed-bilinear/integration-before/core-before-concise-reference-fix.tex": "c5a181f3f457aad2d2a2010bdf48f0319493ce238003ed9586a1a91c6ff168d7",
+    "papers/signed-bilinear-core.tex": "51452c2ca5eb360499f3c3032bd246a2b0e644c82867e67d6107317acc1b459c",
+    "papers/signed-bilinear-details.tex": "c3dd1a612d6e56cd77f652d90331083a7fb2351e226d24fb1a4ca3b227d14b72",
+    "outputs/checks/2026-11-05-signed-bilinear/review-covariance/final-tex-acceptance-v2.json": "7e0a5ce0a4a9fa1f42a9ab95d79347410a4103e7a2f644d42bfcfcb7d4fde162"
+  },
+  "semantic_acceptance": "High-window/coefficient/factor-Cauchy/actual covariance acceptance inherited from v1-v2; separate Perron review unchanged.",
+  "no_arithmetic_rerun": true,
+  "BT_sigma_proved_or_refuted": false,
+  "new_Lean_claim": false,
+  "GRH_claim": false,
+  "not_run": [
+    "Arithmetic rerun (pure editorial reference correction)",
+    "TeX compilation/render verification (parent integration responsibility)",
+    "Lean"
+  ]
+}

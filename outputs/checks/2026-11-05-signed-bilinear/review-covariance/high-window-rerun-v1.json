@@ -1,0 +1,65 @@
+{
+  "status": "PASS: exact algebra diagnostics; BT_sigma remains OPEN",
+  "seed": null,
+  "arithmetic": "stdlib integer/Fraction Eisenstein arithmetic",
+  "coefficient_cases": 2688,
+  "high_window_cases": 753,
+  "strict_cutoff_controls": 7,
+  "equality_window_cases": 148,
+  "nonzero_long_cases": 291,
+  "parity_and_nonvanishing_cases": 753,
+  "outside_window_negative_controls": 1,
+  "literal_balanced_rows": 72,
+  "raw_disjoint_multiplicativity_cases": 157464,
+  "shared_zero_cases": 139968,
+  "bilinear_row_identities": 720,
+  "complex_covariance_cases": 720,
+  "common_complex_profile_cases": 720,
+  "active_bilinear_pair_evaluations": 1440,
+  "fourier_counterexamples": [
+    {
+      "rows": 2,
+      "columns": 4,
+      "marginal_operator_norm_squared": 4,
+      "actual_unnormalized": "512",
+      "unsupported_product_bound": 256,
+      "ratio": 2,
+      "normalized_energy_exponent": "DX"
+    },
+    {
+      "rows": 3,
+      "columns": 9,
+      "marginal_operator_norm_squared": 9,
+      "actual_unnormalized": "19683",
+      "unsupported_product_bound": 6561,
+      "ratio": 3,
+      "normalized_energy_exponent": "DX"
+    },
+    {
+      "rows": 6,
+      "columns": 36,
+      "marginal_operator_norm_squared": 36,
+      "actual_unnormalized": "10077696",
+      "unsupported_product_bound": 1679616,
+      "ratio": 6,
+      "normalized_energy_exponent": "DX"
+    }
+  ],
+  "exponent_cases": 64,
+  "old_exponents": [
+    "1/2",
+    "5/4",
+    "13/12"
+  ],
+  "factor_cauchy_exponents": [
+    "1",
+    "5/4",
+    "5/4"
+  ],
+  "profile_scope": "finite common rational complex annular array, not an analytic smooth-weight bound",
+  "coefficient_norm_lower_proof": "elementary lattice/Mobius argument in derivation, not a numerical test",
+  "analytic_saving_proved": false,
+  "arithmetic_energy_lower_bound": false,
+  "new_Lean_result": false,
+  "GRH_claim": false
+}

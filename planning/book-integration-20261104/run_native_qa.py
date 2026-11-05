@@ -1,7 +1,7 @@
 from pathlib import Path
 from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from urllib.parse import urlsplit,unquote
-import threading,subprocess,os,argparse
+import threading,subprocess,os,argparse,json
 ROOT=Path('/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104');WEB=ROOT/'web'
 ap=argparse.ArgumentParser();ap.add_argument('--candidate',required=True,type=Path);ap.add_argument('--pdf',required=True,type=Path);ap.add_argument('--output',required=True,type=Path);a=ap.parse_args()
 CANDIDATE=a.candidate.resolve();PDF=a.pdf.resolve();OUT=a.output.resolve();OUT.mkdir(exist_ok=False)
@@ -19,7 +19,7 @@ class Handler(SimpleHTTPRequestHandler):
   return str(resolved)
  def log_message(self,*args):pass
 server=ThreadingHTTPServer(('127.0.0.1',0),Handler);thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
-env=dict(os.environ,BOOK_QA_URL='http://127.0.0.1:'+str(server.server_port),BOOK_QA_OUTPUT=str(OUT),BOOK_QA_CANDIDATE=str(CANDIDATE),PYTHONDONTWRITEBYTECODE='1')
+env=dict(os.environ,BOOK_QA_URL='http://127.0.0.1:'+str(server.server_port),BOOK_QA_OUTPUT=str(OUT),BOOK_QA_CANDIDATE=str(CANDIDATE),PYTHONDONTWRITEBYTECODE='1',BOOK_QA_EXPECTED_MATH=str(5356+json.loads((CANDIDATE/'native-build-record.json').read_text())['math_nodes']))
 try:
  with (OUT/'run.log').open('w') as log:
   run=subprocess.run(['node',str(ROOT/'planning/book-integration-20261104/qa-integrated-native.mjs')],cwd=ROOT,env=env,stdout=log,stderr=subprocess.STDOUT)

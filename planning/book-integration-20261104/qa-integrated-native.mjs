@@ -1,6 +1,7 @@
 import {Browser} from '/home/iska/Documents/LaTeX-projects/project-pages-20261104/qa/bidi.mjs';
 import {writeFileSync,readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+const expectedMath=Number(process.env.BOOK_QA_EXPECTED_MATH??6216);
 const base=process.env.BOOK_QA_URL,out=process.env.BOOK_QA_OUTPUT,candidate=process.env.BOOK_QA_CANDIDATE;
 if(!base||!out||!candidate)throw Error('Explicit QA URL/output/candidate required');
 const sha=data=>createHash('sha256').update(data).digest('hex');
@@ -19,21 +20,24 @@ try{
  check(baseline.math===5356,'Baseline math count',baseline);
  writeFileSync(out+'/baseline-dom.json',JSON.stringify({geometry:baseline,subtrees:baselineSubtrees},null,2));
  await browser.viewport(1440,1000);await browser.navigate(base+'/book/main.html');
- await browser.until('document.querySelectorAll("math").length===6216 && typeof fitReviewedReaderMath==="function"');
+ await browser.until('document.querySelectorAll("math").length==='+expectedMath+' && typeof fitReviewedReaderMath==="function"');
  await browser.evaluate('document.fonts.ready.then(()=>true)');
  const state=await browser.evaluate(`(()=>{
  const ids=[...document.querySelectorAll('[id]')].map(x=>x.id);
- const anchors=['mm:afm','rc:recombination','rc:boundary','wc:uniform','wc:powered-input','wc:literal-reciprocity'];
- const refs=[...document.querySelectorAll('a[href^="#mm:"],a[href^="#rc:"],a[href^="#wc:"]')];
+ const anchors=['mm:afm','rc:recombination','rc:boundary','wc:uniform','wc:powered-input','wc:literal-reciprocity','sb:window','sb:covariance-example','sb:perron-factor','sb:perron-error'];
+ const refs=[...document.querySelectorAll('a[href^="#mm:"],a[href^="#rc:"],a[href^="#wc:"],a[href^="#sb:"]')];
  return {math:document.querySelectorAll('math').length,iframes:document.querySelectorAll('iframe').length,uniqueFrames:new Set([...document.querySelectorAll('iframe')].map(x=>x.getAttribute('src'))).size,anchors:anchors.map(id=>({id,present:!!document.getElementById(id)})),allNewRefsResolve:refs.every(x=>!!document.getElementById(x.getAttribute('href').slice(1))),uniqueIds:new Set(ids).size===ids.length,chapters:[...document.querySelectorAll('h2.chapterHead')].map(x=>x.textContent.trim()).slice(-4),bodyWidth:document.body.scrollWidth,clientWidth:document.documentElement.clientWidth};})()`);
- check(state.math===6216&&state.iframes===13&&state.uniqueFrames===13&&state.anchors.every(x=>x.present)&&state.allNewRefsResolve&&state.uniqueIds,'DOM integrity',state);
+ check(state.math===expectedMath&&state.iframes===13&&state.uniqueFrames===13&&state.anchors.every(x=>x.present)&&state.allNewRefsResolve&&state.uniqueIds,'DOM integrity',state);
  const candidateSubtrees=await browser.evaluate(subtreeHashes);
  check(JSON.stringify(candidateSubtrees)===JSON.stringify(baselineSubtrees),'Browser old subtree fidelity',{baselineSubtrees,candidateSubtrees});
  writeFileSync(out+'/initial-dom.json',JSON.stringify(state,null,2));
  await jump('wc:uniform');await browser.screenshot(out+'/weighted-envelope-desktop.png');
  await jump('rc:recombination');await browser.screenshot(out+'/cutoff-convergence-desktop.png');
+ await jump('sb:window');await browser.screenshot(out+'/high-window-desktop.png');
+ await jump('sb:covariance-example');await browser.screenshot(out+'/signed-covariance-desktop.png');
+ await jump('sb:perron-error');await browser.screenshot(out+'/double-perron-desktop.png');
  const downloads=[];
- for(const name of ['validated-oracle-details.tex','masked-moment-details.tex','weighted-cutoff-details.tex']){
+ for(const name of ['validated-oracle-details.tex','masked-moment-details.tex','weighted-cutoff-details.tex','signed-bilinear-core.tex','signed-bilinear-details.tex']){
   const downloaded=await browser.evaluate(`fetch('/book/sources/${name}').then(async r=>({status:r.status,text:await r.text()}))`);
   const expected=readFileSync(candidate+'/book/sources/'+name);
   check(downloaded.status===200&&sha(downloaded.text)===sha(expected),'Source download mismatch',name);

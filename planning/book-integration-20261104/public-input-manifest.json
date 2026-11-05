@@ -254,6 +254,18 @@
       "currently_git_tracked": true
     },
     {
+      "path": "book/chapters/signed-bilinear-core.tex",
+      "sha256": "116dcd7433a38657d84f3d5894fc4d9116673368a24e61ae23ca141ee4087bb2",
+      "bytes": 4731,
+      "currently_git_tracked": false
+    },
+    {
+      "path": "book/chapters/signed-bilinear-details.tex",
+      "sha256": "8f9c053f7074ae520109b6c1c2c4756abd9b395103cb0083278797fdb2461f31",
+      "bytes": 8966,
+      "currently_git_tracked": false
+    },
+    {
       "path": "book/chapters/toricgt.tex",
       "sha256": "48ba14e05d3cb910ff774c34784378322c015c782f55c7911bfdb6573378b25e",
       "bytes": 21162,
@@ -315,8 +327,8 @@
     },
     {
       "path": "book/chapters/weighted-cutoff.tex",
-      "sha256": "8ece1047da512eb70ded0994c7ea8df6374ccc1b71dd145b84f130727473bd86",
-      "bytes": 225,
+      "sha256": "d4b44dc713e040a8c2842c56168f18a9190a78dc288d6db368656699bba169a7",
+      "bytes": 305,
       "currently_git_tracked": false
     },
     {
@@ -375,7 +387,7 @@
     },
     {
       "path": "book/main.tex",
-      "sha256": "80279412d5a1a5b04dc49dad45d672279ea19fa2795f6b00bdd041014e974734",
+      "sha256": "8ff1f3d5af58fd657df57d4d2d254d1f1a764a3677d0c2bcf48ed52ddde57b5e",
       "bytes": 5119,
       "currently_git_tracked": true
     },
@@ -384,6 +396,18 @@
       "sha256": "457211c0707065d15bf528a2aff0d111d804ddd2b07c35550da0e0c19d9eb871",
       "bytes": 4095,
       "currently_git_tracked": true
+    },
+    {
+      "path": "papers/signed-bilinear-core.tex",
+      "sha256": "51452c2ca5eb360499f3c3032bd246a2b0e644c82867e67d6107317acc1b459c",
+      "bytes": 4693,
+      "currently_git_tracked": false
+    },
+    {
+      "path": "papers/signed-bilinear-details.tex",
+      "sha256": "c3dd1a612d6e56cd77f652d90331083a7fb2351e226d24fb1a4ca3b227d14b72",
+      "bytes": 8928,
+      "currently_git_tracked": false
     },
     {
       "path": "planning/book-integration-20261104/build_isolated.py",
@@ -399,8 +423,8 @@
     },
     {
       "path": "planning/book-integration-20261104/render_native.py",
-      "sha256": "81bf4854c1b673ce3a7cfaec76ca586f858e94466b922a97a052aabc4ebf42ac",
-      "bytes": 16303,
+      "sha256": "22b55473e25940214c45c1f6c413baa1365a4d93cb660b677da9a9a73259739a",
+      "bytes": 16723,
       "currently_git_tracked": false
     },
     {
@@ -477,8 +501,8 @@
     },
     {
       "path": "web/book/main.html",
-      "sha256": "816cbef69d3487dbd34ac6a9c82a3dadc2af5904f7cce5a284edf61f183d5150",
-      "bytes": 3080280,
+      "sha256": "1b07ce342942272564c3b010e87022cdc7947d907cf8a902e7bb9cbb675eeea7",
+      "bytes": 3172002,
       "currently_git_tracked": true
     },
     {
@@ -675,12 +699,12 @@
     },
     {
       "path": "web/book/sources/weighted-cutoff.tex",
-      "sha256": "8ece1047da512eb70ded0994c7ea8df6374ccc1b71dd145b84f130727473bd86",
-      "bytes": 225,
+      "sha256": "d4b44dc713e040a8c2842c56168f18a9190a78dc288d6db368656699bba169a7",
+      "bytes": 305,
       "currently_git_tracked": false
     }
   ],
-  "file_count": 113,
+  "file_count": 117,
   "not_currently_git_tracked": [
     "book/chapters/complementary-datasets-core.tex",
     "book/chapters/complementary-datasets-details.tex",
@@ -697,6 +721,8 @@
     "book/chapters/orbital-flow-details.tex",
     "book/chapters/quantum-games-core.tex",
     "book/chapters/quantum-games-details.tex",
+    "book/chapters/signed-bilinear-core.tex",
+    "book/chapters/signed-bilinear-details.tex",
     "book/chapters/uniform-cutoff-moment-core.tex",
     "book/chapters/uniform-cutoff-moment-details.tex",
     "book/chapters/validated-oracle-core.tex",
@@ -709,10 +735,13 @@
     "book/figures/complementary-datasets.pdf",
     "book/figures/orbital-atlas.pdf",
     "book/figures/orbital-flow.pdf",
+    "papers/signed-bilinear-core.tex",
+    "papers/signed-bilinear-details.tex",
     "planning/book-integration-20261104/build_isolated.py",
     "planning/book-integration-20261104/proposed-build-remote-book-candidate.py",
     "planning/book-integration-20261104/render_native.py",
     "planning/book-integration-20261104/reviewed-math-scroll.js",
+    "scripts/build_remote_book_candidate.py",
     "web/book/figures/complementary-datasets-.svg",
     "web/book/figures/orbital-atlas-.svg",
     "web/book/figures/orbital-flow-.svg",
@@ -736,7 +765,7 @@
   "baseline_SHA256": "bce3d2b6c7feda66ff03a5a7531300d07b4b054beb915461547ed68566c84545",
   "baseline_object_required_in_fresh_clone": true,
   "generated_output_caches_required": false,
-  "scope": "Snapshot of exact bounded source/figure/SVG/helpers/native assets used on this remote checkout. Root must include new assets/chapters and the pinned baseline Git history in publication.",
+  "scope": "Exact input closure for the reviewed40-chapter November5 edition, including high-window/covariance/Perron extensions. Local index state is not a statement of missing public dependencies.",
   "invocation": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/build_remote_book_candidate.py --svg-only --output outputs/book-integration-20261104/NEW-PUBLIC-RUN",
   "local_index_status_note": "Recorded tracked/untracked status is from the older local integration index, not a public-origin absence claim. Release inventory compares exact public-origin blob hashes independently.",
   "searchability_and_bytes": "Public SVG glyphs may be paths; generated diagram PDFs and extracted full-PDF text need not match the cached-PDF edition byte-for-byte. Complete source, TOC, aux and native HTML equivalences are separately verified."

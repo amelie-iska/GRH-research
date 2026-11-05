@@ -113,8 +113,12 @@ def main():
         references.append(dict(id=ident,number=number,kind=kind));return '<a'+m[1]+'>'+html.escape(value)+'</a>'
     fragment=re.sub(r'<a([^>]*data-reference-type="(?:eqref|ref)"[^>]*)>.*?</a>',reference,fragment,flags=re.S)
     def heading(m):
-        level=int(m[1])+1;attrs=m[2];cls={2:'chapterHead',3:'sectionHead',4:'subsectionHead',5:'subsubsectionHead'}.get(level,'paragraphHead')
-        return '<h'+str(level)+' class="'+cls+'"'+attrs+'>'+m[3]+'</h'+str(level)+'>'
+        level=int(m[1])+1;attrs=m[2];content=m[3];cls={2:'chapterHead',3:'sectionHead',4:'subsectionHead',5:'subsubsectionHead'}.get(level,'paragraphHead')
+        if level>=6:
+            # PDF paragraph headings are unnumbered; Pandoc otherwise emits40.5.0.0.2.
+            attrs=re.sub(r' data-number="[^"]*"','',attrs)
+            content=re.sub(r'<span class="header-section-number">.*?</span>\s*','',content,count=1,flags=re.S)
+        return '<h'+str(level)+' class="'+cls+'"'+attrs+'>'+content+'</h'+str(level)+'>'
     fragment=re.sub(r'<h([1-6])\b([^>]*)>(.*?)</h\1>',heading,fragment,flags=re.S)
     baseline=a.baseline_book.resolve() if a.baseline_book else ROOT/'web/book/main.html'
     old_original=baseline.read_text();(out/'baseline-book.html').write_text(old_original)
@@ -125,8 +129,9 @@ def main():
     assert old.count(old_guide)==1
     old=old.replace(old_guide,new_guide)
     assert old.count('November 3, 2026')==1
-    old=old.replace('November 3, 2026','November 4, 2026')
-    editorial_changes=[{'old':old_guide,'new':new_guide},{'old':'November 3, 2026','new':'November 4, 2026'}]
+    edition_date=re.search(r'\\date\{([^}]+)\}',main_source).group(1)
+    old=old.replace('November 3, 2026',edition_date)
+    editorial_changes=[{'old':old_guide,'new':new_guide},{'old':'November 3, 2026','new':edition_date}]
     old_ids=set(re.findall(r'\bid="([^"]+)"',old));new_ids=re.findall(r'\bid="([^"]+)"',fragment)
     assert len(set(new_ids))==len(new_ids)
     for ident in sorted(set(new_ids)&old_ids):
@@ -139,7 +144,7 @@ def main():
     assert not re.search(r'\[(?:mm|rc|wc):[^\]]+\]',re.sub(r'<annotation.*?</annotation>','',fragment,flags=re.S))
     source_count=len(re.findall(r'\\begin\{(?:theorem|lemma|proposition|corollary|definition|example|remark)\}',body));assert source_count==len(theorem_records)
     proof_count=len(re.findall(r'\\begin\{proof\}',body));assert proof_count==len(re.findall(r'<em>Proof',fragment))
-    css='<style>.reader-display-math{display:block;min-width:0;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.reader-display-math:focus-visible{outline:2px solid #078b96;outline-offset:3px}.new-reviewed-chapters{margin-top:3rem}.reader-equation{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;max-width:100%;position:relative}.reader-equation>math{min-width:0;max-width:100%;overflow-x:auto}.reader-equation-number{font-size:.85em;white-space:nowrap}.equation-alias{position:absolute;width:0;height:0}.new-reviewed-chapters nav{padding:1rem;border:1px solid currentColor;border-radius:.5rem}.new-reviewed-chapters table{max-width:100%}.new-reviewed-chapters .source-links{font-size:.85em}</style>'
+    css='<style>.reader-display-math{display:block;min-width:0;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.reader-display-math:focus-visible{outline:2px solid #078b96;outline-offset:3px}.new-reviewed-chapters{margin-top:3rem}.reader-equation{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;max-width:100%;position:relative}.reader-equation>math{min-width:0;max-width:100%;overflow-x:auto}.reader-equation-number{font-size:.85em;white-space:nowrap}.equation-alias{position:absolute;width:0;height:0}.new-reviewed-chapters nav{padding:1rem;border:1px solid currentColor;border-radius:.5rem}.new-reviewed-chapters table{max-width:100%}.new-reviewed-chapters .source-links{font-size:.85em}.new-reviewed-chapters .paragraphHead{font-size:1em;font-weight:700}</style>'
     chapter_links=[]
     for match in re.finditer(r'<h2 class="chapterHead"([^>]*)>(.*?)</h2>',fragment,re.S):
         ident=re.search(r'\bid="([^"]+)"',match[1])[1]

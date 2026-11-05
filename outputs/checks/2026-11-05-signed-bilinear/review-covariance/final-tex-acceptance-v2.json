@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-11-05T10:47:17.472411+00:00",
+  "verdict": "ACCEPT final v2 TeX: exact two-inline-formula-to-display reflow only; no mathematical change",
+  "review_method": "Exact whole-file substitution check plus manual unified-diff inspection against the previously accepted details source.",
+  "review_scope": "High-window/coefficient/factor-Cauchy/actual covariance acceptance extends from v1. Perron tail byte-identical; its semantic review remains with the separately assigned reviewer.",
+  "change": "T_a definition and pointwise Cauchy inequality moved from inline math to display math; whitespace and sentence-period placement only.",
+  "exact_substitution_only": true,
+  "perron_tail_byte_identical": true,
+  "core_byte_identical": true,
+  "paths_sha256": {
+    "outputs/checks/2026-11-05-signed-bilinear/integration-before/signed-bilinear-details-before-display.tex": "57c7fa845ae952fe5cbec91ad1b4a9227713e2f48c34e489a0d3ab718737f6f6",
+    "papers/signed-bilinear-details.tex": "c3dd1a612d6e56cd77f652d90331083a7fb2351e226d24fb1a4ca3b227d14b72",
+    "papers/signed-bilinear-core.tex": "c5a181f3f457aad2d2a2010bdf48f0319493ce238003ed9586a1a91c6ff168d7",
+    "outputs/checks/2026-11-05-signed-bilinear/review-covariance/final-tex-acceptance-v1.json": "55f78e499586da40d22b9c773087333986706ec7c8855b4dc908c0d00c0b8db2"
+  },
+  "no_arithmetic_rerun": true,
+  "inherited_arithmetic_acceptance": "ACCEPT reviewed highwindow/coefficient/factor-Cauchy/actual covariance TeX; no findings",
+  "BT_sigma_proved_or_refuted": false,
+  "new_Lean_claim": false,
+  "GRH_claim": false,
+  "not_run": [
+    "Arithmetic rerun, as requested and unnecessary for pure TeX reflow",
+    "TeX compilation/render verification (parent integration responsibility)",
+    "Lean"
+  ]
+}

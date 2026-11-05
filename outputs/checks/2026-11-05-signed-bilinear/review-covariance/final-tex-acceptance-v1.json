@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-11-05T10:44:47.457892+00:00",
+  "verdict": "ACCEPT reviewed highwindow/coefficient/factor-Cauchy/actual covariance TeX; no findings",
+  "review_scope": "Core and details high-window and covariance sections; double-Perron sections delegated to separate reviewer",
+  "paths_sha256": {
+    "papers/signed-bilinear-core.tex": "c5a181f3f457aad2d2a2010bdf48f0319493ce238003ed9586a1a91c6ff168d7",
+    "papers/signed-bilinear-details.tex": "57c7fa845ae952fe5cbec91ad1b4a9227713e2f48c34e489a0d3ab718737f6f6",
+    "planning/signed-bilinear-20261105/review-covariance/FINAL_TEX_REVIEW_ADDENDUM.md": "bcc3bf60e9d62e29a846c74f17e8859be7496c99201dcf8fc1b716aa2ff023c6",
+    "planning/signed-bilinear-20261105/review-covariance/INDEPENDENT_ADVERSARIAL_REVIEW.md": "84eab82374a6a098a79252a8ea99633072a481a617dc795449839f48db386a1c",
+    "planning/signed-bilinear-20261105/review-covariance/check_independent_covariance.py": "cc80f20089355fe58ca801335ef675ac9111f1482b6b588fedb60deac778d4d7",
+    "examples/arithmetic_cutoff/signed_covariance.py": "aa012b0f1a80aee0f32938c6fd4a8c3d535d9a2c2b43a9ae34d573be10bf11e0",
+    "outputs/checks/2026-11-05-signed-bilinear/root-covariance-v1/counterexample.json": "fa79857e378bf48a65aa010868536336a136f3c226a1f87a421902359a3fb795",
+    "outputs/checks/2026-11-05-signed-bilinear/review-covariance/independent-v1/independent-covariance.json": "103d71332c2c8e645803667100cd3586970110c9bf0b25ed92f3c64f27b9d1f0",
+    "outputs/checks/2026-11-05-signed-bilinear/review-covariance/independent-acceptance-v1.json": "72584ed1a2152288bb90e2763e6e0d6099a739649059fe614c8edfeb561ed6c7",
+    "planning/signed-bilinear-20261105/attempt/HIGH_WINDOW_BILINEAR_ATTEMPT.md": "d70b3d99fae5244f436afe3ebc3b17e86d4428ca096ef2cce2fa37fcc0a7dcd3",
+    "outputs/checks/2026-11-05-signed-bilinear/review-covariance/high-window-rerun-v1.json": "44dfbb3dafc25dab692093a86f2074bf5d4abdd0c744fb9fe3b82603e5a12536"
+  },
+  "full_complex_covariance_controls": {
+    "balanced_B7": {
+      "unnormalized_Eisenstein_pair": [
+        -432,
+        0
+      ],
+      "D": 400,
+      "full_covariance": "-27/25"
+    },
+    "outside_S_nontrivial_H89": {
+      "unnormalized_Eisenstein_pair": [
+        -552,
+        0
+      ],
+      "D": 400,
+      "full_covariance": "-69/50"
+    }
+  },
+  "source_code_author_report_unchanged": true,
+  "BT_sigma_proved_or_refuted": false,
+  "new_asymptotic_energy_result": false,
+  "new_Lean_claim": false,
+  "GRH_claim": false,
+  "not_run": [
+    "TeX compilation/render verification (parent integration responsibility)",
+    "Lean",
+    "Infinite analytic moment test"
+  ]
+}

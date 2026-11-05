@@ -18,7 +18,7 @@ The repository and both complementary Hugging Face datasets were made public
 at the owner’s request on 4 November 2026. Frozen data and credentials remain
 separate; the local preview is retained.
 
-Current edition: **233 pages,40 chapters, thirteen unique in-book laboratories**.
+Current edition: **237 pages,40 chapters, thirteen unique in-book laboratories**.
 
 New complementary datasets: **16,384 Aster material-response rows** and
 **22,951 Mora conformer/force rows**, plus separately labelled source anchors
@@ -444,7 +444,7 @@ and [independent review](planning/reviews/mobius-split/REVIEW.md) accompany the
 focused articles33/69pages and book168pages. Full GRH and the signed low-gcd
 estimate remain open; no new dependency, hardware or training was introduced.
 
-Private Parquet releases with cards, origin fields and pinned commits:
+Public Parquet releases with cards, origin fields and pinned data commits:
 
 - [Aster complementary topological response](https://huggingface.co/datasets/AmelieSchreiber/GRH-Aster-TopoResponse-20261104) — 16,384 default rows; commit `2b8ce36571298a3517b8c88bb23269341d9b8908`.
 - [Mora complementary conformer response](https://huggingface.co/datasets/AmelieSchreiber/GRH-Mora-ConformerResponse-20261104) — 22,951 default rows; commit `53a6b66acaa69ef79584648f3f6dc068363c4837`.
@@ -459,7 +459,7 @@ These additional lab fixtures are distinct from the frozen HF default corpora.
 
 ## Current remote build and portfolio (5 November 2026)
 
-The focused articles are49/129pages; the paired technical notes are8/20pages.
+The focused articles are51/133pages; the paired technical notes are9/24pages.
 [Book and mobile QA](planning/book-integration-20261104/MOBILE_QA.md) and
 [article build/reproduction](planning/article-integration-20261104/HANDOFF.md)
 record exact source preservation, renderer boundaries and remaining warnings.
@@ -473,3 +473,10 @@ and71 public-browser checks; the hub passes16 browser checks. Existing ToricGT,
 GRH and private HolonForge pages were untouched by that portfolio release.
 All edits/builds/tests ran on Linux; only the existing Mac gh login was used
 for authorized publication, without transferring credentials.
+
+The [new signed-covariance test](research/signed-cutoff-covariance.md) gives
+an exact original-family example with covariance -27/25, despite positive
+coefficient overlap. Independent finite-field arithmetic reproduces it.
+High-cutoff coefficients stay odd/nonzero; a double-Perron derivation retains
+the reciprocal-L pole problem. These rule out specific shortcuts while the
+required uniform estimate and GRH remain open. [Read chapter40](https://amelie-iska.github.io/GRH-research/book/main.html#sb:core).

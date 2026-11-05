@@ -1,0 +1,191 @@
+\section{Proof details for the high-window and two-cutoff tests}\label{sb:details}
+\subsection{The coefficient lower bound and its precise limitation}
+The element lattice $\mathbb Z[\omega]\subset\mathbb C$ has covolume
+$\sqrt3/2$. Counting disks with boundary error $O(\sqrt x)$ and dividing
+by the six units, using that this ring is a PID, gives
+\[
+ N_K(x)=\kappa x+O(\sqrt x),\qquad \kappa=\frac{\pi}{3\sqrt3}.
+\]
+Finite inclusion-exclusion at $S$ gives
+$N_{K,S}(y)=\kappa y\prod_{p\in S}(1-(Np)^{-1})+O_S(\sqrt y)$.
+Insert $1_{\rm sf}(m)=\sum_{d^2\mid m}\mu(d)$. Absolute convergence at
+$2$, the tail $\sum_{Nd>\sqrt x}(Nd)^{-2}=O(x^{-1/2})$, and
+$\sum_{Nd\le\sqrt x}(Nd)^{-1}=O(\log(2x))$ yield
+\[
+ N_{{\rm sf},S}(x)=c_Sx+O_S(\sqrt x\log(2x)),\qquad
+ c_S=\frac{\kappa}{\zeta_K(2)}\prod_{p\in S}(1+(Np)^{-1})^{-1}>0.
+\]
+These tail estimates follow by partial summation from the displayed lattice
+count. For a fixed nonzero $W$, choose $[a,b]\subset(1,2)$ with
+$|W|\ge\eta>0$. Proposition~\ref{sb:window} gives, for large $D$,
+\[
+ D^{-1}\sum|A_U(m)W(Nm/D)|^2\ge\tfrac12\eta^2c_S(b-a).
+\]
+There is no uniform lower constant over all profiles with one specified
+supremum norm. Nor can a coefficient lower bound be combined with an
+operator upper bound to produce a row-energy lower bound: no lower singular
+value has been established on the actual vector.
+
+\subsection{What legal factor Cauchy actually proves}
+For dyadic $Na\asymp A,Nb\asymp B$, retain the exact $(a,b)=1$ mask,
+hyperbolic support and $W(Na\,Nb/D)$ in
+\[
+ T_a(u)=\sum_b\mu(b)\nu(b)W(Na\,Nb/D)x_b(u).
+\]
+Cauchy gives
+\[
+ |\sum_a\mu(a)\nu(a)x_a(u)T_a(u)|^2\ll A\sum_a|T_a(u)|^2.
+\]
+For fixed $a$, fixed second row factor and fixed unit/ray classes, the
+$b$ coefficients are independent of the pivot row and have squared norm
+$\ll B\|W\|_\infty^2$. The prior classical power-one/two BGL input has
+$\Delta(X,B)=X+B+(XB)^{2/3}$. Summing the $O(A)$ fixed columns and
+$O(X)$ other row factors gives
+\[
+ \mathcal E_{A,B}\ll_{\nu,S,\epsilon}(DX)^\epsilon\|W\|_\infty^2
+ \frac{A^2B}{D}X\Delta(X,B)
+ \ll (DX)^\epsilon\|W\|_\infty^2
+ \{AX^2+DX+D^{2/3}A^{1/3}X^{5/3}\}.
+\]
+In the high window $A,B\asymp\sqrt D$, and only boundedly many dyadic
+pairs occur. This proves~\eqref{sb:factor-bound}; exchanging factors
+or row pivots leaves its $DX$ term. A product of marginal second-moment
+bounds supplies no estimate for the two transforms on the same $(r,s)$.
+Any useful saving must control that coupled fourth moment or the signed
+actual-coefficient covariance, with all masks retained.
+
+\subsection{A smooth profile and the exact covariance computation}
+Let
+\[
+ \phi(t)=\begin{cases}\exp(1-1/(1-t^2)),&|t|<1,\\0,&|t|\ge1,\end{cases}
+ \qquad W_x(y)=x\phi(4(400y-439))+\phi(4(400y-475)).
+\]
+For $x\ge0$ this is nonnegative and smooth; its disjoint supports lie
+strictly inside $(1,2)$. For every integer $n$, $W_x(n/400)$ equals
+$x$ at $n=439$, $1$ at $n=475$ and zero otherwise. Thus the computation
+uses exact values of a genuine common $C_c^\infty$ profile, rather than
+claiming a finite rational weight is smooth. At $x=10$, $\|W_x\|_\infty=10$.
+
+The primary ideal generators, in the order used above, are
+\[
+ (-23,-18),\quad(-5,18),\quad(10,-15),\quad(25,15),
+\]
+where $(a,b)$ denotes $a+b\omega$. The first two have norm $439$.
+The last two factor as $(-2,3)(-5,0)$ and $(-5,-3)(-5,0)$, with norms
+$19\cdot25$. Since $19,25>17$, the long-factor count is $2$ there and
+zero on the prime columns. All squarefree ideals at both selected norms
+are included. The complete $B_7$ uses the four good primes of norms
+$7,7,13,13$ for distinct ordered row factors and all six units. It has
+$72$ distinct rows, maximum norm $2197$; each is nonprincipal by its
+outside-$S$ Kummer valuation $1$ or $2$ modulo $6$, whose nontrivial
+tame character has conductor exponent $1$.
+
+For the raw Gram $G_{ij}=\sum_{u\in B_7}x_{m_i}(u)
+\overline{x_{m_j}(u)}$, exact finite-field exponentiation and lattice
+enumeration give the displayed real matrix. The weighted real vectors are
+$\ell=(0,0,2,2)$, $v=(-x,-x,1,1)$, and $a=(x,x,1,1)$.
+Therefore
+\[
+ Q(C_U,\mu)=D^{-1}\ell^t(\Re G)v=\frac{36-9x}{50}.
+\]
+Its diagonal contribution is $36/50>0$ and its off-diagonal contribution
+is $-9x/50$. For $x=10$ this is $-27/25$ and gives
+\eqref{sb:covariance-example}. The identity
+$(\Re G-72I)^2=18^2I$ proves the real eigenvalues $54,90$;
+these are not being asserted as the eigenvalues of the full complex Gram.
+The exact source is \path{examples/arithmetic_cutoff/signed_covariance.py}.
+A second test retains raw zeros on the $246$ rows $0<Nu\le89$ whose
+outside-$S$ part is nonunit. Its covariance at $x=10$ is $-69/50$.
+This subset is guaranteed nonprincipal; it is not called the entire
+nonprincipal family. Here $89=\lfloor400^{3/4}\rfloor$.
+These are finite counterexamples to automatic covariance positivity,
+not asymptotic counterexamples to $BT_\sigma$ or GRH.
+
+\subsection{Double Perron without a divergent critical-strip series}
+For $T_0=S\cup\operatorname{supp}(u)$ retain
+$F_0(s)=L^{T_0}(s,\psi)/L^{T_0}(2s,\psi_2)$, with the independently
+primitive square character. Set $t_p=q_p/(1+q_p)$ outside $T_0$.
+The finite actual cutoff is
+\[
+ J_U(s,u)=F_0(s)B_U(s),\qquad
+ B_U(s)=\sum_{\substack{a,b\ {\rm sf},\ (a,b)=1\\
+                  (ab,T_0)=1,\ Na,Nb\le U}}
+ \mu(a)\mu(b)\prod_{p\mid ab}t_p.
+\]
+For $\sigma=\Re s>1/2$, the series
+\[
+ \mathcal G(s,z,w)=\sum_{\substack{a,b\ {\rm sf},\ (a,b)=1\\(ab,T_0)=1}}
+ \mu(a)\mu(b)\prod_{p\mid ab}t_p\,(Na)^{-z}(Nb)^{-w}
+ =\prod_{p\notin T_0}(1-t_p(Np)^{-z}-t_p(Np)^{-w})
+\]
+converges absolutely on $\sigma+\Re z>1$, $\sigma+\Re w>1$, uniformly
+in all vertical parts at fixed positive margins. This follows from
+$|t_p|\le(Np)^{-\sigma}/(1-(Np)^{-\sigma})$. There
+$\mathcal F=F_0\mathcal G$, without evaluating an infinite $c$ series
+in the critical strip. Initial absolute convergence also proves
+\eqref{sb:perron-factor} by the local identity
+\[
+ (1-q)(1+q-q\alpha-q\beta)
+ =(1-q\alpha)(1-q\beta)-q^2(1-\alpha)(1-\beta).
+\]
+The correction product is holomorphic on
+\[
+ \sigma+\Re z>0,\quad\sigma+\Re w>0,\quad
+ 2\sigma+\min(\Re z,0)+\min(\Re w,0)>1.
+\]
+On margins $\sigma+\Re z,\sigma+\Re w\ge\eta>0$ and last exponent
+$\ge1+\epsilon$, its local deviation from $1$ is at most
+$4(1-2^{-\eta})^{-2}(Np)^{-1-\epsilon}$. This proves normal convergence
+and a phase/deletion-uniform vertical upper bound. Nonvanishing of the
+correction is not asserted.
+
+For $1/2<\sigma<1$, positive lines $c,d>1-\sigma$, and
+$V=\lfloor U\rfloor+1/2$, define
+\[
+ \mathcal I_{T_1,T_2}=\frac1{(2\pi i)^2}
+ \int_{c-iT_1}^{c+iT_1}\int_{d-iT_2}^{d+iT_2}
+ \mathcal F(s,z,w)\frac{V^{z+w}}{zw}\,dw\,dz.
+\]
+The half-integer $V$ includes the actual equality cutoff, since
+$Na\le U$ is exactly $Na<V$. Put
+$\Delta_V=\inf_{n\in\mathbb Z_{\ge1}}|\log(V/n)|\ge1/(2V+1)$, and let
+$\mathcal A=\sum_{a,b}|\mu(a)\mu(b)\prod_{p\mid ab}t_p|
+(Na)^{-c}(Nb)^{-d}$ with the same disjoint support.
+For $c,T>0$ and $v>0$, $v\ne1$, define
+\[
+ K_{c,T}(v)=\frac1{2\pi i}\int_{c-iT}^{c+iT}\frac{v^z}{z}\,dz.
+\]
+Finite-height termwise integration of the absolutely convergent
+$\mathcal G$ and the one-variable tail estimate
+$|K_{c,T}(v)-1_{v>1}|\le2v^c/(\pi T|\log v|)$ give
+\begin{equation}
+ |\mathcal I_{T_1,T_2}-J_U|
+ \le |F_0|\mathcal A V^{c+d}
+ \left\{\frac2{\pi T_1\Delta_V}+\frac2{\pi T_2\Delta_V}
+       +\frac4{\pi^2T_1T_2\Delta_V^2}\right\}.      \label{sb:perron-error}
+\end{equation}
+Thus $\mathcal I_{T_1,T_2}\to J_U$ as both heights tend independently to
+infinity, away from the original principal pole. This is an oscillatory
+limit, not an absolutely integrable infinite vertical integral.
+
+Taking $T_1=T_2=V^2$ gives the safe upper bound
+$|J_U|\ll (Nu)^\eta |L(s,\psi)|V^{c+d}\log^2(2V)$, with constants
+retaining fixed margins, $\nu,S$, and $\sigma$. Choosing $c,d$ close to
+$1-\sigma$ reproduces $U^{2-2\sigma+\eta}$ in amplitude and
+$U^{2-4\delta+\eta}$ in energy on $\sigma=1/2+\delta$.
+Insertion into the original common-profile Mellin argument retains
+$M_4(W)^2$ and all previously required height/conductor uniformities.
+No derivative-free improvement follows from this Perron estimate.
+
+The correction converges even on some negative auxiliary lines, but
+moving there can cross $z=\rho-s$ or $w=\rho-s$, from zeros of the
+primitive $L$-function. The exact meromorphic slice
+$\mathcal F(s,z,0)=1/L^{T_0}(s+z,\psi)$ forbids assuming universal
+cancellation of these poles. At a numerator zero the slice must be
+understood meromorphically, not by an unjustified pointwise substitution.
+Sequential shifts have single boundary integrals and crossed-zero
+residues as well as the kernel double residue; away from $s$ zeros or
+poles that double residue is $1/L^{T_0}(s,\psi)$.
+A principal $L$ pole supplies a reciprocal zero, not a reciprocal pole.
+Uniform control of actual reciprocal integrals/residues or the signed
+covariance remains a new input. Numerator AFM alone supplies neither.

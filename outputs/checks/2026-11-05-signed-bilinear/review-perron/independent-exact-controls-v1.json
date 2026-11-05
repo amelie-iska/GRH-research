@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "author_code_imported": false,
+  "dependencies": "Python standard library only",
+  "exact_arithmetic": "Fractions in Q(omega); independent quotient and residue-symbol evaluation",
+  "deterministic": true,
+  "seed": "none; exhaustive finite enumerations",
+  "prime_ideal_generators": [
+    [
+      "3",
+      "1"
+    ],
+    [
+      "2",
+      "-1"
+    ],
+    [
+      "4",
+      "1"
+    ],
+    [
+      "3",
+      "-1"
+    ],
+    [
+      "5",
+      "0"
+    ]
+  ],
+  "prime_norms": [
+    7,
+    7,
+    13,
+    13,
+    25
+  ],
+  "rows": 8,
+  "counts": {
+    "local_factorizations": 960,
+    "finite_G_and_triple_series": 192,
+    "sharp_asymmetric_endpoints": 800,
+    "raw_mask_terms": 384,
+    "coordinate_slices": 96,
+    "omitted_R_witnesses": 96,
+    "overlap_witnesses": 128,
+    "uncorrected_endpoint_witnesses": 756,
+    "halfinteger_endpoint_comparisons": 25600,
+    "all_sixth_power_phases": 33,
+    "third_power_phase_orders": 33
+  },
+  "primitive_conductor_drop_controls": {
+    "cubic_ratio": "48/49",
+    "cubic_correction": "49/48",
+    "sixth_ratio": "8/7",
+    "sixth_correction": "7/8"
+  },
+  "scope": "Finite algebra/mask/endpoints and exponent bookkeeping only; analytic proof audited in separate prose",
+  "new_analytic_saving": false,
+  "BT_sigma": false,
+  "new_Lean": false,
+  "GRH": false,
+  "source_sha256": {
+    "planning/signed-bilinear-20261105/perron/DOUBLE_PERRON.md": "e8549e3c576defc7a96b703240a9e51ad9daf6cc1e3ce8077ec37effbbce4e97",
+    "planning/signed-bilinear-20261105/perron/check_double_perron_exact.py": "02c8e728077d01d165f19671fd9bd03d731e43d0d9f101b41344134deaac6aa7",
+    "planning/signed-bilinear-20261105/perron/HANDOFF.md": "e77dfd1b64b7e603c802b51cbcfc17b042e9cb7f3aa8d15c654bc6f477cca707",
+    "planning/signed-bilinear-20261105/perron/manifest-v1.json": "0b00ada326ba21c69dc364765fce2f6249affa7bb5318f028bb89bf210e3d6eb",
+    "outputs/checks/2026-11-05-signed-bilinear/perron/exact-controls-v1.json": "425cedd120e8736a149d7512ff07f25c3f3fd11c9fe3c2cf9f404de04b33ccc9",
+    "papers/masked-moment-core.tex": "63a6ee49d2dcee3b87977541f90995fa5a9c2d3ad584328ebed5059223cea0ff",
+    "papers/masked-moment-details.tex": "cb5c0f58189a2c5f5b47658902b10026556603281799b94313617bc89804a76c",
+    "papers/weighted-cutoff-core.tex": "e358e0a3686caaa1f3d676f360a99b9969ef2d66ed666163e9f8057c58d3f1f2",
+    "papers/weighted-cutoff-details.tex": "4f85502fdd6ffe71ef5be7cee274d7273a3919ff1410e6c3ac6ea96511e5674b",
+    "research/weighted-cutoff-moment.md": "097a6cda1fd324b8f2622600d05e1038c04dbdf85ccfba2efcd8afc6ce8c1a7e",
+    "planning/signed-bilinear-20261105/review-perron/check_independent_perron.py": "c71b5dc1f2351516764999b91cc9d158f9cf1b7f0f9bca72464d858ea90b83e1"
+  }
+}

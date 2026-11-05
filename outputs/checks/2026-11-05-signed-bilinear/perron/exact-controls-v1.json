@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "deterministic": true,
+  "arithmetic": "Fraction and exact Eisenstein pairs; no seed",
+  "prime_ideals": [
+    {
+      "generator": [
+        -2,
+        -3
+      ],
+      "norm": 7
+    },
+    {
+      "generator": [
+        1,
+        3
+      ],
+      "norm": 7
+    },
+    {
+      "generator": [
+        1,
+        -3
+      ],
+      "norm": 13
+    },
+    {
+      "generator": [
+        4,
+        3
+      ],
+      "norm": 13
+    },
+    {
+      "generator": [
+        -5,
+        0
+      ],
+      "norm": 25
+    }
+  ],
+  "finite_support": 32,
+  "literal_rows": 8,
+  "fixed_nu_diagnostics": [
+    "principal",
+    "raw sextic twist of 2"
+  ],
+  "counts": {
+    "local_identity": 800,
+    "global_Euler_identity": 160,
+    "G_absolute_series_algebra": 160,
+    "coordinate_slice_identity": 96,
+    "weighted_cutoff_coefficient_identity": 192,
+    "original_zero_checks": 384,
+    "omitted_R_negative_controls": 64,
+    "overlap_square_negative_controls": 160,
+    "halfweight_endpoint_negative_controls": 136,
+    "halfinteger_exact_endpoint": 6144
+  },
+  "equal_norm_endpoint_control": true,
+  "sixth_power_sentinel_control": true,
+  "rational_domain_controls": [
+    {
+      "sigma": "3/5",
+      "x": "41/100",
+      "y": "41/100",
+      "correction_region": true,
+      "absolute_reciprocal_region": true
+    },
+    {
+      "sigma": "3/5",
+      "x": "-1/25",
+      "y": "-1/25",
+      "correction_region": true,
+      "absolute_reciprocal_region": false
+    },
+    {
+      "sigma": "3/5",
+      "x": "-1/5",
+      "y": "-1/5",
+      "correction_region": false,
+      "absolute_reciprocal_region": false
+    },
+    {
+      "sigma": "2",
+      "x": "-5/2",
+      "y": "1",
+      "correction_region": false,
+      "absolute_reciprocal_region": false
+    }
+  ],
+  "source_sha256": {
+    "planning/signed-bilinear-20261105/perron/check_double_perron_exact.py": "02c8e728077d01d165f19671fd9bd03d731e43d0d9f101b41344134deaac6aa7",
+    "scripts/check_mobius_split.py": "a3f1d3d89acafc187d6ca6851f370712b2544c92802b4d95dc5187e18a770638",
+    "scripts/check_reciprocity_period.py": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925",
+    "planning/signed-bilinear-20261105/perron/DOUBLE_PERRON.md": "e8549e3c576defc7a96b703240a9e51ad9daf6cc1e3ce8077ec37effbbce4e97",
+    "papers/masked-moment-core.tex": "63a6ee49d2dcee3b87977541f90995fa5a9c2d3ad584328ebed5059223cea0ff",
+    "papers/masked-moment-details.tex": "cb5c0f58189a2c5f5b47658902b10026556603281799b94313617bc89804a76c",
+    "papers/weighted-cutoff-core.tex": "e358e0a3686caaa1f3d676f360a99b9969ef2d66ed666163e9f8057c58d3f1f2",
+    "papers/weighted-cutoff-details.tex": "4f85502fdd6ffe71ef5be7cee274d7273a3919ff1410e6c3ac6ea96511e5674b",
+    "outputs/checks/2026-11-05-weighted-moment/review/independent-acceptance-v2.json": "6a8a8809324e478fb6345b0a90ab90d5562890cf9cfbb9dc72829ea3b5f93bcc"
+  },
+  "no_new_analytic_saving": true,
+  "no_new_Lean": true,
+  "no_GRH_claim": true,
+  "scope": "Finite original-mask Euler/cutoff algebra and negative controls only; not analytic convergence, contour shifting, reciprocal bounds or zero location."
+}

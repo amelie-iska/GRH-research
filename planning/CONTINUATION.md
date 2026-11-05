@@ -1078,3 +1078,57 @@ distinct from tame conductor exponent1; this wording correction is documented.
 Source/review: planning/weighted-moment-20261105/{frontier,review}.
 Both gates remain false. Do not repeat centering or mask exclusion as a new
 analytic solution; attack the signed covariance with all required uniformities.
+
+
+## Signed covariance and two-cutoff frontier (5 November 2026)
+
+New shared proofs are papers/signed-bilinear-{core,details}.tex in chapter40,
+with executable examples/arithmetic_cutoff/signed_covariance.py and
+research/signed-cutoff-covariance.md. In the window2D/7<=U²<=D, every actual
+active coefficient is mu(m)(r_U(m)-1), where r_U is an even ordered-factor
+count. Thus it is odd/nonzero. Elementary lattice/squarefree counting gives
+an explicit positive lower constant for its normalized coefficient norm,
+for each fixed nonzero smooth profile. This is not a row-energy lower bound.
+
+A finite example in the ORIGINAL sextic family, with D=400,U=17,nu=1,
+all72literal B7 rows and the complete four columns of norms439/475, has
+Q(C,mu)=-27/25 despite nonnegative pointwise coefficient overlap and a
+positive-definite real Gram. A genuine common nonnegative smooth profile
+has exact integer-norm values10/1. A second guaranteed nonprincipal246-row
+subset atH89 preserves raw zeros and gives-69/50; it is not the full
+nonprincipal family. Independent direct F439/F19/F25 exponentiation
+reproduced1272raw characters, full complex Gram matrices and all12amplitude
+cases. These are exact finite sign counterexamples, not asymptotic BT_sigma
+or GRH counterexamples. No lower bound for arithmetic row energy is inferred.
+
+The high-window bilinear attempt retainsDX after legal factor Cauchy/BGL;
+the older regrouped estimate is stronger. The exact two-variable Perron
+factorization, normal correction domain, half-integer sharp cutoff and
+finite-height error are proved. Safe reciprocal-L contours reproduce the
+oldU^(2-4delta)energy cost, with M4(W)^2 and fixed margins retained. Moving
+the contours requires actual reciprocal/zero-residue control; numerator
+moments do not justify dropping those terms. The coordinate slice is a
+meromorphic identity, including the stated numerator-zero caveat.
+
+Independent proof and final-byte TeX acceptance is under
+planning/signed-bilinear-20261105/{review-covariance,review-perron}; exact
+reports are outputs/checks/2026-11-05-signed-bilinear/. The new book is
+237pages/40chapters/6412nativeMathML, with13unique laboratories. Focused
+articles51/133pages and paired notes9/24pages are synchronized. Three-pass
+builds, source audits, XML/numbered-reference checks and320/390/768/1440px
+browser checks pass. Paragraph headings now match the unnumbered PDF style.
+Old source volumes, diagrams, data and environments are preserved. Earlier
+overfull/undefined-proposition staging failures are retained; valid outputs
+alone are promoted. Inherited amsmath/underfull and3old munder warnings stay
+explicit. No new dependency, training/GPU job, Lean declaration or GRH proof.
+
+Next: prove a QUANTITATIVE lower covariance budget or coupled arithmetic
+fourth moment that permits the observed negative covariance, uniformly in
+the original masks, conductors, cutoffs and common profile; cover neighboring
+near-saturating blocks. Alternatively control the actual two-variable
+reciprocal integrals and all crossed residues. Do not retry automatic
+covariance positivity, coefficient shrinkage, marginal independence or a
+pole-free contour shift as if these missing inputs had been established.
+The best global envelope here still losesD^(1/2) atH=D^(3/4); short/principal
+assembly, analytic/category Lean and the positive determinant bridge remain
+open. Both completion gates remainfalse; the existing heartbeat stays active.

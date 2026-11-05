@@ -1,0 +1,380 @@
+{
+  "passed": true,
+  "implementation": "Independent stdlib ring/factor enumeration and direct F439/F19/F25 exponentiation; imports no author helper.",
+  "active_norms": [
+    439,
+    475
+  ],
+  "profile_support_closures": [
+    [
+      "351/320",
+      "1757/1600"
+    ],
+    [
+      "1899/1600",
+      "1901/1600"
+    ]
+  ],
+  "supnorm_at_x10": 10,
+  "normalized_coefficient_l2": "101/200",
+  "columns": [
+    [
+      -23,
+      -18
+    ],
+    [
+      -5,
+      18
+    ],
+    [
+      10,
+      -15
+    ],
+    [
+      25,
+      15
+    ]
+  ],
+  "rows": {
+    "balanced_B7": {
+      "rows": 72,
+      "max_row_norm": 2197,
+      "zero_entries": 0,
+      "phase_values_checked": 288,
+      "conjugation_controls": 288,
+      "Gram_Eisenstein": [
+        [
+          [
+            72,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            12,
+            24
+          ],
+          [
+            18,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            72,
+            0
+          ],
+          [
+            18,
+            0
+          ],
+          [
+            -12,
+            -24
+          ]
+        ],
+        [
+          [
+            -12,
+            -24
+          ],
+          [
+            18,
+            0
+          ],
+          [
+            72,
+            0
+          ],
+          [
+            -24,
+            -48
+          ]
+        ],
+        [
+          [
+            18,
+            0
+          ],
+          [
+            12,
+            24
+          ],
+          [
+            24,
+            48
+          ],
+          [
+            72,
+            0
+          ]
+        ]
+      ],
+      "Gram_real": [
+        [
+          "72",
+          "0",
+          "0",
+          "18"
+        ],
+        [
+          "0",
+          "72",
+          "18",
+          "0"
+        ],
+        [
+          "0",
+          "18",
+          "72",
+          "0"
+        ],
+        [
+          "18",
+          "0",
+          "0",
+          "72"
+        ]
+      ],
+      "observations": [
+        {
+          "profile_amplitude": 0,
+          "energy_A": "9/25",
+          "energy_C": "36/25",
+          "energy_M": "9/25",
+          "real_covariance": "18/25",
+          "diagonal_covariance": "18/25",
+          "off_diagonal_covariance": "0"
+        },
+        {
+          "profile_amplitude": 1,
+          "energy_A": "9/10",
+          "energy_C": "36/25",
+          "energy_M": "27/50",
+          "real_covariance": "27/50",
+          "diagonal_covariance": "18/25",
+          "off_diagonal_covariance": "-9/50"
+        },
+        {
+          "profile_amplitude": 4,
+          "energy_A": "171/25",
+          "energy_C": "36/25",
+          "energy_M": "27/5",
+          "real_covariance": "0",
+          "diagonal_covariance": "18/25",
+          "off_diagonal_covariance": "-18/25"
+        },
+        {
+          "profile_amplitude": 5,
+          "energy_A": "513/50",
+          "energy_C": "36/25",
+          "energy_M": "423/50",
+          "real_covariance": "-9/50",
+          "diagonal_covariance": "18/25",
+          "off_diagonal_covariance": "-9/10"
+        },
+        {
+          "profile_amplitude": 7,
+          "energy_A": "963/50",
+          "energy_C": "36/25",
+          "energy_M": "837/50",
+          "real_covariance": "-27/50",
+          "diagonal_covariance": "18/25",
+          "off_diagonal_covariance": "-63/50"
+        },
+        {
+          "profile_amplitude": 10,
+          "energy_A": "954/25",
+          "energy_C": "36/25",
+          "energy_M": "864/25",
+          "real_covariance": "-27/25",
+          "diagonal_covariance": "18/25",
+          "off_diagonal_covariance": "-9/5"
+        }
+      ],
+      "local_exponents": {
+        "1": 72,
+        "2": 72
+      }
+    },
+    "outside_S_nontrivial_H89": {
+      "rows": 246,
+      "max_row_norm": 84,
+      "zero_entries": 60,
+      "phase_values_checked": 984,
+      "conjugation_controls": 984,
+      "Gram_Eisenstein": [
+        [
+          [
+            246,
+            0
+          ],
+          [
+            90,
+            36
+          ],
+          [
+            42,
+            18
+          ],
+          [
+            -18,
+            -42
+          ]
+        ],
+        [
+          [
+            54,
+            -36
+          ],
+          [
+            246,
+            0
+          ],
+          [
+            24,
+            42
+          ],
+          [
+            24,
+            -18
+          ]
+        ],
+        [
+          [
+            24,
+            -18
+          ],
+          [
+            -18,
+            -42
+          ],
+          [
+            216,
+            0
+          ],
+          [
+            18,
+            24
+          ]
+        ],
+        [
+          [
+            24,
+            42
+          ],
+          [
+            42,
+            18
+          ],
+          [
+            -6,
+            -24
+          ],
+          [
+            216,
+            0
+          ]
+        ]
+      ],
+      "Gram_real": [
+        [
+          "246",
+          "72",
+          "33",
+          "3"
+        ],
+        [
+          "72",
+          "246",
+          "3",
+          "33"
+        ],
+        [
+          "33",
+          "3",
+          "216",
+          "6"
+        ],
+        [
+          "3",
+          "33",
+          "6",
+          "216"
+        ]
+      ],
+      "observations": [
+        {
+          "profile_amplitude": 0,
+          "energy_A": "111/100",
+          "energy_C": "111/25",
+          "energy_M": "111/100",
+          "real_covariance": "111/50",
+          "diagonal_covariance": "54/25",
+          "off_diagonal_covariance": "3/50"
+        },
+        {
+          "profile_amplitude": 1,
+          "energy_A": "153/50",
+          "energy_C": "111/25",
+          "energy_M": "117/50",
+          "real_covariance": "93/50",
+          "diagonal_covariance": "54/25",
+          "off_diagonal_covariance": "-3/10"
+        },
+        {
+          "profile_amplitude": 4,
+          "energy_A": "2799/100",
+          "energy_C": "111/25",
+          "energy_M": "2511/100",
+          "real_covariance": "39/50",
+          "diagonal_covariance": "54/25",
+          "off_diagonal_covariance": "-69/50"
+        },
+        {
+          "profile_amplitude": 5,
+          "energy_A": "2133/50",
+          "energy_C": "111/25",
+          "energy_M": "1953/50",
+          "real_covariance": "21/50",
+          "diagonal_covariance": "54/25",
+          "off_diagonal_covariance": "-87/50"
+        },
+        {
+          "profile_amplitude": 7,
+          "energy_A": "4077/50",
+          "energy_C": "111/25",
+          "energy_M": "153/2",
+          "real_covariance": "-3/10",
+          "diagonal_covariance": "54/25",
+          "off_diagonal_covariance": "-123/50"
+        },
+        {
+          "profile_amplitude": 10,
+          "energy_A": "16371/100",
+          "energy_C": "111/25",
+          "energy_M": "15651/100",
+          "real_covariance": "-69/50",
+          "diagonal_covariance": "54/25",
+          "off_diagonal_covariance": "-177/50"
+        }
+      ],
+      "local_exponents": {
+        "1": 240,
+        "2": 12
+      }
+    }
+  },
+  "source_sha256": {
+    "planning/signed-bilinear-20261105/review-covariance/check_independent_covariance.py": "cc80f20089355fe58ca801335ef675ac9111f1482b6b588fedb60deac778d4d7",
+    "examples/arithmetic_cutoff/signed_covariance.py": "aa012b0f1a80aee0f32938c6fd4a8c3d535d9a2c2b43a9ae34d573be10bf11e0",
+    "outputs/checks/2026-11-05-signed-bilinear/root-covariance-v1/counterexample.json": "fa79857e378bf48a65aa010868536336a136f3c226a1f87a421902359a3fb795"
+  },
+  "scope": "Automatic nonnegative signed covariance fails for the actual smooth original-family finite case. No BT_sigma refutation, asymptotic energy conclusion, new analytic saving, Lean result or GRH claim."
+}
