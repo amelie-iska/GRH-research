@@ -1,0 +1,406 @@
+% Generated shared reviewed material.
+% Full exact masks, smooth/rough proof and elementary quantitative bounds.
+\section{Proof of the rough-prime mask budget}\label{rma:details}
+\subsection{The common ideal divisor and the exact rough part}
+Here~\eqref{sd:form} uses the complete original good squarefree
+annulus and common $W$, without an additional selected-column or
+column-ray indicator. The actual row filters are unchanged.
+The identity $\mathbf1_{(m,n)=1}=\sum_{d\mid m,\ d\mid n}\mu(d)$
+in~\eqref{sd:form} is an identity of ideal divisors. Write $m=da,n=db$.
+The residual ideals $a,b$ are squarefree but may overlap; squarefreeness
+of the original columns requires $(d,ab)=1$. On $(d,u)=1$ the original
+common phases satisfy
+\[
+ |\nu(d)|^2\chi_d(u)\overline{\chi_d(u)}=1.
+\]
+On $(d,u)>1$ the product is the original raw zero. Hence the full deleted
+set is $\mathcal T=S\cup\operatorname{supp}(abu)$, including residual
+primes where $\chi_a\overline{\chi_b}$ might become imprimitive.
+With
+\[
+ F_{a,b}(x)=W(xNa/D)\overline{W(xNb/D)},\qquad
+ M=\max(Na,Nb),\quad\alpha=\min(Na,Nb),
+\]
+the inner signed sum is
+\begin{equation}\label{rma:inner}
+ \sum_{\substack{d\ \mathrm{SF}\\(d,\mathcal T)=1}}
+             \mu(d)A_U(da)A_U(db)F_{a,b}(Nd).
+\end{equation}
+If its profile is nonzero, then
+\begin{equation}\label{rma:support}
+ D/\alpha<Nd<2D/M.
+\end{equation}
+All endpoints have zero profile value. In particular the profile is
+identically zero if $\alpha\le M/2$. No independent marginal row family
+or changed profile has been substituted.
+
+Factor $d=fe$ uniquely, with $f$ squarefree $U$-smooth and $e$ squarefree
+with every prime norm greater than $U$. Whenever $ez$ is squarefree,
+\begin{equation}\label{rma:invariance}
+ A_U(ez)=A_U(z).
+\end{equation}
+Indeed neither short divisor in~\eqref{rma:AU} can contain a prime of
+$e$; deleting $e$ preserves the two cutoffs and both M\"obius signs in
+a bijection of the original assignments. There is no factor $\mu(e)$
+in~\eqref{rma:invariance}. This invariance is specific to $A_U$; it does
+not hold unchanged for the other coefficient channels. The values
+$A_U(fa),A_U(fb)$ are not factorized.
+
+If $M>1$, goodness gives $M\ge7$. From~\eqref{rma:window} and
+\eqref{rma:support}, $Nd\le2D/M\le U^2$. Thus $e$ is either $1$ or
+one prime ideal, and~\eqref{rma:inner} is exactly
+\begin{equation}\label{rma:rough-inner}
+ \sum_{\substack{f\ \mathrm{good\ SF},\ U\text{-smooth}\\
+                  (f,\mathcal T)=1}}
+ \mu(f)A_U(fa)A_U(fb)
+ \left(F_{a,b}(Nf)-
+       \sum_{\substack{p\notin\mathcal T\\Np>U}}
+                       F_{a,b}(NfNp)\right).
+\end{equation}
+The rough part here belongs to the \emph{common divisor} $d$; the full
+columns can have additional rough primes in $a$ or $b$.
+
+If $M=1$, then $a=b=1$. Three rough prime ideals would have norm product
+strictly greater than $7U^2\ge2D$: two contribute more than $U^2$, and
+the third good prime has norm at least $7$. Two rough primes are
+possible, but then a nonunit $f$ would similarly give
+$Nf\,Ne>7U^2\ge2D$. Hence that case has $f=1$ only. Its sign is
+$\mu(pq)=1$ and its coefficient is $A_U(pq)=A_U(1)=1$.
+Summing this case over the unchanged literal rows gives
+\eqref{rma:Ctwo}; summing all other cases of
+\eqref{rma:rough-inner} over $a,b$ gives the completed squares in
+\eqref{rma:Kzero}--\eqref{rma:KT}. This proves~\eqref{rma:exact}.
+The unit ideal among residuals and conjugate split primes must both be
+retained. The condition $f=1$ is not a termwise assertion that the
+original pair has gcd $1$: the M\"obius expansion cancels noncoprime
+original pairs across its divisor sectors.
+
+\subsection{An exact disjoint error identity}
+We restore only $(p,abuS)=1$ to $p\notin S$. In particular the conditions
+$(f,abuS)=1$ and every raw $\chi_a(u)$ remain in the two residual sums.
+The full deleted union has the disjoint partition
+\begin{equation}\label{rma:union}
+ \mathbf1_{p\mid abu}=\mathbf1_{p\mid u}
+       +\mathbf1_{p\nmid u}\mathbf1_{p\mid a\ \mathrm{or}\ p\mid b}.
+\end{equation}
+Therefore $K_S-K_T=E_{\rm row}+E_{\rm res}$, where the errors are
+\emph{unnormalized}:
+\begin{align}
+ E_{\rm row}
+ &=\sum_u w_u\sum_{\substack{f\ \mathrm{good\ SF},\ U\text{-smooth}\\
+                            (f,u)=1}}\mu(f)
+        \sum_{\substack{p\notin S,\ Np>U\\p\mid u}}
+                  |T_f(Np;u)|^2,\label{rma:Erow}\\
+ E_{\rm res}
+ &=\sum_u w_u\sum_{\substack{f\ \mathrm{good\ SF},\ U\text{-smooth}\\
+                            (f,u)=1}}\mu(f)
+        \sum_{\substack{p\notin S,\ Np>U\\p\nmid u}}
+       \bigl(|T_f(Np;u)|^2-|T_f^{(p)}(Np;u)|^2\bigr).
+       \label{rma:Eres}
+\end{align}
+The two errors are signed; their bounds below use absolute values,
+and neither is assumed nonnegative.
+At $p\mid u$, all residuals divisible by $p$ already have raw character
+zero. This is consistent with the full square in~\eqref{rma:Erow}; it
+does not make that square zero. These formulas keep the complete
+row/residual union without double counting.
+
+Suppose a nonzero omitted residual has $p\mid a$, and write $a=pc$.
+Its profile requires $Nf\,(Np)^2Nc<2D$. If $fc$ is nonunit, then
+\[
+ Nf\,(Np)^2Nc>7U^2\ge2D,
+\]
+a contradiction. Thus necessarily $f=c=1$ and $a=p$. This is a support
+statement about the explicitly auxiliary extension; the formal column
+$fpa=p^2$ is not an original squarefree column. With $P=Np$, set
+\begin{equation}\label{rma:z}
+ z_p(u)=\nu(p)\chi_p(u)W(P^2/D),\qquad T_p(u)=T_1(P;u).
+\end{equation}
+Here $A_U(p)=1$, since $P>U$. The difference $T_f-T_f^{(p)}$ vanishes
+unless $f=1$, when it equals $z_p$. Consequently
+\begin{equation}\label{rma:res-exact}
+ E_{\rm res}=\sum_u w_u
+       \sum_{\substack{p\notin S,\ Np>U\\p\nmid u}}
+       \left(2\operatorname{Re}(T_p(u)\overline{z_p(u)})
+                         -|z_p(u)|^2\right).
+\end{equation}
+The subtraction $-|z_p|^2$ is the exact intersection
+$p\mid a$ and $p\mid b$; omitting it would count that intersection
+twice. Complex profiles and all remaining literal phases are allowed.
+If $z_p\ne0$, then
+\begin{equation}\label{rma:zsupport}
+ \sqrt D<P<\sqrt{2D}.
+\end{equation}
+The condition $P>U$ is automatic here from $U^2\le D$.
+
+\subsection{Elementary ideal and coefficient estimates}
+We give all counting inputs; no prime distribution theorem or Mertens
+estimate is needed. The Eisenstein norm is Euclidean. After rounding
+both real coordinates of a complex quotient in the basis $1,\omega$,
+the error $s+t\omega$ has $|s|,|t|\le1/2$ and norm at most $3/4<1$.
+A least-norm nonzero element of any ideal therefore generates it by
+Euclidean division. Multiplication by $a+b\omega$ has determinant
+$a^2-ab+b^2$, giving the principal ideal norm. Since
+$a^2-ab+b^2\ge(a^2+b^2)/2$, counting all possible generators, with
+harmless overcounting by units, proves for $X\ge1$ that
+\begin{equation}\label{rma:lattice}
+ \#\{a:Na\le X\}\le(2\sqrt{2X}+1)^2<16X.
+\end{equation}
+An annulus $L<Na<2L$ therefore contains at most $32L$ ideals when
+$2L>1$. If $2L\le1$ its profile contribution is zero, including the
+unit endpoint when $2L=1$. This proves the needed uniform bound even
+when $1/2<L<1$; the unit ideal must not be dropped in that range.
+
+There is an exact coefficient identity on the restricted support:
+\begin{equation}\label{rma:coefficient}
+ A_U(g)=\mu(g)\bigl(2\mathbf1_{Ng\le U}-1\bigr)
+ \quad(g\ \mathrm{good\ squarefree},\ Ng\le7U).
+\end{equation}
+Every proper divisor of a nonunit good $g$ has norm at most $Ng/7\le U$.
+If $Ng\le U$, all ternary assignments are allowed and their sum is
+$\prod_{p\mid g}(1-1-1)=\mu(g)$. If $Ng>U$, only the assignments
+$(x,y)=(g,1),(1,g)$ are omitted; each has sign $\mu(g)$, leaving
+$-\mu(g)$. The unit ideal gives $A_U(1)=1$ and is included.
+No approximation or multiplicativity of the cutoff coefficient is used.
+
+In an active term of~\eqref{rma:T}, $P=Np>U$ gives
+\[
+ N(fa)<2D/P<2D/U\le7U.
+\]
+Therefore $|A_U(fa)|=1$ exactly there. This statement concerns only the
+rough-prime support, not the entire original coefficient family.
+With $L=D/(FP)$, the ideal count and $|\chi_a(u)|\le1$ now give
+\begin{equation}\label{rma:Tbound}
+ |T_f(P;u)|\le32B\,\frac{D}{FP}.
+\end{equation}
+The same statement holds if the sum is empty, and covers $L<1$ by the
+preceding endpoint discussion. A dyadic use of~\eqref{rma:lattice} gives
+\begin{equation}\label{rma:fsum}
+ \sum_f\frac1{(Nf)^2}
+ \le\sum_{j\ge0}16\,2^{j+1}2^{-2j}=64,
+\end{equation}
+where the left side may even include all ideals. The smooth squarefree
+restriction only decreases this bound.
+
+\subsection{The normalized row-mask budget}
+Apply triangle only to~\eqref{rma:Erow}, use~\eqref{rma:Tbound},
+and then~\eqref{rma:fsum}. The raw square contributes
+$D^2/P^2$; dividing by $D$ once gives
+\begin{equation}\label{rma:row-bound}
+ \frac{|E_{\rm row}|}{D}
+ \le65536B^2
+       \sum_u w_u\sum_{\substack{p\mid u,\ p\notin S\\Np>U}}
+                                      \frac{D}{(Np)^2}.
+\end{equation}
+By~\eqref{rma:window}, $D/(Np)^2\le D/U^2\le7/2$.
+Let $\kappa_U(u)$ count the distinct good rough prime ideals dividing $u$.
+Each $P=Np$ is at least $7$ and greater than $U$, so $P^2>7U\ge2U$.
+The complete ideal norm of the literal row therefore gives
+\begin{equation}\label{rma:log}
+ \kappa_U(u)\le\frac{2\log(Nu)}{\log(2U)}
+          \le\frac{2\log(2H)}{\log(2U)}.
+\end{equation}
+The denominator is positive also at $U=1$; unit rows have $\kappa_U=0$.
+All sixth-factor divisors remain in this bound, and no rational-norm gcd
+is substituted for an ideal mask. Using $D/(Np)^2\le7/2$ in~\eqref{rma:row-bound} gives the sharper form
+\begin{equation}\label{rma:row-final}
+ \frac{|E_{\rm row}|}{D}\le229376B^2
+                              \sum_u w_u\kappa_U(u).
+\end{equation}
+The logarithmic bound~\eqref{rma:log} is available for arbitrary $H$.
+
+\subsection{The residual intersection budget}
+Use~\eqref{rma:res-exact}, $|z_p|\le B$, and
+\eqref{rma:Tbound} at $f=1$. After the single division by $D$,
+\begin{equation}\label{rma:res-bound}
+ \frac{|E_{\rm res}|}{D}
+ \le B^2R_w\sum_{\sqrt D<Np<\sqrt{2D}}
+       \left(\frac{64}{Np}+\frac1D\right).
+\end{equation}
+Here absolute values bound only the correction; the exact identity
+\eqref{rma:res-exact} retains its original phases. Since $D\ge1$ and
+$Np\le\sqrt{2D}\le2D$, one has $1/D\le2/(Np)$. Also
+\begin{equation}\label{rma:reciprocal}
+ \sum_{\sqrt D<Np<\sqrt{2D}}\frac1{Np}\le16\sqrt2
+\end{equation}
+by~\eqref{rma:lattice}. Thus
+\[
+ |E_{\rm res}|/D\le1056\sqrt2\,B^2R_w\le2048B^2R_w.
+\]
+Together with~\eqref{rma:row-final}, this proves~\eqref{rma:delta}.
+
+\subsection{The exact unit-residual correction and the clean main}
+In~\eqref{rma:Ctwo}, each contributing pair has $P,Q>U$ and $PQ\le2D$.
+Hence both prime norms are less than $2D/U$. There are at most
+$32D/U$ such prime ideals by~\eqref{rma:lattice}, so the number of
+unordered distinct pairs is at most $512D^2/U^2$. Only inside this
+\emph{nonnegative} expression enlarge the masked row count to $R_w$
+and the profile to $B^2$. Thus
+\[
+ 0\le\frac{C_2}{D}\le512\frac{D}{U^2}B^2R_w
+                         \le1792B^2R_w,
+\]
+proving~\eqref{rma:Cbound}. Conjugate primes of equal rational norm
+remain included; no rational-squarefree restriction or new diagonal
+exclusion is imposed. This is a bookkeeping bound for the exact
+correction, not an oscillatory saving or a lower bound for the full
+signed slice. Other residual sectors can cancel it.
+
+Now~\eqref{rma:exact} gives~\eqref{rma:clean} with
+$E=\Delta+C_2/D$, and the explicit bounds give~\eqref{rma:error}.
+Suppose $H\le D^{3/4}$. If two distinct good rough primes divided a row,
+then $H\ge Nu\ge(Np)(Nq)\ge49$, but also
+\[
+ H\ge Nu\ge(Np)(Nq)>U^2\ge2D/7.
+\]
+Combining with $H\le D^{3/4}$ gives $D^{1/4}<7/2$ and hence
+$H<(7/2)^3=343/8<49$, a contradiction. Thus $\kappa_U(u)\le1$
+at every scale in this capacity range. Substitution in~\eqref{rma:error}
+gives $|E|\le233216B^2R_w\le2^{18}B^2R_w$, proving
+\eqref{rma:critical-error}. This is an exact endpoint argument, not an
+asymptotic approximation.
+
+For a two-pivot block, counting each of its two dyadic ideal variables
+by~\eqref{rma:lattice} gives $R_w\ll A_1A_2$ when the original fixed unit
+classes and multiplicities are bounded. Internal coprimality and capacity
+reduce that count; grouping literal fibers preserves total multiplicity.
+Under $A_1A_2\le H\le D^{3/4}$ the correction is therefore $O(B^2H)$.
+The exact local coefficient identity and these correction bounds do not
+estimate the remaining signed main $(K_0-K_S)/D$. Its original
+$A_U(fa)$, coherent rows, common fixed profile and M\"obius mean remain
+the analytic obligation; no new global exponent follows.
+
+
+\subsection{Finite control scope}
+The tables in the shared core retain complete original squarefree ideal
+columns and raw character zeros. Their residual-prime extension is a
+separate auxiliary sum, including the non-squarefree $p^2$ terms needed
+for~\eqref{rma:res-exact}; those are not original columns. The exact
+intersection subtraction and unit residual states with $1/2<L<1$ are
+checked separately. The common profile has fixed $\delta=1/4096$ and
+large fixed derivative constants. The capacities and row blocks differ
+between cases, and the $H=384$ case is outside the critical capacity
+range. These finite equalities neither determine the analytic constants
+nor imply an asymptotic saving.
+
+\subsection{A coherent prime-substitution budget, and its remaining cost}
+This subsection requires $U\ge7$. It does not extend the prime-density
+argument to $U=1$, although the coefficient and mask lemmas above hold
+for all $U\ge1$. For real $t\ge U$, put
+\[
+ G_f(t)=\sum_{\substack{u\in\mathcal R\\(f,u)=1}}
+                      w_u|T_f(t;u)|^2,
+ \qquad M_1(W)=\max\{B,\|xW'(x)\|_\infty\}.
+\]
+The active residuals satisfy $Na\le2D/(FU)$, so their union is finite;
+$G_f$ is smooth and vanishes for $t\ge2D/F$. Since the rough prime in
+$K_S$ is unmasked, it enters only this radial common profile. Let
+\[
+ E_S(t)=\pi_K^S(t)-\operatorname{Li}(t),\qquad
+ \delta_S(U)=\sup_{t\ge U}\frac{|E_S(t)|}{t},
+ \qquad
+ \mathcal J=\sum_f\mu(f)\int_U^\infty\frac{G_f(t)}{\log t}\,dt,
+\]
+where $\pi_K^S$ counts prime \emph{ideals} outside the fixed finite $S$ with
+multiplicity, including inert prime norms and distinct conjugate ideals. Stieltjes partial
+summation gives the exact coherent identity
+\begin{equation}\label{rma:Stieltjes}
+ \begin{aligned}
+ K_S&=\mathcal J+\mathcal E_{\rm PIT},\\
+ \mathcal E_{\rm PIT}
+ &=\sum_f\mu(f)\left(-G_f(U)E_S(U)
+          -\int_U^\infty E_S(t)G_f'(t)\,dt\right).
+ \end{aligned}
+\end{equation}
+The lower term uses $\pi_K^S(U)$, so the condition $Np>U$ is exact even
+when a prime norm equals $U$. A conjugate pair contributes a jump of
+two. This equality precedes any absolute sum over $f$.
+
+Let $\lambda(L)$ be a TRUE arbitrary-coefficient squared norm bound for
+the specified positive row operator on good squarefree ideals of norm
+in $[L,2L]$, including the actual weights. For $1/2\le L<1$, set
+$\lambda_*(L)=R_w$ by the direct unit-column bound; for $L\ge1$, use
+$\lambda_*(L)=\lambda(L)$. No columns are active for $L<1/2$.
+With $L=D/(Ft)$, differentiate only the common $W$: multiplication by
+$t\,d/dt$ replaces $W(x)$ by $xW'(x)$. The exact restricted identity
+\eqref{rma:coefficient}, ideal counting and weighted row Cauchy give
+\[
+ G_f(t)+|tG_f'(t)|\ll M_1(W)^2\lambda_*(L)L.
+\]
+Any enlargement of a common $f$-row mask here occurs only inside these
+positive norm estimates. Substitution in~\eqref{rma:Stieltjes}, with
+$L_f=D/(FU)$, proves
+\begin{equation}\label{rma:PIT-variation}
+ \frac{|\mathcal E_{\rm PIT}|}{D}
+ \ll M_1(W)^2\delta_S(U)
+ \sum_{\substack{f\ \mathrm{good\ SF},\ U\text{-smooth}\\F<2D/U}}
+ \frac1F\left(\lambda_*(L_f)
+       +\int_{1/2}^{L_f}\lambda_*(L)\,\frac{dL}{L}\right).
+\end{equation}
+The original M\"obius sign remains in $K_S$ and $\mathcal J$ themselves;
+the absolute $f$ sum appears only in this error majorant.
+
+Specialize now ONLY to the established positive input for the actual $A_6=1$
+unweighted two-pivot block, or bounded natural literal weights for which
+the same input has been established. Put
+\[
+ R=A_1A_2,\qquad M_{\rm row}=\max(A_1,A_2),\qquad A_1A_2^2\le H.
+\]
+At $L\ge1$ that input is
+\begin{equation}\label{rma:positive-input}
+ \lambda(L)\ll_\epsilon(HD)^\epsilon
+ \min\left\{R+\frac{LR}{M_{\rm row}}
+       +\frac{L^{2/3}R}{M_{\rm row}^{1/3}},\ L+R^2\right\}.
+\end{equation}
+It is not asserted for arbitrary nonnegative weights, enlarged primitive
+conductor families or arbitrary sixth-factor enlargements. Using its
+first branch in~\eqref{rma:PIT-variation} gives
+\begin{align}
+ \frac{|\mathcal E_{\rm PIT}|}{D}
+ &\ll_\epsilon(HD)^\epsilon M_1(W)^2\delta_S(U)\mathcal B_{\rm op},
+                  \label{rma:PIT-budget}\\
+ \mathcal B_{\rm op}
+ &=R\log^2(2D)+\frac{D}{U}\frac{R}{M_{\rm row}}
+       +\left(\frac{D}{U}\right)^{2/3}
+                              \frac{R}{M_{\rm row}^{1/3}}.
+                  \label{rma:Bop}
+\end{align}
+The logarithmic term uses $\sum_{Nf\le X}(Nf)^{-1}\ll\log(2X)$;
+the other terms use convergent ideal sums of powers $2$ and $5/3$.
+The same positive bounds give
+$|\mathcal J|/D\ll_\epsilon(HD)^\epsilon B^2
+\mathcal B_{\rm op}/\log U$. These are inherited majorants, not a new
+signed gain or an estimate of $K_0-\mathcal J$.
+
+Capacity implies
+\[
+ \mathcal B_{\rm op}\ll H\log^2(2D)
+       +(D/U)H^{1/3}+(D/U)^{2/3}H^{2/3}.
+\]
+At $H=D^{3/4}$ and $U\asymp\sqrt D$, these terms have powers
+$3/4,3/4,5/6$. The last power occurs in this majorant already on pure
+scales $A_1\asymp H,A_2=1$ with fixed capacity slack. It is not an
+actual-error lower bound.
+
+For the fixed field, Thorner--Zaman,
+\href{https://doi.org/10.2140/ant.2019.13.1039}{\emph{Algebra \& Number Theory}
+13 (2019), 1039--1068, Theorem~1.1}, applied to the trivial extension
+$K/K$ with absolute degree $[K:\mathbb Q]=2$ and absolute discriminant $3$, supplies for sufficiently
+large $U$ a bound
+\[
+ \delta_S(U)\ll_{K,S}\exp(-c_K\sqrt{\log U}).
+\]
+The possible exceptional real zero is fixed: retain its secondary
+$\operatorname{Li}(x^\beta)$ term, or absorb it only into fixed-field
+constants and the threshold. Finite $S$ deletions are included. No
+prime theorem uniform in the growing deleted set or row conductor is
+used. The DOI, publisher URL and pinned reading-cache hashes are in the
+\href{https://github.com/amelie-iska/GRH-research/blob/main/outputs/checks/2026-11-05-rough-mask/main-attempt/PUBLIC-CITATION-v1.json}{public citation record}.
+
+A fixed-field subpower prime error does not make the available
+$D^{5/6+\epsilon}\delta_S(U)$ majorant certify the target
+$D^{3/4+\epsilon}$ for every $\epsilon>0$. Actual signed errors might
+cancel. Even an exact prime density would leave the coherent signed
+$K_0-\mathcal J$ unestimated. The elementary correction theorem uses
+only $B$, whereas the prime-substitution error requires $M_1(W)^2$.
+The complete original remainder's $7/6$ envelope remains unchanged.
