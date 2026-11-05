@@ -1,0 +1,157 @@
+{
+  "passed": true,
+  "layouts": [
+    {
+      "width": 320,
+      "scroll": 308,
+      "theme": "light",
+      "canvas": 276,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 390,
+      "scroll": 378,
+      "theme": "light",
+      "canvas": 339,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 768,
+      "scroll": 756,
+      "theme": "light",
+      "canvas": 426.20001220703125,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 1440,
+      "scroll": 1428,
+      "theme": "light",
+      "canvas": 977,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 320,
+      "scroll": 308,
+      "theme": "biomech",
+      "canvas": 276,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 390,
+      "scroll": 378,
+      "theme": "biomech",
+      "canvas": 339,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 768,
+      "scroll": 756,
+      "theme": "biomech",
+      "canvas": 426.20001220703125,
+      "filter": "none",
+      "clock": "none"
+    },
+    {
+      "width": 1440,
+      "scroll": 1428,
+      "theme": "biomech",
+      "canvas": 977,
+      "filter": "none",
+      "clock": "none"
+    }
+  ],
+  "cases": [
+    {
+      "D": 256,
+      "max": 30,
+      "N": 259,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=256, U=16: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=37/8; principal residue0."
+    },
+    {
+      "D": 1024,
+      "max": 114,
+      "N": 1057,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=1024, U=32: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=147/16; principal residue0."
+    },
+    {
+      "D": 4096,
+      "max": 412,
+      "N": 4123,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=4096, U=64: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=1145/64; principal residue0."
+    },
+    {
+      "D": 16384,
+      "max": 1570,
+      "N": 16387,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=16384, U=128: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=1163/32; principal residue0."
+    },
+    {
+      "D": 65536,
+      "max": 5912,
+      "N": 65611,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=65536, U=256: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=18539/256; principal residue0."
+    },
+    {
+      "D": 262144,
+      "max": 22438,
+      "N": 262171,
+      "alignment": "A_U · χ_N(ε) · W_D = (1, 0) = |A_U|",
+      "status": "D=262144, U=512: every active norm group and all 40 saved arbitrary-ideal masks decoded and hash checked. Exact unit amplitude=9265/64; principal residue0."
+    }
+  ],
+  "controls": [
+    {
+      "norm49": [
+        {
+          "v": "28",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-8, -5)Nv / squarefree49 / nou=εβ_v⁶ · omega basis(-25271, -128231)Nu=(Nv)⁶13841287201Allowed ideal columns64 / 74T_v=Σ allowed |A_U|64Exact E_u amplitude64/16Exact |E_u|²=T_v²/D16"
+        },
+        {
+          "v": "29",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-8, -3)Nv / squarefree49 / nou=εβ_v⁶ · omega basis(-128231, -25271)Nu=(Nv)⁶13841287201Allowed ideal columns64 / 74T_v=Σ allowed |A_U|64Exact E_u amplitude64/16Exact |E_u|²=T_v²/D16"
+        },
+        {
+          "v": "30",
+          "comparison": "π²2 / 4π̄²2 / 4ππ̄0 / 4",
+          "clock": "W phase 2, character phase 1, exact roots of epsilon",
+          "mask": "β_v · omega basis(-7, -7)Nv / squarefree49 / yesu=εβ_v⁶ · omega basis(117649, 117649)Nu=(Nv)⁶13841287201Allowed ideal columns54 / 74T_v=Σ allowed |A_U|54Exact E_u amplitude54/16Exact |E_u|²=T_v²/D729/64"
+        }
+      ]
+    },
+    {
+      "nativeNormSlider": true
+    },
+    {
+      "jointValid": "3/1000",
+      "jointInvalid": "-3/4000",
+      "orientations": 4
+    }
+  ],
+  "initial": {
+    "theme": "light",
+    "motion": "live"
+  },
+  "pageErrors": [],
+  "fetchErrors": [],
+  "projectPrefix": {
+    "nativeURL": true,
+    "actualFixedAdapter": true,
+    "RequestHEAD": 200
+  },
+  "scope": "Complete exact-display source checked separately. Real Firefox native decode/hash load, both palettes/four widths, all six cases, norm navigation/zoom, all3norm49 ideals/raw mask, ball/dyadic/capacity boundaries, valid and deliberately invalid joint control, keyboard and actual public adapter URL/Request loading."
+}

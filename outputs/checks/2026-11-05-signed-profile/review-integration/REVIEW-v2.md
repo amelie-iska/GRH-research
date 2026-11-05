@@ -1,0 +1,17 @@
+# Independent integration review — PASS
+
+Read-only review on Linux of the promoted signed-profile edition. The governing successful promotion is `outputs/checks/2026-11-05-signed-profile/promotion-final-v2/promotion-v1.json`; the script's historical terminal path is not used. All 42 checks in `integration-v2.json` pass. A final focused alias check in `generated-alias-closure-v1.json` also passes, for 43 checks total.
+
+- All 7,352 production-before MathML subtrees are raw-byte identical and ordered inside the 7,605-expression promoted book. The previous frozen public bundle independently matches the 7,352-expression baseline.
+- All 13 complete iframe elements are byte-identical to production-before. The earlier public bundle differs solely by its documented `/GRH-research/` URL prefix. All 28 SVG references retain their order, and every referenced asset matches both the previous frozen public bundle and the accepted candidate bytes.
+- Both canonical paper fragments match independent B acceptance exactly. Book chapter and downloaded TeX copies add only the expected generated-material comment. The four wrappers and every recorded build source remain bound to their build hashes; expanded source includes the precise core, plus details in extended editions only.
+- The promoted PDFs equal accepted candidate PDFs, with book266 pages, focused61/162 pages and notes19/53 pages. Native HTML equals final candidate v3. All15 promoted artifacts match their receipt.
+- All659 book local references are covered: there are no missing targets after the11 inherited generated routes (`book.pdf` and `lean/*.lean`) are resolved using the exact public builder mapping. Standalone lab resources, both proof anchors and GitHub source destinations resolve in the project. Navigation links the standalone lab without adding an iframe. The frozen lab files remain unchanged.
+- README current edition and landing counts agree. All246 claim IDs are unique, including PRF01/JPM01. The six new scope sections are identical and retain principal nu, moving W_D, derivative costs, raw-mask/conductor distinctions, selected h1 versus other rows, lower9/8 versus upper7/6 and the unresolved fixed-profile/A6=1/GRH boundaries. Historical README edition paragraphs remain preserved as history.
+- Source HEAD/index and every file read by the reviewer remained unchanged. No production file was written, no experiment or build was rerun, no browser was used and nothing was published.
+
+`integration-v1.json` and its checker/output are preserved. Its two failures were reviewer assertion errors: comparing source-root iframe URLs literally to the prefixed public bundle, and expecting the phrase “other rows” instead of the accepted “unselected rows”. `harness-diagnostic-v1.json` records the bounded corrections. Neither required a project change.
+
+Limits: three inherited malformed munder nodes remain and no new ones appeared. This review binds existing proof acceptance, finite implementation/UI acceptance and build artifacts; it does not re-prove the analytic theorem or rerun numerical experiments. Parent's final P7 checkpoint, generated governance pages and publication follow this receipt and are outside this review.
+
+This v2 report supersedes `REVIEW.md` only to make the generated-route distinction explicit. The earlier source-closure check correctly recorded11 inherited source-checkout aliases and no regressions; the added alias check verifies their actual producer sources. All earlier evidence is preserved.

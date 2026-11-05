@@ -1,0 +1,3 @@
+# Current code/proof interface addendum
+
+PASS. The independent implementation/data audit remains unchanged. This addendum supersedes only its earlier current-path proposal binding: the formerly reviewed details1e996c... is now preserved exactly at root/profile-uniformity-details-v3.tex. The current details8d929758... changes only mathscr C_S to mathcal C_S and clarifies q!=1 while explicitly including h=1. Both changes preserve the accepted code/proof interface and remove an ambiguous exclusion; the canonical core0ffb58... is unchanged. Frozen code, sources and run manifesta90d1c... remain exact. No numerical, mathematical counting or browser check was rerun. The separate full-prose acceptance from reviewer B governs current mathematical proof bytes.

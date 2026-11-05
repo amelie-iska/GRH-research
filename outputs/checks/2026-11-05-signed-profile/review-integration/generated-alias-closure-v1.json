@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "builder_path": "scripts/build_public_site.py",
+  "builder_sha256": "6f59dd43b53a61fb3c4c7ad626d3377507911379545544ceed693e50676dfa8a",
+  "all_11_source_missing_routes_are_public_builder_aliases": true,
+  "aliases": [
+    {
+      "reference": "/book.pdf",
+      "producer_source": "outputs/book/surface-orders-book.pdf",
+      "source_sha256": "641f4ddc6c63b5a08a2eb6d626e599aee616960f71795e6672fd932a31e93ffd"
+    },
+    {
+      "reference": "/lean/BookInterfaces.lean",
+      "producer_source": "lean-analytic/BookInterfaces.lean",
+      "source_sha256": "a0a1345ab76c25bf638e9bcde4c6f7828c0a94c92d7cfdf2e59bb232c0b832bd"
+    },
+    {
+      "reference": "/lean/CoveringBand.lean",
+      "producer_source": "lean-analytic/CoveringBand.lean",
+      "source_sha256": "0f131a876b1ec08898b1b7a5e5bd303f09380d9ff060ca0b540234cb26952edf"
+    },
+    {
+      "reference": "/lean/LinearRelations.lean",
+      "producer_source": "lean-analytic/LinearRelations.lean",
+      "source_sha256": "db7b07d8164a2498de3a2f3321b7d7411eea90e20ddf19c9975a13fc074987bf"
+    },
+    {
+      "reference": "/lean/BranchExtension.lean",
+      "producer_source": "lean-analytic/BranchExtension.lean",
+      "source_sha256": "94f15ffe4a6b8e1c10637d6a788411eb80035f68233b9aeb13b2224c2acf4017"
+    },
+    {
+      "reference": "/lean/NodalDG.lean",
+      "producer_source": "lean-analytic/NodalDG.lean",
+      "source_sha256": "87a814c73605cd1dd37b156202f0b7d6c0a8dea8e387392d34aa1d4f615e1d83"
+    },
+    {
+      "reference": "/lean/FiniteRG.lean",
+      "producer_source": "lean-analytic/FiniteRG.lean",
+      "source_sha256": "65382a88cba24ca57ee1b17616b159042e4d3bdc75c8fe25470a19bcf768712b"
+    },
+    {
+      "reference": "/lean/PersistenceResolution.lean",
+      "producer_source": "lean-analytic/PersistenceResolution.lean",
+      "source_sha256": "ed22e939fe97a2e641644fc18b87f6dd687862bbd5b927d234ed1e652379366d"
+    },
+    {
+      "reference": "/lean/MobiusSplit.lean",
+      "producer_source": "lean-analytic/MobiusSplit.lean",
+      "source_sha256": "d2b357fe65ab0d02c1a9edf2518eae082a2eadf71e837522350ccd65ea142651"
+    },
+    {
+      "reference": "/lean/HeckeTypeI.lean",
+      "producer_source": "lean-analytic/HeckeTypeI.lean",
+      "source_sha256": "a506fb6d63050d0c29ddf3b55a5174df653136f578dd2c4469a69349e32a3447"
+    },
+    {
+      "reference": "../book.pdf",
+      "producer_source": "outputs/book/surface-orders-book.pdf",
+      "source_sha256": "641f4ddc6c63b5a08a2eb6d626e599aee616960f71795e6672fd932a31e93ffd"
+    }
+  ],
+  "reason": "These are generated publication routes; source checkout serves them through its project servers/builders. This fresh read-only check binds the exact source producer and target files. No public bundle was rebuilt."
+}

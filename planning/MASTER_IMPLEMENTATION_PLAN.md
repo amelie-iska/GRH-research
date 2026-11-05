@@ -598,3 +598,55 @@ shared papers/mixed-conductor-{core,details}.tex and
 arithmetic-learning-{core,details}.tex; examples/arithmetic_learning/README.md.
 Do not rerun accepted author/reviewer grids or frozen216/200 traces as new
 research. Preserve all earlier sources/runs/releases and original HEAD/index.
+
+
+## Moving-profile and coherent-mean boundary — 5 November 2026
+
+For principal nu=1, fixed S above2,3 (or a fixed larger S), and U²=D,
+the actual norm-radial A_U and literal epsilon=1+omega phase admit ONE
+common complex smooth profile W_D with supnorm1. It varies with D, has
+derivatives O_k(D^k), and vanishes at the annulus endpoints. On actual
+nonprincipal rows epsilon*beta_v^6 the primitive conductor is432, with
+power conductors432/27/16/27/432; every original S/v collision remains
+deleted. The ideal v is arbitrary, including repeated/overlapping primes.
+An elementary positive-density coprime-triple proof gives full original
+E-energy >=(c_S+o(1))D H^(1/6), H=D^theta,0<theta<1. This uses outer
+row-energy positivity and a SELECTED literal class's h1 A-A contribution;
+it does not lower-bound the signed h1 sum over unselected rows.
+At theta3/4 lower power9/8 is below the current upper7/6. No new unsigned
+upper saving, fixed-W counterexample, positive determinant or GRH follows.
+The DH^(1/6) term is necessary in the varying-profile supnorm class for
+theta<2/3. A target uniform through M_k(W)^alpha for every epsilon would
+need k*alpha>=1−5theta/6; this does not refute existing derivative costs.
+
+The actual orientation projection exactly returns the coupled Gamma norm;
+rank supplies no conductor saving. Coherent restriction has compression
+3^(-omega(q))*11* and leakage lambda(1−lambda), so it cannot commute with
+projection for free. An exact original D4000/U63/q-five-prime fixture has
+four active orientations, Gamma=3 and variance0, but selected h1AA=3/1000.
+Omitting the literal unit phase incorrectly gives−3/4000. This rules out a
+variance-only centering rule without its mean term on nonprincipal rows.
+The A6=1 mixed/pure upper-envelope sectors remain open.
+
+Sources: papers/profile-uniformity-{core,details}.tex;
+research/profile-uniformity-and-coherent-means.md; examples/profile_uniformity/.
+Design review and exact joint note: planning/signed-profile-20261105/.
+Independent implementation acceptance-v1 reconstructs all30482 norm groups,
+1219280 raw-mask entries,40 distinct arbitrary ideals through norm64, and
+14720 direct literal symbols across the six frozen scales. The governing
+v2 manifest is a90d1c356c276b36430b58e342ea7aee6dfe6cb33c0d7db0a4ffcb5ab17bc460.
+The fixed-X64 good-S family has19 rows; the separate capacity-matched small
+caps2..4 contain only the good-S unit. Finite ratios do not prove the
+asymptotic theorem. The new standalone profile-uniformity.html inspector
+is a hash-bound exact-data view, not browser training. Preserve failed v1
+manifests/builds, all earlier sources/outputs/releases and the fixed-profile
+frontier. No new Lean declaration or compiler/dependency change occurred.
+
+Next: bound actual signed h,q,K weights BEFORE per-conductor absolute Cauchy,
+retaining coherent means, fixed common profiles, full union/common-prime
+masks and conductor/ray/squarefree/capacity uniformities, especially h=1
+and the A6=1 remaining neighborhoods. Short/principal target assembly,
+independent positive determinant/zero-location and scope-specific GRH
+obligations remain open. Pinned Linux4.24 approval remains pending; do not
+install/substitute/reinventory without explicit reply or changed state.
+Both completion gates remain false; keep this existing heartbeat ACTIVE.

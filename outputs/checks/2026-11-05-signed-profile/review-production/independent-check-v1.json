@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "scope": "Independent finite identities and source/label diagnostics, not a substitute for the analytic proof review",
+  "source_sha256": {
+    "planning/signed-profile-20261105/root/profile-uniformity-core.tex": "0ffb58dbfb5d17dc32f7e3ab5c121007e90d975c9f792c5e5c8f2f94b117d0c3",
+    "planning/signed-profile-20261105/root/profile-uniformity-details.tex": "8d9297584f5d0a93aaec614e6a339e5fc0e0d7784d9f84931125f5c0cf9810c4"
+  },
+  "production_matches": true,
+  "references_checked": [
+    "mcs:core",
+    "sb:core",
+    "prf:unit",
+    "prf:profile",
+    "wc:principal",
+    "prf:row",
+    "prf:triple",
+    "prf:row",
+    "prf:lower",
+    "jdq:details"
+  ],
+  "exact_local_witnesses": true,
+  "local_euler_polynomial": [
+    1,
+    0,
+    -5,
+    6,
+    -2
+  ],
+  "fixture": {
+    "D": 4000,
+    "U": 63,
+    "q_norm": 46721311,
+    "orientations": [
+      {
+        "m": 7189,
+        "n": 6499,
+        "r_m": 2,
+        "r_n": 2,
+        "A_m": -1,
+        "A_n": 1,
+        "unit_phase": 1
+      },
+      {
+        "m": 6097,
+        "n": 7663,
+        "r_m": 2,
+        "r_n": 2,
+        "A_m": -1,
+        "A_n": 1,
+        "unit_phase": 3
+      },
+      {
+        "m": 7663,
+        "n": 6097,
+        "r_m": 2,
+        "r_n": 2,
+        "A_m": 1,
+        "A_n": -1,
+        "unit_phase": 3
+      },
+      {
+        "m": 6499,
+        "n": 7189,
+        "r_m": 2,
+        "r_n": 2,
+        "A_m": 1,
+        "A_n": -1,
+        "unit_phase": 5
+      }
+    ],
+    "good_v_generators_omega": [
+      [
+        -5,
+        -3
+      ],
+      [
+        -5,
+        -2
+      ],
+      [
+        -4,
+        -3
+      ],
+      [
+        -4,
+        -1
+      ]
+    ],
+    "Z": 3,
+    "raw_symbol_checks": 32,
+    "signed_coefficient_sum": [
+      4,
+      0
+    ],
+    "without_literal_unit_phase": [
+      -1,
+      0
+    ],
+    "selected_h1": "3/1000",
+    "wrong_without_unit_h1": "-3/4000",
+    "coherent_point_density": "1/243",
+    "coherent_A_energy_fraction": "4/243",
+    "squared_leakage": "956/59049"
+  },
+  "code_sha256": "4bf97ec22b7f8a119f40291c4eddfe4a17d8d93f5fa8019ac2f1406aafa53558"
+}

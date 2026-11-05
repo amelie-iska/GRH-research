@@ -1,0 +1,37 @@
+# Independent production-proposal review
+
+Verdict: **PASS for the exact scoped statements below.** This is an independent analytic proof review of the root-authored proposals, not acceptance inferred from the author's finite tests. No correction to a mathematical claim is required. Root's subsequent font and scope-wording edits have been checked and included in the final byte binding.
+
+The reviewed final core SHA256 is `0ffb58dbfb5d17dc32f7e3ab5c121007e90d975c9f792c5e5c8f2f94b117d0c3`; final details SHA256 is `8d9297584f5d0a93aaec614e6a339e5fc0e0d7784d9f84931125f5c0cf9810c4`. The current canonical papers match those proposal bytes exactly. The independent receipt binds every input used here, including the accepted design review, joint projection v2, and accepted finite-data manifest. No production file was edited by this reviewer.
+
+## Arithmetic and exact conductor
+
+For an ideal-squarefree column, each rational norm exponent identifies its prime-ideal norm multiset: one split prime has multiplicity two at exponent one and both conjugates are present at exponent two; an inert prime contributes one prime ideal of norm p². This determines μ and the full divisor-norm multiset, including repeated divisor norms, and hence the original r_U and A_U. Removing additional fixed S primes leaves that constancy intact. The high-window identity and parity are used in their established scope, U²=D and the strict annulus. They give |A_U|≥1, without a new Möbius estimate.
+
+The Euler-symbol identity for ζ=1+ω is valid at each good prime and multiplicatively over the column, since all prime-ideal norms are 1 modulo 6. Its decomposition into χ₄(N) and the cubic norm character has the correct inverse orientation for η². The norm character modulo 4 gives quadratic local exponent at most two. The trace congruence gives the cubic norm character modulo δ³. The coprime witnesses are exact: α₂−1=2ωδ³, Nα₂=127, η(α₂)=−1; α₃−1=4δ², Nα₃=121, η(α₃)=ω and η²(α₃)=ω². Their simultaneous triviality at the other local modulus proves minimality, rather than merely furnishing upper bounds. Thus η and η⁵ have conductor (2)²δ³ of norm 432, η² and η⁴ have conductor δ³ of norm 27, and η³ has conductor (2)² of norm 16. Unit triviality and class number one justify descent to ideal characters. The norm-seven witness proves order six and all five nonprincipal powers; CRT preserves nonprincipality after any additional fixed finite S deletion. These statements concern the primitive row character and do not restore raw collision zeros.
+
+## Moving profile and asymptotic lower bound
+
+The single profile W_D is common to every row. Its radius 1/(4D) supports are disjoint and lie in (1,2); the integer-node values are exactly sign(A_N) conjugate(η_N). Its sup norm is one for large D, and the derivative bounds have their explicit D^j cost. No claim is made that this family is a fixed smooth profile or has uniformly bounded higher seminorms.
+
+For arbitrary good ideals v, ζβ_v⁶ is independent of the generator and is injective in v. Its norm is (Nv)⁶. Euler multiplicativity gives exactly η(m)1_(m,v)=1, including repeated primes of v and all zeros. The primitive character remains η, so the actual principal term is zero for ν=1. The node alignment therefore gives the displayed positive row sum with no unit multiplicity or factor six.
+
+The triple-density proof is complete at the elementary ideal-count level. Fixed finite local restrictions reduce by finite inclusion-exclusion to counts of ideal multiples. The local factor for a good prime is (1−t)³(1+2t+t/(1−t))=1−5t²+6t³−2t⁴; the geometric series is required because v is arbitrary. At S the factor is (1−t)³. Every omitted failure lies in one of exactly the five listed square-divisor/pair-collision events. The uniform estimate A_K(Y)≤CY for Y≥1, with zero counts below scale one, bounds each tail by O(D²X/(Np)²). Summability permits the two successive limits and produces a positive convergent Euler product. The main constant κ³C_S and the secondary half-volume interval are correct. Strict endpoints affect only the error.
+
+The lower bound keeps a selected family of literal rows and then its positive A--A coprime-pair contribution. It never asserts that this selected h=1 block lower-bounds the h=1 contribution over other rows. The first inequality is positivity of the outer squared row sum. This distinction avoids any unjustified positive-semidefinite or C--C positive-density assertion. The resulting DH^(1/6) lower bound and the cost comparison kα≥1−5θ/6 follow with the stated quantifiers. For one fixed ε only the weaker displayed inequality follows. The exponent 9/8 at θ=3/4 is below the present 7/6 upper envelope, as correctly stated.
+
+## Joint projection and mean obstruction
+
+The exact completion normalization is correct: with n=φ(q), Γ=c times the counting correlation, projection has coefficient 1/(cn) and counting norm squared 1/(|c|²n). Since conjugate(A) is in the orientation span, replacement by PB in the full bilinear pairing is exact. Its Cauchy--Schwarz bound loses no unexplained conductor or group-size factor. Projection rank supplies no saving for the coupled vector by itself.
+
+The coherent point-set density is 3^(−s). Its compressed multiplication matrix is 3^(−s)11*, with nonzero eigenvalue λ=|J|/3^s. From T−T² the squared leakage is λ(1−λ). The stated leakage inequality uses counting norms; normalized norms would add n, as the text says. The final wording explicitly includes h=1 while excluding only q=1.
+
+For the selected rows, after separating the literal ζ phase into the coefficients, the raw correlation Γ_r=Z_(h,q) is orientation-constant. Passing from C--C to A--A changes both r_U factors to r_U−1. At h=1 the actual μ(q), conjugated common profile and literal unit phase make μ(q)a_r=|A_m A_n|. Thus its nonzero mean cannot be discarded as a principal residue, although orientation variance vanishes. This is a counterexample to dropping that mean, not a new signed upper estimate.
+
+The fresh D=4000 fixture was recomputed without importing author arithmetic: all 32 prime assignments, four active orientations, their r_U values, the four ideals of norms 13,13,19,19, exactly one raw collision, and 32 literal Euler-symbol checks. The coefficient sum is 4, becomes −1 if the literal unit phase is dropped, and gives respectively 3/1000 and −3/4000 after Z=3. The coherent *point* density is 1/243; the text's 4/243 coherent fraction is the compressed eigenvalue and, in this equal-coefficient example, the coherent fraction of A-energy. Squared leakage 956/59049 is exact. Pair-column conductor q and primitive row conductor 432 are correctly distinguished.
+
+## Labels and limits
+
+Every reference in the two proposals resolves in the actual papers; the core has no reference to a details-only label. The unsupported font macro has been replaced by the already supported mathcal, without a dependency. The finite diagnostics check identities and source bytes; they do not prove the asymptotic result. The analytic proof above supplies that result independently of those tables.
+
+The accepted scope is principal ν, fixed finite S, actual ideal-squarefree columns, a scale-varying common complex profile, and selected nonprincipal literal rows. It is not a fixed-W counterexample, a uniform bounded-seminorm counterexample, a sharpness theorem at exponent 7/6, a theorem about all coefficient characters, a new signed upper estimate, determinant positivity, or GRH evidence. The final disclaimers accurately preserve those limits.

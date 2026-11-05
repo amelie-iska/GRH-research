@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "all_acceptance_records_sha256": {
+    "outputs/checks/2026-11-05-signed-profile/review-production/acceptance-v1.json": "e5a4a4b5ac17941f80e2a49748d731b3523853cece5eeae58fef5b6864e9ff3d",
+    "outputs/checks/2026-11-05-signed-profile/review-production/build-acceptance-v1.json": "ce47310be4e7708adab7d8b77cf6ba34bd2898167fdff29afc30d2d7a391752f",
+    "outputs/checks/2026-11-05-signed-profile/root/math-preservation-v2.json": "256ef1a0d96e1f20f7877f27be4075df4122a6a86dfb94f72da815a7d0fad985",
+    "outputs/checks/2026-11-05-signed-profile/root/native-qa-v2/browser.json": "d7d8660643b82a7346b6784a41ad32eb96ce9761638f7a11feca5384b2b2ba4e",
+    "outputs/checks/2026-11-05-signed-profile/lab/frozen-receipt.json": "49d264cfd16cdf0b9d9bb9948ffe4742065f702f5e5b2eee4db19b7490ce7039",
+    "outputs/checks/2026-11-05-signed-profile/review-implementation/acceptance-v1.json": "094f07e43f2d9dc7acc664d4584f7c7f56830dfae3dca0b38abfbeec783bc9f1"
+  },
+  "build_records_sha256": {
+    "outputs/profile-uniformity-book-20261105/v3/pdf/build-record.json": "ed6498bd2294c400898518ea3328d55869c91318e118588fd86c702377047a76",
+    "outputs/profile-uniformity-book-20261105/v3/native/native-build-record.json": "17d2bcbf40034a4e0d0b8a481f8c04d197b6111dd1b78fa0dc8222e8a9be5ac0",
+    "outputs/profile-uniformity-articles-20261105/concise-v1/build-record.json": "916722f1152dde2e66c33c29444992cc0462cc8c0f1b5bac273e121602fc4378",
+    "outputs/profile-uniformity-articles-20261105/extended-v2/build-record.json": "3518b416e299fe2d980470b23db189e21d37f8a5bf8abbbc0e9105d74a1c8de4",
+    "outputs/profile-uniformity-articles-20261105/notes-concise-v1/build-record.json": "8047ecdd1bd659431938d51afa1f141c0468d6e52ac70fbc4e094c7ef77374a4",
+    "outputs/profile-uniformity-articles-20261105/notes-extended-v2/build-record.json": "2f913e03ea30f59c4f1f7bd9d254fc07b3de59fcb3a24dbc48775e1201adc45b"
+  },
+  "changed_artifacts": [
+    {
+      "source": "outputs/profile-uniformity-book-20261105/v3/pdf/main.pdf",
+      "target": "outputs/book/surface-orders-book.pdf",
+      "before_sha256": "c30dfe6f5c68ce294a94c1af2e03ae52eb5be1424933b21f8a5e5fd196306e4d",
+      "after_sha256": "641f4ddc6c63b5a08a2eb6d626e599aee616960f71795e6672fd932a31e93ffd"
+    },
+    {
+      "source": "outputs/profile-uniformity-book-20261105/v3/pdf/main.log",
+      "target": "outputs/book/surface-orders-book.log",
+      "before_sha256": "96a31c929aa1b2e13c799cf1d51c48e1b3fd62214b5c82859ee24c1bdffd0727",
+      "after_sha256": "e92a35e70c54d33523f583ebdffffe81124544f4ef786b7e8413c9710d012bb1"
+    },
+    {
+      "source": "outputs/profile-uniformity-book-20261105/v3/pdf/main.toc",
+      "target": "outputs/book/surface-orders-book.toc",
+      "before_sha256": "7ebb755a265c502073a7d8a99cb9667bcd2c372f518e0755148e31be8d2691ed",
+      "after_sha256": "7021627fec23bfde952150dd44d4e67e2242609e46bba6962fa0be1ef9d1cbc6"
+    },
+    {
+      "source": "outputs/profile-uniformity-book-20261105/v3/native/book/main.html",
+      "target": "web/book/main.html",
+      "before_sha256": "d0a3b4b13dfaea8b109579eb84a493b83fc40bae567cc2c361761672372470f3",
+      "after_sha256": "92e69d423af82e5443a9d2bf3e5527790fd222ad332760a7463046ec98e92369"
+    },
+    {
+      "source": "outputs/profile-uniformity-book-20261105/v3/native/book/sources/weighted-cutoff.tex",
+      "target": "web/book/sources/weighted-cutoff.tex",
+      "before_sha256": "c4f4750271a0d5e7816acd3f374a30e977a652bc554d42a84dffc180141ba0a4",
+      "after_sha256": "ec3edd063beeb46b42bb956a6d9541338519f72aab8c83c89785112879a44428"
+    },
+    {
+      "source": "outputs/profile-uniformity-book-20261105/v3/native/book/sources/profile-uniformity-details.tex",
+      "target": "web/book/sources/profile-uniformity-details.tex",
+      "before_sha256": null,
+      "after_sha256": "59b6ff351414487a3bafdfb98b147da6e25e6588bb9c526120c3c04e3c442f12"
+    },
+    {
+      "source": "outputs/profile-uniformity-book-20261105/v3/native/book/sources/profile-uniformity-core.tex",
+      "target": "web/book/sources/profile-uniformity-core.tex",
+      "before_sha256": null,
+      "after_sha256": "266daeacbc05d660c6470be0eb3529b763130bc1e2aea6f3748453e17c20e6a9"
+    },
+    {
+      "source": "outputs/profile-uniformity-articles-20261105/concise-v1/resolutions-concise.pdf",
+      "target": "outputs/papers/resolutions-concise.pdf",
+      "before_sha256": "fcbbcdcc036ae947860fef4b099dc12e655fe5a761954a5aba8ca3cbf4a29444",
+      "after_sha256": "53c944eb9775b6fe9a00a014d0367b473fd7f7bea230f126df862a718538661f"
+    },
+    {
+      "source": "outputs/profile-uniformity-articles-20261105/concise-v1/resolutions-concise.log",
+      "target": "outputs/papers/resolutions-concise.log",
+      "before_sha256": "da3c0555216d6ff5072ad57eda6eb6b9c7cee67c3a36fa64166dcd2e84be5d8e",
+      "after_sha256": "b4968e33c73f607e917fc1c949bd6aa3fe97aad8133bfa349d4c4f47e0c4c1e7"
+    },
+    {
+      "source": "outputs/profile-uniformity-articles-20261105/extended-v2/resolutions-extended.pdf",
+      "target": "outputs/papers/resolutions-extended.pdf",
+      "before_sha256": "2d144f969841e35385dc0ee2672c128318a40f8c7fa5c5426e9ea1f0ac8b0214",
+      "after_sha256": "362371b4e18491f355f1057eb1e566440b4fcd6c97413e5823a13483e8fdf7a9"
+    },
+    {
+      "source": "outputs/profile-uniformity-articles-20261105/extended-v2/resolutions-extended.log",
+      "target": "outputs/papers/resolutions-extended.log",
+      "before_sha256": "7f1a0519b68ede09b309b396b3d5ec5da7fd811d83974d70b9c728e83c0c5cde",
+      "after_sha256": "4b29d29e0e3c52234c5b74fa3c903b6cacc395014f47d7509446d9d669fe1ce8"
+    },
+    {
+      "source": "outputs/profile-uniformity-articles-20261105/notes-concise-v1/validated-oracle-concise.pdf",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-concise.pdf",
+      "before_sha256": "107f20f713a22e6f7413485cec25f3c808010e033543598fd2f06d014e1c2c2c",
+      "after_sha256": "c3126454ca9296c55fb05d97b88f0f665a429f09604e357853d19ee35a64f110"
+    },
+    {
+      "source": "outputs/profile-uniformity-articles-20261105/notes-concise-v1/validated-oracle-concise.log",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-concise.log",
+      "before_sha256": "8d96aadc0089e227365744e95c4cf17fd07f682ecc3f2cc739c811df66188382",
+      "after_sha256": "0a3dcdca22b7011d374165dd84e8fde24ef5a27b4f3921c0d69f620b6d7d9760"
+    },
+    {
+      "source": "outputs/profile-uniformity-articles-20261105/notes-extended-v2/validated-oracle-extended.pdf",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-extended.pdf",
+      "before_sha256": "d330410b18eb53693c50a9341459471192a5aefd1ead970c9996ab474cbcbd0f",
+      "after_sha256": "d2d66139b6a87dd848b2eb3e41d20b4bf19e5f5969cdb0ff1aa7845762397566"
+    },
+    {
+      "source": "outputs/profile-uniformity-articles-20261105/notes-extended-v2/validated-oracle-extended.log",
+      "target": "outputs/papers/validated-oracle-20261104/validated-oracle-extended.log",
+      "before_sha256": "00da12501721a9fffeca06ddc97aa716776537ea39f10d2c34f08c4b8b56de4c",
+      "after_sha256": "8175ed10f4ea01bbb96c3d168dcca816b623c73f10f0f8de931e18ba17ba9fd3"
+    }
+  ],
+  "book_pages": 266,
+  "MathML": 7605,
+  "focused_pages": [
+    61,
+    162
+  ],
+  "note_pages": [
+    19,
+    53
+  ],
+  "old_math_preserved": 7352,
+  "canonical_labs": 13,
+  "new_Lean_declarations": 0,
+  "GRH_claim": false,
+  "source_HEAD_index_unchanged": true
+}

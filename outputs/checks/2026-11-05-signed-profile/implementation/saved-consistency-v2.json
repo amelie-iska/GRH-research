@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "scope": "Implementation saved-record and fresh-output contract consistency only; independent full scientific audit belongs to a separate reviewer",
+  "run_manifest_sha256": "a90d1c356c276b36430b58e342ea7aee6dfe6cb33c0d7db0a4ffcb5ab17bc460",
+  "source_pin_sha256": "eeb405583fbd9256a1a8a54ffa4a56b79ad4e3e70b3ff1abd0f9c83cf5001f54",
+  "sources_frozen_before_manifest": true,
+  "norm_groups_checked": 30482,
+  "raw_mask_multiplicity_entries_checked": 1219280,
+  "nontrivial_A_direct_ternary_definition_checks": 33,
+  "all_small_ideal_rows_distinct": 40,
+  "source_and_artifact_hashes_pass": true,
+  "contracts": [
+    {
+      "name": "existing_run",
+      "refused": true,
+      "returncode": 1,
+      "reason": "Preserve existing output"
+    },
+    {
+      "name": "existing_source_pin",
+      "refused": true,
+      "returncode": 1,
+      "reason": "Preserve existing output"
+    },
+    {
+      "name": "non_square_D",
+      "refused": true,
+      "returncode": 1,
+      "reason": "integer square"
+    },
+    {
+      "name": "float_D_text",
+      "refused": true,
+      "returncode": 2,
+      "reason": "invalid int value"
+    }
+  ],
+  "cases": [
+    {
+      "D": 256,
+      "unit_energy": "1369/64",
+      "unit_energy_over_D": "1369/16384",
+      "X64_goodS_rows": 19,
+      "X64_energy": "45235/128",
+      "matched_cap": 2
+    },
+    {
+      "D": 1024,
+      "unit_energy": "21609/256",
+      "unit_energy_over_D": "21609/262144",
+      "X64_goodS_rows": 19,
+      "X64_energy": "90397/64",
+      "matched_cap": 2
+    },
+    {
+      "D": 4096,
+      "unit_energy": "1311025/4096",
+      "unit_energy_over_D": "1311025/16777216",
+      "X64_goodS_rows": 19,
+      "X64_energy": "10930287/2048",
+      "matched_cap": 2
+    },
+    {
+      "D": 16384,
+      "unit_energy": "1352569/1024",
+      "unit_energy_over_D": "1352569/16777216",
+      "X64_goodS_rows": 19,
+      "X64_energy": "180568497/8192",
+      "matched_cap": 3
+    },
+    {
+      "D": 65536,
+      "unit_energy": "343694521/65536",
+      "unit_energy_over_D": "343694521/4294967296",
+      "X64_goodS_rows": 19,
+      "X64_energy": "2870253347/32768",
+      "matched_cap": 4
+    },
+    {
+      "D": 262144,
+      "unit_energy": "85840225/4096",
+      "unit_energy_over_D": "85840225/1073741824",
+      "X64_goodS_rows": 19,
+      "X64_energy": "91791978401/262144",
+      "matched_cap": 4
+    }
+  ],
+  "checker_sha256": "e8f46a472c96b9853eed07c5f7dbc92189981a376e99192b216fc55775706b98",
+  "fixed_profile_counterexample_claim": false,
+  "asymptotic_cDX_proof_claim": false,
+  "exact_conductor_claim": false
+}

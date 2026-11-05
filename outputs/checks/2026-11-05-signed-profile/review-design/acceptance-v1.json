@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "review_utc": "2026-11-05T16:59:35.516085+00:00",
+  "verdict": "PASS for the scoped upgraded profile-varying theorem in REVIEW-v1.md; no fixed-profile/GRH/Lean or literature-priority claim",
+  "review_sha256": "ae360ab1af288bd16b067254b58573ad01f26f6f779d0eaaff60a7f9b213dced",
+  "inputs": {
+    "papers/uniform-cutoff-moment-core.tex": {
+      "bytes": 5538,
+      "sha256": "ca7bfa59c85e3fbf915a3c41962689f999d16733530ff610fe0b559f04b1f430"
+    },
+    "papers/hecke-type-i-core.tex": {
+      "bytes": 4218,
+      "sha256": "f458146de1081ae38d4a3828cee7d21a1ff73e1a67f30cedc3477edbe8a474d0"
+    },
+    "papers/masked-moment-core.tex": {
+      "bytes": 9559,
+      "sha256": "63a6ee49d2dcee3b87977541f90995fa5a9c2d3ad584328ebed5059223cea0ff"
+    },
+    "papers/masked-moment-details.tex": {
+      "bytes": 22728,
+      "sha256": "cb5c0f58189a2c5f5b47658902b10026556603281799b94313617bc89804a76c"
+    },
+    "papers/signed-bilinear-core.tex": {
+      "bytes": 4693,
+      "sha256": "51452c2ca5eb360499f3c3032bd246a2b0e644c82867e67d6107317acc1b459c"
+    },
+    "papers/signed-bilinear-details.tex": {
+      "bytes": 8928,
+      "sha256": "c3dd1a612d6e56cd77f652d90331083a7fb2351e226d24fb1a4ca3b227d14b72"
+    },
+    "planning/reviews/book/short-row-gram.md": {
+      "bytes": 13531,
+      "sha256": "1e3bfb1dde9adb5484fac805b4334d48846219668511cd909faac5aeba52308f"
+    },
+    "research/mixed-conductor-and-learning.md": {
+      "bytes": 5398,
+      "sha256": "2da121a627f0c6096750e3e25f744e6e135716de2839377edadaafd7880d8f4d"
+    },
+    "planning/MASTER_IMPLEMENTATION_PLAN.md": {
+      "bytes": 48565,
+      "sha256": "8861e6a281b8e4e9628ebac3c6df2ac41c58c44eded92e61e51dee404d0fd1ac"
+    },
+    "planning/OPEN_OBLIGATIONS.md": {
+      "bytes": 57435,
+      "sha256": "55e08f17521b1599ceabdbeaa07fc7292947c39af4ed6000acff4caecc986513"
+    },
+    "planning/CONTINUATION.md": {
+      "bytes": 112697,
+      "sha256": "e2f9eb20e034bb4dd8c2e00b637b2203bec2129c6634de944647092683ad05ab"
+    },
+    "scripts/check_finite_correlation.py": {
+      "bytes": 7222,
+      "sha256": "5f8da7467f93071fc19b4a1a1e8c415a880a95305d847cce9a42c386d1f3d3e8"
+    },
+    "scripts/check_reciprocity_period.py": {
+      "bytes": 4802,
+      "sha256": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925"
+    },
+    "examples/arithmetic_learning/learn.py": {
+      "bytes": 18833,
+      "sha256": "5c53724df205e017533c20229fe981ce70cde615eeefb7077e73be401dbbdd2e"
+    },
+    "planning/analytic-oracle/arithmetic-review/adversarial-sources/1112.1650v1.txt": {
+      "bytes": 87901,
+      "sha256": "17a478dcdde1315ad76c50484102c9612e69f7c5eac335d067056069a3f5c854"
+    }
+  },
+  "diagnostics": [
+    "outputs/checks/2026-11-05-signed-profile/review-design/independent-checks-v2.json",
+    "outputs/checks/2026-11-05-signed-profile/review-design/upgrade-checks.json"
+  ],
+  "novelty": "Count constant/error, coefficient parity and arbitrary-column alignment already recorded; actual common norm-profile/nonprincipal-unit-sixth-power lower-bound consequence not found in the390-file scoped repository search.",
+  "limits": [
+    "Only principal nu and fixed S are proved",
+    "Profiles vary with D; derivatives grow",
+    "Selected-row h1 positivity only; not all-row h1 positivity",
+    "9/8 lower at theta3/4 does not establish7/6 global sharpness",
+    "alpha nonnegative and every-epsilon quantifier required",
+    "No statement about guaranteed-outside-S-nonunit subsets or rows excluding the witness block"
+  ]
+}

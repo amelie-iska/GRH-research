@@ -1,0 +1,149 @@
+{
+  "A_U_norm_group_histogram": {
+    "-1": 141,
+    "1": 272
+  },
+  "D": 4096,
+  "U": 64,
+  "active_norm_groups": 413,
+  "active_squarefree_ideal_columns": 1145,
+  "asymptotic_claim_proved_by_finite_run": false,
+  "capacity_matched_tower": {
+    "H_floor_D_3over4": 512,
+    "X_floor_H_1over6": 2,
+    "scope": "Small finite capacity-matched probe, separate from fixed X64 / H64^6 experiment",
+    "selected_cap_complete": true,
+    "selected_goodS_cumulative": {
+      "energy": "1311025/4096",
+      "rows": 1,
+      "sum_T_v": 1145
+    }
+  },
+  "column_count_divided_by_D": "1145/4096",
+  "comparator_scope": "V_D also varies with D; it is NOT a fixed-profile baseline",
+  "count_only_energy_lower_bound": "1311025/4096",
+  "energy_divided_by_D": "1311025/16777216",
+  "input_sha256": "6ed03582130e8bc7f97cc9df34ddbbeea97344d4681d00ff84d522547556ab4f",
+  "lower_bound_scope": "Exact E_-1=I_-1 and sum_(0<Nu<=H)|E_u|^2 >= this energy for every H>=1. The asymptotic >=cD requires the separate squarefree-ideal count proof.",
+  "main_order6_profile_energy": "1311025/4096",
+  "main_order6_unit_omega": [
+    1,
+    1
+  ],
+  "nonzero_A_all_columns": true,
+  "order6_nonprincipal_witness": "chi_(norm7)(epsilon)=zeta6; powers1..5 all nonprincipal",
+  "order6_principal_residue": 0,
+  "order6_profile_node_exponent_histogram": {
+    "0": 69,
+    "1": 70,
+    "2": 71,
+    "3": 68,
+    "4": 69,
+    "5": 66
+  },
+  "principal_residue": 0,
+  "principal_residue_reason": "Main epsilon witness is nonprincipal of order6; powers1..5 have phases1..5 at norm7. Real-minus-one witness separately has value-1 at norm7.",
+  "r_U_norm_group_histogram": {
+    "0": 395,
+    "2": 18
+  },
+  "real_minus_one_profile_node_histogram": {
+    "-1": 204,
+    "1": 209
+  },
+  "source_pin_sha256": "eeb405583fbd9256a1a8a54ffa4a56b79ad4e3e70b3ff1abd0f9c83cf5001f54",
+  "sum_abs_A_over_ideals": 1145,
+  "tower_cumulative_caps": [
+    {
+      "H": 64,
+      "X": 2,
+      "finite_only": true,
+      "primary_goodS_cumulative": {
+        "energy": "1311025/4096",
+        "rows": 1,
+        "sum_T_v": 1145
+      },
+      "secondary_goodS_dyadic": {
+        "energy": "1311025/4096",
+        "rows": 1,
+        "sum_T_v": 1145
+      },
+      "secondary_goodS_dyadic_interval": "[X/2,X)"
+    },
+    {
+      "H": 4096,
+      "X": 4,
+      "finite_only": true,
+      "primary_goodS_cumulative": {
+        "energy": "1311025/4096",
+        "rows": 1,
+        "sum_T_v": 1145
+      },
+      "secondary_goodS_dyadic": {
+        "energy": "0",
+        "rows": 0,
+        "sum_T_v": 0
+      },
+      "secondary_goodS_dyadic_interval": "[X/2,X)"
+    },
+    {
+      "H": 262144,
+      "X": 8,
+      "finite_only": true,
+      "primary_goodS_cumulative": {
+        "energy": "3303033/4096",
+        "rows": 3,
+        "sum_T_v": 3141
+      },
+      "secondary_goodS_dyadic": {
+        "energy": "249001/512",
+        "rows": 2,
+        "sum_T_v": 1996
+      },
+      "secondary_goodS_dyadic_interval": "[X/2,X)"
+    },
+    {
+      "H": 16777216,
+      "X": 16,
+      "finite_only": true,
+      "primary_goodS_cumulative": {
+        "energy": "5575745/4096",
+        "rows": 5,
+        "sum_T_v": 5273
+      },
+      "secondary_goodS_dyadic": {
+        "energy": "284089/512",
+        "rows": 2,
+        "sum_T_v": 2132
+      },
+      "secondary_goodS_dyadic_interval": "[X/2,X)"
+    },
+    {
+      "H": 68719476736,
+      "X": 64,
+      "finite_only": true,
+      "primary_goodS_cumulative": {
+        "energy": "10930287/2048",
+        "rows": 19,
+        "sum_T_v": 20340
+      },
+      "secondary_goodS_dyadic": {
+        "energy": "2565739/1024",
+        "rows": 9,
+        "sum_T_v": 9580
+      },
+      "secondary_goodS_dyadic_interval": "[X/2,X)"
+    }
+  ],
+  "unit_amplitude_exact": "1145/sqrt(4096)",
+  "unit_row_energy": "1311025/4096",
+  "unsigned_nodal_comparator_energy": "343/1024",
+  "unsigned_order6_nodal_comparator_energy": "343/1024",
+  "unsigned_order6_nodal_sum_zeta6": [
+    28,
+    -42
+  ],
+  "unsigned_real_minus_one_nodal_amplitude_exact": "7/sqrt(4096)",
+  "unsigned_real_minus_one_nodal_comparator_energy": "49/4096",
+  "unsigned_real_minus_one_nodal_sum_over_ideals": 7
+}

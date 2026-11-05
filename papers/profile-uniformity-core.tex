@@ -1,0 +1,92 @@
+% New scoped consequence for moving common profiles; no fixed-profile saving.
+\section{Why the common profile must stay fixed}\label{prf:core}
+The unsigned envelope of Section~\ref{mcs:core} and the unresolved signed
+estimate have different profile quantifiers. We give an obstruction to an
+$H$-sized bound uniform through the sup norm alone. It uses the \emph{actual}
+coefficients and nonprincipal rows, rather than replacing the columns by
+arbitrary weights. It does not contradict an estimate for one fixed smooth
+profile or one with adequate derivative dependence.
+
+Fix $K=\mathbb Q(\omega)$, $\omega^2+\omega+1=0$, principal $\nu=1$, and a
+finite good set $S$ containing the primes above $2,3$. Write
+$\zeta=1+\omega$, $\delta=1+2\omega$, so $\zeta$ has order six and
+$\delta^2=-3$. Retain the literal raw symbols and normalization
+\[
+ I_u(W)=D^{-1/2}\sum_{\substack{m\ \mathrm{squarefree}\ (m,S)=1}}
+ A_U(m)\chi_m(u)W(Nm/D),\qquad E_u=I_u-P_u.
+\]
+Here and below squarefree means \emph{ideal} squarefree. For $U^2=D$ the
+accepted high-window identity gives
+$A_U(m)=\mu(m)(r_U(m)-1)$ on $D<Nm<2D$, with $r_U(m)$ even and
+$|A_U(m)|\ge1$. The multiset of prime-ideal norms of a squarefree ideal
+is determined by its rational norm. Thus $A_U(m)=A_N$ depends only on
+$N=Nm$, including divisor-norm multiplicities. Moreover
+\begin{equation}\label{prf:unit}
+ \eta(m):=\chi_m(\zeta)=\zeta^{(Nm-1)/6},\qquad (m,S)=1.
+\end{equation}
+The primitive character $\eta$ has conductor $(2)^2(\delta)^3$, of norm
+$432$; its powers $1,5$ have conductor norm $432$, powers $2,4$ norm $27$,
+and power $3$ norm $16$. All five powers are nonprincipal. These row
+conductors do not remove the raw zero at any prime dividing a sixth factor.
+
+Put $\phi(t)=\exp(1-1/(1-t^2))$ for $|t|<1$ and zero otherwise.
+For integer $D$ set $w_N=\operatorname{sgn}(A_N)\overline{\zeta^{(N-1)/6}}$
+when a good squarefree ideal of norm $N$ exists and $D<N<2D$, and zero
+otherwise. Define one common, complex profile
+\begin{equation}\label{prf:profile}
+ W_D(y)=\sum_{D<N<2D}w_N\phi(4(Dy-N)).
+\end{equation}
+Its disjoint supports lie strictly inside $(1,2)$, its sup norm is one for
+large $D$, and $\|W_D^{(j)}\|_\infty\ll_jD^j$. In particular the endpoints
+have value zero. This is a profile varying with scale, independent of the
+row, not a separate choice for each ideal or each row.
+
+\begin{proposition}[A moving-profile lower bound]\label{prf:lower}
+For every fixed $0<\theta<1$, take $H=D^\theta$, $U=\sqrt D$, and
+$X=H^{1/6}$. As integer $D\to\infty$,
+\begin{equation}\label{prf:lower-bound}
+ \sum_{0<Nu\le H}|E_u(W_D)|^2\ge(c_S+o(1))DH^{1/6},\qquad c_S>0.
+\end{equation}
+This lower bound already comes from literal rows
+$u_v=\zeta\beta_v^6$, where $v$ is an arbitrary good ideal of norm at most
+$X$ and $\beta_v$ is a generator. These rows have nonprincipal primitive
+character $\eta$, so $P_{u_v}=0$. Their exact values are
+\begin{equation}\label{prf:row}
+ E_{u_v}(W_D)=D^{-1/2}
+ \sum_{\substack{m\ \mathrm{squarefree},\ (m,Sv)=1\\D<Nm<2D}}
+                      |A_U(m)|.
+\end{equation}
+Every collision with $v$ remains deleted, even when the primitive conductor
+drops to $432$. No squarefree condition is imposed on $v$.
+\end{proposition}
+At $H=D^{3/4}$ the lower exponent is $9/8$, whereas the current upper
+exponent is $7/6$. Thus this does not establish sharpness of $7/6$ or a new
+upper saving. For $0<\theta<2/3$, the term $DH^{1/6}$ dominates the current
+unsigned envelope; it is necessary up to subpower losses in this
+\emph{varying-profile} class, even on nonprincipal rows.
+
+For $k\ge0$ put
+$M_k(W)=\sum_{j=0}^k\|(y\partial_y)^jW\|_\infty$.
+If, for every $\varepsilon>0$, a bound uniform over all common profiles
+with constants independent of $W,D$ were to assert
+\[
+ \sum_{0<Nu\le H}|E_u(W)|^2
+ \ll_\varepsilon M_k(W)^\alpha(HD)^\varepsilon H,
+ \qquad \alpha\ge0,
+\]
+then necessarily $k\alpha\ge1-5\theta/6$. At $\theta=3/4$ this is
+$k\alpha\ge3/8$. For a single fixed $\varepsilon$ the necessary condition
+is only $k\alpha+(1+\theta)\varepsilon\ge1-5\theta/6$.
+These are necessary cost comparisons, not sufficient estimates. A
+fixed-$W$ result, a class with bounded seminorms, or the existing
+$M_4(W)^2$ dependence is not refuted.
+
+The same rows expose a concrete centering error in the joint completion:
+removing the orientation mean of the actual correlation can delete a
+nonzero signed contribution on \emph{nonprincipal} rows. The extended proof
+retains the literal unit phase, gives an exact four-orientation example,
+and explains why orientation projection alone supplies no saving. The
+standalone \href{../profile-uniformity.html}{profile and coherent-mean inspector}
+shows the complete finite norm groups, arbitrary sixth-factor masks and
+exact residual quantities. Its finite tables are diagnostics of this
+construction, not asymptotic estimates, training or GRH evidence.

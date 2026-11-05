@@ -1,0 +1,69 @@
+{
+  "verdict": "PASS",
+  "scope": "Independent frozen implementation/data audit and canonical-prose INTERFACE check only; full separate asymptotic/conductor proof review not duplicated",
+  "run_manifest": {
+    "path": "outputs/experiments/2026-11-05-profile-uniformity-v2/manifest.json",
+    "bytes": 4797,
+    "sha256": "a90d1c356c276b36430b58e342ea7aee6dfe6cb33c0d7db0a4ffcb5ab17bc460"
+  },
+  "review": {
+    "path": "planning/signed-profile-20261105/review-implementation/REVIEW-v1.md",
+    "bytes": 7456,
+    "sha256": "5eb639087649e12fcc542ca1f14f9822fed7ce20421d03a05d868035ba8d8190"
+  },
+  "independent_receipt": {
+    "path": "outputs/checks/2026-11-05-signed-profile/review-implementation/independent-implementation-v1.json",
+    "bytes": 7981,
+    "sha256": "75fadade04ec9d51d481f0c9e748beb201c3650f6c4d41ed72b8dba6c36a1e46"
+  },
+  "reviewer_code": {
+    "path": "planning/signed-profile-20261105/review-implementation/independent_audit.py",
+    "bytes": 16851,
+    "sha256": "5f13d1aaaa59b7de49ab5b583c753a7951fb8bafb0620b0a6364c3e3f480bb09"
+  },
+  "canonical_proposal_interface_bytes": {
+    "planning/signed-profile-20261105/root/profile-uniformity-core.tex": {
+      "path": "planning/signed-profile-20261105/root/profile-uniformity-core.tex",
+      "bytes": 4864,
+      "sha256": "0ffb58dbfb5d17dc32f7e3ab5c121007e90d975c9f792c5e5c8f2f94b117d0c3"
+    },
+    "planning/signed-profile-20261105/root/profile-uniformity-details.tex": {
+      "path": "planning/signed-profile-20261105/root/profile-uniformity-details.tex",
+      "bytes": 12289,
+      "sha256": "1e996c011ab22892a92dbbfcf2048c520c32f199df1be827cda981515f28c02c"
+    }
+  },
+  "frozen_handoff_and_author_consistency": {
+    "planning/signed-profile-20261105/implementation/HANDOFF-v2.md": {
+      "path": "planning/signed-profile-20261105/implementation/HANDOFF-v2.md",
+      "bytes": 5397,
+      "sha256": "ef5fcfc42db2cfa37a449e3944ca580e09cc23866c19e10562b8e9b60a69bd30"
+    },
+    "outputs/checks/2026-11-05-signed-profile/implementation/IMPLEMENTATION-RESULT-v2.json": {
+      "path": "outputs/checks/2026-11-05-signed-profile/implementation/IMPLEMENTATION-RESULT-v2.json",
+      "bytes": 4805,
+      "sha256": "07a13198a693ad06fe035ad0c3bf82da07c54c66f3baa2d58d2cf8573dd53160"
+    }
+  },
+  "sources_and_artifacts_match_manifest": true,
+  "D_values": [
+    256,
+    1024,
+    4096,
+    16384,
+    65536,
+    262144
+  ],
+  "norm_groups": 30482,
+  "allowed_mask_entries": 1219280,
+  "canonical_ideal_v": 40,
+  "actual_small_columns": 368,
+  "actual_raw_symbols": 14720,
+  "selected_h1_small_rows": 80,
+  "grouped_check_units": 1721320,
+  "minimum_observed_energy_over_D": "1311025/16777216",
+  "serialization_contract": "Normalize decoded split-prime-coverage JSON keys before integer-key helper use. Accepted generation and all saved vectors correct.",
+  "blocking_findings": [],
+  "fixed_W_or_GRH_counterexample": false,
+  "protected_bytes_mutated": false
+}

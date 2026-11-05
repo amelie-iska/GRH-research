@@ -13,6 +13,13 @@ finite learner certifies every correlation and both signed-observable errors.
 These are independently reviewed prose and exact finite results; no new
 analytic/category Lean or GRH proof is claimed.
 
+The new [moving-profile construction](research/profile-uniformity-and-coherent-means.md)
+uses the original coefficients and nonprincipal sixth-power rows. A common
+profile W_D that varies with scale gives a lower bound of order D H^(1/6);
+this is not a counterexample for fixed W. An exact original joint example
+also rules out deleting the orientation mean by variance-only centering.
+[Inspect profiles, primitive conductors and raw masks](https://amelie-iska.github.io/GRH-research/profile-uniformity.html).
+
 ## Research book and interactive companion (2026-11-03)
 
 Public project page: **[amelie-iska.github.io/GRH-research](https://amelie-iska.github.io/GRH-research/)**.
@@ -20,7 +27,7 @@ The repository and both complementary Hugging Face datasets were made public
 at the owner’s request on 4 November 2026. Frozen data and credentials remain
 separate; the local preview is retained.
 
-Current edition: **261 pages,40 chapters,7,352 MathML expressions and thirteen unique in-book laboratories**.
+Current edition: **266 pages,40 chapters,7,605 MathML expressions and thirteen unique in-book laboratories**.
 
 New complementary datasets: **16,384 Aster material-response rows** and
 **22,951 Mora conformer/force rows**, plus separately labelled source anchors

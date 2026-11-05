@@ -1,0 +1,247 @@
+% Exact proof with fixed principal nu, moving profile, and all raw masks.
+\section{Proof and joint-mean boundary of the moving-profile construction}\label{prf:details}
+\subsection{Norm groups and primitive conductors}
+For a split rational prime $p$, a squarefree ideal contains zero, one or
+both conjugate primes. Its rational norm exponent is respectively $0,1,2$;
+at exponent one there are two choices, and at exponent two its divisor
+norms include two copies of $p$. For an inert prime, the exponent is zero
+or two, and the nontrivial choice is the single prime ideal of norm $p^2$.
+Thus the rational norm determines $\mu$, the divisor-norm multiset and
+$r_U$, even though it need not determine the ideal. For example norm $49$
+has squarefree ideal divisor norms $1,7,7,49$, whereas the inert prime of
+norm $25$ has divisor norms $1,25$. Additional fixed $S$ deletions remove
+some ideals without changing this constancy among those remaining.
+The high-window formula and its parity are the already proved facts of
+Section~\ref{sb:core}, not a new coefficient estimate.
+
+At a good prime ideal $\mathfrak p$ of norm $q$, Euler's definition gives
+$\chi_{\mathfrak p}(\zeta)=\zeta^{(q-1)/6}$. All such norms are $1$ modulo
+$6$; for $a=1+6r,b=1+6s$ one has
+$(ab-1)/6=r+s+6rs$. Multiplicativity proves~\eqref{prf:unit}.
+Write $\chi_4(N)=(-1)^{(N-1)/2}$ for odd $N$. On good ideals,
+\begin{align*}
+ \eta&=\chi_4(N)\omega^{(N-1)/3},\\
+ \eta^2&=\omega^{2(N-1)/3}=\omega^{-(N-1)/3},\qquad
+ \eta^3=\chi_4(N).
+\end{align*}
+The inverse orientation in the middle expression is essential.
+
+For completeness the local conductors are exact, not merely upper bounds.
+The quadratic norm character factors modulo $(2)^2=(4)$.
+Since $\operatorname{Tr}(\delta\gamma)\in3\mathbb Z$ for every
+$\gamma\in\mathcal O$, expanding the norm gives
+$N(\alpha+\delta^3\beta)\equiv N\alpha\pmod9$.
+The cubic norm character therefore factors modulo $\delta^3$.
+The coprime local witnesses
+\begin{align*}
+ \alpha_2&=13+6\omega,\quad N\alpha_2=127,\quad
+ \alpha_2-1=2\omega\delta^3,\\
+ \alpha_3&=-11,\quad N\alpha_3=121,\quad
+ \alpha_3-1=4\delta^2.
+\end{align*}
+show minimality. The first is $1$ modulo $2$, is $1+2\omega$ modulo $4$,
+and is $1$ modulo $\delta^3$; its $\eta$ value is $-1$.
+The second is $1$ modulo $4$ and $-2=1+\delta^2$ modulo $\delta^3$,
+but not $1$ modulo $\delta^3$; its $\eta$ value is $\omega$ and its square
+is $\omega^2$. Thus the quadratic local exponent is two and the cubic
+one is three. The two moduli are coprime, giving the stated norms
+$432,27,16$ for the nontrivial powers. Global units have norm one, so
+these residue characters are unit trivial and descend to ideal Hecke
+characters in this class-number-one field. A norm-seven prime has value
+$\zeta$, proving order six. A larger finite $S$ does not principalize the
+character: CRT gives representatives of the same nontrivial ray classes
+avoiding the extra excluded primes. Primitive conductor reduction never
+restores raw primes excluded by $S$ or the sixth factor.
+
+\subsection{Exact alignment, with arbitrary overlapping sixth factors}
+The bumps in~\eqref{prf:profile} have radius $1/(4D)$ and center $N/D$.
+Distinct supports are disjoint. At an active integer node their value is
+exactly $w_N$, and all endpoints are zero. Differentiation gives
+$\|W_D^{(j)}\|_\infty\le(4D)^j\|\phi^{(j)}\|_\infty$.
+Expanding $(y\partial_y)^j$ into ordinary derivatives and using $1<y<2$
+gives $M_k(W_D)\ll_kD^k$.
+
+Every nonzero ideal $v$ has a generator $\beta_v$. The literal element
+$u_v=\zeta\beta_v^6$ is independent of that choice, since all units have
+sixth power one; distinct ideals yield distinct rows. Its norm is $(Nv)^6$.
+For squarefree good $m$, exact raw multiplicativity says
+\[
+ \chi_m(u_v)=\eta(m)\mathbf1_{(m,v)=1}.
+\]
+Repeated primes of $v$ are allowed and its collisions with $m$ remain
+zero. The primitive row character is always $\eta$, so the actual
+principal indicator in~\eqref{wc:principal} is zero when $\nu=1$.
+Substituting the nodal profile proves~\eqref{prf:row} with no factor six,
+unit averaging or residue replacement.
+
+\subsection{The coprime-triple density and the selected $h=1$ block}
+Put $\kappa=\pi/(3\sqrt3)$. Lattice counting, with six unit generators
+per ideal, gives
+\[
+ A_K(Y):=\#\{a:Na\le Y\}=\kappa Y+O(\sqrt Y+1),
+ \qquad A_K(Y)\le C Y\quad(Y\ge1).
+\]
+This is the existing elementary ideal count. Let $T(D,X)$ count ordered
+triples $(m,n,v)$ with $m,n$ squarefree good, $D<Nm,Nn<2D$, $Nv\le X$,
+$v$ good and arbitrary, and the three ideals pairwise coprime. For
+$D,X\to\infty$, $X\le D$, we claim
+\begin{equation}\label{prf:triple}
+ \begin{aligned}
+ T(D,X)&=(\kappa^3\mathscr C_S+o(1))D^2X,\\
+ \mathscr C_S&=\prod_{\mathfrak p\in S}(1-t_{\mathfrak p})^3
+ \prod_{\mathfrak p\notin S}
+       (1-5t_{\mathfrak p}^2+6t_{\mathfrak p}^3-2t_{\mathfrak p}^4)>0,\\
+ t_{\mathfrak p}&=(N\mathfrak p)^{-1}.
+ \end{aligned}
+\end{equation}
+Here a product over $S$ means its prime ideals. To prove this, first impose
+the local restrictions at a fixed finite set of primes containing $S$.
+They are finite Boolean combinations of divisibility by $\mathfrak p$
+and $\mathfrak p^2$ in $m,n$, and by $\mathfrak p$ in $v$.
+Finite inclusion-exclusion and the count for fixed ideal multiples give
+the product of the local densities, with relative error tending to zero.
+At a good prime the allowed cases are no positive valuation, a single
+valuation one in $m$ or $n$, or an arbitrary positive valuation in $v$.
+The factor is therefore
+\[
+ (1-t)^3\left(1+2t+\frac{t}{1-t}\right)
+   =(1-t)^2(1+2t-2t^2)=1-5t^2+6t^3-2t^4.
+\]
+At $S$ all three valuations must vanish, giving $(1-t)^3$.
+The geometric series for $v$ is essential; $v$ is not squarefree.
+
+An omitted failure belongs to one of five events:
+$\mathfrak p^2\mid m$, $\mathfrak p^2\mid n$,
+$\mathfrak p\mid(m,n)$, $\mathfrak p\mid(m,v)$ or
+$\mathfrak p\mid(n,v)$. Divisibility counts and $A_K(Y)\le CY$ bound
+each by $O(D^2X/(N\mathfrak p)^2)$, uniformly; if a quotient scale is
+below one its count is zero. Thus the tail after norm $P$ is
+\[
+ O\left(D^2X\sum_{N\mathfrak p>P}(N\mathfrak p)^{-2}\right)=o_P(D^2X).
+\]
+The series converges by the ideal count (or $\zeta_K(2)<\infty$).
+Take the large-scale limit first at fixed $P$, then $P\to\infty$.
+Each local factor is positive and differs from one by $O(t^2)$, proving
+\eqref{prf:triple}. Strict annulus endpoints have no effect on the main
+term by the same lattice count. The secondary range $X/2\le Nv<X$ has
+half this limiting volume, though it may be empty at small $X$.
+
+On the selected literal unit class every expanded pair term in
+\eqref{prf:row} is nonnegative. Keeping only $(m,n)=1$ gives its exact
+$h=1$ A--A contribution
+\[
+ \mathcal E^{AA}_{\mathrm{selected},h=1}
+ =D^{-1}\sum_{\substack{v\ \mathrm{good}\ Nv\le X}}
+  \sum_{\substack{m,n\ \mathrm{squarefree,good}\ D<Nm,Nn<2D\\
+                   (m,n)=(m,v)=(n,v)=1}}|A_U(m)A_U(n)|
+ \ge D^{-1}T(D,X).
+\]
+Consequently, with $X=H^{1/6}$,
+\[
+ \sum_{0<Nu\le H}|E_u|^2
+ \ge\sum_{Nv\le X,\ v\ \mathrm{good}}|E_{u_v}|^2
+ \ge\mathcal E^{AA}_{\mathrm{selected},h=1}
+ \ge(\kappa^3\mathscr C_S+o(1))DX.
+\]
+The first inequality is positivity of the \emph{outer squared row sum}.
+The selected $h=1$ block does not lower-bound the signed $h=1$ sum over
+other literal rows or a unit-complete family. No positive-semidefinite
+claim about a gcd-truncated Gram matrix is needed. This is A--A, not a
+positive-density assertion for C--C long-long weights, which may vanish.
+This proves Proposition~\ref{prf:lower} with $c_S=\kappa^3\mathscr C_S$.
+The derivative tradeoff follows by comparing powers in
+$DH^{1/6}\ll D^{k\alpha+(1+\theta)\varepsilon}H$ and then letting
+$\varepsilon\downarrow0$ only when the proposed bound holds for every
+positive $\varepsilon$.
+
+\subsection{Projection preserves the coupled problem, not a saving}
+Use the exact joint notation of Section~\ref{jdq:details}. For fixed
+$h,q\ne1$, let $n=\varphi(q)$, $\ell=N(hq)$, $Q=Nq$, and
+\begin{align*}
+ c&=\frac{Q^2\xi_q(-\alpha)\tau_\beta(\xi_q)}{\ell^6},\\
+ \Gamma_r^F&=c\sum_K B_F(K)\overline{\theta_r(K)},\qquad
+ A(K)=\sum_{r\in J}a_r\overline{\theta_r(K)}.
+\end{align*}
+The active orientations $J$ include all original restrictions, and the
+literal unit phase belongs to $a_r$. The distinct $\theta_r$ are
+orthonormal for $n^{-1}\sum_K$. If $P$ projects onto their span, then
+\[
+ PB_F=(cn)^{-1}\sum_{r\in J}\Gamma_r^F\theta_r,\qquad
+ \sum_K|PB_F(K)|^2=(|c|^2n)^{-1}\sum_r|\Gamma_r^F|^2.
+\]
+Replacing $B_F$ by $PB_F$ in the full bilinear pairing is exact.
+Cauchy--Schwarz is precisely
+$|c\sum_KB_FA|\le\|a\|_2\|\Gamma^F\|_2$.
+The conductor and group-size factors cancel. Projection rank alone gives
+no arithmetic saving for this particular coupled vector.
+
+For $s=\omega(q)$ let $C=\{K:x_{\mathfrak p}(K)^2=1\text{ for all }
+\mathfrak p\mid q\}$. All orientations agree on $C$. If $M_C$ denotes
+multiplication by its indicator, the matrix in the orthonormal orientation
+basis is
+\[
+ PM_CP=3^{-s}\mathbf1\mathbf1^*,\qquad
+ \lambda=|J|/3^s,\qquad
+ \|(1-P)M_CP\|^2=\lambda(1-\lambda).
+\]
+Thus coherent restriction does not commute with projection. For example
+\[
+ \left|\sum_C(B_F-PB_F)A\right|
+ \le\sqrt{\lambda(1-\lambda)}\|(1-P)B_F\|_2\|A\|_2,
+\]
+where all norms in this inequality are counting $\ell^2$ norms. Normalized
+norms would require an additional factor $n$ on the right. Counting a
+coherent subset alone is not a lower bound for its actual signed pairing.
+
+\subsection{A nonzero orientation mean on actual nonprincipal rows}
+For the selected rows let $V$ be any finite set of good ideals, put the
+first five row factors equal to one, and retain the sixth-factor mask.
+For each $h,q$ define $Z_{h,q}=\#\{v\in V:(v,hq)=1\}$.
+After removing the separately displayed literal unit phase, the exact
+correlation is
+\[
+ \Gamma_r^F=Z_{h,q}
+    =c\sum_KB_V(K)\overline{\theta_r(K)}
+ \quad\text{for every active orientation }r.
+\]
+To pass from the published C--C identity to A--A replace each $r_U$ by
+$r_U-1$. At $h=1$, $m=r,n=q/r$, the coefficient is
+\[
+ a_r^{AA}=(r_U(m)-1)(r_U(n)-1)W_m\overline{W_n}
+                                   \theta_{m,n}(\zeta),
+ \qquad \mu(q)a_r^{AA}=|A_U(m)A_U(n)|.
+\]
+This retains $\mu(q)$, the common complex profile and its conjugation,
+all deleted common primes, and the literal $\zeta$ phase.
+If $Z_{1,q}>0$ and at least one active interior A--A coefficient is
+nonzero, the actual pairing is positive, whereas
+$\sum_r|\Gamma_r^F-\operatorname{mean}\Gamma^F|^2=0$.
+An orientation-variance-only replacement with no mean term is therefore
+false. The mean is not a principal residue: these rows have character
+$\eta$, with nonprincipal powers. This does not refute a properly
+formulated fixed-profile signed estimate.
+
+A fresh exact example uses $D=4000$, $U=63$ and chosen prime ideals of
+norms $7,13,79,67,97$. Their product has four active orientations:
+the pairs $6097/7663$, $7189/6499$ and both reversals.
+Here $r_U=2$, and $A_U$ is $-1$ on the three-prime columns and $+1$ on
+the two-prime columns. The four good ideals with $10\le Nv\le20$ have
+norms $13,13,19,19$. Exactly one collides with the chosen $13$-prime,
+so $Z=3$ for all four orientations. The exact selected $h=1$ contribution
+is $12/4000=3/1000$ despite zero orientation variance.
+Dropping the literal $\zeta$ phase incorrectly changes the coefficient
+sum from $4$ to $-1$, giving $-3/4000$.
+The coherent fraction is $4/243$ and the squared leakage is $956/59049$.
+The residue group and infinite Fourier tail are not estimated by this
+finite check. The fixed row conductor $432$ must be distinguished from
+the pair-column conductor $q=mn$, whose norm here and in the asymptotic
+annulus is comparable to $D^2$.
+
+The exact implementation at \texttt{examples/\allowbreak profile\_uniformity/}
+keeps complete norm groups and arbitrary sixth factors, including distinct
+ideals of norm $49$ with different masks. The saved six-scale examples,
+exact joint fixture and their independent checks certify finite identities
+only. Full-union masks, coherent means, fixed-profile uniformity and the
+remaining mixed/pure upper-envelope neighborhoods still require a new
+signed estimate. No determinant comparison, zero location, analytic or
+categorical Lean theorem, quantum result or GRH proof is obtained.
