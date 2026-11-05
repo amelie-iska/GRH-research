@@ -1,0 +1,473 @@
+% Generated shared reviewed material.
+% Full derivation of the scoped arithmetic-family moment and masked remainder.
+\section{Family identification, the approximate functional equation and masks}
+\label{mm:details}
+We prove the analytic statements of Section~\ref{mm:core} from the
+explicit classical inputs stated there. Write $I(S)$ for the nonzero
+integral ideals prime to $S$, and $\mathcal O_S$ for the ring of
+$S$-integers. Constants may depend on the fixed field, $S$, $\nu$ and
+any declared positive small exponent. No such constant is asserted
+uniform in the conductor or infinity type of a varying $\nu$.
+
+\subsection{A finite comparison with the literal Kummer rows}
+Use Appendix~II of BGL, with $n=6$. Its fixed local modulus and
+representatives may be chosen once, since $S$ contains the primes above
+$6$ and $\mathcal O_S$ has class number one. For each
+$\mathfrak a\in I(S)$ the construction writes
+\[
+ \mathfrak a=(x)E\mathfrak g^6,\qquad
+ \alpha_{\mathfrak a}=xm_E,\qquad
+ (m_E)_S=E,
+\]
+so $(\alpha_{\mathfrak a})_S=\mathfrak a\mathfrak g^{-6}$.
+Choose $y\in K^\times$ generating $\mathfrak g$ as an
+$\mathcal O_S$-ideal. If $(u)_S=\mathfrak a$, then
+\[
+ e=\alpha_{\mathfrak a}y^6/u\in\mathcal O_S^\times,\qquad
+ [\alpha_{\mathfrak a}]=[eu]\quad\hbox{in }K^\times/K^{\times6}.
+\]
+There is a precision here: Appendix~II allows choosing $\mathfrak g$
+relative to a tested denominator. Fix one admissible global decomposition
+first. Its radicand gives the canonical character
+$\vartheta_{\mathfrak a}$ on all primes outside the finite set
+$S\cup\operatorname{supp}(\mathfrak a\mathfrak g)$ where that
+choice applies. Uniqueness of Hecke characters, equivalently Chebotarev
+in the finite abelian quotient, then identifies the underlying primitive
+characters everywhere. With matching arithmetic-Frobenius conventions,
+\begin{equation}\label{mm:unit-comparison}
+ \kappa_u=\kappa_{e^{-1}}\vartheta_{\mathfrak a}.
+\end{equation}
+If the residue-symbol convention is conjugated, conjugate the canonical
+family and its coefficient sequence; the same large sieve follows.
+
+The group $\mathcal O_S^\times/(\mathcal O_S^\times)^6$ is finite.
+Thus~\eqref{mm:unit-comparison} uses one of a finite set of fixed
+Kummer twists $\eta$, all unramified outside $S$ and of bounded
+$S$-conductor. This is a comparison of primitive characters, not a
+pointwise multiplication rule for independently zero-extended arrays at
+bad primes. In particular, a conductor drop must not be replaced by a
+product of artificial zeros.
+
+Since $\mathcal O$ is principal with six units, for fixed
+$\mathfrak a\in I(S)$ and an $S$-supported integral ideal
+$\mathfrak b$ there are at most six $u$ satisfying
+$(u)=\mathfrak a\mathfrak b$. For any nonnegative row quantity, the
+literal moment is consequently at most
+\begin{equation}\label{mm:literal-sum}
+ 6\sum_{\mathfrak b\ S\text{-supported}\atop N\mathfrak b\le H}
+   \sum_{\eta}\sum_{\mathfrak a\in I(S)\atop N\mathfrak a\le H/N\mathfrak b}
+ \left|L\bigl(s,\operatorname{prim}(\nu\eta
+                       \vartheta_{\mathfrak a})\bigr)\right|^2.
+\end{equation}
+An ideal bound $X^{1+\varepsilon}T^{1+\varepsilon}$ therefore transfers
+to all literal rows, since
+\[
+ \sum_{\mathfrak b\ S\text{-supported}}(N\mathfrak b)^{-1-\varepsilon}
+ =\prod_{p\in S}(1-(Np)^{-1-\varepsilon})^{-1}<\infty.
+\]
+No quotient of the original unit rows or deletion of $S$-prime powers
+has occurred.
+
+\subsection{Fixed twists, exact tame conductors and the squarefree sieve}
+Fix $\xi=\nu\eta$ and write
+$\rho_{\mathfrak a}=\operatorname{prim}
+(\xi\vartheta_{\mathfrak a})$. Its fixed conductor is supported in
+$S$ before the Kummer twist. On columns prime to $S$, $|\xi(\mathfrak b)|=1$.
+BGL Theorem~1.3 thus gives, for any fixed $\mathfrak a_1$,
+\begin{align}\label{mm:ls}
+ &\sum_{\mathfrak a_0\in I(S)\ \mathrm{squarefree}\atop N\mathfrak a_0\le M}
+ \left|\sum_{\mathfrak b_1\in I(S)\ \mathrm{squarefree}\atop N\mathfrak b_1\le B}
+ \lambda_{\mathfrak b_1}\xi(\mathfrak b_1)
+ \vartheta_{\mathfrak a_1}(\mathfrak b_1)
+ \vartheta_{\mathfrak a_0}(\mathfrak b_1)\right|^2\notag\\
+ &\hspace{1cm}\ll (MB)^\varepsilon
+ \{M+B+(MB)^{2/3}\}\sum_{\mathfrak b_1}|\lambda_{\mathfrak b_1}|^2.
+\end{align}
+The first fixed multiplier preserves the coefficient norm; the second
+has modulus at most one. Restricting the positive outer row sum is
+harmless. A coprimality condition with another fixed ideal belongs to
+$\lambda$. In particular, $\nu$ need not have order dividing six and
+is not asserted to belong to BGL's finite ray-class character set.
+
+There is a unique valuation decomposition
+\[
+ \mathfrak a=\mathfrak a_0\mathfrak a_1\mathfrak a_2^6,
+ \quad \mathfrak a_0\ \hbox{squarefree},\quad
+ \mathfrak a_1\ \hbox{squarefull and sixth-power-free},\quad
+ (\mathfrak a_0,\mathfrak a_1)=1.
+\]
+Indeed, for $v_p(\mathfrak a)=6q+r$, $0\le r\le5$, put the residual
+prime in $\mathfrak a_0$ if $r=1$, and its exponent $r$ in
+$\mathfrak a_1$ if $2\le r\le5$. BGL Lemma~2.1 gives
+$\vartheta_{\mathfrak a\mathfrak b^6}=\vartheta_{\mathfrak a}$ and
+$\vartheta_{\mathfrak a_0\mathfrak a_1}
+=\vartheta_{\mathfrak a_0}\vartheta_{\mathfrak a_1}$ on ideals
+prime to $S$ in this sixth-power-free case. Those are the identities
+needed here; no arbitrary multiplicativity assertion is substituted.
+
+At a prime outside $S$, tame Kummer inertia at residual exponent $r$
+has order $6/\gcd(6,r)$. It is nontrivial for $r=1,\ldots,5$ and
+has conductor exponent one. The fixed $\xi$ is unramified there, so
+cannot cancel that inertia. At primes in $S$ the local sixth-power
+classes are finite, hence only finitely many primitive conductor types
+occur after multiplication by the fixed $\xi$. Consequently
+\begin{equation}\label{mm:conductor}
+ Q_{\rho_{\mathfrak a}}=|D_K|N\mathfrak f_{\rho_{\mathfrak a}}
+ \le C_{\xi,S}N(\mathfrak a_0\mathfrak a_1),
+\end{equation}
+independently of $\mathfrak a_2$. The equality of the conductor's
+outside-$S$ part with $\operatorname{rad}(\mathfrak a_0\mathfrak a_1)$
+does not identify that conductor with the original larger deleted set.
+
+\subsection{Removing the row-dependent functional-equation weights}
+First take finite-order $\nu$. All characters then have trivial infinity
+type at the complex place. The primitive completion may be normalized as
+\[
+ \Lambda(s,\rho)=Q_\rho^{s/2}\gamma_K(s)L(s,\rho),\qquad
+ \gamma_K(s)=2(2\pi)^{-s}\Gamma(s),\qquad
+ \Lambda(s,\rho)=\epsilon_\rho\Lambda(1-s,\bar\rho),
+ \quad |\epsilon_\rho|=1.
+\]
+For nonprincipal rows the completed function is entire. Apply this
+functional equation to the Mellin integral with even auxiliary factor
+$G(z)=e^{z^2}$ and denominator $z$, shifting across $z=0$. At
+$s=1/2+it$ this gives two weighted Dirichlet series, truncated below to
+polynomials; the dual prefactor has modulus one. Principal rows are excluded from
+this pole-free step and treated separately below.
+
+For fixed $\mathfrak a_2$, let $X=H/(N\mathfrak a_2)^6\ge1$ and
+$T=1+|t|$. An explicit normalized kernel is
+\begin{equation}\label{mm:afe-kernel}
+ V_t(x)=\frac1{2\pi i}\int_{(\eta)}
+ e^{z^2}\frac{\Gamma(s+z)}{\Gamma(s)}T^{-z}x^{-z}\,\frac{dz}{z},
+ \qquad x=\frac{2\pi N\mathfrak b}{\sqrt{Q_\rho}T},
+\end{equation}
+with $\eta>0$ small. Its factors combine to
+$(\sqrt{Q_\rho}/(2\pi N\mathfrak b))^z$ in the actual completed-L
+kernel; there is no extra factor of $T$. The denominator $z$ supplies
+the residue at zero.
+On $z=\eta+iy$, Stirling and $|t+y|\le T(1+|y|)$ give
+\[
+ \left|\frac{\Gamma(1/2+\eta+i(t+y))}
+                 {\Gamma(1/2+it)T^{\eta+iy}}\right|
+ \ll_\eta (1+|y|)^{C_\eta}e^{\pi|y|/2}.
+\]
+The factor $e^{-y^2}$ makes this an integrable majorant uniformly in
+$t$. The analogous bound holds on every fixed positive shifted line
+and for the dual gamma kernel. Moving far enough to the right gives
+arbitrary power decay beyond a common total-ideal cutoff
+\begin{equation}\label{mm:common-cutoff}
+ B'=X^{1/2}T(HT)^\eta,
+\end{equation}
+up to fixed $\xi,S,K$ constants. For any requested $A>0$, a sufficiently
+large positive kernel shift, depending also on $\eta$, makes the
+truncation error $O((HT)^{-A})$ uniformly in all rows in this block.
+Ideal counting $O_K(Y)$ bounds the absolute tails. Such errors are
+negligible after the finite row sums by taking $A$ larger if needed.
+
+Insert~\eqref{mm:afe-kernel} on $\operatorname{Re}z=\eta$.
+The factor $(\sqrt{Q_\rho}T)^z$ is independent of the column and is a
+row multiplier of modulus at most $(CXT^2)^{\eta/2}$.
+Its imaginary part is a phase. The remaining column coefficient is
+$(N\mathfrak b)^{-1/2-\eta-it-iy}$, apart from fixed constants.
+Minkowski or Cauchy with the integrable gamma majorant therefore removes
+the row-dependent weight at cost $(HT)^{O(\eta)}$ in the squared norm.
+No independence of the root numbers is assumed or needed.
+
+For each column use the unique decomposition
+\[
+ \mathfrak b=\mathfrak b_S\mathfrak b_1\mathfrak b_2,
+ \quad \mathfrak b_S\ S\hbox{-supported},\quad
+ \mathfrak b_1\ \hbox{squarefree},\quad
+ \mathfrak b_2\ \hbox{squarefull},\quad
+ (\mathfrak b_1,\mathfrak b_2)=1,
+\]
+where $\mathfrak b_1,\mathfrak b_2\in I(S)$; a prime of outside-$S$
+valuation one goes in $\mathfrak b_1$, and a prime of valuation at least
+two goes with its full exponent in $\mathfrak b_2$. For fixed
+$\mathfrak b_S,\mathfrak b_2$ retain
+$\rho_{\mathfrak a}(\mathfrak b_S)$ as the original primitive row
+value. On the good factors the exact canonical identity applies.
+The remaining factors involving $\mathfrak b_2$, including
+$\vartheta_{\mathfrak a_0}(\mathfrak b_2)$, are bounded row
+multipliers. Their moduli are at most one; only then are they discarded
+in an inequality. In particular the value at $\mathfrak b_S$ is not
+replaced by the product of zero-extended primitive arrays.
+
+For the $\mathfrak b_1$ polynomial the coefficient sequence is
+independent of $\mathfrak a_0$; it includes the indicator
+$(\mathfrak b_1,\mathfrak b_2)=1$ and the common cutoff
+$N\mathfrak b_1\le B'/N(\mathfrak b_S\mathfrak b_2)$.
+Padding it by zeros up to $B'$ is legitimate. Its squared norm is at most
+$\zeta_K(1+2\eta)$. Minkowski over $\mathfrak b_S,\mathfrak b_2$
+is legitimate because
+\[
+ \sum_{\mathfrak b_S,\mathfrak b_2}
+       N(\mathfrak b_S\mathfrak b_2)^{-1/2-\eta}<\infty.
+\]
+The finite Euler product handles $\mathfrak b_S$; the squarefull series
+converges above $1/2$. Apply~\eqref{mm:ls} to each such polynomial and
+to the conjugate dual family. For fixed $\mathfrak a_1,\mathfrak a_2$
+the resulting energy is
+\begin{equation}\label{mm:block-energy}
+ (HT)^{O(\eta)}\{M+B'+(MB')^{2/3}\},\qquad
+ M=X/N\mathfrak a_1.
+\end{equation}
+The additional condition $(\mathfrak a_0,\mathfrak a_1)=1$ simply
+restricts the positive row sum. The large-sieve small exponent can be
+chosen sufficiently small along with $\eta$ and absorbed in the
+indicated small loss.
+
+\subsection{All-ideal summation and principal rows}
+Every squarefull ideal $\mathfrak c$ has a unique expression
+$\mathfrak d^2\mathfrak e^3$ with $\mathfrak e$ squarefree.
+This follows primewise by using exponent zero or one in $\mathfrak e$
+according to the parity of an exponent at least two. Therefore
+\[
+ \#\{\mathfrak c\ \mathrm{squarefull}:N\mathfrak c\le X\}
+ \ll_K X^{1/2},\qquad
+ \sum_{\mathfrak c\ \mathrm{squarefull}}(N\mathfrak c)^{-s}<\infty
+ \quad(s>1/2).
+\]
+For the count, sum
+$O((X/(N\mathfrak e)^3)^{1/2})$ and use
+$\zeta_K(3/2)<\infty$. Summing~\eqref{mm:block-energy} over
+$\mathfrak a_1$ gives
+\[
+ (HT)^{O(\eta)}
+ \{X+B'\sqrt X+(XB')^{2/3}\}
+ \ll (HT)^{O(\eta)}XT,
+\]
+since the squarefull series converges at $1$ and $2/3$,
+$B'=\sqrt X\,T(HT)^\eta$, and $T^{2/3}\le T$ for $T\ge1$.
+The $\mathfrak a_2$ sum is bounded by
+$H\sum_{\mathfrak a_2}(N\mathfrak a_2)^{-6}=H\zeta_K(6)$.
+Choosing all internal losses small for the requested final
+$\varepsilon$ proves the fixed-twist all-ideal central moment.
+
+There are $O_K(H)$ ideal rows in total. On any row where the primitive
+character is principal its $L$-function is $\zeta_K$, and ordinary
+scalar convexity gives
+$|\zeta_K(1/2+it)|^2\ll_\varepsilon T^{1+\varepsilon}$.
+This treats those rows without a pole-free approximate functional
+equation. Finally~\eqref{mm:literal-sum} proves~\eqref{mm:central}
+for every actual nonzero Eisenstein element.
+
+\subsection{Poisson transfer with an explicit constant}
+For a nonprincipal row define
+\[
+ f_\psi(s)=\frac{L(s,\psi)}{(s+1)^{5/4}},
+\]
+using the holomorphic logarithm on $\operatorname{Re}(s+1)>0$.
+On a principal row additionally multiply by $(s-1)/(s+1)$.
+Analytic continuation and ordinary degree-two convexity, used separately
+at each fixed conductor, show that $f_\psi$ is bounded analytic on the
+right half-plane $\operatorname{Re}s>1/2$, with continuous boundary
+and decay at infinity. The principal pole is removed before applying
+Poisson representation to its real and imaginary parts. Jensen gives
+\[
+ |f_\psi(1/2+\delta+it)|^2
+ \le\int_{\mathbb R}P_\delta(t-v)
+             |f_\psi(1/2+iv)|^2\,dv.
+\]
+The exact row family is finite for fixed $H$, so its sum interchanges
+with the integral without a limiting-family issue. The boundary
+pole-removal factor has modulus at most one.
+
+Take $0<\varepsilon_0\le1/4$ and
+$\alpha=3/2-\varepsilon_0\in[5/4,3/2)$. Since
+$|3/2+iv|\ge(1+|v|)/\sqrt2$, the central squared moment of the
+$f_\psi$ is bounded by
+$3C_0H^{1+\varepsilon_0}w_\alpha(v)$, where
+$w_\alpha(v)=(1+|v|)^{-\alpha}$.
+For $|t|\ge2$, split $|v-t|\le|t|/2$ from its complement. The
+near contribution to $P_\delta*w_\alpha$ is at most
+$2^\alpha w_\alpha(t)<3w_\alpha(t)$. In the far region use
+$P_\delta(t-v)\le4\delta/(\pi t^2)$ and
+$\int w_\alpha=2/(\alpha-1)$, giving at most
+\[
+ \frac{2\delta3^\alpha}{\pi(\alpha-1)}w_\alpha(t)
+ \le8w_\alpha(t).
+\]
+Here $(1+|t|)^\alpha/t^2\le3^\alpha/4$ for $|t|\ge2$.
+For $|t|\le2$, the convolution is at most one and hence at most
+$3^\alpha w_\alpha(t)<6w_\alpha(t)$. Thus
+$P_\delta*w_\alpha\le11w_\alpha$ uniformly for $0<\delta<1/2$.
+Restoring the denominator costs less than
+$6(1+|t|)^{5/2}$, and the inverse principal factor is bounded by
+$(3/2+\delta)/(1/2-\delta)$. The product $11\cdot3\cdot6=198<200$
+proves~\eqref{mm:poisson-constant}. The constant is uniform as
+$\delta\downarrow0$, but not as the contour approaches the principal
+pole line $\operatorname{Re}s=1$. No zero-free hypothesis appears.
+
+\subsection{The separately scoped unitary infinity type}
+Let $\nu(\mathfrak a)=\nu_0(\mathfrak a)(N\mathfrak a)^{-i\tau}$
+be fixed and unitary, with angular parameter $m$ and gamma factor
+$\gamma_\nu$ stated in Section~\ref{mm:core}. The external primitive
+functional equation is explicitly
+\[
+ Q_\rho^{s/2}\gamma_\nu(s)L(s,\rho)
+ =\epsilon_\rho Q_\rho^{(1-s)/2}
+                 \gamma_{\bar\nu}(1-s)L(1-s,\bar\rho),
+ \qquad |\epsilon_\rho|=1.
+\]
+A constant norm-twist phase in another completion convention is absorbed
+in $\epsilon_\rho$. All finite Kummer twists share this infinity type.
+Replace $T$ in the kernel by $T_\nu=1+|t+\tau|+|m|$.
+The numerator gamma ratio now has real base $1/2+|m|/2>0$ and
+vertical parameter $t+\tau$; its conjugate dual has parameter
+$-(t+\tau)$. Stirling gives the same integrable Gaussian-majorized
+kernel on each fixed shifted line. Constants can depend on $m,\tau$;
+$T_\nu$ is comparable to $T$ for this one fixed $\nu$.
+The finite-prime conductor analysis, modulus-one coefficient twist,
+all-ideal decomposition and all original primitive row values remain
+unchanged.
+
+A pure norm row has $L(s,\rho)=\zeta_K(s+i\tau)$; exclude it from
+the pole-free approximate functional equation and use scalar convexity
+at $t+\tau$. In the Poisson step cancel its actual pole by
+\[
+ h_\tau(s)=\frac{s-1+i\tau}{s+1+i\tau}.
+\]
+This factor is analytic in the relevant right half-plane. On its
+boundary $|h_\tau|\le1$, while inside
+$|h_\tau^{-1}|\le(3/2+\delta)/(1/2-\delta)$.
+Hence the same transfer factor $200$ applies to the now
+$\nu$-dependent central constant. If the opposite norm convention is
+chosen, replace $\tau$ by $-\tau$ in the gamma factor and pole alike.
+This proves the separate fixed-unitary moment assertion; it does not
+claim uniformity in a family of infinity types or replace the
+finite-order principal-residue expression below.
+
+\subsection{Keeping the full type-I mask during transfer}
+For $\sigma=1/2+\delta$, define $L^T$ by removing every prime of
+$T(u,d)$, not just conductor primes. The identity~\eqref{mm:masked}
+is equivalently
+\[
+ F_{u,d}(s)=\frac{L(s,\psi_u)}{L^{T(u,d)}(2s,\psi_{u,2})}
+ \prod_{p\in T(u,d),\ p\nmid\mathfrak f_u}
+                         (1-\psi_u(p)(Np)^{-s}).
+\]
+Absolute convergence at $2\sigma>1$ bounds the reciprocal incomplete
+product by $\zeta_K(2\sigma)$, without requiring any zero-free theorem
+in the critical strip. For every fixed $\eta>0$,
+\[
+ \prod_{p\in T}(1+(Np)^{-\sigma})
+ \ll_{\sigma,\eta}(N\operatorname{rad}T)^\eta,
+ \qquad N\operatorname{rad}T\le C_S Nu\,Nd.
+\]
+Indeed $1+q^{-\sigma}\le q^\eta$ beyond a fixed threshold, and only
+finitely many prime ideals lie below it. Therefore
+\begin{equation}\label{mm:mask-bound}
+ |F_{u,d}(\sigma+it)|
+ \ll_{\nu,S,\delta,\eta}(Nu\,Nd)^\eta
+                              |L(\sigma+it,\psi_u)|.
+\end{equation}
+This is a bounded inequality after the exact mask identity, not an
+identity that removes original zeros. For example, with principal $\nu$
+and $u=\pi^3$ or $\pi^6$ at $N\pi=7$, the primitive local ratio,
+restoration and full masked factor at $s=1$ are respectively
+\[
+ \begin{array}{c|ccc}
+  v_\pi(u)&\hbox{primitive ratio}&\hbox{restoration}&\hbox{masked factor}\\\hline
+ 3&48/49&49/48&1\\
+ 6&8/7&7/8&1
+ \end{array}
+\]
+The squared primitive character in the first row is unramified at
+$\pi$ although the original primitive character is ramified there.
+Squaring a zero sentinel would give the wrong denominator.
+
+For finite-order $\nu$, the normalized type-I piece is the retained
+$d$ sum of the smoothed squarefree series at $Y=D/Nd$, divided by
+$\sqrt D$. Its possible pole is only at $s=1$, on principal rows.
+Contour shifting with the full mask gives $I_u=P_u+E_u$, with $E_u$
+exactly~\eqref{mm:remainder} and
+\begin{align*}
+ P_u&=\mathbf1_{\psi_u=1}\sqrt D\,\widehat W(1)
+ \sum_{d\ \mathrm{squarefree}\atop(d,S)=1}
+ \frac{\beta_U(d)\nu(d)\chi_d(u)}{Nd}\rho_{T(u,d)},\\
+ \rho_T&=\frac{\operatorname*{res}_{s=1}\zeta_K(s)}{\zeta_K(2)}
+                   \prod_{p\in T}(1+(Np)^{-1})^{-1}.
+\end{align*}
+This does not impose positivity on $P_u$. Since $\beta_U$ is supported
+on $Nd\le U^2\le D$, every inner scale $Y$ is at least one.
+Four integrations by parts give
+$|\widehat W(\sigma+it)|\ll_\sigma\mathcal M_4(W)(1+|t|)^{-4}$,
+which justifies the shifted integrals and their horizontal limits with
+the classical Hecke growth estimates.
+
+Apply Minkowski to~\eqref{mm:remainder} in $\ell^2$ of the actual
+$u$ rows, then use~\eqref{mm:mask-bound} and the off-central moment.
+For sufficiently small internal losses this bounds $\|E\|_2$ by
+\[
+ C D^\delta H^{1/2+O(\eta)}
+ \sum_d\frac{|\beta_U(d)|}{(Nd)^{\sigma-\eta}}
+ \int_{\mathbb R}|\widehat W(\sigma+it)|
+                     (1+|t|)^{(1+O(\eta))/2}\,dt.
+\]
+All original $\nu(d)\chi_d(u)$ have modulus at most one and remain
+inside the exact expression before this inequality. The actual truncated
+factorization gives, without replacing $\beta_U$ by arbitrary coefficients,
+\[
+ \sum_d\frac{|\beta_U(d)|}{(Nd)^{\sigma-\eta}}
+ \le\left(\sum_{Na\le U}(Na)^{-\sigma+\eta}\right)^2
+ \ll_{\delta,\eta}U^{1-2\delta+2\eta}.
+\]
+Choose $\eta<\delta$ if necessary and use the fixed-field ideal count.
+The height integral is bounded by $C\mathcal M_4(W)$. Squaring and
+absorbing the small losses in $(HD)^\varepsilon$, using $U^2\le D$,
+proves~\eqref{mm:energy}. Thus the formerly conditional numerator
+moment input in this residual transfer is discharged, while its
+positive-power cutoff loss is retained explicitly.
+
+\subsection{What remains open and what has been verified}
+The new remainder envelope improves the old scalar-convexity $H$ power
+$3/2-\delta+\varepsilon$ to $1+\varepsilon$. At fixed $U$ one may
+choose $\delta$ for a requested small-loss exponent; for $U=D^a$ with
+fixed $a>0$, the remaining excess tends to $2a$ as $\delta\downarrow0$.
+Neither statement controls $P_u$, the other signed piece, nor their
+covariance. In the original Vaughan identity the short $2a_U$ term
+must be restored at smaller scales where its support can meet the
+annulus. Uniform $\mathcal M_4$ bounds do not justify interchanging a
+profile supremum with the row moment or assuming $U^2\le D'$ after a
+scale $D'$ is reduced.
+
+The independent prose audit is recorded in
+\path{planning/analytic-oracle/arithmetic-review/adversarial-afm-review-20261104.md}.
+The source-hashed finite checker tests valuation/support decompositions,
+squarefull coordinates, height exponents and rational Poisson envelopes.
+Its finite success does not prove reciprocity, analytic continuation,
+the large sieve, the approximate functional equation or the moments.
+No new Lean declarations accompany these analytic theorems. Existing
+Lean local Euler identities are a separately limited verification layer.
+The independent positive arithmetic determinant comparison, original
+signed low-gcd short-row estimate, all required contour uniformities and
+GRH remain open; Dirichlet, Hecke, Dedekind and general Artin scopes are
+not identified with one another.
+
+\paragraph{Pinned primary sources and external inputs.}
+The principal analytic family input is
+\href{https://arxiv.org/pdf/1112.1650v1}{Blomer--Goldmakher--Louvel,
+arXiv:1112.1650v1}, Theorem~1.3, Lemma~2.1, Appendix~II and Section~5.
+Our fixed-$\nu$ proof changes column coefficients and redoes the
+functional-equation reduction; it does not claim the published
+corollary directly states every fixed twist.
+For comparison,
+\href{https://arxiv.org/pdf/2201.01885v2}{Gao--Zhao,
+arXiv:2201.01885v2}, Lemma~2.9 and Section~3.2, uses the sextic
+large-sieve/moment interface. Its GRH-conditional central-density theorem
+is not invoked. Abelian Kummer identification uses the classical
+reciprocity theorem, with the project's pinned Milne \emph{Class Field
+Theory}, version~4.03 (6 August 2020), Theorem~0.8 and Chapter~I,
+Section~1, a reference:
+\href{https://www.jmilne.org/math/CourseNotes/CFT.pdf}{Milne's notes}.
+The primitive degree-one Hecke continuation and completed functional
+equation are explicit classical external inputs; the project's pinned
+\href{https://u.cs.biu.ac.il/~reznikov/courses/kudla-1.pdf}{Kudla notes
+on Tate's thesis}, Theorem~4.3 and Corollary~4.4, supply a reference.
+Their sketch and incomplete displayed epsilon formulas are not used as
+independently certified constants. Standard Stirling, Mellin inversion,
+Poisson representation and scalar convexity complete the external
+analytic dependencies. None is replaced by a finite diagnostic or a
+GRH-equivalent assumption.

@@ -1,0 +1,88 @@
+\section{Euler packaging, coprimality and the analytic boundary}
+\label{rc:details}
+For $p\notin T_0$, set $z_p=\psi_u(p)(Np)^{-s}$ and
+$t_p=z_p/(1+z_p)$. On $\operatorname{Re}s>1$, deleting an additional
+surviving prime divides the squarefree Euler product by $1+z_p$.
+Consequently the exact retained expression is
+\[
+ J_{u,U}(s)=F_{u,1}(s)B_{u,U}(s),\qquad
+ B_{u,U}(s)=\sum_{d\ \mathrm{squarefree},\ (d,T_0)=1}
+                 \beta_U(d)\prod_{p\mid d}t_p.
+\]
+Original zeros enforce $(d,u)=1$ even when a sixth power drops from
+its primitive conductor. This factorization cannot restore a forbidden
+$d$ row by replacing a zero sentinel with an unramified primitive value.
+The equality continues wherever both sides are holomorphic.
+
+Without the cutoffs, $\beta_\infty(d)=\mu(d)2^{\omega(d)}$ on
+squarefree ideals. Absolute convergence justifies
+\[
+ B_{u,\infty}=\prod_{p\notin T_0}(1-2t_p)
+ =\prod_{p\notin T_0}\frac{1-z_p}{1+z_p},\qquad
+ F_{u,1}B_{u,\infty}=\prod_{p\notin T_0}(1-z_p)
+                   =\frac1{L^{T_0}(s,\psi_u)}.
+\]
+Theorem~\ref{rc:recombination} gives a quantitative rate rather than an
+unsupported exchange of this limit with a critical-strip contour.
+
+\paragraph{A local counterexample to the naive square.}
+In a one-prime projection at a good Eisenstein prime of norm $7$, take
+the principal local phase and $s=1$. Then $z=1/7$, $t=1/8$ and,
+for $U\ge7$, the exact polynomial is $B_U=1-2t=3/4$.
+The unconstrained square $(1-t)^2=49/64$ differs by $1/64$:
+it admits the forbidden pair $a=b=p$. After multiplying by
+$F=1+z=8/7$ it gives $7/8$ instead of the correct $6/7$.
+This is an actual local Euler calculation, not an infinite-series or
+mean-square counterexample. It identifies the exact coprimality condition
+that a proposed mollifier-square simplification must preserve.
+
+\paragraph{The exact intermediate coefficient band.}
+For a squarefree $m$ with $U<Nm\le U^2$, one has $A_U(m)=-\mu(m)$.
+Indeed the unrestricted disjoint-assignment sum is $\mu(m)$. If $Na>U$,
+every $b\mid m/a$ automatically has $Nb\le Nm/Na<U$, and
+$\sum_{b\mid m/a}\mu(b)$ vanishes unless $a=m$. Hence the excluded
+$a$ assignments contribute exactly $\mu(m)$; the excluded $b$
+assignments contribute another $\mu(m)$. They cannot overlap because
+$NaNb>U^2\ge Nm$ contradicts $ab\mid m$. Subtraction proves the claim.
+Together with the small-norm band, this gives $A_U=\mu$ for $Nm\le U$
+and $A_U=-\mu$ for $U<Nm\le U^2$. The original smoothed columns have
+$Nm\ge D\ge U^2$, so the new band does not justify replacing their
+coefficients by $-\mu(m)$: generally they lie beyond it.
+
+\begin{theorem}[A stronger cutoff convergence would require zero-freeness]
+\label{rc:boundary}
+Fix a nonprincipal primitive $\psi_u$. If these actual $J_{u,U}$
+converge locally uniformly on $\operatorname{Re}s>1/2$ as
+$U\longrightarrow\infty$, then $L(s,\psi_u)$ has no zero there.
+\end{theorem}
+\begin{proof}
+Classical abelian Hecke continuation makes the numerator of
+$F_{u,1}=L^{T_0}(s,\psi_u)/L^{T_0}(2s,\psi_{u,2})$ holomorphic.
+Its denominator is nonzero on $\operatorname{Re}s>1/2$ by the
+absolute Euler product at $2s$. Each $B_{u,U}$ is a finite sum with
+nonzero denominators $1+z_p$ on $\operatorname{Re}s>0$.
+Thus every $J_{u,U}$ is holomorphic on the asserted half-plane.
+A locally uniform limit $G$ is holomorphic there. On
+$\operatorname{Re}s>1$, the already proved convergence gives
+$L^{T_0}(s,\psi_u)G(s)=1$. The identity theorem extends this equality
+to the connected half-plane, precluding a zero of $L^{T_0}$.
+The finitely deleted factors $1-\psi_u(p)(Np)^{-s}$ do not vanish
+when $\operatorname{Re}s>0$, so the same conclusion holds for the
+primitive $L$-function.
+\end{proof}
+This is an implication, not a proof that the stronger convergence holds,
+and it does not assert a converse. In particular, a family-averaged energy
+bound is not silently promoted to locally uniform convergence for each
+individual character. Principal rows have a pole at $1$ and were excluded
+from this proposition. General Artin holomorphy is not an input.
+
+\paragraph{Reproducible exact diagnostics.}
+The new source \path{examples/arithmetic_cutoff/exact_recombination.py}
+uses actual split/inert prime ideals and raw sextic symbols in
+$\mathbb Z[\omega]$, with exact rational arithmetic. It checks the direct
+masked sum, coefficient regrouping, Euler packaging, both finite full-cutoff
+limits and original zeros, including third/sixth-power rows. Its overlapping-
+support negative controls are not tests of an infinite large sieve or of
+zero location. The analytic convergence argument above uses ordinary ideal
+Euler products and the explicitly stated Hecke continuation theorem; no
+new Lean declaration or complete GRH proof is claimed.

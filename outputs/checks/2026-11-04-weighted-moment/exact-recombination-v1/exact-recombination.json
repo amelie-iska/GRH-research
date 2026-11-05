@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "arithmetic": "exact Fraction and Eisenstein elements; no seed",
+  "prime_ideals": [
+    {
+      "generator": [
+        -2,
+        -3
+      ],
+      "norm": 7
+    },
+    {
+      "generator": [
+        1,
+        3
+      ],
+      "norm": 7
+    },
+    {
+      "generator": [
+        1,
+        -3
+      ],
+      "norm": 13
+    },
+    {
+      "generator": [
+        4,
+        3
+      ],
+      "norm": 13
+    },
+    {
+      "generator": [
+        -5,
+        -3
+      ],
+      "norm": 19
+    },
+    {
+      "generator": [
+        -2,
+        3
+      ],
+      "norm": 19
+    },
+    {
+      "generator": [
+        -5,
+        0
+      ],
+      "norm": 25
+    }
+  ],
+  "finite_squarefree_support": 128,
+  "rows": 33,
+  "cutoffs": [
+    1,
+    7,
+    20,
+    50,
+    500,
+    74736025
+  ],
+  "coefficient_checks": 2304,
+  "weighted_identity_cases": 792,
+  "original_zero_values": 64,
+  "naive_non_coprime_square_counterexamples": 660,
+  "max_abs_A_U": 71,
+  "sixth_power_sentinel_negative_control": true,
+  "source_sha256": {
+    "examples/arithmetic_cutoff/exact_recombination.py": "a0628db65089286c60df6e06eee38e0eca225d0e47319b1f5f6afe80fea4c330",
+    "scripts/check_mobius_split.py": "a3f1d3d89acafc187d6ca6851f370712b2544c92802b4d95dc5187e18a770638",
+    "scripts/check_reciprocity_period.py": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925"
+  },
+  "scope": "Finite actual Eisenstein-prime-ideal and raw sextic-symbol identities. Not infinite cutoff convergence, the large-sieve moment theorem, analytic Lean, positivity or GRH."
+}

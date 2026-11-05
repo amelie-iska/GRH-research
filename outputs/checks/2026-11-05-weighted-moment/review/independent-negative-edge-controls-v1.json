@@ -1,0 +1,482 @@
+{
+  "passed": true,
+  "deterministic": true,
+  "seed": "none",
+  "python": "3.12.3",
+  "independent_no_author_imports": true,
+  "ll_cases": 224,
+  "active_cases": 198,
+  "exact_U_squared_endpoint_cases": 2,
+  "cutoff_values": [
+    "1",
+    "13/2",
+    "7",
+    "15/2",
+    "13",
+    "25",
+    "49"
+  ],
+  "local_inertia_cases": [
+    {
+      "norm": 7,
+      "valuation": 1,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 2,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 3,
+      "inertia_order": 2,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 4,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 5,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 1,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 2,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 3,
+      "inertia_order": 2,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 4,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 7,
+      "valuation": 5,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 1,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 2,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 3,
+      "inertia_order": 2,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 4,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 5,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 1,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 2,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 3,
+      "inertia_order": 2,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 4,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 13,
+      "valuation": 5,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 25,
+      "valuation": 1,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 25,
+      "valuation": 2,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 25,
+      "valuation": 3,
+      "inertia_order": 2,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 25,
+      "valuation": 4,
+      "inertia_order": 3,
+      "tame_conductor_exponent": 1
+    },
+    {
+      "norm": 25,
+      "valuation": 5,
+      "inertia_order": 6,
+      "tame_conductor_exponent": 1
+    }
+  ],
+  "balanced_literal_rows": 72,
+  "raw_product_cases": 75776,
+  "union_mask_zero_cases": 69888,
+  "wrong_inverse_witnesses": 2848,
+  "complex_covariance_row_cases": 1296,
+  "independent_Gram_expansions": 18,
+  "signed_target_equivalence_cases": 54,
+  "wrong_covariance_witnesses": 144,
+  "wrong_weight_conjugation_witnesses": 18,
+  "centered_rows": 74,
+  "centered_columns": 4,
+  "centered_PSD_vectors": 5,
+  "nonprojection_witness": [
+    "-5575/49",
+    "1282/49"
+  ],
+  "negative_controls": [
+    "Nm=U does not satisfy active A=C-mu",
+    "nonsquarefree m invalidates unrestricted sum=mu",
+    "ramified inverse twist could cancel tame inertia if S hypothesis removed",
+    "symmetric-difference mask loses a shared-prime zero",
+    "primitive sixth-power row substitution loses raw zero",
+    "missing conjugate/inverse changes exact raw product",
+    "wrong covariance sign/conjugate changes energy",
+    "missing W(n) conjugate changes Gram energy"
+  ],
+  "complex_annular_profiles": [
+    {
+      "D": 49,
+      "U": 7,
+      "endpoint_columns": 1,
+      "columns": 5,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "energy": "1872240/117649",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 49,
+      "U": 7,
+      "endpoint_columns": 1,
+      "columns": 5,
+      "nu_numerator": [
+        2,
+        0
+      ],
+      "energy": "1872240/117649",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 49,
+      "U": 7,
+      "endpoint_columns": 1,
+      "columns": 5,
+      "nu_numerator": [
+        -1,
+        0
+      ],
+      "energy": "1872240/117649",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 64,
+      "U": 7,
+      "endpoint_columns": 0,
+      "columns": 4,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "energy": "386450067/67108864",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 64,
+      "U": 7,
+      "endpoint_columns": 0,
+      "columns": 4,
+      "nu_numerator": [
+        2,
+        0
+      ],
+      "energy": "386450067/67108864",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 64,
+      "U": 7,
+      "endpoint_columns": 0,
+      "columns": 4,
+      "nu_numerator": [
+        -1,
+        0
+      ],
+      "energy": "386450067/67108864",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 128,
+      "U": 7,
+      "endpoint_columns": 0,
+      "columns": 3,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "energy": "27960092655/8589934592",
+      "covariance": [
+        "5269920483/4294967296",
+        "0"
+      ]
+    },
+    {
+      "D": 128,
+      "U": 7,
+      "endpoint_columns": 0,
+      "columns": 3,
+      "nu_numerator": [
+        2,
+        0
+      ],
+      "energy": "5622215223/1073741824",
+      "covariance": [
+        "5269920483/4294967296",
+        "0"
+      ]
+    },
+    {
+      "D": 128,
+      "U": 7,
+      "endpoint_columns": 0,
+      "columns": 3,
+      "nu_numerator": [
+        -1,
+        0
+      ],
+      "energy": "27960092655/8589934592",
+      "covariance": [
+        "5269920483/4294967296",
+        "0"
+      ]
+    },
+    {
+      "D": 169,
+      "U": 13,
+      "endpoint_columns": 1,
+      "columns": 5,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "energy": "865479019824/137858491849",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 169,
+      "U": 13,
+      "endpoint_columns": 1,
+      "columns": 5,
+      "nu_numerator": [
+        2,
+        0
+      ],
+      "energy": "1485221978736/137858491849",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 169,
+      "U": 13,
+      "endpoint_columns": 1,
+      "columns": 5,
+      "nu_numerator": [
+        -1,
+        0
+      ],
+      "energy": "865479019824/137858491849",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 625,
+      "U": 25,
+      "endpoint_columns": 0,
+      "columns": 5,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "energy": "83772912/244140625",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 625,
+      "U": 25,
+      "endpoint_columns": 0,
+      "columns": 5,
+      "nu_numerator": [
+        2,
+        0
+      ],
+      "energy": "83772912/244140625",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 625,
+      "U": 25,
+      "endpoint_columns": 0,
+      "columns": 5,
+      "nu_numerator": [
+        -1,
+        0
+      ],
+      "energy": "83772912/244140625",
+      "covariance": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "D": 1024,
+      "U": 20,
+      "endpoint_columns": 0,
+      "columns": 3,
+      "nu_numerator": [
+        1,
+        0
+      ],
+      "energy": "17794126418403/281474976710656",
+      "covariance": [
+        "17794126418403/140737488355328",
+        "0"
+      ]
+    },
+    {
+      "D": 1024,
+      "U": 20,
+      "endpoint_columns": 0,
+      "columns": 3,
+      "nu_numerator": [
+        2,
+        0
+      ],
+      "energy": "17794126418403/281474976710656",
+      "covariance": [
+        "17794126418403/140737488355328",
+        "0"
+      ]
+    },
+    {
+      "D": 1024,
+      "U": 20,
+      "endpoint_columns": 0,
+      "columns": 3,
+      "nu_numerator": [
+        -1,
+        0
+      ],
+      "energy": "17794126418403/281474976710656",
+      "covariance": [
+        "17794126418403/140737488355328",
+        "0"
+      ]
+    }
+  ],
+  "author_manifest_hashes_match": true,
+  "source_sha256": {
+    "planning/weighted-moment-20261105/frontier/CENTERING_AND_SIGNED_TARGET.md": "cedc1e68b983dc86e63a2596d535d985a6e0a829906859df71fd97164e36613c",
+    "planning/weighted-moment-20261105/frontier/check_frontier_exact.py": "771eda75200019622daae47f9c0550c5ffb4ab405288f50f96c8ddd504c3548d",
+    "planning/weighted-moment-20261105/frontier/HANDOFF.md": "38f01eed220322e64ce4290a899cb42e3062b41c1b131840c15caebf56b4fc00",
+    "planning/weighted-moment-20261105/frontier/manifest.json": "c970869469e6d011a8ba87870a1b32beab1e82d7da203651c23eba8a60cacd9a",
+    "outputs/checks/2026-11-05-weighted-moment/frontier/exact-controls-v1.json": "634c089be46c1dcf12734ddb0761ccb487e223d9167147b4acfeebb5b8399a7d",
+    "research/weighted-cutoff-moment.md": "097a6cda1fd324b8f2622600d05e1038c04dbdf85ccfba2efcd8afc6ce8c1a7e",
+    "papers/masked-moment-details.tex": "cb5c0f58189a2c5f5b47658902b10026556603281799b94313617bc89804a76c",
+    "planning/weighted-moment-20261104/attempt/UNIFORM_CUTOFF_MOMENT.md": "71a84efb8feddc2d6d3a6764cc581113a7fbe69e01714c7e8b51a75cd6cd596e",
+    "planning/weighted-moment-20261105/review/check_independent_exact.py": "62d7103907247b8f78b2f9f06fc1efaf96a6500b289a4f9a19cac5147a9aad18"
+  },
+  "scope": "Finite diagnostics only. Tame Kummer conductor fact, accepted Mellin transfer and powered BGL remain analytic inputs. Formal residue base=1 tests algebra, not the value of a zeta residue. Complex rational finite profiles are not analytic W estimates. No BT_sigma proof, energy lower bound, Lean or GRH claim."
+}

@@ -26,7 +26,7 @@
 \setcounter{tocdepth}{1}
 \title{Surface Orders, Cyclic Time\ and the Arithmetic Spectral Bridge\\[1em]\large Dessins, resolutions, Auslander--Reiten theory, quantum models and verifiable research}
 \author{Amelie Schreiber\\\small Research development edition}
-\date{November 3, 2026}
+\date{November 4, 2026}
 \begin{document}
 \frontmatter\hypersetup{pageanchor=false}\maketitle\clearpage\hypersetup{pageanchor=true}
 \chapter*{Reader's guide and mathematical status}
@@ -38,7 +38,7 @@ A reader may start with cellular dessins and the node, then projective resolutio
 
 The provenance manifest records the source hashes and chapter inventory. Its location is \path{book/source-provenance.json}. The review records state the audit coverage. The supplied 2053 file is byte-identical to the pinned source called COMPLETED in the source clone; the other supplied COMPLETED file is a shorter, different version. This naming discrepancy is retained in the provenance record. No filename certifies a theorem.
 
-The companion is served on this machine at \url{http://127.0.0.1:8765}. It contains adjustable dessins, category-labelled AR diagrams, quantum carrier circuits, and saved training curves. The private repository remains the authoritative source. Selected lemmas are checked in Lean4; a full formalization of this entire book has not yet been completed.
+The companion is served on this machine at \url{http://127.0.0.1:8765}. It contains adjustable dessins, category-labelled AR diagrams, quantum carrier circuits, and saved training curves. The public repository and its project page provide the authoritative source and hosted companion. Selected lemmas are checked in Lean4; a full formalization of this entire book has not yet been completed.
 {\small\let\savedaddvspace\addvspace\renewcommand{\addvspace}[1]{\savedaddvspace{.6em}}\tableofcontents}
 \mainmatter
 \input{chapters/reviewed-mathematics}
@@ -58,6 +58,10 @@ The companion is served on this machine at \url{http://127.0.0.1:8765}. It conta
 \input{chapters/toricgt}
 \input{chapters/persistence}
 \input{chapters/frontier}
+\part{Certified analytic targets and weighted arithmetic moments}
+\input{chapters/validated-oracle}
+\input{chapters/masked-moment}
+\input{chapters/weighted-cutoff}
 \backmatter
 \input{chapters/references}
 \end{document}

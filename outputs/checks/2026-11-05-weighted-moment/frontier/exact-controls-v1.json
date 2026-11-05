@@ -1,0 +1,208 @@
+{
+  "passed": true,
+  "seed": "none; exhaustive deterministic exact arithmetic",
+  "prime_ideal_generators": [
+    [
+      -2,
+      -3
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      -3
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      -5,
+      -3
+    ],
+    [
+      -2,
+      3
+    ],
+    [
+      -5,
+      0
+    ]
+  ],
+  "prime_ideal_norms": [
+    7,
+    7,
+    13,
+    13,
+    19,
+    19,
+    25
+  ],
+  "finite_squarefree_support": 128,
+  "coefficient_LL_cases": 1024,
+  "active_A_equals_C_minus_mu_cases": 936,
+  "nonprincipal_literal_rows": 72,
+  "exact_raw_union_mask_product_cases": 74752,
+  "shared_zero_cases": 69888,
+  "covariance_row_cases": 720,
+  "independent_Gram_expansions": 10,
+  "nonzero_long_long_active_columns": 10,
+  "retained_masked_covariance_entries": 3768,
+  "parameters": [
+    {
+      "D": 64,
+      "U": 7,
+      "columns": 4,
+      "nu_numerator": [
+        1,
+        0
+      ]
+    },
+    {
+      "D": 64,
+      "U": 7,
+      "columns": 4,
+      "nu_numerator": [
+        2,
+        0
+      ]
+    },
+    {
+      "D": 128,
+      "U": 7,
+      "columns": 11,
+      "nu_numerator": [
+        1,
+        0
+      ]
+    },
+    {
+      "D": 128,
+      "U": 7,
+      "columns": 11,
+      "nu_numerator": [
+        2,
+        0
+      ]
+    },
+    {
+      "D": 512,
+      "U": 7,
+      "columns": 4,
+      "nu_numerator": [
+        1,
+        0
+      ]
+    },
+    {
+      "D": 512,
+      "U": 7,
+      "columns": 4,
+      "nu_numerator": [
+        2,
+        0
+      ]
+    },
+    {
+      "D": 1024,
+      "U": 20,
+      "columns": 11,
+      "nu_numerator": [
+        1,
+        0
+      ]
+    },
+    {
+      "D": 1024,
+      "U": 20,
+      "columns": 11,
+      "nu_numerator": [
+        2,
+        0
+      ]
+    },
+    {
+      "D": 4096,
+      "U": 50,
+      "columns": 7,
+      "nu_numerator": [
+        1,
+        0
+      ]
+    },
+    {
+      "D": 4096,
+      "U": 50,
+      "columns": 7,
+      "nu_numerator": [
+        2,
+        0
+      ]
+    }
+  ],
+  "prime_mask_example": {
+    "row": [
+      -29,
+      9
+    ],
+    "row_norm": 1183,
+    "columns": [
+      {
+        "generator": [
+          48,
+          5
+        ],
+        "norm": 2089
+      },
+      {
+        "generator": [
+          49,
+          4
+        ],
+        "norm": 2221
+      },
+      {
+        "generator": [
+          49,
+          6
+        ],
+        "norm": 2143
+      },
+      {
+        "generator": [
+          50,
+          9
+        ],
+        "norm": 2131
+      },
+      {
+        "generator": [
+          51,
+          1
+        ],
+        "norm": 2551
+      },
+      {
+        "generator": [
+          51,
+          2
+        ],
+        "norm": 2503
+      }
+    ],
+    "all_masks_equal_one": true,
+    "actual_A_U_prime": 1,
+    "U": 20,
+    "aligned_arbitrary_coefficient_norm_squared": 6,
+    "aligned_row_amplitude_squared": 36
+  },
+  "sixth_power_shared_prime_sentinel_preserved": true,
+  "source_sha256": {
+    "planning/weighted-moment-20261105/frontier/check_frontier_exact.py": "771eda75200019622daae47f9c0550c5ffb4ab405288f50f96c8ddd504c3548d",
+    "scripts/check_mobius_split.py": "a3f1d3d89acafc187d6ca6851f370712b2544c92802b4d95dc5187e18a770638",
+    "scripts/check_reciprocity_period.py": "34eef99b491f6b8d64b55b39c3a42400c6df3d0e1ddf5ba8494bc01f300e8925"
+  },
+  "scope": "Exact finite disjoint-convolution, raw symbol masks, Gram and LL-minus-Mobius covariance identities. Rational finite annular profile. No analytic BT_sigma bound, energy lower asymptotic, new Lean theorem, determinant positivity or GRH claim."
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "negative_controls": 24,
+  "cases": [
+    "cached-log-float-one",
+    "cached-log-int-one",
+    "cached-circle-float-index",
+    "cached-circle-float-count",
+    "cached-analytic-float-q",
+    "cached-analytic-float-order",
+    "bad-quadrature-order--2",
+    "bad-quadrature-order--1",
+    "bad-quadrature-order-2.0",
+    "unsupported-conductor",
+    "float-conductor",
+    "nonrectangle-input",
+    "real-domain-left",
+    "real-domain-right",
+    "imag-domain",
+    "bad-circle-(-1, 64)",
+    "bad-circle-(64, 64)",
+    "bad-circle-(0, 0)",
+    "bad-readout-order-(-1, 180)",
+    "bad-readout-order-(64, 180)",
+    "bad-readout-order-(1.0, 180)",
+    "bad-readout-order-(28, -1)",
+    "bad-readout-order-(28, 180.0)",
+    "empty-readout"
+  ],
+  "source_sha256": {
+    "dyadic.py": "82e995ae9f67395980cec3f06bf493931de0413c7ce024562283882c01425170",
+    "theta_oracle.py": "c50857831de0fc5faa6829cf539c7d31dc32958b76412c27689235aeba95d2c1"
+  },
+  "scope": "Domain/order/type guards including lru-cache cross-type aliases"
+}

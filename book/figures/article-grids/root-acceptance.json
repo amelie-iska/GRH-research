@@ -1,0 +1,68 @@
+{
+  "accepted": true,
+  "grid_manifest_sha256": "0bfaf20e810844ae991101f569f1993ff06a3cc3037d0d076ecbed7c0ba08bfe",
+  "reviewer": "root-independent-semantic-and-visual",
+  "checks": [
+    {
+      "name": "quotient-grid",
+      "nodes": 15,
+      "edges": 18,
+      "exact_source_and_independent_manifest_match": true,
+      "visual": "Root inspected rendered preview: clear labels/arrows, hooks and all minus signs preserved, no overlap/clipping"
+    },
+    {
+      "name": "signed-diamond",
+      "nodes": 9,
+      "edges": 12,
+      "exact_source_and_independent_manifest_match": true,
+      "visual": "Root inspected rendered preview: clear labels/arrows, hooks and all minus signs preserved, no overlap/clipping"
+    }
+  ],
+  "scope": "Equivalent vector presentation of exactly these two preserved TikZ-cd source diagrams only; no new categorical theorem.",
+  "original_grid_manifest_sha256": "32ebb21527956c69f32bce1bcd4b89eaf6ab80d62412a48a5af4f5ee13dfa60e",
+  "original_root_acceptance_sha256": "de82e4ab2a2e7ad382bbe79a882f91bc6ac6637ce453abc103ae283cc50a9dd2",
+  "semantic_accepted": true,
+  "root_visual_approved": true,
+  "path_only_manifest_rewrite": true,
+  "original_source_pdf_tex_bytes_preserved": true,
+  "preview_field": "Repo-relative accepted vector PDF itself; no JPEG render tree is required.",
+  "final_package_files": [
+    {
+      "path": "book/figures/article-grids/quotient-grid/diagram.pdf",
+      "sha256": "c78399933083048948500143a0dd20fa2e22daf85be0d63818f97e44004bb8b7",
+      "bytes": 27416,
+      "accepted_original": "outputs/article-integration-20261104/grids-v1/quotient-grid/diagram.pdf"
+    },
+    {
+      "path": "book/figures/article-grids/quotient-grid/diagram.tex",
+      "sha256": "f27e23bd85246ea5db2aa5dd1d52d592b34ec0700cc1dc02be12acf669defdff",
+      "bytes": 1813,
+      "accepted_original": "outputs/article-integration-20261104/grids-v1/quotient-grid/diagram.tex"
+    },
+    {
+      "path": "book/figures/article-grids/quotient-grid/original-source.tex",
+      "sha256": "dd2a7bb5cd4f6a3c8d94e8bd3616cc9442d0ce31655c67d34226b99af16ae0d4",
+      "bytes": 323,
+      "accepted_original": "outputs/article-integration-20261104/grids-v1/quotient-grid/original.tikz-source.tex"
+    },
+    {
+      "path": "book/figures/article-grids/signed-diamond/diagram.pdf",
+      "sha256": "2000e018aac8d848c9557da611dd77d8a4a24eae8c0057fc97551eafd093a293",
+      "bytes": 14201,
+      "accepted_original": "outputs/article-integration-20261104/grids-v1/signed-diamond/diagram.pdf"
+    },
+    {
+      "path": "book/figures/article-grids/signed-diamond/diagram.tex",
+      "sha256": "f59a8a03406657ef2f70e61fad33fc95761a0aadb65ed7e90142ec92d164dae9",
+      "bytes": 1449,
+      "accepted_original": "outputs/article-integration-20261104/grids-v1/signed-diamond/diagram.tex"
+    },
+    {
+      "path": "book/figures/article-grids/signed-diamond/original-source.tex",
+      "sha256": "5cebac09f8e9accfd86178b4ea896294573b28039291334f28aa9f46ce34b722",
+      "bytes": 247,
+      "accepted_original": "outputs/article-integration-20261104/grids-v1/signed-diamond/original.tikz-source.tex"
+    }
+  ],
+  "packaging_authorization": "Root explicitly authorized final source/vector package and root-relative manifest/acceptance; nodes, edges, signs, labels and frozen PDFs are unchanged."
+}

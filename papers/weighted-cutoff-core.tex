@@ -1,0 +1,68 @@
+\section{Recombining the actual weighted cutoff}
+\label{rc:core}
+Keep the finite-order Eisenstein family and original masks of
+Section~\ref{mm:core}. For $U\ge1$ and a squarefree ideal $m$, put
+\[
+ A_U(m)=\sum_{d\mid m}\beta_U(d)
+ =\sum_{ab\mid m\atop(a,b)=1,\ Na,Nb\le U}\mu(a)\mu(b).
+\]
+Every summation variable here is an integral ideal. The last formula
+uses squarefreeness of $m$; an unconstrained square of a M\"obius
+polynomial would also include forbidden overlapping supports.
+\begin{theorem}[Exact recombination and an absolute-half-plane rate]
+\label{rc:recombination}
+Write $T_0=S\cup\operatorname{supp}(u)$ and
+$J_{u,U}(s)=\sum_{d\ \mathrm{squarefree},\ (d,S)=1}
+\beta_U(d)\nu(d)\chi_d(u)(Nd)^{-s}F_{u,d}(s)$.
+For $\operatorname{Re}s>1$,
+\begin{align*}
+ J_{u,U}(s)&=\sum_{m\ \mathrm{squarefree},\ (m,T_0)=1}
+                   A_U(m)\psi_u(m)(Nm)^{-s},\\
+ |A_U(m)|&\le3^{\omega(m)},\qquad
+ A_U(m)=\mu(m)\quad(Nm\le U).
+\end{align*}
+For every $\kappa>0$ and $0<\epsilon<\kappa$, uniformly for
+$\operatorname{Re}s\ge1+\kappa$, all original rows and all $U\ge1$,
+\[
+ \left|J_{u,U}(s)-\frac1{L^{T_0}(s,\psi_u)}\right|
+ \le U^{-\kappa+\epsilon}
+ \{\zeta_K(1+\epsilon)^3+\zeta_K(1+\epsilon)\}.
+\]
+Here $L^{T_0}$ removes every prime of $T_0$, including conductor-drop
+primes; the bound is in the absolute-convergence half-plane only.
+\end{theorem}
+\begin{proof}
+On a surviving term $m=dc$, the two squarefree ideals $c,d$ are
+coprime, and both avoid $T_0$. The original product
+$\nu(d)\chi_d(u)\psi_u(c)$ is then $\psi_u(m)$. Grouping by $m$
+gives $A_U$. Each prime of $m$ has three possible positions in
+$(a,b,m/(ab))$, so the absolute sum is at most $3^{\omega(m)}$.
+When $Nm\le U$ all divisors fit both cutoffs; the primewise sum is
+$1-1-1=-1$, giving $\mu(m)$.
+
+The same bound justifies absolute convergence and regrouping for
+$\operatorname{Re}s>1$, because on squarefree ideals
+$3^{\omega(m)}=\tau_3(m)$ and
+$\sum_m\tau_3(m)(Nm)^{-v}=\zeta_K(v)^3$ for $v>1$,
+where this latter sum runs over all nonzero integral ideals.
+Subtract the absolutely convergent M\"obius series for $1/L^{T_0}$.
+Only $Nm>U$ remain. Rankin's inequality with exponent
+$\eta=\kappa-\epsilon$ bounds their absolute sum by
+\[
+ U^{-\eta}\sum_m\{\tau_3(m)+1\}
+                  (Nm)^{-1-\epsilon},
+\]
+which proves the stated constant independently of deleted primes,
+row multiplicities or character phases.
+\end{proof}
+
+For $W$ supported in $[1,2]$, the same exact regrouping gives the
+original normalized type-I polynomial
+\[
+ I_u=D^{-1/2}\sum_{m\ \mathrm{squarefree},\ (m,S)=1}
+ A_U(m)\nu(m)\chi_m(u)W(Nm/D).
+\]
+This formula retains all original zero sentinels. It permits a direct
+family large sieve before any absolute $d$ sum; its quantitative moment
+is developed separately below. The displayed absolute-half-plane rate
+alone is not that critical-strip moment.

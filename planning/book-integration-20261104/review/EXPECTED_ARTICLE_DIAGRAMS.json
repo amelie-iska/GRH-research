@@ -1,0 +1,385 @@
+{
+  "scope": "Independent manual transcription from original TikZ-cd blocks before inspecting replacement render cases. Coordinate dimensions intentionally left to layout review.",
+  "nodal": {
+    "source_sha256": "dd2a7bb5cd4f6a3c8d94e8bd3616cc9442d0ce31655c67d34226b99af16ae0d4",
+    "nodes": [
+      {
+        "id": "n00",
+        "row": 0,
+        "column": 0,
+        "tex": "0"
+      },
+      {
+        "id": "n01",
+        "row": 0,
+        "column": 1,
+        "tex": "Y"
+      },
+      {
+        "id": "n02",
+        "row": 0,
+        "column": 2,
+        "tex": "\\Lambda"
+      },
+      {
+        "id": "n03",
+        "row": 0,
+        "column": 3,
+        "tex": "X"
+      },
+      {
+        "id": "n04",
+        "row": 0,
+        "column": 4,
+        "tex": "0"
+      },
+      {
+        "id": "n10",
+        "row": 1,
+        "column": 0,
+        "tex": "0"
+      },
+      {
+        "id": "n11",
+        "row": 1,
+        "column": 1,
+        "tex": "Y"
+      },
+      {
+        "id": "n12",
+        "row": 1,
+        "column": 2,
+        "tex": "\\Lambda"
+      },
+      {
+        "id": "n13",
+        "row": 1,
+        "column": 3,
+        "tex": "X"
+      },
+      {
+        "id": "n14",
+        "row": 1,
+        "column": 4,
+        "tex": "0"
+      },
+      {
+        "id": "n20",
+        "row": 2,
+        "column": 0,
+        "tex": "0"
+      },
+      {
+        "id": "n21",
+        "row": 2,
+        "column": 1,
+        "tex": "Y/uY"
+      },
+      {
+        "id": "n22",
+        "row": 2,
+        "column": 2,
+        "tex": "\\Lambda/u\\Lambda"
+      },
+      {
+        "id": "n23",
+        "row": 2,
+        "column": 3,
+        "tex": "X/uX"
+      },
+      {
+        "id": "n24",
+        "row": 2,
+        "column": 4,
+        "tex": "0"
+      }
+    ],
+    "edges": [
+      {
+        "from": "n00",
+        "to": "n01",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n01",
+        "to": "n02",
+        "kind": "hook",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n02",
+        "to": "n03",
+        "kind": "ordinary",
+        "label": "x",
+        "direction": "right"
+      },
+      {
+        "from": "n03",
+        "to": "n04",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n10",
+        "to": "n11",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n11",
+        "to": "n12",
+        "kind": "hook",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n12",
+        "to": "n13",
+        "kind": "ordinary",
+        "label": "x",
+        "direction": "right"
+      },
+      {
+        "from": "n13",
+        "to": "n14",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n20",
+        "to": "n21",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n21",
+        "to": "n22",
+        "kind": "hook",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n22",
+        "to": "n23",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n23",
+        "to": "n24",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "right"
+      },
+      {
+        "from": "n01",
+        "to": "n11",
+        "kind": "ordinary",
+        "label": "u",
+        "direction": "down"
+      },
+      {
+        "from": "n02",
+        "to": "n12",
+        "kind": "ordinary",
+        "label": "u",
+        "direction": "down"
+      },
+      {
+        "from": "n03",
+        "to": "n13",
+        "kind": "ordinary",
+        "label": "u",
+        "direction": "down"
+      },
+      {
+        "from": "n11",
+        "to": "n21",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "down"
+      },
+      {
+        "from": "n12",
+        "to": "n22",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "down"
+      },
+      {
+        "from": "n13",
+        "to": "n23",
+        "kind": "ordinary",
+        "label": "",
+        "direction": "down"
+      }
+    ],
+    "caption_boundary": "No vertical arrows at zero columns; terminal zero above/below explained in existing prose only."
+  },
+  "diamond": {
+    "source_sha256": "5cebac09f8e9accfd86178b4ea896294573b28039291334f28aa9f46ce34b722",
+    "nodes": [
+      {
+        "id": "A",
+        "row": 0,
+        "column": 0,
+        "tex": "A"
+      },
+      {
+        "id": "B",
+        "row": 0,
+        "column": 1,
+        "tex": "B"
+      },
+      {
+        "id": "C",
+        "row": 0,
+        "column": 2,
+        "tex": "C"
+      },
+      {
+        "id": "D",
+        "row": 1,
+        "column": 0,
+        "tex": "D"
+      },
+      {
+        "id": "E",
+        "row": 1,
+        "column": 1,
+        "tex": "E"
+      },
+      {
+        "id": "F",
+        "row": 1,
+        "column": 2,
+        "tex": "F"
+      },
+      {
+        "id": "G",
+        "row": 2,
+        "column": 0,
+        "tex": "G"
+      },
+      {
+        "id": "H",
+        "row": 2,
+        "column": 1,
+        "tex": "H"
+      },
+      {
+        "id": "I",
+        "row": 2,
+        "column": 2,
+        "tex": "I."
+      }
+    ],
+    "edges": [
+      {
+        "from": "A",
+        "to": "B",
+        "kind": "ordinary",
+        "label": "p",
+        "label_side": "above",
+        "direction": "right"
+      },
+      {
+        "from": "B",
+        "to": "C",
+        "kind": "ordinary",
+        "label": "i",
+        "label_side": "above",
+        "direction": "right"
+      },
+      {
+        "from": "D",
+        "to": "E",
+        "kind": "ordinary",
+        "label": "p",
+        "label_side": "above",
+        "direction": "right"
+      },
+      {
+        "from": "E",
+        "to": "F",
+        "kind": "ordinary",
+        "label": "i",
+        "label_side": "above",
+        "direction": "right"
+      },
+      {
+        "from": "G",
+        "to": "H",
+        "kind": "ordinary",
+        "label": "p",
+        "label_side": "above",
+        "direction": "right"
+      },
+      {
+        "from": "H",
+        "to": "I",
+        "kind": "ordinary",
+        "label": "i",
+        "label_side": "above",
+        "direction": "right"
+      },
+      {
+        "from": "A",
+        "to": "D",
+        "kind": "ordinary",
+        "label": "-p",
+        "label_side": "left",
+        "direction": "down"
+      },
+      {
+        "from": "B",
+        "to": "E",
+        "kind": "ordinary",
+        "label": "p",
+        "label_side": "right",
+        "direction": "down"
+      },
+      {
+        "from": "C",
+        "to": "F",
+        "kind": "ordinary",
+        "label": "-p",
+        "label_side": "right",
+        "direction": "down"
+      },
+      {
+        "from": "D",
+        "to": "G",
+        "kind": "ordinary",
+        "label": "-i",
+        "label_side": "left",
+        "direction": "down"
+      },
+      {
+        "from": "E",
+        "to": "H",
+        "kind": "ordinary",
+        "label": "i",
+        "label_side": "right",
+        "direction": "down"
+      },
+      {
+        "from": "F",
+        "to": "I",
+        "kind": "ordinary",
+        "label": "-i",
+        "label_side": "right",
+        "direction": "down"
+      }
+    ],
+    "meaning": "Four anti-commuting mesh squares. Rows/columns are NOT asserted short exact. Terminal period afterI is punctuation, not another object."
+  }
+}

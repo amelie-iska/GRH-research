@@ -2,13 +2,13 @@
 \usepackage{tikz-cd}
 \newtheorem{corollary}[theorem]{Corollary}
 \newcommand{\gshift}[2]{#1\langle #2\rangle}
-\date{November 3, 2026}
+\date{November 4, 2026}
 \title{Infinite dessin orders, projective resolutions and spectral determinants\\\large Constructions, invariant theory and the arithmetic comparison problem}
 \author{Research working draft}
 \begin{document}
 \maketitle
 \begin{abstract}
-We work throughout with infinite-dimensional locally gentle algebras and completed surface orders arising from explicit cellular clean dessins on compact Riemann surfaces. We construct their projective resolutions, Cartan determinants and dual dessins; develop determinant semi-invariants, Schur modules and cyclic-quiver character kernels; and calculate actual lattice almost-split sequences and an affine-type diamond quotient. A constrained-path Fock algebra retains the gentle relations and has a compact extension with incidence boundary map. Its degree spectral triple and an inserted arithmetic Fredholm family are explicit. Jacobi sums provide theta-dessin cellular Frobenius determinants with a positive local metric; inert primes obstruct the same real two-dimensional carrier. Recent spectral approaches are compared with their actual hypotheses. Selected power-series, module and matrix statements are verified in Lean4. A derived branch functor repairs projective determinant multiplicity; tame descent recovers a hereditary order but forces multiplicities for full-deck coefficient kernels. The arithmetic positive determinant comparison remains open; no proof of GRH is claimed.
+We work throughout with infinite-dimensional locally gentle algebras and completed surface orders arising from explicit cellular clean dessins on compact Riemann surfaces. We construct their projective resolutions, Cartan determinants and dual dessins; develop determinant semi-invariants, Schur modules and cyclic-quiver character kernels; and calculate actual lattice almost-split sequences and an affine-type diamond quotient. A constrained-path Fock algebra retains the gentle relations and has a compact extension with incidence boundary map. Its degree spectral triple and an inserted arithmetic Fredholm family are explicit. Jacobi sums provide theta-dessin cellular Frobenius determinants with a positive local metric; inert primes obstruct the same real two-dimensional carrier. Recent spectral approaches are compared with their actual hypotheses. Selected power-series, module and matrix statements are verified in Lean4. A derived branch functor repairs projective determinant multiplicity; tame descent recovers a hereditary order but forces multiplicities for full-deck coefficient kernels. We also certify finite completed Dirichlet readouts and derive a cutoff-uniform original-family type-I remainder envelope, retaining its unresolved exponent loss. The arithmetic positive determinant comparison remains open; no proof of GRH is claimed.
 \end{abstract}
 {\small\tableofcontents}
 \input{dessin-core}
@@ -24,5 +24,10 @@ We work throughout with infinite-dimensional locally gentle algebras and complet
 \input{holomorphic-learning-core}
 \input{quantum-games-core}
 \input{hubs-spokes-core}
+% Reviewed analytic targets and original weighted arithmetic moments.
+\input{validated-oracle-core}
+\input{masked-moment-core}
+\input{weighted-cutoff-core}
+\input{uniform-cutoff-moment-core}
 \input{dessin-references}
 \end{document}

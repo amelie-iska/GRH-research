@@ -1,0 +1,89 @@
+\section{A finite, validated approximation result}
+Let $\chi_3=(0,1,-1)$, $\chi_4=(0,1,0,-1)$ and
+$\chi_5=(0,1,-1,-1,1)$, extended periodically, with parities $a=1,1,0$.
+We approximate the completed functions
+\[
+ \Lambda_q(s)=(q/\pi)^{(s+a)/2}\Gamma((s+a)/2)L(s,\chi_q).
+\]
+The primitive theta/Mellin identity is the explicit classical analytic input;
+no hypothesis about zeros is used. These three examples do not assert a
+uniform result for all conductors, general Hecke functions or Artin holomorphy.
+
+\begin{theorem}[Scope of the supplied finite certificate]
+For each $q=3,4,5$, the supplied exact-rational calculation constructs a
+complex polynomial $P_q$ of degree $28$ satisfying
+\[
+ \sup_{|s-1/2|\le7/10}|P_q(s)-\Lambda_q(s)|<5\cdot10^{-15}.
+\]
+The computation includes enclosures of all $64$ true Fourier-circle nodes,
+completed-function sample error, analytic truncation, Fourier aliasing,
+the exact closed-form $180$-step gradient-descent iterate and coefficient
+midpoint rounding. The Python implementation and informal analytic proof
+have independent checks; this is not a kernel-checked Lean theorem.
+\end{theorem}
+\begin{proof}
+Write $F(c+z)=\sum_{n\ge0}a_nz^n$, with $c=1/2$, $R=7/10$,
+$\rho=6/5$, $r=12/5$. The independently recomputed rational theta majorants
+are strictly below $M_q=4,10,6$, respectively, on $|z|\le r$.
+Use true roots $\zeta_j=e^{2\pi i j/64}$ and rational labels $y_j$
+with proved error $|y_j-F(c+\rho\zeta_j)|\le\eta$.
+Use the real Euclidean gradient on complex coefficient coordinates for
+\[
+ \mathcal L(b)=\frac1{128}\sum_{j=0}^{63}
+ \left|\sum_{n=0}^{28}b_n\zeta_j^n-y_j\right|^2.
+\]
+Discrete Fourier orthogonality gives the least-squares optimum
+$b_n^*=64^{-1}\sum_jy_j\bar\zeta_j^n$, $0\le n\le28$,
+and gradient $\nabla\mathcal L(b)=b-b^*$.
+For step $1/4$ and zero initialization, the exact $180$-step iterate is
+$b_n^{180}=(1-(3/4)^{180})b_n^*$. The code evaluates this closed form;
+it does not claim an explicit180-update optimizer run.
+
+Set $u=R/\rho=7/12$, $v=R/r=7/24$ and $w=(\rho/r)^{64}=2^{-64}$.
+Let $\widehat b_n$ be an outward rectangle enclosing $b_n^*$ and
+$\epsilon_n$ the sum of the coordinate halfwidths of the rectangle
+for $b_n^{180}$. Choose each actual polynomial coefficient as that
+rectangle's exact rational midpoint $c_n$. The normalized basis is explicit:
+\[
+ P_q(s)=\sum_{n=0}^{28}c_n\left(\frac{s-1/2}{6/5}\right)^n.
+\]
+Thus the exported coefficient with index $n$ multiplies the normalized
+variable, rather than the raw power $(s-1/2)^n$. Its error on the compact disk is bounded by
+\begin{align*}
+ E_{\rm opt}&=(3/4)^{180}\sum_{n=0}^{28}|\widehat b_n|_1u^n,&
+ E_{\rm arithmetic}&=\sum_{n=0}^{28}\epsilon_nu^n,\\
+ E_{\rm oracle}&=\eta\frac{1-u^{29}}{1-u},&
+ E_{\rm alias}&=M_q\frac{w}{1-w}\frac{1-v^{29}}{1-v},\\
+ E_{\rm Taylor}&=M_q\frac{v^{29}}{1-v}.&&
+\end{align*}
+Here $|\widehat b_n|_1$ is the sum of the maximum absolute real and imaginary
+coordinates, a safe upper bound for every enclosed complex modulus.
+Cauchy's estimate $|a_n|\le M_qr^{-n}$ and the Fourier identity
+$b_n^*=a_n\rho^n+\sum_{\ell\ge1}a_{n+64\ell}\rho^{n+64\ell}$
+for exact labels prove the alias and Taylor bounds. Label perturbations
+contribute at most $\eta$ per Fourier coefficient. The remaining two
+terms follow directly from the exact iterate and coefficient rectangles.
+Each term is rounded upward to a $180$-bit dyadic rational; the reported total
+is the exact sum of those reported terms. The certified totals below are
+strictly below the asserted threshold. Detailed sample enclosures are proved
+in the extended edition and encoded with exact integer endpoints.
+\end{proof}
+
+\input{validated-oracle-results}
+
+\section{What this does and does not certify}
+The final JSON records exact rational centers, interval endpoints, source
+hashes and all five error terms. Float values are display summaries only.
+A high-precision comparison is an independent diagnostic, not the reason
+an interval contains its mathematical target. Arithmetic uses outward
+integer operations, and invalid float/order inputs are rejected, including
+through typed caches. Earlier pilots and failed validation probes are retained.
+
+This is a fixed finite tolerance/configuration. Increasing accuracy needs
+new truncation and precision choices; the fixed $N=11,T=128$ interface is
+not an arbitrary-accuracy oracle. The broader approximation existence theorem
+is separate. The certificate says nothing about the location of zeros:
+$P_q$ is not required to be real-rooted or a self-adjoint spectral determinant.
+The independent arithmetic determinant identity, positivity and original
+signed short-row/covariance estimates remain open. No GRH proof or complete
+new Lean4 formalization is claimed.

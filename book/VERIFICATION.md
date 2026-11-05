@@ -357,3 +357,106 @@ exponential envelope; downloadable v4 certificates record center1/2, radius12/5,
 source hash and strict Fraction/integer inputs. M_r<4/10/6 is exact, not a
 floating estimate. Sample/optimizer rounding and analytic Lean remain open.
 The book remains212pages, articles42/108pages. No new Lean declaration.
+
+
+## Remote validated-oracle and masked-moment supplement (4 November 2026)
+
+The immutable final-v5 certificate encloses all 192 true circle samples,
+87 DFT/GD coefficients and three exact rational normalized polynomials.
+Strict uniform errors are below 5e-15 on |s-1/2|<=7/10 for the three specified
+conductors. Individual budget components are rounded upward before their
+exact sum. Independent review covers 843 primitive cases, 1160 exact
+recurrence identities, 24 negative controls, 1536 sample-component checks
+and 144 compact-boundary diagnostics. Diagnostic high-precision agreement
+is not substituted for analytic interval inclusion. The GD value is a
+closed-form iterate; arbitrary requested accuracy and all-conductor rates
+are not implemented. Producer and certificate hashes remain unchanged.
+
+The fixed-twist AFM numerator moment, separately fixed-unitary extension
+and exact full-mask remainder have independent adversarial prose/TeX review
+with pinned primary inputs. Finite bookkeeping checks do not prove the
+classical analytic theorems. D^(2delta)U^(2-4delta), principal residue, short
+term and signed covariance remain explicit. No new Lean proof is inferred.
+
+Existing pdflatex compiled both technical-note editions twice into v5 staging,
+then clean logs/PDF headers/source hashes and representative proof-page
+renders were inspected before promotion: 5/14 pages, no overfull boxes or
+undefined references. Prior builds/renders and replaced technical-note aliases
+remain preserved. Receipt: outputs/checks/2026-11-04-validated-oracle/technical-notes-promotion.json.
+Final independent acceptance: review/final-acceptance.json and
+arithmetic-adversarial/afm-tex-review.json in the same check namespace.
+
+Three source pins and clean source worktrees, both original manuscript hashes,
+old PDF/native-MathML integrity and unique13labs pass the existing integrity
+checker (report redirected to this new namespace without replacing its old
+receipt). Existing full book/HTML/articles were not rebuilt or promoted here.
+Linux currently lacks make4ht/latexmk/tikz-cd and pinned Lean4.24; no new
+dependency or toolchain installation was made. Prior360 Lean reports retain
+their earlier scope and were not rerun as a Linux proof check. Full integration
+and analytic/categorical formalization remain unfinished.
+
+The previous public rational-constant asset deployment is now verified live,
+byte-identical and tested across all three conductors with zero browser
+exceptions; this is distinct from the new unpublished interval certificates.
+Evidence: outputs/checks/2026-11-04-validated-oracle/publication/.
+
+
+## Weighted-cutoff and integrated edition milestone (5 November 2026)
+
+The reviewed original-family masked type-I remainder now has the U-independent
+bound ||E||² <= C_(nu,S,epsilon) ||W||_infinity² (HD)^epsilon
+[H + D H^(1/3) + (HD)^(2/3)], for U²<=D, fixed finite-order nu/S and
+one common smooth profile. Recombination retains every original zero mask,
+primitive drop, principal residue and literal element multiplicity. The proof
+uses the pinned classical BGL powered large sieve and has independent
+adversarial prose/TeX review; it is not a new Lean proof. At H=D^(3/4),
+a relative D^(1/2) loss remains. It does not prove the original signed short-row
+estimate, the needed II-I covariance or the arithmetic positive-determinant bridge.
+
+The exact cutoff series has an explicit U^(-kappa+epsilon) convergence rate
+on Re(s)>=1+kappa. Locally uniform convergence of the actual series on
+Re(s)>1/2 would force zero-freeness for a fixed nonprincipal character;
+that stronger convergence is an unproved hypothesis, not a GRH proof.
+See research/weighted-cutoff-moment.md and papers/weighted-cutoff-*.tex /
+uniform-cutoff-moment-*.tex. Exact recombination diagnostics preserve raw
+sextic zeros and reject the naive unconstrained Mobius square.
+
+Accepted staged artifacts are now promoted on Linux: book233pages/40chapters,
+focused articles49/129pages, technical notes8/20pages; native HTML contains
+6216MathML expressions and13unique laboratories. All5356oldMathML subtrees,
+384oldtables, both source volumes and all13oldiframes are unchanged. Existing
+vector assets were source-hash checked; the two article-only grids preserve
+all nodes, arrows, hooks, signs and labels. The bounded remote builder uses
+installed pdflatex/Poppler, Pandoc3.10 and librsvg/cairo, without installing tools.
+Fresh reproduction and exact-source transformation audits pass.
+
+Firefox layout checks at320/390/768/1440 preserve full18px equations in
+focusable horizontal scroll containers, with no page overflow. This corrects
+an inherited MathML overflow issue. Stable dark-mode contrast is14.54:1;
+representative PDF/grid and desktop/mobile/night renders were inspected.
+Three malformed old TeX4ht munder nodes remain explicitly inherited; the860new
+expressions have zero such defects. Article logs retain existing atop/over
+and seven underfull-box warnings per edition, with no overfull boxes or
+unresolved references. No new Lean declarations; prior360reports retain
+historical scopes and were not rerun with an unpinned Linux toolchain.
+
+Evidence: outputs/checks/2026-11-05-weighted-moment/promotion/promotion.json;
+outputs/checks/2026-11-04-weighted-moment/{review,native-browser-v9};
+outputs/article-integration-20261104/audit-v1/source-preservation-audit.json;
+planning/book-integration-20261104/MOBILE_QA.md and
+planning/article-integration-20261104/HANDOFF.md. Earlier failed builds and
+replaced aliases are preserved. Both completion gates remain false.
+
+### Independent signed-frontier continuation (5 November 2026)
+
+The next exact reduction is accepted at derivationSHA7dc97b2e61a8d3bc286356bf9eae28fb986d29978582a97f9bfbfd7e329ab9c1.
+Principal subtraction vanishes on the balanced a1*a2² nonprincipal block.
+The raw Gram retains symmetric-difference oscillation and the union zero mask.
+On the full active annulus A_U=C_U-mu, exposing the precise signed covariance
+lower bound BT_sigma; neither a saving nor an energy lower bound is proved.
+Independent224coefficient,2endpoint,75776raw-product,1296complex-covariance,
+18Gram and54signed-target controls pass. Radicand valuations1/2mod6 are
+distinct from tame conductor exponent1; this wording correction is documented.
+Source/review: planning/weighted-moment-20261105/{frontier,review}.
+Both gates remain false. Do not repeat centering or mask exclusion as a new
+analytic solution; attack the signed covariance with all required uniformities.

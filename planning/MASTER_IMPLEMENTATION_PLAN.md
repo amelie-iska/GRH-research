@@ -417,3 +417,33 @@ No new Lean4 HIT or univalence axiom is permitted. Full analytic/topological
 formalization and a validated oracle remain separate implementation work.
 
 Publication amendment (4 November 2026): the latest explicit user request supersedes earlier private-research wording. The research repository, project page and both reviewed HF datasets are public. Preserve original private-release receipts as historical evidence; protect credentials and unrelated model repositories. Continue the existing implementation/research queue and local8765 preview.
+
+
+### Remote validated-oracle/moment checkpoint (4 November 2026)
+
+The specific q3/4/5 interval sample and readout subtask now has an independently
+accepted finite certificate (final-v5), with no new Lean declarations. Preserve
+the historical floating runs. Arbitrary-tolerance selection and actual analytic
+Lean interfaces remain separate. A reviewed fixed-twist original-family AFM
+proof improves the full-mask remainder; retain its D^(2delta)U^(2-4delta)
+loss, principal/short/covariance obligations and independent arithmetic bridge.
+The next arithmetic task is the full d-weighted moment before absolute sums.
+The new concise/extended technical-note PDFs do not imply the preserved main
+book and live HTML already include this content. Finish their integration with
+the pinned remote build prerequisites; do not install/upgrade or overwrite
+historical outputs to disguise missing formalization. Both completion gates
+remain false and the existing research/implementation heartbeat remains active.
+
+### Accepted remote integration and publishing exception (5 November 2026)
+
+The user explicitly permits the existing Mac GitHub login for publishing only;
+all project edits, clones, builds and numerical/browser/Lean checks remain on
+iska-linux-vscode. No credentials may be read/copied/transferred or new login
+performed. The reviewed weighted-cutoff results and233-page40-chapter book,
+49/129-page focused articles and8/20-page notes are integrated. Maintain the
+cutoff-uniform envelope's residual D^(1/2) loss and the conditional boundary
+implication as separate from GRH. New analytic/categorical Lean, signed
+covariance and the positive determinant bridge remain open. The unified hub
+and four missing project pages are public; preserve pre-existing sites and
+private active-model data. Resume from latest receipts, never rebuild a
+completed audit as if it were a new proof. Both completion gates remain false.

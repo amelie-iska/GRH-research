@@ -1,0 +1,13 @@
+# Frontier handoff: principal centering cannot change the balanced nonprincipal block
+
+5 November 2026; bounded remote-only task. Complete exact derivation: CENTERING_AND_SIGNED_TARGET.md. No improved infinite energy estimate was established.
+
+Proved: the exact residue-centered beta_U Gram matrix; the principal/nonprincipal disjoint energy split; P=0 on every outside-S a1*a2^2 block with nonunit squarefree coprime factors; the raw Gram oscillatory conductor on m symmetric-difference n while retaining the union-support zero mask; and the full active-annulus identity A_U=C_U-mu with its exact LL-minus-Mobius covariance. Thus principal residue subtraction leaves the currently saturated D X block unchanged. This is a shortcut obstruction, not an actual lower bound of D X.
+
+Shared-prime deletion already occurs in theta_m(a). Prime columns Np>H have no shared-row zeros and actual A_U(p)=1 when Np>U. Saturating each fixed-factor BGL norm separately cannot certify simultaneous saturation for one actual coefficient sequence; the accepted D H^(1/3) monomial remains an upper-bound barrier.
+
+Concrete next task: prove BT_sigma in the derivation, for some fixed 0<sigma<=1/12, with actual A_U on nonprincipal a1*a2^2 rows and X~D^(1/4), uniformly U<=sqrt(D), retaining the common W, nu/S, all raw union masks and column primitive conductors. Equivalently prove the displayed LOWER bound on Re Q_B(C_U,mu). A Cauchy bound on its absolute value is insufficient. Then cover the near-saturating full-factorization blocks; one balanced block alone does not improve the global envelope, and the global mixed D^(7/6) term remains at H=D^(3/4).
+
+Focused execution passed: PYTHONDONTWRITEBYTECODE=1 nice -n 15 python3 planning/weighted-moment-20261105/frontier/check_frontier_exact.py --output outputs/checks/2026-11-05-weighted-moment/frontier/exact-controls-v1.json. Exact stdlib/Fraction arithmetic, no seed; 1024 LL coefficients, 936 active signed decompositions, 74752 raw masked products (69888 shared-zero cases), 720 covariance row cases, 10 independent full Gram expansions, 72 literal guaranteed nonprincipal rows, and a six-prime no-deletion/aligned-row example. No numerical inequality was used to certify an infinite theorem.
+
+Only the assigned new planning/frontier and checks/frontier namespaces were written. No queue claim/checkpoint, production edit, promotion, public action, MCP activation, dependency/environment change, model/GPU job, credential action, source deletion or old-output overwrite. Independent review remains a parent task; this is not a reviewed analytic saving, new Lean result, positivity or GRH proof.

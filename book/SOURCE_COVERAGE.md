@@ -271,3 +271,74 @@ prose proofs, numerical training and exact finite combinatorial checks;
 no complete new analytic, topological, game or whole-book Lean claim is made.
 
 P11 now adds exact-rational completed Dirichlet growth/alias/Taylor constants with full numerator/denominator/source records and independent review. This augments the analytic learner; it does not certify sample values, optimizer rounding, all-conductor rates or GRH.
+
+
+## Remote analytic/moment supplement (4 November 2026)
+
+The analytic-learning topic now has a separately reviewed fixed interval
+oracle: 192 true q3/4/5 completed-function samples and three rational degree-28
+normalized readouts, each with strict compact-uniform error below 5e-15.
+Shared supplement sources are papers/validated-oracle-{core,details}.tex;
+the exact coefficient basis and five-part budget are explicit. This does not
+retroactively make historical floating training data interval certified.
+
+The arithmetic topic has a prose proof of the fixed-twist original sextic
+Hecke numerator moment and its exact full-mask residual transfer, with a
+separate fixed-unitary extension. Sources: papers/masked-moment-{core,details}.tex.
+It keeps the U-cutoff loss, actual principal residue, short term and signed
+covariance boundaries. Named classical external inputs remain explicit.
+
+The standalone concise/extended technical notes compile to 5/14 pages.
+These new fragments are not yet integrated into the preserved 212-page
+main book, native-MathML HTML or four existing article PDFs; their unchanged
+page counts are not evidence of integration. Existing source volumes remain
+byte-identical. Actual analytic/categorical Lean interfaces and the full
+book integration are next work, using pinned remote prerequisites. No new
+Lean declaration or GRH completion is claimed.
+
+
+## Weighted-cutoff and integrated edition milestone (5 November 2026)
+
+The reviewed original-family masked type-I remainder now has the U-independent
+bound ||E||² <= C_(nu,S,epsilon) ||W||_infinity² (HD)^epsilon
+[H + D H^(1/3) + (HD)^(2/3)], for U²<=D, fixed finite-order nu/S and
+one common smooth profile. Recombination retains every original zero mask,
+primitive drop, principal residue and literal element multiplicity. The proof
+uses the pinned classical BGL powered large sieve and has independent
+adversarial prose/TeX review; it is not a new Lean proof. At H=D^(3/4),
+a relative D^(1/2) loss remains. It does not prove the original signed short-row
+estimate, the needed II-I covariance or the arithmetic positive-determinant bridge.
+
+The exact cutoff series has an explicit U^(-kappa+epsilon) convergence rate
+on Re(s)>=1+kappa. Locally uniform convergence of the actual series on
+Re(s)>1/2 would force zero-freeness for a fixed nonprincipal character;
+that stronger convergence is an unproved hypothesis, not a GRH proof.
+See research/weighted-cutoff-moment.md and papers/weighted-cutoff-*.tex /
+uniform-cutoff-moment-*.tex. Exact recombination diagnostics preserve raw
+sextic zeros and reject the naive unconstrained Mobius square.
+
+Accepted staged artifacts are now promoted on Linux: book233pages/40chapters,
+focused articles49/129pages, technical notes8/20pages; native HTML contains
+6216MathML expressions and13unique laboratories. All5356oldMathML subtrees,
+384oldtables, both source volumes and all13oldiframes are unchanged. Existing
+vector assets were source-hash checked; the two article-only grids preserve
+all nodes, arrows, hooks, signs and labels. The bounded remote builder uses
+installed pdflatex/Poppler, Pandoc3.10 and librsvg/cairo, without installing tools.
+Fresh reproduction and exact-source transformation audits pass.
+
+Firefox layout checks at320/390/768/1440 preserve full18px equations in
+focusable horizontal scroll containers, with no page overflow. This corrects
+an inherited MathML overflow issue. Stable dark-mode contrast is14.54:1;
+representative PDF/grid and desktop/mobile/night renders were inspected.
+Three malformed old TeX4ht munder nodes remain explicitly inherited; the860new
+expressions have zero such defects. Article logs retain existing atop/over
+and seven underfull-box warnings per edition, with no overfull boxes or
+unresolved references. No new Lean declarations; prior360reports retain
+historical scopes and were not rerun with an unpinned Linux toolchain.
+
+Evidence: outputs/checks/2026-11-05-weighted-moment/promotion/promotion.json;
+outputs/checks/2026-11-04-weighted-moment/{review,native-browser-v9};
+outputs/article-integration-20261104/audit-v1/source-preservation-audit.json;
+planning/book-integration-20261104/MOBILE_QA.md and
+planning/article-integration-20261104/HANDOFF.md. Earlier failed builds and
+replaced aliases are preserved. Both completion gates remain false.

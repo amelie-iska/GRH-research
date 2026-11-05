@@ -1,0 +1,26 @@
+{
+  "accepted": true,
+  "reviewer": "root-independent-package-verification",
+  "manifest_sha256": "0bfaf20e810844ae991101f569f1993ff06a3cc3037d0d076ecbed7c0ba08bfe",
+  "checks": [
+    {
+      "name": "quotient-grid",
+      "pdf_sha256": "c78399933083048948500143a0dd20fa2e22daf85be0d63818f97e44004bb8b7",
+      "nodes": 15,
+      "edges": 18,
+      "unchanged_source_geometry_pdf": true
+    },
+    {
+      "name": "signed-diamond",
+      "pdf_sha256": "2000e018aac8d848c9557da611dd77d8a4a24eae8c0057fc97551eafd093a293",
+      "nodes": 9,
+      "edges": 12,
+      "unchanged_source_geometry_pdf": true
+    }
+  ],
+  "only_manifest_changes": [
+    "pdf",
+    "preview"
+  ],
+  "scope": "Exact accepted source/vector package with repository-relative paths, no rerendered math"
+}

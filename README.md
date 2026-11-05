@@ -4,7 +4,12 @@ A public research workspace for auditing and developing surface-order and Hilber
 
 **Current result:** a corrected conditional spectral criterion, convergent arithmetic approximants with explicit errors, an explicit arithmetic Abel trace-class family, and rigorous obstructions to several supplied proof steps. **A complete proof of GRH has not been established.** In particular, the claimed prime/geodesic identification is false, and the absolute prime-tail bound used in the separate GRH PDF diverges in the asserted range. These require mathematical replacements. See [audit](planning/AUDIT.md) and [open obligations](planning/OPEN_OBLIGATIONS.md).
 
-The latest arithmetic development is a [full-mask Hecke type-I expansion](research/hecke-type-i.md): primitive conductor drops and sixth-power row zeros are restored explicitly. A scalar Mellin/convexity estimate is proved using classical Hecke theory, with conductor, divisor and profile dependence retained. Its elementary aggregate still falls short of the signed short-row target. Seven local/finite Euler identities are Lean checked; the infinite Hecke functions and contour proof remain separately scoped.
+The latest [weighted-cutoff result](research/weighted-cutoff-moment.md) bounds
+the original full-mask type-I remainder independently of the truncated cutoff.
+It still loses a factor D^(1/2) relative to the desired energy at H=D^(3/4).
+The signed covariance and positive arithmetic determinant/zero-location bridge
+remain open. These are independently reviewed prose results with explicit
+classical inputs; no new Lean or GRH proof is claimed.
 
 ## Research book and interactive companion (2026-11-03)
 
@@ -13,7 +18,7 @@ The repository and both complementary Hugging Face datasets were made public
 at the owner’s request on 4 November 2026. Frozen data and credentials remain
 separate; the local preview is retained.
 
-Current edition: **212 pages,37 chapters, thirteen unique in-book laboratories**.
+Current edition: **233 pages,40 chapters, thirteen unique in-book laboratories**.
 
 New complementary datasets: **16,384 Aster material-response rows** and
 **22,951 Mora conformer/force rows**, plus separately labelled source anchors
@@ -25,9 +30,15 @@ New views include [coherent spatial density clouds](https://amelie-iska.github.i
 and [HoTT hubs/spokes applied to dessin face filling](https://amelie-iska.github.io/GRH-research/learned.html#hubs-spokes).
 These additions have explicit prose proofs and independent/focused checks;
 no new complete Lean4, Connes-embedding or GRH proof is claimed.
-The analytic tool now also supplies exact rational growth/alias/Taylor
-certificates (M_r<4/10/6 for the three worked conductors); complex sample and
-optimizer-rounding certification remain separate work.
+The live analytic tool supplies exact rational growth/alias/Taylor
+certificates (M_r<4/10/6 for the three worked conductors). A new
+[Linux implementation](examples/analytic_oracle/README.md) also certifies 192
+complex samples and three normalized rational degree-28 readouts, each with
+compact-uniform error strictly below 5e-15. Independent review covers the
+analytic and arithmetic budgets; the GD value is a closed-form iterate.
+These interval certificates and paired technical notes are integrated into
+the expanded book and both focused article editions. They do not prove zero
+location, all-conductor uniformity or new Lean theorems.
 Generation, source-origin labels, split thresholds and native-admission limits:
 [dataset documentation](examples/synthetic_training/README.md).
 
@@ -445,3 +456,20 @@ models. [Topological transport](https://amelie-iska.github.io/GRH-research/datas
 [3D orbital nodes and phase](https://amelie-iska.github.io/GRH-research/datasets.html#hydrogen-orbitals),
 [trained chemistry](https://amelie-iska.github.io/GRH-research/datasets.html#torsion-generative).
 These additional lab fixtures are distinct from the frozen HF default corpora.
+
+## Current remote build and portfolio (5 November 2026)
+
+The focused articles are49/129pages; the paired technical notes are8/20pages.
+[Book and mobile QA](planning/book-integration-20261104/MOBILE_QA.md) and
+[article build/reproduction](planning/article-integration-20261104/HANDOFF.md)
+record exact source preservation, renderer boundaries and remaining warnings.
+Use scripts/build_remote_book_candidate.py and scripts/build_remote_articles.py
+for fresh staging; they never promote or publish. Dependencies stay pinned.
+
+The [unified research hub](https://amelie-iska.github.io/) now links the six
+public project pages and identifies existing restricted HolonForge documentation.
+Four previously missing pages were published after35 exact hosted-asset checks
+and71 public-browser checks; the hub passes16 browser checks. Existing ToricGT,
+GRH and private HolonForge pages were untouched by that portfolio release.
+All edits/builds/tests ran on Linux; only the existing Mac gh login was used
+for authorized publication, without transferring credentials.

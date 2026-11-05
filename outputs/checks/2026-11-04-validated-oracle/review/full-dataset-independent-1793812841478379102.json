@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "directory": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/experiments/2026-11-04-validated-oracle-final-v5",
+  "source_sha256": {
+    "dyadic.py": "82e995ae9f67395980cec3f06bf493931de0413c7ce024562283882c01425170",
+    "theta_oracle.py": "c50857831de0fc5faa6829cf539c7d31dc32958b76412c27689235aeba95d2c1"
+  },
+  "sample_count": 192,
+  "sample_component_checks": 1536,
+  "all_circle_nodes_contain_highprecision_reference": true,
+  "max_sample_reference_error": 7.774454644802258e-27,
+  "max_observed_error_to_certified_radius": 1.0789594109730008e-10,
+  "max_node_box_L1_radius": 8.238146860676763e-65,
+  "polynomials": [
+    {
+      "q": 3,
+      "uniform_certificate": 1.7850692874475243e-15,
+      "observed_48_boundary_error": 1.8984080449996933e-23,
+      "all_coefficient_enclosures_contain_independent_DFT": true
+    },
+    {
+      "q": 4,
+      "uniform_certificate": 4.454049465469766e-15,
+      "observed_48_boundary_error": 3.3052539017393524e-23,
+      "all_coefficient_enclosures_contain_independent_DFT": true
+    },
+    {
+      "q": 5,
+      "uniform_certificate": 2.905620215391504e-15,
+      "observed_48_boundary_error": 3.181289289016558e-23,
+      "all_coefficient_enclosures_contain_independent_DFT": true
+    }
+  ],
+  "reference_mpmath_version": "1.4.1",
+  "diagnostic_comparisons_not_interval_proofs": true
+}

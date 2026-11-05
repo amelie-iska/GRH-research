@@ -1,0 +1,115 @@
+% Generated shared reviewed material.
+% Original masked cutoff family; no new Lean or GRH theorem.
+\section{A cutoff-uniform envelope for the original masked remainder}
+\label{wc:core}
+Fix $K=\mathbb Q(\omega)$, $\mathcal O=\mathbb Z[\omega]$, a finite-order
+Hecke character $\nu$, and a finite set $S$ containing the primes above $6$
+and the conductor of $\nu$. All unspecified ideal sums below are over
+nonzero integral ideals. Let $\chi_m(u)=(u/m)_6$ be the original symbol,
+zero when $(m,u)>1$, and put
+\[
+ \beta_U(d)=\sum_{ab=d\atop Na,Nb\le U}\mu(a)\mu(b),\qquad
+ A_U(m)=\sum_{d\mid m}\beta_U(d).
+\]
+The columns $d,c,m$ are squarefree and prime to $S$ where indicated.
+Retain the primitive characters $\psi_u=\operatorname{prim}(\nu\kappa_u)$,
+$\psi_{u,2}=\operatorname{prim}(\psi_u^2)$, and the full deleted set
+$T(u,d)=S\cup\operatorname{supp}(u)\cup\operatorname{supp}(d)$.
+For $H,D,U\ge1$, $U^2\le D$, and $W\in C_c^\infty((0,\infty))$
+supported in $[1,2]$, the original normalized type-I piece is
+\begin{equation}\label{wc:polynomial}
+ I_u=D^{-1/2}\sum_{m\ \mathrm{squarefree}\atop(m,S)=1}
+     A_U(m)\nu(m)\chi_m(u)W(Nm/D).
+\end{equation}
+Its exact principal residue is
+\begin{align}\label{wc:principal}
+ P_u&=\mathbf1_{\psi_u=1}\sqrt D\,\widehat W(1)
+ \sum_{d\ \mathrm{squarefree}\atop(d,S)=1}
+ \frac{\beta_U(d)\nu(d)\chi_d(u)}{Nd}\rho_{T(u,d)},\notag\\
+ \rho_T&=\frac{\operatorname*{res}_{s=1}\zeta_K(s)}{\zeta_K(2)}
+               \prod_{p\in T}(1+(Np)^{-1})^{-1}.
+\end{align}
+Define $E_u=I_u-P_u$; this is the same residue-subtracted remainder as the
+fully masked Mellin contour, with no cutoff limit or profile supremum.
+
+\begin{theorem}[Uniformity in the actual truncated cutoff]
+\label{wc:uniform}
+For every $\varepsilon>0$,
+\begin{equation}\label{wc:bound}
+ \sum_{0<Nu\le H}|E_u|^2
+ \ll_{\nu,S,\varepsilon}\|W\|_\infty^2(HD)^\varepsilon
+       \{H+DH^{1/3}+(HD)^{2/3}\}.
+\end{equation}
+The sum is over every actual nonzero Eisenstein element, including units,
+$S$-supported powers and sixth-power rows. The constant is independent of
+$U$ under $U^2\le D$. This is an application of the classical sextic
+large sieve with exact original coefficients, not a zero-location theorem.
+\end{theorem}
+\begin{proof}
+On an absolutely convergent line, expand the restored squarefree series
+$F_{u,d}$. Its condition $(c,T(u,d))=1$ includes $(c,d)=1$, and the
+original symbols multiply. Grouping $m=cd$ gives~\eqref{wc:polynomial}
+by Mellin inversion. Each prime of $m$ may belong to the first truncated
+M\"obius divisor, to the second, or to neither. Consequently
+$|A_U(m)|\le3^{\omega(m)}\ll_\eta(Nm)^\eta$, uniformly in $U$.
+The length-$D$ coefficient sequence in~\eqref{wc:polynomial} therefore
+has squared norm $\ll_\eta\|W\|_\infty^2D^\eta$.
+
+The all-ideal row norm in Section~3 of
+\href{https://arxiv.org/pdf/1112.1650v1}{Blomer--Goldmakher--Louvel,
+arXiv:1112.1650v1} gives
+\[
+ B_2^1(X,D)\ll_\eta(XD)^\eta
+                 \{X+DX^{1/3}+(XD)^{2/3}\}.
+\]
+For completeness, split $a=a_1a_2^2\cdots a_5^5a_6^6$ dyadically;
+$a_1,\ldots,a_5$ are squarefree and pairwise coprime. If their dyadic
+sizes are $A_j$, put $R=\prod_{j=1}^6A_j$ and $M=\max(A_1,A_2)$.
+Pivot on the first or second variable, using the squarefree powered
+sieve proved simultaneously in that paper's Section~3.2. The other
+variables are bounded column multipliers. The block energy is at most
+\[
+ (XD)^\eta\{R+DR/M+D^{2/3}R/M^{1/3}\}\sum_m|\lambda_m|^2.
+\]
+The inequalities $R\le X$, $R^3\le XM^3$ and $R^3\le X^2M$
+follow from $\prod_jA_j^j\le X$ and the pivot choice. Summing the
+logarithmically many blocks proves the displayed bound.
+
+Finite $S$-unit and ray-class partitions convert the original literal
+symbol into the canonical column value $\vartheta_m(a)$ with fixed
+modulus-one coefficient multipliers. On noncoprime pairs both values
+are zero: squarefree $m$ has outside-$S$ conductor exactly $m$.
+This orientation preserves sixth-power zeros. At most six elements
+generate each outside-$S$ ideal times an $S$-supported ideal; the
+$S$-supported sums converge at powers $1$, $1/3$ and $2/3$.
+Thus~\eqref{wc:bound} holds first with $I_u$ in place of $E_u$.
+
+A principal $\psi_u$ requires every outside-$S$ valuation of $u$ to
+be divisible by $6$. There are $O_{\nu,S}(H^{1/6})$ such literal
+rows. Equation~\eqref{wc:principal}, $|\rho_T|\ll_K1$, and the actual
+coefficient sum
+\[
+ \sum_d\frac{|\beta_U(d)|}{Nd}
+ \le\left(\sum_{Na\le U}\frac1{Na}\right)^2\ll\log^2(2U)
+\]
+give $\sum|P_u|^2\ll DH^{1/6}\|W\|_\infty^2\log^4(2U)$.
+This is absorbed by the right side of~\eqref{wc:bound}, using
+$U^2\le D$ and a smaller internal exponent. Finally
+$|E_u|^2\le2|I_u|^2+2|P_u|^2$. The extended proof specifies the
+canonical-family transfer and the powered-sieve input precisely.
+\end{proof}
+
+Combining this with the previously proved fixed-twist AFM transfer yields
+\begin{equation}\label{wc:minimum}
+ \sum_{0<Nu\le H}|E_u|^2\ll_{\nu,S,\delta,\varepsilon}
+ \mathcal M_4(W)^2(HD)^\varepsilon
+ \min\{D^{2\delta}U^{2-4\delta}H,\ H+DH^{1/3}+(HD)^{2/3}\}.
+\end{equation}
+At $H=D^{3/4}$ and $U=D^a$, $0\le a\le1/2$, the excess over $H$
+is at most $\min\{2\delta+(2-4\delta)a,1/2\}$, up to arbitrarily
+small losses. The new envelope improves the old one for $a>1/4$ as
+$\delta\downarrow0$, but still leaves an exponent loss of $1/2$.
+It does not settle the original signed short-row bound, type-II covariance,
+positive arithmetic determinant comparison or GRH. The principal-residue
+bound used here is sufficient for this envelope, not the stronger target
+needed to reassemble the full signed argument.

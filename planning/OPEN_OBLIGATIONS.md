@@ -352,8 +352,9 @@ all original-family low-gcd uniformities remain open.
 
 The finite holomorphic readout theorem proves arbitrary-accuracy compact
 approximation under independently certified constants, oracle and arithmetic
-error. The numerical q3/4/5 experiment does not yet implement a validated
-interval oracle. The Szegő readout limit has an explicit source-condition
+error. The historical floating q3/4/5 training experiment does not implement a validated
+interval oracle; the separately preserved final-v5 finite certificate now does
+so for three specified conductors and a fixed compact/tolerance. The Szegő readout limit has an explicit source-condition
 rate, with vanishing Gram eigenvalues; no general quantum-network or
 all-conductor rate follows. Real-zero restricted approximation still needs
 the independent arithmetic positivity/determinant bridge; the 7/16 Rouché
@@ -361,3 +362,120 @@ obstruction is retained. Game moment PSD and learned finite Bell violations
 do not discharge O1–O8. Surface homotopy cell gluing does not automatically
 supply an exact, Hom-controlled or determinant-preserving categorical functor.
 New analytic/topological/game full Lean implementations remain open.
+
+
+## Validated-oracle and AFM frontier (2026-11-04, remote)
+
+Closed for the narrow supplied finite configuration: true circle-node/sample
+inclusion, analytic tails, complex arithmetic, coefficient midpoint rounding
+and a strict compact-uniform polynomial error below 5e-15 for q3/4/5. The
+closed-form GD iterate is certified, not an executed optimizer trace. The
+fixed n/time/precision interface does not implement arbitrary requested
+accuracy. The original floating learners and observed errors retain their
+historical semantics. No new analytic Lean declaration was added.
+
+The previously conditional AFM numerator input is now proved in prose for
+the fixed finite-order twist and literal Eisenstein element family, using
+the named classical inputs. A separately reviewed fixed-unitary extension
+retains dependence on the fixed twist and infinity type. The resulting exact
+full-mask residue-subtracted remainder costs D^(2delta) U^(2-4delta).
+For U=D^a, fixed a>0, delta->0 leaves the 2a exponent loss. Thus the complete
+d-weighted moment before absolute summation, principal residue, short Vaughan
+term and signed II-I covariance remain open; no original signed MS3/4 theorem
+or positive arithmetic determinant bridge follows. Do not repeat the completed
+unweighted numerator AFM proof as a solution to the remaining weighted gap.
+
+Next: exploit cancellation in the actual d-weighted numerator sum, retaining
+beta_U, nu(d), chi_d(u), primitive drops, the independently squared denominator
+and deleted factors, or prove sufficient signed covariance. In parallel,
+package actual analytic objects in the pinned Lean layer and integrate the
+reviewed technical-note fragments into the book once the preserved remote
+build prerequisites are available. Standalone paired PDFs do not count as
+full book/HTML synchronization or whole-book formalization.
+
+
+## Weighted-cutoff and integrated edition milestone (5 November 2026)
+
+The reviewed original-family masked type-I remainder now has the U-independent
+bound ||E||² <= C_(nu,S,epsilon) ||W||_infinity² (HD)^epsilon
+[H + D H^(1/3) + (HD)^(2/3)], for U²<=D, fixed finite-order nu/S and
+one common smooth profile. Recombination retains every original zero mask,
+primitive drop, principal residue and literal element multiplicity. The proof
+uses the pinned classical BGL powered large sieve and has independent
+adversarial prose/TeX review; it is not a new Lean proof. At H=D^(3/4),
+a relative D^(1/2) loss remains. It does not prove the original signed short-row
+estimate, the needed II-I covariance or the arithmetic positive-determinant bridge.
+
+The exact cutoff series has an explicit U^(-kappa+epsilon) convergence rate
+on Re(s)>=1+kappa. Locally uniform convergence of the actual series on
+Re(s)>1/2 would force zero-freeness for a fixed nonprincipal character;
+that stronger convergence is an unproved hypothesis, not a GRH proof.
+See research/weighted-cutoff-moment.md and papers/weighted-cutoff-*.tex /
+uniform-cutoff-moment-*.tex. Exact recombination diagnostics preserve raw
+sextic zeros and reject the naive unconstrained Mobius square.
+
+Accepted staged artifacts are now promoted on Linux: book233pages/40chapters,
+focused articles49/129pages, technical notes8/20pages; native HTML contains
+6216MathML expressions and13unique laboratories. All5356oldMathML subtrees,
+384oldtables, both source volumes and all13oldiframes are unchanged. Existing
+vector assets were source-hash checked; the two article-only grids preserve
+all nodes, arrows, hooks, signs and labels. The bounded remote builder uses
+installed pdflatex/Poppler, Pandoc3.10 and librsvg/cairo, without installing tools.
+Fresh reproduction and exact-source transformation audits pass.
+
+Firefox layout checks at320/390/768/1440 preserve full18px equations in
+focusable horizontal scroll containers, with no page overflow. This corrects
+an inherited MathML overflow issue. Stable dark-mode contrast is14.54:1;
+representative PDF/grid and desktop/mobile/night renders were inspected.
+Three malformed old TeX4ht munder nodes remain explicitly inherited; the860new
+expressions have zero such defects. Article logs retain existing atop/over
+and seven underfull-box warnings per edition, with no overfull boxes or
+unresolved references. No new Lean declarations; prior360reports retain
+historical scopes and were not rerun with an unpinned Linux toolchain.
+
+Evidence: outputs/checks/2026-11-05-weighted-moment/promotion/promotion.json;
+outputs/checks/2026-11-04-weighted-moment/{review,native-browser-v9};
+outputs/article-integration-20261104/audit-v1/source-preservation-audit.json;
+planning/book-integration-20261104/MOBILE_QA.md and
+planning/article-integration-20261104/HANDOFF.md. Earlier failed builds and
+replaced aliases are preserved. Both completion gates remain false.
+
+
+## Current weighted arithmetic frontier (5 November 2026)
+
+The U-independent envelope closes the weighted-before-Minkowski subtask in
+prose, not the original low-gcd short-row target. Keep the exact squarefree
+A_U coefficient and column-indexed primitive characters with union-support
+zeros. Combining the envelope with the earlier AFM bound gives the recorded
+minimum; at H=D^(3/4) a positive exponent loss remains. Principal residue
+control sufficient for this envelope is weaker than the final assembly needs.
+
+Next concrete arithmetic task: signed actual-coefficient covariance on balanced
+nonprincipal rows a1*a2², with both factors retained inside the column Gram
+form. planning/weighted-moment-20261105/frontier isolates this target and the
+failure of principal centering/shared-prime masks alone to improve it. Its
+finite controls are diagnostics, not a new infinite energy bound. Neighboring
+near-saturating dyadic blocks and the D^(7/6) mixed contribution must also be
+handled; one block's success alone would not establish the global H-sized target.
+The independent determinant/zero-location bridge, full intended L-function
+scopes and actual analytic/category Lean formalization remain unresolved.
+
+Publication authority now includes existing Mac gh for publishing only;
+remote401 does not revoke this explicit user permission. No automatic login
+or credential transfer is allowed. The Mac workspace/local8765 preview and
+older research HEAD/index remain protected. New public release work uses
+a narrow isolated remote worktree, never blanket staging this old dirty copy.
+
+### Independent signed-frontier continuation (5 November 2026)
+
+The next exact reduction is accepted at derivationSHA7dc97b2e61a8d3bc286356bf9eae28fb986d29978582a97f9bfbfd7e329ab9c1.
+Principal subtraction vanishes on the balanced a1*a2² nonprincipal block.
+The raw Gram retains symmetric-difference oscillation and the union zero mask.
+On the full active annulus A_U=C_U-mu, exposing the precise signed covariance
+lower bound BT_sigma; neither a saving nor an energy lower bound is proved.
+Independent224coefficient,2endpoint,75776raw-product,1296complex-covariance,
+18Gram and54signed-target controls pass. Radicand valuations1/2mod6 are
+distinct from tame conductor exponent1; this wording correction is documented.
+Source/review: planning/weighted-moment-20261105/{frontier,review}.
+Both gates remain false. Do not repeat centering or mask exclusion as a new
+analytic solution; attack the signed covariance with all required uniformities.

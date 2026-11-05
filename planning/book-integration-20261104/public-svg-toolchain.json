@@ -1,0 +1,55 @@
+{
+  "python": {
+    "executable": "/usr/bin/python3",
+    "version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39"
+  },
+  "commands": {
+    "pdflatex": {
+      "path": "/usr/bin/pdftex",
+      "sha256": "bdf084260e5e3ca3b1453a8ec1465efa5c0b23180d3bba7992fdd3ee1aeee45b",
+      "version": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)"
+    },
+    "pdfinfo": {
+      "path": "/usr/bin/pdfinfo",
+      "sha256": "a77b2df7a2461aba1f33706daaf5ba4d78304e971686173b6db3b10a9fe44d65",
+      "version": "pdfinfo version 24.02.0"
+    },
+    "pdftotext": {
+      "path": "/usr/bin/pdftotext",
+      "sha256": "46e5639c4096edd4bb06963cc7219401f9b91e0390fe40b3ba1482d1b5386c63",
+      "version": "pdftotext version 24.02.0"
+    },
+    "pdftoppm": {
+      "path": "/usr/bin/pdftoppm",
+      "sha256": "43a3c46cc7c98ab3741050d805dc35153f9b5d2bbe045fd3cc2701d9bc79387d",
+      "version": "pdftoppm version 24.02.0"
+    },
+    "pandoc": {
+      "path": "/home/iska/miniconda3/envs/tokengt/bin/pandoc",
+      "sha256": "8fedc028b2314cd649b6cabf363c94a7c940aff352a1c20753ffb0875f083cac",
+      "version": "pandoc 3.10"
+    }
+  },
+  "native_libraries": {
+    "rsvg-2": {
+      "soname": "librsvg-2.so.2",
+      "loaded_path": "/usr/lib/x86_64-linux-gnu/librsvg-2.so.2.50.0",
+      "sha256": "81b5db4db32c47697c7b6d7432e541544342c97bc88173df9f18bb0679279c51",
+      "distribution_package_version": "librsvg2-2:amd64 2.58.0+dfsg-1ubuntu0.1"
+    },
+    "cairo": {
+      "soname": "libcairo.so.2",
+      "loaded_path": "/usr/lib/x86_64-linux-gnu/libcairo.so.2.11800.0",
+      "sha256": "3144bd5935aee427d6c191b6b6d0ebf9010fb6320295a7f73edd276bc6993f2d",
+      "distribution_package_version": "libcairo2:amd64 1.18.0-3build1",
+      "runtime_version": "1.18.0"
+    },
+    "gobject-2.0": {
+      "soname": "libgobject-2.0.so.0",
+      "loaded_path": "/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.8000.0",
+      "sha256": "2bf396b14b469ca2eed46a785b3bc0bd1fd979261c6bf505bc4debdcd0a6870a",
+      "distribution_package_version": "libglib2.0-0t64:amd64 2.80.0-6ubuntu3.10"
+    }
+  }
+}

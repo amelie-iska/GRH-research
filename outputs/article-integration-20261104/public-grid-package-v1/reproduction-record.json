@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "script": "scripts/build_remote_articles.py",
+  "script_sha256": "ee282c130136a5e720a237787d32184a7a62ac5e9687d655d0bc357e9cce0152",
+  "public_package": "book/figures/article-grids",
+  "results": [
+    {
+      "edition": "concise",
+      "pages": 49,
+      "pdflatex_passes": 3,
+      "cwd": "/tmp",
+      "default_public_package_used": false,
+      "default_external_visual_flag_not_needed_for_bound_packaged_acceptance": false,
+      "text_identical_to_original_accepted_candidate": true,
+      "canonical_input_hashes_unchanged": true,
+      "source_hash_count": 32,
+      "pdf_sha256": "b6b0697d96f88121bbc270a89acce50c49ff4504502c6a2770051fac24f05d00"
+    },
+    {
+      "edition": "extended",
+      "pages": 129,
+      "pdflatex_passes": 3,
+      "cwd": "/tmp",
+      "default_public_package_used": true,
+      "default_external_visual_flag_not_needed_for_bound_packaged_acceptance": true,
+      "text_identical_to_original_accepted_candidate": true,
+      "canonical_input_hashes_unchanged": true,
+      "source_hash_count": 64,
+      "pdf_sha256": "704b62e8e29150162f1206be794b1d684191d9d693c4699bd716c4abedeff9b6"
+    }
+  ],
+  "no_production_PDFs_changed": true,
+  "published": false
+}

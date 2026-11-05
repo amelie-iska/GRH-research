@@ -1,0 +1,17 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern,amsmath,amssymb,amsthm,geometry,hyperref}
+\geometry{margin=1in}
+\hypersetup{hidelinks,pdftitle={Validated Dirichlet approximation and weighted arithmetic moments},pdfauthor={GRH research working note}}
+\newtheorem{theorem}{Theorem}
+\title{Validated Dirichlet approximation and weighted arithmetic moments}
+\author{GRH research working note}
+\date{4 November 2026}
+\begin{document}\maketitle
+\begin{abstract}Exact outward dyadic arithmetic and theta-integral quadrature certify three finite Dirichlet readouts. Separately, a fixed-twist sextic Hecke-family moment improves an original masked remainder estimate, while retaining a positive cutoff loss. We give the precise external analytic inputs and distinguish these results from zero-location and spectral determinant claims. No proof of GRH or complete Lean formalization is asserted.\end{abstract}
+\input{validated-oracle-core}
+\input{masked-moment-core}
+\input{weighted-cutoff-core}
+\input{uniform-cutoff-moment-core}
+\paragraph{Classical reference}NIST Digital Library of Mathematical Functions, Section25.15, \href{https://dlmf.nist.gov/25.15#E5}{Dirichlet L-functions, equations 25.15.5--6}; primitive functional equation and finite Gauss sums (snapshot pinned 4 November 2026). The normalization and explicit finite Gauss sums used here are stated above.\end{document}

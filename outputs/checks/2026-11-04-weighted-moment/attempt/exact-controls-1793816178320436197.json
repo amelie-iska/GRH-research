@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "field": "Q(omega); exact cyclotomic Q(zeta6) arithmetic",
+  "split_prime_generators": [
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      6,
+      1
+    ]
+  ],
+  "split_prime_norms": [
+    7,
+    13,
+    19,
+    31
+  ],
+  "omega_residue_images": [
+    4,
+    9,
+    7,
+    25
+  ],
+  "coefficient_checks": 208,
+  "masked_recombinations": 338,
+  "symbol_rows": 26,
+  "sixth_power_zero_control": true,
+  "dyadic_monomial_checks": 46656,
+  "exponent_checks": 255,
+  "negative_controls": [
+    "wrong1/4 monomial exponent rejected",
+    "primitive sixth-power restoration differs from literal zero"
+  ],
+  "source_sha256": "486e26e0ae94f44e3f8d1961eb183190c5938ae9f15a3d93fbdc4db2baec832e",
+  "scope": "Finite algebraic consistency and monomial inequalities only; not a proof of BGL/contour/GRH, not Lean"
+}

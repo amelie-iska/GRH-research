@@ -1,0 +1,43 @@
+{
+  "review": "literal TeX mathematical adversarial review",
+  "result": "accepted at recorded hashes; no load-bearing correction required",
+  "files": [
+    {
+      "path": "papers/masked-moment-core.tex",
+      "sha256": "d6ce1672bee92e75b93964502c3d900b209c6cbb952a5a9aed9213a917e09fb6",
+      "lines": 194
+    },
+    {
+      "path": "papers/masked-moment-details.tex",
+      "sha256": "c05e049a101a050e76d02be96b2eadb1f665acabd196032ab46fb84427118b33",
+      "lines": 472
+    }
+  ],
+  "not_checked": [
+    "TeX compilation and final layout",
+    "Lean formalization",
+    "independent reproof of cited external classical theorems"
+  ],
+  "post_read_clarification": "Author added 0<a<=1/2 for U=D^a, matching U^2<=D; checked and accepted.",
+  "final_v5_addendum": {
+    "build_record": "outputs/validated-oracle-notes-build-v5/build-record.json",
+    "build_record_sha256": "4ecd7f692986ab572b2e32f25bcfcdb13ae23ab116a0991dfeb7cf6cad4e20c7",
+    "accepted": true,
+    "checks": [
+      {
+        "path": "papers/masked-moment-core.tex",
+        "final_sha256": "63a6ee49d2dcee3b87977541f90995fa5a9c2d3ad584328ebed5059223cea0ff",
+        "reverse_editorial_matches_prior_review": true,
+        "moving_cutoff_range_explicit": true
+      },
+      {
+        "path": "papers/masked-moment-details.tex",
+        "final_sha256": "cb5c0f58189a2c5f5b47658902b10026556603281799b94313617bc89804a76c",
+        "reverse_editorial_matches_prior_review": true,
+        "moving_cutoff_range_explicit": false
+      }
+    ],
+    "range_precision": "The range0<a<=1/2 is explicit in core; details retains fixed a>0 under inherited U^2<=D, so its upper restriction is implicit.",
+    "scope": "Only two stated editorial changes; reverse transformations reproduce both prior reviewed hashes exactly. No independent compilation claim."
+  }
+}
