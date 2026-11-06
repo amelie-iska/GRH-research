@@ -1,0 +1,158 @@
+{
+  "case": "treatment",
+  "passed": true,
+  "URL": "http://127.0.0.1:34739/GRH-research/",
+  "runtime_sha256": "c37b2d5d630e794ccfef01ca316385da755622952adae774c4ce569cbdc13d71",
+  "no_error_filter": true,
+  "requests_blocked_or_intercepted": false,
+  "prefs_changed": false,
+  "DOM": {
+    "readyState": "complete",
+    "DOMContentLoaded": {
+      "readyState": "interactive",
+      "icons": [
+        {
+          "href": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23163b34%22%2F%3E%3Cpath%20d%3D%22M8%2023%2016%208l8%2015H8Zm0%200%208-6%208%206M16%208v9%22%20fill%3D%22none%22%20stroke%3D%22%23e3ba73%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    "iconCount": 1,
+    "icon": {
+      "rel": "icon",
+      "type": "image/svg+xml",
+      "href": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23163b34%22%2F%3E%3Cpath%20d%3D%22M8%2023%2016%208l8%2015H8Zm0%200%208-6%208%206M16%208v9%22%20fill%3D%22none%22%20stroke%3D%22%23e3ba73%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      "connected": true
+    },
+    "svg": {
+      "source": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 32 32\"><rect width=\"32\" height=\"32\" rx=\"7\" fill=\"#163b34\"/><path d=\"M8 23 16 8l8 15H8Zm0 0 8-6 8 6M16 8v9\" fill=\"none\" stroke=\"#e3ba73\" stroke-width=\"2\" stroke-linejoin=\"round\"/></svg>",
+      "namespace": "http://www.w3.org/2000/svg",
+      "root": "svg",
+      "parserError": false
+    }
+  },
+  "imageDecode": {
+    "width": 32,
+    "height": 32,
+    "complete": true
+  },
+  "events": [
+    {
+      "event": "network.beforeRequestSent",
+      "context": "9b01c780-c3d6-46b0-a5d4-473ad41473be",
+      "navigation": "19881af3-9d92-492d-ad36-c3413fb5d359",
+      "request": "6995-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:34739/GRH-research/",
+      "method": "GET",
+      "status": null,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.responseCompleted",
+      "context": "9b01c780-c3d6-46b0-a5d4-473ad41473be",
+      "navigation": "19881af3-9d92-492d-ad36-c3413fb5d359",
+      "request": "6995-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:34739/GRH-research/",
+      "method": "GET",
+      "status": 200,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.beforeRequestSent",
+      "context": "9b01c780-c3d6-46b0-a5d4-473ad41473be",
+      "navigation": null,
+      "request": "6996-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:34739/GRH-research/public-base.js",
+      "method": "GET",
+      "status": null,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.responseCompleted",
+      "context": "9b01c780-c3d6-46b0-a5d4-473ad41473be",
+      "navigation": null,
+      "request": "6996-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:34739/GRH-research/public-base.js",
+      "method": "GET",
+      "status": 200,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.beforeRequestSent",
+      "context": "9b01c780-c3d6-46b0-a5d4-473ad41473be",
+      "navigation": null,
+      "request": "2-e9b53cdd-70d2-4178-8e86-30a844fd375a",
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23163b34%22%2F%3E%3Cpath%20d%3D%22M8%2023%2016%208l8%2015H8Zm0%200%208-6%208%206M16%208v9%22%20fill%3D%22none%22%20stroke%3D%22%23e3ba73%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "status": null,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.responseCompleted",
+      "context": "9b01c780-c3d6-46b0-a5d4-473ad41473be",
+      "navigation": null,
+      "request": "2-e9b53cdd-70d2-4178-8e86-30a844fd375a",
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23163b34%22%2F%3E%3Cpath%20d%3D%22M8%2023%2016%208l8%2015H8Zm0%200%208-6%208%206M16%208v9%22%20fill%3D%22none%22%20stroke%3D%22%23e3ba73%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "status": 200,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.beforeRequestSent",
+      "context": "9b01c780-c3d6-46b0-a5d4-473ad41473be",
+      "navigation": null,
+      "request": "3-e9b53cdd-70d2-4178-8e86-30a844fd375a",
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23163b34%22%2F%3E%3Cpath%20d%3D%22M8%2023%2016%208l8%2015H8Zm0%200%208-6%208%206M16%208v9%22%20fill%3D%22none%22%20stroke%3D%22%23e3ba73%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "status": null,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.responseCompleted",
+      "context": "9b01c780-c3d6-46b0-a5d4-473ad41473be",
+      "navigation": null,
+      "request": "3-e9b53cdd-70d2-4178-8e86-30a844fd375a",
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23163b34%22%2F%3E%3Cpath%20d%3D%22M8%2023%2016%208l8%2015H8Zm0%200%208-6%208%206M16%208v9%22%20fill%3D%22none%22%20stroke%3D%22%23e3ba73%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "status": 200,
+      "error": null,
+      "level": null,
+      "text": null
+    }
+  ],
+  "HTTP_errors": [],
+  "fetch_errors": [],
+  "page_errors": [],
+  "origin_favicon_requests": [],
+  "idleWaits": [
+    {
+      "quiet_ms": 750,
+      "timeout_ms": 30000,
+      "start_ms": 1793965707877,
+      "end_ms": 1793965708632,
+      "pending_at_exit": []
+    }
+  ],
+  "pending_final": [],
+  "cleanup": {
+    "owned_tab_closed": true,
+    "owned_user_context_removed": true,
+    "preexisting_contexts_untouched": true,
+    "session_ended": true,
+    "errors": []
+  }
+}

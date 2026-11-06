@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "scope": "Two isolated loopback404 origins, exact old runtime versus one icon insertion; no HTTP request interception/filtering, prefs, publication or frozen-source changes.",
+  "results": [
+    {
+      "case": "control",
+      "passed": true,
+      "HTTP_errors": [
+        {
+          "event": "network.responseCompleted",
+          "context": "818f6128-7091-481d-bb72-1052605e788c",
+          "navigation": null,
+          "request": "6994-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+          "url": "http://127.0.0.1:43071/favicon.ico",
+          "method": "GET",
+          "status": 404,
+          "error": null,
+          "level": null,
+          "text": null
+        }
+      ],
+      "origin_favicon_requests": 1,
+      "cleanup": {
+        "owned_tab_closed": true,
+        "owned_user_context_removed": true,
+        "preexisting_contexts_untouched": true,
+        "session_ended": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "treatment",
+      "passed": true,
+      "HTTP_errors": [],
+      "origin_favicon_requests": 0,
+      "cleanup": {
+        "owned_tab_closed": true,
+        "owned_user_context_removed": true,
+        "preexisting_contexts_untouched": true,
+        "session_ended": true,
+        "errors": []
+      }
+    }
+  ],
+  "files_sha256": {
+    "control.json": "b4fa7e40017e5184d19c1ea1e002d402e570c5267975a4f2904c523b4dc8b877",
+    "treatment.json": "2b401bf803fc2e03b4bfc3bac8bb257ceafdcf766f02dec3636b3660bc580cd8",
+    "control.png": "94ac90fd62458904c0fbe40b7ce0718fc633a184d19e7c5bf4fb831468cc3766",
+    "treatment.png": "0383e8153c7d8b96d73dd1b7f1e091dc202799ae8c873587d6412c0b60d8c4ef"
+  }
+}

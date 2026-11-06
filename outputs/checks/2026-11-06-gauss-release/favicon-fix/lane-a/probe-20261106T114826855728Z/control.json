@@ -1,0 +1,141 @@
+{
+  "case": "control",
+  "passed": true,
+  "URL": "http://127.0.0.1:43071/GRH-research/",
+  "runtime_sha256": "3486c2656be40d49b4e07463a7ace445bb52c785cf0e61259a5add0f9b570185",
+  "no_error_filter": true,
+  "requests_blocked_or_intercepted": false,
+  "prefs_changed": false,
+  "DOM": {
+    "readyState": "complete",
+    "DOMContentLoaded": {
+      "readyState": "interactive",
+      "icons": []
+    },
+    "iconCount": 0,
+    "icon": null,
+    "svg": null
+  },
+  "imageDecode": null,
+  "events": [
+    {
+      "event": "network.beforeRequestSent",
+      "context": "818f6128-7091-481d-bb72-1052605e788c",
+      "navigation": "ccf6475a-f311-4ec4-b00d-6ae0fc2fa6d1",
+      "request": "6992-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:43071/GRH-research/",
+      "method": "GET",
+      "status": null,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.responseCompleted",
+      "context": "818f6128-7091-481d-bb72-1052605e788c",
+      "navigation": "ccf6475a-f311-4ec4-b00d-6ae0fc2fa6d1",
+      "request": "6992-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:43071/GRH-research/",
+      "method": "GET",
+      "status": 200,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.beforeRequestSent",
+      "context": "818f6128-7091-481d-bb72-1052605e788c",
+      "navigation": null,
+      "request": "6993-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:43071/GRH-research/public-base.js",
+      "method": "GET",
+      "status": null,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.responseCompleted",
+      "context": "818f6128-7091-481d-bb72-1052605e788c",
+      "navigation": null,
+      "request": "6993-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:43071/GRH-research/public-base.js",
+      "method": "GET",
+      "status": 200,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.beforeRequestSent",
+      "context": "818f6128-7091-481d-bb72-1052605e788c",
+      "navigation": null,
+      "request": "6994-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:43071/favicon.ico",
+      "method": "GET",
+      "status": null,
+      "error": null,
+      "level": null,
+      "text": null
+    },
+    {
+      "event": "network.responseCompleted",
+      "context": "818f6128-7091-481d-bb72-1052605e788c",
+      "navigation": null,
+      "request": "6994-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:43071/favicon.ico",
+      "method": "GET",
+      "status": 404,
+      "error": null,
+      "level": null,
+      "text": null
+    }
+  ],
+  "HTTP_errors": [
+    {
+      "event": "network.responseCompleted",
+      "context": "818f6128-7091-481d-bb72-1052605e788c",
+      "navigation": null,
+      "request": "6994-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:43071/favicon.ico",
+      "method": "GET",
+      "status": 404,
+      "error": null,
+      "level": null,
+      "text": null
+    }
+  ],
+  "fetch_errors": [],
+  "page_errors": [],
+  "origin_favicon_requests": [
+    {
+      "event": "network.beforeRequestSent",
+      "context": "818f6128-7091-481d-bb72-1052605e788c",
+      "navigation": null,
+      "request": "6994-17507eab-f6d3-4c7c-ac22-cf8aecc0ba70",
+      "url": "http://127.0.0.1:43071/favicon.ico",
+      "method": "GET",
+      "status": null,
+      "error": null,
+      "level": null,
+      "text": null
+    }
+  ],
+  "idleWaits": [
+    {
+      "quiet_ms": 750,
+      "timeout_ms": 30000,
+      "start_ms": 1793965706998,
+      "end_ms": 1793965707753,
+      "pending_at_exit": []
+    }
+  ],
+  "pending_final": [],
+  "cleanup": {
+    "owned_tab_closed": true,
+    "owned_user_context_removed": true,
+    "preexisting_contexts_untouched": true,
+    "session_ended": true,
+    "errors": []
+  }
+}
