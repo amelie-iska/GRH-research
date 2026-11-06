@@ -1,0 +1,29 @@
+{
+  "Jacobian_omission_negative_control": "Dropping dv contributes exponent-2s instead of1-2s; atNC7,s0 the correct magnitude7 vswrong1 differsby7.",
+  "counts": {
+    "Mellin_Jacobian_exponents": 88,
+    "SL2_cusp_matrix_identities": 40,
+    "angular_phase_unit_checks": 320,
+    "exact_H3_coordinate_identities": 120,
+    "selected_primary_states": 16,
+    "source_primary_selector_states": 544
+  },
+  "ell_zero_endpoint_poles": {
+    "infinity": "1/6, residue-Cinfinity/2",
+    "zero": "5/6,residueCzero/2"
+  },
+  "material_parameters": {
+    "H3_points": "3 exact rational Q(omega),positive rational height states",
+    "SL2_words": "U(a)S U(b)S,5 a by8 nonzero b",
+    "ell": "plus/minus1..4 for phases;1..8 for formal derivatives",
+    "primary_variables_mod3": "1,1+3omega,4,4+3omega; no squarefree-ideal claim",
+    "s_grid": "-5/4..5/4 step1/4"
+  },
+  "note_sha256": "e19cced215fe0eeaa6a51545538d51c5779f1c6735c7145a9284cb570312d7c4",
+  "old_controls_rerun": false,
+  "passed": true,
+  "radial_mixed_derivative_negative_control": "partial_z partial_barz (1+zbarz)^(-2/3) at0=-2/3, so only PURE nonzero angular derivatives are killed",
+  "randomness": "none",
+  "schema": "ramified-gauss-new-cusp-Mellin-controls-v1",
+  "scope": "NEW deterministic exact Q(omega)/Fraction matrix,H3-coordinate,Jacobian,pole and primary-branch controls. NOT actual annular ideal/character/Gauss data, training, numerical spectrum or Lean; no old controls replayed."
+}

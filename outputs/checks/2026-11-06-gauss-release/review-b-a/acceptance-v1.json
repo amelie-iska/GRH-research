@@ -1,0 +1,26 @@
+{
+  "schema": "type-i-transfer-independent-acceptance-v1",
+  "passed": true,
+  "governing_note": {
+    "path": "planning/gauss-release-20261106/lane-a/TYPE_I_FREQUENCY_AND_DELETION_TRANSFER-v2.md",
+    "sha256": "77660bde6a635d5de376e384f7570cee78a0f5dd981e01660ae22a948cbba48b"
+  },
+  "review": {
+    "path": "planning/gauss-release-20261106/review-b-a/REVIEW-v1.md",
+    "sha256": "068e5b9616a416cfab54ff499349c064b932a1947247eb6b93c0a4bdc6f38c00"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-06-gauss-release/review-b-a/source-pins-v1.json",
+    "sha256": "ba5445290fbff975f054ec538c82bb527d0932cd02964d6d718b72cf1376a4a7"
+  },
+  "resolved_findings": [
+    {
+      "version": "v1",
+      "finding": "Eq4 evaluated an inner F outside its SF-frequency domain on dead(d,t)>1 terms.",
+      "resolution": "v2 restricts(d,t)=1 in exact summation range before evaluation."
+    }
+  ],
+  "scope": "Exact fixed-twist/deletion identity and conditional quantitative criterion; no unconditional improved TypeI/whole bound or theorem availability.",
+  "no_controls_rerun": true,
+  "own_new_files_only": true
+}

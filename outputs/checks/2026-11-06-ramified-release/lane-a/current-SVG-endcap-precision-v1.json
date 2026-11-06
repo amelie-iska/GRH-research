@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "required_bounded_endcap_precision": true,
+  "failed_stage": "outputs/checks/2026-11-06-ramified-release/lane-a/stage-browser-20261106T211445970804Z",
+  "failed_assertion": "all-old29SVGrefs-and13lab-URLs-exact",
+  "first_stage_failed_closed_before_publication": true,
+  "only_harness_semantic_change": "current total SVG endcap31\u219232; exact first29oldSVG andfirst13oldiframe comparisons byte-identical",
+  "new_full_harness": {
+    "path": "planning/ramified-release-20261106/lane-a/check_browser_v2.mjs",
+    "sha256": "da5d0ebfc90410ae8bb800df21f7796d46bc98bd8555135a1e3ca54a47710656",
+    "bytes": 71728
+  },
+  "old_full_harness": {
+    "path": "planning/ramified-release-20261106/lane-a/check_browser_v1.mjs",
+    "sha256": "ca64ec763a2b2c25e43764cd9828653cd05700567101a6b5ed7ea9900174dff8",
+    "bytes": 71728
+  },
+  "freezer": {
+    "path": "planning/ramified-release-20261106/lane-a/freeze_inputs_v6.py",
+    "sha256": "5ab759fdc26944c72e9f1862da87c02e08dad82da1283edcb4a5f024530a8e58",
+    "bytes": 3093
+  },
+  "test_source": {
+    "path": "planning/ramified-release-20261106/lane-a/test_contract_v4.py",
+    "sha256": "6c98445be6f8ad77034c54851476b38cc85193e9922bc5cf9b3a1ea983a3012e",
+    "bytes": 6060
+  },
+  "positive_saved_current_refs": true,
+  "four_bounded_negative_ref_controls_rejected": [
+    "old-prefix-loss",
+    "missing-current-SVG",
+    "old-frame-prefix-loss",
+    "missing-current-frame"
+  ],
+  "other_global_count_and_SVG_slice_endcaps_inspected": true,
+  "contract_and_all_named_groups_unchanged": true,
+  "prior_844_contract_negative_controls_still_governing": {
+    "path": "outputs/checks/2026-11-06-ramified-release/lane-a/negative-controls-v3.json",
+    "sha256": "b071583aeb9d1e43406214513e80d7e0a2435af2c8ad87538d4d55507020ffc9",
+    "bytes": 30973
+  },
+  "no_844_replay_or_browser_retry": true,
+  "strict_WS_idle_error_cleanup_code_byte_unchanged": true,
+  "failed_browser_cleanup": {
+    "owned_tab_closed": true,
+    "owned_user_context_removed": true,
+    "preexisting_contexts_untouched": true,
+    "session_ended": true
+  },
+  "failed_runner_cleanup": {
+    "server_stopped": true,
+    "inputs_unchanged": true,
+    "bundle_unchanged": true
+  },
+  "timestamp_utc": "2026-11-06T21:17:29.624014+00:00"
+}

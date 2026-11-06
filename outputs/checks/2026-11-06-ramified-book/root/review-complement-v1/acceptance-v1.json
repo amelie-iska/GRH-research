@@ -1,0 +1,42 @@
+{
+  "schema": "ramified-book-root-independent-complement-review-v1",
+  "passed": true,
+  "reviewer": "root",
+  "reviewed_utc": "2026-11-06T20:17:24.403831+00:00",
+  "governing_note": {
+    "path": "planning/ramified-book-20261106/lane-c/research/BOUNDED_GOOD_PART_COMPLEMENT-v2.md",
+    "role": "candidate",
+    "sha256": "72acb8745dc41bb106e6e0dd44cb248f23f01df59f34a047c40e48a63ab34956"
+  },
+  "required_companion": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-c/research/fixed-family-match-addendum-v1.json",
+    "role": "required_family_companion",
+    "sha256": "50a7feb16d37aa19effd78147ca9705badc2809d6821660e134bba78eeb62018"
+  },
+  "independent_gate": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-b/review-complement-v1/acceptance-v1.json",
+    "sha256": "691a56b5a1e4818e35729af10c832eeb4841e466e632d35b54120b431ba5b6b2"
+  },
+  "source_pins_rechecked": 17,
+  "read_checks": [
+    "Entire v2 and required addendum independently read",
+    "Literal FULL finite ray-group expansion in original DRAFT-v8 Section4 checked; no type-zero-only finite-order inference",
+    "Primitive CRT own-S-conductor values and raw b power masks checked before enlarged fixed-numerator Kummer family",
+    "General fixed finite family theorem applied with NEW common modulus; arbitrary S support compressed without growing-good-r uniformity",
+    "Endpoint partition Ns<=V versus Ns>V and strict Nr<64, Nhr<64 only for top piece",
+    "Positive S geometric count only after actual one-column/full-Q estimate; finite k, opposite column, all e/ray/rho means retained",
+    "Normalization101/144, Bessel-1/16 and equalnorm-3/16 checked algebraically"
+  ],
+  "accepted_scope": "Research-only original pure finite primitive-dual cone Nr<64, all allowed S parts, and new lower-sixth complementary piece; unchanged exponent101/144",
+  "controls_rerun": false,
+  "canonical_integration": false,
+  "new_Lean_declarations": 0,
+  "unestimated": [
+    "Good sixth-free part Nr>=64",
+    "Infinite/high-frequency complement",
+    "Mixed and neighboring blocks",
+    "Whole signed13/12/global9/8 improvement",
+    "Determinant and zero-location bridge",
+    "GRH"
+  ]
+}

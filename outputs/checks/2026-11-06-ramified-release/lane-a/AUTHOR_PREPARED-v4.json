@@ -1,0 +1,89 @@
+{
+  "prepared": true,
+  "schema": "ramified-release-QA-author-preparation-v4",
+  "parent_author": {
+    "path": "outputs/checks/2026-11-06-ramified-release/lane-a/AUTHOR_PREPARED-v3.json",
+    "sha256": "fdb48a21ed636c552e8f3f016167a02d770f720baba93a2b8522030d74548884",
+    "bytes": 3670
+  },
+  "required_endcap_precision": {
+    "path": "outputs/checks/2026-11-06-ramified-release/lane-a/current-SVG-endcap-precision-v1.json",
+    "sha256": "0b6fdcacb6d1d42386f0aa553d6a12699409461fa2a2df594d525d1585c98e17",
+    "bytes": 2271
+  },
+  "governing_files": [
+    {
+      "path": "planning/ramified-release-20261106/lane-a/check_browser_v2.mjs",
+      "sha256": "da5d0ebfc90410ae8bb800df21f7796d46bc98bd8555135a1e3ca54a47710656",
+      "bytes": 71728
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/check_gauss_tail_v1.mjs",
+      "sha256": "1f7c0b8db0cbfd6c69093c567d2b8ea914a9dc453a1cdd759cdca5b09295691b",
+      "bytes": 13567
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/check_ramified_v5.mjs",
+      "sha256": "4e09e45cb17204aabee2d19217cbbb8a4a3041738e3226c74f67daf56f18f3b4",
+      "bytes": 17759
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/check_lab_v1.mjs",
+      "sha256": "094fbfb28a46da943ced6f16ed40207e1fc97a57ff97cd780cc085392999247d",
+      "bytes": 11895
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/owned_browser_v2.mjs",
+      "sha256": "2683eb4027236a54ffb7f06090288aaecf800e7004a8166281d60025bef59256",
+      "bytes": 3783
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/run_browser_v4.py",
+      "sha256": "516372d840778c548ccd63d9586517defb08bb8a55c9365284929fca0dd670a7",
+      "bytes": 13475
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/make_expectations_v4.py",
+      "sha256": "1ffd4d446be4d07ace35a8816df315e3cbcf64245d5efa29c2916b254fb2b483",
+      "bytes": 7514
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/freeze_inputs_v6.py",
+      "sha256": "5ab759fdc26944c72e9f1862da87c02e08dad82da1283edcb4a5f024530a8e58",
+      "bytes": 3093
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/contract_v3.py",
+      "sha256": "8f8511a1e74f9ba483686ebd162e825bc678bdd955e56f87d80e9ad6be2f9d3a",
+      "bytes": 3642
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/test_contract_v4.py",
+      "sha256": "6c98445be6f8ad77034c54851476b38cc85193e9922bc5cf9b3a1ea983a3012e",
+      "bytes": 6060
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/prior-groups-v3.json",
+      "sha256": "d9722c860f67a66b481ee86cdfabf00e13f4a578b0ff8cf5dcc32f11f0f9b7cc",
+      "bytes": 17683
+    }
+  ],
+  "root_required_previous_precisions": [
+    {
+      "path": "outputs/checks/2026-11-06-ramified-release/lane-a/old-math-region-precision-v1.json",
+      "sha256": "6daca4b674c3ed89aca6388b7e2fb3d0472195ec504e99f8ed4dbaf603124e42",
+      "bytes": 3725
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-release/lane-a/role-count-precision-v1.json",
+      "sha256": "3ff14d3a200f8f3ac132643031d4db3c706528f90119949197e78846722a0119",
+      "bytes": 704
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-release/lane-a/in-book-SVG-scope-precision-v1.json",
+      "sha256": "500c9cff24603d5988a4b2cb24b911d85bab291e3704884501e46a9c6334768b",
+      "bytes": 974
+    }
+  ],
+  "next": "C bounded actualdiff review; fresh inputfreeze/new stage run of SAME unchanged641bundle; maps-v2 unchanged"
+}

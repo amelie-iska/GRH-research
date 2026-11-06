@@ -1,0 +1,45 @@
+{
+  "schema": "ramified-gauss-lane-a-independent-c-review-v1",
+  "created_utc": "2026-11-06T17:00:38.450439+00:00",
+  "reviewer": "Lane-A finite-family/cusp-state agent independent of lane-C author",
+  "status": "ACCEPTED_GENERAL_FIXED_FINITE_RAMIFIED_ANGULAR_INTERFACE_RESEARCH_ONLY",
+  "governing_note": {
+    "path": "planning/ramified-gauss-20261106/lane-c/RATIONAL_CUSP_CONSTANTS_AND_MELLIN-v2.md",
+    "sha256": "605478dfe81524f50e4cc53274812cc6739d38115476c9553142e1a7489e5f77"
+  },
+  "version_reconciliation": "Read entirev1 then exactv1-v2diff. Requestedactualchosen-cusp coefficienta_j(mu) instead of ambiguousd_j(-mu);v2resolvesonlythat convention andversionheader. No controls rerun.",
+  "independent_derivation": [
+    "Integral reduced rational fractionA/C admits determinantone gamma. Directmatrix multiplication gives gamma^-1U(A/C)=U(-D/C)W_-C exactly. Known leftGamma2coset and its actual weightzero Kubota character yield the stated functionidentity.",
+    "H3coordinate is zprime=-D/C-barz/(C^2(|z|^2+v^2)), vprime=v/(NC(|z|^2+v^2)). Pulledback constant is radial; everyPURE nonzeroangular derivative at0 killsit. No lowerangular orradialchainruleterms survive.",
+    "For ell>0 coefficientbarC^-2ell v^-2ell and Jacobian y=1/(NCv) give EXACT (-1)^ell(C/barC)^ell(NC)^(1-2s); opposite sign is its conjugate convention. This rederives(8), including the essentialextraNC.",
+    "Actualknowncusp coefficienta_j(mu) has unit translationphase and fixedabsoluteDirichletnorm at1+eta; no unknownrationalcusp is assigned a coefficientbound by finite-dimensionality.",
+    "Both endpoint exponentialbounds establish entireangularMellin for eachfixedrationaltranslate. For ell0 actualendpointpoles at1/6 and5/6 with statedsigns remain; noncubicfinitecharacter is not substituted for a polecalculation.",
+    "Projector f_lambda(x)=kappa_lambda(x)1_x1modlambda^2 atx=lambda^3mu selects exactly plusprimary lowestvaluation branch. Allotherlambda valuationsectors give nonunitx; minusbranch is -1mod3. Taucoefficient3^5/2gtilde(c)|d| and anglei^ell then give completion(9) with NOpsi(lambda)factor.",
+    "Fullfixedfinite characterorder is arbitrary. Imprimitive awaypsi includingF/toverlap is a boundedfunctionof literalperiodM=Ft; Parseval givesl1<=sqrt(NM), withoutunitFouriersupport ordivisionbykappa(t).",
+    "Finite lambda/away pairingproduces exactrationaltranslations; reduceddenominatorNC<=CfixedNt. SummingpertranslateMellinbound givescoarseR^(3/2+2eta)height^(2+4eta), with actualKubota phases retained beforeabsolutevalues.",
+    "Completednumerator isentire andrightlineabsolutelybounded. Previouslyreviewedcompletedconvexity/Perron maytherefore beappliedwitha3/2. DivisionbytwistedL occurs onlywhere3Re(s)-1/2>1, sonoreciprocalLzero-freepremise isused.",
+    "OwnangularmodeinactualgoverningDIRECTmodelis +/-1 becauseoriginalnu finiteorder. Remainingfinitefamily stillrequiresseparateexactfactor-match gate; no nonperiodicdensityg, arithmeticmu/HBsign or growingdeletion is insertedasfixedkappa.",
+    "Potentialscopedpureprefix41/64application requires separate B exactassembly andactualfinitefamily acceptance. No wholeh1/globalpower, determinant/zero-location, LeanorGRHclaim follows fromthisgate."
+  ],
+  "source": {
+    "version": "DR2109.07463v3",
+    "pdf_sha256": "df888f8527b3647a3428d6677a3e3070aab7439f79f737f3e894218fb64cfef0",
+    "text_sha256": "636da1119ebebdcab6756e9258554af06a42d67baf0c47026c73e960de2f4767",
+    "used": "Unconditional known27integralcusps, weightzeroKubotaautomorphy, coefficient/Mellin formulas, notGRHconditionalprimetheorems",
+    "full_primary_reproof": false
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-06-ramified-gauss/lane-c/cusp-controls-v1/checks-v1.json",
+    "sha256": "25ee5b07d80cae3b84955664634c3e1afb4a7e5112b627a46542671c8e59e657",
+    "new_controls_executed_by_this_review": false,
+    "scope": "Boundedsource/matrix/phase/Jacobian/formalbranch controls are evidence, not analyticproof or originalannular data"
+  },
+  "boundaries": {
+    "ell_zero_pole_free_claim": false,
+    "refined_R_half_claim": false,
+    "actual_full_signed_or_global_or_Lean_or_GRH_claim": false,
+    "whole_signed": "13/12 unchanged",
+    "global_unsigned": "9/8 unchanged"
+  },
+  "operations": "Read-onlyscientificreview; onlyownedreviewreceiptwritten viaSSHLinux. No sciencecontrol/build/browser/auth/dependency/Git/publicationrerun."
+}

@@ -1,0 +1,126 @@
+{
+  "accepted_result": "Actual finite primitive-dual low complementary cone and whole bounded-good-sixth-free cone, with Nr<64 and arbitrary S-supported h, bound (3); critical leading upper power101/144.",
+  "builds_run": false,
+  "canonical_source_modified": false,
+  "checks": {
+    "all_rays_means_overlap_and_opposite_column_masks": true,
+    "bessel_and_equalnorm_budget": true,
+    "exact_extraction_and_boundary_partition": true,
+    "formal_controls_scope_read_not_rerun": true,
+    "full_ball_growing_good_conductor_open": true,
+    "literal_finite_ray_order_not_type_zero_inference": true,
+    "new_fixed_family_explicit_construction": true,
+    "one_column_then_outer_normalization": true,
+    "positive_weighted_S_count_only": true,
+    "primitive_S_values_and_generator_units": true,
+    "primitive_order_and_raw_power_mask": true
+  },
+  "controls_rerun": false,
+  "governing_pair_required": true,
+  "not_accepted": [
+    "full dual ball",
+    "unbounded good sixth-free numerator uniformity",
+    "infinite dual complement",
+    "whole signed or global saving",
+    "positive determinant/zero-location bridge",
+    "Lean formalization",
+    "GRH"
+  ],
+  "original_inputs_and_index_preserved": true,
+  "outside_frozen_canonical_package": true,
+  "passed": true,
+  "review_note": {
+    "path": "planning/ramified-book-20261106/lane-b/review-complement-v1/INDEPENDENT_REVIEW-v1.md",
+    "sha256": "eee0c7268a08b34644a5a73699583d403715002a71e1cb356bd43d7145cc4d62"
+  },
+  "reviewed_utc": "2026-11-06T20:14:50.809597+00:00",
+  "reviewer": "lane-b /root/unit_gauss_coprime",
+  "schema": "ramified-book-independent-complement-review-v1",
+  "source_pins": [
+    {
+      "path": "planning/ramified-book-20261106/lane-c/research/BOUNDED_GOOD_PART_COMPLEMENT-v2.md",
+      "role": "candidate",
+      "sha256": "72acb8745dc41bb106e6e0dd44cb248f23f01df59f34a047c40e48a63ab34956"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-c/research/fixed-family-match-addendum-v1.json",
+      "role": "required_family_companion",
+      "sha256": "50a7feb16d37aa19effd78147ca9705badc2809d6821660e134bba78eeb62018"
+    },
+    {
+      "path": "planning/ramified-book-20261106/lane-c/research/cone-v1-v2.diff",
+      "role": "candidate_diff",
+      "sha256": "25895def53a7b9fbb18a687ade3427561177173cb88a9a8a55c248dd273a2894"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-c/research/cone-controls-v1/checks-v1.json",
+      "role": "formal_controls_read_not_rerun",
+      "sha256": "913265050b307ce2caad2a4acd5bf0054e0466b9bea0b4f780107e9b6d048c92"
+    },
+    {
+      "path": "planning/physical-sieve-20261105/postrelease-research/dual-kernel-v1/DRAFT-v8.md",
+      "role": "literal_primitive_kernel",
+      "sha256": "cba96d347cd880cdead3a330ce5e39969b1950c049df1750f6444ce68a0d4ff7"
+    },
+    {
+      "path": "planning/prime-fibre-20261105/lane-b/primary/defaveri-optimal-v1.txt",
+      "role": "primary_defaveri",
+      "sha256": "ef550aa4bca1659c6d98ebf69e2cbd42a2793b707f6171f53d1b2baeb8654a57"
+    },
+    {
+      "path": "planning/ramified-gauss-20261106/lane-c/RATIONAL_CUSP_CONSTANTS_AND_MELLIN-v2.md",
+      "role": "general_ramified_mellin",
+      "sha256": "605478dfe81524f50e4cc53274812cc6739d38115476c9553142e1a7489e5f77"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/lane-c/coefficient-convention-addendum-v1.json",
+      "role": "required_mellin_convention",
+      "sha256": "b601afb66406b6bf4c076102ba4045e8545967ba334271494095190e95f8f060"
+    },
+    {
+      "path": "planning/ramified-gauss-20261106/lane-a/ACTUAL_FINITE_RESIDUE_FAMILY-v1.md",
+      "role": "actual_finite_family",
+      "sha256": "c70805fae6e1cb964d8092b2e914ced3d682c1820408c1210c3cabec1c2b11d5"
+    },
+    {
+      "path": "planning/ramified-gauss-20261106/lane-a/RHO_SCOPE_PRECISION-v1.md",
+      "role": "required_rho_scope",
+      "sha256": "1b1547315ac4144fc295ef4d51f4f5f5ae51a0cd41045d0dd9a4ac2852101161"
+    },
+    {
+      "path": "planning/ramified-gauss-20261106/root/FULL_AU_PURE_PREFIX-v3.md",
+      "role": "full_au",
+      "sha256": "668f71eb4036d93e7907c7bba36ab59c44001fefad9463c2910490a7a4b04d98"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/root/full-au-coefficient-precision-v1.json",
+      "role": "required_au_coeff",
+      "sha256": "1f52dac719030cc625054cc60d4a050cfcb44575d10d899ed03f547e2d9242b8"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/root/full-au-prefix-mask-precision-v1.json",
+      "role": "required_au_prefix_mask",
+      "sha256": "dfb2b1e886a4996fa9e93837b6855d69bdc80f5601817d23f9a485375e4a7748"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/root/whole-au-control-scope-precision-v1.json",
+      "role": "required_au_controls_scope",
+      "sha256": "bd816dfd976846167570507ac856141c14c1d987e094fcf250aea69be0f20ac6"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/lane-c/review-root-full-au-v1/acceptance-v1.json",
+      "role": "independent_full_au_gate",
+      "sha256": "5e01ac18b43ae280c074e3d75fb1a25f08edeee51c86676b481ae00338937f49"
+    },
+    {
+      "path": "planning/root-moment-20261106/lane-a/ALL_COMPONENT_COLUMN_PHASES-v1.md",
+      "role": "all_component_values",
+      "sha256": "011b68a07eda5489b6ea8d8b7fa565e52920423f0c954ef583ea143b64609df8"
+    },
+    {
+      "path": "planning/gauss-book-20261106/lane-b/DIRECT_DISCRETE_TOP_CUTOFF-v2.md",
+      "role": "direct_prefix",
+      "sha256": "4b42c00601073bb6f178daf862c244c8b096b4c17a7aaf66d00caf13f4dd498a"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-11-06T14:45:34.460519+00:00",
+  "reviewer": "independent child lane-A primary/source matching agent",
+  "status": "ACCEPTED_RESEARCH_ONLY_EXTERNAL_INPUT_COROLLARY",
+  "governing_note": {
+    "path": "planning/unit-gauss-20261106/root/BARE_ANGULAR_SHARP_INTERVAL-v2.md",
+    "sha256": "be09958240c81aaab81b3a0b04b2e1601672ec592cc927a44e9692e2f692ba67"
+  },
+  "previous_note": {
+    "path": "planning/unit-gauss-20261106/root/BARE_ANGULAR_SHARP_INTERVAL-v1.md",
+    "sha256": "faf923f87e3bc069ce1648bd30bc807b173b32dc8c7711b8355c49b425e2c11e"
+  },
+  "version_reconciliation": "Exact comparison proves v2 changes only version header and submitted-public-preprint status to public-repository-preprint. No mathematical line changed; old v1 and its arithmetic checks remain unchanged.",
+  "primary": {
+    "commit": "4eaee87548250b2682affda7d05d947c05554bae",
+    "pdf_sha256": "0af3e675f8a6a5b3e47da9ea5ca7434a825f48f7186f79594b1ee5d54d443a37",
+    "text_sha256": "4c231b89ade86e737a56874ebb025e983dc509fa66818d62ab64e1817321ac80",
+    "interfaces": "PropositionA.4,A.8,A.9 and angular lattice estimateA.11",
+    "external_preprint_not_independently_fully_verified": true
+  },
+  "independent_derivation_checks": [
+    "All integer norm endpoint choices are represented exactly by half-integer prefix thresholds; no norm tie is discarded or halved.",
+    "Counting every ideal in a norm fibre gives divisor multiplicity; the shell sum has per-level1+U/H log(2U), hence totalXeps(R+X/H). No radial orthogonality is used.",
+    "Perron sigma=1/log(2X) keeps the bounded-height denominator integrable with logarithmic cost. Its radial sigma perturbation has uniform fixed derivatives.",
+    "For bounded t, endpoint phases can enter arbitrary divisor-bounded a_r(t), and A.8 is uniform in those coefficients. The angular model is at mostX^(1/3+eps)R^(1/2).",
+    "For high heights, A.9 already integrates absolute inner sums and sums absolute outer coefficients. Thus r-dependent endpoint phases disappear without an unstated weighted-norm theorem.",
+    "The polynomial t twist is not inserted in a high-derivative weight for A.8. A.9 uses fixed-derivative W_r and provides exactlydt/T on each height dyad.",
+    "H=X^(1/12) is within A.9 range. AtR<=CX^(1/2), high-height and Perron errors both have exponent11/12; normalization gives5/12.",
+    "Source angular order is fixed nonzero. There is no zeroth-angular residue term in these source interfaces; no assertion is made that a different actual finite-twisted family shares them.",
+    "Actual/source normalization is EXACTLYGactual(c)=chi_(3,c)(delta)Gsource(c), by finite residue variable substitution on goodc. This extra factor is not silently1.",
+    "No finite kappa,primitiveS/source/rho/Gamma/e/w package,good2deletion,fullQmask or larger moving-level range is inserted into the cited source theorem.",
+    "The35/48 bookkeeping comparison is explicitly hypothetical; whole13/12/global9/8 andGRH remain unchanged."
+  ],
+  "root_arithmetic_receipt": {
+    "path": "outputs/checks/2026-11-06-unit-gauss/root/sharp-interval-v1/checks-v1.json",
+    "sha256": "261a033850cad34701306db81c616ee1f5be4a2372328ea22b9b9c3c099a1f0f",
+    "scope": "Original v1 Fraction arithmetic only; not rerun or relabelled"
+  },
+  "public_metadata": {
+    "path": "planning/unit-gauss-20261106/lane-a/PUBLIC-CITATION-v2.json",
+    "sha256": "ed92ea7fdd84018bf277c06b8dbf38119ba0ada94a72bec5efdbdf4754c5abaa",
+    "cache_bodies_excluded": true
+  },
+  "limitations": [
+    "External2026preprint interfaces are imported as stated; no full reproof/Lean acceptance of its prime theorem",
+    "Actual finite-twist and inverse-different conversion/uniformity unavailable",
+    "ExactQdeletion can breaklevelhypothesis",
+    "No actual model or signed exponent gain proved"
+  ]
+}

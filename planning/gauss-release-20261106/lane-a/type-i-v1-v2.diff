@@ -1,0 +1,19 @@
+--- TYPE_I_FREQUENCY_AND_DELETION_TRANSFER-v1.md
++++ TYPE_I_FREQUENCY_AND_DELETION_TRANSFER-v2.md
+@@ -1,6 +1,6 @@
+ # Actual long TypeI: fixed twists, growing Gauss frequencies and full deletions
+ 
+-NEW research-only v1,6 November2026. This note gives an exact arithmetic reduction and a quantified SUFFICIENT missing input. It does NOT prove a new Gauss first-moment estimate or an improved bound for the remaining model. The proposed additive-completion step does not supply that input. No completed Euler kernel, generic-conductor sieve, scalar PIT, zero hypothesis or smooth-Gauss theorem is invoked.
++NEW research-only v2,6 November2026. This note gives an exact arithmetic reduction and a quantified SUFFICIENT missing input. It does NOT prove a new Gauss first-moment estimate or an improved bound for the remaining model. The proposed additive-completion step does not supply that input. No completed Euler kernel, generic-conductor sieve, scalar PIT, zero hypothesis or smooth-Gauss theorem is invoked.
+ 
+ ## 1. Actual object and precise boundary
+ 
+@@ -54,7 +54,7 @@
+ No frequency unit or nonzero value is divided out. Let I/d mean that same real interval divided by Nd, with the SAME open/closed endpoints. Then EXACTLY
+ 
+  F_psi(T;t;Q,I)
+- =sum_(d|radQ)
++ =sum_(d|radQ,(d,t)=1)
+     mu(d)psi(d)bar(G_d)chi_(3,d)(alpha_t)/sqrt(Nd)
+            *F_psi(T/Nd;d*t;1,I/d).                      (4)
+ 

@@ -1,0 +1,37 @@
+--- BOUNDED_GOOD_PART_COMPLEMENT-v1.md
++++ BOUNDED_GOOD_PART_COMPLEMENT-v2.md
+@@ -1,12 +1,12 @@
+ # A new complementary cone: bounded good sixth-free part, arbitrary S part
+ 
+-NEW research-only candidate v1,6 November2026. This estimates an ORIGINAL primitive-dual sector outside the accepted top-sixth band. It does not rerun the ramified FE, full-A_U proof, scalar/counting-mean split, accepted tails or old controls. The new ingredients are an exact finite-order audit of the TOTAL primitive character, compression of unbounded S-supported frequency phases WITHOUT restoring zeros, and a convergent weighted S-cone count.
++NEW research-only candidate v2,6 November2026 (v1 preserved; the enlarged fixed-numerator family is derived explicitly). This estimates an ORIGINAL primitive-dual sector outside the accepted top-sixth band. It does not rerun the ramified FE, full-A_U proof, scalar/counting-mean split, accepted tails or old controls. The new ingredients are an exact finite-order audit of the TOTAL primitive character, compression of unbounded S-supported frequency phases WITHOUT restoring zeros, and a convergent weighted S-cone count.
+ 
+ Acceptance criteria: (i) audit the literal finite ray character and cancellation of auxiliary angular/radial extensions before choosing a common period; (ii) define the exact original projection and its lower-open/closed endpoints, including all rho and nonunit S modes; (iii) prove the phase identity with the indispensable raw conductor mask and all fixed-family dependencies; (iv) bound this genuinely larger sector using the accepted actual one-column theorem BEFORE the opposite-column/outer absolute counts; (v) keep the original finite k/capacity/Bessel/all primitive e-values; (vi) independent adversarial review and only fresh bounded support/phase controls. No book/canonical/global/queue/index edits are authorized by this note.
+ 
+ ## 1. Original kernel, scope and exact new projection
+ 
+-Work in the ORIGINAL unweighted PURE two-pivot scope of FULL_AU_PURE_PREFIX-v3 (668f71eb), with its required coefficient/prefix-mask/control precisions. Fix K=Q(omega), original S, finite-order nu, source/ray/literal u0 with no good support, and ONE common complex smooth column W on[1,2], zero endpoints. Keep D>=2^64,1<=U<=sqrtD,A1~H=D^(3/4), exact capacity and ORIGINAL pre-S finiteK. B=||W||infinity, M(W) its stated Mellin norm, V1(W)=B+integral|W'|. The exact row interpolant G is NOT W; only0<=G<=1,support[1/2,5/2] and its accepted real Bessel remainder are used.
++Work in the ORIGINAL unweighted PURE two-pivot scope of FULL_AU_PURE_PREFIX-v3 (668f71eb), with its required coefficient/prefix-mask/control precisions. Fix K=Q(omega), original S, finite-order nu, source/ray/literal u0 with no good support, and ONE common complex smooth column W on[1,2], zero endpoints. Keep D>=2^64,1<=U<=sqrtD,A1~H=D^(3/4), exact capacity and ORIGINAL pre-S finiteK. B=||W||infinity, M(W) its stated Mellin norm, V1(W)=B+integral|W'|. The exact row interpolant G is NOT W; only0<=G<=1,support[1/2,5/2] and its accepted real Bessel remainder are used. If the original capacity is empty, define both projected pieces to be exactlyzero, as in the original representation.
+ 
+ The source primitive Poisson sum is over ALL nonzero integral dual ideals y, including S-supported ones (coherent-band-core cbk:exact-kernel; original derivation DRAFT-v8 cba96d34, Section5). For every y write its UNIQUE extraction
+  y=h*r*s^6,
+@@ -70,7 +70,18 @@
+ 
+ For each actual primitive-S type the last mask in(7) is a literal0/1 scalar. Across types retain the exact finite joint selector and expand it in the FULL fixed product residue-character basis BEFORE a one-column estimate, as in the required finite-S refinement. Dependence on supp(b) gives only finitely many S-subsets, hence no growing conductor or new coefficient mass. Forbidden primitive values remain zero in the full finite sum.
+ 
+-Now h0*r ranges over a FIXED FINITE set: h0 exponents<L and Nr<64. Fixed numerators need not be primary at S, and r may have repeated ideal factors (e.g.Nr=49); keep their literal powers/raw zeros. The accepted exact actual-family construction covers each such fixed numerator with its actual finite conductor, or a common safe fixed modulus. Constants may grow with these FIXED data and withL; no uniformity in arbitrary source conductors or in a growing good-part cutoff is claimed. Crucially they are independent of b,h,D and X. Thus this is the justified extension from old bounded w to UNBOUNDED S part, not an application to an arbitrary growing-conductor character.
++Now w0=h0*r ranges over a FIXED FINITE set: h0 exponents<L and Nr<64. This is generally LARGER than the old w<64 family; that old finite-family constant is NOT silently reused. Here is the exact new match.
++
++Choose the actual fixed integral generator gamma_w0 of w0, not assumed primary at S. The TOTAL eta has both angular and radial types zero by the audited product(4). Its finite primitive CRT component is theta_S*theta_q, theta_q=chi_(6,m)*bar chi_(6,n). Therefore EXACTLY
++ bar eta(w0)=bar theta_S(gamma_w0)
++              *bar chi_(6,m)(gamma_w0)*chi_(6,n)(gamma_w0).  (7a)
++Every factor uses its actual conductor/convention. theta_S is evaluated at its OWN primitive f_S, including zero. The good-q symbols in(7a) are the primitive finite LOCAL factors in the CRT decomposition, NOT the original raw row symbols at S. A generator-unit change cancels in their total because eta is unit-trivial; no single factor's unit dependence is discarded. Equation(7a) is the all-component primitive finite-value identity already used for fixed e,w, now applied to each specified w0.
++
++For a fixed nonzero gamma_w0, the denominator function m->chi_(6,m)(gamma_w0) is a finite-order Kummer Hecke character away from its literal bad support. The explicit arbitrary-FIXED-numerator construction in ACTUAL_FINITE_RESIDUE_FAMILY-v1(c70805fa), Section2, supplies a safe fixed conductor through the sextic polynomial discriminant ideal(6)^6(gamma_w0)^5; a fractional convention can first be cleared by a fixed sixth power. Keep original good-r collision zeros as well, even if the primitive character's conductor drops. Norm49 and repeated ideal factors are not replaced by rational squarefreeness or a radical-conductor family.
++
++Take a NEW common modulus including the actual/safe conductors and raw supports for ALL these finitely many gamma_w0, together with the original nu/source/ray/Gamma/local-type data. Apply the GENERAL ramified fixed-finite-character theorem to this NEW family, rather than claiming the old w<64 family already contains it. Across primitive S types, bar theta_S(gamma_w0), the b-mask and the separate eta(e) are all retained in the exact finite selector with its full product Fourier expansion; no eta(e) division or replacement by a raw chi_m(S) occurs.
++
++Constants may grow with this NEW FIXED family, S,L and the cutoff64, but not with b,h,D or X. This explicitly justifies unbounded S-supported frequencies using fixed support and the audited period, not a uniform theorem for arbitrary growing-conductor characters.
+ 
+ ## 4. A convergent count of the genuine enlarged support
+ 

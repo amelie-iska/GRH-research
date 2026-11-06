@@ -1,0 +1,19 @@
+--- LONG_DIVISOR_CUBIC_MEAN_ATTEMPT-v3.md
++++ LONG_DIVISOR_CUBIC_MEAN_ATTEMPT-v4.md
+@@ -1,6 +1,6 @@
+ # Common long-factor divisor completion in the actual short-k Gauss kernel
+ 
+-NEW research-only candidate v3, 6 November 2026 (v1/v2 preserved; fixed prefix labels and the separate unit-divisor convention are explicit). This attempt opens the ORIGINAL long-factor coprimality inside the remaining BOTH-TypeI small-A_Y kernel, preserves the common primitive cubic Gauss factor long enough to cancel it, and averages the resulting genuine cubic d-frequency before a separate residual-column triangle. It gives a scoped bound for an AUXILIARY long-divisor tail. The desired full short-k mean is NOT estimated: the unit/small-divisor sector still has the inherited13/16 certificate. This is not the finished finite-k tail rerun, a scalar Mertens input, a new sieve or a full signed saving.
++NEW research-only candidate v4, 6 November 2026 (v1/v2/v3 preserved; auxiliary d is explicitly a divisor, not necessarily the greatest common divisor). This attempt opens the ORIGINAL long-factor coprimality inside the remaining BOTH-TypeI small-A_Y kernel, preserves the common primitive cubic Gauss factor long enough to cancel it, and averages the resulting genuine cubic d-frequency before a separate residual-column triangle. It gives a scoped bound for an AUXILIARY long-divisor tail. The desired full short-k mean is NOT estimated: the unit/small-divisor sector still has the inherited13/16 certificate. This is not the finished finite-k tail rerun, a scalar Mertens input, a new sieve or a full signed saving.
+ 
+ All new files are owned lane-b notes/checks on SSH-Linux; canonical book, public release, queue, indexes, environments, primary caches and other data are unchanged. No numerical Gauss/character fixtures are replayed. The only deep input is the already pinned physical cubic matrix theorem. A new elementary interval-Schur lemma handles exact sharp HB cutoffs; its formal controls are separate from actual arithmetic data.
+ 
+@@ -22,7 +22,7 @@
+ 
+ On original nonzero assignments (p,r)=1 and v,z avoid p*r and all original fixed-at-this-stage raw deletions. Their ONLY remaining variable-variable coprimality is (v,z)=1. Expand THAT exact mask:
+ 1_((v,z)=1)=sum_(d|v,z)mu(d), v=d*a, z=d*b.             (1)
+-d,a,b are good SF; (d,a)=(d,b)=1 remains essential, while a,b MAY OVERLAP in this auxiliary extension. Every d divisor is included. In a fixed assignment satisfying all prefix-cross masks, d is also the common divisor of the two virtual whole columns; after the full signed sum original coprime support is recovered.
++d,a,b are good SF; (d,a)=(d,b)=1 remains essential, while a,b MAY OVERLAP in this auxiliary extension. Every d divisor is included. In a fixed assignment satisfying all prefix-cross masks, d is A common divisor of the two virtual whole columns, not necessarily their greatest common divisor: gcd(m,n)=d*gcd(a,b), since a,b MAY overlap. There is NO added (a,b)=1 mask. After the FULL signed sum over every d divisor original coprime support is recovered.
+ 
+ The cutoff R0 below cuts THIS virtual common divisor in the dual TypeI expansion. It is not the original h in a claimed physical h1 energy, not original k, not the old smooth f localization, and not the long residual HB factor. The truncated sum is an auxiliary signed piece of the ACTUAL full expansion, not a subset of positive original rows or a primitive root of overlapping m,n.
+ 

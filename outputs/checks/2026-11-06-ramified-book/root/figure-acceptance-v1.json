@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "staging_assets": {
+    "book/figures/ramified-cusp-prefix.svg": {
+      "sha256": "4a7405203c91d30e138d1887322967169e7b4867fd5a1bc3bf7d0c81e7c0ec2a",
+      "bytes": 17194
+    },
+    "book/figures/ramified-cusp-prefix.pdf": {
+      "sha256": "3118bc5e28a5e96bb569faa444608817bfbd7b48c1a8b8a977a068d3c3359187",
+      "bytes": 314214
+    },
+    "book/figures/ramified-cusp-prefix.tex": {
+      "sha256": "45402c78bb3d2b86cf13055f257d9bc361f6b503f21bf9406b5e5cc1025b8dd7",
+      "bytes": 12063
+    }
+  },
+  "author_gate": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-a/FIGURE_ACCEPTED-v2.json",
+    "sha256": "26dcc884cb74dd69fe71db7396298d93688c922d8e3bc69e519b3d4449b8a163"
+  },
+  "independent_gate": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-c/artifacts/figure-review-v1/acceptance-v1.json",
+    "sha256": "10d1f975b66cb828b61da60ee58e3da7634c1ea931c9725d544de9b74bfb92ea"
+  },
+  "root_visual": {
+    "passed": true,
+    "PDF_and_actual_SVG_inspected": true,
+    "layout": "Readable; no overlap or clipping; actual unit/k factors and scope retained",
+    "screenshots": {
+      "outputs/checks/2026-11-06-ramified-book/root/figure-visual-v2/pdf.jpg": "8ea62960a7b5cd44ca0503fdbede3d654451cb85b27ac7252e612751c2401e4f",
+      "outputs/checks/2026-11-06-ramified-book/root/figure-visual-v2/svg.jpg": "3ef6a794f0744a5d17f6fb93544e730ebed917e558132bbbc52b3163fda58c1e"
+    }
+  },
+  "caption": "DefinesR=Nt,D>=2^64,epssmall<5/8, originalfinitekcutoff;350pt"
+}

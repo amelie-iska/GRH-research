@@ -1,0 +1,108 @@
+{
+  "schema": "ramified-book-independent-canonical-math-review-v1",
+  "passed": true,
+  "created_at_utc": "2026-11-06T20:10:33.010155+00:00",
+  "governing_sources": [
+    {
+      "path": "papers/ramified-gauss-core.tex",
+      "sha256": "da33e607f548f37ad811b45a86969c315d4b1c680656a25fd72f2fb945283c3f",
+      "bytes": 16355
+    },
+    {
+      "path": "papers/ramified-gauss-details.tex",
+      "sha256": "c1f30a76a87e319fca5bddb134990afe00cc0eaab054964d2a8738bf6fac65f3",
+      "bytes": 39108
+    }
+  ],
+  "review": {
+    "path": "planning/ramified-book-20261106/lane-a/CANONICAL_MATH_REVIEW-v1.md",
+    "sha256": "b9bf35dff19357bda6f03861439400f5dac02578be11fcc27f4daf333ec41dae",
+    "bytes": 6215
+  },
+  "source_pins": [
+    {
+      "path": "planning/ramified-gauss-20261106/root/FULL_AU_PURE_PREFIX-v3.md",
+      "sha256": "668f71eb4036d93e7907c7bba36ab59c44001fefad9463c2910490a7a4b04d98",
+      "bytes": 16385
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/root/full-au-coefficient-precision-v1.json",
+      "sha256": "1f52dac719030cc625054cc60d4a050cfcb44575d10d899ed03f547e2d9242b8",
+      "bytes": 728
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/root/full-au-prefix-mask-precision-v1.json",
+      "sha256": "dfb2b1e886a4996fa9e93837b6855d69bdc80f5601817d23f9a485375e4a7748",
+      "bytes": 843
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/root/whole-au-control-scope-precision-v1.json",
+      "sha256": "bd816dfd976846167570507ac856141c14c1d987e094fcf250aea69be0f20ac6",
+      "bytes": 1132
+    },
+    {
+      "path": "planning/ramified-gauss-20261106/lane-a/ACTUAL_FINITE_RESIDUE_FAMILY-v1.md",
+      "sha256": "c70805fae6e1cb964d8092b2e914ced3d682c1820408c1210c3cabec1c2b11d5",
+      "bytes": 10293
+    },
+    {
+      "path": "planning/ramified-gauss-20261106/lane-a/RHO_SCOPE_PRECISION-v1.md",
+      "sha256": "1b1547315ac4144fc295ef4d51f4f5f5ae51a0cd41045d0dd9a4ac2852101161",
+      "bytes": 1873
+    },
+    {
+      "path": "planning/ramified-gauss-20261106/lane-c/RATIONAL_CUSP_CONSTANTS_AND_MELLIN-v2.md",
+      "sha256": "605478dfe81524f50e4cc53274812cc6739d38115476c9553142e1a7489e5f77",
+      "bytes": 13638
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/lane-c/coefficient-convention-addendum-v1.json",
+      "sha256": "b601afb66406b6bf4c076102ba4045e8545967ba334271494095190e95f8f060",
+      "bytes": 947
+    },
+    {
+      "path": "planning/ramified-book-20261106/lane-b/SOURCE_TOPIC_MAP-v1.md",
+      "sha256": "de21c7c4fd9c543ec2e93569cbd50597f262803c802434b9e66bfb9f0cb8afa9",
+      "bytes": 5300
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-b/AUTHOR_RESULT-v2.json",
+      "sha256": "344e6d9fe8cd6ce0dd9a39d593f373107d9cad41cf492842e12561120031f7e0",
+      "bytes": 4126
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-b/source-pins-v2.json",
+      "sha256": "aa169e2e9bb7f07e95269942e37bf26dda009d3975e7eae28c545f26b52233a6",
+      "bytes": 5001
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-b/source-precision-v1.json",
+      "sha256": "0da59761327bd5f411d2b0125102d2549ddc3dc8d72ef3a412ca08baea7fbedf",
+      "bytes": 1303
+    },
+    {
+      "path": "planning/ramified-book-20261106/lane-b/source-v1-v2-precision.diff",
+      "sha256": "2559e2582bd4dbaffc20e582e3e43429a17a5844bb5c964ced66e3570a5fdae1",
+      "bytes": 848
+    }
+  ],
+  "full_source_read": true,
+  "exact_two_replacement_reverse_hash_guard": true,
+  "reviewed_interfaces": [
+    "actual fixed finite-family and sole angular +/-1",
+    "literal Kubota/actual-a_j/cusp absolute norm",
+    "radial constants/ell0 poles and exact NC Jacobian",
+    "lambda3mu primary projector/arbitrary periodic Fourier/raw cube completion",
+    "safe numerator convexity/sharp endpoints/all levels",
+    "annular-only original BU/exactJ5/all11 scale grouping",
+    "prefix and fullQ masks/original finiteK/once normalization/directAU Bessel"
+  ],
+  "scope": "Original unweighted PURE representation-fixed finite top prefix only; whole13/12/global9/8 and complement/Lean/GRH unchanged",
+  "findings": "No unresolved mathematical source-integration defect. Two presentation defects fixed in governing v2.",
+  "not_run": [
+    "old math controls/numeric traces",
+    "build/PDF/MathML/browser checks",
+    "auth/publication/dependency/Lean/MCP/Git index action"
+  ],
+  "next_gate": "Root-owned source-bound staging builds, MathML/old-artifact preservation and independent visual/browser integration"
+}

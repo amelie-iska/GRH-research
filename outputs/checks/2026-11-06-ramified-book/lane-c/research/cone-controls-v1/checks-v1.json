@@ -1,0 +1,130 @@
+{
+  "cases": [
+    {
+      "V": 1,
+      "X": 64,
+      "cone_states": 23,
+      "low_states": 23,
+      "low_w_at_least64": 1,
+      "nonsquarefree_r_states": 2,
+      "nonsquarefree_s_states": 0,
+      "r_s_overlap_states": 0,
+      "top_states": 0
+    },
+    {
+      "V": 7,
+      "X": 7529536,
+      "cone_states": 530,
+      "low_states": 530,
+      "low_w_at_least64": 464,
+      "nonsquarefree_r_states": 118,
+      "nonsquarefree_s_states": 0,
+      "r_s_overlap_states": 12,
+      "top_states": 0
+    },
+    {
+      "V": 10,
+      "X": 64000000,
+      "cone_states": 751,
+      "low_states": 750,
+      "low_w_at_least64": 684,
+      "nonsquarefree_r_states": 170,
+      "nonsquarefree_s_states": 0,
+      "r_s_overlap_states": 36,
+      "top_states": 1
+    },
+    {
+      "V": 49,
+      "X": 885842380864,
+      "cone_states": 2775,
+      "low_states": 2775,
+      "low_w_at_least64": 2621,
+      "nonsquarefree_r_states": 674,
+      "nonsquarefree_s_states": 46,
+      "r_s_overlap_states": 425,
+      "top_states": 0
+    }
+  ],
+  "closed_boundary_control": "V1,X64,r=s=unit,hNorm64 belongsLOWnotTOP",
+  "nonprincipal_rho_sixth_branch": "Syntheticrhoorder18:6mod18nonzero, kept",
+  "note_sha256": "9a73851016b4abacebabc22fe9299886cd206855721563ea4010a0b700109494",
+  "old_controls_rerun": false,
+  "passed": true,
+  "phase_compression_checks": 54432,
+  "phase_material": {
+    "L_power_exponents": "all0..2",
+    "coefficient_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "conductor_patterns": "allfourbinarymasks",
+    "orders": [
+      6,
+      12,
+      18
+    ],
+    "residue_exponents": "all0..L-1",
+    "two_S_labels": true
+  },
+  "randomness": "none",
+  "raw_zero_negative_control": "L18, exponenth=(18,0),conductormask(1,0): actualeta(h)=0 while omitting b-mask giveseta(h0)=1",
+  "schema": "ramified-book-new-cone-formal-controls-v1",
+  "scope": "NEW formal prime-labelled monoid and finite cyclic phase checks for the bounded-good-sixth-free cone complement. NOT the full Eisenstein ideal family, actual Gauss/energy data, a density proof, training, Lean, or an accepted old fixture rerun.",
+  "support_material": {
+    "S_norm_labels": [
+      4,
+      3
+    ],
+    "V": [
+      1,
+      7,
+      10,
+      49
+    ],
+    "X": "64V^6",
+    "good_labels": [
+      "g7plus",
+      "g7minus",
+      "g19"
+    ],
+    "good_norms": [
+      7,
+      7,
+      19
+    ],
+    "good_sixth_free_r_cutoff": "Nr<64",
+    "new_low": "Ns<=V,totalnorm<=X,NhrNOTbounded64",
+    "old_top": "V<Ns<=2V,Nhr<64,totalnorm<=X",
+    "raw_S_parts": "allallowedinmodel,totalnormcapliteral",
+    "s": "arbitrary,notSF",
+    "same_norm_labels_stay_distinct": true
+  },
+  "support_totals": {
+    "cone_states": 4079,
+    "low_states": 4078,
+    "low_w_at_least64": 3770,
+    "nonsquarefree_r_states": 964,
+    "nonsquarefree_s_states": 46,
+    "r_s_overlap_states": 473,
+    "top_states": 1
+  },
+  "weighted_geometric_checks": {
+    "finite_partial_checks": 3,
+    "infinite_product_majorant": "30",
+    "positive_rational_weight_upperbounds": [
+      "4/5",
+      "5/6"
+    ],
+    "sixthpowers_dominate_inverse_norm": true
+  }
+}

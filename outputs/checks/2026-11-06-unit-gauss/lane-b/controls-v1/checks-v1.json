@@ -1,0 +1,88 @@
+{
+  "formal_Mobius_reconstructions": 256,
+  "formal_common_d_gauge_identities": 625,
+  "formal_material_parameters": {
+    "Gamma_mod3": [
+      0,
+      2,
+      1,
+      1
+    ],
+    "Gauss_prime_variables": "independent formal unitary Laurent variables",
+    "angular_gauge_mod3": [
+      1,
+      1,
+      2,
+      0
+    ],
+    "nu_mod3": [
+      2,
+      1,
+      0,
+      1
+    ],
+    "prime_labels": 4,
+    "randomness": "none",
+    "reciprocity_matrix_mod3": [
+      [
+        0,
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        0
+      ]
+    ],
+    "rho_mod3": [
+      1,
+      0,
+      1,
+      2
+    ],
+    "theta_mod3": [
+      0,
+      1,
+      2,
+      0
+    ]
+  },
+  "new_critical_exponents": {
+    "constant_tail": "5/16",
+    "equalnorm_correction": "-3/16",
+    "mixed_d_tail": "59/96",
+    "quadratic_d_tail": "3/4"
+  },
+  "nontrivial_common_phase_states": 225,
+  "note_sha256": "6acf33002359dff4313365302d7304d7680b33205a2aeea441e0dde7327de0eb",
+  "passed": true,
+  "positive_prefix_scale_checks": 65,
+  "residual_overlap_states": 369,
+  "rho_square_omission_negative_control": {
+    "correct_phase": 2,
+    "d": 1,
+    "exact_Zomega_difference": [
+      -2,
+      -1
+    ],
+    "v": 1,
+    "wrong_phase": 0,
+    "z": 1
+  },
+  "scope": "Fresh synthetic exact Laurent/F3/Integer/Fraction checks of common-Gauss cancellation, retained rho-square and NEW long-divisor exponent assembly only. NOT actual Eisenstein characters/Gauss samples/ideal energy, numerical theorem proof, training or Lean. Accepted old controls not rerun."
+}

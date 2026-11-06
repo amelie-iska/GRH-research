@@ -1,0 +1,20 @@
+{
+  "schema": "ramified-full-au-required-prefix-mask-precision-v1",
+  "passed": true,
+  "parent_sha256": "124dec79b8b024dea4f539a3ab5e5dd45396216dab1d6a88925f944f957d4530",
+  "governing": {
+    "path": "planning/ramified-gauss-20261106/root/FULL_AU_PURE_PREFIX-v3.md",
+    "sha256": "668f71eb4036d93e7907c7bba36ab59c44001fefad9463c2910490a7a4b04d98"
+  },
+  "diff": {
+    "path": "planning/ramified-gauss-20261106/root/full-au-v2-v3.diff",
+    "sha256": "751193a52e0dc4fa40f4234243c2e5d61514055a200ab3e5cc9bd3f194287408"
+  },
+  "required_previous_precision": "outputs/checks/2026-11-06-ramified-gauss/root/full-au-coefficient-precision-v1.json",
+  "changes": [
+    "explicit prefix(p,n) and prefix/k/s/w raw zeros retained outside long-variableQ",
+    "no growingn in fixedkappa"
+  ],
+  "estimates_unchanged": true,
+  "controls_rerun": false
+}

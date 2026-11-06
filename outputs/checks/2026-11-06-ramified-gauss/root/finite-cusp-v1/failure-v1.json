@@ -1,0 +1,7 @@
+{
+  "failed_step": "After exact ring/group/Bruhat loops, json.dumps(raw) refused Fraction objects at serialization; no data/acceptance file written",
+  "exception": "TypeError: Object of type Fraction is not JSON serializable",
+  "producer": "check_rational_cusps_v1.py",
+  "preserved": true,
+  "correction": "v2 adds exact denominator-one serializer only and writes a new outputdirectory; mathematics unchanged"
+}

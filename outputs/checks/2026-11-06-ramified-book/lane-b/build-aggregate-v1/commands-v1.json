@@ -1,0 +1,252 @@
+{
+  "execution_host": "iska-linux-vscode via SSH",
+  "historical_jobs_from_pinned_runner": {
+    "book-pdf": {
+      "cwd": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104",
+      "executed_by_original_runner": true,
+      "executed_by_this_recovery": false,
+      "executed_wrapper": [
+        "nice",
+        "-n",
+        "15",
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/ramified-book-20261106/root/build_book_pdf_v1.py",
+        "--consume-book",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/book-pdf"
+      ],
+      "job_command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/ramified-book-20261106/root/build_book_pdf_v1.py",
+        "--consume-book",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/book-pdf"
+      ]
+    },
+    "focused-concise": {
+      "cwd": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104",
+      "executed_by_original_runner": true,
+      "executed_by_this_recovery": false,
+      "executed_wrapper": [
+        "nice",
+        "-n",
+        "15",
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/scripts/build_remote_articles.py",
+        "--edition",
+        "concise",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/focused-concise"
+      ],
+      "job_command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/scripts/build_remote_articles.py",
+        "--edition",
+        "concise",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/focused-concise"
+      ]
+    },
+    "focused-extended": {
+      "cwd": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104",
+      "executed_by_original_runner": true,
+      "executed_by_this_recovery": false,
+      "executed_wrapper": [
+        "nice",
+        "-n",
+        "15",
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/scripts/build_remote_articles.py",
+        "--edition",
+        "extended",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/focused-extended"
+      ],
+      "job_command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/scripts/build_remote_articles.py",
+        "--edition",
+        "extended",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/focused-extended"
+      ]
+    },
+    "notes-concise": {
+      "cwd": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104",
+      "executed_by_original_runner": true,
+      "executed_by_this_recovery": false,
+      "executed_wrapper": [
+        "nice",
+        "-n",
+        "15",
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/physical-sieve-20261105/builds/build_notes_v1.py",
+        "--edition",
+        "concise",
+        "--root-go",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/notes-concise",
+        "--physical-core-sha",
+        "df49c3f938ab80f80e4c0bb2efb4f71004a2d311dc21f952ecd45077dd35f939",
+        "--physical-details-sha",
+        "4713c2c4e8496a87a8678406d2d43f02ab0bf82e4152fed15938aef52b3b9bf4",
+        "--coherent-core-sha",
+        "5b3ab5c38b5c9130867793ac2e21c7dbc60560bc7d4eadbcc40fb1f334659f6c",
+        "--coherent-details-sha",
+        "92dfe3077dffa048471b0705539bd82b2648c2e4b021c331c2753b6fb655176f"
+      ],
+      "job_command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/physical-sieve-20261105/builds/build_notes_v1.py",
+        "--edition",
+        "concise",
+        "--root-go",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/notes-concise",
+        "--physical-core-sha",
+        "df49c3f938ab80f80e4c0bb2efb4f71004a2d311dc21f952ecd45077dd35f939",
+        "--physical-details-sha",
+        "4713c2c4e8496a87a8678406d2d43f02ab0bf82e4152fed15938aef52b3b9bf4",
+        "--coherent-core-sha",
+        "5b3ab5c38b5c9130867793ac2e21c7dbc60560bc7d4eadbcc40fb1f334659f6c",
+        "--coherent-details-sha",
+        "92dfe3077dffa048471b0705539bd82b2648c2e4b021c331c2753b6fb655176f"
+      ]
+    },
+    "notes-extended": {
+      "cwd": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104",
+      "executed_by_original_runner": true,
+      "executed_by_this_recovery": false,
+      "executed_wrapper": [
+        "nice",
+        "-n",
+        "15",
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/physical-sieve-20261105/builds/build_notes_v1.py",
+        "--edition",
+        "extended",
+        "--root-go",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/notes-extended",
+        "--physical-core-sha",
+        "df49c3f938ab80f80e4c0bb2efb4f71004a2d311dc21f952ecd45077dd35f939",
+        "--physical-details-sha",
+        "4713c2c4e8496a87a8678406d2d43f02ab0bf82e4152fed15938aef52b3b9bf4",
+        "--coherent-core-sha",
+        "5b3ab5c38b5c9130867793ac2e21c7dbc60560bc7d4eadbcc40fb1f334659f6c",
+        "--coherent-details-sha",
+        "92dfe3077dffa048471b0705539bd82b2648c2e4b021c331c2753b6fb655176f"
+      ],
+      "job_command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/physical-sieve-20261105/builds/build_notes_v1.py",
+        "--edition",
+        "extended",
+        "--root-go",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/notes-extended",
+        "--physical-core-sha",
+        "df49c3f938ab80f80e4c0bb2efb4f71004a2d311dc21f952ecd45077dd35f939",
+        "--physical-details-sha",
+        "4713c2c4e8496a87a8678406d2d43f02ab0bf82e4152fed15938aef52b3b9bf4",
+        "--coherent-core-sha",
+        "5b3ab5c38b5c9130867793ac2e21c7dbc60560bc7d4eadbcc40fb1f334659f6c",
+        "--coherent-details-sha",
+        "92dfe3077dffa048471b0705539bd82b2648c2e4b021c331c2753b6fb655176f"
+      ]
+    }
+  },
+  "new_build_or_render_commands_executed": [],
+  "new_commands_executed": [
+    {
+      "command": [
+        "pdfinfo",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/book-pdf/main.pdf"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdftotext",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/book-pdf/main.pdf",
+        "-"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdfinfo",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/focused-concise/resolutions-concise.pdf"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdftotext",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/focused-concise/resolutions-concise.pdf",
+        "-"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdfinfo",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/focused-extended/resolutions-extended.pdf"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdftotext",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/focused-extended/resolutions-extended.pdf",
+        "-"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdfinfo",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/notes-concise/validated-oracle-concise.pdf"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdftotext",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/notes-concise/validated-oracle-concise.pdf",
+        "-"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdfinfo",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/notes-extended/validated-oracle-extended.pdf"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    },
+    {
+      "command": [
+        "pdftotext",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-ramified-book/builds/run-v1/notes-extended/validated-oracle-extended.pdf",
+        "-"
+      ],
+      "returncode": 0,
+      "scope": "read-existing-PDF-only"
+    }
+  ],
+  "recovery_cwd": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104",
+  "recovery_invocation": [
+    "python3",
+    "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/ramified-book-20261106/lane-b/build-aggregate-v1/aggregate_existing_v1.py"
+  ]
+}

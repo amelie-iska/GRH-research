@@ -1,0 +1,37 @@
+{
+  "schema": "ramified-gauss-ssh-interruption-recovery-v1",
+  "observations": [
+    {
+      "event": "SSHrefused",
+      "utc": "2026-11-06T17:11:02Z",
+      "output": "ssh: connect to host 100.78.196.10 port 22: Connection refused"
+    },
+    {
+      "event": "nextheartbeatSSHrefused",
+      "heartbeat_utc": "2026-11-06T17:45:16.285Z",
+      "exit": 255
+    },
+    {
+      "event": "SSHavailable",
+      "remote_date_utc": "2026-11-06T18:46:51Z",
+      "exit": 0
+    }
+  ],
+  "observations_are_not_exact_outage_start_end": true,
+  "during_outage": {
+    "Mac_project_science_fallback": false,
+    "remote_auth_repair": false,
+    "unfrozen_101_144_not_claimed_accepted": true,
+    "existing_heartbeat_kept_ACTIVE": true
+  },
+  "recovery": {
+    "sameP7claim": "373b0e7f-3795-4a6a-bb23-fa74388e9004",
+    "status_and_next_inspected": true,
+    "sourceHEAD": "dba37ffaa78c82ade1385f7ee56c907ab0c67d3a",
+    "sourceindex": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+    "preservation": {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/lane-a/recovery-v1/preservation-v1.json",
+      "sha256": "5cb46cca56e14abd65654055db9c224df45052d404c260219111dff9d9d991d6"
+    }
+  }
+}

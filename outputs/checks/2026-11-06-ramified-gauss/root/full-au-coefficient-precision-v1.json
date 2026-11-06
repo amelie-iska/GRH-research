@@ -1,0 +1,19 @@
+{
+  "schema": "ramified-full-au-required-coefficient-precision-v1",
+  "passed": true,
+  "parent_sha256": "c2eaa3db5178e1055ca90ecfad2c9fe241fdec9bb060887259bf4e0c887fb931",
+  "governing": {
+    "path": "planning/ramified-gauss-20261106/root/FULL_AU_PURE_PREFIX-v2.md",
+    "sha256": "124dec79b8b024dea4f539a3ab5e5dd45396216dab1d6a88925f944f957d4530"
+  },
+  "diff": {
+    "path": "planning/ramified-gauss-20261106/root/full-au-v1-v2.diff",
+    "sha256": "4b57c8cd89ba0e19eba4689d02adef08d33593a44b5274df48a12ae841ab7ec6"
+  },
+  "changes": [
+    "B_U=mu*A_U distinguished from original C_U",
+    "identity restricted to contributing annulus Nm>U; unit not included"
+  ],
+  "estimates_unchanged": true,
+  "controls_rerun": false
+}

@@ -1,0 +1,177 @@
+{
+  "CSV": {
+    "after_rows_including_header": 300,
+    "all_IDs_unique": true,
+    "all_six_fields": true,
+    "before_rows_including_header": 298,
+    "new_IDs": [
+      "RGBBOOK01",
+      "RGBCONE01"
+    ],
+    "old_bytes_prefix_exact": true
+  },
+  "accepted_scope": {
+    "cone_research_only_outside_frozen_book": true,
+    "local_edition": [
+      348,
+      10858
+    ],
+    "normalized_pure_prefix_upper_power": "101/144",
+    "old_assets_precision": "92 including oldHTML;91 unchanged nonHTML",
+    "public_edition_unchanged": [
+      333,
+      10299
+    ],
+    "whole_signed_and_global_unchanged": [
+      "13/12",
+      "9/8"
+    ]
+  },
+  "candidate_root": "outputs/checks/2026-11-06-ramified-book/metadata-stage-v3/project",
+  "exact_existing_producer_reconstruction": {
+    "escaped_ledger_bytes_exact": true,
+    "implementation_plan": true,
+    "theme_assets_exact": true,
+    "verification": true
+  },
+  "execution": {
+    "PDF_native_rebuilt": false,
+    "candidate_applied": false,
+    "canonical_source_edited": false,
+    "only_new_lane_b_review_evidence_written": true,
+    "project_files_changed": false
+  },
+  "generated_pages": {
+    "web/implementation-plan.html": "0ea92636c41fbbe1875d4f8ec98de68c1a4b208006e32973ff4b06ccd2df6dd7",
+    "web/verification.html": "25ba29faa98f0a6a4d4df77dc3cc94cceb222c27372cbba94ed447fefe3856ba"
+  },
+  "governing_prepared": {
+    "path": "outputs/checks/2026-11-06-ramified-book/metadata-stage-v3/prepared-v3.json",
+    "sha256": "e264c9228dfde6dbd3a605d8c05393e190434b701487ad6f707503b872f1bc85"
+  },
+  "history_preservation": {
+    "README.md": "complete former body preserved after new scoped opening status paragraph; identical ledger append",
+    "book/SOURCE_COVERAGE.md": "one stale opening page-count correction; remainder exact; identical ledger append",
+    "book/VERIFICATION.md": "one stale opening page/tool-count correction; remainder exact; identical ledger append",
+    "planning/CONTINUATION.md": "entire historical prefix byte-identical; one identical ledger append",
+    "planning/MASTER_IMPLEMENTATION_PLAN.md": "entire historical prefix byte-identical; one identical ledger append",
+    "planning/OPEN_OBLIGATIONS.md": "entire historical prefix byte-identical; one identical ledger append",
+    "planning/PROGRESS.md": "entire historical prefix byte-identical; one identical ledger append"
+  },
+  "index": {
+    "added_anchor_present_in_staged_book": true,
+    "all_old_hrefs_preserved": true,
+    "local348_public333_distinction": true,
+    "only_added_href": "/book/main.html#rg:core",
+    "v2_to_v3_only_required_scope_sentence": true
+  },
+  "input_records": [
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-b/build-aggregate-v1/aggregate-v1.json",
+      "sha256": "763e2edbfa1207470752fb0dcd478d7f22aaf20c6916d707b89f56aabe3b834c"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/native/run-v1/native-build-record.json",
+      "sha256": "7f6b8ba69696207d85f3fb38deb6ef2197fd701f9b38decd215e70873a22aa44"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-c/research/RESEARCH_ACCEPTED-v1.json",
+      "sha256": "23285bc45fe63493385f5ef9d323f468390568a96313f90a6d50d807b71a5e49"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/metadata-stage-v1/prepared-v2.json",
+      "sha256": "93367c8496ac139f9c5d71b27f3c660b8c346c0590eac75df720f6de29e72a9a"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/metadata-stage-v1/prepared-v1.json",
+      "sha256": "04734f9d03fe058ae15f12920c83465da9fada978c219ffae726ee83e29220cb"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/metadata-stage-v1/count-precision-v1.json",
+      "sha256": "847e16ce8c1ba5dc54e6dddb2cfe0dca363f8c5f89e3e184982d0e1ea50a212b"
+    },
+    {
+      "path": "scripts/build_verification_page.py",
+      "sha256": "5cc38aa451955437354bd2f1575f3acde0874151336f2a1f20c734cb50f0d889"
+    },
+    {
+      "path": "scripts/build_implementation_page.py",
+      "sha256": "e5ff820cb9c6cf5c5c4ba53f9834d18165534bf8d8f84a00efefe2dcee883483"
+    },
+    {
+      "path": "scripts/theme_assets.py",
+      "sha256": "6a10ff1b99df7030306704d30081be5540977803ea83e92df28047924cab83a5"
+    }
+  ],
+  "not_claimed": [
+    "metadata already applied",
+    "artifact promotion already performed by reviewer",
+    "new public release",
+    "both completion gates satisfied"
+  ],
+  "passed": true,
+  "preserved_historical_candidates": {
+    "v1_exact": true,
+    "v2_exact": true,
+    "v3_not_modified_by_review": true
+  },
+  "producer": {
+    "path": "planning/ramified-book-20261106/lane-b/review_metadata_v3.py",
+    "sha256": "fe2ec21cc10b9d5a7bc5c9be270666e276930c29e3438c1a7c8240a462768e46"
+  },
+  "queue": {
+    "byte_identical": true,
+    "complete": 14,
+    "project_complete": false,
+    "research_complete": false,
+    "tasks": 21
+  },
+  "required_finalization": [
+    "Apply metadata only after the independently gated18-artifact local promotion; before bytes must be preserved",
+    "Create/bind governing final milestone and handoff referenced by the prepared staged ledger and RGBBOOK01 evidence",
+    "If research_loop checkpoint changes the queue, regenerate implementation-plan page exactly against CURRENT plan/queue with existing producer and record fresh exact validation; this gate covers only the pinned candidate queue snapshot"
+  ],
+  "schema": "ramified-book-independent-staged-metadata-review-v3",
+  "source_and_candidate_pins": {
+    "README.md": {
+      "before": "78a00de38d0e896dadfa52038ff40c4662d1204bbef2310928606bc7a8fdd40a",
+      "candidate": "cad5339cf56abdeef57cabc3b7e512e09b18074d2b7fe6ab6c0b93b381218d54"
+    },
+    "book/SOURCE_COVERAGE.md": {
+      "before": "4333900d4740c7fd6cd3cc80e3fd24b141aeb2a8d9fa12b82bd779c0e0faa738",
+      "candidate": "7cd38b22867f4275afcc8b40f02fec452369490b060f856424a5eb97141963b1"
+    },
+    "book/VERIFICATION.md": {
+      "before": "fb3f153719b67909cbc2d22538d3f1999dde6ed4a66c3af591ac53990622f3aa",
+      "candidate": "da9d3480ff92a0296ccae5657999b238bf6c503ebdda8b19be9ebcb1028ccceb"
+    },
+    "planning/CLAIMS.csv": {
+      "before": "cec54816de1b25b5a351b3014396da25419c30679d0c70d9a35902d8f1ef6142",
+      "candidate": "3a8bdda82ba0d5d548b7937dc0f9f0955281e820299713002f3b57d44f05b1e9"
+    },
+    "planning/CONTINUATION.md": {
+      "before": "aecd7c8be2e951c57a66b629b054b019d9403ff120be312bdf121af8fef5c170",
+      "candidate": "d73face2078557c9a06b81e61413e16b9e2add1ed859b7fe8a5c1331f9beca41"
+    },
+    "planning/IMPLEMENTATION_QUEUE.json": {
+      "before": "1fbdaa48078608beb3edfdce3b5728521a630991bc480c23afbfedb2d1e3ad9b",
+      "candidate": "1fbdaa48078608beb3edfdce3b5728521a630991bc480c23afbfedb2d1e3ad9b"
+    },
+    "planning/MASTER_IMPLEMENTATION_PLAN.md": {
+      "before": "951e00cdcd59fc5523b3fb1e253dd96572ef3d5235dbf9379ccbb1d04837d702",
+      "candidate": "1df5739490c6aedfefbf2f10dab3caf6cdc3869c0679b1ce614d4a8f597d8e98"
+    },
+    "planning/OPEN_OBLIGATIONS.md": {
+      "before": "9897cfa3ced88b151c8cc0bf6a19b7dd2217e1c39a71b7ad4b9ae2bfbc78f837",
+      "candidate": "236043c39daa59da809d526e1e32d2cfb3af5b3118c6143660074c17fee7c2e4"
+    },
+    "planning/PROGRESS.md": {
+      "before": "6b68365649367fd80d5e0931ebcd32df4ed416a14819cd61d6993a93db1590ea",
+      "candidate": "213b07a86f61f462299fa7789eb8379bc7170afd34d0a1c2bf8b920bdcf29699"
+    },
+    "web/index.html": {
+      "before": "547427c60ac3e73bd514b8258e81cf458c2d448bec4700961a6cd3c94967407e",
+      "candidate": "31fefad3214856402c3e184412bc133832a160912ae9e27852835b10bccbb219"
+    }
+  }
+}

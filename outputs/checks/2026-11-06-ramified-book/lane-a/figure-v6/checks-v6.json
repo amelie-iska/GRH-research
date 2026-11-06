@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "ramified-cusp-prefix.tex"
+      ],
+      "returncode": 0,
+      "stdout": "02).]\n) (/usr/share/texmf/tex/latex/lm/ot1lmss.fd)\n(/usr/share/texmf/tex/latex/lm/omllmm.fd)\n(/usr/share/texmf/tex/latex/lm/omslmsy.fd)\n(/usr/share/texmf/tex/latex/lm/omxlmex.fd)\n(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)\n(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo\nnts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc\n}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc\n/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]\n(./ramified-cusp-prefix.aux) )</usr/share/texlive/texmf-dist/fonts/type1/public\n/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.\npfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/\ntype1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></\nusr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/p\nublic/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/shar\ne/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm\n/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/\nfonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb\n></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1\n/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/shar\ne/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm\n/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/tex\nmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lms\ny5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/font\ns/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb><\n/usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>\nOutput written on ramified-cusp-prefix.pdf (1 page, 314214 bytes).\nTranscript written on ramified-cusp-prefix.log.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdfinfo",
+        "ramified-cusp-prefix.pdf"
+      ],
+      "returncode": 0,
+      "stdout": "Creator:         TeX\nProducer:        pdfTeX-1.40.25\nCreationDate:    Fri Nov  6 20:08:29 2026 UTC\nModDate:         Fri Nov  6 20:08:29 2026 UTC\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           1\nEncrypted:       no\nPage size:       348.692 x 501.121 pts\nPage rot:        0\nFile size:       314214 bytes\nOptimized:       no\nPDF version:     1.5\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdftotext",
+        "ramified-cusp-prefix.pdf",
+        "ramified-cusp-prefix.txt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-png",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "ramified-cusp-prefix.pdf",
+        "ramified-cusp-prefix-pdf-preview"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-png",
+        "-singlefile",
+        "-scale-to",
+        "1400",
+        "ramified-cusp-prefix-svg-preview.pdf",
+        "ramified-cusp-prefix-svg-preview"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "warnings": [],
+  "safe_svg": true,
+  "accessible_svg": true,
+  "cusps": 27,
+  "factor_slots": 11,
+  "searchable_pdf_markers": true,
+  "source_pdf_method": "existing pdflatex/lmodern standard picture; searchable text",
+  "svg_preview_method": "existing librsvg/cairo ctypes svg_pdf only; no builder main",
+  "renderer_sha256": "ee282c130136a5e720a237787d32184a7a62ac5e9687d655d0bc357e9cce0152",
+  "files": [
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/figure-v6/ramified-cusp-prefix.svg",
+      "sha256": "4a7405203c91d30e138d1887322967169e7b4867fd5a1bc3bf7d0c81e7c0ec2a",
+      "bytes": 17194
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/figure-v6/ramified-cusp-prefix.tex",
+      "sha256": "45402c78bb3d2b86cf13055f257d9bc361f6b503f21bf9406b5e5cc1025b8dd7",
+      "bytes": 12063
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/figure-v6/ramified-cusp-prefix.pdf",
+      "sha256": "3118bc5e28a5e96bb569faa444608817bfbd7b48c1a8b8a977a068d3c3359187",
+      "bytes": 314214
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/figure-v6/ramified-cusp-prefix-pdf-preview.png",
+      "sha256": "141c9b53df312b4dad735bf588d460032fc86c448dfb629f986555c273c17087",
+      "bytes": 211660
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/figure-v6/ramified-cusp-prefix-svg-preview.png",
+      "sha256": "7d4d95909a506eee8e25078365d84b5cba74ffe49a19e3fd9a7922c76c91b3e9",
+      "bytes": 217191
+    }
+  ]
+}

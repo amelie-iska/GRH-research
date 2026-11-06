@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-11-06T14:55:34.822357+00:00",
+  "reviewer": "root secondary mathematical review independent of lane B author; primary independent review is lane C",
+  "status": "ACCEPTED_RESEARCH_ONLY_SCOPED_AUXILIARY_TAIL",
+  "note": {
+    "path": "planning/unit-gauss-20261106/lane-b/LONG_DIVISOR_CUBIC_MEAN_ATTEMPT-v4.md",
+    "sha256": "1a5634aa2d01aaa0a42bc8c3613c90d005e22b8f70a1b8d94ef5f99d278f4d12",
+    "bytes": 19703
+  },
+  "review": [
+    "Read fullv3 and exactv3-v4 diff: new d is any common divisor, gcd(m,n)=d*gcd(a,b); no residual coprimality added. All formulae unchanged.",
+    "Primitive auxiliary common Gd cancels only on its squarefree coprime good branch. The separated extension retains actual thetaS(d)^2,rho(d)^2,Gamma-character(d)^2 and raw(d,k) zeros.",
+    "Same-d Cauchy and physical cubic matrices give R^-1 sqrt(Theta(R,L/R)Theta(R,M/R)); no Mobius cancellation claimed and no separate residual-column triangle before this step.",
+    "Independent elementary interval-Schur proof correctly costs logarithms for row-dependent sharp boxes; whole norm fibres retained. Common complexW Mellin inversion costs M(W) twice.",
+    "Original Bessel hierarchy is absolutely summed with separated envelope weights; factor I(cLambda) bounded at Lambda~D^-7/8. FiniteK and k/s overlap are not completed or deleted.",
+    "Prefix ideal assignment coefficients are divisor-bounded, not label-count uniformity. Sum P^-1/2sqrtTheta is bounded by sqrtR D1/4+sqrt(D/R)+D5/12; squaring gives the three stated terms.",
+    "At R0=D1/32, A1V=D13/16 yields5/16,3/4,59/96. Unit residuals use direct counts; separate unit d is not in the R=1 band.",
+    "Optional auxiliary equal-norm fibre correction is counted globally, O(B^2 A1V/D times subpower), not silently removed in a separated positive product.",
+    "New tail concerns virtual common LONG-factor divisor d only, not originalh1, oldsmoothf, originalfinitek or the full kernel. Unit/small d remains inherited13/16; whole13/12/global9/8 unchanged.",
+    "Read full finite-S companion and full independent lane-C review. Finite HxH product Fourier inversion has L1 mass<=|H|sup|f| by Parseval/Cauchy. It is applied BEFORE primitive type freezing and all residual factorization; raw primitive e/w zeros are recovered by full finite sum. k-independence alone was not used as proof of residual multiplicativity.",
+    "No additional scientific controls rerun for wording/finite-Fourier clarification. C gate accepts scoped tail only and external dependencies remain explicit."
+  ],
+  "limitations": [
+    "Same pinned physical cubic large-sieve theorem is an external input, not a reproof",
+    "No full low-d/unit Gauss mean, determinant/zero-location, analytic/categoryLean or GRH theorem",
+    "Formal controls are synthetic algebra, not actual character/energy data"
+  ],
+  "required_companion": {
+    "path": "planning/unit-gauss-20261106/lane-b/FINITE_S_SELECTOR_FACTORIZATION-v1.md",
+    "sha256": "51f1c72818311ee25dcc05097cb08ee629fea0ea4ab35dc1862d32b3ab798103",
+    "bytes": 6161
+  },
+  "independent_gate": {
+    "path": "outputs/checks/2026-11-06-unit-gauss/lane-c/review-b-v1/acceptance-v1.json",
+    "sha256": "207f80a507fc48e92c0578d4b65a66aef709c64f5f61e88d40fd1330904d5844",
+    "bytes": 7662
+  },
+  "version_reconciliation": "v1 secondary review is preserved. Governing pair is Bv4 PLUS required S-selector companion. General thetaS(d)^2 wording is superseded by chi(d)psi(d); separate genuine rho/Gamma squares persist. Quantitative estimates unchanged."
+}

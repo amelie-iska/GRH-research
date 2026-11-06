@@ -1,0 +1,5 @@
+# Coefficient precision amendment
+
+Current root localizationv2c0befeb4 is accepted. The exact diff changes only the version/scope header and the misleading coefficient-state paragraph. The canonical definition is the actual double cutoff, and on squarefree m the exact identity is mu(m)A_Y(m)=sum_(abc=m,Na,Nb<=Y)mu(c), including a=b=unit and every permitted unit factor. No extra-minus-mu(m) term is appended. The high-window A_U identity keeps its own hypotheses and is not a new small-cutoff state.
+
+My previous review's phrase about retaining constant/subtraction states is superseded by this explicit identity. The actual bilinear proof used C_Y=mu A_Y and its exact HB decomposition; it did not use an extra subtraction. The sector composition, all original source/ray/raw masks/capacity and every bound/window/gcd conclusion are unchanged. The earlier full source review and exact exponent checks remain evidence; no controls or algebra run was repeated. This is a coefficient-definition precision correction, not a target bound for the retained short-k BOTH-TypeI kernel.

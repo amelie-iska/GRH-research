@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "reviewer": "root",
+  "browser_receipt_sha256": "0bd65c6e2a901e3fec43d8b82fe09bb8d5fa8c3249ee1b4c9727aee63b6e794c",
+  "native_record_sha256": "7f6b8ba69696207d85f3fb38deb6ef2197fd701f9b38decd215e70873a22aa44",
+  "screenshots": {
+    "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/rg-core-desktop.png": "f8d1442df9426cc443a431ffb7f2716466f356067f88468c416dfc21ef95aef1",
+    "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/figure-light-1440.png": "ce1a58d918b2343acd5204e25ee7018e9f51b91f706aec72188208999573ae4c",
+    "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/figure-biomech-320.png": "9a7a743677ccaa97d08389751a21a5208891c435c9d583788a88b4c8e121911e",
+    "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/final-prefix-theorem-mobile.png": "f57e66523ee8935491ebc32d065e9a583d6e5847e2c468fb6a28abd4376a1f15"
+  },
+  "visually_inspected": true,
+  "checks": [
+    "Desktop native text/math readable and correctly numbered",
+    "ActualSVG source phase and Nk cost legible in integrated construction",
+    "320px dark-mode readable figure in intentional focusable horizontal scroller, no page overflow",
+    "320px prefix theorem and equations preserve font; horizontal scroll instead of formula shrink",
+    "Scope/partial-prefix/full-kernel-open wording visible"
+  ],
+  "known_limits": [
+    "Narrow-screen wide math and construction require horizontal scrolling",
+    "Three inherited munder source nodes retained byte-for-byte"
+  ],
+  "production_promoted": false
+}

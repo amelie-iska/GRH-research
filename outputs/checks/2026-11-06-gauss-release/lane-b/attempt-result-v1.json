@@ -1,0 +1,18 @@
+{
+  "schema": "gauss-release-finite-k-bands-attempt-v1",
+  "status": "candidate-awaiting-independent-review",
+  "note": {
+    "path": "planning/gauss-release-20261106/lane-b/FINITE_K_CUBIC_BANDS-v1.md",
+    "sha256": "3df3987298cb26d4504c0d70bb65c511da1e6c6b09f32738c58e81cdb0c22815"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-06-gauss-release/lane-b/source-pins-v1.json",
+    "sha256": "2d685a94fd1342811ef5b1ab1efe7e0428e327299d0a179d12b9be1428acd8b4"
+  },
+  "new_survivor": "Actual all-component normalized exact-discrete large-k tail <= B\u00b2(DKX)^eps A1V[J0^-2+(DJ0)^-1+D^-1/3 J0^-4/3+Lambda/J0], via physical cubic k-by-residual norm after exact gcd inversion, before other-column triangles.",
+  "critical_consequence": "J0=D^1/32 makes this tail target-sized in pure A1~D^3/4,X=D^3/8. Unit and short finite k remain, with original means and all masks.",
+  "no_whole_target_or_mu_cancellation": true,
+  "controls_rerun": false,
+  "new_dependencies": false,
+  "own_new_files_only": true
+}

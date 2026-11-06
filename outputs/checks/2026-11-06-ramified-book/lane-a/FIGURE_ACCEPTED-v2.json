@@ -1,0 +1,121 @@
+{
+  "schema": "ramified-book-original-figure-semantic-precision-v2",
+  "passed": true,
+  "timestamp_utc": "2026-11-06T20:08:57.937770+00:00",
+  "previous_receipt": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-a/FIGURE_ACCEPTED-v1.json",
+    "sha256": "2c064112966c6a5c8029111659c17882469aa3357afefc151bbe35b02908fa04",
+    "bytes": 5115
+  },
+  "preserved_canonical_preimages": [
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/canonical-v5-preimage/ramified-cusp-prefix.svg",
+      "sha256": "4c53c2264f6313c3be2264498356dc3f1851ee7f4643d29cd287b3ef5ef1acac",
+      "bytes": 16283
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/canonical-v5-preimage/ramified-cusp-prefix.pdf",
+      "sha256": "cbd3cc008c38341aaf20f0a4acf0416716462560e987129149f1e481e54e6529",
+      "bytes": 292239
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/canonical-v5-preimage/ramified-cusp-prefix.tex",
+      "sha256": "d4506eaacc46aba249239678371b7b1f12e78129a345cce3fba5eb9decf04054",
+      "bytes": 11750
+    }
+  ],
+  "governing": [
+    {
+      "path": "planning/ramified-book-20261106/lane-a/build_figure_v6.py",
+      "sha256": "b61cc9c0d4b7dc14c53bfcb5dfb0fdc2cc2d6f5688074d3e30f32d59b4ed0fde",
+      "bytes": 13654
+    },
+    {
+      "path": "planning/ramified-book-20261106/lane-a/verify_figure_v6.py",
+      "sha256": "f6604e061e6da8bb231ac446ba7124ac722a218bc6e3a665ee103497c79c075e",
+      "bytes": 3210
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/figure-v6/checks-v6.json",
+      "sha256": "5c7abeff9a298d3ace0020886f0503c63779b856223d1860f3ce5c2f186ec3f4",
+      "bytes": 5234
+    }
+  ],
+  "promoted": [
+    {
+      "path": "book/figures/ramified-cusp-prefix.svg",
+      "sha256": "4a7405203c91d30e138d1887322967169e7b4867fd5a1bc3bf7d0c81e7c0ec2a",
+      "bytes": 17194
+    },
+    {
+      "path": "book/figures/ramified-cusp-prefix.pdf",
+      "sha256": "3118bc5e28a5e96bb569faa444608817bfbd7b48c1a8b8a977a068d3c3359187",
+      "bytes": 314214
+    },
+    {
+      "path": "book/figures/ramified-cusp-prefix.tex",
+      "sha256": "45402c78bb3d2b86cf13055f257d9bc361f6b503f21bf9406b5e5cc1025b8dd7",
+      "bytes": 12063
+    }
+  ],
+  "visuals": [
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/figure-v6/ramified-cusp-prefix-pdf-preview.png",
+      "sha256": "141c9b53df312b4dad735bf588d460032fc86c448dfb629f986555c273c17087",
+      "bytes": 211660
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/figure-v6/ramified-cusp-prefix-svg-preview.png",
+      "sha256": "7d4d95909a506eee8e25078365d84b5cba74ffe49a19e3fd9a7922c76c91b3e9",
+      "bytes": 217191
+    }
+  ],
+  "required_semantic_precisions": [
+    "u_a,ell explicitly equals chi(delta_a)(-1)^abs(ell)(C/barC)^ell; no unspecified multiplier",
+    "small-prefix branch retains (Nk)^3/8",
+    "positive Nk^(-13/8+epsilon) infinite majorant stated only as bound; original finite k retained"
+  ],
+  "unchanged_acceptance": {
+    "original_construction": true,
+    "two_linked_source_and_coefficient_lanes": true,
+    "literal_27_cusps_9_nonzero_18_zero_constant_terms": true,
+    "all27_have_nonconstant_fourier_coefficients": true,
+    "schematic_J5_eleven_slots": true,
+    "NC_factor_coarse_R_angular_and_zero_order_caveat": true,
+    "actual_primary_index_and_full_raw_masks": true,
+    "rho_not_finite_nu_fixed_finite": true,
+    "scoped_101_over144_not_global_GRH": true,
+    "svg_safe_focusable_accessible_editable_text": true,
+    "pdf_searchable_and_one_page": true,
+    "pdf_clean_log": true,
+    "pdf_and_svg_visuals_inspected": true
+  },
+  "dimensions": {
+    "TeX_pt": [
+      350,
+      503
+    ],
+    "SVG_viewBox": [
+      0,
+      0,
+      700,
+      1006
+    ],
+    "PDF_pt": [
+      348.692,
+      501.121
+    ],
+    "recommended_book_width": "350pt; do not stretch to full 468pt text width; root checks caption fit"
+  },
+  "fresh_checks": [
+    "single-page searchable PDF clean log",
+    "SVG XML/title/description/focus/27/11/safe external-reference guard",
+    "both PDF and librsvg-rendered SVG visually inspected at native ratio"
+  ],
+  "not_run": [
+    "root integrated browser/night/mobile/keyboard checks",
+    "book builds/publication",
+    "old scientific controls"
+  ],
+  "mutation_scope": "only authorized three original figure assets replaced after exact preimage preservation; all existing other figures/artifacts untouched"
+}

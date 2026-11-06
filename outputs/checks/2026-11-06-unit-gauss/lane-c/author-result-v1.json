@@ -1,0 +1,17 @@
+{
+  "actual_ideal_character_Gauss_data_or_Lean": false,
+  "files_sha256": {
+    "outputs/checks/2026-11-06-unit-gauss/lane-c/interval-v1/checks-v1.json": "2a8f6474a72ed84a3db1a9edee30d2fbe4a603229682a74c53458f43ed61e978",
+    "planning/unit-gauss-20261106/lane-c/ROW_INTERVAL_SCHUR-v1.md": "a0107035c97fbed73ef08b0440c3a54be8f360505a775ab3f92dce1ed3d558c8",
+    "planning/unit-gauss-20261106/lane-c/check_interval_v2.py": "cd343cd119301508bd48100426c89fc3cfe469ea91298bf60f7475c614cfb74c",
+    "planning/unit-gauss-20261106/root/PLAN-v1.md": "91789d6587e8412f5d4ecff135f5a7e46ecd9bb19cc40902a371b18dc5c4b709"
+  },
+  "formal_controls_only": true,
+  "lemma": "Arbitrary finite matrix with n distinct scalar column values: row-prefixSchur norm<=1+ceil(log2n); rowinterval<=2(1+ceil(log2n)), equalnormfibresretainedwhole; transposevalid",
+  "negative_control": "Actualgeneric2x2prefixmasknotcontraction: originalmatrixnorm\u00b22, maskedRayleigh13/5",
+  "parent_review_pending": true,
+  "passed": true,
+  "proof": "Canonicaldyadicprefixpartition; oneblockperrowperdepth gives disjointrow/columnprojections and norm<=1 at eachdepth; sumdepthsandtwoendpoints",
+  "source_product_index_publication_auth_dependency_changes": false,
+  "status": "Authorcomplete; independentrootreviewrequested; noarithmeticestimateclaimed"
+}

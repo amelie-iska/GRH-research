@@ -1,0 +1,295 @@
+{
+  "schema": "ramified-book-focused-native-browser-acceptance-v1",
+  "passed": true,
+  "created_at_utc": "2026-11-06T20:23:30.213845+00:00",
+  "all_checks_passed": true,
+  "no_new_errors": true,
+  "global_idle": true,
+  "own_context_and_server_cleanup": true,
+  "native_build_record_sha256": "7f6b8ba69696207d85f3fb38deb6ef2197fd701f9b38decd215e70873a22aa44",
+  "PDF_aggregate_sha256": "763e2edbfa1207470752fb0dcd478d7f22aaf20c6916d707b89f56aabe3b834c",
+  "book_PDF_build_record_sha256": "9ce2ff72259f6414f2ef686b4b053aef3bab654566141905cc55d0e29780eb2d",
+  "raw_browser_gate": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/receipt.json",
+    "sha256": "0bd65c6e2a901e3fec43d8b82fe09bb8d5fa8c3249ee1b4c9727aee63b6e794c",
+    "bytes": 1347
+  },
+  "raw_browser": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/browser.json",
+    "sha256": "37ced08e921fb3252a5baf4927414bc55cabf1798d6b0242c56c19cbb8d299a7",
+    "bytes": 150347
+  },
+  "global_timing": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/network-navigation-timing.json",
+    "sha256": "26c4ea6d9a263dd0b4666406db718cc8dc1d586828d27ac8efc9cee1c67f360e",
+    "bytes": 93758
+  },
+  "all_page_errors": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/page-errors.json",
+    "sha256": "ba5271a399efc6361802100617f9ff24ae2af14db6c078aba5f80440b9487f2d",
+    "bytes": 9275
+  },
+  "source_pins": [
+    {
+      "path": "planning/ramified-book-20261106/lane-a/check_native_v1.mjs",
+      "sha256": "e71175289a066242693ad29f759ffaa537089c0d13c8a0aa8be69ab6493a1f70",
+      "bytes": 25660
+    },
+    {
+      "path": "planning/ramified-book-20261106/lane-a/serve_candidate_v2.py",
+      "sha256": "6212bed66f9e73231f7cfa32618a00ed19d0d7c672346c77cbb93691c40f08ec",
+      "bytes": 2846
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-harness-preparation-v1.json",
+      "sha256": "083bf0577add0b84b8ca79d809ae931b264bd676bcda346cf9cbfc2094b48fc1",
+      "bytes": 1049
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/server-schema-adaptation-v1.json",
+      "sha256": "73a74a493afac23971ff00143e5fb5315074e99116e018f68fed1149082a28b6",
+      "bytes": 581
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-c/artifacts/protocol-review-v1/acceptance-v1.json",
+      "sha256": "975e84d106c73f5a802515ef55c432df9bd87424f431e2ae8646537df16d0fb7",
+      "bytes": 2663
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/native/run-v1/native-build-record.json",
+      "sha256": "7f6b8ba69696207d85f3fb38deb6ef2197fd701f9b38decd215e70873a22aa44",
+      "bytes": 20733
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/builds/run-v1/book-pdf/build-record.json",
+      "sha256": "9ce2ff72259f6414f2ef686b4b053aef3bab654566141905cc55d0e29780eb2d",
+      "bytes": 23446
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-b/build-aggregate-v1/aggregate-v1.json",
+      "sha256": "763e2edbfa1207470752fb0dcd478d7f22aaf20c6916d707b89f56aabe3b834c",
+      "bytes": 70645
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/FIGURE_ACCEPTED-v2.json",
+      "sha256": "26dcc884cb74dd69fe71db7396298d93688c922d8e3bc69e519b3d4449b8a163",
+      "bytes": 4466
+    }
+  ],
+  "checks": 41,
+  "checks_passed": 41,
+  "first_browser_execution_passed": true,
+  "counts": {
+    "old_literal_math_subtrees": 10299,
+    "old_math_byte_identical": true,
+    "total_math_nodes": 10858,
+    "new_math_nodes": 559,
+    "new_source_labels": 75,
+    "tables": 389,
+    "iframes": 14,
+    "old_SVG_refs": 31,
+    "total_SVG_refs": 32,
+    "PDF_pages": 348
+  },
+  "network": {
+    "timing_entries": 219,
+    "protocol_entries": 216,
+    "initial_markers": 1,
+    "actual_departures": 2,
+    "fetch_errors": 0,
+    "http_errors": 0,
+    "pending": 0,
+    "idle_timeouts": 0,
+    "quiet_ms": 750,
+    "timeout_ms": 30000
+  },
+  "quiet_waits": [
+    {
+      "reason": "before-parent-navigation",
+      "quiet_ms": 802
+    },
+    {
+      "reason": "before-parent-navigation",
+      "quiet_ms": 763
+    },
+    {
+      "reason": "before-parent-navigation",
+      "quiet_ms": 774
+    },
+    {
+      "reason": "final-full-idle",
+      "quiet_ms": 1568
+    }
+  ],
+  "minimum_observed_quiet_ms": 763,
+  "error_scope": {
+    "global_log_unfiltered": true,
+    "fetch_or_request_filters_added": false,
+    "known_inherited_munder_predicate_unchanged": true,
+    "all_console_error_events": 24,
+    "inherited_munder_events": 24,
+    "new_console_errors": 0,
+    "note": "Three inherited malformed munder nodes remain in the old literal MathML; repeated console events are retained verbatim across loads/layouts. All new559 nodes pass fixed-arity and visibility checks."
+  },
+  "layouts": [
+    {
+      "theme": "light",
+      "width": 1440,
+      "page_width": 1428,
+      "page_scroll": 1428,
+      "figure_width": 720,
+      "figure_scroll_width": 880,
+      "scroll_regions": 0,
+      "math_scroll_fonts": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "page_width": 308,
+      "page_scroll": 308,
+      "figure_width": 720,
+      "figure_scroll_width": 720,
+      "scroll_regions": 58,
+      "math_scroll_fonts": [
+        "18px"
+      ]
+    },
+    {
+      "theme": "biomech",
+      "width": 1440,
+      "page_width": 1428,
+      "page_scroll": 1428,
+      "figure_width": 720,
+      "figure_scroll_width": 880,
+      "scroll_regions": 0,
+      "math_scroll_fonts": []
+    },
+    {
+      "theme": "biomech",
+      "width": 320,
+      "page_width": 308,
+      "page_scroll": 308,
+      "figure_width": 720,
+      "figure_scroll_width": 720,
+      "scroll_regions": 58,
+      "math_scroll_fonts": [
+        "18px"
+      ]
+    }
+  ],
+  "keyboard": [
+    "genuine mobile figure ArrowRight horizontal scroll",
+    "Tab to original figure TeX link",
+    "Enter proof-reference navigation"
+  ],
+  "screenshots": [
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/direct-proof-biomech-1440.png",
+      "sha256": "07a0c381298b00e93d039543b595a393a6517e75e55d713c80d858734b03112e",
+      "bytes": 658811
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/direct-proof-biomech-320.png",
+      "sha256": "8078149a469958ee138ee4b6018d86f62fe79230419a80f015c2ed94b7f5eec0",
+      "bytes": 186435
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/direct-proof-light-1440.png",
+      "sha256": "edb5d408fb17785e9a31b769ecc4f0fab64f101f90450ebfa72e5f491bc0d1f2",
+      "bytes": 279387
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/direct-proof-light-320.png",
+      "sha256": "f49d481127d5e0f870494aee95c5a338b28656bc81bd385bf259900275f6f864",
+      "bytes": 90743
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/figure-biomech-1440.png",
+      "sha256": "bd671e07356770435615a0f83cb59bd8fe1b5bda11997a2b04acb305f87abb93",
+      "bytes": 365877
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/figure-biomech-320.png",
+      "sha256": "9a7a743677ccaa97d08389751a21a5208891c435c9d583788a88b4c8e121911e",
+      "bytes": 100865
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/figure-light-1440.png",
+      "sha256": "ce1a58d918b2343acd5204e25ee7018e9f51b91f706aec72188208999573ae4c",
+      "bytes": 199245
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/figure-light-320.png",
+      "sha256": "196b0674e14396604d3ebb733c95b056af685f03f7a794e7ade097837a4ed763",
+      "bytes": 63931
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/final-prefix-theorem-mobile.png",
+      "sha256": "f57e66523ee8935491ebc32d065e9a583d6e5847e2c468fb6a28abd4376a1f15",
+      "bytes": 204839
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/rg-core-desktop.png",
+      "sha256": "f8d1442df9426cc443a431ffb7f2716466f356067f88468c416dfc21ef95aef1",
+      "bytes": 297133
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/rg-details-desktop.png",
+      "sha256": "d5e449623e6578a883644b79aa7caa7d3e4c57c2c87b36f51d2d5a89b2155b15",
+      "bytes": 351961
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/rg-prefix-theorem-desktop.png",
+      "sha256": "eeef9e93dab55fd072f81712b7fa5a9e196a5f94725105046226811141f393d4",
+      "bytes": 302357
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/rg-sharp-row-desktop.png",
+      "sha256": "5379c9dcf5dbe55748424e2b0291d662359d06c8b19cfd24e10d93e4a1f11f68",
+      "bytes": 313888
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/rg-workflow-desktop.png",
+      "sha256": "ce1a58d918b2343acd5204e25ee7018e9f51b91f706aec72188208999573ae4c",
+      "bytes": 199245
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/standalone-original-svg-desktop.png",
+      "sha256": "2564e8639265bf08d84310093ecd0cf7cdc7d687e8f8cf6a3c080955c5ed8e4c",
+      "bytes": 158446
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/run-v1/standalone-original-svg-mobile.png",
+      "sha256": "5ecfcb021b05c4242dd63a9286cd9a91fcab4694353d7c531b9ceae48baa7b59",
+      "bytes": 75393
+    }
+  ],
+  "visual_inspection": {
+    "inspected_by_author": [
+      "figure-light-1440.png",
+      "figure-biomech-320.png",
+      "final-prefix-theorem-mobile.png"
+    ],
+    "observed": "Original figure and mathematical text render clearly; mobile overflow is local focusable scrolling, page width remains308px at320viewport; no image tint in night theme. Parent/C independently review saved artifacts."
+  },
+  "browser_cleanup": {
+    "owned_tab_closed": true,
+    "owned_user_context_removed": true,
+    "preexisting_contexts_untouched": true,
+    "session_ended": true
+  },
+  "stage_server_cleanup": {
+    "path": "outputs/checks/2026-11-06-ramified-book/lane-a/browser-v1/server-cleanup-v1.json",
+    "sha256": "dfa37fa3850016db025262f0475a05f7678029c2f361651dd6a6e6c12de58aff",
+    "bytes": 276
+  },
+  "existing_Firefox9335_reachable_after_own_cleanup": true,
+  "old8765_operation": "none; fresh ephemeral stage only",
+  "not_run": [
+    "old release/lab/model/training suites",
+    "mathematical controls/tables/traces",
+    "new book/PDF builds",
+    "auth/publication/dependency/Lean/MCP/Git index action"
+  ],
+  "scope": "New348-page ramified continuation candidate only; no production artifacts promoted by browser QA."
+}

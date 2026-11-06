@@ -1,0 +1,36 @@
+{
+  "SSH_Linux_owned_paths_only": true,
+  "actual_annular_ideal_energy_training_Lean_evidence": false,
+  "analytic_FE_or_cusp_norm_proved_by_controls": false,
+  "checks_read_not_rerun": true,
+  "files_sha256": {
+    "outputs/checks/2026-11-06-ramified-gauss/lane-c/review-a-v1/acceptance-v1.json": "7b67a0710301801f474468bab74403ace6310053a4693051c969ea64eb4afe5b",
+    "outputs/checks/2026-11-06-ramified-gauss/root/check_rational_cusps_v2.py": "414054780ae5cf3389932b7f187fd0b62cf2f477407146fa3ce1b66e495e5bb6",
+    "outputs/checks/2026-11-06-ramified-gauss/root/finite-cusp-v1/failure-v1.json": "0318a0d22fe73590691d131ecf4ca8970f9f66697f4e34e46f691085bdffdf7a",
+    "outputs/checks/2026-11-06-ramified-gauss/root/finite-cusp-v2/cases-v1.json": "a429ba44e562c82f5f0049daab9d22944dbc875d360d37dd4be153568f8caa77",
+    "outputs/checks/2026-11-06-ramified-gauss/root/finite-cusp-v2/checks-v1.json": "6338ee1f45c5f21fb6750a827eb6b0968cce1c2876991d5f428c9f373f50f32e",
+    "planning/ramified-gauss-20261106/lane-a/EXACT_RATIONAL_CUSP_STATE_AND_MULTIPLIER-v1.md": "006c4dc7b90c48c4d1f47be8d3b535670e170009a2d3dfb5e7fe82eae69f5da5"
+  },
+  "independent_review": [
+    "O/(3) determinant enumeration and P,T,E BFS recover648 matrices; SL2Z image24 and27 LEFTcosets, consistent with pinned primary Gamma2 definition",
+    "Exact Euclidean reduction/Bezout and gamma^-1U(A/C)=U(-D/C)W_-C reconstructed in script and separately in C proof",
+    "Unit-d support gives C=c0*r, fixed denominator state, exact moving-translation order; c0^2 is essential after diagonal",
+    "Nonunit fixed residues and denominator strict reductions remain included; integral/zero shifts retained",
+    "Computed BFS numbering is explicitly NOT Patterson numbering; no numerical constantterm or cusp coefficient is assigned from BFSindex",
+    "Actual multiplier remains chi(gamma0) from known Kubota source; neither set1 nor numerically certified by these controls",
+    "Preserved v1 failure was Fraction serialization only, with new v2 outputdirectory and unchanged mathematical loops"
+  ],
+  "no_global_or_GRH_claim": true,
+  "observed_counts": {
+    "SL2_Omod3": 648,
+    "denominator_strict_reductions": 1683,
+    "integer_subgroup_mod3": 24,
+    "left_cosets": 27,
+    "rational_cases": 4680,
+    "unit_d_fixed_affine_cases": 4329,
+    "wrong_diagonal_order_negative_controls": 3942
+  },
+  "passed": true,
+  "schema": "ramified-gauss-lane-c-independent-root-geometry-review-v1",
+  "status": "ACCEPT_BOUNDED_EXACT_GEOMETRY_CONTROLS_AND_SOURCE_ALGEBRA_ONLY"
+}

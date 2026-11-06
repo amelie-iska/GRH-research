@@ -1,0 +1,93 @@
+{
+  "checks": {
+    "actual_Gauss_values_energies_training_Lean": false,
+    "all_bound_existing_hashes_reconciled": true,
+    "fresh_checks_reexecuted_after_outage": false,
+    "new_exact_Eisenstein_affine_states": 432,
+    "new_literal_primary_support_branches": 204,
+    "new_rational_lambda_norm_envelope_cases": 12,
+    "old_scientific_controls_rerun": false,
+    "omitted_lambda_2B_genuinely_wrong_phases": 392,
+    "primary_bodies_published": false
+  },
+  "coarse_H_profile": "V1(W)=sup|W|+integral|Wprime|; fixed finite character/conductor/angular dependence explicit",
+  "created_at_utc": "2026-11-06T18:49:13.111709+00:00",
+  "files_sha256": {
+    "outputs/checks/2026-11-06-ramified-gauss/lane-a/review-b-v1/acceptance-v1.json": "d38808bc5924f49e1ca8a9d5a0ad3a05d4334b30e32e839ef390004aab9fe632",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-a/review-c-v1/acceptance-v1.json": "99b4cc054603b890e180e736dcc308355361f672586474c2523cc0354977c4a4",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-b/coefficient-convention-addendum-v1.json": "19bbb38b2cdda2649f7b7b1f92afa343fa87869bb16307871f3a8ea1b29d831f",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-b/coefficient-transport-v1/checks-v1.json": "40ba477af3d192e4e25bd9eeae48caab88d1271150a4da5e822a06b3794117cc",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-b/review-a-family-v1/acceptance-v1.json": "12333384a01936f9a0c96abd44a461763cc134c7650e6ec0a7a78fec20b28344",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-b/review-c-v1/acceptance-v1.json": "62cc0fedbb79c55e63d708cdbe4afe0b965ea9ed5e33b02b323f1c397a12301e",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-b/review-c-v1/coefficient-notation-addendum-v1.json": "2906ee3e31b20e307a63062b9d0a51900ea51f91cb6fc961791a117e8db6e8d3",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-b/source-pins-v1.json": "ceb741ae6137b8019d7e8bb289abd500aa036d648527e045950694d34460f1b8",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-c/review-a-v1/acceptance-v1.json": "7b67a0710301801f474468bab74403ace6310053a4693051c969ea64eb4afe5b",
+    "outputs/checks/2026-11-06-ramified-gauss/lane-c/review-b-v1/acceptance-v1.json": "b3fa02516317c918cc3ef7182fa8afa1774e883f474b3c02844088599e77fc98",
+    "planning/ramified-gauss-20261106/lane-b/ACTUAL_CUSP_COEFFICIENT_CONVENTION-v1.md": "3da658fd3c21dd001f2c74342d486682e55e42503d48ef536b03d6672b2d6722",
+    "planning/ramified-gauss-20261106/lane-b/CUSP_COEFFICIENT_NORM_AND_ACTUAL_MATCH-v1.md": "8231e155708cc0a49b5571dd612f47356f9082f16bd853fbb850e9eca1ce6411",
+    "planning/ramified-gauss-20261106/lane-b/FINITE_FAMILY_REALIZATION_REVIEW-v1.md": "87d6c0cf2901e7e3863943773de1f5b1362b15266b1c4e2697495da148c2f4b1",
+    "planning/ramified-gauss-20261106/lane-b/RATIONAL_CUSP_INTERFACE_REVIEW-v1.md": "119a415274021f356f4b4d274964bf836d3b10c2bf4e35fb4388f8cf485c5f80",
+    "planning/ramified-gauss-20261106/lane-b/check_cusp_coefficient_transport_v1.py": "933d888a5b1f3d7481447c28d66a38a62e76d1b146476a6dd2be1b3c11218abf"
+  },
+  "global_unsigned_power": "9/8 unchanged",
+  "governing_pair": [
+    {
+      "path": "planning/ramified-gauss-20261106/lane-b/CUSP_COEFFICIENT_NORM_AND_ACTUAL_MATCH-v1.md",
+      "sha256": "8231e155708cc0a49b5571dd612f47356f9082f16bd853fbb850e9eca1ce6411"
+    },
+    {
+      "path": "planning/ramified-gauss-20261106/lane-b/ACTUAL_CUSP_COEFFICIENT_CONVENTION-v1.md",
+      "sha256": "3da658fd3c21dd001f2c74342d486682e55e42503d48ef536b03d6672b2d6722"
+    }
+  ],
+  "independent_B_note_gates": [
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/lane-a/review-b-v1/acceptance-v1.json",
+      "reviewer": "lane-A",
+      "sha256": "d38808bc5924f49e1ca8a9d5a0ad3a05d4334b30e32e839ef390004aab9fe632"
+    },
+    {
+      "path": "outputs/checks/2026-11-06-ramified-gauss/lane-c/review-b-v1/acceptance-v1.json",
+      "reviewer": "lane-C",
+      "sha256": "b3fa02516317c918cc3ef7182fa8afa1774e883f474b3c02844088599e77fc98"
+    }
+  ],
+  "new_results": [
+    "Known27integral cusp actual Fourier coefficients have absolute Dirichlet norm <=3^8 zeta_good(sigma) zeta_good(3sigma-1/2) for1<sigma<13/12.",
+    "Exact affine index and coefficient transport retain |A| and source actual a_j(mu); correct lambda^(4+2B0) phase survives diagonal commutation.",
+    "Full lambda^3mu primary projector, general normalized finite Fourier mass and known integral cusps give conservative moving left normR^(3/2+Oeta), not by fixed-dimensionality assertion.",
+    "Source-to-ACTUAL finite family is realized with original finite-order nu, fixed ray/source/Gamma/primitiveS/fixed numerator data and full raw zeros; Jacobi rho isNOTfinite, exactlyone ownvartheta supplies angular+/-1.",
+    "General bounded periodic raw periodF*t handles overlap/imprimitive cases directly without kappa(t)division; raw Euler deletions survive conductor drop.",
+    "New coarse actual H(3/4,3/8) now has explicit ramified realization under independently reviewed C interface, safe completed convexity and literal sharp/subunit rules.",
+    "All original finite k and all common-long divisors d in small-whole-prefix model admit positive d^-11/8+eps,k^-13/8+eps majorants; critical smallprefix power41/64.",
+    "With separately pinned original DIRECT/wholeprefix/TypeII target-sized inputs, this yields a scoped pure finite primitive-dual top-prefix target, not whole h1."
+  ],
+  "normalized_small_piece_power": "41/64",
+  "not_full_h1_or_general_global_target": true,
+  "preservation": {
+    "Mac_project_fallback": false,
+    "all_new_project_work_SSH_Linux_owned_paths": true,
+    "all_prior_outputs_and_failed_versions_preserved": true,
+    "new_dependency_auth_config_Lean_MCP_build_browser_index_globaldocs_canonical_publication": false
+  },
+  "remaining": {
+    "analytic_category_Lean_and_GRH": "OPEN",
+    "full_dual_complement_and_mixed_neighboring_blocks": "OPEN",
+    "newer_root_101_144": "Message-only independently checked during outage; remote root written proof/review not part of THIS author receipt.",
+    "short_principal_and_independent_determinant_zero_location": "OPEN"
+  },
+  "required_rho_scope_precision": {
+    "path": "planning/ramified-gauss-20261106/lane-a/RHO_SCOPE_PRECISION-v1.md",
+    "sha256": "1b1547315ac4144fc295ef4d51f4f5f5ae51a0cd41045d0dd9a4ac2852101161"
+  },
+  "schema": "ramified-gauss-lane-b-author-result-v1",
+  "small_whole_prefix_Z": "D^(1/8) in this frozen lane-B derivation",
+  "source_pins": {
+    "count": 17,
+    "path": "outputs/checks/2026-11-06-ramified-gauss/lane-b/source-pins-v1.json",
+    "sha256": "ceb741ae6137b8019d7e8bb289abd500aa036d648527e045950694d34460f1b8"
+  },
+  "status": "INDEPENDENTLY_ACCEPTED_KNOWN_CUSP_NORM_ACTUAL_FINITE_MATCH_AND_ALL_K_D_SCOPED_DIRECT_ASSEMBLY",
+  "top_prefix_scope": "Original unweighted PURE A2=unit/othergoodfactorsunits; A1~H=D^(3/4),X=D^(3/8),exactw/s,allrho,originalfiniteK/capacity,completegoodSFcolumns,originalcoprimality,onefixedcomplexW",
+  "whole_signed_power": "13/12 unchanged"
+}

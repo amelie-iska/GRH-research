@@ -1,0 +1,97 @@
+{
+  "prepared": true,
+  "schema": "ramified-release-QA-author-preparation-v3",
+  "passed_syntax_and_guard_controls": true,
+  "created_at_utc": "2026-11-06T21:12:07.848206+00:00",
+  "governing_files": [
+    {
+      "path": "planning/ramified-release-20261106/lane-a/check_browser_v1.mjs",
+      "sha256": "ca64ec763a2b2c25e43764cd9828653cd05700567101a6b5ed7ea9900174dff8",
+      "bytes": 71728
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/check_gauss_tail_v1.mjs",
+      "sha256": "1f7c0b8db0cbfd6c69093c567d2b8ea914a9dc453a1cdd759cdca5b09295691b",
+      "bytes": 13567
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/check_ramified_v5.mjs",
+      "sha256": "4e09e45cb17204aabee2d19217cbbb8a4a3041738e3226c74f67daf56f18f3b4",
+      "bytes": 17759
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/check_lab_v1.mjs",
+      "sha256": "094fbfb28a46da943ced6f16ed40207e1fc97a57ff97cd780cc085392999247d",
+      "bytes": 11895
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/owned_browser_v2.mjs",
+      "sha256": "2683eb4027236a54ffb7f06090288aaecf800e7004a8166281d60025bef59256",
+      "bytes": 3783
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/run_browser_v4.py",
+      "sha256": "516372d840778c548ccd63d9586517defb08bb8a55c9365284929fca0dd670a7",
+      "bytes": 13475
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/make_expectations_v4.py",
+      "sha256": "1ffd4d446be4d07ace35a8816df315e3cbcf64245d5efa29c2916b254fb2b483",
+      "bytes": 7514
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/freeze_inputs_v5.py",
+      "sha256": "2af6b063904d538144b1765b5878b0a358448eb9ea803aed222f315ea49a58b4",
+      "bytes": 3093
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/contract_v3.py",
+      "sha256": "8f8511a1e74f9ba483686ebd162e825bc678bdd955e56f87d80e9ad6be2f9d3a",
+      "bytes": 3642
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/test_contract_v3.py",
+      "sha256": "bb0d4199107edb25099a70c4db2880f8e8caa3dd5545c057eb589377278be35f",
+      "bytes": 6060
+    },
+    {
+      "path": "planning/ramified-release-20261106/lane-a/prior-groups-v3.json",
+      "sha256": "d9722c860f67a66b481ee86cdfabf00e13f4a578b0ff8cf5dcc32f11f0f9b7cc",
+      "bytes": 17683
+    }
+  ],
+  "required_old_math_precision": {
+    "path": "outputs/checks/2026-11-06-ramified-release/lane-a/old-math-region-precision-v1.json",
+    "sha256": "6daca4b674c3ed89aca6388b7e2fb3d0472195ec504e99f8ed4dbaf603124e42",
+    "bytes": 3725
+  },
+  "required_role_precision": {
+    "path": "outputs/checks/2026-11-06-ramified-release/lane-a/role-count-precision-v1.json",
+    "sha256": "3ff14d3a200f8f3ac132643031d4db3c706528f90119949197e78846722a0119",
+    "bytes": 704
+  },
+  "required_SVG_scope_precision": {
+    "path": "outputs/checks/2026-11-06-ramified-release/lane-a/in-book-SVG-scope-precision-v1.json",
+    "sha256": "500c9cff24603d5988a4b2cb24b911d85bab291e3704884501e46a9c6334768b",
+    "bytes": 974
+  },
+  "negative_controls": {
+    "path": "outputs/checks/2026-11-06-ramified-release/lane-a/negative-controls-v3.json",
+    "sha256": "b071583aeb9d1e43406214513e80d7e0a2435af2c8ad87538d4d55507020ffc9",
+    "bytes": 30973
+  },
+  "counts": {
+    "full_inherited": 220,
+    "Gauss": 40,
+    "ramified": 44,
+    "lab": 58,
+    "lab_layouts": 54,
+    "roles": 12
+  },
+  "no_filters_or_750ms_30s_guards_changed": true,
+  "stage_or_live_or_build_execution": false,
+  "map_attempts": {
+    "first": "failed closed before output on prefix assumption",
+    "retry": "awaits independent C addendum"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "base_independent_gate": {
+    "path": "outputs/checks/2026-11-06-twisted-gauss/lane-c/review-a-v1/acceptance-v1.json",
+    "sha256": "6167dad8a4897450c66b1ce347bd689397205401ebbc5f86ee00801091c0a7d4"
+  },
+  "full_actual_H_tw_or_mean_target_claimed": false,
+  "higher_3_primary_interface_proved": false,
+  "independent_derivation": [
+    "Exact t=q0*r with q0 supported on FIXED conductor primes; no kappa(t) division or removed legal overlap",
+    "Reciprocity makes kappa(c)bar chi_c(q0) a fixed denominator character modulo F with ORIGINAL raw F mask",
+    "Primitive conductor drop handled by finite Mobius h|J, c=h*v; h and F0 disjoint",
+    "Source Gauss CRT contributes primitive inverse-cubic fixed character at h, giving primitive fixed input modulo F0*h coprime moving r",
+    "Normalized one-row h terms retain the literal (Nh)^(-1/2), interval I/Nh and profile T/Nh; Dirichlet-series terms analogously retain (Nh)^(-s). These are fixed constants/rescalings, not an extra D saving"
+  ],
+  "new_or_old_controls_rerun": false,
+  "passed": true,
+  "public_primary_metadata": {
+    "path": "planning/twisted-gauss-20261106/lane-a/PUBLIC-CITATION-v1.json",
+    "sha256": "c527f7c0a0f19d4c323b7dbc29086c790218b218cb74cde903b18d18b41da6cb"
+  },
+  "reviewed_companion": {
+    "path": "planning/twisted-gauss-20261106/lane-a/FIXED_OVERLAP_REDUCTION-v1.md",
+    "sha256": "98c127612556fd04125d65a63fa5e6582c1c8b48e74d4fec53e06497cf1fc38e"
+  },
+  "schema": "twisted-gauss-lane-c-fixed-overlap-review-addendum-v1",
+  "scope": "Extends independent away3 gate to exact fixed-overlap companion; no quantitative formula change or arithmetic experiment"
+}

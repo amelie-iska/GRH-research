@@ -1,0 +1,54 @@
+{
+  "counts": {
+    "balanced_height_cases": 319,
+    "horizontal_strip_cases": 2871,
+    "trivial_fallback_cases": 259
+  },
+  "full_actual_ramified3_FE_supplied": false,
+  "grid_material_parameters": {
+    "horizontal_sigma": "1/2..1 step1/16",
+    "left_level_costs": [
+      "1/2",
+      "3/2"
+    ],
+    "length_log_scale": "0..2 step1/8",
+    "level_log_scale": "0..2 step1/8"
+  },
+  "localized_cases": {
+    "coarse": {
+      "alpha": "3/4",
+      "beta": "3/8",
+      "d_series_power": "-11/8",
+      "deletion_power": "-3/8",
+      "k_series_power": "-13/8",
+      "normalized_D_power": "41/64",
+      "prefix_sum_power": "5/8",
+      "target_margin": "7/64"
+    },
+    "refined": {
+      "alpha": "3/4",
+      "beta": "1/8",
+      "d_series_power": "-13/8",
+      "deletion_power": "-5/8",
+      "k_series_power": "-15/8",
+      "normalized_D_power": "39/64",
+      "prefix_sum_power": "3/8",
+      "target_margin": "9/64"
+    }
+  },
+  "localized_parameters": {
+    "hmax": "3/16",
+    "lengthmin": "21/32",
+    "levelmax": "3/8",
+    "optimized_height_lower_powers": {
+      "1/2": "15/128",
+      "3/2": "3/128"
+    }
+  },
+  "note_sha256": "86404fd19f5213cf4c5c45814945ec3a7541e884e9aa04f5ac3cfbb45ea3ba57",
+  "old_controls_rerun": false,
+  "passed": true,
+  "randomness": "none",
+  "schema": "twisted-gauss-new-convexity-exponents-v1",
+  "scope": "Fresh deterministic synthetic Fraction checks of the NEW contour-height, deletion and localized exponent assembly. NOT proof of FE, actual ideal/character/Gauss data, training, numerical energy or Lean."
+}

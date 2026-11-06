@@ -1,0 +1,31 @@
+--- RATIONAL_CUSP_CONSTANTS_AND_MELLIN-v1.md
++++ RATIONAL_CUSP_CONSTANTS_AND_MELLIN-v2.md
+@@ -1,6 +1,6 @@
+ # Rational cusp constants and an exact ramified angular Mellin transform
+ 
+-NEW research-only candidate v1,6 November2026. This derives the actual endpoint constants and a conservative transform from the KNOWN27 integral cusp expansions, not from assumed closure of an unconstructed ramified vector. It supplies a new general finite-character source interface with left cost R^(3/2+epsilon). Its source-to-ACTUAL finite-family match and normalization require independent review before any actual target statement. No current whole signed13/12/global9/8/GRH claim changes.
++NEW research-only candidate v2,6 November2026 (v1 preserved; actual chosen-cusp Fourier coefficients are named a_j to avoid a conjugation/index convention ambiguity). This derives the actual endpoint constants and a conservative transform from the KNOWN27 integral cusp expansions, not from assumed closure of an unconstructed ramified vector. It supplies a new general finite-character source interface with left cost R^(3/2+epsilon). Its source-to-ACTUAL finite-family match and normalization require independent review before any actual target statement. No current whole signed13/12/global9/8/GRH claim changes.
+ 
+ Primary inputs: Dunn--Radziwill2109.07463v3, Section5, theta modularity on Gamma2 with its weight-zero Kubota CHARACTER; the27 integral coset functions F_j=theta(gamma_j*w); exact constant/nonconstant expansions(5.15),(5.16), theta coefficients(5.7), and their Mellin Gamma factors(5.45). PDFdf888f8527b3647a3428d6677a3e3070aab7439f79f737f3e894218fb64cfef0; text636da1119ebebdcab6756e9258554af06a42d67baf0c47026c73e960de2f4767. No GRH-conditional prime theorem is used. K=Q(omega), O=Z[omega], lambda=1+2omega=i sqrt3, different(lambda). All project edits/checks SSH-Linux/owned paths only.
+ 
+@@ -9,7 +9,7 @@
+ Write w=(z,v) in H3. The KNOWN source functions have
+  F_j(z,v)=sigma_j v^(2/3)+F_j^*(z,v),
+ where sigma_j=sigma=3^(5/2)/2 for j<=9 and0 for j>=10.
+-The nonconstant terms have the stated discrete lambda^-4 O Fourier support and K_(1/3) Bessel expansion. Their angular derivatives decay exponentially as v tends to infinity; the absolute Dirichlet series of every fixed cusp coefficient family converges at real part>1, as already checked from the explicit tau/tau1/tau2 formulas. No unknown state is assigned this expansion.
++For the EXACT chosen function F_j=theta(gamma_j*w), write its nonconstant expansion as sum_mu a_j(mu)*v*K_(1/3)(4pi|mu|v)*e(Tr(mu z)); a_j means THAT actual Fourier coefficient, with no unannounced sign or conjugation convention. The nonconstant terms have the stated discrete lambda^-4 O Fourier support and K_(1/3) Bessel expansion. Their angular derivatives decay exponentially as v tends to infinity; the absolute Dirichlet series of every fixed cusp coefficient family converges at real part>1, as already checked from the explicit tau/tau1/tau2 formulas. No unknown state is assigned this expansion.
+ 
+ For a rational translate a=A/C in K, choose A,C in O coprime, C!=0. This includes integral a by C=1. Since O is Euclidean, choose B,D with AD-BC=1, and set
+  gamma_a=[[A,B],[C,D]] in SL2(O).
+@@ -62,9 +62,9 @@
+ The dual Mellin is that of the KNOWN cusp F_j at the specified translate. Notice the essential exponent1-2s, NOT -2s. This factor includes the Jacobian and the v-weight. Its angular phase(C/barC)^ell has modulus one and is retained.
+ 
+ At Re(1-s)>1, the dual expression equals the usual source two-Gamma product times
+- sum_mu d_j(-mu)e(Tr(-mu D/C))
++ sum_mu a_j(mu)e(Tr(-mu D/C))
+                 (mu/|mu|)^(-ell)/(Nmu)^(1-s).
+-Its ABSOLUTE norm is the fixed cusp coefficient norm, independent of D/C since every translate phase is unitary. No fixed/unknown translated cusp is assigned a norm by fiat: these are exactly the original d_j in the known27 expansions.
++Its ABSOLUTE norm is the fixed cusp coefficient norm, independent of D/C since every translate phase is unitary. No fixed/unknown translated cusp is assigned a norm by fiat: these are exactly the actual a_j of the chosen known27 functions (whether a source notation calls it d_j(mu), d_j(-mu), or a conjugated variant).
+ 
+ This proves the angular pole statement and the per-translate functional identity BEFORE any ramified finite-state closure claim. It does not prove a refined moving sqrtR norm.
+ 

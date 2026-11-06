@@ -1,0 +1,76 @@
+--- LONG_DIVISOR_CUBIC_MEAN_ATTEMPT-v1.md
++++ LONG_DIVISOR_CUBIC_MEAN_ATTEMPT-v2.md
+@@ -1,6 +1,6 @@
+ # Common long-factor divisor completion in the actual short-k Gauss kernel
+ 
+-NEW research-only candidate v1, 6 November 2026. This attempt opens the ORIGINAL long-factor coprimality inside the remaining BOTH-TypeI small-A_Y kernel, preserves the common primitive cubic Gauss factor long enough to cancel it, and averages the resulting genuine cubic d-frequency before a separate residual-column triangle. It gives a scoped bound for an AUXILIARY long-divisor tail. The desired full short-k mean is NOT estimated: the unit/small-divisor sector still has the inherited13/16 certificate. This is not the finished finite-k tail rerun, a scalar Mertens input, a new sieve or a full signed saving.
++NEW research-only candidate v2, 6 November 2026 (v1 preserved; common rho(d)^2 and sharper whole-prefix assembly made explicit). This attempt opens the ORIGINAL long-factor coprimality inside the remaining BOTH-TypeI small-A_Y kernel, preserves the common primitive cubic Gauss factor long enough to cancel it, and averages the resulting genuine cubic d-frequency before a separate residual-column triangle. It gives a scoped bound for an AUXILIARY long-divisor tail. The desired full short-k mean is NOT estimated: the unit/small-divisor sector still has the inherited13/16 certificate. This is not the finished finite-k tail rerun, a scalar Mertens input, a new sieve or a full signed saving.
+ 
+ All new files are owned lane-b notes/checks on SSH-Linux; canonical book, public release, queue, indexes, environments, primary caches and other data are unchanged. No numerical Gauss/character fixtures are replayed. The only deep input is the already pinned physical cubic matrix theorem. A new elementary interval-Schur lemma handles exact sharp HB cutoffs; its formal controls are separate from actual arithmetic data.
+ 
+@@ -35,7 +35,7 @@
+  =bar G_a G_b chi_(3,d)(alpha_a)bar chi_(3,d)(alpha_b),  (2)
+ because |G_d|=1, including d=theunit. It is the AUXILIARY good primitive cubic G_d which cancels; no total S-Hecke root or induced-modulus Gauss value is divided out.
+ 
+-The actual all-component root/package is first separated by the accepted finite source-class characters and the exact H=(O/4)^times Fourier expansion of Gamma. Thus the left and right own-ideal multipliers are bounded multiplicative functions, not necessarily the same or finite order. At fixed prefixes p,r their own CRT crosses chi_p(v),bar chi_r(z) split into d and residual factors. Gamma(alpha_p alpha_r alpha_d^2 alpha_a alpha_b) contributes its actual gamma(d)^2 to the d scalar, not1. Actual theta_S(alpha_d)^2 and any other remaining finite S/source/ray factors also stay in that scalar. Individual infinite-type gauges are retained; a positive matrix norm permits their actual complex coefficient diagonals.
++The actual all-component root/package is first separated by the accepted finite source-class characters and the exact H=(O/4)^times Fourier expansion of Gamma. Thus the left and right own-ideal multipliers are bounded multiplicative functions, not necessarily the same or finite order. At fixed prefixes p,r their own CRT crosses chi_p(v),bar chi_r(z) split into d and residual factors. Gamma(alpha_p alpha_r alpha_d^2 alpha_a alpha_b) contributes its actual gamma(d)^2 to the d scalar, not1. Actual theta_S(alpha_d)^2 and rho(d)^2 also stay in that scalar, together with the remaining source-class Fourier factors. In the accepted linear-first source extension rho(m)rho(n), rather than rho(m)bar rho(n), leaves rho(d)^2; it must NOT be set to1 just because d is common or in an identity source class. Any cancellation of nu/vartheta or G_d does not cancel this actual rho phase. Individual infinite-type gauges are retained; a positive matrix norm permits their actual complex coefficient diagonals.
+ 
+ The k phase from the two virtual full columns has common factor
+ chi_(3,d)(alpha_k)bar chi_(3,d)(alpha_k)=1_((d,k)=1).
+@@ -107,31 +107,38 @@
+ 
+ ## 6. Normalized assembly and the long-divisor tail only
+ 
+-Let ell=min(L,M), N=max(L,M). Divide(8) by sqrt(LM) and use L,M>=c D^(1/2). Apart from fixed constants this is bounded by
+-R^-2 +D^-1/6 R^-1 +D^-1/12 R^-3/2
+-      +D^-1/3 R^-1/2 +D^-1/2,                         (10)
+-where the additional D^-1/4 R^-1 term is dominated by the displayed D^-1/6 R^-1. These are upper monomials, not actual sizes.
++The original normalization is A1/[D sqrt(NpNr)] times actual H_p barH'_r. The prefix variables p,r retain all short/HB assignments. At a fixed SF ideal p the number of at-most-eleven-factor assignments, their bounded binomial coefficients and grouped divisor coefficients are O_epsilon(D^epsilon). Thus summing ABSOLUTE prefix assignment coefficients at each ideal costs D^epsilon, not a factor equal to the whole number of labels. This is elementary coefficient counting, not cancellation or coefficient norm shrinkage.
+ 
+-The original normalization is A1/[D sqrt(NpNr)] times actual H_p barH'_r. Since sqrt(LM)=D/sqrt(NpNr), the positive outer weight after(10) is1/(NpNr). The accepted pointwise HB divisor bound gives
+-sum_(Na,Nb<=Y)1/(NaNb)
+- sum_(Nu<=C(D/(NaNb))^(1/3))|H(a,b,u)|/Nu <<D^epsilon. (11)
+-This retains every actual small/HB assignment and sign in the identity; it is NOT coefficient norm shrinkage or a Mobius partial-sum estimate.
++For each actual fixed d scale R, after(7) the positive prefix assembly is bounded by
++ S_R=sum_(Np<=C D^(1/2)) (Np)^(-1/2)
++                      sqrt[Theta(R,D/(R Np))].
++The right prefix gives the SAME positive majorant even if its actual gauges/HB support differ. All cross deletions can remain exact until this positive estimate. Dropping a zero mask here is legal. Using sqrt(x+y+z)<=sqrt x+sqrt y+sqrt z and elementary ideal sums,
++ sum_(Np<=Z)(Np)^(-1/2)<<sqrt Z,
++ sum_(Np<=Z)1/Np<<log(2Z),
++ sum_(Np<=Z)(Np)^(-5/6)<<Z^(1/6),
++gives
++ S_R <<D^epsilon [sqrt R D^(1/4)+sqrt(D/R)+D^(5/12)].   (10)
++The factor C is fixed by the at-most-nine-factor HB grouping and is absorbed. All actual units are included in these sums. A prefix whose d band is empty contributes0; positive enlargement to all Np<=C D^(1/2) is harmless. Residual subunit/empty cases retain the direct unit bound of Section4.
+ 
+-For each original fixed k, estimates(7)–(10) are uniform in its raw phases/deletions. The exact finite positive majorant sum_(Nk<=min(K,J0),SFgood)1/Nk²<=zeta_K(2) merely bounds their absolute assembly; it does NOT complete the original kernel or remove k/s overlap. e,w/source/rho/Fourier total masses are fixed, and ONLY after these estimates the original s set is counted by O(V).
++Squaring(10) by (x+y+z)^2<=3(x²+y²+z²), and multiplying the original A1V/(D R), gives the cleaner WHOLE-prefix d-band bound
++ <<M(W)^2 (DXA1)^epsilon A1 V I(cLambda)
++                     [D^(-1/2)+R^(-2)+D^(-1/6)/R].   (11)
++This uses the actual1/sqrt(NpNr) weights. It is sharper than taking the separate worst L,M>=cD^(1/2) exponents in every cross monomial of(8). No hidden equality of left/right vectors or sign-cancellation premise is inserted; both positive prefix sums are dominated by S_R.
+ 
+-Define P_long(>R0) by retaining d>R0 in(1), within EVERY original finite TypeI assignment and original short-k component. Partition its actual d range into clipped dyadic bands. For R0>=1, empty tails are exactly0, and the constant term in(10) costs only a dyadic log. The resulting scoped NORMALIZED bound is
+-|P_long(>R0)| <<_(fixeddata,epsilon)
++For each original fixed k, estimates(7),(11) are uniform in its actual phases/deletions. The exact finite positive majorant sum_(Nk<=min(K,J0),SFgood)1/Nk²<=zeta_K(2) merely bounds their absolute assembly; it does NOT complete the original kernel or remove k/s overlap. e,w/source/rho/Fourier total masses are fixed, and ONLY after these estimates the original s set is counted by O(V). Fixed primitive S zeros and all theta_S(d)^2 rho(d)^2/gamma(d)^2 factors remain until the stated Cauchy step.
++
++Define P_long(>R0) by retaining d>R0 in(1), within EVERY original finite TypeI assignment and original short-k component. Partition its actual d range into clipped dyadic bands. For R0>=1, empty tails are exactly0, the negative powers sum geometrically and D^(-1/2) costs at most a dyadic log. The resulting scoped NORMALIZED bound is
++ |P_long(>R0)| <<_(fixeddata,epsilon)
+  M(W)^2 (DXA1)^epsilon A1 V I(cLambda)
+- [R0^-2 +D^-1/6 R0^-1 +D^-1/12 R0^-3/2
+-            +D^-1/3 R0^-1/2 +D^-1/2].                (12)
+-Its raw numerator has an additional D. Uniformity includes all original K/capacity, raw common-prime and primitive S/source/ray data; no arbitrary positive original-row-weight extension is claimed.
++                   [D^(-1/2)+R0^(-2)+D^(-1/6)/R0].   (12)
++Its raw numerator has an additional D. Uniformity includes all original K/capacity, raw common-prime and primitive S/source/ray data. No arbitrary positive original-row-weight theorem is claimed.
+ 
+ If the ORIGINAL unequal-norm projection is imposed, it is not put forfree into the separated product in(6). Prove(12) unprojected, then subtract its SAME auxiliary equal-norm tail globally. The original m,n are each SFgood and annular but may overlap in this auxiliary extension. There are O(D^(1+epsilon)) ordered equal-norm ideal pairs: sum over rational norm q of a_K(q)^2, with a_K(q)<<q^epsilon. Every short/HB assignment count and truncated common-divisor count is D^epsilon, each original normalized column product is O(B²/D), and the finite Bessel kernel is uniformly bounded. Thus the once-normalized correction is
+- <<B²(DXA1)^epsilon A1 V/D,                            (13)
+-covered by(12). Conjugate ideals remain distinct. No primitive root at the overlapping product is used, only the chosen bounded auxiliary individual-column extension. This count includes unit/subunit residuals automatically.
++                   <<B²(DXA1)^epsilon A1 V/D,         (13)
++covered by(12), since B<=M(W). Conjugate ideals remain distinct. No primitive root at the overlapping product is used, only the chosen bounded auxiliary individual-column extension. This count includes unit/subunit residuals automatically; no multiplicative norm-inequality selector is invented.
+ 
+-At A1~H=D^(3/4), X=D^(3/8), choose R0=D^(1/32), a NEW divisor cutoff independent of original k and short cutoffY. The five normalized monomial powers from(12) are
+-3/4,59/96,131/192,89/192,5/16,                        (14)
++At A1~H=D^(3/4), X=D^(3/8), choose R0=D^(1/32), a NEW divisor cutoff independent of original k and short cutoffY. The three normalized monomial powers from(12) are
++                         5/16, 3/4, 59/96,           (14)
+ all <=3/4. The optional correction(13) has power−3/16. An elementary absolute count for THIS SAME long-divisor expansion only gives R0^-1, requiring R0>=D^(1/16) to fit the leading target budget; hence(12) gives a genuine stronger scoped tail certificate. Earlier smooth-f/primal positive-tail localizations concern different kernels/coefficients and are not being relabelled or claimed solved. The finished original-k estimate is an INPUT with a different variable and a different1/Nk² weight.
+ 
+ ## 7. Exact failure of the full unit-frequency attack

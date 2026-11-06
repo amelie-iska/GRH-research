@@ -1,0 +1,21 @@
+# Independent finite-k cubic-band proof review — PASS
+
+Full exact-note review of3df39872 against its11 pinned inputs. No mathematical finding remains; no controls, tables, builds, browser or Git commands were run.
+
+The object is the actual normalized pure exact-discrete top prefix, all source classes/rho/S modes and exact w/s endpoints, original finite pre-S K and original coprime pair. It is not a principal-density model or a completed Euler kernel. BOTH-TypeI coefficient pieces are actual functions of their own original column, with divisor bound and no extra mu; their grouping is independent of k,n,s. The large-k theorem can also use the stated original coefficient choices.
+
+The all-component finite Gauss/root formula separates k exactly as theta_S(alpha_k)^2 chi_(3,m)(alpha_k) bar chi_(3,n)(alpha_k). Every other k occurrence is the original mu(k)/(Nk)^2 and common fixed cutoff. Finite Fourier expansion of Gamma(alpha_m alpha_n) is jointly separable, with bounded mass; the right column vector carries the appropriate conjugate gauge. The two vectors need not coincide. All remaining primitive S/e/w zeros, source indicators and s masks stay in coefficient vectors or scalar zero factors. No primary generator at a bad ideal, division by zero or finite-order assertion for an angular xi is used.
+
+On original coprime support this is the stated x_m bar y_n cubic-frequency pairing. Its off-coprime extension is auxiliary. Exact gcd inversion retains arbitrary x_da,y_db with SF and full original masks, without factoring AU(da), its Gauss root or source phases. Raw denominator multiplicativity yields the common factor |chi_(3,d)(k)|²=1_(d,k)=1. The residual a,b are allowed to overlap after inversion; no overlapping primitive root is invented.
+
+Triangle in d is stated. Bilinear Cauchy in k then applies to two positive arbitrary-coefficient norms, with row weight J^-2. Only within those norms may the d-deletion and final clipped endpoint be dropped. Both physical indices are actual SF hence cube-free ideals; the transpose of the accepted primary cubic theorem is the exact family. This supplies [J+D/Nd+(JD/Nd)^(2/3)] times B²D^epsilon/Nd. It is a coupled k norm, not a pointwise column estimate followed by the other-column triangle or a generic primitive-conductor replacement.
+
+For D<Nd<=2D the residual length is in[1/2,1). Only the unit can occur, and direct O(J) row counting supplies B²/(J Nd), with no below-unit-length sieve. The d sums log, zeta2 and zeta5/3 then give J^-2[J+D+(JD)^(2/3)]. Multiplying once by A1/D and the exact O(V) s count yields exactly J^-2+(DJ)^-1+D^-1/3 J^-4/3. No cancellation of mu(d) is claimed.
+
+The optional unequal-norm projection subtracts the same literal component's fixed-norm fibres, of O(D^(1+epsilon)) ordered pairs; original k absolute weight is O(1/J), so its normalized correction A1 V/(DJ) fits the retained term. This does not misuse a whole energy or a multiplicative norm selector.
+
+The real-axis j0 error uses only |dotG-g0|<=constant*x, with x<=Lambda and the actual finite band absolute weight O(1/J). The resulting coarse A1 V Lambda/J bound is valid; unused k^-2 inside x would only sharpen it. No nodal-G derivative or hidden moving-profile seminorm enters. Exact finite dyads sum geometrically only up to K, retaining mu(k), endpoint clipping and legal k/s overlaps.
+
+At pure critical parameters, J0=D^(1/32) gives exactly3/4,-7/32,7/16,-3/32 for the four normalized terms. If K<=J0 the selected part is empty. For K<=C sqrt(D), the first leading term dominates the other two up to fixed constants. Unit/short k and the complete small model remain open; no actual lower size, whole13/12/global9/8 improvement, positivity, GRH or Lean claim follows.
+
+This is a valid new application of the already accepted physical cubic norm across ORIGINAL k frequencies before a separate column triangle. It is distinct from the completed full-series l1 Schur estimate and from balanced macros within the residual c. Its novelty is the quantified partial band control, not a new external sieve or signed-Mobius cancellation theorem. The independent acceptance is proof/source-bound and does not claim numerical arithmetic-family validation.

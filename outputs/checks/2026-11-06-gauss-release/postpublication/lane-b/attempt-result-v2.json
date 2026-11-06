@@ -1,0 +1,26 @@
+{
+  "schema": "postpublication-paired-long-attempt-v2",
+  "status": "candidate-awaiting-independent-review",
+  "note": {
+    "path": "planning/gauss-release-20261106/postpublication/lane-b/PAIRED_LONG_TYPE_I_AND_SHORT_FREQUENCIES-v2.md",
+    "sha256": "99fe6c5a4aa85523bf239527747a33f2436e910a1882a44a8b5e57730d7ad340"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-06-gauss-release/postpublication/lane-b/source-pins-v2.json",
+    "sha256": "cb0bb19b943898f509a8d7c538c38a6bdd5337f2923331967e5db2e95bd8b2d7"
+  },
+  "result": "Exact both-long/root/all-mask matrix, physical cube-free height LMmin(L,M), and newly matched same-paper Proposition8.1 pair norm with finite Bessel hierarchy.",
+  "quantitative_survivor": "Fixed-outer exact band <=B\u00b2D^eps I(cLambda) J^-3/2 sqrt[LM+ell^2/3 N^1/3 J+ell^1/3 N^2/3 J^2/3]; original normalization/short-factor counts yield only A1V J^-3/2 and totalshort A1V.",
+  "failed_inference": "Mixed-orientation long Gauss CRT cancels cross cubic factors; inserting a cubic kernel leaves a nonseparable Gauss cocycle. Legitimate physical height cannot be replaced by radical conductor. Better paired Prop8.1 still leaves its full LM term/actual Gauss means.",
+  "comparison": "No new frontier saving: accepted finite-k J^-2 is stronger away from unit; normalized whole short certificate stays13/16, not3/4. Actual coefficient may cancel; no lower/PSD/impossibility claim.",
+  "no_new_global_13_12_or_9_8_claim": true,
+  "no_old_controls_or_new_dependencies": true,
+  "only_new_owned_research_files": true,
+  "parent_attempt_sha256": "9d96f6277829aa11e045be091b0935e24e909290424c2644d8eea0b52cf6a02f",
+  "leading_factor_precision": {
+    "path": "outputs/checks/2026-11-06-gauss-release/postpublication/lane-b/leading-factor-addendum-v1.json",
+    "sha256": "4db527b2a13de16009981c2595610fdd51671ad0b1fe4ed0a59009479295df74",
+    "statement": "Actual leading component is g0*T0; no division/nonvanishing atM0=0."
+  },
+  "independent_review": "Pending; root primary/source/proof review in progress. No accepted new power gain asserted."
+}
