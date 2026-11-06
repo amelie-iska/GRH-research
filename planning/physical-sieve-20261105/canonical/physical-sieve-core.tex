@@ -1,0 +1,144 @@
+% External input: de Faveri arXiv:2610.04045v1, Theorem 1.1.
+% PDF SHA256 97720b3cacccbedb9c2014520ad4d128ae23afd0a781bdeff27dab4e86b7c726.
+% Application note v2 SHA256 8fcd6445815eee97fdb5b767779602f7436ef237eef3f9ead0af15b137296c8d.
+\section{A sieve comparison indexed by the physical radicand}\label{phy:core}
+This section applies a new external preprint input to the original rows.
+It is an application of that theorem, not a new proof of a large sieve,
+a signed target estimate, or an analytic Lean result.
+Throughout, $K=\mathbb Q(\omega)$, $S$ is fixed and contains the primes
+above $2,3$ and the original conductor exclusions, and $\nu$ is the
+original fixed finite-order Hecke column character. Let $D,H\ge1$, $U\ge1$,
+$U^2\le D$, and let $W$ be one common possibly complex smooth profile
+supported on $[1,2]$, zero at its endpoints. Write $B_W=\|W\|_\infty$.
+The estimates below concern the original unweighted literal rows, or
+already justified bounded natural multiplicities. They do not insert
+arbitrary positive row weights into an unweighted theorem.
+
+\paragraph{Pinned external input.}
+De Faveri's \href{https://arxiv.org/abs/2610.04045v1}{arXiv:2610.04045v1},
+Theorem~1.1, bounds the squared row norm $\Theta_n(A,B)$ for the
+Section~2.3 family of order-dividing-$n$ Hecke characters, with both
+indices $n$th-power-free ideals prime to fixed $S$:
+\begin{equation}\label{phy:input}
+ \Theta_n(A,B)\ll_\epsilon(AB)^\epsilon
+ \bigl(A+B+A^{1-1/n}B^{2/n}+A^{2/n}B^{1-1/n}\bigr).
+\end{equation}
+Here $n\ge3$, $K$ contains $\mu_n$, and the chosen fixed $S$-integer
+ring has class number one. The constants may depend on the fixed
+family construction. We use $n=6$, not a conjectural $A+B$ bound;
+the additional $\mu_{2n}$ condition of that paper's Theorem~1.4 is
+not a hypothesis of Theorem~1.1. Set
+\begin{align*}
+ \Phi_6(A,B)&=A+B+A^{5/6}B^{1/3}+A^{1/3}B^{5/6},\\
+ \Phi_{\rm all}(H,D)&=H+DH^{1/6}
+       +H^{5/6}D^{1/3}+H^{1/3}D^{5/6}.
+\end{align*}
+
+\begin{proposition}[Exact raw-family identification]\label{phy:family}
+There is an allowed fixed choice of the data in~\eqref{phy:input}
+for which, for every good ideal $\mathfrak a$, with unique generator
+$\alpha_{\mathfrak a}\equiv1\pmod3$,
+\[
+ \chi_{\mathfrak a}(\mathfrak m)
+       =\left(\frac{\alpha_{\mathfrak a}}{\mathfrak m}\right)_6
+\]
+including the original zero at each common prime.
+In particular, the row index is the physical sixth-power-free ideal,
+including valuations $2,3,4,5$, rather than its radical conductor.
+\end{proposition}
+The extended proof specifies the data and removes the possible unit
+ambiguity. No extra column-ray selection is made.
+For the unique outside-$S$ decomposition of an actual literal row,
+\begin{equation}\label{phy:raw}
+ \begin{aligned}
+ u&=u_0\alpha_{\mathfrak a}\alpha_{\mathfrak r_6}^6,
+ &\mathfrak a&=\mathfrak r_1\mathfrak r_2^2
+              \mathfrak r_3^3\mathfrak r_4^4\mathfrak r_5^5,\\
+ \chi_{\mathfrak m}(u)
+   &=\chi_{\mathfrak m}(u_0)\chi_{\mathfrak a}(\mathfrak m)
+                  \mathbf1_{(\mathfrak m,\mathfrak r_6)=1},
+ &Nu&=Nu_0\,N\mathfrak a\,(N\mathfrak r_6)^6.
+ \end{aligned}
+\end{equation}
+The first five factors are squarefree and pairwise coprime;
+$\mathfrak r_6$ is arbitrary and may overlap them. All original
+union, common-prime, literal, ray and capacity restrictions remain.
+
+\begin{proposition}[Physical-row comparison]\label{phy:global}
+For the original raw sums $I_u$ of~\eqref{wc:polynomial}, and for
+the original residue-subtracted $E_u=I_u-P_u$ with fixed $\nu,S$,
+\[
+ \sum_{0<Nu\le H}|I_u|^2+\sum_{0<Nu\le H}|E_u|^2
+ \ll_{\nu,S,\epsilon}B_W^2(HD)^\epsilon\Phi_{\rm all}(H,D).
+\]
+For $1\le H\le D$ one has
+\begin{equation}\label{phy:dominance}
+ \Phi_{\rm all}(H,D)\le4DH^{1/6}.
+\end{equation}
+Thus the critical positive envelope at $H=D^{3/4}$ is $D^{9/8+\epsilon}$,
+improving the previous $7/6$ comparison by $1/24$ while still exceeding
+the $3/4$ target by $3/8$.
+\end{proposition}
+The agreement with the varying-profile obstruction of
+Section~\ref{prf:core} concerns only a supremum-norm-controlled class
+allowing $W_D$ to vary. It is not a lower bound or a sharpness assertion
+for one fixed $W$, nor a GRH counterexample.
+
+\begin{proposition}[The actual $A_6=1$ signed slice]\label{phy:signed}
+For an original unweighted two-pivot block, retaining all its actual
+filters and the complete annular columns, the raw form
+$S_1^{AA}$ of~\eqref{sw:slice} satisfies
+\[
+ |S_1^{AA}|\ll_{\nu,S,\epsilon}
+       B_W^2(HD)^\epsilon\Phi_6(H,D).
+\]
+The same bound holds after summing the fixed-$S$ parts of such rows:
+the $D$ term costs a fixed polylogarithmic count, absorbed in
+$(HD)^\epsilon$, not a convergent exponent-zero Euler sum.
+At $H=D^{3/4}$ the available power is $13/12$, an improvement of $1/12$
+from the old $7/6$ majorant, but still $1/3$ above the target.
+\end{proposition}
+The proof inserts~\eqref{phy:input} into the exact original
+common-divisor identity~\eqref{sw:mobius}; $A_U(dn)$ is not factored
+and is not put into the rough short-coefficient domain.
+Under the additional high-window and capacity hypotheses of
+Section~\ref{cmr:core}, its exact ordered rough correction gives
+\begin{equation}\label{phy:combined}
+ \left|\frac{K_0-K_{\rm all}}D\right|
+ \le |S_1^{AA}|+236800B_W^2R_w.
+\end{equation}
+This estimates the actual combined form through its exact identity;
+it does not take separate main-term triangles in $K_0,K_{\rm all}$,
+and does not prove signed cancellation at the target scale.
+
+\begin{proposition}[Updated short positive certificate]\label{phy:short}
+On an original unweighted block, put $R=A_1A_2$,
+$M=\max(A_1,A_2)$ and
+$H_b=\min\{H/Nu_0,8A_1A_2^2\}$ for fixed literal/$S$ factor $u_0$.
+Empty blocks contribute zero; a nonempty block has $H_b\ge1$.
+For $1\le L\le D$ the actual squared row-operator norm has the bound
+\[
+ \lambda_{\rm now}(L)\ll(HD)^\epsilon
+ \min\left\{\begin{aligned}
+ &R+\frac{LR}{M}+\frac{L^{2/3}R}{M^{1/3}},\quad L+R^2,\\
+ &\Phi_6(H_b,L)
+ \end{aligned}\right\}.
+\]
+For $1/2\le L<1$ use the direct unit-column norm $R_w$.
+This new norm may be substituted into the mean-retaining joint
+Abel criterion of Proposition~\ref{cmr:joint}, with its lower endpoint intact.
+At $H=D^{3/4}$, $U\asymp D^{1/2}$, its pure witness costs $19/24$;
+at the displayed mixed witness the minimum retains the old $7/9$
+bound, which beats the generic $19/24$.
+\end{proposition}
+In this positive certificate sufficient independent scalar discrepancy
+powers are respectively
+\begin{equation}\label{phy:diagnostic}
+ U^{-1/12+\epsilon}\quad\hbox{and}\quad U^{-1/18+\epsilon}.
+\end{equation}
+If imposed as all-scale mean-square inputs, these would entail the
+conditional zero-free strips $\Re s>11/12$ and $\Re s>17/18$ of
+Theorem~\ref{cmr:conditional-strip}. Neither input nor strip is proved
+here; they are not necessary conditions for the actual signed target.
+The endpoint and coherent $K_0-J$ remain. Smooth-tail localization
+(Proposition~\ref{cmr:tail}) does not remove $f=1$ or supply this estimate.

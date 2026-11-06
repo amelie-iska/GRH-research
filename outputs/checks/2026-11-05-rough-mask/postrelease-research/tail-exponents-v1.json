@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "scope": "Exact rational arithmetic for a new derived localization, not an analytic saving",
+  "note_sha256": "92b5fbacf0fb9a066037da159875de5980ffcc9ab9545e83b3ce470b55e79c9e",
+  "cases": [
+    {
+      "case": "mixed",
+      "R": "7/12",
+      "M": "5/12",
+      "Y": "13/24",
+      "tail_exponents": [
+        "7/12",
+        "5/8",
+        "3/4"
+      ],
+      "required_cutoff_exponents": [
+        "1/2",
+        "5/12",
+        "13/24"
+      ],
+      "uncut_powered_exponents": [
+        "7/12",
+        "7/6",
+        "10/9"
+      ],
+      "all_tail_terms_at_most_target": true,
+      "unresolved_uncut_maximum": "7/6"
+    },
+    {
+      "case": "pure",
+      "R": "3/4",
+      "M": "3/4",
+      "Y": "5/8",
+      "tail_exponents": [
+        "3/4",
+        "3/8",
+        "3/4"
+      ],
+      "required_cutoff_exponents": [
+        "1/2",
+        "1/4",
+        "5/8"
+      ],
+      "uncut_powered_exponents": [
+        "3/4",
+        "1",
+        "7/6"
+      ],
+      "all_tail_terms_at_most_target": true,
+      "unresolved_uncut_maximum": "7/6"
+    }
+  ],
+  "source_inputs": {
+    "papers/signed-weights-details.tex": "50826ac34ad9c411e4ff6ab164062492d85e1c624eecfc36401b95bda692399b",
+    "papers/rough-mask-core.tex": "f6de95347abdb5370493a7ee6cbb938a337464c9e86766bc3e0b7d4534a9d767",
+    "papers/rough-mask-details.tex": "a7d91548a76fdbf0d98a5d71087a0a6afd4a6ece6f13118eeddf67398a73389e"
+  },
+  "frozen_release_edited": false,
+  "new_scientific_data_or_Lean": false
+}

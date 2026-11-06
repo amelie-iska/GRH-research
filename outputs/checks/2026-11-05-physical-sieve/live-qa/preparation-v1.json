@@ -1,0 +1,29 @@
+{
+  "UI_candidate_v3_sha256": {
+    "physical-sieve-model.mjs": "b40408306eac06ef08033805ef017415422cda74ffb88964477e905b2fb9ee32",
+    "quadratic-pivot.css": "67655511f6167a3d80879d3efa84cafb7e2416c6064795b7f2cdc09c30bfea24",
+    "quadratic-pivot.html": "aec69d12ee5573dbb2340c0d87423449fa7f7a6d0aa28323b19e49ab74189b91",
+    "quadratic-pivot.mjs": "1fe44aad7a03f01105cd604ab9410b26d0042e29e72304a4038253cc6474728a"
+  },
+  "UI_candidate_v3_wording_only_verified": true,
+  "UI_wording_scope": "Moving-profile sharpness explicitly restricted to fixed 0<theta<1; no model/CSS/MJS bytes changed. Root UI visual acceptance remains separate.",
+  "browser_executed": false,
+  "build_or_science_reruns": false,
+  "current_counts_derived_from_explicit_artifact_pins_not_constants": true,
+  "global_network_subscription_idle_navigation_and_finally_bytes_unchanged": true,
+  "new_scripts": {
+    "check_browser_v1.mjs": "812db70250d0cefa08cb572b00b0e70ae93d41b3bd432d0e9ab8d1bad08aeb6a",
+    "prepare_expectations_v1.py": "c0b818c099a42e1d824a825e894d26ee7f27ffe241211ccabb51e894f73e4ae4",
+    "run_browser_v1.py": "f47e89f14f3ecf4921e9bd18c971adec22741c36941b0a3beb00559a11a8e7eb"
+  },
+  "only_changed_old_pivot_expectation": "Both boundary witnesses: 7/6 historical \u2192 current 13/12",
+  "passed": true,
+  "prior_161_group_names_bound_by_expectations_to_frozen_passed_prior_browser": true,
+  "prior_harness_sha256": "57640381b26548582c0012ca6577fcce82af68500d34497686700e698fae4e98",
+  "schema": "physical-sieve-browser-preparation-v1",
+  "scope": "Preparation only; execution requires final immutable bundle and explicit root stage/live GO.",
+  "syntax_checks": [
+    "Node --check harness",
+    "Python AST runner+expectations builder"
+  ]
+}

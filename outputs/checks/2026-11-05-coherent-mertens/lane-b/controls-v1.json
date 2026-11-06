@@ -1,0 +1,63 @@
+{
+  "CPU_affinity_count": 1,
+  "U": 19,
+  "active_supports": 8,
+  "checker_sha256": "20829ed15b4c545e9d7daa86f0c1f1f73d0f78b3cb28f10eed46eccf1696be33",
+  "critical_budget_cases": [
+    {
+      "A1": "3/4",
+      "A2": "0",
+      "H": "3/4",
+      "X0": "1/2",
+      "conditional_d2_U_decay": "1/6",
+      "deficit_D_power": "1/12",
+      "first_bound": "5/6",
+      "monomials": [
+        "3/4",
+        "1/2",
+        "5/6"
+      ],
+      "name": "pure",
+      "second_bound": "3/2"
+    },
+    {
+      "A1": "5/12",
+      "A2": "1/6",
+      "H": "3/4",
+      "X0": "1/2",
+      "conditional_d2_U_decay": "1/18",
+      "deficit_D_power": "1/36",
+      "first_bound": "7/9",
+      "monomials": [
+        "7/12",
+        "2/3",
+        "7/9"
+      ],
+      "name": "mixed",
+      "second_bound": "7/6"
+    }
+  ],
+  "equal_norm_conjugate_IDs_retained": true,
+  "formal_good_prime_ideal_norms": {
+    "13a": 13,
+    "31a": 31,
+    "7a": 7,
+    "7b": 7
+  },
+  "mean_not_centered": true,
+  "no_old_evaluator_or_tables": true,
+  "note_sha256": "e7738dd0ccdd21cff2f45adf2d10f7bc6b24c3312a50f4f1fbb992f385880d8d",
+  "ordered_kernel_controls": 64,
+  "outside_short_domain_negative": {
+    "g_norm": 31,
+    "h_norm": 217,
+    "invalid_diagonal_only_prediction": 0,
+    "true_kernel": 1
+  },
+  "passed": true,
+  "protected11states_unchanged": 11,
+  "randomness": null,
+  "scope": "Exact NEW formal-support kernel/domain and Fraction budget controls; not actual-character data, arithmetic estimate, theorem proof or scientific rerun",
+  "short_bound_exclusive": 133,
+  "source_pins_sha256": "57eaa4ddd766f3f853957198e21edf3a4d629f83d3468a0fe822280fbedb0659"
+}

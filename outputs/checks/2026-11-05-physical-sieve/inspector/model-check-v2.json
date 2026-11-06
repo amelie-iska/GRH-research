@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "scope": "NEW candidate model/reference and static source verification only, no browser or old theorem/scientific controls rerun",
+  "candidate_sha256": {
+    "physical-sieve-model.mjs": "b40408306eac06ef08033805ef017415422cda74ffb88964477e905b2fb9ee32",
+    "quadratic-pivot.mjs": "1fe44aad7a03f01105cd604ab9410b26d0042e29e72304a4038253cc6474728a",
+    "quadratic-pivot.html": "960a16f276b9bf812e921e5e7aa4a655583643fabe47bc2f7e96a9c4c999d539",
+    "quadratic-pivot.css": "67655511f6167a3d80879d3efa84cafb7e2416c6064795b7f2cdc09c30bfea24"
+  },
+  "reference_sha256": "5aff8dce4b77de6d5f54f82190c4787a4641123829f591cb8eece5a2a6e1658f",
+  "checker_sha256": "ea4c6d253def1604f8df23c8076df5644dfa132ea98401fe383fa242e6e89e71",
+  "counts": {
+    "global_states": 81,
+    "triangle_states": 327,
+    "oldface_points": 1001,
+    "sixth_free_cases": 15,
+    "physical_blocks": 8
+  },
+  "source_and_reference_unchanged": true,
+  "results": [
+    {
+      "name": "all81-independent-Fraction-global-states",
+      "passed": true
+    },
+    {
+      "name": "all327-independent-Fraction-triangle-states",
+      "passed": true
+    },
+    {
+      "name": "all1001-oldface-points-preserve-ordinary-power1-and-history",
+      "passed": true
+    },
+    {
+      "name": "sixth-free-independent-generic-and-boundary-formulas",
+      "passed": true
+    },
+    {
+      "name": "eight-physical-blocks-include-overlapping-sixth-factor-capacity",
+      "passed": true
+    },
+    {
+      "name": "critical-reference-fractions-and-capacity-witnesses",
+      "passed": true
+    },
+    {
+      "name": "oldface-scale-endpoints-remain-finite",
+      "passed": true
+    },
+    {
+      "name": "invalid-domain-negative-controls",
+      "passed": true
+    },
+    {
+      "name": "missing-factor-sparse-array-negative-control",
+      "passed": true
+    },
+    {
+      "name": "wrong-global-exponent-mutant-is-rejected",
+      "passed": true
+    },
+    {
+      "name": "radicalized-physical-row-mutant-is-rejected",
+      "passed": true
+    },
+    {
+      "name": "dropped-sixth-factor-mutant-is-rejected",
+      "passed": true
+    },
+    {
+      "name": "root-final-blue-comparison-and-scope-static-bindings",
+      "passed": true
+    }
+  ]
+}

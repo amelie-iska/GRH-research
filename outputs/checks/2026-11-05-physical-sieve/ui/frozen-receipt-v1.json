@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "candidate_source_sha256": {
+    "planning/physical-sieve-20261105/inspector/candidate-v3/quadratic-pivot.css": "67655511f6167a3d80879d3efa84cafb7e2416c6064795b7f2cdc09c30bfea24",
+    "planning/physical-sieve-20261105/inspector/candidate-v3/quadratic-pivot.html": "aec69d12ee5573dbb2340c0d87423449fa7f7a6d0aa28323b19e49ab74189b91",
+    "planning/physical-sieve-20261105/inspector/candidate-v3/quadratic-pivot.mjs": "1fe44aad7a03f01105cd604ab9410b26d0042e29e72304a4038253cc6474728a",
+    "planning/physical-sieve-20261105/inspector/candidate-v3/physical-sieve-model.mjs": "b40408306eac06ef08033805ef017415422cda74ffb88964477e905b2fb9ee32"
+  },
+  "assets": {
+    "web/quadratic-pivot.css": {
+      "candidate": "planning/physical-sieve-20261105/inspector/candidate-v3/quadratic-pivot.css",
+      "sha256": "67655511f6167a3d80879d3efa84cafb7e2416c6064795b7f2cdc09c30bfea24",
+      "bytes": 10513
+    },
+    "web/quadratic-pivot.html": {
+      "candidate": "planning/physical-sieve-20261105/inspector/candidate-v3/quadratic-pivot.html",
+      "sha256": "aec69d12ee5573dbb2340c0d87423449fa7f7a6d0aa28323b19e49ab74189b91",
+      "bytes": 12792
+    },
+    "web/quadratic-pivot.mjs": {
+      "candidate": "planning/physical-sieve-20261105/inspector/candidate-v3/quadratic-pivot.mjs",
+      "sha256": "1fe44aad7a03f01105cd604ab9410b26d0042e29e72304a4038253cc6474728a",
+      "bytes": 17300
+    },
+    "web/physical-sieve-model.mjs": {
+      "candidate": "planning/physical-sieve-20261105/inspector/candidate-v3/physical-sieve-model.mjs",
+      "sha256": "b40408306eac06ef08033805ef017415422cda74ffb88964477e905b2fb9ee32",
+      "bytes": 1008
+    }
+  },
+  "numeric_model_acceptance": {
+    "path": "outputs/checks/2026-11-05-physical-sieve/inspector/model-check-v2.json",
+    "sha256": "1a86fc6979aea0cb53c1f6b434df07a7196b670c126c80df45a4e2f23f8cc484"
+  },
+  "static_caption_addendum": {
+    "path": "outputs/checks/2026-11-05-physical-sieve/inspector/static-caption-addendum-v1.json",
+    "sha256": "b0a211caa8f98208a114a457c2d9d7bc2160f0494b0ce20a5496a608d5934b1d"
+  },
+  "browser": {
+    "path": "outputs/checks/2026-11-05-physical-sieve/ui/browser-v2/browser.json",
+    "sha256": "0837642b7e455909320c3b5ef982f20aac78e31dac8678d4a92a60282a782b97",
+    "checks": 11
+  },
+  "checker_sha256": "00035b78bd3dea1440d68290521a3c3684a73574846c21370d215dc940fa6f93",
+  "root_visual_inspected": [
+    "global-desktop.png",
+    "global-320.png",
+    "triangle-390.png",
+    "global-mobile-night.png"
+  ],
+  "screenshots_sha256": {
+    "global-320.png": "14d018b327ff031832b14250f9d7ac1f8f2698d88a42fbc6df09b2e4bd91082c",
+    "triangle-320.png": "d36ad576fd8c3bef9bdc84de5c09da81dc5a095fe2f23a0c1e42c640a1709bca",
+    "triangle-390.png": "12e801d5d2c6e82cda7d0ac85474e5fce5dfc83ae5da6ee52f0aaaf658cc654f",
+    "global-1440.png": "c18aca27acb590f496b8acd6c53186ef81171a0135ed34f880ebc8f4ad7e8b80",
+    "global-desktop.png": "c18aca27acb590f496b8acd6c53186ef81171a0135ed34f880ebc8f4ad7e8b80",
+    "global-mobile-night.png": "65d4a337201aea7d4544eabb67dd2b4c70d217c78b2011c5d88767aed96d8012",
+    "triangle-1440.png": "8ce0aa163d1b5afcda47fd3ab8a12b6a82fab69fb632947cd1cd7d6287faf4f5",
+    "global-390.png": "d7c7b643f91ba8d0e8df227b2ae38817c2fc517b7ef787ac0a07e0aded4bab7c"
+  },
+  "prior_visual_attempt_preserved": "outputs/checks/2026-11-05-physical-sieve/ui/browser-v1-visual-rejection.json",
+  "owned_loopback_QA_server_8878_stopped": true,
+  "old8765_preview_untouched": true,
+  "scope": "Only candidate-v3 UI. Model and existing source theorem checks retained with exact caption-only addendum; no numeric replay after that wording change. Properly settled day/night/scroll visuals inspected. No browser training or measured energies."
+}

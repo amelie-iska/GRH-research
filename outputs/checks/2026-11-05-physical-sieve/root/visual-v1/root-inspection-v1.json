@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "book_render_receipt_sha256": "b172c610f85244ea7540a9a270b969f2e82b24cb75064a49462b94021bc39aca",
+  "article_render_receipt": {
+    "path": "outputs/checks/2026-11-05-physical-sieve/builds/visual-v1/render-manifest-v1.json",
+    "sha256": "35fc9b43a5f91d9c4a9bfcad609d16af2b46d31d4a21c90231d751f43be93ed0"
+  },
+  "PDFs_visually_reviewed": 5,
+  "book_PDF_pages_inspected": [
+    279,
+    282,
+    289,
+    293,
+    288
+  ],
+  "article_images_inspected": [
+    "concise-v1-page064.png",
+    "notes-concise-v1-page029.png",
+    "extended-v2-page190.png",
+    "notes-extended-v2-page081.png"
+  ],
+  "article_images_sha256": {
+    "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-05-physical-sieve/builds/visual-v1/concise-v1-page064.png": "b49ac17cf828d521d9ad7905713f5423a2190fdbc39098cc8edc27c57b0d5285",
+    "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-05-physical-sieve/builds/visual-v1/notes-concise-v1-page029.png": "845cdbac0265f85d3db26220bb7bff5cc7a5130b07e863ede6c3932dd0772c7e",
+    "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-05-physical-sieve/builds/visual-v1/extended-v2-page190.png": "ae305183c4f9a8698d2b380281dd25538ac6e8741e11f9987bed84d5181f6f62",
+    "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-05-physical-sieve/builds/visual-v1/notes-extended-v2-page081.png": "9c301829f875e692c10bfd995edd97a39e043ab3041e4d9e5c1b2cde133f3d30"
+  },
+  "findings": [
+    "Readable complete displays and equations/table, with full font sizes and no clipped margins or overlapping numbers on inspected pages.",
+    "Primary SHA256 appears as two stated consecutive32hex paragraphs; exact concatenation retained.",
+    "Conditional-input theorem/table and current unsigned/scoped signed bounds remain visibly distinguished."
+  ],
+  "scope": "Root visual inspection of9representative pages across all5PDFs; other rendered pages/bbox checks retained. This is layout review, not a new analytic proof or full formalization."
+}

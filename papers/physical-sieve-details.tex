@@ -1,0 +1,235 @@
+% External preprint input and application proof; no new sieve proof is claimed.
+\section{Proof of the physical-row sieve application}\label{phy:details}
+\subsection{The precise literature input and the primary generator}
+The external input is de Faveri,
+\href{https://arxiv.org/abs/2610.04045v1}{\emph{Optimal large sieve for
+fixed order characters}, arXiv:2610.04045v1, 2 October 2026},
+Theorem~1.1, printed page~2. Input~\eqref{phy:input} is invoked with
+the family in its Sections~2.2--2.5; its deep proof is not reproduced
+or claimed as a new sieve or Lean theorem here. The primary PDF SHA-256 is the concatenation of these two lines:
+\par\noindent\texttt{97720b3cacccbedb9c2014520ad4d128}\par
+\noindent\texttt{ae23afd0a781bdeff27dab4e86b7c726}\par
+The public citation receipt records the version and text hash. Full
+PDF/text reading snapshots are local cache and excluded from public closure.
+
+The ring $\mathcal O=\mathbb Z[\omega]$ is a PID. Its six units map
+bijectively onto $(\mathcal O/(3))^\times$, which has six elements.
+Consequently every fractional ideal prime to $3$ has a unique generator
+$\alpha_{\mathfrak a}\equiv1\pmod3$, interpreted locally at $3$.
+This choice is multiplicative, since a product of two such generators
+is again $1$ modulo $3$ and generates the product ideal.
+
+Choose the source's fixed modulus $\mathfrak c_0$ sufficiently divisible
+at $S$ that its stipulated local sixth-power condition holds, and choose
+it divisible by $(3)$. In the source's Section~2.3 choose ordinary ideal
+representatives $E_0$ prime to $S$, and set
+$m_{E_0}=\alpha_{E_0}$. Global principality makes these allowed
+generators after $S$-localization too. The prescribed products then give
+$m_E=\alpha_E$ for each representative $E$.
+For coprime good ideals $\mathfrak a,\mathfrak m$, the construction gives
+\[
+ \mathfrak a=(x)E\mathfrak g^6,\qquad
+ x\equiv1\pmod{\mathfrak c_0},\qquad
+ (\mathfrak g,\mathfrak m)=1,
+ \qquad
+ \chi_{\mathfrak a}(\mathfrak m)
+       =\left(\frac{xm_E}{\mathfrak m}\right)_6.
+\]
+Choose an ordinary fractional generator $\gamma_{\mathfrak g}$ of
+$\mathfrak g$. Ordinary ideal equality implies
+\begin{equation}\label{phy:generator-proof}
+ \alpha_{\mathfrak a}=\eta x m_E\gamma_{\mathfrak g}^6,
+          \qquad\eta\in\mu_6.
+\end{equation}
+All factors are units at $3$, and
+$\gamma_{\mathfrak g}^6\equiv1\pmod3$ because the residue unit
+group has order six. The other three displayed generators are $1$
+modulo $3$. Hence $\eta\equiv1\pmod3$ and injectivity on $\mu_6$
+forces $\eta=1$. Taking the sixth-power residue symbol proves the exact
+identification in Proposition~\ref{phy:family}. For a common prime the
+source's induced character and the original raw symbol are both zero.
+Thus no primitive-conductor transfer can silently restore a nonunit value.
+
+The field contains $\mu_6$; it need not contain $\mu_{12}$ for the
+Theorem~1.1 input. Its characters have order dividing six and trivial
+infinite type, so physical valuations $2,3,4,5$ are included. They are
+not replaced by a squarefree radical or indexed by its norm. The fixed
+choice of $S,\mathfrak c_0,E,m_E$ is independent of $D,H,U$ and of all
+coefficient masks below. We fix the complex embedding to agree with the
+original sextic symbol. This is a deliberate allowed construction, not
+an assertion that every noncanonical choice in the source is identical.
+
+\subsection{The complete raw row family and the sixth factor}\label{phy:raw-proof}
+At each prime outside $S$, divide its valuation in $(u)$ by six.
+The remainder defines the sixth-power-free ideal $\mathfrak a$, and the
+quotient defines $\mathfrak r_6$. The quotient may exceed one and may
+be positive at a prime of $\mathfrak a$. Thus $\mathfrak r_6$ is neither
+assumed squarefree nor made coprime to the first five factors.
+With the multiplicative primary generators, the quotient
+$u_0=u/(\alpha_{\mathfrak a}\alpha_{\mathfrak r_6}^6)$
+is an integral $S$-supported element, including its literal unit.
+This decomposition is unique and has the norm relation in~\eqref{phy:raw}.
+
+For a squarefree good column $\mathfrak m$, the sixth-power factor has
+symbol one when $(\mathfrak m,\mathfrak r_6)=1$ and zero otherwise.
+The exact family identification gives~\eqref{phy:raw}, even when
+$\mathfrak a,\mathfrak r_6$ overlap. In particular a prime common to
+both factors is still an original raw zero, not two independent masks.
+For fixed $u_0,\mathfrak r_6$ set
+\[
+ c_{\mathfrak m}=A_U(\mathfrak m)\nu(\mathfrak m)
+       \chi_{\mathfrak m}(u_0)W(N\mathfrak m/D)
+                       \mathbf1_{(\mathfrak m,\mathfrak r_6)=1}.
+\]
+These coefficients are independent of the remaining row $\mathfrak a$.
+They vanish outside the COMPLETE original good squarefree annulus;
+putting zero on the extra sixth-power-free indices is permitted.
+The actual row restrictions can only decrease this positive norm, and
+\begin{equation}\label{phy:coefficient-norm}
+ \sum_{\mathfrak m}|c_{\mathfrak m}|^2
+       \ll_\epsilon B_W^2D^{1+\epsilon}.
+\end{equation}
+Indeed $|A_U(\mathfrak m)|\le3^{\omega(\mathfrak m)}$
+uniformly in $U$, and there are $O_K(D)$ ideal columns. This is the
+original assignment bound; it does not assert
+$A_U(dn)=A_U(d)A_U(n)$ or use the rough short-coefficient formula on $K_0$.
+
+The fixed $\nu$ and literal/$S$ phase have modulus one on good columns.
+A row-independent unitary Jacobi factor of nonzero infinity type could
+also be included in these arbitrary coefficients. This does not turn it
+into an order-six row character, supply a theorem for varying infinite
+types, or improve the operator norm by a gauge. Arbitrary positive row
+weights are not part of this application; they require a true weighted
+operator bound in the exact identities of Proposition~\ref{cmr:joint}.
+
+\subsection{The raw global sum and the principal assembly}\label{phy:r6-sums}
+For fixed $u_0,\mathfrak r_6$, use~\eqref{phy:input} with
+\[
+ A=\frac{H}{Nu_0(N\mathfrak r_6)^6},\qquad B=2D.
+\]
+If $A<1$ there is no remaining ideal row. If $A=1$ the unit row remains;
+it is not dropped as a subunit endpoint. Equations~\eqref{phy:raw}
+and~\eqref{phy:coefficient-norm}, and the factor $D^{-1}$ in $|I_u|^2$,
+give a bound by $B_W^2(HD)^\epsilon\Phi_6(A,D)$.
+Now sum all $\mathfrak r_6$ of norm at most $(H/Nu_0)^{1/6}$.
+The $A,A^{5/6}D^{1/3},A^{1/3}D^{5/6}$ terms use respectively
+\[
+ \sum_{\mathfrak r_6}(N\mathfrak r_6)^{-6},\qquad
+ \sum_{\mathfrak r_6}(N\mathfrak r_6)^{-5},\qquad
+ \sum_{\mathfrak r_6}(N\mathfrak r_6)^{-2},
+\]
+which converge. The $D$ term instead uses the ideal count
+$O_K((H/Nu_0)^{1/6})$. Thus the four resulting terms are
+\begin{equation}\label{phy:S-sums}
+ \begin{aligned}
+ &H(Nu_0)^{-1},\qquad DH^{1/6}(Nu_0)^{-1/6},\\
+ &H^{5/6}D^{1/3}(Nu_0)^{-5/6},\qquad
+       H^{1/3}D^{5/6}(Nu_0)^{-1/3}.
+ \end{aligned}
+\end{equation}
+Every exponent on the fixed finite $S$-supported semigroup is positive,
+so these sums converge geometrically, with the six literal units included.
+This proves the raw part of Proposition~\ref{phy:global}, with every
+arbitrary sixth-factor overlap still represented by its coefficient mask.
+
+For the residue-subtracted family, use the original formula
+\eqref{wc:principal}. Its deleted Euler residue is bounded by a fixed
+constant and
+\[
+ \sum_d\frac{|\beta_U(d)|}{Nd}
+   \le\left(\sum_{Na\le U}\frac1{Na}\right)^2
+   \ll_K\log^2(2U).
+\]
+Therefore $|P_u|\ll_{\nu,S}B_W\sqrt D\log^2(2U)$ on a principal row.
+Outside $S$, such a row has all valuations divisible by six, since the
+original $\nu$ has its defining conductor in $S$. The already established
+count is $O_{\nu,S,\epsilon}(H^{1/6}(HD)^\epsilon)$. Consequently
+\begin{equation}\label{phy:principal-proof}
+ \sum_u|P_u|^2\ll_{\nu,S,\epsilon}
+               B_W^2(HD)^\epsilon DH^{1/6}.
+\end{equation}
+Using $|I-P|^2\le2|I|^2+2|P|^2$ proves the stated $E_u$ bound.
+No Artin holomorphy, spectral positivity or zero-location assertion is used.
+For $1\le H\le D$, each of the four terms in $\Phi_{\rm all}$ is at most
+$DH^{1/6}$, proving~\eqref{phy:dominance}.
+The varying-$W_D$ construction of Section~\ref{prf:core} gives a compatible
+supremum-norm-class obstruction; it does not make a fixed-$W$ lower bound.
+
+\subsection{The signed $A_6=1$ common-divisor form}\label{phy:divisor-proof}
+For a fixed $u_0$ the first-five physical ideal is sixth-power-free.
+For the two-pivot block it is exactly $v_1v_2^2$, of norm at most
+$H/Nu_0$, not $Nv_1Nv_2$. Apply the positive norm~\eqref{phy:input}
+inside the exact common-divisor identity~\eqref{sw:mobius}.
+For each squarefree good $d$, put $L=D/Nd$ and keep the original
+coefficient $A_U(dn)$, the column mask $(n,dS)=1$, and the raw row mask
+$(d,u)=1$. The row mask may be enlarged only inside the positive bound.
+The assignment bound and ideal count give coefficient squared norm
+$\ll_\epsilon B_W^2D^\epsilon L$ for $L\ge1$.
+For $1/2\le L<1$ the only possible good residual is the unit; its direct
+row count is bounded by the same polynomial up to an absolute factor.
+There are no active columns for $L<1/2$.
+Thus, only now taking the triangle over $d$,
+\[
+ |S_1^{AA}|\ll B_W^2(HD)^\epsilon
+     \sum_{Nd\le2D}\frac1{Nd}\Phi_6(H/Nu_0,D/Nd).
+\]
+The four ideal sums have exponents $1,2,4/3,11/6$.
+The first is logarithmic, and the others converge, which proves the
+fixed-$u_0$ assertion of Proposition~\ref{phy:signed}.
+If all $S$-supported $u_0$ are included, the terms with positive
+$Nu_0$ exponent sum geometrically. The $D$ term has exponent zero
+and costs only the finite count
+$O_S((\log(2H))^{|S|})$, absorbed into $(HD)^\epsilon$.
+It is not summed as a convergent exponent-zero Euler product.
+
+The accepted identity of Section~\ref{cmr:core} gives
+\[
+ S_1^{AA}=\frac{K_0-K_{\rm all}}D+\mathcal E_{\rm corr},
+ \qquad |\mathcal E_{\rm corr}|\le236800B_W^2R_w
+\]
+in its stated high window and at $H\le D^{3/4}$.
+This retains its ordered $(p,q)$ correction, including $p=q$ and the
+asymmetric restored prime mask; it is distinct from the unordered
+unit correction $C_2$. Taking this already bounded correction gives
+\eqref{phy:combined}. Neither $K_0$ nor $K_{\rm all}$ is separately
+bounded by a substituted marginal mean. The resulting $13/12$ bound
+is an improved positive comparison, not the target signed estimate.
+
+\subsection{The updated short certificate and its unresolved input}\label{phy:short-proof}
+For a nonempty block $H_b\ge1$. At $1\le L\le D$, the two already established block bounds and the new
+physical-row bound are all valid positive estimates of the SAME actual
+unweighted operator. Their minimum is Proposition~\ref{phy:short}.
+The factor $8$ in $H_b$ is the literal dyadic bound
+$Nv_1(Nv_2)^2<8A_1A_2^2$, with the original capacity retained.
+No radical conductor is substituted for that physical norm.
+At $1/2\le L<1$ retain the actual unit-column norm.
+For the exact mean-retaining Abel identity of Proposition~\ref{cmr:joint},
+write $X_0=D/U$ and $M_1(W)=\max(\|W\|_\infty,\|xW'\|_\infty)$.
+Its sufficient positive discrepancy certificate is
+\[
+ \frac{|\mathcal E_{\rm PIT}|}{D}
+ \ll (HD)^\epsilon M_1(W)^2\delta_S(U)
+ \left\{\lambda_{{\rm now},*}(X_0)
+       +\int_{1/2}^{X_0}\lambda_{{\rm now},*}(L)\frac{dL}{L}\right\}.
+\]
+Here $U\ge7$ is retained for the Li/Stieltjes definition, and the lower
+endpoint $E_S(U)Q(U)$ is still part of the exact identity.
+The minimum must stay inside the integral for general neighboring
+capacity-feasible blocks. It is not a variance-only substitution.
+At the critical line, the four new short monomial powers are
+$3/4,1/2,19/24,2/3$. The pure minimum is $19/24$; in the mixed
+$A_1\asymp D^{5/12},A_2\asymp D^{1/6}$ neighborhood the old $7/9$
+entry remains smaller. Equating those majorant powers with the $3/4$
+target gives the sufficient scalar exponents in~\eqref{phy:diagnostic}.
+These are not actual-error lower bounds.
+The conditional strip implication in Theorem~\ref{cmr:conditional-strip}
+therefore has boundaries $11/12$ and $17/18$ for these proposed inputs;
+no such input or strip has been established here. In particular,
+pointwise endpoint control and the coherent signed $K_0-J$ are not
+supplied by an independent mean-square assumption alone.
+
+The new primary input improves a positive norm certificate. Equal-norm
+ideal orientations, coherent means, original common profiles, full-union
+raw zeros and all fixed-conductor qualifications remain. The actual
+signed target, independent determinant bridge and analytic/category
+Lean work remain open.

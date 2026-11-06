@@ -1,0 +1,47 @@
+{
+  "browser_executed": false,
+  "checks": {
+    "MathML": 9172,
+    "actual_table_literal_slash_fractions": true,
+    "all_strict_error_idle_and_navigation_guards_byte_identical": true,
+    "book_pages": 303,
+    "failure_finally_byte_identical": true,
+    "global_WS_prefix_byte_identical": true,
+    "idle_timeout_ms": 30000,
+    "injected_regex_String_raw": true,
+    "keyboard_key_values_correct": true,
+    "legacy_unique_names": 161,
+    "module_predicates_match_accepted_candidate": true,
+    "new_fetch_error_filters": false,
+    "new_unique_anchors": 51,
+    "node_syntax": true,
+    "primary_hash_two_line_concatenation": true,
+    "python_AST": true,
+    "quiet_ms": 750,
+    "runner_fresh_output_inventory_and_input_guards": true,
+    "scope_predicates_match_candidate_and_native": true,
+    "tables": 389
+  },
+  "inputs": {
+    "outputs/physical-sieve-book-20261105/v3/native/book/main.html": "9a9ac7ad8c283951c8dd3eff594a3ec8ff16487adbce06f933869e847d6fffe2",
+    "planning/physical-sieve-20261105/inspector/candidate-v3/physical-sieve-model.mjs": "b40408306eac06ef08033805ef017415422cda74ffb88964477e905b2fb9ee32",
+    "planning/physical-sieve-20261105/inspector/candidate-v3/quadratic-pivot.html": "aec69d12ee5573dbb2340c0d87423449fa7f7a6d0aa28323b19e49ab74189b91",
+    "planning/physical-sieve-20261105/inspector/candidate-v3/quadratic-pivot.mjs": "1fe44aad7a03f01105cd604ab9410b26d0042e29e72304a4038253cc6474728a",
+    "planning/physical-sieve-20261105/live-qa/check_browser_v1.mjs": "812db70250d0cefa08cb572b00b0e70ae93d41b3bd432d0e9ab8d1bad08aeb6a",
+    "planning/physical-sieve-20261105/live-qa/expectations-v1.json": "2a25497c9c568773a9c18c575ce230341da8e8a9d080d7aca809b3a9d61f6ee2",
+    "planning/physical-sieve-20261105/live-qa/run_browser_v2.py": "b17cf2da40df580726c45267729d5471db5e66929456748ac67f899ea17e07e0",
+    "planning/rough-mask-20261105/live-qa/check_browser_v3.mjs": "57640381b26548582c0012ca6577fcce82af68500d34497686700e698fae4e98"
+  },
+  "limitations": [
+    "No claim of successful browser or deployed behavior before the staged/live runs.",
+    "Public HTML exact adapter transformation is governed by the frozen bundle and publication preflight."
+  ],
+  "old_controls_rerun": false,
+  "passed": true,
+  "production_edited": false,
+  "review": {
+    "path": "planning/physical-sieve-20261105/review-browser-static/REVIEW-v1.md",
+    "sha256": "27d09e425df9da9e0b7dff45bfe10bf0c08db13f3f7d647ca85757e6a598874e"
+  },
+  "scope": "Independent bounded static preparation review only; staged/live browser execution is outstanding."
+}

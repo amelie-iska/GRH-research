@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "scope": "Exact power-accounting checks only; analytic implication proved in note, not a proof of the hypotheses or target",
+  "note_sha256": "ad0f89bae09f2fbec0f9f788bc43a1449a991dd66c15793c3fe2bc370d0644aa",
+  "cases": [
+    {
+      "case": "pure",
+      "operator_majorant": "5/6",
+      "target": "3/4",
+      "D_gap": "1/12",
+      "sufficient_U_discrepancy_power": "1/6",
+      "conditional_zero_free_boundary": "5/6",
+      "strict_region": true
+    },
+    {
+      "case": "mixed",
+      "operator_majorant": "7/9",
+      "target": "3/4",
+      "D_gap": "1/36",
+      "sufficient_U_discrepancy_power": "1/18",
+      "conditional_zero_free_boundary": "17/18",
+      "strict_region": true
+    }
+  ],
+  "not_a_GRH_result": true,
+  "not_full_Lean": true
+}

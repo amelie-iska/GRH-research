@@ -1,0 +1,35 @@
+{
+  "checks": {
+    "KS_equals_Kall_plus_P2_sign": true,
+    "P2_constant3584_and_clean236800": true,
+    "P2_ordered_repeated_allowed_q_mask_only": true,
+    "deleted_monoid_includes_prime_powers": true,
+    "fixed_field_inverse_zeta_contour_with_exceptional_threshold": true,
+    "half_integer_Perron_and_annular_error": true,
+    "original_C2_distinct_retained": true,
+    "sqrt_split_and_Rankin_tail": true,
+    "subpower_not_power_or_growing_conductor_claim": true,
+    "uniform_finite_deletion_product_bound": true,
+    "unit_residual_only_rough_prime_f": true
+  },
+  "limitations": [
+    "The fixed-field subpower contour deduction uses standard fixed-degree zeta continuation, Euler/functional-equation bounds and the locally pinned zero-free region.",
+    "Constants and initial threshold may depend on the fixed field and its possible fixed exceptional zero.",
+    "The result supplies no uniform fixed-power Mertens estimate and no coherent target bound."
+  ],
+  "locally_read_existing_primary_text": {
+    "path": "planning/rough-mask-20261105/main-attempt/primary/thorner-zaman-2019.txt",
+    "scope": "Theorem3.1 printed1051 fixed Dedekind zero-free statement only; full publisher source remains excluded from public closure",
+    "sha256": "c3dfeeac5195c57fafef8b7c2b3910e067a6a880480536eaef3bf50c51ec68df"
+  },
+  "new_GRH_or_Lean_claim": false,
+  "new_analytic_hypothesis_asserted": false,
+  "note_path": "planning/coherent-mertens-20261105/lane-c/DELETED_PRIME_MERTENS_AND_UNIT_CORRECTION-v2.md",
+  "note_sha256": "5d13c295b64712be87aa738d8f83001cf84b19effb06d272fb78223dc84be244",
+  "passed": true,
+  "review_path": "planning/coherent-mertens-20261105/lane-a/PARALLEL-ANALYTIC-REVIEW-v1.md",
+  "review_sha256": "349f094e8ccf60a75ab75d3ea9523bcc41f21c77cdade0e5e8ce5fbca95bd5d2",
+  "reviewed_at_utc": "2026-11-05T22:59:44.696436+00:00",
+  "reviewer_scope": "Independent analytic/algebraic derivation; no author-control rerun or new arithmetic/browser/auth/publication",
+  "source_pins_sha256": "fdc4c5879ec8272069a47c88c0fd8befaeb685c9649a2edd1dd3c652f657ec1c"
+}
