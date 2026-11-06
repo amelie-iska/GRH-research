@@ -1,0 +1,426 @@
+{
+  "created_utc": "2026-11-06T10:00:34.594962+00:00",
+  "elapsed_seconds": 0.07300732203293592,
+  "formal": {
+    "SF_only_scope": "Subset convolution verifies coefficients of squarefree formal ideal targets; it is not a repeated-prime-power ideal calculation.",
+    "cases": [
+      {
+        "D_exact": "2",
+        "exact_cutoff_tie_masks": [],
+        "fifth_power_of_minimum": 16807,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 7,
+        "remainder_nonzero_outside_target": 93,
+        "target_coefficients_Nm_le_2D": 1,
+        "target_remainder_nonzero": 0,
+        "twice_D": 4
+      },
+      {
+        "D_exact": "11",
+        "exact_cutoff_tie_masks": [],
+        "fifth_power_of_minimum": 16807,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 7,
+        "remainder_nonzero_outside_target": 93,
+        "target_coefficients_Nm_le_2D": 6,
+        "target_remainder_nonzero": 0,
+        "twice_D": 22
+      },
+      {
+        "D_exact": "47",
+        "exact_cutoff_tie_masks": [],
+        "fifth_power_of_minimum": 16807,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 7,
+        "remainder_nonzero_outside_target": 93,
+        "target_coefficients_Nm_le_2D": 14,
+        "target_remainder_nonzero": 0,
+        "twice_D": 94
+      },
+      {
+        "D_exact": "521",
+        "exact_cutoff_tie_masks": [],
+        "fifth_power_of_minimum": 16807,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 7,
+        "remainder_nonzero_outside_target": 93,
+        "target_coefficients_Nm_le_2D": 39,
+        "target_remainder_nonzero": 0,
+        "twice_D": 1042
+      },
+      {
+        "D_exact": "4097",
+        "exact_cutoff_tie_masks": [],
+        "fifth_power_of_minimum": 16807,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 7,
+        "remainder_nonzero_outside_target": 93,
+        "target_coefficients_Nm_le_2D": 81,
+        "target_remainder_nonzero": 0,
+        "twice_D": 8194
+      },
+      {
+        "D_exact": "500000",
+        "exact_cutoff_tie_masks": [],
+        "fifth_power_of_minimum": 2476099,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 19,
+        "remainder_nonzero_outside_target": 15,
+        "target_coefficients_Nm_le_2D": 189,
+        "target_remainder_nonzero": 0,
+        "twice_D": 1000000
+      },
+      {
+        "D_exact": "16807/2",
+        "exact_cutoff_tie_masks": [
+          1,
+          2
+        ],
+        "fifth_power_of_minimum": 371293,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 13,
+        "remainder_nonzero_outside_target": 43,
+        "target_coefficients_Nm_le_2D": 95,
+        "target_remainder_nonzero": 0,
+        "twice_D": 16807
+      },
+      {
+        "D_exact": "371293/2",
+        "exact_cutoff_tie_masks": [
+          4,
+          8
+        ],
+        "fifth_power_of_minimum": 2476099,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 19,
+        "remainder_nonzero_outside_target": 15,
+        "target_coefficients_Nm_le_2D": 166,
+        "target_remainder_nonzero": 0,
+        "twice_D": 371293
+      },
+      {
+        "D_exact": "18446744073709551616",
+        "exact_cutoff_tie_masks": [],
+        "fifth_power_of_minimum": 38941611811810745401,
+        "full_SF_coefficient_identities": 256,
+        "minimum_nonzero_mu_minus_M_norm": 8281,
+        "remainder_nonzero_outside_target": 0,
+        "target_coefficients_Nm_le_2D": 256,
+        "target_remainder_nonzero": 0,
+        "twice_D": 36893488147419103232
+      }
+    ],
+    "equal_norm_symbols_not_merged": true,
+    "negative_J4": {
+      "D_exact": "500000",
+      "all_target_failures_if_remainder_dropped": 3,
+      "distinct_symbols": [
+        "p19",
+        "p25",
+        "p31",
+        "p37"
+      ],
+      "each_factor_norm_fifth_power_exceeds_2D": true,
+      "expected_failure_observed": true,
+      "factor_norms": [
+        19,
+        25,
+        31,
+        37
+      ],
+      "omitted_remainder_coefficient": 24,
+      "product_norm": 544825,
+      "true_mu": 1,
+      "twice_D": 1000000,
+      "wrong_truncated_coefficient": -23,
+      "wrong_truncation": "J4 with same z5"
+    },
+    "symbols": [
+      {
+        "name": "p7a",
+        "norm": 7
+      },
+      {
+        "name": "p7b",
+        "norm": 7
+      },
+      {
+        "name": "p13a",
+        "norm": 13
+      },
+      {
+        "name": "p13b",
+        "norm": 13
+      },
+      {
+        "name": "p19",
+        "norm": 19
+      },
+      {
+        "name": "p25",
+        "norm": 25
+      },
+      {
+        "name": "p31",
+        "norm": 31
+      },
+      {
+        "name": "p37",
+        "norm": 37
+      }
+    ]
+  },
+  "kind": "NEW exact synthetic formal Dirichlet subset algebra and HB scale checks",
+  "material_parameters": {
+    "J": 5,
+    "cutoff_membership": "(Na)^5<=2D",
+    "formal_target": "all squarefree subsets of eight distinct symbols",
+    "repeated_norm_symbols": "two norm7 and two norm13, never merged",
+    "seed": 2026110609,
+    "symbols": [
+      [
+        "p7a",
+        7
+      ],
+      [
+        "p7b",
+        7
+      ],
+      [
+        "p13a",
+        13
+      ],
+      [
+        "p13b",
+        13
+      ],
+      [
+        "p19",
+        19
+      ],
+      [
+        "p25",
+        25
+      ],
+      [
+        "p31",
+        31
+      ],
+      [
+        "p37",
+        37
+      ]
+    ],
+    "twice_D_cases": [
+      4,
+      22,
+      94,
+      1042,
+      8194,
+      1000000,
+      16807,
+      371293,
+      36893488147419103232
+    ]
+  },
+  "no_dependency_or_source_index_environment_changes": true,
+  "not_Lean_or_interval_arithmetic": true,
+  "not_actual_character_Gauss_or_family_data": true,
+  "note": {
+    "path": "planning/gauss-book-20261106/lane-a/BALANCED_RESIDUAL_HEATH_BROWN_CUBIC-v2.md",
+    "sha256": "c28af64fffc0b7b46ba97ac83c4128eca6ae150218785d72be038affa2db608e"
+  },
+  "old_controls_or_original_tables_rerun": false,
+  "passed": true,
+  "scales": {
+    "D_below_2_power_64_explicit_guard_observed": true,
+    "D_exponents": [
+      64,
+      72,
+      80
+    ],
+    "balanced": 1786,
+    "by_D_j": [
+      {
+        "D": 18446744073709551616,
+        "D_exponent": 64,
+        "L": 281474976710656,
+        "TypeI": 115,
+        "TypeII": 67,
+        "boxes": 182,
+        "factors": 3,
+        "j": 2
+      },
+      {
+        "D": 18446744073709551616,
+        "D_exponent": 64,
+        "L": 281474976710656,
+        "TypeI": 14,
+        "TypeII": 168,
+        "boxes": 182,
+        "factors": 5,
+        "j": 3
+      },
+      {
+        "D": 18446744073709551616,
+        "D_exponent": 64,
+        "L": 281474976710656,
+        "TypeI": 1,
+        "TypeII": 181,
+        "boxes": 182,
+        "factors": 7,
+        "j": 4
+      },
+      {
+        "D": 18446744073709551616,
+        "D_exponent": 64,
+        "L": 281474976710656,
+        "TypeI": 1,
+        "TypeII": 181,
+        "boxes": 182,
+        "factors": 9,
+        "j": 5
+      },
+      {
+        "D": 4722366482869645213696,
+        "D_exponent": 72,
+        "L": 18014398509481984,
+        "TypeI": 125,
+        "TypeII": 57,
+        "boxes": 182,
+        "factors": 3,
+        "j": 2
+      },
+      {
+        "D": 4722366482869645213696,
+        "D_exponent": 72,
+        "L": 18014398509481984,
+        "TypeI": 12,
+        "TypeII": 170,
+        "boxes": 182,
+        "factors": 5,
+        "j": 3
+      },
+      {
+        "D": 4722366482869645213696,
+        "D_exponent": 72,
+        "L": 18014398509481984,
+        "TypeI": 2,
+        "TypeII": 180,
+        "boxes": 182,
+        "factors": 7,
+        "j": 4
+      },
+      {
+        "D": 4722366482869645213696,
+        "D_exponent": 72,
+        "L": 18014398509481984,
+        "TypeI": 1,
+        "TypeII": 181,
+        "boxes": 182,
+        "factors": 9,
+        "j": 5
+      },
+      {
+        "D": 1208925819614629174706176,
+        "D_exponent": 80,
+        "L": 1152921504606846976,
+        "TypeI": 112,
+        "TypeII": 70,
+        "boxes": 182,
+        "factors": 3,
+        "j": 2
+      },
+      {
+        "D": 1208925819614629174706176,
+        "D_exponent": 80,
+        "L": 1152921504606846976,
+        "TypeI": 12,
+        "TypeII": 170,
+        "boxes": 182,
+        "factors": 5,
+        "j": 3
+      },
+      {
+        "D": 1208925819614629174706176,
+        "D_exponent": 80,
+        "L": 1152921504606846976,
+        "TypeI": 2,
+        "TypeII": 180,
+        "boxes": 182,
+        "factors": 7,
+        "j": 4
+      },
+      {
+        "D": 1208925819614629174706176,
+        "D_exponent": 80,
+        "L": 1152921504606846976,
+        "TypeI": 1,
+        "TypeII": 181,
+        "boxes": 182,
+        "factors": 9,
+        "j": 5
+      }
+    ],
+    "examples": {
+      "TypeI": {
+        "D": 18446744073709551616,
+        "L": 281474976710656,
+        "classification": {
+          "kind": "TypeI",
+          "long_index": 2,
+          "scales": [
+            1,
+            1,
+            281474976710656
+          ]
+        },
+        "is_mu": [
+          true,
+          true,
+          false
+        ],
+        "j": 2
+      },
+      "TypeII": {
+        "D": 18446744073709551616,
+        "L": 281474976710656,
+        "classification": {
+          "group_mask": 4,
+          "kind": "TypeII",
+          "scales": [
+            4096,
+            4096,
+            16777216
+          ]
+        },
+        "is_mu": [
+          true,
+          true,
+          false
+        ],
+        "j": 2
+      }
+    },
+    "independent_bruteforce_subsets_agree": true,
+    "j1_empty_in_this_large_D_residual_support": true,
+    "j_values": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "macro_cubed_bounds": "L/512 <= Nu^3,Nv^3 <= 4*512^3*L^2",
+    "no_norm_dependent_grouping": true,
+    "per_coordinate_norm_samples_after_grouping": 4368,
+    "random_boxes_per_D_j": 180,
+    "scope": "Synthetic integer dyadic lower scales and formal HB factor flags, not actual ideal-family samples.",
+    "seed": 2026110609,
+    "total_boxes": 2184,
+    "unbalanced": 398
+  },
+  "source": {
+    "path": "planning/gauss-book-20261106/lane-a/check_formal_hb_v1.py",
+    "sha256": "4dc3a94e84f04d4b5723e57d74b5fa1d5bf3136185c33afc8964e58510239e12"
+  }
+}

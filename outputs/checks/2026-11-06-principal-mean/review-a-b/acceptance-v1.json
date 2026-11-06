@@ -1,0 +1,34 @@
+{
+  "accepted": true,
+  "author_attempt": {
+    "path": "outputs/checks/2026-11-06-principal-mean/lane-b/attempt-result-v2.json",
+    "sha256": "604e564088aa845f8ac2df1616e0ac83a118cb534b02d906c75996e220851051"
+  },
+  "created_utc": "2026-11-06T07:38:26.253744+00:00",
+  "findings": [],
+  "independently_checked": [
+    "actual finite K and full T/raw masks",
+    "absolute fractional moment/gamma constant and finite endpoints",
+    "Q5/3 tail/lower/upper/50^1.5 threshold",
+    "signed endpoint24 bound and H/20 consequence",
+    "single /D outer normalization/D1/3 artificial certificate",
+    "component-only nonzero/endpoints/empty cases and no actual-M or energy lower bound"
+  ],
+  "old_controls_builds_browser_auth_publication_or_index_mutation": false,
+  "passed": true,
+  "review": {
+    "path": "planning/principal-mean-20261106/review-a-b/REVIEW-v1.md",
+    "sha256": "d0b04872768b8ef6b3df1b5dfbc8bef894f71c13e8cfa8c5ca17885428e55c65"
+  },
+  "reviewed_note": {
+    "path": "planning/principal-mean-20261106/lane-b/FINITE_FRACTIONAL_ENDPOINT_OBSTRUCTION-v1.md",
+    "sha256": "e23311faa63846e0e2e4334ce01a491426b98e04935644507dfaa97506696772"
+  },
+  "scope": "Exact finite-k endpoint decomposition and its scoped endpoint-necessity bounds; no whole signed or target improvement.",
+  "source_pins": {
+    "all_inputs_current_exact": true,
+    "inputs_compared": 8,
+    "path": "outputs/checks/2026-11-06-principal-mean/lane-b/source-pins-v2.json",
+    "sha256": "97691dd973f041d4580e5ec6ede9ddbf482ec7e34a012fbc9b3985ddbe2e2d31"
+  }
+}

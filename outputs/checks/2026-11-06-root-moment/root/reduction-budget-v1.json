@@ -1,0 +1,232 @@
+{
+  "passed": true,
+  "kind": "NEW_EXACT_ALGEBRAIC_CONSISTENCY_GUARDS_NOT_ORIGINAL_FAMILY_DATA_OR_INTERVAL_PROOF",
+  "source_sha256": "91b05c9a93e9961f1479d8a956b6ec7af76eb54cee591f58c88c78c024ee6d6c",
+  "theta": "3/4",
+  "critical_principal_gain_required": "1/16",
+  "remaining_separate_ray_gap": "1/48",
+  "error_only_cutoff": "15/14; NOT an actual-prefix range",
+  "exponent_cases": [
+    {
+      "x": "0",
+      "bessel_error": "-1/2",
+      "Euler_error": "3/8",
+      "elementary_principal": "3/4",
+      "separate_ray_error": "3/4",
+      "error_only_target_budget": true
+    },
+    {
+      "x": "3/8",
+      "bessel_error": "-1/16",
+      "Euler_error": "7/16",
+      "elementary_principal": "13/16",
+      "separate_ray_error": "37/48",
+      "error_only_target_budget": true
+    },
+    {
+      "x": "1",
+      "bessel_error": "2/3",
+      "Euler_error": "13/24",
+      "elementary_principal": "11/12",
+      "separate_ray_error": "29/36",
+      "error_only_target_budget": true
+    },
+    {
+      "x": "15/14",
+      "bessel_error": "3/4",
+      "Euler_error": "31/56",
+      "elementary_principal": "13/14",
+      "separate_ray_error": "17/21",
+      "error_only_target_budget": true
+    },
+    {
+      "x": "13/12",
+      "bessel_error": "55/72",
+      "Euler_error": "5/9",
+      "elementary_principal": "67/72",
+      "separate_ray_error": "175/216",
+      "error_only_target_budget": false
+    }
+  ],
+  "capacity_cases": [
+    {
+      "A1": "1",
+      "capacity": 0,
+      "a": 1,
+      "b": 0,
+      "nonempty": false
+    },
+    {
+      "A1": "1",
+      "capacity": 1,
+      "a": 1,
+      "b": 1,
+      "nonempty": true
+    },
+    {
+      "A1": "1",
+      "capacity": 7,
+      "a": 1,
+      "b": 1,
+      "nonempty": true
+    },
+    {
+      "A1": "1",
+      "capacity": 19,
+      "a": 1,
+      "b": 1,
+      "nonempty": true
+    },
+    {
+      "A1": "1",
+      "capacity": 1000,
+      "a": 1,
+      "b": 1,
+      "nonempty": true
+    },
+    {
+      "A1": "3/2",
+      "capacity": 0,
+      "a": 2,
+      "b": 0,
+      "nonempty": false
+    },
+    {
+      "A1": "3/2",
+      "capacity": 1,
+      "a": 2,
+      "b": 1,
+      "nonempty": false
+    },
+    {
+      "A1": "3/2",
+      "capacity": 7,
+      "a": 2,
+      "b": 2,
+      "nonempty": true
+    },
+    {
+      "A1": "3/2",
+      "capacity": 19,
+      "a": 2,
+      "b": 2,
+      "nonempty": true
+    },
+    {
+      "A1": "3/2",
+      "capacity": 1000,
+      "a": 2,
+      "b": 2,
+      "nonempty": true
+    },
+    {
+      "A1": "7",
+      "capacity": 0,
+      "a": 7,
+      "b": 0,
+      "nonempty": false
+    },
+    {
+      "A1": "7",
+      "capacity": 1,
+      "a": 7,
+      "b": 1,
+      "nonempty": false
+    },
+    {
+      "A1": "7",
+      "capacity": 7,
+      "a": 7,
+      "b": 7,
+      "nonempty": true
+    },
+    {
+      "A1": "7",
+      "capacity": 19,
+      "a": 7,
+      "b": 13,
+      "nonempty": true
+    },
+    {
+      "A1": "7",
+      "capacity": 1000,
+      "a": 7,
+      "b": 13,
+      "nonempty": true
+    },
+    {
+      "A1": "37/2",
+      "capacity": 0,
+      "a": 19,
+      "b": 0,
+      "nonempty": false
+    },
+    {
+      "A1": "37/2",
+      "capacity": 1,
+      "a": 19,
+      "b": 1,
+      "nonempty": false
+    },
+    {
+      "A1": "37/2",
+      "capacity": 7,
+      "a": 19,
+      "b": 7,
+      "nonempty": false
+    },
+    {
+      "A1": "37/2",
+      "capacity": 19,
+      "a": 19,
+      "b": 19,
+      "nonempty": true
+    },
+    {
+      "A1": "37/2",
+      "capacity": 1000,
+      "a": 19,
+      "b": 36,
+      "nonempty": true
+    },
+    {
+      "A1": "244",
+      "capacity": 0,
+      "a": 244,
+      "b": 0,
+      "nonempty": false
+    },
+    {
+      "A1": "244",
+      "capacity": 1,
+      "a": 244,
+      "b": 1,
+      "nonempty": false
+    },
+    {
+      "A1": "244",
+      "capacity": 7,
+      "a": 244,
+      "b": 7,
+      "nonempty": false
+    },
+    {
+      "A1": "244",
+      "capacity": 19,
+      "a": 244,
+      "b": 19,
+      "nonempty": false
+    },
+    {
+      "A1": "244",
+      "capacity": 1000,
+      "a": 244,
+      "b": 487,
+      "nonempty": true
+    }
+  ],
+  "support_assertions": 1056,
+  "original_family_character_data": false,
+  "GRH": false,
+  "new_signed_power_gain": false
+}

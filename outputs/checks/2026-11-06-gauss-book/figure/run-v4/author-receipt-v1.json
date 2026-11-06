@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "author": "root",
+  "visual_acceptance_pending": true,
+  "semantics": "Exact disjoint norm-assignment regions and physical cubic cross; schematic axes, not counts or measured energies",
+  "geometry": {
+    "box": [
+      14,
+      52,
+      68,
+      68
+    ],
+    "Y_splits": [
+      40,
+      78
+    ],
+    "regions": {
+      "small": [
+        14,
+        52,
+        26,
+        26
+      ],
+      "I": [
+        40,
+        52,
+        42,
+        68
+      ],
+      "II": [
+        14,
+        78,
+        26,
+        42
+      ]
+    }
+  },
+  "proof_inputs": {
+    "large_tail": "ed8b92c48812ada0dfe92c2bd7e314d8f4432b1952011da72236d4959f14aef7",
+    "finite_k": "816ff565c81e7ff486dc205ff92d3d4484e78226de87d3789fd4d564cc31e7eb"
+  },
+  "outputs": {
+    "outputs/checks/2026-11-06-gauss-book/figure/run-v4/gauss-tail-partition.tex": {
+      "sha256": "7beb483158786b330b9cad6f57f0b3c36fc4a19151ca1d0f051d5f6934dd62d9",
+      "bytes": 4171
+    },
+    "outputs/checks/2026-11-06-gauss-book/figure/run-v4/gauss-tail-partition.pdf": {
+      "sha256": "957a9723b0f7372fe5c3e3e864791741ebc6b5a2e7e2a0e3ad145b2cf7d9caac",
+      "bytes": 180849
+    },
+    "outputs/checks/2026-11-06-gauss-book/figure/run-v4/gauss-tail-partition.svg": {
+      "sha256": "3bb021e219b994969d57ef08b029ec400e27b92d85d7b814d7af73b7a2304ee7",
+      "bytes": 236302
+    },
+    "outputs/checks/2026-11-06-gauss-book/figure/run-v4/preview.png": {
+      "sha256": "6505b60f8bec011f734f60d1e993103ce1e23a4ed6f69331aeeb926dc3ebf22c",
+      "bytes": 80746
+    }
+  },
+  "producer_sha256": "c596c6c574af7ebda5795a51f058be38ea6ff8c4bf303fe42a34499be4cbfd87",
+  "old_assets_edited": false,
+  "canonical_promoted": false,
+  "new_Lean": false
+}

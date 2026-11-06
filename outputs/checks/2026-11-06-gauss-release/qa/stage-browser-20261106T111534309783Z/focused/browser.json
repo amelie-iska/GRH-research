@@ -1,0 +1,6605 @@
+{
+  "schema": "gauss-tail-public-bundle-focused-browser-v1",
+  "passed": true,
+  "scope": "40 focused checks in SAME full-release owned context/global timing; public-prefix bundle bytes only, no candidate HTTP fallback.",
+  "checks": [
+    {
+      "name": "candidate-record-math-count",
+      "passed": true,
+      "detail": 10299
+    },
+    {
+      "name": "scoped-counts-no-new-lab",
+      "passed": true,
+      "detail": {
+        "math": 10299,
+        "newMath": 489,
+        "tables": 389,
+        "newTables": 0,
+        "frames": 14,
+        "newFrames": 0,
+        "svgRefs": 31,
+        "newSVG": 1,
+        "uniqueIds": true,
+        "labels": [
+          "gtl:core",
+          "gtl:objects",
+          "gtl:coefficients",
+          "gtl:profile",
+          "gtl:capacity",
+          "gtl:deletions",
+          "gtl:mean",
+          "gtl:top-window",
+          "gtl:density",
+          "gtl:outer-coefficient",
+          "gtl:actual-mean",
+          "gtl:leading-model",
+          "gtl:model",
+          "gtl:model-error",
+          "gtl:root",
+          "gtl:cubic-gauss",
+          "gtl:S-factor",
+          "gtl:root-cubic",
+          "gtl:tail",
+          "gtl:ternary",
+          "gtl:T-coefficient",
+          "gtl:gauss-cross",
+          "gtl:cubic-input",
+          "gtl:tail-theorem",
+          "gtl:linear-tail",
+          "gtl:finite-tail",
+          "gtl:finite",
+          "gtl:combined",
+          "gtl:long-residual",
+          "gtl:discrete",
+          "gtl:discrete-support",
+          "gtl:discrete-coefficient",
+          "gtl:direct-prefix",
+          "gtl:direct",
+          "gtl:direct-model-error",
+          "gtl:direct-model-tail",
+          "gtl:direct-bound",
+          "gtl:boundary",
+          "gtl:ray-error",
+          "gtl:partition",
+          "gtl:details",
+          "gtl:mean-proof",
+          "gtl:sixth-phase",
+          "gtl:ray-count",
+          "gtl:disk-fourier",
+          "gtl:disk-error",
+          "gtl:full-IE",
+          "gtl:Stieltjes-scale",
+          "gtl:Stieltjes-error",
+          "gtl:Bessel-variation",
+          "gtl:root-proof",
+          "gtl:frequency-sum",
+          "gtl:Gauss-Jacobi",
+          "gtl:Jacobi-identification",
+          "gtl:cubic-CRT-root",
+          "gtl:frequency-transport",
+          "gtl:models-proof",
+          "gtl:real-remainder",
+          "gtl:matched-moments",
+          "gtl:all-models",
+          "gtl:per-mode-error",
+          "gtl:all-model-error",
+          "gtl:phase-proof",
+          "gtl:finite-selectors",
+          "gtl:grouping-proof",
+          "gtl:two-boxes",
+          "gtl:grouped-form",
+          "gtl:cubic-proof",
+          "gtl:dyadic-L2",
+          "gtl:Mellin-separation",
+          "gtl:dyadic-column",
+          "gtl:summed-column",
+          "gtl:reassembly-proof",
+          "gtl:equal-fibre-cost",
+          "gtl:other-column",
+          "gtl:one-sided-moment",
+          "gtl:bilinear-difference",
+          "gtl:critical-proof",
+          "gtl:critical-powers",
+          "gtl:discrepancy-power",
+          "gtl:direct-proof",
+          "gtl:direct-Bessel",
+          "gtl:s-mask-split",
+          "gtl:direct-bilinearity",
+          "gtl:failed",
+          "gtl:triangle-diagnostic"
+        ],
+        "missingLabels": [],
+        "extraLabels": [],
+        "refs": [
+          {
+            "id": "gtl:core",
+            "text": "Results and scopes",
+            "exists": true
+          },
+          {
+            "id": "gtl:details",
+            "text": "Complete proofs",
+            "exists": true
+          },
+          {
+            "id": "cbk:core",
+            "text": "40.29",
+            "exists": true
+          },
+          {
+            "id": "cbk:objects",
+            "text": "40.29.1",
+            "exists": true
+          },
+          {
+            "id": "cbk:nodal",
+            "text": "(40.124)",
+            "exists": true
+          },
+          {
+            "id": "cbk:bessel",
+            "text": "(40.125)",
+            "exists": true
+          },
+          {
+            "id": "cbk:eta",
+            "text": "(40.120)",
+            "exists": true
+          },
+          {
+            "id": "cbk:exact-kernel",
+            "text": "(40.126)",
+            "exists": true
+          },
+          {
+            "id": "sw:character",
+            "text": "(40.33)",
+            "exists": true
+          },
+          {
+            "id": "cbk:cubic",
+            "text": "40.24",
+            "exists": true
+          },
+          {
+            "id": "gtl:model",
+            "text": "40.27",
+            "exists": true
+          },
+          {
+            "id": "gtl:tail-theorem",
+            "text": "40.28",
+            "exists": true
+          },
+          {
+            "id": "gtl:deletions",
+            "text": "(40.172)",
+            "exists": true
+          },
+          {
+            "id": "gtl:direct-prefix",
+            "text": "(40.192)",
+            "exists": true
+          },
+          {
+            "id": "gtl:direct",
+            "text": "40.29",
+            "exists": true
+          },
+          {
+            "id": "cbk:root",
+            "text": "40.20",
+            "exists": true
+          },
+          {
+            "id": "sw:character",
+            "text": "(40.33)",
+            "exists": true
+          },
+          {
+            "id": "cbk:eta",
+            "text": "(40.120)",
+            "exists": true
+          },
+          {
+            "id": "gtl:ray-count",
+            "text": "(40.198)",
+            "exists": true
+          },
+          {
+            "id": "gtl:actual-mean",
+            "text": "(40.176)",
+            "exists": true
+          },
+          {
+            "id": "gtl:ray-error",
+            "text": "(40.196)",
+            "exists": true
+          },
+          {
+            "id": "gtl:actual-mean",
+            "text": "(40.176)",
+            "exists": true
+          },
+          {
+            "id": "gtl:S-factor",
+            "text": "(40.180)",
+            "exists": true
+          },
+          {
+            "id": "sw:core",
+            "text": "40.19",
+            "exists": true
+          },
+          {
+            "id": "gtl:root-cubic",
+            "text": "(40.181)",
+            "exists": true
+          },
+          {
+            "id": "gtl:Gauss-Jacobi",
+            "text": "(40.206)",
+            "exists": true
+          },
+          {
+            "id": "gtl:root-cubic",
+            "text": "(40.181)",
+            "exists": true
+          },
+          {
+            "id": "gtl:actual-mean",
+            "text": "(40.176)",
+            "exists": true
+          },
+          {
+            "id": "gtl:all-models",
+            "text": "(40.212)",
+            "exists": true
+          },
+          {
+            "id": "gtl:leading-model",
+            "text": "(40.177)",
+            "exists": true
+          },
+          {
+            "id": "gtl:real-remainder",
+            "text": "(40.210)",
+            "exists": true
+          },
+          {
+            "id": "gtl:model-error",
+            "text": "(40.178)",
+            "exists": true
+          },
+          {
+            "id": "gtl:root-cubic",
+            "text": "(40.181)",
+            "exists": true
+          },
+          {
+            "id": "gtl:linear-tail",
+            "text": "(40.186)",
+            "exists": true
+          },
+          {
+            "id": "gtl:ternary",
+            "text": "(40.182)",
+            "exists": true
+          },
+          {
+            "id": "gtl:coefficients",
+            "text": "(40.169)",
+            "exists": true
+          },
+          {
+            "id": "gtl:gauss-cross",
+            "text": "(40.184)",
+            "exists": true
+          },
+          {
+            "id": "gtl:linear-tail",
+            "text": "(40.186)",
+            "exists": true
+          },
+          {
+            "id": "gtl:grouped-form",
+            "text": "(40.217)",
+            "exists": true
+          },
+          {
+            "id": "gtl:cubic-input",
+            "text": "(40.185)",
+            "exists": true
+          },
+          {
+            "id": "gtl:dyadic-L2",
+            "text": "(40.218)",
+            "exists": true
+          },
+          {
+            "id": "gtl:linear-tail",
+            "text": "(40.186)",
+            "exists": true
+          },
+          {
+            "id": "gtl:phase-proof",
+            "text": "40.32.4",
+            "exists": true
+          },
+          {
+            "id": "gtl:linear-tail",
+            "text": "(40.186)",
+            "exists": true
+          },
+          {
+            "id": "gtl:linear-tail",
+            "text": "(40.186)",
+            "exists": true
+          },
+          {
+            "id": "gtl:finite-tail",
+            "text": "(40.187)",
+            "exists": true
+          },
+          {
+            "id": "gtl:model-error",
+            "text": "(40.178)",
+            "exists": true
+          },
+          {
+            "id": "gtl:finite-tail",
+            "text": "(40.187)",
+            "exists": true
+          },
+          {
+            "id": "gtl:combined",
+            "text": "(40.188)",
+            "exists": true
+          },
+          {
+            "id": "gtl:long-residual",
+            "text": "(40.189)",
+            "exists": true
+          },
+          {
+            "id": "gtl:discrete-support",
+            "text": "(40.190)",
+            "exists": true
+          },
+          {
+            "id": "gtl:sixth-phase",
+            "text": "(40.197)",
+            "exists": true
+          },
+          {
+            "id": "cbk:exact-kernel",
+            "text": "(40.126)",
+            "exists": true
+          },
+          {
+            "id": "gtl:direct-prefix",
+            "text": "(40.192)",
+            "exists": true
+          },
+          {
+            "id": "gtl:real-remainder",
+            "text": "(40.210)",
+            "exists": true
+          },
+          {
+            "id": "gtl:direct-prefix",
+            "text": "(40.192)",
+            "exists": true
+          },
+          {
+            "id": "gtl:direct-model-error",
+            "text": "(40.193)",
+            "exists": true
+          },
+          {
+            "id": "gtl:root-cubic",
+            "text": "(40.181)",
+            "exists": true
+          },
+          {
+            "id": "gtl:finite-selectors",
+            "text": "(40.215)",
+            "exists": true
+          },
+          {
+            "id": "gtl:phase-proof",
+            "text": "40.32.4",
+            "exists": true
+          },
+          {
+            "id": "gtl:linear-tail",
+            "text": "(40.186)",
+            "exists": true
+          },
+          {
+            "id": "gtl:other-column",
+            "text": "(40.223)",
+            "exists": true
+          },
+          {
+            "id": "gtl:reassembly-proof",
+            "text": "40.32.7",
+            "exists": true
+          },
+          {
+            "id": "gtl:equal-fibre-cost",
+            "text": "(40.222)",
+            "exists": true
+          },
+          {
+            "id": "gtl:direct-model-tail",
+            "text": "(40.194)",
+            "exists": true
+          },
+          {
+            "id": "gtl:direct-bound",
+            "text": "(40.195)",
+            "exists": true
+          },
+          {
+            "id": "gtl:long-residual",
+            "text": "(40.189)",
+            "exists": true
+          }
+        ],
+        "malformed": [],
+        "hidden": 0,
+        "pendingMath": false,
+        "proofs": 0
+      }
+    },
+    {
+      "name": "all-source-gtl-labels-exact",
+      "passed": true,
+      "detail": [
+        "gtl:core",
+        "gtl:objects",
+        "gtl:coefficients",
+        "gtl:profile",
+        "gtl:capacity",
+        "gtl:deletions",
+        "gtl:mean",
+        "gtl:top-window",
+        "gtl:density",
+        "gtl:outer-coefficient",
+        "gtl:actual-mean",
+        "gtl:leading-model",
+        "gtl:model",
+        "gtl:model-error",
+        "gtl:root",
+        "gtl:cubic-gauss",
+        "gtl:S-factor",
+        "gtl:root-cubic",
+        "gtl:tail",
+        "gtl:ternary",
+        "gtl:T-coefficient",
+        "gtl:gauss-cross",
+        "gtl:cubic-input",
+        "gtl:tail-theorem",
+        "gtl:linear-tail",
+        "gtl:finite-tail",
+        "gtl:finite",
+        "gtl:combined",
+        "gtl:long-residual",
+        "gtl:discrete",
+        "gtl:discrete-support",
+        "gtl:discrete-coefficient",
+        "gtl:direct-prefix",
+        "gtl:direct",
+        "gtl:direct-model-error",
+        "gtl:direct-model-tail",
+        "gtl:direct-bound",
+        "gtl:boundary",
+        "gtl:ray-error",
+        "gtl:partition",
+        "gtl:details",
+        "gtl:mean-proof",
+        "gtl:sixth-phase",
+        "gtl:ray-count",
+        "gtl:disk-fourier",
+        "gtl:disk-error",
+        "gtl:full-IE",
+        "gtl:Stieltjes-scale",
+        "gtl:Stieltjes-error",
+        "gtl:Bessel-variation",
+        "gtl:root-proof",
+        "gtl:frequency-sum",
+        "gtl:Gauss-Jacobi",
+        "gtl:Jacobi-identification",
+        "gtl:cubic-CRT-root",
+        "gtl:frequency-transport",
+        "gtl:models-proof",
+        "gtl:real-remainder",
+        "gtl:matched-moments",
+        "gtl:all-models",
+        "gtl:per-mode-error",
+        "gtl:all-model-error",
+        "gtl:phase-proof",
+        "gtl:finite-selectors",
+        "gtl:grouping-proof",
+        "gtl:two-boxes",
+        "gtl:grouped-form",
+        "gtl:cubic-proof",
+        "gtl:dyadic-L2",
+        "gtl:Mellin-separation",
+        "gtl:dyadic-column",
+        "gtl:summed-column",
+        "gtl:reassembly-proof",
+        "gtl:equal-fibre-cost",
+        "gtl:other-column",
+        "gtl:one-sided-moment",
+        "gtl:bilinear-difference",
+        "gtl:critical-proof",
+        "gtl:critical-powers",
+        "gtl:discrepancy-power",
+        "gtl:direct-proof",
+        "gtl:direct-Bessel",
+        "gtl:s-mask-split",
+        "gtl:direct-bilinearity",
+        "gtl:failed",
+        "gtl:triangle-diagnostic"
+      ]
+    },
+    {
+      "name": "new-local-reference-closure",
+      "passed": true,
+      "detail": [
+        {
+          "id": "gtl:core",
+          "text": "Results and scopes",
+          "exists": true
+        },
+        {
+          "id": "gtl:details",
+          "text": "Complete proofs",
+          "exists": true
+        },
+        {
+          "id": "cbk:core",
+          "text": "40.29",
+          "exists": true
+        },
+        {
+          "id": "cbk:objects",
+          "text": "40.29.1",
+          "exists": true
+        },
+        {
+          "id": "cbk:nodal",
+          "text": "(40.124)",
+          "exists": true
+        },
+        {
+          "id": "cbk:bessel",
+          "text": "(40.125)",
+          "exists": true
+        },
+        {
+          "id": "cbk:eta",
+          "text": "(40.120)",
+          "exists": true
+        },
+        {
+          "id": "cbk:exact-kernel",
+          "text": "(40.126)",
+          "exists": true
+        },
+        {
+          "id": "sw:character",
+          "text": "(40.33)",
+          "exists": true
+        },
+        {
+          "id": "cbk:cubic",
+          "text": "40.24",
+          "exists": true
+        },
+        {
+          "id": "gtl:model",
+          "text": "40.27",
+          "exists": true
+        },
+        {
+          "id": "gtl:tail-theorem",
+          "text": "40.28",
+          "exists": true
+        },
+        {
+          "id": "gtl:deletions",
+          "text": "(40.172)",
+          "exists": true
+        },
+        {
+          "id": "gtl:direct-prefix",
+          "text": "(40.192)",
+          "exists": true
+        },
+        {
+          "id": "gtl:direct",
+          "text": "40.29",
+          "exists": true
+        },
+        {
+          "id": "cbk:root",
+          "text": "40.20",
+          "exists": true
+        },
+        {
+          "id": "sw:character",
+          "text": "(40.33)",
+          "exists": true
+        },
+        {
+          "id": "cbk:eta",
+          "text": "(40.120)",
+          "exists": true
+        },
+        {
+          "id": "gtl:ray-count",
+          "text": "(40.198)",
+          "exists": true
+        },
+        {
+          "id": "gtl:actual-mean",
+          "text": "(40.176)",
+          "exists": true
+        },
+        {
+          "id": "gtl:ray-error",
+          "text": "(40.196)",
+          "exists": true
+        },
+        {
+          "id": "gtl:actual-mean",
+          "text": "(40.176)",
+          "exists": true
+        },
+        {
+          "id": "gtl:S-factor",
+          "text": "(40.180)",
+          "exists": true
+        },
+        {
+          "id": "sw:core",
+          "text": "40.19",
+          "exists": true
+        },
+        {
+          "id": "gtl:root-cubic",
+          "text": "(40.181)",
+          "exists": true
+        },
+        {
+          "id": "gtl:Gauss-Jacobi",
+          "text": "(40.206)",
+          "exists": true
+        },
+        {
+          "id": "gtl:root-cubic",
+          "text": "(40.181)",
+          "exists": true
+        },
+        {
+          "id": "gtl:actual-mean",
+          "text": "(40.176)",
+          "exists": true
+        },
+        {
+          "id": "gtl:all-models",
+          "text": "(40.212)",
+          "exists": true
+        },
+        {
+          "id": "gtl:leading-model",
+          "text": "(40.177)",
+          "exists": true
+        },
+        {
+          "id": "gtl:real-remainder",
+          "text": "(40.210)",
+          "exists": true
+        },
+        {
+          "id": "gtl:model-error",
+          "text": "(40.178)",
+          "exists": true
+        },
+        {
+          "id": "gtl:root-cubic",
+          "text": "(40.181)",
+          "exists": true
+        },
+        {
+          "id": "gtl:linear-tail",
+          "text": "(40.186)",
+          "exists": true
+        },
+        {
+          "id": "gtl:ternary",
+          "text": "(40.182)",
+          "exists": true
+        },
+        {
+          "id": "gtl:coefficients",
+          "text": "(40.169)",
+          "exists": true
+        },
+        {
+          "id": "gtl:gauss-cross",
+          "text": "(40.184)",
+          "exists": true
+        },
+        {
+          "id": "gtl:linear-tail",
+          "text": "(40.186)",
+          "exists": true
+        },
+        {
+          "id": "gtl:grouped-form",
+          "text": "(40.217)",
+          "exists": true
+        },
+        {
+          "id": "gtl:cubic-input",
+          "text": "(40.185)",
+          "exists": true
+        },
+        {
+          "id": "gtl:dyadic-L2",
+          "text": "(40.218)",
+          "exists": true
+        },
+        {
+          "id": "gtl:linear-tail",
+          "text": "(40.186)",
+          "exists": true
+        },
+        {
+          "id": "gtl:phase-proof",
+          "text": "40.32.4",
+          "exists": true
+        },
+        {
+          "id": "gtl:linear-tail",
+          "text": "(40.186)",
+          "exists": true
+        },
+        {
+          "id": "gtl:linear-tail",
+          "text": "(40.186)",
+          "exists": true
+        },
+        {
+          "id": "gtl:finite-tail",
+          "text": "(40.187)",
+          "exists": true
+        },
+        {
+          "id": "gtl:model-error",
+          "text": "(40.178)",
+          "exists": true
+        },
+        {
+          "id": "gtl:finite-tail",
+          "text": "(40.187)",
+          "exists": true
+        },
+        {
+          "id": "gtl:combined",
+          "text": "(40.188)",
+          "exists": true
+        },
+        {
+          "id": "gtl:long-residual",
+          "text": "(40.189)",
+          "exists": true
+        },
+        {
+          "id": "gtl:discrete-support",
+          "text": "(40.190)",
+          "exists": true
+        },
+        {
+          "id": "gtl:sixth-phase",
+          "text": "(40.197)",
+          "exists": true
+        },
+        {
+          "id": "cbk:exact-kernel",
+          "text": "(40.126)",
+          "exists": true
+        },
+        {
+          "id": "gtl:direct-prefix",
+          "text": "(40.192)",
+          "exists": true
+        },
+        {
+          "id": "gtl:real-remainder",
+          "text": "(40.210)",
+          "exists": true
+        },
+        {
+          "id": "gtl:direct-prefix",
+          "text": "(40.192)",
+          "exists": true
+        },
+        {
+          "id": "gtl:direct-model-error",
+          "text": "(40.193)",
+          "exists": true
+        },
+        {
+          "id": "gtl:root-cubic",
+          "text": "(40.181)",
+          "exists": true
+        },
+        {
+          "id": "gtl:finite-selectors",
+          "text": "(40.215)",
+          "exists": true
+        },
+        {
+          "id": "gtl:phase-proof",
+          "text": "40.32.4",
+          "exists": true
+        },
+        {
+          "id": "gtl:linear-tail",
+          "text": "(40.186)",
+          "exists": true
+        },
+        {
+          "id": "gtl:other-column",
+          "text": "(40.223)",
+          "exists": true
+        },
+        {
+          "id": "gtl:reassembly-proof",
+          "text": "40.32.7",
+          "exists": true
+        },
+        {
+          "id": "gtl:equal-fibre-cost",
+          "text": "(40.222)",
+          "exists": true
+        },
+        {
+          "id": "gtl:direct-model-tail",
+          "text": "(40.194)",
+          "exists": true
+        },
+        {
+          "id": "gtl:direct-bound",
+          "text": "(40.195)",
+          "exists": true
+        },
+        {
+          "id": "gtl:long-residual",
+          "text": "(40.189)",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "name": "all-new-MathML-visible-and-valid-fixed-arity",
+      "passed": true,
+      "detail": {
+        "malformed": [],
+        "hidden": 0,
+        "pending": false
+      }
+    },
+    {
+      "name": "all-new-proof-environments",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "PDF-aux-equation-heading-theorem-numbers",
+      "passed": true,
+      "detail": {
+        "equations": [
+          {
+            "id": "gtl:Bessel-variation",
+            "number": "40.204",
+            "text": "(40.204)"
+          },
+          {
+            "id": "gtl:Gauss-Jacobi",
+            "number": "40.206",
+            "text": "(40.206)"
+          },
+          {
+            "id": "gtl:Jacobi-identification",
+            "number": "40.207",
+            "text": "(40.207)"
+          },
+          {
+            "id": "gtl:Mellin-separation",
+            "number": "40.219",
+            "text": "(40.219)"
+          },
+          {
+            "id": "gtl:S-factor",
+            "number": "40.180",
+            "text": "(40.180)"
+          },
+          {
+            "id": "gtl:Stieltjes-error",
+            "number": "40.203",
+            "text": "(40.203)"
+          },
+          {
+            "id": "gtl:Stieltjes-scale",
+            "number": "40.202",
+            "text": "(40.202)"
+          },
+          {
+            "id": "gtl:T-coefficient",
+            "number": "40.183",
+            "text": "(40.183)"
+          },
+          {
+            "id": "gtl:actual-mean",
+            "number": "40.176",
+            "text": "(40.176)"
+          },
+          {
+            "id": "gtl:all-model-error",
+            "number": "40.214",
+            "text": "(40.214)"
+          },
+          {
+            "id": "gtl:all-models",
+            "number": "40.212",
+            "text": "(40.212)"
+          },
+          {
+            "id": "gtl:bilinear-difference",
+            "number": "40.225",
+            "text": "(40.225)"
+          },
+          {
+            "id": "gtl:capacity",
+            "number": "40.171",
+            "text": "(40.171)"
+          },
+          {
+            "id": "gtl:coefficients",
+            "number": "40.169",
+            "text": "(40.169)"
+          },
+          {
+            "id": "gtl:combined",
+            "number": "40.188",
+            "text": "(40.188)"
+          },
+          {
+            "id": "gtl:critical-powers",
+            "number": "40.226",
+            "text": "(40.226)"
+          },
+          {
+            "id": "gtl:cubic-CRT-root",
+            "number": "40.208",
+            "text": "(40.208)"
+          },
+          {
+            "id": "gtl:cubic-gauss",
+            "number": "40.179",
+            "text": "(40.179)"
+          },
+          {
+            "id": "gtl:cubic-input",
+            "number": "40.185",
+            "text": "(40.185)"
+          },
+          {
+            "id": "gtl:deletions",
+            "number": "40.172",
+            "text": "(40.172)"
+          },
+          {
+            "id": "gtl:density",
+            "number": "40.174",
+            "text": "(40.174)"
+          },
+          {
+            "id": "gtl:direct-Bessel",
+            "number": "40.228",
+            "text": "(40.228)"
+          },
+          {
+            "id": "gtl:direct-bilinearity",
+            "number": "40.230",
+            "text": "(40.230)"
+          },
+          {
+            "id": "gtl:direct-bound",
+            "number": "40.195",
+            "text": "(40.195)"
+          },
+          {
+            "id": "gtl:direct-model-error",
+            "number": "40.193",
+            "text": "(40.193)"
+          },
+          {
+            "id": "gtl:direct-model-tail",
+            "number": "40.194",
+            "text": "(40.194)"
+          },
+          {
+            "id": "gtl:direct-prefix",
+            "number": "40.192",
+            "text": "(40.192)"
+          },
+          {
+            "id": "gtl:discrepancy-power",
+            "number": "40.227",
+            "text": "(40.227)"
+          },
+          {
+            "id": "gtl:discrete-coefficient",
+            "number": "40.191",
+            "text": "(40.191)"
+          },
+          {
+            "id": "gtl:discrete-support",
+            "number": "40.190",
+            "text": "(40.190)"
+          },
+          {
+            "id": "gtl:disk-error",
+            "number": "40.200",
+            "text": "(40.200)"
+          },
+          {
+            "id": "gtl:disk-fourier",
+            "number": "40.199",
+            "text": "(40.199)"
+          },
+          {
+            "id": "gtl:dyadic-L2",
+            "number": "40.218",
+            "text": "(40.218)"
+          },
+          {
+            "id": "gtl:dyadic-column",
+            "number": "40.220",
+            "text": "(40.220)"
+          },
+          {
+            "id": "gtl:equal-fibre-cost",
+            "number": "40.222",
+            "text": "(40.222)"
+          },
+          {
+            "id": "gtl:finite-selectors",
+            "number": "40.215",
+            "text": "(40.215)"
+          },
+          {
+            "id": "gtl:finite-tail",
+            "number": "40.187",
+            "text": "(40.187)"
+          },
+          {
+            "id": "gtl:frequency-sum",
+            "number": "40.205",
+            "text": "(40.205)"
+          },
+          {
+            "id": "gtl:frequency-transport",
+            "number": "40.209",
+            "text": "(40.209)"
+          },
+          {
+            "id": "gtl:full-IE",
+            "number": "40.201",
+            "text": "(40.201)"
+          },
+          {
+            "id": "gtl:gauss-cross",
+            "number": "40.184",
+            "text": "(40.184)"
+          },
+          {
+            "id": "gtl:grouped-form",
+            "number": "40.217",
+            "text": "(40.217)"
+          },
+          {
+            "id": "gtl:leading-model",
+            "number": "40.177",
+            "text": "(40.177)"
+          },
+          {
+            "id": "gtl:linear-tail",
+            "number": "40.186",
+            "text": "(40.186)"
+          },
+          {
+            "id": "gtl:long-residual",
+            "number": "40.189",
+            "text": "(40.189)"
+          },
+          {
+            "id": "gtl:matched-moments",
+            "number": "40.211",
+            "text": "(40.211)"
+          },
+          {
+            "id": "gtl:model-error",
+            "number": "40.178",
+            "text": "(40.178)"
+          },
+          {
+            "id": "gtl:one-sided-moment",
+            "number": "40.224",
+            "text": "(40.224)"
+          },
+          {
+            "id": "gtl:other-column",
+            "number": "40.223",
+            "text": "(40.223)"
+          },
+          {
+            "id": "gtl:outer-coefficient",
+            "number": "40.175",
+            "text": "(40.175)"
+          },
+          {
+            "id": "gtl:per-mode-error",
+            "number": "40.213",
+            "text": "(40.213)"
+          },
+          {
+            "id": "gtl:profile",
+            "number": "40.170",
+            "text": "(40.170)"
+          },
+          {
+            "id": "gtl:ray-count",
+            "number": "40.198",
+            "text": "(40.198)"
+          },
+          {
+            "id": "gtl:ray-error",
+            "number": "40.196",
+            "text": "(40.196)"
+          },
+          {
+            "id": "gtl:real-remainder",
+            "number": "40.210",
+            "text": "(40.210)"
+          },
+          {
+            "id": "gtl:root-cubic",
+            "number": "40.181",
+            "text": "(40.181)"
+          },
+          {
+            "id": "gtl:s-mask-split",
+            "number": "40.229",
+            "text": "(40.229)"
+          },
+          {
+            "id": "gtl:sixth-phase",
+            "number": "40.197",
+            "text": "(40.197)"
+          },
+          {
+            "id": "gtl:summed-column",
+            "number": "40.221",
+            "text": "(40.221)"
+          },
+          {
+            "id": "gtl:ternary",
+            "number": "40.182",
+            "text": "(40.182)"
+          },
+          {
+            "id": "gtl:top-window",
+            "number": "40.173",
+            "text": "(40.173)"
+          },
+          {
+            "id": "gtl:triangle-diagnostic",
+            "number": "40.231",
+            "text": "(40.231)"
+          },
+          {
+            "id": "gtl:two-boxes",
+            "number": "40.216",
+            "text": "(40.216)"
+          }
+        ],
+        "headings": [
+          {
+            "id": "gtl:core",
+            "number": "40.31",
+            "text": "40.31 An arithmetic Gauss tail with the original finite cutoff",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:objects",
+            "number": "40.31.1",
+            "text": "40.31.1 Original objects and a fixed common profile",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:mean",
+            "number": "40.31.2",
+            "text": "40.31.2 The actual retained mean and its finite leading model",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:root",
+            "number": "40.31.3",
+            "text": "40.31.3 The root is an incomplete cubic Gauss weight",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:tail",
+            "number": "40.31.4",
+            "text": "40.31.4 A signed short-divisor tail from a physical cubic matrix",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:finite",
+            "number": "40.31.5",
+            "text": "40.31.5 What has been reduced, and what remains",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:discrete",
+            "number": "40.31.6",
+            "text": "40.31.6 The exact discrete top prefix, with every ray retained",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:boundary",
+            "number": "40.31.6",
+            "text": "Separate open errors and scope.",
+            "paragraph": true
+          },
+          {
+            "id": "gtl:details",
+            "number": "40.32",
+            "text": "40.32 Proofs for the finite-cutoff Gauss tail",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:mean-proof",
+            "number": "40.32.1",
+            "text": "40.32.1 The coherent main retains all sixth-part and ray data",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:root-proof",
+            "number": "40.32.2",
+            "text": "40.32.2 Exact good-modulus Gauss factors and separate primitive S values",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:models-proof",
+            "number": "40.32.3",
+            "text": "40.32.3 Matched finite endpoint models and a real-axis remainder",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:phase-proof",
+            "number": "40.32.4",
+            "text": "40.32.4 All source and ray phases give bounded multiplicative columns",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:grouping-proof",
+            "number": "40.32.5",
+            "text": "40.32.5 Two exact cutoff boxes expose a physical cubic matrix",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:cubic-proof",
+            "number": "40.32.6",
+            "text": "40.32.6 Cubic Cauchy before the distinguished-divisor triangle",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:reassembly-proof",
+            "number": "40.32.7",
+            "text": "40.32.7 Full pair support and the original finite k reassembly",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:critical-proof",
+            "number": "40.32.8",
+            "text": "40.32.8 The critical reduction is not a bound for its residual mean",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:direct-proof",
+            "number": "40.32.9",
+            "text": "40.32.9 Direct discrete frequencies require no principal-density approximation",
+            "paragraph": false
+          },
+          {
+            "id": "gtl:failed",
+            "number": "40.32.9",
+            "text": "Why the completed shortcuts do not supply that arithmetic.",
+            "paragraph": true
+          }
+        ],
+        "theorems": [
+          {
+            "id": "gtl:model",
+            "number": "40.27",
+            "text": "Proposition 40.27"
+          },
+          {
+            "id": "gtl:tail-theorem",
+            "number": "40.28",
+            "text": "Theorem 40.28"
+          },
+          {
+            "id": "gtl:direct",
+            "number": "40.29",
+            "text": "Proposition 40.29"
+          }
+        ],
+        "references": [
+          {
+            "id": "cbk:core",
+            "kind": "ref",
+            "text": "40.29"
+          },
+          {
+            "id": "cbk:objects",
+            "kind": "ref",
+            "text": "40.29.1"
+          },
+          {
+            "id": "cbk:nodal",
+            "kind": "eqref",
+            "text": "(40.124)"
+          },
+          {
+            "id": "cbk:bessel",
+            "kind": "eqref",
+            "text": "(40.125)"
+          },
+          {
+            "id": "cbk:eta",
+            "kind": "eqref",
+            "text": "(40.120)"
+          },
+          {
+            "id": "cbk:exact-kernel",
+            "kind": "eqref",
+            "text": "(40.126)"
+          },
+          {
+            "id": "sw:character",
+            "kind": "eqref",
+            "text": "(40.33)"
+          },
+          {
+            "id": "cbk:cubic",
+            "kind": "ref",
+            "text": "40.24"
+          },
+          {
+            "id": "gtl:model",
+            "kind": "ref",
+            "text": "40.27"
+          },
+          {
+            "id": "gtl:tail-theorem",
+            "kind": "ref",
+            "text": "40.28"
+          },
+          {
+            "id": "gtl:deletions",
+            "kind": "eqref",
+            "text": "(40.172)"
+          },
+          {
+            "id": "gtl:direct-prefix",
+            "kind": "eqref",
+            "text": "(40.192)"
+          },
+          {
+            "id": "gtl:direct",
+            "kind": "ref",
+            "text": "40.29"
+          },
+          {
+            "id": "cbk:root",
+            "kind": "ref",
+            "text": "40.20"
+          },
+          {
+            "id": "sw:character",
+            "kind": "eqref",
+            "text": "(40.33)"
+          },
+          {
+            "id": "cbk:eta",
+            "kind": "eqref",
+            "text": "(40.120)"
+          },
+          {
+            "id": "gtl:ray-count",
+            "kind": "eqref",
+            "text": "(40.198)"
+          },
+          {
+            "id": "gtl:actual-mean",
+            "kind": "eqref",
+            "text": "(40.176)"
+          },
+          {
+            "id": "gtl:ray-error",
+            "kind": "eqref",
+            "text": "(40.196)"
+          },
+          {
+            "id": "gtl:actual-mean",
+            "kind": "eqref",
+            "text": "(40.176)"
+          },
+          {
+            "id": "gtl:S-factor",
+            "kind": "eqref",
+            "text": "(40.180)"
+          },
+          {
+            "id": "sw:core",
+            "kind": "ref",
+            "text": "40.19"
+          },
+          {
+            "id": "gtl:root-cubic",
+            "kind": "eqref",
+            "text": "(40.181)"
+          },
+          {
+            "id": "gtl:Gauss-Jacobi",
+            "kind": "eqref",
+            "text": "(40.206)"
+          },
+          {
+            "id": "gtl:root-cubic",
+            "kind": "eqref",
+            "text": "(40.181)"
+          },
+          {
+            "id": "gtl:actual-mean",
+            "kind": "eqref",
+            "text": "(40.176)"
+          },
+          {
+            "id": "gtl:all-models",
+            "kind": "eqref",
+            "text": "(40.212)"
+          },
+          {
+            "id": "gtl:leading-model",
+            "kind": "eqref",
+            "text": "(40.177)"
+          },
+          {
+            "id": "gtl:real-remainder",
+            "kind": "eqref",
+            "text": "(40.210)"
+          },
+          {
+            "id": "gtl:model-error",
+            "kind": "eqref",
+            "text": "(40.178)"
+          },
+          {
+            "id": "gtl:root-cubic",
+            "kind": "eqref",
+            "text": "(40.181)"
+          },
+          {
+            "id": "gtl:linear-tail",
+            "kind": "eqref",
+            "text": "(40.186)"
+          },
+          {
+            "id": "gtl:ternary",
+            "kind": "eqref",
+            "text": "(40.182)"
+          },
+          {
+            "id": "gtl:coefficients",
+            "kind": "eqref",
+            "text": "(40.169)"
+          },
+          {
+            "id": "gtl:gauss-cross",
+            "kind": "eqref",
+            "text": "(40.184)"
+          },
+          {
+            "id": "gtl:linear-tail",
+            "kind": "eqref",
+            "text": "(40.186)"
+          },
+          {
+            "id": "gtl:grouped-form",
+            "kind": "eqref",
+            "text": "(40.217)"
+          },
+          {
+            "id": "gtl:cubic-input",
+            "kind": "eqref",
+            "text": "(40.185)"
+          },
+          {
+            "id": "gtl:dyadic-L2",
+            "kind": "eqref",
+            "text": "(40.218)"
+          },
+          {
+            "id": "gtl:linear-tail",
+            "kind": "eqref",
+            "text": "(40.186)"
+          },
+          {
+            "id": "gtl:phase-proof",
+            "kind": "ref",
+            "text": "40.32.4"
+          },
+          {
+            "id": "gtl:linear-tail",
+            "kind": "eqref",
+            "text": "(40.186)"
+          },
+          {
+            "id": "gtl:linear-tail",
+            "kind": "eqref",
+            "text": "(40.186)"
+          },
+          {
+            "id": "gtl:finite-tail",
+            "kind": "eqref",
+            "text": "(40.187)"
+          },
+          {
+            "id": "gtl:model-error",
+            "kind": "eqref",
+            "text": "(40.178)"
+          },
+          {
+            "id": "gtl:finite-tail",
+            "kind": "eqref",
+            "text": "(40.187)"
+          },
+          {
+            "id": "gtl:combined",
+            "kind": "eqref",
+            "text": "(40.188)"
+          },
+          {
+            "id": "gtl:long-residual",
+            "kind": "eqref",
+            "text": "(40.189)"
+          },
+          {
+            "id": "gtl:discrete-support",
+            "kind": "eqref",
+            "text": "(40.190)"
+          },
+          {
+            "id": "gtl:sixth-phase",
+            "kind": "eqref",
+            "text": "(40.197)"
+          },
+          {
+            "id": "cbk:exact-kernel",
+            "kind": "eqref",
+            "text": "(40.126)"
+          },
+          {
+            "id": "gtl:direct-prefix",
+            "kind": "eqref",
+            "text": "(40.192)"
+          },
+          {
+            "id": "gtl:real-remainder",
+            "kind": "eqref",
+            "text": "(40.210)"
+          },
+          {
+            "id": "gtl:direct-prefix",
+            "kind": "eqref",
+            "text": "(40.192)"
+          },
+          {
+            "id": "gtl:direct-model-error",
+            "kind": "eqref",
+            "text": "(40.193)"
+          },
+          {
+            "id": "gtl:root-cubic",
+            "kind": "eqref",
+            "text": "(40.181)"
+          },
+          {
+            "id": "gtl:finite-selectors",
+            "kind": "eqref",
+            "text": "(40.215)"
+          },
+          {
+            "id": "gtl:phase-proof",
+            "kind": "ref",
+            "text": "40.32.4"
+          },
+          {
+            "id": "gtl:linear-tail",
+            "kind": "eqref",
+            "text": "(40.186)"
+          },
+          {
+            "id": "gtl:other-column",
+            "kind": "eqref",
+            "text": "(40.223)"
+          },
+          {
+            "id": "gtl:reassembly-proof",
+            "kind": "ref",
+            "text": "40.32.7"
+          },
+          {
+            "id": "gtl:equal-fibre-cost",
+            "kind": "eqref",
+            "text": "(40.222)"
+          },
+          {
+            "id": "gtl:direct-model-tail",
+            "kind": "eqref",
+            "text": "(40.194)"
+          },
+          {
+            "id": "gtl:direct-bound",
+            "kind": "eqref",
+            "text": "(40.195)"
+          },
+          {
+            "id": "gtl:long-residual",
+            "kind": "eqref",
+            "text": "(40.189)"
+          }
+        ],
+        "caption": "Figure 40.3. The two disjoint cutoff regions fold into the exact coefficient TU+TYT_U+T_Y, followed by the physical cubic matrix on coprime good squarefree ideal factors. Norm axes are schematic, not ideal counts; a common prime gives a raw zero. The displayed tail is the normalized Gauss moment, not an energy or the raw numerator. The bound uses the explicitly cited external cubic sieve. At U\u2265D1/8U\\ge D^{1/8} the choice Y=D1/8Y=D^{1/8} fits the stated pure critical error budget; if Y=UY=U the coefficient tail is zero. The small-cutoff moment and the full kernel remain open."
+      }
+    },
+    {
+      "name": "PDF-aux-reference-and-figure-numbers",
+      "passed": true,
+      "detail": [
+        {
+          "id": "cbk:core",
+          "kind": "ref",
+          "text": "40.29"
+        },
+        {
+          "id": "cbk:objects",
+          "kind": "ref",
+          "text": "40.29.1"
+        },
+        {
+          "id": "cbk:nodal",
+          "kind": "eqref",
+          "text": "(40.124)"
+        },
+        {
+          "id": "cbk:bessel",
+          "kind": "eqref",
+          "text": "(40.125)"
+        },
+        {
+          "id": "cbk:eta",
+          "kind": "eqref",
+          "text": "(40.120)"
+        },
+        {
+          "id": "cbk:exact-kernel",
+          "kind": "eqref",
+          "text": "(40.126)"
+        },
+        {
+          "id": "sw:character",
+          "kind": "eqref",
+          "text": "(40.33)"
+        },
+        {
+          "id": "cbk:cubic",
+          "kind": "ref",
+          "text": "40.24"
+        },
+        {
+          "id": "gtl:model",
+          "kind": "ref",
+          "text": "40.27"
+        },
+        {
+          "id": "gtl:tail-theorem",
+          "kind": "ref",
+          "text": "40.28"
+        },
+        {
+          "id": "gtl:deletions",
+          "kind": "eqref",
+          "text": "(40.172)"
+        },
+        {
+          "id": "gtl:direct-prefix",
+          "kind": "eqref",
+          "text": "(40.192)"
+        },
+        {
+          "id": "gtl:direct",
+          "kind": "ref",
+          "text": "40.29"
+        },
+        {
+          "id": "cbk:root",
+          "kind": "ref",
+          "text": "40.20"
+        },
+        {
+          "id": "sw:character",
+          "kind": "eqref",
+          "text": "(40.33)"
+        },
+        {
+          "id": "cbk:eta",
+          "kind": "eqref",
+          "text": "(40.120)"
+        },
+        {
+          "id": "gtl:ray-count",
+          "kind": "eqref",
+          "text": "(40.198)"
+        },
+        {
+          "id": "gtl:actual-mean",
+          "kind": "eqref",
+          "text": "(40.176)"
+        },
+        {
+          "id": "gtl:ray-error",
+          "kind": "eqref",
+          "text": "(40.196)"
+        },
+        {
+          "id": "gtl:actual-mean",
+          "kind": "eqref",
+          "text": "(40.176)"
+        },
+        {
+          "id": "gtl:S-factor",
+          "kind": "eqref",
+          "text": "(40.180)"
+        },
+        {
+          "id": "sw:core",
+          "kind": "ref",
+          "text": "40.19"
+        },
+        {
+          "id": "gtl:root-cubic",
+          "kind": "eqref",
+          "text": "(40.181)"
+        },
+        {
+          "id": "gtl:Gauss-Jacobi",
+          "kind": "eqref",
+          "text": "(40.206)"
+        },
+        {
+          "id": "gtl:root-cubic",
+          "kind": "eqref",
+          "text": "(40.181)"
+        },
+        {
+          "id": "gtl:actual-mean",
+          "kind": "eqref",
+          "text": "(40.176)"
+        },
+        {
+          "id": "gtl:all-models",
+          "kind": "eqref",
+          "text": "(40.212)"
+        },
+        {
+          "id": "gtl:leading-model",
+          "kind": "eqref",
+          "text": "(40.177)"
+        },
+        {
+          "id": "gtl:real-remainder",
+          "kind": "eqref",
+          "text": "(40.210)"
+        },
+        {
+          "id": "gtl:model-error",
+          "kind": "eqref",
+          "text": "(40.178)"
+        },
+        {
+          "id": "gtl:root-cubic",
+          "kind": "eqref",
+          "text": "(40.181)"
+        },
+        {
+          "id": "gtl:linear-tail",
+          "kind": "eqref",
+          "text": "(40.186)"
+        },
+        {
+          "id": "gtl:ternary",
+          "kind": "eqref",
+          "text": "(40.182)"
+        },
+        {
+          "id": "gtl:coefficients",
+          "kind": "eqref",
+          "text": "(40.169)"
+        },
+        {
+          "id": "gtl:gauss-cross",
+          "kind": "eqref",
+          "text": "(40.184)"
+        },
+        {
+          "id": "gtl:linear-tail",
+          "kind": "eqref",
+          "text": "(40.186)"
+        },
+        {
+          "id": "gtl:grouped-form",
+          "kind": "eqref",
+          "text": "(40.217)"
+        },
+        {
+          "id": "gtl:cubic-input",
+          "kind": "eqref",
+          "text": "(40.185)"
+        },
+        {
+          "id": "gtl:dyadic-L2",
+          "kind": "eqref",
+          "text": "(40.218)"
+        },
+        {
+          "id": "gtl:linear-tail",
+          "kind": "eqref",
+          "text": "(40.186)"
+        },
+        {
+          "id": "gtl:phase-proof",
+          "kind": "ref",
+          "text": "40.32.4"
+        },
+        {
+          "id": "gtl:linear-tail",
+          "kind": "eqref",
+          "text": "(40.186)"
+        },
+        {
+          "id": "gtl:linear-tail",
+          "kind": "eqref",
+          "text": "(40.186)"
+        },
+        {
+          "id": "gtl:finite-tail",
+          "kind": "eqref",
+          "text": "(40.187)"
+        },
+        {
+          "id": "gtl:model-error",
+          "kind": "eqref",
+          "text": "(40.178)"
+        },
+        {
+          "id": "gtl:finite-tail",
+          "kind": "eqref",
+          "text": "(40.187)"
+        },
+        {
+          "id": "gtl:combined",
+          "kind": "eqref",
+          "text": "(40.188)"
+        },
+        {
+          "id": "gtl:long-residual",
+          "kind": "eqref",
+          "text": "(40.189)"
+        },
+        {
+          "id": "gtl:discrete-support",
+          "kind": "eqref",
+          "text": "(40.190)"
+        },
+        {
+          "id": "gtl:sixth-phase",
+          "kind": "eqref",
+          "text": "(40.197)"
+        },
+        {
+          "id": "cbk:exact-kernel",
+          "kind": "eqref",
+          "text": "(40.126)"
+        },
+        {
+          "id": "gtl:direct-prefix",
+          "kind": "eqref",
+          "text": "(40.192)"
+        },
+        {
+          "id": "gtl:real-remainder",
+          "kind": "eqref",
+          "text": "(40.210)"
+        },
+        {
+          "id": "gtl:direct-prefix",
+          "kind": "eqref",
+          "text": "(40.192)"
+        },
+        {
+          "id": "gtl:direct-model-error",
+          "kind": "eqref",
+          "text": "(40.193)"
+        },
+        {
+          "id": "gtl:root-cubic",
+          "kind": "eqref",
+          "text": "(40.181)"
+        },
+        {
+          "id": "gtl:finite-selectors",
+          "kind": "eqref",
+          "text": "(40.215)"
+        },
+        {
+          "id": "gtl:phase-proof",
+          "kind": "ref",
+          "text": "40.32.4"
+        },
+        {
+          "id": "gtl:linear-tail",
+          "kind": "eqref",
+          "text": "(40.186)"
+        },
+        {
+          "id": "gtl:other-column",
+          "kind": "eqref",
+          "text": "(40.223)"
+        },
+        {
+          "id": "gtl:reassembly-proof",
+          "kind": "ref",
+          "text": "40.32.7"
+        },
+        {
+          "id": "gtl:equal-fibre-cost",
+          "kind": "eqref",
+          "text": "(40.222)"
+        },
+        {
+          "id": "gtl:direct-model-tail",
+          "kind": "eqref",
+          "text": "(40.194)"
+        },
+        {
+          "id": "gtl:direct-bound",
+          "kind": "eqref",
+          "text": "(40.195)"
+        },
+        {
+          "id": "gtl:long-residual",
+          "kind": "eqref",
+          "text": "(40.189)"
+        }
+      ]
+    },
+    {
+      "name": "new-table-count-explicit-zero",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "new-layout-no-page-overflow-light-1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "client": 1428,
+        "scroll": 1428,
+        "theme": "light",
+        "figure": {
+          "complete": true,
+          "naturalWidth": 510,
+          "width": 880,
+          "height": 728.4500122070312,
+          "filter": "none",
+          "transform": "none",
+          "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+          "wrapperWidth": 880,
+          "wrapperScroll": 880,
+          "tabIndex": 0,
+          "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+          "role": "region",
+          "overflow": "auto"
+        },
+        "scrolls": [],
+        "tables": []
+      }
+    },
+    {
+      "name": "readable-source-figure-light-1440",
+      "passed": true,
+      "detail": {
+        "complete": true,
+        "naturalWidth": 510,
+        "width": 880,
+        "height": 728.4500122070312,
+        "filter": "none",
+        "transform": "none",
+        "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+        "wrapperWidth": 880,
+        "wrapperScroll": 880,
+        "tabIndex": 0,
+        "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+        "role": "region",
+        "overflow": "auto"
+      }
+    },
+    {
+      "name": "new-overflow-focusable-and-unscaled-light-1440",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "new-layout-no-page-overflow-light-320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "client": 308,
+        "scroll": 308,
+        "theme": "light",
+        "figure": {
+          "complete": true,
+          "naturalWidth": 510,
+          "width": 720,
+          "height": 596,
+          "filter": "none",
+          "transform": "none",
+          "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+          "wrapperWidth": 200,
+          "wrapperScroll": 720,
+          "tabIndex": 0,
+          "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+          "role": "region",
+          "overflow": "auto"
+        },
+        "scrolls": [
+          {
+            "className": "reader-display-math",
+            "end": 80.68333435058594,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 164,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 243.6666717529297,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 173.71665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 271.1000061035156,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 248.0833282470703,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 153.46665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 230.28334045410156,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 149.1666717529297,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 146.36666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 167.06666564941406,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 61.516666412353516,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 199.53334045410156,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 13.016666412353516,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 99.5999984741211,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 48.06666564941406,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 133.39999389648438,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 147.71665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 332.7833251953125,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 282.1833190917969,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 221.11666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 289.48333740234375,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 88.75,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 193.68333435058594,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 196.56666564941406,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 225.51666259765625,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 284.7833251953125,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 202,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-figure-scroll",
+            "end": 520,
+            "tabIndex": 0,
+            "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+            "font": null,
+            "transform": null
+          },
+          {
+            "className": "reader-display-math",
+            "end": 299.0666809082031,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 262.29998779296875,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 107.63333129882812,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 71.9000015258789,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 352.7833251953125,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 262.4666748046875,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 202.23333740234375,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 54.483333587646484,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 243.1666717529297,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 168.8333282470703,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 73.69999694824219,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 264.4166564941406,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 292.54998779296875,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 148.39999389648438,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 220.71665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 198.51666259765625,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 151.46665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 97.26667022705078,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 73.88333129882812,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 185.61666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 194.21665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 247.89999389648438,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 186.14999389648438,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 266,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 206.51666259765625,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 183.86666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 82.76667022705078,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 39.86666488647461,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 254.10000610351562,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 181.86666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 150.61666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          }
+        ],
+        "tables": []
+      }
+    },
+    {
+      "name": "readable-source-figure-light-320",
+      "passed": true,
+      "detail": {
+        "complete": true,
+        "naturalWidth": 510,
+        "width": 720,
+        "height": 596,
+        "filter": "none",
+        "transform": "none",
+        "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+        "wrapperWidth": 200,
+        "wrapperScroll": 720,
+        "tabIndex": 0,
+        "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+        "role": "region",
+        "overflow": "auto"
+      }
+    },
+    {
+      "name": "new-overflow-focusable-and-unscaled-light-320",
+      "passed": true,
+      "detail": [
+        {
+          "className": "reader-display-math",
+          "end": 80.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 164,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 243.6666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 173.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 271.1000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 248.0833282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 153.46665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 230.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 149.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 146.36666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 167.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 61.516666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 199.53334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 13.016666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 99.5999984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 48.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 133.39999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 147.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 332.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 282.1833190917969,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 221.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 289.48333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 88.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 193.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 196.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 225.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 284.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 202,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-figure-scroll",
+          "end": 520,
+          "tabIndex": 0,
+          "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "className": "reader-display-math",
+          "end": 299.0666809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 262.29998779296875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 107.63333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 71.9000015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 352.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 262.4666748046875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 202.23333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 54.483333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 243.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 168.8333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 73.69999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 264.4166564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 292.54998779296875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 148.39999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 220.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 198.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 151.46665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 97.26667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 73.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 185.61666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 194.21665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 247.89999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 186.14999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 266,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 206.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 183.86666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 82.76667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 39.86666488647461,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 254.10000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 181.86666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 150.61666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "name": "new-layout-no-page-overflow-biomech-1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "client": 1428,
+        "scroll": 1428,
+        "theme": "biomech",
+        "figure": {
+          "complete": true,
+          "naturalWidth": 510,
+          "width": 880,
+          "height": 728.4500122070312,
+          "filter": "none",
+          "transform": "none",
+          "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+          "wrapperWidth": 880,
+          "wrapperScroll": 880,
+          "tabIndex": 0,
+          "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+          "role": "region",
+          "overflow": "auto"
+        },
+        "scrolls": [],
+        "tables": []
+      }
+    },
+    {
+      "name": "readable-source-figure-biomech-1440",
+      "passed": true,
+      "detail": {
+        "complete": true,
+        "naturalWidth": 510,
+        "width": 880,
+        "height": 728.4500122070312,
+        "filter": "none",
+        "transform": "none",
+        "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+        "wrapperWidth": 880,
+        "wrapperScroll": 880,
+        "tabIndex": 0,
+        "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+        "role": "region",
+        "overflow": "auto"
+      }
+    },
+    {
+      "name": "new-overflow-focusable-and-unscaled-biomech-1440",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "new-layout-no-page-overflow-biomech-320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "client": 308,
+        "scroll": 308,
+        "theme": "biomech",
+        "figure": {
+          "complete": true,
+          "naturalWidth": 510,
+          "width": 720,
+          "height": 596,
+          "filter": "none",
+          "transform": "none",
+          "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+          "wrapperWidth": 200,
+          "wrapperScroll": 720,
+          "tabIndex": 0,
+          "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+          "role": "region",
+          "overflow": "auto"
+        },
+        "scrolls": [
+          {
+            "className": "reader-display-math",
+            "end": 80.68333435058594,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 164,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 243.6666717529297,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 173.71665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 271.1000061035156,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 248.0833282470703,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 153.46665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 230.28334045410156,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 149.1666717529297,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 146.36666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 167.06666564941406,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 61.516666412353516,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 199.53334045410156,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 13.016666412353516,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 99.5999984741211,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 48.06666564941406,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 133.39999389648438,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 147.71665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 332.7833251953125,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 282.1833190917969,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 221.11666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 289.48333740234375,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 88.75,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 193.68333435058594,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 196.56666564941406,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 225.51666259765625,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 284.7833251953125,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 202,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-figure-scroll",
+            "end": 520,
+            "tabIndex": 0,
+            "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+            "font": null,
+            "transform": null
+          },
+          {
+            "className": "reader-display-math",
+            "end": 299.0666809082031,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 262.29998779296875,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 107.63333129882812,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 71.9000015258789,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 352.7833251953125,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 262.4666748046875,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 202.23333740234375,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 54.483333587646484,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 243.1666717529297,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 168.8333282470703,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 73.69999694824219,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 264.4166564941406,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 292.54998779296875,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 148.39999389648438,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 220.71665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 198.51666259765625,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 151.46665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 97.26667022705078,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 73.88333129882812,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 185.61666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 194.21665954589844,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 247.89999389648438,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 186.14999389648438,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 266,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 206.51666259765625,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 183.86666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 82.76667022705078,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 39.86666488647461,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 254.10000610351562,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 181.86666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          },
+          {
+            "className": "reader-display-math",
+            "end": 150.61666870117188,
+            "tabIndex": 0,
+            "label": "Scrollable mathematical expression",
+            "font": "18px",
+            "transform": "none"
+          }
+        ],
+        "tables": []
+      }
+    },
+    {
+      "name": "readable-source-figure-biomech-320",
+      "passed": true,
+      "detail": {
+        "complete": true,
+        "naturalWidth": 510,
+        "width": 720,
+        "height": 596,
+        "filter": "none",
+        "transform": "none",
+        "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+        "wrapperWidth": 200,
+        "wrapperScroll": 720,
+        "tabIndex": 0,
+        "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+        "role": "region",
+        "overflow": "auto"
+      }
+    },
+    {
+      "name": "new-overflow-focusable-and-unscaled-biomech-320",
+      "passed": true,
+      "detail": [
+        {
+          "className": "reader-display-math",
+          "end": 80.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 164,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 243.6666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 173.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 271.1000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 248.0833282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 153.46665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 230.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 149.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 146.36666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 167.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 61.516666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 199.53334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 13.016666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 99.5999984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 48.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 133.39999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 147.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 332.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 282.1833190917969,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 221.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 289.48333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 88.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 193.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 196.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 225.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 284.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 202,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-figure-scroll",
+          "end": 520,
+          "tabIndex": 0,
+          "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "className": "reader-display-math",
+          "end": 299.0666809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 262.29998779296875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 107.63333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 71.9000015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 352.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 262.4666748046875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 202.23333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 54.483333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 243.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 168.8333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 73.69999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 264.4166564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 292.54998779296875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 148.39999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 220.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 198.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 151.46665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 97.26667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 73.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 185.61666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 194.21665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 247.89999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 186.14999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 266,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 206.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 183.86666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 82.76667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 39.86666488647461,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 254.10000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 181.86666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 150.61666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "name": "figure-genuine-mobile-horizontal-scroll",
+      "passed": true,
+      "detail": {
+        "focused": true,
+        "width": 200,
+        "scroll": 720
+      }
+    },
+    {
+      "name": "figure-native-ArrowRight-scroll",
+      "passed": true
+    },
+    {
+      "name": "figure-Tab-to-original-TeX-link",
+      "passed": true
+    },
+    {
+      "name": "proof-reference-native-Enter-navigation",
+      "passed": true
+    },
+    {
+      "name": "actual-new-source-figure-and-book-PDF-links",
+      "passed": true,
+      "detail": {
+        "sources": [
+          {
+            "name": "gauss-tail-core.tex",
+            "present": true
+          },
+          {
+            "name": "gauss-tail-figure.tex",
+            "present": true
+          },
+          {
+            "name": "gauss-tail-details.tex",
+            "present": true
+          }
+        ],
+        "figure": [
+          {
+            "ext": "svg",
+            "present": true
+          },
+          {
+            "ext": "tex",
+            "present": true
+          },
+          {
+            "ext": "pdf",
+            "present": true
+          }
+        ],
+        "pdf": true
+      }
+    },
+    {
+      "name": "source-bound-download-/book/sources/gauss-tail-core.tex",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:45365/GRH-research/book/sources/gauss-tail-core.tex",
+        "status": 200,
+        "bytes": 19297,
+        "sha256": "42e1f4fb8d0c9c834da605eeda3fcb0ed0e89d16404c8fc9273b0549c66650da"
+      }
+    },
+    {
+      "name": "source-bound-download-/book/sources/gauss-tail-figure.tex",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:45365/GRH-research/book/sources/gauss-tail-figure.tex",
+        "status": 200,
+        "bytes": 751,
+        "sha256": "fe606dca804bc715c85e6bcdfddb9a293ee2e1c06d04bea093a1286e5a33f60f"
+      }
+    },
+    {
+      "name": "source-bound-download-/book/sources/gauss-tail-details.tex",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:45365/GRH-research/book/sources/gauss-tail-details.tex",
+        "status": 200,
+        "bytes": 33535,
+        "sha256": "637ed52c08daf3ff9b5e6f119f9b9a9ef009f0af8e41eb291fd91210e8716457"
+      }
+    },
+    {
+      "name": "source-bound-download-/book/figures/gauss-tail-partition.svg",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:45365/GRH-research/book/figures/gauss-tail-partition.svg",
+        "status": 200,
+        "bytes": 236302,
+        "sha256": "3bb021e219b994969d57ef08b029ec400e27b92d85d7b814d7af73b7a2304ee7"
+      }
+    },
+    {
+      "name": "source-bound-download-/book/figures/gauss-tail-partition.tex",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:45365/GRH-research/book/figures/gauss-tail-partition.tex",
+        "status": 200,
+        "bytes": 4171,
+        "sha256": "7beb483158786b330b9cad6f57f0b3c36fc4a19151ca1d0f051d5f6934dd62d9"
+      }
+    },
+    {
+      "name": "source-bound-download-/book/figures/gauss-tail-partition.pdf",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:45365/GRH-research/book/figures/gauss-tail-partition.pdf",
+        "status": 200,
+        "bytes": 180849,
+        "sha256": "957a9723b0f7372fe5c3e3e864791741ebc6b5a2e7e2a0e3ad145b2cf7d9caac"
+      }
+    },
+    {
+      "name": "source-bound-download-/book.pdf",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:45365/GRH-research/book.pdf",
+        "status": 200,
+        "bytes": 3038220,
+        "sha256": "68d19e2031cffdda959bcd33b45a2f08f96724af024bb085625dacf6b93facba"
+      }
+    },
+    {
+      "name": "source-bound-download-/book/main.html",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:45365/GRH-research/book/main.html",
+        "status": 200,
+        "bytes": 5040073,
+        "sha256": "b0ae6b84f28436cf3282b5f387df9fc8f330ad9cf5fb27be9b79512d7f79552c"
+      }
+    },
+    {
+      "name": "no-new-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no-browser-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "global-WS-log-has-no-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no-HTTP-error-responses",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "strict-global-idle-and-departures",
+      "passed": true,
+      "detail": {
+        "pending": 0,
+        "idleWaits": 14
+      }
+    },
+    {
+      "name": "all-source-and-record-inputs-unchanged",
+      "passed": true
+    }
+  ],
+  "layouts": [
+    {
+      "width": 1440,
+      "client": 1428,
+      "scroll": 1428,
+      "theme": "light",
+      "figure": {
+        "complete": true,
+        "naturalWidth": 510,
+        "width": 880,
+        "height": 728.4500122070312,
+        "filter": "none",
+        "transform": "none",
+        "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+        "wrapperWidth": 880,
+        "wrapperScroll": 880,
+        "tabIndex": 0,
+        "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+        "role": "region",
+        "overflow": "auto"
+      },
+      "scrolls": [],
+      "tables": []
+    },
+    {
+      "width": 320,
+      "client": 308,
+      "scroll": 308,
+      "theme": "light",
+      "figure": {
+        "complete": true,
+        "naturalWidth": 510,
+        "width": 720,
+        "height": 596,
+        "filter": "none",
+        "transform": "none",
+        "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+        "wrapperWidth": 200,
+        "wrapperScroll": 720,
+        "tabIndex": 0,
+        "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+        "role": "region",
+        "overflow": "auto"
+      },
+      "scrolls": [
+        {
+          "className": "reader-display-math",
+          "end": 80.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 164,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 243.6666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 173.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 271.1000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 248.0833282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 153.46665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 230.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 149.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 146.36666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 167.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 61.516666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 199.53334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 13.016666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 99.5999984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 48.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 133.39999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 147.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 332.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 282.1833190917969,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 221.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 289.48333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 88.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 193.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 196.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 225.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 284.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 202,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-figure-scroll",
+          "end": 520,
+          "tabIndex": 0,
+          "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "className": "reader-display-math",
+          "end": 299.0666809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 262.29998779296875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 107.63333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 71.9000015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 352.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 262.4666748046875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 202.23333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 54.483333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 243.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 168.8333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 73.69999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 264.4166564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 292.54998779296875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 148.39999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 220.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 198.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 151.46665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 97.26667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 73.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 185.61666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 194.21665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 247.89999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 186.14999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 266,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 206.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 183.86666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 82.76667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 39.86666488647461,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 254.10000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 181.86666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 150.61666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ],
+      "tables": []
+    },
+    {
+      "width": 1440,
+      "client": 1428,
+      "scroll": 1428,
+      "theme": "biomech",
+      "figure": {
+        "complete": true,
+        "naturalWidth": 510,
+        "width": 880,
+        "height": 728.4500122070312,
+        "filter": "none",
+        "transform": "none",
+        "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+        "wrapperWidth": 880,
+        "wrapperScroll": 880,
+        "tabIndex": 0,
+        "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+        "role": "region",
+        "overflow": "auto"
+      },
+      "scrolls": [],
+      "tables": []
+    },
+    {
+      "width": 320,
+      "client": 308,
+      "scroll": 308,
+      "theme": "biomech",
+      "figure": {
+        "complete": true,
+        "naturalWidth": 510,
+        "width": 720,
+        "height": 596,
+        "filter": "none",
+        "transform": "none",
+        "alt": "Exact short-divisor cutoff partition, physical cubic interaction and open small-cutoff moment",
+        "wrapperWidth": 200,
+        "wrapperScroll": 720,
+        "tabIndex": 0,
+        "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+        "role": "region",
+        "overflow": "auto"
+      },
+      "scrolls": [
+        {
+          "className": "reader-display-math",
+          "end": 80.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 164,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 243.6666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 173.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 271.1000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 248.0833282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 153.46665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 230.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 149.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 146.36666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 167.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 61.516666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 199.53334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 13.016666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 99.5999984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 48.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 133.39999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 147.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 332.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 282.1833190917969,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 221.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 289.48333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 88.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 193.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 196.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 225.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 284.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 202,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-figure-scroll",
+          "end": 520,
+          "tabIndex": 0,
+          "label": "Gauss-tail cutoff partition; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "className": "reader-display-math",
+          "end": 299.0666809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 262.29998779296875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 107.63333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 71.9000015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 352.7833251953125,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 262.4666748046875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 202.23333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 54.483333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 243.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 168.8333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 73.69999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 264.4166564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 292.54998779296875,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 148.39999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 220.71665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 198.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 151.46665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 97.26667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 73.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 185.61666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 194.21665954589844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 247.89999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 186.14999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 266,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 206.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 183.86666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 82.76667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 39.86666488647461,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 254.10000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 181.86666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "className": "reader-display-math",
+          "end": 150.61666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ],
+      "tables": []
+    }
+  ],
+  "expected": {
+    "labels": [
+      "gtl:core",
+      "gtl:objects",
+      "gtl:coefficients",
+      "gtl:profile",
+      "gtl:capacity",
+      "gtl:deletions",
+      "gtl:mean",
+      "gtl:top-window",
+      "gtl:density",
+      "gtl:outer-coefficient",
+      "gtl:actual-mean",
+      "gtl:leading-model",
+      "gtl:model",
+      "gtl:model-error",
+      "gtl:root",
+      "gtl:cubic-gauss",
+      "gtl:S-factor",
+      "gtl:root-cubic",
+      "gtl:tail",
+      "gtl:ternary",
+      "gtl:T-coefficient",
+      "gtl:gauss-cross",
+      "gtl:cubic-input",
+      "gtl:tail-theorem",
+      "gtl:linear-tail",
+      "gtl:finite-tail",
+      "gtl:finite",
+      "gtl:combined",
+      "gtl:long-residual",
+      "gtl:discrete",
+      "gtl:discrete-support",
+      "gtl:discrete-coefficient",
+      "gtl:direct-prefix",
+      "gtl:direct",
+      "gtl:direct-model-error",
+      "gtl:direct-model-tail",
+      "gtl:direct-bound",
+      "gtl:boundary",
+      "gtl:ray-error",
+      "gtl:partition",
+      "gtl:details",
+      "gtl:mean-proof",
+      "gtl:sixth-phase",
+      "gtl:ray-count",
+      "gtl:disk-fourier",
+      "gtl:disk-error",
+      "gtl:full-IE",
+      "gtl:Stieltjes-scale",
+      "gtl:Stieltjes-error",
+      "gtl:Bessel-variation",
+      "gtl:root-proof",
+      "gtl:frequency-sum",
+      "gtl:Gauss-Jacobi",
+      "gtl:Jacobi-identification",
+      "gtl:cubic-CRT-root",
+      "gtl:frequency-transport",
+      "gtl:models-proof",
+      "gtl:real-remainder",
+      "gtl:matched-moments",
+      "gtl:all-models",
+      "gtl:per-mode-error",
+      "gtl:all-model-error",
+      "gtl:phase-proof",
+      "gtl:finite-selectors",
+      "gtl:grouping-proof",
+      "gtl:two-boxes",
+      "gtl:grouped-form",
+      "gtl:cubic-proof",
+      "gtl:dyadic-L2",
+      "gtl:Mellin-separation",
+      "gtl:dyadic-column",
+      "gtl:summed-column",
+      "gtl:reassembly-proof",
+      "gtl:equal-fibre-cost",
+      "gtl:other-column",
+      "gtl:one-sided-moment",
+      "gtl:bilinear-difference",
+      "gtl:critical-proof",
+      "gtl:critical-powers",
+      "gtl:discrepancy-power",
+      "gtl:direct-proof",
+      "gtl:direct-Bessel",
+      "gtl:s-mask-split",
+      "gtl:direct-bilinearity",
+      "gtl:failed",
+      "gtl:triangle-diagnostic"
+    ],
+    "math_nodes": 10299,
+    "math_nodes_added": 489,
+    "tables": 389,
+    "frames": 14,
+    "svg_refs": 31,
+    "pdf_pages": 333
+  },
+  "downloads": [
+    {
+      "url": "http://127.0.0.1:45365/GRH-research/book/sources/gauss-tail-core.tex",
+      "status": 200,
+      "bytes": 19297,
+      "sha256": "42e1f4fb8d0c9c834da605eeda3fcb0ed0e89d16404c8fc9273b0549c66650da"
+    },
+    {
+      "url": "http://127.0.0.1:45365/GRH-research/book/sources/gauss-tail-figure.tex",
+      "status": 200,
+      "bytes": 751,
+      "sha256": "fe606dca804bc715c85e6bcdfddb9a293ee2e1c06d04bea093a1286e5a33f60f"
+    },
+    {
+      "url": "http://127.0.0.1:45365/GRH-research/book/sources/gauss-tail-details.tex",
+      "status": 200,
+      "bytes": 33535,
+      "sha256": "637ed52c08daf3ff9b5e6f119f9b9a9ef009f0af8e41eb291fd91210e8716457"
+    },
+    {
+      "url": "http://127.0.0.1:45365/GRH-research/book/figures/gauss-tail-partition.svg",
+      "status": 200,
+      "bytes": 236302,
+      "sha256": "3bb021e219b994969d57ef08b029ec400e27b92d85d7b814d7af73b7a2304ee7"
+    },
+    {
+      "url": "http://127.0.0.1:45365/GRH-research/book/figures/gauss-tail-partition.tex",
+      "status": 200,
+      "bytes": 4171,
+      "sha256": "7beb483158786b330b9cad6f57f0b3c36fc4a19151ca1d0f051d5f6934dd62d9"
+    },
+    {
+      "url": "http://127.0.0.1:45365/GRH-research/book/figures/gauss-tail-partition.pdf",
+      "status": 200,
+      "bytes": 180849,
+      "sha256": "957a9723b0f7372fe5c3e3e864791741ebc6b5a2e7e2a0e3ad145b2cf7d9caac"
+    },
+    {
+      "url": "http://127.0.0.1:45365/GRH-research/book.pdf",
+      "status": 200,
+      "bytes": 3038220,
+      "sha256": "68d19e2031cffdda959bcd33b45a2f08f96724af024bb085625dacf6b93facba"
+    },
+    {
+      "url": "http://127.0.0.1:45365/GRH-research/book/main.html",
+      "status": 200,
+      "bytes": 5040073,
+      "sha256": "b0ae6b84f28436cf3282b5f387df9fc8f330ad9cf5fb27be9b79512d7f79552c"
+    }
+  ],
+  "inheritedMathMLWarnings": [
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963779315
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963779406
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963779445
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963779873
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963779882
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963779885
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963780559
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963780601
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963780624
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963781633
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963781667
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963781686
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963782368
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963782408
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963782430
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963783019
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963783063
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963783087
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963783843
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963783882
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963783904
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963784501
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963784544
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963784568
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963784947
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963784982
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963785001
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963785514
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963785554
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963785576
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963786098
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963786129
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "05c7273d-687a-49cb-92ef-c4c7d5501579",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963786145
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963797658
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963797732
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963797770
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963798188
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963798196
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963798199
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963798839
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963798882
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963798905
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963800000
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963800034
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963800052
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963800578
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963800618
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963800640
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963801192
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963801223
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963801239
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963801835
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963801877
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963801900
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963808837
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963808878
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d8911079-98af-4041-9807-6ffdd3445e36",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963808901
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963813647
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963813720
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963813758
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963814167
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963814174
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963814177
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963819127
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963819169
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963819192
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963824848
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963824888
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963824911
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963825882
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963825926
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "d70182f6-5233-4d17-b17c-954520b31d05",
+          "context": "768747f9-d3a6-4af9-955f-d335d0a1df33",
+          "userContext": "ff2065c2-4442-4ff0-b045-31d5d3204d8c"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793963825950
+      }
+    }
+  ]
+}

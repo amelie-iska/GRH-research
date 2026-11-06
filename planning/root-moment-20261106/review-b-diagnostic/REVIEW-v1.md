@@ -1,0 +1,17 @@
+# Independent review: short-divisor triangle diagnostic
+
+PASS for the exact v2 SHA256 46a046bf4f52e2964f06b8d7a0a07c05e37decad551a3c1417c16605cd2b9329. The sole precision finding against v1 was the epsilon quantifier/renaming; v2 resolves it explicitly. No other correction is required.
+
+1. The coefficient identity is exactly cbk:coefficients. For an original good SF m, opening its two coprime short divisors leaves t=m/(rs), itself SF and coprime to both. Thus the displayed triple is pairwise coprime and no mu(t) is missing. The full original phase is f_(rst); its multiplicativity or a specific Gauss-family theorem is not assumed. Raw zeros and all phase masks remain inside it. U^2<=D gives L>=1, avoiding an invalid subunit-length estimate.
+
+2. H_alpha is explicitly HYPOTHETICAL, for every epsilon>0, with a constant depending on alpha/epsilon/fixed data and the required uniformity in EVERY arising growing twist, conductor and common-prime mask. No theorem availability, legitimate actual Gauss normalization or two-column factorization is supplied by this conditional diagnostic. Any application must separately establish them. A fixed smooth-coefficient Gauss estimate is not automatically this input.
+
+3. With x=Nt/L, the actual weight is D^(-1/2)W(x)x^(-1/2). Its bounded variation norm is at most a fixed multiple of ||W||infinity+integral|W'|. The all-partial-interval hypothesis suffices for Abel summation; a terminal unweighted interval bound alone would not. V2 applies H with epsilon/2 and uses NrNs<=U^2<=D, so (D NrNs)^(epsilon/2)<=D^epsilon exactly. The final displayed epsilon does not hide extra uniformity.
+
+4. Only after this conditional inner bound are mu(r),mu(s) discarded and the original coprimality overcounted. Partial summation of the elementary ideal count gives sum_(Na<=U)Na^(-alpha)<=C_alpha U^(1-alpha), for0<=alpha<1. This proves D^(alpha-1/2+epsilon)U^(2(1-alpha)). It is a strategy certificate, not an actual estimate obtained from a proved input. Original S/raw-zero support can remove short residual windows, but this proof only overcounts them; no actual residual population or lower bound is asserted.
+
+5. For U=c*sqrt(D), fixed c bounded above and below, alpha-1/2+2*(1/2)*(1-alpha)=1/2 for every fixed alpha<1. Alpha0 and the illustrative alpha5/6 case agree. At alpha1, the separate harmonic estimate costs (1+log U)^2; no alpha-uniform limit of constants is claimed. This is the failure of the stated absolute r/s triangle method, not a proof that actual arithmetic cancellation cannot do better.
+
+6. The auxiliary unrestricted rank-one test is algebraically correct: |C_D|^2/D<=D^(-1/16) would follow from a column exponent at most15/32. The actual h1 coprime two-column slice is not that square and is not PSD; neither this scalar target nor a full-family lower bound follows. The stated connection to the separate pure-top reduction is contextual; this acceptance does not re-prove a new root/Gauss transport theorem or make H_alpha available.
+
+The accepted result is an exact actual-A_U opening plus a conditional upper-certificate diagnostic and a precise failed triangle step. It proves no principal mean/actual energy lower bound, target saving, whole signed exponent, determinant/zero-location or GRH result. Whole13/12/global9/8 remain. No old controls, numerical cases, code evaluators, builds, browser, auth, environment, index, canonical or publication action was used in this review.

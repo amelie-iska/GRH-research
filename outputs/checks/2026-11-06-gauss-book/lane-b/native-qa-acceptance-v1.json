@@ -1,0 +1,74 @@
+{
+  "schema": "focused-gauss-tail-native-qa-acceptance-v1",
+  "passed": true,
+  "checks_passed": 40,
+  "files": {
+    "planning/gauss-book-20261106/lane-b/check_native_v1.mjs": {
+      "sha256": "b36b69af268ed47b1b548bc08344a1616fc153035254a7181d40a3d9f455dba6",
+      "bytes": 23634
+    },
+    "outputs/checks/2026-11-06-gauss-book/native/run-v3/native-build-record.json": {
+      "sha256": "57157b4a17fc805b6be75ba96d88bd9235ae28586433b15f24d25e221863d242",
+      "bytes": 23569
+    },
+    "outputs/checks/2026-11-06-gauss-book/builds/run-v3/book-pdf/build-record.json": {
+      "sha256": "118b0c43a6450d6569a341b97538bd075bce3a3373bc57065d746a1614b6575c",
+      "bytes": 22951
+    },
+    "outputs/checks/2026-11-06-gauss-book/lane-b/native-browser-v2/receipt.json": {
+      "sha256": "cc16f3d146e8096465a09dcab5a1ba5e9949ea040e2ec6fea012630829e16bf4",
+      "bytes": 1267
+    },
+    "outputs/checks/2026-11-06-gauss-book/lane-b/native-browser-v2/browser.json": {
+      "sha256": "687fef32934b9eabefc828363f35dd0c04223c65edc810f673d8cae33df3a2ce",
+      "bytes": 164221
+    },
+    "outputs/checks/2026-11-06-gauss-book/lane-b/native-browser-v2/network-navigation-timing.json": {
+      "sha256": "e0f62a6f70a9f7cabba599252342d46c71d28fdc45ae10799b45412adfc27397",
+      "bytes": 47332
+    },
+    "outputs/checks/2026-11-06-gauss-book/lane-b/native-browser-v2/file-inventory.json": {
+      "sha256": "644e72e43ab42b50b666dff79574e6ae3ac5e736cc1a6cc516718e01444a476b",
+      "bytes": 2476
+    },
+    "outputs/checks/2026-11-06-gauss-book/lane-b/native-browser-v1/receipt.json": {
+      "sha256": "accb2dea80505896dbbf578f70c25a34396a0b0faf3a68335b531d57556ebefd",
+      "bytes": 1266
+    },
+    "outputs/checks/2026-11-06-gauss-book/lane-b/native-night-probe-v1/diagnostic.json": {
+      "sha256": "4aa1b038ea32da51696fd1942564b289a1a88034edba480e42e8ea513fac6b92",
+      "bytes": 3394
+    },
+    "planning/gauss-book-20261106/lane-b/NATIVE-QA-REVIEW-v1.md": {
+      "sha256": "404e68c59ec442aeb7e8d8fde739af80670f0081aa6e94dcb7cd6c37ff4f5392",
+      "bytes": 2178
+    }
+  },
+  "network": {
+    "timing_entries": 106,
+    "protocol_entries": 105,
+    "initial_markers": 1,
+    "actual_departures": 0,
+    "fetch_errors": 0,
+    "http_errors": 0,
+    "pending": 0,
+    "idle_timeouts": 0,
+    "quiet_ms": 750,
+    "timeout_ms": 30000
+  },
+  "cleanup": {
+    "owned_tab_closed": true,
+    "owned_user_context_removed": true,
+    "preexisting_contexts_untouched": true,
+    "session_ended": true
+  },
+  "screenshots": 13,
+  "source_and_inputs_unchanged": true,
+  "inherited_warning_events": 15,
+  "new_page_errors": 0,
+  "native_math_added": 489,
+  "no_old_release_or_science_controls_rerun": true,
+  "no_dependencies_installed": true,
+  "harness_runtime": "Existing Node18.19.1 + ws8.11.0; isolated Firefox BiDi9335 user context/tab.",
+  "root_owned_server_left_running": true
+}

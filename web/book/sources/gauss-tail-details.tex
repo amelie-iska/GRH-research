@@ -1,0 +1,783 @@
+% Generated shared reviewed material.
+% Full shared proofs; no book-only figure or new macro is required.
+\section{Proofs for the finite-cutoff Gauss tail}
+\label{gtl:details}
+The arithmetic norm input is the explicitly pinned
+\href{https://arxiv.org/abs/2610.04045v1}{de Faveri,
+arXiv:2610.04045v1, Theorem~1.1 and Example~2.2}, at order three.
+It is used on its actual primary cube-free ideal family.
+We do not reprove that deep theorem. The primitive root conventions
+are those already established in Proposition~\ref{cbk:root}, and
+the Jacobi orientation is that of~\eqref{sw:character}.
+The accompanying source map binds the accepted research proofs and
+their independent reviews. Full third-party reading caches are not
+public proof inputs.
+
+\subsection{The coherent main retains all sixth-part and ray data}
+\label{gtl:mean-proof}
+For a good ideal $\mathfrak s$, the original fixed-source transport
+in~\eqref{cbk:eta} gives
+\begin{equation}\label{gtl:sixth-phase}
+ \overline{\eta(\mathfrak s^6)}
+   =\overline{\rho(\mathfrak s)}^{\,6}
+                    \mathbf1_{(\mathfrak s,\mathfrak m\mathfrak n)=1}.
+\end{equation}
+This is an assertion about the total character on good arguments,
+not about the order of the individual possibly angular/radial
+$\xi_{\mathfrak m}$. Write $\psi=\bar\rho^{\,6}$, and let
+$\delta_\psi$ be one if it is principal on good ideals and zero
+otherwise. The conductor of $\psi$ belongs to fixed $S$ data.
+
+Here is the fixed-ray counting input, with its full deletion.
+For $t\ge0$, the classical disk estimate gives
+\begin{equation}\label{gtl:ray-count}
+ \begin{aligned}
+ N_{\psi,q}(t)
+ &:=\sum_{\substack{\mathfrak s\ {\rm good}\\
+                    N\mathfrak s\le t,\;(\mathfrak s,\mathfrak q)=1}}
+                                                  \psi(\mathfrak s)\\
+ &=\delta_\psi\kappa_S g(\mathfrak q)t+E_{\psi,q}(t),\\
+ |E_{\psi,q}(t)|
+ &\ll_{S,\psi}t^{1/3}
+                  \sum_{\mathfrak d\mid\mathfrak q}(N\mathfrak d)^{-1/3}
+ \ll_\epsilon D^\epsilon t^{1/3},
+ \qquad N\mathfrak q\le4D^2 .
+ \end{aligned}
+\end{equation}
+We recall a proof to specify the uniformity being used.
+For a fixed ideal modulus, count elements in each translated
+lattice coset inside a disk of radius $R$. Convolve the disk
+indicator with a fixed compact smooth nonnegative mollifier
+of radius $\Delta$. The smoothed disks of radii $R-\Delta$
+and $R+\Delta$ sandwich the original disk. Their zero modes
+differ from its area by $O(R\Delta+\Delta^2)$.
+
+For a nonzero dual vector $\xi$, polar integration gives
+\begin{equation}\label{gtl:disk-fourier}
+ \widehat{\mathbf1_{|z|\le R}}(\xi)
+       =\frac{R J_1(2\pi R|\xi|)}{|\xi|},
+ \qquad
+ |J_1(u)|\ll\min\{1,u^{-1/2}\}.
+\end{equation}
+The decay follows directly from the angular integral for $J_1$:
+for $u\ge1$, remove arcs of length $u^{-1/2}$ around the two
+stationary points. Their total contribution is $O(u^{-1/2})$.
+On the complement integrate once by parts in the phase;
+the boundary terms and the integral of the derivative of
+the reciprocal phase derivative are also $O(u^{-1/2})$.
+For $u\le1$ the angular formula gives the bounded estimate.
+Thus no unproved cancellation of lattice points is inserted.
+The mollifier supplies arbitrarily rapid decay beyond
+$|\xi|\asymp\Delta^{-1}$. Counting points of the fixed dual
+lattice in unit-width radial shells yields
+\begin{equation}\label{gtl:disk-error}
+ \sum_{\xi\ne0}
+    |\widehat{\mathbf1_{|z|\le R}}(\xi)\widehat\varphi(\Delta\xi)|
+ \ll R^{1/2}\Delta^{-1/2}.
+\end{equation}
+The translation only changes unit phases.
+Choose $\Delta$ comparable to $R^{-1/3}$ for large $R$.
+The boundary and dual errors are both $O(R^{2/3})$.
+Bounded $R$ is absorbed into the fixed constant.
+
+A type-zero finite ray character is a fixed periodic generator
+function, trivial on the six units. Apply the preceding count
+to its finitely many residue cosets, and only then form the
+possibly complex weighted sum. Division by six and the
+covolume $\sqrt3/2$ of $\mathcal O$ give the coefficient
+$\pi/(3\sqrt3)$. The principal coset average is the good-$S$
+density; a nonprincipal character has mean zero.
+For $t\ge1$ this proves the undeleted error $O(t^{1/3})$.
+For $0<t<1$ the ideal count is zero and $t\le t^{1/3}$,
+so the same ideal estimate remains valid; $t=0$ is exact.
+
+Now use the \emph{entire} finite inclusion--exclusion:
+\begin{equation}\label{gtl:full-IE}
+ N_{\psi,q}(t)
+  =\sum_{\mathfrak d\mid\mathfrak q}
+       \mu(\mathfrak d)\psi(\mathfrak d)
+                       N_{\psi,1}(t/N\mathfrak d).
+\end{equation}
+Divisors with $N\mathfrak d>t$ are still present, with their
+subunit arguments. For principal $\psi$ the main sum is
+$\kappa_St\prod_{p\mid q}(1-(Np)^{-1})$; otherwise it is zero.
+The error in~\eqref{gtl:ray-count} follows. Its final divisor
+product is $O_\epsilon(D^\epsilon)$ by separating finitely
+many small primes and using $1+P^{-1/3}\le P^\eta$ at all
+sufficiently large $P$. This is ideal-squarefreeness, not
+rational-squarefreeness.
+
+For fixed $\mathfrak h,\mathfrak r$, the original sum over
+$V<N\mathfrak s\le b_{\mathfrak h\mathfrak r}$ has weight
+$\dot G(c\,t^6)$. In the pure block the scale is
+\begin{equation}\label{gtl:Stieltjes-scale}
+ c=\frac{A_1N\mathfrak hN\mathfrak r}
+              {(N\mathfrak k)^2N\mathfrak e F}.
+\end{equation}
+Closed prefixes at both endpoints give the exact error formula
+\begin{equation}\label{gtl:Stieltjes-error}
+ \begin{split}
+ w(b)E_{\psi,q}(b)-w(V)E_{\psi,q}(V)
+             -\int_V^b E_{\psi,q}(t)w'(t)\,dt,
+ \qquad w(t)=\dot G(ct^6).
+ \end{split}
+\end{equation}
+There are no half-weights at ideal norm ties. The angular
+representations of $J_0,J_1$ imply, with
+$\Lambda=A_1X/D^2$,
+\begin{equation}\label{gtl:Bessel-variation}
+ \|\dot G\|_\infty\ll1,\qquad
+ |x\dot G'(x)|\ll\sqrt x,\qquad
+ \int_V^b|w'(t)|\,dt\ll\sqrt\Lambda .
+\end{equation}
+Indeed $ct^6\le\Lambda$ and $b/V\le2$; differentiating
+the Bessel factor, not $G$, proves the last assertion.
+Consequently the error at each fixed outer set is
+$O(D^\epsilon V^{1/3}(1+\sqrt\Lambda))$.
+
+At the top window $N\mathfrak hN\mathfrak r<64$.
+Every good ideal of norm below $64$ is sixth-free, because
+a nontrivial good prime has norm at least seven. Therefore
+the unique decomposition into its $S$ part and good part
+runs exactly over all $\mathfrak w$ in~\eqref{gtl:actual-mean}.
+The principal condition is precisely $\rho^6=1$.
+On the original coprime support
+$g(\mathfrak m\mathfrak n)=g(\mathfrak m)g(\mathfrak n)$.
+This proves the stated finite formula for $M_{\rm top}/D$.
+
+For the separate error, $|A_U|\le3^{\omega(\mathfrak m)}
+\ll_\epsilon D^\epsilon$, and there are $O(D)$ original
+annular ideals. After normalizing once by $D$,
+$A_1/(D\sqrt F)\le A_1/D^2$ cancels the two column counts.
+The $S$/ray/$\mathfrak e$ sets are fixed, the top
+$\mathfrak w$ set is finite, and the \emph{original} finite
+$\mathfrak k$ sum is majorized by $\sum(N\mathfrak k)^{-2}$.
+Since $V^{1/3}\asymp X^{1/18}$, this proves
+\eqref{gtl:ray-error}. Only its error uses these triangles;
+the mean in~\eqref{gtl:actual-mean} stays signed.
+
+\subsection{Exact good-modulus Gauss factors and separate primitive S values}
+\label{gtl:root-proof}
+The finite cubic sum at frequency $z$ is
+\begin{equation}\label{gtl:frequency-sum}
+ \frac1{\sqrt{N\mathfrak m}}\sum_{x\bmod\alpha_{\mathfrak m}}
+       \chi_{3,\mathfrak m}(x)
+        \exp\!\left(2\pi i\operatorname{Tr}
+                   \frac{zx}{\delta\alpha_{\mathfrak m}}\right)
+       =\overline{\chi_{3,\mathfrak m}(z)}G_{\mathfrak m}.
+\end{equation}
+For a unit frequency this is change of variable.
+At a collision, one local additive frequency is zero and its
+nonprincipal local cubic character has zero sum. CRT proves
+the assertion for every good squarefree ideal, including
+inert primes and nonsquarefree rational norms.
+The normalized sum has modulus one at unit frequencies.
+
+The total $\eta$ has type zero, so the previously proved
+root formula is its finite Gauss sum divided by $\sqrt F$.
+CRT at the coprime primitive conductors
+$\mathfrak f_S,\mathfrak q$ gives exactly
+\eqref{gtl:S-factor} times $\tau_q(\theta_q)/\sqrt{Nq}$.
+Although their product is unit-trivial, the finite $S$ and
+good-$q$ characters need not be unit-trivial separately.
+No extra unit average is taken. The actual finite
+$S$ character, including its conductor drop, is used at its
+own primitive modulus. At unit conductor its Gauss sum is one.
+
+On good squarefree $q$, all local powers
+$\theta_q,\theta_q^2,\theta_q^3$ are nonprincipal and primitive.
+The Gauss--Jacobi identity therefore gives
+\begin{equation}\label{gtl:Gauss-Jacobi}
+ \tau_q(\theta_q)\tau_q(\theta_q^2)
+       =J_q(\theta_q,\theta_q^2)\tau_q(\theta_q^3).
+\end{equation}
+Over a residue field this follows by setting $x+y=t$ in the
+product of Gauss sums; the zero-$t$ term vanishes because
+the product character is nonprincipal. Multiplication by CRT
+proves the composite identity: its additive cross multipliers
+on the left combine to those of $\theta_q^3$ on the right.
+The Jacobi sum itself has no additive-generator multiplier.
+
+The correctly oriented result already proved in
+Section~\ref{sw:core} is
+\begin{equation}\label{gtl:Jacobi-identification}
+ \begin{aligned}
+ J_q(\theta_q,\theta_q^2)
+     &=j(\mathfrak m)\overline{j(\mathfrak n)},\\
+ j(\mathfrak m)/\sqrt{N\mathfrak m}
+     &=\mu(\mathfrak m)\vartheta(\mathfrak m),
+       \qquad \vartheta=\Psi/\sqrt N,\quad
+                        \operatorname{cond}\Psi=(2\delta).
+ \end{aligned}
+\end{equation}
+Its sign is fixed by $-j(p)\equiv1\pmod{2\delta}$ and
+$(j(p))=p$ for the positive sextic character. The reduction
+argument includes inert primes. Unique generators congruent
+to one modulo $2\delta$ then identify $-j(p)$ with $\Psi(p)$.
+Multiplication yields the displayed identity only on
+squarefree columns. In particular $\Psi$ has its actual
+infinity type $(1,0)$; it is not a finite-order gauge.
+
+Cubic reciprocity for the same primary section and the fact
+that $\chi_3(-1)=1$ yield
+\begin{equation}\label{gtl:cubic-CRT-root}
+ \begin{aligned}
+ \chi_{3,\mathfrak m}(\alpha_{\mathfrak n})
+   &=\chi_{3,\mathfrak n}(\alpha_{\mathfrak m}),\\
+ \tau_q(\theta_q^2)/\sqrt{Nq}
+   &=G_{\mathfrak m}\overline{G_{\mathfrak n}}.
+ \end{aligned}
+\end{equation}
+The cubic cross factors cancel, while
+$\tau(\bar\chi_3)=\overline{\tau(\chi_3)}$.
+The quadratic Gaussian evaluation in the same two-factor
+completion is
+$\tau_q(\theta_q^3)/\sqrt{Nq}
+ =\Gamma(\alpha_{\mathfrak m}\alpha_{\mathfrak n})$,
+with the period-four formula in~\eqref{gtl:root-cubic}.
+For composite $q$, this uses that Gauss evaluation with its
+exact pairing; $1+\theta_q^3$ is not the root-count function
+of a composite residue ring. Combining these facts with
+\eqref{gtl:Gauss-Jacobi} proves~\eqref{gtl:root-cubic}.
+There is no additional $\theta_q^3(-1)$ factor.
+
+For the original good $\mathfrak k$,
+\begin{equation}\label{gtl:frequency-transport}
+ \begin{aligned}
+ \eta(\mathfrak k^2)
+   &=\theta_S(\alpha_{\mathfrak k})^2
+        \chi_{3,\mathfrak m}(\alpha_{\mathfrak k})
+        \overline{\chi_{3,\mathfrak n}(\alpha_{\mathfrak k})},\\
+ \overline{G_{\mathfrak m}}G_{\mathfrak n}
+        \chi_{3,\mathfrak m}(z)
+        \overline{\chi_{3,\mathfrak n}(z)}
+   &=\overline{g_{\mathfrak m}(z)}g_{\mathfrak n}(z).
+ \end{aligned}
+\end{equation}
+Before the pure specialization the row factor
+$R_{\mathfrak m}(\mathfrak v_2^2)
+ \overline{R_{\mathfrak n}(\mathfrak v_2^2)}$
+makes $z=\alpha_{\mathfrak k}\alpha_{\mathfrak v_2}$.
+All raw collisions are zeros. The separate original
+$(\mathfrak k,\mathfrak v_2)=1$ condition is not replaced by
+a frequency assertion.
+The primitive factors at $\mathfrak e$ and $\mathfrak w$ are
+$\eta(\mathfrak e)$ and $\overline{\eta(\mathfrak w)}$.
+When expressed with generators, their $S$ parts are the
+separate factors $\theta_S(\gamma_{\mathfrak e})$ and
+$\overline{\theta_S(\gamma_{\mathfrak w})}$.
+If either is zero the component vanishes. No quotient of
+these arguments, division by a primitive zero, or primary
+section for an $S$-supported ideal is used. Changes of these
+generators cancel in the total unit-trivial character.
+
+\subsection{Matched finite endpoint models and a real-axis remainder}
+\label{gtl:models-proof}
+For $z\ge0$ and an integer $J\ge0$, the angular cosine formula
+and its real Taylor remainder give
+\begin{equation}\label{gtl:real-remainder}
+ \left|J_0(2\sqrt z)
+       -\sum_{j=0}^J\frac{(-z)^j}{(j!)^2}\right|
+             \le\frac{z^{J+1}}{((J+1)!)^2}.
+\end{equation}
+Indeed use the cosine Taylor polynomial through degree
+$2J+1$ inside its angular integral. The remainder is at most
+$|2\sqrt z\cos\theta|^{2J+2}/(2J+2)!$, and the normalized
+angular moment of $\cos^{2j}\theta$ is
+$(2j)!/(4^j(j!)^2)$. This proves both the coefficients and
+the bound for every nonnegative $z$, without an exponential
+majorant or a sign assertion about the error.
+
+Set
+\begin{equation}\label{gtl:matched-moments}
+ m_j=\int_0^\infty v^jG(v)\,dv,\qquad
+ I_j(\mathfrak w)
+   =\frac{b_{\mathfrak w}^{6j+1}-V^{6j+1}}{6j+1}
+   =\int_V^{b_{\mathfrak w}}t^{6j}\,dt .
+\end{equation}
+The exact order-$J$ signed model of~\eqref{gtl:actual-mean} is
+\begin{equation}\label{gtl:all-models}
+ \mathcal L_J[f_1,f_2]
+  =C_0^{-1/2}\sum_\theta d_\theta[f_1,f_2]
+       \sum_{j=0}^J
+        \frac{(-1)^jm_j\lambda_\theta^j I_j(\mathfrak w)}
+             {C_0^j(j!)^2}\,
+                   Q_{2+2j}^{T_q}(K;\eta^2).
+\end{equation}
+The character in every $Q_s$ is still $\eta^2$.
+Both finite endpoints, every primitive root and every
+original finite $\mathfrak k$ cutoff remain.
+In particular $I_0=X^{1/6}t_{\mathfrak w}$ and
+\eqref{gtl:all-models} at $J=0$ is exactly
+\eqref{gtl:leading-model}.
+
+Applying~\eqref{gtl:real-remainder} before the original
+$\mathfrak k$ sum and the $t$ integral gives a per-$\theta$
+bound
+\begin{equation}\label{gtl:per-mode-error}
+ \begin{split}
+ \frac{C_0^{-1/2}m_{J+1}
+        (\lambda_\theta/C_0)^{J+1}
+        I_{J+1}(\mathfrak w)}
+       {((J+1)!)^2}
+     \sum_{\substack{\mathfrak k\ {\rm original}}}
+                   (N\mathfrak k)^{-4-2J}.
+ \end{split}
+\end{equation}
+Only this certified remainder takes absolute values.
+On the full support
+$\lambda_\theta b_{\mathfrak w}^6
+ =A_1X/(N\mathfrak e F)\le\Lambda$.
+Since $m_{J+1}\le2(5/2)^{J+1}$ and
+$\sum(N\mathfrak k)^{-4-2J}$ is bounded by one constant
+independent of $J$ and all deletions, put
+$\Omega=(5/2)\Lambda/C_0$. Counting the two actual annular
+column sets only in the error yields
+\begin{equation}\label{gtl:all-model-error}
+ |\mathcal M_{\rm top}-\mathcal L_J[A_U,A_U]|
+ \ll B_W^2(DX)^\epsilon A_1X^{1/6}
+             \frac{\Omega^{J+1}}{((J+1)!)^2}.
+\end{equation}
+Here the two $O(D)$ column counts cancel
+$1/(D\sqrt F)\le D^{-2}$, the $S$/source/ray sets are fixed,
+the $\mathfrak w$ set has bounded size, and each interval
+has length at most $V$. The constant in this inequality is
+independent of $J$ and of derivatives of $G$.
+At $J=0$ it proves~\eqref{gtl:model-error}.
+The infinite Bessel hierarchy was already available; the
+statement used here is the finite real-axis certificate.
+It bounds the remainder, not the signed polynomial.
+
+\subsection{All source and ray phases give bounded multiplicative columns}
+\label{gtl:phase-proof}
+Freeze $\mathfrak n,\mathfrak e,\mathfrak w,\mathfrak k$
+and one source/ray component in the pure model.
+After~\eqref{gtl:root-cubic}, every $\mathfrak m$ dependence
+apart from
+$\mu(\mathfrak m)f(\mathfrak m)
+ \overline{G_{\mathfrak m}}W(N\mathfrak m/D)/\sqrt{N\mathfrak m}$
+is a product of bounded multiplicative functions, except
+for two fixed finite selectors.
+The multiplicative factors include $\vartheta,\nu,g$,
+fixed-numerator residue symbols at $u_0,\gamma_S,\mathfrak k,
+\mathfrak e,\mathfrak w$, the value
+$\theta_S(\alpha_{\mathfrak m})$, and the original
+$(\mathfrak m,\mathfrak n)=1$ deletion.
+They include zeros: a numerator valuation divisible by six
+does not restore a collision.
+Primary generators multiply on the required coprime products.
+
+Let $\mathcal C$ be the fixed source group and
+$\mathcal H=(\mathcal O/(4))^\times$, of order $12$.
+Finite character expansions give
+\begin{equation}\label{gtl:finite-selectors}
+ \begin{aligned}
+ \mathbf1_{[\mathfrak m]=A}
+   &=\frac1{|\mathcal C|}\sum_{\chi\in\widehat{\mathcal C}}
+           \overline{\chi(A)}\chi([\mathfrak m]),\\
+ \Gamma(x\alpha_{\mathfrak n})
+   &=\sum_{\chi\in\widehat{\mathcal H}}a_{\chi,\mathfrak n}\chi(x),
+       \qquad \sum_\chi|a_{\chi,\mathfrak n}|\le\sqrt{12}.
+ \end{aligned}
+\end{equation}
+The first coefficient mass is one. The second follows by
+normalized Parseval and Cauchy since the function has
+modulus one on $\mathcal H$.
+These bounds are independent of $\mathfrak n,\mathfrak k,D$.
+Extending a fixed formula off its source class only extends
+a coefficient function; the finite selector sum restores
+the original class. No primitive root of a wrong-class
+or overlapping-conductor pair is asserted.
+
+Consequently every actual fixed-other-column expression is
+a finite linear combination, of fixed total coefficient
+mass, of the linear forms in~\eqref{gtl:linear-tail}.
+The associated $\lambda$ may have growing conductor and
+other-column deletion, but $|\lambda|\le1$ and
+multiplicativity on coprime products suffice.
+This does not flatten the original roots or make the
+coprime matrix positive. It is not a silent extension of
+a same-class, $\rho=1$ formula.
+
+\subsection{Two exact cutoff boxes expose a physical cubic matrix}
+\label{gtl:grouping-proof}
+To prove~\eqref{gtl:ternary}, in each term of
+\eqref{gtl:coefficients} set
+$\mathfrak c=\mathfrak m/(\mathfrak a\mathfrak b)$.
+Squarefreeness makes the factors pairwise coprime and
+$\mu(\mathfrak m)\mu(\mathfrak a)\mu(\mathfrak b)
+ =\mu(\mathfrak c)$.
+The cutoff difference is the exact disjoint assignment
+\begin{equation}\label{gtl:two-boxes}
+ \begin{aligned}
+ &\mathbf1_{N\mathfrak a,N\mathfrak b\le U}
+       -\mathbf1_{N\mathfrak a,N\mathfrak b\le Y}\\
+ &\quad=\mathbf1_{Y<N\mathfrak a\le U,\;N\mathfrak b\le U}
+       +\mathbf1_{N\mathfrak a\le Y,\;Y<N\mathfrak b\le U}.
+ \end{aligned}
+\end{equation}
+Swap $\mathfrak a,\mathfrak b$ in the second piece and
+put $\mathfrak z=\mathfrak b\mathfrak c$ in both.
+On coprime primary $\mathfrak a,\mathfrak z$, Gauss CRT
+has the cross
+$\chi_{3,\mathfrak a}(\alpha_{\mathfrak z})^2$.
+Conjugation and cubic reciprocity give exactly
+\eqref{gtl:gauss-cross}. Thus the left side of
+\eqref{gtl:linear-tail}, before taking its absolute value,
+is
+\begin{equation}\label{gtl:grouped-form}
+ \begin{split}
+ \sum_{\substack{\mathfrak a,\mathfrak z\ {\rm good,SF}\\
+                         Y<N\mathfrak a\le U}}
+ &\frac{\overline{G_{\mathfrak a}}\lambda(\mathfrak a)}
+             {\sqrt{N\mathfrak a}}\,
+   \frac{\overline{G_{\mathfrak z}}\lambda(\mathfrak z)
+                         [T_U(\mathfrak z)+T_Y(\mathfrak z)]}
+             {\sqrt{N\mathfrak z}}\\
+ &\quad\cdot\chi_{3,\mathfrak a}(\alpha_{\mathfrak z})
+                         W(N\mathfrak aN\mathfrak z/D).
+ \end{split}
+\end{equation}
+At a common prime the cubic entry is zero. Hence this
+encompassing SF rectangle encodes the original
+squarefreeness of $\mathfrak m=\mathfrak a\mathfrak z$,
+without inventing a primitive overlapping root.
+Also
+$\mathbf1_{(\mathfrak a\mathfrak z,\mathfrak n)=1}
+ =\mathbf1_{(\mathfrak a,\mathfrak n)=1}
+  \mathbf1_{(\mathfrak z,\mathfrak n)=1}$, and the other
+fixed-numerator collision masks split in the same way.
+In particular the full other-column mask survives.
+There is no assumption that $A_U$ or $T_L$ is multiplicative.
+The elementary estimate
+$|T_U(\mathfrak z)+T_Y(\mathfrak z)|\le2\tau(\mathfrak z)$
+is uniform in both cutoffs.
+
+\subsection{Cubic Cauchy before the distinguished-divisor triangle}
+\label{gtl:cubic-proof}
+Use dyads $N\mathfrak a\asymp A$ in $(Y,U]$.
+Only $N\mathfrak z\asymp Z$, $Z\asymp D/A$,
+can meet the original profile. Both indices in
+\eqref{gtl:grouped-form} are good squarefree ideals, hence
+cube-free. Primary cubic reciprocity identifies the entry
+with the physical family of~\eqref{gtl:cubic-input}, or
+its transpose. Additional row/column masks are coefficient
+contractions inside that arbitrary-coefficient norm.
+No character indexed only by a growing conductor is substituted.
+
+Ideal counting and the divisor estimate show, with
+arbitrarily small exponent losses,
+\begin{equation}\label{gtl:dyadic-L2}
+ \begin{aligned}
+ \sum_{N\mathfrak a\asymp A}
+   \left|\frac{\overline{G_{\mathfrak a}}\lambda(\mathfrak a)}
+                    {\sqrt{N\mathfrak a}}\right|^2&\ll1,\\
+ \sum_{N\mathfrak z\asymp Z}
+   \left|\frac{\overline{G_{\mathfrak z}}\lambda(\mathfrak z)
+                    [T_U(\mathfrak z)+T_Y(\mathfrak z)]}
+                    {\sqrt{N\mathfrak z}}\right|^2
+                                                    &\ll_\epsilon D^\epsilon .
+ \end{aligned}
+\end{equation}
+These are coefficient bounds after the exact signed grouping,
+not a new bound for the norm of $A_U$.
+
+The exact Mellin separation of the one common occurrence
+of $W$ is
+\begin{equation}\label{gtl:Mellin-separation}
+ W(N\mathfrak aN\mathfrak z/D)
+  =\frac1{2\pi}\int_{\mathbb R}\widehat W(t)D^{-it}
+                  (N\mathfrak a)^{it}(N\mathfrak z)^{it}\,dt .
+\end{equation}
+Its powers are unitary on this line, so it costs
+$\mathcal M(W)$ once. The arbitrary-coefficient cubic
+operator norm and~\eqref{gtl:dyadic-L2} therefore give
+\begin{equation}\label{gtl:dyadic-column}
+ |\text{one dyadic form}|
+  \ll_\epsilon \mathcal M(W)D^\epsilon
+                \sqrt{A+D/A+D^{2/3}} .
+\end{equation}
+This is a bilinear matrix inequality, not positivity of
+the original coprime form.
+Summing the finite dyads with $A\ge Y/2$ and
+$A\le U\le\sqrt D$ gives
+\begin{equation}\label{gtl:summed-column}
+ \mathcal M(W)D^\epsilon
+       \{\sqrt U+\sqrt{D/Y}+D^{1/3}\}
+ \ll\mathcal M(W)D^\epsilon
+       \{\sqrt{D/Y}+D^{1/3}\}.
+\end{equation}
+Dyadic logarithms and divisor losses are absorbed by
+distributing a prescribed $\epsilon$ among the preceding
+bounds. Partial dyads and real cutoff ties are literal
+coefficient indicators. Empty tails, including $Y=U$,
+are exactly zero. This proves~\eqref{gtl:linear-tail}.
+
+\subsection{Full pair support and the original finite k reassembly}
+\label{gtl:reassembly-proof}
+Fix the other column $\mathfrak n$. Its raw coprimality
+and numerator deletions are already in $\lambda$ by
+Section~\ref{gtl:phase-proof}.
+An optional condition $N\mathfrak m\ne N\mathfrak n$ is
+not multiplicative. The number of ideals of a fixed
+rational norm $N$ is at most the integer divisor function:
+at a split prime an exponent $e$ gives at most $e+1$
+choices, at an inert prime at most one, and at a
+ramified prime one. Consequently there are
+$O_\epsilon(D^\epsilon)$ ideals in the forbidden norm
+fibre, with all orientations separate.
+Since $|A_U|+|A_Y|\ll_\epsilon D^\epsilon$, subtracting it
+costs
+\begin{equation}\label{gtl:equal-fibre-cost}
+ O_\epsilon(B_WD^{-1/2+\epsilon})
+ \quad\text{in the fixed-other-column sum}.
+\end{equation}
+This is below~\eqref{gtl:linear-tail};
+$\mathcal M(W)\ge B_W$ by Fourier inversion.
+No whole equal-norm energy is subtracted from a different
+frequency sector.
+
+The untouched original column has the elementary bound
+\begin{equation}\label{gtl:other-column}
+ \sum_{\mathfrak n\ {\rm original}}
+       \frac{|A_T(\mathfrak n)W(N\mathfrak n/D)|}
+            {\sqrt{N\mathfrak n}}
+       \ll_\epsilon B_WD^{1/2+\epsilon},
+                 \qquad T\in\{U,Y\}.
+\end{equation}
+Take this triangle only after~\eqref{gtl:linear-tail}.
+In the leading model all $S$, source/ray and
+$N\mathfrak w<64$ coefficient masses are fixed;
+$g_0$ is bounded independently of capacity derivatives,
+and $F^{-1/2}$ supplies the two square-root norm weights
+already used. The normalization is once by $1/D$.
+For each actual fixed $\mathfrak k$, the column estimate
+is uniform in its bounded multiplicative numerator
+phase. Thus its \emph{original finite} sum is bounded by
+$\sum(N\mathfrak k)^{-2}<\infty$, with no
+$(N\mathfrak k)^\epsilon$ or altered conductor cost.
+One does not need to complete that sum.
+
+Equivalently, define $\mathcal G_D^K$ by
+$\mathcal L_0[f_1,f_2]=A_1X^{1/6}\mathcal G_D^K[f_1,f_2]$.
+The preceding estimates give
+\begin{equation}\label{gtl:one-sided-moment}
+ |\mathcal G_D^K[A_U-A_Y,A_T]|
+ \ll B_W\mathcal M(W)D^\epsilon
+                    \{D^{-1/6}+Y^{-1/2}\}.
+\end{equation}
+For a tail on the second column, conjugate the scalar
+expression and reverse the roles. This sends $G_{\mathfrak n}$
+to $\overline{G_{\mathfrak n}}$, $W$ to $\bar W$ and
+the finite coefficients to their conjugates.
+The conjugate cubic matrix has the same norm, and
+$\mathcal M(\bar W)=\mathcal M(W)$.
+No Hermitian assertion about an individual source block
+is required. Finally use the exact bilinear identity
+\begin{equation}\label{gtl:bilinear-difference}
+ \begin{aligned}
+ \mathcal G_D^K[A_U,A_U]-\mathcal G_D^K[A_Y,A_Y]
+  &=\mathcal G_D^K[A_U-A_Y,A_U]\\
+  &\quad+\mathcal G_D^K[A_Y,A_U-A_Y].
+ \end{aligned}
+\end{equation}
+This proves~\eqref{gtl:finite-tail} with all original
+finite cutoffs, primitive $S$ zeros and pair masks.
+
+\subsection{The critical reduction is not a bound for its residual mean}
+\label{gtl:critical-proof}
+Equations~\eqref{gtl:model-error} and
+\eqref{gtl:finite-tail} prove~\eqref{gtl:combined}.
+When $U\ge D^{1/8}$, substituting
+$A_1\asymp D^{3/4}$, $X=D^{3/8}$, $Y=D^{1/8}$
+gives the exact exponent calculations
+\begin{equation}\label{gtl:critical-powers}
+ \begin{aligned}
+ 2(3/4)+(7/6)(3/8)-2&=-1/16,\\
+ 3/4+(1/6)(3/8)-(1/2)(1/8)&=3/4,\\
+ 3/4+(1/6)(3/8)-1/6&=31/48 .
+ \end{aligned}
+\end{equation}
+If $U<D^{1/8}$ choose $Y=U$; the coefficient difference
+then vanishes identically, rather than replacing
+$Y^{-1/2}$ by a smaller number. The small-cutoff moment
+remains exactly the auxiliary expression with that $Y$.
+Since both short divisors have norms at most $Y$,
+their residual in~\eqref{gtl:long-residual} has norm at
+least $D/Y^2$. All other-column and finite-frequency
+couplings remain in its two-column sum.
+
+The current separate discrepancy has critical power
+\begin{equation}\label{gtl:discrepancy-power}
+ 3/4+(1/18)(3/8)=37/48>3/4 .
+\end{equation}
+This upper certificate is not a noncancellation theorem.
+A bound for the small-cutoff leading model alone does
+not cancel or improve it. Both it and the remaining
+original sectors require additional signed arithmetic.
+
+
+\subsection{Direct discrete frequencies require no principal-density approximation}
+\label{gtl:direct-proof}
+For each original dual ideal, its good valuations determine
+uniquely $\mathfrak y=\mathfrak w\mathfrak s^6$ with good
+$\mathfrak s$ and good part of $\mathfrak w$ sixth-free.
+At $V=X^{1/6}/2$, the lower-open condition
+$N\mathfrak s>V$ implies $N\mathfrak w<64$.
+Conversely every ideal of norm below $64$ has sixth-free
+good part, since the least good prime norm is seven.
+This proves the exact support~\eqref{gtl:discrete-support}
+with all its nonunit $S$ modes and possible overlaps.
+No squarefreeness of $\mathfrak s$ or new coprimality with
+$\mathfrak k$ is introduced.
+
+Equation~\eqref{gtl:sixth-phase} holds for \emph{every}
+original $\rho$. Retaining that factor and the actual
+discrete $\mathfrak s$ family in~\eqref{cbk:exact-kernel}
+gives~\eqref{gtl:direct-prefix}. The prefactor is exactly
+$A_1/(D\sqrt F)$, including the once-only normalization.
+All primitive factors at $\mathfrak e,\mathfrak w$ are
+still separate, and a good collision remains zero
+even when its exponent is a sixth power.
+
+The pointwise real-axis remainder~\eqref{gtl:real-remainder}
+at $J=0$ implies
+\begin{equation}\label{gtl:direct-Bessel}
+ |\dot G(x)-g_0|
+    \le C_0^{-3/2}x\int_0^\infty vG(v)\,dv
+    \le3C_0^{-3/2}x,\qquad x\ge0 .
+\end{equation}
+Every argument in~\eqref{gtl:direct-prefix} is at most
+$\Lambda=A_1X/D^2$. Count only in this error:
+there are $O(D^2)$ annular column pairs,
+$A_1/(D\sqrt F)\le A_1/D^2$, the original coefficient
+products are $O(B_W^2D^\epsilon)$, and the original
+finite $\mathfrak k$ absolute budget is bounded by
+$\sum(N\mathfrak k)^{-2}$.
+The $\mathfrak e$/source/ray and $\mathfrak w$ sets have
+fixed finite mass. Since $V\ge1$, the exact good
+$\mathfrak s$ annulus contains $O(V)$ ideals.
+This proves~\eqref{gtl:direct-model-error}, without a
+ray count, interpolated endpoint, density or arbitrary
+row-weight norm.
+
+It remains to justify applying the column-tail theorem
+to every original ray. The good-$q$ powers in the proof
+of~\eqref{gtl:root-cubic} are local powers $1,2,3$ of
+$\theta_q$; that proof never uses $\rho^6=1$.
+For every original component the total $\eta$ is type
+zero and its finite $\theta_S$ is fixed at its actual
+primitive $S$ conductor. Hence the finite selector
+expansion in~\eqref{gtl:finite-selectors} and its
+coefficient mass are valid on all these components.
+No new assertion of sixth order for an individual
+$\xi$ or replacement of a primitive $S$ Gauss sum is made.
+
+Now freeze $\mathfrak s$ as well as
+$\mathfrak n,\mathfrak k,\mathfrak e,\mathfrak w$.
+Relative to Section~\ref{gtl:phase-proof}, the only new
+$\mathfrak m$ factor is
+$\mathbf1_{(\mathfrak m,\mathfrak s)=1}$.
+It is a bounded multiplicative ideal function and
+splits exactly in the grouped column as
+\begin{equation}\label{gtl:s-mask-split}
+ \mathbf1_{(\mathfrak a\mathfrak z,\mathfrak s)=1}
+   =\mathbf1_{(\mathfrak a,\mathfrak s)=1}
+      \mathbf1_{(\mathfrak z,\mathfrak s)=1}.
+\end{equation}
+The $\mathfrak n/\mathfrak s$ mask is a scalar which may
+be zero. The fixed $\bar\rho(\mathfrak s)^6$ phase is
+another bounded scalar. All earlier full-union raw
+deletions and separate primitive $S$ values remain.
+Thus~\eqref{gtl:linear-tail} is uniform in
+$\mathfrak s$ as well as in $\mathfrak n,\mathfrak k$,
+with no $(N\mathfrak s)^\epsilon$ or
+$(N\mathfrak k)^\epsilon$ cost. Their growing deleted
+primes are coefficient diagonals in the same physical
+cubic matrix.
+
+There is no density in the new exact discrete model.
+Use the underlying arbitrary-$\lambda$ theorem with
+the factor $g(\mathfrak m)$ omitted, rather than dividing
+the earlier density-weighted moment by $g(q)$.
+If a $\mathfrak k$ domain has been written with
+$q$ deletion, first express it on the common original
+good-SF set $N\mathfrak k\le K$ with its exact raw
+$\eta(\mathfrak k)^2$ zero. This permits a fixed
+$\mathfrak k$ column argument, restores no prime and
+adds no $(\mathfrak k,\mathfrak s)$ condition.
+
+Apply the signed column estimate before the other
+column triangle. The latter is~\eqref{gtl:other-column};
+after once-only $1/D$ it yields
+$B_W\mathcal M(W)D^\epsilon
+ (Y^{-1/2}+D^{-1/6})$ for each fixed
+$\mathfrak s,\mathfrak w,\mathfrak k,\mathfrak e$
+and finite component, with the original $A_1g_0$ factor.
+Sum the original finite $\mathfrak k$ norm weights and
+the fixed $\mathfrak e,\mathfrak w$ components.
+Only now use the $O(V)$ count of the exact
+$\mathfrak s$ family. Reversed tails use conjugation,
+as in Section~\ref{gtl:reassembly-proof}, and the
+original unequal-norm selector uses the same separate
+fixed-norm fibre bound~\eqref{gtl:equal-fibre-cost}.
+The exact identity
+\begin{equation}\label{gtl:direct-bilinearity}
+ \begin{aligned}
+ \mathcal L_X^K[A_U,A_U]-\mathcal L_X^K[A_Y,A_Y]
+  &=\mathcal L_X^K[A_U-A_Y,A_U]\\
+  &\quad+\mathcal L_X^K[A_Y,A_U-A_Y]
+ \end{aligned}
+\end{equation}
+then proves~\eqref{gtl:direct-model-tail}.
+Combining it with the one Bessel error proves
+\eqref{gtl:direct-bound}.
+
+This direct proof does not assert a smaller value for
+the separate $37/48$ certificate in the continuous
+mean route; it never introduces that split.
+All of its nonprincipal-ray and exact-discrete effects
+remain in $\mathcal L_X^K[A_Y,A_Y]$.
+At $Y\le D^{1/8}$ the residual column norms are at least
+$D/Y^2\ge D^{3/4}$, just as in~\eqref{gtl:long-residual}.
+The new model is still unbounded at target size.
+It is different from the principal-density
+$\mathcal L_0[A_Y,A_Y]$.
+
+A capacity-empty integer interval, or empty exact
+$\mathcal T_X$, gives zero by definition.
+Absence of actual good squarefree rows in a
+\emph{nonempty} integer interval alone does not imply
+that each dual prefix piece is zero; cancellation
+with other frequencies can be required.
+No full dual complement, other block, whole signed
+assembly or determinant/zero-location obligation is
+resolved by this direct small-cutoff reduction.
+
+\paragraph{Why the completed shortcuts do not supply that arithmetic.}
+\label{gtl:failed}
+The inverse-different cubic Gauss frequency is incomplete:
+expanding it leaves the actual weighted primary
+$\mathfrak k$ set, not a complete residue system modulo
+$\mathfrak m\mathfrak n$. The bounded number of
+$\mathfrak w$ modes supplies no such completion.
+Likewise, expanding both short divisors and taking
+their absolute triangles before the cubic cross
+does not give the proved estimate. Even an explicitly
+hypothetical uniform inner exponent $\alpha<1$ would
+produce the diagnostic
+\begin{equation}\label{gtl:triangle-diagnostic}
+ D^{\alpha-1/2}
+ \left(\sum_{N\mathfrak a\le U}(N\mathfrak a)^{-\alpha}\right)^2
+ \ll_\alpha D^{\alpha-1/2}U^{2(1-\alpha)} .
+\end{equation}
+At $U\asymp\sqrt D$ this is $D^{1/2}$.
+It is a conditional failure of that method, not an
+available smooth-coefficient Gauss theorem or an
+impossibility result. The actual proof above retains
+the physical cubic cross until its joint matrix norm.
+It bounds one specified signed tail and leaves the
+long residual-M\"obius, finite-$\mathfrak k$ small-short
+moment as the next arithmetic problem. No whole signed,
+global unsigned, determinant, zero-location, analytic
+Lean or GRH conclusion is implied.

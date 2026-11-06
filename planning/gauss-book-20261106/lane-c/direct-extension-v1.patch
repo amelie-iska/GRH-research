@@ -1,0 +1,273 @@
+--- draft-v1/gauss-tail-core.tex
++++ draft-v2/gauss-tail-core.tex
+@@ -5,7 +5,8 @@
+ root-weighted mean. A large part of its \emph{short-divisor expansion}
+ can now be bounded by retaining a cubic interaction before taking a
+ triangle. This gives a signed cutoff comparison, not a smaller norm
+-for the original coefficients. The remaining small-short-divisor
++for the original coefficients. A direct exact-discrete-frequency
++version is included as well. The remaining small-short-divisor
+ moment and the separate discrete-frequency error are stated below.
+ The whole signed power $13/12$ and global unsigned power $9/8$ do not
+ change.
+@@ -332,6 +333,99 @@
+ The small-short-divisor, long residual-M\"obius cubic Gauss bilinear
+ moment $\mathcal L_0[A_Y,A_Y]$ is still unestimated at the target.
+ 
++
++\subsection{The exact discrete top prefix, with every ray retained}
++\label{gtl:discrete}
++There is also a direct reduction that does not introduce the
++principal-density split. Its exact support is
++\begin{equation}\label{gtl:discrete-support}
++ \mathcal T_X=
++ \{(\mathfrak w,\mathfrak s):N\mathfrak w<64,\ \mathfrak s\ {\rm good},
++       \ V<N\mathfrak s\le2V,\ N\mathfrak w(N\mathfrak s)^6\le X\}.
++\end{equation}
++There is no squarefree restriction on $\mathfrak s$.
++Overlap of $\mathfrak w,\mathfrak s$ and of
++$\mathfrak k,\mathfrak s$ remains allowed.
++Let $\widetilde\Theta$ be the same outer set as $\theta$ above,
++but with \emph{every} original $\rho$, and put
++\begin{equation}\label{gtl:discrete-coefficient}
++ \begin{aligned}
++ \widetilde d_\theta[f_1,f_2]
++ &=\frac{A_1}{D}h_{AB\rho}(\mathcal O)
++       c_{f_1}(\mathfrak m)\overline{c_{f_2}(\mathfrak n)}
++          \frac{\epsilon(\eta)}{\sqrt F}\\
++ &\quad\cdot\frac{\mu(\mathfrak e)\eta(\mathfrak e)}{N\mathfrak e}
++                                  \overline{\eta(\mathfrak w)} .
++ \end{aligned}
++\end{equation}
++This is an explicit definition, not division by a density or a
++primitive value. With the original $\mathfrak k$ support as in
++\eqref{gtl:deletions}, define the normalized exact piece
++\begin{equation}\label{gtl:direct-prefix}
++ \begin{aligned}
++ \mathcal P_X[f_1,f_2]
++ &=\sum_{\theta\in\widetilde\Theta}\widetilde d_\theta[f_1,f_2]
++     \sum_{\mathfrak k}
++           \frac{\mu(\mathfrak k)\eta(\mathfrak k)^2}
++                {(N\mathfrak k)^2}\\
++ &\quad\cdot
++ \sum_{\substack{\mathfrak s:\;(\mathfrak w,\mathfrak s)\in\mathcal T_X}}
++   \bar\rho(\mathfrak s)^6
++       \mathbf1_{(\mathfrak s,\mathfrak m\mathfrak n)=1}
++       \dot G\left(\frac{\lambda_\theta(N\mathfrak s)^6}
++                              {(N\mathfrak k)^2}\right).
++ \end{aligned}
++\end{equation}
++Then $\mathcal P_X[A_U,A_U]$ is the actual original top
++primitive-prefix contribution divided by $D$.
++It is a signed representation-fixed piece, not a positive energy
++or the whole infinite dual sum.
++
++Let $\mathcal L_X^K[f_1,f_2]$ be exactly
++\eqref{gtl:direct-prefix} with $\dot G$ replaced by $g_0$.
++Only in that leading model can the finite $\mathfrak k$ sum
++be factored as $Q_2^{T_q}(K;\eta^2)$.
++The discrete $\mathfrak s$ sum and its endpoints remain.
++Unlike $\mathcal L_0$, this model has no
++$\kappa_S g(\mathfrak m)g(\mathfrak n)$ density, no
++$\rho^6=1$ projection and no integral replacing the
++$\mathfrak s$ family.
++
++\begin{proposition}[Direct original-prefix cutoff reduction]
++\label{gtl:direct}
++Put $\Lambda=A_1X/D^2$. With precisely the original support,
++\begin{equation}\label{gtl:direct-model-error}
++ |\mathcal P_X[A_U,A_U]-\mathcal L_X^K[A_U,A_U]|
++       \ll B_W^2(DX)^\epsilon A_1V\Lambda ,
++\end{equation}
++and
++\begin{equation}\label{gtl:direct-model-tail}
++ \begin{split}
++ |\mathcal L_X^K[A_U,A_U]-\mathcal L_X^K[A_Y,A_Y]|
++ &\ll B_W\mathcal M(W)(DX)^\epsilon A_1V\\
++ &\quad\cdot\{Y^{-1/2}+D^{-1/6}\}.
++ \end{split}
++\end{equation}
++In particular the actual original piece satisfies
++\begin{equation}\label{gtl:direct-bound}
++ \begin{split}
++ |\mathcal P_X[A_U,A_U]-\mathcal L_X^K[A_Y,A_Y]|
++ &\ll (DX)^\epsilon A_1V
++       \{B_W^2\Lambda\\
++ &\qquad+B_W\mathcal M(W)(Y^{-1/2}+D^{-1/6})\}.
++ \end{split}
++\end{equation}
++The original unequal-norm projection is allowed.
++\end{proposition}
++At the critical pure parameters used above the three powers
++are again $-1/16$, $3/4$ and $31/48$, with exact zero
++coefficient tail when $Y=U$. This is a reduction of the
++\emph{actual discrete} piece to a different, still unestimated,
++small-short-divisor model. That model retains every $\rho$,
++every nonunit $S$ mode, the exact $\mathfrak w,\mathfrak s$
++support, root/conductor data, original finite $K$ and both
++long residual-M\"obius column coefficients.
++
+ \paragraph{Separate open errors and scope.}\label{gtl:boundary}
+ The accepted fixed-ray disk count gives the distinct top-band
+ certificate
+@@ -341,9 +435,10 @@
+                        \{1+\sqrt{A_1X/D^2}\}.
+ \end{equation}
+ Its pure critical power is $37/48>3/4$; this is an upper certificate,
+-not a lower bound for the actual error. Neither that discrepancy,
+-the other original frequency sectors nor the full signed assembly
+-is bounded here. The result is an application of a named external
++not a lower bound for the actual error. The direct reduction in Proposition~\ref{gtl:direct} does not
++introduce that split: its discrete model retains those effects.
++No improved bound for the separate discrepancy, for the remaining
++small-cutoff models, or for the other original sectors is proved here. The result is an application of a named external
+ cubic sieve to an actual arithmetic tail, not a new sieve, a complete
+ analytic Lean formalization, a determinant/zero-location bridge or
+ a proof of GRH. Fixed-profile constants and the explicit
+--- draft-v1/gauss-tail-details.tex
++++ draft-v2/gauss-tail-details.tex
+@@ -613,6 +613,144 @@
+ not cancel or improve it. Both it and the remaining
+ original sectors require additional signed arithmetic.
+ 
++
++\subsection{Direct discrete frequencies require no principal-density approximation}
++\label{gtl:direct-proof}
++For each original dual ideal, its good valuations determine
++uniquely $\mathfrak y=\mathfrak w\mathfrak s^6$ with good
++$\mathfrak s$ and good part of $\mathfrak w$ sixth-free.
++At $V=X^{1/6}/2$, the lower-open condition
++$N\mathfrak s>V$ implies $N\mathfrak w<64$.
++Conversely every ideal of norm below $64$ has sixth-free
++good part, since the least good prime norm is seven.
++This proves the exact support~\eqref{gtl:discrete-support}
++with all its nonunit $S$ modes and possible overlaps.
++No squarefreeness of $\mathfrak s$ or new coprimality with
++$\mathfrak k$ is introduced.
++
++Equation~\eqref{gtl:sixth-phase} holds for \emph{every}
++original $\rho$. Retaining that factor and the actual
++discrete $\mathfrak s$ family in~\eqref{cbk:exact-kernel}
++gives~\eqref{gtl:direct-prefix}. The prefactor is exactly
++$A_1/(D\sqrt F)$, including the once-only normalization.
++All primitive factors at $\mathfrak e,\mathfrak w$ are
++still separate, and a good collision remains zero
++even when its exponent is a sixth power.
++
++The pointwise real-axis remainder~\eqref{gtl:real-remainder}
++at $J=0$ implies
++\begin{equation}\label{gtl:direct-Bessel}
++ |\dot G(x)-g_0|
++    \le C_0^{-3/2}x\int_0^\infty vG(v)\,dv
++    \le3C_0^{-3/2}x,\qquad x\ge0 .
++\end{equation}
++Every argument in~\eqref{gtl:direct-prefix} is at most
++$\Lambda=A_1X/D^2$. Count only in this error:
++there are $O(D^2)$ annular column pairs,
++$A_1/(D\sqrt F)\le A_1/D^2$, the original coefficient
++products are $O(B_W^2D^\epsilon)$, and the original
++finite $\mathfrak k$ absolute budget is bounded by
++$\sum(N\mathfrak k)^{-2}$.
++The $\mathfrak e$/source/ray and $\mathfrak w$ sets have
++fixed finite mass. Since $V\ge1$, the exact good
++$\mathfrak s$ annulus contains $O(V)$ ideals.
++This proves~\eqref{gtl:direct-model-error}, without a
++ray count, interpolated endpoint, density or arbitrary
++row-weight norm.
++
++It remains to justify applying the column-tail theorem
++to every original ray. The good-$q$ powers in the proof
++of~\eqref{gtl:root-cubic} are local powers $1,2,3$ of
++$\theta_q$; that proof never uses $\rho^6=1$.
++For every original component the total $\eta$ is type
++zero and its finite $\theta_S$ is fixed at its actual
++primitive $S$ conductor. Hence the finite selector
++expansion in~\eqref{gtl:finite-selectors} and its
++coefficient mass are valid on all these components.
++No new assertion of sixth order for an individual
++$\xi$ or replacement of a primitive $S$ Gauss sum is made.
++
++Now freeze $\mathfrak s$ as well as
++$\mathfrak n,\mathfrak k,\mathfrak e,\mathfrak w$.
++Relative to Section~\ref{gtl:phase-proof}, the only new
++$\mathfrak m$ factor is
++$\mathbf1_{(\mathfrak m,\mathfrak s)=1}$.
++It is a bounded multiplicative ideal function and
++splits exactly in the grouped column as
++\begin{equation}\label{gtl:s-mask-split}
++ \mathbf1_{(\mathfrak a\mathfrak z,\mathfrak s)=1}
++   =\mathbf1_{(\mathfrak a,\mathfrak s)=1}
++      \mathbf1_{(\mathfrak z,\mathfrak s)=1}.
++\end{equation}
++The $\mathfrak n/\mathfrak s$ mask is a scalar which may
++be zero. The fixed $\bar\rho(\mathfrak s)^6$ phase is
++another bounded scalar. All earlier full-union raw
++deletions and separate primitive $S$ values remain.
++Thus~\eqref{gtl:linear-tail} is uniform in
++$\mathfrak s$ as well as in $\mathfrak n,\mathfrak k$,
++with no $(N\mathfrak s)^\epsilon$ or
++$(N\mathfrak k)^\epsilon$ cost. Their growing deleted
++primes are coefficient diagonals in the same physical
++cubic matrix.
++
++There is no density in the new exact discrete model.
++Use the underlying arbitrary-$\lambda$ theorem with
++the factor $g(\mathfrak m)$ omitted, rather than dividing
++the earlier density-weighted moment by $g(q)$.
++If a $\mathfrak k$ domain has been written with
++$q$ deletion, first express it on the common original
++good-SF set $N\mathfrak k\le K$ with its exact raw
++$\eta(\mathfrak k)^2$ zero. This permits a fixed
++$\mathfrak k$ column argument, restores no prime and
++adds no $(\mathfrak k,\mathfrak s)$ condition.
++
++Apply the signed column estimate before the other
++column triangle. The latter is~\eqref{gtl:other-column};
++after once-only $1/D$ it yields
++$B_W\mathcal M(W)D^\epsilon
++ (Y^{-1/2}+D^{-1/6})$ for each fixed
++$\mathfrak s,\mathfrak w,\mathfrak k,\mathfrak e$
++and finite component, with the original $A_1g_0$ factor.
++Sum the original finite $\mathfrak k$ norm weights and
++the fixed $\mathfrak e,\mathfrak w$ components.
++Only now use the $O(V)$ count of the exact
++$\mathfrak s$ family. Reversed tails use conjugation,
++as in Section~\ref{gtl:reassembly-proof}, and the
++original unequal-norm selector uses the same separate
++fixed-norm fibre bound~\eqref{gtl:equal-fibre-cost}.
++The exact identity
++\begin{equation}\label{gtl:direct-bilinearity}
++ \begin{aligned}
++ \mathcal L_X^K[A_U,A_U]-\mathcal L_X^K[A_Y,A_Y]
++  &=\mathcal L_X^K[A_U-A_Y,A_U]\\
++  &\quad+\mathcal L_X^K[A_Y,A_U-A_Y]
++ \end{aligned}
++\end{equation}
++then proves~\eqref{gtl:direct-model-tail}.
++Combining it with the one Bessel error proves
++\eqref{gtl:direct-bound}.
++
++This direct proof does not assert a smaller value for
++the separate $37/48$ certificate in the continuous
++mean route; it never introduces that split.
++All of its nonprincipal-ray and exact-discrete effects
++remain in $\mathcal L_X^K[A_Y,A_Y]$.
++At $Y\le D^{1/8}$ the residual column norms are at least
++$D/Y^2\ge D^{3/4}$, just as in~\eqref{gtl:long-residual}.
++The new model is still unbounded at target size.
++It is different from the principal-density
++$\mathcal L_0[A_Y,A_Y]$.
++
++A capacity-empty integer interval, or empty exact
++$\mathcal T_X$, gives zero by definition.
++Absence of actual good squarefree rows in a
++\emph{nonempty} integer interval alone does not imply
++that each dual prefix piece is zero; cancellation
++with other frequencies can be required.
++No full dual complement, other block, whole signed
++assembly or determinant/zero-location obligation is
++resolved by this direct small-cutoff reduction.
++
+ \paragraph{Why the completed shortcuts do not supply that arithmetic.}
+ \label{gtl:failed}
+ The inverse-different cubic Gauss frequency is incomplete:

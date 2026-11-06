@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "reviewer": "root",
+  "native_record_sha256": "57157b4a17fc805b6be75ba96d88bd9235ae28586433b15f24d25e221863d242",
+  "browser_receipt_sha256": "cc16f3d146e8096465a09dcab5a1ba5e9949ea040e2ec6fea012630829e16bf4",
+  "inspected_screenshots": {
+    "figure-biomech-1440.png": "cd569494a76f1ee8dcfc11b6687b5da2eb1a4f1b7974ddeadb97e56999cae084",
+    "direct-proof-light-320.png": "7fe00d707f554573e4cf0b5b8dfce4c446bc219a5ffc31d97a4f73c7a4119504",
+    "figure-light-320.png": "e5a281502b0b5fd40e33c508939913ab4c5382b88d389b2f548431c4018defb1"
+  },
+  "diagnostic_before_image_sha256": "2e93e40b4ecf05025d593fce8a3c0924a1164ec0a0da7b74b70b8105fe3c3f6b",
+  "decision": "The inherited night SVG filter was readable but changed the original diagram palette. Only the new diagram now keeps the exact source palette on a white canvas; global theme and all old assets stay exact.",
+  "observed": "Night desktop figure/text and complete caption are readable; mobile proof text wraps cleanly, and the diagram keeps readable fonts inside a focusable horizontal scroll region. Browser keyboard/overflow checks independently pass.",
+  "findings": [],
+  "scope": "Representative current native screenshots; no new mathematical or training claim."
+}

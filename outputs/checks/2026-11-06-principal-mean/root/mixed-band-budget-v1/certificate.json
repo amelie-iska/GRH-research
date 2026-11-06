@@ -1,0 +1,206 @@
+{
+  "assumptions": "Proposed all-class M/D <=B\u00b2(DXA2)^eps(R/D)V F6(X/V6,D), accepted sharp mean error; analytic proof and independent review required",
+  "capacity": "3/4",
+  "certificate_limit": "The positive D monomial requires v<=1/6, the error monomial requires x<=1/6+17v/3; hence x<=10/9. Only a limit of this upper-bound certificate, not an impossibility theorem.",
+  "critical_h": "3/4",
+  "edge": {
+    "bessel_exponent": "-17/72",
+    "capacity": "3/4",
+    "error": "3/4",
+    "mean_terms": [
+      "-5/36",
+      "3/4",
+      "19/108",
+      "67/108"
+    ],
+    "v": "1/6",
+    "x": "10/9",
+    "z": "1/9"
+  },
+  "fixed_profile": "One common W retained. Error/certificate B=||W||infinity for this sector only.",
+  "grid": [
+    {
+      "bessel_exponent": "-7/24",
+      "capacity": "3/4",
+      "error": "23/36",
+      "mean_terms": [
+        "-1/4",
+        "3/4",
+        "1/12",
+        "7/12"
+      ],
+      "v": "1/6",
+      "x": "1",
+      "z": "0"
+    },
+    {
+      "bessel_exponent": "-103/360",
+      "capacity": "3/4",
+      "error": "13/20",
+      "mean_terms": [
+        "-43/180",
+        "3/4",
+        "5/54",
+        "317/540"
+      ],
+      "v": "1/6",
+      "x": "91/90",
+      "z": "1/90"
+    },
+    {
+      "bessel_exponent": "-101/360",
+      "capacity": "3/4",
+      "error": "119/180",
+      "mean_terms": [
+        "-41/180",
+        "3/4",
+        "11/108",
+        "319/540"
+      ],
+      "v": "1/6",
+      "x": "46/45",
+      "z": "1/45"
+    },
+    {
+      "bessel_exponent": "-11/40",
+      "capacity": "3/4",
+      "error": "121/180",
+      "mean_terms": [
+        "-13/60",
+        "3/4",
+        "1/9",
+        "107/180"
+      ],
+      "v": "1/6",
+      "x": "31/30",
+      "z": "1/30"
+    },
+    {
+      "bessel_exponent": "-97/360",
+      "capacity": "3/4",
+      "error": "41/60",
+      "mean_terms": [
+        "-37/180",
+        "3/4",
+        "13/108",
+        "323/540"
+      ],
+      "v": "1/6",
+      "x": "47/45",
+      "z": "2/45"
+    },
+    {
+      "bessel_exponent": "-19/72",
+      "capacity": "3/4",
+      "error": "25/36",
+      "mean_terms": [
+        "-7/36",
+        "3/4",
+        "7/54",
+        "65/108"
+      ],
+      "v": "1/6",
+      "x": "19/18",
+      "z": "1/18"
+    },
+    {
+      "bessel_exponent": "-31/120",
+      "capacity": "3/4",
+      "error": "127/180",
+      "mean_terms": [
+        "-11/60",
+        "3/4",
+        "5/36",
+        "109/180"
+      ],
+      "v": "1/6",
+      "x": "16/15",
+      "z": "1/15"
+    },
+    {
+      "bessel_exponent": "-91/360",
+      "capacity": "3/4",
+      "error": "43/60",
+      "mean_terms": [
+        "-31/180",
+        "3/4",
+        "4/27",
+        "329/540"
+      ],
+      "v": "1/6",
+      "x": "97/90",
+      "z": "7/90"
+    },
+    {
+      "bessel_exponent": "-89/360",
+      "capacity": "3/4",
+      "error": "131/180",
+      "mean_terms": [
+        "-29/180",
+        "3/4",
+        "17/108",
+        "331/540"
+      ],
+      "v": "1/6",
+      "x": "49/45",
+      "z": "4/45"
+    },
+    {
+      "bessel_exponent": "-29/120",
+      "capacity": "3/4",
+      "error": "133/180",
+      "mean_terms": [
+        "-3/20",
+        "3/4",
+        "1/6",
+        "37/60"
+      ],
+      "v": "1/6",
+      "x": "11/10",
+      "z": "1/10"
+    },
+    {
+      "bessel_exponent": "-17/72",
+      "capacity": "3/4",
+      "error": "3/4",
+      "mean_terms": [
+        "-5/36",
+        "3/4",
+        "19/108",
+        "67/108"
+      ],
+      "v": "1/6",
+      "x": "10/9",
+      "z": "1/9"
+    }
+  ],
+  "normalized": "P_V/D and M_V/D; sufficient target H. Unnormalized target D*H, not H.",
+  "old_tables_or_exponents_rerun": false,
+  "parameters": {
+    "A1": "5/12",
+    "A2": "1/6",
+    "R": "7/12",
+    "V": "1/6",
+    "Xmax": "10/9",
+    "band_prefactor": "V=(1/2)D^(1/6), D>=64"
+  },
+  "passed": true,
+  "pure_limitation": "R=H makes the D monomial RV exceed H for every polynomially growing V; no actual mean/energy lower bound follows.",
+  "scientific_numeric_controls_rerun": false,
+  "scope": "Formal exact-rational leading-exponent consistency of proposed analytic theorem; not original-family values, an interval proof, numerical training, or actual-energy lower bounds",
+  "source_sha256": "c5bc0a0003a47102788bec3ade5ddd6d2ddb4e6de48ff1b1e29d4ec223a71d10",
+  "strict_beyond": {
+    "bessel_exponent": "-4241/18000",
+    "capacity": "3/4",
+    "error": "751/1000",
+    "mean_terms": [
+      "-1241/9000",
+      "3/4",
+      "1909/10800",
+      "16759/27000"
+    ],
+    "v": "1/6",
+    "x": "10009/9000",
+    "z": "1009/9000"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "attempt_result": {
+    "path": "outputs/checks/2026-11-06-principal-mean/lane-b/attempt-result-v2.json",
+    "sha256": "604e564088aa845f8ac2df1616e0ac83a118cb534b02d906c75996e220851051"
+  },
+  "created_utc": "2026-11-06T07:43:13.625445+00:00",
+  "failed_step": "Completing the fractional moment and omitting finite endpoints cannot uniformly approximate the actual integrated-s kernel; endpoints reproduce/cancel the artificial full branch in the actual low-Bessel regime.",
+  "global_unsigned_power": "9/8",
+  "independent_acceptance": {
+    "path": "outputs/checks/2026-11-06-principal-mean/review-a-b/acceptance-v1.json",
+    "sha256": "b90572a019c051fc900a6391c4c6c4cb60d517a7c33fa67a9b68a6783dfef145"
+  },
+  "independently_accepted": true,
+  "inputs_unchanged": true,
+  "next": "Estimate the actual difference F_V-E_V jointly, or use the actual finite-frequency top-sector root/column moment; no free Euler completion, root averaging or endpoint deletion.",
+  "no_lower_bound_for_actual_M_or_energy": true,
+  "no_new_whole_signed_or_GRH_claim": true,
+  "no_target_sized_joint_estimate": true,
+  "note": {
+    "path": "planning/principal-mean-20261106/lane-b/FINITE_FRACTIONAL_ENDPOINT_OBSTRUCTION-v1.md",
+    "sha256": "e23311faa63846e0e2e4334ce01a491426b98e04935644507dfaa97506696772"
+  },
+  "old_control_numeric_build_browser_dependency_auth_publication_or_index_operations": false,
+  "outside_current_release_canonical_UI": true,
+  "passed": true,
+  "schema": "principal-mean-fractional-endpoint-author-result-v1",
+  "source_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+  "source_pins": {
+    "path": "outputs/checks/2026-11-06-principal-mean/lane-b/source-pins-v2.json",
+    "sha256": "97691dd973f041d4580e5ec6ede9ddbf482ec7e34a012fbc9b3985ddbe2e2d31"
+  },
+  "surviving_statements": [
+    "Exact finite incomplete1/6 Bessel moment with both endpoints",
+    "Exact actual finite-mu(k) root/column outer decomposition F_V-E_V, original pre-S cutoff/fullT/eta^2 retained",
+    "Derivative-free endpoint estimates and signed-k endpoint necessity under explicit K/low-argument/nonzero-G conditions"
+  ],
+  "whole_signed_power": "13/12"
+}

@@ -1,0 +1,658 @@
+{
+  "passed": true,
+  "native_MathML": true,
+  "new_chapters": 0,
+  "chapter_count": 40,
+  "math_nodes_added": 489,
+  "math_nodes": 10299,
+  "old_literal_math_subtrees": 9810,
+  "old_math_byte_identical": true,
+  "old_HTML_restored_exactly": true,
+  "date_unchanged": true,
+  "old_tables": 389,
+  "tables": 389,
+  "canonical_labs": 14,
+  "old_canonical_labs": 14,
+  "old_svg_refs": 30,
+  "svg_refs": 31,
+  "old_assets_unchanged": {
+    "web/book/main16x.svg": "6d762937505def8291f5cbfdd2dcf555bda45593237ddb5b8b760eb60ff66767",
+    "web/book/main18x.svg": "c3bacec296b6d84c83843353e7fac8d435b04db2d34368fb494c252ed9adc35d",
+    "web/book/main7x.svg": "c726a7202dcd09747cf309949b8b10f60a14d8702568b07d76c49cc01600a0ae",
+    "web/book/reviewed-math-scroll.js": "6e133f2880f047f0f36a396263cff99f2d3f507a989cbdf54e2bb3a1f0c87582",
+    "web/book/main.css": "2516bc179b8e16a02d9b40a2db71dbca7aad915fa5785bb3da4642c2812edf43",
+    "web/book/main14x.svg": "1348bace4f53a422549667f01e4455ce94f31bb00ce910d0ba7b1b8e9b34c67a",
+    "web/book/main0x.svg": "81c61ac8fc2cd1fabad776734546b432403a095012fa62993211870ad91a234c",
+    "web/book/main4x.svg": "726a390322f760a6a7c45f570c8713fc619e1660d23d582d9bada91ee26a7e24",
+    "web/book/main12x.svg": "3ca3454713693f0668a8864b6cf6d0ed7dae9d2e201138888d409038896933b9",
+    "web/book/main3x.svg": "3b7ae2c3a9d25fef4fc098fafab77ee28554690b064de2ee35116f0b6ce7d39f",
+    "web/book/main13x.svg": "199a598b3f104eacaa64561feba6875cff61442c9a68056381dba7abcb3a8134",
+    "web/book/main5x.svg": "28a5232744a9c420edbbda31198cc25d28c9e065e12b85cd689de408d4c0240e",
+    "web/book/main11x.svg": "ad52d19aeb262ac6fc619d2afe134e306d1e65775debd9486084fce28db2daba",
+    "web/book/main9x.svg": "dcc5404041be40f703108e59bb6b212c652c38f586ad2e99e6726b59f1a17ea5",
+    "web/book/reader.css": "9eceb875dc3a24bac9f1e110a509b08f869f737e46f30219e439bb15c9bcbb45",
+    "web/book/main10x.svg": "0c8f6c0630e0ccb2e1debb64968eec6e4a73e955691bb0eceeacafb8b1193ffe",
+    "web/book/main6x.svg": "fd19d1ff90e6ef9335a10f048593b569b31625545e81133dc87b667204d5a80f",
+    "web/book/main2x.svg": "31711195058379ca2d78067756273a198054c81bcd23cfebb1ebcefac785062f",
+    "web/book/main1x.svg": "80096e0c9755e517553d10a9d8815a2153f084478db40f62c3d551ae91b2d200",
+    "web/book/main15x.svg": "7fa40fb4ec0b1621ba6556e34b22b173a22dc4142bf87eb367974d4c6f6c0455",
+    "web/book/main17x.svg": "3ac0d84423388b800d13b84acbdcf715d38833e070ddaf4007a20410ce2356e8",
+    "web/book/main8x.svg": "7e47093b14c2b2bd176f97269170cda5c9c73980169f760f59bb337761c4e065",
+    "web/book/sources/weighted-cutoff.tex": "7ed9409934cf12d47812454c05e7a98e2163c507c31faa66dd860c0d5dfa9cb2",
+    "web/book/sources/validated-oracle-results.tex": "ffdc1dcfc3b2924b88e9620a72709c82d549a8d40d24ea8159b56a5eaec8f0d9",
+    "web/book/sources/coherent-main-details.tex": "2e23016d023ae40378b68815f29d944ce639c20b2990174fc8f8b47271f52d76",
+    "web/book/sources/signed-divisor-core.tex": "37181eec7c9e18256683108055f09eab773f9ceea2d10d9a4b197a3170b5011b",
+    "web/book/sources/joint-gauss-core.tex": "4b058cdd04e732445f66a6c60d505dd076718ef3f39b969bdfaad09533c02bf3",
+    "web/book/sources/adaptive-theta-core.tex": "e67d5dbc8124cc4d3178df4ef43e48f724c2148ee5ebfe39f00f0f384154c156",
+    "web/book/sources/coherent-band-details.tex": "024a815649c17a392b0d522b9f391caa90461a4fa09992967103bdeaa6c15ba1",
+    "web/book/sources/signed-bilinear-details.tex": "8f9c053f7074ae520109b6c1c2c4756abd9b395103cb0083278797fdb2461f31",
+    "web/book/sources/signed-bilinear-core.tex": "116dcd7433a38657d84f3d5894fc4d9116673368a24e61ae23ca141ee4087bb2",
+    "web/book/sources/validated-oracle-core.tex": "f813737ccdc562c82d77d1070e50d93eb4a588598aaa237f2d7efdafe891c856",
+    "web/book/sources/unequal-product-details.tex": "593b969caae17280f458a680c7d8d97c816163b9a26023c8d376dad9b9068280",
+    "web/book/sources/adaptive-readout-core.tex": "dd7228b9a6f8d4a7d498803ff0030872681e59749a2425b1855dc485906ccdb7",
+    "web/book/sources/physical-sieve-core.tex": "4b9c55a3b6ca65c5d3503a05b6087c3965e17b810240448d477e3fcab4681353",
+    "web/book/sources/validated-oracle-details.tex": "fdb8cad7b160f72d693b5629e0d2792d69fd7ab4901b4d45ad3d20fdc81870a6",
+    "web/book/sources/adaptive-theta-details.tex": "026254316940a0669e5b8e483848a46149e690bca30575cb091ad541a7ef6ad5",
+    "web/book/sources/uniform-cutoff-moment-core.tex": "c94f0b606aca3c4967ee74e18ad94990e032ad4a7311446e1c09996cf5944090",
+    "web/book/sources/coherent-band-core.tex": "747822463e8ef4b57e2ed406719b48b19b91c59473ac1b89ef12757d38b71c04",
+    "web/book/sources/masked-moment-core.tex": "b71215da404da73260212ef8f5ce4987aad28f6e5740277e4509045ade75a11e",
+    "web/book/sources/weighted-cutoff-details.tex": "8fac92dce808f1226d995ceec27bb561eab1bb42d8a649373c6901b0cba3f8b4",
+    "web/book/sources/masked-moment-details.tex": "223c87c91cddc27ea70f6b0046125023e59bc93b10dc2db72e8881c59342f122",
+    "web/book/sources/signed-weights-details.tex": "140202286783773a011d5689251933d41aad396eeef43b43ec601464e08f9691",
+    "web/book/sources/profile-uniformity-details.tex": "59b6ff351414487a3bafdfb98b147da6e25e6588bb9c526120c3c04e3c442f12",
+    "web/book/sources/coherent-band-figure.tex": "5591c785fb4075a6168b84e44b5aadcef67350e46cf8e7d95d6978d07a02087d",
+    "web/book/sources/quadratic-pivot-details.tex": "98a31bc30ac33343c54a0b855ce147b7665803662293884b0705c94d3545f2b8",
+    "web/book/sources/adaptive-family-details.tex": "aea8261826ce8e12163aaaf1ad1dc7210c3e52ec8b584b1367b57551dac1a698",
+    "web/book/sources/mixed-conductor-details.tex": "6742ce878d92d47fad94556bcbbf55a2d10180bd41f836e1e2f6b74acf9c9994",
+    "web/book/sources/adaptive-family-core.tex": "004584dcc7253bd9d273765c463e53e08e1c5f72a36518873ba4d2ace6222fe4",
+    "web/book/sources/signed-divisor-figure.tex": "5a2b811f73d17feeebfd524c1d5762821c224e95097681cc6fe5657564e2dd8a",
+    "web/book/sources/covariance-budget-details.tex": "d1ae58e32d44e632638fa6cc63fb753d2dd93917b527c1df7562470d211855a7",
+    "web/book/sources/signed-weights-core.tex": "a1d6079f0f8023d47a258e5354874425ba048a1c9f67690ee39930776f596174",
+    "web/book/sources/unequal-product-core.tex": "b2def21115ab0552524690e23f6df998d292ef79d33755e6ae852f79f909458b",
+    "web/book/sources/profile-uniformity-core.tex": "266daeacbc05d660c6470be0eb3529b763130bc1e2aea6f3748453e17c20e6a9",
+    "web/book/sources/validated-oracle.tex": "d0559855df186fc2e947898f0f34d745bd1f6dbc0f97527d1ad6f1eacde5c15e",
+    "web/book/sources/rough-mask-core.tex": "dfa8a97395c7d18f09035bb816370c582322789ca8667812a9fd527af7e8864a",
+    "web/book/sources/rough-mask-details.tex": "bfb9d381a7648e9dfdd9db43693f5dd7516199b43b8bd29eab3f7a83994acf39",
+    "web/book/sources/arithmetic-learning-details.tex": "1043dc7e9f73249e77f9c350cb28ef41cbed393abaeeb57523bba04af5d92e2f",
+    "web/book/sources/adaptive-readout-details.tex": "4f9ba584bd1c7b0d0c5a7da2593e5f0808ddad27df4ff85e91a99d31d7e40755",
+    "web/book/sources/physical-sieve-details.tex": "6e68121878dce2ec54c1e0ca40b35d683ed8035e8eec04ac4bac0acc378d10ac",
+    "web/book/sources/weighted-cutoff-core.tex": "43c44236fc379bd893aa6fc80f53a34a1ba56cbbabbc7bc908b61250d320e848",
+    "web/book/sources/coherent-main-core.tex": "b74691ab9f6a2f09aab7d30109392f1fa842ab489936e9c7213b03a900e6c3d1",
+    "web/book/sources/masked-moment.tex": "11f9ba177cfb5b91f2981bcaf637562992b0b8b9c089f55b12bec69f0f10a5f9",
+    "web/book/sources/quadratic-pivot-core.tex": "6997070e9163c97c0a19af3a80556d7401b082a4cc00ea23568326ba3dde8347",
+    "web/book/sources/covariance-budget-core.tex": "1fcef8b281ec59d9d85127aa99202f71a73ab4950a3745506b285109611cb873",
+    "web/book/sources/mixed-conductor-core.tex": "b564c241160bb82f538d5e4d7c520d034e0b3f0a595984ad21ba71a80901e988",
+    "web/book/sources/signed-divisor-details.tex": "21d13f55b7939b31e3d11cdb4331a40968ff79872bd1a2e20d7cbeac883fa39c",
+    "web/book/sources/uniform-cutoff-moment-details.tex": "e6c440fcf464a7f667ae76129c3a5c3bdc1af9a58e740f056ebccf915c2c61d4",
+    "web/book/sources/joint-gauss-details.tex": "684f594ce269689c43fbbe33583348eadd984aaf76209e2f0d98c85f32db9009",
+    "web/book/sources/arithmetic-learning-core.tex": "ea83097a168c1520951fb11e638dedf517232f1d199d020b0c7026c09e4a964e",
+    "web/book/figures/signed-divisor-workflow.pdf": "7e228426f1b17af17d3ed4474e457a1ab6f65c8f8f31ec5fbb2371e5450e3784",
+    "web/book/figures/signed-divisor-workflow.tex": "7fb6444025651ac762f9fde713c196b717dc9e111f03a603d5cbbac19f2e581d",
+    "web/book/figures/training-curves-.svg": "713522c44fe568712343916c007f678d700fbbf82b77067e94a22da85b207024",
+    "web/book/figures/learned-width-flow-.svg": "42a8783f2265a9952b8ec37e34032f6239066ef4e07bd6f719ac407417a87f18",
+    "web/book/figures/dessin-carriers-.svg": "dbc8499172247e1ad12b32247909fd57f77e8d3ff258181956aeb00ecaeea51c",
+    "web/book/figures/coherent-band-workflow.tex": "1e689122c7daaaf89c0e1521c5abba68c5c4198e71cffa231ca77e7de3de4cea",
+    "web/book/figures/orbital-flow-.svg": "5833c874d768649c2752d776ddd3c975db9337b34d13ea5206593c634afd345a",
+    "web/book/figures/complementary-datasets-.svg": "f3968250de0873122526a8563a4c515d1f352faa21f6947ae80bd31cb6160e2a",
+    "web/book/figures/orbital-atlas-.svg": "5fbddc014796d7391923e96b4c35f98889d365c4ffbef5280012ea235ce59d32",
+    "web/book/figures/learned-covers-.svg": "fa9c216935d7e41ec17d9f1bdf2dec8f0566579f8ec5704490fb185b45bb5e74",
+    "web/book/figures/photonic-angle-.svg": "22d2243d342ae77f441ed79628204d57782efabd0df3b5f103e7c9737f71cb40",
+    "web/book/figures/coherent-band-workflow.pdf": "b2fb73f47c6412c87b7d95fffc0332daf472f2d6c83150cab08304c20e73b5a8",
+    "web/book/figures/coherent-band-workflow.svg": "7a38e87c1905d47cd40d1b7752b45386be3e7badc7b60e24eaa137d7c3898799",
+    "web/book/figures/signed-divisor-workflow-.svg": "39ac56b58bc45c9e6f24aef37f74b7dc7be13ce1ddc10b41fc1d4d79b6aa7be8",
+    "web/book/figures/learned-generative-.svg": "b1274431c640f9ba826ec3aa8d5b90566bff11863e405fe39e93068ea47af260"
+  },
+  "figure_assets": [
+    {
+      "source": "book/figures/gauss-tail-partition.svg",
+      "target": "figures/gauss-tail-partition.svg",
+      "sha256": "3bb021e219b994969d57ef08b029ec400e27b92d85d7b814d7af73b7a2304ee7",
+      "bytes": 236302
+    },
+    {
+      "source": "book/figures/gauss-tail-partition.pdf",
+      "target": "figures/gauss-tail-partition.pdf",
+      "sha256": "957a9723b0f7372fe5c3e3e864791741ebc6b5a2e7e2a0e3ad145b2cf7d9caac",
+      "bytes": 180849
+    },
+    {
+      "source": "book/figures/gauss-tail-partition.tex",
+      "target": "figures/gauss-tail-partition.tex",
+      "sha256": "7beb483158786b330b9cad6f57f0b3c36fc4a19151ca1d0f051d5f6934dd62d9",
+      "bytes": 4171
+    }
+  ],
+  "figure_semantic_gate_sha256": "504fe65c551a510868d78de5961b08c7f66c995bae98ce85d34d3c2d69a5337d",
+  "new_figure_theme_filter": "none!important;whitecanvas",
+  "headings": [
+    {
+      "id": "gtl:core",
+      "number": "40.31",
+      "title": "An arithmetic Gauss tail with the original finite cutoff"
+    },
+    {
+      "id": "gtl:objects",
+      "number": "40.31.1",
+      "title": "Original objects and a fixed common profile"
+    },
+    {
+      "id": "gtl:mean",
+      "number": "40.31.2",
+      "title": "The actual retained mean and its finite leading model"
+    },
+    {
+      "id": "gtl:root",
+      "number": "40.31.3",
+      "title": "The root is an incomplete cubic Gauss weight"
+    },
+    {
+      "id": "gtl:tail",
+      "number": "40.31.4",
+      "title": "A signed short-divisor tail from a physical cubic matrix"
+    },
+    {
+      "id": "gtl:finite",
+      "number": "40.31.5",
+      "title": "What has been reduced, and what remains"
+    },
+    {
+      "id": "gtl:discrete",
+      "number": "40.31.6",
+      "title": "The exact discrete top prefix, with every ray retained"
+    },
+    {
+      "id": "gtl:boundary",
+      "number": "40.31.6",
+      "title": "Separate open errors and scope."
+    },
+    {
+      "id": "gtl:details",
+      "number": "40.32",
+      "title": "Proofs for the finite-cutoff Gauss tail"
+    },
+    {
+      "id": "gtl:mean-proof",
+      "number": "40.32.1",
+      "title": "The coherent main retains all sixth-part and ray data"
+    },
+    {
+      "id": "gtl:root-proof",
+      "number": "40.32.2",
+      "title": "Exact good-modulus Gauss factors and separate primitive S values"
+    },
+    {
+      "id": "gtl:models-proof",
+      "number": "40.32.3",
+      "title": "Matched finite endpoint models and a real-axis remainder"
+    },
+    {
+      "id": "gtl:phase-proof",
+      "number": "40.32.4",
+      "title": "All source and ray phases give bounded multiplicative columns"
+    },
+    {
+      "id": "gtl:grouping-proof",
+      "number": "40.32.5",
+      "title": "Two exact cutoff boxes expose a physical cubic matrix"
+    },
+    {
+      "id": "gtl:cubic-proof",
+      "number": "40.32.6",
+      "title": "Cubic Cauchy before the distinguished-divisor triangle"
+    },
+    {
+      "id": "gtl:reassembly-proof",
+      "number": "40.32.7",
+      "title": "Full pair support and the original finite k reassembly"
+    },
+    {
+      "id": "gtl:critical-proof",
+      "number": "40.32.8",
+      "title": "The critical reduction is not a bound for its residual mean"
+    },
+    {
+      "id": "gtl:direct-proof",
+      "number": "40.32.9",
+      "title": "Direct discrete frequencies require no principal-density approximation"
+    },
+    {
+      "id": "gtl:failed",
+      "number": "40.32.9",
+      "title": "Why the completed shortcuts do not supply that arithmetic."
+    }
+  ],
+  "theorems": [
+    {
+      "id": "gtl:model",
+      "kind": "proposition",
+      "number": "40.27"
+    },
+    {
+      "id": "gtl:tail-theorem",
+      "kind": "theorem",
+      "number": "40.28"
+    },
+    {
+      "id": "gtl:direct",
+      "kind": "proposition",
+      "number": "40.29"
+    }
+  ],
+  "equations": {
+    "gtl:coefficients": "40.169",
+    "gtl:profile": "40.170",
+    "gtl:capacity": "40.171",
+    "gtl:deletions": "40.172",
+    "gtl:top-window": "40.173",
+    "gtl:density": "40.174",
+    "gtl:outer-coefficient": "40.175",
+    "gtl:actual-mean": "40.176",
+    "gtl:leading-model": "40.177",
+    "gtl:model-error": "40.178",
+    "gtl:cubic-gauss": "40.179",
+    "gtl:S-factor": "40.180",
+    "gtl:root-cubic": "40.181",
+    "gtl:ternary": "40.182",
+    "gtl:T-coefficient": "40.183",
+    "gtl:gauss-cross": "40.184",
+    "gtl:cubic-input": "40.185",
+    "gtl:linear-tail": "40.186",
+    "gtl:finite-tail": "40.187",
+    "gtl:combined": "40.188",
+    "gtl:long-residual": "40.189",
+    "gtl:discrete-support": "40.190",
+    "gtl:discrete-coefficient": "40.191",
+    "gtl:direct-prefix": "40.192",
+    "gtl:direct-model-error": "40.193",
+    "gtl:direct-model-tail": "40.194",
+    "gtl:direct-bound": "40.195",
+    "gtl:ray-error": "40.196",
+    "gtl:sixth-phase": "40.197",
+    "gtl:ray-count": "40.198",
+    "gtl:disk-fourier": "40.199",
+    "gtl:disk-error": "40.200",
+    "gtl:full-IE": "40.201",
+    "gtl:Stieltjes-scale": "40.202",
+    "gtl:Stieltjes-error": "40.203",
+    "gtl:Bessel-variation": "40.204",
+    "gtl:frequency-sum": "40.205",
+    "gtl:Gauss-Jacobi": "40.206",
+    "gtl:Jacobi-identification": "40.207",
+    "gtl:cubic-CRT-root": "40.208",
+    "gtl:frequency-transport": "40.209",
+    "gtl:real-remainder": "40.210",
+    "gtl:matched-moments": "40.211",
+    "gtl:all-models": "40.212",
+    "gtl:per-mode-error": "40.213",
+    "gtl:all-model-error": "40.214",
+    "gtl:finite-selectors": "40.215",
+    "gtl:two-boxes": "40.216",
+    "gtl:grouped-form": "40.217",
+    "gtl:dyadic-L2": "40.218",
+    "gtl:Mellin-separation": "40.219",
+    "gtl:dyadic-column": "40.220",
+    "gtl:summed-column": "40.221",
+    "gtl:equal-fibre-cost": "40.222",
+    "gtl:other-column": "40.223",
+    "gtl:one-sided-moment": "40.224",
+    "gtl:bilinear-difference": "40.225",
+    "gtl:critical-powers": "40.226",
+    "gtl:discrepancy-power": "40.227",
+    "gtl:direct-Bessel": "40.228",
+    "gtl:s-mask-split": "40.229",
+    "gtl:direct-bilinearity": "40.230",
+    "gtl:triangle-diagnostic": "40.231"
+  },
+  "proof_environments": 0,
+  "references": [
+    {
+      "id": "cbk:core",
+      "kind": "ref",
+      "number": "40.29"
+    },
+    {
+      "id": "cbk:objects",
+      "kind": "ref",
+      "number": "40.29.1"
+    },
+    {
+      "id": "cbk:nodal",
+      "kind": "eqref",
+      "number": "40.124"
+    },
+    {
+      "id": "cbk:bessel",
+      "kind": "eqref",
+      "number": "40.125"
+    },
+    {
+      "id": "cbk:eta",
+      "kind": "eqref",
+      "number": "40.120"
+    },
+    {
+      "id": "cbk:exact-kernel",
+      "kind": "eqref",
+      "number": "40.126"
+    },
+    {
+      "id": "sw:character",
+      "kind": "eqref",
+      "number": "40.33"
+    },
+    {
+      "id": "cbk:cubic",
+      "kind": "ref",
+      "number": "40.24"
+    },
+    {
+      "id": "gtl:model",
+      "kind": "ref",
+      "number": "40.27"
+    },
+    {
+      "id": "gtl:tail-theorem",
+      "kind": "ref",
+      "number": "40.28"
+    },
+    {
+      "id": "gtl:deletions",
+      "kind": "eqref",
+      "number": "40.172"
+    },
+    {
+      "id": "gtl:direct-prefix",
+      "kind": "eqref",
+      "number": "40.192"
+    },
+    {
+      "id": "gtl:direct",
+      "kind": "ref",
+      "number": "40.29"
+    },
+    {
+      "id": "cbk:root",
+      "kind": "ref",
+      "number": "40.20"
+    },
+    {
+      "id": "sw:character",
+      "kind": "eqref",
+      "number": "40.33"
+    },
+    {
+      "id": "cbk:eta",
+      "kind": "eqref",
+      "number": "40.120"
+    },
+    {
+      "id": "gtl:ray-count",
+      "kind": "eqref",
+      "number": "40.198"
+    },
+    {
+      "id": "gtl:actual-mean",
+      "kind": "eqref",
+      "number": "40.176"
+    },
+    {
+      "id": "gtl:ray-error",
+      "kind": "eqref",
+      "number": "40.196"
+    },
+    {
+      "id": "gtl:actual-mean",
+      "kind": "eqref",
+      "number": "40.176"
+    },
+    {
+      "id": "gtl:S-factor",
+      "kind": "eqref",
+      "number": "40.180"
+    },
+    {
+      "id": "sw:core",
+      "kind": "ref",
+      "number": "40.19"
+    },
+    {
+      "id": "gtl:root-cubic",
+      "kind": "eqref",
+      "number": "40.181"
+    },
+    {
+      "id": "gtl:Gauss-Jacobi",
+      "kind": "eqref",
+      "number": "40.206"
+    },
+    {
+      "id": "gtl:root-cubic",
+      "kind": "eqref",
+      "number": "40.181"
+    },
+    {
+      "id": "gtl:actual-mean",
+      "kind": "eqref",
+      "number": "40.176"
+    },
+    {
+      "id": "gtl:all-models",
+      "kind": "eqref",
+      "number": "40.212"
+    },
+    {
+      "id": "gtl:leading-model",
+      "kind": "eqref",
+      "number": "40.177"
+    },
+    {
+      "id": "gtl:real-remainder",
+      "kind": "eqref",
+      "number": "40.210"
+    },
+    {
+      "id": "gtl:model-error",
+      "kind": "eqref",
+      "number": "40.178"
+    },
+    {
+      "id": "gtl:root-cubic",
+      "kind": "eqref",
+      "number": "40.181"
+    },
+    {
+      "id": "gtl:linear-tail",
+      "kind": "eqref",
+      "number": "40.186"
+    },
+    {
+      "id": "gtl:ternary",
+      "kind": "eqref",
+      "number": "40.182"
+    },
+    {
+      "id": "gtl:coefficients",
+      "kind": "eqref",
+      "number": "40.169"
+    },
+    {
+      "id": "gtl:gauss-cross",
+      "kind": "eqref",
+      "number": "40.184"
+    },
+    {
+      "id": "gtl:linear-tail",
+      "kind": "eqref",
+      "number": "40.186"
+    },
+    {
+      "id": "gtl:grouped-form",
+      "kind": "eqref",
+      "number": "40.217"
+    },
+    {
+      "id": "gtl:cubic-input",
+      "kind": "eqref",
+      "number": "40.185"
+    },
+    {
+      "id": "gtl:dyadic-L2",
+      "kind": "eqref",
+      "number": "40.218"
+    },
+    {
+      "id": "gtl:linear-tail",
+      "kind": "eqref",
+      "number": "40.186"
+    },
+    {
+      "id": "gtl:phase-proof",
+      "kind": "ref",
+      "number": "40.32.4"
+    },
+    {
+      "id": "gtl:linear-tail",
+      "kind": "eqref",
+      "number": "40.186"
+    },
+    {
+      "id": "gtl:linear-tail",
+      "kind": "eqref",
+      "number": "40.186"
+    },
+    {
+      "id": "gtl:finite-tail",
+      "kind": "eqref",
+      "number": "40.187"
+    },
+    {
+      "id": "gtl:model-error",
+      "kind": "eqref",
+      "number": "40.178"
+    },
+    {
+      "id": "gtl:finite-tail",
+      "kind": "eqref",
+      "number": "40.187"
+    },
+    {
+      "id": "gtl:combined",
+      "kind": "eqref",
+      "number": "40.188"
+    },
+    {
+      "id": "gtl:long-residual",
+      "kind": "eqref",
+      "number": "40.189"
+    },
+    {
+      "id": "gtl:discrete-support",
+      "kind": "eqref",
+      "number": "40.190"
+    },
+    {
+      "id": "gtl:sixth-phase",
+      "kind": "eqref",
+      "number": "40.197"
+    },
+    {
+      "id": "cbk:exact-kernel",
+      "kind": "eqref",
+      "number": "40.126"
+    },
+    {
+      "id": "gtl:direct-prefix",
+      "kind": "eqref",
+      "number": "40.192"
+    },
+    {
+      "id": "gtl:real-remainder",
+      "kind": "eqref",
+      "number": "40.210"
+    },
+    {
+      "id": "gtl:direct-prefix",
+      "kind": "eqref",
+      "number": "40.192"
+    },
+    {
+      "id": "gtl:direct-model-error",
+      "kind": "eqref",
+      "number": "40.193"
+    },
+    {
+      "id": "gtl:root-cubic",
+      "kind": "eqref",
+      "number": "40.181"
+    },
+    {
+      "id": "gtl:finite-selectors",
+      "kind": "eqref",
+      "number": "40.215"
+    },
+    {
+      "id": "gtl:phase-proof",
+      "kind": "ref",
+      "number": "40.32.4"
+    },
+    {
+      "id": "gtl:linear-tail",
+      "kind": "eqref",
+      "number": "40.186"
+    },
+    {
+      "id": "gtl:other-column",
+      "kind": "eqref",
+      "number": "40.223"
+    },
+    {
+      "id": "gtl:reassembly-proof",
+      "kind": "ref",
+      "number": "40.32.7"
+    },
+    {
+      "id": "gtl:equal-fibre-cost",
+      "kind": "eqref",
+      "number": "40.222"
+    },
+    {
+      "id": "gtl:direct-model-tail",
+      "kind": "eqref",
+      "number": "40.194"
+    },
+    {
+      "id": "gtl:direct-bound",
+      "kind": "eqref",
+      "number": "40.195"
+    },
+    {
+      "id": "gtl:long-residual",
+      "kind": "eqref",
+      "number": "40.189"
+    }
+  ],
+  "source_sha256": {
+    "book/main.tex": "f9ffbeb5e9e204ee980042e2d753999e618aa3aed67cc7f3f0b79855b4b53561",
+    "book/chapters/gauss-tail-core.tex": "42e1f4fb8d0c9c834da605eeda3fcb0ed0e89d16404c8fc9273b0549c66650da",
+    "book/chapters/gauss-tail-figure.tex": "fe606dca804bc715c85e6bcdfddb9a293ee2e1c06d04bea093a1286e5a33f60f",
+    "book/chapters/gauss-tail-details.tex": "637ed52c08daf3ff9b5e6f119f9b9a9ef009f0af8e41eb291fd91210e8716457",
+    "book/figures/gauss-tail-partition.svg": "3bb021e219b994969d57ef08b029ec400e27b92d85d7b814d7af73b7a2304ee7",
+    "book/figures/gauss-tail-partition.pdf": "957a9723b0f7372fe5c3e3e864791741ebc6b5a2e7e2a0e3ad145b2cf7d9caac",
+    "book/figures/gauss-tail-partition.tex": "7beb483158786b330b9cad6f57f0b3c36fc4a19151ca1d0f051d5f6934dd62d9"
+  },
+  "pdf_aux_sha256": "59723927fc8c2e07bfe885f2789321e2b6b92879cfa0e20eec73c76f8120c3b7",
+  "PDF_build_record_sha256": "118b0c43a6450d6569a341b97538bd075bce3a3373bc57065d746a1614b6575c",
+  "figure_number": "40.3",
+  "pandoc_sha256": "8fedc028b2314cd649b6cabf363c94a7c940aff352a1c20753ffb0875f083cac",
+  "old_HTML_sha256": "1692c43e58cf28c2cb9057c641f55318210d85b5441b5d425dc4efa7dafe01a8",
+  "new_HTML_sha256": "5a54223737c1b35f7fcaa7371fd3d04c0e233e9bd3e8241dad0262bce73f560d",
+  "renderer_sha256": "afa08a48bf89daa4a118266d08df0bc263cf34a7698c71e9b686f0e631443f33",
+  "production_promoted": false,
+  "new_Lean_declarations": 0,
+  "raw_TeX_nodes": 0,
+  "conversion_warnings": 0,
+  "normalizations": {
+    "old_rm": 18
+  },
+  "source_formula_impact": "Only new display syntax rm-to-mathrm; all old literal MathML preserved."
+}

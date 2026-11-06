@@ -1,0 +1,13 @@
+# Independent postpromotion/metadata review — PASS
+
+All18 promoted targets are byte-identical to their selected candidate sources and the independent C artifact map. All12 previously existing target backups match the approved before hashes; six new targets have null before pins and no invented old backup. No pending files remain. All85 inherited non-HTML book assets are unchanged. Promotion gate hashes remain exact; source integration targets and source HEAD/index remain exact.
+
+The seven ledger/README updates preserve every original byte prefix. The six full ledgers have the same single5880-byte scoped suffix, while README has its separate1009-byte summary. The original CSV is a byte prefix, all278 old rows remain exact, oldHB01 remains its original Hodge claim, and the three new IDs GTB01/GTDIRECT01/HBRES01 are unique. The preserved failed duplicate-ID guard was followed by resume without duplicating the already appended ledgers or replacing an old claim. Appended CSV rows retain six fields and CRLF.
+
+The normalization clarification is exactly the two specified new claim-field replacements, from preserved preclarification bytes798fd34c to current2d80f6d4. It explicitly qualifies the direct prefix and11/16 TypeII component as normalized. No other row/cell or original prefix changes. Direct all-ray exact-discrete reduction and separate research-only HB balanced-component result remain distinguished; both residual small model and long TypeI remain open. Whole signed13/12/global unsigned9/8, Lean/GRH and completion claims are unchanged.
+
+Decoded HTML pre extraction is exactly the current verification ledger, including its terminal LF, and exactly the current master plan in the implementation page. Source index metadata shows333pages/10,299MathML with the new proof link. The appendices distinguish this local333/10299 milestone from the still-current public319/9810 Main87f89878/Pagesf6773684 edition; no publication operation or live network check was performed by this review.
+
+The final focus-browser record is40/40 with105protocol events plus one initial marker, zero actual departures, zero fetch/HTTP/pending/timeouts and unchanged750ms/30s guards. This is the existing saved scoped QA evidence, not a rerun or a claim to the old220-group release audit. Synthetic HB controls remain labelled formal algebra, not character-family data.
+
+This gate binds metadata-v1's historical receipt plus its normalization addendum and current exact files. The subsequent administrative checkpoint/implementation refresh is outside this snapshot and can be bound separately. No source/global-doc/index, build, browser, arithmetic-control or publication mutation was performed.

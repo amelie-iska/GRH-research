@@ -1,0 +1,38 @@
+{
+  "accepted": true,
+  "author": {
+    "path": "outputs/checks/2026-11-06-principal-mean/lane-c/author-result-v2.json",
+    "sha256": "e85d033a381f7a5837404db852701bb946eeae0b1b7939fedb50b9b3e74c22b6"
+  },
+  "created_utc": "2026-11-06T07:44:24.739805+00:00",
+  "findings": [],
+  "input_matches": {
+    "outputs/checks/2026-11-06-coupled-sixth/RESEARCH_ACCEPTED-v2.json": true,
+    "outputs/checks/2026-11-06-principal-mean/root/mixed-band-budget-v1/certificate.json": true,
+    "papers/coherent-band-core.tex": true,
+    "papers/coherent-band-details.tex": true,
+    "planning/coherent-release-20261106/HANDOFF-v1.md": true,
+    "planning/coupled-sixth-20261106/lane-a/COHERENT_SIXTH_PART_RAY_MEAN-v1.md": true,
+    "planning/coupled-sixth-20261106/lane-c-sharpen/SMOOTHED_RAY_COUNT_AND_SIXTH_MEAN-v1.md": true,
+    "planning/unequal-band-20261106/lane-a/SIXTH_FREE_DUAL_SECTOR_AND_COHERENT_REMAINDER-v2.md": true
+  },
+  "new_actual_sector_gain": false,
+  "new_mu_d_cancellation": false,
+  "new_whole_signed_or_global_gain": false,
+  "numeric_old_controls_build_browser_auth_publication_or_index_mutation": false,
+  "passed": true,
+  "resolved_v1_scope_finding": "Purported new10/9 actual-sector gain is dominated by accepted UB01 fixed-total-s comparison through3/2 after good/S splitting; v2 explicitly retracts new gain.",
+  "review": {
+    "path": "planning/principal-mean-20261106/review-a-c/REVIEW-v1.md",
+    "sha256": "cd8a2ba4bb6bd6c24924c13f8c478d7e2fff9ad8918e56fc160b691a8770ca21"
+  },
+  "reviewed_note": {
+    "path": "planning/principal-mean-20261106/lane-c/DENSITY_INCIDENCE_AND_MIXED_MEAN_BAND-v2.md",
+    "sha256": "df4b2bdf6bb343b25eebd0c99fe80e231a96a9593d10df9341863e24fbbd7105"
+  },
+  "scope": "Failed new signed-density gain plus valid derived mean-norm corollary, strict constant unequal-d support and exact direct-old-input dominance; NOT new target arithmetic progress.",
+  "scope_correction": {
+    "path": "outputs/checks/2026-11-06-principal-mean/lane-c/scope-correction-v1.json",
+    "sha256": "0ff26de8ea5fee898b621d40dad413913071ed39dc11831cd07363468cfeaeff"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "results": {
+    "focused-concise": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/scripts/build_remote_articles.py",
+        "--edition",
+        "concise",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/focused-concise"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/focused-concise/build-record.json",
+      "record_sha256": "d873f9f4eb1517a3bd7d856e770d79ad3e1464cb881a46aa48423815ddf13ba4",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/focused-concise/resolutions-concise.pdf",
+      "pdf_sha256": "aec953c3b81747052c45b359cec59c531201fcb436a6880d15be76c6cc9f79f0",
+      "pages": 81
+    },
+    "notes-concise": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/physical-sieve-20261105/builds/build_notes_v1.py",
+        "--edition",
+        "concise",
+        "--root-go",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/notes-concise",
+        "--physical-core-sha",
+        "df49c3f938ab80f80e4c0bb2efb4f71004a2d311dc21f952ecd45077dd35f939",
+        "--physical-details-sha",
+        "4713c2c4e8496a87a8678406d2d43f02ab0bf82e4152fed15938aef52b3b9bf4",
+        "--coherent-core-sha",
+        "5b3ab5c38b5c9130867793ac2e21c7dbc60560bc7d4eadbcc40fb1f334659f6c",
+        "--coherent-details-sha",
+        "92dfe3077dffa048471b0705539bd82b2648c2e4b021c331c2753b6fb655176f"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/notes-concise/build-record.json",
+      "record_sha256": "d65e50878677875ea31d4861614a70037469c4f2da42187d493c7f4f5268da47",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/notes-concise/validated-oracle-concise.pdf",
+      "pdf_sha256": "7a811675417a65eceaf23ecf94b47dce6f9fdd062172c032252f80c77fe4a888",
+      "pages": 39
+    },
+    "book-pdf": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/gauss-book-20261106/root/build_book_pdf_v1.py",
+        "--consume-book",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/book-pdf"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/book-pdf/build-record.json",
+      "record_sha256": "4775a2b6becd9e3e3b87a871917fddd7656b9739fdb7859f3f617441eadf3e56",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/book-pdf/main.pdf",
+      "pdf_sha256": "4a68ffa17d59b76f9c9bd686bf59467c76a2219784a3b7acf8b8e26a9bccc3ac",
+      "pages": 333
+    },
+    "notes-extended": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/physical-sieve-20261105/builds/build_notes_v1.py",
+        "--edition",
+        "extended",
+        "--root-go",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/notes-extended",
+        "--physical-core-sha",
+        "df49c3f938ab80f80e4c0bb2efb4f71004a2d311dc21f952ecd45077dd35f939",
+        "--physical-details-sha",
+        "4713c2c4e8496a87a8678406d2d43f02ab0bf82e4152fed15938aef52b3b9bf4",
+        "--coherent-core-sha",
+        "5b3ab5c38b5c9130867793ac2e21c7dbc60560bc7d4eadbcc40fb1f334659f6c",
+        "--coherent-details-sha",
+        "92dfe3077dffa048471b0705539bd82b2648c2e4b021c331c2753b6fb655176f"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/notes-extended/build-record.json",
+      "record_sha256": "6d90f09062e4c9997ffb36be94217250169307604c9bc8aea115ffdd19751961",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/notes-extended/validated-oracle-extended.pdf",
+      "pdf_sha256": "c6d79d74aaf727a56c2be7d45194e8a497a68bab3fa5ee5d6366331ef60fbeb2",
+      "pages": 118
+    },
+    "focused-extended": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/scripts/build_remote_articles.py",
+        "--edition",
+        "extended",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/focused-extended"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/focused-extended/build-record.json",
+      "record_sha256": "4b69331b57f917faf9f5da98cad3e30e872001fd44faf4b8ad50f9b017ef5452",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-gauss-book/builds/run-v2/focused-extended/resolutions-extended.pdf",
+      "pdf_sha256": "9e5f819b3feaf795200b5c4c69ac58d49b778cf3ecd065b1d2caf31cc2b43ef7",
+      "pages": 228
+    }
+  },
+  "source_guard_sha256": {
+    "book/chapters/gauss-tail-core.tex": "42e1f4fb8d0c9c834da605eeda3fcb0ed0e89d16404c8fc9273b0549c66650da",
+    "book/chapters/gauss-tail-details.tex": "8160e8926685479f8affeca11fe455bbc40e82280728e5198fc5c7266a9f45d8",
+    "book/chapters/gauss-tail-figure.tex": "fe606dca804bc715c85e6bcdfddb9a293ee2e1c06d04bea093a1286e5a33f60f",
+    "book/chapters/weighted-cutoff.tex": "93028c4069102f33fae5ec39c747ce068584997568e00fb9eb43d2989983afa2",
+    "scripts/assemble_book.py": "57868a012f3a6e93fcc09243e190192e962e338e7d85a06a49104e1f6b7da916",
+    "papers/resolutions-concise.tex": "14e8f793dbaa911d5075bcf453c7ac55d4191d11c37fa1a0e58bc56b6a03e4ea",
+    "papers/resolutions-extended.tex": "5ef465951b48ad42f28f6d684933f06bed6a4c3fe3302a9a2d86e30c150d035a",
+    "papers/validated-oracle-concise.tex": "cc7dd1e8982ccad938246eab21087618f5b7c2e0e47d224974556c67c62552d9",
+    "papers/validated-oracle-extended.tex": "21bbbc07fd4056055e315b32469b098a3290ddbdac56c9711475b409a6a0f635"
+  },
+  "old_live_HTML_sha256": "1692c43e58cf28c2cb9057c641f55318210d85b5441b5d425dc4efa7dafe01a8",
+  "source_integration_sha256": "1db2efe067b94e5733f68b33ec44deb65d4eb22bc942f567739393c3dff7ff0f",
+  "marker_receipt_sha256": "e146874b32b1f43e40a827e4723657ae8a1818a4c1ced07822073e6553bb9aaa",
+  "producer_sha256": "d4956dd0acbe6bd16679b394df6b74e3cb883a0e968b07026e48b264bce76328",
+  "production_promoted": false,
+  "new_Lean_declarations": 0
+}
