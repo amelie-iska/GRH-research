@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+"""Append only the reviewed coherent-band continuation to the pinned native book.
+Candidate output only. All old literal HTML/math/table/tool bytes are preserved.
+"""
+from pathlib import Path
+import argparse, collections, hashlib, html, json, re, shutil, subprocess
+import xml.etree.ElementTree as ET
+ROOT=Path("/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104")
+PANDOC=Path("/home/iska/miniconda3/envs/tokengt/bin/pandoc")
+NS="{http://www.w3.org/1998/Math/MathML}"
+THEOREMS={"theorem","proposition","lemma","corollary","definition","example","remark"}
+def sha(b): return hashlib.sha256(b).hexdigest()
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument("--output",type=Path,required=True);ap.add_argument("--pdf-build",type=Path,required=True);a=ap.parse_args()
+ out=a.output.resolve();pdf=a.pdf_build.resolve()
+ assert out.is_relative_to(ROOT/"outputs") and not out.exists()
+ out.mkdir(parents=True)
+ producer=Path(__file__).read_bytes();(out/"renderer.py").write_bytes(producer)
+ sources={}
+ def read(name):
+  b=(ROOT/name).read_bytes();sources[name]=sha(b);return b.decode()
+ maintex=read("book/main.tex")
+ names=["book/chapters/coherent-band-core.tex","book/chapters/coherent-band-figure.tex","book/chapters/coherent-band-details.tex"]
+ body="\n".join(read(n) for n in names)
+ assert r"\input" not in body
+ original=maintex.split(r"\begin{document}")[0]+"\n"+r"\begin{document}"+"\n"+body+"\n"+r"\end{document}"+"\n"
+ # Established display-only normalization for Pandoc; shared source bytes stay pinned.
+ (out/"supplement-original.tex").write_text(original)
+ normalized,old_rm=re.subn(r"\\rm\s+([A-Za-z]+)",lambda m:r"\mathrm{"+m[1]+"}",original)
+ (out/"supplement.tex").write_text(normalized)
+ cmd=["nice","-n","15",str(PANDOC),"--from=latex",str(out/"supplement.tex")]
+ ast_run=subprocess.run(cmd+["--to=json"],capture_output=True,text=True,check=True)
+ assert not ast_run.stderr.strip(),ast_run.stderr
+ ast=json.loads(ast_run.stdout);(out/"supplement.ast.json").write_text(json.dumps(ast,indent=2)+"\n")
+ raws=[];maths=[]
+ def walk(x):
+  if isinstance(x,dict):
+   if x.get("t") in {"RawBlock","RawInline"}:raws.append(x)
+   if x.get("t")=="Math":maths.append(x["c"][1].strip())
+   for v in x.values():walk(v)
+  elif isinstance(x,list):
+   for v in x:walk(v)
+ walk(ast);assert not raws,raws[:5]
+ run=subprocess.run(cmd+["--to=html5","--mathml","--wrap=none","--number-sections"],capture_output=True,text=True,check=True)
+ (out/"conversion.log").write_text(run.stdout+run.stderr);assert not run.stderr.strip(),run.stderr
+ fragment=run.stdout;(out/"fragment-unresolved.html").write_text(fragment)
+ ft=ET.fromstring("<div>"+fragment+"</div>")
+ native=list(ft.iter(NS+"math"));assert len(native)==len(maths)>0
+ annotations=["".join(x.find(".//"+NS+"annotation").itertext()).strip() for x in native]
+ assert annotations==maths,"New MathML source order mismatch"
+ pdf_record=json.loads((pdf/"build-record.json").read_text())
+ assert pdf_record["passed"] and pdf_record["consume_actual_integrated_book"]
+ for n in ["book/main.tex"]+names:assert pdf_record["source_sha256"][n]==sources[n],("PDF/native source mismatch",n)
+ pdf_figure={x["path"]:x["sha256"] for x in pdf_record["figure_records"]}
+ assert pdf_figure["book/figures/coherent-band-workflow.pdf"]==sha((ROOT/"book/figures/coherent-band-workflow.pdf").read_bytes())
+ aux=(pdf/"main.aux").read_bytes()
+ labels=dict(re.findall(r"\\newlabel\{([^}]+)\}\{\{([^}]*)\}",aux.decode()))
+ source_labels=re.findall(r"\\label\{([^}]+)\}",body)
+ assert len(source_labels)==len(set(source_labels)) and all(x.startswith("cbk:") for x in source_labels)
+ assert set(source_labels)<=labels.keys()
+ heading_records=[]
+ def heading(m):
+  attrs=dict(re.findall(r'([\w-]+)="([^"]*)"',m[2]));ident=attrs.get("id");level=int(m[1])
+  assert ident in source_labels,("Unlabelled new heading",m[0])
+  number=labels[ident];content=re.sub(r'<span class="header-section-number">.*?</span>\s*',"",m[3],count=1,flags=re.S)
+  cls={1:"sectionHead",2:"subsectionHead",3:"subsubsectionHead"}.get(level,"paragraphHead")
+  heading_records.append(dict(id=ident,number=number,title=re.sub("<[^>]+>","",content)))
+  return '<h'+str(min(6,level+2))+' class="'+cls+'" id="'+ident+'">'+(('<span class="header-section-number">'+number+"</span> ") if level<=3 else "")+content+"</h"+str(min(6,level+2))+">"
+ fragment=re.sub(r"<h([1-6])\b([^>]*)>(.*?)</h\1>",heading,fragment,flags=re.S)
+ equation_records={}
+ existing=set(re.findall(r'\bid="([^"]+)"',fragment))
+ def equation(m):
+  ann=re.search(r'<annotation encoding="application/x-tex">(.*?)</annotation>',m[0],re.S)
+  assert ann
+  found=re.findall(r"\\label\{([^}]+)\}",html.unescape(ann[1]))
+  if not found:return m[0]
+  for ident in found:
+   assert ident not in existing;existing.add(ident);equation_records[ident]=labels[ident]
+  aliases="".join('<span class="equation-alias" id="'+ident+'"></span>' for ident in found[1:])
+  number=", ".join("("+labels[x]+")" for x in found)
+  return '<span class="reader-equation" id="'+found[0]+'">'+aliases+m[0]+'<span class="reader-equation-number">'+number+"</span></span>"
+ fragment=re.sub(r'<math\b[^>]*display="block".*?</math>',equation,fragment,flags=re.S)
+ theorem_records=[]
+ def theorem(m):
+  attrs=dict(re.findall(r'([\w-]+)="([^"]*)"',m[1]));kind=attrs.get("class","")
+  if kind not in THEOREMS:return m[0]
+  ident=attrs.get("id");assert ident in source_labels,("Unlabelled theorem",m[0][:200])
+  number=labels[ident]
+  block,n=re.subn(r"(<strong>[^<]*?)[0-9]+(?:\.[0-9]+)*(</strong>)",lambda x:x[1]+number+x[2],m[0],count=1)
+  assert n==1,(ident,m[0][:200]);theorem_records.append(dict(id=ident,kind=kind,number=number))
+  return block
+ fragment=re.sub(r"<div\b([^>]*)>.*?</div>",theorem,fragment,flags=re.S)
+ references=[]
+ def reference(m):
+  attrs=dict(re.findall(r'([\w-]+)="([^"]*)"',m[1]));ident=html.unescape(attrs["data-reference"]);kind=attrs["data-reference-type"]
+  number=labels[ident];references.append(dict(id=ident,kind=kind,number=number))
+  return "<a"+m[1]+">"+("("+number+")" if kind=="eqref" else number)+"</a>"
+ fragment=re.sub(r'<a([^>]*data-reference-type="(?:eqref|ref)"[^>]*)>.*?</a>',reference,fragment,flags=re.S)
+ fig_assets=[]
+ for suffix in [".svg",".pdf",".tex"]:
+  name="book/figures/coherent-band-workflow"+suffix;b=(ROOT/name).read_bytes();sources[name]=sha(b)
+  if suffix==".pdf":assert b.startswith(b"%PDF")
+  if suffix==".svg":
+   svg=ET.fromstring(b);assert svg.tag.rsplit("}",1)[-1]=="svg"
+   for e in svg.iter():
+    assert e.tag.rsplit("}",1)[-1]!="script"
+    assert not any(k.lower().startswith("on") for k in e.attrib)
+    assert not any(k.rsplit("}",1)[-1]=="href" and not v.startswith("#") for k,v in e.attrib.items())
+  fig_assets.append(dict(source=name,target="figures/"+Path(name).name,sha256=sha(b),bytes=len(b)))
+ def figure(m):
+  tag=m[0].replace("<embed","<img",1).replace('src="figures/coherent-band-workflow.pdf"','src="figures/coherent-band-workflow.svg"')
+  if " alt=" not in tag:tag=tag.replace("<img ","<img alt=\"Actual finite Schur matrix pipeline and remaining arithmetic scopes\" ",1)
+  return '<span class="reader-figure-scroll" tabindex="0" aria-label="Coherent-band matrix workflow; horizontal scrolling on small screens">'+tag+'</span><span class="source-links"><a href="figures/coherent-band-workflow.tex">Original figure TeX</a> · <a href="figures/coherent-band-workflow.pdf">Source-matched figure PDF</a></span>'
+ fragment,nfig=re.subn(r'<(?:img|embed)\b[^>]*\bsrc="figures/coherent-band-workflow\.pdf"[^>]*>',figure,fragment)
+ assert nfig==1,nfig
+ figure_number=labels["cbk:workflow"]
+ fragment,ncaption=re.subn(r"<figcaption>",'<figcaption><strong>Figure '+figure_number+'.</strong> ',fragment)
+ assert ncaption==1 and ('<figcaption><strong>Figure '+figure_number+'.</strong> ') in fragment
+ # Pandoc represents figure labels on figure containers; the PDF number is authoritative.
+ for ident in re.findall(r"\\label\{([^}]+)\}",read("book/chapters/coherent-band-figure.tex")):
+  assert ident in labels
+ source_count=len(re.findall(r"\\begin\{(?:theorem|lemma|proposition|corollary|definition|example|remark)\}",body))
+ assert source_count==len(theorem_records),(source_count,len(theorem_records))
+ proofs=len(re.findall(r"\\begin\{proof\}",body));assert proofs==len(re.findall(r"<em>Proof",fragment)),(proofs,len(re.findall(r"<em>Proof",fragment)))
+ oldbytes=(ROOT/"web/book/main.html").read_bytes();baseline=oldbytes.decode();(out/"baseline-book.html").write_bytes(oldbytes)
+ before=json.loads((ROOT/"outputs/checks/2026-11-06-coherent-book/root/integration-before-v1.json").read_text())
+ assert sha(oldbytes)==before["source_and_live_before"]["web/book/main.html"]["sha256"]
+ old_ids=set(re.findall(r'\bid="([^"]+)"',baseline));new_ids=re.findall(r'\bid="([^"]+)"',fragment)
+ assert len(new_ids)==len(set(new_ids)),[x for x,c in collections.Counter(new_ids).items() if c>1]
+ for ident in sorted(set(new_ids)&old_ids):
+  assert ident not in source_labels
+  fragment=fragment.replace('id="'+ident+'"','id="cbk-auto-'+ident+'"').replace('href="#'+ident+'"','href="#cbk-auto-'+ident+'"')
+ ids=set(re.findall(r'\bid="([^"]+)"',fragment))
+ assert set(source_labels)<=ids,("Lost labels",set(source_labels)-ids)
+ assert not old_ids&ids
+ for ident in re.findall(r'href="#([^"]+)"',fragment):assert html.unescape(ident) in ids|old_ids,("Missing reference",ident)
+ tables=re.findall(r"<table\b[^>]*>.*?</table>",fragment,re.S)
+ fragment=re.sub(r"<table\b[^>]*>.*?</table>",lambda m:'<div class="reader-table-scroll" tabindex="0" aria-label="Coherent-band data table; horizontal scrolling">'+m[0]+"</div>",fragment,flags=re.S)
+ assert re.findall(r"<table\b[^>]*>.*?</table>",fragment,re.S)==tables
+ lab='<aside class="reader-lab" id="lab-coherent-band"><h4>Finite Schur matrix inspector</h4><p>Step through all three saved 14 × 29 auxiliary matrices: generators, factors, actual cutoff coefficients, complex values and raw zeros. The 55-digit saved values are numerical consistency checks, not interval certificates, trained-model output or a bound for the full signed kernel.</p><p><a href="/coherent-band.html">Open the matrix inspector separately</a></p><iframe loading="lazy" src="/coherent-band.html?embed=book" title="Actual finite Schur matrices and state values" height="1120"></iframe></aside>'
+ # Place the canonical lab after the core and before the book-only workflow figure.
+ marker=re.search(r"<figure\b",fragment);assert marker
+ fragment=fragment[:marker.start()]+lab+fragment[marker.start():]
+ nav='<nav aria-label="Reviewed coherent-band continuation"><strong>Chapter 40 continuation: coherent dual bands</strong><p>Finite auxiliary bounds, the full equal-norm sector and the remaining signed unequal-norm problem. The full kernel and GRH remain open.</p><p><a href="#cbk:core">Results and scopes</a> · <a href="#cbk:details">Complete proofs</a> · <a href="../coherent-band.html">Matrix inspector</a> · <a href="../book.pdf">Complete book PDF</a></p></nav>'
+ links='<p class="source-links">Shared TeX sources: '+' · '.join('<a href="sources/'+Path(n).name+'">'+Path(n).name+'</a>' for n in names)+'</p>'
+ insertion='<section class="new-reviewed-chapters" id="coherent-band-section">'+nav+links+fragment+"</section>\n"
+ headings=list(re.finditer(r"<h2\b[^>]*>.*?</h2>",baseline,re.S))
+ bib=[m for m in headings if " ".join(html.unescape(re.sub("<[^>]+>"," ",m[0])).split())=="Bibliography"];assert len(bib)==1
+ date=re.search(r"\\date\{([^}]+)\}",maintex)[1]
+ assert baseline.count("November 5, 2026")==1
+ old=baseline.replace("November 5, 2026",date,1)
+ combined=old[:bib[0].start()]+insertion+old[bib[0].start():] if len(date)==len("November 5, 2026") else None
+ assert combined is not None
+ toc_add='<br /><span class="sectionToc"><a href="#cbk:core">40 · Coherent dual bands and finite Schur transfer</a></span>'
+ toc=re.search(r'<div class="tableofcontents">.*?</div>',combined,re.S);assert toc
+ combined=combined[:toc.end()-6]+toc_add+combined[toc.end()-6:]
+ restored=combined.replace(insertion,"",1).replace(toc_add,"",1).replace(date,"November 5, 2026",1)
+ assert restored==baseline,"Non-additive old HTML change"
+ tree=ET.fromstring(combined);oldtree=ET.fromstring(baseline)
+ oldmath=re.findall(r"<math\b[^>]*>.*?</math>",baseline,re.S);allmath=re.findall(r"<math\b[^>]*>.*?</math>",combined,re.S)
+ assert len(oldmath)==9172
+ pos=0
+ for value in oldmath:
+  while pos<len(allmath) and allmath[pos]!=value:pos+=1
+  assert pos<len(allmath),"Old literal MathML changed"
+  pos+=1
+ assert len(list(oldtree.iter("table")))==389
+ oldframes=[ET.tostring(e) for e in oldtree.iter("iframe")];frames=[ET.tostring(e) for e in tree.iter("iframe")]
+ assert frames[:13]==oldframes and len(frames)==14
+ oldrefs=re.findall(r'(?:src|data)="([^"]+\.svg)"',baseline);newrefs=re.findall(r'(?:src|data)="([^"]+\.svg)"',combined)
+ assert len(oldrefs)==29 and newrefs[:29]==oldrefs and len(newrefs)==30
+ malformed=[]
+ for e in ET.fromstring("<div>"+fragment+"</div>").iter():
+  tag=e.tag.rsplit("}",1)[-1]
+  if tag in {"msub","msup","munder","mover"} and len(e)!=2:malformed.append(tag)
+  if tag in {"msubsup","munderover"} and len(e)!=3:malformed.append(tag)
+ assert not malformed,malformed
+ target=out/"book";shutil.copytree(ROOT/"web/book",target);(target/"main.html").write_text(combined)
+ for n in names:(target/"sources"/Path(n).name).write_bytes((ROOT/n).read_bytes())
+ for item in fig_assets:
+  p=target/item["target"];p.parent.mkdir(exist_ok=True,parents=True);p.write_bytes((ROOT/item["source"]).read_bytes())
+ old_assets=before["old_book_assets_sha256"]
+ unchanged={}
+ for name,digest in old_assets.items():
+  # The snapshot uses paths relative to web/book (or the repository).
+  rel=name.removeprefix("web/book/")
+  if rel=="main.html":continue
+  assert sha((target/rel).read_bytes())==digest,(name,"Changed old asset")
+  unchanged[name]=digest
+ (out/"fragment-resolved.html").write_text(fragment)
+ assert all(sha((ROOT/n).read_bytes())==digest for n,digest in sources.items())
+ assert Path(__file__).read_bytes()==producer
+ rec=dict(passed=True,native_MathML=True,new_chapters=0,chapter_count=40,math_nodes_added=len(maths),math_nodes=len(allmath),old_literal_math_subtrees=9172,old_math_byte_identical=True,old_tables=389,tables=len(list(tree.iter("table"))),canonical_labs=14,old_canonical_labs=13,old_svg_refs=29,svg_refs=30,old_assets_unchanged=unchanged,headings=heading_records,theorems=theorem_records,equations=equation_records,proof_environments=proofs,references=references,source_sha256=sources,pdf_aux_sha256=sha(aux),PDF_build_record_sha256=sha((pdf/"build-record.json").read_bytes()),figure_number=figure_number,pandoc_sha256=sha(PANDOC.read_bytes()),old_HTML_sha256=sha(oldbytes),new_HTML_sha256=sha(combined.encode()),renderer_sha256=sha(producer),production_promoted=False,new_Lean_declarations=0,raw_TeX_nodes=0,conversion_warnings=0,normalizations={"old_rm":old_rm},source_formula_impact="Only new display syntax rm-to-mathrm; all old literal MathML preserved.")
+ (out/"native-build-record.json").write_text(json.dumps(rec,indent=2)+"\n")
+ print(json.dumps({k:rec[k] for k in ["passed","math_nodes","math_nodes_added","tables","canonical_labs","svg_refs","production_promoted"]}))
+if __name__=="__main__":main()

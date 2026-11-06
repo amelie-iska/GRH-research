@@ -1,0 +1,37 @@
+{
+  "H_ROOT_not_used": true,
+  "actual_bound": "|P_<=Y,C,1| << B\u00b2(DYA2)^epsilon A1A2 Phi(Y,D) I(B0 A1Y/(C0D\u00b2))",
+  "all12_protected_states_unchanged": true,
+  "all_other_components_and_full_complement_open": true,
+  "checked": [
+    "Actual primitive prefactor and Bessel j norm scalings",
+    "Original finite k/capacity and all raw/S masks",
+    "Unchanged eta(k)^2 phase at every order",
+    "Auxiliary off-coprime product/gcd inversion with overlapping residuals",
+    "j-independent coefficient norm from R_j(da) contraction",
+    "Ny^j bounded only inside positive residual energies",
+    "j-independent h/divisor/auxiliary norm bounds",
+    "All-order finite-window interchange and explicit I growth",
+    "Partial target range and normalized powers"
+  ],
+  "created_utc": "2026-11-06T03:26:44.173998+00:00",
+  "fixed_I_range_only_if_A1Y_le_cD2_with_fixed_c": true,
+  "governing_note": {
+    "path": "planning/intermediate-kernel-20261106/lane-b/EXACT_FINITE_K_ALL_J_BOUND-v1.md",
+    "sha256": "8197418d78d586cc67a24a89baf8eb49b2d53a18e26f9f39698e0c9e7450048d"
+  },
+  "mixed_same_class_rho1_prefix_Y_D_target": true,
+  "no_actual_energy_lower_positivity_Lean_or_GRH_claim": true,
+  "no_canonical_or_source_index_mutation": true,
+  "no_control_table_build_browser_env_auth_publication_rerun": true,
+  "no_remaining_findings": true,
+  "no_whole_global9over8_or_scoped13over12_change": true,
+  "passed": true,
+  "research_only_outside_frozen_release": true,
+  "review_path": "planning/intermediate-kernel-20261106/lane-a/review-b-all-j/REVIEW-v1.md",
+  "review_sha256": "63cd86637299ae95e68eab29a7523e63df6cef56202edc95a1147b39d670fbf0",
+  "schema": "intermediate-b-all-j-independent-acceptance-v1",
+  "source_pins_path": "outputs/checks/2026-11-06-intermediate-kernel/lane-a/review-b-all-j/source-pins-v1.json",
+  "source_pins_sha256": "af6f8a9f97e8b757023036b628371842d83bd128f29299f2e3c644a3da8c0d1d",
+  "verdict": "PASS_EXACT_FINITE_K_ALL_J_SAME_CLASS_RHO1_WINDOW_BOUND"
+}

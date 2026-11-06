@@ -1,0 +1,920 @@
+% Full proofs of accepted coherent-band research, with no new target claim.
+\section{Proofs for the coherent-band comparisons}
+\label{cbk:details}
+These proofs use de Faveri's pinned
+\href{https://arxiv.org/abs/2610.04045v1}{arXiv:2610.04045v1},
+Theorem~1.1 and its stated character family as external input. The
+primitive Poisson convention agrees with its Lemma~3.1; the formulas
+below also derive the normalization. This is not a proof of that deep
+large-sieve theorem. The source version and independent proof reviews
+are bound by the accompanying source map; full third-party reading
+caches are not public source dependencies.
+
+\subsection{Finite Fourier transforms and the primitive Gaussian}
+\label{cbk:gaussian-proof}
+For $\mathfrak f=(\gamma)$ use the primitive additive pairing
+\[
+ e_\gamma(x)=\exp\bigl(2\pi i\operatorname{Tr}(x/(\delta\gamma))\bigr),
+ \qquad \delta=1+2\omega.
+\]
+Let $\theta$ be primitive modulo $\mathfrak f$, extended by zero at
+nonunits of this \emph{actual} conductor. For every $\beta\in\mathcal O$,
+\begin{equation}\label{cbk:finite-Fourier}
+ \sum_{x\bmod\gamma}\theta(x)e_\gamma(\beta x)
+          =\overline{\theta(\beta)}\tau_\gamma(\theta).
+\end{equation}
+At a unit this is change of variable. At a nonunit frequency the
+additive character factors through a proper conductor quotient.
+Primitivity supplies a unit in the kernel of unit reduction on which
+$\theta$ is nontrivial. Multiplication by that unit leaves the additive
+factor unchanged and forces the sum to vanish. Unit reduction is
+surjective prime by prime and hence by CRT. Parseval for this
+nondegenerate finite additive pairing gives
+\[
+ \sum_{\beta\bmod\mathfrak f}
+   \left|\sum_x\theta(x)e_\gamma(\beta x)\right|^2
+       =N\mathfrak f\,\varphi(\mathfrak f),\qquad
+ |\tau_\gamma(\theta)|^2=N\mathfrak f.
+\]
+For the unit conductor use its one-element convention $\tau=1$.
+For coprime $\gamma_1,\gamma_2$, the two CRT frequencies are
+$\gamma_2^{-1}$ and $\gamma_1^{-1}$, so
+\begin{equation}\label{cbk:Gauss-CRT}
+ \tau_{\gamma_1\gamma_2}(\theta_1\theta_2)
+ =\theta_1(\gamma_2)\theta_2(\gamma_1)
+                        \tau_{\gamma_1}(\theta_1)\tau_{\gamma_2}(\theta_2).
+\end{equation}
+The product is primitive because each ramified local conductor occurs
+in only one factor.
+
+Here are the archimedean factors that a raw Gauss sum alone would miss.
+Put $d=|k|$ and
+\[
+ P_k(z)=\begin{cases}z^k,&k\ge0,\\\bar z^{-k},&k<0.\end{cases}
+\]
+With Euclidean Fourier transform
+$\widehat g(w)=\int_{\mathbb C}g(z)e^{-2\pi i\operatorname{Re}(z\bar w)},dz$,
+differentiating the two-dimensional Gaussian gives
+\begin{equation}\label{cbk:harmonic-Fourier}
+ \widehat{P_k(z)e^{-\pi b|z|^2}}(w)
+    =(-i)^d b^{-d-1}P_k(w)e^{-\pi|w|^2/b},\qquad b>0.
+\end{equation}
+Holomorphic or antiholomorphic harmonicity removes the lower
+contraction terms. The sign is $(-i)^{|k|}$ for either sign of $k$.
+Let $\chi_0=\chi N^{-it}$ and
+$a_\gamma=2/(\sqrt3|\gamma|)$. Its theta series is
+\[
+ \Theta_{\chi_0}(t)=\sum_{\alpha\in\mathcal O}
+          \theta(\alpha)P_k(\alpha)e^{-\pi a_\gamma t|\alpha|^2}.
+\]
+The lattice $\gamma\mathcal O$ has covolume
+$(\sqrt3/2)|\gamma|^2$ and dual lattice
+$2/(\bar\gamma\bar\delta)\mathcal O$.
+Write a dual point as $w=2\bar\beta/(\bar\gamma\bar\delta)=c\bar\beta$.
+Then $|c|=a_\gamma$ and
+$\operatorname{phase}(c)=\operatorname{phase}(\delta\gamma)$.
+Equations~\eqref{cbk:finite-Fourier} and
+\eqref{cbk:harmonic-Fourier}, applied in each residue class, yield
+\begin{equation}\label{cbk:theta-inversion}
+ \Theta_{\chi_0}(t)=i^{-d}\operatorname{phase}(\delta\gamma)^k
+      \frac{\tau_\gamma(\theta)}{\sqrt{N\mathfrak f}}
+                 t^{-d-1}\Theta_{\bar\chi_0}(1/t).
+\end{equation}
+The inverse different and the conductor generator have not been
+replaced by a raw character value at $\delta$.
+
+Use $\Gamma_{\mathbb C}(s)=2(2\pi)^{-s}\Gamma(s)$ and
+\[
+ \Lambda(s,\chi)=(3N\mathfrak f)^{s/2}
+           \Gamma_{\mathbb C}(s-it+d/2)L(s,\chi).
+\]
+Every nonzero ideal has six generators; their contributions agree
+because $\theta(u)u^k=1$. The Mellin transform of the theta series,
+with exponent $s+d/2$, is therefore exactly
+$3(3N\mathfrak f)^{d/4}\Lambda(s,\chi_0)$.
+The same constant occurs on the conjugate side. Mellin integration
+of~\eqref{cbk:theta-inversion} proves the root formula for $t=0$.
+At nonunit conductor the zero frequency vanishes by primitivity.
+At unit conductor and $k\ne0$, $P_k(0)=0$. At unit conductor and
+$k=0$, retain the Gaussian zero term when splitting its Mellin
+integral at one; this gives the usual meromorphic polar terms and
+root one. They are not dropped from the functional equation.
+
+Changing $\gamma$ to $u\gamma$ multiplies its Gauss sum by $\theta(u)$
+and its angular factor by $u^k$, whose product is one. Thus the
+formula is independent of the conductor generator. Complex
+conjugation gives
+$\tau_\gamma(\bar\theta)=\theta(-1)\overline{\tau_\gamma(\theta)}$,
+where $\theta(-1)=(-1)^k$; together with the angular factor this
+proves $\epsilon(\bar\chi)=\overline{\epsilon(\chi)}$.
+Finally
+\[
+ \Lambda(s,\chi_0N^{it})=(3N\mathfrak f)^{it/2}
+                                  \Lambda(s-it,\chi_0),\qquad
+ \epsilon(\chi_0N^{it})=(3N\mathfrak f)^{it}\epsilon(\chi_0).
+\]
+This proves~\eqref{cbk:root-formula} also for radial unitary twists.
+
+In~\eqref{cbk:Gauss-CRT}, the angular cross factors
+$\operatorname{phase}(\gamma_2)^{k_1}
+ \operatorname{phase}(\gamma_1)^{k_2}$ convert the finite residue
+values into ideal values $\chi_1(\mathfrak f_2)\chi_2(\mathfrak f_1)$.
+The remaining $i$ factor is
+$i^{|k_1|+|k_2|-|k_1+k_2|}$. Radial cross factors satisfy
+\[
+ \prod_j(3N\mathfrak f_j)^{it_j}
+       \prod_{i\ne j}(N\mathfrak f_j)^{it_i}
+       =\left(3N\prod_j\mathfrak f_j\right)^{i\sum_jt_j}.
+\]
+Iteration proves~\eqref{cbk:root-product}. Coprimality is a hypothesis
+on the \emph{actual primitive ideal conductors}, not on rational
+norms or higher induced moduli.
+
+\subsection{Transport to every original class and ray component}
+\label{cbk:root-transport-proof}
+Let the types of $\xi_{\mathfrak m},\xi_{\mathfrak n}$ be
+$(k_A,t_A),(k_B,t_B)$. The character $\sigma$ in~\eqref{cbk:eta} has
+types $(k_B-k_A,t_B-t_A)$. The three primitive conductors
+$\mathfrak m,\mathfrak n,\mathfrak f_S$ are pairwise coprime;
+no good local ramification can cancel against the other two.
+Applying~\eqref{cbk:root-product} gives
+\begin{equation}\label{cbk:triple-root}
+ \begin{split}
+ \epsilon(\eta)
+ &=\gamma_{AB\rho}\epsilon(\xi_{\mathfrak m})
+       \overline{\epsilon(\xi_{\mathfrak n})}
+       \xi_{\mathfrak m}(\mathfrak n\mathfrak f_S)
+       \overline{\xi_{\mathfrak n}(\mathfrak m\mathfrak f_S)}
+                                  \sigma(\mathfrak m\mathfrak n),\\
+ \gamma_{AB\rho}
+ &=i^{|k_A|+|k_B|+|k_B-k_A|}\epsilon(\sigma).
+ \end{split}
+\end{equation}
+Source reciprocity is
+$\widetilde\chi_{\mathfrak m}(\mathfrak n)
+ \overline{\widetilde\chi_{\mathfrak n}(\mathfrak m)}=\alpha(A,B)$.
+Substituting $\widetilde\chi=\xi\psi$ in~\eqref{cbk:triple-root}
+cancels all crossed $\psi$ values and proves~\eqref{cbk:two-gauges},
+with $\kappa_{AB\rho}=\alpha(A,B)\gamma_{AB\rho}$.
+In particular the remaining factor is $\rho(\mathfrak m)\rho(\mathfrak n)$,
+not an assumed class constant; $\rho$ need not factor through the
+source class group.
+
+For good dual $\mathfrak z$, write
+$\widetilde\chi_{\mathfrak m}(\mathfrak z)
+ =\gamma_A(\mathfrak z)R_{\mathfrak m}(\mathfrak z)$,
+with the fixed finite reciprocity phase in that class. Then
+\begin{equation}\label{cbk:Omega}
+ \begin{aligned}
+ \overline{\sigma(\mathfrak z)}
+   \overline{\xi_{\mathfrak m}(\mathfrak z)}\xi_{\mathfrak n}(\mathfrak z)
+ &=\Omega_{AB\rho}(\mathfrak z)
+                  \overline{R_{\mathfrak m}(\mathfrak z)}
+                            R_{\mathfrak n}(\mathfrak z),\\
+ \Omega_{AB\rho}
+ &=\bar\sigma\,\psi_A\bar\psi_B\,\bar\gamma_A\gamma_B,
+ \qquad |\Omega_{AB\rho}(\mathfrak z)|=1.
+ \end{aligned}
+\end{equation}
+The equality includes raw collision zeros. This is a fixed unitary
+\emph{row} phase for each component, not equality of the two column
+classes. At $S$ the separate scalar
+$\sigma(\mathfrak k^2\mathfrak l\mathfrak e)
+ \overline{\sigma(\mathfrak h)}$ is kept, including zero.
+There is no division by such a scalar, and no substitution of
+$\rho(\mathfrak e/\mathfrak h)$ at a conductor drop.
+Off the original coprime column support, products of individual
+column gauges below are only an auxiliary extension. They are not
+roots or primitive conductors of overlapping pairs.
+
+\subsection{The sharp capacity, square-divisor signs and exact Poisson}
+\label{cbk:kernel-proof}
+The endpoints in~\eqref{cbk:nodal} are integers. The two smooth
+transitions lie between ideal norm nodes, so its value at
+$x=N\mathfrak v_1/A_1$ is exactly one or zero according to the
+original interval and capacity. For nonempty fibres these transitions
+are disjoint. Their monotonicity gives total variation two; their
+$j$th derivatives cost powers of $A_1$.
+The elementary identity
+\begin{equation}\label{cbk:row-inversion}
+ \sum_{\mathfrak v\ \mathrm{good}}\mu(\mathfrak v)^2
+                    \mathbf1_{(\mathfrak v,\mathfrak v_2)=1}B(\mathfrak v)
+ =\sum_{\substack{\mathfrak k\ \mathrm{good,SF}\\
+                    (\mathfrak k,\mathfrak v_2)=1}}\mu(\mathfrak k)
+   \sum_{\mathfrak l\mid\mathfrak v_2}\mu(\mathfrak l)
+       \sum_{\mathfrak z\ \mathrm{good}}B(\mathfrak k^2\mathfrak l\mathfrak z)
+\end{equation}
+follows by expanding the squarefree indicator and then the remaining
+coprimality indicator. Auxiliary $\mathfrak z$ need not be squarefree,
+and may overlap $\mathfrak k$ or $\mathfrak l$. The original norm
+support fixes $N\mathfrak l\le b$ and
+$N\mathfrak k\le\sqrt{b/N\mathfrak l}$ \emph{before} Poisson.
+Including more $\mathfrak k$ would add zero primal terms whose
+individual dual windows need not be zero.
+
+On good $\mathfrak v_1$, expand exactly
+\[
+ \mathbf1_{\rm ray}R_{\mathfrak m}(\mathfrak v_1)
+       \overline{R_{\mathfrak n}(\mathfrak v_1)}
+   =\sum_\rho h_{AB\rho}(\mathfrak v_2)\eta_{\mathfrak m,\mathfrak n,\rho}
+                                                    (\mathfrak v_1).
+\]
+This includes every reciprocity/ray component, not a selected same
+class term. With $L=A_1/((N\mathfrak k)^2N\mathfrak l)$, good-$S$
+deletion is the \emph{finite} identity
+\begin{equation}\label{cbk:S-deletion}
+ \sum_{\mathfrak z\ \mathrm{good}}G(N\mathfrak z/L)\eta(\mathfrak z)
+ =\sum_{\mathfrak e\mid P_S}\mu(\mathfrak e)\eta(\mathfrak e)
+       \sum_{\mathfrak y}G(N\mathfrak y/(L/N\mathfrak e))\eta(\mathfrak y).
+\end{equation}
+Primitive zeros at $S$ suppress the corresponding terms automatically.
+They do not assign forbidden raw values to an original row.
+
+For a nonprincipal primitive type-zero $\eta$ of conductor norm $F$,
+its normalized functional equation and ordinary Mellin inversion give
+\begin{equation}\label{cbk:primitive-Poisson}
+ \sum_{\mathfrak y}G(N\mathfrak y/L)\eta(\mathfrak y)
+ =\epsilon(\eta)\frac L{\sqrt F}
+      \sum_{\mathfrak y}\dot G(LN\mathfrak y/F)
+                                      \overline{\eta(\mathfrak y)}.
+\end{equation}
+To see the field constant explicitly, put
+\[
+ \gamma_K(s)=C_0^{s-1/2}\frac{\Gamma(s)}{\Gamma(1-s)},\qquad
+ \widehat G(s)=\int_0^\infty G(t)t^s\,\frac{dt}{t}.
+\]
+The Mellin transform of~\eqref{cbk:bessel} is
+$\gamma_K(s)\widehat G(1-s)$. The Bessel identity may first be
+justified absolutely in $0<\operatorname{Re}s<1/4$; smooth compact
+support and repeated Hankel integration by parts continue it to
+$\operatorname{Re}s>0$ at each fixed $G$. Mellin inversion of the
+primal ideal sum, its primitive functional equation, and the change
+$s\mapsto1-s$ now give~\eqref{cbk:primitive-Poisson} with exactly
+$L/\sqrt F$. There is no principal residue since $\eta$ has nonempty
+good ramification. The intermediate contour moves involve the
+entire nonprincipal completed function and the fixed smooth
+transform, not an inverse $L$ function or an assumed zero-free strip.
+This also recovers the pinned source Lemma~3.1 convention.
+
+At a good prime ideal of norm $P$, a nontrivial primitive character
+modulo $p$ lifted to $p^j$, $j\ge2$, has raw Gauss sum zero for a
+primitive additive frequency. More generally it vanishes unless the
+frequency has valuation $j-1$, when its value is
+$P^{j-1}\bar\chi(\beta/\pi^{j-1})\tau_p(\chi)$ with compatible
+additive normalizations. This follows by summing the lifts first.
+Thus neither lower character order nor a higher physical modulus
+licenses a unit root. Applying~\eqref{cbk:primitive-Poisson} only at
+the actual $F$ in~\eqref{cbk:eta}, and inserting
+\eqref{cbk:S-deletion} into~\eqref{cbk:row-inversion}, proves the exact
+signed kernel. Splitting every dual ideal uniquely as
+$\mathfrak y=\mathfrak h\mathfrak z$, with $\mathfrak h$ supported
+on $S$ and $\mathfrak z$ good, retains all modes.
+
+\subsection{The joint bilinear estimate behind finite prefixes}
+\label{cbk:prefix-proof}
+The external sixth-order norm gives the following arbitrary-column-
+coefficient comparison, for every $Z,L\ge1$:
+\begin{equation}\label{cbk:all-ideal-norm}
+ \sum_{\substack{\mathfrak z\ \mathrm{good}\\N\mathfrak z\le Z}}
+    \left|\sum_{\substack{\mathfrak a\ \mathrm{SF,good}\\N\mathfrak a\asymp L}}
+                      b_{\mathfrak a}R_{\mathfrak a}(\mathfrak z)\right|^2
+       \ll (ZL)^\epsilon\Phi(Z,L)\sum_{\mathfrak a}|b_{\mathfrak a}|^2.
+\end{equation}
+For completeness, extract $\mathfrak z=\mathfrak r\mathfrak s^6$
+with sixth-power-free $\mathfrak r$. Freeze $\mathfrak s$ as the
+original column collision mask $(\mathfrak a,\mathfrak s)=1$ and
+apply~\eqref{phy:input} to $\mathfrak r$. The four sums have factors
+$\sum(N\mathfrak s)^{-6}$, the count
+$N\mathfrak s\le Z^{1/6}$, $\sum(N\mathfrak s)^{-5}$ and
+$\sum(N\mathfrak s)^{-2}$, respectively. Ideal counting proves
+\eqref{cbk:all-ideal-norm}. This is not an arbitrary \emph{row}-weight
+theorem or an extension of a residue-subtracted energy estimate.
+For $1/2\le L<1$ use the direct unit residual column; below $1/2$
+there is no annular residual column. Primitive $\xi$ is not treated
+as sixth-order: convert to raw $R$ inside each fixed residual-class
+positive norm, where its common $\psi$ row phase cancels.
+
+At $s=\lambda+i\tau$, use~\eqref{cbk:two-gauges} to form the two
+\emph{distinct} vectors
+\begin{equation}\label{cbk:Mellin-vectors}
+ \begin{aligned}
+ b_{\mathfrak m}(s)&=c_{\mathfrak m}u_{\mathfrak m}
+  R_{\mathfrak m}(\mathfrak v_2^2)
+  \xi_{\mathfrak m}(\mathfrak k^2\mathfrak l\mathfrak e)
+  \overline{\xi_{\mathfrak m}(\mathfrak h)}(N\mathfrak m)^{s-1/2},\\
+ d_{\mathfrak n}(s)&=c_{\mathfrak n}v_{\mathfrak n}
+  R_{\mathfrak n}(\mathfrak v_2^2)
+  \xi_{\mathfrak n}(\mathfrak k^2\mathfrak l\mathfrak e)
+  \overline{\xi_{\mathfrak n}(\mathfrak h)}(N\mathfrak n)^{s-1/2}.
+ \end{aligned}
+\end{equation}
+The pairing is $b_{\mathfrak m}(s)
+\overline{d_{\mathfrak n}(\bar s)}$, not a PSD form at $s$.
+The exact remaining primitive-conductor factor is
+\begin{equation}\label{cbk:FS-Mellin}
+ (N\mathfrak f_S)^{s-1/2}
+       \left(\frac{A_1}{N\mathfrak l N\mathfrak e}\right)^{1-s},
+\end{equation}
+with scalar $\sigma(\mathfrak k^2\mathfrak l\mathfrak e)
+\bar\sigma(\mathfrak h)$ and finite $\mathfrak k$ weight
+$(N\mathfrak k)^{-2+2s}$. Its $S$ exponent is $s-1/2$, not its
+inverse. On $0<\lambda<1/2$ its modulus is at most one.
+
+Insert exact gcd inversion before comparison and put
+$\mathfrak m=\mathfrak d\mathfrak a$,
+$\mathfrak n=\mathfrak d\mathfrak b$.
+Residual $\mathfrak a,\mathfrak b$ may overlap each other but are
+individually coprime to $\mathfrak d$. Raw multiplicativity gives
+\[
+ \overline{R_{\mathfrak d\mathfrak a}(\mathfrak z)}
+ R_{\mathfrak d\mathfrak b}(\mathfrak z)
+ =\mathbf1_{(\mathfrak d,\mathfrak z)=1}
+              \overline{R_{\mathfrak a}(\mathfrak z)}R_{\mathfrak b}(\mathfrak z).
+\]
+Their source classes are $A[\mathfrak d]^{-1}$ and
+$B[\mathfrak d]^{-1}$, generally different. Bilinear Cauchy in the
+row variable, including~\eqref{cbk:Omega}, gives two separate
+positive norms. Only \emph{inside} them may the raw
+$(\mathfrak d,\mathfrak z)$ mask be dropped. Uniformly in the
+fixed column phases and $\tau$,
+\begin{equation}\label{cbk:subsequence}
+ \sum_{\mathfrak a}|b_{\mathfrak d\mathfrak a}(s)|^2,
+ \quad\sum_{\mathfrak b}|d_{\mathfrak d\mathfrak b}(\bar s)|^2
+       \ll B_W^2D^{2\lambda+\epsilon}/N\mathfrak d.
+\end{equation}
+Indeed $|A_U(\mathfrak m)|\le3^{\omega(\mathfrak m)}$ and an annular
+subsequence has $O(D/N\mathfrak d)$ columns. Neither
+$A_U(\mathfrak d\mathfrak a)$ nor $\beta_{\mathfrak d\mathfrak a}$
+is factored. For the small residual interval the direct unit count
+has the same bound.
+
+Apply~\eqref{cbk:all-ideal-norm} to the two separate vectors. The
+divisor sums have exponents $1,2,4/3,11/6$:
+\begin{equation}\label{cbk:d-Phi}
+ \sum_{N\mathfrak d\le2D}\frac1{N\mathfrak d}
+                      \Phi(Z,D/N\mathfrak d)
+      \ll\log(2D)\Phi(Z,D),
+\end{equation}
+with the direct endpoint understood. For
+$Y<N\mathfrak h N\mathfrak z\le2Y$, the weight modulus is at most
+$Y^{-\lambda}$ and the legal positive row prefix is
+$N\mathfrak z\le2Y/N\mathfrak h\ge1$.
+The four positive row exponents in $\Phi$ give
+\[
+ \sum_{\mathfrak h\ S\text{-supported},\,N\mathfrak h\le2Y}
+                  \Phi(2Y/N\mathfrak h,D)\ll_S\Phi(Y,D).
+\]
+This is a summation over \emph{all} $S$-supported modes, not an
+exponent-zero convergent sum or a missing raw $S$ value.
+
+The sharp $G$ requires an honest transform bound. Integration by
+parts against its finite variation gives
+\[
+ \widehat G(1-s)=-\frac1{1-s}\int t^{1-s}\,dG(t).
+\]
+For fixed $0<\lambda<1/2$, Stirling's ratio estimate is
+$|\gamma_K(\lambda+i\tau)|\ll_\lambda
+(1+|\tau|)^{2\lambda-1}$. Thus
+\begin{equation}\label{cbk:BV-L1}
+ \int_{\mathbb R}|\widehat G(1-\lambda-i\tau)
+                          \gamma_K(\lambda+i\tau)|\,d\tau
+                         \ll_\lambda1,
+\end{equation}
+using the integrable tail $(1+|\tau|)^{2\lambda-2}$ and
+$\operatorname{TV}(G)\le2$. No derivative seminorm growing with
+$A_1$ is hidden here.
+Only after the joint estimate may the original finite $\mathfrak k$
+sum be bounded by $\zeta_K^S(2-2\lambda)$; the identity has not been
+Euler-completed. Finite $\mathfrak e$, the original
+$\mathfrak l\mid\mathfrak v_2$ divisor sum, and unweighted actual
+$\mathfrak v_2$ counting cost a fixed constant and
+$A_2(DA_2)^\epsilon$. Equations~\eqref{cbk:subsequence}--
+\eqref{cbk:BV-L1} give
+\begin{equation}\label{cbk:fixed-line-band}
+ \frac{|\mathcal P_D(Y,2Y]|}{D}
+ \ll_{\lambda}B_W^2(DYA_2)^\epsilon
+    A_2A_1^{1-\lambda}D^{2\lambda-1}Y^{-\lambda}\Phi(Y,D).
+\end{equation}
+Every finite source/ray component is reconstructed using the distinct
+gauges and bilinear argument, rather than a same-class inference.
+
+For $0<\lambda<1/6$, each of the four powers of $Y$ after
+multiplication by $Y^{-\lambda}$ is positive. Finite dyadic summation,
+a last partial band and the dual unit separately therefore give
+the same bound with $Y=X$ for every finite prefix $X\ge1$.
+For a requested final loss $\epsilon_0>0$, fix
+$\lambda=\min\{1/12,\epsilon_0/4\}$, independently of all scales,
+and use the positive-norm loss $\epsilon_0/2$. Since $A_1,X\ge1$,
+\[
+ D^{2\lambda}(A_1X)^{-\lambda}\le D^{\epsilon_0/2},\qquad
+ (DXA_2)^{\epsilon_0/2}D^{\epsilon_0/2}\le(DXA_2)^{\epsilon_0}.
+\]
+This proves~\eqref{cbk:prefix-bound}; neither endpoint
+$\lambda=0$ nor $\lambda=1/2$ is invoked.
+
+For the independent all-orders bound, expand $J_0$ exactly at every
+finite dual prefix. The $j$th moment satisfies
+$|M_j|=|\int t^jG(t)dt|\le2(5/2)^j$.
+The resulting original-column factors $(D/N\mathfrak m)^j$ and
+$(D/N\mathfrak n)^j$ are contractions, including on
+$\mathfrak m=\mathfrak d\mathfrak a$; they are not replaced by
+$(D/N\mathfrak a)^j$. The exact $S$ factor is
+$(N\mathfrak f_S)^{-j-1/2}$, and the finite $\mathfrak k$ norm
+exponent is $2+2j$ with the \emph{same} character phase
+$\eta(\mathfrak k)^2$ as before. After gcd inversion, weighted
+bilinear Cauchy may bound
+$(N\mathfrak h N\mathfrak z)^j\le X^j$ inside each positive norm;
+the product of the square roots costs $X^j$, not $X^{2j}$.
+All remaining divisor/$S$/subsequence constants are uniform in $j$.
+The $j$th joint bound is the prefactor of~\eqref{cbk:all-j} times
+$((5/2)A_1X/(C_0D^2))^j/(j!)^2$. Summing this absolutely convergent
+series proves~\eqref{cbk:all-j} without an infinite-dual interchange.
+
+For completeness, the scoped critical-half estimate uses
+$H(v)=e^{v/2}G(e^v)$. Its Fourier transform is
+$\widehat G(1/2-i\tau)$. The fixed smooth step and its two
+transitions give
+$\|H\|_1+\|H'\|_1\ll1$ and $\|H''\|_1\ll1+A_1$.
+The minimum of the three Fourier bounds
+$O(1)$, $O(1/|\tau|)$ and $O(A_1/\tau^2)$ has integral
+$O(1+\log(2A_1))$. On the half line
+$|\gamma_K(1/2+i\tau)|=1$ exactly. The original finite square-divisor
+sum is harmonic, $\sum_{N\mathfrak k\le K_{\mathfrak l}}
+(N\mathfrak k)^{-1}\ll1+\log(2A_1)$; it is not an infinite
+$\zeta_K(1)$. The same joint argument in the stated same-class/
+$\rho=1$ component proves~\eqref{cbk:half}. This estimate is not
+summed over all dual bands to infer a whole target.
+
+\subsection{Finite-height Schur transfer, including the operator error}
+\label{cbk:schur-proof}
+For $x\ne1$ define
+\[
+ I_T(x)=\frac1{2\pi}\int_{-T}^T\frac{x^{c_P+it}}{c_P+it}\,dt.
+\]
+Fourier inversion of $e^{-c_Pv}\mathbf1_{v\ge0}$ gives its full
+vertical limit $\mathbf1_{x>1}$. Integration by parts in each
+oscillatory tail gives
+\begin{equation}\label{cbk:Perron-error}
+ |I_T(x)-\mathbf1_{x>1}|
+                \le\frac{2x^{c_P}}{\pi T|\log x|}.
+\end{equation}
+There is no pole-free inverse-$L$ contour assertion. Set
+$U^\#=\lfloor U\rfloor+1/2$. Every divisor norm $n\le X$ is a
+positive integer, so
+\[
+ |\log(U^\#/n)|\ge\frac1{2X+1}\ge\frac1{3X},\qquad
+ (U^\#/n)^{c_P}\le e.
+\]
+The indicator is exactly $n\le U$, even when $U$ is an integer.
+Since $6e/\pi<6$,~\eqref{cbk:Perron-error} is at most
+$e_T=6X/T\le3/4$. A product of the two indicators therefore has
+error at most $2e_T+e_T^2\le18X/T$.
+
+For squarefree $\mathfrak m$ put
+\[
+ H_{\mathfrak m}(v,w)=\prod_{p\mid\mathfrak m}
+                              (1-(Np)^{-v}-(Np)^{-w}).
+\]
+There are exactly $3^{\omega(\mathfrak m)}$ ordered disjoint divisor
+assignments. On the supported coprime products only,
+$H_{\mathfrak d\mathfrak a}=H_{\mathfrak d}H_{\mathfrak a}$, so
+\begin{equation}\label{cbk:finite-Perron}
+ \begin{split}
+ A_U(\mathfrak d\mathfrak a)
+ &=\frac1{(2\pi i)^2}\int_{c_P-iT}^{c_P+iT}
+                \int_{c_P-iT}^{c_P+iT}
+       \frac{(U^\#)^{v+w}}{vw}
+                 H_{\mathfrak d}(v,w)H_{\mathfrak a}(v,w)\,dv\,dw
+                           +R_T(\mathfrak d,\mathfrak a),\\
+ |R_T(\mathfrak d,\mathfrak a)|
+ &\le(18X/T)3^{\omega(\mathfrak d)}3^{\omega(\mathfrak a)}.
+ \end{split}
+\end{equation}
+Forbidden entries of $K$ remain zero. The integral is the actual
+operator $\operatorname{diag}(H_{\mathfrak d})K
+\operatorname{diag}(H_{\mathfrak a})$, with an ordinary right
+diagonal, not a Hermitian assumption. The two diagonal norms cost
+$G_{\mathcal I\mathcal J}$, $(U^\#)^{2c_P}\le e^2$, and each
+normalized absolute vertical integral is $L_T$.
+
+A uniform entry error alone does not multiply operator norms.
+Instead, with counting $\ell^2$ norms,
+\[
+ \|R_T\circ K\|_{\rm op}
+  \le\|R_T\circ K\|_F
+  \le\max|R_T|\,\|K\|_F
+  \le\max|R_T|\sqrt{\min(\#\mathcal I,\#\mathcal J)}\,\|K\|_{\rm op}.
+\]
+The accepted fixed-field ideal bound $\#\{N\mathfrak a\le X\}\le2X$
+gives an error at most $18\sqrt2X^{3/2}G_{\mathcal I\mathcal J}/T$,
+less than the displayed $32$ constant. This proves
+\eqref{cbk:schur-bound}. Splitting the finite set of prime ideals
+$Np<3^{1/\eta}$ from the rest proves
+$3^{\omega(\mathfrak m)}\ll_\eta(N\mathfrak m)^\eta$.
+Use $\eta=\epsilon/2$ and $T=(4X)^4$ to obtain the subpower/log bound.
+This is a mathematical finite-matrix transfer, not a claim of
+fast numerical Perron evaluation at that height.
+
+Let $F_0(v)=W(e^v)$. Two integrations by parts give
+$|\widehat F_0(t)|\le\min\{\|F_0\|_1,\|F_0''\|_1/t^2\}$.
+Split at $|t|=1$ to get
+\[
+ M(W)\le(\|F_0\|_1+\|F_0''\|_1)/\pi.
+\]
+Here $F_0''(v)=xW'(x)+x^2W''(x)$ and its support has length
+$\log2$, proving~\eqref{cbk:profile-seminorm}.
+Absolute Fourier inversion expresses $W(N\mathfrak dN\mathfrak a/D)$
+as an integral of two unitary norm diagonals and a scalar. Its
+Schur multiplier norm is at most $M(W)$. Compose with
+\eqref{cbk:finite-Perron}; two coefficient occurrences cost the
+square. All original zeros remain throughout, and no factorization
+of a primitive $\beta_{\mathfrak d\mathfrak a}$ is supplied by this lemma.
+
+\subsection{The cubic transposition in an identity divisor class}
+\label{cbk:cubic-proof}
+Fix the scope of Proposition~\ref{cbk:cubic}. On good arguments the
+primary-generator source construction is index-multiplicative.
+For $[\mathfrak d]=1$, comparison with the unit source class removes
+the $S$ conductor of $\widetilde\chi_{\mathfrak d}$; its type is zero.
+For $[\mathfrak a]=C$ and $(\mathfrak d,\mathfrak a)=1$,
+\[
+ \xi_{\mathfrak d\mathfrak a}
+       =\widetilde\chi_{\mathfrak d}\xi_{\mathfrak a}.
+\]
+The primitive conductors are coprime and their angular correction in
+\eqref{cbk:root-product} is one. Multiplication by the actual
+$\psi_C(\mathfrak d\mathfrak a)$ yields
+\[
+ \beta_{\mathfrak d\mathfrak a}
+ =\epsilon(\widetilde\chi_{\mathfrak d})\beta_{\mathfrak a}
+        \widetilde\chi_{\mathfrak d}(\mathfrak a)
+        \widetilde\chi_{\mathfrak a}(\mathfrak d).
+\]
+Source reciprocity is
+$\widetilde\chi_{\mathfrak d}(\mathfrak a)
+\overline{\widetilde\chi_{\mathfrak a}(\mathfrak d)}=\alpha(1,C)$,
+proving~\eqref{cbk:beta-split}. In the product for residuals
+$\mathfrak a,\mathfrak b$, their common $\epsilon$ and $\alpha$ cancel:
+\begin{equation}\label{cbk:cubic-quotient}
+ \beta_{\mathfrak d\mathfrak a}
+       \overline{\beta_{\mathfrak d\mathfrak b}}
+ =\beta_{\mathfrak a}\overline{\beta_{\mathfrak b}}
+       (\widetilde\chi_{\mathfrak a}
+                    \overline{\widetilde\chi_{\mathfrak b}})^2(\mathfrak d).
+\end{equation}
+If $\mathfrak g=(\mathfrak a,\mathfrak b)$, the primitive cubic
+conductor is $(\mathfrak a/\mathfrak g)(\mathfrak b/\mathfrak g)$,
+nonprincipal when $\mathfrak a\ne\mathfrak b$. The same source class
+cancels its $S$ component. Common good primes have dropped only from
+that primitive conductor; the full $\mathfrak a\mathfrak b$ union
+still remains excluded from $\mathfrak d$.
+
+The other common $\mathfrak d$ phases from $\nu,u_0$ and the
+$\mathfrak k,\mathfrak l,\mathfrak v_2,\mathfrak e,\mathfrak h$
+modulations cancel in the pair. Their raw zeros, together with the
+$\mathfrak z$ factor, retain
+\[
+ (\mathfrak d,S\mathfrak a\mathfrak b\mathfrak k
+                                      \mathfrak v_2\mathfrak z)=1.
+\]
+This notation means coprimality with the union of the displayed
+prime supports. Primitive values at $\mathfrak e,\mathfrak h$ are
+legitimate unitary phases of a good-conductor character.
+The radial factor $(N\mathfrak d)^{2s-1}$ is kept, not called a
+cancelled phase.
+
+At fixed $\mathfrak z,s$ the core matrix is
+\begin{equation}\label{cbk:cubic-matrix}
+ K^{(\mathfrak z)}_{\mathfrak d\mathfrak a}
+ =\mathbf1_{[\mathfrak d]=1,[\mathfrak a]=C,
+                     (\mathfrak d,\mathfrak k\mathfrak v_2\mathfrak z)=1}
+      \widetilde\chi_{\mathfrak a}(\mathfrak d)^2
+                                \overline{R_{\mathfrak a}(\mathfrak z)}.
+\end{equation}
+Its cubic character already has the $(\mathfrak d,\mathfrak a)$ zero.
+All additional fixed residual phases are column contractions. On
+good arguments the squared sextic symbol is the actual primary
+cubic symbol $(\alpha_{\mathfrak a}/\mathfrak d)_3$.
+The pinned external Example~2.2 constructs precisely this family
+with primary generators congruent to one modulo $3$. Both variables
+are squarefree and hence cube-free; source-sixth-class selectors
+and deleting the prime above $2$ only restrict the positive matrix.
+Theorem~1.1 at $n=3$, or its transpose, therefore gives
+\begin{equation}\label{cbk:cubic-norm}
+ \|K^{(\mathfrak z)}\|_{\rm op}^2
+                \ll_\eta(EL)^\eta\Theta_3(E,L).
+\end{equation}
+The lengths are physical ideal norms $E,L$, not varying conductor
+labels.
+
+The original annular condition implies
+$L/2\le N\mathfrak a\le2L$, a bounded number of dyads with lower
+endpoint at least one. On the encompassing rectangle
+$N\mathfrak dN\mathfrak a\le4D$, apply
+Proposition~\ref{cbk:schur} with $X=4D$. This is the necessary
+repair: $A_U(\mathfrak d\mathfrak a)$ depends on \emph{both} matrix
+indices and cannot be put into a fixed coefficient vector by fiat.
+Composing the common $W$ costs $M(W)$.
+With $0<\lambda<1/2$, the squared row radial factor is
+$O(E^{2\lambda-1})$, and the column squared norm is
+\[
+ \sum_{L/2\le N\mathfrak a\le2L}(N\mathfrak a)^{2\lambda-1}
+                                      \ll_\lambda L^{2\lambda}.
+\]
+The product is $D^{2\lambda}/E$. Thus the two Mellin vectors have
+squared norms at most
+\[
+ M(W)^2D^{2\lambda+\eta}\Theta_3(E,L)/E.
+\]
+Cauchy in $\mathfrak d$ now uses $|\mu(\mathfrak d)|\le1$, explicitly
+losing rather than exploiting its sign. A final triangle over
+$N\mathfrak z\le Z$ gives the new inner branch
+\begin{equation}\label{cbk:cubic-inner}
+ |T_E(Z;s)|\ll M(W)^2D^{2\lambda+\eta}
+                                      (Z/E)\Theta_3(E,L).
+\end{equation}
+The accepted separate positive-divisor argument gives
+$|T_E(Z;s)|\ll M(W)^2D^{2\lambda+\eta}\Phi(Z,L)$: there are
+$O(E)$ divisors and each actual subsequence norm is
+$O(M(W)^2D^{2\lambda+\eta}/E)$. Both estimates apply to the same
+quantity, so their minimum is legal.
+
+For $Y<N\mathfrak hN\mathfrak z\le2Y$, put
+$Z_{\mathfrak h}=2Y/N\mathfrak h\ge1$.
+The new branch uses the convergent positive exponent-one sum
+$\sum_{\mathfrak h}Z_{\mathfrak h}\ll_SY$; the old branch uses
+its four positive $\Phi$ exponents. Sum each branch to obtain the
+minimum after summation. The same finite $\mathfrak k$ majorant,
+$\mathfrak e/\mathfrak l$ bounds, actual $A_2$ count and fixed-line
+BV integral as above now prove~\eqref{cbk:cubic-bound}, including
+the once-only $1/D$ normalization. No all-divisor or whole-dual
+conclusion follows.
+
+On rough prime divisors $\mathfrak d=p$, $Np>U$, no short divisor
+can contain $p$, so $A_U(p\mathfrak a)=A_U(\mathfrak a)$ exactly.
+The remaining fixed-residual arithmetic sum has the shape
+\begin{equation}\label{cbk:prime-failure}
+ \begin{split}
+ -A_U(\mathfrak a)A_U(\mathfrak b)
+ \sum_{\substack{E<Np\le2E,\ Np>U,\ [p]=1\\
+      p\notin S\cup\operatorname{supp}(\mathfrak a\mathfrak b
+                    \mathfrak k\mathfrak v_2\mathfrak z)}}
+ &\lambda_{\mathfrak a\mathfrak b}(p)(Np)^{2s-1}\\[-2mm]
+ &\cdot W(NpN\mathfrak a/D)\overline{W(NpN\mathfrak b/D)},
+ \end{split}
+\end{equation}
+up to the already fixed residual phases, with
+$\lambda_{\mathfrak a\mathfrak b}
+ =(\widetilde\chi_{\mathfrak a}\overline{\widetilde\chi_{\mathfrak b}})^2$.
+Here $\mu(p)=-1$ is constant. A fixed-field scalar Mertens estimate
+is not a uniform bound for these varying cubic prime twists.
+The auxiliary principal case $\mathfrak a=\mathfrak b$ may cancel
+against other divisor sectors; it is no physical lower obstruction.
+
+\subsection{Classification and proof of the full equal-norm sector}
+\label{cbk:equal-proof}
+Factor the common rational norm prime by prime. At an inert prime
+there is only one ideal of norm $p^2$; equal norms force the same
+squarefree valuation in both columns and coprimality forces it to
+zero. The same argument excludes a ramified prime. At a split prime
+write the two pairs of valuations as $(x,y),(z,w)\in\{0,1\}^2$.
+Then $x+y=z+w$ and $xz=yw=0$. Sum two is forbidden; sum one forces
+opposite choices. Hence $\mathfrak n=\bar{\mathfrak m}$ and the
+common norm is rational-squarefree supported on split primes.
+Both primes above each such prime must already be good. This does
+not assume that the original $S$ is conjugation-stable or enlarge it.
+Each eligible $\mathfrak m$ has exactly one partner, so the ordered
+pair count is at most $\#\{N\mathfrak m\le2D\}\le4D$.
+All other rational-nonsquarefree norms remain in the \emph{full}
+annulus; only this sector has been classified.
+
+The ternary bound is uniform in the original cutoff:
+$|A_U(\mathfrak m)|\le3^{\omega(\mathfrak m)}\ll_\eta D^\eta$.
+For each actual row the absolute triangle in this sparse sector
+costs $O(B_W^2D^{1+\epsilon})$ before normalization. Divide once
+by $D$ and sum the actual rows to obtain~\eqref{cbk:equal-target}.
+Original row masks give $R_w\ll R$, and a nonempty capacity block
+has $Nu_0A_1A_2^2\le H$, hence $R\le H/(Nu_0A_2)\le H$.
+For each fixed $W$, $S_1^{AA}=S_{\rm eq}+S_{\rm neq}$ proves the
+target equivalence stated in the core, with constants allowed to
+depend on that fixed profile.
+
+Conjugating the residue-field definition gives, including zeros,
+\begin{equation}\label{cbk:norm-pullback}
+ R_{\bar{\mathfrak m}}(x)=\overline{R_{\mathfrak m}(\bar x)},\qquad
+ R_{\mathfrak m}(x)\overline{R_{\bar{\mathfrak m}}(x)}
+                                  =R_{\mathfrak m}(Nx).
+\end{equation}
+For a split rational $p$, $p\mid Nx$ exactly when $x$ meets at
+least one of its two conjugate primes, so the right side retains
+the original \emph{union} zero. For an orientation of rational-
+squarefree norm $N$, restriction to rational integers gives a
+primitive Dirichlet character $\psi_{\mathfrak m}\pmod N$:
+$\mathbb Z/N\mathbb Z\longrightarrow\mathcal O/\mathfrak m$ is an
+isomorphism, and each local character has exact order six.
+Its ideal norm pullback has conductor
+$(N)=\mathfrak m\bar{\mathfrak m}$ and infinity type zero.
+There is no smaller radical or common truncated-frequency assertion.
+
+Choose one prime $\pi_p$ above each admissible split rational $p$.
+Every divisor of an orientation $\mathfrak m$ has a unique rational
+divisor norm and the same M\"obius parity. Thus
+$A_U(\mathfrak m)=a_U(N)$ with the \emph{two original} cutoffs, and
+the partner has the same coefficient. At
+$t=Nu_0N\mathfrak v_1(N\mathfrak v_2)^2$,
+\eqref{cbk:norm-pullback} makes the local orientation factors
+$a_p\chi_p(t)$ and its conjugate. Expanding their product gives
+all $2^{\omega(N)}$ ordered orientations exactly, proving
+\eqref{cbk:orientation}. Both reversals are included, not divided
+by two. The common complex profile gives $|W(N/D)|^2$.
+For $\nu=1$ and no raw collision the character factors are
+$2\operatorname{Re}\mu_6\in\{2,1,-1,-2\}$, so they need not
+vanish or be positive; $a_U$ or $W$ can still vanish. This is not
+a row-energy lower bound.
+
+For~\eqref{cbk:equal-prefix}, use the exact primitive representation
+\emph{restricted first} to these $O(D)$ pairs. Its conductor norm
+is $N\mathfrak f_S N^2\ge D^2$, and $|\dot G|\le2C_0^{-1/2}$
+by $|J_0(t)|\le1$ on real $t$. The Poisson amplitude is at most
+$A_1/((N\mathfrak k)^2N\mathfrak lN\mathfrak eD)$.
+There are $O(Y)$ integral dual ideals in a prefix or band, counting
+every $S$-supported ideal once. The finite square-divisor sum is
+bounded by its convergent positive $Nk^{-2}$ majorant; finite
+$S$/ray and $\mathfrak l$ divisor costs give
+$A_2(DA_2)^\epsilon$. With the sparse pair count and coefficient
+product $B_W^2D^\epsilon$, the numerator is
+$O(B_W^2(DYA_2)^\epsilon RY)$. Division by $D$ proves the bound.
+This uses no general row-weight norm and no root cancellation.
+
+At fixed parameters, exact Poisson gives
+$D S_{\rm eq}=\mathcal P_{\rm eq}(\le Y)+\mathcal P_{\rm eq}(>Y)$,
+with its actual smooth derivative constants. Therefore
+\begin{equation}\label{cbk:equal-complement}
+ \frac{|\mathcal P_{\rm eq}(>Y)|}{D}
+ \ll B_W^2\{D^\epsilon R_w+(DYA_2)^\epsilon RY/D\}.
+\end{equation}
+This is a \emph{signed} whole-minus-prefix identity and triangle,
+not absolute summation of high modes. The condition $RY/D\le H$
+gives pure $Y\asymp D$ and mixed $Y\asymp D^{7/6}$ target-sized
+prefix/complement sectors. Unequal norms and arbitrary larger
+individual windows remain unestimated.
+
+\subsection{A common literal modulus and the surviving ray mean}
+\label{cbk:ray-proof}
+This last construction concerns the pure block only. The primary
+section on good ideals is multiplicative because
+$\mu_6\to(\mathcal O/3)^\times$ is bijective.
+Let $\mathfrak c=(\gamma_c)$ be fixed, $S$-supported and divisible
+by $(6)$, large enough for all actual row-ray congruences.
+For $\mathfrak q=\mathfrak m\mathfrak n$ coprime to it, put
+\[
+ \vartheta_{\mathfrak q}(x)=(x/\mathfrak m)_6
+                     \overline{(x/\mathfrak n)_6},\qquad
+ \tau_{\mathfrak q}=\sum_{x\bmod\mathfrak q}
+               \vartheta_{\mathfrak q}(x)e_{\gamma_q}(x).
+\]
+Every good local factor is nontrivial sextic, so its finite
+conductor is exactly $\mathfrak q$, including nonunit frequency
+zeros. It need not yet be unit-trivial or an ideal character.
+The finite indicator $P_{\mathfrak k^2}$ imposes residual generator
+$x\equiv1\pmod3$, original $S$-goodness and the actual ray
+condition on $\alpha_{\mathfrak k}^2x$. It is independent of
+$\mathfrak m,\mathfrak n$. Literal square-divisor inversion is
+\begin{equation}\label{cbk:literal-primal}
+ \begin{split}
+ \mathcal P_D
+ =\sum_{(\mathfrak m,\mathfrak n)=1}c_{\mathfrak m}\bar c_{\mathfrak n}
+ \sum_{\substack{\mathfrak k\ \mathrm{good,SF}\\N\mathfrak k\le\sqrt b}}
+ \mu(\mathfrak k)\vartheta_{\mathfrak q}(\alpha_{\mathfrak k}^2)
+ \sum_{x\in\mathcal O}
+ P_{\mathfrak k^2}(x\bmod\mathfrak c)
+          \vartheta_{\mathfrak q}(x)G(Nx/L_{\mathfrak k}).
+ \end{split}
+\end{equation}
+The original $(\mathfrak k,\mathfrak q)$ zero is kept.
+Auxiliary lattice $x$ need not generate a squarefree ideal.
+
+Use the same positive additive-pairing sign as above. CRT separates
+the common-modulus Fourier transform into the $\mathfrak q$ sum
+at frequency $\beta\gamma_c^{-1}$ and the $\mathfrak c$ sum at
+$\beta\gamma_q^{-1}$. Primitive finite Gauss Fourier proves
+\eqref{cbk:ray-Fourier} for \emph{every} $\beta$, including its
+zero at $(\beta,\mathfrak q)>1$. This is the finite recombination
+of all ray components; it is not a unit root at the larger induced
+modulus $\mathfrak c\mathfrak q$.
+For $g_L(x)=G(|x|^2/L)$ the Euclidean radial transform is
+\[
+ \widehat g_L(w)=\pi L\int_0^\infty
+                         G(t)J_0(2\pi\sqrt{Lt}|w|)\,dt.
+\]
+At the common dual vector
+$w=2\bar\beta/(\bar\delta\bar\gamma_c\bar\gamma_q)$ this equals
+$(\sqrt3/2)L\dot G(LN\beta/(N\mathfrak c Q))$.
+The lattice covolume is $(\sqrt3/2)N\mathfrak c Q$.
+Consequently, writing $F_{\mathfrak k^2}=P_{\mathfrak k^2}\vartheta_{\mathfrak q}$,
+\begin{equation}\label{cbk:literal-Poisson}
+ \sum_{x\in\mathcal O}F_{\mathfrak k^2}(x)G(Nx/L)
+ =\frac L{N\mathfrak c Q}\sum_{\beta\in\mathcal O}
+       \widehat F_{\mathfrak k^2}(\beta)
+                            \dot G(LN\beta/(N\mathfrak c Q)).
+\end{equation}
+No class/root phase is discarded: the original finite function
+itself has been transformed. Primitive-conductor descriptions
+induced to the common modulus must reproduce precisely this
+frequency support, rather than a falsely flat lifted Gauss sum.
+
+Combining the formulas gives the explicit signed literal additive
+band
+\begin{equation}\label{cbk:literal-band}
+ \begin{split}
+ \mathcal B_Y={}&\sum_{(\mathfrak m,\mathfrak n)=1}
+ c_{\mathfrak m}\bar c_{\mathfrak n}
+ \sum_{\substack{\mathfrak k\ \mathrm{good,SF}\\N\mathfrak k\le\sqrt b}}
+ \frac{\mu(\mathfrak k)L_{\mathfrak k}\tau_{\mathfrak q}
+                    \vartheta_{\mathfrak q}(\gamma_c)}{N\mathfrak c Q}
+             \vartheta_{\mathfrak q}(\alpha_{\mathfrak k}^2)\\
+ &\quad\cdot\sum_{Y<N\beta\le2Y}
+       \overline{\vartheta_{\mathfrak q}(\beta)}
+       \widehat P_{\mathfrak k^2}(\beta\gamma_q^{-1})
+                   \dot G(L_{\mathfrak k}N\beta/(N\mathfrak c Q)).
+ \end{split}
+\end{equation}
+All finite $\mu(\mathfrak k)$, the original unfactored coefficients
+and the full pair/ray/raw masks precede any absolute norm.
+There is no gcd triangle or positive completion in this identity.
+The frequency band is literal and unit-invariant; it is not simply
+the old primitive-ideal band under a new name.
+
+On $\beta=\gamma_c\zeta$, the fixed-residue Fourier frequency is
+zero. The factor $\vartheta_{\mathfrak q}(\gamma_c)$ cancels and
+\[
+ \widehat F_{\mathfrak k^2}(\gamma_c\zeta)
+        =r_{\mathfrak k^2}\tau_{\mathfrak q}
+                                  \overline{\vartheta_{\mathfrak q}(\zeta)}.
+\]
+This $S$-local mean is not the global $\beta=0$, which is zero by
+primitive nontriviality. A six-unit orbit sum in this radial band
+vanishes if $\vartheta_{\mathfrak q}|_{\mu_6}$ is nontrivial.
+Otherwise it is six times the sum over \emph{all} integral ideals;
+values there are defined with any generator, not a nonexistent
+primary generator for an $S$-supported ideal.
+At $\varepsilon=1+\omega$, local residue powers give
+\[
+ \vartheta_{\mathfrak q}(\varepsilon)
+       =\varepsilon^{(N\mathfrak m-N\mathfrak n)/6}.
+\]
+Every good prime-ideal norm is one modulo six, and
+$(\prod Np-1)/6\equiv\sum(Np-1)/6\pmod6$, proving
+\eqref{cbk:unit-selection}. In the surviving case
+$\vartheta_{\mathfrak q}$ is a primitive type-zero ideal character
+and $\epsilon_{\mathfrak q}=\tau_{\mathfrak q}/\sqrt Q$.
+The exact retained mean channel is
+\begin{equation}\label{cbk:literal-mean}
+ \begin{split}
+ \mathcal B_Y^{S\text{-mean}}
+ ={}&\sum_{\substack{(\mathfrak m,\mathfrak n)=1\\
+                    N\mathfrak m\equiv N\mathfrak n\ (36)}}
+ c_{\mathfrak m}\bar c_{\mathfrak n}
+ \sum_{\substack{\mathfrak k\ \mathrm{good,SF}\\N\mathfrak k\le\sqrt b}}
+ \mu(\mathfrak k)\vartheta_{\mathfrak q}(\alpha_{\mathfrak k}^2)
+ \frac{6r_{\mathfrak k^2}}{N\mathfrak c}
+                         \frac{L_{\mathfrak k}}{\sqrt Q}\epsilon_{\mathfrak q}\\
+ &\quad\cdot\sum_{Y/N\mathfrak c<N\mathfrak z\le2Y/N\mathfrak c}
+       \overline{\vartheta_{\mathfrak q}(\mathfrak z)}
+                                      \dot G(L_{\mathfrak k}N\mathfrak z/Q).
+ \end{split}
+\end{equation}
+This includes nonunit and $S$-supported dual modes. The $\mathfrak k$
+phase is cubic, $\vartheta_{\mathfrak q}(\mathfrak k)^2$, not one,
+and its original cutoff has not been Euler-completed.
+
+For the basic $S$ above $2,3$ and no additional ray condition,
+modulo $(6)$ the allowed coordinates $a+b\omega$ are
+$(1,0),(1,3),(4,3)$. The fourth primary residue $(4,0)$ is excluded
+by the original $2$-adic coprimality condition. Thus $r=3$,
+$N\mathfrak c=36$, and $6r/N\mathfrak c=1/2$ exactly. Dropping that
+condition would give the incorrect $2/3$. The new exact local
+Fourier check has $\sum|\widehat P|^2=36\cdot3=108$; it is a
+finite $S$-ring consistency check, not an arithmetic-family or
+asymptotic band test.
+
+Proposition~\ref{cbk:equal} controls the whole primal equal-norm
+sector. That alone does not control this sector in an individual
+literal band or $S$-mean channel. To formulate a literal unequal-norm
+problem, impose $N\mathfrak m\ne N\mathfrak n$ on the original pair
+sum before applying~\eqref{cbk:literal-primal} and
+\eqref{cbk:literal-Poisson}. The projected formula retains unequal
+norms congruent modulo $36$ as well as all complementary literal
+residues. Neither the full $\mathcal B_Y$ nor its separately projected
+unequal-norm version is proved small here. At a pure critical block a
+sufficient band estimate would be
+\[
+ |\mathcal B_Y|\ll_{S,\nu,W,\epsilon}
+                         B_W^2 D A_1(DA_1Y)^\epsilon,
+\]
+with the fixed-profile dependence retained. This is not necessary
+for the whole kernel, where bands may cancel. Finite ray/root
+recombination alone does not provide it; nor does a nonzero local
+mean give a lower bound for the whole band. This identifies the
+remaining coherent unequal-norm arithmetic problem without deleting
+its means or changing any original conductor, capacity or profile.

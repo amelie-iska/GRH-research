@@ -1,0 +1,13 @@
+# Independent review of Euler--Schur and Bessel hierarchy v1
+
+PASS for the exact author note SHA256 48de3f906d16dbbc60cfd1cef174b0e05b3020279ee8e5f1dacaa408465b24db. Read the complete statement and its accepted family/primitive scope; no author tests, old arithmetic data, browser, build, auth or index operation was run.
+
+The raw-zero diagonal maps form a semigroup D_k D_l=D_kl even when entries vanish. Absolute operator-norm convergence for Re(w)>1 permits exact ideal-divisor convolution. The inverse really requires all ideal powers; with them the nonunit coefficients vanish by sum_{d|r}mu(d)=0. This preserves every fixed entrywise mask and works for rectangular blocks/amplifications as stated. The good-nonunit norm7 endpoint gives the 11/7 bound; the finite map differs from identity by at most4/7, so its Neumann inverse bound7/3 and lower3/7 are correct. Schatten p contraction is valid for the stated p>=1.
+
+The local two-coordinate identity is algebraically exact. For rho=1 and an actual coprime/nonunit pair avoiding v2, at least one prime dividing one column gives strict inequality in the determinant comparison. The natural full-union extension is therefore indefinite. The note correctly confines this to that extension and does not infer a negative energy or positivity of the coprime slice.
+
+The linear-first quadratic-form convention in Eq6 has the correct D_k c substitution. Uniform invertibility rules out a dimension-uniform D^-delta contraction solely from this multiplier; it does not prohibit cancellation of the prescribed AU vector and remaining frequencies.
+
+On a fixed finite class/rho block the good-conductor product and fixed finite S part are used only on actual coprime support. The finite-K hierarchy has the correct Nk exponent2+2j, signed moments M_j, real diagonal powers R_j on both sides (separate left/right on rectangular blocks), and factorial-square convergence. Its error coefficients (8/3)C^-3/2 t M1_abs V(B0t/C) and4|g0|/K are dimension-free and correct. M0 may vanish. The real w=2+2j completion tail2w/(w-1)K^(1-w) follows from the explicit ideal count.
+
+The hierarchy's absolute entire-function majorant does not control the infinite dual sum. The Mellin absolute conditions Re(s)<1/2 for infinite k-Euler and Re(s)>1 for a complete unweighted dual Dirichlet sum do not overlap. These are correctly presented as obstructions to blind absolute Fubini, not impossibility of ordered identities or joint cancellation. No actual whole-kernel target gain is proved. All primitive roots/local phases, original coefficients/common complex W, full deleted sets, equal-norm fibres, finite capacity and nonunit/S-supported modes remain.

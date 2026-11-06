@@ -1,0 +1,4322 @@
+{
+  "passed": true,
+  "integration": [
+    {
+      "name": "exact-three-inherited-munder-nodes",
+      "passed": true,
+      "detail": [
+        "<munder><mrow><mi class=\"qopname\">lim</mi><mo> ⁡<!--FUNCTION APPLICATION--> </mo></mrow><mi class=\"MathClass-op\">←</mi><mo> ⁡<!--FUNCTION APPLICATION--></mo></munder>",
+        "<munder><mrow><mi class=\"qopname\">lim</mi><mo> ⁡<!--FUNCTION APPLICATION--> </mo></mrow><mi class=\"MathClass-op\">←</mi><mo> ⁡<!--FUNCTION APPLICATION--></mo></munder>",
+        "<munder><mrow><mi class=\"qopname\">lim</mi><mo> ⁡<!--FUNCTION APPLICATION--> </mo></mrow><mi class=\"MathClass-op\">←</mi><mo> ⁡<!--FUNCTION APPLICATION--></mo></munder>"
+      ]
+    },
+    {
+      "name": "old-baseline-counts",
+      "passed": true,
+      "detail": {
+        "math": {
+          "count": 9172,
+          "sha": "3412e7866fe63a1954d82777470e478a50404bab7d99d53e20187aa8f2265a34"
+        },
+        "table": {
+          "count": 389,
+          "sha": "19bb4b5502247b415385e0d89313c400a9177e369b3ae32b06f23174f1a2ce92"
+        },
+        "iframe": {
+          "count": 13,
+          "sha": "35fb4b6ab21ecafd7cd014a8f0eff241160a3fa5769e3de9232d9b0ef9b89169"
+        }
+      }
+    },
+    {
+      "name": "new-native-integrity",
+      "passed": true,
+      "detail": {
+        "math": 9810,
+        "iframes": 14,
+        "frames": [
+          "/?embed=atlas",
+          "/?embed=ar",
+          "/relations.html?embed=book",
+          "/dg.html?embed=book",
+          "/?embed=circuits",
+          "/rg.html?embed=book",
+          "/?embed=auxiliary-training",
+          "/architecture.html?embed=book",
+          "/convextok.html?embed=book",
+          "/qtoken.html?embed=book",
+          "/learned.html?embed=book",
+          "/datasets.html?embed=book",
+          "/persistence.html?embed=book",
+          "/coherent-band.html?embed=book"
+        ],
+        "tables": 389,
+        "uniqueIds": true,
+        "cbk": [
+          "cbk:core",
+          "cbk:objects",
+          "cbk:coefficients",
+          "cbk:normalization",
+          "cbk:primitive-kernel",
+          "cbk:eta",
+          "cbk:root",
+          "cbk:root-formula",
+          "cbk:root-product",
+          "cbk:two-gauges",
+          "cbk:nodal",
+          "cbk:bessel",
+          "cbk:kernel",
+          "cbk:exact-kernel",
+          "cbk:comparisons",
+          "cbk:Phi",
+          "cbk:prefix",
+          "cbk:prefix-bound",
+          "cbk:all-j",
+          "cbk:half",
+          "cbk:schur",
+          "cbk:schur-bound",
+          "cbk:profile-seminorm",
+          "cbk:cubic",
+          "cbk:cubic-bound",
+          "cbk:beta-split",
+          "cbk:localization",
+          "cbk:equal",
+          "cbk:equal-target",
+          "cbk:orientation",
+          "cbk:equal-prefix",
+          "cbk:ray",
+          "cbk:ray-Fourier",
+          "cbk:unit-selection",
+          "cbk:boundary",
+          "cbk:workflow",
+          "cbk:details",
+          "cbk:gaussian-proof",
+          "cbk:finite-Fourier",
+          "cbk:Gauss-CRT",
+          "cbk:harmonic-Fourier",
+          "cbk:theta-inversion",
+          "cbk:root-transport-proof",
+          "cbk:triple-root",
+          "cbk:Omega",
+          "cbk:kernel-proof",
+          "cbk:row-inversion",
+          "cbk:S-deletion",
+          "cbk:primitive-Poisson",
+          "cbk:prefix-proof",
+          "cbk:all-ideal-norm",
+          "cbk:Mellin-vectors",
+          "cbk:FS-Mellin",
+          "cbk:subsequence",
+          "cbk:d-Phi",
+          "cbk:BV-L1",
+          "cbk:fixed-line-band",
+          "cbk:schur-proof",
+          "cbk:Perron-error",
+          "cbk:finite-Perron",
+          "cbk:cubic-proof",
+          "cbk:cubic-quotient",
+          "cbk:cubic-matrix",
+          "cbk:cubic-norm",
+          "cbk:cubic-inner",
+          "cbk:prime-failure",
+          "cbk:equal-proof",
+          "cbk:norm-pullback",
+          "cbk:equal-complement",
+          "cbk:ray-proof",
+          "cbk:literal-primal",
+          "cbk:literal-Poisson",
+          "cbk:literal-band",
+          "cbk:literal-mean"
+        ],
+        "allRefs": true
+      }
+    },
+    {
+      "name": "browser-old-subtree-preservation",
+      "passed": true,
+      "detail": {
+        "oldHashes": {
+          "math": {
+            "count": 9172,
+            "sha": "3412e7866fe63a1954d82777470e478a50404bab7d99d53e20187aa8f2265a34"
+          },
+          "table": {
+            "count": 389,
+            "sha": "19bb4b5502247b415385e0d89313c400a9177e369b3ae32b06f23174f1a2ce92"
+          },
+          "iframe": {
+            "count": 13,
+            "sha": "35fb4b6ab21ecafd7cd014a8f0eff241160a3fa5769e3de9232d9b0ef9b89169"
+          }
+        },
+        "newHashes": {
+          "math": {
+            "count": 9172,
+            "sha": "3412e7866fe63a1954d82777470e478a50404bab7d99d53e20187aa8f2265a34"
+          },
+          "table": {
+            "count": 389,
+            "sha": "19bb4b5502247b415385e0d89313c400a9177e369b3ae32b06f23174f1a2ce92"
+          },
+          "iframe": {
+            "count": 13,
+            "sha": "35fb4b6ab21ecafd7cd014a8f0eff241160a3fa5769e3de9232d9b0ef9b89169"
+          }
+        }
+      }
+    },
+    {
+      "name": "exact-inherited-malformed-node-preservation",
+      "passed": true
+    },
+    {
+      "name": "PDF-aux-equation-numbers",
+      "passed": true,
+      "detail": {
+        "cbk:coefficients": "(40.118)",
+        "cbk:normalization": "(40.119)",
+        "cbk:eta": "(40.120)",
+        "cbk:root-formula": "(40.121)",
+        "cbk:root-product": "(40.122)",
+        "cbk:two-gauges": "(40.123)",
+        "cbk:nodal": "(40.124)",
+        "cbk:bessel": "(40.125)",
+        "cbk:exact-kernel": "(40.126)",
+        "cbk:Phi": "(40.127)",
+        "cbk:prefix-bound": "(40.128)",
+        "cbk:all-j": "(40.129)",
+        "cbk:half": "(40.130)",
+        "cbk:schur-bound": "(40.131)",
+        "cbk:profile-seminorm": "(40.132)",
+        "cbk:cubic-bound": "(40.133)",
+        "cbk:beta-split": "(40.134)",
+        "cbk:equal-target": "(40.135)",
+        "cbk:orientation": "(40.136)",
+        "cbk:equal-prefix": "(40.137)",
+        "cbk:ray-Fourier": "(40.138)",
+        "cbk:unit-selection": "(40.139)",
+        "cbk:finite-Fourier": "(40.140)",
+        "cbk:Gauss-CRT": "(40.141)",
+        "cbk:harmonic-Fourier": "(40.142)",
+        "cbk:theta-inversion": "(40.143)",
+        "cbk:triple-root": "(40.144)",
+        "cbk:Omega": "(40.145)",
+        "cbk:row-inversion": "(40.146)",
+        "cbk:S-deletion": "(40.147)",
+        "cbk:primitive-Poisson": "(40.148)",
+        "cbk:all-ideal-norm": "(40.149)",
+        "cbk:Mellin-vectors": "(40.150)",
+        "cbk:FS-Mellin": "(40.151)",
+        "cbk:subsequence": "(40.152)",
+        "cbk:d-Phi": "(40.153)",
+        "cbk:BV-L1": "(40.154)",
+        "cbk:fixed-line-band": "(40.155)",
+        "cbk:Perron-error": "(40.156)",
+        "cbk:finite-Perron": "(40.157)",
+        "cbk:cubic-quotient": "(40.158)",
+        "cbk:cubic-matrix": "(40.159)",
+        "cbk:cubic-norm": "(40.160)",
+        "cbk:cubic-inner": "(40.161)",
+        "cbk:prime-failure": "(40.162)",
+        "cbk:norm-pullback": "(40.163)",
+        "cbk:equal-complement": "(40.164)",
+        "cbk:literal-primal": "(40.165)",
+        "cbk:literal-Poisson": "(40.166)",
+        "cbk:literal-band": "(40.167)",
+        "cbk:literal-mean": "(40.168)"
+      }
+    },
+    {
+      "name": "PDF-aux-figure-number",
+      "passed": true
+    },
+    {
+      "name": "native-layout-320",
+      "passed": true,
+      "detail": {
+        "client": 308,
+        "scroll": 308,
+        "inner": 320,
+        "math": 9810
+      }
+    },
+    {
+      "name": "new-overflow-accessible-320",
+      "passed": true,
+      "detail": [
+        {
+          "end": 97.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 228.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 181.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 105.69999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 43.81666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 94.44999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 141.60000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 143.1999969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 181.78334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 91.13333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 10.116666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 197.48333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 129.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 109.6500015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 212.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 304.6499938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 68.38333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 178.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 241.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.3000030517578,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 177.35000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 175.23333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 65.94999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 193.98333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 106.51667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 520,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "end": 83.36666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 42.150001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 166.5833282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 140.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 253.93333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 15.283333778381348,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 149.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 53.88333511352539,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 254.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 44.21666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 141.8333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 194.03334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 248.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 48.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 244.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 157.85000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 128.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 198.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 131.5500030517578,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 161.6666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 148.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 92.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 110.83333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 255.4499969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.53334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 34.08333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 38.400001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 402.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 390.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 87.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 16.049999237060547,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 136.89999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 16.366666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 350.6000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 124.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 151.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 112.66666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 396.8999938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 41.31666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 254.43333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 238.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 37.13333511352539,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 260.3500061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 2.5,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "name": "native-layout-390",
+      "passed": true,
+      "detail": {
+        "client": 378,
+        "scroll": 378,
+        "inner": 390,
+        "math": 9810
+      }
+    },
+    {
+      "name": "new-overflow-accessible-390",
+      "passed": true,
+      "detail": [
+        {
+          "end": 27.683332443237305,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 158.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 111.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 35.70000076293945,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 24.450000762939453,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.5999984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 73.19999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 111.78333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 21.133333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 127.48332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 59.266666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 39.650001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 142.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 234.64999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 108.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 171.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 107.3499984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 105.23332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 123.98332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 36.516666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 450,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "end": 13.366666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 96.58333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 70.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 183.93333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 79.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 184.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.83333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 124.03333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 178.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 174.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 87.8499984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 58.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 128.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 61.54999923706055,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 91.66666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 78.51667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 22.299999237060547,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 40.83333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 185.4499969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.53333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 50.41666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 332.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 320.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 17.41666603088379,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 66.9000015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 280.6000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 54.29999923706055,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 81.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 42.66666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 326.8999938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 184.43333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 168.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.35000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "name": "native-layout-768",
+      "passed": true,
+      "detail": {
+        "client": 756,
+        "scroll": 756,
+        "inner": 768,
+        "math": 9810
+      }
+    },
+    {
+      "name": "new-overflow-accessible-768",
+      "passed": true,
+      "detail": [
+        {
+          "end": 108,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        }
+      ]
+    },
+    {
+      "name": "native-layout-1440",
+      "passed": true,
+      "detail": {
+        "client": 1428,
+        "scroll": 1428,
+        "inner": 1440,
+        "math": 9810
+      }
+    },
+    {
+      "name": "new-overflow-accessible-1440",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "native-night-theme",
+      "passed": true
+    },
+    {
+      "name": "native-reference-click",
+      "passed": true
+    },
+    {
+      "name": "new-source-download-coherent-band-core.tex",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "bytes": 18836,
+        "sha": "747822463e8ef4b57e2ed406719b48b19b91c59473ac1b89ef12757d38b71c04"
+      }
+    },
+    {
+      "name": "new-source-download-coherent-band-details.tex",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "bytes": 43661,
+        "sha": "024a815649c17a392b0d522b9f391caa90461a4fa09992967103bdeaa6c15ba1"
+      }
+    },
+    {
+      "name": "new-source-download-coherent-band-figure.tex",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "bytes": 401,
+        "sha": "5591c785fb4075a6168b84e44b5aadcef67350e46cf8e7d95d6978d07a02087d"
+      }
+    },
+    {
+      "name": "candidate-book-PDF-download",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "bytes": 2820876,
+        "sha": "a57969a36ec3ad4ab96fd2c0137bb41917a98523200fd245c18be9b052f3e38b"
+      }
+    },
+    {
+      "name": "no-new-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no-browser-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "global-WS-log-has-no-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "strict-global-idle-and-departures",
+      "passed": true,
+      "detail": {
+        "pending": 0,
+        "idleWaits": 4
+      }
+    }
+  ],
+  "lab": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "coherent-band-source-ready",
+        "passed": true,
+        "detail": "SHA256 verified · 3 cases / 1218 positions · source 1511 numerical consistency assertions at 55 digits"
+      },
+      {
+        "name": "coherent-band-runtime-payload-source-hashes",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-1218-786-42-shape",
+        "passed": true,
+        "detail": {
+          "cases": 3,
+          "columns": 29,
+          "inert_factor_entries": 42,
+          "masked": 786,
+          "rows": 14,
+          "states": 1218
+        }
+      },
+      {
+        "name": "coherent-band-every-saved-string-121",
+        "passed": true,
+        "detail": {
+          "positions": 406,
+          "allNormStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-121-raw",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-121-au",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-121-profile",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-phase0-is-one-121",
+        "passed": true,
+        "detail": {
+          "D": 121,
+          "stage": "raw",
+          "i": 0,
+          "j": 0,
+          "support": 1,
+          "phase6": 0,
+          "A_U": 1,
+          "value": [
+            1,
+            0
+          ],
+          "A_T": [
+            "1.000184228297936012748303567349504316478169450194801098",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-distinct-ideal-norm7-121",
+        "passed": true,
+        "detail": {
+          "D": 121,
+          "stage": "raw",
+          "i": 1,
+          "j": 2,
+          "support": 1,
+          "phase6": 4,
+          "A_U": -1,
+          "value": [
+            -0.5,
+            -0.8660254037844386
+          ],
+          "A_T": [
+            "-1.000319842939763637346959237035673853849938165695135138",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-shared-prime-rawzero-121",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-product-only-zero-121",
+        "passed": true,
+        "detail": {
+          "D": 121,
+          "stage": "raw",
+          "i": 1,
+          "j": 10,
+          "support": 0,
+          "phase6": null,
+          "A_U": null,
+          "value": [
+            0,
+            0
+          ],
+          "A_T": null,
+          "W": null,
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-annulus-zero-is-not-mask-121",
+        "passed": true,
+        "detail": {
+          "D": 121,
+          "stage": "profile",
+          "i": 0,
+          "j": 0,
+          "support": 1,
+          "phase6": 0,
+          "A_U": 1,
+          "value": [
+            0,
+            0
+          ],
+          "A_T": [
+            "1.000184228297936012748303567349504316478169450194801098",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-profile-zero-label-121",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-inert-prime-factor-121",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-selected-55digit-Perron-profile-121",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-full-selector-ranges-121",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-every-saved-string-289",
+        "passed": true,
+        "detail": {
+          "positions": 406,
+          "allNormStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-289-raw",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-289-au",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-289-profile",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-phase0-is-one-289",
+        "passed": true,
+        "detail": {
+          "D": 289,
+          "stage": "raw",
+          "i": 0,
+          "j": 0,
+          "support": 1,
+          "phase6": 0,
+          "A_U": 1,
+          "value": [
+            1,
+            0
+          ],
+          "A_T": [
+            "1.000052648954056521726400281495942791917925625419252806",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-distinct-ideal-norm7-289",
+        "passed": true,
+        "detail": {
+          "D": 289,
+          "stage": "raw",
+          "i": 1,
+          "j": 2,
+          "support": 1,
+          "phase6": 4,
+          "A_U": -1,
+          "value": [
+            -0.5,
+            -0.8660254037844386
+          ],
+          "A_T": [
+            "-1.000067096259261576540530439024020504891371960597373535",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-shared-prime-rawzero-289",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-product-only-zero-289",
+        "passed": true,
+        "detail": {
+          "D": 289,
+          "stage": "raw",
+          "i": 1,
+          "j": 23,
+          "support": 0,
+          "phase6": null,
+          "A_U": null,
+          "value": [
+            0,
+            0
+          ],
+          "A_T": null,
+          "W": null,
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-annulus-zero-is-not-mask-289",
+        "passed": true,
+        "detail": {
+          "D": 289,
+          "stage": "profile",
+          "i": 0,
+          "j": 0,
+          "support": 1,
+          "phase6": 0,
+          "A_U": 1,
+          "value": [
+            0,
+            0
+          ],
+          "A_T": [
+            "1.000052648954056521726400281495942791917925625419252806",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-profile-zero-label-289",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-inert-prime-factor-289",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-selected-55digit-Perron-profile-289",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-full-selector-ranges-289",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-every-saved-string-529",
+        "passed": true,
+        "detail": {
+          "positions": 406,
+          "allNormStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-529-raw",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-529-au",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-all-406-rendered-529-profile",
+        "passed": true,
+        "detail": {
+          "cells": 406,
+          "normStringsExact": true
+        }
+      },
+      {
+        "name": "coherent-band-phase0-is-one-529",
+        "passed": true,
+        "detail": {
+          "D": 529,
+          "stage": "raw",
+          "i": 0,
+          "j": 0,
+          "support": 1,
+          "phase6": 0,
+          "A_U": 1,
+          "value": [
+            1,
+            0
+          ],
+          "A_T": [
+            "0.9999987753912901865562419661085915527889990493151585392",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-distinct-ideal-norm7-529",
+        "passed": true,
+        "detail": {
+          "D": 529,
+          "stage": "raw",
+          "i": 1,
+          "j": 2,
+          "support": 1,
+          "phase6": 4,
+          "A_U": -1,
+          "value": [
+            -0.5,
+            -0.8660254037844386
+          ],
+          "A_T": [
+            "-0.9999360815476703669041922862500008140566603417233532789",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-shared-prime-rawzero-529",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-product-only-zero-529",
+        "passed": true,
+        "detail": {
+          "D": 529,
+          "stage": "raw",
+          "i": 3,
+          "j": 23,
+          "support": 0,
+          "phase6": null,
+          "A_U": null,
+          "value": [
+            0,
+            0
+          ],
+          "A_T": null,
+          "W": null,
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-annulus-zero-is-not-mask-529",
+        "passed": true,
+        "detail": {
+          "D": 529,
+          "stage": "profile",
+          "i": 0,
+          "j": 0,
+          "support": 1,
+          "phase6": 0,
+          "A_U": 1,
+          "value": [
+            0,
+            0
+          ],
+          "A_T": [
+            "0.9999987753912901865562419661085915527889990493151585392",
+            "0.0"
+          ],
+          "W": [
+            "0.0",
+            "0.0"
+          ],
+          "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+          "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+          "auxiliary": true
+        }
+      },
+      {
+        "name": "coherent-band-profile-zero-label-529",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-inert-prime-factor-529",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-selected-55digit-Perron-profile-529",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-full-selector-ranges-529",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-keyboard-right",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-keyboard-down",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-keyboard-end",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-keyboard-home",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-keyboard-control-end",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-keyboard-control-home",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-zoom-range",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "coherent-band-nine-layouts-light-320",
+        "passed": true,
+        "detail": {
+          "layouts": 9
+        }
+      },
+      {
+        "name": "coherent-band-nine-layouts-light-390",
+        "passed": true,
+        "detail": {
+          "layouts": 9
+        }
+      },
+      {
+        "name": "coherent-band-nine-layouts-light-1440",
+        "passed": true,
+        "detail": {
+          "layouts": 9
+        }
+      },
+      {
+        "name": "coherent-band-nine-layouts-biomech-320",
+        "passed": true,
+        "detail": {
+          "layouts": 9
+        }
+      },
+      {
+        "name": "coherent-band-nine-layouts-biomech-390",
+        "passed": true,
+        "detail": {
+          "layouts": 9
+        }
+      },
+      {
+        "name": "coherent-band-nine-layouts-biomech-1440",
+        "passed": true,
+        "detail": {
+          "layouts": 9
+        }
+      },
+      {
+        "name": "coherent-band-complete-lab-coverage",
+        "passed": true,
+        "detail": {
+          "layouts": 54,
+          "caseStages": 9,
+          "cells": 3654,
+          "savedPositions": 1218
+        }
+      },
+      {
+        "name": "coherent-band-native-URL-Request-HEAD",
+        "passed": true,
+        "detail": {
+          "status": 200,
+          "url": "http://127.0.0.1:37631/data/coherent-band-schur-v1.json"
+        }
+      },
+      {
+        "name": "coherent-band-auxiliary-precision-profile-generator-scope",
+        "passed": true,
+        "detail": null
+      }
+    ],
+    "layouts": [
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "raw",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "au",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "profile",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "raw",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "au",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "profile",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "raw",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "au",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "light",
+        "stage": "profile",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "raw",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "au",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "profile",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "raw",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "au",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "profile",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "raw",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "au",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "light",
+        "stage": "profile",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "raw",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "au",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "profile",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "raw",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "au",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "profile",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "raw",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "au",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "light",
+        "stage": "profile",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(245, 243, 236)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 320,
+        "scroll": 308,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 274,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 390,
+        "scroll": 378,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 337,
+        "hostScroll": 636,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 121,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 289,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "raw",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "au",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      },
+      {
+        "width": 1440,
+        "scroll": 1428,
+        "theme": "biomech",
+        "stage": "profile",
+        "D": 529,
+        "matrixFilter": "none",
+        "planeFilter": "none",
+        "hostWidth": 791,
+        "hostScroll": 791,
+        "cellCount": 406,
+        "bodyBackground": "rgb(7, 13, 20)"
+      }
+    ],
+    "sourceSHA": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+    "payloadSHA": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171",
+    "caseStageMatrices": 9,
+    "renderedCellsChecked": 3654,
+    "savedStringPositionsChecked": 1218,
+    "initial": {
+      "theme": "biomech",
+      "motion": "paused"
+    },
+    "scope": "Only the new source-bound auxiliary-matrix lab. No legacy release/old arithmetic control replay. Root caller retains exact global WS,750ms quiet,30s idle and unfiltered fetch/page-error guards."
+  },
+  "layouts": [
+    {
+      "g": {
+        "client": 308,
+        "scroll": 308,
+        "inner": 320,
+        "math": 9810
+      },
+      "overflow": [
+        {
+          "end": 97.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 228.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 181.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 105.69999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 43.81666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 94.44999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 141.60000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 143.1999969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 181.78334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 91.13333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 10.116666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 197.48333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 129.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 109.6500015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 212.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 304.6499938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 68.38333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 178.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 241.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.3000030517578,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 177.35000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 175.23333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 65.94999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 193.98333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 106.51667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 520,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "end": 83.36666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 42.150001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 166.5833282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 140.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 253.93333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 15.283333778381348,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 149.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 53.88333511352539,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 254.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 44.21666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 141.8333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 194.03334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 248.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 48.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 244.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 157.85000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 128.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 198.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 131.5500030517578,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 161.6666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 148.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 92.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 110.83333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 255.4499969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.53334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 34.08333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 38.400001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 402.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 390.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 87.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 16.049999237060547,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 136.89999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 16.366666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 350.6000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 124.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 151.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 112.66666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 396.8999938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 41.31666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 254.43333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 238.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 37.13333511352539,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 260.3500061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 2.5,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "g": {
+        "client": 378,
+        "scroll": 378,
+        "inner": 390,
+        "math": 9810
+      },
+      "overflow": [
+        {
+          "end": 27.683332443237305,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 158.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 111.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 35.70000076293945,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 24.450000762939453,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.5999984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 73.19999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 111.78333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 21.133333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 127.48332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 59.266666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 39.650001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 142.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 234.64999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 108.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 171.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 107.3499984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 105.23332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 123.98332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 36.516666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 450,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "end": 13.366666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 96.58333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 70.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 183.93333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 79.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 184.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.83333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 124.03333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 178.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 174.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 87.8499984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 58.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 128.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 61.54999923706055,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 91.66666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 78.51667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 22.299999237060547,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 40.83333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 185.4499969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.53333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 50.41666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 332.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 320.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 17.41666603088379,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 66.9000015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 280.6000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 54.29999923706055,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 81.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 42.66666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 326.8999938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 184.43333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 168.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.35000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "g": {
+        "client": 756,
+        "scroll": 756,
+        "inner": 768,
+        "math": 9810
+      },
+      "overflow": [
+        {
+          "end": 108,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        }
+      ]
+    },
+    {
+      "g": {
+        "client": 1428,
+        "scroll": 1428,
+        "inner": 1440,
+        "math": 9810
+      },
+      "overflow": []
+    }
+  ],
+  "inheritedMathMLWarnings": [
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942369768
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942369851
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942369891
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942370281
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942370288
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942370291
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942371737
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942371778
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942371801
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942373104
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942373137
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942373155
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942373631
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942373669
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942373690
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942374150
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942374180
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942374196
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942375017
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942375057
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942375079
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942571488
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942571531
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "8bb5dc87-7ff2-48a2-9bf6-f4049a31bb4c",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942571553
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "dcc3b588-695f-44fe-9eb9-b19241e3a97b",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942582864
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "dcc3b588-695f-44fe-9eb9-b19241e3a97b",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942582939
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "dcc3b588-695f-44fe-9eb9-b19241e3a97b",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942582977
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "dcc3b588-695f-44fe-9eb9-b19241e3a97b",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583309
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "dcc3b588-695f-44fe-9eb9-b19241e3a97b",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583316
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "dcc3b588-695f-44fe-9eb9-b19241e3a97b",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583319
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583845
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583919
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583957
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942584330
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942584338
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942584341
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942585894
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942585936
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942585959
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587314
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587348
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587366
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587884
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587923
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587946
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942588419
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942588449
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942588465
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942589352
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942589393
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f72a0774-2373-4eb2-a2d8-4bef557e1a7d",
+          "context": "120e317d-9631-41ef-87da-a1758f52b0ea",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942589415
+      }
+    }
+  ],
+  "network": {
+    "events": 193,
+    "fetchErrors": 0,
+    "newPageErrors": 0,
+    "inheritedMathMLWarnings": 51,
+    "pending": 0,
+    "idleWaits": 4,
+    "quiet_ms": 750,
+    "timeout_ms": 30000,
+    "departures": 2
+  },
+  "new_sources": [
+    {
+      "status": 200,
+      "bytes": 18836,
+      "sha": "747822463e8ef4b57e2ed406719b48b19b91c59473ac1b89ef12757d38b71c04"
+    },
+    {
+      "status": 200,
+      "bytes": 43661,
+      "sha": "024a815649c17a392b0d522b9f391caa90461a4fa09992967103bdeaa6c15ba1"
+    },
+    {
+      "status": 200,
+      "bytes": 401,
+      "sha": "5591c785fb4075a6168b84e44b5aadcef67350e46cf8e7d95d6978d07a02087d"
+    }
+  ]
+}

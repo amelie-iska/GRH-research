@@ -1,0 +1,41 @@
+--- planning/coherent-band-20261106/lane-b/LITERAL_RAY_RECOMBINATION-v1.md
++++ planning/coherent-band-20261106/lane-b/LITERAL_RAY_RECOMBINATION-v2.md
+@@ -1,6 +1,6 @@
+ # Literal-ray Fourier recombination before the coherent band triangle
+ 
+-NEW research attempt, 6 November 2026. This does NOT reprove the accepted prefix/Mellin/all-j/root-normalization results. It changes the organization of the actual pure two-pivot kernel: work with the literal primary-generator lattice before any source-class/rho decomposition. The resulting finite CRT formula exactly recombines the ray/root components at a common additive modulus, including their induced-conductor frequency support. It exposes a surviving S-local Fourier-mean channel on actual equal-norm columns. No improved band bound is proved. The exact failed cancellation step is stated below.
++NEW v2 research attempt, 6 November 2026 (v1 preserved; S-supported dual ideal notation clarified). This does NOT reprove the accepted prefix/Mellin/all-j/root-normalization results. It changes the organization of the actual pure two-pivot kernel: work with the literal primary-generator lattice before any source-class/rho decomposition. The resulting finite CRT formula exactly recombines the ray/root components at a common additive modulus, including their induced-conductor frequency support. It exposes a surviving S-local Fourier-mean channel on actual equal-norm columns. No improved band bound is proved. The exact failed cancellation step is stated below.
+ 
+ Inputs are the just-closed intermediate run: HANDOFF-v1 bb9463e0, aggregate5470159d, RUN_CLOSED66473a6f, and the master/current ancestor instructions. Old numeric tables, controls, application audits and finished prefix arguments are inputs only, never rerun. All new files are confined to this new lane and its checks.
+ 
+@@ -93,10 +93,10 @@
+ 
+     sum_{zeta!=0}bar theta_q(zeta)H(Nzeta)
+        =0                         if theta_q|mu6 is nontrivial,
+-       =6 sum_{zeta ideals}bar theta_q(alpha(zeta))H(Nzeta)
++       =6 sum_{zeta ideals}bar theta_q(zeta)H(Nzeta)
+                                   if theta_q|mu6 is trivial.       (3.2)
+ 
+-Here the ideal sum includes ALL integral ideals, including S-supported ones, and raw q zeros. This is a six-element unit-orbit identity, not an unproved arithmetic cancellation estimate. In the second case theta_q is a genuine angular0/radial0 primitive ideal character with conductor q, so epsilon_q=tau_q/sqrt Q in the accepted different normalization.
++Here the ideal sum includes ALL integral ideals, including S-supported ones, and raw q zeros. This is a six-element unit-orbit identity, not an unproved arithmetic cancellation estimate. In the second case theta_q(zeta) means the induced ideal value computed from ANY integral generator of zeta; unit-triviality makes it independent of that choice. NO primary1mod3 generator is asserted for an S-supported ideal. Theta_q is then a genuine angular0/radial0 primitive ideal character with conductor q, so epsilon_q=tau_q/sqrt Q in the accepted different normalization.
+ 
+ On good SF m,n, for epsilon=1+omega, local finite-field powers and multiplication of ideal norms give
+ 
+@@ -114,7 +114,7 @@
+        sum_{k good SF,Nk<=K} mu(k)theta_q(alpha(k)^2)
+             [6r_(k^2)/Nc] [L_k/sqrt Q]epsilon_q
+        *sum_{zeta ideals,Y/Nc<Nzeta<=2Y/Nc}
+-                  bar theta_q(alpha(zeta))dotG(L_k Nzeta/Q).       (3.4)
++                  bar theta_q(zeta)dotG(L_k Nzeta/Q).       (3.4)
+ 
+ This contains nonunit dual modes, not merely the already-studied dual UNIT. The finite k factor theta_q(k)^2 is cubic, not1; it remains inside the signed expression at the actual cutoff. There is no completed Euler product or inverse-L replacement here. The complement beta not divisible by gamma_c remains in(2.3). Neither(3.4) nor its real part bounds the whole band from below.
+ 
+@@ -122,7 +122,7 @@
+ 
+     6r/Nc=1/2.                                             (3.5)
+ 
+-This explicit nonzero coefficient is independent of D. Deleting the original prime above2 would instead give4 residues and the WRONG coefficient2/3. Additional actual ray restrictions must use their own r_(k^2), not this unrestricted special value.
++This explicit nonzero coefficient is independent of D. Dropping the original2-adic coprimality condition would instead give4 residues and the WRONG coefficient2/3. Additional actual ray restrictions must use their own r_(k^2), not this unrestricted special value.
+ 
+ ## 4. Does this give actual arithmetic cancellation at the pure witness?
+ 

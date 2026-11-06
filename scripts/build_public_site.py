@@ -20,7 +20,7 @@ def main(output):
         source=ROOT/p
         if not source.is_file():continue
         target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target);files.append((source,target))
-    for source,name in [('outputs/book/surface-orders-book.pdf','book.pdf'),('outputs/papers/resolutions-concise.pdf','concise.pdf'),('outputs/papers/resolutions-extended.pdf','extended.pdf'),('papers/dessin-core.tex','papers/dessin-core.tex')]:
+    for source,name in [('outputs/book/surface-orders-book.pdf','book.pdf'),('outputs/papers/resolutions-concise.pdf','concise.pdf'),('outputs/papers/resolutions-extended.pdf','extended.pdf'),('outputs/papers/validated-oracle-20261104/validated-oracle-concise.pdf','validated-oracle-concise.pdf'),('outputs/papers/validated-oracle-20261104/validated-oracle-extended.pdf','validated-oracle-extended.pdf'),('papers/dessin-core.tex','papers/dessin-core.tex')]:
         (output/name).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/source,output/name)
     runtime=r'''// Project-path adapter only; saved scientific records remain byte-identical.
 (()=>{const base='/GRH-research/';const map=value=>{if(typeof value!=='string')return value;if(value.startsWith('http://127.0.0.1:8765/'))return base+value.slice(22);if(value.startsWith(location.origin+'/'))value=value.slice(location.origin.length);if(value.startsWith('/')&&!value.startsWith('//')&&!value.startsWith(base))return base+value.slice(1);return value;};

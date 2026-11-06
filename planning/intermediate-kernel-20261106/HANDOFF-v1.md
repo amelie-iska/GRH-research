@@ -1,0 +1,55 @@
+# Research-only intermediate-kernel checkpoint — 6 November 2026
+
+Read this before the preserved older conditional-H_ROOT and next-task records. This is NEW independently reviewed research OUTSIDE the frozen public release/current book. Main5d49a3e99267d35c3613b196a10ee5f6d11ca090 / Pages504df4af84e587e7a0763d3fcc0faba0c61131a9 and the verified303-page/9172MathML edition remain current. No new release, canonical paper/book/UI implementation, build/browser/auth operation, production dependency or old numerical-table audit occurred. The current whole two-pivot signed13/12 and global unsigned9/8 bounds are unchanged.
+
+Governing aggregate: outputs/checks/2026-11-06-intermediate-kernel/RESEARCH_ACCEPTED-v1.json SHA5470159d31d46bf5ce42fc52fcae4dc4013dc662b054f115f27fcc937ff62d63. Authoritative public receipt remains physical-sieve PUBLIC_RELEASE_VERIFIED.json SHA6e695033a110e201bd311d748638cc313bd7465436b552b59d0313049689b5d6. Every instruction/accepted correction in MASTER_IMPLEMENTATION_PLAN.md and every original/source/output/history remains in force.
+
+## Exact scope retained
+
+ONLY the original UNWEIGHTED remaining two-pivot family v3=v4=v5=v6=O, fixed literal u0 unit/S-supported with NO good-prime support, original SF/coprime v1,v2 and exact Nu0 Nv1 Nv2²<=H capacity. Additional good frozen factors and summation over varying u0 are NOT automatically covered. S, original ray modulus/source family and nu are fixed. Arbitrary positive row weights need their TRUE operator norm.
+
+Columns are the COMPLETE original good squarefree IDEAL annulus D<=Nm<=2D, D>1, with all distinct equal-norm/conjugate ideals retained. The actual ternary AU(m), primitive phases, nu, ONE common possibly complex W, raw/common-prime/full-union/ray/SF/capacity masks and uncentered orientation means are unchanged. Original AU(da), beta_da and primitive S values stay UNFACTORED after gcd inversion. No rational-squarefree substitution, coefficient shrinkage, conductor-drop zero restoration or independence/PSD premise occurs.
+
+All P bounds below concern representation-fixed exact finite prefixes of the primitive Poisson numerator P_D=D*S1AA. They are not positive physical energies or lower bounds. The sufficient full target is P_D=O_(nu,S,W,eps)(DH(DH)^eps), equivalently normalized S1AA=O(H(DH)^eps); this is not necessary for every split component/final assembly.
+
+## New normalization proof: H_ROOT technical gate closed
+
+C: planning/intermediate-kernel-20261106/lane-c/GLOBAL_ROOT_MULTIPLICATION-v2.md SHA25ad1b4abdcaa0598e4aec079322b4a834d180e7f9409ea5eff411985ee7503c. Independent B acceptance f5486cb1ff1072a6a5dfbf733daa57cc84dc88eefb8ea815fd8af7b5313c591b and independent A acceptance069f36b18ca66f3d7324893cddff4692afb630dea3d91922ae0b3cf5074416aa bind it.
+
+The self-contained primitive finite-CRT/Gaussian-Poisson derivation keeps the inverse different, conductor generator/covolume, positive and negative angular types, fixed radial unitary types, generator invariance/conjugation, unit-conductor angular characters and principal meromorphic zero/pole terms. For chi of angular k and primitive conductor(gamma), epsilon=i^(-|k|)phase(delta gamma)^k tau_gamma/sqrt(Nf), with radial twist(3Nf)^it. Coprime multiplication has correction i^(sum|k_j|-|sum k_j|) and ALL cross-character conductor values.
+
+On the ACTUAL coprime class/rho blocks, the resulting root is kappa_ABrho u_m conjugate(v_n), with DISTINCT u_m=beta_m xi_m(f_S)rho(m), v_n=beta_n xi_n(f_S)conjugate(rho(n)). Rho need not factor through sourceGamma. Primitive sigma(k²ell e)conjugate(sigma(h)), including0 at S, stays explicit. H_ROOT is now proved for these stated objects/conventions; earlier conditional versions are preserved as history. This is a convention-complete rederivation of standard Hecke laws, not a new literature-priority sieve or GRH theorem. Root gauges alone give no signed power saving.
+
+## New actual joint finite-band and prefix estimates
+
+A: HONEST_BV_MELLIN_INTERMEDIATE-v1.md SHA985295ddbdb03b721a68ce7a1397ca5c80b75c93df26edfc874f028be0b2cb8f. C independent acceptance ca55abb4be886113b1c518c47c816d09e296f96612f28bcec8f34dccef2b7f51; A author17e81a45a9b0f3c4ca75b524932af63a400981b1dcdf248f2a4afe2b17850d19.
+
+The ACTUAL sharp-capacity interpolant G has amplitude<=1, support[1/2,5/2], TV<=2. For fixed0<lambda<1/2, the PRODUCT of its Mellin transform and field gamma factor has uniformly finite L1 norm; the tail is |t|^(2lambda-2). Only a positive majorant zeta_K^S(2-2lambda) bounds the actual FINITE k sum, AFTER the joint m,n estimate. No completed Euler factor or profile approximation is inserted. Mellin pairs b_m(s) with conjugate(b_n(conjugate(s))), not a PSD form. The actual subsequence norms are B²D^(2lambda+eps)/Nd. Unit dual mode and all S h factors are retained; legal row prefixes are2Y/Nh>=1. For finite prefixes use0<lambda<1/6 and fixed positive-epsilon absorption, never lambda=0.
+
+B same-class all-j theorem8197418d78d586cc67a24a89baf8eb49b2d53a18e26f9f39698e0c9e7450048d has independent A gatea010d7e9799b996cfc36300a320fdebda77e615304878b3db9fc2105bb9d5fb3. It separately bounds the exact finite-K Bessel hierarchy by Phi(Y,D) I((5/2)A1Y/(C0D²)), I(t)=sum t^j/(j!)². The weight(NhNz)^j is dominated only INSIDE positive subsequence norms, after exact gcd inversion. Its j-independent original-annulus contractions do not factor AU or beta. This is not a summable high-tail theorem.
+
+B's final explicit ALL-class/rho transport: planning/intermediate-kernel-20261106/lane-b/ALL_COMPONENT_EXACT_PREFIX-v3.md SHAb978ac2f1cc3969d004c98afb94ad224dabef91eb1d4e9cda3c7fcd66829a07e. C all-j gate dd0154f0314a166fd0e1e5f2004d1fcf6f3c5d0a85bf5fe5975c830fc56d3efd and final BV gate ea05206ec7c7460bd1ea27635ab6f24147f07e44e4e8de9594f896750cefb653 independently check distinct gauges, primitive sigma(e/h) zeros, good-z unit row phase Omega, DIFFERENT residual-class bilinear Cauchy, F_S^(s-1/2), exact finite K/capacity and unit mode. This is not silent same-class-to-all inference. B author closure854f9db3b9fb47b46d79c195c45899de42536e2e599ee1b913b062bd722570bb and final26-file source pins1ea5fbaf05456e3d8281d2ec2b6374f6243311ad8e4585ccd54b108c5c91d4c7 bind both B theorems/gates.
+
+Let Phi(Z,L)=Z+L Z^(1/6)+Z^(5/6)L^(1/3)+Z^(1/3)L^(5/6), B=||W||infinity. The FULL reconstructed fixed-u0 two-pivot finite prefix now satisfies
+
+    |P_{<=X}|/D << B²(DXA2)^eps (A1A2/D)Phi(X,D), EVERY FINITE X>=1.
+
+This has NO Taylor-I or oldX<=sqrt(H) restriction. It includes EVERY nonunit/S-supported/class/rho mode INSIDE that prefix. On H~D^(3/4), A1~D^(5/12), A2~D^(1/6), the actual mixed prefix X~D is target-sized. At X=D the pure prefix upper power is11/12; at X=D^(3/8), pure/mixed upper powers are13/16 and31/48. These are upper bounds for possibly empty actual blocks, not density/lower constructions. Finite-prefix growth prevents any X->infinity inference.
+
+Root: CRITICAL_MELLIN_DYADIC-v1.md SHA62937830ef87cd1f802a0d29cd7961fbec0240eb503912d3759f5afc488d51cb. Independent B62863a00c7a600f83886b40593fc4db28df3afad997f31b3e482f5f8a9db7b97 and C8f80fe491fdd69ef1840783b444d57b8e6c02eb8008aa323786993d728d32802 accept the SAME-class/rho1 critical-half estimate B²(DYA2)^eps A2 sqrt(A1/Y)Phi(Y,D)(1+log(2A1))². The Mellin L1log uses the actual growing-derivative G, and the original finite k harmonic sum supplies the otherlog; no infinite zeta(1) is used. This does not itself broaden that root theorem's scope or solve the full complement.
+
+## Fresh focused controls and independent evidence
+
+Exactly152 NEW saved consistency checks at65decimal precision:58 primitive Hecke/Gaussian/CRT/radial checks,13 unit-conductor/principal-zero-term/angular edge checks,81 critical-Mellin/log-Fourier/IBP checks. Fourteen Gaussian functional-equation cases and15 Mellin cases are included. Parameters, exact fixtures, scripts/results and existing87 pure-mpmath source hashes are bound by root/controls-inputs-v1.json SHA5ecb2b6ba7d9fa6de3ac0253160d1b417863dcc286c935ed0ced73749e5c0397.
+
+These are synthetic analytic consistency controls, NOT interval enclosures, original arithmetic-family data or mathematical proof by numerical output. Independent analytic reviews supply the proof gates. No old250 Bessel controls or accepted original-family tables/traces were rerun. Linuxsystempython used the EXISTING approved pure-Python mpmath1.3.0 read-only path with bytecode disabled/nice15/single threads; no install/env/cache mutation. Every source/failed notation guard/version is preserved. Root acceptance-gates-v1 d5600ee26afc6b92fca675673a170049f28900e58bd6b58548e6477f7a7b30cc and integration-final-v1 a52f824660ba12e2841e32cfbd0dbbcc820ede0d43ed310396ed01eb9bfb5ed6 bind the explicit acceptance criteria.
+
+## Remaining task and checkpoint
+
+NEXT genuine research: bound the ACTUAL signed coherent annular Bessel-character sum in the pure positive-power dual range or mixed range BEYOND normD, retaining roots/deletions/Mobius signs/orientation means/equal-norm fibres BEFORE a positive-d/per-conductor triangle. The now-executed finite-prefix/Mellin/all-j/root-normalization/norm-only routes are finished as scoped reductions; do not rerun them or present them as the missing full signed saving. Preserve every original AU/commonW/full-union/common-prime/ray/SF/capacity/conductor/profile uniformity and neighboring blocks.
+
+The whole infinite dual complement, sum over varying u0/extra factors, short/principal target assembly, independent positive arithmetic determinant/zero-location bridge and separate Dirichlet/Hecke/Dedekind/elliptic/generalArtin scopes remain OPEN. No Artinholomorphy/GRH/desiredpositivity/zero-location premise. No analytic/category Lean completion. Linux4.24 approval STILL UNANSWERED: no install/download/substitute/reinventory/repeatedquestion.
+
+P7 claim4e8abce7-b063-4631-b265-3224a9195b6a / checkpoint77968dd4-97bd-4108-b279-c81931e1e1b5 remainsin_progress; priorP9 remainsin_progress. root/checkpoint-v1.json SHAd97af51589a5ed9471ddad6bb13cdd82139573357e638874182c9467cb9f32b1 binds the administrative checkpoint, not a proof checker. Both completion gates FALSE; ONE existing heartbeat ACTIVE.
+
+All12 protected HEAD/index states/11 release worktrees and four canonical paper sources remain unchanged, bound by root/protected-states-v1.json SHA4aa6c5cb9fab9e3eb0ed7f715a3c4de313b3a79c536caad120c17e16a0174aa4. SourceHEADdba37ff/index0ef1af/origin5d49a3e and every original/output/cache/environment/history/Macworkspace/old8765preview/private active-model datum preserved. ExistingMacgh remains publishingONLY and was unused; all science/checks/edits Linux. No externalMCP/auth/globalconfig/Claude change. Full preceding automation prompt is archived at root/automation-before-update-v1.json SHA706cb974ed0238b596af74a1ed16bab386e05df786802ed370699d628377b4c3. Only the latest short frontier slot is to be refreshed; the entire preceding64,153-character prefix is retained verbatim. Integrate accepted notes into the book only with a FUTURE substantive reviewed milestone; no status-only commit/republish, cleanup/reset or proof-schedule guarantee.

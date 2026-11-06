@@ -1,0 +1,162 @@
+{
+  "accepted_research_map": {
+    "cbk:cubic": [
+      {
+        "bytes": 19345,
+        "path": "planning/coherent-band-20261106/lane-a/CUBIC_TRANSPOSED_DIVISOR_BANDS-v2.md",
+        "sha256": "1fcf324837d2d8560b53aa548b916be6488d936af4dcf7001fdc00e68c152e67"
+      }
+    ],
+    "cbk:equal": [
+      {
+        "bytes": 17487,
+        "path": "planning/coherent-band-20261106/lane-c/EQUAL_NORM_COHERENT_SECTOR-v2.md",
+        "sha256": "fb56956bf7ab0fcf765b34f617a874fbba2d37438d14335684d57607337175c1"
+      }
+    ],
+    "cbk:kernel": [
+      {
+        "bytes": 25701,
+        "path": "planning/physical-sieve-20261105/postrelease-research/dual-kernel-v1/DRAFT-v8.md",
+        "sha256": "cba96d347cd880cdead3a330ce5e39969b1950c049df1750f6444ce68a0d4ff7"
+      },
+      {
+        "bytes": 1007,
+        "path": "planning/physical-sieve-20261105/postrelease-review/dual-kernel-a/scope-addendum-v1.json",
+        "sha256": "5f576c22742d894536c7e8a843d29e3117be9c1e3534d5a5415aa8e130b80b11"
+      }
+    ],
+    "cbk:prefix": [
+      {
+        "bytes": 19452,
+        "path": "planning/intermediate-kernel-20261106/lane-b/ALL_COMPONENT_EXACT_PREFIX-v3.md",
+        "sha256": "b978ac2f1cc3969d004c98afb94ad224dabef91eb1d4e9cda3c7fcd66829a07e"
+      },
+      {
+        "bytes": 13120,
+        "path": "planning/intermediate-kernel-20261106/lane-b/EXACT_FINITE_K_ALL_J_BOUND-v1.md",
+        "sha256": "8197418d78d586cc67a24a89baf8eb49b2d53a18e26f9f39698e0c9e7450048d"
+      },
+      {
+        "bytes": 16772,
+        "path": "planning/intermediate-kernel-20261106/lane-a/HONEST_BV_MELLIN_INTERMEDIATE-v1.md",
+        "sha256": "985295ddbdb03b721a68ce7a1397ca5c80b75c93df26edfc874f028be0b2cb8f"
+      },
+      {
+        "bytes": 9341,
+        "path": "planning/intermediate-kernel-20261106/root/CRITICAL_MELLIN_DYADIC-v1.md",
+        "sha256": "62937830ef87cd1f802a0d29cd7961fbec0240eb503912d3759f5afc488d51cb"
+      }
+    ],
+    "cbk:ray": [
+      {
+        "bytes": 15440,
+        "path": "planning/coherent-band-20261106/lane-b/LITERAL_RAY_RECOMBINATION-v2.md",
+        "sha256": "c7254d2cc9c94b82de75a17a08504986a22e53baa034f740cb979ce574b17fb7"
+      }
+    ],
+    "cbk:root": [
+      {
+        "bytes": 14988,
+        "path": "planning/intermediate-kernel-20261106/lane-c/GLOBAL_ROOT_MULTIPLICATION-v2.md",
+        "sha256": "25ad1b4abdcaa0598e4aec079322b4a834d180e7f9409ea5eff411985ee7503c"
+      }
+    ],
+    "cbk:schur": [
+      {
+        "bytes": 8051,
+        "path": "planning/coherent-band-20261106/root/FINITE_CUTOFF_SCHUR-v1.md",
+        "sha256": "f07d6228b1e192c07553f6af38c5ce8371c975f48a4dd691c419923c9e973d43"
+      }
+    ]
+  },
+  "bounded_review_corrections": [
+    "unit projection statement has no nonvanishing converse",
+    "S_eq is explicitly once-normalized; orientation sum is before1/D",
+    "whole primal EQ control does not control an individual literal band/channel; unequal pair projection must precede Poisson",
+    "Explicit A1,A2>=1 original block domain for epsilon absorption/counts"
+  ],
+  "created_utc": "2026-11-06T05:09:29.328137+00:00",
+  "exact_v1_v2_diff": {
+    "bytes": 2731,
+    "path": "outputs/checks/2026-11-06-coherent-book/lane-b/source-v1-v2.diff",
+    "sha256": "a7d526c3eed99b43d14d0c0d01a969d63d966e3febc426f908712fdf44150e88"
+  },
+  "exact_v1_v3_diff": {
+    "bytes": 3076,
+    "path": "outputs/checks/2026-11-06-coherent-book/lane-b/source-v1-v3.diff",
+    "sha256": "e28b0b0287eb4b4e997ff21e2fc135226017d59d7e60502959df441ff2634063"
+  },
+  "external_primary_input": {
+    "PDF_SHA256": "97720b3cacccbedb9c2014520ad4d128ae23afd0a781bdeff27dab4e86b7c726",
+    "citation_style": "Existing physical-sieve href plus phy:input; no existing deFaveri bibkey is present, and no bibliography edit/new bibitem was made.",
+    "full_PDF_text_cache_excluded_from_public_source_dependencies": true,
+    "text_SHA256": "ef550aa4bca1659c6d98ebf69e2cbd42a2793b707f6171f53d1b2baeb8654a57",
+    "theorem": "Theorem1.1 n6/n3; Example2.2 actual cubic family; Lemma3.1 Poisson convention",
+    "url": "https://arxiv.org/abs/2610.04045v1",
+    "version": "v1"
+  },
+  "integration_hook": "Comment only: root inserts one canonical cbk-workflow and unique inspector in the book; concise core does not reference absent assets/details.",
+  "latest_governing_inputs": [
+    {
+      "bytes": 11176,
+      "path": "planning/coherent-band-20261106/HANDOFF-v1.md",
+      "sha256": "90a6be03a2518def4243e63c00e587da6837bad04c86dd6fe9f71597cfaa5a82"
+    },
+    {
+      "bytes": 14653,
+      "path": "outputs/checks/2026-11-06-coherent-band/RESEARCH_ACCEPTED-v1.json",
+      "sha256": "34b4f9a51315cafd237a63b13ef4ac5d72b9ceef500d83be573d39dace991ae7"
+    },
+    {
+      "bytes": 5139,
+      "path": "outputs/checks/2026-11-06-coherent-band/root/RUN_CLOSED-v1.json",
+      "sha256": "77a7ac3cdc30dba6de8fb77c3b66cb823846be06247144c0710b255287a830ab"
+    }
+  ],
+  "new_TeX_files": [
+    {
+      "bytes": 18798,
+      "path": "papers/coherent-band-core.tex",
+      "sha256": "4f47a84d005485d13937f377eff5baf366f31bddfc223f51b3b09e20de465bc5"
+    },
+    {
+      "bytes": 43623,
+      "path": "papers/coherent-band-details.tex",
+      "sha256": "27b4b0a43020f6efb550cb6a9ae4249734f9fcfb2aaad441eaca791eac55d7af"
+    }
+  ],
+  "no_new_mathematical_gain_claim": "Whole signed13/12/global9/8 unchanged. Prefix and auxiliary divisor-band scope, actual masks/means and fixed-W dependence retained.",
+  "no_pending_sixth_free_or_unreviewed_research_included": true,
+  "parent_source_map": {
+    "bytes": 5948,
+    "path": "planning/coherent-book-20261106/lane-b/source-map-v2.json",
+    "sha256": "bca9a12b8ce6e2218c8507d8d2a1ba5737d4f9e1a31e4762f4d6c6153f5868bb"
+  },
+  "preserved_v1_TeX": [
+    {
+      "bytes": 18656,
+      "path": "planning/coherent-book-20261106/lane-b/frozen-v1/coherent-band-core.tex",
+      "sha256": "ecf02cfe5cfb04b8705796bc2826fba2d70393b147b2fe72c293d813cd064108"
+    },
+    {
+      "bytes": 43340,
+      "path": "planning/coherent-book-20261106/lane-b/frozen-v1/coherent-band-details.tex",
+      "sha256": "83c0ec1a4120650c1d58712ca125981ed497af919a2ccd2cd6459560dce8284d"
+    }
+  ],
+  "preserved_v2_TeX": [
+    {
+      "bytes": 18779,
+      "path": "planning/coherent-book-20261106/lane-b/frozen-v2/coherent-band-core.tex",
+      "sha256": "043b2f0e9e0d4b3825882d038c3d635e79fcc8304937f89d1fce9a20c5b35d05"
+    },
+    {
+      "bytes": 43623,
+      "path": "planning/coherent-book-20261106/lane-b/frozen-v2/coherent-band-details.tex",
+      "sha256": "27b4b0a43020f6efb550cb6a9ae4249734f9fcfb2aaad441eaca791eac55d7af"
+    }
+  ],
+  "schema": "coherent-book-accepted-research-source-map-v3",
+  "status": "SOURCE_PROPOSAL_FOR_INDEPENDENT_REVIEW"
+}

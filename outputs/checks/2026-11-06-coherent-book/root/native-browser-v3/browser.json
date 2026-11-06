@@ -1,0 +1,2992 @@
+{
+  "passed": true,
+  "integration": [
+    {
+      "name": "exact-three-inherited-munder-nodes",
+      "passed": true,
+      "detail": [
+        "<munder><mrow><mi class=\"qopname\">lim</mi><mo> ⁡<!--FUNCTION APPLICATION--> </mo></mrow><mi class=\"MathClass-op\">←</mi><mo> ⁡<!--FUNCTION APPLICATION--></mo></munder>",
+        "<munder><mrow><mi class=\"qopname\">lim</mi><mo> ⁡<!--FUNCTION APPLICATION--> </mo></mrow><mi class=\"MathClass-op\">←</mi><mo> ⁡<!--FUNCTION APPLICATION--></mo></munder>",
+        "<munder><mrow><mi class=\"qopname\">lim</mi><mo> ⁡<!--FUNCTION APPLICATION--> </mo></mrow><mi class=\"MathClass-op\">←</mi><mo> ⁡<!--FUNCTION APPLICATION--></mo></munder>"
+      ]
+    },
+    {
+      "name": "old-baseline-counts",
+      "passed": true,
+      "detail": {
+        "math": {
+          "count": 9172,
+          "sha": "3412e7866fe63a1954d82777470e478a50404bab7d99d53e20187aa8f2265a34"
+        },
+        "table": {
+          "count": 389,
+          "sha": "19bb4b5502247b415385e0d89313c400a9177e369b3ae32b06f23174f1a2ce92"
+        },
+        "iframe": {
+          "count": 13,
+          "sha": "35fb4b6ab21ecafd7cd014a8f0eff241160a3fa5769e3de9232d9b0ef9b89169"
+        }
+      }
+    },
+    {
+      "name": "new-native-integrity",
+      "passed": true,
+      "detail": {
+        "math": 9810,
+        "iframes": 14,
+        "frames": [
+          "/?embed=atlas",
+          "/?embed=ar",
+          "/relations.html?embed=book",
+          "/dg.html?embed=book",
+          "/?embed=circuits",
+          "/rg.html?embed=book",
+          "/?embed=auxiliary-training",
+          "/architecture.html?embed=book",
+          "/convextok.html?embed=book",
+          "/qtoken.html?embed=book",
+          "/learned.html?embed=book",
+          "/datasets.html?embed=book",
+          "/persistence.html?embed=book",
+          "/coherent-band.html?embed=book"
+        ],
+        "tables": 389,
+        "uniqueIds": true,
+        "cbk": [
+          "cbk:core",
+          "cbk:objects",
+          "cbk:coefficients",
+          "cbk:normalization",
+          "cbk:primitive-kernel",
+          "cbk:eta",
+          "cbk:root",
+          "cbk:root-formula",
+          "cbk:root-product",
+          "cbk:two-gauges",
+          "cbk:nodal",
+          "cbk:bessel",
+          "cbk:kernel",
+          "cbk:exact-kernel",
+          "cbk:comparisons",
+          "cbk:Phi",
+          "cbk:prefix",
+          "cbk:prefix-bound",
+          "cbk:all-j",
+          "cbk:half",
+          "cbk:schur",
+          "cbk:schur-bound",
+          "cbk:profile-seminorm",
+          "cbk:cubic",
+          "cbk:cubic-bound",
+          "cbk:beta-split",
+          "cbk:localization",
+          "cbk:equal",
+          "cbk:equal-target",
+          "cbk:orientation",
+          "cbk:equal-prefix",
+          "cbk:ray",
+          "cbk:ray-Fourier",
+          "cbk:unit-selection",
+          "cbk:boundary",
+          "cbk:workflow",
+          "cbk:details",
+          "cbk:gaussian-proof",
+          "cbk:finite-Fourier",
+          "cbk:Gauss-CRT",
+          "cbk:harmonic-Fourier",
+          "cbk:theta-inversion",
+          "cbk:root-transport-proof",
+          "cbk:triple-root",
+          "cbk:Omega",
+          "cbk:kernel-proof",
+          "cbk:row-inversion",
+          "cbk:S-deletion",
+          "cbk:primitive-Poisson",
+          "cbk:prefix-proof",
+          "cbk:all-ideal-norm",
+          "cbk:Mellin-vectors",
+          "cbk:FS-Mellin",
+          "cbk:subsequence",
+          "cbk:d-Phi",
+          "cbk:BV-L1",
+          "cbk:fixed-line-band",
+          "cbk:schur-proof",
+          "cbk:Perron-error",
+          "cbk:finite-Perron",
+          "cbk:cubic-proof",
+          "cbk:cubic-quotient",
+          "cbk:cubic-matrix",
+          "cbk:cubic-norm",
+          "cbk:cubic-inner",
+          "cbk:prime-failure",
+          "cbk:equal-proof",
+          "cbk:norm-pullback",
+          "cbk:equal-complement",
+          "cbk:ray-proof",
+          "cbk:literal-primal",
+          "cbk:literal-Poisson",
+          "cbk:literal-band",
+          "cbk:literal-mean"
+        ],
+        "allRefs": true
+      }
+    },
+    {
+      "name": "browser-old-subtree-preservation",
+      "passed": true,
+      "detail": {
+        "oldHashes": {
+          "math": {
+            "count": 9172,
+            "sha": "3412e7866fe63a1954d82777470e478a50404bab7d99d53e20187aa8f2265a34"
+          },
+          "table": {
+            "count": 389,
+            "sha": "19bb4b5502247b415385e0d89313c400a9177e369b3ae32b06f23174f1a2ce92"
+          },
+          "iframe": {
+            "count": 13,
+            "sha": "35fb4b6ab21ecafd7cd014a8f0eff241160a3fa5769e3de9232d9b0ef9b89169"
+          }
+        },
+        "newHashes": {
+          "math": {
+            "count": 9172,
+            "sha": "3412e7866fe63a1954d82777470e478a50404bab7d99d53e20187aa8f2265a34"
+          },
+          "table": {
+            "count": 389,
+            "sha": "19bb4b5502247b415385e0d89313c400a9177e369b3ae32b06f23174f1a2ce92"
+          },
+          "iframe": {
+            "count": 13,
+            "sha": "35fb4b6ab21ecafd7cd014a8f0eff241160a3fa5769e3de9232d9b0ef9b89169"
+          }
+        }
+      }
+    },
+    {
+      "name": "exact-inherited-malformed-node-preservation",
+      "passed": true
+    },
+    {
+      "name": "PDF-aux-equation-numbers",
+      "passed": true,
+      "detail": {
+        "cbk:coefficients": "(40.118)",
+        "cbk:normalization": "(40.119)",
+        "cbk:eta": "(40.120)",
+        "cbk:root-formula": "(40.121)",
+        "cbk:root-product": "(40.122)",
+        "cbk:two-gauges": "(40.123)",
+        "cbk:nodal": "(40.124)",
+        "cbk:bessel": "(40.125)",
+        "cbk:exact-kernel": "(40.126)",
+        "cbk:Phi": "(40.127)",
+        "cbk:prefix-bound": "(40.128)",
+        "cbk:all-j": "(40.129)",
+        "cbk:half": "(40.130)",
+        "cbk:schur-bound": "(40.131)",
+        "cbk:profile-seminorm": "(40.132)",
+        "cbk:cubic-bound": "(40.133)",
+        "cbk:beta-split": "(40.134)",
+        "cbk:equal-target": "(40.135)",
+        "cbk:orientation": "(40.136)",
+        "cbk:equal-prefix": "(40.137)",
+        "cbk:ray-Fourier": "(40.138)",
+        "cbk:unit-selection": "(40.139)",
+        "cbk:finite-Fourier": "(40.140)",
+        "cbk:Gauss-CRT": "(40.141)",
+        "cbk:harmonic-Fourier": "(40.142)",
+        "cbk:theta-inversion": "(40.143)",
+        "cbk:triple-root": "(40.144)",
+        "cbk:Omega": "(40.145)",
+        "cbk:row-inversion": "(40.146)",
+        "cbk:S-deletion": "(40.147)",
+        "cbk:primitive-Poisson": "(40.148)",
+        "cbk:all-ideal-norm": "(40.149)",
+        "cbk:Mellin-vectors": "(40.150)",
+        "cbk:FS-Mellin": "(40.151)",
+        "cbk:subsequence": "(40.152)",
+        "cbk:d-Phi": "(40.153)",
+        "cbk:BV-L1": "(40.154)",
+        "cbk:fixed-line-band": "(40.155)",
+        "cbk:Perron-error": "(40.156)",
+        "cbk:finite-Perron": "(40.157)",
+        "cbk:cubic-quotient": "(40.158)",
+        "cbk:cubic-matrix": "(40.159)",
+        "cbk:cubic-norm": "(40.160)",
+        "cbk:cubic-inner": "(40.161)",
+        "cbk:prime-failure": "(40.162)",
+        "cbk:norm-pullback": "(40.163)",
+        "cbk:equal-complement": "(40.164)",
+        "cbk:literal-primal": "(40.165)",
+        "cbk:literal-Poisson": "(40.166)",
+        "cbk:literal-band": "(40.167)",
+        "cbk:literal-mean": "(40.168)"
+      }
+    },
+    {
+      "name": "PDF-aux-figure-number",
+      "passed": true
+    },
+    {
+      "name": "native-layout-320",
+      "passed": true,
+      "detail": {
+        "client": 308,
+        "scroll": 308,
+        "inner": 320,
+        "math": 9810
+      }
+    },
+    {
+      "name": "new-overflow-accessible-320",
+      "passed": true,
+      "detail": [
+        {
+          "end": 97.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 228.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 181.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 105.69999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 43.81666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 94.44999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 141.60000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 143.1999969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 181.78334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 91.13333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 10.116666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 197.48333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 129.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 109.6500015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 212.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 304.6499938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 68.38333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 178.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 241.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.3000030517578,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 177.35000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 175.23333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 65.94999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 193.98333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 106.51667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 520,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "end": 83.36666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 42.150001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 166.5833282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 140.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 253.93333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 15.283333778381348,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 149.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 53.88333511352539,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 254.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 44.21666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 141.8333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 194.03334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 248.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 48.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 244.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 157.85000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 128.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 198.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 131.5500030517578,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 161.6666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 148.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 92.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 110.83333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 255.4499969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.53334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 34.08333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 38.400001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 402.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 390.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 87.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 16.049999237060547,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 136.89999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 16.366666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 350.6000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 124.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 151.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 112.66666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 396.8999938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 41.31666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 254.43333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 238.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 37.13333511352539,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 260.3500061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 2.5,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "name": "native-layout-390",
+      "passed": true,
+      "detail": {
+        "client": 378,
+        "scroll": 378,
+        "inner": 390,
+        "math": 9810
+      }
+    },
+    {
+      "name": "new-overflow-accessible-390",
+      "passed": true,
+      "detail": [
+        {
+          "end": 27.683332443237305,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 158.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 111.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 35.70000076293945,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 24.450000762939453,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.5999984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 73.19999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 111.78333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 21.133333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 127.48332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 59.266666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 39.650001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 142.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 234.64999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 108.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 171.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 107.3499984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 105.23332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 123.98332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 36.516666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 450,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "end": 13.366666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 96.58333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 70.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 183.93333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 79.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 184.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.83333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 124.03333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 178.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 174.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 87.8499984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 58.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 128.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 61.54999923706055,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 91.66666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 78.51667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 22.299999237060547,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 40.83333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 185.4499969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.53333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 50.41666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 332.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 320.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 17.41666603088379,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 66.9000015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 280.6000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 54.29999923706055,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 81.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 42.66666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 326.8999938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 184.43333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 168.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.35000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "name": "native-layout-768",
+      "passed": true,
+      "detail": {
+        "client": 756,
+        "scroll": 756,
+        "inner": 768,
+        "math": 9810
+      }
+    },
+    {
+      "name": "new-overflow-accessible-768",
+      "passed": true,
+      "detail": [
+        {
+          "end": 108,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        }
+      ]
+    },
+    {
+      "name": "native-layout-1440",
+      "passed": true,
+      "detail": {
+        "client": 1428,
+        "scroll": 1428,
+        "inner": 1440,
+        "math": 9810
+      }
+    },
+    {
+      "name": "new-overflow-accessible-1440",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "native-night-theme",
+      "passed": true
+    },
+    {
+      "name": "native-reference-click",
+      "passed": true
+    },
+    {
+      "name": "new-source-download-coherent-band-core.tex",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "bytes": 18836,
+        "sha": "747822463e8ef4b57e2ed406719b48b19b91c59473ac1b89ef12757d38b71c04"
+      }
+    },
+    {
+      "name": "new-source-download-coherent-band-details.tex",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "bytes": 43661,
+        "sha": "024a815649c17a392b0d522b9f391caa90461a4fa09992967103bdeaa6c15ba1"
+      }
+    },
+    {
+      "name": "new-source-download-coherent-band-figure.tex",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "bytes": 401,
+        "sha": "5591c785fb4075a6168b84e44b5aadcef67350e46cf8e7d95d6978d07a02087d"
+      }
+    },
+    {
+      "name": "candidate-book-PDF-download",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "bytes": 2870311,
+        "sha": "dea24dafd8d6a662268f91210b46282a3815ec49bb971b555c6e1c3fd9dc18fa"
+      }
+    },
+    {
+      "name": "no-new-page-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no-browser-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "global-WS-log-has-no-fetch-errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "strict-global-idle-and-departures",
+      "passed": true,
+      "detail": {
+        "pending": 0,
+        "idleWaits": 3
+      }
+    }
+  ],
+  "layouts": [
+    {
+      "g": {
+        "client": 308,
+        "scroll": 308,
+        "inner": 320,
+        "math": 9810
+      },
+      "overflow": [
+        {
+          "end": 97.68333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 228.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 181.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 105.69999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 43.81666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 94.44999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 141.60000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 143.1999969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 181.78334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 91.13333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 10.116666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 197.48333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 129.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 109.6500015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 212.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 304.6499938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 68.38333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 178.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 241.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.3000030517578,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 177.35000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 175.23333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 65.94999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 193.98333740234375,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 106.51667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 520,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "end": 83.36666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 42.150001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 166.5833282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 140.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 253.93333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 15.283333778381348,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 149.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 53.88333511352539,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 254.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 44.21666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 141.8333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 194.03334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 248.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 48.06666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 244.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 157.85000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 128.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 198.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 131.5500030517578,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 161.6666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 148.51666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 92.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 110.83333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 255.4499969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.53334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 34.08333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 38.400001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 402.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 390.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 87.41666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 16.049999237060547,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 136.89999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 16.366666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 350.6000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 124.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 151.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 112.66666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 396.8999938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 41.31666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 254.43333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 238.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 37.13333511352539,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 260.3500061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 2.5,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "g": {
+        "client": 378,
+        "scroll": 378,
+        "inner": 390,
+        "math": 9810
+      },
+      "overflow": [
+        {
+          "end": 27.683332443237305,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 158.26666259765625,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 111.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 35.70000076293945,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 24.450000762939453,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.5999984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 73.19999694824219,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 111.78333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 21.133333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 127.48332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 59.266666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 39.650001525878906,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 142.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 234.64999389648438,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 108.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 171.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.30000305175781,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 107.3499984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 105.23332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 123.98332977294922,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 36.516666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 450,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        },
+        {
+          "end": 13.366666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 96.58333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 70.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 183.93333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 79.11666870117188,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 184.28334045410156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 71.83333587646484,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 124.03333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 178.75,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 174.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 87.8499984741211,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 58.56666564941406,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 128.1666717529297,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 61.54999923706055,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 91.66666412353516,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 78.51667022705078,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 22.299999237060547,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 40.83333206176758,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 185.4499969482422,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 120.53333282470703,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 50.41666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 332.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 320.8166809082031,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 17.41666603088379,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 66.9000015258789,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 280.6000061035156,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 54.29999923706055,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 81.88333129882812,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 42.66666793823242,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 326.8999938964844,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 184.43333435058594,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 168.25,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        },
+        {
+          "end": 190.35000610351562,
+          "tabIndex": 0,
+          "label": "Scrollable mathematical expression",
+          "font": "18px",
+          "transform": "none"
+        }
+      ]
+    },
+    {
+      "g": {
+        "client": 756,
+        "scroll": 756,
+        "inner": 768,
+        "math": 9810
+      },
+      "overflow": [
+        {
+          "end": 108,
+          "tabIndex": 0,
+          "label": "Coherent-band matrix workflow; horizontal scrolling on small screens",
+          "font": null,
+          "transform": null
+        }
+      ]
+    },
+    {
+      "g": {
+        "client": 1428,
+        "scroll": 1428,
+        "inner": 1440,
+        "math": 9810
+      },
+      "overflow": []
+    }
+  ],
+  "inheritedMathMLWarnings": [
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583845
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583919
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942583957
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942584330
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942584338
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942584341
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942585894
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942585936
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942585959
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587314
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587348
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587366
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587884
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587923
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942587946
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942588419
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942588449
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942588465
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942589352
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942589393
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942589415
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942876101
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942876140
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "b1518595-aa13-4b7f-baba-2b7446acea46",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942876162
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "a6485f83-e701-4551-a66d-577f04c339fe",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942877032
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "a6485f83-e701-4551-a66d-577f04c339fe",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942877107
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "a6485f83-e701-4551-a66d-577f04c339fe",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942877145
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "a6485f83-e701-4551-a66d-577f04c339fe",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942877468
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "a6485f83-e701-4551-a66d-577f04c339fe",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942877475
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "a6485f83-e701-4551-a66d-577f04c339fe",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942877478
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942878169
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942878243
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942878280
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942878660
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942878667
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942878670
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942880072
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942880115
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942880139
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942881439
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942881471
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942881488
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942881954
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942881993
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942882015
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942882470
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942882499
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942882515
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942883291
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942883330
+      }
+    },
+    {
+      "type": "event",
+      "method": "log.entryAdded",
+      "params": {
+        "type": "javascript",
+        "level": "error",
+        "source": {
+          "realm": "f0672ae4-1dcf-4857-90a5-f8d778c43ee2",
+          "context": "b21547e1-c641-40cf-9eff-b7223262c34d",
+          "userContext": "default"
+        },
+        "text": "Invalid markup: Incorrect number of children for <munder/> tag.",
+        "timestamp": 1793942883352
+      }
+    }
+  ],
+  "network": {
+    "events": 183,
+    "fetchErrors": 0,
+    "newPageErrors": 0,
+    "inheritedMathMLWarnings": 51,
+    "pending": 0,
+    "idleWaits": 3,
+    "quiet_ms": 750,
+    "timeout_ms": 30000,
+    "departures": 1
+  },
+  "new_sources": [
+    {
+      "status": 200,
+      "bytes": 18836,
+      "sha": "747822463e8ef4b57e2ed406719b48b19b91c59473ac1b89ef12757d38b71c04"
+    },
+    {
+      "status": 200,
+      "bytes": 43661,
+      "sha": "024a815649c17a392b0d522b9f391caa90461a4fa09992967103bdeaa6c15ba1"
+    },
+    {
+      "status": 200,
+      "bytes": 401,
+      "sha": "5591c785fb4075a6168b84e44b5aadcef67350e46cf8e7d95d6978d07a02087d"
+    }
+  ]
+}

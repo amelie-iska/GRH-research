@@ -67,7 +67,14 @@ def token_panel(m):
  count+=1
  return heading+'<aside class="reader-lab" id="lab-convextok"><h3>Certified vocabulary and surface-path laboratory</h3><p>Original small examples of ConvexTok: inspect the occurrence DAG, fractional capacities, vocabulary choices and shortest segmentations, with exact rational certificates. The genus-two and genus-four cases encode finite permitted words of the infinite dessin algebra; they do not replace it by a finite algebra.</p><p><a href="/convextok.html">Open the tokenisation laboratory separately</a> · <a href="https://arxiv.org/html/2605.22821v1">Primary paper v1</a></p><iframe loading="lazy" src="/convextok.html?embed=book" title="ConvexTok vocabulary, LP certificates and dessin paths" height="1100"></iframe><details><summary>Complete executable optimisation and certificate code</summary><button class="load-code" data-source="/examples/tokenization/model.py">Load complete source</button><pre class="source-code"></pre></details><p>Exact small-instance optimisation, not trained language-model evidence, a coherent quantum tokenizer or a GRH proof. LP and rounding examples are not yet formalized in Lean.</p></aside>'
 s=re.sub(r'<h3 class="sectionHead">.*?</h3>',token_panel,s,flags=re.S)
-assert count==13, 'Expected thirteen unique canonical laboratories, including complementary physical datasets'
+def coherent_band_panel(m):
+ global count
+ heading=m[0];text=' '.join(re.sub('<[^>]+>',' ',heading).lower().split())
+ if 'coherent dual bands, actual cutoffs and arithmetic localization' not in text:return heading
+ count+=1
+ return heading+'<aside class="reader-lab" id="lab-coherent-band"><h3>Finite Schur matrix inspector</h3><p>All three saved 14 × 29 auxiliary matrices retain generators, factors, actual cutoff coefficients, complex values and raw zeros. Saved 55-digit values are numerical consistency checks, not interval certificates or a full signed-kernel estimate.</p><p><a href="/coherent-band.html">Open the matrix inspector separately</a></p><iframe loading="lazy" src="/coherent-band.html?embed=book" title="Actual finite Schur matrices and state values" height="1120"></iframe></aside>'
+s=re.sub(r'<h3 class="sectionHead">.*?</h3>',coherent_band_panel,s,flags=re.S)
+assert count==14, 'Expected fourteen unique canonical laboratories, including the finite Schur replay'
 
 s=s.replace('</body>','''<script>document.querySelectorAll('.load-code').forEach(button=>button.onclick=async()=>{const r=await fetch(button.dataset.source);const p=button.parentElement.querySelector('pre');p.textContent=r.ok?await r.text():'Source unavailable';button.hidden=true;});
 function fitReaderMath(){

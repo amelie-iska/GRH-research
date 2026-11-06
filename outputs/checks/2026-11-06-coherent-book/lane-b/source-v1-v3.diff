@@ -1,0 +1,63 @@
+--- planning/coherent-book-20261106/lane-b/frozen-v1/coherent-band-core.tex
++++ papers/coherent-band-core.tex
+@@ -40,7 +40,7 @@
+ an $S$-argument below is a different object, not restoration of a deleted
+ raw row value.
+ 
+-Only the original unweighted two-pivot rows are used:
++Let $A_1,A_2\ge1$. Only the original unweighted two-pivot rows are used:
+ \[
+  u=u_0\alpha_{\mathfrak v_1}\alpha_{\mathfrak v_2}^{\,2},\qquad
+  A_i\le N\mathfrak v_i<2A_i,\qquad
+@@ -320,12 +320,13 @@
+ supported on split rational primes. The original good masks require
+ \emph{both} primes above each such rational prime to avoid $S$;
+ $S$ need not be enlarged or conjugation-stable. There are $O(D)$
+-ordered annular pairs. If $S_{\rm eq}$ denotes their full primal
+-part in~\eqref{cbk:normalization}, then
++ordered annular pairs. Define $S_{\rm eq}$ as the normalized contribution to $S_1^{AA}$,
++namely $D^{-1}$ times their full primal contribution to $\mathcal P_D$
++in~\eqref{cbk:normalization}. Then
+ \begin{equation}\label{cbk:equal-target}
+  |S_{\rm eq}|\ll B_W^2R_wD^\epsilon\ll B_W^2R(DH)^\epsilon.
+ \end{equation}
+-Their full orientation mean at norm $N$ is exactly
++Before the factor $D^{-1}$, their ordered orientation sum at norm $N$ is
+ \begin{equation}\label{cbk:orientation}
+  \begin{gathered}
+  a_U(N)^2|W(N/D)|^2
+@@ -377,9 +378,8 @@
+ The $S$-local Fourier-mean sublattice $\beta=\gamma_c\zeta$ has
+ coefficient $r_{\mathfrak k^2}\tau_{\mathfrak q}
+ \overline{\vartheta_{\mathfrak q}(\zeta)}$, where $r=\sum P$.
+-Its six-unit orbit vanishes only when
+-$\vartheta_{\mathfrak q}|_{\mu_6}$ is nontrivial; the surviving
+-condition is
++The six-unit projection annihilates every nontrivial unit restriction
++and retains the unit-trivial branch, whose condition is
+ \begin{equation}\label{cbk:unit-selection}
+  N\mathfrak m\equiv N\mathfrak n\pmod{36}.
+ \end{equation}
+--- planning/coherent-book-20261106/lane-b/frozen-v1/coherent-band-details.tex
++++ papers/coherent-band-details.tex
+@@ -898,11 +898,15 @@
+ finite $S$-ring consistency check, not an arithmetic-family or
+ asymptotic band test.
+ 
+-The full equal-norm part of this retained unit-trivial set is
+-already localized by Proposition~\ref{cbk:equal}. Unequal norms
+-congruent modulo $36$ remain, together with the complementary
+-literal residues. Nothing proves that their combination in
+-\eqref{cbk:literal-band} is small. At a pure critical block a
++Proposition~\ref{cbk:equal} controls the whole primal equal-norm
++sector. That alone does not control this sector in an individual
++literal band or $S$-mean channel. To formulate a literal unequal-norm
++problem, impose $N\mathfrak m\ne N\mathfrak n$ on the original pair
++sum before applying~\eqref{cbk:literal-primal} and
++\eqref{cbk:literal-Poisson}. The projected formula retains unequal
++norms congruent modulo $36$ as well as all complementary literal
++residues. Neither the full $\mathcal B_Y$ nor its separately projected
++unequal-norm version is proved small here. At a pure critical block a
+ sufficient band estimate would be
+ \[
+  |\mathcal B_Y|\ll_{S,\nu,W,\epsilon}

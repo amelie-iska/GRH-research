@@ -1,0 +1,35 @@
+{
+  "schema": "intermediate-kernel-root-final-integration-v1",
+  "utc": "2026-11-06T03:31:28.042532+00:00",
+  "passed": true,
+  "source_sha256": {
+    "planning/intermediate-kernel-20261106/lane-a/HONEST_BV_MELLIN_INTERMEDIATE-v1.md": "985295ddbdb03b721a68ce7a1397ca5c80b75c93df26edfc874f028be0b2cb8f",
+    "planning/intermediate-kernel-20261106/lane-b/EXACT_FINITE_K_ALL_J_BOUND-v1.md": "8197418d78d586cc67a24a89baf8eb49b2d53a18e26f9f39698e0c9e7450048d",
+    "planning/intermediate-kernel-20261106/lane-c/GLOBAL_ROOT_MULTIPLICATION-v2.md": "25ad1b4abdcaa0598e4aec079322b4a834d180e7f9409ea5eff411985ee7503c",
+    "planning/intermediate-kernel-20261106/lane-b/ALL_COMPONENT_EXACT_PREFIX-v3.md": "b978ac2f1cc3969d004c98afb94ad224dabef91eb1d4e9cda3c7fcd66829a07e"
+  },
+  "root_directly_read_and_checked": [
+    "Finite hierarchy has unchanged eta(k)^2 and only norm exponent2+2j. Uniform j norm follows from original-annulus real contractions, not AU/beta factorization.",
+    "Y^j dominance occurs only inside positive subsequence norms after exact gcd inversion; S-h geometric exponents remain positive.",
+    "BV Mellin gamma-product tail is t^(2sigma-2); fixed0<sigma<1/2 gives L1, prefix geometry requires sigma<1/6, and epsilon relabelling never evaluates sigma0.",
+    "The second Mellin vector is evaluated at conjugate(s) before conjugation. Off-real-axis pairings are bilinear, not PSD.",
+    "All-component Omega=bar(sigma)psiA bar(psiB)bar(gammaA)gammaB; root gauges u_m and v_n remain distinct and rho need not factor sourceGamma.",
+    "Primitive sigma(k^2 ell e)bar(sigma(h)) zero values retained; no division by those values and no original raw S zero restored.",
+    "Exact conductor factor F_S^(s-1/2) has modulus<=1 only for fixed real part<1/2; F_S remains in actual identity.",
+    "Two different residual classes are handled by row Cauchy with separate positive norms, original AU(da)/common W and all primitive phases retained.",
+    "No full-dual limit from a growing prefix bound. Mixed X~D power3/4 is partial; pure X=D power11/12, global9/8 and whole13/12 remain unchanged."
+  ],
+  "independent_peer_reviews_are_separate_receipts": true,
+  "no_new_controls_rerun_for_this_review": true,
+  "no_Lean_full_kernel_target_or_GRH_completion": true,
+  "previous_review_preserved": {
+    "path": "outputs/checks/2026-11-06-intermediate-kernel/root/integration-review-v2.json",
+    "sha256": "fd6c01def6866c293880f3e55cf08ce9b5f01b81fb89843c280539c60989c6cc"
+  },
+  "v2_to_v3_diff_checked": "Only title and explicit fixed lambda=min(1/12,eta0/4), normepsilon=eta0/2 absorption expansion; no mathematical hypothesis or kernel changed.",
+  "all_component_final_peer_gate": {
+    "path": "outputs/checks/2026-11-06-intermediate-kernel/lane-c/all-component-prefix-acceptance-v2.json",
+    "sha256": "ea05206ec7c7460bd1ea27635ab6f24147f07e44e4e8de9594f896750cefb653",
+    "passed": true
+  }
+}

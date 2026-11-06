@@ -1,0 +1,32 @@
+{
+  "schema": "new-intermediate-controls-inputs-v1",
+  "passed": true,
+  "utc": "2026-11-06T03:16:43.299965+00:00",
+  "system_python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "existing_approved_environment_manifest": "outputs/checks/2026-11-06-dual-window/root/sharp-tail-controls-v1/environment-receipt-v2.json",
+  "existing_manifest_sha256": "57eb2c2e649d63cf7fef95db97b499ee9c4665873f69f6a0930c0ebb5c191b6b",
+  "all87_existing_pure_mpmath_sources_match": true,
+  "no_install_upgrade_or_environment_edit": true,
+  "PYTHONDONTWRITEBYTECODE": "1",
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "nice": 15,
+  "mpmath": "1.3.0",
+  "dps": 65,
+  "source_sha256": {
+    "planning/intermediate-kernel-20261106/root/check_hecke_gaussian_v1.py": "8093a6a7c6d979bcac40e21e235b2ce4bf4578584145f51929c4751a91ac021b",
+    "planning/intermediate-kernel-20261106/root/check_hecke_unit_edges_v1.py": "90a55ed5ab41778a788c3e4f906fed030ea5836e11c94a28755713b330904c1d",
+    "planning/intermediate-kernel-20261106/root/check_critical_mellin_v1.py": "e1245eafc95604d5b9c25626663c1d1db3e8f5554a0edb20fe973f9f4afb3909",
+    "outputs/checks/2026-11-06-intermediate-kernel/root/hecke-gaussian-v1/controls-v1.json": "037c544c4d730402a25043cf6d6de71e87bdfe743f53da19dcd5a984a5ec189e",
+    "outputs/checks/2026-11-06-intermediate-kernel/root/hecke-unit-edges-v1/controls-v1.json": "e1d1d8e4647b6150bc95671c9e47a3a6dd81c0fd75e64e7c885bc2abc00693c4",
+    "outputs/checks/2026-11-06-intermediate-kernel/root/critical-mellin-controls-v1/controls-v1.json": "5d6ced4df2c62af0149f82a524058061e07fa5c9c71fef58cba7ee7628364e21",
+    "planning/intermediate-kernel-20261106/lane-c/GLOBAL_ROOT_MULTIPLICATION-v2.md": "25ad1b4abdcaa0598e4aec079322b4a834d180e7f9409ea5eff411985ee7503c",
+    "planning/intermediate-kernel-20261106/root/CRITICAL_MELLIN_DYADIC-v1.md": "62937830ef87cd1f802a0d29cd7961fbec0240eb503912d3759f5afc488d51cb"
+  },
+  "new_checks": 152,
+  "new_Gaussian_FE_cases": 14,
+  "new_Mellin_cases": 15,
+  "scientific_scope": "Fresh Hecke root-normalization/Gaussian and critical-line analytic consistency tests, NOT actual original arithmetic-family data; no interval enclosures and no proof by numerics",
+  "no_old_250_or_previous_trace_checks_rerun": true,
+  "no_new_Lean_or_GRH_claim": true
+}

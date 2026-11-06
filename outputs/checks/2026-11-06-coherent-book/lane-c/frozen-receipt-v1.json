@@ -1,0 +1,121 @@
+{
+  "all_12_protected_HEAD_index_states_unchanged": true,
+  "all_edits_checks_remote_Linux": true,
+  "browser_training_or_new_interval_proof": false,
+  "checks_sha256": {
+    "outputs/checks/2026-11-06-coherent-book/lane-c/browser-module-preparation-v1.json": "db2bba2e39098a1ae961a2accaeb1a3e89f6c7443ee18fae49f8f97ef5e61cf3",
+    "outputs/checks/2026-11-06-coherent-book/lane-c/extraction-v1.json": "f21babf83dcb4fcabe0bcd9313736ae59fed9ab1974db53877e49c2b1368f54d",
+    "outputs/checks/2026-11-06-coherent-book/lane-c/figure-v4/figure-final-v1.json": "769ac7d6eb253e702b4254b61939df32dca38c305ec244f0c1ea32077779c7a7",
+    "outputs/checks/2026-11-06-coherent-book/lane-c/figure-v4/figure-receipt-v1.json": "fab8a4f9da8fecb6b373af1b2849296469380ba52e60a0ff3502e69ec969c1a0",
+    "outputs/checks/2026-11-06-coherent-book/lane-c/lab-static-v1.json": "409b645904177f81ffac72f0b1b081731f40fea231dd8b22932dbf9e79e2a1b6",
+    "outputs/checks/2026-11-06-coherent-book/lane-c/payload-check-v1.json": "054ef6ae8f67dfe6bf2398a988ff8d32984a50873f34d2791bf6d6802ea29eeb",
+    "outputs/checks/2026-11-06-coherent-book/lane-c/runtime-check-v1.json": "0d400332f77c2c621d8eec596e2a4139f0881180b79d4aad0df02db4bcaffd61",
+    "outputs/checks/2026-11-06-coherent-book/root/combined-browser-v2/browser.json": "59a60cb3bdf10ea6dce4caf7387683547a76f31f28d9676bcfd9b7ed21f0c301",
+    "outputs/checks/2026-11-06-coherent-book/root/combined-browser-v2/coherent-band-lab.json": "e6a4f0eb085a70c0a6812824d488c1df7b3ba5ebc3c7baca2ad67065476cf60b",
+    "outputs/checks/2026-11-06-coherent-book/root/lab-visual-v1.json": "177fc77a69ad75cf15e32df7e3b4bc1729d37ea4d37d34270d65aabecce037ca"
+  },
+  "created_utc": "2026-11-06T05:27:55.959177+00:00",
+  "current_figure_version": 4,
+  "current_whole_signed13over12_global9over8_unchanged": true,
+  "data_source": {
+    "checks": 1511,
+    "dps": 55,
+    "inputs_sha256": {
+      "examples/coherent_band/extract_payload_v1.py": "c6fc0bd0e5238b56d0ea05b48d8852c538b9f39b1699ff824de5802dc7d714c3",
+      "examples/profile_uniformity/ideal_tower.py": "77dc26658a188ff6669bf577fcb8298b875ab2a5e4f8e0bfe628b94c9b9430d4",
+      "outputs/checks/2026-11-06-coherent-band/root/finite-schur-controls-v1/controls-v1.json": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+      "planning/coherent-band-20261106/root/FINITE_CUTOFF_SCHUR-v1.md": "f07d6228b1e192c07553f6af38c5ce8371c975f48a4dd691c419923c9e973d43",
+      "planning/coherent-band-20261106/root/check_finite_schur_v1.py": "eb159c6dffdf32ef1442b6a5990141ea48d4d6c44b7a17020a6a10d5a1808fdd"
+    },
+    "interval_enclosures": false,
+    "path": "outputs/checks/2026-11-06-coherent-band/root/finite-schur-controls-v1/controls-v1.json",
+    "sha256": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04"
+  },
+  "figure_layout": "2+1,minimum12ptsource/10.216ptat6inwidth; author standalone renderPASS; final root book-context check remains separate",
+  "files": {
+    "book/figures/coherent-band-workflow.pdf": {
+      "bytes": 206923,
+      "sha256": "b2fb73f47c6412c87b7d95fffc0332daf472f2d6c83150cab08304c20e73b5a8"
+    },
+    "book/figures/coherent-band-workflow.svg": {
+      "bytes": 248988,
+      "sha256": "7a38e87c1905d47cd40d1b7752b45386be3e7badc7b60e24eaa137d7c3898799"
+    },
+    "book/figures/coherent-band-workflow.tex": {
+      "bytes": 197564,
+      "sha256": "1e689122c7daaaf89c0e1521c5abba68c5c4198e71cffa231ca77e7de3de4cea"
+    },
+    "examples/coherent_band/README.md": {
+      "bytes": 5052,
+      "sha256": "53a890462da7bf727469c52648eec98a9fc56395ffe37120597b0f3deab021d5"
+    },
+    "examples/coherent_band/build_lab_v1.py": {
+      "bytes": 1800,
+      "sha256": "e99bd1bd7bc0075aa284144a650f379ca2ce3f64081d35123d37a4a3656d4012"
+    },
+    "examples/coherent_band/build_workflow_v4.py": {
+      "bytes": 8102,
+      "sha256": "ba64e60d5f4f1d2ac7ae4fc473c3a1bef04efc14bd3dfa6741e2c0a0b32c6deb"
+    },
+    "examples/coherent_band/check_payload_v1.py": {
+      "bytes": 4252,
+      "sha256": "d0fe2d4173e94b58fc37510da12c282c463a64ce15b437909dbcc3665a101b89"
+    },
+    "examples/coherent_band/check_runtime_v1.mjs": {
+      "bytes": 2027,
+      "sha256": "5b291d0f2c163ad8c9a95cb2c9b23faaa7936f0ae3efbc922989f1d8b74b8ff9"
+    },
+    "examples/coherent_band/extract_payload_v1.py": {
+      "bytes": 6819,
+      "sha256": "c6fc0bd0e5238b56d0ea05b48d8852c538b9f39b1699ff824de5802dc7d714c3"
+    },
+    "examples/coherent_band/lab.css": {
+      "bytes": 7520,
+      "sha256": "4523ce0c13d0cabeb0775a5fe0418c89d8aaf23980b4bfebbd52307151309cad"
+    },
+    "examples/coherent_band/runtime.mjs": {
+      "bytes": 15127,
+      "sha256": "8adfe9b65f58fb877ba51fe6e844f89531644363b3e5e842fd27064d3a44e919"
+    },
+    "examples/coherent_band/template.html": {
+      "bytes": 9775,
+      "sha256": "69445c310d6ab343024bdad1d65638a21da5b639237322df10fc6560308c7d27"
+    },
+    "planning/coherent-book-20261106/lane-c/check_lab_v1.mjs": {
+      "bytes": 11895,
+      "sha256": "094fbfb28a46da943ced6f16ed40207e1fc97a57ff97cd780cc085392999247d"
+    },
+    "web/coherent-band.html": {
+      "bytes": 32635,
+      "sha256": "c31a9dd07fa8b43dad03be21f94b10cdd5b1d7c43455253910415042743a4757"
+    },
+    "web/data/coherent-band-schur-v1.json": {
+      "bytes": 461431,
+      "sha256": "e540ac344bbf3d4d07d1ac9fcb8c5cd336a6195c7130a602567242c33bc73171"
+    }
+  },
+  "frozen": true,
+  "historical_failed_figure_versions_and_initial_page_preserved": true,
+  "historical_v1_v2_v3_workflow_producers_not_current_reproduction_inputs": true,
+  "no_dependency_install_auth_publication_or_index_actions": true,
+  "no_external_web_CSS_or_module_asset": true,
+  "old_web_sources_unchanged": true,
+  "passed": true,
+  "rendered_stage_cells_checked": 3654,
+  "root_browser_checks": 58,
+  "root_browser_layouts": 54,
+  "root_browser_visual_gate_passed": true,
+  "root_global_WS": {
+    "actual_departures": 2,
+    "events": 193,
+    "fetch_errors": 0,
+    "new_page_errors": 0,
+    "pending": 0,
+    "quiet_ms": 750,
+    "timeout_ms": 30000,
+    "timeouts": 0
+  },
+  "saved_positions_checked": 1218,
+  "scientific_controls_SVD_Perron_rerun": false,
+  "scope": "C-owned source-bound standalone auxiliary matrix inspector/data and readable workflow assets. Root owns new book/native final integration, source promotion and any publication gates."
+}

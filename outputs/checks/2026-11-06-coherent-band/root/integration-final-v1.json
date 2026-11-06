@@ -1,0 +1,40 @@
+{
+  "schema": "coherent-band-root-final-integration-v1",
+  "utc": "2026-11-06T04:22:11.485448+00:00",
+  "passed": true,
+  "source_and_peer_sha256": {
+    "planning/coherent-band-20261106/root/FINITE_CUTOFF_SCHUR-v1.md": "f07d6228b1e192c07553f6af38c5ce8371c975f48a4dd691c419923c9e973d43",
+    "planning/coherent-band-20261106/lane-a/CUBIC_TRANSPOSED_DIVISOR_BANDS-v2.md": "1fcf324837d2d8560b53aa548b916be6488d936af4dcf7001fdc00e68c152e67",
+    "planning/coherent-band-20261106/lane-b/LITERAL_RAY_RECOMBINATION-v2.md": "c7254d2cc9c94b82de75a17a08504986a22e53baa034f740cb979ce574b17fb7",
+    "planning/coherent-band-20261106/lane-c/EQUAL_NORM_COHERENT_SECTOR-v2.md": "fb56956bf7ab0fcf765b34f617a874fbba2d37438d14335684d57607337175c1",
+    "outputs/checks/2026-11-06-coherent-band/lane-b/review-root-cutoff/acceptance-v1.json": "c72bd2107f25ce2119418621db1910990503af797b19b009b33b427de692bcd8",
+    "outputs/checks/2026-11-06-coherent-band/lane-b/review-a-cubic/acceptance-v1.json": "f3c428b94b93f5fa2460e20438e933481fc4c22d86b8465087e50926593b081f",
+    "outputs/checks/2026-11-06-coherent-band/lane-a/review-b-literal-ray/acceptance-v1.json": "73d7d1b6c39b4419a8fbfbffef6f3253b66ac0218abf2777b50a37875eb75493",
+    "outputs/checks/2026-11-06-coherent-band/lane-b/review-c-equal-norm/acceptance-v1.json": "794e3e8056ff416ff207eb9a627bedb7ade699b7f672fbc9281fdcd253547658",
+    "outputs/checks/2026-11-06-coherent-band/lane-b/review-c-equal-norm/precision-addendum-v1.json": "be3f7f540e8a8d57d8f77bdebeacf8e1ed2161b3881bd010b843932b74c4691e",
+    "outputs/checks/2026-11-06-coherent-band/lane-c/cubic-transposed-divisor-acceptance-v1.json": "59c42799777afca3380f6444e99a5d4db3b677358bfba67e59c1a1c6f50390b8"
+  },
+  "root_directly_checked": [
+    "Finite AU cutoff Schur uses original coprimeSF products, half-integer endpoints, honest finiteheight/Frobenius error, ordinary row/right-column diagonal integral; W common fixed seminorm explicit.",
+    "Identity-source-class d gives primitive tildechi_d good conductor and exact xi_da=tildechi_d xi_a; angular/radial root correction1; reciprocity gives beta_da row phase times beta_a tildechi_a(d)^2.",
+    "Actual cubic d-by-a matrix is primary cubic residue Example2.2, fixed sourceclass selectors/rawmask contractions; squarefree parameters and physical E,L allow the pinned n3 theorem, not a conductor-parametric comparison.",
+    "Both AU/W transfer constants are squared; coupled d/z norm D^(2sigma)Theta3/E and oldPhi comparator yield the ONCE/D normalized min; fixed0<sigma<1/2 only.",
+    "Literal CRT factor theta_q(gamma_c)bar theta_q(beta) Phat(beta gamma_q^-1) and L/(NcQ) Poisson prefactor correct. Mean branch beta=gamma_c zeta differs from globalbeta0.",
+    "Unit selectionNm=Nn mod36 holds ONLY on that dual unit-complete Smean branch; it is not a deletion of all other literal-frequency channels or of arbitrary original rows.",
+    "Literalv2 uses unit-trivial induced ideal character on ALL ideals, so S-supported modes require no impossible primary1mod3 generator.",
+    "Equalnorm coprimeSF columns are conjugates with split rational-squarefree norms, paired-good masks preserve arbitrary originalS; exactnormpullback/orientationproduct retains every mean.",
+    "Full primal EQ sector target follows from O(D) pairs and ONCE/D; sparse prefixRY/D and exactwhole-minusprefix signed tail are distinct. Desired full/unequal target constants fixedW qualified in v2.",
+    "No new global9/8/whole13/12 estimate, all-d/mixedhighdual control, Mobius-sign saving, physicalPSD/lowerbound, determinant/zero-location, Lean or GRH inference."
+  ],
+  "new_primary_application_read": {
+    "public_version": "deFaveri arXiv2610.04045v1, Theorem1.1 atn3 and actual Example2.2",
+    "pdf_sha256": "97720b3cacccbedb9c2014520ad4d128ae23afd0a781bdeff27dab4e86b7c726",
+    "text_sha256": "ef550aa4bca1659c6d98ebf69e2cbd42a2793b707f6171f53d1b2baeb8654a57",
+    "full_cache_local_only_not_for_public_closure": true
+  },
+  "no_scientific_controls_reexecuted_for_review": true,
+  "preserved_initial_integration": {
+    "path": "outputs/checks/2026-11-06-coherent-band/root/integration-review-v1.json",
+    "sha256": "306280823c363370a629bb9ebe974e1ec3a667bcc785a0d30652269eb84c9137"
+  }
+}

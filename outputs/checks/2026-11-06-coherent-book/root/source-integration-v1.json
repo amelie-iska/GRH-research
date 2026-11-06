@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "producer_sha256": "8b7efa64ce4ca476684db5d451b39b425d41f23928dfc156783451d93f6938f0",
+  "edits": [
+    {
+      "path": "book/chapters/coherent-band-core.tex",
+      "before": null,
+      "after": "747822463e8ef4b57e2ed406719b48b19b91c59473ac1b89ef12757d38b71c04"
+    },
+    {
+      "path": "book/chapters/coherent-band-details.tex",
+      "before": null,
+      "after": "024a815649c17a392b0d522b9f391caa90461a4fa09992967103bdeaa6c15ba1"
+    },
+    {
+      "path": "book/chapters/coherent-band-figure.tex",
+      "before": null,
+      "after": "5591c785fb4075a6168b84e44b5aadcef67350e46cf8e7d95d6978d07a02087d"
+    },
+    {
+      "path": "book/chapters/weighted-cutoff.tex",
+      "before": "7ed9409934cf12d47812454c05e7a98e2163c507c31faa66dd860c0d5dfa9cb2",
+      "after": "fef7720f6fc1c6464a7c24e674dfc82c562fb12104ec1fcf36a6a6970318a32c"
+    },
+    {
+      "path": "scripts/assemble_book.py",
+      "before": "cb6108012525fd6310d96080053f1b369d4bbae0bf20f3741ca013b7e7609d64",
+      "after": "b0edd5c3df04c65c0a44346615bac6cadb9bf10aaac314ae88f508fc1cf464b8"
+    },
+    {
+      "path": "book/main.tex",
+      "before": "8ff1f3d5af58fd657df57d4d2d254d1f1a764a3677d0c2bcf48ed52ddde57b5e",
+      "after": "f9ffbeb5e9e204ee980042e2d753999e618aa3aed67cc7f3f0b79855b4b53561"
+    },
+    {
+      "path": "papers/resolutions-concise.tex",
+      "before": "286624914af8e64c3b91dc80c19bb5b030310bcb0b1553814a60a28d70ff7124",
+      "after": "901cc181c7035e7a54aee78c1e127b12908053002a983896b36058daaf9cb091"
+    },
+    {
+      "path": "papers/resolutions-extended.tex",
+      "before": "77f602d083f12029b5cd7c4a14d8298c46e7ece47527633faf148002ed7eac42",
+      "after": "57c4628a942ec49a3f3c0171563014a647385ba563e6d268b1fbd1ac9daa522f"
+    },
+    {
+      "path": "papers/validated-oracle-concise.tex",
+      "before": "eead4b43eac8c21c2dff93e2663924d6f5fd2d8375aaca5286900b285a792f7a",
+      "after": "13e736a77c91d9e13488a7f54a07bb74f2fc3923a7d4f9714ac8f4779b678cfe"
+    },
+    {
+      "path": "papers/validated-oracle-extended.tex",
+      "before": "bba389591ec764dd22b94cb4b2dfb2d041fd9fc7fa346dcb5f3264e12d1ceeb0",
+      "after": "9b8896ed3604e313f4da6789085605d60f831756af12d35bfccdd5d7dc0044d0"
+    },
+    {
+      "path": "scripts/prepare_book_html.py",
+      "before": "c4831a28346d9bff03419c0536e5d66b9b216c196e49f32d9b110498ad01d96e",
+      "after": "4c808528ef84281ac897b7b7a407e1eb89da8b8110e8d6a177e6cc5c70111f55"
+    }
+  ],
+  "closure": {
+    "resolutions-concise": {
+      "labels": 185,
+      "references": 62,
+      "expanded_sha256": "72936efa9b496e9ad303556001d4a9cfc7c814d8c0c57105227796293f865e71",
+      "core": true,
+      "details": false
+    },
+    "resolutions-extended": {
+      "labels": 339,
+      "references": 298,
+      "expanded_sha256": "159f6cbc06d6925bb157763a06d050960a3d6be36c1f989e7cd213ca90b85442",
+      "core": true,
+      "details": true
+    },
+    "validated-oracle-concise": {
+      "labels": 137,
+      "references": 58,
+      "expanded_sha256": "ce871f1c46e9cf37bc27264832c5b4c9ea7b5f59dc534bce0d43794d14a0cc38",
+      "core": true,
+      "details": false
+    },
+    "validated-oracle-extended": {
+      "labels": 279,
+      "references": 274,
+      "expanded_sha256": "84e6cd9c631bf0c4d1334882cd2e51460d5c811a01e6829e27122a97874d605a",
+      "core": true,
+      "details": true
+    },
+    "book": {
+      "labels": 381,
+      "chapter_count": 40,
+      "expanded_sha256": "8dfd49cf024297400447c1a7b1785da7b26fa4579ff44376bec587d7063814c9"
+    }
+  },
+  "math_review_sha256": "9d1d9567b47f13998fb76a2959bf0b585f43badbcd99abfc626e3ed6872c41a9",
+  "figure_receipt_sha256": "3a1a81cba698da7de2b769f77e9a8964f50bb8f21b29e81db0c1b2bf57cdea53",
+  "general_assembler_executed": false,
+  "old_live_outputs_edited": false,
+  "index_edited": false,
+  "new_Lean_declarations": 0
+}

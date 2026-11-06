@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-11-06T05:49:10.217698+00:00",
+  "guards": [
+    {
+      "assumption": "All15 heading AUX counters must be printed",
+      "correction": "cbk:boundary is an explicitly unnumbered paragraph;14 numbered headings+1 unnumbered paragraph verified against source."
+    },
+    {
+      "assumption": "conversion.log must be empty stderr",
+      "correction": "It captures334744 bytes of successful Pandoc HTML stdout; diagnostic warning classification, resolved native MathML and source hashes verified instead."
+    }
+  ],
+  "no_artifact_or_source_mutation": true,
+  "no_build_browser_or_science_rerun": true,
+  "scope": "Two read-only reviewer assumptions, not artifact/build/browser failures"
+}

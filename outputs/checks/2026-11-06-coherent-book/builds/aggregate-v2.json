@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "results": {
+    "focused-concise": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/scripts/build_remote_articles.py",
+        "--edition",
+        "concise",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/focused-concise"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/focused-concise/build-record.json",
+      "record_sha256": "76ab8325716d7bcf7e8f7de9d616854f6a18e8d5335db06d06c7a5df5e0e04da",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/focused-concise/resolutions-concise.pdf",
+      "pdf_sha256": "c5813782e4d52328f91d144651c69215015d0002b1d9da3d57a6034b804e27c5",
+      "pages": 76
+    },
+    "notes-concise": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/physical-sieve-20261105/builds/build_notes_v1.py",
+        "--edition",
+        "concise",
+        "--root-go",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/notes-concise",
+        "--physical-core-sha",
+        "df49c3f938ab80f80e4c0bb2efb4f71004a2d311dc21f952ecd45077dd35f939",
+        "--physical-details-sha",
+        "4713c2c4e8496a87a8678406d2d43f02ab0bf82e4152fed15938aef52b3b9bf4",
+        "--coherent-core-sha",
+        "5b3ab5c38b5c9130867793ac2e21c7dbc60560bc7d4eadbcc40fb1f334659f6c",
+        "--coherent-details-sha",
+        "92dfe3077dffa048471b0705539bd82b2648c2e4b021c331c2753b6fb655176f"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/notes-concise/build-record.json",
+      "record_sha256": "bf9ea0cc8e5f8882ee405d5f9d2f4278332caca12f64ace380cbb12832460b6f",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/notes-concise/validated-oracle-concise.pdf",
+      "pdf_sha256": "803fffab7bcebb1a053cfc1e8293156e76f9ea2ac8ab31415e86fd69b36854e7",
+      "pages": 34
+    },
+    "book-pdf": {
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/book-pdf-v2/main.pdf",
+      "pdf_sha256": "dea24dafd8d6a662268f91210b46282a3815ec49bb971b555c6e1c3fd9dc18fa",
+      "pages": 319,
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/book-pdf-v2/build-record.json",
+      "record_sha256": "e598505e1bf23254b0ff906e00157f1e6eaf4e396e321b86b6dbe14e0be84d8a",
+      "scope": "Onlyfigurelayoutchanged; fourarticlePDFs reusedsourcebound fromrun-v1."
+    },
+    "notes-extended": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/planning/physical-sieve-20261105/builds/build_notes_v1.py",
+        "--edition",
+        "extended",
+        "--root-go",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/notes-extended",
+        "--physical-core-sha",
+        "df49c3f938ab80f80e4c0bb2efb4f71004a2d311dc21f952ecd45077dd35f939",
+        "--physical-details-sha",
+        "4713c2c4e8496a87a8678406d2d43f02ab0bf82e4152fed15938aef52b3b9bf4",
+        "--coherent-core-sha",
+        "5b3ab5c38b5c9130867793ac2e21c7dbc60560bc7d4eadbcc40fb1f334659f6c",
+        "--coherent-details-sha",
+        "92dfe3077dffa048471b0705539bd82b2648c2e4b021c331c2753b6fb655176f"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/notes-extended/build-record.json",
+      "record_sha256": "0e7bf2df97bdc607660cee7a8df72697ecd2d407dde420c38a86827e67269622",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/notes-extended/validated-oracle-extended.pdf",
+      "pdf_sha256": "d6e5c34d0bdc0ac865905646d391f477f948e2e2bb9aa0cc04acf9b504e790ae",
+      "pages": 105
+    },
+    "focused-extended": {
+      "returncode": 0,
+      "command": [
+        "python3",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/scripts/build_remote_articles.py",
+        "--edition",
+        "extended",
+        "--output",
+        "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/focused-extended"
+      ],
+      "record": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/focused-extended/build-record.json",
+      "record_sha256": "59ec12e2c46c86232523969d30386abdbaacc0c21dcd7023db7d6e014f02f7ed",
+      "passed": true,
+      "pdf": "/home/iska/Documents/LaTeX-projects/GRH-from-Mac-20261104/outputs/checks/2026-11-06-coherent-book/builds/run-v1/focused-extended/resolutions-extended.pdf",
+      "pdf_sha256": "450304b72a1379264dc9759901b73826124f472eb13f899a01dcd9c8cd39ea53",
+      "pages": 215
+    }
+  },
+  "source_guard_sha256": {
+    "book/chapters/coherent-band-core.tex": "747822463e8ef4b57e2ed406719b48b19b91c59473ac1b89ef12757d38b71c04",
+    "book/chapters/coherent-band-details.tex": "024a815649c17a392b0d522b9f391caa90461a4fa09992967103bdeaa6c15ba1",
+    "book/chapters/coherent-band-figure.tex": "5591c785fb4075a6168b84e44b5aadcef67350e46cf8e7d95d6978d07a02087d",
+    "book/chapters/weighted-cutoff.tex": "fef7720f6fc1c6464a7c24e674dfc82c562fb12104ec1fcf36a6a6970318a32c",
+    "scripts/assemble_book.py": "b0edd5c3df04c65c0a44346615bac6cadb9bf10aaac314ae88f508fc1cf464b8",
+    "book/main.tex": "f9ffbeb5e9e204ee980042e2d753999e618aa3aed67cc7f3f0b79855b4b53561",
+    "papers/resolutions-concise.tex": "901cc181c7035e7a54aee78c1e127b12908053002a983896b36058daaf9cb091",
+    "papers/resolutions-extended.tex": "57c4628a942ec49a3f3c0171563014a647385ba563e6d268b1fbd1ac9daa522f",
+    "papers/validated-oracle-concise.tex": "13e736a77c91d9e13488a7f54a07bb74f2fc3923a7d4f9714ac8f4779b678cfe",
+    "papers/validated-oracle-extended.tex": "9b8896ed3604e313f4da6789085605d60f831756af12d35bfccdd5d7dc0044d0",
+    "scripts/prepare_book_html.py": "4c808528ef84281ac897b7b7a407e1eb89da8b8110e8d6a177e6cc5c70111f55"
+  },
+  "old_live_HTML_sha256": "9a9ac7ad8c283951c8dd3eff594a3ec8ff16487adbce06f933869e847d6fffe2",
+  "source_integration_sha256": "091f0aaa76ac5da57bfd8723ff76a99a6dfbfafa796215c63cc5c721d24e9c84",
+  "marker_receipt_sha256": "b3bfa00ccf29938e05f9677883a209566fc4c3d838b9cc84ac01dd36e2e18ee7",
+  "producer_sha256": "98adf2167aecd7150b8a9135ee95864be5d9fb5c31157106515ce29baf1ad17a",
+  "production_promoted": false,
+  "new_Lean_declarations": 0,
+  "figure_layout_revision_receipt_sha256": "769ac7d6eb253e702b4254b61939df32dca38c305ec244f0c1ea32077779c7a7",
+  "book_only_rebuilt": true
+}

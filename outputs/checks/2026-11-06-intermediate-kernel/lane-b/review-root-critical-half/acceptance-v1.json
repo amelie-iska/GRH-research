@@ -1,0 +1,32 @@
+{
+  "checks": [
+    "Actual log-variable Fourier L1 constants",
+    "Exact unit Gamma modulus at half",
+    "Bilinear Mellin conjugate parameter and weighted Cauchy afterd",
+    "FullS prefix2Y/Nh and subunit column count",
+    "FiniteK harmonic logarithm and1/D normalization"
+  ],
+  "governing_note": {
+    "path": "planning/intermediate-kernel-20261106/root/CRITICAL_MELLIN_DYADIC-v1.md",
+    "sha256": "62937830ef87cd1f802a0d29cd7961fbec0240eb503912d3759f5afc488d51cb"
+  },
+  "no_source_or_index_mutation": true,
+  "not_inferred": [
+    "Infinite-y bound or global target gain",
+    "PSD/energy lower bound",
+    "General-root-law assumption"
+  ],
+  "old_controls_rerun": false,
+  "passed": true,
+  "review": {
+    "path": "planning/intermediate-kernel-20261106/lane-b/review-root-critical-half/REVIEW-v1.md",
+    "sha256": "03b01e74835845cd35e75be833dd67f867821774f322c1a988ef4a2184585962"
+  },
+  "source_pins": {
+    "planning/dual-window-20261106/HANDOFF-v2.md": "daa59cabbc6fb81ba3a120546a26699700b3123fa0b7a17de09a93acc64630cc",
+    "planning/dual-window-20261106/lane-b/NEW_LOW_MODEL_BOUND-v4.md": "de79e9639fee4b463ae16901459c3f5552434130b88daa9a8b7cfd7b61d97c5d",
+    "planning/dual-window-20261106/root/SHARP_ROW_DUAL_TAIL-v2.md": "bb2c8277cdcd7673bbca87470bd0d7047cc9eb6bdeace9a1d8423fa9acf31ae1",
+    "planning/intermediate-kernel-20261106/root/CRITICAL_MELLIN_DYADIC-v1.md": "62937830ef87cd1f802a0d29cd7961fbec0240eb503912d3759f5afc488d51cb"
+  },
+  "verdict": "PASS_ACTUAL_SAME_CLASS_RHO1_CRITICAL_HALF_DYADIC_BOUND"
+}

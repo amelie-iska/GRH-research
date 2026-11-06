@@ -1,0 +1,69 @@
+{
+  "schema": "finite-cutoff-schur-author-v1",
+  "utc": "2026-11-06T04:17:11.426419+00:00",
+  "passed": true,
+  "inputs_proof_checker_review_sha256": {
+    "planning/coherent-band-20261106/root/FINITE_CUTOFF_SCHUR-v1.md": "f07d6228b1e192c07553f6af38c5ce8371c975f48a4dd691c419923c9e973d43",
+    "planning/coherent-band-20261106/root/check_finite_schur_v1.py": "eb159c6dffdf32ef1442b6a5990141ea48d4d6c44b7a17020a6a10d5a1808fdd",
+    "examples/profile_uniformity/ideal_tower.py": "77dc26658a188ff6669bf577fcb8298b875ab2a5e4f8e0bfe628b94c9b9430d4",
+    "examples/quantum/requirements-cpu.lock": "bbda0be638105efc4f453c239c925d9e77171898fa84866146a6f55031ca7b5a",
+    "outputs/checks/2026-11-06-coherent-band/root/finite-schur-controls-v1/controls-v1.json": "fd5b33de0c54632b46d0515f5a3f67c7b91ceb896d09bd5f0303256f9fe91a04",
+    "outputs/checks/2026-11-06-coherent-band/lane-b/review-root-cutoff/acceptance-v1.json": "c72bd2107f25ce2119418621db1910990503af797b19b009b33b427de692bcd8"
+  },
+  "theorem": "Exact original AU(da) finite Schur norm transfer G[e² L_T²+32X^(3/2)/T]; U# integer endpoints, T finite, common complex W costs explicit J(W).",
+  "independent_analytic_gate": "outputs/checks/2026-11-06-coherent-band/lane-b/review-root-cutoff/acceptance-v1.json",
+  "new_controls": {
+    "saved_assertion_entries": 1511,
+    "dps": 55,
+    "finite_auxiliary_cubic_matrix_shapes": [
+      [
+        14,
+        29
+      ],
+      [
+        14,
+        29
+      ],
+      [
+        14,
+        29
+      ]
+    ],
+    "D": [
+      121,
+      289,
+      529
+    ],
+    "U": [
+      11,
+      17,
+      23
+    ],
+    "full_saved_matrix_states": 1218,
+    "supported_states": [
+      74,
+      148,
+      210
+    ],
+    "zero_states": [
+      332,
+      258,
+      196
+    ],
+    "inert_factor_states": [
+      6,
+      14,
+      22
+    ],
+    "profile": "ONE fixed complex C_c² polynomial-phase test profile; lemma admits C², original arithmetic application uses its stated C∞ W",
+    "interval_enclosures": false,
+    "complete_original_physical_row_family_data": false,
+    "proof_by_numerics": false,
+    "no_randomness": true
+  },
+  "existing_approved_pure_mpmath_readonly": true,
+  "no_install_or_old_tables_controls_rerun": true,
+  "new_cubic_block_estimate_requires_own_arithmetic_gate": true,
+  "no_Mobius_sign_power_or_whole_signed_GRH_gain": true,
+  "no_Lean_build_browser_publication_or_index_change": true
+}

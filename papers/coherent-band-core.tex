@@ -1,0 +1,407 @@
+% Accepted research integration; no new sieve or whole signed target claim.
+% Sources are pinned in planning/coherent-book-20261106/lane-b/source-map-v1.json.
+\section{Coherent dual bands, actual cutoffs and arithmetic localization}
+\label{cbk:core}
+The physical-row comparison in Section~\ref{phy:core} leaves a signed
+problem. We now retain its exact primitive roots and sharp row capacity,
+prove quantitative finite-prefix and divisor-band comparisons, and
+localize a coherent sector that can already be controlled. The remaining
+unequal-norm signed moment is stated explicitly. These results do not
+improve the whole signed power $13/12$ or the global unsigned power $9/8$.
+The deep sieve input remains the pinned external theorem
+\eqref{phy:input}; its cubic specialization is used below.
+
+\subsection{The original form and the scope of the dual representation}
+\label{cbk:objects}
+Let $K=\mathbb Q(\omega)$, $\mathcal O=\mathbb Z[\omega]$ and
+$\delta=1+2\omega=i\sqrt3$. The fixed set $S$ contains the primes above
+$2,3$ and the original exclusions. All columns are the complete good
+squarefree \emph{ideal} annulus $D\le N\mathfrak m\le2D$, $D>1$.
+Distinct ideals of the same norm remain distinct. Put
+\begin{equation}\label{cbk:coefficients}
+ \begin{aligned}
+ A_U(\mathfrak m)
+   &=\sum_{\substack{\mathfrak r\mathfrak s\mid\mathfrak m\\
+              (\mathfrak r,\mathfrak s)=1\\N\mathfrak r,N\mathfrak s\le U}}
+                    \mu(\mathfrak r)\mu(\mathfrak s),\\
+ c_{\mathfrak m}
+   &=A_U(\mathfrak m)\nu(\mathfrak m)R_{\mathfrak m}(u_0)
+                                      W(N\mathfrak m/D).
+ \end{aligned}
+\end{equation}
+Here $1\le U\le\sqrt D$, $\nu$ is the original fixed unitary
+finite-order column character, and $W$ is one common possibly complex
+smooth profile supported on $[1,2]$, zero at its endpoints.
+Write $B_W=\|W\|_\infty$.
+For a good ideal $\mathfrak v$, let $\alpha_{\mathfrak v}\equiv1\pmod3$
+be its unique primary generator and set
+$R_{\mathfrak m}(\mathfrak v)=(\alpha_{\mathfrak v}/\mathfrak m)_6$.
+The literal symbol is zero at a common prime. A primitive extension at
+an $S$-argument below is a different object, not restoration of a deleted
+raw row value.
+
+Let $A_1,A_2\ge1$. Only the original unweighted two-pivot rows are used:
+\[
+ u=u_0\alpha_{\mathfrak v_1}\alpha_{\mathfrak v_2}^{\,2},\qquad
+ A_i\le N\mathfrak v_i<2A_i,\qquad
+ Nu_0N\mathfrak v_1(N\mathfrak v_2)^2\le H.
+\]
+The ideals $\mathfrak v_1,\mathfrak v_2$ are good, squarefree and
+coprime; all actual literal and ray restrictions remain. The other
+four factors are the unit ideal. The fixed $u_0$ is literal
+unit/$S$-supported, without good-prime support. Extra good frozen
+factors, a sum over varying $u_0$, and arbitrary row weights are not
+included. Write $R=A_1A_2$ and let $R_w$ be the actual number of rows.
+The normalization is
+\begin{equation}\label{cbk:normalization}
+ \begin{aligned}
+ \mathcal P_D&=D S_1^{AA}\\
+ &=\sum_{(\mathfrak v_1,\mathfrak v_2)\ \mathrm{actual}}
+   \sum_{(\mathfrak m,\mathfrak n)=1}
+ c_{\mathfrak m}\overline{c_{\mathfrak n}}
+ R_{\mathfrak m}(\mathfrak v_1\mathfrak v_2^2)
+ \overline{R_{\mathfrak n}(\mathfrak v_1\mathfrak v_2^2)}.
+ \end{aligned}
+\end{equation}
+The original M\"obius signs are already in the two $A_U$ coefficients;
+no additional $\mu(\mathfrak m\mathfrak n)$ is inserted.
+This raw coprime form is not a positive energy or principal-term
+assembly.
+
+\subsection{Primitive normalization and an exact finite-cutoff kernel}
+\label{cbk:primitive-kernel}
+For each source class $A$, use the fixed decomposition
+$\widetilde\chi_{\mathfrak m}=\xi_{\mathfrak m}\psi_A$,
+$\operatorname{cond}(\xi_{\mathfrak m})=\mathfrak m$, and
+$\beta_{\mathfrak m}=\epsilon(\xi_{\mathfrak m})\psi_A(\mathfrak m)$.
+Individual $\xi$ and $\psi$ may have nonzero fixed angular and radial
+unitary types; they are not declared sixth-order.
+The finite source reciprocity factors and the \emph{whole} original
+row-ray projector are expanded in their complete finite character
+basis, with coefficients $h_{AB\rho}(\mathfrak v_2)$.
+On coprime class-$A,B$ columns the resulting primitive character is
+\begin{equation}\label{cbk:eta}
+ \begin{aligned}
+ \sigma&=\operatorname{prim}(\rho\psi_A\overline{\psi_B}),
+ &\mathfrak f_S&=\operatorname{cond}(\sigma),\\
+ \eta&=\xi_{\mathfrak m}\overline{\xi_{\mathfrak n}}\sigma,
+ &F&=N\mathfrak f_S\,N\mathfrak m\,N\mathfrak n.
+ \end{aligned}
+\end{equation}
+Its total infinity type is zero. The actual $S$ conductor, including
+any drop, is retained.
+
+\begin{proposition}[Primitive roots with their types retained]
+\label{cbk:root}
+For a primitive unitary Hecke character
+$\chi((\alpha))=\theta(\alpha)\operatorname{phase}(\alpha)^k
+N(\alpha)^{it}$, with conductor $(\gamma)$, let
+\[
+ \tau_\gamma(\theta)=\sum_{x\bmod\gamma}
+       \theta(x)\exp\bigl(2\pi i\operatorname{Tr}(x/(\delta\gamma))\bigr).
+\]
+Then
+\begin{equation}\label{cbk:root-formula}
+ \epsilon(\chi)=(3N\mathfrak f)^{it}i^{-|k|}
+       \operatorname{phase}(\delta\gamma)^k
+                       \frac{\tau_\gamma(\theta)}{\sqrt{N\mathfrak f}}.
+\end{equation}
+The unit-conductor/principal formula has its usual meromorphic terms.
+For pairwise coprime primitive conductors,
+\begin{equation}\label{cbk:root-product}
+ \epsilon\Bigl(\prod_j\chi_j\Bigr)
+  =i^{\sum_j|k_j|-|\sum_jk_j|}
+       \prod_j\epsilon(\chi_j)\prod_{i\ne j}\chi_i(\mathfrak f_j).
+\end{equation}
+Consequently the actual character in~\eqref{cbk:eta} satisfies
+\begin{equation}\label{cbk:two-gauges}
+ \begin{aligned}
+ \epsilon(\eta)&=\kappa_{AB\rho}u_{\mathfrak m}
+                                      \overline{v_{\mathfrak n}},\\
+ u_{\mathfrak m}&=\beta_{\mathfrak m}\xi_{\mathfrak m}(\mathfrak f_S)
+                                                     \rho(\mathfrak m),\\
+ v_{\mathfrak n}&=\beta_{\mathfrak n}\xi_{\mathfrak n}(\mathfrak f_S)
+                                           \overline{\rho(\mathfrak n)}.
+ \end{aligned}
+\end{equation}
+The scalar $\kappa_{AB\rho}$ is fixed. These are two distinct unitary
+column gauges. The primitive values $\sigma(\mathfrak e)$ and
+$\sigma(\mathfrak h)$ at $S$, including zero, remain separately in
+the kernel; they cannot be replaced by $\rho$ there.
+\end{proposition}
+This closes the normalization hypothesis for these stated conventions.
+A bounded, invertible change of phases gives no power saving by itself.
+
+For a fixed actual $\mathfrak v_2$, define the exact integer endpoints
+\[
+ a=\lceil A_1\rceil,\qquad
+ b=\min\{\lceil2A_1\rceil-1,
+                 \lfloor H/(Nu_0(N\mathfrak v_2)^2)\rfloor\}.
+\]
+An empty interval contributes zero. Choose one fixed nondecreasing
+smooth step $s_0$, equal to zero on $(-\infty,0]$ and one on
+$[1,\infty)$, and put
+\begin{equation}\label{cbk:nodal}
+ G_{\mathfrak v_2}(x)
+  =s_0\bigl(4(A_1x-a+1/2)\bigr)
+       s_0\bigl(4(b+1/2-A_1x)\bigr).
+\end{equation}
+It is the exact row indicator at every ideal norm node, has amplitude
+at most one, support in $[1/2,5/2]$ and total variation at most two.
+Its derivatives cost powers of $A_1$; it is not the fixed column $W$.
+Set $C_0=3/(4\pi^2)$ and
+\begin{equation}\label{cbk:bessel}
+ \dot G(X)=C_0^{-1/2}\int_0^\infty
+                   G(t)J_0(2\sqrt{Xt/C_0})\,dt.
+\end{equation}
+
+\begin{proposition}[The actual signed kernel before absolute norms]
+\label{cbk:kernel}
+For every nonzero class/ray component, the good conductor of $\eta$
+is $\mathfrak m\mathfrak n$, so $\eta$ is nonprincipal. Put
+$P_S=\prod_{p\in S}p$ and
+\[
+ L_{\mathfrak e}=\frac{A_1}
+     {(N\mathfrak k)^2N\mathfrak l N\mathfrak e},\qquad
+ K_{\mathfrak l}=\sqrt{b/N\mathfrak l}.
+\]
+Squarefree-row inversion, finite $S$ deletion and primitive Poisson
+give~\eqref{cbk:normalization} by summing the following kernel:
+\begin{equation}\label{cbk:exact-kernel}
+ \begin{aligned}
+ &c_{\mathfrak m}\overline{c_{\mathfrak n}}
+ R_{\mathfrak m}(\mathfrak v_2^2)
+       \overline{R_{\mathfrak n}(\mathfrak v_2^2)}
+          h_{AB\rho}(\mathfrak v_2)\\
+ &\quad\cdot\mu(\mathfrak k)\mu(\mathfrak l)\mu(\mathfrak e)
+       \eta(\mathfrak k^2\mathfrak l\mathfrak e)
+       \epsilon(\eta)\frac{L_{\mathfrak e}}{\sqrt F}
+       \sum_{\mathfrak y}\dot G_{\mathfrak v_2}
+               (L_{\mathfrak e}N\mathfrak y/F)
+                                    \overline{\eta(\mathfrak y)}.
+ \end{aligned}
+\end{equation}
+The outer sums are over every actual $\mathfrak v_2$, every class/ray
+component and original coprime column pair, all
+$\mathfrak l\mid\mathfrak v_2$ with $N\mathfrak l\le b$,
+all good squarefree $\mathfrak k$ with $(\mathfrak k,\mathfrak v_2)=1$
+and $N\mathfrak k\le K_{\mathfrak l}$, and every $\mathfrak e\mid P_S$.
+The dual sum is over \emph{all} nonzero integral ideals, including
+$S$-supported ones. It converges at each fixed parameter set with the
+actual derivative constants of $G$. The original pre-$S$ cutoff is
+never extended in this identity.
+\end{proposition}
+All signs, means, product norms and raw zeros occur before a triangle.
+A higher induced modulus does not have a unit Gauss root automatically:
+its nonprimitive additive frequencies may vanish.
+
+\subsection{What finite prefixes and actual divisor bands now satisfy}
+\label{cbk:comparisons}
+Write
+\begin{equation}\label{cbk:Phi}
+ \begin{aligned}
+ \Phi(Z,L)&=Z+LZ^{1/6}+Z^{5/6}L^{1/3}+Z^{1/3}L^{5/6},\\
+ I(t)&=\sum_{j\ge0}\frac{t^j}{(j!)^2}.
+ \end{aligned}
+\end{equation}
+Let $\mathcal P_{\le X}$ retain all terms of~\eqref{cbk:exact-kernel}
+with $N\mathfrak y\le X$, including every source/ray/$S$ component.
+
+\begin{proposition}[All-component exact finite prefixes]
+\label{cbk:prefix}
+For every finite $X\ge1$,
+\begin{equation}\label{cbk:prefix-bound}
+ \frac{|\mathcal P_{\le X}|}{D}
+   \ll B_W^2(DXA_2)^\epsilon\frac{A_1A_2}{D}\Phi(X,D).
+\end{equation}
+A separate exact all-orders estimate is
+\begin{equation}\label{cbk:all-j}
+ |\mathcal P_{\le X}|
+  \ll B_W^2(DXA_2)^\epsilon A_1A_2\Phi(X,D)
+                 I\left(\frac{(5/2)A_1X}{C_0D^2}\right).
+\end{equation}
+No completed Euler model, low-frequency approximation or
+$X\le\sqrt H$ hypothesis is used in~\eqref{cbk:prefix-bound}.
+On a fixed same-source-class/$\rho=1$ component, the additional
+critical-half band estimate is
+\begin{equation}\label{cbk:half}
+ \frac{|\mathcal P_{C,1}(Y,2Y]|}{D}
+  \ll B_W^2(DYA_2)^\epsilon A_2\sqrt{A_1/Y}\,
+                      \Phi(Y,D)(1+\log(2A_1))^2.
+\end{equation}
+Constants depend on the fixed $S$, ray/source data, $\nu$, step and
+$\epsilon$, not on any hidden uniform smoothness of the sharp $G$.
+\end{proposition}
+At $H\asymp D^{3/4}$, the mixed witness
+$(A_1,A_2)\asymp(D^{5/12},D^{1/6})$ has a target-sized full finite
+prefix $X\asymp D$. The pure prefix at $X=D$ has upper power $11/12$.
+At $X=D^{3/8}$ the pure/mixed powers are $13/16$ and $31/48$.
+These growing bounds cannot be sent to $X=\infty$.
+
+\begin{proposition}[Finite transfer of the actual cutoff and profile]
+\label{cbk:schur}
+Let $X\ge2$, $1\le U\le X$, and let $K=(K_{\mathfrak d\mathfrak a})$
+be a finite matrix indexed by good squarefree ideals of norms at most
+$X$, zero unless $(\mathfrak d,\mathfrak a)=1$ and
+$N\mathfrak d N\mathfrak a\le X$. All additional masks may remain in
+$K$. Set
+\[
+ \begin{aligned}
+ G_{\mathcal I\mathcal J}
+  &=\max_{\mathfrak d\in\mathcal I}3^{\omega(\mathfrak d)}
+           \max_{\mathfrak a\in\mathcal J}3^{\omega(\mathfrak a)},\\
+ c_P&=1/\log(4X),\qquad L_T=\operatorname{asinh}(T/c_P)/\pi.
+ \end{aligned}
+\]
+Empty matrices are zero. For every finite $T\ge8X$,
+\begin{equation}\label{cbk:schur-bound}
+ \|[A_U(\mathfrak d\mathfrak a)K_{\mathfrak d\mathfrak a}]\|_{\rm op}
+ \le G_{\mathcal I\mathcal J}
+      \left(e^2L_T^2+\frac{32X^{3/2}}T\right)\|K\|_{\rm op}.
+\end{equation}
+For $T=(4X)^4$ this is $O_\epsilon(X^\epsilon\log^2(4X))\|K\|$.
+The common complex multiplier $W(N\mathfrak d N\mathfrak a/D)$ costs
+\begin{equation}\label{cbk:profile-seminorm}
+ \begin{aligned}
+ M(W)&=\frac1{2\pi}\int_{\mathbb R}|\widehat W(it)|\,dt,\qquad
+ \widehat W(s)=\int_0^\infty W(x)x^s\,\frac{dx}{x},\\
+ M(W)&\le\frac{\log2}{\pi}
+       \bigl(B_W+\|xW'(x)+x^2W''(x)\|_\infty\bigr).
+ \end{aligned}
+\end{equation}
+Two occurrences in a bilinear/Gram estimate cost the square of the
+transfer norm. This is not $A_U(\mathfrak d\mathfrak a)=
+A_U(\mathfrak d)A_U(\mathfrak a)$ or coefficient shrinkage.
+\end{proposition}
+
+\begin{proposition}[A cubic comparison for an actual auxiliary band]
+\label{cbk:cubic}
+Fix one same-source-class/$\rho=1$ component of the auxiliary
+individual-column extension of~\eqref{cbk:exact-kernel}. Insert the
+exact coprime identity $\sum_{\mathfrak d\mid(\mathfrak m,\mathfrak n)}
+\mu(\mathfrak d)$, and retain the \emph{identity-source-class} divisors
+$E<N\mathfrak d\le2E$, $1\le E\le D/2$. Denote the resulting exact
+signed dual band by $\mathcal P^{\rm id}_{E,C}(Y,2Y]$.
+Put $L=D/E$ and $\Theta_3(E,L)=E+L+(EL)^{2/3}$.
+For fixed $0<\lambda<1/2$,
+\begin{equation}\label{cbk:cubic-bound}
+ \begin{split}
+ \frac{|\mathcal P^{\rm id}_{E,C}(Y,2Y]|}{D}
+ &\ll M(W)^2(DYA_2)^\epsilon
+       A_2 A_1^{1-\lambda}D^{2\lambda-1}Y^{-\lambda}\\
+ &\quad\cdot\min\{\Phi(Y,L),\ (Y/E)\Theta_3(E,L)\}.
+ \end{split}
+\end{equation}
+The arithmetic identity behind the new branch is
+\begin{equation}\label{cbk:beta-split}
+ \beta_{\mathfrak d\mathfrak a}
+ =\epsilon(\widetilde\chi_{\mathfrak d})\beta_{\mathfrak a}
+       \alpha(1,C)\widetilde\chi_{\mathfrak a}(\mathfrak d)^2,
+ \qquad [\mathfrak d]=1,\quad[\mathfrak a]=C.
+\end{equation}
+It exposes the physical cubic residue matrix in
+$\mathfrak d,\mathfrak a$. The external input is
+\href{https://arxiv.org/abs/2610.04045v1}{de Faveri, Theorem~1.1
+and Example~2.2}, now at $n=3$, not a conductor-parametric sieve.
+\end{proposition}
+This improves a \emph{scoped norm comparator}: at $E\asymp D^{2/3}$
+the second branch is $O(Y)$. It still uses $|\mu(\mathfrak d)|\le1$
+at its final Cauchy step. Such $\mathfrak d$ are auxiliary divisors,
+not the original column-pair gcd $h$. All divisor classes, small
+$\mathfrak d$ and the full high-dual sum are not bounded here.
+
+\subsection{Coherent means that can be localized, and those that remain}
+\label{cbk:localization}
+\begin{proposition}[The full equal-norm sector]
+\label{cbk:equal}
+Original coprime squarefree columns with
+$N\mathfrak m=N\mathfrak n=N>1$ satisfy
+$\mathfrak n=\overline{\mathfrak m}$, with rational-squarefree $N$
+supported on split rational primes. The original good masks require
+\emph{both} primes above each such rational prime to avoid $S$;
+$S$ need not be enlarged or conjugation-stable. There are $O(D)$
+ordered annular pairs. Define $S_{\rm eq}$ as the normalized contribution to $S_1^{AA}$,
+namely $D^{-1}$ times their full primal contribution to $\mathcal P_D$
+in~\eqref{cbk:normalization}. Then
+\begin{equation}\label{cbk:equal-target}
+ |S_{\rm eq}|\ll B_W^2R_wD^\epsilon\ll B_W^2R(DH)^\epsilon.
+\end{equation}
+Before the factor $D^{-1}$, their ordered orientation sum at norm $N$ is
+\begin{equation}\label{cbk:orientation}
+ \begin{gathered}
+ a_U(N)^2|W(N/D)|^2
+   \prod_{p\mid N}\{a_p\chi_p(t)+\overline{a_p\chi_p(t)}\},\\
+ t=Nu_0N\mathfrak v_1(N\mathfrak v_2)^2,
+ \end{gathered}
+\end{equation}
+where $a_p=\nu(\pi_p)\overline{\nu(\bar\pi_p)}$,
+$\chi_p(t)=(t/\pi_p)_6$, and
+$a_U(N)=\sum_{rs\mid N,(r,s)=1,r,s\le U}\mu_{\mathbb Z}(r)\mu_{\mathbb Z}(s)$.
+This includes all ordered orientations and every raw collision zero.
+For the all-component primitive-ideal prefix/band,
+\begin{equation}\label{cbk:equal-prefix}
+ \frac{|\mathcal P_{\rm eq}(\le Y)|+
+             |\mathcal P_{\rm eq}(Y,2Y]|}{D}
+       \ll B_W^2(DYA_2)^\epsilon RY/D.
+\end{equation}
+The signed complement is bounded by the whole primal term minus that
+prefix, not by an absolute high-mode summation.
+\end{proposition}
+Since $R\ll H$ on nonempty blocks, the desired full fixed-$W$ target
+is equivalent, up to~\eqref{cbk:equal-target}, to that for unequal
+norms. Its desired constants may depend on fixed $W$ or appropriate
+specified seminorms. Formula~\eqref{cbk:orientation} is neither
+identically zero nor positive in general.
+
+\begin{proposition}[Literal-ray recombination in the pure sector]
+\label{cbk:ray}
+In the pure case $\mathfrak v_2=\mathcal O$, choose an $S$-supported
+ray modulus $\mathfrak c=(\gamma_c)$ divisible by $(6)$. For an
+original coprime pair put $\mathfrak q=\mathfrak m\mathfrak n$,
+$Q=N\mathfrak q$, $\gamma_q=\alpha_{\mathfrak m}\alpha_{\mathfrak n}$,
+and let $\vartheta_{\mathfrak q}(x)=(x/\mathfrak m)_6
+\overline{(x/\mathfrak n)_6}$ be the primitive finite character modulo
+$\mathfrak q$. Let $P_{\mathfrak k^2}$ be the full literal
+primary/good-$S$/ray indicator on $\mathcal O/\mathfrak c$ after
+$v_1=k^2z$, with finite additive transform $\widehat P$.
+The exact common-modulus Fourier coefficient is
+\begin{equation}\label{cbk:ray-Fourier}
+ \widehat F_{\mathfrak k^2}(\beta)
+ =\tau_{\mathfrak q}\vartheta_{\mathfrak q}(\gamma_c)
+       \overline{\vartheta_{\mathfrak q}(\beta)}
+       \widehat P_{\mathfrak k^2}
+                    (\beta\gamma_q^{-1}\bmod\mathfrak c).
+\end{equation}
+Its literal-lattice radial Poisson prefactor is
+$L_{\mathfrak k}/(N\mathfrak c Q)$,
+$L_{\mathfrak k}=A_1/(N\mathfrak k)^2$.
+The $S$-local Fourier-mean sublattice $\beta=\gamma_c\zeta$ has
+coefficient $r_{\mathfrak k^2}\tau_{\mathfrak q}
+\overline{\vartheta_{\mathfrak q}(\zeta)}$, where $r=\sum P$.
+The six-unit projection annihilates every nontrivial unit restriction
+and retains the unit-trivial branch, whose condition is
+\begin{equation}\label{cbk:unit-selection}
+ N\mathfrak m\equiv N\mathfrak n\pmod{36}.
+\end{equation}
+For the basic $S$ above $2,3$ with no extra ray condition,
+$\mathfrak c=(6)$ has $r=3$ and ideal coefficient
+$6r/N\mathfrak c=1/2$. This is not the global $\beta=0$ mode,
+which vanishes. All $S$-supported dual ideals remain, with values
+defined by any generator once the character is unit-trivial.
+\end{proposition}
+Literal additive bands and the earlier primitive-ideal bands have
+different fixed-$S$ frequency support/rescalings; no unmatched windows
+are identified. Unequal norms congruent modulo $36$ and all other
+literal residue channels remain. Finite ray recombination supplies
+no automatic zero mean or signed target estimate.
+
+\paragraph{Remaining arithmetic obligation.}\label{cbk:boundary}
+A finite-prefix comparison, the sparse equal-norm sector and the
+cubic auxiliary-band comparison do not bound the complete signed
+unequal-norm kernel. The required additional estimate must retain
+all small divisors/source classes and the literal $S$ mean together
+with complementary residues before the final conductor/divisor/dual
+triangle. No desired positivity, energy lower bound, new zero-free
+strip, determinant comparison, analytic Lean or GRH claim follows.
+% Root integration hook: one canonical cbk-workflow figure, book only.
+% Root integration hook: one unique coherent-band inspector, book only.

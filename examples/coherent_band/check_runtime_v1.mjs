@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
+import {DATA_SHA,STAGES,entryValue,zeroReason,omegaText,complexPhase,multiply} from './runtime.mjs';
+const root=new URL('../../',import.meta.url);const path=new URL('web/data/coherent-band-schur-v1.json',root);const bytes=fs.readFileSync(path);const data=JSON.parse(bytes);
+assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),DATA_SHA);
+let projected=0,masked=0;let maxError=0;
+for(const c of data.cases){for(const e of c.entries){for(const stage of STAGES){const actual=entryValue(e,stage.key);assert(actual.every(Number.isFinite));let expected=[0,0];if(e.support){const theta=e.phase6*Math.PI/3;expected=[Math.cos(theta),Math.sin(theta)];if(stage.key!=='raw')expected=expected.map(x=>x*e.A_U);if(stage.key==='profile')expected=[expected[0]*Number(e.W[0])-expected[1]*Number(e.W[1]),expected[0]*Number(e.W[1])+expected[1]*Number(e.W[0])];}const error=Math.hypot(actual[0]-expected[0],actual[1]-expected[1]);maxError=Math.max(maxError,error);assert(error<4e-14);if(!e.support){assert.equal(zeroReason(e,stage.key),'source-masked zero');assert.deepEqual(actual,[0,0]);masked++;}projected++;}if(e.support&&e.phase6===0){assert.deepEqual(entryValue(e,'raw'),[1,0]);assert.equal(zeroReason(e,'raw'),null);}if(e.support)assert.equal(omegaText(e.AU_K_omega).includes('NaN'),false);}}
+assert.equal(projected,3654);assert.equal(masked,2358);assert.deepEqual(complexPhase(0),[1,0]);assert.deepEqual(multiply([1,0],[3,-2]),[3,-2]);assert.equal(omegaText([0,0]),'0');assert.equal(omegaText([0,1]),'ω');
+const out=process.argv[2];assert(out);const result={passed:true,scope:'Pure JavaScript display projections, not scientific matrix-norm/control replay',payload_sha256:DATA_SHA,entriesAcrossThreeStages:projected,maskedStageValues:masked,maxDoubleProjectionError:maxError,tolerance:4e-14,phaseZeroIsNonzero:true};fs.writeFileSync(out,JSON.stringify(result,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(result));

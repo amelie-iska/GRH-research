@@ -1,0 +1,49 @@
+{
+  "accepted": true,
+  "accidental_v1_zero_all_warnings_guard_restored_to_established_predecessor_policy": true,
+  "all_browser_fetch_errors_still_fail": true,
+  "all_original_network_collection_idle750ms_timeout30s_pending0_and_departure_guards_preserved": true,
+  "all_other_page_errors_still_fail": true,
+  "classification_scope": "The identical predecessor substring predicate on collected parent page-error records; no new error category/severity/URL wildcard added. It is not a whole-message equality classifier.",
+  "created_utc": "2026-11-06T05:22:43.587168+00:00",
+  "findings": [],
+  "global_WS_fetch_errors_additionally_fail": true,
+  "helper_subscribes_log_entryAdded_and_fetchError_globally": true,
+  "known_events_preserved_in_final_report_not_silently_discarded": true,
+  "known_phrase": "Incorrect number of children for <munder/>",
+  "limitations": [
+    "Policy acceptance only; final combined module/native run must still pass on final figure/candidate bytes and expectation pins",
+    "No claim that inherited malformed markup is repaired",
+    "DOM checks refer to the parent book document; policy scope otherwise remains the predecessor helper/context behavior"
+  ],
+  "new_DOM_guards": [
+    "Baseline has exactly3 munder elements with child count not2",
+    "Current entire-parent-document malformed munder outerHTML array equals baseline exactly, including count/order/bytes",
+    "Old full MathML/table/iframe subtree hash preservation remains checked separately"
+  ],
+  "passed": true,
+  "predecessor_error_predicate_identical": true,
+  "reason": "This restores the predecessor\u2019s precise inherited-munder classification after v1 accidentally demanded zero legacy warnings, and strengthens DOM/fetch checks. The permitted change is not an expanded whitelist beyond the predecessor.",
+  "reviewed_harness": {
+    "path": "planning/coherent-book-20261106/root/check_native_v2.mjs",
+    "sha256": "5fe475cba19ab529c4cc71a578823d5a014bad8732e2769155ad793fa3cfc547"
+  },
+  "saved_v1_failure_independently_read": {
+    "all27_exact_saved_message": "Invalid markup: Incorrect number of children for <munder/> tag.",
+    "failed_group": "zero-global-errors",
+    "failure_and_original_harness_preserved": true,
+    "fetch_errors": 0,
+    "known_repeated_events": 27,
+    "preceding_passed_groups": 19
+  },
+  "schema": "coherent-book-independent-native-browser-error-policy-review-v1",
+  "scope": "Read-only source/diff/saved-failure review; no browser/module execution, candidate acceptance, or new control run.",
+  "source_bindings": {
+    "/home/iska/Documents/LaTeX-projects/project-pages-20261104/qa/bidi.mjs": "5bdde3410cd2298a46e4873ee4531c8e054bf6c27e054b3352e1db01112292bc",
+    "outputs/checks/2026-11-06-coherent-book/root/native-browser-v1/browser.json": "79d42cfe684804250918c5b44d0f2a510303e9a577bf827e2917234e20dd379f",
+    "outputs/checks/2026-11-06-coherent-book/root/native-browser-v1/failure-explanation-v1.json": "1b2c9009d12a44b60be34e0a127e47c0dac8c2a6326b486bb458f9a683397621",
+    "planning/coherent-book-20261106/root/check_native_v1.mjs": "8eee1f0fb757c07e112c4bec9d8e3ec41c296818ed1d765ff8b5c3d599087e47",
+    "planning/coherent-book-20261106/root/check_native_v2.mjs": "5fe475cba19ab529c4cc71a578823d5a014bad8732e2769155ad793fa3cfc547",
+    "planning/physical-sieve-20261105/live-qa/check_browser_v1.mjs": "812db70250d0cefa08cb572b00b0e70ae93d41b3bd432d0e9ab8d1bad08aeb6a"
+  }
+}
