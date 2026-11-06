@@ -1,0 +1,447 @@
+% Generated shared reviewed material.
+% Shared concise source. Full proof provenance is in the gauss-book source map.
+\section{An arithmetic Gauss tail with the original finite cutoff}
+\label{gtl:core}
+The coherent kernel of Section~\ref{cbk:core} contains a difficult
+root-weighted mean. A large part of its \emph{short-divisor expansion}
+can now be bounded by retaining a cubic interaction before taking a
+triangle. This gives a signed cutoff comparison, not a smaller norm
+for the original coefficients. A direct exact-discrete-frequency
+version is included as well. The remaining small-short-divisor
+moment and the separate discrete-frequency error are stated below.
+The whole signed power $13/12$ and global unsigned power $9/8$ do not
+change.
+
+\subsection{Original objects and a fixed common profile}
+\label{gtl:objects}
+Keep $K=\mathbb Q(\omega)$, $\mathcal O=\mathbb Z[\omega]$,
+$\delta=1+2\omega$, and the fixed exclusions $S$ of
+Section~\ref{cbk:objects}. A good ideal is prime to $S$.
+All columns are the complete good squarefree ideal annulus
+$D\le N\mathfrak m\le2D$, $D>1$. Equal norms do not identify ideals.
+For a real cutoff $1\le T\le\sqrt D$ put
+\begin{equation}\label{gtl:coefficients}
+ \begin{aligned}
+ A_T(\mathfrak m)
+ &=\sum_{\substack{\mathfrak a\mathfrak b\mid\mathfrak m\\
+             (\mathfrak a,\mathfrak b)=1\\
+             N\mathfrak a,N\mathfrak b\le T}}
+                    \mu(\mathfrak a)\mu(\mathfrak b),\\
+ c_f(\mathfrak m)
+ &=f(\mathfrak m)\nu(\mathfrak m)R_{\mathfrak m}(u_0)
+                                             W(N\mathfrak m/D).
+ \end{aligned}
+\end{equation}
+Here $\nu$ is the original fixed unitary finite-order character;
+$u_0$ is the fixed literal unit/$S$-supported factor with no good
+support. The actual coefficient is $c_{A_U}$, $1\le U\le\sqrt D$.
+The function $W$ is one fixed, possibly complex, smooth common
+profile supported on $[1,2]$, zero at the endpoints. Define
+\begin{equation}\label{gtl:profile}
+ \begin{aligned}
+ B_W&=\|W\|_\infty,\qquad
+ \widehat W(t)=\int_0^\infty W(x)x^{-it}\,\frac{dx}{x},\\
+ \mathcal M(W)&=\frac1{2\pi}\int_{\mathbb R}|\widehat W(t)|\,dt.
+ \end{aligned}
+\end{equation}
+This explicit seminorm is finite and controls $B_W$. It is a
+seminorm of the column profile, not of the sharp nodal row function.
+
+Only the original unweighted \emph{pure} two-pivot block is used:
+$A_2=1$, $\mathfrak v_2=\mathcal O$, and the other four factors
+are units. The first row is good and squarefree, with the original
+literal/ray conditions and capacity. Its integer endpoints are
+\begin{equation}\label{gtl:capacity}
+ a=\lceil A_1\rceil,\qquad
+ b=\min\{\lceil2A_1\rceil-1,\lfloor H/Nu_0\rfloor\},
+ \qquad K=\sqrt b .
+\end{equation}
+An empty interval contributes zero throughout. Otherwise $b\ge a\ge1$.
+Use the exact $G$ of~\eqref{cbk:nodal}, its transform
+$\dot G$ in~\eqref{cbk:bessel}, and $C_0=3/(4\pi^2)$.
+In particular $0\le G\le1$, $\operatorname{supp}G\subset[1/2,5/2]$,
+and $\int G\le2$. The original \emph{pre-$S$} cutoff $K$ is never
+recomputed after another deletion.
+
+Let $\mathcal I$ be the original ordered coprime column pairs.
+One may also impose the \emph{original} unequal-norm projection;
+the same choice is then used in every expression below. For each
+source pair $A,B$ and original ray character $\rho$ use the primitive
+$\eta$, $\mathfrak f_S$ and $F$ of~\eqref{cbk:eta}. Thus
+$F=N\mathfrak f_S N\mathfrak mN\mathfrak n$, and $\eta$ has total
+infinity type zero. Put
+\begin{equation}\label{gtl:deletions}
+ \begin{aligned}
+ T_q&=S\cup\operatorname{supp}(\mathfrak m\mathfrak n),\\
+ Q_s^{T_q}(K;\eta^2)
+   &=\sum_{\substack{\mathfrak k\ {\rm good,SF}\\
+                   N\mathfrak k\le K,\;(\mathfrak k,T_q)=1}}
+         \frac{\mu(\mathfrak k)\eta(\mathfrak k)^2}
+              {(N\mathfrak k)^s},\\
+ P_S(\eta)&=\sum_{\mathfrak e\mid P_S}
+                   \frac{\mu(\mathfrak e)\eta(\mathfrak e)}
+                        {N\mathfrak e},
+ \qquad P_S=\prod_{p\in S}p .
+ \end{aligned}
+\end{equation}
+The symbol $(\mathfrak k,T_q)=1$ means avoidance of every prime in
+that set. Squaring $\eta$ never restores a deleted prime. Values at
+$\mathfrak e$ and at any later $S$-supported frequency are separate
+primitive values, including zero.
+
+\subsection{The actual retained mean and its finite leading model}
+\label{gtl:mean}
+In the exact primitive kernel~\eqref{cbk:exact-kernel}, write each
+dual ideal uniquely as $\mathfrak y=\mathfrak h\mathfrak r\mathfrak s^6$:
+$\mathfrak h$ is $S$-supported, $\mathfrak r$ is good and sixth-free,
+and $\mathfrak s$ is good. Overlap of $\mathfrak r,\mathfrak s$
+is allowed. For $X\ge64$ set
+\begin{equation}\label{gtl:top-window}
+ V=X^{1/6}/2,\qquad
+ b_{\mathfrak w}=(X/N\mathfrak w)^{1/6},\qquad
+ t_{\mathfrak w}=\bigl((N\mathfrak w)^{-1/6}-1/2\bigr)_+ .
+\end{equation}
+The top band is $V<N\mathfrak s\le2V$, $N\mathfrak y\le X$.
+Replacing its $\mathfrak s$ count by its principal fixed-ray
+density defines the retained mean $M_{\rm top}$. This operation
+keeps, rather than deletes, its coherent main term.
+The selected branches are $\rho^6=1$. At this top window
+$N\mathfrak hN\mathfrak r<64<7^6$, so
+$\mathfrak w=\mathfrak h\mathfrak r$ runs over \emph{all} integral
+ideals of norm below $64$, including $S$-supported ideals.
+
+Set
+\begin{equation}\label{gtl:density}
+ \kappa_S=\frac{\pi}{3\sqrt3}\prod_{p\in S}(1-(Np)^{-1}),
+ \qquad
+ g(\mathfrak m)=\prod_{p\mid\mathfrak m}(1-(Np)^{-1}).
+\end{equation}
+On original coprime support the density is
+$\kappa_Sg(\mathfrak m)g(\mathfrak n)$.
+For $\theta=(A,B,\rho,\mathfrak m,\mathfrak n,\mathfrak e,\mathfrak w)$
+in the preceding sets, with $\rho^6=1$, define
+\begin{equation}\label{gtl:outer-coefficient}
+ \begin{aligned}
+ d_\theta[f_1,f_2]
+ &=\frac{\kappa_S A_1}{D}h_{AB\rho}(\mathcal O)
+     c_{f_1}(\mathfrak m)\overline{c_{f_2}(\mathfrak n)}
+     \frac{g(\mathfrak m)g(\mathfrak n)\epsilon(\eta)}{\sqrt F}\\
+ &\quad\cdot
+      \frac{\mu(\mathfrak e)\eta(\mathfrak e)}{N\mathfrak e}
+                       \overline{\eta(\mathfrak w)},\qquad
+ \lambda_\theta=\frac{A_1N\mathfrak w}{N\mathfrak e F}.
+ \end{aligned}
+\end{equation}
+The exact definition of the normalized retained mean is
+\begin{equation}\label{gtl:actual-mean}
+ \begin{aligned}
+ \mathcal M_{\rm top}
+ :=\frac{M_{\rm top}}D
+ &=\sum_\theta d_\theta[A_U,A_U]
+     \sum_{\substack{\mathfrak k\ {\rm good,SF}\\N\mathfrak k\le K,\;(\mathfrak k,T_q)=1}}
+       \frac{\mu(\mathfrak k)\eta(\mathfrak k)^2}
+            {(N\mathfrak k)^2}\\
+ &\quad\cdot\int_V^{b_{\mathfrak w}}
+       \dot G\left(\frac{\lambda_\theta t^6}
+                         {(N\mathfrak k)^2}\right)\,dt .
+ \end{aligned}
+\end{equation}
+All sums here are finite. In particular there is no
+$\mathfrak k\mid\mathfrak w$ or $(\mathfrak k,\mathfrak w)=1$
+condition. The finite original source/ray coefficients
+$h_{AB\rho}(\mathcal O)$ have not been centered.
+An argument at $\mathfrak e$ is not divided by a value at
+$\mathfrak w$.
+
+Put $g_0=C_0^{-1/2}\int G$ and define
+\begin{equation}\label{gtl:leading-model}
+ \mathcal L_0[f_1,f_2]
+  =g_0X^{1/6}
+      \sum_\theta d_\theta[f_1,f_2]\,t_{\mathfrak w}
+                             Q_2^{T_q}(K;\eta^2).
+\end{equation}
+Replacing both column functions here is an explicitly defined
+auxiliary model, not a change to the original primal data.
+
+\begin{proposition}[Matched leading model with its original cutoff]
+\label{gtl:model}
+For the actual coefficients and every finite $X\ge64$,
+\begin{equation}\label{gtl:model-error}
+ |\mathcal M_{\rm top}-\mathcal L_0[A_U,A_U]|
+ \ll B_W^2(DX)^\epsilon\,\frac{A_1^2X^{7/6}}{D^2}.
+\end{equation}
+The constant uses no derivative bound for the sharp $G$.
+Both interval endpoints and the original finite $K$ occur in
+$\mathcal L_0$. This estimates the model error, not the leading
+signed model.
+\end{proposition}
+
+\subsection{The root is an incomplete cubic Gauss weight}
+\label{gtl:root}
+For each good ideal use its primary generator
+$\alpha_{\mathfrak a}\equiv1\pmod3$ and write
+$\chi_{j,\mathfrak a}$ for its positive residue character of order
+$j=3,6$. For good squarefree $\mathfrak m$ put
+\begin{equation}\label{gtl:cubic-gauss}
+ \begin{aligned}
+ G_{\mathfrak m}
+ &=\frac1{\sqrt{N\mathfrak m}}
+   \sum_{x\bmod\alpha_{\mathfrak m}}
+      \chi_{3,\mathfrak m}(x)
+      \exp\!\left(2\pi i\operatorname{Tr}
+                   \frac{x}{\delta\alpha_{\mathfrak m}}\right),\\
+ g_{\mathfrak m}(z)
+ &=\overline{\chi_{3,\mathfrak m}(z)}G_{\mathfrak m}.
+ \end{aligned}
+\end{equation}
+The second expression is the normalized finite Gauss sum at
+frequency $z$, including zero when $(\mathfrak m,z)>1$.
+For $\mathfrak q=\mathfrak m\mathfrak n$ put
+$\theta_q=\chi_{6,\mathfrak m}\overline{\chi_{6,\mathfrak n}}$.
+Let $\theta_S$ be the \emph{actual finite $S$ part} of the
+total type-zero $\eta$, at its own primitive conductor
+$\mathfrak f_S=(\gamma_S)$. Then
+\begin{equation}\label{gtl:S-factor}
+ \mathcal S_{\mathfrak m,\mathfrak n,\rho}
+  =\theta_S(\alpha_{\mathfrak m}\alpha_{\mathfrak n})
+       \theta_q(\gamma_S)
+        \frac{\tau_{\gamma_S}(\theta_S)}{\sqrt{N\mathfrak f_S}} .
+\end{equation}
+The unit-conductor convention is one. This scalar has modulus one;
+it is not obtained by discarding the infinity type of a constituent.
+The accepted Jacobi character in~\eqref{sw:character} gives
+$\vartheta=\Psi/\sqrt N$, with conductor $(2\delta)$ of norm $12$
+and nonzero infinity type. The exact root formula is
+\begin{equation}\label{gtl:root-cubic}
+ \begin{aligned}
+ \epsilon(\eta)
+ &=\mathcal S_{\mathfrak m,\mathfrak n,\rho}
+       \Gamma(\alpha_{\mathfrak m}\alpha_{\mathfrak n})
+       \mu(\mathfrak m)\mu(\mathfrak n)
+       \vartheta(\mathfrak m)\overline{\vartheta(\mathfrak n)}
+       \overline{G_{\mathfrak m}}G_{\mathfrak n},\\
+ \Gamma(a+b\omega)
+ &=\tfrac12\{1+i^{-b}+i^a+i^{b-a}\}.
+ \end{aligned}
+\end{equation}
+No extra quadratic sign is inserted. In the original kernel,
+$\eta(\mathfrak k^2)$ and the second-row phase, when present,
+produce the raw cubic frequency
+$\overline{g_{\mathfrak m}(\alpha_{\mathfrak k}\alpha_{\mathfrak v_2})}
+ g_{\mathfrak n}(\alpha_{\mathfrak k}\alpha_{\mathfrak v_2})$;
+here $\mathfrak v_2=\mathcal O$. This incomplete weighted
+frequency set is not a complete residue average.
+
+\subsection{A signed short-divisor tail from a physical cubic matrix}
+\label{gtl:tail}
+For squarefree $\mathfrak m$ there is an exact sign-preserving
+assignment identity:
+\begin{equation}\label{gtl:ternary}
+ \mu(\mathfrak m)A_T(\mathfrak m)
+   =\sum_{\substack{\mathfrak a\mathfrak b\mathfrak c=\mathfrak m\\
+                   N\mathfrak a,N\mathfrak b\le T}}
+                                         \mu(\mathfrak c).
+\end{equation}
+The factors are pairwise coprime and squarefree. For $Y\le U$ the
+difference of cutoff boxes has two disjoint pieces. After interchanging
+$\mathfrak a,\mathfrak b$ in the second and setting
+$\mathfrak z=\mathfrak b\mathfrak c$, the exact coefficient is
+\begin{equation}\label{gtl:T-coefficient}
+ T_U(\mathfrak z)+T_Y(\mathfrak z),\qquad
+ T_L(\mathfrak z)=
+       \sum_{\substack{\mathfrak b\mid\mathfrak z\\N\mathfrak b\le L}}
+                                  \mu(\mathfrak z/\mathfrak b).
+\end{equation}
+It is independent of $\mathfrak a$. The conjugate Gauss CRT identity
+retains the cross interaction
+\begin{equation}\label{gtl:gauss-cross}
+ \overline{G_{\mathfrak a\mathfrak z}}
+  =\overline{G_{\mathfrak a}}\overline{G_{\mathfrak z}}
+                 \chi_{3,\mathfrak a}(\alpha_{\mathfrak z}),
+ \qquad(\mathfrak a,\mathfrak z)=1 .
+\end{equation}
+The raw cubic entry is zero at a common prime.
+
+The deep input is explicitly external:
+\href{https://arxiv.org/abs/2610.04045v1}{de Faveri,
+arXiv:2610.04045v1, Theorem~1.1 and Example~2.2}, at $n=3$.
+For the physical primary cubic matrix on good squarefree ideals
+of norms comparable to $A,Z$ it gives
+\begin{equation}\label{gtl:cubic-input}
+ \bigl\|[\chi_{3,\mathfrak a}(\alpha_{\mathfrak z})]\bigr\|_{\rm op}^2
+  \ll_\epsilon (AZ)^\epsilon
+           \{A+Z+(AZ)^{2/3}\}.
+\end{equation}
+Both indices are actual ideals and hence cube-free, not arbitrary
+primitive-conductor labels. This is the same pinned input as the
+cubic comparison in Proposition~\ref{cbk:cubic}.
+
+\begin{theorem}[Actual Gauss-weighted cutoff tail]
+\label{gtl:tail-theorem}
+For any bounded multiplicative ideal function $\lambda$ on good
+ideals, with $|\lambda|\le1$, and $1\le Y\le U\le\sqrt D$,
+\begin{equation}\label{gtl:linear-tail}
+ \begin{split}
+ \left|\sum_{\mathfrak m\ {\rm good,SF}}
+  \frac{\mu(\mathfrak m)(A_U-A_Y)(\mathfrak m)
+          \overline{G_{\mathfrak m}}\lambda(\mathfrak m)}
+       {\sqrt{N\mathfrak m}}W(N\mathfrak m/D)\right|\\
+ \ll_\epsilon\mathcal M(W)D^\epsilon
+                   \{D^{1/3}+\sqrt{D/Y}\}.
+ \end{split}
+\end{equation}
+The constant is uniform in the conductor or raw deletion set in
+$\lambda$. For the actual pure leading model, with every original
+finite $K$, class/ray/root/$S$ component and coprime pair retained,
+\begin{equation}\label{gtl:finite-tail}
+ \begin{split}
+ |\mathcal L_0[A_U,A_U]-\mathcal L_0[A_Y,A_Y]|
+ \ll B_W\mathcal M(W)D^\epsilon A_1X^{1/6}
+                       \{Y^{-1/2}+D^{-1/6}\}.
+ \end{split}
+\end{equation}
+The original unequal-norm projection is also allowed.
+\end{theorem}
+This uses the cubic interaction before the short-divisor triangle.
+It does not assert pointwise or coefficient-norm shrinkage of $A_U$,
+nor a separate cancellation theorem for $\mu(\mathfrak c)$.
+
+\subsection{What has been reduced, and what remains}
+\label{gtl:finite}
+Combining Proposition~\ref{gtl:model} and
+Theorem~\ref{gtl:tail-theorem} gives
+\begin{equation}\label{gtl:combined}
+ \begin{split}
+ |\mathcal M_{\rm top}-\mathcal L_0[A_Y,A_Y]|
+ &\ll (DX)^\epsilon\left\{
+ B_W^2\frac{A_1^2X^{7/6}}{D^2}\right.\\
+ &\qquad\left.+
+ B_W\mathcal M(W)A_1X^{1/6}
+                      (Y^{-1/2}+D^{-1/6})\right\}.
+ \end{split}
+\end{equation}
+At $A_1\asymp H=D^{3/4}$, $X=D^{3/8}$ and
+$Y=\min\{U,D^{1/8}\}$, the errors are target-sized. If $Y=U$ the
+coefficient tail is exactly zero; otherwise the three displayed
+powers are $-1/16$, $3/4$ and $31/48$. The remaining exact coefficients
+satisfy
+\begin{equation}\label{gtl:long-residual}
+ \mu(\mathfrak m)A_Y(\mathfrak m)
+  =\sum_{\substack{\mathfrak a\mathfrak b\mathfrak c=\mathfrak m\\
+                   N\mathfrak a,N\mathfrak b\le Y}}\mu(\mathfrak c),
+ \qquad N\mathfrak c\ge D/Y^2\ge D^{3/4}.
+\end{equation}
+The small-short-divisor, long residual-M\"obius cubic Gauss bilinear
+moment $\mathcal L_0[A_Y,A_Y]$ is still unestimated at the target.
+
+
+\subsection{The exact discrete top prefix, with every ray retained}
+\label{gtl:discrete}
+There is also a direct reduction that does not introduce the
+principal-density split. Its exact support is
+\begin{equation}\label{gtl:discrete-support}
+ \mathcal T_X=
+ \{(\mathfrak w,\mathfrak s):N\mathfrak w<64,\ \mathfrak s\ {\rm good},
+       \ V<N\mathfrak s\le2V,\ N\mathfrak w(N\mathfrak s)^6\le X\}.
+\end{equation}
+There is no squarefree restriction on $\mathfrak s$.
+Overlap of $\mathfrak w,\mathfrak s$ and of
+$\mathfrak k,\mathfrak s$ remains allowed.
+Let $\widetilde\Theta$ be the same outer set as $\theta$ above,
+but with \emph{every} original $\rho$, and put
+\begin{equation}\label{gtl:discrete-coefficient}
+ \begin{aligned}
+ \widetilde d_\theta[f_1,f_2]
+ &=\frac{A_1}{D}h_{AB\rho}(\mathcal O)
+       c_{f_1}(\mathfrak m)\overline{c_{f_2}(\mathfrak n)}
+          \frac{\epsilon(\eta)}{\sqrt F}\\
+ &\quad\cdot\frac{\mu(\mathfrak e)\eta(\mathfrak e)}{N\mathfrak e}
+                                  \overline{\eta(\mathfrak w)} .
+ \end{aligned}
+\end{equation}
+This is an explicit definition, not division by a density or a
+primitive value. With the original $\mathfrak k$ support as in
+\eqref{gtl:deletions}, define the normalized exact piece
+\begin{equation}\label{gtl:direct-prefix}
+ \begin{aligned}
+ \mathcal P_X[f_1,f_2]
+ &=\sum_{\theta\in\widetilde\Theta}\widetilde d_\theta[f_1,f_2]
+     \sum_{\mathfrak k}
+           \frac{\mu(\mathfrak k)\eta(\mathfrak k)^2}
+                {(N\mathfrak k)^2}\\
+ &\quad\cdot
+ \sum_{\substack{\mathfrak s:\;(\mathfrak w,\mathfrak s)\in\mathcal T_X}}
+   \bar\rho(\mathfrak s)^6
+       \mathbf1_{(\mathfrak s,\mathfrak m\mathfrak n)=1}
+       \dot G\left(\frac{\lambda_\theta(N\mathfrak s)^6}
+                              {(N\mathfrak k)^2}\right).
+ \end{aligned}
+\end{equation}
+Then $\mathcal P_X[A_U,A_U]$ is the actual original top
+primitive-prefix contribution divided by $D$.
+It is a signed representation-fixed piece, not a positive energy
+or the whole infinite dual sum.
+
+Let $\mathcal L_X^K[f_1,f_2]$ be exactly
+\eqref{gtl:direct-prefix} with $\dot G$ replaced by $g_0$.
+Only in that leading model can the finite $\mathfrak k$ sum
+be factored as $Q_2^{T_q}(K;\eta^2)$.
+The discrete $\mathfrak s$ sum and its endpoints remain.
+Unlike $\mathcal L_0$, this model has no
+$\kappa_S g(\mathfrak m)g(\mathfrak n)$ density, no
+$\rho^6=1$ projection and no integral replacing the
+$\mathfrak s$ family.
+
+\begin{proposition}[Direct original-prefix cutoff reduction]
+\label{gtl:direct}
+Put $\Lambda=A_1X/D^2$. With precisely the original support,
+\begin{equation}\label{gtl:direct-model-error}
+ |\mathcal P_X[A_U,A_U]-\mathcal L_X^K[A_U,A_U]|
+       \ll B_W^2(DX)^\epsilon A_1V\Lambda ,
+\end{equation}
+and
+\begin{equation}\label{gtl:direct-model-tail}
+ \begin{split}
+ |\mathcal L_X^K[A_U,A_U]-\mathcal L_X^K[A_Y,A_Y]|
+ &\ll B_W\mathcal M(W)(DX)^\epsilon A_1V\\
+ &\quad\cdot\{Y^{-1/2}+D^{-1/6}\}.
+ \end{split}
+\end{equation}
+In particular the actual original piece satisfies
+\begin{equation}\label{gtl:direct-bound}
+ \begin{split}
+ |\mathcal P_X[A_U,A_U]-\mathcal L_X^K[A_Y,A_Y]|
+ &\ll (DX)^\epsilon A_1V
+       \{B_W^2\Lambda\\
+ &\qquad+B_W\mathcal M(W)(Y^{-1/2}+D^{-1/6})\}.
+ \end{split}
+\end{equation}
+The original unequal-norm projection is allowed.
+\end{proposition}
+At the critical pure parameters used above the three powers
+are again $-1/16$, $3/4$ and $31/48$, with exact zero
+coefficient tail when $Y=U$. This is a reduction of the
+\emph{actual discrete} piece to a different, still unestimated,
+small-short-divisor model. That model retains every $\rho$,
+every nonunit $S$ mode, the exact $\mathfrak w,\mathfrak s$
+support, root/conductor data, original finite $K$ and both
+long residual-M\"obius column coefficients.
+
+\paragraph{Separate open errors and scope.}\label{gtl:boundary}
+The accepted fixed-ray disk count gives the distinct top-band
+certificate
+\begin{equation}\label{gtl:ray-error}
+ \frac{|\mathcal P_{\rm top}-M_{\rm top}|}{D}
+ \ll B_W^2(DX)^\epsilon A_1X^{1/18}
+                       \{1+\sqrt{A_1X/D^2}\}.
+\end{equation}
+Its pure critical power is $37/48>3/4$; this is an upper certificate,
+not a lower bound for the actual error. The direct reduction in Proposition~\ref{gtl:direct} does not
+introduce that split: its discrete model retains those effects.
+No improved bound for the separate discrepancy, for the remaining
+small-cutoff models, or for the other original sectors is proved here. The result is an application of a named external
+cubic sieve to an actual arithmetic tail, not a new sieve, a complete
+analytic Lean formalization, a determinant/zero-location bridge or
+a proof of GRH. Fixed-profile constants and the explicit
+$\mathcal M(W)$ cannot be replaced by a uniform supnorm-only claim
+for varying profiles.
