@@ -1,0 +1,162 @@
+% Generated shared reviewed material.
+% Mean-retaining coherent reductions; no unproved scalar input is assumed.
+\section{The coherent signed main and its remaining inputs}\label{cmr:core}
+The physical sixth-power-free comparison in Section~\ref{phy:core}
+provides a new positive upper bound. We now collect the exact coherent
+reductions that it can enter. They preserve the original mean and all
+raw masks; none proves the target by a scalar cancellation assertion.
+
+Use the complete original good squarefree annulus and common complex
+profile of Section~\ref{rma:core}. Write $\mathcal U$ for the actual
+nonzero literal rows, $w_u\ge0$, $R_w=\sum_u w_u$ and
+$B=\|W\|_\infty$. Retain fixed $S,\nu$, all internal row masks and
+\eqref{rma:window}. Every identity below is a raw A--A identity;
+principal residues still require their separate assembly. Classical
+operator specializations are only for the original unweighted
+$A_6=1$ rows, or their already justified bounded natural multiplicities.
+
+First there is a useful distinction between two auxiliary kernels.
+Let $K_{\rm all}$ be $K_S$ of~\eqref{rma:KS} with the $U$-smooth
+restriction on its squarefree $f$ removed, retaining $(f,u)=1$ and
+exactly $A_U(fa)$ in every $T_f$. Set
+\begin{equation}\label{cmr:Ptwo}
+ \begin{split}
+ P_2={}&\sum_u w_u\sum_{\substack{p\notin S\\Np>U}}
+       \sum_{\substack{q\notin S,\ Nq>U\\q\nmid u}}
+          |W(NpNq/D)|^2,\\
+ K_S={}&K_{\rm all}+P_2,\qquad
+ 0\le P_2/D\le3584B^2R_w.
+ \end{split}
+\end{equation}
+Here $(p,q)$ is ordered, $p=q$ is allowed, and only $q$ has the
+stated row mask. This is distinct from the original unordered,
+distinct-prime $C_2$ in~\eqref{rma:Ctwo}. In particular
+\begin{equation}\label{cmr:auxexact}
+ S_1^{AA}=\frac{K_0-K_{\rm all}}D+\Delta+\frac{C_2-P_2}D.
+\end{equation}
+At $H\le D^{3/4}$ the error in this \emph{new} auxiliary main is
+at most $236800B^2R_w$. The old $233216B^2R_w$ bound for
+$(K_0-K_S)/D$ is unchanged. The physical comparison
+in~\eqref{phy:combined} estimates the new combined main, in its stated
+$A_6=1$ scope, without estimating its two summands separately.
+
+The prime-discrepancy clauses below additionally require $U\ge7$.
+Define
+\[
+ E_S(t)=\pi_K^S(t)-\operatorname{Li}_2(t),\qquad
+ \operatorname{Li}_2(t)=\int_2^t\frac{dv}{\log v},\qquad
+ M_1(W)=\max\{B,\|xW'(x)\|_\infty\}.
+\]
+The count is of prime ideals outside fixed $S$, including distinct
+conjugate ideals and inert prime norms. Put
+\[
+ Q(t)=\sum_{\substack{f\ \mathrm{good\ SF}\\f\ U\text{-smooth}}}
+       \mu(f)\sum_{\substack{u\in\mathcal U\\(f,u)=1}}
+                   w_u|T_f(t;u)|^2,
+ \qquad
+ \mathcal J=\int_U^\infty\frac{Q(t)}{\log t}\,dt.
+\]
+
+\begin{proposition}[A joint form retaining its mean]\label{cmr:joint}
+On the finite space of good squarefree $g$ with $Ng\le2D/U$, let
+\[
+ b_g(t)=A_U(g)\nu(g)W(Ng\,t/D),\quad
+ (\mathsf Rc)(u)=\sqrt{w_u}\sum_g c_g\chi_g(u),\quad
+ (\mathsf P_fc)_g=\mathbf1_{f\mid g}c_g.
+\]
+With ordinary counting $\ell^2$ norms,
+\begin{equation}\label{cmr:joint-form}
+ Q(t)=b(t)^*\mathcal M_Ub(t),\qquad
+ \mathcal M_U=\sum_{f\ U\text{-smooth}}\mu(f)
+                \mathsf P_f\mathsf R^*\mathsf R\mathsf P_f,
+ \quad t\ge U.
+\end{equation}
+The matrix is self-adjoint, with no positivity assertion. The exact
+prime substitution is
+\begin{equation}\label{cmr:primeerror}
+ K_S=\mathcal J+\mathcal E_{\rm PIT},\qquad
+ \mathcal E_{\rm PIT}=-E_S(U)Q(U)
+                      -\int_U^\infty E_S(t)Q'(t)\,dt.
+\end{equation}
+The endpoint excludes $Np=U$ exactly. It must remain.
+\end{proposition}
+
+For any true arbitrary-coefficient row norm $\lambda_*(L)$, use the
+direct unit-column value $R_w$ on $1/2\le L<1$. On the active range
+$1\le L\le D/U$, the current original two-pivot bound is the
+minimum in Proposition~\ref{phy:short};
+it is not a theorem for arbitrary row weights. Let $\lambda^\#(D/T)$
+dominate this norm on the two adjacent active length dyads. Then
+\begin{equation}\label{cmr:square-budget}
+ \frac{|\mathcal E_{\rm PIT}|}D
+ \ll_\epsilon(HD)^\epsilon M_1(W)^2
+ \left\{\frac{|E_S(U)|}{U}\lambda_*(D/U)
+          +\sum_T\mathfrak d_2(T)\lambda^\#(D/T)\right\},
+\end{equation}
+where $T=2^jU<2D$ and
+$\mathfrak d_2(T)^2=\int_T^{2T}|E_S(t)|^2t^{-3}\,dt$.
+This is a sufficient-input budget, not an asserted power estimate for
+$\mathfrak d_2$ or for the endpoint. The pointwise version retains
+$\lambda_*(D/U)+\int_{1/2}^{D/U}\lambda_*(L)\,dL/L$,
+with the current minimum inside that integral.
+
+On good rough-prime columns the exact quadratic-form compression is
+$\Pi_{\mathcal P}\mathcal M_U\Pi_{\mathcal P}
+ =\Pi_{\mathcal P}\mathsf R^*\mathsf R\Pi_{\mathcal P}$.
+This is not an invariant-subspace assertion: off-block couplings remain
+and can cancel its contribution. Radial Mellin Parseval likewise
+retains equal-norm ideal correlations, including their derivatives;
+it neither orthogonalizes orientations nor permits deleting their mean.
+Even exact prime density leaves $K_0-\mathcal J$ to estimate.
+
+\begin{proposition}[A sufficient smooth-divisor tail cutoff]\label{cmr:tail}
+For the original unweighted $A_6=1$ two-pivot rows put
+$R=A_1A_2$, $M_{\rm row}=\max(A_1,A_2)$.
+Restrict the smooth $f$ sums in $K_0,K_S$ to $Nf>Y\ge1$.
+The inherited positive input gives
+\begin{equation}\label{cmr:tailbound}
+ \begin{aligned}
+ \frac{|K_0^{>Y}|}D&\ll_\epsilon(HD)^\epsilon B^2
+ \left\{R+\frac{DR}{M_{\rm row}Y}
+       +\frac{D^{2/3}R}{M_{\rm row}^{1/3}Y^{2/3}}\right\},\\
+ K_S^{>Y}&=0\qquad(Y\ge2D/U).
+ \end{aligned}
+\end{equation}
+If $R\ll H$, a sufficient target-size tail cutoff is
+\[
+ Y\ge\max\left\{1,\frac{2D}U,\frac{DR}{M_{\rm row}H},
+       \frac{DR^{3/2}}{M_{\rm row}^{1/2}H^{3/2}}\right\}.
+\]
+This is a coarse inherited sufficient bound, not signed cancellation
+or an optimal localization. The smooth incidence divisor $f$ is not
+the original column-pair gcd $h$.
+\end{proposition}
+
+\begin{theorem}[A conditional input diagnostic]\label{cmr:conditional-strip}
+Fix $S$ and $0<\alpha<1/2$. If for every $\epsilon>0$,
+\[
+ \mathfrak d_2(T)\ll_{\epsilon,K,S}T^{-\alpha+\epsilon}
+\]
+holds for all sufficiently large real $T$, then
+\[
+ \zeta_K(s)\ne0\qquad
+   (\operatorname{Re}s>\max\{1-\alpha,1/2\},\ s\ne1).
+\]
+This is a strict-region implication from an explicitly hypothetical
+input, not a new zero-free theorem or a necessary condition for the
+actual signed target.
+\end{theorem}
+
+With the current physical input the pure witness has the sufficient
+PIT majorant $19/24$, and the mixed witness retains the smaller $7/9$
+from the minimum. Independent scalar powers $U^{-1/12}$ and
+$U^{-1/18}$ would suffice for those majorants, with compatible endpoint
+control; their all-scale mean-square versions would entail the strict
+strips $11/12$ and $17/18$ above. None is asserted available.
+The old pure $5/6$ budget and $U^{-1/6}$ input, with conditional strip
+$5/6$, are historical values for the former operator bound.
+Proposition~\ref{phy:global} gives the current global $9/8$ comparison,
+and Proposition~\ref{phy:signed} the scoped $A_6=1$ comparison $13/12$.
+The target, principal/short assembly beyond the stated scopes,
+independent determinant/zero-location bridges and full analytic/category
+Lean formalization remain open.
