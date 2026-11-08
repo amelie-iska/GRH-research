@@ -1,0 +1,181 @@
+{
+  "passed": true,
+  "utc": "2026-11-08T22:04:03.787853+00:00",
+  "status": "VERIFIED_STAGING_ONLY",
+  "source_stage": {
+    "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/source-stage-v1.json",
+    "bytes": 61868,
+    "sha256": "a5e56471e8ce3c8bce560c818b8dc938177723d114c667d6d9c331842ccfd7eb"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-cutoff-appendix/SOURCE_PINS-v1.json",
+    "bytes": 68785,
+    "sha256": "ba84649ce4a2d79d24ff45a90af27f7b375eb5499c6ad9ed369b7b729c7afc3d"
+  },
+  "pin_count": 350,
+  "appendix_review": {
+    "path": "planning/cutoff-appendix-20261108/REVIEW-v1.json",
+    "bytes": 5784,
+    "sha256": "e0eec6caca6c559d22a69e0070a7fc1008ed6490ae3c6934b5cac390903ca64b"
+  },
+  "research_review": {
+    "path": "outputs/checks/2026-11-08-cutoff-appendix/WIDE_REVIEW-v1.json",
+    "bytes": 1214,
+    "sha256": "b07ad37fb81b11956f643a383b8fe1d8755bfd03f42bd680a4bfe7113766c6da"
+  },
+  "research_controls": [
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/wide-correction-controls-v2.json",
+      "bytes": 1184,
+      "sha256": "3792e8b90add70cecd8f307b2898d02a5be4bf3167bafc51bedad701e7936441"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/wide-correction-addendum-controls-v1.json",
+      "bytes": 449,
+      "sha256": "12de43ad94c97f72b7d4b0eb0d952cad4da3a8d14eafac3e6a3769dddc320836"
+    }
+  ],
+  "pdfs": {
+    "book-pdf": {
+      "pages": 360,
+      "artifact": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/book-pdf/main.pdf",
+        "bytes": 3320323,
+        "sha256": "a5200ed87f58f9c2f07d9886b35242d3c7021fc0848587471e732e5a8fc128a8"
+      },
+      "build": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/book-pdf/build-record.json",
+        "bytes": 23939,
+        "sha256": "9eb2f696de2df2ef92cbc14b62c4626f9f1a69eadb623a7fbcafe48e4b10ecf0"
+      }
+    },
+    "focused-concise": {
+      "pages": 88,
+      "artifact": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/focused-concise/resolutions-concise.pdf",
+        "bytes": 963384,
+        "sha256": "7eacf6ce23aa38d1b147f1650cfbad2125f7a42a299f63776fd6418f74fbb76e"
+      },
+      "build": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/focused-concise/build-record.json",
+        "bytes": 7840,
+        "sha256": "3f968eb4b7c80b4d625d8648d912d34b69da8cffff057971a15e69e2308d5673"
+      }
+    },
+    "focused-extended": {
+      "pages": 253,
+      "artifact": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/focused-extended/resolutions-extended.pdf",
+        "bytes": 2062813,
+        "sha256": "76a1d2c0168c58af2500846bcc8c05cbfa9dc53539093421b0e305e45b344197"
+      },
+      "build": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/focused-extended/build-record.json",
+        "bytes": 17044,
+        "sha256": "ad5d89c0ebf03ea990a1034e56e18dbf3daaf879c0ed305bf2e78799a7fe831b"
+      }
+    },
+    "notes-concise": {
+      "pages": 45,
+      "artifact": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/notes-concise/validated-oracle-concise.pdf",
+        "bytes": 647683,
+        "sha256": "810ad426127e34304852deed76ca5f202813f353989ecb888464fe2b0183c9da"
+      },
+      "build": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/notes-concise/build-record.json",
+        "bytes": 4431,
+        "sha256": "3830641823cb6f3cd95eadcbf2960364ede85ef8b0632f1f924c6760822762b5"
+      }
+    },
+    "notes-extended": {
+      "pages": 142,
+      "artifact": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/notes-extended/validated-oracle-extended.pdf",
+        "bytes": 1288490,
+        "sha256": "911a1ae7a520d996c9e7018da96314f67fb8fa74fffe1b1c3f42ae76852ed9a8"
+      },
+      "build": {
+        "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/notes-extended/build-record.json",
+        "bytes": 7161,
+        "sha256": "db28d90bd3c4be31c0a2e9454b60d75ae32d50bd4ad4793bdd09ccdf21d0f278"
+      }
+    }
+  },
+  "native_build": {
+    "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/native/native-build-record.json",
+    "bytes": 17259,
+    "sha256": "8110dc6dac633067d5429bdcffc6002070e1c0492163428ebdcc7881f549b801"
+  },
+  "native_book": {
+    "path": "outputs/checks/2026-11-08-cutoff-appendix/stage-v2/inputs/outputs/cutoff/native/book/main.html",
+    "bytes": 5564489,
+    "sha256": "f2fc7069d1ab536755a2232fc380aba6ad78b70fb639fbeeaa3a46c3a996e115"
+  },
+  "browser": {
+    "path": "outputs/checks/2026-11-08-cutoff-appendix/browser-v1/receipt.json",
+    "bytes": 1334,
+    "sha256": "717d4e0e0d76df7e519a9bba76aab9e41ad3fcb402c26e4c7d19576172783118"
+  },
+  "visual_evidence": [
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/visual-v2/core.jpg",
+      "bytes": 165478,
+      "sha256": "2d58e90c7ed010de45336153150f67e5cf6ac35019061349733ea0386806261c"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/visual-v2/detail-harmonic.jpg",
+      "bytes": 135731,
+      "sha256": "5491006d2f2ad80539583f821a27012ab91e76387ecb5b36aa897856846efe7a"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/visual-v2/figure-biomech-320.jpg",
+      "bytes": 36397,
+      "sha256": "beb9ce406f181f0219b17cfa02fc2ce8dc4454ae5cd5ab87aa8917251da800af"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/visual-v2/figure-light-1440.jpg",
+      "bytes": 94868,
+      "sha256": "03e24d040c9e30ac714a76be99abe33260785f5377982857c04aacdda95cfb29"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/visual-v2/figure-light-320.jpg",
+      "bytes": 31892,
+      "sha256": "bf901fc75c8a476302ae61e5247d6a52223b9b01b07a2af404f3d75ffcbd3c64"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/visual-v2/regime.jpg",
+      "bytes": 115635,
+      "sha256": "9810e3d328786fd46a5e061e78c7454b75be44342652ada6a71652bc4c66d1a0"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/visual-v2/three-half-comparison.jpg",
+      "bytes": 130030,
+      "sha256": "47e88cda2ab83361bd539379be94f156cf212ac17d4b85bbf11d0ef6dcd1823c"
+    }
+  ],
+  "visual_review": "Selected PDF pages and native light layouts inspected, with the full mobile figure reachable through focused horizontal scrolling.",
+  "page_counts": [
+    360,
+    88,
+    253,
+    45,
+    142
+  ],
+  "mathml": 11505,
+  "literal_prior_mathml": 10858,
+  "chapters": 40,
+  "tables": 389,
+  "canonical_iframes": 14,
+  "svg_refs": 33,
+  "failed_candidates": "Extended PDF v1 59.88504pt overfull paragraph resolved by aligned displays. First wide-check candidate syntax error corrected. PDF visual lookup needed physical pagination offset. All candidates preserved.",
+  "notes": "Three inherited malformed munder nodes are outside the appendix. Older TeX underfull and package notices and source-matched cached diagram constraints persist. Wide correction advances are outside the staged appendix.",
+  "production_promoted": false,
+  "published": false,
+  "new_Lean_declarations": 0,
+  "project_complete": false,
+  "research_complete": false,
+  "protected_HEAD_states": 16,
+  "protected_frozen_release_index_states": 15,
+  "canonical_artifacts_verified": 18
+}

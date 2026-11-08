@@ -1,0 +1,76 @@
+{
+  "schema": "pure-equal-cross-independent-review-record-v1",
+  "utc": "2026-11-08T13:57:15.782044+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "scope": "Original unweighted pure nonprincipal two-pivot projections. All review work used read-only SSH.",
+  "allocated": {
+    "proof": {
+      "path": "planning/pure-equal-cross-20261108/PURE_EQUAL_ALLOCATED-v1.md",
+      "bytes": 10945,
+      "sha256": "a1c8847482573a1777e011bc8feed207a7a7e49eba4e38f52b31a0043d52290e"
+    },
+    "agents": [
+      "rational_cubic_gram",
+      "low_content_short_gauss",
+      "low_content_cross_review"
+    ],
+    "checked": [
+      "general d ordered allocations and signs",
+      "log-node separation and exact strict/inclusive endpoints",
+      "only variable (h,t) projector and fixed raw q phase",
+      "sixth and fourth moment common-factor transport",
+      "L6/L3 profile optimization including subunit",
+      "complete selected divisor sum",
+      "ordered cutoff provides eligible divisor at all eligible norms >=D^(5/24)"
+    ],
+    "independent_ephemeral_controls": {
+      "grouped_cutoff_sums": 1024,
+      "rational_product_character_values": 51759,
+      "raw_zeros_in_product_controls": 11096,
+      "oriented_pair_decompositions": 6561
+    }
+  },
+  "joint": {
+    "proof": {
+      "path": "planning/pure-equal-cross-20261108/PURE_EQUAL_JOINT-v1.md",
+      "bytes": 9745,
+      "sha256": "cdceed0305fe16722fea96fe917f58d856729c693f75f50565395abc9bf8b982"
+    },
+    "agents": [
+      "low_content_cross_review",
+      "low_content_short_gauss"
+    ],
+    "checked": [
+      "primitive phase at h intersect conjugate t remains exponent 1",
+      "equal-pattern multiplicity and Gaussian completion with full deletion",
+      "Schur and scalar bounds",
+      "pure profile slices and complete divisor comparison"
+    ],
+    "independent_ephemeral_controls": {
+      "local_phase_checks": 39123,
+      "Gram_local_mask_checks": 118566
+    }
+  },
+  "unequal": {
+    "proof": {
+      "path": "planning/pure-equal-cross-20261108/GROUPED_UNEQUAL_OVERLAP-v1.md",
+      "bytes": 10245,
+      "sha256": "8437fda279bd45ed1da2f7f75814aebb2f5d5f7f3ad5b2244a4ebb39862a2113"
+    },
+    "agents": [
+      "low_content_short_gauss"
+    ],
+    "checked": [
+      "full h grouping and reduced ratio",
+      "exact c1/c2/s/b0 phase and repeated valuations",
+      "gap and residual cutoffs dependent on Nd",
+      "full-complement rather than just equality crosses"
+    ],
+    "independent_ephemeral_controls": {
+      "exact_phase_checks": 125000,
+      "physical_ratio_checks": 1000,
+      "residual_overlaps_with_c2": 488
+    }
+  },
+  "note": "Thread records carry the independent calculations. Source-bound durable author controls are in ATTEMPT-v1.json."
+}

@@ -1,0 +1,103 @@
+{
+  "schema": "coupled-cutoff-attempt-v1",
+  "utc": "2026-11-08T19:02:47.094959+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "proofs": [
+    {
+      "path": "planning/coupled-cutoff-20261108/COUPLED_POWERFUL_CROSS-v2.md",
+      "bytes": 14559,
+      "sha256": "1ba4e56c0d41d22ac424e37d197b00940d0c00688bb73bc84264432f77f6b104"
+    },
+    {
+      "path": "planning/coupled-cutoff-20261108/ONE_SIDED_CONTENT-v1.md",
+      "bytes": 7686,
+      "sha256": "47912941464e30dfb2f7165829163b75992454f986975be343742fecf7b5b234"
+    },
+    {
+      "path": "planning/coupled-cutoff-20261108/LOCALIZATION-v1.md",
+      "bytes": 3311,
+      "sha256": "d8e9737eef396aa4c113f14bb898d30a80ffa4102374991d21bf3c2db345e22f"
+    },
+    {
+      "path": "planning/coupled-cutoff-20261108/COMPARABLE_SCALE_WINDOW-v1.md",
+      "bytes": 10897,
+      "sha256": "5272f59cce4484e19712502bf8f4f230205a9e0b2eb83bac462f2ce660d82b11"
+    }
+  ],
+  "clarification": {
+    "path": "planning/coupled-cutoff-20261108/PROJECTOR_CLARIFICATION-v1.md",
+    "bytes": 2184,
+    "sha256": "d66c86094b7d3e3dae2ecbc508b24acd0917742ec48310ba28c2142b9c08d848"
+  },
+  "controls": [
+    {
+      "path": "outputs/checks/2026-11-08-coupled-cutoff/grouped-powerful-exact-v2.json",
+      "bytes": 2239,
+      "sha256": "3a5957cb1619929b9fef2fbad304f1be8345ed777cf8c5be5dcbbca09ea78f4d"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coupled-cutoff/content-controls-v1.json",
+      "bytes": 788,
+      "sha256": "dda97a7a93da062453909d84ff0b7cd142193b63af4e384db8fb0cb34096a184"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coupled-cutoff/scale-controls-v1.json",
+      "bytes": 653,
+      "sha256": "c012a7e4c76058dcc984f86474471ce901cdb083f7b2c2621cb0e916278771d4"
+    }
+  ],
+  "harnesses": [
+    {
+      "path": "outputs/checks/2026-11-08-coupled-cutoff/check_grouped_powerful_exact_v2.py",
+      "bytes": 14791,
+      "sha256": "d20a2fb0b2a761fbdae7292c03aab02760e3b941023a59e57d4030f47702dfbb"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coupled-cutoff/check_content_v1.py",
+      "bytes": 5364,
+      "sha256": "158ea901db525f78ea6d68cc230b64238077346b90a9e8502d9c3d86b061d32a"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coupled-cutoff/check_scale_v1.py",
+      "bytes": 3126,
+      "sha256": "1a8d34a3faa4fb160c094a3e92a301b1c79a08542b9466e17ca2ff59012793fe"
+    }
+  ],
+  "preserved_candidates": [
+    {
+      "path": "planning/coupled-cutoff-20261108/COUPLED_POWERFUL_CROSS-v1.md",
+      "bytes": 13929,
+      "sha256": "78f5b6ab31f9a5287c9fc977bb4e63f9dcbbe7ee8d7923ce4a1f46008fab6500"
+    },
+    {
+      "path": "planning/increment-one-20261108/COUPLED_CUTOFF_DRAFT-v1.md",
+      "bytes": 14079,
+      "sha256": "34f3370a606baed487a958b4e23bd15761b91f0fde9052065630c3e98b581da4"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coupled-cutoff/check_grouped_powerful_exact_v1.py",
+      "bytes": 12883,
+      "sha256": "648b72f15679109a2b1cfb5d24bf170a3594ada994be3a9f18b3482115ea011a"
+    }
+  ],
+  "review": {
+    "path": "outputs/checks/2026-11-08-coupled-cutoff/REVIEW-v1.json",
+    "bytes": 2575,
+    "sha256": "981f4ffe72b98e6cb76817a4ed0afcac7089f0841901f3ed9ef09863e6985006"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-coupled-cutoff/SOURCE_PINS-v1.json",
+    "bytes": 57075,
+    "sha256": "2c63c95740a0d506de6d4a1a9271d9fbc3a970767650de6865f899ffc4406982"
+  },
+  "new_results": {
+    "pure_comparable": "Original selected signed equality/complement cross, all increments 1..5: 55/68 all divisors and target on Nd<=D^9/68; all comparable physical lengths at exact pure pivot scales.",
+    "large_powerful": "At B,K comparable to R, target all d for NP at least order D^1/2; target prefix Nd<=M^1/2 for powerful dyad M between D^9/34 and D^1/2.",
+    "localizations": "At B,K comparable to R, target all d for Nk_*>=D^2/119 or either retained active factor at least order Nd*D^-9/68. Small one-sided content c gives relative excess 1/17-25c/102.",
+    "equality": "Middle subtraction counted at physical norms before powerful or content sums; both endpoints and re-expressed direct equal norms retained."
+  },
+  "failed_step": "Freezing the whole powerful part before bounding the sparse square-divisor tail loses the uniform coupled rate. Also a residual-only deletion after stripping s_1 is false. Joint sparse counting after extracting P_s and the explicit fixed eligibility recover the statements above.",
+  "next": "Retain exact cutoff and dual phases when averaging over the remaining low-residual, small-powerful nonunit d core; separately extend to noncomparable physical scales.",
+  "open": "Whole prefix 109/144, signed 13/12, unsigned 9/8, principal/short assembly, determinant, scope-specific zero location, Lean and GRH.",
+  "prior_fixtures_replayed": false
+}

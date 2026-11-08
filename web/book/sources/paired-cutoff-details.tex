@@ -1,0 +1,752 @@
+% Source-bound extended proof of the selected paired cutoff comparisons.
+\section{Sharp insertion and ordered cutoff estimates}
+\label{pca:details}
+
+Throughout this section, \(x\) denotes the erased squarefree cutoff
+factor, \(I\) the positive insertion ideal, and \(B,K\) their respective
+physical dyadic lengths. The exact partner norms are \(Nz=Nz_*Nx\) and
+\(N\mathfrak k=Nk_*NI\). Here \(\mathfrak k\) is the original dual ideal,
+and \(k_*\) is its fixed residual factor in a given cell. Write
+\[
+ E=Nd,\qquad A=A_1,\qquad R=A_1A_2,\qquad
+ a=\log_D A,\quad r=\log_D R,\quad b=\log_D B,\quad k=\log_D K .
+\]
+At the critical pure scales \(a=r=3/4\) at the level of powers, and
+at the critical mixed scales \(a=5/12,\ r=7/12\). Fixed comparison
+constants in the scales are allowed throughout. A bound in this
+section includes the common factor
+\((DH)^\epsilon\mathcal M_{24}(W)^2\) for the paired cross, with the
+original fixed-data constants. In row moments the appropriate one-profile
+factor is understood separately.
+
+The estimates concern the selected pairing with both original erasures,
+all positive off-\(d\) increases whose sum with the old residue is at
+most five, and the exact new residues on \(d\). The old cutoff and
+conjugate erasures, including old exponent two in the conjugate
+erasure, remain in the phase. The cutoff is \(Z=U^2\), with
+\(U^2\le D\le7U^2/2\). The rows are the original unweighted literal
+nonprincipal rows. We keep the common \(W\), fixed \(S,\nu,u_0\),
+literal ray, capacity and squarefree selectors, and the actual
+primitive \(Q_u\asymp R\), Gauss root and raw zeros. The physical
+sieve is the order-six application in Section~\ref{phy:details}.
+Its exponent at column length \(D^t\), relative to \(A\), is
+\begin{equation}\label{pca:detail-delta}
+ \Delta_a(t)=\max\bigl(0,t-a,t/3-a/6,5t/6-2a/3\bigr).
+\end{equation}
+Its growth slope is at most one. A live subunit dyad is treated
+at constant scale.
+
+\subsection{The middle subtraction and scalar comparisons}
+\label{pca:detail-radial}
+
+First remove the negligible inherited tail \(N\mathfrak k>D^5\).
+Its absolute estimate applies to each selection below. Fix the
+original allocation and dyad on the partner side. The compact
+logarithmic separation of the partner profile uses
+\(\log(NI/K)-\log(Nx/B)-\log(Q_u/R)\).
+Its weighted Fourier absolute integral, with the extra factor
+\(1+|\xi|\) in log frequency \(\xi\), is bounded by a constant
+times \(\mathcal M_{24}(W)(1+y'_1)^{-4}\) at the actual
+dyadic profile scale \(y'_1\). This follows by extending the
+profile on a fixed-width log interval and integrating by parts.
+The phase factors then separate on the erased array, insertion
+array and row. There is no condition on \(B/K\) in this separation.
+Sharp subinterval partial summation removes the insertion norm
+twist with the erased array and every other row multiplier fixed.
+
+For the original middle equality, the equation
+\(Nz_*Nx=Nk_*NI\) fixes at most one integer norm on either side
+given the other ideal. There are divisor-many ideals of each
+integer norm on the clipped support. This counts the entire
+insertion ideal, including its powerful part. The physical
+\(1/Nx\) yields weighted mass
+\(O((DH)^\epsilon\min(1,K/B))\). The two half radial powers
+supply \((B/K)^{1/2}\), giving the factor
+\(\sqrt{\min(B/K,K/B)}\le1\). The remaining label sums give
+\(O(R/E)\). Apply this subtraction only in the original middle
+window with its exact two endpoints. Equal norms in the
+re-expressed direct, low and far pieces remain there.
+
+The original live primal test gives
+\begin{equation}\label{pca:detail-primal}
+ E\ll D/B,\qquad
+ D/(E E_1(Nh_1)^2)>Nz/4,\qquad y'_1\gg N\mathfrak k/R\gg K/R .
+\end{equation}
+For each side \(i=0,1\) write \(h_i=r_i e_{0,i}\) for
+the original grouped square-divisor label and \(E_i=Ne_{1,i}\)
+for its deletion norm. The good part of \(e_{1,i}\) is a divisor
+of \(d\), and its other part is supported on \(S\).
+Write \(h_0=f a_{\rm id},\ h_1=f b_{\rm id}\) with
+\(f=(h_0,h_1)\). The three ideals \(f,a_{\rm id},b_{\rm id}\)
+are pairwise coprime and squarefree. The ideal \(b_{\rm id}\)
+is distinguished from the length exponent \(b\).
+On the equality side \(z_{0,0}=g\ell,\ \mathfrak k_0=g\bar\ell\).
+For the good part \(\bar\ell_{\rm g}\) of the conjugate define
+\[
+ j=(\bar\ell_{\rm g},d),\quad c=(z_*,a_{\rm id},\bar\ell_{\rm g}),
+ \quad a_0=a_{\rm id}/c,\quad
+ \ell_0=\ell/(\ell,z_*b_{\rm id}).
+\]
+The good conjugate erasure support \(\mathfrak q_\ell\) is a
+squarefree divisor of \(\bar\ell_{\rm g}\) avoiding
+\(a_{\rm id},b_{\rm id},d\). Its full erased factor is
+\(\mathfrak e_\ell=\prod_{p\mid\mathfrak q_\ell}
+ p^{1+\mathbf1_{p\mid z_*}}\).
+Let \(\widetilde q_d\) be the actual sixth-free new
+representative at the good primes of \(d\).
+With \(k_S\) the original \(S\)-part and \(v_6\) the full
+sixth-power repetition, the exact partner residual is
+\begin{equation}\label{pca:detail-partner-residual}
+ \begin{aligned}
+ k_*&=k_S v_6^6
+ \frac{z_*a_{\rm id}^{4}b_{\rm id}^{2}\ell_0^6}{\ell\,c^6}\\
+ &\quad{}\times
+ \frac{(\bar\ell_{\rm g}/j)\widetilde q_d}{\mathfrak e_\ell}.
+ \end{aligned}
+\end{equation}
+The quotient follows from the good exponent difference of the
+two primitive phases. Away from \(d\), before changing any
+residue, that difference has representative exponent
+\[
+ v_p(z_{0,1})+4v_p(a_{\rm id})+2v_p(b_{\rm id})
+                  -v_p(\ell)+v_p(\bar\ell_{\rm g})\pmod 6.
+\]
+At \(\ell_0\) one adds six to the negative exponent, and
+at \(c\) one subtracts the overflow six. The selected
+cutoff erasure removes \(x\) from this product.
+The selected conjugate erasure divides by
+\(\mathfrak e_\ell\), and the \(d\)-part uses
+\(\widetilde q_d\) in place of the matched residue.
+The positive increases multiply this exact residual by \(I\).
+The norm and raw value of \(v_6^6\) are retained, including
+any overlap with the other factors. On the original admissible
+pairs these operations give the literal product
+\(\psi_u(x)\overline{\psi_u(I)}\) times the fixed row phases,
+with the original raw zeros.
+
+Let \(D^\rho\) be the product of the
+two row norms relative to \(R\sqrt{K/B}\), after the projectors
+and powerful sums. The full cutoff inverse norm is included
+in these norms. For the exact paired scalar, start with
+\[
+ \frac{D}{E^2E_0E_1\,Ng\,N\ell\,Nz_*
+          (Nf)^4(Nc)^2(Na_0)^2(Nb_{\rm id})^2}.
+\]
+Up to the fixed dyadic constants its profile scales are
+\[
+ \begin{aligned}
+ y_0&=\frac{D}{EE_0 R(Nf\,Nc\,Na_0)^2},\\
+ y'_1&\asymp
+ \frac{D}{EE_1 R}\frac{(Na_0)^4}{(Nf\,Nc)^2}
+ (N\ell_0 Nv_6)^6\frac{N\widetilde q_d}{Nj}
+             \frac{Nk_S K}{B\,N\mathfrak e_\ell}.
+ \end{aligned}
+\]
+The actual profile uses \(Q_u\), the physical ideal norms
+and the original fixed \(S\)-factors.
+Multiplying by \(y_0^{-\alpha}(y'_1)^{-\theta}\) gives the
+following weights before the relative row moment:
+\begin{equation}\label{pca:detail-scalar}
+ \begin{aligned}
+ &D^{1-\alpha-\theta}R^{\alpha+\theta}E^{\alpha+\theta-2}
+   E_0^{\alpha-1} E_1^{\theta-1}(B/K)^\theta\\[-2pt]
+ &\quad{}\times
+ \frac{(Nf)^{2\alpha+2\theta-4}(Nc)^{2\alpha+2\theta-2}
+       (Na_0)^{2\alpha-4\theta-2}}
+      {Ng\,N\ell\,Nz_*(Nb_{\rm id})^2
+        (N\ell_0 Nv_6)^{6\theta}(Nk_S)^\theta}
+ (N\mathfrak e_\ell)^\theta
+       (Nj/N\widetilde q_d)^\theta .
+ \end{aligned}
+\end{equation}
+The scalar is accompanied by the retained decay
+\((1+K/R)^{-(4-\theta)}\) from \eqref{pca:detail-primal}.
+Every absolute comparison follows the exact pairing with those labels.
+
+In the harmonic \(\ell\)-count the fixed \(\bar j\mid\ell\)
+pays \(Nj\) to power one. A conjugate erasure prime \(p\) uses a
+distinct \(\bar p\mid\ell\). Its conjugate lies in exactly one of
+\(\ell_0,z_*,b_{\rm id}\), paying a second inverse norm. In the
+old exponent-two case, the original \(p\mid z_*\) pays a third
+inverse norm. Thus the resulting local exponents are at most
+\(-2+\theta\) and \(-3+2\theta\), respectively. When \(Nc\)
+or its half power is needed, charge \(c\mid z_*\). This charge
+is disjoint from both conjugate charges since
+\(\mathfrak q_\ell\perp a_{\rm id}\), its conjugates lie in
+\(\ell\), and \(c\mid a_{\rm id},\bar\ell_{\rm g}\).
+The other sums below are harmonic on polynomial support,
+convergent inverse-power sums, or fixed-divisor choices.
+
+For \(1/6\le\theta\le1\), take \(\alpha=1-\theta\).
+The harmonic comparison at each \(d\) is
+\begin{equation}\label{pca:detail-harmonic}
+ \frac R E D^\rho (B/K)^{\theta-1/2}
+                   (1+K/R)^{-(4-\theta)}.
+\end{equation}
+The two three-half choices give the comparisons
+\[
+ \begin{aligned}
+ &\frac{R^{3/2}D^\rho}{\sqrt D\sqrt E},
+       &&(\alpha,\theta)=(1,1/2),\\
+ &\frac{R^{3/2}D^\rho(K/B)^{1/6}}{\sqrt D E^{1/3}},
+       &&(\alpha,\theta)=(7/6,1/3),
+ \end{aligned}
+\]
+with the corresponding retained decays. In the second choice
+\(E_0^{1/6}\ll_S E^{1/6}\). With \((\alpha,\theta)=(1,1/4)\),
+the \(E_0\) cancels, the weights in \(f,a_0,\ell_0v_6\) have
+exponents \(-3/2,-1,-3/2\), and the disjoint charge on \(c\)
+pays its half power. The resulting comparison is
+\begin{equation}\label{pca:detail-quarter}
+ \frac{R^{5/4}D^\rho}{D^{1/4}E^{3/4}}
+             (K/B)^{1/4}(1+K/R)^{-15/4}.
+\end{equation}
+By the first inequality in \eqref{pca:detail-primal}, summing
+the \(E^{-3/4}\) costs \(O((D/B)^{1/4})\) on its live range.
+The two three-half choices on \(E\le D^e\) cost
+\(D^{e/2}\) and \(D^{2e/3}\), respectively.
+
+The higher choice \((\alpha,\theta)=(5/2,1)\) leaves
+\((Nf)^3(Nc)^5\) in \eqref{pca:detail-scalar}.
+The exact primal restriction gives
+\[
+ (Nf)^2(Nb_{\rm id})^2Nz_*Nx\ll D/(E E_1),
+ \qquad (Nf\,Nc)^4\ll (D/(E E_1B))^4 .
+\]
+Write the remaining numerator as
+\((Nf)^{-1}Nc\,(Nf\,Nc)^4\) and pay the first two factors by
+the preceding harmonic counts. The additional \(E^{-4}\) and
+\(E_0\ll_S E\) give the harmonic comparison
+\begin{equation}\label{pca:detail-high}
+ \frac{R^{7/2}D^{3/2+\rho}}{B^4 E}
+                 (B/K)^{1/2}(1+K/R)^{-3}.
+\end{equation}
+
+There is also a fixed-label selection for \((\alpha,\theta)=(1,0)\).
+For \(p\mid a_0\), the original eligibility excludes \(b_{\rm id}\),
+\(\ell,d,x,\mathfrak q_\ell\), and at most one of \(z_*,\bar\ell_{\rm g}\)
+contains \(p\). The exact residual has valuation four or five at this
+prime before adding the full sixth repetition. Thus
+\(a_0^4v_6^6\mid k_*\). On \((Na_0)^4(Nv_6)^6\ll D^\xi\),
+the joint count of \(a_0,v_6\) is \(O(D^{\xi/4})\), by summing
+\((Nv_6)^{-3/2}\). Formula~\eqref{pca:detail-scalar} then gives
+\(R D^{\rho+\xi/4}(K/B)^{1/2}/E\). This selection is sufficient
+when \(Nk_*\ll D^\xi\). The comparison uses the full residual
+ideal, with its \(S\)-part and repetitions.
+
+\subsection{The sharp moment and the grouped sparse tail}
+\label{pca:detail-sparse}
+
+Write \(I=I_1P\) uniquely, where \(I_1\) is squarefree and the
+nonzero valuations of \(P\) are \(2,3,4,5\). We have \(I_1\perp P\).
+Fix \(P\) at first. The common-prime projector for \(x,I_1\)
+uses \(s_1\mid(x,I_1)\), with \(\mu(s_1)\) and the two raw
+values on \(s_1\). Require \(s_1\) itself to satisfy the original
+fixed prime eligibility of \(I_1\), including \(s_1\perp P\),
+before stripping it. The residual \(I'_1\) avoids \(s_1\)
+by its squarefreeness, along with the original forbidden union.
+Keep the original fixed \(P\)-deletion on the erased array.
+After stripping \(s_1\), the squared erased mass is
+\(O((DH)^\epsilon/(B Ns_1))\), including its actual \(1/Nx\).
+The insertion length is \(K/(NP\,Ns_1)\).
+A dyad \(NP\asymp M\) has \(O(\sqrt M)\) powerful ideals,
+by the unique representation \(P=a_{\rm p}^2b_{\rm p}^3\)
+with \(b_{\rm p}\) squarefree and the convergent
+\(\sum_{b_{\rm p}}(Nb_{\rm p})^{-3/2}\). Overlap is allowed
+at exponent five. This pays the \(M^{-1/2}\) shortening in
+the product of the two moments.
+
+For the sharp insertion bound at length \(L\), expand the
+fixed deletion and squarefree selectors in the order
+\(I'_1=e(r')^2m\), where \(e=e_f e_P\) divides the full forbidden
+union and \(r'\) avoids that union. All Möbius signs and
+fixed raw factors are retained. At fixed \(P,e,r'\) the remaining
+sharp interval is an unweighted \(m\)-interval after the exact
+partial summation. Its endpoints can be treated as sharp disk
+endpoints. Smooth a disk of norm length \(L\) at radial width
+proportional to \(\delta\sqrt L\). The normalized shell row
+norm is bounded by a subpower times
+\[
+ D^{\Delta_a(l)/2}\bigl(\sqrt{\delta L}+L^{1/6}\bigr),
+ \qquad l=\log_D L.
+\]
+To see the additive term, split each ideal uniquely as
+\(\mathfrak s\,b_0 v^6\) with \(\mathfrak s\) supported on \(S\)
+and \(b_0\) good sixth-free. At fixed \(\mathfrak s,v\),
+the shell contains divisor-many ideals per integer norm and
+has norm width \(O(\delta L/(N\mathfrak s(Nv)^6))\).
+Apply the physical sieve to \(b_0\). The square roots of the
+width weights sum absolutely. The constant atoms sum over
+\(N\mathfrak s(Nv)^6\ll L\), giving \(L^{1/6}\) up to
+subpowers. This also accounts for open or closed endpoints.
+
+The smoothed primitive Poisson transform has the original
+\(Q_u^{-1/2}\) and primitive Gauss root. On a dual dyad \(T\)
+put \(Y=\sqrt{LT/R}\). The disk transform is \(L\) times
+the Fourier transform of the unit disk's chord length
+\(2\sqrt{1-v^2}\) at frequency comparable to \(Y\).
+Integrating once by parts, separating the two endpoint
+intervals of width \(1/Y\), and integrating by parts again
+on the interior gives \(O(L(1+Y)^{-3/2})\).
+The endpoint derivative integral is \(O(Y^{-1/2})\);
+the interior boundary and second derivative terms
+are \(O(Y^{1/2})\) before the second division by \(Y\).
+The same argument with the chord length multiplied by \(v\)
+bounds the frequency derivative, so its logarithmic derivative
+costs one power of \(1+Y\). The convolution bump and its
+log derivative provide \((1+\delta Y)^{-M_0}\)
+for arbitrarily large fixed \(M_0\).
+Consequently the cutoff log function \(m\) and \(m'\)
+have \(L^2\) bounds \(O(L(1+Y)^{-3/2}(1+\delta Y)^{-M_0})\)
+and \(O(L(1+Y)^{-1/2}(1+\delta Y)^{-M_0})\), respectively.
+Splitting the Fourier integral at
+\(1+\|m'\|_2/\|m\|_2\) and applying Cauchy and Plancherel
+gives absolute log Fourier mass
+\(O(L(1+Y)^{-1}(1+\delta Y)^{-M_0})\).
+Multiplying by \(\sqrt T/\sqrt{Q_u}\) yields
+\[
+ O_{M_0}\!\left(\sqrt L
+     (1+\delta\sqrt{LT/R})^{-M_0}\right).
+\]
+The zero frequency is absent by nonprincipality.
+With \(\delta\asymp D^{\lambda-\Delta_a(l)}\)
+when \(\Delta_a(l)>\lambda\), the effective dual exponent is
+\begin{equation}\label{pca:detail-sharp-criterion}
+ t=\max(0,r-l+2(\Delta_a(l)-\lambda)).
+\end{equation}
+The main shell term has row RMS \(O(\sqrt L D^{\lambda/2})\).
+The additive term has the same bound whenever
+\(\Delta_a(l)\le2l/3\). The smoothed term has that bound if
+\(\Delta_a(t)\le\lambda\). Above the cutoff the arbitrary
+smoothing decay pays the degree-one growth of the sieve and
+the divisor subpowers. The ordinary estimate applies directly
+if \(\Delta_a(l)\le\lambda\).
+
+In pure use \(\lambda=0\) for \(l\le4/5\).
+For \(l\ge3/8\) the convex function in
+\eqref{pca:detail-sharp-criterion} before truncation is at
+most \(3/8\) by the endpoints. In mixed use
+\(\lambda=1/20\) for \(l\le5/8\). The smoothing branch
+requires \(l>43/120\), and the same convex comparison gives
+\(t\le43/120\). The additive term meets the stated criterion
+in both cases. The exact deletion \(e\)-sum has divisor cost
+at fixed \(P\), the \(r'\)-sum is harmonic, and the \(P\)-count
+pays the shortening above. The resulting sharp rectangle
+loss is \((\Delta_a(b)+\lambda)/2\). It uses the physical
+ratio \(\sqrt{K/B}\) even when \(B\) and \(K\) are unequal.
+The ordinary two-moment alternative has loss
+\((\Delta_a(b)+\Delta_a(k))/2\).
+
+The coupled comparison keeps a sharper tail for \(Nr'\ge D^q\)
+at \(NP\asymp M\). Freeze \(e_f\), expand the remaining
+\((x,P)=1\) by \(s_2\mid(x,P)\), with \(s_2\perp s_1\),
+and fix the powered portion \(P_s\) on \(s_2\). Set \(P=P_sP'\)
+and group the insertion coefficients by the actual
+\(P'e_P(r')^2m\), of length \(K'=K/(Ns_1\,Ne_f\,NP_s)\).
+The coefficients are divisor bounded and signed. They include
+the original full \(P\)-dyad, threshold, old residue test and
+clipped physical interval. For the sixth-free reduction of
+this grouped ideal, write it as \(\mathfrak s\,b_0v^6\),
+and split \(P'=P_0P_1,\ r'=r_0r_1\) by the support of \(v\).
+The original \(r'\perp P\) gives \(P_1r_1^2\mid b_0\).
+The two inverse-norm sums in the support count are bounded by
+\[
+ \min(1,(NP_sNP_0/M)^{1/2}),\qquad
+ \min(1,Nr_0D^{-q}).
+\]
+The first is the powerful reciprocal dyad count and the
+second the inverse-square ideal tail. The resulting squared
+mass at fixed \(\mathfrak s,v,P_0,r_0\) is at most their
+product times \(K'/(N\mathfrak s(Nv)^6)\), up to subpowers.
+After square roots the \(v\)-sum converges, since
+\((NP_0)^{1/4}(Nr_0)^{1/2}(Nv)^{-3}\le(Nv)^{-5/4}\).
+The \(S\)-part sum also converges. Finally
+\(NP_s\ge(Ns_2)^2\) makes the product of the insertion
+shortening and the erased \(s_2\)-shortening harmonic.
+Thus the relative norm saving in this branch is
+\(M^{-1/4}D^{-q/2}\). It holds at the actual physical
+lengths for both ratio orientations.
+
+\subsection{Coupling the dual to the shorter ordered factor}
+\label{pca:detail-coupling}
+
+Open \(x\) into its actual two ordered cutoff factors.
+Fix the assignments of the cutoff base and of \(s_1\), and
+retain the individual cutoff bounds. Before expanding their
+remaining coprimality, both factors are individually squarefree
+and keep all their fixed deletions. Use the common squarefree
+\(w\) projector, with pre-stripping eligibility in both arrays
+and with both residual factors avoiding \(w\) after shortening.
+The fixed phase is \(\mu(w)\psi_u(w)^2\). Sharp norm product
+tests separate with polylogarithmic Fourier mass on the clipped
+polynomial ranges, keeping their endpoints. The auxiliary
+primitive insertion dual has the same raw orientation as \(x\).
+Multiply it by the shorter cutoff factor as an actual ideal
+before forming row norms. The grouped coefficients have
+divisor bound and no added coprimality with the auxiliary
+frequency. With shortened lengths \(X_s,X_l\) the physical
+product is \(X_sX_l\asymp B/(Ns_1(Nw)^2)\).
+The actual cutoff inverse norm and the smoothed transform
+mass \(\sqrt L\) therefore give the factor
+\[
+ \frac{\sqrt{K/B}}{Ns_1 Nw\,Nr'\sqrt{Ne}\sqrt M}.
+\]
+The \(P\)-count pays the \(M^{-1/2}\), and the \(s_1,w,r'\)
+sums remain harmonic.
+
+For reference, set \(n=\log_D Ns_1,\ j=\log_D Ne,\ p=\log_D Nr'\),
+\(v=\log_D M\), and write \(\ell=k-v-n-j-2p\) for the ordinary
+insertion log length. In each coupled application choose the
+relative target loss \(\rho\), then use the sharp branch for
+large \(n\) and the extra deletion shortening \(D^{-j/2}\) for
+large \(j\). Put
+\[
+ \sigma=\Delta_a(b)+\Delta_a(k)-2\rho,\qquad
+ q=\max(0,\sigma-v/2).
+\]
+The grouped branch \(p\ge q\) pays the ordinary excess down to
+\(\rho\). In the remaining branch take \(\delta\asymp D^{-\beta}\).
+With
+\(\beta=\max(0,\Delta_a(b-n)+\Delta_a(\ell)-j-2\rho)\)
+the main shell meets the chosen loss directly.
+The additive term has exponent
+\((\Delta_a(b-n)+\Delta_a(\ell))/2-\ell/3-j/2\).
+The smoothed dual exponent is
+\[
+ t=\max(0,r-k+v+n+j+2p+2\beta).
+\]
+Its two sieve losses are evaluated at \(u_s+t,u_l\), where
+\(u_i=\log_D X_i\), \(u_s\le u_l\le1/2\), and \(u_s+u_l\le b-n\).
+The degree bound pays all larger dual dyads using the same
+smoothing decay. The following computations specify the
+small-\(p\) shell and cutoff choices in the regions of interest.
+
+\subsection{Pure central and comparable regions}
+\label{pca:detail-central}
+
+Set \(a=r=3/4\). On \(2/3\le b\le a,\ 1/2\le k\le31/40\)
+the coupled loss is the smaller of \(\Delta_a(b)/2\) and
+\[
+ \rho_c=
+ \begin{cases}
+ (25b-2k)/204-7/272,& k\le a,\\
+ (25b+22k)/204-31/272,& k\ge a .
+ \end{cases}
+\]
+To verify the second choice when it is smaller, put
+\(j_0=\Delta_a(b)-2\rho_c,\ n_0=3j_0\). Use the sharp branches
+at \(n\ge n_0\) or \(j\ge j_0\), as described above. In the
+remaining small-\(p\) range choose
+\[
+ \beta=\sigma-v/3-2n/3-4j/3-2p/3,\qquad
+ 6\rho_c=(a+b)/2-k+8\sigma/3 .
+\]
+Since \(v+2p\le2\sigma\), the lower bounds for \(\ell,\beta\)
+on the two \(k\)-pieces are, respectively,
+\[
+ \begin{array}{c|cc}
+ &\ell&\beta\\ \hline
+ k\le a&47/68-9b/17+11k/51&73/408-9b/34+8k/153\\
+ k\ge a&13/34-9b/17+32k/51&-97/204-9b/34+283k/306 .
+ \end{array}
+\]
+Their minima are \(41/102,1/153\) and \(31/68,1/51\).
+Thus \(\ell>3/8\) and \(\beta>0\).
+The lower slope \(1/3\) gives
+\(\Delta_a(\ell)\le\Delta_a(k)-(k-\ell)/3\);
+the main shell costs at most \(\rho_c\).
+For \(k\le a\) the additive excess is at most
+\(-\ell/6-n/6-j/2\).
+For \(k\ge a\) it is at most \(13/96-31/204<0\).
+
+The dual satisfies \(t\le a-k+8\sigma/3\).
+In the two \(k\)-pieces, \(b/2-k+8\sigma/3\) is
+\((25b-2k-18)/34\) and \((25b+22k-36)/34\), respectively,
+both negative on the stated rectangle. Thus \(u_s+t<a\).
+The geometric mean excess is bounded by
+\[
+ \tfrac16\max(1/8,(a+b)/2-k+8\sigma/3)=\rho_c .
+\]
+Indeed both sieve arguments use the lower slope, with
+\(u_s\le b/2-n/2,\ u_s+u_l\le b-n\) and \(u_l\le1/2\).
+
+Write \(\rho\) for the smaller loss. Substituting it into the
+harmonic comparison at \(\theta=1/6\) gives the short target
+for \(57/80\le b\le a,\ k\le(172b+21)/264\).
+The ordinary sharp loss already covers \(k\le b/2+3/16\).
+At \(\theta=1\) and \(k\ge a\), the retained decay gives
+the long target for \(273/404\le b\le a,\
+k\ge(508b+1743)/2768\).
+The sharp comparison covers \(k\ge5/8+4b/21\) through \(4/5\),
+and the ordinary long insertion comparison decreases above \(4/5\).
+The fixed product selection of Section~\ref{pca:detail-radial}
+instead gives \(k\le(308b+21-204\xi)/400\) on the lower
+\(k\)-piece. The two divisor-prefix choices with partner
+exponents \(1/2,1/4\), retaining the actual partner decay,
+give target through
+\[
+ e\le\max\left\{
+ \tfrac14-2\rho+7(k-a)_+,\ 
+ \tfrac14-4\rho+b-k+15(k-a)_+
+ \right\},\qquad Nd\le D^e .
+\]
+
+For \(B\asymp K\) and \(b\le a\), the central formula gives
+\(\rho\le1/17\), with the sharp branch sufficient below its
+central rectangle. For comparable \(b\ge a\), the shifted
+comparison below has loss at most
+\(1/17+(1/51+5/12)(b-a)\) until the long target applies.
+The partner decay in the half split pays this additional
+loss. The two half powers and the one-plus-half powers then
+give \(D^{55/68+\epsilon}\) over all \(d\) and the target
+on \(Nd\le D^{9/68}\), respectively. The latter follows from
+\(5/8+1/17+9/136=3/4\).
+
+\subsection{Pure long insertion for every erasure length}
+\label{pca:detail-long}
+
+Take \(k=a+y,\ 0\le y\le1/56\). Work first at the reference
+erased exponent \(a\), and put
+\[
+ \rho_0=1/17+y/51,\quad n_0=6(1/16-\rho_0),\quad
+ j_0=n_0/3,\quad \sigma=9/68+27y/34 .
+\]
+The sharp and sparse branches use these reference thresholds,
+with the actual insertion length. Their erased ordinary excess
+increases by at most \(5(b-a)_+/6\), before its square root.
+In the remaining branch use
+\(\beta=\Delta_a(a-n)+\Delta_a(\ell)-j-2\rho_0\).
+Here \(\ell\ge31/68-22y/51>3/8\) and
+\(\beta\ge1/51-16y/153>0\).
+The main shell has reference loss \(\rho_0\);
+the additive term has excess at most
+\(1/8+5y/12-(31/68-22y/51)/3<0\).
+
+If \(\ell\le a\), then
+\(\beta=\sigma-y/2-v/3-2n/3-4j/3-2p/3\).
+If \(\ell\ge a\), then
+\(\beta=\sigma-5v/6-7n/6-11j/6-5p/3\).
+The first gives \(t\le8\sigma/3-2y\), and the second
+\(t\le2\sigma-y\le8\sigma/3-2y=6\rho_0\).
+At \(b>a\), reduce \(u_s\) to at most \((a-n)/2\) and
+then \(u_l\) only enough to make the sum at most \(a-n\).
+The reference pair remains ordered and nonnegative.
+The total reduction is at most \(b-a\), either by the
+shorter-factor cap alone or by the original bound on the sum.
+The reference grouped length is below \(a\), since
+\(3/8+6\rho_0<a\). Restoring the removed lengths adds at
+most \(5(b-a)/12\) in the geometric mean, by the \(5/6\)
+Lipschitz bound through actual exponent one.
+Thus the relative loss is
+\(\rho_0+5(b-a)_+/12\).
+
+For \(b\le a\) use \eqref{pca:detail-harmonic} at \(\theta=1\);
+for \(b\ge a\) use \eqref{pca:detail-quarter} with the
+live divisor cap. The respective exponents after summation
+are at most
+\[
+ a+\rho_0+(b-a)/2-7y/2,\qquad
+ a+\rho_0-(b-a)/12-7y/2 .
+\]
+Both meet target at \(y\ge6/355\).
+For \(k\ge a+1/56\) the sharp loss \(\Delta_a(b)/2\)
+already suffices through \(4/5\), by the same two radial
+comparisons. Above \(4/5\) the ordinary insertion adds
+\(\Delta_a(k)/2\); at the endpoint
+\(1/16+1/12-7/40<0\), and the bound decreases thereafter.
+This gives \(K\gtrsim D^{1089/1420}\) over all \(B\) and \(d\).
+
+\subsection{Pure long erasure and the intermediate gap}
+\label{pca:detail-gap}
+
+For \(a\le b\le1,\ k\le4/5\), the sharp loss is
+\(\rho_{\rm sh}=5b/12-1/4\).
+The three-half choice with partner exponent \(1/3\), summed
+over \(E\ll D/B\), has exponent
+\(a+5(1-b)/12-(a-k)_+/6-7(k-a)_+/2\).
+The high radial comparison \eqref{pca:detail-high} has exponent
+\(31/8-37b/12-k/2-3(k-a)_+\).
+For \(k\le a\) the two reach target when
+\[
+ k\le L_b=-7/4+5b/2\quad\text{or}\quad
+ k\ge H_b=25/4-37b/6 .
+\]
+They overlap for \(b\ge12/13\). For \(k\ge4/5\) the
+ordinary insertion in the high comparison adds \(\Delta_a(k)/2\).
+Its endpoint exponent \(409/120-37b/12\) is below target for
+\(b\ge9/10\), and decreases with \(k\).
+For the small residual product selection, the low endpoint
+is instead \(1/2+b/6-\xi/2\); it overlaps the high endpoint
+at \(b\ge69/76+3\xi/38\).
+
+For \(1355/1482\le b\le12/13\), work in the gap
+\(L_b\le k\le H_b\). Define
+\[
+ g=\min((k-L_b)/6,(H_b-k)/2),\qquad
+ \rho=\rho_{\rm sh}-g,\qquad C_b=17/4-4b .
+\]
+The two losses agree at \(C_b\), where
+\(\rho_C=3b/2-5/4\) is the minimum of \(\rho\).
+It suffices to achieve the chosen \(\rho\), by using the
+smaller radial comparison. Use
+\(j_0=\Delta_a(b)-2\rho,\ n_0=6j_0/5,\ \sigma=j_0+\Delta_a(k)\),
+and the exact nonnegative width exponent from
+Section~\ref{pca:detail-coupling}. The two sharp branches and
+the grouped tail apply with these choices. The minimum of
+\(k-2\sigma-n_0-j_0\) occurs at \(C_b\) and equals
+\((233b-202)/30>1/3\); this bounds \(\ell\) from below.
+The shell additive excess is at most \(1/5-1/9<\rho_C\).
+
+When \(\ell\ge3/8\) and \(\beta>0\), the slopes on \(b-n\)
+and on \([\ell,k]\) bound \(t\) by
+\(t_1=a-k+8\sigma/3\).
+When \(\beta=0\), the bound is
+\(t_2=a-k+2\sigma+n_0+j_0\).
+For \(\ell<3/8,\ \beta>0\) use
+\(\beta=j_0-5n/6-j\), which again gives \(t\le t_2\).
+Both upper expressions peak at \(C_b\), as is seen from
+the slopes \(1/3,-1\) of \(j_0\).
+At \(C_b\) their difference is
+\((438b-397)/180\ge0\), so \(t\le t_*=(95-96b)/18\).
+
+For \(u_s+u_l\le b\), convexity and monotonicity of the
+sieve losses reduce the geometric mean maximum to
+\((u_s,u_l)=(b-1/2,1/2)\) and \((b/2,b/2)\).
+Indeed the maximizing \(u_l\) at fixed \(u_s\) is
+\(\min(1/2,b-u_s)\). Before the breakpoint use monotonicity
+and after it use convexity. At the two endpoints the shifted
+length is between \(a\) and one. The second endpoint is larger
+by \((1-b)/8\), with value
+\[
+ 7b/24+5t_*/12-5/16=815/432-139b/72\le\rho_C .
+\]
+The last inequality is exactly \(b\ge1355/1482\).
+This closes the gap for every \(K\) after the two radial
+comparisons and the independent middle subtraction.
+
+\subsection{Pure short insertion over large erasures}
+\label{pca:detail-short}
+
+For \(b\ge a\) and \(k<a\), the harmonic choice \(\theta=1/6\)
+and the quarter choice with the primal divisor cap meet target
+if the rectangle loss is at most
+\[
+ \rho=\max\{(b-k)/3,\ b/2-k/4-3/16\}.
+\]
+With the sharp loss this covers \(b\le3-4k\) or
+\(b\ge3k-3/4\), which is exhaustive for \(k\le15/28\).
+For \(15/28\le k\le921/1652\), work inside the remaining
+triangle and split it at \(b=9/8-k/2\).
+Use the same \(j_0,n_0,\sigma\) and exact width as in the
+intermediate gap. Here
+\[
+ j_0\le3/236,\quad b-n_0\ge3117/4130>a,\quad
+ \ell\ge3159/8260>3/8,\quad \rho\ge1/16.
+\]
+These bounds follow by the affine formulas on the two triangles.
+The main shell meets \(\rho\), and its additive term is at most
+\((7/26+1/16)/2-1/8<1/16\).
+The same \(t_1,t_2\) estimates apply, with
+\(t_1-t_2\ge67/4130\). Thus it is enough to evaluate
+\((\Delta_a(u_s+t_1)+\Delta_a(u_l))/2-\rho\)
+at the two cutoff endpoints of the previous proof.
+On each triangle these expressions are convex. Their
+vertex values in the two endpoint orders are
+\[
+ \begin{array}{c|c|rr}
+ k&b & (b-1/2,1/2)&(b/2,b/2)\\ \hline
+ 15/28&6/7&-5/168&-1/48\\
+ 921/1652&318/413&-83/9912&-83/9912\\
+ 921/1652&699/826&-51/3304&0\\
+ 921/1652&381/413&-787/19824&-85/2832 .
+ \end{array}
+\]
+The sharp branches, sparse tail and smoothed dual therefore
+meet \(\rho\) throughout. This proves the target for
+\(K\lesssim D^{921/1652}\) and \(B\gtrsim R\) over all \(d\).
+
+\subsection{Mixed ratios and the critical-capacity strip}
+\label{pca:detail-mixed}
+
+At \(a_*=5/12,\ r_*=7/12\) use the mixed sharp insertion loss
+\(\lambda/2=1/40\) through \(k_0=5/8\). Denote
+\(\Delta_{a_*}\) by \(\Delta\).
+For \(k\ge b,\ k\le k_0\), the harmonic \(\theta=1\)
+comparison is at most
+\(r_*+\Delta(k)/2+1/40-3(k-r_*)_+\), maximal at \(k=r_*\).
+For \(k\le b\le r_*\) use \(\theta=1/6\) and the sharp
+moment, with the same bound \(57/80\). For \(k\le b,\ b\ge r_*\)
+and \(k\le k_0\) the quarter comparison and live divisor cap
+give exponent
+\[
+ 23/48+\Delta(b)/2+1/40+(k-b)/4+(1-b)/4
+                                      -15(k-r_*)_+/4 .
+\]
+At fixed \(b\) this is maximal at \(k=r_*\). It equals \(57/80\)
+at \(b=r_*\), decreases with slope \(-1/12\) through \(5/6\),
+and is constant thereafter. For \(k>k_0,\ k\ge b\) the ordinary
+\(\theta=1\) exponent is at most \(r_*+\Delta(k)-3(k-r_*)\),
+maximal at \(k_0\) with value \(101/144\). For \(k>k_0,\ k\le b\)
+use \(\theta=1/6\). The exponent decreases in \(k\); at \(k=k_0\)
+it is convex in \(b\) on \([k_0,1]\), with endpoint values
+\(2/3,205/288\). Both are below \(57/80\).
+Adding the separate harmonic equality count gives \(57/80\)
+over all physical ratios and divisors.
+
+Under \(A_1A_2^2\ll H\ll D^{3/4}\), the capacity bounds
+\(r\le(3/4+a)/2\) at the level of exponents. The actual
+\(Q_u\) is still used in each moment.
+On the left, put \(a=a_*-z,\ 0\le z\le1/8\).
+Use \(\lambda=1/20+3z/5\) through \(k_0=5/8\).
+At \(l=43/120\) the three nonconstant monomials of
+\(\Delta_a(l)\) are
+\(-7/120+z,\ 1/20+z/6,\ 1/48+2z/3\), each at most \(\lambda\).
+The smoothing branch is therefore longer than this \(l\).
+The reference convex dual expression has endpoint maximum
+\(31/90\), and the capacity and
+\(\Delta_a(l)\le\Delta_{a_*}(l)+z\) give
+\(t\le31/90+3z/10\). The three nonconstant monomials
+at that upper bound are
+\[
+ -13/180+13z/10,\quad 49/1080+4z/15,\quad 1/108+11z/12 ,
+\]
+each at most \(\lambda\) by the endpoints in \(z\).
+The additive term is controlled since \(3a\ge7/8\).
+The erased and sharp insertion half-losses together increase
+by at most \(4z/5\). In the harmonic branches the capacity
+prefactor saves \(z/2\), while in the quarter branch it saves
+\(5z/8\). In both ordinary branches \(k>5/8>r_*\), so the
+active partner decay and capacity prefactor pay the increase
+of the two sieve factors. This gives \(57/80+3z/10\le3/4\).
+
+On the right take \(a=a_*+x,\ 0\le x\le59/912\), and use
+\(\lambda=1/20+x/4\) through \(k_0=31/48\).
+On the smoothing branch \(l>43/120\). In
+\eqref{pca:detail-sharp-criterion} the possible \(r\)-increase
+of \(x/2\) is paid by \(2(\lambda-1/20)\).
+The reference convex function on \([43/120,31/48]\) has
+endpoint values \(9/40,43/120\). Thus \(\Delta_a(t)\le1/20\);
+the additive term is controlled by \(k_0<3a\).
+In the ratio comparisons take the capacity upper bound
+\(r_b=r_*+x/2\). The scalar estimates increase with \(r\),
+while the sharp proof has already retained the actual conductor.
+In the sharp ranges the maximum is
+\(r_b+(\Delta_a(r_b)+\lambda)/2=57/80+x/2\).
+For the quarter range, after setting \(k=r_b\),
+the \(b\)-dependent term \((\Delta_a(b)-b)/2\) is
+nonincreasing, giving the same maximum.
+In the ordinary ranges the \(\theta=1\) endpoint is
+\(21/32+4x/3\). The \(\theta=1/6\) bound at \(k=k_0\)
+has \(b\)-endpoint values \(29/48+7x/4\) and
+\(373/576+19x/12\); convexity bounds its interior.
+All are at most \(3/4\), with the last endpoint attaining
+that value at \(x=59/912\).
+The union is the first-pivot strip
+\(7/24\le a\le439/912\), subject to the original capacity
+and with no independent closeness requirement on \(A_2\).
+
+All comparisons here preserve the original \(\mu(d)\) in
+the identity and use an absolute divisor bound at the end.
+The remaining pure rectangles, the coherent divisor sum,
+other signed components and the determinant and zero-location
+comparisons remain open.

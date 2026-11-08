@@ -1,0 +1,50 @@
+{
+  "schema": "reduced-dual-window-author-attempt-v1",
+  "utc": "2026-11-08T06:48:09.165656+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/reduced-dual-window-20261108/REDUCED_DUAL_WINDOW-v2.md",
+    "bytes": 13050,
+    "sha256": "ef18e9e3ad842bdd79389b0afa7ebb3cb22924143c312c67d54c38cd28756553"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-reduced-dual-window/SOURCE_PINS-v1.json",
+    "bytes": 37748,
+    "sha256": "c650c5e9cd9f0303510260440085abceacbe602e9232dc84bc9b8204c2aad8a4"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-reduced-dual-window/controls-v1.json",
+    "bytes": 1228,
+    "sha256": "47b7bcf3bb13a0d628bbc265fd202bfb27667f65b4446b6a476044c5a5232f24"
+  },
+  "rectangle_controls": {
+    "path": "outputs/checks/2026-11-08-reduced-dual-window/rectangle-controls-v1.json",
+    "bytes": 430,
+    "sha256": "0531f9c27cca9678fb5c17b4e4f36ee745c56202db97d3d89e1c50a14cd845c2"
+  },
+  "harnesses": [
+    {
+      "path": "planning/reduced-dual-window-20261108/check_reduced_dual_window_v2.py",
+      "bytes": 7972,
+      "sha256": "d7694e53e78febb19cf491cc11f662eeeaf84f135e12be9b4a12b99a297527d1"
+    },
+    {
+      "path": "planning/reduced-dual-window-20261108/check_rectangle_v1.py",
+      "bytes": 3562,
+      "sha256": "63e5d0cd043d0ac01117ee03bfe676829affc1f0c9755992ca49fe2e5a6903c1"
+    }
+  ],
+  "preserved_first_failure": {
+    "file": {
+      "path": "planning/reduced-dual-window-20261108/check_reduced_dual_window_v1.py",
+      "bytes": 7968,
+      "sha256": "fb2c588397f69c1cf1cc49295a5e91b19497ccdf45592cbd635656a6fc834ec1"
+    },
+    "failure": "The dyadic length P shadowed the imported prime-ideal table P; local_symbol then raised TypeError at its subscript. The second version renames only the dyadic length to Pr."
+  },
+  "method": "At the actual middle frequencies set g=gcd(z0,k), z0=g*a and k=g*b. Keep the row zero |psi(g)|^2 and exact coprimality of a,b; b can share primes with g. Fix g,b or g,a for the single-factor bounds. For the joint rectangle use exact coprime inclusion-exclusion q and two shortened fourth moments.",
+  "positive_budget": "Full cutoff coefficient, controlled exact pieces: mixed denominator 67/90, numerator 11/15, joint 107/144 at K0=D^(1/20), L0=D^(3/20), symmetric rectangle D^(21/80). Pure denominator and numerator unit, joint D^(3/16), each 3/4. Includes nonunit frequencies and exact deletions, roots, row conductors, S phases, raw zeros.",
+  "remaining": "Residual middle with both reduced factors above individual cuts and outside the joint rectangle. Signed cross comparisons 329/360 mixed and 11/12 pure remain above target. Whole exponents unchanged, determinant/Lean/GRH open.",
+  "independent_review": "Pending: review agents remain unavailable. Inherited intermediate proof drafts also pending.",
+  "replayed_old_experiment_or_audit": false
+}

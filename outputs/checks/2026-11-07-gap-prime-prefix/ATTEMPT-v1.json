@@ -1,0 +1,160 @@
+{
+  "schema": "gap-prime-prefix-author-attempt-v1",
+  "utc": "2026-11-07T15:22:31.835650+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/gap-prime-prefix-20261107/GAP_PRIME_PREFIX-v1.md",
+    "bytes": 16305,
+    "sha256": "d55d6ff7634e6342c5c28455f9f96dce79dc4a745bd9ed10c8eb0fa02f54c99a"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-gap-prime-prefix/controls-v1.json",
+    "bytes": 2583,
+    "sha256": "0e74c8fe00cf26d4cf61ae6946566967752587a52886ce276b6950723d595522"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-gap-prime-prefix/SOURCE_PINS-v1.json",
+    "bytes": 21240,
+    "sha256": "7c10690c5671e57ac0270b650b7ce1804ab978eae2d342f34d50511e4eacc832"
+  },
+  "control_harness": {
+    "path": "planning/gap-prime-prefix-20261107/check_gap_prime_prefix_v1.py",
+    "bytes": 5786,
+    "sha256": "ce832f1ec4f43f2c42039d5a5b49f64246bb7555c0eb5b18d31889fa9e9e462a"
+  },
+  "new_step": "Take canonical ascending ideal-prime prefix crossing T0=D^(1/24). Exact rank and cutoff comparators separate with finite Fourier log mass. A selectable prefix through T1=D^(3/10) leaves residual P>=D^(1/32) after small d. Q costs D^(39/40)/E and one selected column suffices.",
+  "combined_cofactor": "Failure at T1 forces one large prime in each original factor with cofactor <T0 for D>=2^128. If the two cofactors' product reaches T0, use that product for the short group and separate the two literal cutoff comparisons.",
+  "squarefull_frequency": "If valuation>=2 part of r has norm >=D^(1/32), count O(R D^-1/64) ideals. Pointwise cubic norm gives H D^-1/192 for small d. The inherited large-d tail costs H D^-1/480.",
+  "primitive_short_input": "Inherited ordinary primitive comparison gives L/P+(RP)^2<=O(D^(31/32)) on P<=D^(1/8). This covers the combined-cofactor selection and short prime prefixes independently of Q. Four exact supplementary power checks passed.",
+  "budget_and_remaining": "Removed actual signed terms O(H D^-1/480) with fixed profile/subpowers. Remaining each column has two prime ideals with cofactor product <D^(1/24), and r has squarefull part norm <D^(1/32). Unit-cofactor comparable sqrt(D) prime pairing still permits the physical D term and Q's RP^2 term.",
+  "next": "Estimate the actual signed two-prime gap pairing with small combined cofactors and small squarefull frequency part, keeping complete coprimality, masks, gauges, exact density and the finite source/capacity data.",
+  "scope": "Central high-cutoff far gap with D>=2^128. No new whole-prefix gain. Prior 109/144, whole signed 13/12, global unsigned 9/8, determinant/zero-location, Lean and GRH remain open.",
+  "fresh_controls": {
+    "cyclotomic_fourier_comparisons": 818,
+    "comparison_equalities": 90,
+    "ordered_prefix_controls": 465,
+    "rational_power_grid": 2376,
+    "prime_certificates": [
+      [
+        4958484857810564677633,
+        5
+      ],
+      [
+        708355171002246758401,
+        7
+      ],
+      [
+        381421915184075636737,
+        5
+      ],
+      [
+        74007277743114289153,
+        5
+      ]
+    ],
+    "actual_ideal_fixtures": [
+      {
+        "case": "selectable",
+        "ideal_prime_labels": [
+          [
+            [
+              67,
+              1
+            ],
+            [
+              74007277743114289153,
+              1
+            ]
+          ],
+          [
+            [
+              4958484857810564677633,
+              1
+            ]
+          ]
+        ],
+        "selected": true,
+        "small_cofactor_product": null,
+        "column_norm": 24586585725819872608791483441483085372194883
+      },
+      {
+        "case": "combined cofactor reaches threshold",
+        "ideal_prime_labels": [
+          [
+            [
+              7,
+              1
+            ],
+            [
+              708355171002246758401,
+              1
+            ]
+          ],
+          [
+            [
+              13,
+              1
+            ],
+            [
+              381421915184075636737,
+              1
+            ]
+          ]
+        ],
+        "selected": false,
+        "small_cofactor_product": 91,
+        "column_norm": 24586578921834052489733353206698503386955867
+      },
+      {
+        "case": "combined cofactor below threshold",
+        "ideal_prime_labels": [
+          [
+            [
+              7,
+              1
+            ],
+            [
+              708355171002246758401,
+              1
+            ]
+          ],
+          [
+            [
+              7,
+              -1
+            ],
+            [
+              708355171002246758401,
+              -1
+            ]
+          ]
+        ],
+        "selected": false,
+        "small_cofactor_product": 49,
+        "column_norm": 24586585365995490096271179422200310739763249
+      },
+      {
+        "case": "unit cofactors with distinct equal-norm primes",
+        "ideal_prime_labels": [
+          [
+            [
+              4958484857810564677633,
+              1
+            ]
+          ],
+          [
+            [
+              4958484857810564677633,
+              -1
+            ]
+          ]
+        ],
+        "selected": false,
+        "small_cofactor_product": 1,
+        "column_norm": 24586572085136655808981649303588289210482689
+      }
+    ]
+  },
+  "independent_review": "Pending",
+  "prior_numeric_or_release_audit_replay": false
+}

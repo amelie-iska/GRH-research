@@ -1,0 +1,19 @@
+# Joint k/r finite projection — 7 November 2026 UTC
+
+The verified public Main aeb7705c8bc5b7662a44916ea5039fb2dae7266d / Pages 163b9eaf49298864a12e8f09cb2ec171a8a605df and 348-page/10858-MathML edition remain unchanged. Ramified handoff c9d6a030 and public receipt c3bb690e govern.
+
+New author-checked draft awaiting independent review:
+planning/joint-kr-20261107/JOINT_KR_ERASED_PRIMES-v1.md, SHA256 d573ff303c31815b0b9e00be6bcfb4929e3b3607dff6a449577622083b7d88f3.
+Attempt outputs/checks/2026-11-07-joint-kr/ATTEMPT-v1.json, SHA256 85d9f2678cfa5b53e5f609fd3d1696319b7c9a59a6614bd18ee53e40d1bb83bc.
+45 input pins outputs/checks/2026-11-07-joint-kr/SOURCE_PINS-v1.json, SHA256 a9da92171535971384316bd2897a2867c0aaa64221603c5d3fa5bd3d7ab7226d.
+The accepted mixed6456+6fed/7d62 and canonical cbk/physical-sixth norm are inputs. The preceding balanced-prefix, radical-complement and full-row drafts remain separate and unreviewed.
+
+The new joint grouping uses t=sixth-free part of r*k^4 and the erased ideal g=gcd(k,r2), where r2 contains exactly the exponent-two primes of r. It retains the indispensable raw (mn,g)=1 mask; Nt<=Nr Nk^4/(Ng)^6 and each fixed (g,t) fibre has at most 2^omega(t) actual pairs. The primitive S/ray/root values and mu(k)/(Nk)^2 remain in the exact fibre sum. This is not a replacement of the total primitive character by a sixth-order one. On t=unit distinct g carry distinct zeros. Dropping g is false.
+
+Use one actual two-column physical norm at fixed g before separate k/r triangles, with exact original coprime lift. Balance it against accepted formula11 optimized at Z=D^(2/9)(Nk Q_gamma)^(-1/3), and count the actual g^2|r. On the legal small rectangle this yields main H X^(1/6) D^(-1/63) A2^(-41/42) J^(-11/6) G^(23/42), with explicit common-profile/epsilon costs. Combining with the inherited outer rectangle gives the candidate target bound for the exact finite Ny<=X<=D^(3/8) projection Nk>=D^(47/1296); on g=unit it suffices Nk>=D^(47/1848). Keep the literal pre-S cap, full unequal-norm fibre and derivative-free Bessel errors. No extra primal/dual coprimality or Euler completion occurs.
+
+At Nk=unit the new frequency is just t=r and there is no k gain. Pure intermediate r~D^(2/21) still has budget gap47/1008, not an actual lower bound. NEXT estimate this original short/unit-k joint term or signed d sum, preserving both actual Gauss/root vectors, all source/ray/primitive factors, means, common W and raw zeros before positive triangles. Whole signed13/12 and global unsigned9/8 remain unchanged; higher frequencies, extra factors, short/principal assembly, independent arithmetic determinant/zero-location separately by scope, analytic/category Lean and GRH remain open.
+
+Fresh controls outputs/checks/2026-11-07-joint-kr/controls-v1.json, SHA256 df8e0efd5ec080fc03784c691eeaa4d4f1c466967a3d7ef0ca75ef66f0e71f82:20736 structural states,331776 literal raw sextic products,9855 wrong-mask differences,3 exact finite signed fibre pairings with declared diagnostic scalars,283477 Fraction budget points. They check the new algebra/exponent bookkeeping, not a primitive root or actual full-kernel evaluation, infinite analytic theorem, Lean or GRH. Old FE/table/control/tail/norm/scalar/publication audits were not replayed. Independent reviewer availability remains unchanged; no retry or borrowed review gate.
+
+P7 claim 1fac1a2e-d361-41af-b68d-f67e7c028330 / checkpoint 7a06bd85-e518-4417-a20e-1afc30dd486f remains in progress; P4/P9 and both false gates unchanged. Preserve all16 HEAD/index states,15 release worktrees,sourceHEADdba37ff/index0ef1af,frozen331indexff207, all originals/caches/outputs/environments/history and Mac workspace/old8765/private active model data. All project work SSH Linux only. No canonical book/lab/PDF/public branch/preview process/dependency/auth/externalMCP/Claude/global-config change. Pinned Linux4.24 approval unanswered: no install/reask. Keep ONE heartbeat active.

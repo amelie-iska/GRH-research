@@ -1,0 +1,81 @@
+{
+  "schema": "two-family-defect-independent-review-v1",
+  "utc": "2026-11-08T16:59:28.705355+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "reviewed": [
+    {
+      "proof": {
+        "path": "planning/two-family-defect-20261108/TWO_FAMILY_CROSS-v1.md",
+        "bytes": 13025,
+        "sha256": "5f4233776993bf0db296c04d17a3a4999f784f4521a0990ecc04ee10fb0f419a"
+      },
+      "reviewers": [
+        "low_content_cross_review",
+        "low_content_short_gauss"
+      ],
+      "scope": "Exact additive complement, raw M\u00f6bius zero and valuation factors, two second moments, radial scale, separate q_l charges, actual primal test and dyadic powers."
+    },
+    {
+      "proof": {
+        "path": "planning/two-family-defect-20261108/POWERFUL_INSERTION_CROSS-v3.md",
+        "bytes": 14085,
+        "sha256": "193941ef4a0068086c64c78f9047fce8776a4907e682b8077c41a23d8d04233e"
+      },
+      "reviewers": [
+        "low_content_short_gauss"
+      ],
+      "scope": "Exact increases with old+increment at most five, original powered norms, cubefree even root and odd count, capacity-wide pivot switch. Wording-only v3 confirmed. The narrower v1 was also independently reviewed by low_content_cross_review."
+    },
+    {
+      "proof": {
+        "path": "planning/two-family-defect-20261108/ASYMMETRIC_UNIT_CROSS-v1.md",
+        "bytes": 3779,
+        "sha256": "29f9f5508b10ba81aff4b84359c7daadf6df34a8f4b3b788ecdef9cad54aa824"
+      },
+      "reviewers": [
+        "low_content_short_gauss"
+      ],
+      "scope": "Exact asymmetric weight and raw incidence sums. Mixed all ratios on small intermediate divisors and stated pure unit wedges."
+    },
+    {
+      "proof": {
+        "path": "planning/two-family-defect-20261108/RATIONAL_DEFECT_CONTENT-v1.md",
+        "bytes": 3592,
+        "sha256": "ae9b943b56b19d9516bcc62cba70e59f5c69f498543a7c95fa9791e7bfdd59b2"
+      },
+      "reviewers": [
+        "low_content_short_gauss"
+      ],
+      "scope": "Exact rational contents including inert primes, own-content repeats and four coprimality conditions, unchanged physical profile and residual length comparison."
+    },
+    {
+      "proof": {
+        "path": "planning/two-family-defect-20261108/VERY_LONG_DEFECT_CROSS-v1.md",
+        "bytes": 7024,
+        "sha256": "58b6f1df566428aded12d29ee2d2b1abd1063a2affcbeb02e6455af315df8a2d"
+      },
+      "reviewers": [
+        "low_content_cross_review"
+      ],
+      "scope": "Stronger profile powers and actual primal cap in the narrower no-conjugate-erasure sector. All d residue factors and exponent thresholds checked."
+    }
+  ],
+  "independent_ephemeral_controls": {
+    "low_content_cross_review": {
+      "complement_cases": 34560,
+      "coprimality_masks": 20736,
+      "powered_common_splits": 83521
+    },
+    "low_content_short_gauss": {
+      "rational_scale_grid": 2002,
+      "primal_divisor_cap_instances": 6804
+    },
+    "rational_cubic_gram": {
+      "powerful_mobius_projectors": 1296,
+      "powered_raw_phases": 65536,
+      "literal_pivot_switch_phases": 41472,
+      "capacity_cells": 43621
+    }
+  },
+  "review_context": "Independent reviews performed using SSH on the exact saved proof bytes. Each proof was reviewed by an agent other than its author."
+}

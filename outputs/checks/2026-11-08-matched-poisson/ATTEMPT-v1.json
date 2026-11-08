@@ -1,0 +1,50 @@
+{
+  "schema": "matched-poisson-attempt-v1",
+  "utc": "2026-11-08T15:04:02.761042+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "proofs": [
+    {
+      "path": "planning/matched-poisson-20261108/MATCHED_POISSON_CROSS-v2.md",
+      "bytes": 15089,
+      "sha256": "8634bdac8792c95c057d79742551caa945b3885707424a3c5b039f923404cf99"
+    },
+    {
+      "path": "planning/matched-poisson-20261108/COMPLETE_ALLOCATION_UNIT-v1.md",
+      "bytes": 4719,
+      "sha256": "2fc71998ba2ae71a1133ccfdccd4a05077aef591fd0815e8c2e2171b8f494e38"
+    }
+  ],
+  "preserved_first_bound": {
+    "path": "planning/matched-poisson-20261108/MATCHED_POISSON_CROSS-v1.md",
+    "bytes": 15308,
+    "sha256": "1daa5652b40db1f106701adf8a9685381edb2ec54009211aa4edc585dc998553"
+  },
+  "review": {
+    "path": "outputs/checks/2026-11-08-matched-poisson/REVIEW-v1.json",
+    "bytes": 1946,
+    "sha256": "2d4462329a87c5c26905ba272452465a1ac3dd9654c3df2b1eb8bd31f5a63a7f"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-matched-poisson/SOURCE_PINS-v1.json",
+    "bytes": 47472,
+    "sha256": "ba7e96c983eccc5d38193f04fe6d31427bc249238c4294b0c17c2d600745e974"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-matched-poisson/controls-v1.json",
+    "bytes": 833,
+    "sha256": "97626dc6819c21d8316d6c524e433afdbfe1b95450721b6725e22910b3e7ea85"
+  },
+  "harness": {
+    "path": "planning/matched-poisson-20261108/check_matched_poisson_v1.py",
+    "bytes": 6368,
+    "sha256": "ccd9b04b312fa78d7db0694dce8946d31102482249a73e012641fba8bf0ed664"
+  },
+  "new_results": {
+    "matched_patterns": "R/Nd per divisor, R over all d up to subpowers; R^(3/2)/sqrt(D) at d=1",
+    "signed_nonprincipal_defects": "(R/sqrt(A1)) F0^(3/4) up to subpowers and profile, target for F0<=D^(1/2) in critical pure and mixed blocks",
+    "complete_allocation_unit": "isolated exact middle scalar is -1 plus a uniform fixed-field subpower error; the corresponding low unit supplies +1"
+  },
+  "failed_step": "A power saving of the isolated complete-allocation middle scalar towards zero is impossible. The paired radial weights and local valuation budgets improve the first comparison F0^(13/12) to F0^(3/4).",
+  "open": "High good defect conductor in the exact signed cross, other off-equal interactions, whole signed 13/12, unsigned 9/8, prefix 109/144, determinant, zero-location, Lean, GRH.",
+  "prior_fixtures_replayed": false
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "small-cutoff-product-author-attempt-v1",
+  "utc": "2026-11-08T02:43:31.584772+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/small-cutoff-product-20261108/SMALL_CUTOFF_PRODUCT-v2.md",
+    "bytes": 11857,
+    "sha256": "9a5b11f7481bafd6ac6293e333ee242e5bf7b56f6fffc8334b80bbcca3a2e11a"
+  },
+  "preserved_draft_v1": {
+    "path": "planning/small-cutoff-product-20261108/SMALL_CUTOFF_PRODUCT-v1.md",
+    "bytes": 11518,
+    "sha256": "5b9fbaaa777f16e3a8fc90079884c5499e33e71fc31e44fcc23086371540528a"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-small-cutoff-product/SOURCE_PINS-v1.json",
+    "bytes": 33908,
+    "sha256": "50d35cefbdcfc1e156d76e25ab82452defe1b41445e8500bb3a39ace16a5ad5b"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-small-cutoff-product/controls-v1.json",
+    "bytes": 1484,
+    "sha256": "3430d0641ec8b480d4633c6df934e55b66fa81d0ee0232d595ce5e5403641b4b"
+  },
+  "control_harness": {
+    "path": "planning/small-cutoff-product-20261108/check_small_cutoff_product_v1.py",
+    "bytes": 7645,
+    "sha256": "a055a85f666b1f8ee6b61d49d1bf4339ac477ef8f8e57851d0e9aaff27e7fe9f"
+  },
+  "actual_channel": "Original ordered cutoff divisors x,y with N(xy)<=Z. For each intermediate d exactly assign its primes to x,y or neither. Expand the unused residual squarefree condition by mu(r) and b times r^2, keeping all masks and allowing overlap of r,b. Use nonprincipal primitive Poisson for small r and the pinned physical sixth-free norm with v2 and the sixth-power factors fixed for large r.",
+  "new_budget": "Uniform positive normalized bound for each d: (Z/Nd)[R^2/C0+A2 Phi6(A1,C0)] with M4(W)^2 and subpowers. Mixed C0=D^(31/66) yields Z D^(23/33) and power 493/660 at Z=D^(1/20), including a pivot neighborhood. At d=1 the target is equivalent to controlling the complementary amplitude. No fixed-field 7/8 input.",
+  "remaining_cross": "Across signed d the complementary positive norm is still open at target scale. The absolute Cauchy cross bound with inherited power 13/12 is D^(235/264+eps) sqrt(Z), which exceeds target. Pure budget optimizes at 27/32 for Z=1 and fails target.",
+  "limits": "Larger cutoff products, full small-annular signed form, determinant and zero locations, Lean and GRH remain open. No public release.",
+  "independent_review": "Pending. Review-agent limits remain active.",
+  "replayed_old_experiment_or_audit": false
+}

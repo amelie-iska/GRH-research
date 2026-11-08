@@ -1,0 +1,119 @@
+{
+  "schema": "high-cutoff-gap-author-attempt-v1",
+  "utc": "2026-11-07T14:23:42.208611+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/gap-factor-20261107/HIGH_CUTOFF_GAP_PAIR-v1.md",
+    "bytes": 14386,
+    "sha256": "08d35c01f05aadb475e28aaad73977b06f031635184d4329cdc52d1fb6d36f07"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-gap-factor/controls-v1.json",
+    "bytes": 2149,
+    "sha256": "2f8fd95dbaf09630b87751c71782de784003fb34ca15a64e64126b4e3a6f7287"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-gap-factor/SOURCE_PINS-v1.json",
+    "bytes": 20224,
+    "sha256": "8b00eed6728e08c7b15ab0ed1310ba49ecfe4bd9db69303b95003a86dfe24f1e"
+  },
+  "control_harness": {
+    "path": "planning/gap-factor-20261107/check_gap_factor_v1.py",
+    "bytes": 6483,
+    "sha256": "9cab29e6b8f6c33a896d2228492fee755cf1625fce92d3b602b4f145daec1c8f"
+  },
+  "new_step": "Control the literal small-product boundary via prior Q. Below it sum signed HB positions, retaining unequal cutoffs; placements become the signed sum of ordered above-cutoff pairs. In high window 2D/7<=U^2<=D the strict leftover norm is <7, so q=3 vanishes and q=2 has d3=c=1. Every surviving factorization is counted once in tau_gap(m).",
+  "coprimality": "Restore full original signed divisor sum and outer k/A2 parts at normalized H D^-1/480 cost. Replace A_U by mu(m) tau_gap(m) in both original columns, retaining complete coprimality, phases and density.",
+  "thin": "On a factor in (U,U(1+D^-1/32)] the lattice cell count lowers squared normalized coefficient mass by D^-1/32. The small-d signed paired bound is H D^-1/192 up to fixed profile and subpowers; all d cost H D^-1/480. Uses inherited cubic and physical norms.",
+  "failed_step": "In the remaining far-from-cutoff two-factor sectors of lengths sqrt(D), Q's RP^2 and the generic physical D term still leave the density cost. No whole-prefix gain.",
+  "next": "Estimate the original far-from-cutoff signed gap pairing for the comparable sqrt(D) lengths with both actual coefficient gauges, exact density and coprime/raw masks.",
+  "scope": "Only the central principal density in the stated high window. Whole finite-prefix candidate 109/144 unchanged; whole signed 13/12, global unsigned 9/8, other bands, short/principal assembly, determinant/zero-location, Lean and GRH open.",
+  "fresh_controls": {
+    "unequal_cutoff_tables": 240,
+    "literal_allocation_states": 444568,
+    "actual_ideal_fixtures": [
+      {
+        "name": "unit divisor and two large factors",
+        "d_prime_norms": [],
+        "small_prime_norms": [],
+        "large_factor_prime_norms": [
+          4318967329,
+          4330967299
+        ],
+        "U": 4294967296,
+        "column_norm": 18705306267348374371,
+        "signed_placements": 2,
+        "ordered_gap_norm_pairs": [
+          [
+            4318967329,
+            4330967299
+          ],
+          [
+            4330967299,
+            4318967329
+          ]
+        ]
+      },
+      {
+        "name": "three large factors cancel",
+        "d_prime_norms": [],
+        "small_prime_norms": [],
+        "large_factor_prime_norms": [
+          2700037,
+          2730001,
+          2760013
+        ],
+        "U": 4294967296,
+        "column_norm": 20344342064050350481,
+        "signed_placements": 0,
+        "ordered_gap_norm_pairs": []
+      },
+      {
+        "name": "strict cutoff with one factor exactly U",
+        "d_prime_norms": [],
+        "small_prime_norms": [],
+        "large_factor_prime_norms": [
+          4294957309,
+          4318967329
+        ],
+        "U": 4294957309,
+        "column_norm": 18549780297020757661,
+        "signed_placements": 0,
+        "ordered_gap_norm_pairs": []
+      }
+    ],
+    "formal_nonunit_assignment": {
+      "d_norm": 7,
+      "D": 497323236409786642155382248146820840100456150797347717440463976893159497012533375533056,
+      "U": 22300745198530623141535718272648361505980416,
+      "large_label_norms": [
+        3504402816911955065098470014273313950939779,
+        22969767554486541835781789820827812351159828
+      ],
+      "d_allocations": [
+        [
+          7,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          7,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          7,
+          0
+        ]
+      ]
+    },
+    "strict_high_window_endpoint_checks": 2028,
+    "exact_power_grid": 11
+  },
+  "independent_review": "Pending",
+  "prior_numeric_or_release_audit_replay": false
+}

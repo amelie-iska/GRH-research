@@ -1,0 +1,119 @@
+{
+  "schema": "defect-order-cross-run-closed-v1",
+  "utc": "2026-11-08T16:07:55.445181+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "handoff": {
+    "path": "planning/defect-order-cross-20261108/HANDOFF-v2.md",
+    "sha256": "dd89f4f29a4d70c4de947e254b76d6dd168ac071a0b0c2748a955cc350b9c607",
+    "bytes": 3573
+  },
+  "proofs": [
+    {
+      "path": "planning/defect-order-cross-20261108/DEFECT_ORDER_CROSS-v1.md",
+      "bytes": 14564,
+      "sha256": "50b73c77580efb6269944e360298f30a102dbd085a9a0380ae9be2beb71f40ab"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/Z_ONLY_ERASURE_CROSS-v2.md",
+      "bytes": 11212,
+      "sha256": "713e1a0252d79e5fac849e83cf93d4a21b69951cbcabf3a21ee4db440bd7c541"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/JOINT_ERASURE_CROSS-v2.md",
+      "bytes": 7874,
+      "sha256": "424bdaa5449e2e49715553452e261e5e0f9cb66325dbb8b835d2973e0fb38d83"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/CONJUGATE_ERASURE_CROSS-v3.md",
+      "bytes": 3617,
+      "sha256": "2c3255944274d5100c6c19923045711f7af23a4496686b7e991815eec7f67a1c"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/BOUNDED_INSERTIONS-v1.md",
+      "bytes": 2406,
+      "sha256": "75387bab12bfd6e8a8ed21e8696b9e6678e01f9386c0996576c5d2d665538cf3"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/ATTEMPT-v1.json",
+      "sha256": "3fc6524043287794e34a218c97451e957450f60b31fa8338e314634d632f87ec",
+      "bytes": 6293
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/REVIEW-v1.json",
+      "sha256": "77de0e79a766731e696f21522d813db5ae40cde9a6b78938dd29cf2bee84e602",
+      "bytes": 2857
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/SOURCE_PINS-v1.json",
+      "sha256": "504fd594d23ba8ca329dd6ebe51d705a73fe13f69ff580dc7d82cf99b087c50f",
+      "bytes": 49435
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/controls-v2.json",
+      "sha256": "b29a530cfd6fba65a8a03486bf56cc08e87d010b336b5b009e305a6ee4f01415",
+      "bytes": 775
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/joint-controls-v2.json",
+      "sha256": "dbd12c007390adacda719d78b904d591eb701c18c33999d570273dd4ad52e9ce",
+      "bytes": 547
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/insertion-controls-v2.json",
+      "sha256": "3c484aac7a30fa499c81d5dd0ac15007e7526f86ddb85a5e8698373272480698",
+      "bytes": 308
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/metadata-validation-v1.json",
+      "sha256": "89d2d04ad0f0d287e49d27172e5a97efbee2d8fbcfcc7d3a88808d9fa1f959f0",
+      "bytes": 1958
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/CLAIM-v1.json",
+      "sha256": "ee6b0ecd455bfa586ff600250b35eedab90c84fc3d7f5c95bd5ee07d3b5e3477",
+      "bytes": 1219
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/CHECKPOINT-v1.json",
+      "sha256": "60ab546570294b08925f9f5746810743f1b7461b56e60d00264e98fc1f53a68e",
+      "bytes": 1396
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/automation-before-update-v1.json",
+      "sha256": "734906b26ac7fcf0eff9fd22a9303127558a145f33f389aa14382bf79cfb6004",
+      "bytes": 65885
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/automation-after-update-v1.json",
+      "sha256": "88944fe056413a0a84981a9ef0f4636f1057bd9f40a2b9ede25545b8c4b1479d",
+      "bytes": 65820
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/status-after-v1.txt",
+      "sha256": "736e4b1ffed74e88bff1784427055e2a6c897ab5c4d88fad883aa6c8ad254649",
+      "bytes": 28752
+    }
+  ],
+  "all_244_pins_rechecked": true,
+  "selected_joint_erasure_cross": "D^(3/4+eps) all original feasible two-pivot blocks at critical capacity",
+  "both_selected_sources_and_arbitrary_d_residues": true,
+  "higher_cutoff_erasures": "pure 7/12, mixed 13/24 at Nq_z at least D^(5/8)",
+  "conjugate_only": "3/8",
+  "bounded_fresh_insertions": "D^(1/5) pure or D^(1/4) mixed with Nq_z at least D^(5/8)",
+  "coherent_cutoff_ideal_sum_before_row_cauchy": true,
+  "original_raw_masks_sharp_cutoff_and_S_phases_retained": true,
+  "large_competing_inserted_and_erased_support_open": true,
+  "protected_HEAD_states": 16,
+  "protected_frozen_release_index_states_byte_identical": 15,
+  "observed_source_index_sha256": "91163e2550566607f23d517016b3cc08da3f312f4bc165a79c19640aa6cc77ef",
+  "protected_science_artifacts": 18,
+  "CPU_lock_unchanged": true,
+  "current_verified_public_release": "aeb7705c/163b9eaf, 348 pages and 10858 MathML",
+  "existing_heartbeat_same_schedule_target": true,
+  "prompt_changed_only_latest_slot": true,
+  "project_complete": false,
+  "research_complete": false,
+  "project_edits_checks": "SSH to iska-linux-vscode"
+}

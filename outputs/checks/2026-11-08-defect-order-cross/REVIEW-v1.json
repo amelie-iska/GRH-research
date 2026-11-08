@@ -1,0 +1,70 @@
+{
+  "schema": "defect-order-cross-independent-review-v1",
+  "utc": "2026-11-08T16:06:28.476065+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "reviewed": [
+    {
+      "proof": {
+        "path": "planning/defect-order-cross-20261108/DEFECT_ORDER_CROSS-v1.md",
+        "bytes": 14564,
+        "sha256": "50b73c77580efb6269944e360298f30a102dbd085a9a0380ae9be2beb71f40ab"
+      },
+      "reviewers": [
+        "low_content_cross_review",
+        "low_content_short_gauss"
+      ],
+      "scope": "General radial split, exact forced label payments, local order and rational content, directed reverse and monotone bounds. Uniform mixed comparison failure is stated as a bound limitation."
+    },
+    {
+      "proof": {
+        "path": "planning/defect-order-cross-20261108/Z_ONLY_ERASURE_CROSS-v2.md",
+        "bytes": 11212,
+        "sha256": "713e1a0252d79e5fac849e83cf93d4a21b69951cbcabf3a21ee4db440bd7c541"
+      },
+      "reviewers": [
+        "low_content_short_gauss",
+        "low_content_cross_review"
+      ],
+      "scope": "Raw sextic ideal group, fixed partner frequency, cutoff coefficient mass, log separation, all-d and power budgets. Sharper unit-divisor comparison in v1 also checked."
+    },
+    {
+      "proof": {
+        "path": "planning/defect-order-cross-20261108/JOINT_ERASURE_CROSS-v2.md",
+        "bytes": 7874,
+        "sha256": "424bdaa5449e2e49715553452e261e5e0f9cb66325dbb8b835d2973e0fb38d83"
+      },
+      "reviewers": [
+        "low_content_short_gauss",
+        "low_content_cross_review"
+      ],
+      "scope": "Two erasure sources including exponent two, arbitrary changed d residues, independent second conjugate charge, coherent cutoff-defect row average, physical capacity and high-defect exponents."
+    },
+    {
+      "proof": {
+        "path": "planning/defect-order-cross-20261108/CONJUGATE_ERASURE_CROSS-v3.md",
+        "bytes": 3617,
+        "sha256": "2c3255944274d5100c6c19923045711f7af23a4496686b7e991815eec7f67a1c"
+      },
+      "reviewers": [
+        "low_content_cross_review"
+      ],
+      "scope": "Summable conjugate-only weight after signed squarefree completion, capacity power 3/8."
+    },
+    {
+      "proof": {
+        "path": "planning/defect-order-cross-20261108/BOUNDED_INSERTIONS-v1.md",
+        "bytes": 2406,
+        "sha256": "75387bab12bfd6e8a8ed21e8696b9e6678e01f9386c0996576c5d2d665538cf3"
+      },
+      "reviewers": [
+        "low_content_cross_review"
+      ],
+      "scope": "Frozen inserted residue phases and zeros, profile shift and mixed exponent caps."
+    }
+  ],
+  "independent_ephemeral_controls": {
+    "circular_states": 105,
+    "asymmetric_endpoint_states": 315
+  },
+  "review_context": "Independent SSH proof reviews. Low-content cross review authored the earlier preserved conjugate v2, and separately reviewed the stronger v3 by the other agent."
+}

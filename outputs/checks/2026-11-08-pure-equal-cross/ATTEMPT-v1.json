@@ -1,0 +1,62 @@
+{
+  "schema": "pure-equal-cross-attempt-v1",
+  "utc": "2026-11-08T13:57:15.782044+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "proofs": [
+    {
+      "path": "planning/pure-equal-cross-20261108/PURE_EQUAL_ALLOCATED-v1.md",
+      "bytes": 10945,
+      "sha256": "a1c8847482573a1777e011bc8feed207a7a7e49eba4e38f52b31a0043d52290e"
+    },
+    {
+      "path": "planning/pure-equal-cross-20261108/PURE_EQUAL_JOINT-v1.md",
+      "bytes": 9745,
+      "sha256": "cdceed0305fe16722fea96fe917f58d856729c693f75f50565395abc9bf8b982"
+    },
+    {
+      "path": "planning/pure-equal-cross-20261108/GROUPED_UNEQUAL_OVERLAP-v1.md",
+      "bytes": 10245,
+      "sha256": "8437fda279bd45ed1da2f7f75814aebb2f5d5f7f3ad5b2244a4ebb39862a2113"
+    }
+  ],
+  "review": {
+    "path": "outputs/checks/2026-11-08-pure-equal-cross/REVIEW-v1.json",
+    "bytes": 2770,
+    "sha256": "6e70f4f603897b18c588616a59d84fbd59fd89feac848b36074fd36b4c944ad6"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-pure-equal-cross/SOURCE_PINS-v1.json",
+    "bytes": 45521,
+    "sha256": "eefe5221417332d618e55470484dbd0e8756f2913292fa9a46da8dd9a5e87d5e"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-pure-equal-cross/controls-v2.json",
+    "bytes": 1149,
+    "sha256": "a50bd9d86855a44e132c6cae7c553d20b750c911d79d4795a6170099add4956e"
+  },
+  "harness": {
+    "path": "planning/pure-equal-cross-20261108/check_pure_equal_v2.py",
+    "bytes": 12167,
+    "sha256": "f2599e86daebbae0f61ebd4cc615e4028b122f147bb736cf7971148dadeef6a0"
+  },
+  "preserved_failed_harness": {
+    "path": "planning/pure-equal-cross-20261108/check_pure_equal_v1.py",
+    "bytes": 8843,
+    "sha256": "ff3e0fea4c3f21253d82955d9518fae7281dfb4123d58a2dbc27b0869630c1a2"
+  },
+  "preserved_failure": {
+    "path": "outputs/checks/2026-11-08-pure-equal-cross/controls-failure-v1.txt",
+    "bytes": 279,
+    "sha256": "439c46c195ca7f4e2ee4f92b2746c046902afdf503ea25f5d1b46aceaf6b0a65"
+  },
+  "new_results": {
+    "pure_full_complement_cross_on_eligible_overlap": "3/4 when N ell_good >= D^(5/24), including d=1",
+    "pure_joint_Gaussian_schur": "3/4 with B near D^(1/6) and content or opposite overlap >=D^(1/24); balanced no-sparsity band works from Nd=D^(1/16)",
+    "pure_grouped_h_profile": "3/4 on exact short and long h selections",
+    "pure_equal_unequal_cross": "3/4 on comparable dynamic near gaps and on residual b0 <= max(1,D^(1/8)/sqrt(Nd))",
+    "pure_unequal_full_complement_cross": "3/4 on selected long numerator or weighted denominator tail, including d=1"
+  },
+  "failed_step": "The unrestricted joint norm at d=1 and B around D^(1/6) gives 37/48, above target. Joint L6/L3 resolves a different divisor band by keeping the true sharp allocations.",
+  "open": "Small eligible conjugate overlap, low-content low-overlap saddle Nh near T0 and generic off-equal remainder. Whole 109/144, 13/12, 9/8, determinant, zero-location, Lean, and GRH remain open.",
+  "prior_fixtures_replayed": false
+}

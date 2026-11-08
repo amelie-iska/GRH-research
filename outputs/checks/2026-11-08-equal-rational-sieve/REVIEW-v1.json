@@ -1,0 +1,73 @@
+{
+  "schema": "equal-rational-sieve-independent-review-record-v1",
+  "utc": "2026-11-08T12:59:56.871965+00:00",
+  "scope": "Research only. Independent reviews of original unweighted nonprincipal two-pivot projections and the oriented rational Gram comparison. Neither completion gate is addressed by this receipt.",
+  "main_review": {
+    "agent": "low_content_cross_review",
+    "reviewed": {
+      "path": "planning/equal-rational-sieve-20261108/GROUPED_EQUAL_CROSS-v2.md",
+      "bytes": 10132,
+      "sha256": "91b70fade60a57fc3fa525f1c78a03d0b2929dbda11cbf96fb5bd3dad1385177"
+    },
+    "final": {
+      "path": "planning/equal-rational-sieve-20261108/GROUPED_EQUAL_CROSS-v4.md",
+      "bytes": 10245,
+      "sha256": "9f1d6174db055a62765f55422f58cae507d6828ca75ba5371d7f4e6cf31a4491"
+    },
+    "status": "accepted within stated scope",
+    "checked": [
+      "Exact h=r e0 regrouping and masks",
+      "Fixed e1 cubic input and profile scale",
+      "D^(1/4) divisor split and D^(35/48) full mixed cross",
+      "Pure tail at Nd>=D^(11/32)"
+    ],
+    "independent_ephemeral_checks": {
+      "exact_grouped_values": 1221000,
+      "literal_rows": 20,
+      "live_direct_allocations": 748,
+      "nonzero_grouped_rows": 3736,
+      "zero_rows_with_nonzero_allocation_weight": 4344
+    },
+    "final_diff": "Endpoint log(2+2J) correction and explicit permitted repeated k factor. V3 contained an accidental backspace in the latter sentence. V4 repairs the TeX escape. Root verified the diff and absence of control bytes."
+  },
+  "auxiliary_review": {
+    "agent": "rational_cubic_gram",
+    "reviewed": {
+      "path": "planning/equal-rational-sieve-20261108/EQUAL_RATIONAL_SIEVE-v2.md",
+      "bytes": 21042,
+      "sha256": "6ec99f4f9de81207509328d43f706b4f67be7e96cb378e79a4d09a150e3750ad"
+    },
+    "final": {
+      "path": "planning/equal-rational-sieve-20261108/EQUAL_RATIONAL_SIEVE-v4.md",
+      "bytes": 21065,
+      "sha256": "c47b821a5431823959b020ee18954148e79c3eaf5fe7e3cea4d00c1ecda25e7f"
+    },
+    "status": "accepted within stated scope",
+    "checked": [
+      "Primitive rational Gaussian Poisson",
+      "Opposite-orientation j retains order three",
+      "Both ray and finite Kummer twist classes fixed",
+      "M\u00f6bius extension and restricted coefficient multiplicities",
+      "B^(5/3) off-diagonal comparison",
+      "Live radial factor and exact rational powers"
+    ],
+    "independent_ephemeral_checks": {
+      "rational_gram_phase_checks": 557685,
+      "raw_zero_cases": 151504
+    },
+    "final_diff": "Endpoint logarithm, clarity on fixed twists, and main proof version link."
+  },
+  "additional_review": {
+    "agent": "low_content_short_gauss",
+    "checked": [
+      "Primitive local factors and integer norm fibres",
+      "Both frozen-pivot and physical norm row averages",
+      "Direct far ratio equation (6) at mixed and pure"
+    ],
+    "independent_ephemeral_checks": {
+      "primitive_crt_characters": 26,
+      "local_phase_and_norm_checks": 15030
+    }
+  },
+  "independent_check_scope": "Read-only SSH. Agent reports are retained in the thread. Durable author checks are separately source bound in ATTEMPT-v1.json."
+}

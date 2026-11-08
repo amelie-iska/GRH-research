@@ -1,0 +1,64 @@
+{
+  "schema": "quadratic-cross-author-attempt-v1",
+  "utc": "2026-11-07T09:31:32.893466+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/quadratic-cross-20261107/QUADRATIC_CROSS_PREFIX-v2.md",
+    "bytes": 21015,
+    "sha256": "b3dba35a977b07590d401a0457b5d9db4ec4f1a283dc2cd05cbea3db4a8945d6"
+  },
+  "preserved_v1": {
+    "path": "planning/quadratic-cross-20261107/QUADRATIC_CROSS_PREFIX-v1.md",
+    "bytes": 19539,
+    "sha256": "c30ff4087130b954f53618e0c3b7d6344a4ce2eb1a4053252fa674dbe190f355"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-quadratic-cross/controls-v1.json",
+    "bytes": 1715,
+    "sha256": "bff59f36956a022c5e0518545b3a0f9b62a02d74555de7993508d16971768b5e"
+  },
+  "mixed_v2_controls": {
+    "path": "outputs/checks/2026-11-07-quadratic-cross/fixed-k-controls-v1.json",
+    "bytes": 747,
+    "sha256": "055d5d7c4cbac9d351150068328910c81e46f3a1da88f0f6aefc96b7f28bcc5a"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-quadratic-cross/SOURCE_PINS-v1.json",
+    "bytes": 13682,
+    "sha256": "29e9a287db46c942c1bc6e72dbc7660fd799fbb3f45821ff3d5cc4f20c5c537b"
+  },
+  "new_operator": "Gaussian Poisson after duality of the live rp^4 long operator. Four gcd types, raw same-colour deletion, primitive opposite-colour quadratic, CRT crossed product of two quadratic matrices. Squarefree-pair bound T+AB(A+B).",
+  "all_sixthfree_r": "Freeze squarefull part u at small norm and compare true primitive conductors at large norm. Gives E^-1[L/P+RP(R+P)+(RL)^(2/3)]. At R,P~D^(1/4) and E=1, the joint bound costs D^(5/6) with epsilon.",
+  "critical": {
+    "pure_candidate_power": "257/336",
+    "previous_author_gain": "1/168",
+    "accepted_same_prefix_gain": "1/21",
+    "remaining_gap": "5/336",
+    "target_X_exponent": "2/7",
+    "target_A2_exponent_at_critical_X": "5/312"
+  },
+  "mixed_v2": "Take the minimum of actual small-d band estimates at fixed original k, gaining A2^-13/14 and paying positive Nk^-27/14. Finite signed k and masks are kept.",
+  "failure_scope": "At pure R near D^(2/7), P near unit, the sharp individual row and L/P comparison meet without enough saving. Improving only the quadratic cross term cannot remove this term of the budget. No lower bound for the signed object.",
+  "next": "Estimate actual small-p Gauss columns or signed joint pairing at that transition, before positive triangles.",
+  "algebra_control_counts": {
+    "ordered_label_pairs": 531441,
+    "opposite_colour_overlap_pairs": 413792,
+    "same_colour_overlap_pairs": 413792,
+    "raw_gram_and_deletion_values": 7971615,
+    "CRT_inverse_dilation_values": 2125764,
+    "quadratic_cross_phase_values": 531441,
+    "shortened_cross_factor_values": 142642,
+    "two_same_colour_inversion_cases": 21316
+  },
+  "rational_v1_counts": {
+    "ordinary": 125,
+    "frozen": 139,
+    "small_r_affine_endpoints": 174,
+    "subunit_P0_cases": 38
+  },
+  "independent_review": "Pending, reviewer availability unchanged",
+  "whole_signed_and_unsigned": "13/12 and 9/8",
+  "project_complete": false,
+  "research_complete": false,
+  "no_previous_finite_control_or_publication_audit_replay": true
+}

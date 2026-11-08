@@ -1,0 +1,83 @@
+{
+  "schema": "coherent-matching-tail-run-closed-v1",
+  "utc": "2026-11-08T00:43:37.313199+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "handoff": {
+    "path": "planning/coherent-mixed-band-20261108/HANDOFF-v1.md",
+    "sha256": "2529122b25f5bbc89c3abddae1b4f891a461e6b267ed414fd6f7e2169774d30d",
+    "bytes": 3584
+  },
+  "evidence": [
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/ATTEMPT-v1.json",
+      "sha256": "9d857cd11dd17db1b0adb79391a0d4c0fdb75a036b3bd8b357c926dce4369980",
+      "bytes": 2890
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/SOURCE_PINS-v1.json",
+      "sha256": "11fc786c10cfb7c15e45609ae8749f8005a44c927096152d9122a9fba8b1254e",
+      "bytes": 31938
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/controls-v1.json",
+      "sha256": "69316c680ded3d09c94b3dbf6764a4a702ac967cc29459c894ad1972d6d0652d",
+      "bytes": 2096
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/controls-above-u-v1.json",
+      "sha256": "2f3d581058b8c97465ddae8269a9ce0f2227627ec4a694f110e0bac94b6d7328",
+      "bytes": 1530
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/metadata-validation-v1.json",
+      "sha256": "ab0c5a12064c5e2f9759198bbd2478f2b73f0d73552224f9b74c063903dd489e",
+      "bytes": 1805
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/CLAIM-v1.json",
+      "sha256": "7faa83a37a03b7d4e1c8d4ee4a60d34d5b62b8c9b9b5ae7ec06465de77fbe4f7",
+      "bytes": 1428
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/CHECKPOINT-v1.json",
+      "sha256": "483099426a9d0ef8f184d6dc2bd8205527f3ffff077a732de0af08ceeaeac9f7",
+      "bytes": 1414
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/automation-before-update-v1.json",
+      "sha256": "5151e0c694f01f6d363f7d70cdb5de68faa5f74b57a42831884542ff1365fcad",
+      "bytes": 65890
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/automation-after-update-v1.json",
+      "sha256": "36b7ad90895b69eb46c6cf59b07cb44a9e30968e4d02fe8adc1bad0972822f12",
+      "bytes": 65880
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/status-after-v1.txt",
+      "sha256": "fc49596bb91aa75ab88e312c4be52588358d388bb674b944efba440b6d774b8f",
+      "bytes": 24201
+    }
+  ],
+  "all_155_pins_rechecked": true,
+  "below_u_common_divisor_smooth_band": true,
+  "sufficient_mixed_below_u_cutoff_source_dependent": "52/105",
+  "power_at_D_to_199_400_source_dependent": "8621/11520",
+  "above_u_matches_only_f1_prime_or_density_with_weight_on_prime_variable": true,
+  "above_u_matched_power_source_dependent": "215/288",
+  "above_u_continuous_replacement_power_source_dependent": "35/48",
+  "literal_raw_masks_strict_endpoints_and_dual_pivot_freezing_preserved": true,
+  "not_an_independent_zero_free_theorem": true,
+  "small_d_pure_unmatched_f1_far_strip_and_whole_coherent_main_open": true,
+  "whole_prefix_candidate_unchanged": "109/144",
+  "protected_HEAD_index_states": 16,
+  "protected_science_artifacts": 18,
+  "CPU_lock_unchanged": true,
+  "prior_release": "aeb7705c/163b9eaf, 348 pages and 10858 MathML",
+  "existing_heartbeat_same_schedule_target": true,
+  "prompt_changed_only_latest_slot": true,
+  "project_complete": false,
+  "research_complete": false,
+  "independent_acceptance_for_this_candidate": false,
+  "project_edits_checks": "SSH to iska-linux-vscode"
+}

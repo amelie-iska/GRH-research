@@ -1,0 +1,45 @@
+{
+  "schema": "conjugate-dual-overlap-author-attempt-v1",
+  "utc": "2026-11-08T09:52:58.451257+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/conjugate-dual-overlap-20261108/CONJUGATE_DUAL_OVERLAP-v2.md",
+    "bytes": 11761,
+    "sha256": "8d1edf32225f3f9f9b4c1929b486388909fde4db7a5cf10487eb77044d54ab8a"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/controls-v1.json",
+    "bytes": 811,
+    "sha256": "44686d6ca96bde4cf0e5d1c39e8590d7c02cf635d6a8e6babf8cb71437aeb5af"
+  },
+  "cross_controls": {
+    "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/cross-controls-v1.json",
+    "bytes": 312,
+    "sha256": "56f257c65fac88f0f3ab18b331c9ff5ede675af82aeca61c92a4aa2cb38f0da0"
+  },
+  "harnesses": [
+    {
+      "path": "planning/conjugate-dual-overlap-20261108/check_conjugate_overlap_v1.py",
+      "bytes": 6321,
+      "sha256": "b7bdbc2cb10e710c8b85f966d27edee82d751753985601f507c928aa938d7912"
+    },
+    {
+      "path": "planning/conjugate-dual-overlap-20261108/check_equal_norm_cross_v1.py",
+      "bytes": 952,
+      "sha256": "2c63035844fa05a502e47d5c2b612936426c3140b99cf496407aacd37feead97"
+    }
+  ],
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/SOURCE_PINS-v1.json",
+    "bytes": 40771,
+    "sha256": "c0d6be8ad6000ea257860e4d66eafaeaac6ec47e1df004871a6e90529c1ac9e2"
+  },
+  "method": "Extract ell=gcd(a,conjugate(b)) after the original ideal gcd g. Nell is gcd(Na,Nb) on the actual good squarefree numerator, ideal coprime support. Keep the full row phase and both raw zeros of ell. Apply a simultaneous two-lcm coprimality projector with a polylog absolute weight.",
+  "mixed": "Integer reduced denominator, numerator, and joint rectangle powers 67/90, 11/15, and 107/144. Ng Nell>=D^(8/15) gives 67/90 without individual upper cuts. Threshold D^(35/66) gives 3/4 exactly.",
+  "pure": "All four projections in the stated pure ranges have power 3/4.",
+  "equal_norm_cross": "Equal-norm positive energy 7/12 at mixed. Its cross with the actual full complement gives 5/6 by Cauchy, and the Nd>=D^(1/5) portion gives 3/4 via the inherited physical tail.",
+  "failed_range": "The trial Ng Nell>=D^(1/2) costs 29/36 in the mixed high-overlap comparison. The absolute cross on Nd<D^(1/5) has no target-size estimate here.",
+  "remaining": "Large integer reduced ratios with small conjugate overlap and the signed small-d cross, including d=1. Whole, determinant, zero-location and Lean obligations remain open.",
+  "independent_review": "Pending. Review slots remain usage limited.",
+  "prior_fixtures_replayed": false
+}

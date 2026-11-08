@@ -1,0 +1,36 @@
+{
+  "schema": "coherent-matching-tail-author-attempt-v1",
+  "utc": "2026-11-07T23:34:36.938630+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/coherent-matching-tail-20261107/MATCHING_CELL_TAIL-v2.md",
+    "bytes": 14531,
+    "sha256": "c171a080ed7c2bf32d062da93d0abe1a88fe09c9ef7d89fa1471a67ed14b4507"
+  },
+  "preserved_draft_v1": {
+    "path": "planning/coherent-matching-tail-20261107/MATCHING_CELL_TAIL-v1.md",
+    "bytes": 14566,
+    "sha256": "fba83d84244637e48a27a9d8c1e59d78395e6adfe25aa58279c81ca5fea4cb95"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-coherent-matching-tail/SOURCE_PINS-v1.json",
+    "bytes": 30944,
+    "sha256": "da6df59b6e717215d203d64722702451962bf1da03f436fec918d351822ac640"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-coherent-matching-tail/controls-v1.json",
+    "bytes": 976,
+    "sha256": "545a616a011692b227ef992f66381333e4dcc2d3d3cad075c5bd5ea7f5f47d73"
+  },
+  "control_harness": {
+    "path": "planning/coherent-matching-tail-20261107/check_matching_cell_tail_v1.py",
+    "bytes": 9035,
+    "sha256": "db3c495c96ca35b789872a2b754c13c0251ddf668fa864e2669b0f1113382d7f"
+  },
+  "new_step": "Choose the disjoint pair of opposite cells by dyadic product; separate the two strict max cutoffs, keep both signed Mertens prefixes through overlap inversion, and use joint row/column deletion radicals before the physical norm.",
+  "actual_bound": "For the full smooth d-tail at critical H, pinned conditional sigma=7/8 gives sufficient cutoff D^(10/19) and D^(237/320+eps) at cutoff D^(11/20), with explicit profile derivatives. Elementary sufficient cutoff remains D^(5/8).",
+  "sharp_failure": "The sharp cutoff in the product of moving norms has an unsummable weighted log Fourier transform; this proof does not give the gain for the sharp cutoff.",
+  "remaining": "Small d including d=1, smooth K0-J and far-norm joint Gauss remain open. No whole signed estimate, new zero-free result, independent proof, Lean, GRH, or publication.",
+  "independent_review": "Pending. Previous reviewer usage limits still active; no retry.",
+  "replayed_old_experiment_or_audit": false
+}

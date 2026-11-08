@@ -1,0 +1,128 @@
+{
+  "schema": "matched-poisson-run-closed-v1",
+  "utc": "2026-11-08T15:08:12.872656+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "handoff": {
+    "path": "planning/matched-poisson-20261108/HANDOFF-v1.md",
+    "sha256": "b3caa3275bd286fde5593f6209fbae86eed6d60edf650aa213f6f0d8b769ee40",
+    "bytes": 4497
+  },
+  "proofs": [
+    {
+      "path": "planning/matched-poisson-20261108/MATCHED_POISSON_CROSS-v2.md",
+      "bytes": 15089,
+      "sha256": "8634bdac8792c95c057d79742551caa945b3885707424a3c5b039f923404cf99"
+    },
+    {
+      "path": "planning/matched-poisson-20261108/COMPLETE_ALLOCATION_UNIT-v1.md",
+      "bytes": 4719,
+      "sha256": "2fc71998ba2ae71a1133ccfdccd4a05077aef591fd0815e8c2e2171b8f494e38"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/ATTEMPT-v1.json",
+      "sha256": "8aaf964e1143ca3f83023262ea39a45f52135bd693f26899343d7965df2d1275",
+      "bytes": 2420
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/REVIEW-v1.json",
+      "sha256": "2d4462329a87c5c26905ba272452465a1ac3dd9654c3df2b1eb8bd31f5a63a7f",
+      "bytes": 1946
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/SOURCE_PINS-v1.json",
+      "sha256": "ba7e96c983eccc5d38193f04fe6d31427bc249238c4294b0c17c2d600745e974",
+      "bytes": 47472
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/controls-v1.json",
+      "sha256": "97626dc6819c21d8316d6c524e433afdbfe1b95450721b6725e22910b3e7ea85",
+      "bytes": 833
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/INDEX_RECONCILIATION-v1.json",
+      "sha256": "891ae87425abd42931724e9d6dc8e9239584f0b492f73c35f982f1f38c048f74",
+      "bytes": 1052
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/update_metadata_v1.py",
+      "sha256": "0eba245f375db2c4ab4a6624cf10e3fb40de4f7cadecf8a79a6135ef0abe63b0",
+      "bytes": 9376
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/update_metadata_v2.py",
+      "sha256": "5512faf3a70f4fd92d3ae8e2d8d0a62b476744e38af4e9ed8cb7cdc7cf780756",
+      "bytes": 9686
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/update_metadata_v3.py",
+      "sha256": "96ec9fc558960a5ed1217e5d3a2714088a6ca72b6289bc6a3de11f441fb76ba7",
+      "bytes": 9686
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/metadata-validation-v3.json",
+      "sha256": "3448b125c186d237229484ae05fe48edb9ae7c5627b8d8f013a10bdf95e99ff2",
+      "bytes": 1955
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/CLAIM-v1.json",
+      "sha256": "94c77fcc6a84a8a96a8f2dbf218943ce23b0d6cc8a306333fda3a7692b1e4781",
+      "bytes": 1186
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/CHECKPOINT-v1.json",
+      "sha256": "74787f04cacff035acc5439499766ea3d125dee2bfde65bac020f4282b561b18",
+      "bytes": 1224
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/automation-before-update-v1.json",
+      "sha256": "c62f409e3197a7db58418e8128447c69e03999a18bb312df714e3b2c625fa027",
+      "bytes": 65840
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/automation-after-update-v1.json",
+      "sha256": "734906b26ac7fcf0eff9fd22a9303127558a145f33f389aa14382bf79cfb6004",
+      "bytes": 65885
+    },
+    {
+      "path": "outputs/checks/2026-11-08-matched-poisson/status-after-v1.txt",
+      "sha256": "1ab4e5606a6e2eeee722ffded259a8aed00e5ead44547dc0aed51afa97be0907",
+      "bytes": 24013
+    }
+  ],
+  "all_234_pins_rechecked": true,
+  "matched_good_pattern_bound": "R/Nd per divisor up to subpowers, pure unit divisor D^(5/8)",
+  "actual_signed_cross_low_good_defect_bound": "D^(3/4+eps) for Nq<=D^(1/2) in both critical blocks including d=1",
+  "unit_cancellation": "exact selected middle -1 plus subpower error, low term +1",
+  "original_raw_masks_sharp_cutoff_S_phases_and_primitive_zeros_retained": true,
+  "higher_good_defects_and_generic_unequal_remainder_open": true,
+  "not_an_independent_zero_free_theorem": true,
+  "whole_prefix_candidate_unchanged": "109/144",
+  "protected_HEAD_states": 16,
+  "protected_frozen_release_index_states_byte_identical": 15,
+  "source_index_bytes_reconciled_and_preserved_as_found": {
+    "historical_source_index_sha256": "0ef1af515b143ef68fed1d9a42aef7c00d5d1d7c3ef6832d2926d48e0925214c",
+    "observed_source_index_sha256": "91163e2550566607f23d517016b3cc08da3f312f4bc165a79c19640aa6cc77ef",
+    "index_bytes": 168699,
+    "index_mtime_utc": "2026-11-08T14:47:40.097617+00:00",
+    "source_HEAD": "dba37ffaa78c82ade1385f7ee56c907ab0c67d3a",
+    "source_HEAD_file_sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+    "index_stage_listing_sha256": "da0bd6e3f8efc4cd7b93ea1fed3a94673625699e83bc2ea00ff2eb22454d1e39",
+    "identical_index_and_HEAD_path_mode_oid_entries": 1406,
+    "frozen_release_HEAD_and_index_states_byte_identical": 15,
+    "raw_source_index_hash_changed": true,
+    "staged_diff_empty": true,
+    "source_index_rewritten_by_this_check": false,
+    "scope": "The byte divergence was first detected at the metadata protection gate. Index contents by path, mode, stage and object ID match HEAD. The cause of the byte difference was not established. The historical receipts and observed index were not rewritten."
+  },
+  "protected_science_artifacts": 18,
+  "CPU_lock_unchanged": true,
+  "prior_release": "aeb7705c/163b9eaf, 348 pages and 10858 MathML",
+  "existing_heartbeat_same_schedule_target": true,
+  "prompt_changed_only_latest_slot": true,
+  "project_complete": false,
+  "research_complete": false,
+  "independent_acceptance_for_this_candidate": true,
+  "project_edits_checks": "SSH to iska-linux-vscode"
+}

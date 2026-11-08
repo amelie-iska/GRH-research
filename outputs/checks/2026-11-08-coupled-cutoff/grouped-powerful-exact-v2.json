@@ -1,0 +1,101 @@
+{
+  "checks": {
+    "expanded_literal_terms": 67378,
+    "global_raw_phase_pair_checks": 357627,
+    "grouped_sixth_power_terms": 2240,
+    "literal_projector_coefficients": 4152,
+    "local_primitive_raw_phase_checks": 36938,
+    "local_projector_checks": 864,
+    "local_raw_zero_checks": 3164,
+    "negative_literal_terms": 33568,
+    "negative_signed_grouped_tail_coefficients": 1040,
+    "nonunit_eP_terms": 11565,
+    "nonunit_h_terms": 13692,
+    "nonunit_rprime_terms": 15684,
+    "nonzero_literal_projector_coefficients": 242,
+    "physical_sixth_power_allocation_checks": 67378,
+    "positive_literal_terms": 33810,
+    "powerful_h_canonical_allocations": 6561,
+    "signed_grouped_tail_coefficients": 34951,
+    "zero_despite_trivial_phase_exponent": 568,
+    "zero_signed_grouped_tail_coefficients": 7020
+  },
+  "combined_powerful_square_tail_thresholds": [
+    1,
+    100,
+    1000
+  ],
+  "designated_fixed_S_label_index": [
+    2
+  ],
+  "literal_residue_row_patterns": 69,
+  "physical_norm_clip_and_old_residue_cells": [
+    {
+      "fixed": [
+        2
+      ],
+      "norm_half_open": [
+        1,
+        2000000
+      ],
+      "old": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "fixed": [
+        2
+      ],
+      "norm_half_open": [
+        200,
+        2000000
+      ],
+      "old": [
+        0,
+        2,
+        0,
+        4
+      ]
+    },
+    {
+      "fixed": [
+        1,
+        2
+      ],
+      "norm_half_open": [
+        1,
+        800000
+      ],
+      "old": [
+        4,
+        1,
+        0,
+        5
+      ]
+    }
+  ],
+  "preserved_v1_regression": {
+    "description": "At x=I=p for a fixed-forbidden p and old residue zero, the unrestricted s=p term has coefficient -1 after residual-only deletion.",
+    "eligibility": "s must avoid the fixed forbidden union and rad(P).",
+    "invalid_v1_coefficient": -1,
+    "required_coefficient": 0
+  },
+  "primes_by_distinct_ideal_label": [
+    7,
+    7,
+    13,
+    19
+  ],
+  "representative_local_orientations": [
+    1,
+    -1,
+    1,
+    -1
+  ],
+  "scope": "finite ideal-valuation and residue-field algebra controls only",
+  "script_sha256": "d20a2fb0b2a761fbdae7292c03aab02760e3b941023a59e57d4030f47702dfbb",
+  "status": "pass"
+}

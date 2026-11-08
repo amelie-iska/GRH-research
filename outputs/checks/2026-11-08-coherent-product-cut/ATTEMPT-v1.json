@@ -1,0 +1,36 @@
+{
+  "schema": "coherent-product-cut-author-attempt-v1",
+  "utc": "2026-11-08T01:36:13.349384+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/coherent-product-cut-20261108/PRODUCT_CUTOFF_REDUCTION-v2.md",
+    "bytes": 15273,
+    "sha256": "f47d5ad369b8a149e6423de06b9432c844de9cc50293c32ed6acfbbeb1d2b0ed"
+  },
+  "preserved_draft_v1": {
+    "path": "planning/coherent-product-cut-20261108/PRODUCT_CUTOFF_REDUCTION-v1.md",
+    "bytes": 13982,
+    "sha256": "7d892c979c63399892f7ebc77664f640e8f7fb753917b8c216366713d484ef21"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-coherent-product-cut/SOURCE_PINS-v1.json",
+    "bytes": 32929,
+    "sha256": "0f93d10bf2aa30dd69dc97710aee77ba148343cb4d2b9712a7fab1efc7430184"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-coherent-product-cut/controls-v1.json",
+    "bytes": 19497,
+    "sha256": "2f9e2363ffe4a4daada87c4724e328d41f9de2a9bd2c7e4b1f3b64d7cbb5913c"
+  },
+  "control_harness": {
+    "path": "planning/coherent-product-cut-20261108/check_product_cut_v1.py",
+    "bytes": 8713,
+    "sha256": "9f3ae651ac917a6ee030530ffe8d7db33b3f1d45a839c943baf141ccdf9b9d9c"
+  },
+  "exact_transport": "A cutoff on the full intermediate divisor uses F in the smooth term, F*P in the rough-prime term, P*Q in the unordered distinct semiprime term. The complementary rough terms vanish identically if 2Y<=U. With 2Y<=U^2 only the F*P branch can survive. The true product-selected Stieltjes endpoint at U is retained.",
+  "new_signed_bound": "Powered middle term bounded by A_minus^(5/6)*A_plus^(1/6)*L after the same valuation-specific pivot deletions, supplying a row gain on each placement when sigma>5/6; two signed prefixes remain. Conditional cutoff D^(52/105) mixed, D^(8/17) balanced, D^(10/19) pure.",
+  "whole_form_reduction": "Target-size tail leaves only the small annular sum in the entire cubic-dominant wedge without the fixed-field power, and in the critical mixed block conditional on pinned fixed-field Mertens only. Pure retains a product-selected short term supported on Nf << D^(1/38), with discrete raw or conditional continuous version.",
+  "limits": "No bound on the small annular sum or annular d=1, no whole signed or global gain, no zero-free theorem, determinant, Lean, GRH or publication.",
+  "independent_review": "Pending; reviewer usage limits remain active, no retry.",
+  "replayed_old_experiment_or_audit": false
+}

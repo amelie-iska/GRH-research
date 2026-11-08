@@ -1,0 +1,92 @@
+{
+  "schema": "coherent-matching-tail-run-closed-v1",
+  "utc": "2026-11-08T09:54:14.756967+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "handoff": {
+    "path": "planning/conjugate-dual-overlap-20261108/HANDOFF-v1.md",
+    "sha256": "56fdb450fbee0e352cdcb6375dff2d14d9a4da7dcad195e8792f5c079c9cd113",
+    "bytes": 3313
+  },
+  "draft": {
+    "path": "planning/conjugate-dual-overlap-20261108/CONJUGATE_DUAL_OVERLAP-v2.md",
+    "sha256": "8d1edf32225f3f9f9b4c1929b486388909fde4db7a5cf10487eb77044d54ab8a",
+    "bytes": 11761
+  },
+  "evidence": [
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/ATTEMPT-v1.json",
+      "sha256": "0e14504badd5bb14b804b7b0aebcde77e8413a0212ffb809e0792adbeaeda578",
+      "bytes": 2665
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/SOURCE_PINS-v1.json",
+      "sha256": "c0d6be8ad6000ea257860e4d66eafaeaac6ec47e1df004871a6e90529c1ac9e2",
+      "bytes": 40771
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/controls-v1.json",
+      "sha256": "44686d6ca96bde4cf0e5d1c39e8590d7c02cf635d6a8e6babf8cb71437aeb5af",
+      "bytes": 811
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/cross-controls-v1.json",
+      "sha256": "56f257c65fac88f0f3ab18b331c9ff5ede675af82aeca61c92a4aa2cb38f0da0",
+      "bytes": 312
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/metadata-validation-v1.json",
+      "sha256": "5e2ceeaa7e0ce44793c6ee47b81dfed052167e1e7946351362c1e255aa6d615e",
+      "bytes": 1805
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/CLAIM-v1.json",
+      "sha256": "b7cd8c4d5928af1b5430e2356d9be518a6045594631be5e5495919e92c11bfd5",
+      "bytes": 1250
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/CHECKPOINT-v1.json",
+      "sha256": "0ba4e7f586829db9533b5781bcee5c77e02038ee9701c6a57f7803a173d43b78",
+      "bytes": 1221
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/automation-before-update-v1.json",
+      "sha256": "cd58fab2b5a8ed439b4df2211d30d88c5dd47db2e980a14864e96f910b9e3be6",
+      "bytes": 65855
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/automation-after-update-v1.json",
+      "sha256": "296efc13df4fdcd68b8602c5b29c9cbdbfa8ba9a4b761278f3b94886b42e6b27",
+      "bytes": 65820
+    },
+    {
+      "path": "outputs/checks/2026-11-08-conjugate-dual-overlap/status-after-v1.txt",
+      "sha256": "35ea339a586115e3f03b7755b0f284a8d92367d81905bba2b11f23bdf9a22e56",
+      "bytes": 24008
+    }
+  ],
+  "all_200_pins_rechecked": true,
+  "conjugate_overlap_retains_exact_phase_and_raw_zeros": true,
+  "two_coprimality_projectors_use_lcm": true,
+  "mixed_reduced_integer_ratio_powers": [
+    "67/90",
+    "11/15",
+    "107/144"
+  ],
+  "mixed_high_overlap_power_at_threshold_D_to_8_15": "67/90",
+  "mixed_equal_norm_energy": "7/12",
+  "mixed_equal_norm_cross": "5/6",
+  "mixed_equal_norm_cross_for_Nd_at_least_D_to_1_5": "3/4",
+  "large_reduced_ratio_and_small_d_cross_open": true,
+  "not_an_independent_zero_free_theorem": true,
+  "whole_prefix_candidate_unchanged": "109/144",
+  "protected_HEAD_index_states": 16,
+  "protected_science_artifacts": 18,
+  "CPU_lock_unchanged": true,
+  "prior_release": "aeb7705c/163b9eaf, 348 pages and 10858 MathML",
+  "existing_heartbeat_same_schedule_target": true,
+  "prompt_changed_only_latest_slot": true,
+  "project_complete": false,
+  "research_complete": false,
+  "independent_acceptance_for_this_candidate": false,
+  "project_edits_checks": "SSH to iska-linux-vscode"
+}

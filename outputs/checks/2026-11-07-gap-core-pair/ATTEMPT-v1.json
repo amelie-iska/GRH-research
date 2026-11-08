@@ -1,0 +1,106 @@
+{
+  "schema": "gap-core-pair-author-attempt-v1",
+  "utc": "2026-11-07T16:30:55.508520+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/gap-core-pair-20261107/GAP_CORE_PAIR-v1.md",
+    "bytes": 13011,
+    "sha256": "59dcf8f0524442193653c3a9bdf2c9ac810a81b638d0fb2a561bff6659fd9eac"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-gap-core-pair/controls-v1.json",
+    "bytes": 1265,
+    "sha256": "be38baa6ed9db35c55d5a0e95ad738f5c64ae869e46701c13f9d0b62117b744e"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-gap-core-pair/SOURCE_PINS-v1.json",
+    "bytes": 22151,
+    "sha256": "9b8ad89389cc421264bf942f6774981e6ea1bb84a5e61f8522d5b9b7cb2b3a10"
+  },
+  "control_harness": {
+    "path": "planning/gap-core-pair-20261107/check_gap_core_pair_v2.py",
+    "bytes": 5441,
+    "sha256": "e03e50ae93692b621247b6184d5ffc85107da424198433fc20b02c6eaed3a398"
+  },
+  "preserved_first_harness": {
+    "path": "planning/gap-core-pair-20261107/check_gap_core_pair_v1.py",
+    "bytes": 5419,
+    "sha256": "7d500e99bd091f3733864ea626daca4862021d682cef69245c30fd7f38d27fe7"
+  },
+  "fixture_failure": "v1 included trial columns with cofactor norm beyond the original cutoff at its line 53 and stopped before generating output. v2 filters these candidates by the literal support condition and passes.",
+  "new_step": "A marked prime has norm >sqrt(2/7)D^(11/24), so it cannot meet another column's small cofactor. The separated-product error from a shared marked prime is H D^-11/96 by ideal counts. The remaining signed lift runs only over d|gcd(c,c').",
+  "cofactor_budget": "Group the entire cofactor after d. At cofactor scale C the ordinary primitive squared norm is at most D/(E C) with fixed profile and subpowers. Bilinear Cauchy gives H(X/R)^(1/6)/sqrt(C C'). The exact product cutoff Nc Nc'>=D^(1/48) costs H D^-1/480.",
+  "inert": "An inert marked prime of norm >Y lowers inverse-norm coefficient mass by Y^-1/2. The signed paired bound is H D^-17/160 after density, with the same literal product cutoff and collision correction.",
+  "remaining": "Four split prime ideals, two per column, with Nc Nc'<D^(1/48), and the earlier small squarefull r part. Unit cofactors retain D/C=D in the primitive comparison. Comparable sqrt(D) signed split-prime pairing remains open.",
+  "next": "Estimate this signed split-prime pairing jointly in the two prime variables and r, with exact densities, original gauges and the short signed cofactor projector.",
+  "scope": "Central far-gap two-prime projection, not the whole prefix. Prior 109/144, whole signed 13/12, global unsigned 9/8, determinant and zero-location, Lean and GRH remain open.",
+  "fresh_controls": {
+    "actual_marked_columns": 96,
+    "pair_counts": {
+      "pairs": 9216,
+      "cofactor_overlap": 2916,
+      "one_marked_overlap": 3072,
+      "two_marked_overlap": 216,
+      "split_conjugate_ties": 2204,
+      "joint_threshold": 8748,
+      "joint_below": 468,
+      "inert_union": 7452
+    },
+    "prime_certificates": [
+      [
+        5052932176560802234369,
+        "split",
+        13
+      ],
+      [
+        72771174401,
+        "inert",
+        3
+      ],
+      [
+        728593991485882368001,
+        "split",
+        19
+      ],
+      [
+        27019706369,
+        "inert",
+        3
+      ],
+      [
+        735339976908381093889,
+        "split",
+        7
+      ],
+      [
+        27321696257,
+        "inert",
+        3
+      ],
+      [
+        399585007248051535873,
+        "split",
+        5
+      ],
+      [
+        21130903553,
+        "inert",
+        3
+      ],
+      [
+        403217604550223462401,
+        "split",
+        7
+      ]
+    ],
+    "exact_comparator_checks": 8000,
+    "exact_comparator_equalities": 10,
+    "exact_rational_grid_points": 9471,
+    "signed_collision_correction": [
+      "0",
+      "-2199/1183"
+    ]
+  },
+  "independent_review": "Pending",
+  "prior_numeric_or_release_audit_replay": false
+}

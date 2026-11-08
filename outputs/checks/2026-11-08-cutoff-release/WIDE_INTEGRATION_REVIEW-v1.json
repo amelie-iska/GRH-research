@@ -1,0 +1,56 @@
+{
+  "checks": {
+    "complete_frequency": "Each small-prime subtraction has zero primal contribution because E N zeta > 2D, and only its entire complement equals minus its middle projection. The elementary equality norm and harmonic divisor sum retain R and all original modes, including the re-expressed direct part.",
+    "exact_band": "The strict divisor endpoints, norm <14 restriction, good prime norms 7 and 13, and the E1 Nh thresholds 2 and 14 agree with the reviewed source.",
+    "fixed_intersection": "The full fixed prime union includes the named small primes; only eligible delta is allowed. Four squarefree cells, retained tie endpoints, largest free cell and Y prime threshold are preserved. Deleted fixed-field Mertens gives the stated subpower bound at fixed labels only.",
+    "prefix": "The equality correction forces E0 Nh0 < 14, not a partner-only automatic decay. The exact 7/2 radial decay pays the 1/16 sharp insertion cost through Nd <= D^(13/56), with all actual positive increases and unchanged insertion eligibility. A double correction is included only when the equality side is wide."
+  },
+  "core_heading": "Wide cutoff corrections and full-frequency compensation",
+  "details_heading": "Derivations for the wide cutoff correction",
+  "labels": [
+    "pca:wide-core",
+    "pca:wide-factor",
+    "pca:wide-scalar",
+    "pca:wide-details",
+    "pca:wide-band-proof",
+    "pca:wide-scalar-proof",
+    "pca:wide-prefix-proof"
+  ],
+  "passed": true,
+  "pins": {
+    "band_and_scalar": {
+      "bytes": 8622,
+      "path": "planning/cutoff-appendix-20261108/WIDE_CORRECTION-v1.md",
+      "sha256": "9af9f35d509aa834d3f4fa551f5131547cebbb3af34ccf836cf2a5d8681bb086"
+    },
+    "compensation_and_prefix": {
+      "bytes": 6765,
+      "path": "planning/cutoff-appendix-20261108/WIDE_CORRECTION_ADDENDUM-v1.md",
+      "sha256": "eb952404e03f76b31ce122919bea28a5653ff28a35823c97bc15c0b0f5bd8721"
+    },
+    "core": {
+      "bytes": 3151,
+      "path": "planning/cutoff-release-20261108/wide-cutoff-core.tex",
+      "sha256": "4c5d132c6d4560c6c4f1d646ee48801c4d560356f9ec44ff716535ef0cd8dd9c"
+    },
+    "details": {
+      "bytes": 10031,
+      "path": "planning/cutoff-release-20261108/wide-cutoff-details.tex",
+      "sha256": "80be3d795e3f5158124c536289aabfa39270de6a1e733be6cf63651b1e96062a"
+    },
+    "previous_independent_review": {
+      "bytes": 1214,
+      "path": "outputs/checks/2026-11-08-cutoff-appendix/WIDE_REVIEW-v1.json",
+      "sha256": "b07ad37fb81b11956f643a383b8fe1d8755bfd03f42bd680a4bfe7113766c6da"
+    }
+  },
+  "reviewer": "low_content_cross_review",
+  "schema": "cutoff-wide-integration-review-v1",
+  "scope": "Consolidates exact wide correction, masked fixed-label subpower scalar, full-frequency small-prime compensation, and the pure comparable equality-wide prefix including its double correction. The partner-only unit-pair sector, the coherent wide sum, other signed components, determinant/zero locations and GRH remain open. This receipt does not accept rendered or hosted artifacts.",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_TEX_INTEGRATION",
+  "utc": "2026-11-08T22:55:37.825911+00:00",
+  "wide_sha256": {
+    "core": "4c5d132c6d4560c6c4f1d646ee48801c4d560356f9ec44ff716535ef0cd8dd9c",
+    "details": "80be3d795e3f5158124c536289aabfa39270de6a1e733be6cf63651b1e96062a"
+  }
+}

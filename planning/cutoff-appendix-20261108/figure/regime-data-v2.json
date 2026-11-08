@@ -1,0 +1,53 @@
+{
+  "assets": {
+    "paired-cutoff-regimes.pdf": {
+      "bytes": 7976,
+      "sha256": "facd020d14c6c8b9c1ce4713664e0c4f1ac2049efec04e81d1c2ed2afd0fb82b"
+    },
+    "paired-cutoff-regimes.svg": {
+      "bytes": 9296,
+      "sha256": "72a3f6343c591b44b1e907b97794d7b6860ba6771453b685d3356f5ec894c324"
+    }
+  },
+  "broad": {
+    "large_erasure_b_min": "1355/1482",
+    "long_insertion_k_min": "1089/1420",
+    "short_insertion_b_min": "3/4",
+    "short_insertion_k_max": "921/1652"
+  },
+  "central_long": {
+    "b_max": "3/4",
+    "b_min": "273/404",
+    "displayed_boundary_joins_broad_at_b": "134823/180340",
+    "k_min": "(508b+1743)/2768"
+  },
+  "central_short": {
+    "b_max": "3/4",
+    "b_min": "57/80",
+    "k_max": "(172b+21)/264"
+  },
+  "conditional": {
+    "b_max": "3/4",
+    "b_min": "2/3",
+    "filled": false,
+    "k_max_at_xi_zero": "(308b+21)/400"
+  },
+  "scope": "Regime map for the selected original pure two-pivot cross at R of order D to the three quarters. The horizontal axis is b = log base D of B, the erased cutoff norm, and the vertical axis is k = log base D of K, the insertion norm. Solid fill marks proved normalized O(D to the three quarters plus epsilon) comparisons over all d. The broad thresholds are k at least 1089/1420 for every b, b at least 1355/1482 for every k, and k at most 921/1652 for b at least 3/4. Dashed boundaries add reviewed affine central regions. The dotted boundary gives a conditional comparison below it when the fixed label product stays bounded. Unshaded cells remain open under the displayed comparisons. The map omits other label and divisor selectors and concerns neither the whole signed form nor a lower bound.",
+  "sources": {
+    "outputs/checks/2026-11-08-pure-intermediate/REVIEW-v1.json": "41ba3eb06125bcf169cf8b1de5367fa3406c90225139ff1fc277bc5d91544114",
+    "planning/pure-intermediate-20261108/CENTRAL_RECTANGLES-v1.md": "c936870a1fcae69471edff65a92efb3ac192db7cb2b3b90eef3a6582dfa4637e",
+    "planning/pure-intermediate-20261108/INTERMEDIATE_ERASURE-v1.md": "2f17255a51fbe1be8bd695fe7cbc28be90f5beaab2921e5b8374b7bd80da473b",
+    "planning/pure-intermediate-20261108/LONG_INSERTION_ALL_ERASURES-v1.md": "5de437e62878d96c05c01240df29a4dd3b97c4930f5db96fce13c2bddec75b75",
+    "planning/pure-intermediate-20261108/SHORT_INSERTION_ALL_LARGE_ERASURES-v1.md": "e9cd7dc765ce8d7c0852dd8927dd175c7eda6fc5e7b3a8c71e1625577bd3583e"
+  },
+  "window": {
+    "b": [
+      "13/20",
+      "1"
+    ],
+    "k": [
+      "12/25",
+      "21/25"
+    ]
+  }
+}

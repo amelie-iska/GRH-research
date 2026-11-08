@@ -1,0 +1,139 @@
+{
+  "schema": "defect-order-cross-attempt-v1",
+  "utc": "2026-11-08T16:06:28.476065+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "proofs": [
+    {
+      "path": "planning/defect-order-cross-20261108/DEFECT_ORDER_CROSS-v1.md",
+      "bytes": 14564,
+      "sha256": "50b73c77580efb6269944e360298f30a102dbd085a9a0380ae9be2beb71f40ab"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/Z_ONLY_ERASURE_CROSS-v2.md",
+      "bytes": 11212,
+      "sha256": "713e1a0252d79e5fac849e83cf93d4a21b69951cbcabf3a21ee4db440bd7c541"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/JOINT_ERASURE_CROSS-v2.md",
+      "bytes": 7874,
+      "sha256": "424bdaa5449e2e49715553452e261e5e0f9cb66325dbb8b835d2973e0fb38d83"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/CONJUGATE_ERASURE_CROSS-v3.md",
+      "bytes": 3617,
+      "sha256": "2c3255944274d5100c6c19923045711f7af23a4496686b7e991815eec7f67a1c"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/BOUNDED_INSERTIONS-v1.md",
+      "bytes": 2406,
+      "sha256": "75387bab12bfd6e8a8ed21e8696b9e6678e01f9386c0996576c5d2d665538cf3"
+    }
+  ],
+  "controls": [
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/controls-v2.json",
+      "bytes": 775,
+      "sha256": "b29a530cfd6fba65a8a03486bf56cc08e87d010b336b5b009e305a6ee4f01415"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/joint-controls-v2.json",
+      "bytes": 547,
+      "sha256": "dbd12c007390adacda719d78b904d591eb701c18c33999d570273dd4ad52e9ce"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/insertion-controls-v2.json",
+      "bytes": 308,
+      "sha256": "3c484aac7a30fa499c81d5dd0ac15007e7526f86ddb85a5e8698373272480698"
+    }
+  ],
+  "harnesses": [
+    {
+      "path": "planning/defect-order-cross-20261108/check_defect_order_v2.py",
+      "bytes": 7622,
+      "sha256": "fa3abc017fa618d7985f19e920e9b87049e315cfdab1bf6291a5ff05b5637bfc"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/check_joint_erasure_v2.py",
+      "bytes": 5793,
+      "sha256": "dc941d447f974824693990bb76634556f4439349ffcfecb1da9b44efb91e4801"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/check_bounded_insertions_v2.py",
+      "bytes": 3275,
+      "sha256": "08ce4aeeb8b39de5202e672a8f44270f625d8ab1d269465cd7da19c0587b8a03"
+    }
+  ],
+  "preserved_candidates_and_failures": [
+    {
+      "path": "planning/defect-order-cross-20261108/Z_ONLY_ERASURE_CROSS-v1.md",
+      "bytes": 12412,
+      "sha256": "ae8903f47a6e842e997fecea99d0ef3f70ccae21c92c4d13d1727b536684137a"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/JOINT_ERASURE_CROSS-v1.md",
+      "bytes": 7675,
+      "sha256": "a40e247b246607b56ec149906374a9a9de8bc93d4d83ad794e42ba4b521609e1"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/CONJUGATE_ERASURE_CROSS-v1.md",
+      "bytes": 3177,
+      "sha256": "865fcc2f030be1930dffa73d5c2274f1e1b82570c22d44cb26fde5ee811fa120"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/CONJUGATE_ERASURE_CROSS-v2.md",
+      "bytes": 3380,
+      "sha256": "a31a33f5039aabeeed526a1579ed553fc59fcd0e2c9aba04f49ab5f1e47e34ff"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/check_defect_order_v1.py",
+      "bytes": 7489,
+      "sha256": "2adc1876d27c7a050deae3134edc3e1fcad8eb83a7d7c56359d6304a069dfc8e"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/check_joint_erasure_v1.py",
+      "bytes": 5800,
+      "sha256": "c57296a2fd77105eab179da3584de237ed20764da46cd8956d8d5a615f2f2afe"
+    },
+    {
+      "path": "planning/defect-order-cross-20261108/check_bounded_insertions_v1.py",
+      "bytes": 3324,
+      "sha256": "fc610d51d84dd109782a87fcfdd69259ca0c72e535c74fe5c39d7ea19447c7d6"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/control-failure-v1.txt",
+      "bytes": 399,
+      "sha256": "81a4e6f21240c6122641953800a559aebe5c188e05731c3dd4b1353288a73814"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/joint-control-failure-v1.txt",
+      "bytes": 372,
+      "sha256": "aa8583742d17f392b5579d857813528153815043eaa5e37b7ea9fc39111b42bc"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-defect-order-cross/insertion-control-failure-v1.txt",
+      "bytes": 263,
+      "sha256": "82cdcb27f03d77d09ecb40ae4963064f1916ebff048a4250f19b6e26e6895967"
+    }
+  ],
+  "review": {
+    "path": "outputs/checks/2026-11-08-defect-order-cross/REVIEW-v1.json",
+    "bytes": 2857,
+    "sha256": "77de0e79a766731e696f21522d813db5ae40cde9a6b78938dd29cf2bee84e602"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-defect-order-cross/SOURCE_PINS-v1.json",
+    "bytes": 49435,
+    "sha256": "504fd594d23ba8ca329dd6ebe51d705a73fe13f69ff580dc7d82cf99b087c50f"
+  },
+  "new_results": {
+    "local_orders": "No local order-six defect and all non-erasing sectors bounded by R with no conductor cap, exact rational-content mixed criterion.",
+    "reverse_unit": "The signed theta=1/6 comparison reaches target through oriented conductor D^9/10 with arbitrary rational content.",
+    "coherent_joint_erasures": "Original selected cutoff and conjugate erasures, with matched exponent 1 or 2 on the latter and arbitrary d residues, reach D^3/4 for all feasible blocks. For cutoff erasure norm at least D^5/8, pure 7/12 and mixed 13/24.",
+    "conjugate_only": "Power 3/8 on the specified one-incidence conjugate erasure sector, no conductor cap.",
+    "bounded_insertions": "With cutoff erasure norm at least D^5/8, fresh inserted support through D^1/5 pure or D^1/4 mixed also reaches target."
+  },
+  "failed_step": "Comparable weak insertion and erasure support norms F leave signed majorant F^3/2 for every single radial split after independent conductor counts. No lower bound for the cross follows.",
+  "next": "Average both raw ideal families before taking row absolute values. Retain exact coprimality, complement indicator, capacity, cutoff, original S/phases and raw union.",
+  "open": "Generic high-defect and whole off-equal cross, whole prefix109/144, signed13/12, unsigned9/8, independent positive determinant, scope-specific zero location, pinned Lean and GRH.",
+  "prior_fixtures_replayed": false
+}

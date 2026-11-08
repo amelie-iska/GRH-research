@@ -1,0 +1,64 @@
+{
+  "schema": "smooth-long-prefix-author-attempt-v1",
+  "utc": "2026-11-07T10:21:59.886604+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/smooth-long-prefix-20261107/SMOOTH_LONG_PREFIX-v1.md",
+    "bytes": 14885,
+    "sha256": "cebf37cbc81931df210c855d88f36461b61736cbcd4752ca4e2e33c596d2d1f0"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-smooth-long-prefix/controls-v1.json",
+    "bytes": 1157,
+    "sha256": "0fde9b0de5ccd98a26e0be7c7835dcfafe71637a3252c2fe0fdb3fdf67cebdc7"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-smooth-long-prefix/SOURCE_PINS-v1.json",
+    "bytes": 14873,
+    "sha256": "7b4c1a4ce2063a1b340c9ed48cec9b81372c9675d4ce746dc1a42ef97297a92b"
+  },
+  "new_step": "Every literal short product Np<=Z<=L^(1/3)/2 forces the same unrestricted long label for all v on the original W support. Reunite all long dyads exactly. Mellin with W on Re(s)=1/2+eta gives C_W(T Q Nt)^eps (Q Nt)^(3/4).",
+  "deletion": "Full original union mask first. Cubic and growing-character raw zeros leave live deletion divisors only in rad(s), each with cost (Nb')^(1/4). Ns arbitrary with all overlaps.",
+  "balance": "Use previous pending (Q) only for large unbalanced prefixes and inherited cubic balanced boxes. E^-1 [D^(5/7) E^-2/7 (A2 Nk)^3/7 X^1/42 R^29/42 + R D^2/3]. Original finite Nk positive powers 11/7 and 2.",
+  "candidate": "Normalized actual finite prefix H[1+X^(1/6)D^(-1/18)A2^(-1)] with fixed W seminorms, epsilon and explicit errors. Requires independent review of both this step and previous (Q).",
+  "critical": {
+    "pure_candidate_power": "109/144",
+    "old_transition_relative_power": "-11/336",
+    "remaining_gap": "1/144",
+    "previous_author_gain": "1/126",
+    "accepted_same_prefix_gain": "1/18",
+    "target_X_exponent": "1/3",
+    "target_A2_exponent_at_critical_X": "1/144"
+  },
+  "controls_v1_harness_failure": "The first fixture used L=2^18 with Z=64, violating its explicit 8Z^3<=L input guard before any output. V2 changes that single fixture length to 2^22 and passes.",
+  "preserved_failed_harness": {
+    "path": "planning/smooth-long-prefix-20261107/check_smooth_long_v1.py",
+    "bytes": 7093,
+    "sha256": "7c0a4ecc761019ac03ac7c9a0d1415097236b21c1b3138b71182aba662efc020"
+  },
+  "governing_harness": {
+    "path": "planning/smooth-long-prefix-20261107/check_smooth_long_v2.py",
+    "bytes": 7093,
+    "sha256": "3a2e7bab86dba7c2122927a744187beab5496eb49652b42428a449719c25df03"
+  },
+  "fresh_control_counts": {
+    "actual_label_tuples": 155520,
+    "regrouped_label_tuples": 4752,
+    "literal_profile_endpoints": 192,
+    "unit_prefix_tuples": 384,
+    "complete_multiset_comparisons": 48,
+    "balanced_negative_controls": 3,
+    "literal_divisor_branches": 287,
+    "local_multiset_comparisons": 144,
+    "nonsquarefree_s_cases": 72,
+    "primitive_drop_still_raw_zero": 8,
+    "fraction_capacity_points": 462,
+    "empty_smooth_branch_points": 102,
+    "joint_residual_power_points": 16
+  },
+  "remaining": "Balanced R L^(2/3) and comparable large-prefix budget at R near D^(1/3), no actual lower bound. Full signed estimate, higher frequencies, determinant and zero-location, analytic/category Lean and GRH open.",
+  "next": "Estimate the signed balanced pairing or refine its joint norm near R=D^(1/3) while retaining the exact columns.",
+  "whole_signed_and_unsigned": "13/12 and 9/8",
+  "independent_review": "Pending, reviewer availability unchanged",
+  "no_prior_control_or_publication_audit_replay": true
+}

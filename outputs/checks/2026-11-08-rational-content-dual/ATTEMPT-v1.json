@@ -1,0 +1,38 @@
+{
+  "schema": "rational-content-dual-attempt-v1",
+  "utc": "2026-11-08T11:49:55.382654+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/rational-content-dual-20261108/RATIONAL_CONTENT_DUAL-v2.md",
+    "bytes": 9832,
+    "sha256": "0df533244d3bb1d548cf94de38d944da6b6e7ee36363b2667ed82b49106ee90c"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-rational-content-dual/controls-v1.json",
+    "bytes": 721,
+    "sha256": "fd03da601d20627f179f15b0d10db9cc6dec1f4b8cac9799e01e9cd110e2d5e1"
+  },
+  "harness": {
+    "path": "planning/rational-content-dual-20261108/check_rational_content_v1.py",
+    "bytes": 5287,
+    "sha256": "bb5cc3edb4fa8d2691cac7f21afdcbdf46816fba2a4cf806660c5d2bc1fba4c5"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-rational-content-dual/SOURCE_PINS-v1.json",
+    "bytes": 42734,
+    "sha256": "c9045c7811dfd222880c2a13efd2e74b3dea45d0894e1499d6ebd6201b4e4e5d"
+  },
+  "preserved_v1": {
+    "file": {
+      "path": "planning/rational-content-dual-20261108/RATIONAL_CONTENT_DUAL-v1.md",
+      "bytes": 9832,
+      "sha256": "cae62e2eef15f2f096019e6e7f9402a1ec26cabdf90ed90f2d6f13bae67e5357"
+    },
+    "correction": "V2 corrects the displayed one-content slack exponent from 1003/1350 to 4031/5400."
+  },
+  "method": "Count rational ideal factors, which are permitted in ideal-squarefree terms. Retain exact norm weights, phases, two-lcm projector, deletions, primitive root and signed mu(d). For two large rational factors apply the inherited fourth moments at shortened residual lengths.",
+  "new_bounds": "Mixed equal-cross power 3/4 on the comparable wide near strip with one rational content >= D^(23/216), and across the comparable middle range with both >= D^(13/120), including d=1. Pure comparable cross 3/4 with both >= D^(9/32). Separate deletion length bound gives 1607/2160 on the selected mixed near sector.",
+  "failed_range": "Both mixed contents >= D^(1/10) still cost 55/72 by this route. Long comparable small-content and noncomparable far small-d cross terms remain above target or unestimated. The new bounds use absolute Cauchy and do not improve the whole signed exponent.",
+  "independent_review": "Pending; reviewer agents are usage-limited.",
+  "prior_fixtures_replayed": false
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "joint-cutoff-product-author-attempt-v1",
+  "utc": "2026-11-08T04:49:05.605950+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/joint-cutoff-product-20261108/JOINT_CUTOFF_PRODUCT-v1.md",
+    "bytes": 11325,
+    "sha256": "7bb924270029f219843c586a8d665e800738fa7c54009bf7f6e16bb909ce7ff4"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-joint-cutoff-product/SOURCE_PINS-v1.json",
+    "bytes": 35831,
+    "sha256": "682cf9c722999d0400d7f52ba85c9bd103dc71cef03f2c2681f8719ee2dff2ca"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-joint-cutoff-product/controls-v1.json",
+    "bytes": 1446,
+    "sha256": "4b032971948caf7b4bc0cd29a81bc8cb61acfb589b401907d53a927ed0779263"
+  },
+  "control_harness": {
+    "path": "planning/joint-cutoff-product-20261108/check_joint_cutoff_product_v3.py",
+    "bytes": 8569,
+    "sha256": "c2008886471cc0e48553bb0af99e8fc71d9b62d814b1e7359607ab7d3418dfad"
+  },
+  "preserved_harness_failures": [
+    {
+      "file": {
+        "path": "planning/joint-cutoff-product-20261108/check_joint_cutoff_product_v1.py",
+        "bytes": 8611,
+        "sha256": "13dc918ddfd44fb0ef1e33375557ecdbeb0df211a20b038b327d614ee17df480"
+      },
+      "failure": "NameError in a redundant assertion referring to the undefined local one. Assertion removed in v2."
+    },
+    {
+      "file": {
+        "path": "planning/joint-cutoff-product-20261108/check_joint_cutoff_product_v2.py",
+        "bytes": 8569,
+        "sha256": "298b38c7ec7b92eb046e7b1d167c41a046fc26c133cd6c24ff896b39b1b5a4d5"
+      },
+      "failure": "Fixture gave zero live paths with both deletion factors nonunit. At D=1800, U=40 the selected z=7 and d=7 allocation cancels with upper cutoff 65. v3 uses upper cutoff 43 to exercise this edge."
+    }
+  ],
+  "joint_method": "For fixed deletion split e=e1*e0, e0|z and e1 supported on S,d, use z=e0*z0. Direct grouping in z0*b or exact radial Poisson with both factors averaged by fourth moments. Profile Q_u, Gauss root, S-supported dual phases, and all raw masks retained. E1 growth cancels and the E0 sum is harmonic.",
+  "new_budget": "Actual selected mixed cutoff N(xy)<=D^(29/120) meets the target, including the band above the earlier D^(5/36) cutoff. At D^(7/30) power 107/144 with mixed pivot neighborhood and explicit M12(W). No fixed-field power hypothesis.",
+  "remaining": "Complementary d=1 amplitude and signed cross term remain open. Available mixed absolute cross exponent 263/288 at D^(7/30). Pure bounded cutoff uses the earlier separate dual estimate.",
+  "independent_review": "Pending. Review-agent limits remain active.",
+  "replayed_old_experiment_or_audit": false
+}

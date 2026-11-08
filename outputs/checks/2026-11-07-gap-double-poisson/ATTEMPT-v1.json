@@ -1,0 +1,87 @@
+{
+  "schema": "gap-double-poisson-author-attempt-v1",
+  "utc": "2026-11-07T17:32:06.763898+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/gap-double-poisson-20261107/GAP_DOUBLE_POISSON-v1.md",
+    "bytes": 12867,
+    "sha256": "33f4f234467bd6d74b7a25570ac0441e0b85220c616256b9189191bafa754142"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-gap-double-poisson/controls-v1.json",
+    "bytes": 936,
+    "sha256": "b401f418aaefdbcfa50670dcefa50ff28bb187887ac7d04c0fa8b025ac841794"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-gap-double-poisson/SOURCE_PINS-v1.json",
+    "bytes": 23702,
+    "sha256": "250e7c9c50371272d53446d1e8f10d26943af1930423f691071f31f3cc3dbabb"
+  },
+  "control_harness": {
+    "path": "planning/gap-double-poisson-20261107/check_gap_double_poisson_v1.py",
+    "bytes": 6559,
+    "sha256": "f6d3bdbb4feff42c9c0af7a463345c799a51087f263fe3a49f35931a04202f3e"
+  },
+  "new_step": "For the actual two-split-prime unit-cofactor columns, Cauchy in the first prime and positive Gaussian majorization give a comparison on the element lattice. Complete two variables with local powers 2 and 5 at the same squarefree modulus. The joint dual symbol is Theta(beta*alpha^4), and their CRT cross is the literal quadratic multiplier K with the actual local Gauss phases retained.",
+  "dual_fibres": "At fixed good sixth-free part z, decompose the good ideals of alpha and beta as t0*t1*d^3 and b0*t1^2*e^6. Nt0 Nb0 >= B = Nrad(z). Count all B <= Z including Gaussian tails at cost (AV)^(1/3) Z^(2/3), up to subpowers.",
+  "bounded_pieces": "Squared auxiliary diagonal <= D^(67/80), coherent B=1 part <= D^(29/40), all B <= D^(3/8) <= D^(39/40), times coefficient mass and subpowers. These are components of an upper comparison, not selected terms in the signed original.",
+  "failed_full_estimate": "Absolute larger dual-frequency count produces D^(3/2), worse than the inherited D. The joint high-conductor sector has not been estimated.",
+  "next": "Estimate the remaining dual B>D^(3/8) with both local Gauss phases, full raw masks and common Gaussian dependence, or bypass the comparison by using the signed pairing directly.",
+  "scope": "Unit cofactors in the central far-gap split-prime norm only. Whole-prefix candidate 109/144, signed 13/12, global unsigned 9/8, determinant and zero-location, Lean and GRH unchanged.",
+  "fresh_controls": {
+    "split_prime_ideal_generators": [
+      [
+        -2,
+        -3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        -3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        -5,
+        -3
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        -5,
+        -6
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        4,
+        -3
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    "ordered_distinct_pairs": 90,
+    "equal_norm_conjugate_ordered_pairs": 10,
+    "exact_CRT_transforms": 180,
+    "dual_checks": 7200,
+    "raw_zero_frequency_checks": 792,
+    "period_four_class_pairs": 90,
+    "labelled_ideal_pair_checks": 12555,
+    "distinct_good_sixth_free_parts": 553,
+    "zero_good_conductor_pairs": 588,
+    "rational_scale_points": 10465
+  },
+  "independent_review": "Pending",
+  "prior_numeric_or_release_audit_replay": false
+}

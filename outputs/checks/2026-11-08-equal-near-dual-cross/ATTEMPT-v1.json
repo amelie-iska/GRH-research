@@ -1,0 +1,38 @@
+{
+  "schema": "equal-near-dual-cross-attempt-v1",
+  "utc": "2026-11-08T10:52:19.702560+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/equal-near-dual-cross-20261108/EQUAL_NEAR_DUAL_CROSS-v2.md",
+    "bytes": 11491,
+    "sha256": "98b0313c47f14c65f948e5222de4052ff69425011af9d7c52b97d777826e4f3b"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-equal-near-dual-cross/controls-v1.json",
+    "bytes": 573,
+    "sha256": "15fe4f596a1c6857b1ea1c3314bebb35637e26096d5189389e7d654fffdf8e6a"
+  },
+  "harness": {
+    "path": "planning/equal-near-dual-cross-20261108/check_equal_near_cross_v1.py",
+    "bytes": 4858,
+    "sha256": "0fd127a4afa516a03ed9ab349caec7baf182da2dea5d03eff08944842c7d2f31"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-equal-near-dual-cross/SOURCE_PINS-v1.json",
+    "bytes": 41717,
+    "sha256": "1bf8c765a8cd1056581498396ef99d906a6d2b429856f814643ba00c259ae3b5"
+  },
+  "preserved_v1": {
+    "file": {
+      "path": "planning/equal-near-dual-cross-20261108/EQUAL_NEAR_DUAL_CROSS-v1.md",
+      "bytes": 9657,
+      "sha256": "09c9f514217d12f321badd33c810402a87128c7935e37640f723cae21de02362"
+    },
+    "correction": "The noncomparable exponent at gap D^(29/96) is 233/288. V2 corrects it and adds the dyadic localization."
+  },
+  "method": "Count numerator ideals by integer norms at fixed denominator. For noncomparable and short comparable boxes insert exact additive step masks before the two-lcm projector. Freeze the radial profile at ratio one and separate the derivative variation, retaining all phases.",
+  "new_bounds": "Mixed equal/near signed cross reaches 3/4 at gap D^(1/8) for all d, including d=1, by absolute Cauchy. Slack gap D^(7/60) gives 179/240 with feasible mixed neighborhood. At gap D^(73/216) the noncomparable part, comparable P<=D^(11/30), and variation for higher P reach the target cross.",
+  "failed_range": "The wider comparable bound without freezing gives 161/192 at gap D^(29/96). The leading comparable profile in the wider high-length boxes and the far small-d cross are unestimated at target.",
+  "independent_review": "Pending. Review slots remain usage limited.",
+  "prior_fixtures_replayed": false
+}

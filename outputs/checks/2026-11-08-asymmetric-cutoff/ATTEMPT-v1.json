@@ -1,0 +1,159 @@
+{
+  "schema": "asymmetric-cutoff-attempt-v1",
+  "utc": "2026-11-08T20:07:14.384920+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "proofs": [
+    {
+      "path": "planning/asymmetric-cutoff-20261108/MIXED_ALL_RATIOS-v1.md",
+      "bytes": 8366,
+      "sha256": "42120c61dc03d744fb962950d4a2a28d5b576168f87f986edabdf9c6e2fffde9"
+    },
+    {
+      "path": "planning/asymmetric-cutoff-20261108/NEAR_MIXED_WINDOW-v1.md",
+      "bytes": 4462,
+      "sha256": "c6491614df348571c01c7c74460dc9743d0199b6b7c90d0f5688714b04a567b5"
+    },
+    {
+      "path": "planning/asymmetric-cutoff-20261108/MIXED_CAPACITY_STRIP-v1.md",
+      "bytes": 4541,
+      "sha256": "c1adc2b00e4ccb1bef9ab69a33c740058ca0c7fb08b54576b058e59c12d68e6f"
+    },
+    {
+      "path": "planning/asymmetric-cutoff-20261108/LEFT_CAPACITY_EXTENSION-v1.md",
+      "bytes": 3852,
+      "sha256": "b10700ba12a1fc53f6ee7a6c6a676be73c1c2d59c7c24383ab96efa5d35e3cd5"
+    },
+    {
+      "path": "planning/asymmetric-cutoff-20261108/RIGHT_CAPACITY_EXTENSION-v1.md",
+      "bytes": 4631,
+      "sha256": "d6e5d411c7b95bf9d908b64952526dfd7cfdf623810ea5ebe7e40cef0f82eec1"
+    },
+    {
+      "path": "planning/asymmetric-cutoff-20261108/SHORT_INSERTION-v2.md",
+      "bytes": 18452,
+      "sha256": "c21aa4544bd41919683a3f6e35969804b4b464850606cb775215c3e3a3a468d6"
+    },
+    {
+      "path": "planning/asymmetric-cutoff-20261108/RECTANGLE-v1.md",
+      "bytes": 12005,
+      "sha256": "044975ff4b85a83e911b5f3ca4f7bf0bd2babe6f959035b8b8ccce75c30d3a18"
+    },
+    {
+      "path": "planning/asymmetric-cutoff-20261108/HIGH_RADIAL_LONG-v1.md",
+      "bytes": 7086,
+      "sha256": "acbd3493b2aa9fb8e39895435e10b223b4fa2a28bd6c096eef9461860c757040"
+    }
+  ],
+  "controls": [
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/radial-asymmetry-controls-v1.json",
+      "bytes": 819,
+      "sha256": "7d75dd14a6c468775f1f8876e99733c99a9dd996acc8dece17f736efc8b0d219"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/near-mixed-controls-v1.json",
+      "bytes": 693,
+      "sha256": "8a15ffb5af95c07e6a7643b8f7101ece4230377be84fe42a8781da9559245fbc"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/mixed-capacity-strip-controls-v1.json",
+      "bytes": 696,
+      "sha256": "18ab46a0be7e324b3e49f6e45b538040f6c45122b7981184bfe2824d613e2651"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/long-erased-controls-v3.json",
+      "bytes": 1036,
+      "sha256": "1e6716a576bc9dfe8014fdfc50c373c720955ca678ac667473ac3fc7956fe0a5"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/capacity-extension-controls-v1.json",
+      "bytes": 962,
+      "sha256": "b76098c87328c9935f633d86f093317fd09a92879998e368e36e8c1713e933c8"
+    }
+  ],
+  "harnesses": [
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/check_radial_asymmetry_v1.py",
+      "bytes": 9404,
+      "sha256": "987a94ef74e00a07219b052a4dd35ad7f674e183822bdc1c45147cddff6ec026"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/check_near_mixed_v1.py",
+      "bytes": 3040,
+      "sha256": "e87a6d3fe0b76068243a11f10418de91963618987390f735179f902e44879882"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/check_mixed_capacity_strip_v1.py",
+      "bytes": 2666,
+      "sha256": "9278f29e96ededde7a3a5d11a862e336804ca1000044f411f2e35d6e788992e9"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/check_long_erased_v3.py",
+      "bytes": 6535,
+      "sha256": "d1060478bc32218759aad3b31769101c1b8051457e8fdda1b8ec9ba7dee065d1"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/check_capacity_extension_v1.py",
+      "bytes": 4625,
+      "sha256": "b3a9932204c9bf669e0eb1b5b6cf3ea25cf33e07483d8bcc55fe8d53f737a436"
+    }
+  ],
+  "preserved_candidates": [
+    {
+      "path": "planning/asymmetric-cutoff-20261108/SHORT_INSERTION-v1.md",
+      "bytes": 16053,
+      "sha256": "c261f72779916bad01eff87c743fcb951000d9257d19ff9ddf0cfeb9369f9bfb"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/check_long_erased_v1.py",
+      "bytes": 6341,
+      "sha256": "6e23bc2e87f87ad57e9bea4396ec14871fd6582201c8eeadadf1a724ca7c60df"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/check_long_erased_v2.py",
+      "bytes": 6359,
+      "sha256": "c031b3cd0a42d916dc899f1512fe6f69924eaa817ec8df7ba172908cbbfbdf79"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/long-erased-failed-v1.json",
+      "bytes": 460,
+      "sha256": "8f8cdc9a32aaac86d245df8cd742abd40379a29a1203aa2a7548a0e96cc0a52a"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/long-erased-failed-v2.json",
+      "bytes": 501,
+      "sha256": "7903da14191742c1c5d2c29e393f5d3bed19a2385428657672a28110022dc7b5"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/long-erased-controls-v1.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-asymmetric-cutoff/long-erased-controls-v2.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "review": {
+    "path": "outputs/checks/2026-11-08-asymmetric-cutoff/REVIEW-v1.json",
+    "bytes": 3683,
+    "sha256": "b4a89fd31bb685451dd9525f60b2e0a6ec870b2946eb8bfc768d5b3f575630bc"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-asymmetric-cutoff/SOURCE_PINS-v1.json",
+    "bytes": 59785,
+    "sha256": "c8138006a5b2ae0aaaed2f6bf6904997575605ef43d44284b0af8ff37f2b5141"
+  },
+  "new_results": {
+    "mixed_all_ratios": "57/80 at the critical mixed pivot scales for all ratios and all d in the original selected cross.",
+    "mixed_capacity": "Target for 7/24 <= log_D A1 <= 439/912 at H<<D^3/4 and A1*A2^2<<H; original fixed primitive conductor and no extra A2 proximity.",
+    "pure_short": "At B~R, K<=D^25/44 all d; fixed product a0^4 v6^6 norm <=D^xi extends to K<=D^(63/100-51xi/100) on the stated rectangle. Exact enhanced prefix comparison.",
+    "pure_long": "At B>=D^12/13 every K and all d; selected low residual threshold b>=69/76+3xi/38. Relative 11/72 separate coupled long rectangle, unit-d result for B>=R.",
+    "middle_subtraction": "Two-way physical integer norm-fibre count yields factor sqrt(min(B/K,K/B)), removes only the original middle equality with exact endpoints."
+  },
+  "failed_step": "Long-control v1 used integer zero in a division, contaminating an exact rational comparison. v2 asked for a structurally empty low-length positive-beta branch. v3 uses exact arithmetic and checks the observed low-length zero-beta branch. Mathematical outputs retained all branches as upper bounds.",
+  "next": "Control the intervening pure rectangles and average the remaining low-residual small-powerful nonunit d before absolute values; prepare substantive book integration of accepted scoped estimates.",
+  "open": "Whole prefix 109/144, signed 13/12, unsigned 9/8, principal/short assembly, determinant, scope-specific zero locations, Lean and GRH.",
+  "prior_fixtures_replayed": false
+}

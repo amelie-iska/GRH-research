@@ -1,0 +1,49 @@
+{
+  "schema": "coherent-mixed-band-author-attempt-v1",
+  "utc": "2026-11-08T00:42:15.447670+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/coherent-mixed-band-20261108/MIXED_SUB_U_BAND-v2.md",
+    "bytes": 18000,
+    "sha256": "2c0a4210ae9d66ccb1f7203eeb072c44435daeba6c37b9578f6ed5a46e98067e"
+  },
+  "preserved_draft_v1": {
+    "path": "planning/coherent-mixed-band-20261108/MIXED_SUB_U_BAND-v1.md",
+    "bytes": 12820,
+    "sha256": "1751ee5df8a6f9b8b880c935a7487fe1ab653bb7c4dbfc4da27277036ea15b62"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-coherent-mixed-band/SOURCE_PINS-v1.json",
+    "bytes": 31938,
+    "sha256": "11fc786c10cfb7c15e45609ae8749f8005a44c927096152d9122a9fba8b1254e"
+  },
+  "controls": [
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/controls-v1.json",
+      "bytes": 2096,
+      "sha256": "69316c680ded3d09c94b3dbf6764a4a702ac967cc29459c894ad1972d6d0652d"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-coherent-mixed-band/controls-above-u-v1.json",
+      "bytes": 1530,
+      "sha256": "2f3d581058b8c97465ddae8269a9ce0f2227627ec4a694f110e0bac94b6d7328"
+    }
+  ],
+  "control_harnesses": [
+    {
+      "path": "planning/coherent-mixed-band-20261108/check_mixed_sub_u_v1.py",
+      "bytes": 10804,
+      "sha256": "b4bbd73978f177873afebcbe5b664cb44935320777e62aa804143c5b7bd58786"
+    },
+    {
+      "path": "planning/coherent-mixed-band-20261108/check_mixed_above_u_v1.py",
+      "bytes": 4054,
+      "sha256": "42a6569aa913b5644ebbab19d0c6f483e51ca1e6afb9c3fe00a1267857c07d77"
+    }
+  ],
+  "new_below_u": "Freeze row primes separately by actual valuation in pivot 1 or 2, use the inherited powered norm at the two residual lengths, and retain both signed moving prefixes. The linear length term does not gain from row deletions. The actual smooth sub-U coherent piece with the same divisor selector on both sides is target-sized from D^(52/105), conditional on pinned fixed-field 7/8 Mertens. At D^(199/400), power 8621/11520; original short sides are bounded elementarily.",
+  "new_above_u": "With a fixed selector in (U,cU), c<7, each omitted rough divisor is a single prime and exactly subtracts the raw f=1 rough-prime term with selector transported to its norm. Conditional mixed power 215/288. Restored row/residual masks cost O(B^2 R); replacing prime by matched density costs D^(35/48+eps) with the pinned fixed-field PIT input and endpoint exactly zero for this selector only.",
+  "limits": "Not a common-divisor selector on both sides above U; pure block, annular f=d=1, other f=1 density ranges, whole main, far-norm Gauss, determinant/zero-location, Lean and GRH remain open. No new zero-free theorem or publication.",
+  "independent_review": "Pending; reviewer usage limits remain active, no retry.",
+  "replayed_old_experiment_or_audit": false
+}

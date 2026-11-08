@@ -1,0 +1,98 @@
+{
+  "schema": "equal-rational-sieve-run-closed-v1",
+  "utc": "2026-11-08T13:01:27.522113+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "handoff": {
+    "path": "planning/equal-rational-sieve-20261108/HANDOFF-v1.md",
+    "sha256": "bebef8cff5bd184bef4a94d0bf6dc1a78ad77cbec33df09ac9bf5d5ca1027efe",
+    "bytes": 3914
+  },
+  "main_proof": {
+    "path": "planning/equal-rational-sieve-20261108/GROUPED_EQUAL_CROSS-v4.md",
+    "sha256": "9f1d6174db055a62765f55422f58cae507d6828ca75ba5371d7f4e6cf31a4491",
+    "bytes": 10245
+  },
+  "auxiliary_proof": {
+    "path": "planning/equal-rational-sieve-20261108/EQUAL_RATIONAL_SIEVE-v4.md",
+    "sha256": "c47b821a5431823959b020ee18954148e79c3eaf5fe7e3cea4d00c1ecda25e7f",
+    "bytes": 21065
+  },
+  "evidence": [
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/ATTEMPT-v1.json",
+      "sha256": "cac61a946d46a69fff624b5995603300863f273de2a66e509b838bfa29450d37",
+      "bytes": 4124
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/REVIEW-v1.json",
+      "sha256": "745a9173fe8027891ee18b13da82ff7e5b6322c125e1a0bac8e6962881f905e1",
+      "bytes": 3174
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/SOURCE_PINS-v1.json",
+      "sha256": "30942bd718fdef02ddbcd980347c5728132af47a734e961260dafd7572ea4b8e",
+      "bytes": 44182
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/controls-v1.json",
+      "sha256": "2dd7e5b43c25c045bbda88ef7fdfce11dc0f00a83e0ca91bf8356f9347db2fc3",
+      "bytes": 748
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/controls-repeated-v1.json",
+      "sha256": "5d8dda84451d65900bec8cab62812e23249a0d639e46fa420d0b6b3963ad0dcb",
+      "bytes": 618
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/metadata-validation-v1.json",
+      "sha256": "1bfa2f31f8e04e0d801f5430d188fe7e044dac7c841304abab089736f586a6fa",
+      "bytes": 1803
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/CLAIM-v1.json",
+      "sha256": "6bf0b27e01ac420205a3991c1acafa04d214a4414aa4e160093ca377087ede2e",
+      "bytes": 1163
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/CHECKPOINT-v1.json",
+      "sha256": "6db30e08aa9828fed279a33c52a3932a55f55dddd6e7e5bc7df572d5c3e5f120",
+      "bytes": 1217
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/automation-before-update-v1.json",
+      "sha256": "b4ef25f046f21fdcc2036c77028cb869e1cd8710a92a361cf2a6310824fb28c9",
+      "bytes": 65777
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/automation-after-update-v1.json",
+      "sha256": "321e8e89e00f607726f67cde9b240fbfa8a9a3fc1073effcd08eb114b3ee19b5",
+      "bytes": 65784
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/status-after-v1.txt",
+      "sha256": "05e081d2d4fba9f712b3b6b2c5afc1870f1d1947946686e95573e04df787dede",
+      "bytes": 24006
+    }
+  ],
+  "all_217_pins_rechecked": true,
+  "exact_h_grouping_preserves_all_cutoff_allocations": true,
+  "mixed_full_equal_norm_middle_cross_including_unit_d": "35/48",
+  "pure_equal_norm_cross_Nd_at_least_D_to_11_32": "3/4",
+  "oriented_rational_Gram_offdiagonal_exponent": "5/3",
+  "pure_selected_divisor_optimum_cross": "83/120",
+  "mixed_pure_far_ratio_cross_sectors": "3/4",
+  "bound_uses_absolute_cauchy_on_signed_cross": true,
+  "pure_small_divisor_equality_and_both_off_equal_assemblies_open": true,
+  "not_an_independent_zero_free_theorem": true,
+  "whole_prefix_candidate_unchanged": "109/144",
+  "protected_HEAD_index_states": 16,
+  "protected_science_artifacts": 18,
+  "CPU_lock_unchanged": true,
+  "prior_release": "aeb7705c/163b9eaf, 348 pages and 10858 MathML",
+  "existing_heartbeat_same_schedule_target": true,
+  "prompt_changed_only_latest_slot": true,
+  "project_complete": false,
+  "research_complete": false,
+  "independent_acceptance_for_this_candidate": true,
+  "project_edits_checks": "SSH to iska-linux-vscode"
+}

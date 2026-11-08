@@ -1,0 +1,72 @@
+{
+  "schema": "gap-dual-colours-author-attempt-v1",
+  "utc": "2026-11-07T18:27:29.871776+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/gap-dual-colours-20261107/GAP_DUAL_COLOURS-v2.md",
+    "bytes": 13431,
+    "sha256": "356c6365f13795225e7d9acbcaddadb9fd18ebf1fe5c44a1773f4be3da557781"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-gap-dual-colours/controls-v1.json",
+    "bytes": 725,
+    "sha256": "fc8dcdee8867b5dd0ea9234b9c2f6a34eb564433f8795d1b7b805e2970732e82"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-gap-dual-colours/SOURCE_PINS-v1.json",
+    "bytes": 24889,
+    "sha256": "5c451150ce66326e325ea38a54d1c213dccc1a12c030f1f0365682209d012721"
+  },
+  "control_harness": {
+    "path": "planning/gap-dual-colours-20261107/check_gap_dual_colours_v3.py",
+    "bytes": 8188,
+    "sha256": "dc06f6abde9497fbbd98f42a84c6fa19156f24a740c2a763f7beecbf048c6685"
+  },
+  "preserved": [
+    {
+      "path": "planning/gap-dual-colours-20261107/GAP_DUAL_COLOURS-v1.md",
+      "bytes": 12986,
+      "sha256": "553b949db8029d28386040960c0fcbf696ad7515cb34e1b6c02a5b479a441913"
+    },
+    {
+      "path": "planning/gap-dual-colours-20261107/check_gap_dual_colours_v1.py",
+      "bytes": 7871,
+      "sha256": "7c12f91ee4a658e6b555ccaf31d8e4afd91639617e59d1f5972b4477ea06d692"
+    },
+    {
+      "path": "planning/gap-dual-colours-20261107/check_gap_dual_colours_v2.py",
+      "bytes": 8112,
+      "sha256": "496eb18e567f630b74a533b3e94e4438635c45295243021672d1eb2833621913"
+    }
+  ],
+  "author_check_corrections": [
+    "v1 failed at line 165 because the 256-point numerical Gaussian fixture had error above 2e-9. The final harness preserves the coarse failure as a negative control and uses 1024 frequencies (maximum Gaussian error 2.21e-13). The analytic Mellin expansion is separate.",
+    "v2 passed the Gaussian guard and failed at line 182: it used the upper R endpoint's -7/960 as a uniform sparse-sector density exponent. The function 1/48-r/12 is decreasing, and the true worst endpoint is -1/160. Draft v2 and harness v3 make this distinction explicit."
+  ],
+  "new_step": "Separate the actual pair Q by Fourier inversion in log(Q/T^2), with exponential shell bounds and exact algebraic diagonal subtraction after factoring the period-four CRT multiplier. Keep both literal Gauss products, the minus-one sign, both equal-norm ideal labels and all raw masks.",
+  "bounded_pieces": {
+    "B2<=D^(7/24)": "D^(157/160) via all-element cubic sieve in alpha",
+    "B3<=D^(31/80)": "D^(59/60) via labelled cubic conductor fibres",
+    "first frequency sparse by D^(-1/12)": "D^(467/480) via all-element sextic sieve in beta"
+  },
+  "failed_full_estimate": "Separating at fixed alpha and using the sextic sieve improves the completed comparison's full bound to D^(169/160), still worse than inherited D for the original squared column norm. No target-sized bound for the actual joint remainder or signed form.",
+  "remaining": "B2>D^(7/24), B3>D^(31/80), with the main first-frequency lengths and small good squarefull part; keep actual prime phases, shared Q, raw zeros or return to the pre-Cauchy signed pairing.",
+  "scope": "Auxiliary off-diagonal components only. Whole unit and nonunit cofactor estimates, candidate 109/144, whole signed 13/12, global unsigned 9/8, determinant/zero-location, Lean and GRH unchanged.",
+  "fresh_controls": {
+    "labelled_ideal_pairs": 28380,
+    "cubic_fibres": 434,
+    "cubic_coherent_pairs": 914,
+    "radical_overlap_pairs": 21808,
+    "toy_high_total_small_component_pairs": 13023,
+    "raw_element_symbol_zeros": 11,
+    "separated_prime_sum_cases": 40,
+    "gaussian_recombination_cases": 8,
+    "periodic_frequency_grid": 1024,
+    "max_phase_recombination_error": 2.5103073074894707e-15,
+    "max_gaussian_recombination_error": 2.2100438654287436e-13,
+    "max_coarse_256_error": 1.435305580072062e-07,
+    "rational_scale_checks": 1803
+  },
+  "independent_review": "Pending; prior subagent usage limit, no retry.",
+  "prior_numeric_or_release_audit_replay": false
+}

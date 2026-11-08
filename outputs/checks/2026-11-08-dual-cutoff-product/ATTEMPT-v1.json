@@ -1,0 +1,31 @@
+{
+  "schema": "dual-cutoff-product-author-attempt-v1",
+  "utc": "2026-11-08T03:41:51.143064+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/dual-cutoff-product-20261108/DUAL_CUTOFF_PRODUCT-v1.md",
+    "bytes": 12078,
+    "sha256": "dc38019a38c98e89607556bd232570468da9c1a8af85a79931b3f3cc554f9c11"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-dual-cutoff-product/SOURCE_PINS-v1.json",
+    "bytes": 34901,
+    "sha256": "11d0d339bb3076499b1cb553e830b4135487e45613a34b7f7eb5bcfd0c75cb20"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-dual-cutoff-product/controls-v1.json",
+    "bytes": 2164,
+    "sha256": "22c4ce127693d0e0340700adf5318408d2ed7eda589d1b86890277b1f813a5b1"
+  },
+  "control_harness": {
+    "path": "planning/dual-cutoff-product-20261108/check_dual_cutoff_product_v1.py",
+    "bytes": 7412,
+    "sha256": "d0b6b16e0c02f38416c755b7047de479693f0fe3e3009757b24ed5ee2e588e49"
+  },
+  "actual_channel": "Keep the original ordered cutoff product N(xy)<=Z and exact squarefree expansion. For each fixed deletion factor use the shorter of the direct and radial primitive Poisson lengths. Separate the exact row-dependent conductor profile, keep the Gauss root and S-supported dual phases, and freeze the second physical pivot and sixth factors in the actual sieve.",
+  "new_budget": "Positive normalized per-d bound (Z/Nd) A2 Phi6(A1,sqrt(R)) with M12(W)^2 and subpowers. Mixed base 11/18 gives power 53/72 at Z=D^(1/8) and target at Z=D^(5/36). Pure bounded Z, including the unit product, costs target power 3/4. No fixed-field 7/8 input.",
+  "cross": "The signed cross bound from absolute Cauchy and the inherited complementary positive norm is D^(61/72+eps) sqrt(Z) at the mixed scales. The larger-product amplitude and joint signed comparison remain open.",
+  "validation_scope": "New primitive finite-character Gauss and Gaussian Poisson fixtures exercise exact pairing and deletion transport. Gaussian comparisons have finite truncation and use double precision.",
+  "independent_review": "Pending. Review-agent limits remain active.",
+  "replayed_old_experiment_or_audit": false
+}

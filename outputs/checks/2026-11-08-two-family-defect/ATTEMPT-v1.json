@@ -1,0 +1,109 @@
+{
+  "schema": "two-family-defect-attempt-v1",
+  "utc": "2026-11-08T16:59:28.705355+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "proofs": [
+    {
+      "path": "planning/two-family-defect-20261108/TWO_FAMILY_CROSS-v1.md",
+      "bytes": 13025,
+      "sha256": "5f4233776993bf0db296c04d17a3a4999f784f4521a0990ecc04ee10fb0f419a"
+    },
+    {
+      "path": "planning/two-family-defect-20261108/POWERFUL_INSERTION_CROSS-v3.md",
+      "bytes": 14085,
+      "sha256": "193941ef4a0068086c64c78f9047fce8776a4907e682b8077c41a23d8d04233e"
+    },
+    {
+      "path": "planning/two-family-defect-20261108/ASYMMETRIC_UNIT_CROSS-v1.md",
+      "bytes": 3779,
+      "sha256": "29f9f5508b10ba81aff4b84359c7daadf6df34a8f4b3b788ecdef9cad54aa824"
+    },
+    {
+      "path": "planning/two-family-defect-20261108/RATIONAL_DEFECT_CONTENT-v1.md",
+      "bytes": 3592,
+      "sha256": "ae9b943b56b19d9516bcc62cba70e59f5c69f498543a7c95fa9791e7bfdd59b2"
+    },
+    {
+      "path": "planning/two-family-defect-20261108/VERY_LONG_DEFECT_CROSS-v1.md",
+      "bytes": 7024,
+      "sha256": "58b6f1df566428aded12d29ee2d2b1abd1063a2affcbeb02e6455af315df8a2d"
+    }
+  ],
+  "controls": [
+    {
+      "path": "outputs/checks/2026-11-08-two-family-defect/controls-v1.json",
+      "bytes": 749,
+      "sha256": "28dd5aff11f2abc675a2ed5fceea7676bf6eefa1b37dd4dd15f1eed2de12b98a"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-two-family-defect/powered-controls-v2.json",
+      "bytes": 451,
+      "sha256": "51844c28958e4f450ce36ca138a57ec2a8a6f53d4bec21eeac7993efb2913089"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-two-family-defect/rational-controls-v1.json",
+      "bytes": 329,
+      "sha256": "f088fe3b80326edd1144719810a84f76f5492c15fed32c614c20d29d13ad3cb5"
+    }
+  ],
+  "harnesses": [
+    {
+      "path": "planning/two-family-defect-20261108/check_two_family_v1.py",
+      "bytes": 6972,
+      "sha256": "fb789b217d9ef761a5d7892d5ed313151ee42048268ee87a36b3341dff9a92e8"
+    },
+    {
+      "path": "planning/two-family-defect-20261108/check_powered_extension_v2.py",
+      "bytes": 3314,
+      "sha256": "27c19c40f27181983cad761f3356c7d922411d2c0eba93f331c1d9f692cc68f7"
+    },
+    {
+      "path": "planning/two-family-defect-20261108/check_rational_defect_v1.py",
+      "bytes": 2926,
+      "sha256": "f19a588e195129f12ab9b2548281c12531df74b3413f76ad9f1357d3d0fa3106"
+    }
+  ],
+  "preserved_candidates": [
+    {
+      "path": "planning/two-family-defect-20261108/POWERFUL_INSERTION_CROSS-v1.md",
+      "bytes": 14629,
+      "sha256": "aaa2b6f7786bf8f80365542fca8a23c3bd9f0231b283fa0fa609fca86e9f34c5"
+    },
+    {
+      "path": "planning/two-family-defect-20261108/POWERFUL_INSERTION_CROSS-v2.md",
+      "bytes": 14057,
+      "sha256": "73f9744481132a6eb73e8bbd328578fa5b11b93ac2cc1136441b9a14a4203423"
+    },
+    {
+      "path": "planning/two-family-defect-20261108/check_powered_extension_v1.py",
+      "bytes": 3279,
+      "sha256": "ece8476a59e85fa246a2f07bc162c534c398dc058bc9da3954c8188f0342c550"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-two-family-defect/powered-controls-v1.json",
+      "bytes": 450,
+      "sha256": "ebc3505b43cf60d182665de0122bdd34ab30eaff3686d38d9e62cffca0eb6fd9"
+    }
+  ],
+  "review": {
+    "path": "outputs/checks/2026-11-08-two-family-defect/REVIEW-v1.json",
+    "bytes": 3258,
+    "sha256": "2d80b6bb4af1dbcca8ebb89b8388446fef62c757644f8268c3c12bea84af2364"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-two-family-defect/SOURCE_PINS-v1.json",
+    "bytes": 51779,
+    "sha256": "a2c7183e9d02450a18c75153785ec2a4f426453c1162fce826ed99692224c511"
+  },
+  "new_results": {
+    "exact_two_family": "Both literal defect sums formed before row Cauchy, with additive integer norm equality and ideal M\u00f6bius on the exact common primes.",
+    "comparable": "All comparable d=1 target in the two critical blocks; mixed comparable Nd<=D^(1/3). Across all d the short/long thresholds are pure 3/8 and 51/64 and mixed 8/15 and 115/192.",
+    "powerful": "All allowed off-d increments 2..5 with stated cutoff/conjugate erasures, no conductor or ratio cap, all feasible two-pivot blocks at critical capacity.",
+    "mixed_asymmetry": "All dyadic pairs in the selected mixed sector reach target for Nd<=D^(7/96).",
+    "rational_content": "At comparable B,K~R the all-d target holds when both rational contents exceed D^(3/16) pure or D^(1/40) mixed, including residue-one increments."
+  },
+  "failed_step": "A full nonunit-d estimate for the low-content comparable midrange would require a gain beyond the two positive norms. At B~K~R pure their all-d budget is D^(7/8); the E^(-1/2) small-divisor bound loses its gain after the existing divisor-count cost. This is a method cost.",
+  "next": "Estimate the residual small-content increment-one midrange by averaging the divisor or keeping its exact dependence on the powerful part and original cutoff.",
+  "open": "Whole prefix109/144, signed13/12, unsigned9/8, principal/short assembly, determinant, scope-specific zero location, pinned Lean and GRH.",
+  "prior_fixtures_replayed": false
+}

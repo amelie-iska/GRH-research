@@ -1,0 +1,30 @@
+{
+  "schema": "low-dual-cutoff-author-attempt-v1",
+  "utc": "2026-11-08T05:43:38.506969+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/low-dual-cutoff-20261108/LOW_DUAL_CUTOFF-v1.md",
+    "bytes": 10004,
+    "sha256": "0d92323bbde25afbdb18ec6092e107be66a4837e2478191d21410c8e2a852b04"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-low-dual-cutoff/SOURCE_PINS-v1.json",
+    "bytes": 36820,
+    "sha256": "139ddfd7931f123ca5c9f8bd602ad7fc951953486909bd9ed9dbd7a665d0e4b0"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-low-dual-cutoff/controls-v1.json",
+    "bytes": 1230,
+    "sha256": "d6123374bd8ac01b3e75ecba3f82c51527b0aa354adc80915df164d3aa272773"
+  },
+  "control_harness": {
+    "path": "planning/low-dual-cutoff-20261108/check_low_dual_cutoff_v1.py",
+    "bytes": 7679,
+    "sha256": "ed3b3d5c6a3d6290dd854aedea989caa687539efaf3ce24f9e1ba73fda5480e0"
+  },
+  "method": "Keep one dual ideal fixed and sieve the cutoff factor on its original length J/E0. Use M=REJ/X>=RJ/D and all column-length degrees <=1 to cap the cost at min(Z,DK0/R), uniformly in the full cutoff range. Keep exact deletions, Q_u, Gauss root, S phases and raw zeros. For Nk>max(K0,M D^eta) use radial decay with M24(W).",
+  "positive_budget": "Direct + low + far with full Z=U^2: mixed 67/90 at K0=D^(1/20), with neighborhood; exact mixed threshold K0=D^(7/132). Pure 3/4 with unit dual ideal. Far 5/8 with eta=1/16 and feasible capacities. No fixed-field power.",
+  "remaining": "Residual K0<Nk<=M D^(1/16), Xprime>Bstar. Signed cross absolute comparisons 329/360 mixed and 11/12 pure do not meet target. Full 109/144, 13/12, 9/8 bounds unchanged; determinant, Lean and GRH open.",
+  "independent_review": "Pending. Existing review-agent limits remain active. The preceding joint note is also pending review.",
+  "replayed_old_experiment_or_audit": false
+}

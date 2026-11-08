@@ -1298,3 +1298,260 @@ This is a LOCAL substantive edition, not a new public release. Public Main1f346d
 Next implementation: prepare a separately reviewed substantive public release from this local milestone with the five PDF exports, source-only public research closure and strict inherited live-browser/source-pin/integrity/visibility/credential gates; no status-only commit or republish. Next genuine arithmetic: estimate actual growing-good-r finite frequencies or neighboring mixed blocks BEFORE losing joint phases/means/raw masks, then assemble the remaining full frequency/short/principal terms. Whole signed13/12/global unsigned9/8 are unchanged. Independent positive determinant/zero-location and separate Dirichlet/Hecke/Dedekind/elliptic/generalArtin obligations remain open; no Artin holomorphy, GRH, desired positivity or zero locations are assumed. Actual analytic/category Lean remains unfinished.
 
 The governing local record is outputs/checks/2026-11-06-ramified-book/root/MILESTONE_ACCEPTED-v1.json and planning/ramified-book-20261106/HANDOFF-v1.md. P4 claim9902aec2-80f1-48e5-9e0a-1e79a2028dff remains in_progress together with P7/priorP9. Both implementation/research completion gates remain FALSE. Keep this ONE existing heartbeat ACTIVE, with no cleanup/reset/no-op/status commit or guaranteed proof schedule.
+
+
+## Verified public ramified release and accepted growing/mixed cones — 6 November 2026
+
+This entry supersedes historical pending-publication and next-task descriptions, preserving their evidence. Main aeb7705c8bc5b7662a44916ea5039fb2dae7266d and Pages 163b9eaf49298864a12e8f09cb2ec171a8a605df are VERIFIED LIVE. The authoritative receipt is /home/iska/Documents/LaTeX-projects/GRH-publication-20261106-ramified/outputs/publication/20261106-ramified/release-preparation-v1/PUBLIC_RELEASE_VERIFIED.json, SHA256 c3bb690ee951a58759217960b33e6c4900b36d54fade69b47756bbfb3baad499. Public proof: https://amelie-iska.github.io/GRH-research/book/main.html#rg:core ; PDF: https://amelie-iska.github.io/GRH-research/book.pdf .
+
+The released edition has 348 pages, 40 chapters and 10,858 MathML expressions; focused PDFs have 85/243 pages and notes 43/131. All 10,299 previous literal math subtrees, 389 tables, 14 labs and 31 old SVG references are preserved; one original rational-cusp/eleven-factor figure raises the SVG count to32. The reviewed pure finite TOP-prefix theorem has normalized power101/144 under its stated D>=2^64, fixed finite characters and common-W seminorm hypotheses. It uses original A_U, the whole eleven-factor partition, all finite k/fullQ and actual prefix/opposite-column masks. It does not replace A_U by A_Y or introduce auxiliary common-d.
+
+Publication checked 331 Main files/566 closure pins, 641 hosted files and all972 selected Git-tree entries/modes/sizes/parents/refs;625 old hosted files remain byte-identical. All16 changed hosted hashes passed deployment round3, with two pending rounds preserved. Stage and LIVE each passed220 inherited groups+40Gauss+44ramified and Lab58/54. LIVE has693 global events=679protocol+14navigation markers, one initial and13 actual departures,17idle waits, zero fetch/HTTP/new-page errors/timeouts/pending and minimum quiet774ms at idle-wait exits (required750ms). Frozen QA5ccf4f28, ROOT_READY784922eb, ROOT_REVIEW2ee93de4, preflightb227257a, allowlist9103c529, APIb7040130 and independent releasegate1da7d2a6 bind the exact candidate. All972 payload SHA256/GitSHA1/UTF8/base64 roundtrips and refusal controls pass; the972-file credential scan has zero matches. Failed map/stage/admin candidates and111 hash-reviewed generated/CSV/history/harness whitespace diagnostics remain preserved, without normalization or weakened error filters. Owned contexts/sessions are closed; LIVE used no stage server. Actual public desktop figure/mobile theorem were visually inspected. Three inherited munder nodes, old TeX warnings, cached-PDF searchability and the documented public SVG reproduction/standalone-navigation scope limits remain.
+
+NEW accepted research OUTSIDE this frozen331-file release and current348-page book: growing-modulus v2c922a225 WITH required actual-row87ce4a54 and aggregateb50439b9 proves explicit auxiliary raw period F0*rad(r), not a physical-radical norm replacement. It retains actual Gauss/source normalization, one angular vartheta, arbitrary S powers, finite ray order, raw conductor-drop zeros, all equal-norm fibres, fullQ/prefix masks and common-W costs. Legal Z_r=D^(2/9)*Nrad(r)^(-1/3) gives column D^(7/18)*Nrad(r)^(1/6). The original pure cone Ny<=X,Nr<=Y has leading power101/144+delta at X=D^(3/8),Y=D^delta; it is target-sized through delta7/144. The full finite-ball positive budget155/144 is not the complete kernel estimate. Fresh saved local quotient/valuation/Perron/Fraction controls are formal, not ideal energies or Lean, and are finished rather than a next experiment.
+
+The accepted mixed extension is ACTUAL_MIXED_PRIMITIVE_CONE-v2.md9b0b8b6c WITH REQUIRED6fed549f and7d62d6c9; aggregate6456d737, handoffcbdf8ea4 and independent rootb31c7692/B51b4eb05 govern. It applies ONLY to original nonprincipal unweighted two-pivotA6=1 rows with the other four good factors units, fixed u0/S/nu/ray and one common complex W. It keeps ORIGINAL(k,v2)=1, ell|v2, pre-S cutoff sqrt(b/Nell), exact finite A_AB(v2^2)*conj(rho(v2))^2 and primitive S/e/root values. Only the good-local sextic factor uses gamma=alpha_ell*alpha_v2^2*alpha_r^5; total eta may have higher ray order. Quadratic ell twists and raw zeros survive conductor drop. J_np on the unit/unit branch is fixed before Poisson; an arithmetically empty original fibre need not have zero finite projection. The DIRECT original coefficient has no imported density-g. Unequal-norm subtraction follows the unprojected column bound and never becomes an artificial kappa/Q deletion.
+
+For1<=Y<=X and2A2Y<=D^(2/3), the normalized mixed cone is bounded by parameter^epsilon*A1*A2*X^(1/6)*{B[M(W)+V1(W)]D^(-1/9)A2^(1/6)Y+B^2[A1X/D^2+D^(-1)]Y^(5/6)}. At H=D^(3/4),X=D^(3/8),Y=D^(7/144), actual capacity Nu0*A1*A2^2<=H gives main<=H*A2^(-5/6), Bessel<=D^(-19/864)A2^(-3) and equal-norm<=D^(-127/864)A2^(-1), with explicit profile/fixed-data/epsilon costs. Fixed C_H capacity constants have an explicit large-D threshold and bounded-range fallback. Saved7776 modular phase/raw states (432 conductor-drop states),12 Fraction vertices and exact overlap controls ran once; independent reviewers read code/results without replay. No actual Gauss energy/training/spectral/Lean result is claimed. This cone is finished; do not rerun it as new research or publish these notes as a status-only release.
+
+NEXT genuine arithmetic: estimate the ACTUAL r>Y, Ny>X and remaining finite/infinite-frequency complement, retaining all original means, root/ray/S values, common-prime/full-union masks, equal-norm fibres, original capacity and common-profile uniformities BEFORE per-r/per-conductor absolute Cauchy; or derive additional-good-factor primal exclusions explicitly before Poisson. Whole signed13/12/global unsigned9/8, short/principal assembly, independent positive determinant/zero-location bridges separately for Dirichlet/Hecke/Dedekind/elliptic/generalArtin and actual analytic/category Lean/GRH remain OPEN. No Artin holomorphy, GRH, desired positivity or zero locations are assumed.
+
+All scientific edits/builds/checks ran on iska-linux-vscode via SSH. The existing Mac gh login was used ONLY for publishing streamed reviewed Linux payloads in memory; no login/token read/copy/transfer, dependency/toolchain install, infrastructure/GPU, external MCP or Claude/global configuration change occurred. Preserve sourceHEADdba37ff/index0ef1af, all16HEAD/index states/15release worktrees including the new frozen331indexff207f16, all originals/outputs/caches/environments/history/private active models and Mac workspace/old8765preview. Linux4.24approval is still unanswered: no install/download/substitute/reinventory/repeated question. P4 claimf654cf42-34cf-465d-9b2c-1b2dcb7828d7 and prior P7/P9 remain in_progress. Both completion gates are FALSE; keep ONE existing heartbeat ACTIVE. No cleanup/reset/no-op/status commit or proof schedule.
+
+
+## Full physical-row mask derivation — UNREVIEWED draft, 7 November 2026 UTC
+
+Public Main aeb7705c/Pages163b9eaf and the verified348-page/10858MathML book remain unchanged. This is research outside the frozen331-file release and current canonical book/articles, not a new accepted theorem or a publication.
+
+P7 claim1f11e152-be0d-4385-a859-c05e50253a83 attempted the actual full six-factor primal exclusions before Poisson. Draft planning/full-row-cone-20261106/root/FULL_ROW_PRIMAL_MASKS_AND_CONE-v1.md SHA965a8b56 derives ell|v2v3v4v5 and(k,v2v3v4v5)=1 from the first-five SF/pairwise-coprime row support. Arbitrary overlapping v6 is a column mask and capacity factor, not a new(v1,v6) or(k,v6) restriction. The literal v1=p,v6=p row has physical valuation7 and is allowed. At auxiliary v1=p², forbidding k=p because p|v6 destroys the required1-1 SF cancellation.
+
+The draft separates the q6 column-prefix mask from exact long-variable deletion. If q6 is represented only in Qlong, its Möbius deletion scalar must retain nonzero d|q6 terms unless another actual character zero applies. Giving that scalar a q6 zero while dropping its inner mask restores forbidden columns. Keeping q6 as a finite raw character is a different valid representation that must retain its inner mask and period cost. The draft uses the pure-deletion representation, original finite ray/root/S phases, higher-order rho distinctions, good-only gamma=ell*z*r^5, original nonprincipal unit predicate before Poisson, all original raw/prefix/fullQ/common-W/capacity masks and the original A_U whole-factor grouping.
+
+A quantitative extension to all six row factors is a CANDIDATE ONLY. At the specified finite cone Ny<=D^(3/8),Nr<=D^(7/144), its proposed leading budget is H*A2^(-5/6)*A3^(-11/6)*A4^(-17/6)*A5^(-23/6)*A6^(-5), with explicit smaller Bessel/equal-norm errors and legal modulus/profile/capacity thresholds. It is NOT added to the accepted results or best global bound.
+
+New exact formal controls0cfeda91 passed once:225 primal-inversion states,45 column-mask states,108864 NEW j3/j4/j5 phase states with9072 raw conductor-drop states,7 capacity vertices and4096 six-coordinate Fraction samples. These are formal local identities, not actual ideal/Gauss energy data, a spectral computation, analytic proof checker or Lean. Producer3eeebd3e and33 source pins3191490b are bound by ATTEMPT-v1.json1470a0d4. No old7776/FE/tail/scalar/norm/training/build/browser/publication audit was replayed.
+
+All three requested independent reviewer turns failed because of a usage limit before substantive outputs; no review gate exists for this extension. Status stays UNREVIEWED, P7 stays in_progress and both completion gates stay FALSE. Next concrete task is independent actual-support/phase/deletion/uniformity review of the saved draft, followed by the actual r>Y/Ny>X/restfinite/infinite-frequency complement. Do not rerun these finished formal controls as new research, promote this draft to the book or publish a status-only update. Whole signed13/12/global9/8, short/principal assembly, positive determinant/zero-location separately Dirichlet/Hecke/Dedekind/elliptic/generalArtin, actual analytic/category Lean and GRH remain open. No GRH/Artinholomorphy/desired positivity/zero premise was introduced.
+
+All new work ran on iska-linux-vscode via SSH, with no public branch, canonical artifact, dependency/environment, auth/credential, external MCP, Claude/global configuration or Macworkspace/old8765 change. Preserve all16HEAD/index states/15release worktrees/sourceindex0ef/frozen331indexff207 and every original/output/cache/history. Linux4.24approval remains unanswered: no install/download/substitute/reinventory/repeated question. Keep ONE existing heartbeat ACTIVE.
+
+
+## 7 November 2026 UTC — finite dual frequency research draft
+
+Author-checked only; independent review pending. See planning/radical-frequency-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-radical-frequency/ATTEMPT-v1.json. Using the accepted mixed two-pivot kernel, counting frequency ideals by the radical outside the second pivot gives a candidate target-size bound for a larger finite projection, including squarefull r through D^(7/60) at Ny<=D^(3/8). The draft records the exact cuts, fixed-profile costs and preserved raw masks. The separate entire Ny<=D^(3/8) projection has upper exponent 155/144 at the critical line. The pure block's large squarefree frequencies still exceed the target in this method. Fresh exact ideal-index and exponent controls passed; they are not Gauss-energy or Lean evidence.
+
+P7 checkpoint bb7c27a2-6ac3-4ddd-ab07-a27de2fd413d stays in progress. Next bound the actual joint phases before the positive frequency count. Whole 13/12, global 9/8, determinant/zero-location, Lean and GRH remain open. Both completion gates are false. The verified 348-page/10858-MathML book remains current.
+
+
+## 7 November 2026 UTC — balanced finite-prefix research draft
+
+Author checked; independent review pending. See planning/joint-r-frequency-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-joint-r-frequency/ATTEMPT-v1.json. The sixth-free norm/gcd lift is inherited from the accepted book, not a new analytic theorem. The new band localization combined with mixed6456 at Ystar=D^(2/21)A2^(-1/7) gives candidate main H X^(1/6)D^(-1/63)A2^(-41/42), X<=D^(1/2), with explicit common-W/error costs and full original masks. At X=D^(3/8) the pure SAME finite prefix improves13/16 to803/1008 (gain1/63), and the mixed witness31/48 to71/112 (gain1/84). These are finite-prefix comparisons; whole13/12/global9/8 remain unchanged. The pure intermediate-r budget still has gap47/1008. Fresh reduced-pairing/exponent controls pass; independent review, the joint intermediate-r/short-k estimate, full high frequencies, determinant/zero-location, Lean and GRH remain open.
+
+P7 checkpoint 3a2cb4a4-c536-4cb9-aac9-74669bc6a747 stays in progress; P4/P9 and both false gates unchanged. Published348/10858 book and protected states preserved. No publication or book promotion. Next estimate the actual joint phases or signed-d sum before positive triangles, without replaying finished audits.
+
+
+## 7 November 2026 UTC — joint k/r research draft
+
+Author checked; independent review pending. See planning/joint-kr-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-joint-kr/ATTEMPT-v1.json. Combining actual k,r in a physical sixth-free frequency retains the erased exponent-two prime mask and puts both original columns inside one norm before separate frequency triangles. The candidate target-size exact finite projection Ny<=D^(3/8) with Nk>=D^(47/1296) preserves the actual pre-S cap, common W, primitive/source/ray phases and all zeros; on g=unit the cutoff is D^(47/1848). Exact finite grouping and exponent controls pass. The unit and shorter k terms remain open, as do the whole13/12/global9/8 comparisons, high frequencies, determinant/zero-location, Lean and GRH. P7 checkpoint 7a06bd85-e518-4417-a20e-1afc30dd486f stays in progress; both gates remain false. No book/release promotion; public348/10858 edition preserved.
+
+
+## 7 November 2026 UTC — two shifted columns research draft
+
+Author checked; independent review pending. See planning/unit-k-divisor-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-unit-k-divisor/ATTEMPT-v1.json. The new fixed auxiliary d transport preserves distinct short cutoffs and shifts the physical cubic numerator to d*k before both column estimates. It covers the former intermediate Nr~D^(2/21) range even at k=unit. The candidate whole finite prefix at X=D^(3/8) has pure power113/144, a gain1/36 over the established same-prefix13/16; the pure intermediate Nr~D^(1/6) gap5/144 remains. Exact finite transport, raw phase and exponent controls passed. This does not change the whole13/12/global9/8 bounds, high-frequency or determinant/zero-location obligations, Lean or GRH. P7 checkpoint 418becb6-9ce1-45fd-81a3-7194f14b37d7 stays in progress; both gates false. No book/release promotion; public348/10858 edition preserved.
+
+
+## 7 November 2026 UTC — joint short-prefix/frequency draft
+
+Author checked; independent review pending. See planning/prefix-r-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-prefix-r/ATTEMPT-v1.json. The short raw R_p(r) already deletes p/r collisions; on live support the joint physical norm uses literal t=r*p^4. The new finite-prefix candidate pure exponent is865/1104, a gain2/69 over the established same-prefix13/16. The next pure transition R~D^(4/23) still exceeds target by37/1104 in this upper budget. Exact raw transfer/grouped Cauchy/Fraction controls passed. Whole13/12/global9/8, high-frequency and determinant/zero-location obligations, Lean and GRH remain open. P7 checkpoint a6d695b6-2093-4447-b121-88ccd375d659 stays in progress; both gates false. No book/release promotion; verified348/10858 edition preserved.
+
+
+## 7 November 2026 UTC — primitive-conductor prefix draft
+
+Author checked, independent review pending. See planning/structured-prp-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-structured-prp/ATTEMPT-v1.json. On live pairs \(t=rp^4\), the true good primitive conductor is \(\operatorname{rad}(r)p\). The ordinary all-primitive sieve in the joint positive norm gives the candidate normalized pure finite-prefix exponent \(37/48\) at \(X=D^{3/8}\), a gain \(1/24\) over \(13/16\). The candidate reaches target size for \(X\le D^{1/4}\). The new pure transition leaves an upper-budget gap \(1/48\) at the critical prefix. Finite CRT support and rational exponent controls passed. P7 checkpoint d334a65d-0688-4535-8d27-ad43ffcffd67 stays in progress and both completion gates are false. The full signed estimate, higher-frequency complement, determinant and zero-location obligations, Lean and GRH remain open.
+
+
+## 7 November 2026 UTC — quadratic cross terms in the finite prefix
+
+Author checked, independent review pending. See planning/quadratic-cross-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-quadratic-cross/ATTEMPT-v1.json. Poisson in the dual Gram form of the live literal \(rp^4\) operator produces two quadratic cross matrices after handling all four shared-prime cases. The all-sixth-free Type-I estimate reduces the previous \(R,P\asymp D^{1/4}\) comparison from \(D^1\) to \(D^{5/6}\) at \(E=1\). The candidate pure finite-prefix power is \(257/336\). The new comparison is target-sized through \(X\le D^{2/7}\) and leaves a \(5/336\) gap at \(X=D^{3/8}\). Exact residue, CRT and exponent controls passed. P7 checkpoint 38ee8e3e-53d1-4ece-9b14-3658feb33233 stays in progress. Both completion gates are false and the full signed estimate, determinant and zero-location obligations, Lean and GRH remain open.
+
+
+## 7 November 2026 UTC — smooth long factor in the finite prefix
+
+Author checked, independent review pending. See planning/smooth-long-prefix-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-smooth-long-prefix/ATTEMPT-v1.json. Reuniting the long dyads at literal small \(Np\) permits the exact common \(W\) on the safe Mellin line. The surviving original long deletion is supported on \(\operatorname{rad}(s)\). Together with the previous pending quadratic comparison this gives candidate pure finite-prefix power \(109/144\), target size through \(X\le D^{1/3}\), and an upper-budget gap \(1/144\) at \(X=D^{3/8}\). Exact regrouping, raw deletion and exponent checks passed. P7 checkpoint aa5eddf4-278c-4a20-b4cb-f622b8b0be67 stays in progress. The full signed estimate, determinant and zero-location obligations, Lean and GRH remain open and both completion gates are false.
+
+
+## 7 November 2026 UTC — sixth-part counting error at the balanced prefix
+
+Author checked, independent review pending. See planning/sixth-part-mean-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-sixth-part-mean/ATTEMPT-v1.json. The exact two sixth-part deletion masks yield lcm(d,bi) residual subsequences. A physical sixth-free r norm before the divisor triangles gives normalized counting error B_W^2(DH)^epsilon (H/A2)(X/R)^(1/18). With the earlier pending low-side inputs, the pure critical remainder after retaining the signed high principal mean has power 271/360. The principal mean still permits the 1/144 upper-budget excess, and the whole-prefix candidate is unchanged. The finite ideal-mask and rational power checks passed. P7 checkpoint e1088b0c-464b-4c5a-8f81-f7a07ed008dd stays in progress. The full signed estimate, determinant and zero-location, Lean and GRH remain open and both gates are false.
+
+
+## 7 November 2026 UTC — signed central principal density
+
+Author checked, independent review pending. See planning/principal-macro-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-principal-macro/ATTEMPT-v1.json. In the central dyadic band D^(13/40)<=R<=D^(27/80), a group of intermediate scale in either original column permits the earlier joint norm. One-large boxes coalesce and use short density divisors plus the physical-norm coefficient tail. The removed signed part costs H D^(-1/480) with fixed profile/subpowers, conditional on prior (Q) and (M). Both remaining columns have two or three large factors. Two exact coprime ideal columns confirm a surviving two-large coefficient. The whole-prefix candidate remains 109/144. P7 checkpoint 6fdbce10-ee4f-4cad-81ed-80e04782c6cd stays in progress. The full signed estimate, determinant and zero-location, Lean and GRH remain open and both gates are false.
+
+
+## 7 November 2026 UTC — exact high-cutoff gap pairing
+
+Author checked, independent review pending. See planning/gap-factor-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-gap-factor/ATTEMPT-v1.json. In the stated central band and 2D/7<=U^2<=D, sum the signed label positions after clipping the literal small product. The above-cutoff complement forces leftover norm below 7. Three large labels cancel and two yield exactly the ordered above-U factorizations of the original column. After restoring the signed coprime projector the normalized replacement costs H D^(-1/480) with fixed profile and subpowers, conditional on previous (Q)/(M). The independent-of-(Q)/(M) thin-gap estimate removes a narrow interval above U. The comparable far-from-cutoff term remains open. Exact signed allocation and endpoint controls passed. Whole-prefix candidate remains 109/144. P7 checkpoint 4b4b6472-dc97-4c28-bb9e-62dbf4060955 stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — prime prefixes in the high-cutoff gap
+
+Author checked, independent review pending. See planning/gap-prime-prefix-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-gap-prime-prefix/ATTEMPT-v1.json. Exact rank and cutoff separation makes an intermediate prime prefix in either column usable. The smaller prefix range and the combined-cofactor selection use the inherited primitive comparison. The wider range uses prior (Q). These parts and the large squarefull frequency part cost H D^(-1/480) in the actual signed central gap, with fixed profile and subpowers. The remainder has two primes per column with combined cofactor norm below D^(1/24) and squarefull frequency part below D^(1/32). Fresh exact comparisons, ideal cases and exponent checks passed. Whole-prefix candidate remains 109/144. P7 checkpoint f2ad88b4-2e4d-4f13-9d26-c1582b9444aa stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — joint cofactor bound in the signed two-prime pairing
+
+Author checked, independent review pending. See planning/gap-core-pair-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-gap-core-pair/ATTEMPT-v1.json. Shared marked prime ideals cost H D^-11/96 in the separated product, leaving the signed projector on the small cofactors. The inherited primitive norm on both cofactor groups gives H (X/R)^(1/6)/sqrt(C C') with fixed profile and subpowers. The joint product at least D^(1/48) costs H D^-1/480 and the marked inert section costs H D^-17/160. The remaining comparable split-prime pairing has joint cofactor norm below D^(1/48). Exact projector, cutoff and exponent checks passed. Whole-prefix candidate remains 109/144. P7 checkpoint 1025101f-29a4-49c4-a827-0898f951f370 stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — joint Gaussian completion in the unit-cofactor split-prime comparison
+
+Author checked, independent review pending. See planning/gap-double-poisson-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-gap-double-poisson/ATTEMPT-v1.json. Joint completion with powers 2 and 5 retains the dual argument beta alpha^4, the quadratic CRT multiplier, both local Gauss phases and raw zeros. Counting labelled dual ideal fibres gives squared auxiliary budgets D^(67/80) on the true diagonal and D^(39/40) on the dual good conductor range B<=D^(3/8), including Gaussian tails. Larger dual conductors remain open; counting them absolutely would cost D^(3/2) instead of inherited D. No selected signed original part or whole exponent is claimed. Exact CRT, frequency, ideal and scale controls passed. Whole-prefix candidate remains 109/144. P7 checkpoint a1c9b4f8-7bf2-4d1d-8e26-d4c9b2cf5c0e stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — conductor components in the joint Gaussian comparison
+
+Author checked, independent review pending. See planning/gap-dual-colours-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-gap-dual-colours/ATTEMPT-v1.json. Exact common-Q Fourier separation retains the CRT phase, both Gauss factors, the diagonal correction and all raw zeros. The quadratic conductor range B2<=D^(7/24) costs D^(157/160); the cubic range B3<=D^(31/80) costs D^(59/60); sparse first frequencies cost D^(467/480). These are auxiliary off-diagonal sectors only. The full separated sixth-order comparison costs D^(169/160), still worse than inherited D on the original squared column. The jointly large conductor sector remains open; no selected signed original term or whole exponent is claimed. Exact labelled ideal and rational controls and finite Gaussian recombination passed. Whole-prefix candidate remains 109/144. P7 checkpoint 365d1018-6af7-46ce-8f97-84c964ad8d05 stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — overlap and Gauss compensation in the joint Gaussian comparison
+
+Author checked, independent review pending. See planning/gap-dual-overlap-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-gap-dual-overlap/ATTEMPT-v1.json. Literal Gauss duplication cancels the identified varying Jacobi angle, retaining the positive cubic Gauss factors, period-four multiplier and all raw twists. With g the full good gcd of the dual arguments and d the sixth root of the quotient beta/alpha_g, the joint cut (Ng)^(5/6)(Nd)^4>=D^(1/12) costs D^(39/40) for that auxiliary off-diagonal sector. This is not a bound on a selected original signed term. At coprime squarefree principal scales the separated budget D^(1+r/6) still loses to inherited D. Exact phase, raw deletion, and rational checks passed. The signed pairing and whole-prefix candidate 109/144 are unchanged. P7 checkpoint 0a6f1c68-1a19-4c64-a6ac-934ae7aab3d2 stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — prime-norm strip and source-dependent short prime error
+
+Author checked, independent review pending. See planning/gap-norm-strip-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-gap-norm-strip/ATTEMPT-v1.json. Exact inclusive Fourier separation lets the previous auxiliary exclusions be subtracted inside the close-norm strip, giving D^(59/60) for |Nq-Nqprime|<=D^(7/48) with mass and subpowers. Separately, conditional on the pinned strict 7/8 preprint, the fixed-field discrepancy yields D^(35/48+eps) for the original short prime-counting error at H=D^(3/4), including the lower endpoint and stated profile norm. No new zero-free theorem, coherent K0-J estimate, or selected original signed bound is claimed. Finite prime counts, strip reassembly, and scale checks passed. Far norms, whole candidate 109/144 and the signed estimate remain open. P7 checkpoint 1bbd94a1-3b50-4195-9805-0a010d8effba stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — coherent large-divisor tail for continuous J
+
+Author checked, independent review pending. See planning/coherent-j-tail-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-coherent-j-tail/ATTEMPT-v1.json. The full prime-power deletion placements and half-open Abel expansion separate the actual cutoff jumps before the unweighted physical norm. At critical H, the original nonunit continuous J tail is target-sized from F>=D^(1/8) with elementary sigma=1, and from F>=D^(1/11) using the fixed-field Mertens consequence of the pinned external 7/8 theorem. The latter gives D^(179/240+eps) at F>=D^(1/10), with the stated profile norm. No new zero-free theorem, small-F or annular K0 estimate, or bound on K0-J is claimed. Exact ideal, Abel, and scale checks passed. P7 checkpoint d5def2ad-a3f0-44fc-8a1f-300dfd3bb693 stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — coherent tail for the full annular divisor
+
+Author checked, independent review pending. See planning/coherent-annular-tail-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-coherent-annular-tail/ATTEMPT-v1.json. The exact high-window annular coefficient is mu times the ordered above-U factor count minus mu. Its full intermediate common divisor splits into one, two or four cells; largest-cell signed Abel retains the max jump and full prime-power deletion before the inherited physical norm. Conditional on the pinned fixed-field 7/8 input, the critical full A-A tail is target-sized at D^(4/7), versus elementary D^(5/8), and costs D^(71/96+eps) at D^(3/5) with profile norm. This includes rough d, so it is not a smooth K0 or original high-gcd bound. Small d including d=1 and K0-J remain open. Exact coefficient, allocation, Abel and scale checks passed. P7 checkpoint 0649306b-405d-479e-8353-9536fa418887 stays in progress and both gates are false.
+
+
+## 7 November 2026 UTC — two signed cells in a smooth full-divisor tail
+
+Author checked; independent review pending. See planning/coherent-matching-tail-20261107/HANDOFF-v1.md and outputs/checks/2026-11-07-coherent-matching-tail/ATTEMPT-v1.json. On actual unweighted two-pivot annular A-A, disjoint opposite cells retain two independent strict gap cutoffs and two signed Mertens prefixes before the row norm. Exact mutual-coprimality inversion and joint prime-power radical unions retain all raw masks. At critical H, the smooth full intermediate-divisor tail is target-sized from D^(10/19) conditional on the pinned fixed-field 7/8 Mertens input, with bound D^(237/320+eps) at D^(11/20) and explicit profile norms. Elementary D^(5/8) and conditional sharp D^(4/7) remain distinct. The sharp limit loses weighted log Fourier integrability. No small-d/d=1, smooth K0-J, original high-gcd, whole signed estimate, determinant or GRH result. Exact finite controls passed. P7 checkpoint 31fdd8e0-a123-4043-a9a0-9a28bf266804 and both gates remain open.
+
+
+## 8 November 2026 UTC — actual mixed coherent bands near U
+
+Author checked; independent review pending. See planning/coherent-mixed-band-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-coherent-mixed-band/ATTEMPT-v1.json. Keep two signed annular prefixes and shorten both actual pivots separately according to the frozen prime valuation. Conditional on pinned fixed-field 7/8 Mertens, the selected smooth same-divisor K0-J and K0-KS band below U is target-sized from D^(52/105), with power 8621/11520 at D^(199/400). Above U on a fixed smooth (U,cU), c<7, the excluded rough divisors are single primes: pair the original smooth annular band with the f=1 rough term at the same prime norm. The matched power is 215/288 with the pinned Mertens and PIT inputs and the band endpoint/masks as stated. This does not identify the above-U selector with one on f in J. Fresh exact finite controls passed. Small d and d=1, pure, unmatched continuous, whole signed bound, determinant, Lean and GRH remain open. P7 checkpoint 27f95326-c6dc-4b52-a95e-ccc603afe809 and both gates stay open.
+
+
+## 8 November 2026 UTC — product cutoff in the full signed form
+
+Author checked; independent review pending. See planning/coherent-product-cut-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-coherent-product-cut/ATTEMPT-v1.json. One exact multiplier on the full intermediate divisor transports to F, FP and PQ in the smooth, rough-prime and unordered distinct semiprime branches. The new geometric middle powered bound retains two signed prefixes after valuation-specific row deletion. The critical mixed D^(52/105) and balanced D^(8/17) cutoffs, conditional on pinned fixed-field Mertens, leave only the small annular sum for the entire original signed form, with no PIT input there. The cubic-dominant wedge also admits an elementary rough-free reduction with the inherited powered sieve. Pure D^(10/19) retains the product-cut short term with F << D^(1/38). Its true endpoint and masks remain. Exact finite controls passed. Small annular d and d=1, whole signed bounds, determinant, Lean and GRH remain open. P7 checkpoint 2c2eb81b-8e05-464b-ad8d-5b1bdf5637a9 and both gates remain open.
+
+
+## 8 November 2026 UTC — actual small cutoff-product amplitude
+
+Author checked, independent review pending. See planning/small-cutoff-product-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-small-cutoff-product/ATTEMPT-v1.json. For the original ordered cutoff divisors with N(xy)<=Z, split the unused squarefree residual into an exact square-divisor expansion. Keep the full raw masks and possible overlap of the two auxiliary factors. Nonprincipal primitive Poisson for small square divisors and the inherited sixth-free norm at fixed second pivot and sixth factors give (Z/Nd)[R^2/C0+A2 Phi6(A1,C0)] after normalization. The mixed choice C0=D^(31/66), Z=D^(1/20) gives D^(493/660+eps) summed positively over d without the fixed-field power. At d=1 this leaves the complementary amplitude as the target. Across signed d the cross term remains open. Exact finite controls passed. P7 checkpoint 40021686-9f8b-4a68-ae53-a120be476a25 and both gates remain open.
+
+
+## 8 November 2026 UTC — dual average for cutoff-product amplitudes
+
+Author checked, independent review pending. See planning/dual-cutoff-product-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-dual-cutoff-product/ATTEMPT-v1.json. For each deletion factor use the shorter direct or radial Poisson length in the actual row norm, keeping the exact conductor profile, Gauss root and S-supported dual phases. With the original squarefree expansion this bounds the selected normalized positive amplitude by (Z/Nd) A2 Phi6(A1,sqrt(R)) with explicit fixed-profile seminorms. Mixed Z=D^(1/8) costs D^(53/72+eps) after harmonic summation over d, and pure bounded Z meets the target. Gaussian normalization, mask and exact scale checks passed. The larger cutoff products and signed cross term remain open. P7 checkpoint 8618fe02-8ef5-47e0-a462-20158059d259 and both gates remain open.
+
+
+## 8 November 2026 UTC — joint average for cutoff-product amplitudes
+
+Author checked, independent review pending. See planning/joint-cutoff-product-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-joint-cutoff-product/ATTEMPT-v1.json. At fixed full deletion, group the cutoff and unused factor in the direct column or keep the cutoff and Poisson frequency together through two fourth moments. Retain the exact row conductor profile, Gauss root, S-supported phases and raw masks. The selected mixed positive amplitude reaches the target up to cutoff D^(29/120). Cutoff D^(7/30) gives D^(107/144+eps) after harmonic summation over d with explicit profile seminorms. Exact direct and finite dual algebra checks passed. The larger-product amplitude and signed cross term remain open. P7 checkpoint c46107d9-ef7e-4547-8428-f3e2fcc644e5 and both gates remain open.
+
+
+## 8 November 2026 UTC — full cutoff coefficient at small dual frequencies
+
+Author checked, independent review pending. See planning/low-dual-cutoff-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-low-dual-cutoff/ATTEMPT-v1.json. Fix a low dual ideal and average the cutoff column, keeping exact Q_u, Gauss root, S-supported phases and raw masks. The scale inequality M>=RJ/D caps the effective cutoff length at min(Z,DK0/R). For the full original cutoff coefficient the direct, low, and far branches give a positive budget of mixed D^(67/90+eps) with K0=D^(1/20), and pure D^(3/4+eps) with K0=1. Fresh exact frequency-split and scale checks passed. The middle window and signed cross remain open; the whole form and published edition are unchanged. P7 checkpoint 8b1d84e9-6ac6-48ff-8b41-fdf9991ecab9 and both gates remain open.
+
+
+## 8 November 2026 UTC — reduced ideal ratio in the middle dual window
+
+Author checked, independent review pending. See planning/reduced-dual-window-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-reduced-dual-window/ATTEMPT-v1.json. Cancel only the shared ideal phase in z0/k, keeping its exact row zero. Single-factor and exact coprime fourth-moment estimates control new middle pieces for the full original cutoff coefficient: mixed powers 67/90, 11/15, 107/144; pure 3/4. Fresh exact phase, grouping, and coprimality controls passed. Large reduced factors outside the joint rectangle and the signed cross remain open; the whole bound and public book are unchanged. P7 checkpoint 6e8fe815-2ded-4bf0-bd1e-1b822f3e6200 and both gates remain open.
+
+
+## 8 November 2026 UTC — sixth powers in the reduced dual denominator
+
+Author checked, independent review pending. See planning/dual-powerful-denominator-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-dual-powerful-denominator/ATTEMPT-v1.json. Counts for the exact decomposition b=s*b0*v^6 bound two pieces of the remaining dual window. Pure unit good core and the arbitrary-core set Nv>=D^(13/120) meet 3/4 for all reduced numerators. Mixed short core with the stated numerator cutoff gives 67/90. Mixed large sixth factor with its stated cutoff gives 107/144. Fresh exact ideal, phase and scalar controls passed. The sixth-free complement and signed cross remain open. P7 checkpoint 1d46a1b9-0c33-4c3e-9be6-db90c9eea4f3 and both gates remain open.
+
+
+## 8 November 2026 UTC — powered roots of dual denominators
+
+Author checked, independent review pending. See planning/powered-dual-root-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-powered-dual-root/ATTEMPT-v1.json. On the actual residual b=s*f*c^m, average the cutoff and powered root in two fourth moments with the exact coprimality phase and original physical norm. The mixed cube and square sectors give 89/120 and 2687/3600. Pure gives 133/180 and 893/1200 at the stated cuts. Fresh exact phase, grouping and exponent controls passed. The large squarefree complement and signed cross remain open. P7 checkpoint 874b2bb8-b5c8-4952-ac98-c4c55e0b948b and both gates remain open.
+
+
+## 8 November 2026 UTC — conjugate overlap in the dual window
+
+Author checked, independent review pending. See planning/conjugate-dual-overlap-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-conjugate-dual-overlap/ATTEMPT-v1.json. After the ideal gcd, factor the conjugate overlap and preserve its exact phase and zeros. Two coupled coprimality projectors use least common multiples. Mixed integer reduced ratio bounds are 67/90, 11/15, and 107/144 on their stated ranges. The mixed equal-norm signed cross for Nd>=D^(1/5) reaches 3/4 by an absolute tail comparison. Fresh norm, phase, lcm, and exponent checks passed. The small-d cross and large integer reduced ratios with small overlap remain open. P7 checkpoint 5456a3ec-bca5-4ec2-8d47-c3e87a397bcf and both gates remain open.
+
+
+## 8 November 2026 UTC — equal-norm cross with the near strip
+
+Author checked, independent review pending. See planning/equal-near-dual-cross-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-equal-near-dual-cross/ATTEMPT-v1.json. The actual mixed equal/near signed cross reaches power 3/4 for reduced integer gaps up to D^(1/8), including the unit divisor. Up to D^(73/216) the noncomparable part, short comparable dyads, and high-length radial variation reach target cross. This uses exact sharp masks and absolute Cauchy. The wider leading term and far small-d cross remain open. Fresh exact phases, additive masks and rational profile controls passed. P7 checkpoint 6348d325-6332-41fe-bf63-2ce423bdda1d and both gates remain open.
+
+
+## 8 November 2026 UTC — rational ideal content in the dual cross
+
+Author checked, independent review pending. See planning/rational-content-dual-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-rational-content-dual/ATTEMPT-v1.json. On the actual mixed wide near strip either rational content at least D^(23/216) gives cross 3/4. When both are at least D^(13/120), this also holds across the full comparable middle range, including far gaps and the unit divisor. The proof keeps exact physical norms, phases, and masks, then uses absolute Cauchy. The remaining small-content and far noncomparable small-divisor cross is open. Fresh exact algebraic controls passed. P7 checkpoint ecd3cc89-db33-4a67-85ee-ac280eed39d7 and both gates remain open.
+
+
+## 8 November 2026 UTC — grouped cutoff and deletion in the equal-norm cross
+
+Independently reviewed research. See planning/equal-rational-sieve-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-equal-rational-sieve/ATTEMPT-v1.json. Grouping h=r e0 in the exact equal-norm middle projection gives the full mixed cross with its original complement at power 35/48, including d=1. The pure tail Nd>=D^(11/32) has power 3/4. The auxiliary cubic Gram bound L+B^(5/3) controls selected pure divisor ranges. Fresh exact algebraic checks include repeated frequencies and raw zeros. Pure small-d equality and the off-equal squared assembly remain open. P7 checkpoint 730db3a4-4a66-47f4-81fb-69ce3dd8ffd3 and both gates remain open.
+
+
+## 8 November 2026 UTC — pure cutoff separation and unequal overlap
+
+Independently reviewed research. See planning/pure-equal-cross-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-pure-equal-cross/ATTEMPT-v1.json. The pure equality cross against the full original complement has power 3/4 when the eligible conjugate overlap norm is at least D^(5/24), including d=1. This keeps the exact ordered allocations before the cubic L6 and rational L3 comparison. Grouping h against the actual unequal denominator also gives target cross for two selected unequal sectors against their entire complements. Fresh exact phases, endpoint and repeated-frequency controls passed. Small eligible overlap at the natural h scale and generic unequal interactions remain open. P7 checkpoint 4e8d8997-fec1-44be-9d36-bdc66662cfc1 and both gates remain open.
+
+
+## 8 November 2026 UTC — matched and low-conductor Poisson cross
+
+Independently reviewed research. See planning/matched-poisson-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-matched-poisson/ATTEMPT-v1.json. The matched good-pattern equality cross is bounded by R up to subpowers, and the signed defect comparison reaches target for Nq<=D^(1/2) in both critical blocks, including d=1. The conductor here belongs to the row character in the pairing. A separate exact complete allocation window has middle scalar -1 plus a subpower error, with the unit supplied by the low piece. Fresh exact phase, zero, cutoff and unit controls passed. High defects and the whole signed assembly remain open. P7 checkpoint 9cea1dc5-c60f-452a-9bfc-3319e6257913 and both gates remain open.
+
+
+## 8 November 2026 UTC — directed defects and coherent erasures
+
+Independently reviewed research. See planning/defect-order-cross-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-defect-order-cross/ATTEMPT-v1.json. The actual signed cross meets target for joint cutoff and conjugate erasures with arbitrary d residue changes, without a conductor cap, using the coherent cutoff-defect sum before row Cauchy. The local-order comparison also reaches target for every non-erasing conductor and extends the reverse unit sector to oriented D^(9/10). Exact phase, local weight and conjugate charge checks passed. Large competing insertions and erasures, the whole signed assembly and both gates remain open. P7 checkpoint 16172d73-4889-422a-8ff2-783b63473fe8.
+
+
+## 8 November 2026 UTC — two coherent defect families
+
+Independently reviewed research. See planning/two-family-defect-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-two-family-defect/ATTEMPT-v1.json. An exact additive equality projector and ideal Mobius inversion allow two coherent raw character sums with the original cutoff and zero masks. The selected comparable sector meets target at d=1 in both critical blocks. The capacity-wide powerful-increase estimate covers arbitrary mixtures of increments 2 through 5 with the stated erasures and d-residue changes. Large residue-one supports in the full divisor sum remain open. P7 checkpoint 5ebadc90-c6e3-4b74-a363-b4a2e2a42cbc.
+
+
+## 8 November 2026 UTC — sharp insertion completion
+
+Independently reviewed research. See planning/increment-one-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-increment-one/ATTEMPT-v1.json. Sharp primitive Poisson completion of the unweighted insertion array and an exact middle-equality count give comparable powers 57/80 mixed and 13/16 pure in the original selected cross. The estimates allow mixtures of positive increments 1 through 5. The pure Nd<=D^(1/8) prefix and additional localized sectors reach target. A prime-d slice shows cancellation of the outer sign by the actual equality cutoff. The remaining low-residual pure divisor range and both gates remain open. P7 checkpoint 07eb50ec-b8bd-46ab-aca4-a7b855f505e8.
+
+
+## 8 November 2026 UTC — coupled pure cutoff comparison
+
+Independently reviewed research checkpoint. See planning/coupled-cutoff-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-coupled-cutoff/ATTEMPT-v1.json. Coupling the insertion dual with the shorter actual ordered cutoff factor and grouping the powerful sparse tail improves the selected pure comparable all-divisor exponent from 13/16 to 55/68, including increments 1 through 5 and all physical comparable scales in this scope. The target divisor prefix expands from 1/8 to 9/68. Large powerful parts and additional central-scale label sectors reach target for all divisors. The exact middle equality test, original raw masks and signed identity remain. Low-residual small-powerful nonunit divisors beyond the prefix, noncomparable scales, the determinant and zero-location bridges and both gates remain open. The frozen 348-page public edition is unchanged. P7 checkpoint d51f9799-f78e-4f1a-83f8-0203fd5af64e.
+
+
+## 8 November 2026 UTC — asymmetric physical cutoffs
+
+Independently reviewed research checkpoint. See planning/asymmetric-cutoff-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-asymmetric-cutoff/ATTEMPT-v1.json. The original selected mixed cross has power 57/80 at all physical ratios and divisors, and reaches target throughout the stated critical-capacity first-pivot strip 7/24 through 439/912. In pure, short insertion and long erasure sectors reach target under the stated physical thresholds and residual selections. The exact middle subtraction keeps both endpoints and uses the two-way physical norm count. Intermediate pure rectangles, remaining signed divisor cancellation, the determinant and zero-location bridges and both gates remain open. The frozen public edition is unchanged. P7 checkpoint ba9e13cd-154c-4fd6-969f-d1f3b2a02121.
+
+
+## 8 November 2026 UTC — pure intermediate cutoff ranges
+
+Independently reviewed research checkpoint. See planning/pure-intermediate-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-pure-intermediate/ATTEMPT-v1.json. In the original selected pure cross, target holds for all erasures when K is at least of order D^(1089/1420), for all insertions when B is at least of order D^(1355/1482), and for short K up to D^(921/1652) uniformly over B at least of order R. The ordered assignment signs recombine below the cutoff and leave an exact strict correction band above it. A thin physical norm interval reaches target, while passive fixed-label Mertens gives only subpower cancellation. The coherent wide-band divisor sum, whole signed estimate, determinant and zero-location bridges remain open. P7 checkpoint 13a42796-9d69-474a-94ed-1cb595983f6c.
+
+
+## 8 November 2026 UTC — paired cutoff appendix staged
+
+See planning/cutoff-appendix-20261108/HANDOFF-v1.md and outputs/checks/2026-11-08-cutoff-appendix/STAGE_ACCEPTED-v1.json. The independently reviewed appendix, original regime figure and five PDF editions passed source-bound staging. The native candidate preserves all 10858 earlier MathML subtrees and passed 41 focused browser checks. The published edition remains 348 pages. Independent research records exact wide correction signs and fixed-label subpower cancellation, full-frequency partner small-prime compensation and an equality-side target-size prefix Nd <= D^(13/56) in the pure comparable block. The new wide notes are outside the staged appendix. The partner-only unit-pair correction, remaining coherent sum and determinant comparison are open. P7 checkpoint f31ee721-2f5b-4c28-886a-ac936316c997.
+
+
+## 8 November 2026 UTC — paired cutoff and wide correction edition
+
+The integrated candidate has 363 pages, 40 chapters and 11,657 native MathML expressions. Its focused PDFs have 88 and 257 pages. The notes have 46 and 146 pages. The appendix preserves the 10,858 previously published MathML expressions byte-for-byte and adds one original regime diagram. The wide correction sections give the exact unit and small-prime band, fixed-label subpower cancellation, full-frequency compensation and the equality-wide pure comparable prefix Nd <= D^(13/56). The staged sources, PDF and native checks are bound in outputs/checks/2026-11-08-cutoff-release/INTEGRATION_ACCEPTED-v1.json.
+
+Separate research gives a primal reduction and two physical moments for the full-frequency unit-pair contribution. It reaches the target on the balanced split Nm,Nn at least of order D^(1/8), with all-divisor pure upper power 19/24 and the Nd >= D^(1/8) upper power 37/48. See planning/cutoff-release-20261108/research/UNIT_PAIR_FULL_FREQUENCY-v1.md and the independent review. The unbalanced unit-pair estimate, coherent selected modes, original signed assembly, determinant/zero-location and Lean obligations remain open. P7 checkpoint 21bae760-dacd-4a98-a531-c901aa431dcb.

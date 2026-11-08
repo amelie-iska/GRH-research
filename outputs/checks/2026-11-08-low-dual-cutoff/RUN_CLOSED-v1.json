@@ -1,0 +1,88 @@
+{
+  "schema": "coherent-matching-tail-run-closed-v1",
+  "utc": "2026-11-08T05:45:28.995391+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "handoff": {
+    "path": "planning/low-dual-cutoff-20261108/HANDOFF-v1.md",
+    "sha256": "1dece7c6d1bd5f787019ac09849d47f4c679ebdef5bb29434bef1a12ea1c8251",
+    "bytes": 3088
+  },
+  "draft": {
+    "path": "planning/low-dual-cutoff-20261108/LOW_DUAL_CUTOFF-v1.md",
+    "sha256": "0d92323bbde25afbdb18ec6092e107be66a4837e2478191d21410c8e2a852b04",
+    "bytes": 10004
+  },
+  "evidence": [
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/ATTEMPT-v1.json",
+      "sha256": "b3ef1d44755206d072161dde947e0e611ebaa61f53dcc82f8a4e2d861da43166",
+      "bytes": 1922
+    },
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/SOURCE_PINS-v1.json",
+      "sha256": "139ddfd7931f123ca5c9f8bd602ad7fc951953486909bd9ed9dbd7a665d0e4b0",
+      "bytes": 36820
+    },
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/controls-v1.json",
+      "sha256": "d6123374bd8ac01b3e75ecba3f82c51527b0aa354adc80915df164d3aa272773",
+      "bytes": 1230
+    },
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/metadata-validation-v1.json",
+      "sha256": "4739df7c66883cabb6873931b5f5735ac452db80200d0abd61cc087770872f09",
+      "bytes": 1805
+    },
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/CLAIM-v1.json",
+      "sha256": "f1f5a9f7b430b8859767716068b823b88d410c0f119854e35bbe28e8f2de76e7",
+      "bytes": 1362
+    },
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/CHECKPOINT-v1.json",
+      "sha256": "e95475912b7818d7014e87369d7df6934f989866fad7230d0bbb52fe6177d086",
+      "bytes": 1376
+    },
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/automation-before-update-v1.json",
+      "sha256": "602844dad5e2a8140436b53f47116aa490f046fd9ff9d3466fac3b508bf6d46a",
+      "bytes": 65856
+    },
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/automation-after-update-v1.json",
+      "sha256": "79979fe9fba5c37e99f76f93a1fd0a2a9498d8dbe1b34eab05f2313b5ff7b2cc",
+      "bytes": 65863
+    },
+    {
+      "path": "outputs/checks/2026-11-08-low-dual-cutoff/status-after-v1.txt",
+      "sha256": "f957f8a25d32cdaf839314a439d2e996f78917af9f86f75cf620cfdef5a2f4f4",
+      "bytes": 24163
+    }
+  ],
+  "all_180_pins_rechecked": true,
+  "all_cutoff_products_in_exact_direct_low_far_projection": true,
+  "fixed_dual_frequency_with_original_cutoff_sieve": true,
+  "full_deletion_e0_e1_and_row_phases_retained": true,
+  "mixed_at_frequency_cutoff_D_to_1_20": "67/90",
+  "mixed_exact_target_frequency_cutoff": "7/132",
+  "pure_unit_frequency": "3/4",
+  "far_tail_power_with_M24_and_eta_1_16": "5/8",
+  "signed_cross_upper_powers": {
+    "mixed": "329/360",
+    "pure": "11/12"
+  },
+  "no_fixed_field_power_needed_for_this_channel": true,
+  "d1_middle_window_and_signed_cross_still_open": true,
+  "not_an_independent_zero_free_theorem": true,
+  "whole_prefix_candidate_unchanged": "109/144",
+  "protected_HEAD_index_states": 16,
+  "protected_science_artifacts": 18,
+  "CPU_lock_unchanged": true,
+  "prior_release": "aeb7705c/163b9eaf, 348 pages and 10858 MathML",
+  "existing_heartbeat_same_schedule_target": true,
+  "prompt_changed_only_latest_slot": true,
+  "project_complete": false,
+  "research_complete": false,
+  "independent_acceptance_for_this_candidate": false,
+  "project_edits_checks": "SSH to iska-linux-vscode"
+}

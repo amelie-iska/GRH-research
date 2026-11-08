@@ -1,0 +1,83 @@
+{
+  "schema": "sharp-insertion-independent-review-v1",
+  "utc": "2026-11-08T18:06:31.008546+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "reviewed": [
+    {
+      "proof": {
+        "path": "planning/increment-one-20261108/SHARP_INSERTION_POISSON-v1.md",
+        "bytes": 14053,
+        "sha256": "028171d1357ef8d14aafbc45a1c9a212fce64937c2d53bd780248d9a337b6570"
+      },
+      "reviewers": [
+        "low_content_cross_review",
+        "low_content_short_gauss"
+      ],
+      "scope": "Primitive radial normalization, exact thin-shell residual support, log Fourier L1, all-ideal sharp moment and complete insertion restrictions, fixed equality fibre and all critical exponents."
+    },
+    {
+      "proof": {
+        "path": "planning/increment-one-20261108/POWERFUL_FREEZE-v1.md",
+        "bytes": 3783,
+        "sha256": "b4896e9d89d738f935893ccf8f3fc42db0bb89e1f0236c88809b32e9120e5722"
+      },
+      "reviewers": [
+        "low_content_cross_review",
+        "low_content_short_gauss"
+      ],
+      "scope": "Exact eligibility and squarefree part, a^2 b^3 count, physical norms and raw fixed masks, equality subtraction and inherited pure/mixed estimates."
+    },
+    {
+      "proof": {
+        "path": "planning/increment-one-20261108/RESIDUAL_LOCALIZATION-v2.md",
+        "bytes": 5564,
+        "sha256": "bbbe301209b69865b044ca31936dcd8d7f9ded7a1faaa73b3551d7439060f684"
+      },
+      "reviewers": [
+        "low_content_short_gauss"
+      ],
+      "scope": "Full residual frequency decay, relaxed active divisor predicates, one-sided content, prefix and long threshold. V1 additionally reviewed by low_content_cross_review."
+    },
+    {
+      "proof": {
+        "path": "planning/increment-one-20261108/OPPOSITE_DEFECT_OVERLAP-v1.md",
+        "bytes": 14096,
+        "sha256": "0ad6edc9c99c00bd04c6a28cef07d2861eec7dded5d4669ddd46339368923c98"
+      },
+      "reviewers": [
+        "low_content_cross_review",
+        "low_content_short_gauss"
+      ],
+      "scope": "Exact opposite overlap, six LCM projectors, harmonic weights, ordered cutoff allocation, rational fourth and sextic 8/3 moments, critical powers."
+    },
+    {
+      "proof": {
+        "path": "planning/increment-one-20261108/ACTIVE_DIVISOR_CROSS-v2.md",
+        "bytes": 9137,
+        "sha256": "9f05550a631e27df2c56c45b499c56982d4aecae2714e3b6a9907cb962ff23f1"
+      },
+      "reviewers": [
+        "rational_cubic_gram",
+        "low_content_short_gauss"
+      ],
+      "scope": "Rational cubic gram reviewed v1 exact cutoff/sign example. Short gauss authored v1 and checked the existence-only v2 addition. Fixed-field PIT with no varying conductor uniformity."
+    }
+  ],
+  "independent_ephemeral_controls": {
+    "low_content_cross_review": {
+      "sharp_moment_and_cross_fraction_endpoints": "passed"
+    },
+    "low_content_short_gauss": {
+      "prime_d_ordered_cases": 462,
+      "divisor_endpoint_weights": 62736
+    },
+    "rational_cubic_gram": {
+      "opposite_six_gcd_controls": 192,
+      "divisor_terms": 6391,
+      "opposite_raw_phase_transfers": 159775,
+      "opposite_raw_zeros": 31814,
+      "split_lcm_patterns": 4095
+    }
+  },
+  "review_context": "Scoped mathematical reviews of exact saved bytes and identified additions on SSH Linux. The main result, its powerful extension and the opposite overlap were independently reviewed."
+}

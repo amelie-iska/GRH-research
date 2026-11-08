@@ -1,0 +1,32 @@
+{
+  "schema": "powered-dual-root-author-attempt-v1",
+  "utc": "2026-11-08T08:49:32.376957+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/powered-dual-root-20261108/POWERED_DUAL_ROOT-v1.md",
+    "bytes": 9727,
+    "sha256": "29ec50fee89e89cefc162f3d3ccb5b0139c5462d0a496132d8baf8db68125ff2"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-08-powered-dual-root/controls-v1.json",
+    "bytes": 689,
+    "sha256": "692a441c294a1ba2ea3d7d29c8df6fca55d3736ead1d61a9a5ca7c7340b5b8a9"
+  },
+  "harness": {
+    "path": "planning/powered-dual-root-20261108/check_powered_root_v1.py",
+    "bytes": 6385,
+    "sha256": "57466d6ad7d16d5d99c5425d37dae5780c4b57610ff9aeaaa71efdeebf52361d"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-powered-dual-root/SOURCE_PINS-v1.json",
+    "bytes": 39849,
+    "sha256": "3fca3fa30ce069b2c69ac68fb0ea7efe6c10ddc59efc25ee30f58afc31d69dfa"
+  },
+  "method": "On the actual residual b=s*f*c^m, use the m-power phase on the root c and keep Nb in the radial profile. The coprimality q multiplier is mu(q) psi(q) conjugate(psi(q))^m, with original zeros and repeated root factors. The two fourth moments give the Y^(-1+1/m) saving with lower physical norm Nb>=Y.",
+  "mixed": "Cubic-root sector m=3 gives 89/120 and square-root sector m=2 gives 2687/3600 with the stated cutoffs and feasible neighborhood.",
+  "pure": "Cube 133/180 and square 893/1200 with the stated cutoffs.",
+  "failed_range": "Allowing all numerators in the trial mixed cube estimate at Y=D^(3/8), F0=1 costs 9/8 by the new majorant. No lower bound or whole-form saving follows.",
+  "remaining": "Generic large squarefree denominator and large numerator region, signed cross, whole bound, determinant, zero locations and Lean remain open.",
+  "independent_review": "Pending. Review slots remain usage limited.",
+  "prior_fixtures_replayed": false
+}

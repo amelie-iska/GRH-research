@@ -1,0 +1,89 @@
+{
+  "schema": "sharp-insertion-attempt-v1",
+  "utc": "2026-11-08T18:06:31.008546+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "proofs": [
+    {
+      "path": "planning/increment-one-20261108/SHARP_INSERTION_POISSON-v1.md",
+      "bytes": 14053,
+      "sha256": "028171d1357ef8d14aafbc45a1c9a212fce64937c2d53bd780248d9a337b6570"
+    },
+    {
+      "path": "planning/increment-one-20261108/POWERFUL_FREEZE-v1.md",
+      "bytes": 3783,
+      "sha256": "b4896e9d89d738f935893ccf8f3fc42db0bb89e1f0236c88809b32e9120e5722"
+    },
+    {
+      "path": "planning/increment-one-20261108/RESIDUAL_LOCALIZATION-v2.md",
+      "bytes": 5564,
+      "sha256": "bbbe301209b69865b044ca31936dcd8d7f9ded7a1faaa73b3551d7439060f684"
+    },
+    {
+      "path": "planning/increment-one-20261108/OPPOSITE_DEFECT_OVERLAP-v1.md",
+      "bytes": 14096,
+      "sha256": "0ad6edc9c99c00bd04c6a28cef07d2861eec7dded5d4669ddd46339368923c98"
+    },
+    {
+      "path": "planning/increment-one-20261108/ACTIVE_DIVISOR_CROSS-v2.md",
+      "bytes": 9137,
+      "sha256": "9f05550a631e27df2c56c45b499c56982d4aecae2714e3b6a9907cb962ff23f1"
+    }
+  ],
+  "controls": [
+    {
+      "path": "outputs/checks/2026-11-08-increment-one/controls-v1.json",
+      "bytes": 542,
+      "sha256": "d8807c73ed0b94d4f293bef84f5a98a98d14295e2cadbb18f4f6aecc0ee1e294"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-increment-one/powerful-controls-v1.json",
+      "bytes": 405,
+      "sha256": "94c5958d391c54e8dedf055800d78e875b822bc0876c424c014e7b9a48d8e7d4"
+    }
+  ],
+  "harnesses": [
+    {
+      "path": "planning/increment-one-20261108/check_sharp_insertion_v1.py",
+      "bytes": 4912,
+      "sha256": "484daf4cbefe8a49377b3562c53f0407e3997929ff9c9e2a9ac33dae1e92e0f8"
+    },
+    {
+      "path": "planning/increment-one-20261108/check_powerful_freeze_v1.py",
+      "bytes": 3008,
+      "sha256": "e5125ea62d2f2e661b9a74dae009769698fd5a0f5f2fe5a613cc47786fa4ed29"
+    }
+  ],
+  "preserved_candidates": [
+    {
+      "path": "planning/increment-one-20261108/ACTIVE_DIVISOR_CROSS-v1.md",
+      "bytes": 8348,
+      "sha256": "78fcc8cc9f858fba416fa1a229b282b82f18d4122e07a131858b822c70ea5e27"
+    },
+    {
+      "path": "planning/increment-one-20261108/RESIDUAL_LOCALIZATION-v1.md",
+      "bytes": 3106,
+      "sha256": "56b975260ff12ce952a9ff2959e781bf42fe29dc937df739045e6d2bf0cab5cd"
+    }
+  ],
+  "review": {
+    "path": "outputs/checks/2026-11-08-increment-one/REVIEW-v1.json",
+    "bytes": 3368,
+    "sha256": "d399c15e0a76f8b90d7e8b74bd1fc7b7ccba1f1dd9d4656d53917ee052ce7fa6"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-increment-one/SOURCE_PINS-v1.json",
+    "bytes": 54382,
+    "sha256": "afd0cd589d181a3405846877582296edb92d5797f9917f7ce24003496095510e"
+  },
+  "new_results": {
+    "sharp_moment": "Pure RMS sqrt(L) through D^4/5, mixed D^1/40 sqrt(L) through D^5/8. Squarefree and fixed masks remain exact.",
+    "comparable_mixtures": "Original selected comparable cross with arbitrary increments 1..5: all-d 57/80 mixed and 13/16 pure. Pure Nd<=D^1/8 reaches 3/4.",
+    "localized_pure": "Nk_*>=D^1/56, active divisor predicates with E D^-1/8, one-sided cutoff content D^3/16 at B~K~R, or comparable B>=D^57/74 give target under stated masks.",
+    "opposite": "Comparable increment-one cross with opposite gcd >=D^1/4 pure or D^1/20 mixed reaches target across all d.",
+    "prime_divisor_scalar": "Selected fixed-row prime-d cutoff coefficients exactly absorb mu(d), so the outer sign cannot alone give a uniform power saving for this scalar."
+  },
+  "failed_step": "A pointwise signed Mertens replacement for the outer divisor factor does not apply uniformly to the actual cutoff product: the prime-d slice has the cancelling equality allocation sign. Pure small-residual all-d cross comparison still costs D^(13/16).",
+  "next": "Audit a coupled-cutoff route that keeps one of the two actual cutoff allocations with the insertion dual sum, then address the remaining pure divisor core.",
+  "open": "Whole prefix109/144, signed13/12, unsigned9/8, principal/short assembly, determinant, scope-specific zero location, pinned Lean and GRH.",
+  "prior_fixtures_replayed": false
+}

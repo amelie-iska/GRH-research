@@ -1,0 +1,48 @@
+{
+  "schema": "coherent-annular-tail-author-attempt-v1",
+  "utc": "2026-11-07T22:37:38.452590+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/coherent-annular-tail-20261107/COHERENT_ANNULAR_TAIL-v1.md",
+    "bytes": 13852,
+    "sha256": "1af09b3b37c7e4b2f8f9847d945106acf4ec0098e3003baaee8a5a749c358cd5"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-coherent-annular-tail/controls-v1.json",
+    "bytes": 709,
+    "sha256": "a86cd1fb350839538e568aa0300a437eeff3bd7d85426caab80938a4d7bf4fa7"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-coherent-annular-tail/SOURCE_PINS-v1.json",
+    "bytes": 30123,
+    "sha256": "8efd7d6ee7720f5d47d7f46f7eec83b7379d5a46e5893dfae7eb7a4c8bb23139"
+  },
+  "control_harness": {
+    "path": "planning/coherent-annular-tail-20261107/check_coherent_annular_tail_v1.py",
+    "bytes": 7557,
+    "sha256": "aeeab8b6780306e6449e2f067f49384a6e5ed2175bd3723786ce1320e185e523"
+  },
+  "new_step": "Exact annular inclusion-exclusion gives A_U=mu*(ordered >U factor count minus one). Each full intermediate divisor splits into one, two or four cells; freeze other cells and use the full signed largest-cell prefix before applying the physical norm. The only moving cutoff is the max of the one or two own thresholds; ties are assigned exactly. Full prime-power deletion and all row and column zeros remain.",
+  "unconditional_with_inherited_sieve": "Elementary sigma=1 recovers sufficient full intermediate-divisor tail cutoff D^(5/8) at critical H. The annular coefficient decomposition is exact regardless of the external source.",
+  "external_source_dependent_only": "Fixed-field Mertens from pinned strict 7/8 gives sufficient full-divisor cutoffs D^(5/11), D^(10/19), D^(4/7) for mu-mu, mixed gap and gap-gap. Full A-A tail at D^(3/5) costs D^(71/96+eps) with M2(W)^2.",
+  "failed_full_step": "The moving-cell Mertens prefix must include rough primes. It does not apply to the smooth-only K0 tail, and does not estimate d=1 or K0-J. No original high-gcd or whole exponent claim.",
+  "next": "Estimate the remaining small intermediate divisor and its actual annular/continuous coupling, or return to far-norm Gauss. Do not force smoothness in a full Mertens prefix.",
+  "scope": "Original unweighted two-pivot full signed intermediate divisor tail only; no new zero-free theorem, independent external certification, Lean or GRH result.",
+  "fresh_controls": {
+    "annulus_cases": 5,
+    "actual_annular_coefficient_checks": 138,
+    "actual_divisor_phase_tuples": 34287,
+    "allocated_paths": 195975,
+    "raw_zero_pair_visits": 18948,
+    "equal_norm_distinct_pair_visits": 7232,
+    "same_jump_threshold_paths": 55214,
+    "outside_window_negative_control_norm": 35929,
+    "half_open_max_jump_checks": 936,
+    "lower_jump_ties": 65,
+    "upper_jump_ties": 155,
+    "equal_threshold_checks": 156,
+    "scale_points": 1203
+  },
+  "independent_review": "Pending; prior subagent usage limit, no retry.",
+  "prior_numeric_or_release_audit_replay": false
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "coherent-j-tail-author-attempt-v1",
+  "utc": "2026-11-07T21:37:42.504471+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/coherent-j-tail-20261107/COHERENT_J_TAIL-v1.md",
+    "bytes": 14709,
+    "sha256": "5e0963c711c95b6c56c18ff4758c6f3da4ab33ce4d536570e7f63853614e3534"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-coherent-j-tail/controls-v1.json",
+    "bytes": 541,
+    "sha256": "3323d76e83fa4f1aad3129b116785efc5613b2f9b2ff57e6ca03e5beb6b6256e"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-coherent-j-tail/SOURCE_PINS-v1.json",
+    "bytes": 29130,
+    "sha256": "ba65b2440ac6369fd45dca12d7678c08d02bfe3cbca76063b0b7ec2c63edee52"
+  },
+  "control_harness": {
+    "path": "planning/coherent-j-tail-20261107/check_coherent_j_tail_v1.py",
+    "bytes": 5002,
+    "sha256": "7f4c22c2bf1f478788ec7206549a629c84ab5fa0d283c52fc7c45fb8f02cb731"
+  },
+  "new_step": "Expand the full deletion into four per-prime placements of each entire prime power. Apply half-open finite Abel, retaining closed prefixes at the two jumps, and separate each jump by strict norm ordering and Mellin ratio. Freeze row primes with actual valuations 1 or 2, then apply the physical unweighted sieve before the placement triangle.",
+  "unconditional_with_inherited_sieve": "At sigma=1 elementary Mertens size gives the original signed continuous nonunit smooth-divisor tail target size from F>=D^(1/8) in the critical window; this exponent has no H_b margin.",
+  "external_source_dependent_only": "Pinned strict 7/8 gives the fixed-field interior subpolynomial reciprocal and M_S(x)<<x^(7/8+eta). In the coherent tail this moves the sufficient cutoff to F>=D^(1/11); F>=D^(1/10) costs D^(179/240+eps) with M2(W)^2.",
+  "failed_full_step": "At Y=1 the 19/24 monomial remains even with the source input. The small-F and f=1 terms and the full annular K0 coefficient cannot be treated by this short formula. No bound on K0-J or new whole exponent.",
+  "next": "Estimate the small-F coherent continuous term together with the actual annular K0, or return to far-norm actual Gauss weights; do not apply the short identity on the annulus.",
+  "scope": "Only original unweighted two-pivot A6=1 continuous tail, no arbitrary row weights, no new zero-free theorem, no independent external certification and no signed whole/Lean/GRH result.",
+  "fresh_controls": {
+    "labelled_ideal_states": 228,
+    "placement_product_checks": 3265,
+    "deletion_coefficients_checked": 1140,
+    "prime_power_branches": 199,
+    "half_open_abel_checks": 1530,
+    "lower_jump_ties": 480,
+    "upper_jump_ties": 336,
+    "jump_at_atomic_norm_checks": 610,
+    "euler_exponent_checks": 121,
+    "scale_grid_checks": 605
+  },
+  "independent_review": "Pending; prior subagent usage limit, no retry.",
+  "prior_numeric_or_release_audit_replay": false
+}

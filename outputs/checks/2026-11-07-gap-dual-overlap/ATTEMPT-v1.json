@@ -1,0 +1,48 @@
+{
+  "schema": "gap-dual-overlap-author-attempt-v1",
+  "utc": "2026-11-07T19:29:46.828948+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/gap-dual-overlap-20261107/GAP_DUAL_OVERLAP-v1.md",
+    "bytes": 11851,
+    "sha256": "1029c0caf0ab299e2062d769f83cf8a23f951ad789bfc538c2197a76b1a0d04d"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-gap-dual-overlap/controls-v1.json",
+    "bytes": 721,
+    "sha256": "87ad04b939ee03fbc8ad79cb687bae8f21c9e7c059bd36bbfc4fc3d8b14165ed"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-gap-dual-overlap/SOURCE_PINS-v1.json",
+    "bytes": 25849,
+    "sha256": "d80d8dcd493ece32081e7ae4745ef1c2aeaca595c3a0ad3c00afd975554cbe51"
+  },
+  "control_harness": {
+    "path": "planning/gap-dual-overlap-20261107/check_gap_dual_overlap_v1.py",
+    "bytes": 6294,
+    "sha256": "cd4912af80f9dad6d519ec853fefda855e1577d3b6c1e90ef1c3c4b015084aaa"
+  },
+  "phase": "Direct quadratic Gauss duplication plus the literal Jacobi identity give b_q g_q(2)g_q(5) = mu(q) b_tilde_q g_q(2)g_q(3) for b_q=b_tilde_q vartheta(q) overline(G_act). CRT and the exact minus-one sign absorb the quadratic factors into Gamma(alpha_q alpha_q'). The positive cubic Gauss weight remains; the identified vartheta cancels. The raw growing quadratic and cubic twists remain.",
+  "joint_overlap": "g is the full good ideal gcd of alpha,beta. In beta/alpha_g the sixth root d is the arbitrary quotient-valuation ideal and can overlap g and the sixth-free residue a. Literal mask 1_(q,d)=1 survives. After log-Q separation and diagonal subtraction, freeze g,x,u_S,d and apply the pinned physical sieve only to a.",
+  "bounded_piece": "(Ng)^(5/6)(Nd)^4 >= D^(1/12) costs at most D^(39/40) for the auxiliary off-diagonal contribution with mass and subpowers; exact density scale comparison relative power -1/160. No separately selected signed original estimate.",
+  "failed_full_estimate": "In the principal-scale coprime squarefree section g=d=1 the large monomial stays D^(1+r/6), worse than the inherited D for the original squared column. Angle cancellation alone does not bound the growing quadratic twist.",
+  "next": "Study both-large conductor principal-scale sector with the now explicit positive cubic Gauss weight and actual growing quadratic twist, or bypass the auxiliary comparison in the original signed form.",
+  "scope": "Unit cofactor auxiliary off-diagonal sectors only; full unit/nonunit pairing, candidate 109/144, whole signed 13/12, global unsigned 9/8, determinant/zero-location, Lean and GRH unchanged.",
+  "fresh_controls": {
+    "labelled_split_primes": 16,
+    "exact_cyclotomic_identities": 80,
+    "independently_chosen_Jacobi_generators": 16,
+    "ordered_pair_phase_checks": 240,
+    "equal_norm_distinct_ordered_pairs": 16,
+    "max_pair_phase_error": 2.025966904339278e-15,
+    "valuation_pairs": 256,
+    "triple_overlap_valuation_pairs": 33,
+    "raw_literal_checks": 4096,
+    "raw_zeros": 645,
+    "raw_zeros_at_conductor_drop": 185,
+    "exact_scale_budget_checks": 57672,
+    "joint_cut_moderate_scale_cases": 6723
+  },
+  "independent_review": "Pending; prior subagent usage limit, no retry.",
+  "prior_numeric_or_release_audit_replay": false
+}

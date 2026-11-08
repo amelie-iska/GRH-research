@@ -1,0 +1,68 @@
+{
+  "schema": "principal-density-macro-author-attempt-v1",
+  "utc": "2026-11-07T13:29:48.779216+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/principal-macro-20261107/PRINCIPAL_DENSITY_MACRO_SPLIT-v1.md",
+    "bytes": 14276,
+    "sha256": "b1a6b0e5fe4cff4f5986d5e4296c5cc3029482ee166a1bb22aa31cc9a5a0fd1d"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-principal-macro/controls-v1.json",
+    "bytes": 980,
+    "sha256": "6f1225f9068a90e3e9ed83fa42202bc09810d2d9dfe85f0d200915dae9b40eff"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-principal-macro/SOURCE_PINS-v1.json",
+    "bytes": 19324,
+    "sha256": "38c65f9259717fb9b5e8c548b26da73865cdf1518bb61d2ac7080fc558db2a71"
+  },
+  "control_harness": {
+    "path": "planning/principal-macro-20261107/check_principal_macro_v1.py",
+    "bytes": 5817,
+    "sha256": "335fd65a2faf7a1bf9b3c0dc946997a17bd56b5309d38df85622321593ee7427"
+  },
+  "new_step": "Apply pending Q to any grouped short subset of scales in [D^(1/32),D^(3/10)] with arbitrary remaining grouped coefficients. One side saves enough in signed paired Cauchy. Without such a subset the small scales have product <D^(1/32), and there are 1 to 3 large scales. Coalesce the one-large long dyads.",
+  "density": "Open literal g(v) at B0=D^(1/64). For b'<=B0 retain actual shifted Gauss phase, t'=b't, masks and inverse-square-root factor. Finite smooth cost B0^(1/4). For b'>B0 use the coefficient mass with suppression B0^-2 and actual physical norm.",
+  "budget": "For D^(13/40)<=R<=D^(27/80), the intermediate group and one-large branches have squared norms at most D^(39/40)/E and D^(125/128)/E up to fixed profile and subpowers. One-side Cauchy and density cost D^(1/120) leave H D^(-13/3840). Disjoint outer E/J/A2 tails above D^(1/96) leave H D^(-1/480).",
+  "failed_step": "For both remaining columns with two large factors near sqrt(D), the RP^2 term of Q exceeds D. The inherited physical norm leaves the density loss. Fresh actual A_U coefficients have a surviving two-large piece, without an energy claim.",
+  "remaining": "Both columns have two or three large labels and E,J,A2<=D^(1/96) in the stated central band. Prior whole-prefix candidate 109/144 unchanged. Whole signed 13/12 and global unsigned 9/8, other bands/higher modes, short/principal assembly, determinant and zero-location, Lean and GRH remain open.",
+  "next": "Estimate the original signed principal-density pairing in the remaining 2/3-label by 2/3-label sectors, especially two groups of scale sqrt(D), while retaining the full original phases, fixed profile and raw zeros.",
+  "fresh_controls": {
+    "grouped_box_checks": {
+      "1": 90,
+      "middle": 3027,
+      "2": 252,
+      "3": 20
+    },
+    "long_dyad_coalescence_checks": 36,
+    "formal_density_transport_checks": 2560,
+    "formal_retained_raw_zeros": 15030,
+    "formal_large_divisor_terms": 2453,
+    "exact_rational_grid_points": 2376,
+    "actual_coefficients": [
+      {
+        "split_prime_ideal_norms": [
+          4394967301,
+          4394967307
+        ],
+        "column_norm": 19315737603229028407,
+        "A_U": 1,
+        "one_large": -1,
+        "two_large": 2
+      },
+      {
+        "split_prime_ideal_norms": [
+          4394967361,
+          4394967403
+        ],
+        "column_norm": 19315738288843933483,
+        "A_U": 1,
+        "one_large": -1,
+        "two_large": 2
+      }
+    ]
+  },
+  "independent_review": "Pending",
+  "prior_numeric_or_release_audit_replay": false
+}

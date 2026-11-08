@@ -1,0 +1,96 @@
+{
+  "schema": "equal-rational-sieve-attempt-v1",
+  "utc": "2026-11-08T12:59:56.871965+00:00",
+  "status": "INDEPENDENT_REVIEW_ACCEPTED_SCOPED_RESEARCH",
+  "main": {
+    "path": "planning/equal-rational-sieve-20261108/GROUPED_EQUAL_CROSS-v4.md",
+    "bytes": 10245,
+    "sha256": "9f1d6174db055a62765f55422f58cae507d6828ca75ba5371d7f4e6cf31a4491"
+  },
+  "auxiliary": {
+    "path": "planning/equal-rational-sieve-20261108/EQUAL_RATIONAL_SIEVE-v4.md",
+    "bytes": 21065,
+    "sha256": "c47b821a5431823959b020ee18954148e79c3eaf5fe7e3cea4d00c1ecda25e7f"
+  },
+  "reviews": {
+    "path": "outputs/checks/2026-11-08-equal-rational-sieve/REVIEW-v1.json",
+    "bytes": 3174,
+    "sha256": "745a9173fe8027891ee18b13da82ff7e5b6322c125e1a0bac8e6962881f905e1"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-equal-rational-sieve/SOURCE_PINS-v1.json",
+    "bytes": 44182,
+    "sha256": "30942bd718fdef02ddbcd980347c5728132af47a734e961260dafd7572ea4b8e"
+  },
+  "controls": [
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/controls-v1.json",
+      "bytes": 748,
+      "sha256": "2dd7e5b43c25c045bbda88ef7fdfce11dc0f00a83e0ca91bf8356f9347db2fc3"
+    },
+    {
+      "path": "outputs/checks/2026-11-08-equal-rational-sieve/controls-repeated-v1.json",
+      "bytes": 618,
+      "sha256": "5d8dda84451d65900bec8cab62812e23249a0d639e46fa420d0b6b3963ad0dcb"
+    }
+  ],
+  "harnesses": [
+    {
+      "path": "planning/equal-rational-sieve-20261108/check_equal_rational_v1.py",
+      "bytes": 8662,
+      "sha256": "f188c06a175f5372f50815c4983fbadca1247c9fc6c8a722e89df348d1a0ed00"
+    },
+    {
+      "path": "planning/equal-rational-sieve-20261108/check_repeated_frequency_v1.py",
+      "bytes": 6852,
+      "sha256": "411cbd064431749ad47eddaf75522b82a77c5ff8523871879f9e30ec0fb96762"
+    }
+  ],
+  "preserved_drafts": [
+    {
+      "path": "planning/equal-rational-sieve-20261108/EQUAL_RATIONAL_SIEVE-v1.md",
+      "bytes": 13642,
+      "sha256": "71a4ae70573ab9536299e865be755efbb67f480727e8fb5d944dbb53c59acc94"
+    },
+    {
+      "path": "planning/equal-rational-sieve-20261108/EQUAL_RATIONAL_SIEVE-v2.md",
+      "bytes": 21042,
+      "sha256": "6ec99f4f9de81207509328d43f706b4f67be7e96cb378e79a4d09a150e3750ad"
+    },
+    {
+      "path": "planning/equal-rational-sieve-20261108/EQUAL_RATIONAL_SIEVE-v3.md",
+      "bytes": 21065,
+      "sha256": "d8cb2265b92a737f612063231e057434d4d08508dcf37031a548875dab0575b1"
+    },
+    {
+      "path": "planning/equal-rational-sieve-20261108/GROUPED_EQUAL_CROSS-v1.md",
+      "bytes": 8838,
+      "sha256": "52edbd1baebf4a7600e435593ec5b8ecef397dd3c139fb5bf0f2bb21c06f8fca"
+    },
+    {
+      "path": "planning/equal-rational-sieve-20261108/GROUPED_EQUAL_CROSS-v2.md",
+      "bytes": 10132,
+      "sha256": "91b70fade60a57fc3fa525f1c78a03d0b2929dbda11cbf96fb5bd3dad1385177"
+    },
+    {
+      "path": "planning/equal-rational-sieve-20261108/GROUPED_EQUAL_CROSS-v3.md",
+      "bytes": 10244,
+      "sha256": "1666389f85678ff9e8a3ba7491ba3e396fc5cef3d25db082a8e20d07f1acacb4"
+    }
+  ],
+  "new_results": {
+    "mixed_whole_equal_norm_middle_cross": "35/48, includes d=1",
+    "pure_equal_norm_middle_cross_divisor_tail": "3/4 for Nd>=D^(11/32)",
+    "oriented_rational_sixth_and_cubic_gram": "(L+B^5/3)(LB)^eps",
+    "pure_selected_divisor_optimum": "83/120 for Nt asymp D^(9/20)",
+    "far_numerator_over_denominator": "Mixed threshold D^(5/6), pure threshold D^(19/24), cross 3/4"
+  },
+  "failed_routes": {
+    "separate_r_and_e0_norm": "Optimized first term leaves E0^-1/2 in row norm, whose sum is not logarithmic. Group h=r e0 before the norm.",
+    "pure_unit_divisor_grouped_cross": "41/48 with the full complement comparison.",
+    "pure_unselected_divisor_Gram_trial": "B=D^(7/10) gives 31/40.",
+    "base_ordinary_trial_correction": "The mixed first-pivot/full-norm comparison at B=D^(3/10) has cross 23/30, not the v1 display 31/40."
+  },
+  "open": "Full pure small-divisor equal cross and pure/mixed off-equal squared forms and interactions. Whole 109/144, 13/12, 9/8 and determinant, zero-location, Lean, GRH remain open.",
+  "prior_fixtures_replayed": false
+}

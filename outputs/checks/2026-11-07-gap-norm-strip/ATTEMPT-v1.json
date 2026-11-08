@@ -1,0 +1,46 @@
+{
+  "schema": "gap-norm-strip-author-attempt-v1",
+  "utc": "2026-11-07T20:36:15.323724+00:00",
+  "status": "AUTHOR_CHECKED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+  "draft": {
+    "path": "planning/gap-norm-strip-20261107/GAP_NORM_STRIP_AND_PIT-v1.md",
+    "bytes": 10608,
+    "sha256": "0dbe1a8bdba4f7011601814869b4aaa07bd982e42da24624136bb03c455db760"
+  },
+  "controls": {
+    "path": "outputs/checks/2026-11-07-gap-norm-strip/controls-v1.json",
+    "bytes": 704,
+    "sha256": "39a2cb47637ee02e6c795264485bdb57ee6e1d8afc2ee85614495e3646da883e"
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-07-gap-norm-strip/SOURCE_PINS-v1.json",
+    "bytes": 28168,
+    "sha256": "b663b5d7f6481854b219b7edd527f6f9dc6f71d888ab98da520e5651cfef8bee"
+  },
+  "control_harness": {
+    "path": "planning/gap-norm-strip-20261107/check_gap_norm_strip_v1.py",
+    "bytes": 4984,
+    "sha256": "742f8fdc1fdf905e2fcd362b3a03d812ff0634f8c34696914355752b45ed92bc"
+  },
+  "unconditional_within_prior_auxiliary_comparison": "The full-frequency close-norm strip is O(PR(1+Y)||b||^2). An exact inclusive cyclic Fourier mask has logarithmic mass, preserving all prior exclusion estimates. At Y=D^(7/48) the remaining close strip costs D^(59/60) up to subpowers; equal norm distinct ideal labels stay off diagonal.",
+  "external_source_dependent_only": "The pinned strict 7/8 zero-free statement for zeta and fixed L(s,chi_-3) gives E_S(x)<<x^(7/8+eps) by fixed-function Perron and exact Eisenstein prime counts. The endpoint and d2 are separately controlled. Original unweighted A6=1 two-pivot short prime discrepancy <=D^(35/48+eps) at H=D^(3/4) with M1(W)^2; target-sized for D^(5/8)<=H<=D^(3/4).",
+  "failed_step": "The full-frequency PR bound cannot be used directly for truncated dual sectors; Fourier-compatible subtraction supplies the valid strip comparison. Degree counting away from the strip is insufficient; the conditional source deduction does not estimate the coherent K0-J main.",
+  "next": "Estimate the far-norm, main-frequency auxiliary sector with actual cubic Gauss and both growing twists, or return to the signed form before Cauchy; the coherent main remains open even with the source-dependent discrepancy budget.",
+  "scope": "No new zero-free theorem, no independent certification of the external preprint, and no full signed, determinant/zero-location, Lean or GRH result. Candidate 109/144 and whole signed 13/12/unsigned 9/8 remain unchanged.",
+  "fresh_controls": {
+    "ideal_representatives_through_4096": 2473,
+    "prime_ideals_through_4096": 565,
+    "inclusive_prime_count_endpoints": 8193,
+    "split_prime_jumps": 277,
+    "inert_prime_jumps": 10,
+    "prime_labels_for_strip": 26,
+    "equal_norm_distinct_ordered_pairs": 26,
+    "exact_indicator_controls": 315,
+    "numerical_pair_reassemblies": 9,
+    "max_pair_error": 2.2638484234006487e-16,
+    "exact_power_checks": 2406,
+    "max_degree_observed": 25
+  },
+  "independent_review": "Pending; prior subagent usage limit, no retry.",
+  "prior_numeric_or_release_audit_replay": false
+}
