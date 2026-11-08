@@ -1,0 +1,68 @@
+% Reviewed inputs: planning/cutoff-appendix-20261108/WIDE_CORRECTION-v1.md
+% and WIDE_CORRECTION_ADDENDUM-v1.md; exact source pins are in the release receipt.
+\section{Wide cutoff corrections and full-frequency compensation}
+\label{pca:wide-core}
+
+Keep the pairing \eqref{pca:cross}, the exact ordered cutoff
+identity \eqref{pca:ordered}, and all the original allocation,
+primitive-conductor and raw-zero conditions. At one live
+allocation put \(h=re_0\), \(E_1=Ne_1\), and write the
+actual cutoff ideal as \(\zeta=e_0z_0=\zeta_1\zeta_2\).
+Thus \(T_i=U/N\zeta_i\ge1\), \(E=Nd\), and
+\[
+ \Omega=\frac{E}{T_1T_2}=\frac{E N\zeta}{U^2}
+                 <\frac{14}{E_1Nh}.
+\]
+Let \(\mathcal P\) consist of the good prime ideals of norms
+seven or thirteen, with the original \(S\)-deletion. These
+are at most four separate ideal labels. Put
+\(s(E)=\mathbf1_{E\le T_1}+\mathbf1_{E\le T_2}-1\).
+The exact wide correction is
+\begin{equation}\label{pca:wide-factor}
+ \begin{aligned}
+ F_d(T_1,T_2)&=\mu(d)\bigl(s(E)+C_d(T_1,T_2)\bigr),\\
+ C_d(T_1,T_2)&=
+ \sum_{\substack{mn=d\\Nm>T_1,\;Nn>T_2}}
+       \left(1-\sum_{\substack{p\in\mathcal P\\p\mid m}}
+                  \mathbf1_{Nm>T_1Np}\right).
+ \end{aligned}
+\end{equation}
+The two factors are coprime because \(d\) is squarefree.
+The strict tests retain the original cutoff endpoints.
+For \(E_1Nh\ge2\) only the unweighted factorization count
+remains. For \(E_1Nh\ge14\) the correction vanishes.
+
+At fixed row and fixed primal and dual labels, prescribe the
+exact intersection \(\delta\) of \(d\) with the full forbidden
+prime union, including \(\mathcal P\). In a divisor dyad
+\(Y\le Nd<2Y\) put \(Y'=Y/N\delta\). For fixed \(\kappa>0\)
+and \(Y'\ge D^\kappa\), the fixed-label scalar after taking
+out its fixed coefficient and row phase has bound
+\begin{equation}\label{pca:wide-scalar}
+ \ll_\kappa \mathcal M_{24}(W)^2
+ \frac{4^{\omega(\delta)}\log^C(2D)}{Y\,N\delta}\,
+               \exp\!\bigl(-c_\kappa\sqrt{\log(2Y')}\bigr).
+\end{equation}
+The estimate includes both wide corrections, with the
+original full prime deletions. It gives subpower cancellation
+before a coherent average over the rows and other labels.
+
+For each \(p\in\mathcal P\), replacing the partner coefficient
+by its signed \(p\)-subtraction in \eqref{pca:wide-factor}
+gives a zero primal amplitude \(V_d^{[p]}\).
+The exact full-frequency complement is
+\(V_d^{[p]}-\mathcal E_d^{[p]}=-\mathcal E_d^{[p]}\), where
+\(\mathcal E_d^{[p]}\) is its middle equality projection.
+The original elementary equality norm gives a contribution
+of order at most \(R(DH)^\epsilon\mathcal M_{24}(W)^2\)
+after the full divisor sum. This comparison requires all
+partner modes, including the re-expressed direct component.
+
+In the pure comparable sector \(A_1\asymp R\asymp D^{3/4}\),
+\(A_2\asymp1\), \(B,K\asymp R\), the equality-side
+wide correction reaches \(D^{3/4+\epsilon}\) on
+\(Nd\le D^{13/56}\) with the inherited profile cost. Its
+partner can carry the original coefficient, the step part,
+or the correction part. Thus this prefix includes their
+double correction. The remaining coherent wide sum and the
+other signed components remain open.
