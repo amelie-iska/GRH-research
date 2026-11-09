@@ -1,0 +1,214 @@
+{
+  "passed": true,
+  "utc": "2026-11-09T00:06:29.135217+00:00",
+  "scope": "Research-only scoped pure unit-pair advances outside the verified published book.",
+  "results": {
+    "rational_content": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/PRIMAL_RATIONAL_CONTENT-v1.md",
+        "bytes": 8194,
+        "sha256": "1941be5c403ae542308c9e3ec18efcec5816bf6104969c9f64b76e00f3691615"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/primal-content-controls-v2.json",
+          "bytes": 1412,
+          "sha256": "325bb08b1b9bfe56906657a808b8d64d308af7bf49e8e5bcbaf88ab14d17f76c"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-a/root-primal-content-review-v1.json",
+          "bytes": 3113,
+          "sha256": "4fc43cfce810789b84b0a223c09eefcfbaa00bc04be420ebd66ae149dd838d2d"
+        }
+      ]
+    },
+    "equality_overlap": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/lane-a/EQUALITY_LABEL_OVERLAP-v1.md",
+        "bytes": 8292,
+        "sha256": "9400556108d8fc43e27c7fa44ab34deb4fdca1bf61890e3dc4452c44159b8040"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-a/equality-overlap-controls-v1.json",
+          "bytes": 952,
+          "sha256": "a87b62d15c17d82639e00033380796cc02d9f58e589d5033d6ccbbc5b11cdbc4"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-b/transfer-overlap-independent-review-v1.json",
+          "bytes": 2477,
+          "sha256": "53212393b682214e850df5a871b2418887fa23b53a28aa1dba87e8efddd7c927"
+        }
+      ]
+    },
+    "higher_equality": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/lane-c/HIGHER_EQUALITY_MOMENTS-v1.md",
+        "bytes": 12602,
+        "sha256": "6796c5bf4c0608530efdfef666da6fd5889dfe76c704163d51262490b9eaa5d1"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-c/moments-check-v2.json",
+          "bytes": 460,
+          "sha256": "a397a40ad8e77f43597599298b05ad50f64e76b7176690205d0c372ba69a0310"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-a/higher-equality-independent-review-v1.json",
+          "bytes": 3564,
+          "sha256": "0ddb7c9f93fb0405d03e71418561e6cbabea50fec5ace97fe09ce96b571d3fb9"
+        }
+      ]
+    },
+    "rational_content_synthesis": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/lane-c/CONTENT_MOMENT_SYNTHESIS-v1.md",
+        "bytes": 5317,
+        "sha256": "cf8902bbf3d8ed5dc9bbb5eb1d15095b952d3e78b85fa5b0feb305545d127c41"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-c/synthesis-check-v1.json",
+          "bytes": 490,
+          "sha256": "2ecffbc58c8e375bd30c2504a63f5d03d36af540e5889e13e4d4159baeb35fd4"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-a/synthesis-limit-independent-review-v1.json",
+          "bytes": 4237,
+          "sha256": "175743f81a9f3f285240ff8286700776497c24247b82d1b571c0384cdffbba52"
+        }
+      ]
+    },
+    "separate_moment_limit": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/lane-c/SEPARATE_MOMENT_LIMIT-v1.md",
+        "bytes": 3712,
+        "sha256": "7bab4b26c09347ef16490a27e59a9591238e9135299b4cc6aafb967a82e7458c"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-c/separate-limit-check-v1.json",
+          "bytes": 350,
+          "sha256": "2ae6de567c540f8b2fde1d6d991bfb7f7f6f47c821f02f6983a3861d318410ac"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-a/synthesis-limit-independent-review-v1.json",
+          "bytes": 4237,
+          "sha256": "175743f81a9f3f285240ff8286700776497c24247b82d1b571c0384cdffbba52"
+        }
+      ]
+    },
+    "selected_low": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/lane-b/SELECTED_LOW_FREQUENCIES-v2.md",
+        "bytes": 12112,
+        "sha256": "f4925a9e4189a871774e91bb6816eb96368c851ee0c68446baea919aa364cafd"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-b/selected-low-controls-v1.json",
+          "bytes": 859,
+          "sha256": "979b7947a525bbb6a5dd8b100a2f95a9aea5e7bc8737148edeee41a51b986eed"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-a/selected-low-independent-review-v1.json",
+          "bytes": 2704,
+          "sha256": "620c8a25e95e7e0c6230e8f959287f2f68c9f664695d4fe60865a789380a3324"
+        }
+      ]
+    },
+    "coupled_projectors": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/lane-b/COUPLED_COPRIMALITY-v1.md",
+        "bytes": 6007,
+        "sha256": "2a6b2ef3bc4bbbdd8f025a9f7d2d34d03b8924f2b9d44419d0555eaf3346677e"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-b/coupled-coprimality-controls-v1.json",
+          "bytes": 886,
+          "sha256": "9023c6f2a9c3823a5c603d8e6a76b669ff14b1e2b80b84a0374612e0c30f1427"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-b/transfer-overlap-independent-review-v1.json",
+          "bytes": 2477,
+          "sha256": "53212393b682214e850df5a871b2418887fa23b53a28aa1dba87e8efddd7c927"
+        }
+      ]
+    },
+    "selected_moment": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/SELECTED_MOMENT_SYNTHESIS-v1.md",
+        "bytes": 6327,
+        "sha256": "0a5e583934bc234b2dbf0d70a0688aaccdf74d913207855bcae3037ed66d8051"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/selected-synthesis-controls-v1.json",
+          "bytes": 608,
+          "sha256": "bdd57fc5eac4fdc430a058b795b8a48f89588da153ab3d19bc8c2a686206d25f"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-b/selected-moment-independent-review-v1.json",
+          "bytes": 1616,
+          "sha256": "f0caefb11c637286eba08fcce7a80287a3e396646b4b66ced4df1dc514460a53"
+        }
+      ]
+    },
+    "selected_coupled_transfer": {
+      "proof": {
+        "path": "planning/unit-pair-core-20261108/SELECTED_COUPLED_TRANSFER-v1.md",
+        "bytes": 2796,
+        "sha256": "541939c77a202fb816c33ca4c18196691e19b80e4b72e3b07ec8bdec68a0495c"
+      },
+      "controls": [],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-08-unit-pair-core/lane-b/transfer-overlap-independent-review-v1.json",
+          "bytes": 2477,
+          "sha256": "53212393b682214e850df5a871b2418887fa23b53a28aa1dba87e8efddd7c927"
+        }
+      ]
+    }
+  },
+  "source_pins": {
+    "path": "outputs/checks/2026-11-08-unit-pair-core/SOURCE_PINS-v1.json",
+    "bytes": 77679,
+    "sha256": "4cc0b8fde85e9a1cade13f4d2299985df99e381e58b0c5fa89d7dbc93733d486"
+  },
+  "source_pin_instances": 393,
+  "all_divisor_full_frequency_power": "37/48",
+  "target_sectors": {
+    "ordered_divisor_dyads": "e_j=1/4-3/(4j), j fixed at least 6, L_s=3/8, L_l=3/8+3/(4j)",
+    "rational_content": "threshold D^(1/24) on either cutoff factor",
+    "longer_equality_label_overlap": "D^(1/16) all d, D^(1/32) for Nd at least of order D^(1/8)",
+    "selected_frequency": "9/20 all d, 1/2 for Nd at least of order D^(1/8), 45/88 at Nd at least of order D^(1/4)",
+    "selected_coupled": "same thresholds with both exact original ideal coprimalities, empty middle equality"
+  },
+  "separate_moment_upper_budget_limit": "1/48 excess at the limiting constant nonunit divisor balanced edge",
+  "still_open": "Wide low-content small-overlap unbalanced/edge cores, high and other coupled selected modes, equality-wide beyond prefix, whole signed and determinant/zero-location.",
+  "published_release": {
+    "path": "outputs/checks/2026-11-08-cutoff-release/PUBLIC_RELEASE_VERIFIED.json",
+    "bytes": 3840,
+    "sha256": "c1a146daabe2c169781253ae5decafd8ce5e85866c47b3864839db4a42237ab5"
+  },
+  "publication_changed": false,
+  "new_Lean_declarations": 0,
+  "both_completion_gates_false": true
+}

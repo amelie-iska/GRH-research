@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "utc": "2026-11-09T02:06:36.999140+00:00",
+  "scope": "Five independently reviewed new sectors. The staged book integrates the previous research checkpoint; the current five notes are separate.",
+  "results": {
+    "cross_conjugate": {
+      "proof": {
+        "path": "planning/mid-divisor-20261109/lane-c/CROSS_CONJUGATE_CUTOFF-v1.md",
+        "sha256": "68ec0ada633f984cb5cfe665436e4abcef00896e255e187bbd995b28b5d57ab4",
+        "bytes": 12583
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-c/cross-conjugate-check-v1.json",
+          "sha256": "e9d82be39a36557c3b4d962bc84f60e514b4c36b41fa2a66c61976f9e2d4b814",
+          "bytes": 797
+        },
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-c/cross-conjugate-combined-projector-v1.json",
+          "sha256": "dcf148a0285fd25adb41f03fa5f2ce1bbe392187c4657660201d775621b09099",
+          "bytes": 1198
+        }
+      ],
+      "reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-a/cross-conjugate-independent-review-v1.json",
+          "sha256": "86ab0ac2fe704d1c38dbf4d479d5b772918d42fbc794fd45485399c00b9933f5",
+          "bytes": 4078
+        }
+      ]
+    },
+    "smooth_radial": {
+      "proof": {
+        "path": "planning/mid-divisor-20261109/lane-b/SMOOTH_RADIAL_PARTNER-v1.md",
+        "sha256": "7e71ef83c62acd3f7fdbc4906e69ee88e9afa300ba2015012271359cb2555145",
+        "bytes": 12386
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-b/smooth-radial-partner-controls-v1.json",
+          "sha256": "5e662af2dc9379a87cdc4c794f522818dcc1eea03f830c2c7e403256310d20b5",
+          "bytes": 1860
+        }
+      ],
+      "reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-c/smooth-radial-partner-review-v1.json",
+          "sha256": "73ade9772bd476f8e293e9f879e948adbee3970704fdc160e1ba893e10441020",
+          "bytes": 2770
+        }
+      ]
+    },
+    "signed_g": {
+      "proof": {
+        "path": "planning/mid-divisor-20261109/lane-a/EQUALITY_WIDE_SIGNED_G-v1.md",
+        "sha256": "416e80eed89d3e0ff983e6f684a0743023b8df27fd96654bd2d2c24d96341ac6",
+        "bytes": 9846
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-a/signed-g-controls-v1.json",
+          "sha256": "0bb00a7fe510c12405ebff32dc998008146ba64be4fa5c1579abcac5e78ef3ec",
+          "bytes": 820
+        }
+      ],
+      "reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-b/equality-wide-signed-g-independent-review-v1.json",
+          "sha256": "0b4b21e168cc92d77a7ca4f51d565c7efa333e0e8d50d0272a3303c99dbcbb52",
+          "bytes": 2642
+        }
+      ]
+    },
+    "equality_thin_product": {
+      "proof": {
+        "path": "planning/mid-divisor-20261109/lane-a/EQUALITY_WIDE_THIN_PRODUCT-v1.md",
+        "sha256": "054a520da3915994183e4a810406cd6694755fd8f71284f7c3481269f0693288",
+        "bytes": 4590
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-a/equality-thin-product-controls-v1.json",
+          "sha256": "c78931736242165f13bda429e8bbe62e0319c06a1fb406f17b485aceb3063bd1",
+          "bytes": 808
+        }
+      ],
+      "reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/equality-thin-independent-review-v1.json",
+          "sha256": "00adfaa3c16b76c7f60aaa3aea4a76416eb0be0df9509de4403cc8d057271f78",
+          "bytes": 1029
+        }
+      ]
+    },
+    "smooth_good_sixth_free": {
+      "proof": {
+        "path": "planning/mid-divisor-20261109/lane-b/SMOOTH_GOOD_SIXTH_FREE-v1.md",
+        "bytes": 6314,
+        "sha256": "bb9940b105af9a9c49d56d736f7a0ad7525304853337b8e742f8d3f4b2301d7d"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-b/smooth-good-sixth-free-controls-v1.json",
+          "bytes": 989,
+          "sha256": "cf4f917dbe160a9f1dfbd9aa2526908b269ff2575ce81728cf3168faaa69aa80"
+        }
+      ],
+      "reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-mid-divisor/lane-c/smooth-good-sixth-free-review-v1.json",
+          "bytes": 2229,
+          "sha256": "83e2acfe76f368a9dfb4dd4bddd1d3d89d092e694eb5195f87736fd464ae5978"
+        }
+      ]
+    }
+  },
+  "source_pin_instances": 491,
+  "source_pins": {
+    "path": "outputs/checks/2026-11-09-mid-divisor/SOURCE_PINS-v2.json",
+    "bytes": 98177,
+    "sha256": "0294b260b358eaaf804aefb22246f7e3f155339d68bc4d6b3e5600ef2d2f765e"
+  },
+  "integration": {
+    "path": "outputs/checks/2026-11-09-mid-divisor/INTEGRATION_ACCEPTED-v1.json",
+    "sha256": "dc96fb88c4327f6888529eab0e8f29a8b264b138072ae3fd0447b6909f4293c7",
+    "bytes": 6506
+  },
+  "prior_public_release": {
+    "path": "outputs/checks/2026-11-08-cutoff-release/PUBLIC_RELEASE_VERIFIED.json",
+    "sha256": "c1a146daabe2c169781253ae5decafd8ce5e85866c47b3864839db4a42237ab5",
+    "bytes": 3840
+  },
+  "whole_signed_power": "109/144",
+  "general_signed_power": "13/12",
+  "unsigned_power": "9/8",
+  "still_open": "Low overlap unbalanced middle divisors, sharp main-frequency selectors, small-conjugate-support equality-wide outside the thin strip, whole signed and determinant/zero-location bridges.",
+  "project_complete": false,
+  "research_complete": false,
+  "new_Lean_declarations": 0,
+  "extends": {
+    "path": "outputs/checks/2026-11-09-mid-divisor/RESEARCH_ACCEPTED-v1.json",
+    "bytes": 4633,
+    "sha256": "59febcceab9afaf566a149d5219865620e429fff569125ef0a48ba4f4f633c9b"
+  }
+}

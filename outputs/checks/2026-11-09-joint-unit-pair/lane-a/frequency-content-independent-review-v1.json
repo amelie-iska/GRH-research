@@ -1,0 +1,20 @@
+{
+  "status": "accepted",
+  "scope": "Independent adversarial review of selected partner frequency rational content and large fixed factors. Existing author controls read and hash-bound, not rerun.",
+  "sources": {
+    "planning/joint-unit-pair-20261109/FREQUENCY_RATIONAL_CONTENT-v2.md": "e22b7235595e07ecc71d24a0f71242193b4d779559f8f33c70df8a53361c162a",
+    "outputs/checks/2026-11-09-joint-unit-pair/check_frequency_content_v1.py": "0195809f009c2f7302d599526ffb70f11a1d8465d115be57d34518cbefa7a66f",
+    "outputs/checks/2026-11-09-joint-unit-pair/frequency-content-controls-v1.json": "38cd8a37c4bd20bd54dee5aecffea6cd88c6eb7fd4a7b18794f82c862ffbb1dd"
+  },
+  "findings": [
+    "The rational content is the maximal rational factor with no prime below S. The ideal count at each c has length O(T/c^2), and a subunit upper bound below one is empty. The total actual eligible support is O(T/B). Grouping the actual j-th powers gives the squared mass O((DH)^eps (T/B)^j) by ordered multiplicities and a divisor bound, without assuming the residual support sparse on each sixth-power fibre.",
+    "At fixed S-part and sixth-power part, the exact raw multiplier is the conjugate character of that whole fixed factor. No disjointness of q and its sixth-free residual is imposed. At each Q dyad the two norm comparisons before the j-th root are respectively T^(j/2) Q^(1/2) B^(-j/2) and T^(j/2)Q^-2, with the physical sieve factor evaluated at the shortened max(1,T^j/Q^6).",
+    "The crossover is x=b/5. Delta is convex and nondecreasing, so its composition with j(t-6x)_+ is convex. On the first affine branch the maximum is at x=0 or x=b/5; beyond the crossover the generic branch and sieve term both decrease. This proves the two sparse moment endpoints with all bounded scales.",
+    "The three divisor lines follow from the original normalized pairing. For e <= 1/8 the exact omitted term is -e/6. For e in [1/8,1/4] the fixed j=12 cutoff and equality expression is convex and has endpoint value -9/32 including the -3/8 Poisson scale. For e >= 1/4 the longer-second and shorter-fourth cutoff factor gives -11/32 with equality decay discarded.",
+    "At t0=9/20+3b/5 with b<=9/28 the shortened Delta drop pays the b/10 branch difference. If it crosses below the diagonal threshold, the unshortened gain is at least Delta(t0)/2 and exceeds b/10 by 1/80. All four stated rational threshold pairs check. At t=3/4,b=3/8 the first line indeed leaves 1/16.",
+    "Actual q(J) is divisible by the product of input q factors by floor superadditivity, while S-parts multiply exactly. The q tail of the square-root mass is Q0^(-2j), and the fixed S-Euler product gives the S0^(-j/2+j eps) bound. The residual sieve keeps shortened length, and the exact q and S factors keep all phases and zeros. At T=R the sixth-part exponents are -1/8,-3/32, giving the three stated budgets. The S-part threshold reduces the exponents to the previous t=9/20 budgets.",
+    "Above T=R, Delta is Lipschitz with constant one, so the exponent of the unweighted frequency comparison grows by at most log_D(T/R), while the original radial profile retains fourth power decay. This absorbs the polynomial divisor subpowers with small internal epsilon. No finite-frequency truncation is silently substituted.",
+    "The extra selector depends only on the actual frequency and fixed original labels. The live 14Li caps, true primitive conductor, re-expressed direct term and selected original middle equality subtraction are preserved. The latter only uses divisor-bounded coefficients and therefore retains the separate R/E budget. No full-frequency primal collapse is applied to selected modes."
+  ],
+  "limitation": "Only the actual stated selected frequency subsets are estimated. Main-scale small rational, small sixth-power and small S-parts and coupled defect selectors remain open."
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "status": "accepted",
+  "prior_stage_review_sha256": "19fa1e1c7dc38a26308a8223a4296f499320b9f3a9a39dae6d7bceea165dbcc3",
+  "stage_v5_source_sha256": "c60dbf1646eb9e5a3d2bf9256e6819ae8e9724cd88410e69c3bdf0ba1991ebb0",
+  "fragments": {
+    "joint-cutoff-core.tex": "38359448b8065b81b3d9cfa9464bd3a63bd0586972ff5f3bb04a9e4a4b74c2b1",
+    "joint-cutoff-details.tex": "8d13a2b7698574fb6598e40136ce8e387e425c74aadd23a56f5b4bafd184a155"
+  },
+  "checks": [
+    "The only core change states the actual selector's modulus-at-most-one hypothesis. This makes the core hypothesis match the accepted source.",
+    "The narrow details changes unify the equality dyad notation and supply the correct normalized paired mass: the single outer D normalization cancels the equality D; converting normalized counting norms gives R against the two primitive Q_u^{-1/2} factors.",
+    "The stage-v5 source receipt has the same 545 keys as v4. The only changed values are the two fragment hashes and their four book/paper input copies. The changed files were read and rehashed, and both staged copies match the corresponding fragments-v3 source. All other receipt keys and input values match the independently checked v4 source plan."
+  ],
+  "scope": "Independent narrow source diff and manifest verification. This addendum does not approve the build output, browser release or promotion."
+}

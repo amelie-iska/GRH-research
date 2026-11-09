@@ -1,0 +1,439 @@
+% Detailed derivation from the reviewed unit-pair and equality-wide records.
+\section{Proofs of the joint cutoff estimates}
+\label{pca:joint-details}
+
+Write \([F]_p=R^{-1/p}\|F\|_{\ell^p}\) for counting norms on the
+actual rows and \([F]_\infty=\|F\|_\infty\). Use the same convention
+after fixing the second pivot, since \(A\asymp R\) and there are
+only boundedly many second pivots. The physical sieve factors are
+\[
+ \begin{aligned}
+ \Phi_6(A,B)&=A+B+A^{5/6}B^{1/3}+A^{1/3}B^{5/6},\\
+ \Phi_3(A,B)&=A+B+2(AB)^{2/3},\\
+ \Delta_6(x)&=\max(0,x-3/4,x/3-1/8,5x/6-1/2),\\
+ \Delta_3(x)&=\max(0,x-3/4,2x/3-1/4).
+ \end{aligned}
+\]
+The last two functions record the power of the corresponding
+sieve divided by \(A\) at \(B=D^x\). We display bounds up to
+\((DH)^\epsilon\) and the appropriate \(W\) seminorms.
+The dyads, divisor multiplicities and harmonic norm sums have
+subpower cost. Shortened lengths are replaced by one only in
+the sieve factor, with a bounded nonempty subunit counted directly.
+
+\subsection{Exact cutoff arrays and the equality moment}
+\label{pca:joint-arrays}
+
+For Theorem~\ref{pca:joint-full}, fix the ordered \(d=mn\).
+On the support \(N\zeta_i>L_i\), the primal unused good
+squarefree ideal \(c\) has \(Nc<2D/(EN\zeta)<7\). Thus the
+partner primal unit part is the sum with \(c=1\). Its coefficient
+is \(\mu(d)\mathbf1_{(d,u)=1}\) times the product of the two
+Möbius and raw factors at \(\zeta_1,\zeta_2\), with the common
+weight \(W(EN\zeta_1N\zeta_2/D)\).
+It keeps \((d,\zeta)=1\), both original upper bounds \(N\zeta_i\le U\),
+and \((\zeta_1,\zeta_2)=1\). Each nonzero summand has
+\(N\zeta_i<7L_i\). Expand the common-prime test using
+\(\sum_{w\mid(\zeta_1,\zeta_2)}\mu(w)\), with \(w\) good
+squarefree and coprime to \(d\), and set \(\zeta_i=w b_i\).
+The residual \(b_i\) avoid \(w,d\). Keep \(\mu(w)\psi_u(w)^2\)
+and the row deletion. Logarithmic Fourier separation of \(W\)
+gives two arrays \(B_s,B_l\) with lengths \(M_i=L_i/Nw\),
+where \(s,l\) are the shorter and longer cutoffs. Their
+coefficients retain the exact endpoints. In particular their
+true masses multiply to \(U/(\sqrt E Nw)\).
+
+For the equality vector, at fixed \(e_1,g,\ell\) and a dyad
+\(P\le Nh<2P\), group the actual \(h=re_0\) coefficients
+over the permissible \(e_0\)-allocations. The row factor of the
+resulting sum \(F_P\) is \(\psi_u(h)^2\). The coefficient
+is divisor bounded with the original middle and cutoff predicates.
+The external inverse norm is \(D/(E E_1NgN\ell\sqrt R)\),
+where \(E_1=Ne_1\) and the actual primitive factor \(Q_u^{-1/2}\)
+is bounded using \(Q_u\asymp R\).
+The Gauss root and fixed raw factors are retained.
+Put \(T_0=\sqrt{D/(ER)}\), \(T_1=T_0/\sqrt{E_1}\).
+On a dyad \(P\le Nh<2P\), the normalized weight from
+the inverse square and the radial log separation is
+\[
+ P^{-2}\bigl(1+(T_1/P)^2\bigr)^{-4}\mathcal M_{12}(W).
+\]
+This keeps \(Q_u\) in the separated phase.
+
+For a fixed integer \(j\ge2\), take the \(j\)-th power of the
+formed \(h\)-array and group by the product of its \(j\) ideals.
+The fixed factors on the second pivot and on \(S\) stay in the
+coefficients. In the variable first pivot the \(h\)-character is
+cubic. Write the grouped column as \(b_0q^3\), with \(b_0\)
+cubefree, and freeze \(q\) with its raw multiplier
+\(\psi_u(q)^6\). The squared mass on a fibre is bounded by
+\(P^j/(Nq)^3\) up to divisor factors. The sum of the square roots
+converges in \(q\), and the cubic comparison gives
+\([F_P]_{2j}\ll \sqrt P\,(\Phi_3(A,P^j)/A)^{1/(2j)}\).
+When \(T_1\ge1\) the radial dyad sum is bounded at \(P\asymp T_1\):
+below it use the eighth power in the weight, and above it the
+sieve factor grows at most as \(P^{1/2}\) against \(P^{-3/2}\).
+When \(T_1<1\) use unit scale. For \(e\le1/4\), take
+\(\tau=(1/4-e)/2\); the replacement of \(T_1\) by \(T_0\)
+in the sieve costs only the monotone enlargement, and
+\(E_1^{-1}T_1^{-3/2}=E_1^{-1/4}T_0^{-3/2}\).
+In the subunit case \(E_1^{-1}\le T_0^{-2}\) when \(T_0\ge1\).
+The equality bound after the \(g,\ell\) harmonic sums is
+\begin{equation}\label{pca:joint-equality-moment}
+ [\mathcal E_d]_{2j}\ll
+ \sqrt{D/E}\,D^{-\tau/2+\Delta_3(j\tau)/(2j)}
+       (DH)^\epsilon\mathcal M_{12}(W).
+\end{equation}
+The same dyad calculation with the elementary ideal count
+gives the pointwise factor
+\[
+ \sqrt{D/E}\min(1,\sqrt{D/(ER)}).
+\]
+
+Set \(l_i=\log_D\max(1,L_i)\). The cutoff second moment has
+excess \(\Delta_6(l_i)/2\) over its square-root mass.
+For the fourth moment, square the actual cutoff sum.
+The grouped product is sixth-free, with exponent two
+allowed at a common prime, and has divisor-bounded
+multiplicity. Its fourth-root cost is
+\(D^{\Delta_6(2l_i)/4}\).
+For \(e\le1/8\), pair the equality sixth moment with the
+shorter third and longer second moments. Interpolating the
+shorter between second and fourth with weight \(2/3\) on
+the fourth yields
+\[
+ \frac{\Delta_6(l_l)}2+\frac{\Delta_6(l_s)}6
+   +\frac{\Delta_6(2l_s)}6-\frac{\tau}2
+   +\frac{\Delta_3(3\tau)}6
+ =\frac1{48}-\frac{l_l-l_s}{12}.
+\]
+Here \(3/8\le l_s\le l_l\le1/2\), \(l_s+l_l=1-e\) at the level
+of powers, and \(\Delta_3(3\tau)=0\).
+For \(e\ge1/8\) the pointwise equality bound and the two
+second moments have excess at most \(1/48\), because
+\((l_s/3-1/8)_++(l_l/3-1/8)_+\le1/24\).
+The normalized masses and \(w\)-sum give \(R/E\).
+The original \(\mathcal E_d^{\rm unit}\) compensation has
+normalized energy of order at most \(R/E\) by the grouped
+elementary equality bound, and so does \(\mathcal E_d\).
+Their inner product has the same upper bound. Summing over
+\(d\) harmonically proves the \(37/48\) comparison.
+
+\subsection{A forced radical in the physical sieve}
+\label{pca:joint-radical}
+
+For an actual good sixth-free ideal \(\mathfrak b\) of norm
+of order \(B\), put
+\(\mathfrak b^\sharp=\mathfrak b/\operatorname{rad}\mathfrak b\).
+If every column satisfies \(N\operatorname{rad}(\mathfrak b^\sharp)
+\gtrsim P\), the physical positive comparison can use
+\begin{equation}\label{pca:joint-psi}
+ \begin{aligned}
+ \widetilde\Psi(A,B,P)={}&A+B+A^{5/6}B^{1/3}P^{-1/3}\\
+              &+A^{1/6}BP^{-1/2}+A^{2/3}B^{1/2}P^{-1/2}.
+ \end{aligned}
+\end{equation}
+The factor multiplies the original squared coefficient mass,
+up to subpowers. Here is the support restriction inside
+the pinned de Faveri argument. In its Lemma 4.4 remove the
+outer common ideal of norm \(F\). The remaining scales obey
+\(B'\asymp B/F\) and \(A/(CF)\le A'\le CA\) for a fixed constant
+\(C\), and the radical threshold can drop at most by \(F\).
+A prime lost from that radical divides the removed ideal.
+The sharp part has norm at least the norm of its radical.
+
+In the two positive norms of the proof of Lemma 5.1,
+fix the sharp label \(s_i\) and the internal Möbius
+divisor \(r\), with squarefree part \(r u_i\).
+The original coefficient already requires
+\(\operatorname{rad}(s_i)\mid r u_i\).
+Set \(q_i=\operatorname{rad}(s_i)/(\operatorname{rad}(s_i),r)\),
+so \(u_i=q_i v_i\). The \(v_i\) are squarefree and avoid \(r,q_i\).
+The new label is in bijection with the original label at
+these fixed indices. Keep the original denominator at
+\(r q_i v_i\), the ray predicates, and the raw factor
+\(\chi_{q_i}\) at the grouped row variable. Multiplicativity
+gives the same zeros, including when a row prime divides
+\(q_i\). This factor is a contraction in the formed norm.
+The original squared coefficient sum is unchanged by the reindexing.
+
+If \(P_i\) and \(C_i\) are the norm scales of \(s_i\) and
+its radical, the row cap is still \(K_i\lesssim (B')^2/(A'P_i)\).
+The column cap is now \(B'/(P_i C_i)\), since
+\(N(rq_i)\ge N\operatorname{rad}(s_i)\).
+Both \(P_i,C_i\) are at least of order \(\max(1,P/F)\).
+Insert the four terms of the sixth-power comparison from
+de Faveri's Theorem 1.1 and Lemma 6.1,
+\(K+K^{1/6}L+K^{5/6}L^{1/3}+K^{1/3}L^{5/6}\).
+The two factors in its positive Cauchy estimate carry
+the prefactor \(A'\sqrt{P_1P_2}/B'\). Consequently
+the four monomials before taking their geometric mean
+are bounded by
+\[
+ \begin{aligned}
+ B',\quad &(A')^{5/6}(B')^{1/3}P_i^{-1/6}C_i^{-1},\\
+ &(A')^{1/6}B'P_i^{-1/6}C_i^{-1/3},\\
+ &(A')^{2/3}(B')^{1/2}P_i^{-1/6}C_i^{-5/6}.
+ \end{aligned}
+\]
+Put \(G=\max(1,P/F)\). The resulting factors satisfy
+\[
+ \begin{aligned}
+ F^{-1/3}G^{-7/6}&\le P^{-1/3},\\
+ F^{-1}G^{-1/2}&\le P^{-1/2},\\
+ F^{-1/2}G^{-1}&\le P^{-1/2}.
+ \end{aligned}
+\]
+These follow by considering \(F\le P\) and
+\(F\ge P\). The source diagonal term gives \(A\).
+This proves \eqref{pca:joint-psi} with its full masks.
+
+For the pure joint norm apply Cauchy with the longer cutoff
+as one factor. The other norm, of \(F_P\overline{B_s}\),
+equals that of \(F_P B_s\) by pointwise modulus.
+The exact signed pairing keeps its original conjugation.
+The latter positive norm groups actual \(h^2 b_s\) injectively:
+exponents \(0,1,2,3\) determine membership of \(h,b_s\)
+at each prime. The radical of its sharp part is \(h\).
+The length is of order \(P^2\max(1,M_s)\) and the squared
+mass is bounded by \(P M_s\) up to subpowers. The square root
+of \eqref{pca:joint-psi} grows at most linearly in \(P\)
+at fixed \(M_s\); the inverse square and square-root mass
+supply \(P^{-3/2}\). Thus the same radial maximum at
+\(T_0\), with the \(E_1\)-factor as above, applies.
+For \(e\le1/4\) the joint excess over the square-root mass
+is \(\tfrac12(l_s/3+\tau/3-1/8)_+\); the \(B\) term is
+below \(A\) in power, and the other two terms in
+\eqref{pca:joint-psi} have no larger exponent.
+With the longer second moment the total relative power is
+\[
+ \tfrac12(l_s/3+\tau/3-1/8)_+
+ +\tfrac12(l_l/3-1/8)_+-\tau/2
+     =\tfrac16(1/4+e/2-l_s)_+ .
+\]
+The equality follows from \(l_l\ge3/8\) and \(l_s+l_l=1-e\).
+If \(e\le1/6\), then \(l_s\ge1/2-e\ge1/4+e/2\).
+The middle compensation still costs \(R/E\), proving the
+low-divisor and length claims of Theorem~\ref{pca:joint-full}.
+
+\subsection{The selected Poisson product}
+\label{pca:joint-selected-proof}
+
+For Theorem~\ref{pca:joint-modes}, keep the actual selected
+partner frequencies in the Poisson expression. The live dyad
+gives \(N\zeta_i<14L_i\), and \(E_1Nh<14\) on the partner
+wide support. Keep the ordered \(e_0\)-assignment, the
+common-prime projector and all shortened residual deletions.
+The actual partner frequency weight separates in logarithmic
+variables on a frequency dyad, with absolute Fourier mass
+bounded by \(\mathcal M_{12}(W)(1+T/R)^{-4}\).
+The primitive factor remains \(Q_u^{-1/2}\) and the factor
+from the re-expressed direct term remains in the array.
+
+At fixed equality \(g,\ell,e_1\) and \(P\le Nh_0<2P\),
+the raw equality phase times the conjugated partner dual
+phase is \(\psi_u(h_0^2\mathfrak k)\). The row-independent
+selector is included in the coefficient at fixed
+\(h_0,\mathfrak k\) by summing the exact equality allocations.
+It can give a nonseparable coefficient, with divisor-bounded
+multiplicity and all the original signs. Write the grouped
+product uniquely as \(\mathfrak s b_0 v^6\), with
+\(\mathfrak s\) supported on \(S\), \(v\) good and \(b_0\)
+good sixth-free. Factor \(h_0=h_{\rm in}h_{\rm out}\)
+by support in \(v\). Then \(h_{\rm in}\mid v\) and
+\(h_{\rm out}^2\mid b_0\), even when the actual frequency
+meets \(h_0\).
+At fixed \(\mathfrak s,v,h_{\rm in}\), count \(h_{\rm out}\)
+at length \(P/Nh_{\rm in}\) and divide the physical residual
+length by \((Nh_{\rm out})^2\).
+The squared coefficient mass is bounded by
+\[
+ (DH)^\epsilon\,\frac{PT\,Nh_{\rm in}}{N\mathfrak s\,(Nv)^6}.
+\]
+The exact multipliers at \(\mathfrak s,v\) remain in the
+positive comparison. The sums of the square-root weights
+converge, since the sum over \(h_{\rm in}\mid v\) costs at
+most \((Nv)^{1/2+\epsilon}\).
+Also \(N\operatorname{rad}(b_0^\sharp)\ge P/Nv\).
+Apply \eqref{pca:joint-psi} with this threshold, truncated
+below by one, and with the true length at most of order
+\(P^2T/(N\mathfrak s(Nv)^6)\).
+Each inverse threshold exponent \(\beta\) is at most six
+times its length exponent \(\alpha\). Thus the sieve may
+use the nominal arguments \(P^2T,P\) after this shortening.
+The radial sum at fixed \(T\) still has its maximum at the
+equality scale, as the sieve square root grows at most
+linearly in \(P\).
+
+Put \(\Gamma_4=(\Delta_6(2l_s)+\Delta_6(2l_l))/4\).
+The two fourth moments of the cutoffs give this excess,
+with their true shortened masses.
+Before the sieve factors, the normalized mass at fixed labels
+and radial dyad, omitting the harmless fixed shortening and
+the harmonic common-prime factor, is
+\[
+ \frac{\sqrt{L_1L_2}\sqrt T\,P^{-3/2}}{E E_1 NgN\ell}.
+\]
+The factor \(P^{-3/2}\) includes the equality inverse square
+and its square-root mass. The outer normalization by \(D\)
+cancels the equality prefactor \(D\); conversion of the
+counting norm back to the row sum supplies \(R\) against
+the two factors of size \(Q_u^{-1/2}\).
+For \(e\le1/4\) and the indicated frequency ranges above
+\(t=3/8\), the relative joint sieve excess is
+\((t/3+\tau/3-1/8)/2\). Adding the physical frequency factor,
+the cutoff moments and the equality radial gain gives
+\(2t/3-7/16+\Gamma_4-\tau/3\).
+For \(e\le1/8\), \(\Gamma_4=1/6-5e/12\).
+For \(1/8\le e\le1/4\), convexity and the individual length
+caps give \(\Gamma_4\le13/96-e/6\).
+These are the first two branches of
+\eqref{pca:joint-frequency-frontier}; smaller \(t\) follows
+by monotonicity of the upper comparison.
+
+For \(e\ge1/4\), use the unit-scale equality dyad and the
+unshortened frequency sieve at \(T\). The total power above
+\(R/E\) is
+\[
+ t/2-1/4-e/2+\Gamma+\Delta_6(t)/2 .
+\]
+For the third and fourth branches one may take
+\(\Gamma=\Gamma_4\), bounded by \(13/96-e/6\)
+through \(e=5/16\) and by \(1/12\) thereafter.
+For \(e\ge27/56\) use the lesser of \(\Gamma_4\) and
+\(\Gamma_2=l_s/2+\Delta_6(l_l)/2\); the latter
+uses the shorter pointwise bound and longer second moment.
+Under \(l_s+l_l\le29/56\) and \(l_l\le1/2\),
+the maximum of this minimum is \(3/56\).
+Indeed \(l_l\) may be increased to its permitted endpoint;
+the two affine bounds cross at \(l_s=5/56,\ l_l=3/7\).
+For \(l_s\le1/56\) the pointwise option is smaller than
+\(3/56\), and for \(l_s\ge1/7\) convexity bounds the
+fourth-moment option by its values at \(1/7,29/112\).
+At \(t=3/4\) the resulting power is at most
+\(3/16-e/2+3/56\le0\).
+Above \(R\), the remaining growth has slope at most one
+and the factor \((1+T/R)^{-4}\) gives a summable tail.
+For equality-dependent selectors, sum the actual equality
+label vectors only after using each label's own
+selected middle equality subtraction. Each of these
+subtractions has the elementary normalized energy \(R/E\).
+The sum of the equality-label pointwise majorants is
+\(O((DH)^\epsilon\mathcal M_{12}(W)\sqrt{D/E})\), by the
+original harmonic \(g,\ell\) sums and the inverse-square radial
+bound. Cauchy at each label gives the required total
+compensation of order \(R/E\). The divisor sum is harmonic.
+
+\subsection{Sparse frequency and equality support}
+\label{pca:joint-sparse-proof}
+
+For a frequency-only selector, rational content at least \(D^b\)
+leaves \(O(TD^{-b})\) ideals on a dyad. Divide each frequency
+by its rational principal factor and sum the inverse squares
+of the possible contents. For \(j=1,2\), power the formed
+frequency array \(j\) times before taking its second moment.
+Grouping by product gives squared mass at most
+\((DH)^\epsilon(TD^{-b})^j\) by the divisor bound.
+At fixed \(S\)-part \(\mathfrak s\), a dyad \(Q\) of the
+sixth-power base \(q\) has two bounds for the sum of square-root
+masses. They are \(T^{j/2} Q^{1/2}D^{-jb/2}\)
+by Cauchy over disjoint fibres, and \(T^{j/2}Q^{-2}\)
+by the individual shortened length and ideal count.
+The sieve length is at most of order \(\max(1,T^j/Q^6)\).
+On writing \(x=\log_D Q/j\), the bound is convex up to \(b/5\)
+and nonincreasing afterwards. Its maximum is bounded by the
+larger value at \(0,b/5\). Thus the \(2j\)-norm of the
+frequency array has excess
+\[
+ \lambda_j=
+ \max\left\{\frac{\Delta_6(jt)}{2j}-\frac b2,\
+   \frac{\Delta_6(j(t-6b/5)_+)}{2j}-\frac{2b}5\right\}.
+\]
+The two cutoff moments and \eqref{pca:joint-equality-moment}
+give the following upper powers above \(R/E\):
+\[
+ \begin{cases}
+ t/2-13/48+\lambda_1/3+2\lambda_2/3,&e\le1/8,\\
+ t/2-9/32+5\lambda_1/6+\lambda_2/6,&1/8\le e\le1/4,\\
+ t/2-11/32+\lambda_2,&e\ge1/4.
+ \end{cases}
+\]
+In the first two lines use the equality sixth and twenty-fourth
+moments respectively and interpolate the frequency second and
+fourth moments. The last line uses the equality supremum,
+the longer second and shorter fourth moments.
+At \(t=9/20+3b/5\), the first branch of \(\lambda_j\)
+dominates for both \(j\), since the lost sieve growth across
+the length shortening is at least \(b/10\).
+The first excess is zero, and the other two are nonpositive.
+The last branch at \(t=2/3,\ b=41/144\) is zero.
+The fixed \(S\)-part and sixth-power multipliers retain
+their exact raw values on each fibre.
+
+If the frequency sixth-power base is at least \(D^a\),
+the product of \(j\) such bases divides the grouped base,
+and summing its inverse-cube weights gives \(D^{-2ja}\).
+The replacement \(\lambda_j\) is
+\(-2a+\Delta_6(j(t-6a)_+)/(2j)\).
+If the \(S\)-part has norm at least \(D^\sigma\), its product
+has norm at least \(D^{j\sigma}\).
+Summing the inverse square roots over this fixed prime support
+costs \(D^{-j\sigma/2+\epsilon}\); use the Euler product
+with any fixed positive exponent below \(1/2\).
+Now \(\lambda_j=-\sigma/2+\Delta_6(j(t-\sigma)_+)/(2j)\).
+At \(t=3/4\) these comparisons meet the target with
+\(a=1/16\) and \(\sigma=3/10\).
+Monotonicity gives smaller \(t\) and the original radial
+decay sums the upper tail. All comparisons keep the
+corresponding middle subtraction.
+
+For the equality-wide sector, fix \(g,h,e_0,e_1,\ell/\ell_{\rm g}\).
+The last factor lies on finitely many conjugates of primes
+in \(S\), and its phase is retained.
+The live dyad gives \(E_1Nh<14\).
+On the remaining conjugate-good part the actual phase is
+\(\nu(\ell_{\rm g})\overline{\nu(\bar\ell_{\rm g})}
+ (Nu/\ell_{\rm g})_6\), including zeros at either orientation.
+On \(T\le N\ell_{\rm g}<2T\) the rational conductor is
+\(N\ell_{\rm g}\) and the squared coefficient mass is
+of order at most \(1/T\) up to subpowers. Fixing the
+second pivot, the oriented rational Gram bound has sieve
+factor \(A+T^{5/3}\) in the integer variable \(Nv_1\);
+equal-norm row multiplicity has divisor cost.
+The sum over \(g\) is harmonic. Including the alternative
+direct count gives normalized equality energy at most
+\[
+ \frac{D}{E^2}\left(1+\frac{D}{ER}\right)^{-8}
+      \min\left(1,\frac{A+T^{5/3}}{AT}\right)
+       (DH)^\epsilon\mathcal M_{24}(W)^2.
+\]
+For the full partner complement the four upper powers
+of normalized energy are
+\(3/4-e,\ 1-2e,\ 23/24-4e/3,\ 13/12-11e/6\).
+For its wide coefficient the same bound follows by the
+primal unit reduction, the exact small-prime compensation
+and the physical sieve at \(D/E\); for the step use the
+difference of the full and wide coefficients.
+Cauchy requires the extra equality gain
+\(\max(0,P(e)-1/2-8(1/4-e)_+)\), where \(P(e)\) is the
+maximum of the four displayed powers.
+This gives \(\theta(e)\) in Theorem~\ref{pca:joint-eqwide}.
+The actual support \(ET\ll D\) ensures that the
+\(T^{2/3}/A\) term does not obstruct this threshold.
+The harmonic divisor sum finishes the full-complement bound.
+
+For the distinct comparable selected rectangles, retain
+the extra equality factor \((1+D/(ER))^{-7/2}\) after the
+original two half radial powers. The coupled cutoff estimate
+on the same insertion rectangles costs \(D^{1/17}\)
+relative to \(R/E\). This estimate accepts the original
+coefficient or its step and wide parts. At fixed ordered
+\(m,n\) and, for a subtraction, fixed \(p\), the additional
+wide tests are single-factor lower endpoints on the two
+ordered arrays. The step tests are single-factor upper
+endpoints. The exact common-prime projectors and actual
+insertion dual retain these endpoints. Since
+\((7/2)(1/4-111/476)=1/17\), the equality radial factor pays
+that cost on the stated prefix. The selected middle subtraction
+has its separate \(R/E\) bound. This proves the second
+assertion of Theorem~\ref{pca:joint-eqwide}.

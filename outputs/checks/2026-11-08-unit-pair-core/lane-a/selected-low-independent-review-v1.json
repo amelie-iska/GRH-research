@@ -1,0 +1,18 @@
+{
+  "status": "accepted",
+  "scope": "Independent review of lane-b selected low partner frequencies. Existing control receipt read and hash-bound without rerunning.",
+  "sources": {
+    "planning/unit-pair-core-20261108/lane-b/SELECTED_LOW_FREQUENCIES-v2.md": "f4925a9e4189a871774e91bb6816eb96368c851ee0c68446baea919aa364cafd",
+    "outputs/checks/2026-11-08-unit-pair-core/lane-b/check_selected_low_v1.py": "8984d8a422d735f5217d841ef2a227b34637179703ad66ca32ee6d890ef6ccc0",
+    "outputs/checks/2026-11-08-unit-pair-core/lane-b/selected-low-controls-v1.json": "979b7947a525bbb6a5dd8b100a2f95a9aea5e7bc8737148edeee41a51b986eed"
+  },
+  "findings": [
+    "The original live dyad gives the independent caps 14 L_i, distinct from the 7 L_i full primal caps. It forces E1 Nh < 14 and leaves only bounded r, e0 and e1. Actual L is bounded above and below on the dyad. On the enlarged separate rectangle its independent bounds still keep its log scale within fixed constants, and the exact J step recovers the original support.",
+    "The w projector precedes stripping with w squarefree and prime to d,r,e0. The raw phase psi(w)^2 is preserved. No w or r exclusion is inserted on the partner frequency. The separate row-independent frequency weight is the exact scope needed for the three-array factorization.",
+    "The individual inverse norm factors in L are bounded by one after factoring L_i. Their common scalar is (D/U^2)Ne0/(E1(Nh)^2). The original Q_u and row root remain in the exact Poisson factor. Log steps in the integer products and radial separation preserve exact endpoints and common W.",
+    "The fourth moments square the formed sextic sums and group actual product ideals. The frequency product uses the inherited all-ideal extension with separate S and sixth-power frozen factors and their raw zeros. No cubic comparison is used on generic exponent-two products.",
+    "Equality supremum with the two cutoff masses and the frequency mass gives R/E times sqrt(T/R), up to the stated physical moment ratios and harmonic w cost. The maximum combined cutoff losses are 5/48,13/192,1/32 in the three stated divisor ranges. On 3/8 <= t <= 45/88 the needed Delta6(2t) term is 5t/3-1/2. The thresholds are 19/44,83/176,45/88 and smaller t follows by monotonicity.",
+    "The exact middle compensation is still the elementary equality R/E bound with the same selected frequency weight of modulus at most one, only on the original middle window. The proof does not apply the full-frequency primal unit collapse to a mode selection."
+  ],
+  "limitation": "Acceptance is for separately selected low partner frequency terms, not coupled defect selectors, high frequencies or the whole signed form."
+}

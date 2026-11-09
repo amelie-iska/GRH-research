@@ -1,0 +1,19 @@
+{
+  "status": "accepted",
+  "scope": "Independent adversarial review of the root primal rational-content note and its existing finite-control binding. No old controls rerun.",
+  "sources": {
+    "planning/unit-pair-core-20261108/PRIMAL_RATIONAL_CONTENT-v1.md": "1941be5c403ae542308c9e3ec18efcec5816bf6104969c9f64b76e00f3691615",
+    "outputs/checks/2026-11-08-unit-pair-core/check_primal_content_v2.py": "9775d5990b47906cfe1d4d7c608352d55730ee7b855222a7cbaf348b4a4e3652",
+    "outputs/checks/2026-11-08-unit-pair-core/primal-content-controls-v2.json": "325bb08b1b9bfe56906657a808b8d64d308af7bf49e8e5bcbaf88ab14d17f76c"
+  },
+  "findings": [
+    "Rational content of a good squarefree ideal is unique: a split rational prime requires both prime ideals, and an inert rational prime contributes its prime ideal of squared norm. The factor c(wx)=1 is essential because w and x could otherwise complete a conjugate pair. With that condition and coprimality to (q), c(z)=q and z determines its unique eligible decomposition.",
+    "The two projectors retain v and w good squarefree, mutually coprime and prime to d before stripping. The v support condition is r divides q, not Nv divides q, including inert and double split factors. The residual y excludes v,w,d. It may still overlap q or the first residual at other primes on the enlarged rectangle, where the full original Möbius sum supplies cancellation.",
+    "The sign product is mu(w)^3 mu(v)^2 mu(z) mu(y), giving the stated mu(w) mu(z) mu(y). Literal multiplicativity leaves psi(v) psi(w)^2 with both raw zeros, and the rational factor is not neutralized.",
+    "The first mass estimate follows from counting each eligible x at length at most 7 L1/(Nw q^2). A bound below one is empty. At fixed r, summing (r j)^-2 over j >= B/r costs 1/(r max(B,r)). The second mass is at true length L2/(Nw Nv). Every nonempty shortened subunit array is bounded below by 1/7.",
+    "After the positive row comparisons Nv >= r and multiplicity at most 3^omega(r) give B^-1/2 times a harmonic r prefix and a convergent r^-3/2 tail. The w sum is harmonic. Empty terms are only enlarged positively, and the conditional pure exponents follow.",
+    "The cutoff coefficient for the full-frequency correction is frequency independent, row independent and divisor bounded after ordered splits. The original equality compensation therefore retains the elementary R/E bound without the B^-1/2 gain. The 7Li cap is only for nonzero primal terms and is not introduced into the compensated equality projection.",
+    "The existing v2 harness constructs distinct literal split and inert residue fields, exact rational content and physical norms, including a live subunit case. It compares the original complete pairs to the two-projector arrays, keeps the d row mask, and its negative controls actually detect removing psi(v) or replacing r divides q by Nv divides q. The receipt's source SHA bindings match."
+  ],
+  "limitation": "Acceptance is for this full-frequency selected rational-content sector. No bound on small content, selected dual modes or the whole signed form follows."
+}

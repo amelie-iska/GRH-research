@@ -1,0 +1,22 @@
+{
+  "status": "accepted",
+  "scope": "Independent review of lane-c full-frequency higher equality moments and all-divisor 37/48. Existing controls read and hash-bound without rerunning.",
+  "sources": {
+    "planning/unit-pair-core-20261108/lane-c/HIGHER_EQUALITY_MOMENTS-v1.md": "6796c5bf4c0608530efdfef666da6fd5889dfe76c704163d51262490b9eaa5d1",
+    "outputs/checks/2026-11-08-unit-pair-core/lane-c/verify_moments_v2.py": "5d2c768deebfccd787e4a6f9901be34fbc9e5e4e8a954ba2f6f2becc5bf7e698",
+    "outputs/checks/2026-11-08-unit-pair-core/lane-c/moments-check-v2.json": "a397a40ad8e77f43597599298b05ad50f64e76b7176690205d0c372ba69a0310",
+    "planning/equal-rational-sieve-20261108/GROUPED_EQUAL_CROSS-v4.md": "9f1d6174db055a62765f55422f58cae507d6828ca75ba5371d7f4e6cf31a4491",
+    "planning/pure-equal-cross-20261108/PURE_EQUAL_ALLOCATED-v1.md": "a1c8847482573a1777e011bc8feed207a7a7e49eba4e38f52b31a0043d52290e",
+    "planning/cutoff-release-20261108/research/UNIT_PAIR_FULL_FREQUENCY-v1.md": "83d946bfa83e58087ec1d64cc0e34e5b52b855e1d75b071e05e75f3ac6d2bb16"
+  },
+  "findings": [
+    "At fixed second pivot the actual variable first-pivot dependence of psi(h)^2 is order three. Raising the actual sum to fixed j and grouping physical product ideals is exact. The cubefree residual b0 of b=b0 q^3 can share primes with q. No false deletion is introduced, and psi_u(q)^6 retains all zeros and fixed twist phases. Its factor at fixed q is a contraction and the (Nq)^-3/2 triangle is summable.",
+    "Normalized j-th root of the grouped second moment gives sqrt(T)(Phi3(A,T^j)/A)^(1/(2j)). The fixed exponent j preserves the polynomial support used in divisor bounds, and A is comparable to the row normalization R only at the declared pure scales.",
+    "For the radial dyad sum below T1 monotonicity and the eighth power of T/T1 make the dyadic tail summable. Above T1 the moment factor grows at most as (T/T1)^(1/2), leaving decay T^-1. The e1 factor at T1 >= 1 is E1^-1/4. When T1 < 1 and T0 >= 1, the constant-scale contribution relative to the T0 comparison costs at most T0^(3/2)/E1 <= 1. This yields the exact normalized equality moment.",
+    "The partner fourth moment squares the actual squarefree residual sum. Products have local exponents at most two, so they remain in the physical sixth-free comparison, including the raw phase at a repeated prime. The w multiplier is exactly psi_u(w)^2 with w good squarefree and prime to d before stripping.",
+    "The Hölder indices 2j, 2, 2j/(j-1) add reciprocals to one, and the interpolation weight on the shorter fourth moment is 2/j. The physical masses and original cutoff scalar leave R/(E Nw) in normalized units, giving equation (3) and harmonic w and d factors.",
+    "For e <= 1/8, both unshortened cutoff lengths have exponent at least 3/8. Taking j=3 puts the cubic product in its diagonal range. The loss is exactly 1/48-(l_l-l_s)/12. The remaining e >= 1/8 range uses the inherited 37/48 estimate. On the special fixed-j dyads the two losses 1/(8j),1/(16j) are paid by 3/(16j).",
+    "The middle equality compensation remains the same row-independent divisor-bounded coefficient estimate. The full partner frequency recombination, fixed moment index and actual ordered divisor selectors are essential. Existing finite controls have the declared limited exponent and formal raw-mask scope."
+  ],
+  "limitation": "The result improves the unrestricted full-frequency unit-pair estimate only. The signed whole form, selected partner defect modes and the remaining target-scale wide cells are open."
+}

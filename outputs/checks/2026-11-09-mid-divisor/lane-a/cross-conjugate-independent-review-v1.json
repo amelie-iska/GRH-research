@@ -1,0 +1,21 @@
+{
+  "status": "accepted",
+  "scope": "Independent cross-conjugate cutoff review with source and finite-control binding. No author control reruns.",
+  "sources": {
+    "planning/mid-divisor-20261109/lane-c/CROSS_CONJUGATE_CUTOFF-v1.md": "68ec0ada633f984cb5cfe665436e4abcef00896e255e187bbd995b28b5d57ab4",
+    "planning/joint-unit-pair-20261109/lane-c/FORCED_RADICAL_JOINT-v1.md": "48344a5ba51f9a78125ec61be466e72f71e2180c88dfe94e09e3aa64b365bd81",
+    "outputs/checks/2026-11-09-mid-divisor/lane-c/check_cross_conjugate_v1.py": "89a86fdbb266fef3c331fa6d3768dac3dcf20aa45bb07a377431083f536f3bc6",
+    "outputs/checks/2026-11-09-mid-divisor/lane-c/cross-conjugate-check-v1.json": "e9d82be39a36557c3b4d962bc84f60e514b4c36b41fa2a66c61976f9e2d4b814"
+  },
+  "findings": [
+    "The exact overlap has only one orientation per split rational prime, no inert or ramified support. Original squarefreeness and coprimality give x,y avoiding lambda, and the exact remaining two gcds are (x,y)=(x,bar y)=1. This is reversible.",
+    "The extended array keeps y prime to lambda and removes the other three conditions with j,k,v. Both k and bar k obey the actual fixed good and d requirements because k divides x and bar k divides y. The two lcms, not products j k and j bar k, are needed. Since B is prime to conjugation-invariant lambda, so are j and k; hence A=v A0 is exact. Residual squarefreeness and fixed deletions remain in X,Y. The invalid tuples cancel by the three signed projectors before positive comparisons.",
+    "On extended tuples the separable cutoff signs coincide with the original signs on valid support. The exact raw factor psi(AB) psi(X) psi(Z) can include repeated primes shared by fixed and transferred labels; this is a multiplicative identity with the original zeros. For example a v prime in lambda also appears in Z and is not deleted. The coefficient of Z retains B,Y avoiding lambda and v dividing lambda.",
+    "The rational r to (r) map is injective and each possible r for fixed Z is determined by a rational ideal divisor of Z. The Y label is then unique. Orientation count at most 2^omega(r) and ideal factorization multiplicity are divisor bounded. The physical Z length is J Ls/NB, not Ls/(J NB), while its square mass is Ls/(r_v NB) up to subpowers. Correct mass product is J^-1/2 (NA0 NB Nv r_v)^-1/2.",
+    "The two lcm harmonic sums allow j,k to overlap. Each supported split rational prime contributes at least one ideal to each lcm and at most a bounded number of states; inert support has stronger norm charge. The v sum uses Nv >= r_v and multiplicity at most 3^omega(r_v). Fixed factors and raw zeros remain outside both positive moments.",
+    "The ordinary exponent is nonincreasing in eta by the one-Lipschitz positive sieve cost. On the 5/6 total-length segment eta=1/32 gives excess sums 1/32 and 1/36 at the two endpoints. On the 3/4 segment the endpoint costs are 1/48-2 eta/3-(e-1/4)/2 and at most -eta/3-(e-1/4)/2. Both claimed cutoff thresholds follow.",
+    "In the intermediate range with eta <= 1/32, the transferred unshortened pair has sum 1-e and both lengths at most 1/2. The cited forced-radical joint comparison applies to whichever transferred column is shorter, because Z is squarefree and the log-separated coefficient does not couple to equality labels. The product h^2 Z still has forced radical h including common primes. Subtracting eta/2 from the joint loss gives the threshold (1/4+e/2-l_s)_+/4.",
+    "The exact middle compensation remains row-independent and divisor bounded for this frequency-independent overlap selector. The finite fixture receipt binds the exact proof and exercises each projector and a joint j,k term. It does not include simultaneous nontrivial v with another projector; the direct support and lcm argument above handles that case."
+  ],
+  "limitation": "Acceptance uses the pinned forced-radical joint comparison as an input, not a fresh review of its primary-literature derivation. Small-overlap mid-divisor cells, selected partner frequencies, and the whole signed estimate remain open."
+}

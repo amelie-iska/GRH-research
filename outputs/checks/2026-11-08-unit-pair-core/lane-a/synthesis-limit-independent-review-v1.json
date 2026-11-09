@@ -1,0 +1,26 @@
+{
+  "status": "accepted",
+  "scope": "Independent proof and evidence-binding review of sparse rational-content transfer and the separate-moment optimization limit. No control reruns.",
+  "sources": {
+    "planning/unit-pair-core-20261108/lane-c/CONTENT_MOMENT_SYNTHESIS-v1.md": "cf8902bbf3d8ed5dc9bbb5eb1d15095b952d3e78b85fa5b0feb305545d127c41",
+    "planning/unit-pair-core-20261108/lane-c/SEPARATE_MOMENT_LIMIT-v1.md": "7bab4b26c09347ef16490a27e59a9591238e9135299b4cc6aafb967a82e7458c",
+    "outputs/checks/2026-11-08-unit-pair-core/lane-c/verify_synthesis_v1.py": "64745ba988604b852a967df7ecf775174e403843dac3f8ccd047946405ce61f3",
+    "outputs/checks/2026-11-08-unit-pair-core/lane-c/synthesis-check-v1.json": "2ecffbc58c8e375bd30c2504a63f5d03d36af540e5889e13e4d4159baeb35fd4",
+    "outputs/checks/2026-11-08-unit-pair-core/lane-c/separate-limit-check-v1.json": "2ae6de567c540f8b2fde1d6d991bfb7f7f6f47c821f02f6983a3861d318410ac",
+    "outputs/checks/2026-11-08-unit-pair-core/lane-c/moments-check-v2.json": "a397a40ad8e77f43597599298b05ad50f64e76b7176690205d0c372ba69a0310"
+  },
+  "synthesis": [
+    "At fixed projectors both arrays use actual unique squarefree ideal labels, with unit-size coefficients after the fixed phase and norm twist. In the square of an array with K such labels the total ordered multiplicity is K^2, and each product fibre is bounded by its divisor count on polynomial support. The product is sixth-free with exponents at most two, retains conjugate labels and raw zeros, and its squared coefficient mass is at most max(t_b) K^2.",
+    "The pinned physical second moment applied to that actual product yields the square-root K mass in the fourth moment after normalized root extraction. Both endpoint moments therefore retain the same square-root K in interpolation. This is valid even when the rational-content selector is on the shorter cutoff and affects its fourth moment.",
+    "The exact v,w projector factors and row-independent selectors remain those of the reviewed root note. A content bound on the other original factor in the disjointized union is imposed on that factor after reconstructing it, so it is a separate selector. The v,w sums recover B^-1/2 from the two sparse masses and no estimate of the compensated equality term claims this factor.",
+    "For e <= 1/8 the exact higher moment excess is 1/48-(l_l-l_s)/12, so the sufficient exponent for B is max(0,1/24-(l_l-l_s)/6). For e >= 1/8 the existing rational-content comparison gives the uniform 1/24 threshold. Full frequencies and elementary R/E compensation stay necessary.",
+    "The synthesis receipt and script hash match. Its formal product-support checks include product collisions beyond pair reversal and are appropriately distinct from a physical sieve verification."
+  ],
+  "separate_limit": [
+    "At the balanced edge the equality even-moment excess is -1/16+x Delta3(1/(16x)). The cubic mixed monomial gives the supporting line -1/48-x/4, including the pointwise endpoint by inequality. The original grouped cubic second moment supplies the j=1 endpoint.",
+    "For each cutoff even moment, the actual product is uniquely b0 q^6 with no extra residual disjointness. Its raw fixed multiplier psi(q)^6 retains all zeros and the summable norm contraction is (Nq)^-3. The resulting excess x Delta6(1/(4x)) equals 7/48-x/4 at k=1,2. For k>=2 the physical mixed term gives 5/24-x/2 >= 7/48-x/4. The pointwise excess 1/4 also lies above.",
+    "Interpolation preserves both affine supporting bounds. Norm monotonicity from a higher positive moment cannot undercut these decreasing supporting lines either. Their sum for x_E+x_1+x_2=1 is 1/48. Equality sixth, cutoff second and cutoff third interpolated from second and fourth attain it. This is a lower limit for those quoted upper powers, not for any actual norm or contribution.",
+    "The separate-limit receipt binds the exact reviewed proof and records 258 rational comparisons, with no finite inference about an asymptotic cross."
+  ],
+  "limitation": "Acceptance is scoped to the exact selected full-frequency synthesis and the specified separate-moment method. Low content, joint signed products and selected partner dual modes are not bounded by these conclusions."
+}

@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "source_sha256": {
+    "planning/unit-pair-core-20261108/SELECTED_MOMENT_SYNTHESIS-v1.md": "0a5e583934bc234b2dbf0d70a0688aaccdf74d913207855bcae3037ed66d8051",
+    "planning/unit-pair-core-20261108/lane-b/SELECTED_LOW_FREQUENCIES-v2.md": "f4925a9e4189a871774e91bb6816eb96368c851ee0c68446baea919aa364cafd",
+    "planning/unit-pair-core-20261108/lane-c/HIGHER_EQUALITY_MOMENTS-v1.md": "6796c5bf4c0608530efdfef666da6fd5889dfe76c704163d51262490b9eaa5d1"
+  },
+  "scope": "independent exact source audit of the selected-frequency higher moment synthesis",
+  "checks": {
+    "j3_exact_and_boundary": 3250,
+    "j12_convex_endpoint_and_piecewise_boundary": 3250,
+    "fixed_j_holder_and_interpolation": 29
+  },
+  "findings": [
+    "The original normalized higher equality moment is available at fixed second pivot with the exact cubic grouped product and raw fixed multipliers.",
+    "The two cutoff fourth moments and interpolated selected frequency moment have the stated physical squared-product lengths. No cubic order is assigned to their cross terms.",
+    "The j=3 exponent is exactly 5t/6-3/8-e/6 on the stated lower-divisor geometry.",
+    "The j=12 exponent at t=1/2 uses the cutoff endpoint and is bounded by 1/96-e/12 or -1/48+e/12 on the two subintervals.",
+    "The inherited supremum bound covers the stated range past e=1/4. The original selected equality compensation stays separate and uses only its elementary count.",
+    "The claimed selectors depend only on fixed labels and frequency. The note does not extend this higher moment to coupled cutoff or equality selections."
+  ]
+}

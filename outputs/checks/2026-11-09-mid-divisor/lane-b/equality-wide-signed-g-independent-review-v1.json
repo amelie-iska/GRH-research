@@ -1,0 +1,23 @@
+{
+  "control_scope": "The finite projector uses distinct conjugate-prime labels above 7 and explicit norm endpoints. The norm-fibre and profile checks are arithmetic controls, not an actual row-family table or a proof of the Mertens bound.",
+  "fresh_controls": {
+    "exact_profile_exponent_controls": 10201,
+    "integer_hyperbola_controls": 1024,
+    "weighted_projector_cells": 256
+  },
+  "review": [
+    "The retained strict live cutoff bounds force bounded h,e0,e1 and Ng_l Ng_s asymptotic to D/(E T). The deterministic longer-factor index gives the claimed G lower bound. Original tests are intersections of exact norm intervals after freezing ell_g and its split.",
+    "The squarefree row mask on g_l may be removed by the exact q projector, with the original forbidden union imposed on q and the residual b. The cancellation of two Mobius signs requires and retains (q,b)=1. No (g,bar ell) mask is introduced.",
+    "The small-q deleted Mertens bound is valid on the whole dyadic interval because G/Nq is at least of order D^(5/64). The deletion radical stays polynomial, and the weighted partial summation preserves endpoints.",
+    "No D^epsilon enters the equality norm: tau(ell_g)^2 is the four-factor ideal divisor count on squarefree ell_g, the primitive rational labels are injective, integer norm fibres are dominated by the hyperbola expansion, and the retained tau(d) is explicit. The dual ordinary sieve costs A1 log(2D)+sqrt(A1) T^2.",
+    "The large-q row count uses only the good q-part outside the bounded v2 dividing v1. The summed q factor D^(-3/32) is at most T^(-1/2) D^(-1/32) in the stated band. It is absorbed into the subpower gain.",
+    "The partner's inherited positive energy still carries D^epsilon and uses its full frequency, including compensation. Pairing gives the stated subpower threshold refinement. It does not produce a new fixed power at e=1/4 and T comparable to one, where the upper comparison still has exponent 13/16."
+  ],
+  "source_hashes": {
+    "planning/coherent-mertens-20261105/lane-c/DELETED_PRIME_MERTENS_AND_UNIT_CORRECTION-v1.md": "224451fe8bd3c808593d504f24c09e9a28dcfde673e760b01a62991cb948fa2e",
+    "planning/equal-rational-sieve-20261108/EQUAL_RATIONAL_SIEVE-v4.md": "c47b821a5431823959b020ee18954148e79c3eaf5fe7e3cea4d00c1ecda25e7f",
+    "planning/joint-unit-pair-20261109/lane-a/EQUALITY_WIDE_RATIONAL_MOMENT-v1.md": "57438e47b8b8a82e4ca09347dc99c4011b915ff7fc2237c8f7b5077888356f12",
+    "planning/mid-divisor-20261109/lane-a/EQUALITY_WIDE_SIGNED_G-v1.md": "416e80eed89d3e0ff983e6f684a0743023b8df27fd96654bd2d2c24d96341ac6"
+  },
+  "status": "accepted_in_stated_scope"
+}

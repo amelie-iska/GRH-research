@@ -1,0 +1,170 @@
+{
+  "passed": true,
+  "utc": "2026-11-09T01:10:55.044398+00:00",
+  "scope": "Research-only original pure unit-pair and equality-wide results outside the current edition.",
+  "results": {
+    "frequency_content": {
+      "proof": {
+        "path": "planning/joint-unit-pair-20261109/FREQUENCY_RATIONAL_CONTENT-v2.md",
+        "bytes": 11751,
+        "sha256": "e22b7235595e07ecc71d24a0f71242193b4d779559f8f33c70df8a53361c162a"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/frequency-content-controls-v1.json",
+          "bytes": 1152,
+          "sha256": "38cd8a37c4bd20bd54dee5aecffea6cd88c6eb7fd4a7b18794f82c862ffbb1dd"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-a/frequency-content-independent-review-v1.json",
+          "bytes": 3858,
+          "sha256": "010b80b2e024bb7e55d11378025efcebefdc9cd5bbe30a7f6c7c163102ba304e"
+        }
+      ]
+    },
+    "equality_wide_rational": {
+      "proof": {
+        "path": "planning/joint-unit-pair-20261109/lane-a/EQUALITY_WIDE_RATIONAL_MOMENT-v1.md",
+        "bytes": 8204,
+        "sha256": "57438e47b8b8a82e4ca09347dc99c4011b915ff7fc2237c8f7b5077888356f12"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-a/equality-wide-rational-controls-v1.json",
+          "bytes": 765,
+          "sha256": "d7451a1e7b65800fd88a92cb13b81f03d9a7938323456494333d0c0d6def70a0"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-b/equality-wide-independent-review-v1.json",
+          "bytes": 2204,
+          "sha256": "9c057b0cae4b3953be9921b22364408475d3e8425011ed826688756f58b23750"
+        }
+      ]
+    },
+    "joint_equality_frequency": {
+      "proof": {
+        "path": "planning/joint-unit-pair-20261109/lane-b/JOINT_EQUALITY_FREQUENCY-v2.md",
+        "bytes": 13332,
+        "sha256": "e268f0f5ab1a8472ad2d704a201ae59f62b0119380ca98926106631e38a565f5"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-b/joint-equality-frequency-controls-v1.json",
+          "bytes": 974,
+          "sha256": "0ae96e3d4d1a52c85463a601561d42ee53dc96425389c435f12cd388c911f630"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-c/independent-proof-review-v1.json",
+          "bytes": 2223,
+          "sha256": "3d51cf8aa482da2ac3ea760a2ab97651d007ab8e00a1b03bf11dbf1049d10406"
+        }
+      ]
+    },
+    "forced_radical": {
+      "proof": {
+        "path": "planning/joint-unit-pair-20261109/lane-c/FORCED_RADICAL_JOINT-v1.md",
+        "bytes": 9880,
+        "sha256": "48344a5ba51f9a78125ec61be466e72f71e2180c88dfe94e09e3aa64b365bd81"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-c/forced-radical-check-v2.json",
+          "bytes": 660,
+          "sha256": "735e3bf26e0e9ac4abfd4bf0ad19725f0c1ae497d812f1236f88d8af47947346"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-b/forced-radical-independent-review-v1.json",
+          "bytes": 3285,
+          "sha256": "56da03e4d01cff8f74b5448e473444a8f98635e6be89c43bd9c324b5c73393d4"
+        },
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/forced-radical-root-source-review-v1.json",
+          "bytes": 1939,
+          "sha256": "8788690b1f2044d1979f526a310a5582030a8f5ff12e18ba90c127da33c8e896"
+        }
+      ]
+    },
+    "forced_frequency": {
+      "proof": {
+        "path": "planning/joint-unit-pair-20261109/lane-c/FORCED_RADICAL_FREQUENCIES-v1.md",
+        "bytes": 4666,
+        "sha256": "3101caddeb3b010ac0f870153bcb6a9855c31bb1f90ab50c589629d731ecb188"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-c/forced-frequency-check-v1.json",
+          "bytes": 475,
+          "sha256": "77b3e17027d376aee2f5953f513ba4cd96a834eb150176a9897721f8713b29ec"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/forced-frequency-independent-review-v1.json",
+          "bytes": 1461,
+          "sha256": "7ded09dac166b4c1401e536eadcd7d3de07cbc303d8627ece43e2a6ad800ce8d"
+        }
+      ]
+    },
+    "selected_equality_wide_prefix": {
+      "proof": {
+        "path": "planning/joint-unit-pair-20261109/lane-a/EQUALITY_WIDE_SELECTED_PREFIX-v1.md",
+        "bytes": 3566,
+        "sha256": "703de276214a4326ab1fb9d73b4d2d93e066f912141c76c5670b9b8e631630e6"
+      },
+      "controls": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-a/equality-wide-selected-prefix-controls-v1.json",
+          "bytes": 424,
+          "sha256": "64fcfa6a79cfcbd06dd5492f97e834dfaff5c98779f83f99a2bd81044235d25b"
+        }
+      ],
+      "independent_reviews": [
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/equality-wide-selected-prefix-independent-review-v1.json",
+          "bytes": 1684,
+          "sha256": "af42ed82018c748d3f983868e4b828a77c1cb786d45f2a6b990cc91f3634ba1e"
+        },
+        {
+          "path": "outputs/checks/2026-11-09-joint-unit-pair/lane-c/independent-proof-review-v1.json",
+          "bytes": 2223,
+          "sha256": "3d51cf8aa482da2ac3ea760a2ab97651d007ab8e00a1b03bf11dbf1049d10406"
+        }
+      ]
+    }
+  },
+  "source_pin_instances": 437,
+  "source_pins": {
+    "path": "outputs/checks/2026-11-09-joint-unit-pair/SOURCE_PINS-v1.json",
+    "bytes": 86792,
+    "sha256": "f00a155565142c9631fb24ce0d85716acd03d7f310dc24981ea3ccfe68d35b5f"
+  },
+  "public_release": {
+    "path": "outputs/checks/2026-11-08-cutoff-release/PUBLIC_RELEASE_VERIFIED.json",
+    "bytes": 3840,
+    "sha256": "c1a146daabe2c169781253ae5decafd8ce5e85866c47b3864839db4a42237ab5"
+  },
+  "published_edition": {
+    "pages": 363,
+    "mathml": 11657
+  },
+  "pure_full_frequency_all_divisor_power": "37/48",
+  "target_full_frequency_divisor_prefix": "1/6",
+  "target_all_divisor_selected_frequency_prefix": "15/32",
+  "target_all_frequency_divisor_suffix": "27/56",
+  "selected_comparable_equality_wide_divisor_prefix": "111/476",
+  "still_open": "Unbalanced middle-divisor cross, selected main scale with small content and power parts, small-support equality-wide, coherent signed divisor sum, whole signed assembly and determinant/zero location.",
+  "whole_signed_power": "109/144",
+  "comparison_signed_power": "13/12",
+  "comparison_unsigned_power": "9/8",
+  "publication_changed": false,
+  "new_Lean_declarations": 0,
+  "both_completion_gates_false": true
+}
