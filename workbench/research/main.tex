@@ -26,8 +26,10 @@ This supplement extends the GRH-research monograph. It separates constructive ma
 \chapter{Graph languages and computational mechanisms}
 \input{language-graph-computation}
 \chapter{Physical data, coding and experimental scope}
-\IfFileExists{physical-information.tex}{\input{physical-information}}{The experimental record is stored with the versioned code and dataset.}
-\IfFileExists{results-summary.tex}{\input{results-summary}}{}
-\IfFileExists{bgg-category-o.tex}{\chapter{BGG, category $\mathcal O$ and the structural synthesis}\input{bgg-category-o}}{}
-\appendix\input{references}
+\input{physical-information}
+\input{results-summary}
+\chapter{BGG, category $\mathcal O$ and the structural synthesis}
+\input{bgg-category-o}
+\appendix
+\begingroup\footnotesize\sloppy\input{references}\endgroup
 \end{document}

@@ -1,0 +1,44 @@
+\section{Recorded results from the executed pilot}
+\label{sec:wb-recorded-results}
+
+The executed protocol produced sixteen trained component runs: four data sources, two native attention variants and two seeds. Each run attempted 80 optimizer steps, selecting among checkpoints at steps 20, 40, 60 and 80 using validation only. The ordinary encoder/readout has 2,744 parameters; the tropical-code variant has 2,104. These are deliberately small component tests, not a matched-parameter proof of architectural superiority or a full Mora-3 training result.
+
+\begin{center}\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Data & Test $n$ & Count & Vanilla & Tropical & V+retrieval & T+retrieval\\
+\midrule
+CO$_2$ &146&2.6657&2.2118&2.1476&2.0616&2.0539\\
+Sunspots &406&2.8996&2.9120&2.9804&2.8768&2.9500\\
+Ni\~no-3.4 &171&2.9965&3.0051&3.0009&3.0090&2.9902\\
+ECG MLII &4783&2.8046&2.8632&2.9473&2.7575&2.8696\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Entries are held-out \emph{bits per quantized symbol}; the neural columns average the two recorded seeds. They are not bits per original byte and do not include model or retrieval storage. The count baseline's order and smoothing were chosen on validation. Retrieval weights were also chosen on validation, including the option of no retrieval. The complete per-seed results and probability arrays are retained in the experiment outputs, subject to the source-specific redistribution policy.
+
+The result is mixed. Both neural variants improve the selected count predictor on CO$_2$. They do not consistently beat it on the other sources. Retrieval improves most runs but worsens vanilla seed 29 on Ni\~no-3.4 by approximately 0.0124 bits per symbol. Two seeds and these short evaluation spans do not justify a general ranking of the architectures. The examples demonstrate an executable protocol, not a discovery of language in the measured processes.
+
+\begin{center}\small
+\begin{tabular}{lrrr}
+\toprule
+Data & Count ideal BPB & Vanilla ideal BPB range & Tropical ideal BPB range\\
+\midrule
+CO$_2$ &2.9370&2.8134--2.8336&2.7852--2.8297\\
+Sunspots &3.4946&3.4925--3.5029&3.5120--3.5176\\
+Ni\~no-3.4 &1.9904&1.9925--1.9925&1.9892--1.9937\\
+ECG MLII &1.1652&1.1792--1.1806&1.1992--1.2027\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Here BPB uses the canonical four-byte fixed-point target value as denominator and adds the exact integer residual code. It remains an ideal conditional codelength, not an emitted arithmetic-coded file. Adding model parameters, metadata, context seeds and retrieval-bank values changes the comparison substantially. Without retrieval, the neural two-part BPB ranges are approximately 128.8--163.9 for CO$_2$, 48.8--61.4 for sunspots, 109.4--139.4 for Ni\~no-3.4 and 5.05--6.10 for ECG. A short test stream cannot amortize a model or memory bank merely because its conditional likelihood improves. These costs are reported rather than omitted.
+
+The known human-language control uses the actual Gutenberg English text of \emph{Alice's Adventures in Wonderland}, with boilerplate excluded and disjoint chronological byte spans. Validation selected an order-two count model with smoothing 0.1. Its held-out conditional likelihood is 2.9601 bits per UTF-8 byte; independently applied zlib and lzma produced approximately 3.0386 and 2.9087 bits per byte on that held-out byte segment. The code lengths have different model/coder conditioning and are not a matched total-description-length contest. Authorship/provenance, not compressibility, establishes that this source is human communication. No acoustic or cross-author claim is inferred.
+
+The final measured-study record has SHA-256
+\begin{center}\small\texttt{3eed1b691172b2b3aded5f8117e773594cb2804e59a5f1a2564bc7bcd7bdf630}\end{center}
+and the executed experiment source has SHA-256
+\begin{center}\small\texttt{d1ef909033581b85a874c3286ae2cf75774e9337aaff43973ba295636b0e4d98}\end{center}
+The initial metadata serialization failure and a missing adapter return were corrected before optimizer updates; both failed preflight records remain retained. A requested NOAA global-temperature endpoint returned HTTP 404 and was not represented as a completed dataset. The failed eight-worker Codex launch produced no development results because of an account usage limit; all completed work in this release was subsequently executed directly.
