@@ -21,15 +21,11 @@ jobs:
       PYTHONUNBUFFERED: '1'
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          submodules: false
+        with: {fetch-depth: 1, submodules: false}
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+        with: {python-version: '3.11'}
       - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
+        with: {node-version: '22'}
       - name: Install isolated verification dependencies
         run: |
           python -m pip install --disable-pip-version-check torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
@@ -41,10 +37,11 @@ jobs:
         id: studies
         run: |
           python -m workbench.integration.pipeline studies --out "$RUNNER_TEMP/integrated-evidence" --data "$RUNNER_TEMP/integrated-wmap"
+          python -m workbench.integration.refine --evidence "$RUNNER_TEMP/integrated-evidence"
           git config user.name 'GRH verification'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md extension/manuscript/main.tex extension/manuscript/chapters/synthesis.tex extension/manuscript/integrated extension/site/index.html extension/site/integrated-app.js extension/site/integrated-next-steps.js workbench/site/program3.html
-          git add -f extension/site/workbench extension/site/verification/integration/next-steps.json
+          git add README.md extension/manuscript/main.tex extension/manuscript/chapters/synthesis.tex extension/manuscript/chapters/preface.tex extension/manuscript/integrated extension/site/index.html extension/site/integrated-app.js extension/site/integrated-next-steps.js workbench/site/program3.html
+          git add -f extension/site/workbench extension/site/verification/integration
           git commit -m 'Integrate research bodies in one native manuscript and the existing atlas'
       - name: Run regressions, build the unified document and test the main page
         id: verify
@@ -83,8 +80,7 @@ jobs:
           source=Path('extension/site'); target=Path(os.environ['RUNNER_TEMP'])/'integrated-pages'
           for name in ['index.html','integrated-app.js','integrated-next-steps.js','downloads/paper.pdf','downloads/source.zip']:
               p=target/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source/name,p)
-          for name in ['workbench','verification/integration']:
-              shutil.copytree(source/name,target/name,dirs_exist_ok=True)
+          for name in ['workbench','verification/integration']:shutil.copytree(source/name,target/name,dirs_exist_ok=True)
           PY
           git -C "$RUNNER_TEMP/integrated-pages" switch -c "$pages_branch"
           git -C "$RUNNER_TEMP/integrated-pages" add -f index.html integrated-app.js integrated-next-steps.js downloads/paper.pdf downloads/source.zip workbench verification/integration
@@ -116,13 +112,11 @@ jobs:
     if: github.ref_name == 'integrated-public-check-20261114'
     runs-on: ubuntu-24.04
     timeout-minutes: 12
-    permissions:
-      contents: read
+    permissions: {contents: read}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+        with: {python-version: '3.11'}
       - name: Install browser checker
         run: |
           python -m pip install playwright==1.56.0
@@ -134,7 +128,7 @@ jobs:
           from pathlib import Path
           import urllib.request,hashlib,json,os
           root=Path('extension/site');base='https://amelie-iska.github.io/GRH-research/';rows=[]
-          paths=['index.html','integrated-app.js','integrated-next-steps.js','downloads/paper.pdf','downloads/source.zip','verification/integration/next-steps.json','verification/integration/manifest.json','workbench/program3.html','workbench/program3-report.pdf']
+          paths=['index.html','integrated-app.js','integrated-next-steps.js','downloads/paper.pdf','downloads/source.zip','verification/integration/next-steps.json','verification/integration/next-steps-manifest.json','verification/integration/manifest.json','workbench/program3.html','workbench/program3-report.pdf']
           for name in paths:
               data=urllib.request.urlopen(base+name,timeout=60).read()
               if data!=(root/name).read_bytes():raise ValueError('Published bytes differ: '+name)

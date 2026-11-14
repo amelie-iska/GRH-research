@@ -23,12 +23,14 @@ theorem scalar_model_error (actual surrogate delta alpha : ℝ)
  have h := (abs_le.mp herror).2
  linarith
 
-theorem long_division_step (p r bit : ℕ) (hp : 0<p) (hr : r<p) (hb : bit≤1) :
+/- r < p already entails positivity of p; no redundant hypothesis is needed. -/
+theorem long_division_step (p r bit : ℕ) (hr : r<p) (hb : bit≤1) :
  (if 2*r+bit<p then 2*r+bit else 2*r+bit-p)<p := by
  split_ifs <;> omega
 
+/- Explicit function syntax prevents Boolean coercion/equality precedence ambiguity. -/
 theorem xor_output_involution (value output : Bool) :
- (output ^^ value) ^^ value=output := by
+ Bool.xor (Bool.xor output value) value = output := by
  cases value <;> cases output <;> decide
 end IntegratedOperatorContracts
 #print axioms IntegratedOperatorContracts.power_intertwines
