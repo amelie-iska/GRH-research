@@ -1,8 +1,8 @@
 \chapter{The Lean 4 companion: verified statements and explicit limits}
 
-\section{Current six-module verification}
+\section{Current seven-module verification}
 
-The current companion contains 115 selected theorem declarations in six
+The current companion contains 121 selected theorem declarations in seven
 modules.
 \begin{center}
 \begin{tabular}{lr}
@@ -13,15 +13,16 @@ Module & Declarations\\\midrule
 \texttt{DiagramGrammar} & 16\\
 \texttt{FluidInterfaces} & 34\\
 \texttt{ReductionContracts} & 16\\
-\texttt{TransportContracts} & 17\\\bottomrule
+\texttt{TransportContracts} & 17\\
+\texttt{WeightedGainContracts} & 6\\\bottomrule
 \end{tabular}
 \end{center}
 The final verification records a fresh compiler check, exact printed types,
 source hashes and axiom dependencies for every declaration, with no warnings
 or unexpected axioms. Its authoritative record is
-\texttt{lean/final-verification/verification.json} and the six module logs.
-The formal type map identifies 68 declarations with precise partial
-components of 25 manuscript environments; no whole composite environment is
+\texttt{lean/final-verification/verification.json} and the seven module logs.
+The formal type map identifies 74 declarations with precise partial
+components of 27 manuscript environments; no whole composite environment is
 labelled completely formalized. This verification covers the selected local
 interfaces, not the full upstream continuum proof or cryptographic security.
 
@@ -70,9 +71,9 @@ actually certified.
 There are three different proof layers in the deliverable. First, the paper
 gives complete elementary proofs of many finite and algebraic results.
 Second, it states deep external theorems with citations and their relevant
-hypotheses. Third, the current companion checks 115 selected formal declarations
-across the six modules listed above. The original four modules contribute 82;
-the reduction and transport modules add 16 and 17, respectively.
+hypotheses. Third, the current companion checks 121 selected formal declarations
+across the seven modules listed above. The original four modules contribute 82;
+the reduction, transport and weighted-gain modules add 16, 17 and 6, respectively.
 Appendix~\ref{ch:fluid-verification} identifies the earlier fluid-era checks
 and distinguishes them from the current aggregate verification.
 These layers overlap, but they are not identical. A citation to a formal

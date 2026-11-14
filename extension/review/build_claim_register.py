@@ -502,7 +502,7 @@ def strip_lean_comments_and_strings(s: str) -> str:
 
 
 def lean_audit() -> tuple[dict, dict]:
-    """Bind every current declaration to the current successful six-module run.
+    """Bind every current declaration to the current successful module run.
 
     This function does not run Lean. It validates the existing fresh run's
     source, checker, configuration, raw-log and per-declaration evidence.
@@ -516,6 +516,7 @@ def lean_audit() -> tuple[dict, dict]:
         "FluidInterfaces": "FluidInterfaces",
         "ReductionContracts": "ReductionContracts",
         "TransportContracts": "TransportContracts",
+        "WeightedGainContracts": "WeightedGainContracts",
     }
     manifest_path = LEAN / "final-verification/verification.json"
     fresh = json.loads(manifest_path.read_text())
@@ -642,7 +643,7 @@ def lean_audit() -> tuple[dict, dict]:
         "upstream_continuum_kernel_verification_performed": False,
     }
     return {
-        "method": "Source, configuration, checker, exact printed-type and raw-log audit against the current successful six-module verification manifest. This inventory generator does not invoke Lean.",
+        "method": "Source, configuration, checker, exact printed-type and raw-log audit against the current successful registered-module verification manifest. This inventory generator does not invoke Lean.",
         "new_kernel_run_performed": False,
         "separate_fresh_local_kernel_verification": fresh_record,
         "authoritative_verified_declaration_count": len(authoritative_names),
@@ -1212,8 +1213,8 @@ def markdown(register: dict) -> str:
         "that foundational axioms are absent.",
         "",
         "**The inventory generator itself does not run Lean.** Fresh second-pass "
-        "kernel runs of all six modules are recorded in "
-        "extension/lean/final-verification/verification.json and its six module logs. "
+        "kernel runs of all registered modules are recorded in "
+        "extension/lean/final-verification/verification.json and its module logs. "
         f"All {verified_count} declaration-level dependency reports, printed types, source hashes "
         "and log hashes match the current successful record. The existing 35 precise "
         "component declarations remain mapped; validated additions are merged without "

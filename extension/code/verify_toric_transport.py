@@ -218,20 +218,86 @@ def enumerate_matrix_paths(arrows, input_dim):
     return actual, maximum, counts
 
 
-def weighted_gain_certificate(gain, weights, rate):
-    """Check G w <= q w exactly for a supplied positive weight vector.
+def _weighted_gain_scalar(value, name):
+    """Accept only the exact scalar types this certificate can justify."""
+    # In particular, bool is an int subclass and custom numeric subclasses
+    # can replace arithmetic/comparisons. Check exact types before arithmetic.
+    if type(value) is not int and type(value) is not Q:
+        raise TypeError(f"{name} must be a built-in int or fractions.Fraction")
+    return Q(value)
 
-    At fixed q these are linear feasibility inequalities. This function
-    verifies a witness; it does not pretend to optimize q and w in one LP.
-    """
+
+def _weighted_gain_evaluation(gain, weights, rate):
     rows, cols = shape(gain)
     if rows != cols or len(weights) != rows:
         raise ValueError("Gain certificate needs a square matrix and matching weights")
+    gain = [[_weighted_gain_scalar(value, f"gain[{i}][{j}]")
+             for j, value in enumerate(row)] for i, row in enumerate(gain)]
+    weights = [_weighted_gain_scalar(value, f"weights[{i}]")
+               for i, value in enumerate(weights)]
+    rate = _weighted_gain_scalar(rate, "rate")
     if any(value < 0 for row in gain for value in row) or rate < 0:
         raise ValueError("Gain bounds and rate must be nonnegative")
     if any(weight <= 0 for weight in weights):
         raise ValueError("Block-norm weights must be strictly positive")
-    return all(value <= rate * weight for value, weight in zip(mv(gain, weights), weights))
+    lhs = mv(gain, weights)
+    rhs = [rate * weight for weight in weights]
+    slack = [limit - value for limit, value in zip(rhs, lhs)]
+    row_bounds = [value / weight for value, weight in zip(lhs, weights)]
+    holds = all(value >= 0 for value in slack)
+    return {"gain": gain, "weights": weights, "rate": rate,
+            "row_lhs": lhs, "row_rhs": rhs, "row_slack": slack,
+            "row_bounds": row_bounds, "weighted_bound": max(row_bounds),
+            "bound_holds": holds, "certifies_contraction": holds and rate < 1}
+
+
+def weighted_gain_certificate(gain, weights, rate):
+    """Check G w <= q w for exact built-in int/Fraction scalar inputs.
+
+    G must be a nonnegative square matrix, w strictly positive and q >= 0.
+    Floats (including finite ones), bools and custom scalar subclasses are
+    rejected before arithmetic. Explicit Fraction conversion is the caller's
+    responsibility; silently rounding an approximate witness can certify a
+    false bound. Existing valid exact inputs still return a bool.
+
+    At fixed q these are linear feasibility inequalities. True with q >= 1
+    is a gain bound, not a strict contraction. Applying a q < 1 bound to an
+    actual update requires a separately justified domain-valid gain envelope.
+    This function verifies supplied weights; it does not optimize q and w.
+    """
+    return _weighted_gain_evaluation(gain, weights, rate)["bound_holds"]
+
+
+def weighted_gain_witness(gain, weights, rate):
+    """Return a replayable exact JSON witness, including rejected bounds.
+
+    Decimal numerator/positive-denominator strings preserve arbitrary integer
+    precision in JSON. Each Fraction is reduced with a positive denominator.
+    check_weighted_gain_witness.py independently recomputes the entire record
+    using integer arithmetic, without importing this implementation.
+
+    The contraction flag concerns the supplied finite matrix in its weighted
+    maximum norm. No LP optimum, global nonlinear gain envelope, invariant
+    domain, continuum PDE result or file-authenticity guarantee is implied.
+    """
+    result = _weighted_gain_evaluation(gain, weights, rate)
+
+    def encode(value):
+        return {"numerator": str(value.numerator),
+                "denominator": str(value.denominator)}
+
+    return {
+        "schema_version": 1,
+        "kind": "weighted-gain",
+        "gain": [[encode(value) for value in row] for row in result["gain"]],
+        "weights": [encode(value) for value in result["weights"]],
+        "rate": encode(result["rate"]),
+        **{key: [encode(value) for value in result[key]]
+           for key in ("row_lhs", "row_rhs", "row_slack", "row_bounds")},
+        "weighted_bound": encode(result["weighted_bound"]),
+        "bound_holds": result["bound_holds"],
+        "certifies_contraction": result["certifies_contraction"],
+    }
 
 
 def run_checks():

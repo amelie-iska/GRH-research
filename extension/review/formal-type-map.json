@@ -1,25 +1,25 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-14T00:33:48.980488+00:00",
+  "generated_at_utc": "2026-11-14T01:36:57.167506+00:00",
   "purpose": "Exact declaration types and manually reviewed component correspondences, not a claim that all manuscript environments are formalized.",
-  "declaration_count": 115,
-  "declarations_with_manuscript_components": 68,
+  "declaration_count": 121,
+  "declarations_with_manuscript_components": 74,
   "whole_environments_marked_fully_formalized": 0,
   "claim_register": "extension/review/claim-register.json",
   "lean_source_audit": {
-    "method": "Source, configuration, checker, exact printed-type and raw-log audit against the current successful six-module verification manifest. This inventory generator does not invoke Lean.",
+    "method": "Source, configuration, checker, exact printed-type and raw-log audit against the current successful registered-module verification manifest. This inventory generator does not invoke Lean.",
     "new_kernel_run_performed": false,
     "separate_fresh_local_kernel_verification": {
       "path": "extension/lean/final-verification/verification.json",
-      "sha256": "0e22a8acbc9e9076a63af813d2f719cd64e27d30256f6f37c4950d77ac0868c8",
+      "sha256": "465cb1eceeb51316595b205d1e9cd532cf4705d62c4c767de8c879247f2443a1",
       "status": "verified",
-      "checked_at_utc": "2026-11-14T00:17:41.403883+00:00",
-      "module_count": 6,
-      "declaration_count": 115,
+      "checked_at_utc": "2026-11-14T01:33:03.265652+00:00",
+      "module_count": 7,
+      "declaration_count": 121,
       "scope": "Fresh elaboration, printed types and actual foundational axiom dependencies for exactly the listed finite-interface declarations. Cached compiled imports and the named Lean/mathlib toolchain are trusted. No claim of complete monograph, continuum Navier-Stokes, GRH, Yang-Mills or cryptographic implementation verification.",
       "upstream_continuum_kernel_verification_performed": false
     },
-    "authoritative_verified_declaration_count": 115,
+    "authoritative_verified_declaration_count": 121,
     "project_axiom_or_admitted_placeholder_detected": false,
     "foundational_axioms_are_not_claimed_absent": [
       "Classical.choice",
@@ -152,6 +152,27 @@
           "propext"
         ],
         "nonstandard_reported_dependencies": []
+      },
+      {
+        "source_file": "extension/lean/WeightedGainContracts.lean",
+        "manifest_file": "extension/lean/final-verification/verification.json",
+        "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+        "manifest_source_hash_matches": true,
+        "verification_log": "extension/lean/final-verification/WeightedGainContracts.log",
+        "verification_log_sha256": "79be90d4807d1eb48df1f6478c3a2004db7cc0d90093f0af0c45a45225c0ffad",
+        "verification_log_axioms_match_manifest": true,
+        "declaration_count": 6,
+        "source_declarations_match_manifest": true,
+        "print_axioms_covers_every_declaration": true,
+        "kernel_printed_types_cover_every_declaration": true,
+        "audit_commands_provenance": "verify_all.py appends #check and #print axioms for every selected declaration",
+        "forbidden_tokens_outside_comments_and_strings": [],
+        "reported_dependencies": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "nonstandard_reported_dependencies": []
       }
     ],
     "other_lean_files": [],
@@ -270,12 +291,18 @@
       "TransportContracts.scalar_suffix_correction",
       "TransportContracts.suffix_transport_telescope",
       "TransportContracts.trace_preserving_composite_nonzero",
-      "TransportContracts.two_arrow_transport"
+      "TransportContracts.two_arrow_transport",
+      "WeightedGainContracts.feasibility_mono",
+      "WeightedGainContracts.gain_bound",
+      "WeightedGainContracts.gain_iteration_with_residual",
+      "WeightedGainContracts.matrix_action_weighted_bound",
+      "WeightedGainContracts.matrix_iteration_with_residual",
+      "WeightedGainContracts.row_ratio_iff"
     ],
     "new_component_mapping_provenance": {
       "path": "extension/lean/new-declarations.json",
-      "sha256": "73639787341ebea44766a326e626f995d8d5398074abb05b6a962d2b772105c2",
-      "declaration_count": 33,
+      "sha256": "0965718778daa84c761fc0cdc08eb44c9d3cd46fb06cf10546f7724cc2b095d2",
+      "declaration_count": 39,
       "previous_precise_component_declarations_preserved": 35
     }
   },
@@ -2981,6 +3008,178 @@
           ],
           "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
           "component": "Two-arrow noncommutative telescope",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "WeightedGainContracts.feasibility_mono",
+      "source_file": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_signature_source": "theorem feasibility_mono (G : Matrix ι ι K) (w : ι → K) (q q' : K)\n    (hw : ∀ i, 0 < w i) (hqq' : q ≤ q')\n    (hgain : ∀ i, (G *ᵥ w) i ≤ q * w i) :\n    ∀ i, (G *ᵥ w) i ≤ q' * w i",
+      "kernel_printed_type": "WeightedGainContracts.feasibility_mono.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (G : Matrix ι ι K) (w : ι → K) (q q' : K) (hw : ∀ (i : ι), 0 < w i)\n  (hqq' : q ≤ q') (hgain : ∀ (i : ι), G.mulVec w i ≤ q * w i) (i : ι) : G.mulVec w i ≤ q' * w i",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.015",
+          "claim_labels": [
+            "prop:weighted-gain-feasibility"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "A fixed positive weight vector remains feasible when the proposed rate increases",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "WeightedGainContracts.gain_bound",
+      "source_file": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_signature_source": "theorem gain_bound (G : Matrix ι ι K) (w d d' : ι → K) (q r : K)\n    (hG : ∀ i j, 0 ≤ G i j)\n    (hgain : ∀ i, (G *ᵥ w) i ≤ q * w i) (hr : 0 ≤ r)\n    (hd : ∀ i, d i ≤ r * w i)\n    (hstep : ∀ i, d' i ≤ (G *ᵥ d) i) :\n    ∀ i, d' i ≤ (q * r) * w i",
+      "kernel_printed_type": "WeightedGainContracts.gain_bound.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (G : Matrix ι ι K) (w d d' : ι → K) (q r : K) (hG : ∀ (i j : ι), 0 ≤ G i j)\n  (hgain : ∀ (i : ι), G.mulVec w i ≤ q * w i) (hr : 0 ≤ r) (hd : ∀ (i : ι), d i ≤ r * w i)\n  (hstep : ∀ (i : ι), d' i ≤ G.mulVec d i) (i : ι) : d' i ≤ q * r * w i",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.016",
+          "claim_labels": [
+            "thm:weighted-gain-propagation",
+            "eq:weighted-residual-convolution"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Nonnegative finite block-gain comparison propagates a componentwise radius; this nondividing result needs no positivity assumption on weights",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "WeightedGainContracts.gain_iteration_with_residual",
+      "source_file": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_signature_source": "theorem gain_iteration_with_residual (G : ℕ → Matrix ι ι K)\n    (w : ι → K) (q r₀ : K) (δ : ℕ → K) (d : ℕ → ι → K)\n    (hG : ∀ n i j, 0 ≤ G n i j)\n    (hgain : ∀ n i, (G n *ᵥ w) i ≤ q * w i)\n    (hq : 0 ≤ q) (hr₀ : 0 ≤ r₀) (hδ : ∀ n, 0 ≤ δ n)\n    (hzero : ∀ i, d 0 i ≤ r₀ * w i)\n    (hstep : ∀ n i, d (n + 1) i ≤ (G n *ᵥ d n) i + δ n * w i) :\n    ∀ n i, d n i ≤ errorBudget q r₀ δ n * w i",
+      "kernel_printed_type": "WeightedGainContracts.gain_iteration_with_residual.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (G : ℕ → Matrix ι ι K) (w : ι → K) (q r₀ : K) (δ : ℕ → K) (d : ℕ → ι → K)\n  (hG : ∀ (n : ℕ) (i j : ι), 0 ≤ G n i j) (hgain : ∀ (n : ℕ) (i : ι), (G n).mulVec w i ≤ q * w i) (hq : 0 ≤ q)\n  (hr₀ : 0 ≤ r₀) (hδ : ∀ (n : ℕ), 0 ≤ δ n) (hzero : ∀ (i : ι), d 0 i ≤ r₀ * w i)\n  (hstep : ∀ (n : ℕ) (i : ι), d (n + 1) i ≤ (G n).mulVec (d n) i + δ n * w i) (n : ℕ) (i : ι) :\n  d n i ≤ WeightedGainContracts.errorBudget q r₀ δ n * w i",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.016",
+          "claim_labels": [
+            "thm:weighted-gain-propagation",
+            "eq:weighted-residual-convolution"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Time-varying block gains sharing weights and rate propagate the initial radius plus the explicit finite geometric residual convolution",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "WeightedGainContracts.matrix_action_weighted_bound",
+      "source_file": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_signature_source": "theorem matrix_action_weighted_bound (A G : Matrix ι ι K) (w x : ι → K)\n    (q r : K) (hw : ∀ i, 0 < w i)\n    (hG : ∀ i j, 0 ≤ G i j)\n    (hgain : ∀ i, (G *ᵥ w) i ≤ q * w i)\n    (hA : ∀ i j, |A i j| ≤ G i j)\n    (hx : ∀ i, |x i| ≤ r * w i) :\n    ∀ i, |(A *ᵥ x) i| ≤ (q * r) * w i",
+      "kernel_printed_type": "WeightedGainContracts.matrix_action_weighted_bound.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (A G : Matrix ι ι K) (w x : ι → K) (q r : K) (hw : ∀ (i : ι), 0 < w i)\n  (hG : ∀ (i j : ι), 0 ≤ G i j) (hgain : ∀ (i : ι), G.mulVec w i ≤ q * w i) (hA : ∀ (i j : ι), |A i j| ≤ G i j)\n  (hx : ∀ (i : ι), |x i| ≤ r * w i) (i : ι) : |A.mulVec x i| ≤ q * r * w i",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.016",
+          "claim_labels": [
+            "thm:weighted-gain-propagation",
+            "eq:weighted-residual-convolution"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "The actual signed matrix action satisfies the certified weighted component bound under entrywise domination and positive weights",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "WeightedGainContracts.matrix_iteration_with_residual",
+      "source_file": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_signature_source": "theorem matrix_iteration_with_residual (A G : ℕ → Matrix ι ι K)\n    (w : ι → K) (q r₀ : K) (δ : ℕ → K) (u e : ℕ → ι → K)\n    (hG : ∀ n i j, 0 ≤ G n i j)\n    (hgain : ∀ n i, (G n *ᵥ w) i ≤ q * w i)\n    (hA : ∀ n i j, |A n i j| ≤ G n i j)\n    (hq : 0 ≤ q) (hr₀ : 0 ≤ r₀) (hδ : ∀ n, 0 ≤ δ n)\n    (hzero : ∀ i, |u 0 i| ≤ r₀ * w i)\n    (he : ∀ n i, |e n i| ≤ δ n * w i)\n    (hu : ∀ n, u (n + 1) = A n *ᵥ u n + e n) :\n    ∀ n i, |u n i| ≤ errorBudget q r₀ δ n * w i",
+      "kernel_printed_type": "WeightedGainContracts.matrix_iteration_with_residual.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (A G : ℕ → Matrix ι ι K) (w : ι → K) (q r₀ : K) (δ : ℕ → K) (u e : ℕ → ι → K)\n  (hG : ∀ (n : ℕ) (i j : ι), 0 ≤ G n i j) (hgain : ∀ (n : ℕ) (i : ι), (G n).mulVec w i ≤ q * w i)\n  (hA : ∀ (n : ℕ) (i j : ι), |A n i j| ≤ G n i j) (hq : 0 ≤ q) (hr₀ : 0 ≤ r₀) (hδ : ∀ (n : ℕ), 0 ≤ δ n)\n  (hzero : ∀ (i : ι), |u 0 i| ≤ r₀ * w i) (he : ∀ (n : ℕ) (i : ι), |e n i| ≤ δ n * w i)\n  (hu : ∀ (n : ℕ), u (n + 1) = (A n).mulVec (u n) + e n) (n : ℕ) (i : ι) :\n  |u n i| ≤ WeightedGainContracts.errorBudget q r₀ δ n * w i",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.016",
+          "claim_labels": [
+            "thm:weighted-gain-propagation",
+            "eq:weighted-residual-convolution"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "The actual time-varying inhomogeneous matrix recurrence satisfies that budget when every signed residual obeys its component bound",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "WeightedGainContracts.row_ratio_iff",
+      "source_file": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_signature_source": "theorem row_ratio_iff (G : Matrix ι ι K) (w : ι → K) (q : K)\n    (hw : ∀ i, 0 < w i) :\n    (∀ i, (G *ᵥ w) i / w i ≤ q) ↔\n      (∀ i, (G *ᵥ w) i ≤ q * w i)",
+      "kernel_printed_type": "WeightedGainContracts.row_ratio_iff.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (G : Matrix ι ι K) (w : ι → K) (q : K) (hw : ∀ (i : ι), 0 < w i) :\n  (∀ (i : ι), G.mulVec w i / w i ≤ q) ↔ ∀ (i : ι), G.mulVec w i ≤ q * w i",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.015",
+          "claim_labels": [
+            "prop:weighted-gain-feasibility"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Positive-denominator row ratios are equivalent to componentwise feasibility over an ordered field",
           "whole_statement_formalized": false
         }
       ]

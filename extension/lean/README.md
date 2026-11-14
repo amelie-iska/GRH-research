@@ -1,14 +1,15 @@
 # Exact formal interfaces
 
-The current package contains **115 selected theorem declarations in six
-default Lake libraries**. `ReductionContracts.lean` adds 16 declarations and
-`TransportContracts.lean` adds 17 to the previous four-module, 82-declaration
-snapshot. The current fresh check and complete printed types/axioms are in
+The current package contains **121 selected theorem declarations in seven
+default Lake libraries**. `ReductionContracts.lean` adds 16 declarations,
+`TransportContracts.lean` adds 17, and `WeightedGainContracts.lean` adds six
+to the previous four-module, 82-declaration snapshot. The current fresh check
+and complete printed types/axioms are in
 [`final-verification/verification.json`](final-verification/verification.json)
 and its per-module logs. The historical records below retain their original
 sources and counts; they are not relabeled as checks of the new modules.
 
-The [new declaration map](new-declarations.md) links each of the 33 additions
+The [new declaration map](new-declarations.md) links each of the 39 additions
 to its precise manuscript component and states where formal coverage stops.
 No whole continuum PDE proof, complete monograph, GRH, Yang–Mills mass-gap
 construction, or implemented cryptographic security theorem is claimed here.
@@ -23,7 +24,7 @@ python extension/lean/verify_all.py \
 ```
 
 Run that command from the repository root. It checks the compiler revision,
-clean tracked mathlib pin, all six Lake targets, current source hashes, actual
+clean tracked mathlib pin, all seven Lake targets, current source hashes, actual
 theorem types, axiom inventories and source stability during elaboration.
 The fresh checker now passes `-DwarningAsError=true` to Lean and independently
 rejects warning-bearing output, absent printed types and unexpected axioms.
@@ -32,8 +33,8 @@ Standard foundational dependencies remain disclosed. Cached compiled imports
 and the named compiler are part of the trusted environment; this command is
 not a from-source rebuild of the entire Lean/mathlib dependency graph.
 
-The [final integration audit](../review/final-pass/independent-formal-crypto-final-20261113.md)
-records the fresh 115-declaration run in the integration clone and the separate
+The historical [final integration audit](../review/final-pass/independent-formal-crypto-final-20261113.md)
+records the prior 115-declaration run in the integration clone and the separate
 25-test cryptographic wrapper run. The claim-register gate also has executable
 negative checks: altered source, checker or log bytes; a missing printed type
 even after the log hash is recomputed; and a falsely asserted whole-manuscript
@@ -63,7 +64,7 @@ they are never installed as project theorem sources.
 ## Portable inherited-package verification
 
 The original `lean/` arithmetic and `lean-analytic/` packages remain separate
-from the six extension modules. Their public theorem/lemma inventory currently
+from the seven extension modules. Their public theorem/lemma inventory currently
 contains **7 arithmetic and 361 analytic declarations**. This source inventory
 is not itself a successful build count: consult each verification record's
 `verified_declaration_count`, `blocked_module_count` and exact source hashes.
@@ -255,8 +256,9 @@ turned into a continuum PDE theorem. The trace lemma does not formalize complete
 positivity, instrument branches, quantum-channel trace-norm contraction or
 protocol security.
 
-Both modules are now Lake libraries and default targets. The source/type/hash
-map and fresh six-module logs are the authority for the current **115** count.
+Both modules are Lake libraries and default targets. Together they established
+the preceding 115-declaration extension snapshot. The current source/type/hash
+map and seven-module logs additionally include the weighted gain results below.
 
 Six of the transport declarations provide a concrete nonnormal-matrix witness:
 `J_M = [[0,M],[0,0]]` has square zero, but maps the unit vector `(0,1)`
@@ -266,5 +268,34 @@ the matrix does not commute with its transpose. These exact algebraic facts
 expose the failure of a plain `J` power probe as a general operator-norm upper
 certificate. They do not claim a complete singular-value algorithm or its
 numerical error analysis. The earlier independent-verification snapshot with
-109 declarations remains historical; the current `final-verification` directory
-contains the fresh 115-declaration run.
+109 declarations remains historical. The complete 115-declaration source and
+verification record remains available at published commit `ae44abb`; the
+current `final-verification` directory contains the fresh 121-declaration run.
+
+## Exact weighted gain contracts: six additional declarations
+
+`WeightedGainContracts.lean` connects a supplied gain certificate to the actual
+signed matrix action. It proves equivalence between positive-denominator row
+ratios and componentwise feasibility, monotonicity in the proposed rate, a
+general nonnegative block-gain comparison, and the resulting matrix-action
+bound. Two further theorems propagate time-varying gains and actual matrix
+recurrences with every residual included in the finite geometric convolution:
+
+\[
+  |u_{n,i}|\le
+  \left(q^n r_0+\sum_{k=0}^{n-1}q^{n-1-k}\delta_k\right)w_i.
+\]
+
+The hypotheses include a common row-gain certificate at every step, entrywise
+domination of the actual matrices, nonnegative radii, and the specified initial
+and residual bounds. The statements hold over an ordered field, including
+exact rationals and reals. The nondividing component bounds need fewer
+assumptions than a norm interpretation; strictly positive weights and `q < 1`
+are needed to interpret the unforced bound as strict weighted-norm contraction.
+
+These are finite algebraic results. They do not verify the Python parser or
+certificate replay implementation, an LP solver, domain-wide Jacobian gains,
+invariant domains, nonlinear fixed points, a continuum PDE, or a cryptographic
+security claim. The [weighted gain formalization note](weighted-gain-formalization.md)
+records the precise new coverage and the preserved prior evidence. The inherited
+arithmetic and analytic declarations remain separately audited.

@@ -1,21 +1,23 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-14T00:18:45.120355+00:00",
+  "checked_at_utc": "2026-11-14T01:37:40.697244+00:00",
   "status": "passed",
   "python_optimization": 1,
   "explicit_checks_active_under_optimization": true,
-  "generator_sha256": "105edecd4800f532b9e292791d6e9d7674532b6049cdd9b2a8766e4349bdd5d9",
-  "gate_checker_sha256": "b4c6af02bc6a880374905de9c28e5b79d939cf9ac85df2a4e9de32cb4e60dcc6",
-  "lean_manifest_sha256": "0e22a8acbc9e9076a63af813d2f719cd64e27d30256f6f37c4950d77ac0868c8",
+  "generator_sha256": "5e4bbd5bd5448cbc10b04a25a2d5cd5eb0c4a5aadbff51f6c26be0e474e40087",
+  "gate_checker_sha256": "76b68abf13c544eac02a3f9be3eb94896dbd76f4beceeca1113e151118c158c6",
+  "lean_manifest_sha256": "465cb1eceeb51316595b205d1e9cd532cf4705d62c4c767de8c879247f2443a1",
   "checks": [
     {
-      "name": "current_115_declaration_manifest_accepted",
-      "status": "passed"
+      "name": "current_registered_manifest_accepted",
+      "status": "passed",
+      "declarations": 121,
+      "modules": 7
     },
     {
       "name": "stale_source_rejected",
       "status": "passed",
-      "observed_rejection": "Source/declaration/printed-type mismatch: TransportContracts"
+      "observed_rejection": "Source/declaration/printed-type mismatch: WeightedGainContracts"
     },
     {
       "name": "stale_checker_rejected",

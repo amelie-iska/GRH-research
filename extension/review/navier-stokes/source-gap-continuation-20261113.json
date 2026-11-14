@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "continuation_id": "source-gap-continuation-20261113",
+  "review_date_utc": "2026-11-14",
+  "scope": "Independent transcript provenance and exact original Cerfon citation; no new full-text original-paper coverage and no mathematical-claim changes.",
+  "transcript": {
+    "review_date_utc": "2026-11-14",
+    "extracted_at_utc": "2026-11-14T01:29:48.520Z",
+    "source_url": "https://www.youtube.com/watch?v=MXs_vkc8hpY",
+    "method": "Read-only DOM extraction of the visible timestamps and text from all 249 timed entries in the public YouTube Show transcript panel; separately generated from the browser export attempt.",
+    "timed_segments": 249,
+    "first_timestamp": "0:00",
+    "last_timestamp": "32:36",
+    "last_timestamp_semantics": "Start of the final exposed transcript entry, not the video end time.",
+    "player_duration_display": "33:00",
+    "strictly_increasing_timestamps": true,
+    "largest_adjacent_start_gap_seconds": 14,
+    "missing_timestamp_or_text_fields": 0,
+    "all_extracted_entries_read": true,
+    "reading_batches_1_based": [
+      [
+        1,
+        85
+      ],
+      [
+        86,
+        170
+      ],
+      [
+        171,
+        249
+      ]
+    ],
+    "description_and_bibliography_rechecked": true,
+    "canonicalization": "UTF-8 without BOM; each line is the visible timestamp, TAB, trimmed textContent, and LF. Internal transcript spelling and punctuation are preserved.",
+    "canonical_text_bytes": 35743,
+    "canonical_text_sha256": "0cbc23bb1d1d6c3fe46f46dcfa337f4aa78f0d8966f377eea35ea525e86e3884",
+    "export_tool_attempt": {
+      "initial_result": "ad_playing",
+      "later_result": "Returned an export path",
+      "path_verification": "The returned path could not be opened in the browser runtime (ENOENT). It is not counted as verified exporter output."
+    },
+    "private_cache": {
+      "verified": true,
+      "basename": "0cbc23bb1d1d6c3fe46f46dcfa337f4aa78f0d8966f377eea35ea525e86e3884.tsv",
+      "bytes": 35743,
+      "sha256": "0cbc23bb1d1d6c3fe46f46dcfa337f4aa78f0d8966f377eea35ea525e86e3884",
+      "verified_at_utc": "2026-11-14T01:32:52.057255+00:00",
+      "outside_git_repository": true,
+      "included_in_repository_or_releases": false
+    },
+    "limitations": [
+      "No full audiovisual review is claimed.",
+      "The source captions are not certified as error-free or author-authored.",
+      "The content hash identifies the extracted bytes reviewed; it does not independently validate their scientific claims.",
+      "The full transcript is privately cached and is not redistributed in the repository or release artifacts.",
+      "The earlier caption-file and transcript-API failures remain historical evidence; those endpoints were not reattempted in this continuation."
+    ]
+  },
+  "cerfon_citation": {
+    "verified_date_utc": "2026-11-14",
+    "source_url": "https://www.youtube.com/watch?v=MXs_vkc8hpY",
+    "method": "Read the destination of the Cerfon link in the original video expanded bibliography.",
+    "exact_cited_url": "https://www.math.nyu.edu/~cerfon/mechanics.html",
+    "notes_full_text_reviewed": false,
+    "conclusion": "The historical attempted URL matches the original citation. This confirmation does not close the notes-access gap."
+  },
+  "full_text_gaps_remaining": [
+    "jonsson1961",
+    "cerfon",
+    "parker1959",
+    "valentini2015",
+    "loudon1959",
+    "loudon2016"
+  ],
+  "new_full_text_original_papers_reviewed": 0,
+  "source_material_redistribution": {
+    "video_transcript_in_repository": false,
+    "downloaded_primary_pdfs_in_repository": false,
+    "authored_review_and_metadata_only": true
+  },
+  "historical_access_records_preserved": true
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "examples": [
+    {
+      "name": "accepted",
+      "witness": "witness-accepted.json",
+      "witness_sha256": "0012ab3f6c1ac049cb4b4092e20fc341ca36cc2d1faffb876e7e2d6d327855bb",
+      "replay": "replay-accepted.json",
+      "replay_sha256": "ceeb2e6fc9b8154dd172b7e59fcc60ec34d1eb10c2e3b80a1ad03d14541fe754",
+      "exit_code": 0,
+      "status": "certified",
+      "certifies_contraction": true
+    },
+    {
+      "name": "rejected",
+      "witness": "witness-rejected.json",
+      "witness_sha256": "dd5944df816fce8e3a0f062e51ed4fafdd6d47c4bb05ac6508711bb10fc36171",
+      "replay": "replay-rejected.json",
+      "replay_sha256": "aa45839fb1fa2f97ff0a0a1f27220212dc8773b2717fe5ea46f243d780ceccd9",
+      "exit_code": 2,
+      "status": "rejected",
+      "certifies_contraction": false
+    },
+    {
+      "name": "noncontracting",
+      "witness": "witness-noncontracting.json",
+      "witness_sha256": "49ad324ea0e2734d2af6b637a9f6725eab16c718997fe5a553304b7dfd60cad3",
+      "replay": "replay-noncontracting.json",
+      "replay_sha256": "0173ec4441952e951a910b577dbb39e318979a386cd95d1be23ed4102987acbd",
+      "exit_code": 0,
+      "status": "certified",
+      "certifies_contraction": false
+    },
+    {
+      "name": "subnormal-exact-rejected",
+      "witness": "witness-subnormal-exact-rejected.json",
+      "witness_sha256": "72b8d9648c2cac826538e6bc9b01ad4e3dd8b13782bf0c16c3fdf40f3ae3d86c",
+      "replay": "replay-subnormal-exact-rejected.json",
+      "replay_sha256": "02f2875a6d00c15220f6b8d66baf41b0ff31c967918ab6af7b112b5eb5aa37b8",
+      "exit_code": 2,
+      "status": "rejected",
+      "certifies_contraction": false
+    }
+  ],
+  "ordinary_regression_equal_to_ae44abb_except_source_hash": true,
+  "source_sha256": {
+    "extension/code/verify_toric_transport.py": "b22fed38f4998e54baca0c0f29a587582137dbf9e5f219e0b8850a8f9ff70847",
+    "extension/code/check_weighted_gain_witness.py": "85b2c1ac08cc7fc76495961d24060e90e21c9808cdb3b7a1343cfea23e355b89",
+    "extension/code/test_weighted_gain.py": "faae15bacb6d7fb159e4c9c8833be98903a6e0c29514d76c94546ff13e23148a"
+  },
+  "scope": "Replayable exact examples and preservation of the prior finite toric regression outputs; supplied gains are not certified as global model envelopes."
+}

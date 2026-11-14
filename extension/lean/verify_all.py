@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Freshly elaborate all six finite-interface modules with exact pinned tools.
+"""Freshly elaborate all seven finite-interface modules with exact pinned tools.
 
 This driver makes no downloads or source changes. It captures actual theorem
 types and axiom dependencies, verifies source stability during checking, and
@@ -29,6 +29,7 @@ MODULES = {
     "FluidInterfaces": ("FluidInterfaces", 34),
     "ReductionContracts": ("ReductionContracts", 16),
     "TransportContracts": ("TransportContracts", 17),
+    "WeightedGainContracts": ("WeightedGainContracts", 6),
 }
 
 

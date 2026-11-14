@@ -1,0 +1,54 @@
+{
+  "baseline_commit": "ae44abba256f29f477c2348fbf15497f305ac1e2",
+  "source": "extension/code/verify_toric_transport.py",
+  "source_sha256": "34bf46e9c1274d75a3708177cea8848a1b34c0d57978d1d2ed0bfcfc1060b7f1",
+  "execution": "Unmodified source loaded from git in memory; no tracked source changes",
+  "finite_subnormal_false_positive": {
+    "gain": {
+      "repr": "1.01",
+      "hex": "0x1.028f5c28f5c29p+0",
+      "exact_rational": {
+        "numerator": "4548635623644201",
+        "denominator": "4503599627370496"
+      }
+    },
+    "weight": {
+      "repr": "5e-324",
+      "hex": "0x0.0000000000001p-1022",
+      "exact_rational": {
+        "numerator": "1",
+        "denominator": "202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784"
+      }
+    },
+    "rate": {
+      "repr": "0.99",
+      "hex": "0x1.fae147ae147aep-1",
+      "exact_rational": {
+        "numerator": "4458563631096791",
+        "denominator": "4503599627370496"
+      }
+    },
+    "binary64_lhs_hex": "0x0.0000000000001p-1022",
+    "binary64_rhs_hex": "0x0.0000000000001p-1022",
+    "old_checker_result": true,
+    "same_inputs_as_exact_fractions_result": false,
+    "exact_slack": {
+      "numerator": "-45035996273705",
+      "denominator": "455769356286876421213391376429838886925099892492896311359073203585443629295319008244476198689326433780162368020962991167191110613607139517741900808291216386005762763108913764753265553690611976382226145357950239793122692242822302122332514317008108070827274337186476319071835298862424880252130670164301449339557783552772064084296510505746432"
+    },
+    "reason": "Both binary64 products round to the same smallest positive subnormal; exact slack is negative."
+  },
+  "infinite_weight_false_positive": {
+    "gain": 2,
+    "weight": "Infinity",
+    "rate": "0.5",
+    "old_checker_result": true,
+    "required_result": "TypeError: weight is outside the exact int/Fraction domain",
+    "reason": "Infinity compares less than or equal to itself after both products; it is not a positive finite rational weight."
+  },
+  "existing_rational_controls": {
+    "at_one_half": true,
+    "at_two_fifths": false
+  },
+  "scope": "Concrete representational false-positive in an exact finite weighted-gain witness checker, not a counterexample to the mathematical weighted-norm inequality."
+}

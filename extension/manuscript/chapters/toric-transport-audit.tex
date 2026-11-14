@@ -1,6 +1,6 @@
 \chapter{Corrected transport, information and quantum contracts for tropical quivers}
 \label{ch:toric-transport-audit}
-\reviewstatus{This chapter adds explicit corrections to selected claims in the pinned Tropical Quivers and ToricGT research manuscripts. Seventeen finite declarations in TransportContracts.lean are kernel checked; the information-theoretic and stochastic-limit discussions are mathematical arguments with stated hypotheses, not a formalization of all source papers. None of the statements below extends the external forced Navier--Stokes theorem to the unforced problem.}
+\reviewstatus{This chapter adds explicit corrections to selected claims in the pinned Tropical Quivers and ToricGT research manuscripts. Seventeen finite declarations in TransportContracts.lean and six in WeightedGainContracts.lean are kernel checked; the latter include a signed matrix-action estimate and a time-varying residual budget. The information-theoretic and stochastic-limit discussions are mathematical arguments with stated hypotheses, not a formalization of all source papers. None of the statements below extends the external forced Navier--Stokes theorem to the unforced problem.}
 
 \section{Source scope and a quantitative contract}
 
@@ -683,6 +683,131 @@ $1/4\le q^2$, so a proposed rate $q=2/5$ is impossible. These exact
 equalities and the rejection are included in the regression. Bounds on
 $G$ must hold over the claimed domain; a few sampled Jacobians do not
 establish them.
+
+\subsection{Propagating a certified gain through time}
+
+The feasibility certificate becomes useful for dynamics only after a
+comparison inequality has been established for the actual update. The
+following result states that missing link explicitly and retains every
+per-step perturbation.
+
+\begin{theorem}[Common weighted gain and accumulated residuals]
+\label{thm:weighted-gain-propagation}
+Let $I$ be a nonempty finite index set, $w_i>0$, and $q\ge0$.
+For each $n\ge0$ let $G_n$ be an entrywise nonnegative real matrix with
+$G_nw\le qw$.
+If real matrices $A_n$ satisfy $|(A_n)_{ij}|\le (G_n)_{ij}$, then
+\[
+ |x_j|\le rw_j\ (j\in I),\quad r\ge0
+ \quad\Longrightarrow\quad
+ |(A_nx)_i|\le qr w_i\ (i\in I).
+\]
+More generally, suppose $r_0\ge0$, $\delta_n\ge0$ and nonnegative block
+errors $d_{n,i}$ obey
+\[
+ d_{0,i}\le r_0w_i,\qquad
+ d_{n+1,i}\le\sum_j(G_n)_{ij}d_{n,j}+\delta_nw_i.
+\]
+Then
+\begin{equation}\label{eq:weighted-residual-convolution}
+ d_{n,i}\le R_nw_i,\qquad
+ R_n=q^nr_0+\sum_{k=0}^{n-1}q^{n-1-k}\delta_k.
+\end{equation}
+In particular, if $u_{n+1}=A_nu_n+e_n$,
+$|u_{0,i}|\le r_0w_i$ and $|e_{n,i}|\le\delta_nw_i$, the same
+conclusion holds with $d_{n,i}=|u_{n,i}|$. For
+$0\le q<1$ and $\delta_n\le\bar\delta$, this gives
+\[
+ \|u_n\|_{\infty,w}
+ \le q^nr_0+\bar\delta\frac{1-q^n}{1-q}.
+\]
+The finite-sum formula also applies at $q=0$ and $q=1$; no division by
+$1-q$ is required there.
+\end{theorem}
+\begin{proof}
+For a single signed matrix action, the triangle inequality gives
+\[
+ |(A_nx)_i|
+ \le\sum_j |(A_n)_{ij}|\,|x_j|
+ \le r\sum_j(G_n)_{ij}w_j
+ \le rq w_i.
+\]
+For the error comparison, $R_0=r_0$ and the finite sum in
+\eqref{eq:weighted-residual-convolution} satisfies
+$R_{n+1}=qR_n+\delta_n$. All $R_n$ are nonnegative. If
+$d_{n,j}\le R_nw_j$, the nonnegative entries of $G_n$ imply
+\[
+ d_{n+1,i}\le R_n(G_nw)_i+\delta_nw_i
+ \le(qR_n+\delta_n)w_i=R_{n+1}w_i.
+\]
+Induction proves the comparison. In the signed recurrence,
+$|u_{n+1,i}|\le\sum_j(G_n)_{ij}|u_{n,j}|+\delta_nw_i$
+follows from the triangle inequality, so the comparison applies.
+The uniform-perturbation assertion follows by bounding every
+$\delta_k$ by $\bar\delta$ and summing a finite geometric series.
+\end{proof}
+
+For a nonlinear map between normed blocks, one must prove
+\[
+ \|F_{n,i}(x)-F_{n,i}(y)\|
+ \le\sum_j(G_n)_{ij}\|x_j-y_j\|
+\]
+on a domain containing both trajectories. A uniform derivative bound on a
+convex domain is one sufficient route; a switching or nonsmooth map needs
+its own comparison argument. Invariance of that domain is a separate
+obligation. Time-varying matrices need not commute, and individual
+spectral-radius bounds do not replace a common positive weight vector.
+For $q<1$, the unforced comparison contracts initial discrepancies;
+persistent errors leave a finite error floor. For $q\ge1$, a valid
+finite-time bound is still useful but does not establish contraction.
+
+The six exact declarations in \path{extension/lean/WeightedGainContracts.lean}
+prove the row-ratio equivalence, rate monotonicity, gain comparison,
+signed matrix estimate, and the two finite residual-convolution statements
+over an ordered field. The rational and real instances therefore share
+the same algebraic proof. The nondividing comparison declarations use
+weaker hypotheses where possible. The interpretation as a weighted norm,
+the nonlinear domain obligation, and the displayed closed geometric-series
+corollary are written arguments; the whole composite theorem is not
+registered as fully formalized.
+
+\subsection{An exact certificate has an exact input domain}
+
+The boolean API in \path{extension/code/verify_toric_transport.py}
+now accepts only literal Python integers and \texttt{Fraction} values,
+with Boolean values excluded. It checks the input types before any
+arithmetic, as well as square shape, nonnegative gains and rate, and
+strictly positive weights. An earlier implementation documented rational
+inputs but did not enforce that domain: a subnormal floating-point weight
+could round both sides of a false inequality to the same value, and an
+infinite weight could make two infinite quantities compare equal. The
+continuation record preserves both rejected historical cases, including
+the exact rational reconstruction of the floating-point values. This
+corrects an executable acceptance condition; the rational theorem is
+unchanged.
+
+The companion \texttt{weighted\_gain\_witness} serializes the matrix,
+weights, proposed rate, every row product, right-hand side, signed slack,
+row ratio, and maximal ratio. Each rational is a reduced pair of decimal
+integer strings with positive denominator. Thus an integer larger than
+the exact range of a JavaScript number remains exact in JSON. A separate
+\path{check_weighted_gain_witness.py} recomputes the entire certificate
+using integer addition, multiplication, greatest common divisors and
+cross multiplication; it imports neither the producer nor
+\texttt{Fraction}. It rejects duplicate keys, noncanonical rational
+representations, missing or additional fields, and altered derived data.
+The checker uses explicit conditions that remain active under Python
+optimization.
+
+Its exit code is zero for an accurately recorded holding bound, two for
+an accurately recorded failed bound, and one for malformed or inconsistent
+evidence. A holding rate at least one retains the explicit flag
+\texttt{certifies\_contraction=false}. Parser resource limits are separate
+from the mathematical statement. This replay checks the supplied finite
+inequalities; it does not authenticate a file, prove a global model-gain
+bound, verify the Python interpreter, or certify an optimizer. The source
+hashes, positive and negative replay examples, and adversarial regression
+results are retained with the release evidence.
 
 \section{Proper scoring must include its probability boundary}
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "declaration_count": 33,
+  "declaration_count": 39,
   "declarations": [
     {
       "declaration": "ReductionContracts.factorization_iff_fiber_constant",
@@ -330,6 +330,66 @@
       "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
       "manuscript_anchor": "prop:nonnormal-jvp",
       "scope": "For nonzero M, the matrix does not commute with its transpose",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "WeightedGainContracts.row_ratio_iff",
+      "source": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_and_axiom_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:weighted-gain-feasibility",
+      "scope": "Positive-denominator row ratios are equivalent to componentwise feasibility over an ordered field",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "WeightedGainContracts.feasibility_mono",
+      "source": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_and_axiom_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:weighted-gain-feasibility",
+      "scope": "A fixed positive weight vector remains feasible when the proposed rate increases",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "WeightedGainContracts.gain_bound",
+      "source": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_and_axiom_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:weighted-gain-propagation",
+      "scope": "Nonnegative finite block-gain comparison propagates a componentwise radius; this nondividing result needs no positivity assumption on weights",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "WeightedGainContracts.matrix_action_weighted_bound",
+      "source": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_and_axiom_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:weighted-gain-propagation",
+      "scope": "The actual signed matrix action satisfies the certified weighted component bound under entrywise domination and positive weights",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "WeightedGainContracts.gain_iteration_with_residual",
+      "source": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_and_axiom_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:weighted-gain-propagation",
+      "scope": "Time-varying block gains sharing weights and rate propagate the initial radius plus the explicit finite geometric residual convolution",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "WeightedGainContracts.matrix_iteration_with_residual",
+      "source": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "type_and_axiom_log": "extension/lean/final-verification/WeightedGainContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:weighted-gain-propagation",
+      "scope": "The actual time-varying inhomogeneous matrix recurrence satisfies that budget when every signed residual obeys its component bound",
       "whole_manuscript_formalization_claim": false
     }
   ],

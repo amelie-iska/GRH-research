@@ -1,10 +1,10 @@
 # Microscopic foundations of fluid simulation: source review and corrections
 
-Review date: 13 November 2026. This is an authored review, not a reproduction of the video transcript or of the papers. Download hashes, exact coverage, and unsuccessful access attempts are recorded in `microscopic-source-coverage.json`. The manuscript exposition is `extension/manuscript/chapters/microscopic-fluid-limits.tex`; its bibliography is `extension/manuscript/ns-microscopic.bib`.
+Original review date: 13 November 2026; transcript-provenance continuation: 14 November 2026. This is an authored review, not a reproduction of the video transcript or of the papers. Download hashes, exact coverage, and unsuccessful access attempts are recorded in `microscopic-source-coverage.json`. The sanitized continuation receipt is `source-gap-continuation-20261113.json`; its filename identifies the continuation work package, while its timestamps record the actual UTC review date. The manuscript exposition is `extension/manuscript/chapters/microscopic-fluid-limits.tex`; its bibliography is `extension/manuscript/ns-microscopic.bib`.
 
 ## Scope and completion statement
 
-The requested video was reviewed through **all 249 timed English transcript segments**, beginning at 0:00 and ending at 32:36. Its description, publication metadata, and full expanded bibliography were also inspected. A description was not substituted for a transcript. The public YouTube transcript interface supplied the text after the caption-file and transcript-API attempts failed. The full transcript is not included in this repository or its release artifacts.
+The requested video was reviewed through **all 249 timed English transcript segments**, with the first entry starting at 0:00 and the final entry starting at 32:36; the player displayed a duration of 33:00. Its description, publication metadata, and full expanded bibliography were also inspected. A description was not substituted for a transcript. The public YouTube transcript interface supplied the text after the caption-file and transcript-API attempts failed. On 14 November, all 249 entries were independently extracted from that public interface and reread, and the exact extracted bytes were verified in a private cache. The full transcript is not included in this repository or its release artifacts.
 
 The following full main texts were reviewed: Stodolna et al. (five pages), Vozzi et al. (five pages), Itatani et al. (five pages), the eight-page abridged English Jönsson article, Allen's 28-page PDF, all six Volkov lecture decks (371 PDF pages), all nine currently available Farhat replacement decks (627 PDF pages, including overlays; separate detailed review), and the 23-page de Oliveira–Verri preprint. Full-text reading is distinguished from complete independent proof verification. The Volkov PDFs lose many mathematical symbols during extraction; readable text on every page and twelve selected rendered formula/algorithm pages were reviewed. The Jönsson scan was read using OCR with selected image checks.
 
@@ -44,7 +44,15 @@ The manuscript supplies direct proofs of several of these qualifications: inform
 
 ### Transcript access record
 
-The public video page and its description were accessible. Caption tracks were discoverable, but attempts to retrieve caption data in XML/JSON variants returned empty bodies. The transcript endpoint returned `400 FAILED_PRECONDITION`. The public browser interface subsequently exposed all 249 timed English segments. A separately read middle range closed the gap in the first long DOM output; the review therefore covers the complete exposed transcript, not just its first and last portions. An export was generated inside the browser environment, but no executor-local exported file was independently verified. Consequently the repository does not claim to retain a full transcript file or a transcript-content hash.
+In the original 13 November review, the public video page and its description were accessible. Caption tracks were discoverable, but attempts to retrieve caption data in XML/JSON variants returned empty bodies. The transcript endpoint returned `400 FAILED_PRECONDITION`. The public browser interface subsequently exposed all 249 timed English segments. A separately read middle range closed the gap in the first long DOM output; the review therefore covers the complete exposed transcript, not just its first and last portions. An export was generated inside the browser environment, but no executor-local exported file was independently verified. At that stage, no retained transcript file or transcript-content hash was claimed. These access failures remain part of the historical record.
+
+#### Independent provenance continuation, 14 November 2026
+
+The original video description, bibliography, and public **Show transcript** panel were reopened without signing in. A read-only DOM extraction separately captured the visible timestamp and text of each of the 249 transcript entries. All extracted entries were read in the inclusive batches 1–85, 86–170, and 171–249. Every entry had both fields, timestamps were strictly increasing, and the largest gap between adjacent entry starts was 14 seconds. The first and last entry starts remained 0:00 and 32:36. These observations concern the exposed transcript; they do not establish complete audiovisual coverage or certify the captions as error-free or author-authored.
+
+The canonical artifact uses UTF-8 without a BOM. Each line contains the visible timestamp, a tab, the trimmed text content, and a newline; internal spelling and punctuation are preserved. Its **35,743 bytes** have SHA-256 `0cbc23bb1d1d6c3fe46f46dcfa337f4aa78f0d8966f377eea35ea525e86e3884`. A private cache copy with basename `0cbc23bb1d1d6c3fe46f46dcfa337f4aa78f0d8966f377eea35ea525e86e3884.tsv` was independently read back and verified against both this byte count and hash, outside any Git repository. Only provenance metadata is published here; the transcript is excluded from the repository and release artifacts. The hash identifies the bytes reviewed and does not validate their scientific claims.
+
+The browser's dedicated export feature first reported that an advertisement was playing and later returned an export path. Opening that path failed with `ENOENT`, so the exporter output remains unverified. The hashed artifact above is the separately generated DOM extraction, not that exporter output. Caption-file and transcript-API routes were not retried in this continuation. All six outstanding original-source full-text gaps remain open, and this provenance update does not change the mathematical claims.
 
 ## 2. Electronic imaging and interference papers
 
@@ -123,6 +131,8 @@ The introductory suggestion that Bell correlations require instantaneous communi
 ### Cerfon: access gap
 
 The requested [NYU mechanics page](https://www.math.nyu.edu/~cerfon/mechanics.html), its non-`www` variant, and the author's CIMS home location returned HTTP 403. No claim is made to have read those notes. Other NYU mechanics courses or a different author with a similar surname were not substituted.
+
+On 14 November 2026, the expanded bibliography on the original video was inspected again. Its Cerfon link has the exact destination `https://www.math.nyu.edu/~cerfon/mechanics.html`, confirming that the historical attempted address matches the original citation. This URL confirmation does not provide the notes or close their full-text access gap.
 
 ## 4. Molecular dynamics, internal energy, and singular potentials
 

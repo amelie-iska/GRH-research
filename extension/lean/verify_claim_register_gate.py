@@ -17,6 +17,7 @@ import re
 import shutil
 import sys
 import tempfile
+import tomllib
 
 
 REPO = Path(__file__).resolve().parents[2]
@@ -59,17 +60,23 @@ def main() -> int:
         temporary = Path(directory)
         lean = temporary / "extension/lean"
         lean.mkdir(parents=True)
-        for name in ["BridgeTheorems.lean", "QuantumInterfaces.lean", "DiagramGrammar.lean",
-                     "FluidInterfaces.lean", "ReductionContracts.lean", "TransportContracts.lean",
-                     "lakefile.toml", "lean-toolchain", "verify_all.py", "new-declarations.json"]:
+        configuration = tomllib.loads((REPO / "extension/lean/lakefile.toml").read_text())
+        registered_sources = [name + ".lean" for name in configuration["defaultTargets"]]
+        for name in registered_sources + [
+                "lakefile.toml", "lean-toolchain", "verify_all.py", "new-declarations.json"]:
             shutil.copy2(REPO / "extension/lean" / name, lean / name)
         shutil.copytree(REPO / "extension/lean/final-verification", lean / "final-verification")
         module.PROJECT, module.LEAN = temporary, lean
         _, signatures = module.lean_audit()
-        require(len(signatures) == 115, "The accepted inventory must contain exactly 115 declarations")
-        checks.append({"name": "current_115_declaration_manifest_accepted", "status": "passed"})
+        original_verification = json.loads(
+            (REPO / "extension/lean/final-verification/verification.json").read_text())
+        expected_count = sum(len(item["declarations"]) for item in original_verification["modules"])
+        require(len(signatures) == expected_count,
+                "The accepted inventory must contain every registered declaration")
+        checks.append({"name": "current_registered_manifest_accepted", "status": "passed",
+                       "declarations": len(signatures), "modules": len(registered_sources)})
 
-        source = lean / "TransportContracts.lean"
+        source = lean / "WeightedGainContracts.lean"
         original_source = source.read_bytes()
         source.write_bytes(original_source + b"\n-- stale source probe\n")
         expect_rejection("stale_source_rejected", module.lean_audit,

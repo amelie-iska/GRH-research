@@ -1,9 +1,9 @@
 # New declaration-to-manuscript map
 
-This map covers exactly **33 added declarations**. Current source SHA-256
+This map covers exactly **39 added declarations**. Current source SHA-256
 hashes, actual printed theorem types and axiom dependencies are in
 [`final-verification/verification.json`](final-verification/verification.json)
-and its two named module logs. The corresponding machine-readable map is
+and its three named module logs. The corresponding machine-readable map is
 [`new-declarations.json`](new-declarations.json). A component mapping does not
 assert that every prose statement in the target environment is formalized.
 
@@ -76,3 +76,26 @@ plain Jacobian power iteration as a general singular-value upper certificate.
 They formalize finite real matrix identities and squared Euclidean gain only;
 they do not prove spectral-radius characterizations, convergence of `J*J`
 iteration, floating-point error bounds, or a certified operator-norm algorithm.
+
+## WeightedGainContracts — six declarations
+
+Source: `WeightedGainContracts.lean`. Namespace prefix `WeightedGainContracts.`
+is omitted below. Actual types: `final-verification/WeightedGainContracts.log`.
+
+| Declaration | Manuscript anchor | Precisely checked component |
+|---|---|---|
+| `row_ratio_iff` | `prop:weighted-gain-feasibility` | Positive-denominator row ratios are equivalent to componentwise feasibility over an ordered field |
+| `feasibility_mono` | `prop:weighted-gain-feasibility` | A fixed positive weight vector remains feasible when the proposed rate increases |
+| `gain_bound` | `thm:weighted-gain-propagation` | Nonnegative finite block-gain comparison propagates a componentwise radius; this nondividing result needs no positivity assumption on weights |
+| `matrix_action_weighted_bound` | `thm:weighted-gain-propagation` | The actual signed matrix action satisfies the certified weighted component bound under entrywise domination and positive weights |
+| `gain_iteration_with_residual` | `thm:weighted-gain-propagation` | Time-varying block gains sharing weights and rate propagate the initial radius plus the explicit finite geometric residual convolution |
+| `matrix_iteration_with_residual` | `thm:weighted-gain-propagation` | The actual time-varying inhomogeneous matrix recurrence satisfies that budget when every signed residual obeys its component bound |
+
+These statements apply to ordered fields, including exact rational witnesses
+and real gain envelopes. The weight positivity needed for division is explicit.
+The nondividing error comparisons validly have weaker hypotheses. Strict
+contraction needs a rate below one and a valid gain envelope for the actual
+update. The LP formulation, floating-point rejection, Python arithmetic and
+serialized witness replay remain separate implementation obligations; no
+whole-environment formalization claim is made. The six new statements do not
+extend the continuum, GRH, mass-gap, quantum hardware, or security scope.
