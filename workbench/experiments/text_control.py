@@ -5,7 +5,7 @@ import argparse,collections,hashlib,json,lzma,math,urllib.request,zlib
 from pathlib import Path
 
 def run(raw:bytes):
- text=raw.decode('utf8-sig')
+ text=raw.decode('utf-8-sig')
  start=text.find('*** START OF THE PROJECT GUTENBERG EBOOK');end=text.find('*** END OF THE PROJECT GUTENBERG EBOOK')
  if start<0 or end<0 or end<=start:raise ValueError('Expected Gutenberg boundaries missing')
  start=text.index('\n',start)+1;data=text[start:end].encode('utf8');n=len(data);a=int(.6*n);b=int(.8*n)
@@ -15,11 +15,12 @@ def run(raw:bytes):
   table={};glob=collections.Counter(train)
   for i in range(order,len(train)):
    key=train[i-order:i] if order else b'';table.setdefault(key,collections.Counter())[train[i]]+=1
+  totals={k:sum(v.values()) for k,v in table.items()};global_total=sum(glob.values())
   for alpha in (.1,.5,1.):
    def score(chunk):
     total=0.
     for i in range(order,len(chunk)):
-     key=chunk[i-order:i] if order else b'';c=table.get(key,glob);total-=math.log2((c.get(chunk[i],0)+alpha)/(sum(c.values())+256*alpha))
+     key=chunk[i-order:i] if order else b'';c=table.get(key,glob);den=totals.get(key,global_total);total-=math.log2((c.get(chunk[i],0)+alpha)/(den+256*alpha))
     return total/(len(chunk)-order)
    candidates.append(dict(order=order,alpha=alpha,validation_bpb=score(val),test_bpb=score(test),initial_context_bytes=order,model_entries=len(table)))
  best=min(candidates,key=lambda x:(x['validation_bpb'],x['order'],x['alpha']))

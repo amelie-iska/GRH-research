@@ -14,8 +14,11 @@ async function evaluate(){
 }
 function download(name,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function choose(){invalidate();$('inputs').value=JSON.stringify(defaults[$('kind').value],null,2);evaluate();}
+function importCertificate(raw){if(raw.length>65536)throw new Error('Certificate exceeds size budget');const c=W.replay(JSON.parse(raw));invalidate();$('kind').value=c.kind;$('inputs').value=JSON.stringify(c.inputs,null,2);evaluate();}
 $('kind').addEventListener('change',choose);$('inputs').addEventListener('input',()=>{invalidate();$('status').textContent='Inputs changed; recheck before using a witness.';});$('check').addEventListener('click',evaluate);
 $('export').addEventListener('click',async()=>{const c=current||await evaluate();if(c)download('grh-'+c.certificate.kind+'.json',JSON.stringify(c.certificate,null,2),'application/json');});
+const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.id='importWitness';input.setAttribute('aria-label','Import a canonical certificate JSON file');$('inputs').insertAdjacentElement('afterend',input);
+input.addEventListener('change',async()=>{try{if(!input.files[0])return;if(input.files[0].size>65536)throw new Error('File too large');importCertificate(await input.files[0].text());}catch(e){invalidate();$('status').textContent='Import rejected: '+e.message;}});
 async function service(endpoint){
  const c=current||await evaluate();if(!c)return;const epoch=generation;
  $('receipt').textContent='Local service request in progress; no proof is claimed yet.';
@@ -29,4 +32,5 @@ async function service(endpoint){
   $('receipt').textContent=JSON.stringify(data,null,2);$('status').textContent=data.status==='kernel_checked'?'Lean kernel accepted this finite predicate.':'Kernel check did not succeed: '+data.status;
  }catch(e){if(epoch===generation){$('receipt').textContent=e.message;$('status').textContent='No kernel verification receipt.';}}
 }
-$('verify').addEventListener('click',()=>service('verify'));$('source').addEventListener('click',()=>service('source'));choose();
+$('verify').addEventListener('click',()=>service('verify'));$('source').addEventListener('click',()=>service('source'));
+try{const hash=new URLSearchParams(location.hash.slice(1));if(hash.has('certificate'))importCertificate(hash.get('certificate'));else choose();}catch(e){choose();$('status').textContent='URL certificate rejected: '+e.message;}
