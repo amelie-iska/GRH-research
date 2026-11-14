@@ -1,0 +1,32 @@
+name: Program 3 public release verification
+on:
+  push:
+    branches: [program3-publication-check]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install isolated public-browser checker
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Verify published bytes and interactions
+        run: python workbench/program3/publication_check.py
+      - name: Preserve public verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: program3-publication-${{ github.run_id }}
+          path: ${{ runner.temp }}/program3-publication
+          if-no-files-found: warn
+          retention-days: 30
