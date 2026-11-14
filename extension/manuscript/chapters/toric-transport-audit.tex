@@ -1,12 +1,17 @@
 \chapter{Corrected transport, information and quantum contracts for tropical quivers}
 \label{ch:toric-transport-audit}
-\reviewstatus{This chapter adds explicit corrections to selected claims in the pinned Tropical Quivers and ToricGT research manuscripts. Eleven finite declarations in TransportContracts.lean are kernel checked; the information-theoretic and stochastic-limit discussions are mathematical arguments with stated hypotheses, not a formalization of all source papers. None of the statements below extends the external forced Navier--Stokes theorem to the unforced problem.}
+\reviewstatus{This chapter adds explicit corrections to selected claims in the pinned Tropical Quivers and ToricGT research manuscripts. Seventeen finite declarations in TransportContracts.lean are kernel checked; the information-theoretic and stochastic-limit discussions are mathematical arguments with stated hypotheses, not a formalization of all source papers. None of the statements below extends the external forced Navier--Stokes theorem to the unforced problem.}
 
 \section{Source scope and a quantitative contract}
 
-The source revisions are Tropical\_Quivers\_of\_Archs \cite{ToricAuditQuivers2026} commit
-\texttt{2b6ab79a685e2c6233fb8892e59589951feeddad} and ToricGT-Program commit
-\texttt{f91ba1811b5a4f70d53c7120acf8ca2a0049f85b}.\footnote{Primary sources:
+The source revisions are:
+\begin{itemize}
+\item Tropical\_Quivers\_of\_Archs \cite{ToricAuditQuivers2026}, commit\\
+\texttt{2b6ab79a685e2c6233fb8892e59589951feeddad};
+\item ToricGT-Program, commit\\
+\texttt{f91ba1811b5a4f70d53c7120acf8ca2a0049f85b}.
+\end{itemize}
+The pinned primary sources are available online.\footnote{Primary sources:
 \url{https://github.com/amelie-iska/Tropical_Quivers_of_Archs/tree/2b6ab79a685e2c6233fb8892e59589951feeddad}
 and \url{https://github.com/amelie-iska/ToricGT-Program/tree/f91ba1811b5a4f70d53c7120acf8ca2a0049f85b}.}
 The companion review gives
@@ -62,7 +67,7 @@ zero. For a particular vector it is enough that $Hx_0=x_0$.
 \end{proof}
 
 The equal-space specialization is formalized by induction in
-\texttt{TransportContracts.suffix\_transport\_telescope}. Its recursive
+\path{TransportContracts.suffix_transport_telescope}. Its recursive
 form is
 \[
  s_0=0,\qquad s_{j+1}=A_{j+1}s_j+r_{j+1}.
@@ -322,10 +327,12 @@ only linearity, normalization and trace preservation, so it applies in
 particular to completely positive trace-preserving channels.
 \end{proof}
 
-The proposition is formalized as
-\texttt{TransportContracts.trace\_preserving\_composite\_nonzero} with an
-abstract linear trace functional. A legitimate quantum interpretation of
-forbidden paths can use completely positive trace-nonincreasing instrument
+The proposition is formalized, with an abstract linear trace functional, as
+\begin{quote}\small
+\path{TransportContracts.trace_preserving_composite_nonzero}.
+\end{quote}
+A legitimate quantum interpretation of
+forbidden paths can use completely positive trace-non\-increasing instrument
 branches, explicit rejection flags, or linear amplitude maps whose ranges
 and kernels enforce the relation. For instrument branches, a forbidden
 composition has zero probability; the complete instrument, including all

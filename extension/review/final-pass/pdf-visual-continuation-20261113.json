@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "scope": "Visual inspection of11 selected final PDF pages; not every-page proof audit",
+  "pdfs": {
+    "main": {
+      "pages": 341,
+      "sha256": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b"
+    },
+    "fluid-extension": {
+      "pages": 90,
+      "sha256": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721"
+    }
+  },
+  "pages_inspected": {
+    "main": [
+      1,
+      96,
+      110,
+      292,
+      293,
+      309
+    ],
+    "fluid-extension": [
+      1,
+      57,
+      61,
+      66,
+      74
+    ]
+  },
+  "observations": [
+    "Titles and date text legible; no clipped text or missing glyphs",
+    "Crypto table columns fit and state actual primitive boundaries",
+    "Lean module table and115-count scope readable",
+    "Reduction proof, transport contracts and formulas readable",
+    "Long declaration identifiers wrap within margins",
+    "Bounding-box follow-up confirms identical1.9937-inch chapter-label top positions on inspected chapter starts",
+    "Seven repeated page renders are pixel-identical to prior inspected renders; four corrected-count pages were newly inspected with no clipping or overlap."
+  ],
+  "render_manifest": {
+    "pdf_sha256": {
+      "main": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b",
+      "fluid-extension": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721"
+    },
+    "resolution_dpi": 100,
+    "renders": [
+      {
+        "document": "fluid-extension",
+        "physical_page": 1,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/fluid-extension-001.png",
+        "sha256": "76057f178656cd4fc8dd24cfe3e18482b4e9c81b95512aea44dd6ab37d4c8561",
+        "same_pixels_as_prior_render": true
+      },
+      {
+        "document": "fluid-extension",
+        "physical_page": 57,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/fluid-extension-057.png",
+        "sha256": "b405838804d84319af26aeb37af009b50421acb3009c4e757e4d77df5982580d",
+        "same_pixels_as_prior_render": true
+      },
+      {
+        "document": "fluid-extension",
+        "physical_page": 61,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/fluid-extension-061.png",
+        "sha256": "6953b303240df205de0125d89fb49b24e7f31e01eab8fde8867a3bce618a96b4",
+        "same_pixels_as_prior_render": true
+      },
+      {
+        "document": "fluid-extension",
+        "physical_page": 66,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/fluid-extension-066.png",
+        "sha256": "ec6adeb605f58c4ddfb31b67d3059f87063ac57dd13d28a9658138c1b7dd46b0",
+        "same_pixels_as_prior_render": true
+      },
+      {
+        "document": "fluid-extension",
+        "physical_page": 74,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/fluid-extension-074.png",
+        "sha256": "0f1a24682d2cb69a77b47de405d821f20053ea85615e73a06f41d7d3ec4d9931",
+        "same_pixels_as_prior_render": false
+      },
+      {
+        "document": "main",
+        "physical_page": 1,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/main-001.png",
+        "sha256": "a7da3b6697c05527725302765dbdad66e29dfd608669af7e9084c643db740968",
+        "same_pixels_as_prior_render": true
+      },
+      {
+        "document": "main",
+        "physical_page": 96,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/main-096.png",
+        "sha256": "45f49496ee44f9ccf7ce7ec76906a2f282ab069408d4583cc51d0085ad2b3a01",
+        "same_pixels_as_prior_render": false
+      },
+      {
+        "document": "main",
+        "physical_page": 110,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/main-110.png",
+        "sha256": "b0d3506704dd7ee08f9d45d3ce31f69b179a49e0fc700ce854c84da71cefa504",
+        "same_pixels_as_prior_render": true
+      },
+      {
+        "document": "main",
+        "physical_page": 292,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/main-292.png",
+        "sha256": "05f6c06c42600f8c6ddf9b4f499a43ee602fe96bbb6ea9df2f80a6fa744694d9",
+        "same_pixels_as_prior_render": true
+      },
+      {
+        "document": "main",
+        "physical_page": 293,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/main-293.png",
+        "sha256": "efcc46d315d62cc752d1965630730184673edb516c248bbc8b348d455ce86702",
+        "same_pixels_as_prior_render": false
+      },
+      {
+        "document": "main",
+        "physical_page": 309,
+        "image": "/workspace/scratch/eb5aaff6dc13/pdf-qa-final/main-309.png",
+        "sha256": "2fd2791765f139a41b47465b12496200a3bdb88693106d090e79d0f7df5c2a98",
+        "same_pixels_as_prior_render": false
+      }
+    ],
+    "corrected_count_pages": [
+      [
+        "main",
+        96
+      ],
+      [
+        "main",
+        293
+      ],
+      [
+        "main",
+        309
+      ],
+      [
+        "fluid-extension",
+        74
+      ]
+    ]
+  },
+  "no_manuscript_edits_after_inspection": true
+}

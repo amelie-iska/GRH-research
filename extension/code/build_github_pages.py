@@ -358,6 +358,9 @@ def build(source: Path, output: Path, base: str, aliases: bool = True) -> dict:
     if output.exists():
         raise FileExistsError("Use a fresh output directory; existing bundles are never overwritten")
     source_paths = sorted(p for p in source.rglob("*") if p.is_file())
+    if any(p.name.casefold() == "keys.txt" or ".private-credentials" in
+           {part.casefold() for part in p.relative_to(source).parts} for p in source_paths):
+        raise ValueError("Credential paths are not published; remove them from the site source")
     if any(p.is_symlink() or source not in p.resolve().parents for p in source_paths):
         raise ValueError("Symlinks and paths escaping the source are not published")
     before = {p.relative_to(source).as_posix(): digest(p) for p in source_paths}

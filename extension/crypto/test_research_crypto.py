@@ -135,6 +135,60 @@ class ArtifactEncryptionTests(unittest.TestCase):
         envelope = rc.encrypt_artifact(b"data", key, context=context)
         self.assertEqual(rc.decrypt_artifact(envelope, key, expected_context=context), b"data")
 
+    def test_maximum_payload_and_context_roundtrip(self):
+        # Exercise the actual advertised limits, not a reduced test constant.
+        data = b"x" * rc.MAX_PLAINTEXT_BYTES
+        context = "\u00e9" * (rc.MAX_CONTEXT_BYTES // 2)
+        self.assertEqual(len(context.encode("utf-8")), rc.MAX_CONTEXT_BYTES)
+        for algorithm in rc.ALGORITHMS:
+            with self.subTest(algorithm=algorithm):
+                key = rc.generate_symmetric_key()
+                envelope = rc.encrypt_artifact(data, key, context=context, algorithm=algorithm)
+                self.assertLessEqual(len(envelope), rc.MAX_ENVELOPE_BYTES)
+                self.assertEqual(self.decrypt(envelope, key, algorithm, context), data)
+
+    def test_oversized_payload_rejected(self):
+        for algorithm in rc.ALGORITHMS:
+            with self.subTest(algorithm=algorithm), self.assertRaises(ValueError):
+                rc.encrypt_artifact(b"x" * (rc.MAX_PLAINTEXT_BYTES + 1),
+                                    rc.generate_symmetric_key(), context=CONTEXT,
+                                    algorithm=algorithm)
+
+    def test_oversized_serialized_envelope_rejected(self):
+        for algorithm in rc.ALGORITHMS:
+            with self.subTest(algorithm=algorithm), self.assertRaises(rc.EnvelopeFormatError):
+                self.decrypt(b" " * (rc.MAX_ENVELOPE_BYTES + 1),
+                             rc.generate_symmetric_key(), algorithm)
+
+    def test_utf8_byte_limit_is_not_character_limit(self):
+        context = "\u00e9" * (rc.MAX_CONTEXT_BYTES // 2 + 1)
+        self.assertLess(len(context), rc.MAX_CONTEXT_BYTES)
+        self.assertGreater(len(context.encode("utf-8")), rc.MAX_CONTEXT_BYTES)
+        for algorithm, key, envelope in self.cases():
+            with self.subTest(algorithm=algorithm, operation="encrypt"), self.assertRaises(ValueError):
+                rc.encrypt_artifact(b"data", key, context=context, algorithm=algorithm)
+            with self.subTest(algorithm=algorithm, operation="parse"), self.assertRaises(rc.EnvelopeFormatError):
+                self.decrypt(rewrite(envelope, context=context), key, algorithm)
+
+    def test_noncanonical_base64_pad_bits_rejected(self):
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+        for algorithm in rc.ALGORITHMS:
+            key = rc.generate_symmetric_key()
+            # Empty plaintext gives a 16-byte tag ending in two base64 pad bytes.
+            envelope = rc.encrypt_artifact(b"", key, context=CONTEXT, algorithm=algorithm)
+            encoded = json.loads(envelope)["ciphertext"]
+            self.assertTrue(encoded.endswith("=="))
+            alias = encoded[:-3] + alphabet[alphabet.index(encoded[-3]) | 1] + "=="
+            self.assertNotEqual(alias, encoded)
+            self.assertEqual(base64.b64decode(alias, validate=True), base64.b64decode(encoded))
+            with self.subTest(algorithm=algorithm), self.assertRaises(rc.EnvelopeFormatError):
+                self.decrypt(rewrite(envelope, ciphertext=alias), key, algorithm)
+
+    def test_unpaired_surrogate_context_rejected(self):
+        for algorithm, key, envelope in self.cases():
+            with self.subTest(algorithm=algorithm), self.assertRaises(rc.EnvelopeFormatError):
+                self.decrypt(rewrite(envelope, context="\ud800"), key, algorithm)
+
 
 class SignatureTests(unittest.TestCase):
     def setUp(self):

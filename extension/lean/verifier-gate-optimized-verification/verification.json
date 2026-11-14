@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-14T00:18:49.216060+00:00",
+  "status": "passed",
+  "python_optimization": 1,
+  "explicit_checks_active_under_optimization": true,
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+  "checker_sha256": "540b117d1d4f19210bf28be50adb1707ce6a23a244d71d8dafa7914327dbf82d",
+  "evidence_policy_sha256": "a232cb6f4fad348904c4bcd111a92f80e75f161c5de9d0519039e4b9d87dec4d",
+  "checks": [
+    {
+      "name": "complete_kernel_evidence_accepted",
+      "status": "passed",
+      "observed": "verified"
+    },
+    {
+      "name": "zero_exit_warning_rejected",
+      "status": "passed",
+      "observed": "failed"
+    },
+    {
+      "name": "compiler_warning_as_error_rejected",
+      "status": "passed",
+      "observed": "failed"
+    },
+    {
+      "name": "admitted_dependency_rejected",
+      "status": "passed",
+      "observed": "failed"
+    },
+    {
+      "name": "project_axiom_rejected",
+      "status": "passed",
+      "observed": "failed"
+    },
+    {
+      "name": "missing_type_rejected",
+      "status": "passed",
+      "observed": "failed"
+    },
+    {
+      "name": "missing_axiom_report_rejected",
+      "status": "passed",
+      "observed": "failed"
+    },
+    {
+      "name": "changed_source_rejected",
+      "status": "passed",
+      "observed": "failed"
+    },
+    {
+      "name": "nonzero_process_exit_rejected",
+      "status": "passed",
+      "observed": "failed"
+    }
+  ],
+  "compiler_invocations": [
+    {
+      "fixture": "proved",
+      "exit_code": 0,
+      "warnings_as_errors": false,
+      "log": "proved.log",
+      "log_sha256": "ce72ace3142db13092e41cb581d1c11c662bcf0705a803b29f0dab9b1171a0e5"
+    },
+    {
+      "fixture": "warning",
+      "exit_code": 0,
+      "warnings_as_errors": false,
+      "log": "warning.log",
+      "log_sha256": "0ee8c080ba1c73710f9833d07152f57958581764da0d2bb43e011ab46bc390d5"
+    },
+    {
+      "fixture": "warning-strict",
+      "exit_code": 1,
+      "warnings_as_errors": true,
+      "log": "warning-strict.log",
+      "log_sha256": "2a049277ee55b8a9a7006d160d63ee5bf973d8142de3893c1d76bfca505fb84e"
+    },
+    {
+      "fixture": "admitted",
+      "exit_code": 0,
+      "warnings_as_errors": false,
+      "log": "admitted.log",
+      "log_sha256": "09e7a1fde4279908e9f0aaa34f51377c47cb090b9e910d35898201fffd697666"
+    },
+    {
+      "fixture": "project-axiom",
+      "exit_code": 0,
+      "warnings_as_errors": false,
+      "log": "project-axiom.log",
+      "log_sha256": "99df35af802b70dab3352767c29a82f5aac8b7109c681205cdb882a7a564c403"
+    }
+  ],
+  "scope": "Acceptance-policy regressions using five actual compiler invocations plus targeted omissions and failure states. Negative fixtures are temporary and are never project theorem sources. This record is not an additional mathematical theorem proof."
+}

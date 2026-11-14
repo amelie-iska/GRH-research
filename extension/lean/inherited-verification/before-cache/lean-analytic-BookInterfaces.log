@@ -1,0 +1,59 @@
+GRHResearch.BookInterfaces.plucker24.{u_1} {R : Type u_1} [CommRing R] (A : Matrix (Fin 2) (Fin 4) R) :
+  minor24 A 0 1 * minor24 A 2 3 - minor24 A 0 2 * minor24 A 1 3 + minor24 A 0 3 * minor24 A 1 2 = 0
+GRHResearch.BookInterfaces.node_relations.{u_1} {R : Type u_1} [CommRing R] (u b : R) :
+  nodeX u b + nodeY u b = u • 1 ∧ nodeX u b * nodeY u b = 0 ∧ nodeY u b * nodeX u b = 0
+GRHResearch.BookInterfaces.node_triangular_determinant.{u_1} {R : Type u_1} [CommRing R] (u b s t : R) :
+  (1 - s • nodeX u b - t • nodeY u b).det = (1 - s * u) * (1 - t * u)
+GRHResearch.BookInterfaces.twisted_shift_square.{u_1} {R : Type u_1} [CommRing R] (u : R) :
+  twistedShift u * twistedShift u = u • 1
+GRHResearch.BookInterfaces.clock_shift_anticommute.{u_1} {R : Type u_1} [CommRing R] (u : R) :
+  signClock * twistedShift u = -(twistedShift u * signClock)
+GRHResearch.BookInterfaces.distinct_site_commutation.{u_1} {R : Type u_1} [CommRing R] :
+  firstBitShift * secondBitClock = secondBitClock * firstBitShift
+GRHResearch.BookInterfaces.kraus_pool_trace.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {ι : Type u_3} [Fintype n]
+  [Fintype m] [Fintype ι] [DecidableEq n] (K : ι → Matrix m n ℂ) (hK : ∑ i, (K i)ᴴ * K i = 1) (A : Matrix n n ℂ) :
+  (krausPool K A).trace = A.trace
+GRHResearch.BookInterfaces.kraus_pool_positive.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {ι : Type u_3} [Fintype n]
+  [Fintype m] [Fintype ι] (K : ι → Matrix m n ℂ) (A : Matrix n n ℂ) (hA : A.PosSemidef) : (krausPool K A).PosSemidef
+'GRHResearch.BookInterfaces.plucker24' depends on axioms: [propext, Quot.sound]
+'GRHResearch.BookInterfaces.node_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.BookInterfaces.node_triangular_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.BookInterfaces.twisted_shift_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.BookInterfaces.clock_shift_anticommute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.BookInterfaces.distinct_site_commutation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.BookInterfaces.kraus_pool_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.BookInterfaces.kraus_pool_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BookInterfaces.plucker24.{u_1} {R : Type u_1} [CommRing R] (A : Matrix (Fin 2) (Fin 4) R) :
+  GRHResearch.BookInterfaces.minor24 A 0 1 * GRHResearch.BookInterfaces.minor24 A 2 3 -
+        GRHResearch.BookInterfaces.minor24 A 0 2 * GRHResearch.BookInterfaces.minor24 A 1 3 +
+      GRHResearch.BookInterfaces.minor24 A 0 3 * GRHResearch.BookInterfaces.minor24 A 1 2 =
+    0
+'GRHResearch.BookInterfaces.plucker24' depends on axioms: [propext, Quot.sound]
+GRHResearch.BookInterfaces.node_relations.{u_1} {R : Type u_1} [CommRing R] (u b : R) :
+  GRHResearch.BookInterfaces.nodeX u b + GRHResearch.BookInterfaces.nodeY u b = u • 1 ∧
+    GRHResearch.BookInterfaces.nodeX u b * GRHResearch.BookInterfaces.nodeY u b = 0 ∧
+      GRHResearch.BookInterfaces.nodeY u b * GRHResearch.BookInterfaces.nodeX u b = 0
+'GRHResearch.BookInterfaces.node_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BookInterfaces.node_triangular_determinant.{u_1} {R : Type u_1} [CommRing R] (u b s t : R) :
+  (1 - s • GRHResearch.BookInterfaces.nodeX u b - t • GRHResearch.BookInterfaces.nodeY u b).det =
+    (1 - s * u) * (1 - t * u)
+'GRHResearch.BookInterfaces.node_triangular_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BookInterfaces.twisted_shift_square.{u_1} {R : Type u_1} [CommRing R] (u : R) :
+  GRHResearch.BookInterfaces.twistedShift u * GRHResearch.BookInterfaces.twistedShift u = u • 1
+'GRHResearch.BookInterfaces.twisted_shift_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BookInterfaces.clock_shift_anticommute.{u_1} {R : Type u_1} [CommRing R] (u : R) :
+  GRHResearch.BookInterfaces.signClock * GRHResearch.BookInterfaces.twistedShift u =
+    -(GRHResearch.BookInterfaces.twistedShift u * GRHResearch.BookInterfaces.signClock)
+'GRHResearch.BookInterfaces.clock_shift_anticommute' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BookInterfaces.distinct_site_commutation.{u_1} {R : Type u_1} [CommRing R] :
+  GRHResearch.BookInterfaces.firstBitShift * GRHResearch.BookInterfaces.secondBitClock =
+    GRHResearch.BookInterfaces.secondBitClock * GRHResearch.BookInterfaces.firstBitShift
+'GRHResearch.BookInterfaces.distinct_site_commutation' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BookInterfaces.kraus_pool_trace.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {ι : Type u_3} [Fintype n]
+  [Fintype m] [Fintype ι] [DecidableEq n] (K : ι → Matrix m n ℂ) (hK : ∑ i, (K i).conjTranspose * K i = 1)
+  (A : Matrix n n ℂ) : (GRHResearch.BookInterfaces.krausPool K A).trace = A.trace
+'GRHResearch.BookInterfaces.kraus_pool_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BookInterfaces.kraus_pool_positive.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {ι : Type u_3} [Fintype n]
+  [Fintype m] [Fintype ι] (K : ι → Matrix m n ℂ) (A : Matrix n n ℂ) (hA : A.PosSemidef) :
+  (GRHResearch.BookInterfaces.krausPool K A).PosSemidef
+'GRHResearch.BookInterfaces.kraus_pool_positive' depends on axioms: [propext, Classical.choice, Quot.sound]

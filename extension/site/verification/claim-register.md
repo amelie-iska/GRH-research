@@ -2,11 +2,11 @@
 
 This register inventories every theorem, proposition, lemma, corollary, conjecture, and problem environment reachable from the current manuscript main file. It records what evidence is present; it is not a universal proof certificate.
 
-The snapshot contains **246 claim environments** in **27 included TeX files**. **239** have attached local proof environments. 6 general results are explicitly cited external theorems. 5 local arguments are classified as conditional transfer or deduction criteria because their additional inputs are not established by those claims.
+The snapshot contains **269 claim environments** in **31 included TeX files**. **262** have attached local proof environments. 6 general results are explicitly cited external theorems. 5 local arguments are classified as conditional transfer or deduction criteria because their additional inputs are not established by those claims.
 
 A separate list classifies 9 major external statements from the new fluid chapters, including the released continuum theorem and the kinetic-limit and quantum-algorithm literature. These prose records are not added to the number of locally proved environments.
 
-The 82 verified Lean declarations are governed by their successful verification manifests and raw logs. This register maps 35 declarations to exact components of 16 manuscript claims. **No complete composite environment is marked as fully formalized.** A partial map is never counted as a Lean proof of the entire proposition.
+The 115 verified Lean declarations are governed by their successful verification manifests and raw logs. This register maps 68 declarations to exact components of 25 manuscript claims. **No complete composite environment is marked as fully formalized.** A partial map is never counted as a Lean proof of the entire proposition.
 
 ## Meaning of the status labels
 
@@ -239,6 +239,29 @@ A separate mathematical reading, with per-claim findings and its own reviewed so
 | fluid-circuit-repairs.002 | fluid-circuit-repairs.tex | proposition: Reversible equality encoding and its success probability | Local argument | Not mapped |
 | fluid-circuit-repairs.003 | fluid-circuit-repairs.tex | proposition: Contraction-normalized rectangular dilation | Local argument | Not mapped |
 | fluid-circuit-repairs.004 | fluid-circuit-repairs.tex | proposition: Linear instrument, conditional normalization | Local argument | Not mapped |
+| quantum-spin-scope.001 | quantum-spin-scope.tex | proposition: Periodic compatibility for a smooth global lift | Local argument | Not mapped |
+| quantum-spin-scope.002 | quantum-spin-scope.tex | proposition: A smooth fluid solution excluded by these global-lift assumptions | Local argument | Not mapped |
+| reduction-contracts.001 | reduction-contracts.tex | theorem: Factorization through retained information | Local argument | Partial components: ReductionContracts.factorization_iff_fiber_constant, ReductionContracts.reduced_output_unique, ReductionContracts.discrete_closure_iff, ReductionContracts.mismatched_fiber_excludes_closure |
+| reduction-contracts.002 | reduction-contracts.tex | proposition: Propagation of an exact discrete reduction | Local argument | Partial components: ReductionContracts.discrete_trajectory_preserved |
+| reduction-contracts.003 | reduction-contracts.tex | proposition: Unresolved diameter bounds approximation error | Local argument | Partial components: ReductionContracts.fiber_error_lower_bound, ReductionContracts.fiber_diameter_le_twice_error |
+| reduction-contracts.004 | reduction-contracts.tex | proposition: Arbitrarily large cancellation gain | Local argument | Partial components: ReductionContracts.signedPartner_constant_coefficient, ReductionContracts.signedPartner_linear_coefficient, ReductionContracts.signedPartner_ne_zero, ReductionContracts.signedPartner_order, ReductionContracts.signed_cancellation_identity, ReductionContracts.signed_cancellation_sum_ne_zero, ReductionContracts.signed_cancellation_order, ReductionContracts.signed_cancellation_strict, ReductionContracts.no_universal_minimum_rule |
+| toric-transport-audit.001 | toric-transport-audit.tex | theorem: Typed transport telescope | Local argument | Partial components: TransportContracts.suffix_transport_telescope, TransportContracts.closed_path_residual, TransportContracts.flat_closed_path_zero, TransportContracts.two_arrow_transport, TransportContracts.fixed_vector_closed_path_zero |
+| toric-transport-audit.002 | toric-transport-audit.tex | proposition: A flat-cycle counterexample to prefix transport | Local argument | Partial components: TransportContracts.scalar_counterexample_flat, TransportContracts.scalar_prefix_counterexample, TransportContracts.scalar_suffix_correction |
+| toric-transport-audit.003 | toric-transport-audit.tex | proposition: Exact hypothesis for orthogonal Hodge components | Local argument | Not mapped |
+| toric-transport-audit.004 | toric-transport-audit.tex | proposition: Deterministic certificates have zero extra Bayes information | Local argument | Not mapped |
+| toric-transport-audit.005 | toric-transport-audit.tex | proposition: Actual predictor improvement includes approximation error | Local argument | Not mapped |
+| toric-transport-audit.006 | toric-transport-audit.tex | proposition: Damping cannot repair every expanding cycle | Local argument | Partial components: TransportContracts.positive_damping_bound_not_contracting, TransportContracts.expanding_scalar_damping |
+| toric-transport-audit.007 | toric-transport-audit.tex | proposition: A sufficient dissipativity condition for relaxation | Local argument | Not mapped |
+| toric-transport-audit.008 | toric-transport-audit.tex | proposition: Trace preservation obstructs a zero path relation | Local argument | Partial components: TransportContracts.trace_preserving_composite_nonzero |
+| toric-transport-audit.009 | toric-transport-audit.tex | proposition: Exact logarithmic identities and dequantization error | Local argument | Not mapped |
+| toric-transport-audit.010 | toric-transport-audit.tex | proposition: When a finite tropical mask is exact | Local argument | Not mapped |
+| toric-transport-audit.011 | toric-transport-audit.tex | proposition: Exact-step and bounded-length tropical paths | Local argument | Not mapped |
+| toric-transport-audit.012 | toric-transport-audit.tex | proposition: A nilpotent Jacobian with arbitrarily large gain | Local argument | Partial components: TransportContracts.nonnormal_shear_square_zero, TransportContracts.nonnormal_shear_unit_image, TransportContracts.nonnormal_shear_gain_squared, TransportContracts.nonnormal_shear_strict_gain, TransportContracts.nonnormal_shear_second_jvp_zero, TransportContracts.nonnormal_shear_not_normal |
+| toric-transport-audit.013 | toric-transport-audit.tex | theorem: Finite path-multiplicity bound | Local argument | Not mapped |
+| toric-transport-audit.014 | toric-transport-audit.tex | proposition: Decaying maximal paths with an expanding linear map | Local argument | Not mapped |
+| toric-transport-audit.015 | toric-transport-audit.tex | proposition: Fixed-rate feasibility is linear | Local argument | Not mapped |
+| toric-transport-audit.016 | toric-transport-audit.tex | proposition: Binary log loss with correct endpoint conventions | Local argument | Not mapped |
+| toric-transport-audit.017 | toric-transport-audit.tex | proposition: Independent disjoint components can carry one bit jointly | Local argument | Not mapped |
 | cyclic-cosmology.001 | cyclic-cosmology.tex | proposition: Connection change and null trajectories | Local argument | Not mapped |
 | cyclic-cosmology.002 | cyclic-cosmology.tex | proposition: Hodge scaling and the four-dimensional Maxwell system | Local argument | Not mapped |
 | cyclic-cosmology.003 | cyclic-cosmology.tex | theorem: Quartic compactification and conformal time | Local argument | Not mapped |
@@ -466,6 +489,66 @@ Source: `extension/manuscript/chapters/fluid-circuit-repairs.tex`.
 - **FluidInterfaces.hidden_recurrence_expansion**: The all-natural-time expansion z_n=D^n z_0+sum_{k<n}D^(n-1-k)Cx_k from the exact hidden recurrence, including the empty sum at zero.
 - **FluidInterfaces.resolved_memory_identity**: The resulting exact discrete convolution in the retained recurrence. No continuous matrix exponential, continuous-time memory integral, or block-resolvent determinant identity is included.
 
+### reduction-contracts.001 — Factorization through retained information
+
+- **ReductionContracts.factorization_iff_fiber_constant**: Exact set-theoretic equivalence for a surjective observation map
+- **ReductionContracts.reduced_output_unique**: Uniqueness on the surjective observed state space
+- **ReductionContracts.discrete_closure_iff**: Specialization to a discrete state update
+- **ReductionContracts.mismatched_fiber_excludes_closure**: Two indistinguishable inputs with different outputs exclude every deterministic closure
+
+### reduction-contracts.002 — Propagation of an exact discrete reduction
+
+- **ReductionContracts.discrete_trajectory_preserved**: Exact intertwining at every natural-number step
+
+### reduction-contracts.003 — Unresolved diameter bounds approximation error
+
+- **ReductionContracts.fiber_error_lower_bound**: Triangle-inequality error lower bound in a seminormed additive group
+- **ReductionContracts.fiber_diameter_le_twice_error**: Uniform epsilon error implies at most twice-epsilon pair separation
+
+### reduction-contracts.004 — Arbitrarily large cancellation gain
+
+- **ReductionContracts.signedPartner_constant_coefficient**: Constant coefficient of the explicit rational polynomial
+- **ReductionContracts.signedPartner_linear_coefficient**: Linear coefficient of the explicit rational polynomial
+- **ReductionContracts.signedPartner_ne_zero**: The second summand is nonzero
+- **ReductionContracts.signedPartner_order**: The second summand has order one
+- **ReductionContracts.signed_cancellation_identity**: The sum is exactly the prescribed higher monomial
+- **ReductionContracts.signed_cancellation_sum_ne_zero**: The residual polynomial is nonzero
+- **ReductionContracts.signed_cancellation_order**: Its order is the arbitrary integer k+2
+- **ReductionContracts.signed_cancellation_strict**: The residual order strictly exceeds the minimum summand order
+- **ReductionContracts.no_universal_minimum_rule**: There is no universal exact minimum rule for signed polynomial addition
+
+### toric-transport-audit.001 — Typed transport telescope
+
+- **TransportContracts.suffix_transport_telescope**: Arbitrary finite path with all arrows acting on the same module
+- **TransportContracts.closed_path_residual**: Closed-path endpoint residual
+- **TransportContracts.flat_closed_path_zero**: Identity holonomy makes the closed residual zero
+- **TransportContracts.two_arrow_transport**: Two-arrow noncommutative telescope
+- **TransportContracts.fixed_vector_closed_path_zero**: Fixing the initial vector suffices without full flatness
+
+### toric-transport-audit.002 — A flat-cycle counterexample to prefix transport
+
+- **TransportContracts.scalar_counterexample_flat**: The counterexample has identity holonomy
+- **TransportContracts.scalar_prefix_counterexample**: The incorrect prefix sum is exactly 3/2
+- **TransportContracts.scalar_suffix_correction**: Correct suffix transport gives zero for the same data
+
+### toric-transport-audit.006 — Damping cannot repair every expanding cycle
+
+- **TransportContracts.positive_damping_bound_not_contracting**: The displayed upper bound is at least one for L≥1 and eta≥0
+- **TransportContracts.expanding_scalar_damping**: The scalar multiplier is greater than one for positive damping
+
+### toric-transport-audit.008 — Trace preservation obstructs a zero path relation
+
+- **TransportContracts.trace_preserving_composite_nonzero**: Two real linear trace-preserving maps cannot have zero composite if a trace-one vector exists
+
+### toric-transport-audit.012 — A nilpotent Jacobian with arbitrarily large gain
+
+- **TransportContracts.nonnormal_shear_square_zero**: The explicit real matrix [[0,M],[0,0]] squares to zero
+- **TransportContracts.nonnormal_shear_unit_image**: Its image on the explicit Euclidean unit vector (0,1) is (M,0)
+- **TransportContracts.nonnormal_shear_gain_squared**: Exact coordinate squared norm of that image is M squared
+- **TransportContracts.nonnormal_shear_strict_gain**: The one-step squared gain exceeds one when M>1
+- **TransportContracts.nonnormal_shear_second_jvp_zero**: A second Jacobian-vector product is zero on every input
+- **TransportContracts.nonnormal_shear_not_normal**: For nonzero M, the matrix does not commute with its transpose
+
 The remaining verified declarations are not forced into a broader manuscript statement. They still have the scope and types recorded in their source files and verification manifests. Examples include scalar quadric expansions, abstract binary-character commutation, and a restricted binary-noise bound. Similar terminology alone does not establish a formal correspondence.
 
 ## Proposed research and incomplete goals outside the environment list
@@ -475,7 +558,7 @@ The remaining verified declarations are not forced into a broader manuscript sta
 - **Resource-certified improvements to ECC quantum arithmetic** — A full reversible circuit, ancilla policy, success probability, and cost comparison are required; no general speedup is established. Source: extension/manuscript/chapters/synthesis.tex.
 - **New lattice-cryptographic security reduction** — Module structure and correctness identities are not claimed to prove hardness or a new security reduction. Source: extension/manuscript/chapters/cryptography.tex.
 - **Uniform physical Yang--Mills mass gap** — Requires an analytic infrared estimate surviving the stated limits and the correct reconstructed vacuum sector; no mass-gap theorem is asserted. Source: extension/manuscript/chapters/synthesis.tex.
-- **Complete Lean formalization and complete linked-source proof audit** — The companion verifies 82 selected declarations and documents source coverage; it does not formalize all manuscript or source theorems or fully review every outbound linked work. Source: extension/manuscript/chapters/source-concordance.tex.
+- **Complete Lean formalization and complete linked-source proof audit** — The companion verifies 115 selected declarations and documents source coverage; it does not formalize all manuscript or source theorems or fully review every outbound linked work. Source: extension/manuscript/chapters/source-concordance.tex.
 - **Fresh upstream continuum Navier--Stokes kernel and Comparator verification** — Exact upstream tools and sources were pinned. The fresh build attempt stopped at dependency artifacts after rate-limited cache retrieval; source inspection and the successful local companion checks are not substituted for that verification. Source: extension/manuscript/chapters/navier-stokes-release.tex.
 - **New continuum conclusions from finite learned fluid models** — Finite energy stability, exact recurrence identities and circuit simulations do not establish mesh-uniform regularity, a hydrodynamic joint limit, unforced positive-viscosity blowup, or an improved continuum existence theorem. Source: extension/manuscript/chapters/fluid-structures.tex.
 - **Trained quantum fluid ToricGT with demonstrated quantum advantage** — The new fluid companion supplies an explicit finite circuit and constrained model proposal, with classical simulation and structural checks. It does not claim a trained fluid model, quantum hardware execution of those new examples, or a proved end-to-end speedup. Source: extension/manuscript/chapters/quantum-fluid.tex.
@@ -484,7 +567,7 @@ The remaining verified declarations are not forced into a broader manuscript sta
 
 The source audit checked all registered theorem modules and the Lean configuration after stripping nested block comments, line comments, and strings. It found no project axiom declaration, sorry/admit/sorryAx placeholder, unsafe declaration, or native_decide invocation. The module hashes, declaration sets, and print-axioms inventories match the existing successful verification manifests. Their reported dependencies are limited to propext, Classical.choice, and Quot.sound; the audit does not claim that foundational axioms are absent.
 
-**The inventory generator itself does not run Lean.** Fresh second-pass kernel runs of all four modules are recorded in navier-stokes/local-kernel-verification.json and the four local-kernel logs. Their 82 declaration-level dependency reports agree with the unchanged original manifests. Each current module is also checked against its authoritative verification manifest and raw log. The earlier three-module second-pass run remains a separate historical record.
+**The inventory generator itself does not run Lean.** Fresh second-pass kernel runs of all six modules are recorded in extension/lean/final-verification/verification.json and its six module logs. All 115 declaration-level dependency reports, printed types, source hashes and log hashes match the current successful record. The existing 35 precise component declarations remain mapped; validated additions are merged without reclassifying any composite manuscript statement as fully formalized. Earlier three-, four-, and 109-declaration six-module checks remain historical records.
 
 The local successful check does not complete the upstream continuum Navier--Stokes build, which used a different toolchain and stopped at missing dependency artifacts. That outcome remains in navier-stokes/release-build-verification.json.
 

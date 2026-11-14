@@ -1,0 +1,26 @@
+GRHResearch.Resolutions.arrow_state_determinant.{u_1, u_2, u_3} {R : Type u_1} [CommRing R] {n : Type u_2}
+  {m : Type u_3} [Fintype n] [DecidableEq n] [Fintype m] [DecidableEq m] (S : Matrix n m R) (T : Matrix m n R)
+  (D U V W : Matrix m m R) (hinv : (1 - U) * W = 1) (hsplit : T * S * D = U + V) :
+  (1 + S * D * W * T).det * (1 - U).det = (1 + V).det
+GRHResearch.Resolutions.acyclic_pair_determinant.{u_1, u_2} {R : Type u_1} [CommRing R] {n : Type u_2} [Fintype n]
+  [DecidableEq n] (A B E : Matrix n n R) (hAB : A * B = 1) (t : R) : (1 - t • (A * E * B)).det = (1 - t • E).det
+GRHResearch.Resolutions.alternating_duality_without_purity :
+  have F := !![2, 0; 0, 1];
+  have J := !![0, 1; -1, 0];
+  Fᵀ * J * F = 2 • J ∧ 2 ^ 2 ≠ 2
+'GRHResearch.Resolutions.arrow_state_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Resolutions.acyclic_pair_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Resolutions.alternating_duality_without_purity' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Resolutions.arrow_state_determinant.{u_1, u_2, u_3} {R : Type u_1} [CommRing R] {n : Type u_2}
+  {m : Type u_3} [Fintype n] [DecidableEq n] [Fintype m] [DecidableEq m] (S : Matrix n m R) (T : Matrix m n R)
+  (D U V W : Matrix m m R) (hinv : (1 - U) * W = 1) (hsplit : T * S * D = U + V) :
+  (1 + S * D * W * T).det * (1 - U).det = (1 + V).det
+'GRHResearch.Resolutions.arrow_state_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Resolutions.acyclic_pair_determinant.{u_1, u_2} {R : Type u_1} [CommRing R] {n : Type u_2} [Fintype n]
+  [DecidableEq n] (A B E : Matrix n n R) (hAB : A * B = 1) (t : R) : (1 - t • (A * E * B)).det = (1 - t • E).det
+'GRHResearch.Resolutions.acyclic_pair_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Resolutions.alternating_duality_without_purity :
+  have F := !![2, 0; 0, 1];
+  have J := !![0, 1; -1, 0];
+  F.transpose * J * F = 2 • J ∧ 2 ^ 2 ≠ 2
+'GRHResearch.Resolutions.alternating_duality_without_purity' depends on axioms: [propext, Classical.choice, Quot.sound]

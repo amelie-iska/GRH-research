@@ -1,0 +1,56 @@
+'GRHResearch.Analytic.central_rectangle_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.retained_height_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.buffered_height_from_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.strict_ramified_credit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.simultaneous_ramified_power_credit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.central_normalization_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.central_perturbation_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.central_reference_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.original_integral_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.late_height_and_tail_choice' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.central_rectangle_geometry {a β e s : ℝ} (ha : 51 / 100 ≤ a) (haβ : a ≤ β) (hβ : β ≤ 1)
+  (he : 0 < e) (he1 : e ≤ 1 / 1000) (hs : a + 16 * e ≤ s) :
+  51 / 100 ≤ s ∧ -1 / 100 ≤ 1 - a - 6 * e ∧ 1 + 10 * e ≤ s + (1 - a - 6 * e) ∧ 1 + 14 * e ≤ β + 20 * e + (1 - a - 6 * e)
+'GRHResearch.Analytic.central_rectangle_geometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.retained_height_budget.{u_1} {ι : Type u_1} (F : Finset ι) (hF : F.Nonempty) (a v cap : ι → ℝ)
+  {T : ℝ} (ha : ∀ i ∈ F, |a i| ≤ cap i) (hv : ∀ i ∈ F, |v i| ≤ T / (2 * ↑F.card * (1 + cap i))) :
+  |∑ i ∈ F, a i * v i| ≤ T / 2
+'GRHResearch.Analytic.retained_height_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.buffered_height_from_budget {γ added T : ℝ} {i : ℕ} (hT : 0 ≤ T) (hγ : |γ| ≤ (3 * ↑i + 1) * T)
+  (hv : |added| ≤ T / 2) : |γ + added| ≤ (3 * ↑i + 2) * T
+'GRHResearch.Analytic.buffered_height_from_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.strict_ramified_credit {w : ℝ} (hw : w ≤ 1 / 2) {j : ℕ} (hj : 2 ≤ j) :
+  -w - (↑j - 1) * (1 / 2 - w) ≤ -1 / 2
+'GRHResearch.Analytic.strict_ramified_credit' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.simultaneous_ramified_power_credit.{u_1} {ι : Type u_1} (F : Finset ι) (Q : ι → ℝ) (j : ι → ℕ)
+  {w : ℝ} (hw : w ≤ 1 / 2) (hQ : ∀ i ∈ F, 1 ≤ Q i) (hj : ∀ i ∈ F, 2 ≤ j i) :
+  ∏ i ∈ F, Q i ^ (-w - (↑(j i) - 1) * (1 / 2 - w)) ≤ ∏ i ∈ F, Q i ^ (-(1 / 2))
+'GRHResearch.Analytic.simultaneous_ramified_power_credit' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.central_normalization_identity (σ a h lx ly ell g d R δ z e εc εd : ℝ) (hh : h = 1 - lx + ell) :
+  lx * (1 / 2 - z) + a + z - 1 - a * ly - d * z + (16 - 6 * ly) * e +
+        (d * (R + δ / 2 + εc) + ell * (z - 1 / 2) + g + εc + d * εd) -
+      (σ + lx / 2 - 1 + h / 6) =
+    GRHResearch.Analytic.centralExponent σ a h ly ell g d R δ z + (16 - 6 * ly) * e + (1 + d) * εc + d * εd
+'GRHResearch.Analytic.central_normalization_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.central_reference_shift (σ β a h ly ell g d R δ z : ℝ) :
+  GRHResearch.Analytic.centralExponent σ a h ly ell g d R δ z - (β - σ) =
+    GRHResearch.Analytic.centralExponent β a h ly ell g d R δ z
+'GRHResearch.Analytic.central_reference_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.central_perturbation_identities (t δ q R d : ℝ) :
+  GRHResearch.Analytic.centralExponent (7 / 8 - t / 4) ((1 + δ) / 2) (13 / 16 + 3 * t / 2) (23 / 48 - t / 2) (1 / 6 + t)
+          (q * (1 / 6 + t)) d R δ (17 / 50) -
+        GRHResearch.Analytic.centralExponent (7 / 8) ((1 + δ) / 2) (13 / 16) (23 / 48) (1 / 6) (q / 6) d R δ (17 / 50) =
+      t * (13 / 50 + δ / 4 + q) ∧
+    GRHResearch.Analytic.centralExponent (7 / 8 - t / 4) ((1 + δ) / 2) (13 / 16 + 3 * t / 2) (23 / 48 - t / 2)
+          (1 / 6 + t) (q * (1 / 6 + t)) (13 / 16 + 3 * t / 2) R δ (17 / 50) -
+        GRHResearch.Analytic.centralExponent (7 / 8) ((1 + δ) / 2) (13 / 16) (23 / 48) (1 / 6) (q / 6) (13 / 16) R δ
+          (17 / 50) =
+      t * (-1 / 4 + δ + q + 3 * R / 2)
+'GRHResearch.Analytic.central_perturbation_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.original_integral_envelope.{u_1} {α : Type u_1} [MeasurableSpace α] (μ : MeasureTheory.Measure α)
+  (f : α → ℂ) (k : α → ℝ) (C : ℝ) (hf : MeasureTheory.Integrable f μ) (hk : MeasureTheory.Integrable k μ)
+  (hbound : ∀ᵐ (x : α) ∂μ, ‖f x‖ ≤ C * k x) : ‖∫ (x : α), f x ∂μ‖ ≤ C * ∫ (x : α), k x ∂μ
+'GRHResearch.Analytic.original_integral_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.late_height_and_tail_choice {A m cap B C : ℝ} (hA : 0 ≤ A) (hm : 0 < m) (hcap : 0 < cap) :
+  ∃ τ, 0 < τ ∧ τ ≤ cap ∧ A * τ ≤ m / 4 ∧ ∃ N, B - ↑N * τ < C - m / 2
+'GRHResearch.Analytic.late_height_and_tail_choice' depends on axioms: [propext, Classical.choice, Quot.sound]

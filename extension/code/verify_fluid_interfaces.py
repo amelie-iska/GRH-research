@@ -2,6 +2,10 @@
 """Independent finite checks for the fluid companion; no GPU or network needed."""
 from __future__ import annotations
 
+# Refuse before importing numerical dependencies or producing any evidence.
+if not __debug__:
+    raise RuntimeError("Verification requires assertions; run without -O or PYTHONOPTIMIZE")
+
 import datetime as dt
 import hashlib
 import json

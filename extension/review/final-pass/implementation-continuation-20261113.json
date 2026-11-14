@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "Verification-runtime fail-closed repair, six permanent cryptography edge regressions, and ordinary affected checks; no new general mathematical or cryptographic security theorem.",
+  "runtime_refusal_cases": 25,
+  "runtime_parent_modes": [
+    "ordinary",
+    "optimized"
+  ],
+  "crypto_test_methods": 31,
+  "crypto_failures": 0,
+  "crypto_errors": 0,
+  "crypto_skipped": 0,
+  "sha256": {
+    "extension/code/verify_examples.py": "6c3b05fb4c3da4000fc24a2303914836ed5529f74c78b4d6bfa0dc66f6c40e8f",
+    "extension/code/verify_invariants.py": "d27cfb27d44d68e4cac896975267922d3476095ad3837ddd6b29380645a9e73f",
+    "extension/code/verify_fluid_interfaces.py": "747207339c4f76e005c3904f7cf97bf79f1bf3909454c4eb3c4eeb094dbda715",
+    "extension/code/verify_legacy.py": "b0819d638eaa85ce3c46a7948158c291760ff5dddc65a53059a6a0d621b19780",
+    "extension/code/verify_toric_transport.py": "34bf46e9c1274d75a3708177cea8848a1b34c0d57978d1d2ed0bfcfc1060b7f1",
+    "extension/code/verify_verifier_runtime.py": "9a4adbce60fb027c8a3c1af3eba0345d2f60197a5783f4f463657e54a6ac94c5",
+    "extension/crypto/research_crypto.py": "54565f60dc085a9fddabc21c8f260f4611399f428d6d48a6b33772a063ad8116",
+    "extension/crypto/test_research_crypto.py": "bbb8303f7a6d3d60b804262ac178e89cadba40b005f66315909f6788ffd94dcf",
+    "extension/crypto/verify_crypto.py": "85e6688e432add78653f8372ffe9b08d32d8592732f04bf3e1fdafce14211419",
+    "extension/crypto/requirements.txt": "393b9dff0661e807b4f3793c6750cb0b802b9219c7563c83e7a35fb29b90cd59",
+    "extension/crypto/verification.json": "3da9ea2a7b1ccd788d9b24100a5d2193a1931c85118d67482caf9ed0f2539da7",
+    "extension/crypto/verification.log": "047c70afefced03eecbcce7b4a9ae0263a5557b6f94b12313d84d56826b73d46",
+    "extension/verification/examples.json": "e2052e7dcb3f6dbbb8451cb525495023482d5f0a0696bffdb00f2f8dd195c223",
+    "extension/verification/invariants.json": "3439433fcdc76ecd5e5e5bfaf4be86fd95bc56125031b1acdce56adb9d38027c",
+    "extension/verification/fluids-python.json": "2caa6c09be23bd1547464f8227a7805306f5128d7f2e71e0e4010dafa031ddfd",
+    "extension/verification/verification-runtime.json": "55aa4c851112eb0e75ad317286daf85df77806ac17faad8547c7e5cf23dbe0c3",
+    "extension/verification/verification-runtime-optimized.json": "e9c58baa9a5c18687483dfa9c257a10269a5ad5af9127263cff09fe809b18f7a",
+    "extension/site/data/fluids-reference.json": "00860f03dd04cad4ab54121ecb0286c3718222808dc5f07bbae7f2c9a5a7c750",
+    "extension/review/legacy-http-check.json": "0099584ed218bbd6ce9fe0bfb0c68cb06c0529cb1828319755804a3306279c08",
+    "extension/review/final-pass/toric-transport-verification.json": "834b3d17f6cb8078a5717605d0791de720abf8a738be3c0402a6a476ef71fbc2",
+    "extension/review/final-pass/optimization-false-pass-before.json": "77a438f489364ee1fcfa139eebc98ef571e78cb0c32904ed03751ca7b3fc9869",
+    "extension/review/final-pass/continuation-crypto.log": "7fb83abb5aa759217d77ed9e1b626a8e0a7a5ff63569656ea34652b4c1920581",
+    "extension/review/final-pass/continuation-examples.log": "cdac8d096146f968398542315864376b6a07ce6eb0c9e085148a5350b08ee32d",
+    "extension/review/final-pass/continuation-invariants.log": "be43d299d00492c8cd6068d6791020f38b8af5a294cf49eb1bd8aa7acb1a305d",
+    "extension/review/final-pass/continuation-fluids.log": "9d938bb468fa2810114ad9b0efdb26eeae81ae177695f60e3d209f90434fa816",
+    "extension/review/final-pass/continuation-toric.log": "834b3d17f6cb8078a5717605d0791de720abf8a738be3c0402a6a476ef71fbc2",
+    "extension/review/final-pass/continuation-legacy.log": "b8bec28b14024e2c602e21ef4e70f91796c2543ca8b23741f86d3022ee83722b"
+  }
+}

@@ -1,0 +1,40 @@
+GRHResearch.ShortRowPairBarrier.frame_potential_duality.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]
+  (A : U → I → ℂ) : ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2 = ∑ u, ∑ v, ‖rowGram A u v‖ ^ 2
+GRHResearch.ShortRowPairBarrier.row_diagonal_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]
+  (A : U → I → ℂ) : ∑ u, ‖rowGram A u u‖ ^ 2 ≤ ∑ i, ∑ j, ‖columnGram A i j‖ ^ 2
+GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]
+  [Fintype I] (A : U → I → ℂ) (w : U → ℝ) (hw : ∀ (u : U) (i : I), ‖A u i‖ ^ 2 = w u) :
+  ↑(Fintype.card I) ^ 2 * ∑ u, w u ^ 2 - ↑(Fintype.card I) * (∑ u, w u) ^ 2 ≤
+    ∑ i, ∑ j, if i = j then 0 else ‖columnGram A i j‖ ^ 2
+GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]
+  [Fintype I] (A : U → I → ℂ) (hA : ∀ (u : U) (i : I), ‖A u i‖ = 1) :
+  ↑(Fintype.card I) * ↑(Fintype.card U) * (↑(Fintype.card I) - ↑(Fintype.card U)) ≤
+    ∑ i, ∑ j, if i = j then 0 else ‖columnGram A i j‖ ^ 2
+'GRHResearch.ShortRowPairBarrier.frame_potential_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowPairBarrier.row_diagonal_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.ShortRowPairBarrier.frame_potential_duality.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]
+  (A : U → I → ℂ) :
+  ∑ i, ∑ j, ‖GRHResearch.ShortRowPairBarrier.columnGram A i j‖ ^ 2 =
+    ∑ u, ∑ v, ‖GRHResearch.ShortRowPairBarrier.rowGram A u v‖ ^ 2
+'GRHResearch.ShortRowPairBarrier.frame_potential_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowPairBarrier.row_diagonal_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]
+  (A : U → I → ℂ) :
+  ∑ u, ‖GRHResearch.ShortRowPairBarrier.rowGram A u u‖ ^ 2 ≤
+    ∑ i, ∑ j, ‖GRHResearch.ShortRowPairBarrier.columnGram A i j‖ ^ 2
+'GRHResearch.ShortRowPairBarrier.row_diagonal_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]
+  [Fintype I] (A : U → I → ℂ) (w : U → ℝ) (hw : ∀ (u : U) (i : I), ‖A u i‖ ^ 2 = w u) :
+  ↑(Fintype.card I) ^ 2 * ∑ u, w u ^ 2 - ↑(Fintype.card I) * (∑ u, w u) ^ 2 ≤
+    ∑ i, ∑ j, if i = j then 0 else ‖GRHResearch.ShortRowPairBarrier.columnGram A i j‖ ^ 2
+'GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]
+  [Fintype I] (A : U → I → ℂ) (hA : ∀ (u : U) (i : I), ‖A u i‖ = 1) :
+  ↑(Fintype.card I) * ↑(Fintype.card U) * (↑(Fintype.card I) - ↑(Fintype.card U)) ≤
+    ∑ i, ∑ j, if i = j then 0 else ‖GRHResearch.ShortRowPairBarrier.columnGram A i j‖ ^ 2
+'GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

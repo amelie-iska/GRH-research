@@ -7,6 +7,10 @@ This file is not a cryptographic implementation or a security experiment.
 """
 from __future__ import annotations
 
+# These proof checks must not be silently removed by optimized Python.
+if not __debug__:
+    raise RuntimeError("Verification requires assertions; run without -O or PYTHONOPTIMIZE")
+
 import argparse
 import cmath
 import hashlib

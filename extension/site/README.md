@@ -3,8 +3,8 @@
 This static companion presents the research monograph, executable finite models,
 source reviews, and verification evidence. Its publication destination is the
 existing [amelie-iska/GRH-Research repository](https://github.com/amelie-iska/GRH-Research).
-The research repository and the managed website checkout have separate commit
-and deployment records.
+The Pages release combines this companion with the inherited project material;
+publication and machine synchronization are recorded separately from local validation.
 
 The new laboratories use local JavaScript, styles, and data; they require no
 package installation or CDN. The inherited pages under [legacy/](legacy/index.html)
@@ -13,8 +13,8 @@ retain their separately documented dependencies.
 ## Read and run
 
 - [Research atlas](index.html).
-- [Compiled monograph: 316 pages](downloads/paper.pdf).
-- [Standalone fluid supplement: 70 pages](downloads/fluid-extension.pdf).
+- [Compiled monograph: 341 pages](downloads/paper.pdf).
+- [Standalone fluid supplement: 90 pages](downloads/fluid-extension.pdf).
 - [Compact research source archive](downloads/source.zip).
 - [Lean companion archive](downloads/lean4.zip).
 
@@ -31,9 +31,10 @@ for local development, not a claim of a public deployment.
 The PDF hashes, source snapshots, compiler results, and warning counts are in
 the [monograph build record](verification/pdf-build.json) and
 [fluid supplement build record](verification/fluid-build-verification.json).
-Separate rendered-page reviews cover the
-[main manuscript's inspected pages](verification/main-fluid-pdf-visual-qa.json)
-and the [fluid supplement](verification/fluid-pdf-visual-qa.json).
+Earlier rendered-page reviews are retained as historical records for the
+[main manuscript](verification/main-fluid-pdf-visual-qa.json) and
+[fluid supplement](verification/fluid-pdf-visual-qa.json); their hashes identify
+the editions they inspected. Current build freshness is checked independently.
 The download directory contains generated release artifacts and is excluded
 from the compact source archive to prevent recursive packaging.
 
@@ -82,50 +83,59 @@ interfaces explained by this project.
 The pinned upstream solution has a 609-module local import closure. Its source
 audit was completed; the separate fresh upstream build stopped at missing
 dependency artifacts after rate-limited cache downloads. The
-[build-attempt record](verification/navier-stokes/release-build-verification.json)
+[current build-attempt record](verification/final-pass/upstream-build-current.json)
 preserves that incomplete status. Successful local companion checks do not
 substitute for the upstream continuum kernel or Comparator checks.
 
 ## Current proof and source evidence
 
-The [claim register](verification/claim-register.md) inventories **246 named
-environments**: 234 local arguments, five conditional arguments, six cited
-external results, and one open problem. There are **239 attached written proofs**.
-Nine additional external statements in prose have explicit source and proof-scope
-classifications. An attached proof is evidence of a written argument, not a
-universal independent proof certificate.
+The [claim register](verification/claim-register.md) inventories
+**269 named environments**, including
+257 local arguments,
+5 conditional arguments,
+6 cited external results, and
+1 open problem. It records
+**262 attached written proofs**. Presence of
+a written argument does not certify its correctness. The selected external
+statements in prose retain their distinct source and proof-scope classifications.
 
-The [formal type map](verification/formal-type-map.md) records all **82 local
-kernel-checked declarations**. It maps **35 declarations** to precise components
-of **16 manuscript environments**. No complete composite manuscript environment
-is marked fully formalized. In particular, a finite energy derivative does not
-formalize global ODE continuation; discrete memory does not formalize the
-continuous memory integral; and a matrix determinant does not formalize a
-covering-space theorem.
+The [current selected Lean record](verification/lean-current/verification.json)
+contains **115 kernel-checked declarations in 6 modules**.
+The [formal type map](verification/formal-type-map.md) maps
+**68 declarations** to
+precise components of **25
+manuscript environments**. No complete composite manuscript environment is
+marked fully formalized. The source hashes, exact printed types, actual axiom
+dependencies and module logs accompany the record and the recursive Lean archive.
 
-The [fresh four-module check](verification/navier-stokes/local-kernel-verification.md)
-used Lean 4.24.0 and the pinned mathlib revision, returned exit code zero with
-zero warnings, and preserved the original sources and manifests. The component
-manifests are:
+The selected checks use Lean 4.24.0 and the pinned mathlib revision. Their
+foundational dependencies are limited to `propext`, `Classical.choice` and
+`Quot.sound`. They trust cached compiled imports; they do not independently
+rebuild every dependency or formalize the entire monograph. The four-module,
+82-declaration manifests retained elsewhere are historical evidence.
 
-- [25 original declarations](verification/verification.json).
-- [Seven quantum declarations](verification/quantum-verification.json).
-- [Sixteen diagram declarations](verification/diagram-verification.json).
-- [34 fluid declarations](verification/fluid-verification.json).
+The library-backed cryptographic implementation has
+**31 passing test methods** in its
+[current regression record](verification/crypto/verification.json). Those tests
+exercise the implemented interfaces and malformed-input rejection. They do not
+prove computational security or certify a deployment.
 
-Reported foundational dependencies are limited to `propext`, `Classical.choice`,
-and `Quot.sound`; the records do not claim these foundations are absent.
+The [release summary](verification/release-summary.json) binds these displayed
+counts and the two PDF records to their source hashes. The separate upstream
+Navier–Stokes check remains **incomplete**, as recorded in the
+[current build status](verification/final-pass/upstream-build-current.json).
+Local finite-interface certificates do not establish that continuum theorem.
 
-The [review ledger](verification/review-ledger.md) retains the historical
-180-environment second audit as a historical snapshot. Additional fluid reviews
-include the [microscopic source ledger](verification/navier-stokes/microscopic-source-review.md),
-[Farhat review](verification/navier-stokes/farhat-review.md),
-[quantum-fluid literature review](verification/navier-stokes/quantum-algorithms-review.md),
-and [independent release-chapter review](verification/navier-stokes/release-chapter-independent-review.json).
-The source records distinguish full text reading, selected passages, image
-inspection, and unavailable originals. The nine current Farhat decks contain
-627 PDF pages including overlays and replace unavailable historical filenames;
-they are not claimed to be identical editions or 627 distinct slides.
+The [review ledger](verification/review-ledger.md) retains historical audits at
+their original scope. Fluid sources have separate
+[microscopic](verification/navier-stokes/microscopic-source-review.md),
+[Farhat](verification/navier-stokes/farhat-review.md), and
+[quantum-algorithm](verification/navier-stokes/quantum-algorithms-review.md)
+records. They distinguish full-text reading, selected passages, image inspection
+and inaccessible originals. The prior 249-segment video transcript review lacks
+a retained executor-local transcript export and content hash. The nine current
+Farhat decks contain 627 PDF pages including overlays; they are replacements
+for unavailable historical filenames, not a claim of identical editions.
 
 ## Numerical verification and browser inspection
 

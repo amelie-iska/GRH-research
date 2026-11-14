@@ -2,7 +2,7 @@
 
 This separate layer uses actual complex numbers, exponential Euler weights, differentiability on a domain and continuity on its closure, the maximum-modulus principle, pointwise filter limits, and uniform boundary convergence. It is distinct from the standalone finite-arithmetic layer.
 
-Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 342 currently checked declarations print their theorem types and axiom dependencies. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
+Run `sh scripts/check_analytic.sh` from the project root. The script verifies the exact mathlib commit and manifest before checking the source with warnings treated as errors. All 361 public theorem/lemma declarations in the current analytic inventory have freshly checked theorem types and axiom dependencies. Older counts in the development notes below refer to their historical snapshots. Their only dependencies reported at that level are the standard Lean foundations `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or project-specific axiom is used.
 
 ## Checked theorems
 
@@ -335,3 +335,20 @@ spanning, previously open; it is not a formal algebra comparison from a
 separately constructed quiver-path quotient. No completion/category/AR or
 GRH claim is inferred. The fresh full suite is360reports,357standard-only
 andthree axiom-free.
+
+## Fresh inherited-package audit, 13 November 2026
+
+The portable verifier checked all 361 public analytic declarations across 36
+source modules, together with the seven original arithmetic declarations in
+`lean/GRHResearch.lean`: 368 declarations across 37 modules. Every public type
+and axiom report is retained; all modules passed with zero warnings, no
+admissions and no unapproved project axiom. The pinned Lean 4.24.0 toolchain
+and mathlib revision remain unchanged. This is separate from the 115-declaration
+six-module research extension and from the upstream continuum formalization.
+
+See [the exact manifest](../extension/lean/inherited-verification/all/verification.json)
+and [the continuation audit](../extension/review/final-pass/formal-continuation-20261113.md).
+The verifier prints every public declaration, including attributed theorems and
+helper lemmas omitted by earlier simple line-prefix inventories. These are
+precisely scoped interface results; the check does not prove GRH or turn a
+component theorem into a fully formalized manuscript.

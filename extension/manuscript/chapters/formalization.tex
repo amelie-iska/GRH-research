@@ -3,9 +3,19 @@
 \section{Current six-module verification}
 
 The current companion contains 115 selected theorem declarations in six
-modules: 25 in \texttt{BridgeTheorems}, seven in \texttt{QuantumInterfaces},
-16 in \texttt{DiagramGrammar}, 34 in \texttt{FluidInterfaces}, 16 in
-\texttt{ReductionContracts}, and 17 in \texttt{TransportContracts}.
+modules.
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Module & Declarations\\\midrule
+\texttt{BridgeTheorems} & 25\\
+\texttt{QuantumInterfaces} & 7\\
+\texttt{DiagramGrammar} & 16\\
+\texttt{FluidInterfaces} & 34\\
+\texttt{ReductionContracts} & 16\\
+\texttt{TransportContracts} & 17\\\bottomrule
+\end{tabular}
+\end{center}
 The final verification records a fresh compiler check, exact printed types,
 source hashes and axiom dependencies for every declaration, with no warnings
 or unexpected axioms. Its authoritative record is
@@ -60,10 +70,11 @@ actually certified.
 There are three different proof layers in the deliverable. First, the paper
 gives complete elementary proofs of many finite and algebraic results.
 Second, it states deep external theorems with citations and their relevant
-hypotheses. Third, the companion checks 82 selected formal declarations across
-the original 25-declaration file, the seven-declaration quantum supplement,
-the sixteen-declaration diagram and transport supplement, and the
-34-declaration fluid supplement in Appendix~\ref{ch:fluid-verification}.
+hypotheses. Third, the current companion checks 115 selected formal declarations
+across the six modules listed above. The original four modules contribute 82;
+the reduction and transport modules add 16 and 17, respectively.
+Appendix~\ref{ch:fluid-verification} identifies the earlier fluid-era checks
+and distinguishes them from the current aggregate verification.
 These layers overlap, but they are not identical. A citation to a formal
 upstream project is also different from compiling that project during this
 work. The Yang--Mills dependency manifest records the frozen external source

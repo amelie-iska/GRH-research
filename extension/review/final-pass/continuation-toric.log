@@ -1,0 +1,141 @@
+{
+  "schema_version": 3,
+  "status": "passed",
+  "arithmetic": "fractions.Fraction for all matrix and damping checks",
+  "seed": 20261113,
+  "generic_path_checks": 288,
+  "rectangular_path_checks": 120,
+  "noncommuting_flat_cycle_checks": 128,
+  "conditional_independence_checks": 16,
+  "prefix_counterexample": {
+    "holonomy": "1",
+    "old_residual": "3/2",
+    "correct_residual": "0"
+  },
+  "positive_damping_counterexamples": [
+    {
+      "eta": "1",
+      "exact_factor": "2"
+    },
+    {
+      "eta": "1/2",
+      "exact_factor": "3/2"
+    },
+    {
+      "eta": "1/10",
+      "exact_factor": "11/10"
+    },
+    {
+      "eta": "1/1000",
+      "exact_factor": "1001/1000"
+    }
+  ],
+  "jvp_norm_counterexample": {
+    "matrix": "[[0,10],[0,0]]",
+    "matrix_squared": "zero",
+    "spectral_radius": "0",
+    "spectral_norm": "10",
+    "J_transpose_J": "diag(0,100)",
+    "pure_J_iteration_from_e2_after_two_steps": "zero",
+    "scope": "A JVP-only iterate is not a certified singular-norm upper bound."
+  },
+  "certificate_information_example": {
+    "I_B_Z_given_complete_X_bits": 0,
+    "I_B_Z_given_lossy_S_bits": 1.0,
+    "definition": "X uniform on {0,1,2,3}; B=Z=X mod 2; S=floor(X/2)"
+  },
+  "tropical_path_enumeration_checks": 96,
+  "tropical_horizon_counterexample": {
+    "D": "[-1]",
+    "v0": "[0]",
+    "steps": 2,
+    "pure_power": "[-2]",
+    "bounded_length_closure": "[0]"
+  },
+  "finite_mask_counterexamples": [
+    {
+      "penalty": "1",
+      "excluded_raw": "2",
+      "masked_max": "1",
+      "admissible_max": "0"
+    },
+    {
+      "penalty": "3",
+      "excluded_raw": "4",
+      "masked_max": "1",
+      "admissible_max": "0"
+    },
+    {
+      "penalty": "17",
+      "excluded_raw": "18",
+      "masked_max": "1",
+      "admissible_max": "0"
+    }
+  ],
+  "logarithmic_counterexamples": {
+    "a": "1",
+    "b": "1",
+    "lambda": "1",
+    "v_lambda_ab": "-1",
+    "incorrect_minus_offset": "-3",
+    "correct_plus_offset": "-1",
+    "additivity_witness": "2 > 1, so log(2) > log(1)=0; no floating-point logarithm used"
+  },
+  "path_multiplicity": {
+    "independent_exhaustive_checks": 72,
+    "dense_branching_counterexamples": [
+      {
+        "dimension": 2,
+        "edge_weight": "3/4",
+        "max_times_growth_factor": "3/4",
+        "ordinary_growth_factor": "3/2"
+      },
+      {
+        "dimension": 3,
+        "edge_weight": "2/3",
+        "max_times_growth_factor": "2/3",
+        "ordinary_growth_factor": "2"
+      },
+      {
+        "dimension": 4,
+        "edge_weight": "5/8",
+        "max_times_growth_factor": "5/8",
+        "ordinary_growth_factor": "5/2"
+      }
+    ],
+    "exact_dense_horizons_per_example": 6,
+    "bound": "abs(product)[i,j] <= sum_abs_path_weights[i,j] <= count[i,j] * maximum_path_weight[i,j]",
+    "scope": "Finite exact products, not empirical or infinite-horizon Lyapunov estimates"
+  },
+  "weighted_gain": {
+    "G": "[[0,2],[1/8,0]]",
+    "weights": "[4,1]",
+    "unweighted_row_bound": "2",
+    "certified_weighted_bound": "1/2",
+    "rejected_rate": "2/5",
+    "necessary_rate_squared": ">= 1/4",
+    "optimization_scope": "Fixed-rate linear feasibility witness; no joint rate/weight LP claim"
+  },
+  "xor_information_synergy": {
+    "exact_pairwise_independence_checks": 12,
+    "law": "X,Y independent fair bits; B=X XOR Y; T=X+Y",
+    "I_B_X_bits": 0,
+    "I_B_Y_bits": 0,
+    "I_B_T_bits": 1,
+    "I_B_Y_given_X_bits": 1,
+    "source_component_overlap": "empty",
+    "scope": "Exact probability equalities; fair/deterministic entropy arguments in the manuscript"
+  },
+  "cross_entropy_endpoints": {
+    "exact_interior_improvement_checks": 32,
+    "deterministic_zero_label_improvement": "q -> q/2",
+    "deterministic_one_label_improvement": "q -> (1+q)/2",
+    "scope": "Probability inequalities plus monotonicity of log; no numeric logarithm certificate"
+  },
+  "scope": "Finite exact regression examples; the manuscript and Lean contain the general transport proof.",
+  "source_sha256": "34bf46e9c1274d75a3708177cea8848a1b34c0d57978d1d2ed0bfcfc1060b7f1",
+  "upstream_pins": {
+    "Tropical_Quivers_of_Archs": "2b6ab79a685e2c6233fb8892e59589951feeddad",
+    "ToricGT-Program": "f91ba1811b5a4f70d53c7120acf8ca2a0049f85b"
+  }
+}

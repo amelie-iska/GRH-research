@@ -1,0 +1,112 @@
+GRHResearch.DessinNode.parameter_diagonal.{u_1} (k : Type u_1) [Field k] : parameter k = (diagonal k) X
+GRHResearch.DessinNode.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(augmentationLinear k)
+GRHResearch.DessinNode.augmentation_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (augmentationLinear k) = LinearMap.range (firstBoundary k)
+GRHResearch.DessinNode.common_dvr_coordinates.{u_1} (k : Type u_1) [Field k] :
+  Function.Bijective fun ab => (diagonal k) ab.1 + (diagonal k) ab.2 * x k
+GRHResearch.DessinNode.first_boundary_square_zero.{u_1} (k : Type u_1) [Field k] : firstBoundary k ∘ₗ evenBoundary k = 0
+GRHResearch.DessinNode.alternating_boundaries_square_zero.{u_1} (k : Type u_1) [Field k] :
+  evenBoundary k ∘ₗ oddBoundary k = 0 ∧ oddBoundary k ∘ₗ evenBoundary k = 0
+GRHResearch.DessinNode.first_boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (firstBoundary k) = LinearMap.range (evenBoundary k)
+GRHResearch.DessinNode.even_boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (evenBoundary k) = LinearMap.range (oddBoundary k)
+GRHResearch.DessinNode.odd_boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (oddBoundary k) = LinearMap.range (evenBoundary k)
+GRHResearch.DessinNode.resolution_terms_projective.{u_1} (k : Type u_1) [Field k] :
+  Module.Projective ↥(Order k) ↥(Order k) ∧ Module.Projective (↥(Order k)) (↥(Order k) × ↥(Order k))
+GRHResearch.DessinNode.diagonal_injective.{u_1} (k : Type u_1) [Field k] : Function.Injective ⇑(diagonal k)
+GRHResearch.DessinNode.x_ne_zero.{u_1} (k : Type u_1) [Field k] : x k ≠ 0
+GRHResearch.DessinNode.y_ne_zero.{u_1} (k : Type u_1) [Field k] : y k ≠ 0
+GRHResearch.DessinNode.xy_zero.{u_1} (k : Type u_1) [Field k] : x k * y k = 0
+GRHResearch.DessinNode.yx_zero.{u_1} (k : Type u_1) [Field k] : y k * x k = 0
+GRHResearch.DessinNode.first_branch_zero_factor.{u_1} (k : Type u_1) [Field k] (z : ↥(Order k)) (hz : (↑z).1 = 0) :
+  ∃ w, y k * w = z
+GRHResearch.DessinNode.second_branch_zero_factor.{u_1} (k : Type u_1) [Field k] (z : ↥(Order k)) (hz : (↑z).2 = 0) :
+  ∃ w, x k * w = z
+GRHResearch.DessinNode.ann_x_is_y.{u_1} (k : Type u_1) [Field k] (z : ↥(Order k)) : x k * z = 0 ↔ ∃ w, y k * w = z
+GRHResearch.DessinNode.ann_y_is_x.{u_1} (k : Type u_1) [Field k] (z : ↥(Order k)) : y k * z = 0 ↔ ∃ w, x k * w = z
+GRHResearch.DessinNode.parameter_regular.{u_1} (k : Type u_1) [Field k] (z : ↥(Order k)) : parameter k * z = 0 ↔ z = 0
+'GRHResearch.DessinNode.parameter_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.augmentation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.augmentation_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.common_dvr_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.first_boundary_square_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.alternating_boundaries_square_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.first_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.even_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.odd_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.resolution_terms_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.diagonal_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.x_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.y_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.xy_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.yx_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.first_branch_zero_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.second_branch_zero_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.ann_x_is_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.ann_y_is_x' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinNode.parameter_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.diagonal_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(GRHResearch.DessinNode.diagonal k)
+'GRHResearch.DessinNode.diagonal_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.x_ne_zero.{u_1} (k : Type u_1) [Field k] : GRHResearch.DessinNode.x k ≠ 0
+'GRHResearch.DessinNode.x_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.y_ne_zero.{u_1} (k : Type u_1) [Field k] : GRHResearch.DessinNode.y k ≠ 0
+'GRHResearch.DessinNode.y_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.xy_zero.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.DessinNode.x k * GRHResearch.DessinNode.y k = 0
+'GRHResearch.DessinNode.xy_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.yx_zero.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.DessinNode.y k * GRHResearch.DessinNode.x k = 0
+'GRHResearch.DessinNode.yx_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.first_branch_zero_factor.{u_1} (k : Type u_1) [Field k] (z : ↥(GRHResearch.DessinNode.Order k))
+  (hz : (↑z).1 = 0) : ∃ w, GRHResearch.DessinNode.y k * w = z
+'GRHResearch.DessinNode.first_branch_zero_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.second_branch_zero_factor.{u_1} (k : Type u_1) [Field k] (z : ↥(GRHResearch.DessinNode.Order k))
+  (hz : (↑z).2 = 0) : ∃ w, GRHResearch.DessinNode.x k * w = z
+'GRHResearch.DessinNode.second_branch_zero_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.ann_x_is_y.{u_1} (k : Type u_1) [Field k] (z : ↥(GRHResearch.DessinNode.Order k)) :
+  GRHResearch.DessinNode.x k * z = 0 ↔ ∃ w, GRHResearch.DessinNode.y k * w = z
+'GRHResearch.DessinNode.ann_x_is_y' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.ann_y_is_x.{u_1} (k : Type u_1) [Field k] (z : ↥(GRHResearch.DessinNode.Order k)) :
+  GRHResearch.DessinNode.y k * z = 0 ↔ ∃ w, GRHResearch.DessinNode.x k * w = z
+'GRHResearch.DessinNode.ann_y_is_x' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.parameter_regular.{u_1} (k : Type u_1) [Field k] (z : ↥(GRHResearch.DessinNode.Order k)) :
+  GRHResearch.DessinNode.parameter k * z = 0 ↔ z = 0
+'GRHResearch.DessinNode.parameter_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.first_boundary_square_zero.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.DessinNode.firstBoundary k ∘ₗ GRHResearch.DessinNode.evenBoundary k = 0
+'GRHResearch.DessinNode.first_boundary_square_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.alternating_boundaries_square_zero.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.DessinNode.evenBoundary k ∘ₗ GRHResearch.DessinNode.oddBoundary k = 0 ∧
+    GRHResearch.DessinNode.oddBoundary k ∘ₗ GRHResearch.DessinNode.evenBoundary k = 0
+'GRHResearch.DessinNode.alternating_boundaries_square_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.first_boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (GRHResearch.DessinNode.firstBoundary k) = LinearMap.range (GRHResearch.DessinNode.evenBoundary k)
+'GRHResearch.DessinNode.first_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.even_boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (GRHResearch.DessinNode.evenBoundary k) = LinearMap.range (GRHResearch.DessinNode.oddBoundary k)
+'GRHResearch.DessinNode.even_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.odd_boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (GRHResearch.DessinNode.oddBoundary k) = LinearMap.range (GRHResearch.DessinNode.evenBoundary k)
+'GRHResearch.DessinNode.odd_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.resolution_terms_projective.{u_1} (k : Type u_1) [Field k] :
+  Module.Projective ↥(GRHResearch.DessinNode.Order k) ↥(GRHResearch.DessinNode.Order k) ∧
+    Module.Projective (↥(GRHResearch.DessinNode.Order k))
+      (↥(GRHResearch.DessinNode.Order k) × ↥(GRHResearch.DessinNode.Order k))
+'GRHResearch.DessinNode.resolution_terms_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.parameter_diagonal.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.DessinNode.parameter k = (GRHResearch.DessinNode.diagonal k) PowerSeries.X
+'GRHResearch.DessinNode.parameter_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(GRHResearch.DessinNode.augmentationLinear k)
+'GRHResearch.DessinNode.augmentation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.augmentation_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (GRHResearch.DessinNode.augmentationLinear k) = LinearMap.range (GRHResearch.DessinNode.firstBoundary k)
+'GRHResearch.DessinNode.augmentation_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinNode.common_dvr_coordinates.{u_1} (k : Type u_1) [Field k] :
+  Function.Bijective fun ab =>
+    (GRHResearch.DessinNode.diagonal k) ab.1 + (GRHResearch.DessinNode.diagonal k) ab.2 * GRHResearch.DessinNode.x k
+'GRHResearch.DessinNode.common_dvr_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]

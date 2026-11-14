@@ -44,6 +44,56 @@ def locate(name: str, env: dict[str, str]) -> str:
     return result.stdout.strip()
 
 
+def prepare_local_tex_runtime(env: dict[str, str]) -> dict:
+    """Use installed TeX trees even when their runtime ls-R links are absent.
+
+    Some bundled environments provide the complete read-only TeX installation
+    without the generated /var/lib/texmf databases or font map. Repair search
+    behavior for this child process only; never run a system-wide mktexlsr or
+    updmap. Ordinary complete TeX installations retain their normal settings.
+    """
+    evidence: dict = {"filesystem_search_fallback": False, "local_font_map": None}
+    if not locate("pdflatex.ini", env):
+        trees = subprocess.check_output(["kpsewhich", "-var-value=TEXMF"],
+                                        env=env, text=True).strip()
+        # Kpathsea's !! prefix forces database-only lookup. Removing it permits
+        # lookup in the existing tree when a generated database is unavailable.
+        if "!!" in trees:
+            env["TEXMF"] = trees.replace("!!", "")
+            evidence["filesystem_search_fallback"] = True
+        if not locate("pdflatex.ini", env):
+            raise SystemExit("pdflatex.ini is absent from the installed TeX trees. "
+                             "Install the LaTeX base macros before building.")
+    if not locate("pdftex.map", env):
+        components = ["cm.map", "cmextra.map", "symbols.map", "euler.map", "lm.map"]
+        paths = [Path(locate(name, env)) for name in components]
+        if not all(path.is_file() for path in paths):
+            missing = [name for name, path in zip(components, paths) if not path.is_file()]
+            raise SystemExit("Cannot construct the local font map; missing " + ", ".join(missing))
+        font_dir = BUILD / "fonts"
+        font_dir.mkdir(parents=True, exist_ok=True)
+        font_map = font_dir / "pdftex.map"
+        font_map.write_text("\n".join(path.read_text() for path in paths) + "\n")
+        env["TEXFONTMAPS"] = str(font_dir) + "//:" + env.get("TEXFONTMAPS", "")
+        evidence["local_font_map"] = {
+            "path": str(font_map.relative_to(ROOT)),
+            "sha256": hashlib.sha256(font_map.read_bytes()).hexdigest(),
+            "components": {name: hashlib.sha256(path.read_bytes()).hexdigest()
+                           for name, path in zip(components, paths)},
+        }
+    return evidence
+
+
+def source_inventory(job: str) -> dict[str, str]:
+    inputs = [ROOT / (job + ".tex"), ROOT / "lean-listings-unicode.tex"]
+    inputs.extend(sorted(ROOT.glob("*.bib")))
+    inputs.extend(sorted((ROOT.parent / "lean").glob("*.lean")))
+    inputs.extend(sorted((ROOT / "chapters").glob("*.tex")))
+    inputs.extend(sorted((ROOT / "figures").glob("*.pdf")))
+    return {os.path.relpath(path, ROOT): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in inputs}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--fetch-listings", action="store_true",
@@ -55,6 +105,8 @@ def main() -> None:
     if args.main not in {"main", "fluid-extension"}:
         raise SystemExit("Unknown manuscript entry point")
     job = args.main
+    source_hashes = source_inventory(job)
+    builder_hash = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     for executable in ("pdftex", "bibtex", "kpsewhich"):
         if not shutil.which(executable):
             raise SystemExit(f"Required TeX executable is absent: {executable}")
@@ -62,6 +114,7 @@ def main() -> None:
     env = os.environ.copy()
     vendor = BUILD / "vendor" / "listings"
     env["TEXINPUTS"] = str(vendor) + "//:" + env.get("TEXINPUTS", "")
+    runtime_evidence = prepare_local_tex_runtime(env)
 
     fmt = BUILD / "pdflatex.fmt"
     if not fmt.exists():
@@ -110,11 +163,10 @@ def main() -> None:
     page_match = re.search(r"Output written on " + re.escape(job) + r"\.pdf \((\d+) pages?", log)
     pages = int(page_match.group(1)) if page_match else None
     pdf = ROOT / (job + ".pdf")
-    inputs = [ROOT / (job + ".tex"), ROOT / "lean-listings-unicode.tex"]
-    inputs.extend(sorted(ROOT.glob("*.bib")))
-    inputs.extend(sorted((ROOT.parent / "lean").glob("*.lean")))
-    inputs.extend(sorted((ROOT / "chapters").glob("*.tex")))
-    inputs.extend(sorted((ROOT / "figures").glob("*.pdf")))
+    if source_inventory(job) != source_hashes:
+        raise SystemExit("Manuscript inputs changed during compilation; refusing a mixed-source manifest.")
+    if hashlib.sha256(Path(__file__).read_bytes()).hexdigest() != builder_hash:
+        raise SystemExit("The build driver changed during compilation; rerun against stable inputs.")
     warning_counts = {
         "overfull_boxes": log.count("Overfull "),
         "missing_characters": log.count("Missing character:"),
@@ -133,11 +185,13 @@ def main() -> None:
         "pdf_sha256": hashlib.sha256(pdf.read_bytes()).hexdigest(),
         "warning_counts": warning_counts,
         "bibtex_warning_details": [line for line in biblog.splitlines() if "Warning--" in line],
-        "source_sha256": {os.path.relpath(p, ROOT): hashlib.sha256(p.read_bytes()).hexdigest()
-                          for p in inputs},
+        "source_sha256": source_hashes,
+        "builder_sha256": builder_hash,
+        "sources_unchanged_during_build": True,
         "local_format": ".texbuild/pdflatex.fmt",
         "shell_escape": False,
         "listings_path": locate("listings.sty", env),
+        "runtime_preparation": runtime_evidence,
     }
     (ROOT / (evidence_prefix + "-verification.json")).write_text(json.dumps(manifest, indent=2) + "\n")
     print(json.dumps({key: manifest[key] for key in

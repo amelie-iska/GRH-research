@@ -2,7 +2,7 @@
 \label{ch:implemented-cryptography}
 
 \reviewstatus{Executable library-backed encryption, signature and key-encapsulation
-interfaces, with 25 passing regression-test methods and preserved runtime evidence.
+interfaces, with 31 passing regression-test methods and preserved runtime evidence.
 The framing and tests are local contributions. The cryptographic primitives are
 external implementations; no new security reduction or Lean verification of those
 implementations is claimed.}
@@ -124,11 +124,14 @@ not make every component post-quantum.
 
 The recorded execution used Python~3.12.14,
 \texttt{cryptography}~50.0.0 and OpenSSL~4.0.1. All five algorithm choices in the
-table were exercised. The 25 test methods passed with no failures, errors or
+table were exercised. The 31 test methods passed with no failures, errors or
 skips; parameterized cases additionally cover empty, binary, Unicode and larger
 payloads; ciphertext, tag and nonce changes; wrong keys, contexts and algorithms;
 parser ambiguity; signature changes; context framing; both KEM parameter sets;
-implicit rejection; and incorrect KEM lengths. Private keys and shared secrets
+implicit rejection; and incorrect KEM lengths. Permanent boundary tests cover
+the full 16~MiB payload and 1024-byte context limits, oversized inputs,
+UTF-8 byte counting, noncanonical base64 pad bits and unpaired Unicode
+surrogates. Private keys and shared secrets
 were generated in memory and were neither persisted nor printed.
 
 \begin{lstlisting}

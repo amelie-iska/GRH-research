@@ -1,0 +1,65 @@
+'GRHResearch.Analytic.eisenstein4_relation' depends on axioms: [propext, Quot.sound]
+'GRHResearch.Analytic.odd4_has_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.odd4_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.squareClass4_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.odd4_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.squareClass4_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gammaFour4_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.signClass4_bicharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.signClass4_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gammaClass4_refinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gammaFour4_refinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reduceEisenstein4_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reciprocityPhase4_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.eisenstein4_relation : { re := 0, im := 1 } ^ 2 + { re := 0, im := 1 } + 1 = 0
+'GRHResearch.Analytic.eisenstein4_relation' depends on axioms: [propext, Quot.sound]
+GRHResearch.Analytic.odd4_has_inverse (x : GRHResearch.Analytic.Eisenstein4) :
+  GRHResearch.Analytic.odd4 x → ∃ y, x * y = 1
+'GRHResearch.Analytic.odd4_has_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.odd4_card : Fintype.card { x // GRHResearch.Analytic.odd4 x } = 12
+'GRHResearch.Analytic.odd4_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.squareClass4_mul (x y : GRHResearch.Analytic.Eisenstein4) :
+  GRHResearch.Analytic.odd4 x →
+    GRHResearch.Analytic.odd4 y →
+      GRHResearch.Analytic.squareClass4 (x * y) =
+        GRHResearch.Analytic.squareClass4 x + GRHResearch.Analytic.squareClass4 y
+'GRHResearch.Analytic.squareClass4_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.odd4_mul (x y : GRHResearch.Analytic.Eisenstein4) :
+  GRHResearch.Analytic.odd4 x → GRHResearch.Analytic.odd4 y → GRHResearch.Analytic.odd4 (x * y)
+'GRHResearch.Analytic.odd4_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.squareClass4_kernel (x : GRHResearch.Analytic.Eisenstein4) :
+  GRHResearch.Analytic.odd4 x → (GRHResearch.Analytic.squareClass4 x = 0 ↔ ∃ y, GRHResearch.Analytic.odd4 y ∧ y ^ 2 = x)
+'GRHResearch.Analytic.squareClass4_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gammaFour4_table (x : GRHResearch.Analytic.Eisenstein4) (hx : GRHResearch.Analytic.odd4 x) :
+  GRHResearch.Analytic.gammaFour4 x = GRHResearch.Analytic.gammaClass4 (GRHResearch.Analytic.squareClass4 x)
+'GRHResearch.Analytic.gammaFour4_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.signClass4_bicharacter (x y z : ZMod 2 × ZMod 2) :
+  GRHResearch.Analytic.signClass4 (x + y) z =
+      GRHResearch.Analytic.signClass4 x z * GRHResearch.Analytic.signClass4 y z ∧
+    GRHResearch.Analytic.signClass4 x (y + z) =
+        GRHResearch.Analytic.signClass4 x y * GRHResearch.Analytic.signClass4 x z ∧
+      GRHResearch.Analytic.signClass4 x y = GRHResearch.Analytic.signClass4 y x
+'GRHResearch.Analytic.signClass4_bicharacter' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.signClass4_diagonal (x y : ZMod 2 × ZMod 2) :
+  GRHResearch.Analytic.signClass4 (x + y) (x + y) =
+    GRHResearch.Analytic.signClass4 x x * GRHResearch.Analytic.signClass4 y y
+'GRHResearch.Analytic.signClass4_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gammaClass4_refinement (x y : ZMod 2 × ZMod 2) :
+  GRHResearch.Analytic.gammaClass4 (x + y) =
+    GRHResearch.Analytic.gammaClass4 x * GRHResearch.Analytic.gammaClass4 y * ↑(GRHResearch.Analytic.signClass4 x y)
+'GRHResearch.Analytic.gammaClass4_refinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gammaFour4_refinement (x y : GRHResearch.Analytic.Eisenstein4) (hx : GRHResearch.Analytic.odd4 x)
+  (hy : GRHResearch.Analytic.odd4 y) :
+  GRHResearch.Analytic.gammaFour4 (x * y) =
+    GRHResearch.Analytic.gammaFour4 x * GRHResearch.Analytic.gammaFour4 y *
+      ↑(GRHResearch.Analytic.reciprocityPhase4 x y)
+'GRHResearch.Analytic.gammaFour4_refinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reduceEisenstein4_period (x z : GRHResearch.Analytic.EisensteinZ) :
+  GRHResearch.Analytic.reduceEisenstein4 (x + 4 * z) = GRHResearch.Analytic.reduceEisenstein4 x
+'GRHResearch.Analytic.reduceEisenstein4_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reciprocityPhase4_period (x y z w : GRHResearch.Analytic.EisensteinZ) :
+  GRHResearch.Analytic.reciprocityPhase4 (GRHResearch.Analytic.reduceEisenstein4 (x + 4 * z))
+      (GRHResearch.Analytic.reduceEisenstein4 (y + 4 * w)) =
+    GRHResearch.Analytic.reciprocityPhase4 (GRHResearch.Analytic.reduceEisenstein4 x)
+      (GRHResearch.Analytic.reduceEisenstein4 y)
+'GRHResearch.Analytic.reciprocityPhase4_period' depends on axioms: [propext, Classical.choice, Quot.sound]

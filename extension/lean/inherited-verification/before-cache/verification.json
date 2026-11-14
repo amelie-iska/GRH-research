@@ -1,0 +1,1764 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-14T00:19:29.992862+00:00",
+  "status": "failed",
+  "package": "all",
+  "module_count": 37,
+  "declaration_count": 368,
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "provenance_sha256": {
+    "checker": "a3dec107003f8b0da052ee0b3a0ae69b71a4c4537c669dcc77cfd84b2dd9ae7a",
+    "evidence_policy": "a232cb6f4fad348904c4bcd111a92f80e75f161c5de9d0519039e4b9d87dec4d",
+    "lean_binary": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+    "lake_binary": "5f3828d1d1977654cf5602c40ac4ee52b64f7dcf34d64c5877d7b7d2d3616344",
+    "mathlib_manifest": "d1208145605d20579ecc91977126e7647e0216a3f7b7d2b9a55d33d040bcd0b8",
+    "repository_mathlib_manifest": "d1208145605d20579ecc91977126e7647e0216a3f7b7d2b9a55d33d040bcd0b8"
+  },
+  "configuration_unchanged_during_check": true,
+  "warnings_treated_as_errors": true,
+  "modules": [
+    {
+      "source": "lean/GRHResearch.lean",
+      "source_sha256": "00c90926dec9aef9fbc1f028850ada7c450fe359dda286e3a0f39599f5283379",
+      "declaration_count": 7,
+      "declarations": [
+        "GRHResearch.no_integral_trace_norm_two",
+        "GRHResearch.no_integer_norm_trace_equation",
+        "GRHResearch.cyclicDegrees_even",
+        "GRHResearch.no_integral_cyclic_induction_degree_one",
+        "GRHResearch.symmetrization_changes_determinant",
+        "GRHResearch.unipotence_does_not_bound_exponent",
+        "GRHResearch.iwahori_shift_witness"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 0.8587995790003333,
+      "log": "lean-GRHResearch.log",
+      "log_sha256": "1cc59508ffba559b0cd1ce98f9c608f667ea3773a2ff670e2e469663e636a506",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.no_integral_trace_norm_two": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.no_integer_norm_trace_equation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.cyclicDegrees_even": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.no_integral_cyclic_induction_degree_one": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.symmetrization_changes_determinant": [],
+        "GRHResearch.unipotence_does_not_bound_exponent": [],
+        "GRHResearch.iwahori_shift_witness": []
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.no_integral_trace_norm_two": "GRHResearch.no_integral_trace_norm_two (t : Int) : 2 * (t * t) \u2260 9",
+        "GRHResearch.no_integer_norm_trace_equation": "GRHResearch.no_integer_norm_trace_equation (n t : Int) (hn : 1 < n) : n * (t * t) \u2260 (n + 1) * (n + 1)",
+        "GRHResearch.cyclicDegrees_even": "GRHResearch.cyclicDegrees_even (xs : List Int) : \u2203 k, GRHResearch.cyclicDegrees xs = 2 * k",
+        "GRHResearch.no_integral_cyclic_induction_degree_one": "GRHResearch.no_integral_cyclic_induction_degree_one (xs : List Int) : GRHResearch.cyclicDegrees xs \u2260 1",
+        "GRHResearch.symmetrization_changes_determinant": "GRHResearch.symmetrization_changes_determinant :\n  GRHResearch.det { a := 1, b := -1, c := 1, d := 1 } = 2 \u2227 GRHResearch.det { a := 1, b := 0, c := 0, d := 1 } = 1",
+        "GRHResearch.unipotence_does_not_bound_exponent": "GRHResearch.unipotence_does_not_bound_exponent :\n  GRHResearch.mul { a := 1, b := 1, c := 0, d := 1 } { a := 1, b := 1, c := 0, d := 1 } \u2260\n    { a := 1, b := 0, c := 0, d := 1 }",
+        "GRHResearch.iwahori_shift_witness": "GRHResearch.iwahori_shift_witness :\n  GRHResearch.mul (GRHResearch.mul { a := 0, b := 2, c := 1, d := 0 } { a := 0, b := 1, c := 0, d := 0 })\n      { a := 0, b := 2, c := 1, d := 0 } =\n    { a := 0, b := 0, c := 1, d := 0 }"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/AbelBoundary.lean",
+      "source_sha256": "dfcc86209e66181be877f0359b38b5a23a5e0f894b94d433829b5d58f5125ce2",
+      "declaration_count": 10,
+      "declarations": [
+        "GRHResearch.AbelBoundary.finite_abel_boundary",
+        "GRHResearch.AbelBoundary.finite_boundary_determinant",
+        "GRHResearch.AbelBoundary.squared_geometric_majorant",
+        "GRHResearch.AbelBoundary.boundary_operator_on_range",
+        "GRHResearch.AbelBoundary.boundary_operator_square",
+        "GRHResearch.AbelBoundary.boundary_operator_difference_norm",
+        "GRHResearch.AbelBoundary.symmetric_boundary_functional",
+        "GRHResearch.AbelBoundary.symmetric_boundary_value_ne_zero",
+        "GRHResearch.AbelBoundary.symmetric_boundary_pair",
+        "GRHResearch.AbelBoundary.real_abel_kernel_minor"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 1.125984458005405,
+      "log": "lean-analytic-AbelBoundary.log",
+      "log_sha256": "e55f3a7bae2e480d3da11577bbcfc91c078d162fa46ea55c28d5d1c327082b86",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/ArithmeticZeroDisk.lean",
+      "source_sha256": "4da50ab4b07192d1f790351196963a9eb511c15b4b395275f01baed7aaa6c3f8",
+      "declaration_count": 2,
+      "declarations": [
+        "GRHResearch.Analytic.arithmetic_zero_disk_in_left_strip",
+        "GRHResearch.Analytic.arithmetic_zero_certificate_margin"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 5.196081631991547,
+      "log": "lean-analytic-ArithmeticZeroDisk.log",
+      "log_sha256": "87c10fb45e7e02a5ef71ebe20ec561326ea54a23f389e6b2204a181d7f72ec57",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.Analytic.arithmetic_zero_disk_in_left_strip": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.arithmetic_zero_certificate_margin": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.Analytic.arithmetic_zero_disk_in_left_strip": "GRHResearch.Analytic.arithmetic_zero_disk_in_left_strip {z : \u2102}\n  (hz : dist z GRHResearch.Analytic.arithmeticZeroCenter \u2264 1 / 10000) : 0 < z.re \u2227 z.re < 1 / 2",
+        "GRHResearch.Analytic.arithmetic_zero_certificate_margin": "GRHResearch.Analytic.arithmetic_zero_certificate_margin :\n  1 / 10000 - 1 / 1000000 - 9 / 2 * (1 / 10000) ^ 2 = 19791 / 200000000 \u2227 0 < 19791 / 200000000"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/BookInterfaces.lean",
+      "source_sha256": "a0a1345ab76c25bf638e9bcde4c6f7828c0a94c92d7cfdf2e59bb232c0b832bd",
+      "declaration_count": 8,
+      "declarations": [
+        "GRHResearch.BookInterfaces.plucker24",
+        "GRHResearch.BookInterfaces.node_relations",
+        "GRHResearch.BookInterfaces.node_triangular_determinant",
+        "GRHResearch.BookInterfaces.twisted_shift_square",
+        "GRHResearch.BookInterfaces.clock_shift_anticommute",
+        "GRHResearch.BookInterfaces.distinct_site_commutation",
+        "GRHResearch.BookInterfaces.kraus_pool_trace",
+        "GRHResearch.BookInterfaces.kraus_pool_positive"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 9.354963777004741,
+      "log": "lean-analytic-BookInterfaces.log",
+      "log_sha256": "43f79c55df3010fdbe97db118e6dc47d3f5b7a753762b3f99fc9c604ce77d9d6",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.BookInterfaces.plucker24": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.BookInterfaces.node_relations": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.BookInterfaces.node_triangular_determinant": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.BookInterfaces.twisted_shift_square": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.BookInterfaces.clock_shift_anticommute": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.BookInterfaces.distinct_site_commutation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.BookInterfaces.kraus_pool_trace": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.BookInterfaces.kraus_pool_positive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.BookInterfaces.plucker24": "GRHResearch.BookInterfaces.plucker24.{u_1} {R : Type u_1} [CommRing R] (A : Matrix (Fin 2) (Fin 4) R) :\n  GRHResearch.BookInterfaces.minor24 A 0 1 * GRHResearch.BookInterfaces.minor24 A 2 3 -\n        GRHResearch.BookInterfaces.minor24 A 0 2 * GRHResearch.BookInterfaces.minor24 A 1 3 +\n      GRHResearch.BookInterfaces.minor24 A 0 3 * GRHResearch.BookInterfaces.minor24 A 1 2 =\n    0",
+        "GRHResearch.BookInterfaces.node_relations": "GRHResearch.BookInterfaces.node_relations.{u_1} {R : Type u_1} [CommRing R] (u b : R) :\n  GRHResearch.BookInterfaces.nodeX u b + GRHResearch.BookInterfaces.nodeY u b = u \u2022 1 \u2227\n    GRHResearch.BookInterfaces.nodeX u b * GRHResearch.BookInterfaces.nodeY u b = 0 \u2227\n      GRHResearch.BookInterfaces.nodeY u b * GRHResearch.BookInterfaces.nodeX u b = 0",
+        "GRHResearch.BookInterfaces.node_triangular_determinant": "GRHResearch.BookInterfaces.node_triangular_determinant.{u_1} {R : Type u_1} [CommRing R] (u b s t : R) :\n  (1 - s \u2022 GRHResearch.BookInterfaces.nodeX u b - t \u2022 GRHResearch.BookInterfaces.nodeY u b).det =\n    (1 - s * u) * (1 - t * u)",
+        "GRHResearch.BookInterfaces.twisted_shift_square": "GRHResearch.BookInterfaces.twisted_shift_square.{u_1} {R : Type u_1} [CommRing R] (u : R) :\n  GRHResearch.BookInterfaces.twistedShift u * GRHResearch.BookInterfaces.twistedShift u = u \u2022 1",
+        "GRHResearch.BookInterfaces.clock_shift_anticommute": "GRHResearch.BookInterfaces.clock_shift_anticommute.{u_1} {R : Type u_1} [CommRing R] (u : R) :\n  GRHResearch.BookInterfaces.signClock * GRHResearch.BookInterfaces.twistedShift u =\n    -(GRHResearch.BookInterfaces.twistedShift u * GRHResearch.BookInterfaces.signClock)",
+        "GRHResearch.BookInterfaces.distinct_site_commutation": "GRHResearch.BookInterfaces.distinct_site_commutation.{u_1} {R : Type u_1} [CommRing R] :\n  GRHResearch.BookInterfaces.firstBitShift * GRHResearch.BookInterfaces.secondBitClock =\n    GRHResearch.BookInterfaces.secondBitClock * GRHResearch.BookInterfaces.firstBitShift",
+        "GRHResearch.BookInterfaces.kraus_pool_trace": "GRHResearch.BookInterfaces.kraus_pool_trace.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {\u03b9 : Type u_3} [Fintype n]\n  [Fintype m] [Fintype \u03b9] [DecidableEq n] (K : \u03b9 \u2192 Matrix m n \u2102) (hK : \u2211 i, (K i).conjTranspose * K i = 1)\n  (A : Matrix n n \u2102) : (GRHResearch.BookInterfaces.krausPool K A).trace = A.trace",
+        "GRHResearch.BookInterfaces.kraus_pool_positive": "GRHResearch.BookInterfaces.kraus_pool_positive.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {\u03b9 : Type u_3} [Fintype n]\n  [Fintype m] [Fintype \u03b9] (K : \u03b9 \u2192 Matrix m n \u2102) (A : Matrix n n \u2102) (hA : A.PosSemidef) :\n  (GRHResearch.BookInterfaces.krausPool K A).PosSemidef"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/BranchExtension.lean",
+      "source_sha256": "94f15ffe4a6b8e1c10637d6a788411eb80035f68233b9aeb13b2224c2acf4017",
+      "declaration_count": 39,
+      "declarations": [
+        "GRHResearch.BranchExtension.view_injective",
+        "GRHResearch.BranchExtension.view_generator",
+        "GRHResearch.BranchExtension.first_generator",
+        "GRHResearch.BranchExtension.mixed_products_zero",
+        "GRHResearch.BranchExtension.sum_vertices",
+        "GRHResearch.BranchExtension.loop_first",
+        "GRHResearch.BranchExtension.loop_power_entry",
+        "GRHResearch.BranchExtension.polynomial_recovery",
+        "GRHResearch.BranchExtension.polynomial_embedding_injective",
+        "GRHResearch.BranchExtension.algebra_not_finite",
+        "GRHResearch.BranchExtension.residue_evaluation",
+        "GRHResearch.BranchExtension.evaluation_re",
+        "GRHResearch.BranchExtension.action_one_formula",
+        "GRHResearch.BranchExtension.action_two_formula",
+        "GRHResearch.BranchExtension.include_injective",
+        "GRHResearch.BranchExtension.project_surjective",
+        "GRHResearch.BranchExtension.project_include",
+        "GRHResearch.BranchExtension.range_include_eq_kernel_project",
+        "GRHResearch.BranchExtension.a0_zero_on_one",
+        "GRHResearch.BranchExtension.a0_on_two",
+        "GRHResearch.BranchExtension.no_module_section",
+        "GRHResearch.BranchExtension.NormalPath.slot_ext",
+        "GRHResearch.BranchExtension.NormalPath.positive_length",
+        "GRHResearch.BranchExtension.NormalPath.length_equation",
+        "GRHResearch.BranchExtension.NormalPath.same_start_length",
+        "GRHResearch.BranchExtension.NormalPath.selector_vector",
+        "GRHResearch.BranchExtension.NormalPath.coefficient_recovery",
+        "GRHResearch.BranchExtension.NormalPath.normal_vectors_independent",
+        "GRHResearch.BranchExtension.NormalPath.normal_form_injective",
+        "GRHResearch.BranchExtension.NormalPath.lifted_normal_power",
+        "GRHResearch.BranchExtension.NormalPath.positive_mem_surface",
+        "GRHResearch.BranchExtension.NormalPath.vector_mem_surface",
+        "GRHResearch.BranchExtension.NormalPath.view_lift",
+        "GRHResearch.BranchExtension.NormalPath.lifted_vectors_independent",
+        "GRHResearch.BranchExtension.NormalPath.vector_mul_mem_normalSpan",
+        "GRHResearch.BranchExtension.NormalPath.surface_eq_normalSpan",
+        "GRHResearch.BranchExtension.NormalPath.view_expansion",
+        "GRHResearch.BranchExtension.NormalPath.lifted_expansion_bijective",
+        "GRHResearch.BranchExtension.NormalPath.normalEquiv_symm_coefficient"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.8137520730087999,
+      "log": "lean-analytic-BranchExtension.log",
+      "log_sha256": "7cf10d3299fec30e8e555680e04ab04dc9a3269cc65e7186723470ecfc4d0c34",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/CentralContour.lean",
+      "source_sha256": "f60f5f25e7782d090b8fb02149d1b432e35be7a517804debaef19cdda22afa1b",
+      "declaration_count": 10,
+      "declarations": [
+        "GRHResearch.Analytic.central_rectangle_geometry",
+        "GRHResearch.Analytic.retained_height_budget",
+        "GRHResearch.Analytic.buffered_height_from_budget",
+        "GRHResearch.Analytic.strict_ramified_credit",
+        "GRHResearch.Analytic.simultaneous_ramified_power_credit",
+        "GRHResearch.Analytic.central_normalization_identity",
+        "GRHResearch.Analytic.central_reference_shift",
+        "GRHResearch.Analytic.central_perturbation_identities",
+        "GRHResearch.Analytic.original_integral_envelope",
+        "GRHResearch.Analytic.late_height_and_tail_choice"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.8741654780023964,
+      "log": "lean-analytic-CentralContour.log",
+      "log_sha256": "38f0e6a2868f9a79133c03575c9491139cff2b66295e286b4d48f1f846338fb7",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/CoveringBand.lean",
+      "source_sha256": "0f131a876b1ec08898b1b7a5e5bd303f09380d9ff060ca0b540234cb26952edf",
+      "declaration_count": 3,
+      "declarations": [
+        "GRHResearch.CoveringBand.mixed_products",
+        "GRHResearch.CoveringBand.cubic_nilpotence",
+        "GRHResearch.CoveringBand.no_euler_operator"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 48.383833871004754,
+      "log": "lean-analytic-CoveringBand.log",
+      "log_sha256": "4081a6fcf9f6029482c4d954a9ca8a1de1cb99e0edab976c645f4ed34e4e7e1f",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.CoveringBand.mixed_products": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.CoveringBand.cubic_nilpotence": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.CoveringBand.no_euler_operator": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.CoveringBand.mixed_products": "GRHResearch.CoveringBand.mixed_products.{u_1} {R : Type u_1} [CommRing R] :\n  GRHResearch.CoveringBand.bandX * GRHResearch.CoveringBand.bandY = 0 \u2227\n    GRHResearch.CoveringBand.bandY * GRHResearch.CoveringBand.bandX = 0",
+        "GRHResearch.CoveringBand.cubic_nilpotence": "GRHResearch.CoveringBand.cubic_nilpotence.{u_1} {R : Type u_1} [CommRing R] :\n  GRHResearch.CoveringBand.bandX ^ 3 = 0 \u2227 GRHResearch.CoveringBand.bandY ^ 3 = 0",
+        "GRHResearch.CoveringBand.no_euler_operator": "GRHResearch.CoveringBand.no_euler_operator.{u_1} {R : Type u_1} [CommRing R] [CharZero R]\n  (D : Matrix (Fin 9) (Fin 9) R) :\n  \u00ac(D * GRHResearch.CoveringBand.bandX - GRHResearch.CoveringBand.bandX * D = GRHResearch.CoveringBand.bandX \u2227\n      D * GRHResearch.CoveringBand.bandY - GRHResearch.CoveringBand.bandY * D = GRHResearch.CoveringBand.bandY)"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/DessinInvariantComponents.lean",
+      "source_sha256": "d2d7f69118c646a1c20797639fe014cc915b41aac15a3294b48bea4c56cc9cd2",
+      "declaration_count": 10,
+      "declarations": [
+        "GRHResearch.DessinInvariants.ck1_forbidden_successor",
+        "GRHResearch.DessinInvariants.closed_ck1_arrows_zero",
+        "GRHResearch.DessinInvariants.closed_ck1_vertices_zero",
+        "GRHResearch.DessinInvariants.determinant_change_of_bases",
+        "GRHResearch.DessinInvariants.sym_square_zero",
+        "GRHResearch.DessinInvariants.sym_square_one",
+        "GRHResearch.DessinInvariants.sym_square_composition",
+        "GRHResearch.DessinInvariants.sym_square_preserves_relation",
+        "GRHResearch.DessinInvariants.schur_two_character",
+        "GRHResearch.DessinInvariants.schur_node_parameter_failure"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.7319623119983589,
+      "log": "lean-analytic-DessinInvariantComponents.log",
+      "log_sha256": "6736cdd785f64f7a8fe5eb694157e656b4793d718e366099b105705b8a829484",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/DessinNodeOrder.lean",
+      "source_sha256": "e23b7cb94dd2e6fff66afafe654a301a303a4647b1a847f90a39f9f41c43a2f7",
+      "declaration_count": 20,
+      "declarations": [
+        "GRHResearch.DessinNode.diagonal_injective",
+        "GRHResearch.DessinNode.x_ne_zero",
+        "GRHResearch.DessinNode.y_ne_zero",
+        "GRHResearch.DessinNode.xy_zero",
+        "GRHResearch.DessinNode.yx_zero",
+        "GRHResearch.DessinNode.first_branch_zero_factor",
+        "GRHResearch.DessinNode.second_branch_zero_factor",
+        "GRHResearch.DessinNode.ann_x_is_y",
+        "GRHResearch.DessinNode.ann_y_is_x",
+        "GRHResearch.DessinNode.parameter_regular",
+        "GRHResearch.DessinNode.first_boundary_square_zero",
+        "GRHResearch.DessinNode.alternating_boundaries_square_zero",
+        "GRHResearch.DessinNode.first_boundary_exact",
+        "GRHResearch.DessinNode.even_boundary_exact",
+        "GRHResearch.DessinNode.odd_boundary_exact",
+        "GRHResearch.DessinNode.resolution_terms_projective",
+        "GRHResearch.DessinNode.parameter_diagonal",
+        "GRHResearch.DessinNode.augmentation_surjective",
+        "GRHResearch.DessinNode.augmentation_exact",
+        "GRHResearch.DessinNode.common_dvr_coordinates"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.6761940969881834,
+      "log": "lean-analytic-DessinNodeOrder.log",
+      "log_sha256": "64611f94a0f067eb811a7123646b539b25726c1ce1fe2a9038d605d57e42bcca",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/DessinPullbackComponents.lean",
+      "source_sha256": "0e0637a230a71eee7bbe9441e74479eff638cc41439a18ce90537c91d587994e",
+      "declaration_count": 10,
+      "declarations": [
+        "GRHResearch.DessinPullback.matrix_unit_forward",
+        "GRHResearch.DessinPullback.matrix_unit_reverse",
+        "GRHResearch.DessinPullback.matrix_unit_orthogonal",
+        "GRHResearch.DessinPullback.matrix_unit_square",
+        "GRHResearch.DessinPullback.matrix_unit_sum",
+        "GRHResearch.DessinPullback.diagonal_extraction_not_multiplicative",
+        "GRHResearch.DessinPullback.no_commutative_matrix_residue",
+        "GRHResearch.DessinPullback.diagonal_fiber_multiplicative",
+        "GRHResearch.DessinPullback.pullback_projection_surjective",
+        "GRHResearch.DessinPullback.pullback_zero_fiber"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 4.331018069002312,
+      "log": "lean-analytic-DessinPullbackComponents.log",
+      "log_sha256": "f46e33ed4d81bb8f8cc10f7a1cca3d2905002e529f75b2021eb8f1e6d2a5ae5c",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.DessinPullback.matrix_unit_forward": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.matrix_unit_reverse": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.matrix_unit_orthogonal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.matrix_unit_square": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.matrix_unit_sum": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.diagonal_extraction_not_multiplicative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.no_commutative_matrix_residue": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.diagonal_fiber_multiplicative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.pullback_projection_surjective": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.DessinPullback.pullback_zero_fiber": [
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.DessinPullback.matrix_unit_forward": "GRHResearch.DessinPullback.matrix_unit_forward.{u_1} {R : Type u_1} [CommRing R] :\n  GRHResearch.DessinPullback.e01 * GRHResearch.DessinPullback.e10 = GRHResearch.DessinPullback.e00",
+        "GRHResearch.DessinPullback.matrix_unit_reverse": "GRHResearch.DessinPullback.matrix_unit_reverse.{u_1} {R : Type u_1} [CommRing R] :\n  GRHResearch.DessinPullback.e10 * GRHResearch.DessinPullback.e01 = GRHResearch.DessinPullback.e11",
+        "GRHResearch.DessinPullback.matrix_unit_orthogonal": "GRHResearch.DessinPullback.matrix_unit_orthogonal.{u_1} {R : Type u_1} [CommRing R] :\n  GRHResearch.DessinPullback.e00 * GRHResearch.DessinPullback.e11 = 0",
+        "GRHResearch.DessinPullback.matrix_unit_square": "GRHResearch.DessinPullback.matrix_unit_square.{u_1} {R : Type u_1} [CommRing R] :\n  GRHResearch.DessinPullback.e00 * GRHResearch.DessinPullback.e00 = GRHResearch.DessinPullback.e00",
+        "GRHResearch.DessinPullback.matrix_unit_sum": "GRHResearch.DessinPullback.matrix_unit_sum.{u_1} {R : Type u_1} [CommRing R] :\n  GRHResearch.DessinPullback.e00 + GRHResearch.DessinPullback.e11 = 1",
+        "GRHResearch.DessinPullback.diagonal_extraction_not_multiplicative": "GRHResearch.DessinPullback.diagonal_extraction_not_multiplicative.{u_1} {R : Type u_1} [CommRing R] [Nontrivial R] :\n  (GRHResearch.DessinPullback.e01 * GRHResearch.DessinPullback.e10) 0 0 \u2260\n    GRHResearch.DessinPullback.e01 0 0 * GRHResearch.DessinPullback.e10 0 0",
+        "GRHResearch.DessinPullback.no_commutative_matrix_residue": "GRHResearch.DessinPullback.no_commutative_matrix_residue.{u_1, u_2} {R : Type u_1} [CommRing R] {S : Type u_2}\n  [CommRing S] [Nontrivial S] (f : Matrix (Fin 2) (Fin 2) R \u2192+* S) : False",
+        "GRHResearch.DessinPullback.diagonal_fiber_multiplicative": "GRHResearch.DessinPullback.diagonal_fiber_multiplicative.{u_1} {R : Type u_1} [CommRing R] (a b : Fin 2 \u2192 R)\n  (i : Fin 2) : (Matrix.diagonal a * Matrix.diagonal b) i i = a i * b i",
+        "GRHResearch.DessinPullback.pullback_projection_surjective": "GRHResearch.DessinPullback.pullback_projection_surjective.{u_2, u_3, u_4} {B : Type u_2} {C : Type u_3} {D : Type u_4}\n  [Ring B] [Ring C] [Ring D] (f : B \u2192+* D) (g : C \u2192+* D) (s : C \u2192+* B) (hs : \u2200 (c : C), f (s c) = g c) :\n  Function.Surjective fun p => (\u2191p).2",
+        "GRHResearch.DessinPullback.pullback_zero_fiber": "GRHResearch.DessinPullback.pullback_zero_fiber.{u_2, u_3, u_4} {B : Type u_2} {C : Type u_3} {D : Type u_4} [Ring B]\n  [Ring C] [Ring D] (f : B \u2192+* D) (g : C \u2192+* D) (p : \u21a5(GRHResearch.DessinPullback.pullbackSubring f g))\n  (hp : (\u2191p).2 = 0) : f (\u2191p).1 = 0"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/DualNumberResolution.lean",
+      "source_sha256": "58487840ee31a19a67e68129144b0e16b32986a558344df59e16b9c7e12bd4fa",
+      "declaration_count": 13,
+      "declarations": [
+        "GRHResearch.Analytic.DualNumberResolution.boundary_coordinates",
+        "GRHResearch.Analytic.DualNumberResolution.epsilon_ne_zero",
+        "GRHResearch.Analytic.DualNumberResolution.epsilon_square_zero",
+        "GRHResearch.Analytic.DualNumberResolution.boundary_square_zero",
+        "GRHResearch.Analytic.DualNumberResolution.boundary_exact",
+        "GRHResearch.Analytic.DualNumberResolution.differential_exact_all_degrees",
+        "GRHResearch.Analytic.DualNumberResolution.differential_square_zero",
+        "GRHResearch.Analytic.DualNumberResolution.augmentation_surjective",
+        "GRHResearch.Analytic.DualNumberResolution.augmentation_exact",
+        "GRHResearch.Analytic.DualNumberResolution.resolution_terms_projective",
+        "GRHResearch.Analytic.DualNumberResolution.epsilon_smul_residue",
+        "GRHResearch.Analytic.DualNumberResolution.hom_boundary_zero",
+        "GRHResearch.Analytic.DualNumberResolution.augmentationLinear_ne_zero"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.7333526839938713,
+      "log": "lean-analytic-DualNumberResolution.log",
+      "log_sha256": "994840c6a09a276ca67533db2b1874dd2bea6915a2f059b0d39bff59eef7a10b",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/EulerCorrection.lean",
+      "source_sha256": "c656739b2b8b224f377e9f6c778386df32c108145a305e0e2acba7ea80b581ec",
+      "declaration_count": 8,
+      "declarations": [
+        "GRHResearch.Analytic.good_residual_identity",
+        "GRHResearch.Analytic.principal_correction_from_local",
+        "GRHResearch.Analytic.principal_remainder_defect",
+        "GRHResearch.Analytic.principal_euler_factorization",
+        "GRHResearch.Analytic.principal_correction_ne_zero",
+        "GRHResearch.Analytic.correction_tprod_ne_zero",
+        "GRHResearch.Analytic.correction_tprod_error",
+        "GRHResearch.Analytic.shifted_zero_transport"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 1.1104765690106433,
+      "log": "lean-analytic-EulerCorrection.log",
+      "log_sha256": "20c252c7b93057091335e282053f3bf08981ad8460ff5a1b6ab41faa237c25c7",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/EulerFactors.lean",
+      "source_sha256": "f56aaf3bf17b8421028eb178bdb0a72e821156e67ba2e854205552141edf3a30",
+      "declaration_count": 6,
+      "declarations": [
+        "GRHResearch.Analytic.norm_eulerWeight_lt_one",
+        "GRHResearch.Analytic.euler_factor_ne_zero",
+        "GRHResearch.Analytic.finite_euler_product_ne_zero",
+        "GRHResearch.Analytic.boundary_lower_bound",
+        "GRHResearch.Analytic.limit_ne_zero_of_boundary_lower_bound",
+        "GRHResearch.Analytic.boundary_uniform_limit_ne_zero"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.9624187529989285,
+      "log": "lean-analytic-EulerFactors.log",
+      "log_sha256": "f5bf43483bcdf168bd05cbe30a89f2ef762ddc33965bd20590d17f711fac33aa",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/FiniteCorrelation.lean",
+      "source_sha256": "452c48368eca9ea6cbc1771e621b178070b4daeeeb83c37986c1534476cdcacf",
+      "declaration_count": 16,
+      "declarations": [
+        "GRHResearch.Analytic.finite_character_power_zero",
+        "GRHResearch.Analytic.finite_trivial_character_sum",
+        "GRHResearch.Analytic.finite_character_unit_product",
+        "GRHResearch.Analytic.finite_character_diagonal",
+        "GRHResearch.Analytic.finite_character_unit_shift",
+        "GRHResearch.Analytic.finite_character_autocorrelation",
+        "GRHResearch.Analytic.field_correlation_solve",
+        "GRHResearch.Analytic.field_correlation_units",
+        "GRHResearch.Analytic.field_correlation_one_zero",
+        "GRHResearch.Analytic.field_correlation_zero_coefficients",
+        "GRHResearch.Analytic.field_correlation_principal_corner",
+        "GRHResearch.Analytic.field_correlation_f7_corner",
+        "GRHResearch.Analytic.sextic_character_power_nontrivial",
+        "GRHResearch.Analytic.finite_gauss_trivial",
+        "GRHResearch.Analytic.finite_gauss_conjugate",
+        "GRHResearch.Analytic.finite_gauss_norm_sq"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.7100518999941414,
+      "log": "lean-analytic-FiniteCorrelation.log",
+      "log_sha256": "b5b94156b8a734e4c6db6c8e3a50e1985f2932682f424c91f039591de504cb12",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/FiniteRG.lean",
+      "source_sha256": "65382a88cba24ca57ee1b17616b159042e4d3bdc75c8fe25470a19bcf768712b",
+      "declaration_count": 9,
+      "declarations": [
+        "GRHResearch.FiniteRG.marginal_nonneg",
+        "GRHResearch.FiniteRG.gibbs_marginal_pos",
+        "GRHResearch.FiniteRG.exp_effective_action",
+        "GRHResearch.FiniteRG.partition_exact",
+        "GRHResearch.FiniteRG.retained_observable_exact",
+        "GRHResearch.FiniteRG.nested_marginal",
+        "GRHResearch.FiniteRG.marginal_sandwich",
+        "GRHResearch.FiniteRG.gibbs_error_sandwich",
+        "GRHResearch.FiniteRG.transfer_partition_step"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 8.572727291990304,
+      "log": "lean-analytic-FiniteRG.log",
+      "log_sha256": "ac70c3ecdf1196d3ec7b48a19b83fe49527bcc3eca4147ffe7ea3e7f05b3e48a",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.FiniteRG.marginal_nonneg": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.FiniteRG.gibbs_marginal_pos": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.FiniteRG.exp_effective_action": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.FiniteRG.partition_exact": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.FiniteRG.retained_observable_exact": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.FiniteRG.nested_marginal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.FiniteRG.marginal_sandwich": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.FiniteRG.gibbs_error_sandwich": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.FiniteRG.transfer_partition_step": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.FiniteRG.marginal_nonneg": "GRHResearch.FiniteRG.marginal_nonneg.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] (w : U \u2192 V \u2192 \u211d)\n  (hw : \u2200 (u : U) (v : V), 0 \u2264 w u v) (u : U) : 0 \u2264 GRHResearch.FiniteRG.marginal w u",
+        "GRHResearch.FiniteRG.gibbs_marginal_pos": "GRHResearch.FiniteRG.gibbs_marginal_pos.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] [Nonempty V]\n  (A : U \u2192 V \u2192 \u211d) (u : U) : 0 < GRHResearch.FiniteRG.marginal (fun u v => Real.exp (A u v)) u",
+        "GRHResearch.FiniteRG.exp_effective_action": "GRHResearch.FiniteRG.exp_effective_action.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] [Nonempty V]\n  (A : U \u2192 V \u2192 \u211d) (u : U) :\n  Real.exp (GRHResearch.FiniteRG.effectiveAction A u) = GRHResearch.FiniteRG.marginal (fun u v => Real.exp (A u v)) u",
+        "GRHResearch.FiniteRG.partition_exact": "GRHResearch.FiniteRG.partition_exact.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] [Fintype U] [Nonempty V]\n  (A : U \u2192 V \u2192 \u211d) : \u2211 u, Real.exp (GRHResearch.FiniteRG.effectiveAction A u) = \u2211 p, Real.exp (A p.1 p.2)",
+        "GRHResearch.FiniteRG.retained_observable_exact": "GRHResearch.FiniteRG.retained_observable_exact.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] [Fintype U]\n  (w : U \u2192 V \u2192 \u211d) (O : U \u2192 \u211d) : \u2211 u, GRHResearch.FiniteRG.marginal w u * O u = \u2211 p, w p.1 p.2 * O p.1",
+        "GRHResearch.FiniteRG.nested_marginal": "GRHResearch.FiniteRG.nested_marginal.{u_1, u_2, u_3} {U : Type u_1} {V : Type u_2} {W : Type u_3} [Fintype V]\n  [Fintype W] (w : U \u2192 V \u2192 W \u2192 \u211d) (u : U) :\n  GRHResearch.FiniteRG.marginal (fun u v => GRHResearch.FiniteRG.marginal (fun v z => w u v z) v) u =\n    GRHResearch.FiniteRG.marginal (fun u p => w u p.1 p.2) u",
+        "GRHResearch.FiniteRG.marginal_sandwich": "GRHResearch.FiniteRG.marginal_sandwich.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] (w wh : U \u2192 V \u2192 \u211d)\n  (lo hi : \u211d) (hlo : \u2200 (u : U) (v : V), lo * w u v \u2264 wh u v) (hhi : \u2200 (u : U) (v : V), wh u v \u2264 hi * w u v) (u : U) :\n  lo * GRHResearch.FiniteRG.marginal w u \u2264 GRHResearch.FiniteRG.marginal wh u \u2227\n    GRHResearch.FiniteRG.marginal wh u \u2264 hi * GRHResearch.FiniteRG.marginal w u",
+        "GRHResearch.FiniteRG.gibbs_error_sandwich": "GRHResearch.FiniteRG.gibbs_error_sandwich.{u_1, u_2} {U : Type u_1} {V : Type u_2} [Fintype V] (A Ah : U \u2192 V \u2192 \u211d)\n  (\u03b5 : \u211d) (h : \u2200 (u : U) (v : V), |Ah u v - A u v| \u2264 \u03b5) (u : U) :\n  Real.exp (-\u03b5) * GRHResearch.FiniteRG.marginal (fun u v => Real.exp (A u v)) u \u2264\n      GRHResearch.FiniteRG.marginal (fun u v => Real.exp (Ah u v)) u \u2227\n    GRHResearch.FiniteRG.marginal (fun u v => Real.exp (Ah u v)) u \u2264\n      Real.exp \u03b5 * GRHResearch.FiniteRG.marginal (fun u v => Real.exp (A u v)) u",
+        "GRHResearch.FiniteRG.transfer_partition_step": "GRHResearch.FiniteRG.transfer_partition_step.{u_4} {I : Type u_4} [Fintype I] [DecidableEq I] (T : Matrix I I \u211d)\n  (n : \u2115) : ((T * T) ^ n).trace = (T ^ (2 * n)).trace"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/FrozenRowCount.lean",
+      "source_sha256": "8074b0439592c0f649dda304a2dfbd70bf0286726ab33d4fb5f3ace89ad35981",
+      "declaration_count": 7,
+      "declarations": [
+        "GRHResearch.Analytic.count_from_complex_moment",
+        "GRHResearch.Analytic.frozen_plain_capacity",
+        "GRHResearch.Analytic.frozen_row_coefficients",
+        "GRHResearch.Analytic.frozen_crossing_bounds",
+        "GRHResearch.Analytic.frozen_short_crossing",
+        "GRHResearch.Analytic.frozen_balanced_cutoff",
+        "GRHResearch.Analytic.frozen_supply_margin"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 11.385828220998519,
+      "log": "lean-analytic-FrozenRowCount.log",
+      "log_sha256": "155f8a050aa4b6a0d5407afd95e56b37693a995f4ff526905a4a64e2c9ff78a6",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.Analytic.count_from_complex_moment": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.frozen_plain_capacity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.frozen_row_coefficients": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.frozen_crossing_bounds": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.frozen_short_crossing": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.frozen_balanced_cutoff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.frozen_supply_margin": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.Analytic.count_from_complex_moment": "GRHResearch.Analytic.count_from_complex_moment.{u_1} {\u03b9 : Type u_1} (F : Finset \u03b9) (w p : \u03b9 \u2192 \u2102) {A B M : \u211d}\n  (hB : 0 \u2264 B) (hw : \u2200 i \u2208 F, A \u2264 \u2016w i\u2016 ^ 2) (hp : \u2200 i \u2208 F, B \u2264 \u2016p i\u2016 ^ 2) (hm : \u2211 i \u2208 F, \u2016w i * p i\u2016 ^ 2 \u2264 M) :\n  \u2191F.card * A * B \u2264 M",
+        "GRHResearch.Analytic.frozen_plain_capacity": "GRHResearch.Analytic.frozen_plain_capacity (m : \u211d) : 2 * m + 6 * (3 / 4) * ((1 - 2 * m) / (9 / 2)) = 1",
+        "GRHResearch.Analytic.frozen_row_coefficients": "GRHResearch.Analytic.frozen_row_coefficients {x : \u211d} (hx1 : x \u2264 1 / 2) :\n  37 / 18 \u2264 GRHResearch.Analytic.rowD x \u2227 7 / 9 \u2264 GRHResearch.Analytic.rowP x",
+        "GRHResearch.Analytic.frozen_crossing_bounds": "GRHResearch.Analytic.frozen_crossing_bounds {x \u03c4 : \u211d} (hx0 : 0 \u2264 x) (hx1 : x \u2264 1 / 2) (ht0 : 1 \u2264 \u03c4) (ht1 : \u03c4 \u2264 3 / 2) :\n  23 / 37 \u2264 GRHResearch.Analytic.rowCrossing x \u03c4 \u2227\n    GRHResearch.Analytic.rowCrossing x \u03c4 \u2264 1 \u2227\n      1 / 3 \u2264 \u03c4 - GRHResearch.Analytic.rowCrossing x \u03c4 \u2227 \u03c4 - GRHResearch.Analytic.rowCrossing x \u03c4 \u2264 1 / 2",
+        "GRHResearch.Analytic.frozen_short_crossing": "GRHResearch.Analytic.frozen_short_crossing {x : \u211d} (hD : GRHResearch.Analytic.rowD x \u2260 0) (\u03b4 \u03c4 : \u211d) :\n  1 - \u03b4 * (x + (1 - x) * GRHResearch.Analytic.rowCrossing x \u03c4) =\n      1 - \u03b4 + \u03b4 * GRHResearch.Analytic.rowP x / GRHResearch.Analytic.rowD x * (3 / 2 - \u03c4) \u2227\n    1 - \u03b4 * (4 * x / 9 + (2 - 8 * x / 9) * (\u03c4 - GRHResearch.Analytic.rowCrossing x \u03c4)) =\n      1 - \u03b4 + \u03b4 * GRHResearch.Analytic.rowP x / GRHResearch.Analytic.rowD x * (3 / 2 - \u03c4)",
+        "GRHResearch.Analytic.frozen_balanced_cutoff": "GRHResearch.Analytic.frozen_balanced_cutoff {\u03b4 x : \u211d} (h\u03b40 : 0 \u2264 \u03b4) (h\u03b41 : \u03b4 \u2264 3 / 4) (hx1 : x \u2264 1 / 2) :\n  have J := (5 / 6 - \u03b4) * GRHResearch.Analytic.rowD x + \u03b4 * GRHResearch.Analytic.rowP x;\n  have \u03c4 := 1 + \u03b4 * GRHResearch.Analytic.rowP x / (2 * J);\n  0 < J \u2227\n    1 \u2264 \u03c4 \u2227\n      \u03c4 < 3 / 2 \u2227\n        1 - \u03b4 + \u03b4 * GRHResearch.Analytic.rowP x / GRHResearch.Analytic.rowD x * (3 / 2 - \u03c4) =\n          1 - \u03b4 + (5 / 6 - \u03b4) * (\u03c4 - 1)",
+        "GRHResearch.Analytic.frozen_supply_margin": "GRHResearch.Analytic.frozen_supply_margin {t \u03b6 : \u211d} (h\u03b6 : \u03b6 < 23 / 336 + 53 * t / 14) :\n  7 / 37 * (13 / 16 + 3 * t / 2 + \u03b6) < 1 / 6 + t"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/GramPoisson.lean",
+      "source_sha256": "e2c1d4ec01d3dd7a55c952843a1f6cc44e49fad28431f925d24e166aaf935ef6",
+      "declaration_count": 9,
+      "declarations": [
+        "GRHResearch.Analytic.normalized_finite_fourier_norm",
+        "GRHResearch.Analytic.normalized_finite_fourier_zero",
+        "GRHResearch.Analytic.nonprincipal_independent_coordinate_mean",
+        "GRHResearch.Analytic.nonprincipal_joint_mean",
+        "GRHResearch.Analytic.gram_dyadic_head",
+        "GRHResearch.Analytic.gram_dyadic_total",
+        "GRHResearch.Analytic.gram_dyadic_tail",
+        "GRHResearch.Analytic.gram_dyadic_head_bound",
+        "GRHResearch.Analytic.gram_nonexceptional_accounting"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.643104172006133,
+      "log": "lean-analytic-GramPoisson.log",
+      "log_sha256": "435a65179d67493112509747cac3e0bf4ed0e5910e6bca225591ae8f071fe6f3",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/HeckeTypeI.lean",
+      "source_sha256": "a506fb6d63050d0c29ddf3b55a5174df653136f578dd2c4469a69349e32a3447",
+      "declaration_count": 7,
+      "declarations": [
+        "GRHResearch.HeckeTypeI.squarefree_local",
+        "GRHResearch.HeckeTypeI.unramified_ratio",
+        "GRHResearch.HeckeTypeI.deleted_local",
+        "GRHResearch.HeckeTypeI.quadratic_collapse",
+        "GRHResearch.HeckeTypeI.sixth_power_mask",
+        "GRHResearch.HeckeTypeI.zero_square_is_not_unramified",
+        "GRHResearch.HeckeTypeI.finite_restoration"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 6.522925021999981,
+      "log": "lean-analytic-HeckeTypeI.log",
+      "log_sha256": "f03eb72bee5113611b9ac702f8702263f327e96504e750036be373ba4264469a",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.HeckeTypeI.squarefree_local": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.HeckeTypeI.unramified_ratio": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.HeckeTypeI.deleted_local": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.HeckeTypeI.quadratic_collapse": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.HeckeTypeI.sixth_power_mask": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.HeckeTypeI.zero_square_is_not_unramified": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.HeckeTypeI.finite_restoration": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.HeckeTypeI.squarefree_local": "GRHResearch.HeckeTypeI.squarefree_local (z : \u2102) : (1 + z) * (1 - z) = 1 - z ^ 2",
+        "GRHResearch.HeckeTypeI.unramified_ratio": "GRHResearch.HeckeTypeI.unramified_ratio (a z : \u2102) (h : 1 - a * z \u2260 0) :\n  GRHResearch.HeckeTypeI.ratio a (a ^ 2) z = 1 + a * z",
+        "GRHResearch.HeckeTypeI.deleted_local": "GRHResearch.HeckeTypeI.deleted_local (a b z : \u2102) (ha : 1 - a * z \u2260 0) (hb : 1 - b * z ^ 2 \u2260 0) :\n  GRHResearch.HeckeTypeI.ratio a b z * GRHResearch.HeckeTypeI.restore a b z = 1",
+        "GRHResearch.HeckeTypeI.quadratic_collapse": "GRHResearch.HeckeTypeI.quadratic_collapse (z : \u2102) : GRHResearch.HeckeTypeI.restore 0 1 z = (1 - z ^ 2)\u207b\u00b9",
+        "GRHResearch.HeckeTypeI.sixth_power_mask": "GRHResearch.HeckeTypeI.sixth_power_mask (z : \u2102) (hm : 1 - z \u2260 0) (hp : 1 + z \u2260 0) :\n  GRHResearch.HeckeTypeI.restore 1 1 z = (1 + z)\u207b\u00b9",
+        "GRHResearch.HeckeTypeI.zero_square_is_not_unramified": "GRHResearch.HeckeTypeI.zero_square_is_not_unramified : 0 ^ 2 \u2260 1",
+        "GRHResearch.HeckeTypeI.finite_restoration": "GRHResearch.HeckeTypeI.finite_restoration.{u_1} {I : Type u_1} [DecidableEq I] (P T : Finset I) (a b z : I \u2192 \u2102)\n  (ha : \u2200 p \u2208 P, 1 - a p * z p \u2260 0) (hb : \u2200 p \u2208 P, 1 - b p * z p ^ 2 \u2260 0) (hsquare : \u2200 p \u2208 P, p \u2209 T \u2192 b p = a p ^ 2) :\n  ((\u220f p \u2208 P, GRHResearch.HeckeTypeI.ratio (a p) (b p) (z p)) *\n      \u220f p \u2208 P, if p \u2208 T then GRHResearch.HeckeTypeI.restore (a p) (b p) (z p) else 1) =\n    \u220f p \u2208 P with p \u2209 T, (1 + a p * z p)"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/HermitianRigidity.lean",
+      "source_sha256": "c83d7135e0bc3db84a0ecb5481bd95c157a7f67c3bcbb1bdfdfec0d10d0c8a8a",
+      "declaration_count": 3,
+      "declarations": [
+        "GRHResearch.Analytic.real_valued_holomorphic_constant",
+        "GRHResearch.Analytic.conjugate_holomorphic_pair_constant",
+        "GRHResearch.Analytic.holomorphic_hermitian_family_constant"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.8287651369901141,
+      "log": "lean-analytic-HermitianRigidity.log",
+      "log_sha256": "793b98628ebe275b3a3c64923f935b2fea7e21599127f2d485fb02b591c3d81c",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/HodgeDeterminant.lean",
+      "source_sha256": "c6451b5294ae5c5a90478c0fd8236ade7ee0bb86750c8a5d159942f013aa753f",
+      "declaration_count": 11,
+      "declarations": [
+        "GRHResearch.Hodge.shifted_matrix_factor",
+        "GRHResearch.Hodge.odd_dirac_square",
+        "GRHResearch.Hodge.gram_partners_positive",
+        "GRHResearch.Hodge.normalized_gram_determinants",
+        "GRHResearch.Hodge.shifted_gram_determinants",
+        "GRHResearch.Hodge.normalized_gram_superdet",
+        "GRHResearch.Hodge.identity_metric_positive",
+        "GRHResearch.Hodge.identity_weighted_adjoint",
+        "GRHResearch.Hodge.identity_metric_laplacian_det",
+        "GRHResearch.Hodge.identity_metric_moves_zero",
+        "GRHResearch.Hodge.boundary_relative_product"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.5768126750044758,
+      "log": "lean-analytic-HodgeDeterminant.log",
+      "log_sha256": "fc25d4798fb003d34141d8f55ba165ccc58fb223ddb4c067d04922b1e203651e",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/HyperbolicCoordinates.lean",
+      "source_sha256": "7fa278a07a7e11f1198610156beff00b66312adcf80008618b85271f6c5398f7",
+      "declaration_count": 3,
+      "declarations": [
+        "GRHResearch.HyperbolicCoordinates.disk_to_hyperboloid",
+        "GRHResearch.HyperbolicCoordinates.inverse_disk_defect",
+        "GRHResearch.HyperbolicCoordinates.rotation_four_norm"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 3.3763644010032294,
+      "log": "lean-analytic-HyperbolicCoordinates.log",
+      "log_sha256": "f0ac49500674f8906afc90be2ce8b239b776ac84c403d975a6d7909b1b9f5a97",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.HyperbolicCoordinates.disk_to_hyperboloid": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.HyperbolicCoordinates.inverse_disk_defect": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.HyperbolicCoordinates.rotation_four_norm": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.HyperbolicCoordinates.disk_to_hyperboloid": "GRHResearch.HyperbolicCoordinates.disk_to_hyperboloid (x y : \u211d) (h : 1 - x ^ 2 - y ^ 2 \u2260 0) :\n  ((1 + x ^ 2 + y ^ 2) / (1 - x ^ 2 - y ^ 2)) ^ 2 - (2 * x / (1 - x ^ 2 - y ^ 2)) ^ 2 -\n      (2 * y / (1 - x ^ 2 - y ^ 2)) ^ 2 =\n    1",
+        "GRHResearch.HyperbolicCoordinates.inverse_disk_defect": "GRHResearch.HyperbolicCoordinates.inverse_disk_defect (X Y T : \u211d) (hT : T + 1 \u2260 0) (h : T ^ 2 - X ^ 2 - Y ^ 2 = 1) :\n  1 - (X / (T + 1)) ^ 2 - (Y / (T + 1)) ^ 2 = 2 / (T + 1)",
+        "GRHResearch.HyperbolicCoordinates.rotation_four_norm": "GRHResearch.HyperbolicCoordinates.rotation_four_norm (a b c d p q : \u211d) (h : p ^ 2 + q ^ 2 = 1) :\n  (p * a - q * c) ^ 2 + b ^ 2 + (q * a + p * c) ^ 2 + d ^ 2 = a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/JensenMetric.lean",
+      "source_sha256": "dd184467f010f1cdc2347fe7a1be1d0adf8a1e3b990a128314efa9824c7b3450",
+      "declaration_count": 7,
+      "declarations": [
+        "GRHResearch.Analytic.finite_product_defect_bound",
+        "GRHResearch.Analytic.positive_metric_eigenvalue_real",
+        "GRHResearch.Analytic.quadratic_hermite_symmetrizes",
+        "GRHResearch.Analytic.quadratic_hermite_det",
+        "GRHResearch.Analytic.quadratic_hermite_form",
+        "GRHResearch.Analytic.quadratic_hermite_posDef",
+        "GRHResearch.Analytic.gaussian_mixture_turan_obstruction"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 9.561058149003657,
+      "log": "lean-analytic-JensenMetric.log",
+      "log_sha256": "692470c952e973ab078e2f57f463e253ba29972ad4d671c16195af3d90e2cc1e",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.Analytic.finite_product_defect_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.positive_metric_eigenvalue_real": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.quadratic_hermite_symmetrizes": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.quadratic_hermite_det": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.quadratic_hermite_form": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.quadratic_hermite_posDef": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.gaussian_mixture_turan_obstruction": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.Analytic.finite_product_defect_bound": "GRHResearch.Analytic.finite_product_defect_bound.{u_1} {\u03b9 : Type u_1} [DecidableEq \u03b9] (s : Finset \u03b9) (a : \u03b9 \u2192 \u211d)\n  (ha : \u2200 i \u2208 s, 0 \u2264 a i \u2227 a i \u2264 1) :\n  0 \u2264 \u220f i \u2208 s, (1 - a i) \u2227 \u220f i \u2208 s, (1 - a i) \u2264 1 \u2227 1 - \u220f i \u2208 s, (1 - a i) \u2264 \u2211 i \u2208 s, a i",
+        "GRHResearch.Analytic.positive_metric_eigenvalue_real": "GRHResearch.Analytic.positive_metric_eigenvalue_real.{u_1} {\u03b9 : Type u_1} [Fintype \u03b9] {C H : Matrix \u03b9 \u03b9 \u2102} {v : \u03b9 \u2192 \u2102}\n  {z : \u2102} (hH : H.PosDef) (hHC : (H * C).IsHermitian) (hv : v \u2260 0) (heigen : C *\u1d65 v = z \u2022 v) : z.im = 0",
+        "GRHResearch.Analytic.quadratic_hermite_symmetrizes": "GRHResearch.Analytic.quadratic_hermite_symmetrizes (a b : \u211d) :\n  GRHResearch.Analytic.quadraticHermite a b * GRHResearch.Analytic.quadraticCompanion a b =\n    (GRHResearch.Analytic.quadraticHermite a b * GRHResearch.Analytic.quadraticCompanion a b)\u1d40",
+        "GRHResearch.Analytic.quadratic_hermite_det": "GRHResearch.Analytic.quadratic_hermite_det (a b : \u211d) : (GRHResearch.Analytic.quadraticHermite a b).det = b ^ 2 - 4 * a",
+        "GRHResearch.Analytic.quadratic_hermite_form": "GRHResearch.Analytic.quadratic_hermite_form (a b : \u211d) (v : Fin 2 \u2192 \u211d) :\n  star v \u2b1d\u1d65 GRHResearch.Analytic.quadraticHermite a b *\u1d65 v = 2 * (v 0 - b * v 1 / 2) ^ 2 + (b ^ 2 - 4 * a) / 2 * v 1 ^ 2",
+        "GRHResearch.Analytic.quadratic_hermite_posDef": "GRHResearch.Analytic.quadratic_hermite_posDef {a b : \u211d} (hdisc : 0 < b ^ 2 - 4 * a) :\n  (GRHResearch.Analytic.quadraticHermite a b).PosDef",
+        "GRHResearch.Analytic.gaussian_mixture_turan_obstruction": "GRHResearch.Analytic.gaussian_mixture_turan_obstruction (variance : \u211d) :\n  ((variance + 1 / 10) / 2) ^ 2 - (3 * variance ^ 2 + 3 / 5 * variance + 1 / 10) / 12 = -(7 / 1200)"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/LinearRelations.lean",
+      "source_sha256": "db7b07d8164a2498de3a2f3321b7d7411eea90e20ddf19c9975a13fc074987bf",
+      "declaration_count": 11,
+      "declarations": [
+        "GRHResearch.LinearRelations.graph_zero_output",
+        "GRHResearch.LinearRelations.graph_zero_input",
+        "GRHResearch.LinearRelations.inverse_graph_zero_input",
+        "GRHResearch.LinearRelations.graph_composition",
+        "GRHResearch.LinearRelations.inverse_involution",
+        "GRHResearch.LinearRelations.intertwine_power",
+        "GRHResearch.LinearRelations.kernel_filtration_functorial",
+        "GRHResearch.LinearRelations.image_filtration_functorial",
+        "GRHResearch.LinearRelations.finite_kernel_stabilizes",
+        "GRHResearch.LinearRelations.finite_dimensional_fitting",
+        "GRHResearch.LinearRelations.unit_power_annihilation"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 5.569493877002969,
+      "log": "lean-analytic-LinearRelations.log",
+      "log_sha256": "0bb2b48c0bc37ec55b4528d9cd3a19b819134153c4171107e08c4100677915c1",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.LinearRelations.graph_zero_output": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.graph_zero_input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.inverse_graph_zero_input": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.graph_composition": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.inverse_involution": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.intertwine_power": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.kernel_filtration_functorial": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.image_filtration_functorial": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.finite_kernel_stabilizes": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.finite_dimensional_fitting": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.LinearRelations.unit_power_annihilation": [
+          "Classical.choice",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.LinearRelations.graph_zero_output": "GRHResearch.LinearRelations.graph_zero_output.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R] [AddCommGroup V]\n  [Module R V] (f : V \u2192\u2097[R] V) (x : V) : (x, 0) \u2208 f.graph \u2194 x \u2208 LinearMap.ker f",
+        "GRHResearch.LinearRelations.graph_zero_input": "GRHResearch.LinearRelations.graph_zero_input.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R] [AddCommGroup V]\n  [Module R V] (f : V \u2192\u2097[R] V) (y : V) : (0, y) \u2208 f.graph \u2194 y = 0",
+        "GRHResearch.LinearRelations.inverse_graph_zero_input": "GRHResearch.LinearRelations.inverse_graph_zero_input.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R]\n  [AddCommGroup V] [Module R V] (f : V \u2192\u2097[R] V) (y : V) :\n  (0, y) \u2208 GRHResearch.LinearRelations.inverse f.graph \u2194 y \u2208 LinearMap.ker f",
+        "GRHResearch.LinearRelations.graph_composition": "GRHResearch.LinearRelations.graph_composition.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R] [AddCommGroup V]\n  [Module R V] (f g : V \u2192\u2097[R] V) : GRHResearch.LinearRelations.compose g.graph f.graph = (g \u2218\u2097 f).graph",
+        "GRHResearch.LinearRelations.inverse_involution": "GRHResearch.LinearRelations.inverse_involution.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R] [AddCommGroup V]\n  [Module R V] (C : Submodule R (V \u00d7 V)) :\n  GRHResearch.LinearRelations.inverse (GRHResearch.LinearRelations.inverse C) = C",
+        "GRHResearch.LinearRelations.intertwine_power": "GRHResearch.LinearRelations.intertwine_power.{u_1, u_2, u_3} {R : Type u_1} {V : Type u_2} {W : Type u_3} [CommRing R]\n  [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W] (f : V \u2192\u2097[R] V) (g : W \u2192\u2097[R] W) (h : V \u2192\u2097[R] W)\n  (hc : h \u2218\u2097 f = g \u2218\u2097 h) (n : \u2115) (x : V) : h ((f ^ n) x) = (g ^ n) (h x)",
+        "GRHResearch.LinearRelations.kernel_filtration_functorial": "GRHResearch.LinearRelations.kernel_filtration_functorial.{u_1, u_2, u_3} {R : Type u_1} {V : Type u_2} {W : Type u_3}\n  [CommRing R] [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W] (f : V \u2192\u2097[R] V) (g : W \u2192\u2097[R] W)\n  (h : V \u2192\u2097[R] W) (hc : h \u2218\u2097 f = g \u2218\u2097 h) (n : \u2115) {x : V} (hx : x \u2208 LinearMap.ker (f ^ n)) : h x \u2208 LinearMap.ker (g ^ n)",
+        "GRHResearch.LinearRelations.image_filtration_functorial": "GRHResearch.LinearRelations.image_filtration_functorial.{u_1, u_2, u_3} {R : Type u_1} {V : Type u_2} {W : Type u_3}\n  [CommRing R] [AddCommGroup V] [Module R V] [AddCommGroup W] [Module R W] (f : V \u2192\u2097[R] V) (g : W \u2192\u2097[R] W)\n  (h : V \u2192\u2097[R] W) (hc : h \u2218\u2097 f = g \u2218\u2097 h) (n : \u2115) {x : V} (hx : x \u2208 LinearMap.range (f ^ n)) :\n  h x \u2208 LinearMap.range (g ^ n)",
+        "GRHResearch.LinearRelations.finite_kernel_stabilizes": "GRHResearch.LinearRelations.finite_kernel_stabilizes.{u_2, u_4} {V : Type u_2} [AddCommGroup V] {K : Type u_4} [Field K]\n  [Module K V] [FiniteDimensional K V] (f : V \u2192\u2097[K] V) (n : \u2115) (hn : Module.finrank K V \u2264 n) :\n  LinearMap.ker (f ^ n) = LinearMap.ker (f ^ Module.finrank K V)",
+        "GRHResearch.LinearRelations.finite_dimensional_fitting": "GRHResearch.LinearRelations.finite_dimensional_fitting.{u_2, u_4} {V : Type u_2} [AddCommGroup V] {K : Type u_4}\n  [Field K] [Module K V] [FiniteDimensional K V] (f : V \u2192\u2097[K] V) :\n  IsCompl (LinearMap.ker (f ^ Module.finrank K V)) (LinearMap.range (f ^ Module.finrank K V))",
+        "GRHResearch.LinearRelations.unit_power_annihilation": "GRHResearch.LinearRelations.unit_power_annihilation.{u_1, u_2} {R : Type u_1} {V : Type u_2} [CommRing R]\n  [AddCommGroup V] [Module R V] (a : R) (ha : IsUnit a) (n : \u2115) (x : V) (hx : a ^ n \u2022 x = 0) : x = 0"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/LowEnergy.lean",
+      "source_sha256": "f4bed8eb874aecb2d8d42a4049327e82cb6067aeb499984f945c83b4761578b6",
+      "declaration_count": 7,
+      "declarations": [
+        "GRHResearch.Analytic.hybrid_minimum_dichotomy",
+        "GRHResearch.Analytic.kernel_quarter_charge",
+        "GRHResearch.Analytic.reflected_energy_upper",
+        "GRHResearch.Analytic.perturbed_rescaling_identities",
+        "GRHResearch.Analytic.perturbed_scale_margins",
+        "GRHResearch.Analytic.perturbed_rescaling_loss",
+        "GRHResearch.Analytic.perturbed_rescaling_power"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 10.247864727993147,
+      "log": "lean-analytic-LowEnergy.log",
+      "log_sha256": "c437f88f17f0ad64d94f977ff3162bf496100c4ae0bd2a88165ecaf690552a84",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.Analytic.hybrid_minimum_dichotomy": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.kernel_quarter_charge": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.reflected_energy_upper": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.perturbed_rescaling_identities": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.perturbed_scale_margins": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.perturbed_rescaling_loss": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.perturbed_rescaling_power": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.Analytic.hybrid_minimum_dichotomy": "GRHResearch.Analytic.hybrid_minimum_dichotomy {v z : \u211d} (hv : 0 \u2264 v) :\n  GRHResearch.Analytic.hybridMinimum v z = z \u2228 v / 2 \u2264 GRHResearch.Analytic.hybridMinimum v z",
+        "GRHResearch.Analytic.kernel_quarter_charge": "GRHResearch.Analytic.kernel_quarter_charge (T y : \u211d) : T / 4 \u2264 y / 4 + max 0 (T - y) / 2",
+        "GRHResearch.Analytic.reflected_energy_upper": "GRHResearch.Analytic.reflected_energy_upper {O H A S N B z ell \u03b8 v lb e M \u03b5 \u03c4 : \u211d} (h\u03b5 : 0 \u2264 \u03b5) (h\u03c4 : 0 \u2264 \u03c4)\n  (hO : -\u03b5 \u2264 O) (hH : H \u2264 M - O + \u03b5) (hA : 0 \u2264 A) (hAwidth : 2 * A \u2264 O + \u03b5) (hS : 0 \u2264 S) (hN : 0 \u2264 N) (hNA : N \u2264 A)\n  (hB : 0 \u2264 B) (hz : z \u2264 ell) (hsum : M + ell \u2264 1) (hv : 0 \u2264 v) (hlb : 0 \u2264 lb) (he : -\u03b5 \u2264 e)\n  (hret : v + 3 * lb + e \u2264 GRHResearch.Analytic.dualLength H A z ell \u03b8 N B + \u03c4) :\n  GRHResearch.Analytic.reflectedEnergy O H A S N B z ell \u03b8 v lb e \u2264\n    M + max 0 ((1 + 3 * ell - 2 * M) / 4) + 6 * \u03b5 + 2 * |\u03b8| + \u03c4",
+        "GRHResearch.Analytic.perturbed_rescaling_identities": "GRHResearch.Analytic.perturbed_rescaling_identities (t d : \u211d) :\n  5 / 6 - t - 2 * d + (1 / 6 + t - d) - 1 = -3 * d \u2227\n    1 + 3 * (1 / 6 + t - d) - 2 * (5 / 6 - t - 2 * d) = -1 / 6 + 5 * t + d \u2227\n      23 / 48 - t / 2 - (17 / 48 - t / 2) = 1 / 8 \u2227\n        (17 / 48 - t / 2) / 2 - 1 + (13 / 16 + 3 * t / 2) / 6 = -11 / 16 \u2227\n          (17 / 48 - t / 2) / 2 + 1 / 8 / 12 = 3 / 16 - t / 4",
+        "GRHResearch.Analytic.perturbed_scale_margins": "GRHResearch.Analytic.perturbed_scale_margins {t d : \u211d} (ht : t \u2264 1 / 30) (hd : d \u2264 1 / 6 + t) :\n  11 / 80 \u2264 17 / 48 - t / 2 - d \u2227\n    21 / 80 \u2264 23 / 48 - t / 2 - d \u2227 2 / 5 \u2264 5 / 6 - t - 2 * d \u2227 1 / 30 \u2264 23 / 48 - t / 2 - d - 11 * (1 / 8) / 6",
+        "GRHResearch.Analytic.perturbed_rescaling_loss": "GRHResearch.Analytic.perturbed_rescaling_loss {t d : \u211d} (ht : t \u2264 1 / 30) (hd : 0 \u2264 d) :\n  -d + max 0 ((-1 / 6 + 5 * t + d) / 4) / 2 \u2264 -7 * d / 8",
+        "GRHResearch.Analytic.perturbed_rescaling_power": "GRHResearch.Analytic.perturbed_rescaling_power {Z t d : \u211d} (hZ : 1 \u2264 Z) (ht : t \u2264 1 / 30) (hd : 0 \u2264 d) :\n  Z ^ (-d + max 0 ((-1 / 6 + 5 * t + d) / 4) / 2) \u2264 1"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/MobiusSplit.lean",
+      "source_sha256": "d2b357fe65ab0d02c1a9edf2518eae082a2eadf71e837522350ccd65ea142651",
+      "declaration_count": 8,
+      "declarations": [
+        "GRHResearch.MobiusSplit.inverse_split_identity",
+        "GRHResearch.MobiusSplit.truncated_apply",
+        "GRHResearch.MobiusSplit.tail_apply",
+        "GRHResearch.MobiusSplit.moebius_split",
+        "GRHResearch.MobiusSplit.unit_cutoff",
+        "GRHResearch.MobiusSplit.unit_tail_identity",
+        "GRHResearch.MobiusSplit.unit_tail_coefficient",
+        "GRHResearch.MobiusSplit.unit_tail_nonnegative"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.6587067609943915,
+      "log": "lean-analytic-MobiusSplit.log",
+      "log_sha256": "8cd7d2752f36212d2e3516134323507aa655d68e01e2d90a4e85e6085714528a",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/NodalDG.lean",
+      "source_sha256": "87a814c73605cd1dd37b156202f0b7d6c0a8dea8e387392d34aa1d4f615e1d83",
+      "declaration_count": 20,
+      "declarations": [
+        "GRHResearch.NodalDG.odd_square_product",
+        "GRHResearch.NodalDG.differential_even",
+        "GRHResearch.NodalDG.differential_odd",
+        "GRHResearch.NodalDG.differential_square_zero",
+        "GRHResearch.NodalDG.sign_leibniz",
+        "GRHResearch.NodalDG.koszul_homotopy",
+        "GRHResearch.NodalDG.unit_contracts",
+        "GRHResearch.NodalDG.unit_cycle_boundary",
+        "GRHResearch.NodalDG.boundary_range",
+        "GRHResearch.NodalDG.augmentation_kernel",
+        "GRHResearch.NodalDG.augmentation_surjective",
+        "GRHResearch.NodalDG.boundary_injective",
+        "GRHResearch.NodalDG.totalAugmentation_differential",
+        "GRHResearch.NodalDG.clock_semilinear",
+        "GRHResearch.NodalDG.clock_commutes",
+        "GRHResearch.NodalDG.relation_ne_zero",
+        "GRHResearch.NodalDG.nodal_boundary_injective",
+        "GRHResearch.NodalDG.nodal_augmentation_exact",
+        "GRHResearch.NodalDG.nodal_augmentation_surjective",
+        "GRHResearch.NodalDG.ambient_term_projective"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.6076469880063087,
+      "log": "lean-analytic-NodalDG.log",
+      "log_sha256": "41cea169a2e43e40a6f56d54337394f788f64d73262bdf187277433ba2fa357d",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/PersistenceResolution.lean",
+      "source_sha256": "ed22e939fe97a2e641644fc18b87f6dd687862bbd5b927d234ed1e652379366d",
+      "declaration_count": 19,
+      "declarations": [
+        "GRHResearch.PersistenceResolution.relation_decomposition",
+        "GRHResearch.PersistenceResolution.x_ne_zero",
+        "GRHResearch.PersistenceResolution.y_ne_zero",
+        "GRHResearch.PersistenceResolution.x_dvd_of_y_mul",
+        "GRHResearch.PersistenceResolution.complex_identity",
+        "GRHResearch.PersistenceResolution.d2_injective",
+        "GRHResearch.PersistenceResolution.d1_kernel",
+        "GRHResearch.PersistenceResolution.d1_range",
+        "GRHResearch.PersistenceResolution.augmentation_surjective",
+        "GRHResearch.PersistenceResolution.augmentation_kernel",
+        "GRHResearch.PersistenceResolution.free_terms_projective",
+        "GRHResearch.PersistenceResolution.regular_action",
+        "GRHResearch.PersistenceResolution.residue_action",
+        "GRHResearch.PersistenceResolution.residue_x_smul",
+        "GRHResearch.PersistenceResolution.residue_y_smul",
+        "GRHResearch.PersistenceResolution.hom_x_smul_zero",
+        "GRHResearch.PersistenceResolution.hom_y_smul_zero",
+        "GRHResearch.PersistenceResolution.hom_d1_zero",
+        "GRHResearch.PersistenceResolution.hom_d2_zero"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 8.763026214001002,
+      "log": "lean-analytic-PersistenceResolution.log",
+      "log_sha256": "e41cb426d1038fa6ee0d946b416869ec6067f80aa386c7cd71030c077ef91056",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.PersistenceResolution.x_ne_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.y_ne_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.regular_action": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.residue_action": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.residue_x_smul": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.residue_y_smul": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.hom_x_smul_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.hom_y_smul_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.hom_d1_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.hom_d2_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.relation_decomposition": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.x_dvd_of_y_mul": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.complex_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.d2_injective": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.d1_kernel": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.d1_range": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.augmentation_surjective": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.augmentation_kernel": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.PersistenceResolution.free_terms_projective": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.PersistenceResolution.x_ne_zero": "GRHResearch.PersistenceResolution.x_ne_zero.{u_1} (k : Type u_1) [Field k] : GRHResearch.PersistenceResolution.x k \u2260 0",
+        "GRHResearch.PersistenceResolution.y_ne_zero": "GRHResearch.PersistenceResolution.y_ne_zero.{u_1} (k : Type u_1) [Field k] : GRHResearch.PersistenceResolution.y k \u2260 0",
+        "GRHResearch.PersistenceResolution.regular_action": "GRHResearch.PersistenceResolution.regular_action.{u_1} (k : Type u_1) [Field k]\n  (r q : GRHResearch.PersistenceResolution.Ring k) : r \u2022 q = r * q",
+        "GRHResearch.PersistenceResolution.residue_action": "GRHResearch.PersistenceResolution.residue_action.{u_1} (k : Type u_1) [Field k]\n  (r : GRHResearch.PersistenceResolution.Ring k) (a : k) : r \u2022 a = MvPolynomial.constantCoeff r * a",
+        "GRHResearch.PersistenceResolution.residue_x_smul": "GRHResearch.PersistenceResolution.residue_x_smul.{u_1} (k : Type u_1) [Field k] (a : k) :\n  GRHResearch.PersistenceResolution.x k \u2022 a = 0",
+        "GRHResearch.PersistenceResolution.residue_y_smul": "GRHResearch.PersistenceResolution.residue_y_smul.{u_1} (k : Type u_1) [Field k] (a : k) :\n  GRHResearch.PersistenceResolution.y k \u2022 a = 0",
+        "GRHResearch.PersistenceResolution.hom_x_smul_zero": "GRHResearch.PersistenceResolution.hom_x_smul_zero.{u_1, u_2} (k : Type u_1) [Field k] {N : Type u_2} [AddCommMonoid N]\n  [Module (GRHResearch.PersistenceResolution.Ring k) N] (f : N \u2192\u2097[GRHResearch.PersistenceResolution.Ring k] k) (v : N) :\n  f (GRHResearch.PersistenceResolution.x k \u2022 v) = 0",
+        "GRHResearch.PersistenceResolution.hom_y_smul_zero": "GRHResearch.PersistenceResolution.hom_y_smul_zero.{u_1, u_2} (k : Type u_1) [Field k] {N : Type u_2} [AddCommMonoid N]\n  [Module (GRHResearch.PersistenceResolution.Ring k) N] (f : N \u2192\u2097[GRHResearch.PersistenceResolution.Ring k] k) (v : N) :\n  f (GRHResearch.PersistenceResolution.y k \u2022 v) = 0",
+        "GRHResearch.PersistenceResolution.hom_d1_zero": "GRHResearch.PersistenceResolution.hom_d1_zero.{u_1} (k : Type u_1) [Field k]\n  (f : GRHResearch.PersistenceResolution.Ring k \u2192\u2097[GRHResearch.PersistenceResolution.Ring k] k) :\n  f \u2218\u2097 GRHResearch.PersistenceResolution.d1 k = 0",
+        "GRHResearch.PersistenceResolution.hom_d2_zero": "GRHResearch.PersistenceResolution.hom_d2_zero.{u_1} (k : Type u_1) [Field k]\n  (f : GRHResearch.PersistenceResolution.F1 k \u2192\u2097[GRHResearch.PersistenceResolution.Ring k] k) :\n  f \u2218\u2097 GRHResearch.PersistenceResolution.d2 k = 0",
+        "GRHResearch.PersistenceResolution.relation_decomposition": "GRHResearch.PersistenceResolution.relation_decomposition.{u_1} {S : Type u_1} [CommRing S] [IsDomain S] (x y : S)\n  (hx : x \u2260 0) (hregular : \u2200 (z : S), x \u2223 y * z \u2192 x \u2223 z) (a b c : S) (h : x ^ 2 * a + x * y * b + y ^ 2 * c = 0) :\n  \u2203 p q, a = -y * p \u2227 b = x * p - y * q \u2227 c = x * q",
+        "GRHResearch.PersistenceResolution.x_dvd_of_y_mul": "GRHResearch.PersistenceResolution.x_dvd_of_y_mul.{u_1} (k : Type u_1) [Field k]\n  (z : GRHResearch.PersistenceResolution.Ring k)\n  (h : GRHResearch.PersistenceResolution.x k \u2223 GRHResearch.PersistenceResolution.y k * z) :\n  GRHResearch.PersistenceResolution.x k \u2223 z",
+        "GRHResearch.PersistenceResolution.complex_identity": "GRHResearch.PersistenceResolution.complex_identity.{u_1} (k : Type u_1) [Field k] :\n  GRHResearch.PersistenceResolution.d1 k \u2218\u2097 GRHResearch.PersistenceResolution.d2 k = 0",
+        "GRHResearch.PersistenceResolution.d2_injective": "GRHResearch.PersistenceResolution.d2_injective.{u_1} (k : Type u_1) [Field k] :\n  Function.Injective \u21d1(GRHResearch.PersistenceResolution.d2 k)",
+        "GRHResearch.PersistenceResolution.d1_kernel": "GRHResearch.PersistenceResolution.d1_kernel.{u_1} (k : Type u_1) [Field k] :\n  LinearMap.ker (GRHResearch.PersistenceResolution.d1 k) = LinearMap.range (GRHResearch.PersistenceResolution.d2 k)",
+        "GRHResearch.PersistenceResolution.d1_range": "GRHResearch.PersistenceResolution.d1_range.{u_1} (k : Type u_1) [Field k] :\n  LinearMap.range (GRHResearch.PersistenceResolution.d1 k) = GRHResearch.PersistenceResolution.ideal k",
+        "GRHResearch.PersistenceResolution.augmentation_surjective": "GRHResearch.PersistenceResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :\n  Function.Surjective \u21d1(GRHResearch.PersistenceResolution.augmentation k)",
+        "GRHResearch.PersistenceResolution.augmentation_kernel": "GRHResearch.PersistenceResolution.augmentation_kernel.{u_1} (k : Type u_1) [Field k] :\n  LinearMap.ker (GRHResearch.PersistenceResolution.augmentation k) =\n    LinearMap.range (GRHResearch.PersistenceResolution.d1 k)",
+        "GRHResearch.PersistenceResolution.free_terms_projective": "GRHResearch.PersistenceResolution.free_terms_projective.{u_1} (k : Type u_1) [Field k] :\n  Module.Projective (GRHResearch.PersistenceResolution.Ring k) (GRHResearch.PersistenceResolution.Ring k) \u2227\n    Module.Projective (GRHResearch.PersistenceResolution.Ring k) (GRHResearch.PersistenceResolution.F1 k) \u2227\n      Module.Projective (GRHResearch.PersistenceResolution.Ring k) (GRHResearch.PersistenceResolution.F2 k)"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/PositivePencil.lean",
+      "source_sha256": "07cc4592d57ec11c6b73fdbb498cd1ed38dbb0a623c93f4261eadb5f61d2ef9a",
+      "declaration_count": 7,
+      "declarations": [
+        "GRHResearch.Analytic.real_ratio_from_positive_form",
+        "GRHResearch.Analytic.positive_pencil_eigenvalue_real",
+        "GRHResearch.Analytic.positive_pencil_det_zero_real",
+        "GRHResearch.Analytic.positive_pencil_det_ne_zero",
+        "GRHResearch.Analytic.centered_positive_pencil_zero_on_line",
+        "GRHResearch.Analytic.det_ne_zero_of_strict_imaginary_form",
+        "GRHResearch.Analytic.indefinite_pencil_off_line_witness"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 13.87804704500013,
+      "log": "lean-analytic-PositivePencil.log",
+      "log_sha256": "50ea6cd107866025fb191dd3c08b60af2d628323ae4870b351dfbe4dc2d6871b",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.Analytic.real_ratio_from_positive_form": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.positive_pencil_eigenvalue_real": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.positive_pencil_det_zero_real": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.positive_pencil_det_ne_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.centered_positive_pencil_zero_on_line": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.det_ne_zero_of_strict_imaginary_form": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.indefinite_pencil_off_line_witness": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.Analytic.real_ratio_from_positive_form": "GRHResearch.Analytic.real_ratio_from_positive_form {a b z : \u2102} (ha : a.im = 0) (hb : b.im = 0) (hpositive : 0 < b.re)\n  (heq : a = z * b) : z.im = 0",
+        "GRHResearch.Analytic.positive_pencil_eigenvalue_real": "GRHResearch.Analytic.positive_pencil_eigenvalue_real.{u_1} {\u03b9 : Type u_1} [Fintype \u03b9] {A B : Matrix \u03b9 \u03b9 \u2102} {v : \u03b9 \u2192 \u2102}\n  {z : \u2102} (hA : A.IsHermitian) (hB : B.PosDef) (hv : v \u2260 0) (heigen : A *\u1d65 v = z \u2022 B *\u1d65 v) : z.im = 0",
+        "GRHResearch.Analytic.positive_pencil_det_zero_real": "GRHResearch.Analytic.positive_pencil_det_zero_real.{u_1} {\u03b9 : Type u_1} [Fintype \u03b9] [DecidableEq \u03b9] {A B : Matrix \u03b9 \u03b9 \u2102}\n  {z : \u2102} (hA : A.IsHermitian) (hB : B.PosDef) (hdet : (A - z \u2022 B).det = 0) : z.im = 0",
+        "GRHResearch.Analytic.positive_pencil_det_ne_zero": "GRHResearch.Analytic.positive_pencil_det_ne_zero.{u_1} {\u03b9 : Type u_1} [Fintype \u03b9] [DecidableEq \u03b9] {A B : Matrix \u03b9 \u03b9 \u2102}\n  {z : \u2102} (hA : A.IsHermitian) (hB : B.PosDef) (hz : z.im \u2260 0) : (A - z \u2022 B).det \u2260 0",
+        "GRHResearch.Analytic.centered_positive_pencil_zero_on_line": "GRHResearch.Analytic.centered_positive_pencil_zero_on_line.{u_1} {\u03b9 : Type u_1} [Fintype \u03b9] [DecidableEq \u03b9]\n  {A B : Matrix \u03b9 \u03b9 \u2102} {s : \u2102} (hA : A.IsHermitian) (hB : B.PosDef) (hdet : (A - (-I * (s - 1 / 2)) \u2022 B).det = 0) :\n  s.re = 1 / 2",
+        "GRHResearch.Analytic.det_ne_zero_of_strict_imaginary_form": "GRHResearch.Analytic.det_ne_zero_of_strict_imaginary_form.{u_1} {\u03b9 : Type u_1} [Fintype \u03b9] [DecidableEq \u03b9]\n  {M : Matrix \u03b9 \u03b9 \u2102} (hpositive : \u2200 (v : \u03b9 \u2192 \u2102), v \u2260 0 \u2192 0 < (star v \u2b1d\u1d65 M *\u1d65 v).im) : M.det \u2260 0",
+        "GRHResearch.Analytic.indefinite_pencil_off_line_witness": "GRHResearch.Analytic.indefinite_pencil_off_line_witness :\n  (!![0, 1 / 4; 1 / 4, 0] - (-I * (1 / 4 - 1 / 2)) \u2022 !![1, 0; 0, -1]).det = 0 \u2227 1 / 4 \u2260 1 / 2"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/PrincipalResidue.lean",
+      "source_sha256": "d462ab576e6ca692807d5db13fa4e6b44ded1fa1faa8510493eb179846c9f9ec",
+      "declaration_count": 6,
+      "declarations": [
+        "GRHResearch.Analytic.principal_multiplier_when_equal",
+        "GRHResearch.Analytic.principal_multiplier_error",
+        "GRHResearch.Analytic.principal_multiplier_scaled_error",
+        "GRHResearch.Analytic.weighted_slot_factorization",
+        "GRHResearch.Analytic.weighted_slot_error_bound",
+        "GRHResearch.Analytic.finite_product_relative_error"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 7.6169839880021755,
+      "log": "lean-analytic-PrincipalResidue.log",
+      "log_sha256": "211569ef2baa81bdcdc18c1e1991c1820a87d7e1fe1a33332a4bc9b5f0a971b7",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.Analytic.principal_multiplier_when_equal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.principal_multiplier_error": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.principal_multiplier_scaled_error": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.weighted_slot_factorization": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.weighted_slot_error_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.Analytic.finite_product_relative_error": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.Analytic.principal_multiplier_when_equal": "GRHResearch.Analytic.principal_multiplier_when_equal (v d : \u2102) : GRHResearch.Analytic.principalSlotMultiplier v d d = -v",
+        "GRHResearch.Analytic.principal_multiplier_error": "GRHResearch.Analytic.principal_multiplier_error (v d r : \u2102) (hd : d \u2260 0) (hn : 1 - v * r - (1 - v) * d \u2260 0) :\n  GRHResearch.Analytic.principalSlotMultiplier v d r + 1 =\n    (1 - v) * (r / d - v * r - (1 - v) * d) / (1 - v * r - (1 - v) * d)",
+        "GRHResearch.Analytic.principal_multiplier_scaled_error": "GRHResearch.Analytic.principal_multiplier_scaled_error (v d r : \u2102) (hd : d \u2260 0) (hr : r \u2260 0)\n  (hn : 1 - v * r - (1 - v) * d \u2260 0) :\n  (GRHResearch.Analytic.principalSlotMultiplier v d r + 1) / (r / d) - 1 =\n    (-v * (1 - r) + (1 - v) ^ 2 * d * (1 - d / r)) / (1 - v * r - (1 - v) * d)",
+        "GRHResearch.Analytic.weighted_slot_factorization": "GRHResearch.Analytic.weighted_slot_factorization.{u_1} {\u03b9 : Type u_1} (P : Finset \u03b9) (a b : \u03b9 \u2192 \u2102)\n  (hS : \u2211 i \u2208 P, a i \u2260 0) : \u2211 i \u2208 P, a i * b i = (-\u2211 i \u2208 P, a i) * (1 - (\u2211 i \u2208 P, a i * (b i + 1)) / \u2211 i \u2208 P, a i)",
+        "GRHResearch.Analytic.weighted_slot_error_bound": "GRHResearch.Analytic.weighted_slot_error_bound.{u_1} {\u03b9 : Type u_1} (P : Finset \u03b9) (a : \u03b9 \u2192 \u211d) (b : \u03b9 \u2192 \u2102) {\u03b4 : \u211d}\n  (ha : \u2200 i \u2208 P, 0 \u2264 a i) (hS : 0 < \u2211 i \u2208 P, a i) (hb : \u2200 i \u2208 P, \u2016b i + 1\u2016 \u2264 \u03b4) :\n  \u2016(-\u2211 i \u2208 P, \u2191(a i) * (b i + 1)) / \u2191(\u2211 i \u2208 P, a i)\u2016 \u2264 \u03b4",
+        "GRHResearch.Analytic.finite_product_relative_error": "GRHResearch.Analytic.finite_product_relative_error.{u_1} {\u03b9 : Type u_1} [DecidableEq \u03b9] (P : Finset \u03b9) (\u03c1 : \u03b9 \u2192 \u2102)\n  {\u03b4 : \u211d} (h\u03b41 : \u03b4 \u2264 1) (h\u03c1 : \u2200 i \u2208 P, \u2016\u03c1 i\u2016 \u2264 \u03b4) : \u2016\u220f i \u2208 P, (1 + \u03c1 i) - 1\u2016 \u2264 (2 ^ P.card - 1) * \u03b4"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/ReciprocityPeriod.lean",
+      "source_sha256": "f98c1c7ef500f68f5cf9b35f3498b98b97526770beb89d3292aaff6dbb970184",
+      "declaration_count": 13,
+      "declarations": [
+        "GRHResearch.Analytic.eisenstein4_relation",
+        "GRHResearch.Analytic.odd4_has_inverse",
+        "GRHResearch.Analytic.odd4_card",
+        "GRHResearch.Analytic.squareClass4_mul",
+        "GRHResearch.Analytic.odd4_mul",
+        "GRHResearch.Analytic.squareClass4_kernel",
+        "GRHResearch.Analytic.gammaFour4_table",
+        "GRHResearch.Analytic.signClass4_bicharacter",
+        "GRHResearch.Analytic.signClass4_diagonal",
+        "GRHResearch.Analytic.gammaClass4_refinement",
+        "GRHResearch.Analytic.gammaFour4_refinement",
+        "GRHResearch.Analytic.reduceEisenstein4_period",
+        "GRHResearch.Analytic.reciprocityPhase4_period"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.586687246002839,
+      "log": "lean-analytic-ReciprocityPeriod.log",
+      "log_sha256": "90619a9cca6166e360a2b8809ff3b1598d798831bad7659aafa90adfbcec15e0",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/ReflectedIdentity.lean",
+      "source_sha256": "7a1d5926419bf10ffac9e23b6076d488502eff83802202b8a024fbdce10cd00f",
+      "declaration_count": 9,
+      "declarations": [
+        "GRHResearch.Analytic.reflected_row_column",
+        "GRHResearch.Analytic.reflected_mark_column",
+        "GRHResearch.Analytic.reflected_mark_mask_witness",
+        "GRHResearch.Analytic.reflected_ramanujan_partition",
+        "GRHResearch.Analytic.reflected_unit_cross_phase",
+        "GRHResearch.Analytic.reflected_pair_phase",
+        "GRHResearch.Analytic.reflected_row_mark_phase",
+        "GRHResearch.Analytic.reflected_moving_j4_phase",
+        "GRHResearch.Analytic.reflected_common_density"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.6844101469905581,
+      "log": "lean-analytic-ReflectedIdentity.log",
+      "log_sha256": "5c93be20755d4547ac0fc43d1fa9f03fd49e84779001a859dc5a00b36306a4cb",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/ResolutionDeterminant.lean",
+      "source_sha256": "0af562e374ce22245e1a032d5e6242f1976221a7cb85521a0ee6979fd0910f09",
+      "declaration_count": 3,
+      "declarations": [
+        "GRHResearch.Resolutions.arrow_state_determinant",
+        "GRHResearch.Resolutions.acyclic_pair_determinant",
+        "GRHResearch.Resolutions.alternating_duality_without_purity"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.5299006139975972,
+      "log": "lean-analytic-ResolutionDeterminant.log",
+      "log_sha256": "8fcb40cdfe6d08a9e470795bba0075cf6a498c61a0c8af9f4a2f7acc08b79481",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/ShortRowGram.lean",
+      "source_sha256": "ae60be34e053f3c0f67320dacb9b4ee4f7f6a88bc41f8d350ca4e95d34b5e0b9",
+      "declaration_count": 9,
+      "declarations": [
+        "GRHResearch.ShortRowGram.character_pair_mask",
+        "GRHResearch.ShortRowGram.common_character_mask",
+        "GRHResearch.ShortRowGram.matched_character_sum",
+        "GRHResearch.ShortRowGram.matched_row_energy_lower",
+        "GRHResearch.ShortRowGram.complete_character_gram",
+        "GRHResearch.ShortRowGram.finite_gram_expansion",
+        "GRHResearch.ShortRowGram.eisenstein_norm_mul",
+        "GRHResearch.ShortRowGram.eisenstein_norm_square_identity",
+        "GRHResearch.ShortRowGram.norm_seven_prime_data"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.5446862090029754,
+      "log": "lean-analytic-ShortRowGram.log",
+      "log_sha256": "21fea84069ec3425276ea8cdf20ae6422408d5a361a96fa74ced66e0af2193f5",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/ShortRowPairBarrier.lean",
+      "source_sha256": "88e2f6458416b15313631f694e5e921f049adeb79f3f5fc88041a28c8ce80e7d",
+      "declaration_count": 4,
+      "declarations": [
+        "GRHResearch.ShortRowPairBarrier.frame_potential_duality",
+        "GRHResearch.ShortRowPairBarrier.row_diagonal_lower",
+        "GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower",
+        "GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 6.253177133999998,
+      "log": "lean-analytic-ShortRowPairBarrier.log",
+      "log_sha256": "03d357f7b58ba8b80f87ffef6e837bde2ebc82977f9faaa75cf7c4d475cf69a9",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.ShortRowPairBarrier.frame_potential_duality": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.ShortRowPairBarrier.row_diagonal_lower": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.ShortRowPairBarrier.frame_potential_duality": "GRHResearch.ShortRowPairBarrier.frame_potential_duality.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]\n  (A : U \u2192 I \u2192 \u2102) :\n  \u2211 i, \u2211 j, \u2016GRHResearch.ShortRowPairBarrier.columnGram A i j\u2016 ^ 2 =\n    \u2211 u, \u2211 v, \u2016GRHResearch.ShortRowPairBarrier.rowGram A u v\u2016 ^ 2",
+        "GRHResearch.ShortRowPairBarrier.row_diagonal_lower": "GRHResearch.ShortRowPairBarrier.row_diagonal_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U] [Fintype I]\n  (A : U \u2192 I \u2192 \u2102) :\n  \u2211 u, \u2016GRHResearch.ShortRowPairBarrier.rowGram A u u\u2016 ^ 2 \u2264\n    \u2211 i, \u2211 j, \u2016GRHResearch.ShortRowPairBarrier.columnGram A i j\u2016 ^ 2",
+        "GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower": "GRHResearch.ShortRowPairBarrier.weighted_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]\n  [Fintype I] (A : U \u2192 I \u2192 \u2102) (w : U \u2192 \u211d) (hw : \u2200 (u : U) (i : I), \u2016A u i\u2016 ^ 2 = w u) :\n  \u2191(Fintype.card I) ^ 2 * \u2211 u, w u ^ 2 - \u2191(Fintype.card I) * (\u2211 u, w u) ^ 2 \u2264\n    \u2211 i, \u2211 j, if i = j then 0 else \u2016GRHResearch.ShortRowPairBarrier.columnGram A i j\u2016 ^ 2",
+        "GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower": "GRHResearch.ShortRowPairBarrier.unimodular_pair_square_lower.{u_1, u_2} {U : Type u_1} {I : Type u_2} [Fintype U]\n  [Fintype I] (A : U \u2192 I \u2192 \u2102) (hA : \u2200 (u : U) (i : I), \u2016A u i\u2016 = 1) :\n  \u2191(Fintype.card I) * \u2191(Fintype.card U) * (\u2191(Fintype.card I) - \u2191(Fintype.card U)) \u2264\n    \u2211 i, \u2211 j, if i = j then 0 else \u2016GRHResearch.ShortRowPairBarrier.columnGram A i j\u2016 ^ 2"
+      },
+      "printed_types_cover_every_declaration": true
+    },
+    {
+      "source": "lean-analytic/ThetaJacobi.lean",
+      "source_sha256": "6e170c297d49f59bb562e9a737d3059478a339e2100aad0662a189813d9bb101",
+      "declaration_count": 16,
+      "declarations": [
+        "GRHResearch.ThetaJacobi.jacobi_conjugate",
+        "GRHResearch.ThetaJacobi.jacobi_norm_sq",
+        "GRHResearch.ThetaJacobi.shifted_jacobi",
+        "GRHResearch.ThetaJacobi.cubic_quadratic_product_ne_one",
+        "GRHResearch.ThetaJacobi.cm_determinant",
+        "GRHResearch.ThetaJacobi.cm_local_polynomial",
+        "GRHResearch.ThetaJacobi.cm_gram_identity",
+        "GRHResearch.ThetaJacobi.cm_gram_positive",
+        "GRHResearch.ThetaJacobi.f7_local_polynomials",
+        "GRHResearch.ThetaJacobi.cellular_inclusion_cycles",
+        "GRHResearch.ThetaJacobi.cellular_homology_restriction",
+        "GRHResearch.ThetaJacobi.cellular_edge_polynomial",
+        "GRHResearch.ThetaJacobi.cellular_chain_map",
+        "GRHResearch.ThetaJacobi.conjugation_matrix_identities",
+        "GRHResearch.ThetaJacobi.inert_real_determinant_nonpositive",
+        "GRHResearch.ThetaJacobi.no_inert_real_frobenius"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.5803457470028661,
+      "log": "lean-analytic-ThetaJacobi.log",
+      "log_sha256": "52c55db5ab9c942df5ce1b21bc8892b2c079049a23402dda0ef7196f432cfbf9",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/ThetaProjectiveMultiplicity.lean",
+      "source_sha256": "335f7ca2635a70886b1eec4cd71bc414938b81bca2f9b36ed7a87d9651801a52",
+      "declaration_count": 5,
+      "declarations": [
+        "GRHResearch.ThetaProjectiveMultiplicity.six_path_blocks_det",
+        "GRHResearch.ThetaProjectiveMultiplicity.six_path_blocks_local_det",
+        "GRHResearch.ThetaProjectiveMultiplicity.power_series_det_specialization",
+        "GRHResearch.ThetaProjectiveMultiplicity.quadratic_not_ratio_sixth",
+        "GRHResearch.ThetaProjectiveMultiplicity.no_cyclic_rank_one_arrows"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 1.0300523839978268,
+      "log": "lean-analytic-ThetaProjectiveMultiplicity.log",
+      "log_sha256": "53c86ccd9350630404d7fe37f9b5c310325861e7909a5adaa34b117c278d57aa",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    },
+    {
+      "source": "lean-analytic/ThetaTameDescent.lean",
+      "source_sha256": "2d5b85676db6d527535193f6ee278ec1ff5226a115ddc3e8bf69531fb7560b9b",
+      "declaration_count": 13,
+      "declarations": [
+        "GRHResearch.ThetaTameDescent.cubic_fourth",
+        "GRHResearch.ThetaTameDescent.clock_rotation",
+        "GRHResearch.ThetaTameDescent.tame_coefficient",
+        "GRHResearch.ThetaTameDescent.invariant_coefficient_zero",
+        "GRHResearch.ThetaTameDescent.tame_cube",
+        "GRHResearch.ThetaTameDescent.comparison_determinant",
+        "GRHResearch.ThetaTameDescent.comparison_closed_fiber",
+        "GRHResearch.ThetaTameDescent.weighted_rotation_cube",
+        "GRHResearch.ThetaTameDescent.weighted_rotation_polynomial",
+        "GRHResearch.ThetaTameDescent.rotation_polynomial_commutator",
+        "GRHResearch.ThetaTameDescent.no_nonconstant_rotation_descent",
+        "GRHResearch.ThetaTameDescent.clock_rotation_determinants",
+        "GRHResearch.ThetaTameDescent.weighted_lift_intertwining"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.6089817909960402,
+      "log": "lean-analytic-ThetaTameDescent.log",
+      "log_sha256": "181bb6c1f5b21a41dd552e8c470a288b522f6048847c1d30374b80ee6a4c5df3",
+      "status": "failed",
+      "warning_count": 0,
+      "axioms_per_declaration": {},
+      "unexpected_axioms": {},
+      "kernel_printed_types": {},
+      "printed_types_cover_every_declaration": false
+    }
+  ],
+  "scope": "Fresh elaboration of the listed inherited public theorem/lemma declarations, with exact types and foundational axiom reports. Private helper proofs are elaborated but not separately inventoried. Cached compiled imports and the pinned tools are trusted. No complete manuscript, arithmetic identification, GRH, continuum Navier-Stokes or Yang-Mills proof is asserted."
+}

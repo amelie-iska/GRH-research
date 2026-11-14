@@ -1,0 +1,29 @@
+'GRHResearch.Analytic.finite_product_defect_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.positive_metric_eigenvalue_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.quadratic_hermite_symmetrizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.quadratic_hermite_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.quadratic_hermite_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.quadratic_hermite_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gaussian_mixture_turan_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_product_defect_bound.{u_1} {ι : Type u_1} [DecidableEq ι] (s : Finset ι) (a : ι → ℝ)
+  (ha : ∀ i ∈ s, 0 ≤ a i ∧ a i ≤ 1) :
+  0 ≤ ∏ i ∈ s, (1 - a i) ∧ ∏ i ∈ s, (1 - a i) ≤ 1 ∧ 1 - ∏ i ∈ s, (1 - a i) ≤ ∑ i ∈ s, a i
+'GRHResearch.Analytic.finite_product_defect_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.positive_metric_eigenvalue_real.{u_1} {ι : Type u_1} [Fintype ι] {C H : Matrix ι ι ℂ} {v : ι → ℂ}
+  {z : ℂ} (hH : H.PosDef) (hHC : (H * C).IsHermitian) (hv : v ≠ 0) (heigen : C *ᵥ v = z • v) : z.im = 0
+'GRHResearch.Analytic.positive_metric_eigenvalue_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.quadratic_hermite_symmetrizes (a b : ℝ) :
+  GRHResearch.Analytic.quadraticHermite a b * GRHResearch.Analytic.quadraticCompanion a b =
+    (GRHResearch.Analytic.quadraticHermite a b * GRHResearch.Analytic.quadraticCompanion a b)ᵀ
+'GRHResearch.Analytic.quadratic_hermite_symmetrizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.quadratic_hermite_det (a b : ℝ) : (GRHResearch.Analytic.quadraticHermite a b).det = b ^ 2 - 4 * a
+'GRHResearch.Analytic.quadratic_hermite_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.quadratic_hermite_form (a b : ℝ) (v : Fin 2 → ℝ) :
+  star v ⬝ᵥ GRHResearch.Analytic.quadraticHermite a b *ᵥ v = 2 * (v 0 - b * v 1 / 2) ^ 2 + (b ^ 2 - 4 * a) / 2 * v 1 ^ 2
+'GRHResearch.Analytic.quadratic_hermite_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.quadratic_hermite_posDef {a b : ℝ} (hdisc : 0 < b ^ 2 - 4 * a) :
+  (GRHResearch.Analytic.quadraticHermite a b).PosDef
+'GRHResearch.Analytic.quadratic_hermite_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gaussian_mixture_turan_obstruction (variance : ℝ) :
+  ((variance + 1 / 10) / 2) ^ 2 - (3 * variance ^ 2 + 3 / 5 * variance + 1 / 10) / 12 = -(7 / 1200)
+'GRHResearch.Analytic.gaussian_mixture_turan_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]

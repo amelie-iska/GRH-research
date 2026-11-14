@@ -1,0 +1,67 @@
+'GRHResearch.Analytic.finite_character_power_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_trivial_character_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_unit_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_unit_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_character_autocorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_solve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_units' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_one_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_zero_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_principal_corner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.field_correlation_f7_corner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.sextic_character_power_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_gauss_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_gauss_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_gauss_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_character_power_zero.{u_2} {K : Type u_2} [Field K] (A : MulChar K ℂ) (n : ℕ) :
+  (A ^ n) 0 = 0
+'GRHResearch.Analytic.finite_character_power_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_trivial_character_sum.{u_1} {F : Type u_1} [Field F] [Fintype F] :
+  ∑ x, 1 x = ↑(Fintype.card F) - 1
+'GRHResearch.Analytic.finite_trivial_character_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_character_unit_product.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ) {b : F}
+  (hb : b ≠ 0) : A b * star (A b) = 1
+'GRHResearch.Analytic.finite_character_unit_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_character_diagonal.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ) :
+  ∑ x, A x * star (A x) = ↑(Fintype.card F) - 1
+'GRHResearch.Analytic.finite_character_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_character_unit_shift.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ) :
+  ∑ x, A (x + 1) * star (A x) = if A = 1 then ↑(Fintype.card F) - 2 else -1
+'GRHResearch.Analytic.finite_character_unit_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_character_autocorrelation.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ)
+  (b : F) :
+  ∑ x, A (x + b) * star (A x) = if b = 0 then ↑(Fintype.card F) - 1 else if A = 1 then ↑(Fintype.card F) - 2 else -1
+'GRHResearch.Analytic.finite_character_autocorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.field_correlation_solve.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ) {a : F}
+  (ha : a ≠ 0) (b k : F) : GRHResearch.Analytic.fieldCorrelation A a b k = ∑ y, A ((k + b * y) / a) * star (A y)
+'GRHResearch.Analytic.field_correlation_solve' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.field_correlation_units.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ) {a b : F}
+  (ha : a ≠ 0) (hb : b ≠ 0) (k : F) :
+  GRHResearch.Analytic.fieldCorrelation A a b k =
+    A (b / a) * if k = 0 then ↑(Fintype.card F) - 1 else if A = 1 then ↑(Fintype.card F) - 2 else -1
+'GRHResearch.Analytic.field_correlation_units' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.field_correlation_one_zero.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ) {a : F}
+  (ha : a ≠ 0) (k : F) :
+  GRHResearch.Analytic.fieldCorrelation A a 0 k = if k = 0 then 0 else if A = 1 then ↑(Fintype.card F) - 1 else 0
+'GRHResearch.Analytic.field_correlation_one_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.field_correlation_zero_coefficients.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ)
+  (k : F) : GRHResearch.Analytic.fieldCorrelation A 0 0 k = if k = 0 then (∑ x, A x) * star (∑ y, A y) else 0
+'GRHResearch.Analytic.field_correlation_zero_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.field_correlation_principal_corner.{u_1} {F : Type u_1} [Field F] [Fintype F] :
+  GRHResearch.Analytic.fieldCorrelation 1 0 0 0 = (↑(Fintype.card F) - 1) ^ 2
+'GRHResearch.Analytic.field_correlation_principal_corner' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.field_correlation_f7_corner : GRHResearch.Analytic.fieldCorrelation 1 0 0 0 = 36
+'GRHResearch.Analytic.field_correlation_f7_corner' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.sextic_character_power_nontrivial.{u_2} {K : Type u_2} [Field K] (A : MulChar K ℂ)
+  (horder : orderOf A = 6) {n : ℕ} (hn : ¬6 ∣ n) : A ^ n ≠ 1
+'GRHResearch.Analytic.sextic_character_power_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_gauss_trivial.{u_1} {F : Type u_1} [Field F] [Fintype F] (ψ : AddChar F ℂ) (hψ : ψ ≠ 1) :
+  gaussSum 1 ψ = -1
+'GRHResearch.Analytic.finite_gauss_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_gauss_conjugate.{u_1} {F : Type u_1} [Field F] [Fintype F] (A : MulChar F ℂ)
+  (ψ : AddChar F ℂ) : gaussSum A⁻¹ ψ⁻¹ = star (gaussSum A ψ)
+'GRHResearch.Analytic.finite_gauss_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_gauss_norm_sq.{u_1} {F : Type u_1} [Field F] [Fintype F] {A : MulChar F ℂ} (hA : A ≠ 1)
+  {ψ : AddChar F ℂ} (hψ : ψ ≠ 1) : ‖gaussSum A ψ‖ ^ 2 = ↑(Fintype.card F)
+'GRHResearch.Analytic.finite_gauss_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]

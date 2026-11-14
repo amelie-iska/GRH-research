@@ -8,6 +8,10 @@ proofs; they are not a continuum PDE, quantum-hardware, or security result.
 """
 from __future__ import annotations
 
+# Protect imported verifier functions as well as the command-line entry point.
+if not __debug__:
+    raise RuntimeError("Verification requires assertions; run without -O or PYTHONOPTIMIZE")
+
 import argparse
 from fractions import Fraction as Q
 import hashlib

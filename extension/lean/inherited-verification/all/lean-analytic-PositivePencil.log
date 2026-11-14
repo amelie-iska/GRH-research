@@ -1,0 +1,29 @@
+'GRHResearch.Analytic.real_ratio_from_positive_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.positive_pencil_eigenvalue_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.positive_pencil_det_zero_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.positive_pencil_det_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.centered_positive_pencil_zero_on_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.det_ne_zero_of_strict_imaginary_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.indefinite_pencil_off_line_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.real_ratio_from_positive_form {a b z : ℂ} (ha : a.im = 0) (hb : b.im = 0) (hpositive : 0 < b.re)
+  (heq : a = z * b) : z.im = 0
+'GRHResearch.Analytic.real_ratio_from_positive_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.positive_pencil_eigenvalue_real.{u_1} {ι : Type u_1} [Fintype ι] {A B : Matrix ι ι ℂ} {v : ι → ℂ}
+  {z : ℂ} (hA : A.IsHermitian) (hB : B.PosDef) (hv : v ≠ 0) (heigen : A *ᵥ v = z • B *ᵥ v) : z.im = 0
+'GRHResearch.Analytic.positive_pencil_eigenvalue_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.positive_pencil_det_zero_real.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] {A B : Matrix ι ι ℂ}
+  {z : ℂ} (hA : A.IsHermitian) (hB : B.PosDef) (hdet : (A - z • B).det = 0) : z.im = 0
+'GRHResearch.Analytic.positive_pencil_det_zero_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.positive_pencil_det_ne_zero.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] {A B : Matrix ι ι ℂ}
+  {z : ℂ} (hA : A.IsHermitian) (hB : B.PosDef) (hz : z.im ≠ 0) : (A - z • B).det ≠ 0
+'GRHResearch.Analytic.positive_pencil_det_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.centered_positive_pencil_zero_on_line.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι]
+  {A B : Matrix ι ι ℂ} {s : ℂ} (hA : A.IsHermitian) (hB : B.PosDef) (hdet : (A - (-I * (s - 1 / 2)) • B).det = 0) :
+  s.re = 1 / 2
+'GRHResearch.Analytic.centered_positive_pencil_zero_on_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.det_ne_zero_of_strict_imaginary_form.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι]
+  {M : Matrix ι ι ℂ} (hpositive : ∀ (v : ι → ℂ), v ≠ 0 → 0 < (star v ⬝ᵥ M *ᵥ v).im) : M.det ≠ 0
+'GRHResearch.Analytic.det_ne_zero_of_strict_imaginary_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.indefinite_pencil_off_line_witness :
+  (!![0, 1 / 4; 1 / 4, 0] - (-I * (1 / 4 - 1 / 2)) • !![1, 0; 0, -1]).det = 0 ∧ 1 / 4 ≠ 1 / 2
+'GRHResearch.Analytic.indefinite_pencil_off_line_witness' depends on axioms: [propext, Classical.choice, Quot.sound]

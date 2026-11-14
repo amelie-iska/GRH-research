@@ -20,7 +20,7 @@ audits state their actual coverage and remaining obligations.
 
 ## Read and run
 
-- **Hosted research atlas:** [Orders, Complexes and Quantum Fields](https://orders-complexes-quantum-fields.wolvieworld.chatgpt.site/) (existing account access is required). All static page sources are also included below.
+- **Combined research atlas:** [Orders, Complexes and Quantum Fields](https://amelie-iska.github.io/GRH-research/), including the inherited GRH site. The [earlier managed site](https://orders-complexes-quantum-fields.wolvieworld.chatgpt.site/) remains a separate historical deployment; its existing account access is required.
 - **Manuscript:** [compiled PDF](extension/manuscript/main.pdf), [LaTeX source](extension/manuscript/main.tex), [build instructions](extension/manuscript/BUILD.md).
 - **Fluid supplement:** [compiled PDF](extension/manuscript/fluid-extension.pdf), [LaTeX entry point](extension/manuscript/fluid-extension.tex), and [interactive fluid laboratory](extension/site/fluids.html).
 - **Interactive research atlas:** [site source](extension/site/index.html), with six mathematical laboratories, a live 18-qubit circuit/QNN companion, an algebra companion, live quantum ToricGT, diagram/language, synthetic-cosmology and fluid pages, original research pages, downloads, and verification records.
@@ -180,11 +180,11 @@ not redistributed here. Their bibliographic references, review notes and
 hashes are retained. Existing upstream authorship and notices are preserved.
 No new open-source license is imposed on inherited material.
 
-The revised manuscript has **pending final-build count pages**, with a separate **pending final-build count fluid
+The revised manuscript has **341 pages**, with a separate **90-page fluid
 supplement**. Its [claim register](extension/review/claim-register.md) contains
-**264 named environments**: 252 local arguments, five specially marked
+**269 named environments**: 257 local arguments, five specially marked
 conditional arguments, six cited external results, and one open problem.
-The **257 attached proofs** are written arguments. Nine additional external
+The **262 attached proofs** are written arguments. Nine additional external
 statements in prose have explicit source and proof-scope classifications.
 
 The [independent second audit](extension/review/second-pass-math-audit.md)
@@ -192,7 +192,7 @@ covered all 125 original statements and all 55 additions in the earlier
 180-environment version. That historical coverage is preserved. The subsequent
 [fluid review records](extension/review/navier-stokes/) document the additional
 source reading, theorem checks, corrections, and their own reviewed snapshots;
-the earlier audit is not presented as an audit of all 264 current environments.
+the earlier audit is not presented as an audit of all 269 current environments.
 
 The six Lean modules contain **115 kernel-checked declarations**, all freshly
 rechecked with zero warnings. The [formal type map](extension/review/formal-type-map.md)
@@ -206,3 +206,31 @@ continuum verification attempt incomplete.
 The original Git submodule references remain pinned in the inherited tree.
 A source archive does not recursively vendor their entire contents; use the
 recorded repository URLs and commits when obtaining those separate projects.
+
+## Continuation validation and release integrity
+
+The resumed review corrected verification scripts that could report success
+under optimized Python after their assertions were removed. The scripts now
+refuse that execution mode before writing evidence; a regression checks 25
+subprocess cases under both normal and optimized parent runtimes. The
+[cryptographic suite](extension/crypto/verification.json) now passes 31 test
+methods, including actual payload/context boundaries and canonical encoding.
+
+The [release freshness gate](extension/code/release_freshness.py) binds the
+current PDFs, claim register, formal types, verification logs, numerical
+fixtures and public downloads to their source hashes. Nested Lean verification
+logs are included in the proof archive. It establishes artifact consistency,
+not a new theorem or cryptographic security proof. The
+[continuation checkpoint](extension/review/final-pass/IMPLEMENTATION_STATE.md)
+and per-area final-pass notes record exact work and remaining obligations.
+Post-release branch, deployment and machine receipts are recorded separately in
+`planning/continuation-20261113/PUBLICATION_STATUS.json`, so the frozen compact
+source archive need not change merely to record where it was published.
+
+The [fresh inherited audit](extension/lean/inherited-verification/all/verification.json)
+also checks **368 declarations across 37 original modules**: 361 analytic
+interface declarations and seven arithmetic declarations. All pass with zero
+warnings and exact type/axiom reports. This inventory is separate from the
+extension's 115 declarations; together they cover 483 distinct local project
+declarations across 43 source files. These counts describe checked declarations,
+not whole manuscript theorems or an independently rebuilt upstream continuum proof.

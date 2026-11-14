@@ -1,0 +1,39 @@
+'GRHResearch.Analytic.count_from_complex_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_plain_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_row_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_crossing_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_short_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_balanced_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.frozen_supply_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.count_from_complex_moment.{u_1} {ι : Type u_1} (F : Finset ι) (w p : ι → ℂ) {A B M : ℝ}
+  (hB : 0 ≤ B) (hw : ∀ i ∈ F, A ≤ ‖w i‖ ^ 2) (hp : ∀ i ∈ F, B ≤ ‖p i‖ ^ 2) (hm : ∑ i ∈ F, ‖w i * p i‖ ^ 2 ≤ M) :
+  ↑F.card * A * B ≤ M
+'GRHResearch.Analytic.count_from_complex_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.frozen_plain_capacity (m : ℝ) : 2 * m + 6 * (3 / 4) * ((1 - 2 * m) / (9 / 2)) = 1
+'GRHResearch.Analytic.frozen_plain_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.frozen_row_coefficients {x : ℝ} (hx1 : x ≤ 1 / 2) :
+  37 / 18 ≤ GRHResearch.Analytic.rowD x ∧ 7 / 9 ≤ GRHResearch.Analytic.rowP x
+'GRHResearch.Analytic.frozen_row_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.frozen_crossing_bounds {x τ : ℝ} (hx0 : 0 ≤ x) (hx1 : x ≤ 1 / 2) (ht0 : 1 ≤ τ) (ht1 : τ ≤ 3 / 2) :
+  23 / 37 ≤ GRHResearch.Analytic.rowCrossing x τ ∧
+    GRHResearch.Analytic.rowCrossing x τ ≤ 1 ∧
+      1 / 3 ≤ τ - GRHResearch.Analytic.rowCrossing x τ ∧ τ - GRHResearch.Analytic.rowCrossing x τ ≤ 1 / 2
+'GRHResearch.Analytic.frozen_crossing_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.frozen_short_crossing {x : ℝ} (hD : GRHResearch.Analytic.rowD x ≠ 0) (δ τ : ℝ) :
+  1 - δ * (x + (1 - x) * GRHResearch.Analytic.rowCrossing x τ) =
+      1 - δ + δ * GRHResearch.Analytic.rowP x / GRHResearch.Analytic.rowD x * (3 / 2 - τ) ∧
+    1 - δ * (4 * x / 9 + (2 - 8 * x / 9) * (τ - GRHResearch.Analytic.rowCrossing x τ)) =
+      1 - δ + δ * GRHResearch.Analytic.rowP x / GRHResearch.Analytic.rowD x * (3 / 2 - τ)
+'GRHResearch.Analytic.frozen_short_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.frozen_balanced_cutoff {δ x : ℝ} (hδ0 : 0 ≤ δ) (hδ1 : δ ≤ 3 / 4) (hx1 : x ≤ 1 / 2) :
+  have J := (5 / 6 - δ) * GRHResearch.Analytic.rowD x + δ * GRHResearch.Analytic.rowP x;
+  have τ := 1 + δ * GRHResearch.Analytic.rowP x / (2 * J);
+  0 < J ∧
+    1 ≤ τ ∧
+      τ < 3 / 2 ∧
+        1 - δ + δ * GRHResearch.Analytic.rowP x / GRHResearch.Analytic.rowD x * (3 / 2 - τ) =
+          1 - δ + (5 / 6 - δ) * (τ - 1)
+'GRHResearch.Analytic.frozen_balanced_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.frozen_supply_margin {t ζ : ℝ} (hζ : ζ < 23 / 336 + 53 * t / 14) :
+  7 / 37 * (13 / 16 + 3 * t / 2 + ζ) < 1 / 6 + t
+'GRHResearch.Analytic.frozen_supply_margin' depends on axioms: [propext, Classical.choice, Quot.sound]

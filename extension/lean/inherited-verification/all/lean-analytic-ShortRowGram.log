@@ -1,0 +1,61 @@
+GRHResearch.ShortRowGram.character_pair_mask.{u_1} {F : Type u_1} [Field F] [Fintype F] (χ : MulChar F ℂ) (x : F) :
+  χ x * star (χ x) = if x = 0 then 0 else 1
+GRHResearch.ShortRowGram.common_character_mask.{u_1} {F : Type u_1} [Field F] [Fintype F] (χ : MulChar F ℂ) (x : F)
+  (a b : ℂ) : χ x * a * star (χ x * b) = (if x = 0 then 0 else 1) * a * star b
+GRHResearch.ShortRowGram.matched_character_sum.{u_1, u_2} {F : Type u_1} [Field F] [Fintype F] {ι : Type u_2}
+  (s : Finset ι) (χ : MulChar F ℂ) (r : ι → F) : ∑ b ∈ s, star (χ (r b)) * χ (r b) = ↑(#({b ∈ s | r b ≠ 0}))
+GRHResearch.ShortRowGram.matched_row_energy_lower.{u_1, u_2, u_3} {F : Type u_1} [Field F] [Fintype F] {ρ : Type u_2}
+  {ι : Type u_3} (rows : Finset ρ) (columns : Finset ι) (row : ρ) (hr : row ∈ rows) (χ : MulChar F ℂ) (r : ι → F)
+  (kernel : ρ → ι → ℂ) (hk : ∀ b ∈ columns, kernel row b = χ (r b)) :
+  ↑(#({b ∈ columns | r b ≠ 0})) ^ 2 ≤ ∑ k ∈ rows, ‖∑ b ∈ columns, star (χ (r b)) * kernel k b‖ ^ 2
+GRHResearch.ShortRowGram.complete_character_gram.{u_1} {F : Type u_1} [Field F] [Fintype F] (χ ψ : MulChar F ℂ) :
+  ∑ x, χ x * star (ψ x) = if χ = ψ then ↑(Fintype.card F) - 1 else 0
+GRHResearch.ShortRowGram.finite_gram_expansion.{u_2, u_3} {ρ : Type u_2} {ι : Type u_3} (rows : Finset ρ)
+  (columns : Finset ι) (c : ι → ℂ) (kernel : ρ → ι → ℂ) :
+  ∑ k ∈ rows, ‖∑ n ∈ columns, c n * kernel k n‖ ^ 2 =
+    (∑ n ∈ columns, ∑ m ∈ columns, c n * star (c m) * ∑ k ∈ rows, kernel k n * star (kernel k m)).re
+GRHResearch.ShortRowGram.eisenstein_norm_mul (x y : Eisenstein) : normE (x * y) = normE x * normE y
+GRHResearch.ShortRowGram.eisenstein_norm_square_identity (x : Eisenstein) :
+  (2 * x.re - x.im) ^ 2 + 3 * x.im ^ 2 = 4 * normE x
+GRHResearch.ShortRowGram.norm_seven_prime_data : normE { re := 1, im := 3 } = 7 ∧ residueSeven { re := 1, im := 3 } = 0
+'GRHResearch.ShortRowGram.character_pair_mask' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowGram.common_character_mask' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowGram.matched_character_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowGram.matched_row_energy_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowGram.complete_character_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowGram.finite_gram_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowGram.eisenstein_norm_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ShortRowGram.eisenstein_norm_square_identity' depends on axioms: [propext, Quot.sound]
+'GRHResearch.ShortRowGram.norm_seven_prime_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowGram.character_pair_mask.{u_1} {F : Type u_1} [Field F] [Fintype F] (χ : MulChar F ℂ) (x : F) :
+  χ x * star (χ x) = if x = 0 then 0 else 1
+'GRHResearch.ShortRowGram.character_pair_mask' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowGram.common_character_mask.{u_1} {F : Type u_1} [Field F] [Fintype F] (χ : MulChar F ℂ) (x : F)
+  (a b : ℂ) : χ x * a * star (χ x * b) = (if x = 0 then 0 else 1) * a * star b
+'GRHResearch.ShortRowGram.common_character_mask' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowGram.matched_character_sum.{u_1, u_2} {F : Type u_1} [Field F] [Fintype F] {ι : Type u_2}
+  (s : Finset ι) (χ : MulChar F ℂ) (r : ι → F) : ∑ b ∈ s, star (χ (r b)) * χ (r b) = ↑{b ∈ s | r b ≠ 0}.card
+'GRHResearch.ShortRowGram.matched_character_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowGram.matched_row_energy_lower.{u_1, u_2, u_3} {F : Type u_1} [Field F] [Fintype F] {ρ : Type u_2}
+  {ι : Type u_3} (rows : Finset ρ) (columns : Finset ι) (row : ρ) (hr : row ∈ rows) (χ : MulChar F ℂ) (r : ι → F)
+  (kernel : ρ → ι → ℂ) (hk : ∀ b ∈ columns, kernel row b = χ (r b)) :
+  ↑{b ∈ columns | r b ≠ 0}.card ^ 2 ≤ ∑ k ∈ rows, ‖∑ b ∈ columns, star (χ (r b)) * kernel k b‖ ^ 2
+'GRHResearch.ShortRowGram.matched_row_energy_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowGram.complete_character_gram.{u_1} {F : Type u_1} [Field F] [Fintype F] (χ ψ : MulChar F ℂ) :
+  ∑ x, χ x * star (ψ x) = if χ = ψ then ↑(Fintype.card F) - 1 else 0
+'GRHResearch.ShortRowGram.complete_character_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowGram.finite_gram_expansion.{u_2, u_3} {ρ : Type u_2} {ι : Type u_3} (rows : Finset ρ)
+  (columns : Finset ι) (c : ι → ℂ) (kernel : ρ → ι → ℂ) :
+  ∑ k ∈ rows, ‖∑ n ∈ columns, c n * kernel k n‖ ^ 2 =
+    (∑ n ∈ columns, ∑ m ∈ columns, c n * star (c m) * ∑ k ∈ rows, kernel k n * star (kernel k m)).re
+'GRHResearch.ShortRowGram.finite_gram_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowGram.eisenstein_norm_mul (x y : GRHResearch.ShortRowGram.Eisenstein) :
+  GRHResearch.ShortRowGram.normE (x * y) = GRHResearch.ShortRowGram.normE x * GRHResearch.ShortRowGram.normE y
+'GRHResearch.ShortRowGram.eisenstein_norm_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ShortRowGram.eisenstein_norm_square_identity (x : GRHResearch.ShortRowGram.Eisenstein) :
+  (2 * x.re - x.im) ^ 2 + 3 * x.im ^ 2 = 4 * GRHResearch.ShortRowGram.normE x
+'GRHResearch.ShortRowGram.eisenstein_norm_square_identity' depends on axioms: [propext, Quot.sound]
+GRHResearch.ShortRowGram.norm_seven_prime_data :
+  GRHResearch.ShortRowGram.normE { re := 1, im := 3 } = 7 ∧
+    GRHResearch.ShortRowGram.residueSeven { re := 1, im := 3 } = 0
+'GRHResearch.ShortRowGram.norm_seven_prime_data' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "summary": {
+    "pdfs": {
+      "main": {
+        "pages": 341,
+        "pdf_sha256": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b",
+        "pdf_bytes": 2145675
+      },
+      "fluid-extension": {
+        "pages": 90,
+        "pdf_sha256": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721",
+        "pdf_bytes": 851343
+      }
+    },
+    "local_finite_declarations": 115,
+    "local_modules": 6,
+    "written_claims": {
+      "included_tex_files": 31,
+      "claim_environments": 269,
+      "by_environment": {
+        "proposition": 200,
+        "lemma": 19,
+        "theorem": 44,
+        "corollary": 5,
+        "problem": 1
+      },
+      "by_status": {
+        "local_argument_present": 257,
+        "conditional_local_argument": 5,
+        "external_cited": 6,
+        "proposed_open_problem": 1
+      },
+      "attached_proof_environments": 262,
+      "whole_environments_marked_fully_formalized": 0,
+      "environments_with_partial_formal_components": 25,
+      "verified_declarations_mapped_to_precise_components": 68,
+      "authoritative_verified_declarations": 115,
+      "selected_external_prose_statements": 9
+    },
+    "crypto_tests": 31,
+    "upstream_build_status": "fresh_source_audit_passed; fresh_final_kernel_build_not_completed",
+    "upstream_final_kernel_verified": false
+  },
+  "source_sha256": {
+    "extension/manuscript/build-verification.json": "882210923badf9c811c2dc89ccb0ad4cbcfc7444d6e7856e7c6ceca9f1ab05e4",
+    "extension/manuscript/fluid-build-verification.json": "923a0006198b0ea0938c4578bce1337f9a750e7db16b27ab3704868b9a7b255c",
+    "extension/lean/final-verification/verification.json": "0e22a8acbc9e9076a63af813d2f719cd64e27d30256f6f37c4950d77ac0868c8",
+    "extension/review/claim-register.json": "7be55113f7d4d6371df6dfc010f1934b0a0a84ae1192eb56418ab03e712c10b4",
+    "extension/review/formal-type-map.json": "d5e3934c5b92d271dce484fc469c214b6ae5c4b0d453776ffa736625aceded1f",
+    "extension/crypto/verification.json": "3da9ea2a7b1ccd788d9b24100a5d2193a1931c85118d67482caf9ed0f2539da7",
+    "extension/review/final-pass/upstream-build-current.json": "0b7139762cff156d39311ad8d027471dc79cd9830fa0efd992700aafb2351d2f",
+    "extension/code/release_freshness.py": "1c5ce857cc94f1ff69a2e3759f27fb0e29fef4edcfd60de51d8716168262c58c",
+    "extension/code/refresh_site_release.py": "07648ee717350ee2700906443b106813395de788cbc1decefe18177683dc4c4e"
+  },
+  "copied_files": [
+    {
+      "source": "extension/crypto/verification.json",
+      "target": "verification/crypto/verification.json",
+      "sha256": "3da9ea2a7b1ccd788d9b24100a5d2193a1931c85118d67482caf9ed0f2539da7"
+    },
+    {
+      "source": "extension/crypto/verification.log",
+      "target": "verification/crypto/verification.log",
+      "sha256": "047c70afefced03eecbcce7b4a9ae0263a5557b6f94b12313d84d56826b73d46"
+    },
+    {
+      "source": "extension/lean/final-verification/BridgeTheorems.log",
+      "target": "verification/lean-current/BridgeTheorems.log",
+      "sha256": "34aa2c02e22bebfcb63c99225f4eeabe87a779eacaded257e2f7d2c4a728eb1c"
+    },
+    {
+      "source": "extension/lean/final-verification/DiagramGrammar.log",
+      "target": "verification/lean-current/DiagramGrammar.log",
+      "sha256": "dfd1c7de8ae586afff86e64b1debf5083f8d27e4c3e31823052aba98fc67c867"
+    },
+    {
+      "source": "extension/lean/final-verification/FluidInterfaces.log",
+      "target": "verification/lean-current/FluidInterfaces.log",
+      "sha256": "7691709de948461dc00915981025fe55ba95f91309a2654735687e1bcdea59f0"
+    },
+    {
+      "source": "extension/lean/final-verification/QuantumInterfaces.log",
+      "target": "verification/lean-current/QuantumInterfaces.log",
+      "sha256": "4975d697da0b298d4c5689a0bb2f52669783d55272ad8699d72ca52752136a76"
+    },
+    {
+      "source": "extension/lean/final-verification/ReductionContracts.log",
+      "target": "verification/lean-current/ReductionContracts.log",
+      "sha256": "f83168394396b1f030ad45bc016b43a81c99ac6f87b25293dc3c6c3d704398f8"
+    },
+    {
+      "source": "extension/lean/final-verification/TransportContracts.log",
+      "target": "verification/lean-current/TransportContracts.log",
+      "sha256": "317482e234ac21f26b4a355b2f371a66177e6c60038ec74c52737c478a9e7162"
+    },
+    {
+      "source": "extension/lean/final-verification/verification.json",
+      "target": "verification/lean-current/verification.json",
+      "sha256": "0e22a8acbc9e9076a63af813d2f719cd64e27d30256f6f37c4950d77ac0868c8"
+    },
+    {
+      "source": "extension/manuscript/build-verification.json",
+      "target": "verification/pdf-build.json",
+      "sha256": "882210923badf9c811c2dc89ccb0ad4cbcfc7444d6e7856e7c6ceca9f1ab05e4"
+    },
+    {
+      "source": "extension/manuscript/fluid-build-verification.json",
+      "target": "verification/fluid-build-verification.json",
+      "sha256": "923a0006198b0ea0938c4578bce1337f9a750e7db16b27ab3704868b9a7b255c"
+    },
+    {
+      "source": "extension/manuscript/fluid-extension.pdf",
+      "target": "downloads/fluid-extension.pdf",
+      "sha256": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721"
+    },
+    {
+      "source": "extension/manuscript/main.pdf",
+      "target": "downloads/paper.pdf",
+      "sha256": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b"
+    },
+    {
+      "source": "extension/review/claim-register.json",
+      "target": "verification/claim-register.json",
+      "sha256": "7be55113f7d4d6371df6dfc010f1934b0a0a84ae1192eb56418ab03e712c10b4"
+    },
+    {
+      "source": "extension/review/claim-register.md",
+      "target": "verification/claim-register.md",
+      "sha256": "8b1827fd47082a353fc8f2f3599a33827303c32cc89edcb467647ff9d47deb35"
+    },
+    {
+      "source": "extension/review/final-pass/upstream-build-current.json",
+      "target": "verification/final-pass/upstream-build-current.json",
+      "sha256": "0b7139762cff156d39311ad8d027471dc79cd9830fa0efd992700aafb2351d2f"
+    },
+    {
+      "source": "extension/review/final-pass/upstream-build-current.md",
+      "target": "verification/final-pass/upstream-build-current.md",
+      "sha256": "18c5bdf8794f08940fd702afe9a0e251d952cb56716f65cf1476c553798e88c5"
+    },
+    {
+      "source": "extension/review/formal-type-map.json",
+      "target": "verification/formal-type-map.json",
+      "sha256": "d5e3934c5b92d271dce484fc469c214b6ae5c4b0d453776ffa736625aceded1f"
+    },
+    {
+      "source": "extension/review/formal-type-map.md",
+      "target": "verification/formal-type-map.md",
+      "sha256": "88108663286a7e4e50831039b41840ca20ffa70eeb3a8873848e8e62918d82f8"
+    },
+    {
+      "source": "extension/verification/algebra-browser-qa.json",
+      "target": "verification/algebra-browser-qa.json",
+      "sha256": "00b81d8a4f815ef8113e0b59e3b04806e69ebcbeb2e40cf9b7a077d967cf4e15"
+    },
+    {
+      "source": "extension/verification/algebra-checks.json",
+      "target": "verification/algebra-checks.json",
+      "sha256": "01d91a5028bfc99501d17b378a6591b28733dbd67455c52d72e62b57b880e6de"
+    },
+    {
+      "source": "extension/verification/algebra_companion.jpg",
+      "target": "verification/algebra_companion.jpg",
+      "sha256": "ccf62cb5b6e3f2cee8af5fdf51a18dbb0700521a2e209b6de16a256c440f8657"
+    },
+    {
+      "source": "extension/verification/atlas-checks.json",
+      "target": "verification/atlas-checks.json",
+      "sha256": "e2043d5c45961fee5811e36f94abb1f49bbdb3de0b74cfea3ab8cb12fdaf1542"
+    },
+    {
+      "source": "extension/verification/browser-qa.json",
+      "target": "verification/browser-qa.json",
+      "sha256": "dce1f0c7dbb024f2314f6d6a8d937551ab968d92a5601026830e279c40ee956f"
+    },
+    {
+      "source": "extension/verification/examples.json",
+      "target": "verification/examples.json",
+      "sha256": "e2052e7dcb3f6dbbb8451cb525495023482d5f0a0696bffdb00f2f8dd195c223"
+    },
+    {
+      "source": "extension/verification/fluid-pdf-visual-qa.json",
+      "target": "verification/fluid-pdf-visual-qa.json",
+      "sha256": "a41e8edf972f460c5f2a4abf052fe9f6c52ababb8429282def42c57376ab8e49"
+    },
+    {
+      "source": "extension/verification/fluids-browser-qa.json",
+      "target": "verification/fluids-browser-qa.json",
+      "sha256": "75c97328d4fc66b6b24adad21f9be10c8643d2ef4b3dc5e22f7f0ce245d27dfe"
+    },
+    {
+      "source": "extension/verification/fluids-design.json",
+      "target": "verification/fluids-design.json",
+      "sha256": "c50c978dd99b78cffdc56df2b4313770ff16ab5c0892e5c2313e8dd25fc7ab15"
+    },
+    {
+      "source": "extension/verification/fluids-math-audit.json",
+      "target": "verification/fluids-math-audit.json",
+      "sha256": "b69c6fdd7e185225f2e8908b368c21a31ab80b1b87fd46e04628948913345823"
+    },
+    {
+      "source": "extension/verification/fluids-node.json",
+      "target": "verification/fluids-node.json",
+      "sha256": "e19150cf259f4386c33aa685a2629053cb6c21249e2cb30ec563f8fc6e24b690"
+    },
+    {
+      "source": "extension/verification/fluids-python.json",
+      "target": "verification/fluids-python.json",
+      "sha256": "2caa6c09be23bd1547464f8227a7805306f5128d7f2e71e0e4010dafa031ddfd"
+    },
+    {
+      "source": "extension/verification/grammar-checks.json",
+      "target": "verification/grammar-checks.json",
+      "sha256": "bf4a1daad3d3f449e16a06f7153811ec7f5423ef15c092d4003a5d6a08810b7e"
+    },
+    {
+      "source": "extension/verification/invariants.json",
+      "target": "verification/invariants.json",
+      "sha256": "3439433fcdc76ecd5e5e5bfaf4be86fd95bc56125031b1acdce56adb9d38027c"
+    },
+    {
+      "source": "extension/verification/legacy-browser-qa.json",
+      "target": "verification/legacy-browser-qa.json",
+      "sha256": "70da83ea4b0c914f4af7acfc655b4745e31e489e245e412251e87ed4c84d776c"
+    },
+    {
+      "source": "extension/verification/main-fluid-pdf-visual-qa.json",
+      "target": "verification/main-fluid-pdf-visual-qa.json",
+      "sha256": "b6e4912e5589479c56eedcf797357320f2d830a23c04e916ff6f09a3005998ac"
+    },
+    {
+      "source": "extension/verification/quantum-browser-qa.json",
+      "target": "verification/quantum-browser-qa.json",
+      "sha256": "bb548accafffa85b946080fb59b71eb62fc3c38ea803cee41b6c0dd90bfd1859"
+    },
+    {
+      "source": "extension/verification/quantum-kernel-checks.json",
+      "target": "verification/quantum-kernel-checks.json",
+      "sha256": "57d9c8ed479063ac43543f9b4ebb21a68bbd709805b5c1f16149c5a98ed99296"
+    },
+    {
+      "source": "extension/verification/quantum-worker-checks.json",
+      "target": "verification/quantum-worker-checks.json",
+      "sha256": "d907c4fe98990fa540bba5b9b15aff258313609748f3addb1e5ce5e3385c3280"
+    },
+    {
+      "source": "extension/verification/second-pass-browser-qa.json",
+      "target": "verification/second-pass-browser-qa.json",
+      "sha256": "a1b0370a27a20aad95ba047a2060c60b7675cb702d0e47e97ccf77c452d95919"
+    },
+    {
+      "source": "extension/verification/verification-runtime-optimized.json",
+      "target": "verification/verification-runtime-optimized.json",
+      "sha256": "e9c58baa9a5c18687483dfa9c257a10269a5ad5af9127263cff09fe809b18f7a"
+    },
+    {
+      "source": "extension/verification/verification-runtime.json",
+      "target": "verification/verification-runtime.json",
+      "sha256": "55aa4c851112eb0e75ad317286daf85df77806ac17faad8547c7e5cf23dbe0c3"
+    }
+  ],
+  "scope": "Public metadata generated from source-current local records. This does not attest deployment, upstream continuum proof verification, whole-manuscript formalization or cryptographic security."
+}

@@ -1,0 +1,35 @@
+'GRHResearch.Analytic.good_residual_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_correction_from_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_remainder_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_euler_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_correction_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.correction_tprod_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.correction_tprod_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.shifted_zero_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.good_residual_identity (q v w d r : ℂ) (hv : 1 - v ≠ 0) (hr : 1 - r ≠ 0) :
+  GRHResearch.Analytic.goodPStar q v w d r + d =
+    (r * ((1 - q⁻¹) / (1 - v) + w - d) - d * w * (q - 1) * v / (1 - v)) / (1 - r)
+'GRHResearch.Analytic.good_residual_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.principal_correction_from_local (v d r : ℂ) (hv : 1 - v ≠ 0) (hd : 1 - d ≠ 0) (hr : 1 - r ≠ 0) :
+  (1 / (1 - v) + v / (1 - v) + ((r * (1 - v) - d * v * (1 - v)) / (1 - v) - d + v * r) / (1 - r)) * (1 - v) ^ 2 /
+      (1 - d) =
+    GRHResearch.Analytic.principalCorrection v d r
+'GRHResearch.Analytic.principal_correction_from_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.principal_remainder_defect (v d r : ℂ) (hd : 1 - d ≠ 0) :
+  GRHResearch.Analytic.principalRemainder v d r - 1 = -v ^ 2 + (1 - v ^ 2) * v * (d - r) / (1 - d)
+'GRHResearch.Analytic.principal_remainder_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.principal_euler_factorization (v d r : ℂ) (hd : 1 - d ≠ 0) (hr : 1 - r ≠ 0) :
+  GRHResearch.Analytic.principalCorrection v d r = GRHResearch.Analytic.principalRemainder v d r / (1 - r)
+'GRHResearch.Analytic.principal_euler_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.principal_correction_ne_zero {v : ℝ} {d r : ℂ} (hv0 : 0 < v) (hv1 : v < 1) (hd : ‖d‖ < 1)
+  (hr : ‖r‖ < 1) : GRHResearch.Analytic.principalCorrection (↑v) d r ≠ 0
+'GRHResearch.Analytic.principal_correction_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.correction_tprod_ne_zero.{u_1} {ι : Type u_1} (f : ι → ℂ) (hlocal : ∀ (i : ι), 1 + f i ≠ 0)
+  (hsum : Summable fun i => ‖f i‖) : ∏' (i : ι), (1 + f i) ≠ 0
+'GRHResearch.Analytic.correction_tprod_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.correction_tprod_error.{u_1} {ι : Type u_1} (f : ι → ℂ) (hsum : Summable fun i => ‖f i‖) :
+  ‖∏' (i : ι), (1 + f i) - 1‖ ≤ Real.exp (∑' (i : ι), ‖f i‖) - 1
+'GRHResearch.Analytic.correction_tprod_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.shifted_zero_transport {A L H : ℂ → ℂ} {ρ : ℂ} (hρ : 1 / 2 ≤ ρ.re) (hzero : L ρ = 0)
+  (hfactor : ∀ (s : ℂ), 1 / 2 < s.re → H s = A s * L (6 * s - 3)) : H ((ρ + 3) / 6) = 0 ∧ 7 / 12 ≤ ((ρ + 3) / 6).re
+'GRHResearch.Analytic.shifted_zero_transport' depends on axioms: [propext, Classical.choice, Quot.sound]

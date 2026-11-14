@@ -1,0 +1,49 @@
+GRHResearch.MobiusSplit.inverse_split_identity.{u_1} {R : Type u_1} [CommRing R] (m z a : R) (hm : m * z = 1) :
+  2 * a - a * a * z + (m - a) * (m - a) * z = m
+GRHResearch.MobiusSplit.truncated_apply (U n : ℕ) : (truncated U) n = if n ≤ U then μ n else 0
+GRHResearch.MobiusSplit.tail_apply (U n : ℕ) : (μ - truncated U) n = if U < n then μ n else 0
+GRHResearch.MobiusSplit.moebius_split (U : ℕ) :
+  2 * truncated U - truncated U * truncated U * ↑ζ + (μ - truncated U) * (μ - truncated U) * ↑ζ = μ
+GRHResearch.MobiusSplit.unit_cutoff : truncated 1 = 1
+GRHResearch.MobiusSplit.unit_tail_identity : (μ - 1) * (μ - 1) * ↑ζ = μ + ↑ζ - 2
+GRHResearch.MobiusSplit.unit_tail_coefficient (n : ℕ) (hn : 1 < n) : ((μ - 1) * (μ - 1) * ↑ζ) n = μ n + 1
+GRHResearch.MobiusSplit.unit_tail_nonnegative (n : ℕ) (hn : 1 < n) : 0 ≤ ((μ - 1) * (μ - 1) * ↑ζ) n
+'GRHResearch.MobiusSplit.inverse_split_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.MobiusSplit.truncated_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.MobiusSplit.tail_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.MobiusSplit.moebius_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.MobiusSplit.unit_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.MobiusSplit.unit_tail_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.MobiusSplit.unit_tail_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.MobiusSplit.unit_tail_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.MobiusSplit.inverse_split_identity.{u_1} {R : Type u_1} [CommRing R] (m z a : R) (hm : m * z = 1) :
+  2 * a - a * a * z + (m - a) * (m - a) * z = m
+'GRHResearch.MobiusSplit.inverse_split_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.MobiusSplit.truncated_apply (U n : ℕ) :
+  (GRHResearch.MobiusSplit.truncated U) n = if n ≤ U then ArithmeticFunction.moebius n else 0
+'GRHResearch.MobiusSplit.truncated_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.MobiusSplit.tail_apply (U n : ℕ) :
+  (ArithmeticFunction.moebius - GRHResearch.MobiusSplit.truncated U) n =
+    if U < n then ArithmeticFunction.moebius n else 0
+'GRHResearch.MobiusSplit.tail_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.MobiusSplit.moebius_split (U : ℕ) :
+  2 * GRHResearch.MobiusSplit.truncated U -
+        GRHResearch.MobiusSplit.truncated U * GRHResearch.MobiusSplit.truncated U * ↑ArithmeticFunction.zeta +
+      (ArithmeticFunction.moebius - GRHResearch.MobiusSplit.truncated U) *
+          (ArithmeticFunction.moebius - GRHResearch.MobiusSplit.truncated U) *
+        ↑ArithmeticFunction.zeta =
+    ArithmeticFunction.moebius
+'GRHResearch.MobiusSplit.moebius_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.MobiusSplit.unit_cutoff : GRHResearch.MobiusSplit.truncated 1 = 1
+'GRHResearch.MobiusSplit.unit_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.MobiusSplit.unit_tail_identity :
+  (ArithmeticFunction.moebius - 1) * (ArithmeticFunction.moebius - 1) * ↑ArithmeticFunction.zeta =
+    ArithmeticFunction.moebius + ↑ArithmeticFunction.zeta - 2
+'GRHResearch.MobiusSplit.unit_tail_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.MobiusSplit.unit_tail_coefficient (n : ℕ) (hn : 1 < n) :
+  ((ArithmeticFunction.moebius - 1) * (ArithmeticFunction.moebius - 1) * ↑ArithmeticFunction.zeta) n =
+    ArithmeticFunction.moebius n + 1
+'GRHResearch.MobiusSplit.unit_tail_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.MobiusSplit.unit_tail_nonnegative (n : ℕ) (hn : 1 < n) :
+  0 ≤ ((ArithmeticFunction.moebius - 1) * (ArithmeticFunction.moebius - 1) * ↑ArithmeticFunction.zeta) n
+'GRHResearch.MobiusSplit.unit_tail_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]

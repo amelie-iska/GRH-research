@@ -1,0 +1,27 @@
+'GRHResearch.no_integral_trace_norm_two' depends on axioms: [propext, Quot.sound]
+'GRHResearch.no_integer_norm_trace_equation' depends on axioms: [propext, Quot.sound]
+'GRHResearch.cyclicDegrees_even' depends on axioms: [propext, Quot.sound]
+'GRHResearch.no_integral_cyclic_induction_degree_one' depends on axioms: [propext, Quot.sound]
+'GRHResearch.symmetrization_changes_determinant' does not depend on any axioms
+'GRHResearch.unipotence_does_not_bound_exponent' does not depend on any axioms
+'GRHResearch.iwahori_shift_witness' does not depend on any axioms
+GRHResearch.no_integral_trace_norm_two (t : Int) : 2 * (t * t) ≠ 9
+'GRHResearch.no_integral_trace_norm_two' depends on axioms: [propext, Quot.sound]
+GRHResearch.no_integer_norm_trace_equation (n t : Int) (hn : 1 < n) : n * (t * t) ≠ (n + 1) * (n + 1)
+'GRHResearch.no_integer_norm_trace_equation' depends on axioms: [propext, Quot.sound]
+GRHResearch.cyclicDegrees_even (xs : List Int) : ∃ k, GRHResearch.cyclicDegrees xs = 2 * k
+'GRHResearch.cyclicDegrees_even' depends on axioms: [propext, Quot.sound]
+GRHResearch.no_integral_cyclic_induction_degree_one (xs : List Int) : GRHResearch.cyclicDegrees xs ≠ 1
+'GRHResearch.no_integral_cyclic_induction_degree_one' depends on axioms: [propext, Quot.sound]
+GRHResearch.symmetrization_changes_determinant :
+  GRHResearch.det { a := 1, b := -1, c := 1, d := 1 } = 2 ∧ GRHResearch.det { a := 1, b := 0, c := 0, d := 1 } = 1
+'GRHResearch.symmetrization_changes_determinant' does not depend on any axioms
+GRHResearch.unipotence_does_not_bound_exponent :
+  GRHResearch.mul { a := 1, b := 1, c := 0, d := 1 } { a := 1, b := 1, c := 0, d := 1 } ≠
+    { a := 1, b := 0, c := 0, d := 1 }
+'GRHResearch.unipotence_does_not_bound_exponent' does not depend on any axioms
+GRHResearch.iwahori_shift_witness :
+  GRHResearch.mul (GRHResearch.mul { a := 0, b := 2, c := 1, d := 0 } { a := 0, b := 1, c := 0, d := 0 })
+      { a := 0, b := 2, c := 1, d := 0 } =
+    { a := 0, b := 0, c := 1, d := 0 }
+'GRHResearch.iwahori_shift_witness' does not depend on any axioms

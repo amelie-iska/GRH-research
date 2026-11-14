@@ -37,9 +37,12 @@ The recovered baseline is local commit `c72fa33`, descended from GitHub's
 `dbd954eede479a5129831e4e7c30537389ae973d`, plus unpublished corrections in the
 previous working tree. It includes a 316-page monograph, a 70-page fluid
 supplement, interactive laboratories and 82 historical Lean declarations. The
-unpublished additions bring the selected formal interface set to 109 and add
+unpublished additions bring the selected formal interface set to 115 and add
 cryptographic wrappers, reduction contracts, transport corrections and a Pages
-builder. These counts are historical until rebuilt against final inputs.
+builder. The resumed build now records 341 monograph pages, 90 supplement pages, 269
+named mathematical environments and 115 selected extension declarations.
+The original arithmetic/analytic package has a separate audit and is not
+added to the extension declaration count.
 
 **Acceptance:** an inventory, source-coverage records, independent reviews, a
 cleanly identified publication baseline, and an explicit list of unresolved
@@ -166,3 +169,23 @@ next executable step. Refresh it before context becomes crowded. Full logs and
 source inventories remain in files; continuation reads the checkpoint and only
 the relevant sections. This supplies durable continuation even when automatic
 conversation compaction happens; it does not depend on a chat-only memory.
+
+## Resumed execution status
+
+The frozen interrupted work is published on `research/recovery-20261113` at
+`97345b643f6d6c576ef4b3cb9900dab4d820c585`. Fresh continuation work has corrected
+optimized-Python false passes, warning acceptance in the Lean driver, Linux
+proof-runner portability, incomplete proof archives, stale public metadata,
+and process-local TeX discovery. The current documents pass their source-hash
+and typesetting gates, and 11 representative physical pages have been visually checked.
+
+The source and site publication steps use ordinary non-forced branch updates.
+The existing Pages configuration serves the `gh-pages` branch at repository
+root. Each publication reads the branch head first and preserves concurrent
+changes. Private authentication material is neither copied into the repository
+nor included in any artifact. Terminal output must not expose credential values.
+
+Final publication and machine receipts live in
+`planning/continuation-20261113/PUBLICATION_STATUS.json`. This plan defines the
+acceptance procedure; that post-release receipt records observed commits and
+deployment outcomes without a self-referential archive hash.

@@ -1,0 +1,328 @@
+GRHResearch.BranchExtension.view_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(GRHResearch.BranchExtension.view k)
+'GRHResearch.BranchExtension.view_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.view_generator.{u_1} (k : Type u_1) [Field k] (g : GRHResearch.BranchExtension.Gen) :
+  (GRHResearch.BranchExtension.view k) (GRHResearch.BranchExtension.generator k g) =
+    GRHResearch.BranchExtension.rawGenerator k g
+'GRHResearch.BranchExtension.view_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.first_generator.{u_1} (k : Type u_1) [Field k] (g : GRHResearch.BranchExtension.Gen) :
+  (GRHResearch.BranchExtension.first k) (GRHResearch.BranchExtension.generator k g) =
+    (GRHResearch.BranchExtension.rawGenerator k g).1
+'GRHResearch.BranchExtension.first_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.mixed_products_zero.{u_1} (k : Type u_1) [Field k]
+  (i j : GRHResearch.BranchExtension.Vertex) :
+  GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.a i) *
+        GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.b j) =
+      0 ∧
+    GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.b j) *
+        GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.a i) =
+      0
+'GRHResearch.BranchExtension.mixed_products_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.sum_vertices.{u_1} (k : Type u_1) [Field k] :
+  ∑ i, GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.vertex i) = 1
+'GRHResearch.BranchExtension.sum_vertices' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.loop_first.{u_1} (k : Type u_1) [Field k] :
+  (GRHResearch.BranchExtension.first k) (GRHResearch.BranchExtension.loop k) = Matrix.single 0 0 Polynomial.X
+'GRHResearch.BranchExtension.loop_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.loop_power_entry.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  (GRHResearch.BranchExtension.first k) (GRHResearch.BranchExtension.loop k ^ n) 0 0 = Polynomial.X ^ n
+'GRHResearch.BranchExtension.loop_power_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.polynomial_recovery.{u_1} (k : Type u_1) [Field k] (f : GRHResearch.BranchExtension.P k) :
+  (GRHResearch.BranchExtension.firstAlg k) ((Polynomial.aeval (GRHResearch.BranchExtension.loop k)) f) 0 0 = f
+'GRHResearch.BranchExtension.polynomial_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.polynomial_embedding_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(Polynomial.aeval (GRHResearch.BranchExtension.loop k))
+'GRHResearch.BranchExtension.polynomial_embedding_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.algebra_not_finite.{u_1} (k : Type u_1) [Field k] :
+  ¬Module.Finite k (GRHResearch.BranchExtension.A k)
+'GRHResearch.BranchExtension.algebra_not_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.residue_evaluation.{u_1} (k : Type u_1) [Field k] (f : GRHResearch.BranchExtension.P k) :
+  (GRHResearch.BranchExtension.residue k) ((Polynomial.aeval (GRHResearch.BranchExtension.epsilon k)) f) =
+    Polynomial.eval 0 f
+'GRHResearch.BranchExtension.residue_evaluation' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.evaluation_re.{u_1} (k : Type u_1) [Field k] (f : GRHResearch.BranchExtension.P k) :
+  ((Polynomial.aeval (GRHResearch.BranchExtension.epsilon k)) f).re = Polynomial.eval 0 f
+'GRHResearch.BranchExtension.evaluation_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.action_one_formula.{u_1} (k : Type u_1) [Field k] (a : GRHResearch.BranchExtension.A k)
+  (x : GRHResearch.BranchExtension.M1 k) (i : GRHResearch.BranchExtension.Vertex) :
+  (a • x) i = ∑ j, Polynomial.eval 0 ((↑a).1 i j) * x j
+'GRHResearch.BranchExtension.action_one_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.action_two_formula.{u_1} (k : Type u_1) [Field k] (a : GRHResearch.BranchExtension.A k)
+  (x : GRHResearch.BranchExtension.M2 k) (i : GRHResearch.BranchExtension.Vertex) :
+  (a • x) i = ∑ j, (Polynomial.aeval (GRHResearch.BranchExtension.epsilon k)) ((↑a).1 i j) * x j
+'GRHResearch.BranchExtension.action_two_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.include_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(GRHResearch.BranchExtension.inclusion k)
+'GRHResearch.BranchExtension.include_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.project_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(GRHResearch.BranchExtension.project k)
+'GRHResearch.BranchExtension.project_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.project_include.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.BranchExtension.project k ∘ₗ GRHResearch.BranchExtension.inclusion k = 0
+'GRHResearch.BranchExtension.project_include' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.range_include_eq_kernel_project.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.range (GRHResearch.BranchExtension.inclusion k) = LinearMap.ker (GRHResearch.BranchExtension.project k)
+'GRHResearch.BranchExtension.range_include_eq_kernel_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.a0_zero_on_one.{u_1} (k : Type u_1) [Field k] (x : GRHResearch.BranchExtension.M1 k) :
+  GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.a 0) • x = 0
+'GRHResearch.BranchExtension.a0_zero_on_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.a0_on_two.{u_1} (k : Type u_1) [Field k] (x : GRHResearch.BranchExtension.M2 k) :
+  (GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.a 0) • x) 4 =
+    GRHResearch.BranchExtension.epsilon k * x 0
+'GRHResearch.BranchExtension.a0_on_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.no_module_section.{u_1} (k : Type u_1) [Field k] :
+  ¬∃ s, GRHResearch.BranchExtension.project k ∘ₗ s = LinearMap.id
+'GRHResearch.BranchExtension.no_module_section' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.slot_ext {s t : GRHResearch.BranchExtension.NormalPath.Slot} (hr : s.row = t.row)
+  (hc : s.col = t.col) (hq : s.degree = t.degree) : s = t
+'GRHResearch.BranchExtension.NormalPath.slot_ext' does not depend on any axioms
+GRHResearch.BranchExtension.NormalPath.positive_length (s : GRHResearch.BranchExtension.NormalPath.Slot) :
+  0 < GRHResearch.BranchExtension.NormalPath.length s
+'GRHResearch.BranchExtension.NormalPath.positive_length' depends on axioms: [propext, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.length_equation (s : GRHResearch.BranchExtension.NormalPath.Slot) :
+  GRHResearch.BranchExtension.NormalPath.length s + ↑s.row = 5 * s.degree + ↑s.col
+'GRHResearch.BranchExtension.NormalPath.length_equation' depends on axioms: [propext, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.same_start_length {s t : GRHResearch.BranchExtension.NormalPath.Slot}
+  (hc : s.col = t.col)
+  (hl : GRHResearch.BranchExtension.NormalPath.length s = GRHResearch.BranchExtension.NormalPath.length t) : s = t
+'GRHResearch.BranchExtension.NormalPath.same_start_length' depends on axioms: [propext, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.selector_vector.{u_1} (k : Type u_1) [Field k]
+  (x y : GRHResearch.BranchExtension.NormalPath.Key) :
+  (GRHResearch.BranchExtension.NormalPath.selector k x) (GRHResearch.BranchExtension.NormalPath.vector k y) =
+    if x = y then 1 else 0
+'GRHResearch.BranchExtension.NormalPath.selector_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.coefficient_recovery.{u_1} (k : Type u_1) [Field k]
+  (x : GRHResearch.BranchExtension.NormalPath.Key) (l : GRHResearch.BranchExtension.NormalPath.Key →₀ k) :
+  (GRHResearch.BranchExtension.NormalPath.selector k x)
+      ((Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.vector k)) l) =
+    l x
+'GRHResearch.BranchExtension.NormalPath.coefficient_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.normal_vectors_independent.{u_1} (k : Type u_1) [Field k] :
+  LinearIndependent k (GRHResearch.BranchExtension.NormalPath.vector k)
+'GRHResearch.BranchExtension.NormalPath.normal_vectors_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.normal_form_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.vector k))
+'GRHResearch.BranchExtension.NormalPath.normal_form_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.lifted_normal_power.{u_1} (k : Type u_1) [Field k] (b : Bool)
+  (i j : GRHResearch.BranchExtension.Vertex) (n : ℕ) :
+  (GRHResearch.BranchExtension.view k)
+      (GRHResearch.BranchExtension.NormalPath.shortWalk k b i i ^ n *
+        GRHResearch.BranchExtension.NormalPath.shortWalk k b i j) =
+    GRHResearch.BranchExtension.NormalPath.positive k b i j (n + if i < j then 0 else 1)
+'GRHResearch.BranchExtension.NormalPath.lifted_normal_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.positive_mem_surface.{u_1} (k : Type u_1) [Field k] (b : Bool)
+  (s : GRHResearch.BranchExtension.NormalPath.Slot) :
+  GRHResearch.BranchExtension.NormalPath.positive k b s.row s.col s.degree ∈ GRHResearch.BranchExtension.surface k
+'GRHResearch.BranchExtension.NormalPath.positive_mem_surface' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.vector_mem_surface.{u_1} (k : Type u_1) [Field k]
+  (x : GRHResearch.BranchExtension.NormalPath.Key) :
+  GRHResearch.BranchExtension.NormalPath.vector k x ∈ GRHResearch.BranchExtension.surface k
+'GRHResearch.BranchExtension.NormalPath.vector_mem_surface' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.view_lift.{u_1} (k : Type u_1) [Field k]
+  (x : GRHResearch.BranchExtension.NormalPath.Key) :
+  (GRHResearch.BranchExtension.view k) (GRHResearch.BranchExtension.NormalPath.lift k x) =
+    GRHResearch.BranchExtension.NormalPath.vector k x
+'GRHResearch.BranchExtension.NormalPath.view_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.lifted_vectors_independent.{u_1} (k : Type u_1) [Field k] :
+  LinearIndependent k (GRHResearch.BranchExtension.NormalPath.lift k)
+'GRHResearch.BranchExtension.NormalPath.lifted_vectors_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.vector_mul_mem_normalSpan.{u_1} (k : Type u_1) [Field k]
+  (x y : GRHResearch.BranchExtension.NormalPath.Key) :
+  GRHResearch.BranchExtension.NormalPath.vector k x * GRHResearch.BranchExtension.NormalPath.vector k y ∈
+    GRHResearch.BranchExtension.NormalPath.normalSpan k
+'GRHResearch.BranchExtension.NormalPath.vector_mul_mem_normalSpan' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.surface_eq_normalSpan.{u_1} (k : Type u_1) [Field k] :
+  Subalgebra.toSubmodule (GRHResearch.BranchExtension.surface k) = GRHResearch.BranchExtension.NormalPath.normalSpan k
+'GRHResearch.BranchExtension.NormalPath.surface_eq_normalSpan' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.view_expansion.{u_1} (k : Type u_1) [Field k]
+  (l : GRHResearch.BranchExtension.NormalPath.Key →₀ k) :
+  (GRHResearch.BranchExtension.view k)
+      ((Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.lift k)) l) =
+    (Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.vector k)) l
+'GRHResearch.BranchExtension.NormalPath.view_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.lifted_expansion_bijective.{u_1} (k : Type u_1) [Field k] :
+  Function.Bijective ⇑(Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.lift k))
+'GRHResearch.BranchExtension.NormalPath.lifted_expansion_bijective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.normalEquiv_symm_coefficient.{u_1} (k : Type u_1) [Field k]
+  (a : GRHResearch.BranchExtension.A k) (x : GRHResearch.BranchExtension.NormalPath.Key) :
+  ((GRHResearch.BranchExtension.NormalPath.normalEquiv k).symm a) x =
+    (GRHResearch.BranchExtension.NormalPath.selector k x) ((GRHResearch.BranchExtension.view k) a)
+'GRHResearch.BranchExtension.NormalPath.normalEquiv_symm_coefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.view_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(GRHResearch.BranchExtension.view k)
+'GRHResearch.BranchExtension.view_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.view_generator.{u_1} (k : Type u_1) [Field k] (g : GRHResearch.BranchExtension.Gen) :
+  (GRHResearch.BranchExtension.view k) (GRHResearch.BranchExtension.generator k g) =
+    GRHResearch.BranchExtension.rawGenerator k g
+'GRHResearch.BranchExtension.view_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.first_generator.{u_1} (k : Type u_1) [Field k] (g : GRHResearch.BranchExtension.Gen) :
+  (GRHResearch.BranchExtension.first k) (GRHResearch.BranchExtension.generator k g) =
+    (GRHResearch.BranchExtension.rawGenerator k g).1
+'GRHResearch.BranchExtension.first_generator' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.mixed_products_zero.{u_1} (k : Type u_1) [Field k]
+  (i j : GRHResearch.BranchExtension.Vertex) :
+  GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.a i) *
+        GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.b j) =
+      0 ∧
+    GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.b j) *
+        GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.a i) =
+      0
+'GRHResearch.BranchExtension.mixed_products_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.sum_vertices.{u_1} (k : Type u_1) [Field k] :
+  ∑ i, GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.vertex i) = 1
+'GRHResearch.BranchExtension.sum_vertices' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.loop_first.{u_1} (k : Type u_1) [Field k] :
+  (GRHResearch.BranchExtension.first k) (GRHResearch.BranchExtension.loop k) = Matrix.single 0 0 Polynomial.X
+'GRHResearch.BranchExtension.loop_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.loop_power_entry.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  (GRHResearch.BranchExtension.first k) (GRHResearch.BranchExtension.loop k ^ n) 0 0 = Polynomial.X ^ n
+'GRHResearch.BranchExtension.loop_power_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.polynomial_recovery.{u_1} (k : Type u_1) [Field k] (f : GRHResearch.BranchExtension.P k) :
+  (GRHResearch.BranchExtension.firstAlg k) ((Polynomial.aeval (GRHResearch.BranchExtension.loop k)) f) 0 0 = f
+'GRHResearch.BranchExtension.polynomial_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.polynomial_embedding_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(Polynomial.aeval (GRHResearch.BranchExtension.loop k))
+'GRHResearch.BranchExtension.polynomial_embedding_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.algebra_not_finite.{u_1} (k : Type u_1) [Field k] :
+  ¬Module.Finite k (GRHResearch.BranchExtension.A k)
+'GRHResearch.BranchExtension.algebra_not_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.residue_evaluation.{u_1} (k : Type u_1) [Field k] (f : GRHResearch.BranchExtension.P k) :
+  (GRHResearch.BranchExtension.residue k) ((Polynomial.aeval (GRHResearch.BranchExtension.epsilon k)) f) =
+    Polynomial.eval 0 f
+'GRHResearch.BranchExtension.residue_evaluation' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.evaluation_re.{u_1} (k : Type u_1) [Field k] (f : GRHResearch.BranchExtension.P k) :
+  ((Polynomial.aeval (GRHResearch.BranchExtension.epsilon k)) f).re = Polynomial.eval 0 f
+'GRHResearch.BranchExtension.evaluation_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.action_one_formula.{u_1} (k : Type u_1) [Field k] (a : GRHResearch.BranchExtension.A k)
+  (x : GRHResearch.BranchExtension.M1 k) (i : GRHResearch.BranchExtension.Vertex) :
+  (a • x) i = ∑ j, Polynomial.eval 0 ((↑a).1 i j) * x j
+'GRHResearch.BranchExtension.action_one_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.action_two_formula.{u_1} (k : Type u_1) [Field k] (a : GRHResearch.BranchExtension.A k)
+  (x : GRHResearch.BranchExtension.M2 k) (i : GRHResearch.BranchExtension.Vertex) :
+  (a • x) i = ∑ j, (Polynomial.aeval (GRHResearch.BranchExtension.epsilon k)) ((↑a).1 i j) * x j
+'GRHResearch.BranchExtension.action_two_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.include_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(GRHResearch.BranchExtension.inclusion k)
+'GRHResearch.BranchExtension.include_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.project_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(GRHResearch.BranchExtension.project k)
+'GRHResearch.BranchExtension.project_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.project_include.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.BranchExtension.project k ∘ₗ GRHResearch.BranchExtension.inclusion k = 0
+'GRHResearch.BranchExtension.project_include' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.range_include_eq_kernel_project.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.range (GRHResearch.BranchExtension.inclusion k) = LinearMap.ker (GRHResearch.BranchExtension.project k)
+'GRHResearch.BranchExtension.range_include_eq_kernel_project' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.a0_zero_on_one.{u_1} (k : Type u_1) [Field k] (x : GRHResearch.BranchExtension.M1 k) :
+  GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.a 0) • x = 0
+'GRHResearch.BranchExtension.a0_zero_on_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.a0_on_two.{u_1} (k : Type u_1) [Field k] (x : GRHResearch.BranchExtension.M2 k) :
+  (GRHResearch.BranchExtension.generator k (GRHResearch.BranchExtension.Gen.a 0) • x) 4 =
+    GRHResearch.BranchExtension.epsilon k * x 0
+'GRHResearch.BranchExtension.a0_on_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.no_module_section.{u_1} (k : Type u_1) [Field k] :
+  ¬∃ s, GRHResearch.BranchExtension.project k ∘ₗ s = LinearMap.id
+'GRHResearch.BranchExtension.no_module_section' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.slot_ext {s t : GRHResearch.BranchExtension.NormalPath.Slot} (hr : s.row = t.row)
+  (hc : s.col = t.col) (hq : s.degree = t.degree) : s = t
+'GRHResearch.BranchExtension.NormalPath.slot_ext' does not depend on any axioms
+GRHResearch.BranchExtension.NormalPath.positive_length (s : GRHResearch.BranchExtension.NormalPath.Slot) :
+  0 < GRHResearch.BranchExtension.NormalPath.length s
+'GRHResearch.BranchExtension.NormalPath.positive_length' depends on axioms: [propext, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.length_equation (s : GRHResearch.BranchExtension.NormalPath.Slot) :
+  GRHResearch.BranchExtension.NormalPath.length s + ↑s.row = 5 * s.degree + ↑s.col
+'GRHResearch.BranchExtension.NormalPath.length_equation' depends on axioms: [propext, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.same_start_length {s t : GRHResearch.BranchExtension.NormalPath.Slot}
+  (hc : s.col = t.col)
+  (hl : GRHResearch.BranchExtension.NormalPath.length s = GRHResearch.BranchExtension.NormalPath.length t) : s = t
+'GRHResearch.BranchExtension.NormalPath.same_start_length' depends on axioms: [propext, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.selector_vector.{u_1} (k : Type u_1) [Field k]
+  (x y : GRHResearch.BranchExtension.NormalPath.Key) :
+  (GRHResearch.BranchExtension.NormalPath.selector k x) (GRHResearch.BranchExtension.NormalPath.vector k y) =
+    if x = y then 1 else 0
+'GRHResearch.BranchExtension.NormalPath.selector_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.coefficient_recovery.{u_1} (k : Type u_1) [Field k]
+  (x : GRHResearch.BranchExtension.NormalPath.Key) (l : GRHResearch.BranchExtension.NormalPath.Key →₀ k) :
+  (GRHResearch.BranchExtension.NormalPath.selector k x)
+      ((Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.vector k)) l) =
+    l x
+'GRHResearch.BranchExtension.NormalPath.coefficient_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.normal_vectors_independent.{u_1} (k : Type u_1) [Field k] :
+  LinearIndependent k (GRHResearch.BranchExtension.NormalPath.vector k)
+'GRHResearch.BranchExtension.NormalPath.normal_vectors_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.normal_form_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.vector k))
+'GRHResearch.BranchExtension.NormalPath.normal_form_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.lifted_normal_power.{u_1} (k : Type u_1) [Field k] (b : Bool)
+  (i j : GRHResearch.BranchExtension.Vertex) (n : ℕ) :
+  (GRHResearch.BranchExtension.view k)
+      (GRHResearch.BranchExtension.NormalPath.shortWalk k b i i ^ n *
+        GRHResearch.BranchExtension.NormalPath.shortWalk k b i j) =
+    GRHResearch.BranchExtension.NormalPath.positive k b i j (n + if i < j then 0 else 1)
+'GRHResearch.BranchExtension.NormalPath.lifted_normal_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.positive_mem_surface.{u_1} (k : Type u_1) [Field k] (b : Bool)
+  (s : GRHResearch.BranchExtension.NormalPath.Slot) :
+  GRHResearch.BranchExtension.NormalPath.positive k b s.row s.col s.degree ∈ GRHResearch.BranchExtension.surface k
+'GRHResearch.BranchExtension.NormalPath.positive_mem_surface' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.vector_mem_surface.{u_1} (k : Type u_1) [Field k]
+  (x : GRHResearch.BranchExtension.NormalPath.Key) :
+  GRHResearch.BranchExtension.NormalPath.vector k x ∈ GRHResearch.BranchExtension.surface k
+'GRHResearch.BranchExtension.NormalPath.vector_mem_surface' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.view_lift.{u_1} (k : Type u_1) [Field k]
+  (x : GRHResearch.BranchExtension.NormalPath.Key) :
+  (GRHResearch.BranchExtension.view k) (GRHResearch.BranchExtension.NormalPath.lift k x) =
+    GRHResearch.BranchExtension.NormalPath.vector k x
+'GRHResearch.BranchExtension.NormalPath.view_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.lifted_vectors_independent.{u_1} (k : Type u_1) [Field k] :
+  LinearIndependent k (GRHResearch.BranchExtension.NormalPath.lift k)
+'GRHResearch.BranchExtension.NormalPath.lifted_vectors_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.vector_mul_mem_normalSpan.{u_1} (k : Type u_1) [Field k]
+  (x y : GRHResearch.BranchExtension.NormalPath.Key) :
+  GRHResearch.BranchExtension.NormalPath.vector k x * GRHResearch.BranchExtension.NormalPath.vector k y ∈
+    GRHResearch.BranchExtension.NormalPath.normalSpan k
+'GRHResearch.BranchExtension.NormalPath.vector_mul_mem_normalSpan' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.surface_eq_normalSpan.{u_1} (k : Type u_1) [Field k] :
+  Subalgebra.toSubmodule (GRHResearch.BranchExtension.surface k) = GRHResearch.BranchExtension.NormalPath.normalSpan k
+'GRHResearch.BranchExtension.NormalPath.surface_eq_normalSpan' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.view_expansion.{u_1} (k : Type u_1) [Field k]
+  (l : GRHResearch.BranchExtension.NormalPath.Key →₀ k) :
+  (GRHResearch.BranchExtension.view k)
+      ((Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.lift k)) l) =
+    (Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.vector k)) l
+'GRHResearch.BranchExtension.NormalPath.view_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.BranchExtension.NormalPath.lifted_expansion_bijective.{u_1} (k : Type u_1) [Field k] :
+  Function.Bijective ⇑(Finsupp.linearCombination k (GRHResearch.BranchExtension.NormalPath.lift k))
+'GRHResearch.BranchExtension.NormalPath.lifted_expansion_bijective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.BranchExtension.NormalPath.normalEquiv_symm_coefficient.{u_1} (k : Type u_1) [Field k]
+  (a : GRHResearch.BranchExtension.A k) (x : GRHResearch.BranchExtension.NormalPath.Key) :
+  ((GRHResearch.BranchExtension.NormalPath.normalEquiv k).symm a) x =
+    (GRHResearch.BranchExtension.NormalPath.selector k x) ((GRHResearch.BranchExtension.view k) a)
+'GRHResearch.BranchExtension.NormalPath.normalEquiv_symm_coefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -2,11 +2,11 @@
 
 Exact declaration types and manually reviewed component correspondences, not a claim that all manuscript environments are formalized.
 
-This snapshot records **82 verified declarations**; 35 are mapped to precise manuscript components. No composite manuscript environment is marked fully formalized.
+This snapshot records **115 verified declarations**; 68 are mapped to precise manuscript components. No composite manuscript environment is marked fully formalized.
 
 Prefer kernel_printed_type when present: it includes elaborated implicit parameters and typeclass hypotheses. Otherwise the unchanged source signature and recorded section context are provided, with the exact source hash. Local definitions in the same module remain part of its interpretation.
 
-Fresh local checks are recorded in `navier-stokes/local-kernel-verification.json` and its four raw logs. Those checks concern the local Lean 4.24 companion; the upstream continuum Lean 4.34 build has its separate incomplete status.
+Fresh local checks are recorded in `extension/lean/final-verification/verification.json` and its six raw logs. Those checks concern the local Lean 4.24 companion; the upstream continuum Lean 4.34 build has its separate incomplete status.
 
 ## Boundaries
 
@@ -21,7 +21,7 @@ Fresh local checks are recorded in `navier-stokes/local-kernel-verification.json
 
 ### DiagramGrammar.complex_transport
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -39,7 +39,7 @@ DiagramGrammar.complex_transport.{u_1, u_2, u_3, u_4, u_5, u_6, u_7} {K : Type u
 
 ### DiagramGrammar.context_sound
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -57,7 +57,7 @@ DiagramGrammar.context_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → 
 
 ### DiagramGrammar.derivation_sound
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -79,7 +79,7 @@ DiagramGrammar.derivation_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj �
 
 ### DiagramGrammar.equivRule_sound
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -96,7 +96,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.equiv_derivation_sound
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -114,7 +114,7 @@ DiagramGrammar.equiv_derivation_sound.{u, w, z} {Obj : Type u} {K : Type z} [Sem
 
 ### DiagramGrammar.exact_transport
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -133,7 +133,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.homotopy_implies_exact
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -151,7 +151,7 @@ DiagramGrammar.homotopy_implies_exact.{u_1, u_2, u_3, u_4} {K : Type u_1} {V0 : 
 
 ### DiagramGrammar.identity_loop_value
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -166,7 +166,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.linearEquiv_cancellation
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -183,7 +183,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.matrix_hodge_conjugacy
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -203,7 +203,7 @@ DiagramGrammar.matrix_hodge_conjugacy.{u_1, u_2, u_3} {n0 : Type u_1} {n1 : Type
 
 ### DiagramGrammar.rectangular_trace_cyclicity
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -218,7 +218,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.rewriteStep_sound
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -240,7 +240,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.structural_derivation_sound
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -258,7 +258,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.structural_sound
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -275,7 +275,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.tensor_interchange
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -292,7 +292,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### DiagramGrammar.tensor_trace_factorization
 
-Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/diagram-verification.json`.
+Source: `extension/lean/DiagramGrammar.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -307,7 +307,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.boundary_flux_divergence_zero
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -322,7 +322,7 @@ FluidInterfaces.boundary_flux_divergence_zero.{u_1, u_2, u_3} {n : Type u_1} {m 
 
 ### FluidInterfaces.boundary_flux_update_preserves_divergence
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -338,7 +338,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.dot_self_nonneg
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -352,7 +352,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.factorized_viscosity_nonneg
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -367,7 +367,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.factorized_viscosity_work
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -382,7 +382,7 @@ FluidInterfaces.factorized_viscosity_work.{u_1, u_2} {n : Type u_1} {m : Type u_
 
 ### FluidInterfaces.finite_fluid_energy_derivative
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -401,7 +401,7 @@ FluidInterfaces.finite_fluid_energy_derivative.{u_1, u_2, u_3} {n : Type u_1} {m
 
 ### FluidInterfaces.finite_fluid_work_identity
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -418,7 +418,7 @@ FluidInterfaces.finite_fluid_work_identity.{u_1, u_2, u_3} {n : Type u_1} {m : T
 
 ### FluidInterfaces.hidden_recurrence_expansion
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -435,7 +435,7 @@ FluidInterfaces.hidden_recurrence_expansion.{u_1, u_2, u_3} {K : Type u_1} {X : 
 
 ### FluidInterfaces.hidden_state_prevents_autonomous_closure
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `propext`.
 
@@ -451,7 +451,7 @@ FluidInterfaces.hidden_state_prevents_autonomous_closure.{u_1, u_2, u_3} {K : Ty
 
 ### FluidInterfaces.kineticEnergy_nonneg
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -465,7 +465,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.kinetic_energy_derivative
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -481,7 +481,7 @@ FluidInterfaces.kinetic_energy_derivative.{u_1} {n : Type u_1} [Fintype n] (u : 
 
 ### FluidInterfaces.lower_diagonal_lower_zero
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -497,7 +497,7 @@ FluidInterfaces.lower_diagonal_lower_zero.{u_1, u_2, u_3} {K : Type u_1} {X : Ty
 
 ### FluidInterfaces.no_commuting_complex_structure
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -512,7 +512,7 @@ FluidInterfaces.no_commuting_complex_structure (I : Matrix (Fin 2) (Fin 2) ℝ)
 
 ### FluidInterfaces.pressure_work_zero
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -527,7 +527,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.projection_best_approximation
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -543,7 +543,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.projection_energy_nonincrease
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -558,7 +558,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.projection_energy_split
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -574,7 +574,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.projection_residual_kernel
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -589,7 +589,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.projection_residual_orthogonal
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -604,7 +604,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.quadratic_generator_square
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -619,7 +619,7 @@ FluidInterfaces.quadratic_generator_square :
 
 ### FluidInterfaces.quadratic_order_addition
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -635,7 +635,7 @@ FluidInterfaces.quadratic_order_addition (a b c d : ℤ) :
 
 ### FluidInterfaces.quadratic_order_determinant
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -650,7 +650,7 @@ FluidInterfaces.quadratic_order_determinant (a b : ℤ) :
 
 ### FluidInterfaces.quadratic_order_multiplication
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -666,7 +666,7 @@ FluidInterfaces.quadratic_order_multiplication (a b c d : ℤ) :
 
 ### FluidInterfaces.quadratic_order_one
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -680,7 +680,7 @@ FluidInterfaces.quadratic_order_one : FluidInterfaces.quadraticOrderMatrix 1 0 =
 
 ### FluidInterfaces.quadratic_order_representation_injective
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -695,7 +695,7 @@ FluidInterfaces.quadratic_order_representation_injective :
 
 ### FluidInterfaces.renormalization_determinant
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -709,7 +709,7 @@ FluidInterfaces.renormalization_determinant : FluidInterfaces.renormalizationMat
 
 ### FluidInterfaces.renormalization_is_quadratic_order_element
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -724,7 +724,7 @@ FluidInterfaces.renormalization_is_quadratic_order_element :
 
 ### FluidInterfaces.renormalization_power_determinant
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -739,7 +739,7 @@ FluidInterfaces.renormalization_power_determinant (k : ℕ) : (FluidInterfaces.r
 
 ### FluidInterfaces.renormalization_quadratic_identity
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -757,7 +757,7 @@ FluidInterfaces.renormalization_quadratic_identity :
 
 ### FluidInterfaces.resolved_memory_identity
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -775,7 +775,7 @@ FluidInterfaces.resolved_memory_identity.{u_1, u_2, u_3} {K : Type u_1} {X : Typ
 
 ### FluidInterfaces.schur_elimination_iff
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
@@ -792,7 +792,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.skew_transport_work
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -807,7 +807,7 @@ FluidInterfaces.skew_transport_work.{u_1} {n : Type u_1} [Fintype n] (J : Matrix
 
 ### FluidInterfaces.transpose_work
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -822,7 +822,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### FluidInterfaces.unforced_work_nonpositive
 
-Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/fluid-verification.json`.
+Source: `extension/lean/FluidInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -836,425 +836,627 @@ FluidInterfaces.unforced_work_nonpositive.{u_1, u_2, u_3} {n : Type u_1} {m : Ty
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
-### ResearchBridge.binary_noise_bound
+### ReductionContracts.discrete_closure_iff
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.discrete_closure_iff.{u_1, u_2} {A : Type u_1} {B : Type u_2} (P : A → B) (F : A → A)
+  (hP : Function.Surjective P) : (∃ G, ∀ (x : A), G (P x) = P (F x)) ↔ ∀ (x y : A), P x = P y → P (F x) = P (F y)
+```
+
+- **reduction-contracts.001** (thm:reduction-fiber-factorization): Specialization to a discrete state update
+
+### ReductionContracts.discrete_trajectory_preserved
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: none.
+
+Elaborated type:
+
+```lean
+ReductionContracts.discrete_trajectory_preserved.{u_1, u_2} {A : Type u_1} {B : Type u_2} (P : A → B) (F : A → A)
+  (G : B → B) (hcomm : ∀ (x : A), P (F x) = G (P x)) (u : ℕ → A) (v : ℕ → B) (hu : ∀ (n : ℕ), u (n + 1) = F (u n))
+  (hv : ∀ (n : ℕ), v (n + 1) = G (v n)) (hzero : P (u 0) = v 0) (n : ℕ) : P (u n) = v n
+```
+
+- **reduction-contracts.002** (prop:reduction-trajectory): Exact intertwining at every natural-number step
+
+### ReductionContracts.factorization_iff_fiber_constant
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.factorization_iff_fiber_constant.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3}
+  (P : A → B) (Q : A → C) (hP : Function.Surjective P) :
+  (∃ G, ∀ (x : A), G (P x) = Q x) ↔ ∀ (x y : A), P x = P y → Q x = Q y
+```
+
+- **reduction-contracts.001** (thm:reduction-fiber-factorization): Exact set-theoretic equivalence for a surjective observation map
+
+### ReductionContracts.fiber_diameter_le_twice_error
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem binary_noise_bound (e₁ e₂ r₁ r₂ E : ℝ)
-    (hE : 0 ≤ E) (h₁ : |e₁| ≤ E) (h₂ : |e₂| ≤ E)
-    (hr₁ : r₁ = 0 ∨ r₁ = 1) (hr₂ : r₂ = 0 ∨ r₂ = 1) :
-    |e₁ * r₁ + e₂ * r₂| ≤ 2 * E
+ReductionContracts.fiber_diameter_le_twice_error.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {V : Type u_3}
+  [SeminormedAddCommGroup V] (P : A → B) (Q : A → V) (G : B → V) (x y : A) (ε : ℝ) (hxy : P x = P y)
+  (hx : ‖Q x - G (P x)‖ ≤ ε) (hy : ‖Q y - G (P y)‖ ≤ ε) : ‖Q x - Q y‖ ≤ 2 * ε
+```
+
+- **reduction-contracts.003** (prop:reduction-error-diameter): Uniform epsilon error implies at most twice-epsilon pair separation
+
+### ReductionContracts.fiber_error_lower_bound
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.fiber_error_lower_bound.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {V : Type u_3}
+  [SeminormedAddCommGroup V] (P : A → B) (Q : A → V) (G : B → V) (x y : A) (hxy : P x = P y) :
+  ‖Q x - Q y‖ ≤ ‖Q x - G (P x)‖ + ‖Q y - G (P y)‖
+```
+
+- **reduction-contracts.003** (prop:reduction-error-diameter): Triangle-inequality error lower bound in a seminormed additive group
+
+### ReductionContracts.mismatched_fiber_excludes_closure
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: none.
+
+Elaborated type:
+
+```lean
+ReductionContracts.mismatched_fiber_excludes_closure.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3}
+  (P : A → B) (Q : A → C) (x y : A) (hxy : P x = P y) (hQ : Q x ≠ Q y) : ¬∃ G, ∀ (a : A), G (P a) = Q a
+```
+
+- **reduction-contracts.001** (thm:reduction-fiber-factorization): Two indistinguishable inputs with different outputs exclude every deterministic closure
+
+### ReductionContracts.no_universal_minimum_rule
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.no_universal_minimum_rule :
+  ¬∀ (p q : Polynomial ℚ), p ≠ 0 → q ≠ 0 → p + q ≠ 0 → (p + q).trailingDegree = min p.trailingDegree q.trailingDegree
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): There is no universal exact minimum rule for signed polynomial addition
+
+### ReductionContracts.reduced_output_unique
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Quot.sound`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.reduced_output_unique.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3} (P : A → B)
+  (Q : A → C) (hP : Function.Surjective P) (G H : B → C) (hG : ∀ (x : A), G (P x) = Q x)
+  (hH : ∀ (x : A), H (P x) = Q x) : G = H
+```
+
+- **reduction-contracts.001** (thm:reduction-fiber-factorization): Uniqueness on the surjective observed state space
+
+### ReductionContracts.signedPartner_constant_coefficient
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.signedPartner_constant_coefficient (k : ℕ) : (ReductionContracts.signedPartner k).coeff 0 = 0
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): Constant coefficient of the explicit rational polynomial
+
+### ReductionContracts.signedPartner_linear_coefficient
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.signedPartner_linear_coefficient (k : ℕ) : (ReductionContracts.signedPartner k).coeff 1 = -1
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): Linear coefficient of the explicit rational polynomial
+
+### ReductionContracts.signedPartner_ne_zero
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.signedPartner_ne_zero (k : ℕ) : ReductionContracts.signedPartner k ≠ 0
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): The second summand is nonzero
+
+### ReductionContracts.signedPartner_order
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.signedPartner_order (k : ℕ) : (ReductionContracts.signedPartner k).trailingDegree = 1
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): The second summand has order one
+
+### ReductionContracts.signed_cancellation_identity
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.signed_cancellation_identity (k : ℕ) :
+  Polynomial.X + ReductionContracts.signedPartner k = Polynomial.X ^ (k + 2)
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): The sum is exactly the prescribed higher monomial
+
+### ReductionContracts.signed_cancellation_order
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.signed_cancellation_order (k : ℕ) :
+  (Polynomial.X + ReductionContracts.signedPartner k).trailingDegree = ↑(k + 2)
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): Its order is the arbitrary integer k+2
+
+### ReductionContracts.signed_cancellation_strict
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.signed_cancellation_strict (k : ℕ) :
+  min Polynomial.X.trailingDegree (ReductionContracts.signedPartner k).trailingDegree <
+    (Polynomial.X + ReductionContracts.signedPartner k).trailingDegree
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): The residual order strictly exceeds the minimum summand order
+
+### ReductionContracts.signed_cancellation_sum_ne_zero
+
+Source: `extension/lean/ReductionContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ReductionContracts.signed_cancellation_sum_ne_zero (k : ℕ) : Polynomial.X + ReductionContracts.signedPartner k ≠ 0
+```
+
+- **reduction-contracts.004** (prop:reduction-signed-order): The residual polynomial is nonzero
+
+### ResearchBridge.binary_noise_bound
+
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+ResearchBridge.binary_noise_bound (e₁ e₂ r₁ r₂ E : ℝ) (hE : 0 ≤ E) (h₁ : |e₁| ≤ E) (h₂ : |e₂| ≤ E)
+  (hr₁ : r₁ = 0 ∨ r₁ = 1) (hr₂ : r₂ = 0 ∨ r₂ = 1) : |e₁ * r₁ + e₂ * r₂| ≤ 2 * E
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.complex_range_le_kernel
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {K V₀ V₁ V₂ : Type*} [Field K]
-variable [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂]
-variable [Module K V₀] [Module K V₁] [Module K V₂]
-theorem complex_range_le_kernel (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂)
-    (h : B.comp A = 0) : LinearMap.range A ≤ LinearMap.ker B
+ResearchBridge.complex_range_le_kernel.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3}
+  {V₂ : Type u_4} [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁]
+  [Module K V₂] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) : LinearMap.range A ≤ LinearMap.ker B
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.complex_rank_bound
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {K V₀ V₁ V₂ : Type*} [Field K]
-variable [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂]
-variable [Module K V₀] [Module K V₁] [Module K V₂]
-theorem complex_rank_bound [FiniteDimensional K V₁]
-    (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B.comp A = 0) :
-    Module.finrank K (LinearMap.range A) + Module.finrank K (LinearMap.range B)
-      ≤ Module.finrank K V₁
+ResearchBridge.complex_rank_bound.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3} {V₂ : Type u_4}
+  [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁] [Module K V₂]
+  [FiniteDimensional K V₁] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) :
+  Module.finrank K ↥(LinearMap.range A) + Module.finrank K ↥(LinearMap.range B) ≤ Module.finrank K V₁
 ```
 
 - **complexes.011** (): The adjacent-rank inequality rank(A)+rank(B)<=dim(V1), assuming BA=0.
 
 ### ResearchBridge.cone_equal_norm_iff
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {R : Type*} [CommRing R]
-theorem cone_equal_norm_iff (u₁ u₂ v₁ v₂ : R) :
-    cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) = 0 ↔
-      u₁ ^ 2 + u₂ ^ 2 = v₁ ^ 2 + v₂ ^ 2
+ResearchBridge.cone_equal_norm_iff.{u_1} {R : Type u_1} [CommRing R] (u₁ u₂ v₁ v₂ : R) :
+  ResearchBridge.cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) = 0 ↔ u₁ ^ 2 + u₂ ^ 2 = v₁ ^ 2 + v₂ ^ 2
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.cone_perturbation
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {R : Type*} [CommRing R]
-theorem cone_perturbation (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R) :
-    cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) =
-      cone x₁ x₂ y₁ y₂ +
-        t * (y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂) +
-        t ^ 2 * cone u₁ u₂ v₁ v₂
+ResearchBridge.cone_perturbation.{u_1} {R : Type u_1} [CommRing R] (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R) :
+  ResearchBridge.cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) =
+    ResearchBridge.cone x₁ x₂ y₁ y₂ + t * (y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂) +
+      t ^ 2 * ResearchBridge.cone u₁ u₂ v₁ v₂
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.cone_split_identity
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {R : Type*} [CommRing R]
-theorem cone_split_identity (u₁ u₂ v₁ v₂ : R) :
-    cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) =
-      (u₁ ^ 2 + u₂ ^ 2) - (v₁ ^ 2 + v₂ ^ 2)
+ResearchBridge.cone_split_identity.{u_1} {R : Type u_1} [CommRing R] (u₁ u₂ v₁ v₂ : R) :
+  ResearchBridge.cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) = u₁ ^ 2 + u₂ ^ 2 - (v₁ ^ 2 + v₂ ^ 2)
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.cone_tangent_second_order
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {R : Type*} [CommRing R]
-theorem cone_tangent_second_order (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R)
-    (h₀ : cone x₁ x₂ y₁ y₂ = 0)
-    (h₁ : y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂ = 0) :
-    cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) =
-      t ^ 2 * cone u₁ u₂ v₁ v₂
+ResearchBridge.cone_tangent_second_order.{u_1} {R : Type u_1} [CommRing R] (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R)
+  (h₀ : ResearchBridge.cone x₁ x₂ y₁ y₂ = 0) (h₁ : y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂ = 0) :
+  ResearchBridge.cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) = t ^ 2 * ResearchBridge.cone u₁ u₂ v₁ v₂
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.euler_rank_identity
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem euler_rank_identity (a b c r s : ℤ) :
-    (a - r) - (b - r - s) + (c - s) = a - b + c
+ResearchBridge.euler_rank_identity (a b c r s : ℤ) : a - r - (b - r - s) + (c - s) = a - b + c
 ```
 
 - **complexes.012** (): The integer identity (a-r)-(b-r-s)+(c-s)=a-b+c after dimension substitution.
 
 ### ResearchBridge.hidden_collision_relation
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {q : ℕ}
-theorem hidden_collision_relation (x a b c d : ZMod q) :
-    hiddenLinear x a b = hiddenLinear x c d ↔
-      (a - c) + x * (b - d) = 0
+ResearchBridge.hidden_collision_relation {q : ℕ} (x a b c d : ZMod q) :
+  ResearchBridge.hiddenLinear x a b = ResearchBridge.hiddenLinear x c d ↔ a - c + x * (b - d) = 0
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hidden_kernel_relation
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {q : ℕ}
-theorem hidden_kernel_relation (x a b : ZMod q) :
-    hiddenLinear x a b = 0 ↔ a = -(x * b)
+ResearchBridge.hidden_kernel_relation {q : ℕ} (x a b : ZMod q) : ResearchBridge.hiddenLinear x a b = 0 ↔ a = -(x * b)
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hodge_characteristic_factor
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem hodge_characteristic_factor (x₁ x₂ y₁ y₂ t : ℝ)
-    (h : cone x₁ x₂ y₁ y₂ = 0) :
-    Matrix.det (t • (1 : Matrix (Fin 2) (Fin 2) ℝ) - hodgeMatrix x₁ x₂ y₁ y₂) =
-      (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2))
+ResearchBridge.hodge_characteristic_factor (x₁ x₂ y₁ y₂ t : ℝ) (h : ResearchBridge.cone x₁ x₂ y₁ y₂ = 0) :
+  (t • 1 - ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂).det = (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2))
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hodge_characteristic_identity
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem hodge_characteristic_identity (x₁ x₂ y₁ y₂ t : ℝ) :
-    Matrix.det (t • (1 : Matrix (Fin 2) (Fin 2) ℝ) - hodgeMatrix x₁ x₂ y₁ y₂) =
-      (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2)) -
-        (cone x₁ x₂ y₁ y₂) ^ 2
+ResearchBridge.hodge_characteristic_identity (x₁ x₂ y₁ y₂ t : ℝ) :
+  (t • 1 - ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂).det =
+    (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2)) - ResearchBridge.cone x₁ x₂ y₁ y₂ ^ 2
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hodge_energy_nonnegative
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem hodge_energy_nonnegative (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :
-    0 ≤ hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂
+ResearchBridge.hodge_energy_nonnegative (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) : 0 ≤ ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hodge_energy_zero_iff
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem hodge_energy_zero_iff (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :
-    hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂ = 0 ↔
-      x₁ * z₁ + x₂ * z₂ = 0 ∧ y₁ * z₁ + y₂ * z₂ = 0
+ResearchBridge.hodge_energy_zero_iff (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :
+  ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂ = 0 ↔ x₁ * z₁ + x₂ * z₂ = 0 ∧ y₁ * z₁ + y₂ * z₂ = 0
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hodge_family_arbitrarily_small_energy
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem hodge_family_arbitrarily_small_energy (ε : ℝ) (hε : 0 < ε) :
-    ∃ t : ℝ, 0 < t ∧ cone t 0 0 1 = 0 ∧
-      hodgeEnergy t 0 0 1 1 0 < ε
+ResearchBridge.hodge_family_arbitrarily_small_energy (ε : ℝ) (hε : 0 < ε) :
+  ∃ t, 0 < t ∧ ResearchBridge.cone t 0 0 1 = 0 ∧ ResearchBridge.hodgeEnergy t 0 0 1 1 0 < ε
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hodge_family_diagonal
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem hodge_family_diagonal (t : ℝ) :
-    hodgeMatrix t 0 0 1 = !![t ^ 2, 0; 0, 1]
+ResearchBridge.hodge_family_diagonal (t : ℝ) : ResearchBridge.hodgeMatrix t 0 0 1 = !![t ^ 2, 0; 0, 1]
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hodge_positive_semidefinite
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem hodge_positive_semidefinite {m n p : Type*}
-    [Fintype m] [Fintype n] [Fintype p]
-    (A : Matrix n m ℝ) (B : Matrix p n ℝ) :
-    (A * Aᴴ + Bᴴ * B).PosSemidef
+ResearchBridge.hodge_positive_semidefinite.{u_1, u_2, u_3} {m : Type u_1} {n : Type u_2} {p : Type u_3} [Fintype m]
+  [Fintype n] [Fintype p] (A : Matrix n m ℝ) (B : Matrix p n ℝ) : (A * Aᴴ + Bᴴ * B).PosSemidef
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.hodge_quadratic_identity
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem hodge_quadratic_identity (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :
-    ![z₁, z₂] ⬝ᵥ (hodgeMatrix x₁ x₂ y₁ y₂ *ᵥ ![z₁, z₂]) =
-      hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂
+ResearchBridge.hodge_quadratic_identity (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :
+  ![z₁, z₂] ⬝ᵥ ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂ *ᵥ ![z₁, z₂] = ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.koszul_zero_composite
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {R : Type*} [CommRing R]
-theorem koszul_zero_composite (x y c : R) : x * (-y * c) + y * (x * c) = 0
+ResearchBridge.koszul_zero_composite.{u_1} {R : Type u_1} [CommRing R] (x y c : R) : x * (-y * c) + y * (x * c) = 0
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.middle_exact_iff_rank_sum
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-variable {K V₀ V₁ V₂ : Type*} [Field K]
-variable [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂]
-variable [Module K V₀] [Module K V₁] [Module K V₂]
-theorem middle_exact_iff_rank_sum [FiniteDimensional K V₁]
-    (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B.comp A = 0) :
-    LinearMap.range A = LinearMap.ker B ↔
-      Module.finrank K (LinearMap.range A) + Module.finrank K (LinearMap.range B)
-        = Module.finrank K V₁
+ResearchBridge.middle_exact_iff_rank_sum.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3}
+  {V₂ : Type u_4} [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁]
+  [Module K V₂] [FiniteDimensional K V₁] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) :
+  LinearMap.range A = LinearMap.ker B ↔
+    Module.finrank K ↥(LinearMap.range A) + Module.finrank K ↥(LinearMap.range B) = Module.finrank K V₁
 ```
 
 - **complexes.011** (): Middle exactness iff equality in the adjacent-rank bound, assuming BA=0.
 
 ### ResearchBridge.noise_cancellation
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem noise_cancellation {R m n : Type*} [CommRing R]
-    [Fintype m] [Fintype n]
-    (A : Matrix m n R) (s : n → R) (e r : m → R) (μ : R) :
-    (((A *ᵥ s + e) ⬝ᵥ r) + μ) - (s ⬝ᵥ (Aᵀ *ᵥ r)) =
-      e ⬝ᵥ r + μ
+ResearchBridge.noise_cancellation.{u_1, u_2, u_3} {R : Type u_1} {m : Type u_2} {n : Type u_3} [CommRing R] [Fintype m]
+  [Fintype n] (A : Matrix m n R) (s : n → R) (e r : m → R) (μ : R) : (A *ᵥ s + e) ⬝ᵥ r + μ - s ⬝ᵥ Aᵀ *ᵥ r = e ⬝ᵥ r + μ
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
 
 ### ResearchBridge.shear_determinant_one
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem shear_determinant_one (n : ℤ) : Matrix.det (shear n) = 1
+ResearchBridge.shear_determinant_one (n : ℤ) : (ResearchBridge.shear n).det = 1
 ```
 
 - **cryptography.006** (): The displayed integer shear has determinant one.
 
 ### ResearchBridge.shear_e2_image
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem shear_e2_image (n : ℤ) : shear n *ᵥ ![0, 1] = ![n, 1]
+ResearchBridge.shear_e2_image (n : ℤ) : ResearchBridge.shear n *ᵥ ![0, 1] = ![n, 1]
 ```
 
 - **cryptography.006** (): The shear sends the second basis vector to (N,1).
 
 ### ResearchBridge.shear_e2_norm_squared
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem shear_e2_norm_squared (n : ℤ) :
-    ((shear n *ᵥ ![0, 1]) 0 : ℝ) ^ 2 +
-      ((shear n *ᵥ ![0, 1]) 1 : ℝ) ^ 2 = (n : ℝ) ^ 2 + 1
+ResearchBridge.shear_e2_norm_squared (n : ℤ) :
+  ↑((ResearchBridge.shear n *ᵥ ![0, 1]) 0) ^ 2 + ↑((ResearchBridge.shear n *ᵥ ![0, 1]) 1) ^ 2 = ↑n ^ 2 + 1
 ```
 
 - **cryptography.006** (): The real squared-coordinate length of that image is N^2+1; the square-root and unbounded-operator-norm conclusion are not formalized here.
 
 ### ResearchBridge.shear_inverse
 
-Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/verification.json`.
+Source: `extension/lean/BridgeTheorems.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
-Verified source signature (with reviewed section context where needed):
+Elaborated type:
 
 ```lean
-theorem shear_inverse (n : ℤ) : shear n * shear (-n) = 1
+ResearchBridge.shear_inverse (n : ℤ) : ResearchBridge.shear n * ResearchBridge.shear (-n) = 1
 ```
 
 - **cryptography.006** (): The displayed shear multiplied by the opposite shear is the identity.
 
 ### ResearchQuantum.binarySign_add
 
-Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/quantum-verification.json`.
+Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -1269,7 +1471,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### ResearchQuantum.boundary_phase_shift_commute
 
-Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/quantum-verification.json`.
+Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -1288,7 +1490,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### ResearchQuantum.euler_surface_rank_substitution
 
-Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/quantum-verification.json`.
+Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -1303,7 +1505,7 @@ ResearchQuantum.euler_surface_rank_substitution (V E F g : ℤ) (hEuler : V - E 
 
 ### ResearchQuantum.pauliX_square
 
-Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/quantum-verification.json`.
+Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -1317,7 +1519,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### ResearchQuantum.pauliZ_square
 
-Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/quantum-verification.json`.
+Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -1331,7 +1533,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### ResearchQuantum.pauli_anticommutation
 
-Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/quantum-verification.json`.
+Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -1346,7 +1548,7 @@ No manuscript environment is assigned to this declaration. Its own precise type 
 
 ### ResearchQuantum.shift_phase_commutation
 
-Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/quantum-verification.json`.
+Source: `extension/lean/QuantumInterfaces.lean`. Verification: `extension/lean/final-verification/verification.json`.
 
 Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
 
@@ -1360,3 +1562,263 @@ ResearchQuantum.shift_phase_commutation.{u_1, u_2} {R : Type u_1} {C : Type u_2}
 ```
 
 No manuscript environment is assigned to this declaration. Its own precise type remains verified; no broader claim is inferred.
+
+### TransportContracts.closed_path_residual
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.closed_path_residual.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0) :
+  TransportContracts.transportedResidual A x n = x 0 - (TransportContracts.holonomy A n) (x 0)
+```
+
+- **toric-transport-audit.001** (thm:typed-transport-telescope): Closed-path endpoint residual
+
+### TransportContracts.expanding_scalar_damping
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.expanding_scalar_damping (eta : ℝ) (heta : 0 < eta) : 1 < 1 - eta + eta * 2
+```
+
+- **toric-transport-audit.006** (prop:transport-damping-obstruction): The scalar multiplier is greater than one for positive damping
+
+### TransportContracts.fixed_vector_closed_path_zero
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.fixed_vector_closed_path_zero.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0)
+  (hfixed : (TransportContracts.holonomy A n) (x 0) = x 0) : TransportContracts.transportedResidual A x n = 0
+```
+
+- **toric-transport-audit.001** (thm:typed-transport-telescope): Fixing the initial vector suffices without full flatness
+
+### TransportContracts.flat_closed_path_zero
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.flat_closed_path_zero.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0)
+  (hflat : TransportContracts.holonomy A n = 1) : TransportContracts.transportedResidual A x n = 0
+```
+
+- **toric-transport-audit.001** (thm:typed-transport-telescope): Identity holonomy makes the closed residual zero
+
+### TransportContracts.nonnormal_shear_gain_squared
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.nonnormal_shear_gain_squared (M : ℝ) :
+  (TransportContracts.nonnormalShear M).mulVec ![0, 1] 0 ^ 2 +
+      (TransportContracts.nonnormalShear M).mulVec ![0, 1] 1 ^ 2 =
+    M ^ 2
+```
+
+- **toric-transport-audit.012** (prop:nonnormal-jvp): Exact coordinate squared norm of that image is M squared
+
+### TransportContracts.nonnormal_shear_not_normal
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.nonnormal_shear_not_normal (M : ℝ) (hM : M ≠ 0) :
+  (TransportContracts.nonnormalShear M).transpose * TransportContracts.nonnormalShear M ≠
+    TransportContracts.nonnormalShear M * (TransportContracts.nonnormalShear M).transpose
+```
+
+- **toric-transport-audit.012** (prop:nonnormal-jvp): For nonzero M, the matrix does not commute with its transpose
+
+### TransportContracts.nonnormal_shear_second_jvp_zero
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.nonnormal_shear_second_jvp_zero (M : ℝ) (v : Fin 2 → ℝ) :
+  (TransportContracts.nonnormalShear M).mulVec ((TransportContracts.nonnormalShear M).mulVec v) = 0
+```
+
+- **toric-transport-audit.012** (prop:nonnormal-jvp): A second Jacobian-vector product is zero on every input
+
+### TransportContracts.nonnormal_shear_square_zero
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.nonnormal_shear_square_zero (M : ℝ) :
+  TransportContracts.nonnormalShear M * TransportContracts.nonnormalShear M = 0
+```
+
+- **toric-transport-audit.012** (prop:nonnormal-jvp): The explicit real matrix [[0,M],[0,0]] squares to zero
+
+### TransportContracts.nonnormal_shear_strict_gain
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.nonnormal_shear_strict_gain (M : ℝ) (hM : 1 < M) :
+  1 <
+    (TransportContracts.nonnormalShear M).mulVec ![0, 1] 0 ^ 2 +
+      (TransportContracts.nonnormalShear M).mulVec ![0, 1] 1 ^ 2
+```
+
+- **toric-transport-audit.012** (prop:nonnormal-jvp): The one-step squared gain exceeds one when M>1
+
+### TransportContracts.nonnormal_shear_unit_image
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.nonnormal_shear_unit_image (M : ℝ) : (TransportContracts.nonnormalShear M).mulVec ![0, 1] = ![M, 0]
+```
+
+- **toric-transport-audit.012** (prop:nonnormal-jvp): Its image on the explicit Euclidean unit vector (0,1) is (M,0)
+
+### TransportContracts.positive_damping_bound_not_contracting
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.positive_damping_bound_not_contracting (L eta : ℝ) (hL : 1 ≤ L) (heta : 0 ≤ eta) :
+  1 ≤ 1 - eta + eta * L
+```
+
+- **toric-transport-audit.006** (prop:transport-damping-obstruction): The displayed upper bound is at least one for L≥1 and eta≥0
+
+### TransportContracts.scalar_counterexample_flat
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.scalar_counterexample_flat : 1 / 2 * 2 = 1
+```
+
+- **toric-transport-audit.002** (prop:transport-prefix-counterexample): The counterexample has identity holonomy
+
+### TransportContracts.scalar_prefix_counterexample
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.scalar_prefix_counterexample : 2 * (1 - 2 * 0) + 2 * (1 / 2) * (0 - 1 / 2 * 1) = 3 / 2
+```
+
+- **toric-transport-audit.002** (prop:transport-prefix-counterexample): The incorrect prefix sum is exactly 3/2
+
+### TransportContracts.scalar_suffix_correction
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.scalar_suffix_correction : 1 / 2 * (1 - 2 * 0) + (0 - 1 / 2 * 1) = 0
+```
+
+- **toric-transport-audit.002** (prop:transport-prefix-counterexample): Correct suffix transport gives zero for the same data
+
+### TransportContracts.suffix_transport_telescope
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.suffix_transport_telescope.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) :
+  TransportContracts.transportedResidual A x n = x n - (TransportContracts.holonomy A n) (x 0)
+```
+
+- **toric-transport-audit.001** (thm:typed-transport-telescope): Arbitrary finite path with all arrows acting on the same module
+
+### TransportContracts.trace_preserving_composite_nonzero
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.trace_preserving_composite_nonzero.{u_1} {V : Type u_1} [AddCommGroup V] [Module ℝ V]
+  (trace : V →ₗ[ℝ] ℝ) (A B : Module.End ℝ V) (hA : ∀ (x : V), trace (A x) = trace x)
+  (hB : ∀ (x : V), trace (B x) = trace x) (rho : V) (hnormalized : trace rho = 1) : B * A ≠ 0
+```
+
+- **toric-transport-audit.008** (prop:transport-trace-zero-obstruction): Two real linear trace-preserving maps cannot have zero composite if a trace-one vector exists
+
+### TransportContracts.two_arrow_transport
+
+Source: `extension/lean/TransportContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+TransportContracts.two_arrow_transport.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A B : Module.End R V) (x y z : V) : B (y - A x) + (z - B y) = z - (B * A) x
+```
+
+- **toric-transport-audit.001** (thm:typed-transport-telescope): Two-arrow noncommutative telescope

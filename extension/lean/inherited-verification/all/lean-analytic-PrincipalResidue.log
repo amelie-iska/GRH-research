@@ -1,0 +1,27 @@
+'GRHResearch.Analytic.principal_multiplier_when_equal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_multiplier_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.principal_multiplier_scaled_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.weighted_slot_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.weighted_slot_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_product_relative_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.principal_multiplier_when_equal (v d : ℂ) : GRHResearch.Analytic.principalSlotMultiplier v d d = -v
+'GRHResearch.Analytic.principal_multiplier_when_equal' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.principal_multiplier_error (v d r : ℂ) (hd : d ≠ 0) (hn : 1 - v * r - (1 - v) * d ≠ 0) :
+  GRHResearch.Analytic.principalSlotMultiplier v d r + 1 =
+    (1 - v) * (r / d - v * r - (1 - v) * d) / (1 - v * r - (1 - v) * d)
+'GRHResearch.Analytic.principal_multiplier_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.principal_multiplier_scaled_error (v d r : ℂ) (hd : d ≠ 0) (hr : r ≠ 0)
+  (hn : 1 - v * r - (1 - v) * d ≠ 0) :
+  (GRHResearch.Analytic.principalSlotMultiplier v d r + 1) / (r / d) - 1 =
+    (-v * (1 - r) + (1 - v) ^ 2 * d * (1 - d / r)) / (1 - v * r - (1 - v) * d)
+'GRHResearch.Analytic.principal_multiplier_scaled_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.weighted_slot_factorization.{u_1} {ι : Type u_1} (P : Finset ι) (a b : ι → ℂ)
+  (hS : ∑ i ∈ P, a i ≠ 0) : ∑ i ∈ P, a i * b i = (-∑ i ∈ P, a i) * (1 - (∑ i ∈ P, a i * (b i + 1)) / ∑ i ∈ P, a i)
+'GRHResearch.Analytic.weighted_slot_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.weighted_slot_error_bound.{u_1} {ι : Type u_1} (P : Finset ι) (a : ι → ℝ) (b : ι → ℂ) {δ : ℝ}
+  (ha : ∀ i ∈ P, 0 ≤ a i) (hS : 0 < ∑ i ∈ P, a i) (hb : ∀ i ∈ P, ‖b i + 1‖ ≤ δ) :
+  ‖(-∑ i ∈ P, ↑(a i) * (b i + 1)) / ↑(∑ i ∈ P, a i)‖ ≤ δ
+'GRHResearch.Analytic.weighted_slot_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_product_relative_error.{u_1} {ι : Type u_1} [DecidableEq ι] (P : Finset ι) (ρ : ι → ℂ)
+  {δ : ℝ} (hδ1 : δ ≤ 1) (hρ : ∀ i ∈ P, ‖ρ i‖ ≤ δ) : ‖∏ i ∈ P, (1 + ρ i) - 1‖ ≤ (2 ^ P.card - 1) * δ
+'GRHResearch.Analytic.finite_product_relative_error' depends on axioms: [propext, Classical.choice, Quot.sound]

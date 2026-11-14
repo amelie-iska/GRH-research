@@ -1,0 +1,8 @@
+'GRHResearch.Analytic.arithmetic_zero_disk_in_left_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.arithmetic_zero_certificate_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.arithmetic_zero_disk_in_left_strip {z : ℂ}
+  (hz : dist z GRHResearch.Analytic.arithmeticZeroCenter ≤ 1 / 10000) : 0 < z.re ∧ z.re < 1 / 2
+'GRHResearch.Analytic.arithmetic_zero_disk_in_left_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.arithmetic_zero_certificate_margin :
+  1 / 10000 - 1 / 1000000 - 9 / 2 * (1 / 10000) ^ 2 = 19791 / 200000000 ∧ 0 < 19791 / 200000000
+'GRHResearch.Analytic.arithmetic_zero_certificate_margin' depends on axioms: [propext, Classical.choice, Quot.sound]

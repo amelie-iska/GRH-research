@@ -1,0 +1,30 @@
+'GRHResearch.Analytic.norm_eulerWeight_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.euler_factor_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.finite_euler_product_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.boundary_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.limit_ne_zero_of_boundary_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.boundary_uniform_limit_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.norm_eulerWeight_lt_one {p : ℝ} {s : ℂ} (hp : 1 < p) (hs : 0 < s.re) :
+  ‖GRHResearch.Analytic.eulerWeight p s‖ < 1
+'GRHResearch.Analytic.norm_eulerWeight_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.euler_factor_ne_zero {p : ℝ} {s a : ℂ} (hp : 1 < p) (hs : 0 < s.re) (ha : ‖a‖ ≤ 1) :
+  1 - a * GRHResearch.Analytic.eulerWeight p s ≠ 0
+'GRHResearch.Analytic.euler_factor_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.finite_euler_product_ne_zero.{u_1} {ι : Type u_1} (P : Finset ι) (p : ι → ℝ) (a : ι → ℂ) (s : ℂ)
+  (hs : 0 < s.re) (hp : ∀ i ∈ P, 1 < p i) (ha : ∀ i ∈ P, ‖a i‖ ≤ 1) :
+  ∏ i ∈ P, (1 - a i * GRHResearch.Analytic.eulerWeight (p i) s) ≠ 0
+'GRHResearch.Analytic.finite_euler_product_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.boundary_lower_bound {U : Set ℂ} {f : ℂ → ℂ} {δ : ℝ} {z : ℂ} (hU : Bornology.IsBounded U)
+  (hf : DiffContOnCl ℂ f U) (hzero : ∀ w ∈ closure U, f w ≠ 0) (hδ : 0 < δ) (hboundary : ∀ w ∈ frontier U, δ ≤ ‖f w‖)
+  (hz : z ∈ closure U) : δ ≤ ‖f z‖
+'GRHResearch.Analytic.boundary_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.limit_ne_zero_of_boundary_lower_bound {U : Set ℂ} {F : ℕ → ℂ → ℂ} {z value : ℂ} {δ : ℝ}
+  (hU : Bornology.IsBounded U) (hF : ∀ (n : ℕ), DiffContOnCl ℂ (F n) U) (hzero : ∀ (n : ℕ), ∀ w ∈ closure U, F n w ≠ 0)
+  (hδ : 0 < δ) (hboundary : ∀ᶠ (n : ℕ) in atTop, ∀ w ∈ frontier U, δ ≤ ‖F n w‖) (hz : z ∈ closure U)
+  (hlimit : Tendsto (fun n => F n z) atTop (𝓝 value)) : value ≠ 0
+'GRHResearch.Analytic.limit_ne_zero_of_boundary_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.boundary_uniform_limit_ne_zero {U : Set ℂ} {F : ℕ → ℂ → ℂ} {f : ℂ → ℂ} {z : ℂ} {m : ℝ}
+  (hU : Bornology.IsBounded U) (hF : ∀ (n : ℕ), DiffContOnCl ℂ (F n) U) (hzero : ∀ (n : ℕ), ∀ w ∈ closure U, F n w ≠ 0)
+  (hm : 0 < m) (hboundary : ∀ w ∈ frontier U, m ≤ ‖f w‖) (huniform : TendstoUniformlyOn F f atTop (frontier U))
+  (hz : z ∈ closure U) (hlimit : Tendsto (fun n => F n z) atTop (𝓝 (f z))) : f z ≠ 0
+'GRHResearch.Analytic.boundary_uniform_limit_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

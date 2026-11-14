@@ -1,0 +1,66 @@
+GRHResearch.DessinInvariants.ck1_forbidden_successor.{u_1} {R : Type u_1} [Ring R] (a b ghost : R)
+  (hsource : ghost * a * b = b) (hforbid : a * b = 0) : b = 0
+GRHResearch.DessinInvariants.closed_ck1_arrows_zero.{u_1, u_2} {R : Type u_1} {H : Type u_2} [Ring R] (f : H ≃ H)
+  (a ghost : H → R) (hsource : ∀ (h : H), ghost h * a h * a (f h) = a (f h)) (hforbid : ∀ (h : H), a h * a (f h) = 0)
+  (h : H) : a h = 0
+GRHResearch.DessinInvariants.closed_ck1_vertices_zero.{u_1, u_2, u_3} {R : Type u_1} {H : Type u_2} {V : Type u_3}
+  [Ring R] (t : H → V) (ht : Function.Surjective t) (a ghost : H → R) (p : V → R) (ha : ∀ (h : H), a h = 0)
+  (hCK1 : ∀ (h : H), ghost h * a h = p (t h)) (v : V) : p v = 0
+GRHResearch.DessinInvariants.determinant_change_of_bases.{u_1, u_2} {R : Type u_1} {ι : Type u_2} [CommRing R]
+  [Fintype ι] [DecidableEq ι] (D G₀ G₁ W₀ : Matrix ι ι R) (h : G₀ * W₀ = 1) :
+  (G₁ * D * W₀).det * G₀.det = G₁.det * D.det
+GRHResearch.DessinInvariants.sym_square_zero.{u_1} {R : Type u_1} [CommRing R] : symSquare 0 = 0
+GRHResearch.DessinInvariants.sym_square_one.{u_1} {R : Type u_1} [CommRing R] : symSquare 1 = 1
+GRHResearch.DessinInvariants.sym_square_composition.{u_1} {R : Type u_1} [CommRing R] (M N : Matrix (Fin 2) (Fin 2) R) :
+  symSquare (M * N) = symSquare M * symSquare N
+GRHResearch.DessinInvariants.sym_square_preserves_relation.{u_1} {R : Type u_1} [CommRing R]
+  (M N : Matrix (Fin 2) (Fin 2) R) (h : M * N = 0) : symSquare M * symSquare N = 0
+GRHResearch.DessinInvariants.schur_two_character.{u_1} {R : Type u_1} [CommRing R] (M : Matrix (Fin 2) (Fin 2) R) :
+  M.trace ^ 2 = (symSquare M).trace + M.det
+GRHResearch.DessinInvariants.schur_node_parameter_failure.{u_1} {R : Type u_1} [CommRing R] (u : R) (hu : u ≠ 0) :
+  symSquare !![u, 0; 0, 0] + symSquare !![0, 0; 0, u] ≠ u • 1
+'GRHResearch.DessinInvariants.ck1_forbidden_successor' does not depend on any axioms
+'GRHResearch.DessinInvariants.closed_ck1_arrows_zero' depends on axioms: [Quot.sound]
+'GRHResearch.DessinInvariants.closed_ck1_vertices_zero' does not depend on any axioms
+'GRHResearch.DessinInvariants.determinant_change_of_bases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinInvariants.sym_square_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinInvariants.sym_square_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinInvariants.sym_square_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinInvariants.sym_square_preserves_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinInvariants.schur_two_character' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.DessinInvariants.schur_node_parameter_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinInvariants.ck1_forbidden_successor.{u_1} {R : Type u_1} [Ring R] (a b ghost : R)
+  (hsource : ghost * a * b = b) (hforbid : a * b = 0) : b = 0
+'GRHResearch.DessinInvariants.ck1_forbidden_successor' does not depend on any axioms
+GRHResearch.DessinInvariants.closed_ck1_arrows_zero.{u_1, u_2} {R : Type u_1} {H : Type u_2} [Ring R] (f : H ≃ H)
+  (a ghost : H → R) (hsource : ∀ (h : H), ghost h * a h * a (f h) = a (f h)) (hforbid : ∀ (h : H), a h * a (f h) = 0)
+  (h : H) : a h = 0
+'GRHResearch.DessinInvariants.closed_ck1_arrows_zero' depends on axioms: [Quot.sound]
+GRHResearch.DessinInvariants.closed_ck1_vertices_zero.{u_1, u_2, u_3} {R : Type u_1} {H : Type u_2} {V : Type u_3}
+  [Ring R] (t : H → V) (ht : Function.Surjective t) (a ghost : H → R) (p : V → R) (ha : ∀ (h : H), a h = 0)
+  (hCK1 : ∀ (h : H), ghost h * a h = p (t h)) (v : V) : p v = 0
+'GRHResearch.DessinInvariants.closed_ck1_vertices_zero' does not depend on any axioms
+GRHResearch.DessinInvariants.determinant_change_of_bases.{u_1, u_2} {R : Type u_1} {ι : Type u_2} [CommRing R]
+  [Fintype ι] [DecidableEq ι] (D G₀ G₁ W₀ : Matrix ι ι R) (h : G₀ * W₀ = 1) :
+  (G₁ * D * W₀).det * G₀.det = G₁.det * D.det
+'GRHResearch.DessinInvariants.determinant_change_of_bases' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinInvariants.sym_square_zero.{u_1} {R : Type u_1} [CommRing R] :
+  GRHResearch.DessinInvariants.symSquare 0 = 0
+'GRHResearch.DessinInvariants.sym_square_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinInvariants.sym_square_one.{u_1} {R : Type u_1} [CommRing R] :
+  GRHResearch.DessinInvariants.symSquare 1 = 1
+'GRHResearch.DessinInvariants.sym_square_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinInvariants.sym_square_composition.{u_1} {R : Type u_1} [CommRing R] (M N : Matrix (Fin 2) (Fin 2) R) :
+  GRHResearch.DessinInvariants.symSquare (M * N) =
+    GRHResearch.DessinInvariants.symSquare M * GRHResearch.DessinInvariants.symSquare N
+'GRHResearch.DessinInvariants.sym_square_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinInvariants.sym_square_preserves_relation.{u_1} {R : Type u_1} [CommRing R]
+  (M N : Matrix (Fin 2) (Fin 2) R) (h : M * N = 0) :
+  GRHResearch.DessinInvariants.symSquare M * GRHResearch.DessinInvariants.symSquare N = 0
+'GRHResearch.DessinInvariants.sym_square_preserves_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinInvariants.schur_two_character.{u_1} {R : Type u_1} [CommRing R] (M : Matrix (Fin 2) (Fin 2) R) :
+  M.trace ^ 2 = (GRHResearch.DessinInvariants.symSquare M).trace + M.det
+'GRHResearch.DessinInvariants.schur_two_character' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.DessinInvariants.schur_node_parameter_failure.{u_1} {R : Type u_1} [CommRing R] (u : R) (hu : u ≠ 0) :
+  GRHResearch.DessinInvariants.symSquare !![u, 0; 0, 0] + GRHResearch.DessinInvariants.symSquare !![0, 0; 0, u] ≠ u • 1
+'GRHResearch.DessinInvariants.schur_node_parameter_failure' depends on axioms: [propext, Classical.choice, Quot.sound]

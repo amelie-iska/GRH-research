@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-14T00:23:45.192004+00:00",
+  "status": "verified",
+  "package": "arithmetic",
+  "module_count": 1,
+  "declaration_count": 7,
+  "verified_module_count": 1,
+  "verified_declaration_count": 7,
+  "blocked_module_count": 0,
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "mathlib_commit": null,
+  "provenance_sha256": {
+    "checker": "01486d51bea09528a88ba2a49fc9f54c3823d7a4d72f6f002544924f08729bb5",
+    "evidence_policy": "a232cb6f4fad348904c4bcd111a92f80e75f161c5de9d0519039e4b9d87dec4d",
+    "lean_binary": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c"
+  },
+  "configuration_unchanged_during_check": true,
+  "warnings_treated_as_errors": true,
+  "modules": [
+    {
+      "source": "lean/GRHResearch.lean",
+      "source_sha256": "00c90926dec9aef9fbc1f028850ada7c450fe359dda286e3a0f39599f5283379",
+      "declaration_count": 7,
+      "declarations": [
+        "GRHResearch.no_integral_trace_norm_two",
+        "GRHResearch.no_integer_norm_trace_equation",
+        "GRHResearch.cyclicDegrees_even",
+        "GRHResearch.no_integral_cyclic_induction_degree_one",
+        "GRHResearch.symmetrization_changes_determinant",
+        "GRHResearch.unipotence_does_not_bound_exponent",
+        "GRHResearch.iwahori_shift_witness"
+      ],
+      "source_unchanged_during_check": true,
+      "exit_code": 0,
+      "elapsed_seconds": 0.6436406140128383,
+      "log": "lean-GRHResearch.log",
+      "log_sha256": "1cc59508ffba559b0cd1ce98f9c608f667ea3773a2ff670e2e469663e636a506",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "GRHResearch.no_integral_trace_norm_two": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.no_integer_norm_trace_equation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.cyclicDegrees_even": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.no_integral_cyclic_induction_degree_one": [
+          "Quot.sound",
+          "propext"
+        ],
+        "GRHResearch.symmetrization_changes_determinant": [],
+        "GRHResearch.unipotence_does_not_bound_exponent": [],
+        "GRHResearch.iwahori_shift_witness": []
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "GRHResearch.no_integral_trace_norm_two": "GRHResearch.no_integral_trace_norm_two (t : Int) : 2 * (t * t) \u2260 9",
+        "GRHResearch.no_integer_norm_trace_equation": "GRHResearch.no_integer_norm_trace_equation (n t : Int) (hn : 1 < n) : n * (t * t) \u2260 (n + 1) * (n + 1)",
+        "GRHResearch.cyclicDegrees_even": "GRHResearch.cyclicDegrees_even (xs : List Int) : \u2203 k, GRHResearch.cyclicDegrees xs = 2 * k",
+        "GRHResearch.no_integral_cyclic_induction_degree_one": "GRHResearch.no_integral_cyclic_induction_degree_one (xs : List Int) : GRHResearch.cyclicDegrees xs \u2260 1",
+        "GRHResearch.symmetrization_changes_determinant": "GRHResearch.symmetrization_changes_determinant :\n  GRHResearch.det { a := 1, b := -1, c := 1, d := 1 } = 2 \u2227 GRHResearch.det { a := 1, b := 0, c := 0, d := 1 } = 1",
+        "GRHResearch.unipotence_does_not_bound_exponent": "GRHResearch.unipotence_does_not_bound_exponent :\n  GRHResearch.mul { a := 1, b := 1, c := 0, d := 1 } { a := 1, b := 1, c := 0, d := 1 } \u2260\n    { a := 1, b := 0, c := 0, d := 1 }",
+        "GRHResearch.iwahori_shift_witness": "GRHResearch.iwahori_shift_witness :\n  GRHResearch.mul (GRHResearch.mul { a := 0, b := 2, c := 1, d := 0 } { a := 0, b := 1, c := 0, d := 0 })\n      { a := 0, b := 2, c := 1, d := 0 } =\n    { a := 0, b := 0, c := 1, d := 0 }"
+      },
+      "printed_types_cover_every_declaration": true,
+      "missing_compiled_dependencies": []
+    }
+  ],
+  "scope": "Fresh elaboration of the listed inherited public theorem/lemma declarations, with exact types and foundational axiom reports. Private helper proofs are elaborated but not separately inventoried. Cached compiled imports and the pinned tools are trusted. No complete manuscript, arithmetic identification, GRH, continuum Navier-Stokes or Yang-Mills proof is asserted."
+}

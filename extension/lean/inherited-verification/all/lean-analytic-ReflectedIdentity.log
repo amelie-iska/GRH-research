@@ -1,0 +1,38 @@
+'GRHResearch.Analytic.reflected_row_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_mark_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_mark_mask_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_ramanujan_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_unit_cross_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_pair_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_row_mark_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_moving_j4_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.reflected_common_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_row_column.{u_1} {F : Type u_1} [Field F] (A : MulChar F ℂ) (hA : A ^ 6 = 1) (n b : F) :
+  (A ^ 3) (n * b ^ 3) = (A ^ 3) (n * b)
+'GRHResearch.Analytic.reflected_row_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_mark_column.{u_1} {F : Type u_1} [Field F] (A : MulChar F ℂ) (hA : A ^ 6 = 1) (n b : F) :
+  (A⁻¹ ^ 2) (n * b ^ 3) = (A⁻¹ ^ 2) n * if b = 0 then 0 else 1
+'GRHResearch.Analytic.reflected_mark_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_mark_mask_witness.{u_1} {F : Type u_1} [Field F] (A : MulChar F ℂ) :
+  (A⁻¹ ^ 2) (1 * 0 ^ 3) = 0 ∧ (A⁻¹ ^ 2) 1 = 1
+'GRHResearch.Analytic.reflected_mark_mask_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_ramanujan_partition.{u_1} {F : Type u_1} [Field F] (n b : F) :
+  (if n * b ^ 3 = 0 then 1 else 0) = (if n = 0 then 1 else 0) + (if n = 0 then 0 else 1) * if b = 0 then 1 else 0
+'GRHResearch.Analytic.reflected_ramanujan_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_unit_cross_phase (z w : ℂˣ) (j : ℤ) :
+  z ^ (-2) * (w * z ^ (-2)) ^ (-(j + 2)) = w ^ (-(j + 2)) * z ^ (2 * j + 2)
+'GRHResearch.Analytic.reflected_unit_cross_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_pair_phase (a b : ℂ) (hcubic : a ^ 2 = b ^ 2) (j k : ℕ) :
+  a ^ (2 * j + 2) * b ^ (2 * k + 2) = (a ^ 2) ^ (j + k + 2)
+'GRHResearch.Analytic.reflected_pair_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_row_mark_phase (a b : ℂ) (hsextic : a ^ 6 = 1) (hcubic : a ^ 2 = b ^ 2) :
+  a ^ 4 * b ^ 2 = 1
+'GRHResearch.Analytic.reflected_row_mark_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_moving_j4_phase (a b : ℂ) (hsextic : a ^ 6 = 1) (hcubic : a ^ 2 = b ^ 2) :
+  a ^ 4 * b ^ 10 = a ^ 2
+'GRHResearch.Analytic.reflected_moving_j4_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.reflected_common_density.{u_1, u_2} {T : Type u_1} {E : Type u_2} [MeasurableSpace T]
+  [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E] (μ : MeasureTheory.Measure T) (φ : T → ℂ) (B : T → E)
+  (c : ℂ) (hB : MeasureTheory.Integrable (fun t => φ t • B t) μ) :
+  ‖∫ (t : T), (c * φ t) • B t ∂μ‖ ≤ ‖c‖ * ∫ (t : T), ‖φ t‖ * ‖B t‖ ∂μ
+'GRHResearch.Analytic.reflected_common_density' depends on axioms: [propext, Classical.choice, Quot.sound]

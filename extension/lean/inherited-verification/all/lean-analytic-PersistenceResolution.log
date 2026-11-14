@@ -1,0 +1,113 @@
+GRHResearch.PersistenceResolution.x_ne_zero.{u_1} (k : Type u_1) [Field k] : x k ≠ 0
+GRHResearch.PersistenceResolution.y_ne_zero.{u_1} (k : Type u_1) [Field k] : y k ≠ 0
+GRHResearch.PersistenceResolution.regular_action.{u_1} (k : Type u_1) [Field k] (r q : Ring k) : r • q = r * q
+GRHResearch.PersistenceResolution.residue_action.{u_1} (k : Type u_1) [Field k] (r : Ring k) (a : k) :
+  r • a = MvPolynomial.constantCoeff r * a
+GRHResearch.PersistenceResolution.residue_x_smul.{u_1} (k : Type u_1) [Field k] (a : k) : x k • a = 0
+GRHResearch.PersistenceResolution.residue_y_smul.{u_1} (k : Type u_1) [Field k] (a : k) : y k • a = 0
+GRHResearch.PersistenceResolution.hom_x_smul_zero.{u_1, u_2} (k : Type u_1) [Field k] {N : Type u_2} [AddCommMonoid N]
+  [Module (Ring k) N] (f : N →ₗ[Ring k] k) (v : N) : f (x k • v) = 0
+GRHResearch.PersistenceResolution.hom_y_smul_zero.{u_1, u_2} (k : Type u_1) [Field k] {N : Type u_2} [AddCommMonoid N]
+  [Module (Ring k) N] (f : N →ₗ[Ring k] k) (v : N) : f (y k • v) = 0
+GRHResearch.PersistenceResolution.hom_d1_zero.{u_1} (k : Type u_1) [Field k] (f : Ring k →ₗ[Ring k] k) : f ∘ₗ d1 k = 0
+GRHResearch.PersistenceResolution.hom_d2_zero.{u_1} (k : Type u_1) [Field k] (f : F1 k →ₗ[Ring k] k) : f ∘ₗ d2 k = 0
+GRHResearch.PersistenceResolution.relation_decomposition.{u_1} {S : Type u_1} [CommRing S] [IsDomain S] (x y : S)
+  (hx : x ≠ 0) (hregular : ∀ (z : S), x ∣ y * z → x ∣ z) (a b c : S) (h : x ^ 2 * a + x * y * b + y ^ 2 * c = 0) :
+  ∃ p q, a = -y * p ∧ b = x * p - y * q ∧ c = x * q
+GRHResearch.PersistenceResolution.x_dvd_of_y_mul.{u_1} (k : Type u_1) [Field k] (z : Ring k) (h : x k ∣ y k * z) :
+  x k ∣ z
+GRHResearch.PersistenceResolution.complex_identity.{u_1} (k : Type u_1) [Field k] : d1 k ∘ₗ d2 k = 0
+GRHResearch.PersistenceResolution.d2_injective.{u_1} (k : Type u_1) [Field k] : Function.Injective ⇑(d2 k)
+GRHResearch.PersistenceResolution.d1_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (d1 k) = LinearMap.range (d2 k)
+GRHResearch.PersistenceResolution.d1_range.{u_1} (k : Type u_1) [Field k] : LinearMap.range (d1 k) = ideal k
+GRHResearch.PersistenceResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(augmentation k)
+GRHResearch.PersistenceResolution.augmentation_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (augmentation k) = LinearMap.range (d1 k)
+GRHResearch.PersistenceResolution.free_terms_projective.{u_1} (k : Type u_1) [Field k] :
+  Module.Projective (Ring k) (Ring k) ∧ Module.Projective (Ring k) (F1 k) ∧ Module.Projective (Ring k) (F2 k)
+'GRHResearch.PersistenceResolution.x_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.y_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.regular_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.residue_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.residue_x_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.residue_y_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.hom_x_smul_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.hom_y_smul_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.hom_d1_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.hom_d2_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.relation_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.x_dvd_of_y_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.complex_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d2_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d1_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.d1_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.augmentation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.augmentation_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.PersistenceResolution.free_terms_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.relation_decomposition.{u_1} {S : Type u_1} [CommRing S] [IsDomain S] (x y : S)
+  (hx : x ≠ 0) (hregular : ∀ (z : S), x ∣ y * z → x ∣ z) (a b c : S) (h : x ^ 2 * a + x * y * b + y ^ 2 * c = 0) :
+  ∃ p q, a = -y * p ∧ b = x * p - y * q ∧ c = x * q
+'GRHResearch.PersistenceResolution.relation_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.x_ne_zero.{u_1} (k : Type u_1) [Field k] : GRHResearch.PersistenceResolution.x k ≠ 0
+'GRHResearch.PersistenceResolution.x_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.y_ne_zero.{u_1} (k : Type u_1) [Field k] : GRHResearch.PersistenceResolution.y k ≠ 0
+'GRHResearch.PersistenceResolution.y_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.x_dvd_of_y_mul.{u_1} (k : Type u_1) [Field k]
+  (z : GRHResearch.PersistenceResolution.Ring k)
+  (h : GRHResearch.PersistenceResolution.x k ∣ GRHResearch.PersistenceResolution.y k * z) :
+  GRHResearch.PersistenceResolution.x k ∣ z
+'GRHResearch.PersistenceResolution.x_dvd_of_y_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.complex_identity.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.PersistenceResolution.d1 k ∘ₗ GRHResearch.PersistenceResolution.d2 k = 0
+'GRHResearch.PersistenceResolution.complex_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.d2_injective.{u_1} (k : Type u_1) [Field k] :
+  Function.Injective ⇑(GRHResearch.PersistenceResolution.d2 k)
+'GRHResearch.PersistenceResolution.d2_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.d1_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (GRHResearch.PersistenceResolution.d1 k) = LinearMap.range (GRHResearch.PersistenceResolution.d2 k)
+'GRHResearch.PersistenceResolution.d1_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.d1_range.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.range (GRHResearch.PersistenceResolution.d1 k) = GRHResearch.PersistenceResolution.ideal k
+'GRHResearch.PersistenceResolution.d1_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(GRHResearch.PersistenceResolution.augmentation k)
+'GRHResearch.PersistenceResolution.augmentation_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.augmentation_kernel.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (GRHResearch.PersistenceResolution.augmentation k) =
+    LinearMap.range (GRHResearch.PersistenceResolution.d1 k)
+'GRHResearch.PersistenceResolution.augmentation_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.free_terms_projective.{u_1} (k : Type u_1) [Field k] :
+  Module.Projective (GRHResearch.PersistenceResolution.Ring k) (GRHResearch.PersistenceResolution.Ring k) ∧
+    Module.Projective (GRHResearch.PersistenceResolution.Ring k) (GRHResearch.PersistenceResolution.F1 k) ∧
+      Module.Projective (GRHResearch.PersistenceResolution.Ring k) (GRHResearch.PersistenceResolution.F2 k)
+'GRHResearch.PersistenceResolution.free_terms_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.regular_action.{u_1} (k : Type u_1) [Field k]
+  (r q : GRHResearch.PersistenceResolution.Ring k) : r • q = r * q
+'GRHResearch.PersistenceResolution.regular_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.residue_action.{u_1} (k : Type u_1) [Field k]
+  (r : GRHResearch.PersistenceResolution.Ring k) (a : k) : r • a = MvPolynomial.constantCoeff r * a
+'GRHResearch.PersistenceResolution.residue_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.residue_x_smul.{u_1} (k : Type u_1) [Field k] (a : k) :
+  GRHResearch.PersistenceResolution.x k • a = 0
+'GRHResearch.PersistenceResolution.residue_x_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.residue_y_smul.{u_1} (k : Type u_1) [Field k] (a : k) :
+  GRHResearch.PersistenceResolution.y k • a = 0
+'GRHResearch.PersistenceResolution.residue_y_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.hom_x_smul_zero.{u_1, u_2} (k : Type u_1) [Field k] {N : Type u_2} [AddCommMonoid N]
+  [Module (GRHResearch.PersistenceResolution.Ring k) N] (f : N →ₗ[GRHResearch.PersistenceResolution.Ring k] k) (v : N) :
+  f (GRHResearch.PersistenceResolution.x k • v) = 0
+'GRHResearch.PersistenceResolution.hom_x_smul_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.hom_y_smul_zero.{u_1, u_2} (k : Type u_1) [Field k] {N : Type u_2} [AddCommMonoid N]
+  [Module (GRHResearch.PersistenceResolution.Ring k) N] (f : N →ₗ[GRHResearch.PersistenceResolution.Ring k] k) (v : N) :
+  f (GRHResearch.PersistenceResolution.y k • v) = 0
+'GRHResearch.PersistenceResolution.hom_y_smul_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.hom_d1_zero.{u_1} (k : Type u_1) [Field k]
+  (f : GRHResearch.PersistenceResolution.Ring k →ₗ[GRHResearch.PersistenceResolution.Ring k] k) :
+  f ∘ₗ GRHResearch.PersistenceResolution.d1 k = 0
+'GRHResearch.PersistenceResolution.hom_d1_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.PersistenceResolution.hom_d2_zero.{u_1} (k : Type u_1) [Field k]
+  (f : GRHResearch.PersistenceResolution.F1 k →ₗ[GRHResearch.PersistenceResolution.Ring k] k) :
+  f ∘ₗ GRHResearch.PersistenceResolution.d2 k = 0
+'GRHResearch.PersistenceResolution.hom_d2_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

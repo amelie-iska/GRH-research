@@ -25,6 +25,9 @@ python extension/lean/verify_all.py \
 Run that command from the repository root. It checks the compiler revision,
 clean tracked mathlib pin, all six Lake targets, current source hashes, actual
 theorem types, axiom inventories and source stability during elaboration.
+The fresh checker now passes `-DwarningAsError=true` to Lean and independently
+rejects warning-bearing output, absent printed types and unexpected axioms.
+Compiler, checker and configuration hashes must stay unchanged during the run.
 Standard foundational dependencies remain disclosed. Cached compiled imports
 and the named compiler are part of the trusted environment; this command is
 not a from-source rebuild of the entire Lean/mathlib dependency graph.
@@ -46,6 +49,56 @@ python -O extension/lean/verify_claim_register_gate.py \
 The ordinary and optimized records each report six checks, including acceptance
 of the unchanged current manifest. These are tests of evidence handling, not
 additional mathematical theorem declarations.
+
+The [continuation review](../review/final-pass/formal-continuation-20261113.md)
+records the stricter fresh run and the portability work. Its additional
+[fresh-checker regression record](verifier-gate-verification/verification.json)
+contains nine checks driven by five actual compiler invocations, including a
+warning that Lean otherwise emits with exit zero, an admitted proof, and an
+unproved project axiom. The corresponding
+[optimized run](verifier-gate-optimized-verification/verification.json) keeps all
+nine checks active under `python -O`. Deliberately invalid fixtures are temporary;
+they are never installed as project theorem sources.
+
+## Portable inherited-package verification
+
+The original `lean/` arithmetic and `lean-analytic/` packages remain separate
+from the six extension modules. Their public theorem/lemma inventory currently
+contains **7 arithmetic and 361 analytic declarations**. This source inventory
+is not itself a successful build count: consult each verification record's
+`verified_declaration_count`, `blocked_module_count` and exact source hashes.
+The older analytic README's 342 count describes an earlier snapshot.
+
+Both shell entrypoints accept explicit existing toolchains on Linux or macOS:
+
+```sh
+sh scripts/check_lean.sh --toolchain /absolute/path/to/lean-4.24.0-linux
+sh scripts/check_analytic.sh \
+  --toolchain /absolute/path/to/lean-4.24.0-linux \
+  --mathlib /absolute/path/to/mathlib4-v4.24.0
+```
+
+`GRH_LEAN_TOOLCHAIN` and `GRH_MATHLIB` provide equivalent per-command settings.
+To check both packages in one invocation:
+
+```sh
+python extension/lean/verify_inherited.py \
+  --toolchain /absolute/path/to/lean-4.24.0-linux \
+  --mathlib /absolute/path/to/mathlib4-v4.24.0
+```
+
+The [combined inherited manifest](inherited-verification/all/verification.json)
+records each public declaration's fully qualified name, actual elaborated type,
+foundational axiom dependencies, source and output hashes. Private helpers are
+elaborated with their containing modules but are not separately counted. The
+driver verifies the compiler revision, clean tracked mathlib pin, and exact
+dependency manifest. It makes no downloads and never invokes a global toolchain
+installer. A missing compiled import is recorded as a dependency block rather
+than presented as a failed mathematical theorem or a verified declaration.
+
+These packages still do not supply the missing arithmetic identification for
+GRH or a continuum mass-gap theorem. Their audit does not rebuild the separate
+Lean 4.34.0-rc2 upstream Navier–Stokes development.
 
 ## Original module and historical verification
 

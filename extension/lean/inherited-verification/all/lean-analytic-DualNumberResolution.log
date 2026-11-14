@@ -1,0 +1,124 @@
+GRHResearch.Analytic.DualNumberResolution.epsilon_ne_zero.{u_1} (k : Type u_1) [Field k] : epsilon k ≠ 0
+GRHResearch.Analytic.DualNumberResolution.epsilon_square_zero.{u_1} (k : Type u_1) [Field k] : epsilon k * epsilon k = 0
+GRHResearch.Analytic.DualNumberResolution.boundary_coordinates.{u_1} (k : Type u_1) [Field k] (x : Ring k) :
+  (boundary k) x = { re := 0, im := x.re }
+GRHResearch.Analytic.DualNumberResolution.boundary_square_zero.{u_1} (k : Type u_1) [Field k] :
+  boundary k ∘ₗ boundary k = 0
+GRHResearch.Analytic.DualNumberResolution.boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (boundary k) = LinearMap.range (boundary k)
+GRHResearch.Analytic.DualNumberResolution.differential_exact_all_degrees.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  LinearMap.ker (differential k n) = LinearMap.range (differential k (n + 1))
+GRHResearch.Analytic.DualNumberResolution.differential_square_zero.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  differential k n ∘ₗ differential k (n + 1) = 0
+GRHResearch.Analytic.DualNumberResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(augmentationLinear k)
+GRHResearch.Analytic.DualNumberResolution.augmentation_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (augmentationLinear k) = LinearMap.range (differential k 0)
+GRHResearch.Analytic.DualNumberResolution.resolution_terms_projective.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  Module.Projective (Ring k) (Term k n)
+GRHResearch.Analytic.DualNumberResolution.epsilon_smul_residue.{u_1} (k : Type u_1) [Field k] (a : k) :
+  epsilon k • a = 0
+GRHResearch.Analytic.DualNumberResolution.hom_boundary_zero.{u_1} (k : Type u_1) [Field k] (f : Ring k →ₗ[Ring k] k)
+  (n : ℕ) : f ∘ₗ differential k n = 0
+GRHResearch.Analytic.DualNumberResolution.augmentationLinear_ne_zero.{u_1} (k : Type u_1) [Field k] :
+  augmentationLinear k ≠ 0
+'GRHResearch.Analytic.DualNumberResolution.epsilon_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.epsilon_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.boundary_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.boundary_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.differential_exact_all_degrees' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.differential_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.augmentation_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.augmentation_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.resolution_terms_projective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.epsilon_smul_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.hom_boundary_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.DualNumberResolution.augmentationLinear_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.boundary_coordinates.{u_1} (k : Type u_1) [Field k]
+  (x : GRHResearch.Analytic.DualNumberResolution.Ring k) :
+  (GRHResearch.Analytic.DualNumberResolution.boundary k) x = { re := 0, im := x.re }
+'GRHResearch.Analytic.DualNumberResolution.boundary_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.epsilon_ne_zero.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.Analytic.DualNumberResolution.epsilon k ≠ 0
+'GRHResearch.Analytic.DualNumberResolution.epsilon_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.epsilon_square_zero.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.Analytic.DualNumberResolution.epsilon k * GRHResearch.Analytic.DualNumberResolution.epsilon k = 0
+'GRHResearch.Analytic.DualNumberResolution.epsilon_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.boundary_square_zero.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.Analytic.DualNumberResolution.boundary k ∘ₗ GRHResearch.Analytic.DualNumberResolution.boundary k = 0
+'GRHResearch.Analytic.DualNumberResolution.boundary_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.boundary_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (GRHResearch.Analytic.DualNumberResolution.boundary k) =
+    LinearMap.range (GRHResearch.Analytic.DualNumberResolution.boundary k)
+'GRHResearch.Analytic.DualNumberResolution.boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.differential_exact_all_degrees.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  LinearMap.ker (GRHResearch.Analytic.DualNumberResolution.differential k n) =
+    LinearMap.range (GRHResearch.Analytic.DualNumberResolution.differential k (n + 1))
+'GRHResearch.Analytic.DualNumberResolution.differential_exact_all_degrees' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.differential_square_zero.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  GRHResearch.Analytic.DualNumberResolution.differential k n ∘ₗ
+      GRHResearch.Analytic.DualNumberResolution.differential k (n + 1) =
+    0
+'GRHResearch.Analytic.DualNumberResolution.differential_square_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.augmentation_surjective.{u_1} (k : Type u_1) [Field k] :
+  Function.Surjective ⇑(GRHResearch.Analytic.DualNumberResolution.augmentationLinear k)
+'GRHResearch.Analytic.DualNumberResolution.augmentation_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.augmentation_exact.{u_1} (k : Type u_1) [Field k] :
+  LinearMap.ker (GRHResearch.Analytic.DualNumberResolution.augmentationLinear k) =
+    LinearMap.range (GRHResearch.Analytic.DualNumberResolution.differential k 0)
+'GRHResearch.Analytic.DualNumberResolution.augmentation_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.resolution_terms_projective.{u_1} (k : Type u_1) [Field k] (n : ℕ) :
+  Module.Projective (GRHResearch.Analytic.DualNumberResolution.Ring k)
+    (GRHResearch.Analytic.DualNumberResolution.Term k n)
+'GRHResearch.Analytic.DualNumberResolution.resolution_terms_projective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.epsilon_smul_residue.{u_1} (k : Type u_1) [Field k] (a : k) :
+  GRHResearch.Analytic.DualNumberResolution.epsilon k • a = 0
+'GRHResearch.Analytic.DualNumberResolution.epsilon_smul_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.hom_boundary_zero.{u_1} (k : Type u_1) [Field k]
+  (f : GRHResearch.Analytic.DualNumberResolution.Ring k →ₗ[GRHResearch.Analytic.DualNumberResolution.Ring k] k)
+  (n : ℕ) : f ∘ₗ GRHResearch.Analytic.DualNumberResolution.differential k n = 0
+'GRHResearch.Analytic.DualNumberResolution.hom_boundary_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.DualNumberResolution.augmentationLinear_ne_zero.{u_1} (k : Type u_1) [Field k] :
+  GRHResearch.Analytic.DualNumberResolution.augmentationLinear k ≠ 0
+'GRHResearch.Analytic.DualNumberResolution.augmentationLinear_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

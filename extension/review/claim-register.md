@@ -2,7 +2,7 @@
 
 This register inventories every theorem, proposition, lemma, corollary, conjecture, and problem environment reachable from the current manuscript main file. It records what evidence is present; it is not a universal proof certificate.
 
-The snapshot contains **264 claim environments** in **31 included TeX files**. **257** have attached local proof environments. 6 general results are explicitly cited external theorems. 5 local arguments are classified as conditional transfer or deduction criteria because their additional inputs are not established by those claims.
+The snapshot contains **269 claim environments** in **31 included TeX files**. **262** have attached local proof environments. 6 general results are explicitly cited external theorems. 5 local arguments are classified as conditional transfer or deduction criteria because their additional inputs are not established by those claims.
 
 A separate list classifies 9 major external statements from the new fluid chapters, including the released continuum theorem and the kinetic-limit and quantum-algorithm literature. These prose records are not added to the number of locally proved environments.
 
@@ -257,6 +257,11 @@ A separate mathematical reading, with per-claim findings and its own reviewed so
 | toric-transport-audit.010 | toric-transport-audit.tex | proposition: When a finite tropical mask is exact | Local argument | Not mapped |
 | toric-transport-audit.011 | toric-transport-audit.tex | proposition: Exact-step and bounded-length tropical paths | Local argument | Not mapped |
 | toric-transport-audit.012 | toric-transport-audit.tex | proposition: A nilpotent Jacobian with arbitrarily large gain | Local argument | Partial components: TransportContracts.nonnormal_shear_square_zero, TransportContracts.nonnormal_shear_unit_image, TransportContracts.nonnormal_shear_gain_squared, TransportContracts.nonnormal_shear_strict_gain, TransportContracts.nonnormal_shear_second_jvp_zero, TransportContracts.nonnormal_shear_not_normal |
+| toric-transport-audit.013 | toric-transport-audit.tex | theorem: Finite path-multiplicity bound | Local argument | Not mapped |
+| toric-transport-audit.014 | toric-transport-audit.tex | proposition: Decaying maximal paths with an expanding linear map | Local argument | Not mapped |
+| toric-transport-audit.015 | toric-transport-audit.tex | proposition: Fixed-rate feasibility is linear | Local argument | Not mapped |
+| toric-transport-audit.016 | toric-transport-audit.tex | proposition: Binary log loss with correct endpoint conventions | Local argument | Not mapped |
+| toric-transport-audit.017 | toric-transport-audit.tex | proposition: Independent disjoint components can carry one bit jointly | Local argument | Not mapped |
 | cyclic-cosmology.001 | cyclic-cosmology.tex | proposition: Connection change and null trajectories | Local argument | Not mapped |
 | cyclic-cosmology.002 | cyclic-cosmology.tex | proposition: Hodge scaling and the four-dimensional Maxwell system | Local argument | Not mapped |
 | cyclic-cosmology.003 | cyclic-cosmology.tex | theorem: Quartic compactification and conformal time | Local argument | Not mapped |

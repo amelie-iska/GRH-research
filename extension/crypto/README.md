@@ -44,12 +44,16 @@ python -m venv /path/to/research-crypto-venv
 ```
 
 `verification.json` records actual versions, source hashes and the outcome;
-`verification.log` records every test name. The **25 test methods** include
+`verification.log` records every test name. The **31 test methods** include
 additional parameterized cases and tamper checks. They cover empty/binary/Unicode
 payloads, each byte of the tested ciphertext/tag and nonce, wrong keys and
 contexts, algorithm substitution, malformed and duplicate JSON fields, signature
 changes, context-framing ambiguity, both KEM parameter sets, implicit rejection
-and malformed KEM lengths. No test is silently skipped when a backend is absent.
+and malformed KEM lengths. Permanent boundary regressions also cover both AEADs
+at the actual 16 MiB payload and 1024 UTF-8-byte context limits, one-byte-over
+payloads, oversized envelopes, multibyte contexts, noncanonical base64 pad-bit
+aliases and unpaired Unicode surrogates. No test is silently skipped when a
+backend is absent.
 
 All secret keys and shared secrets are created in memory for the run and are
 never written to a result file. The test report contains neither private keys

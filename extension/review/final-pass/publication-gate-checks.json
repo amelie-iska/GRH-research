@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "source_sha256": {
+    "extension/code/release_freshness.py": "1c5ce857cc94f1ff69a2e3759f27fb0e29fef4edcfd60de51d8716168262c58c",
+    "extension/code/build_github_pages.py": "b7f84888529201b05438b5374773237cf15c1b5f74dae7a29d5eeeffa1256f03",
+    "extension/code/test_release_freshness.py": "3519bf40adf5b181bd1d945fae71ded16fa57958a8b67952a60f9a82ab35d1ab"
+  },
+  "runs": [
+    {
+      "command": [
+        "python",
+        "extension/code/test_release_freshness.py"
+      ],
+      "exit_code": 0,
+      "tests_run": 15,
+      "output": "test_added_source_missing_from_archive_rejected (__main__.ReleaseFreshnessTests.test_added_source_missing_from_archive_rejected) ... ok\ntest_changed_crypto_source_rejected (__main__.ReleaseFreshnessTests.test_changed_crypto_source_rejected) ... ok\ntest_changed_fluid_reference_rejected (__main__.ReleaseFreshnessTests.test_changed_fluid_reference_rejected) ... ok\ntest_changed_formal_log_rejected (__main__.ReleaseFreshnessTests.test_changed_formal_log_rejected) ... ok\ntest_changed_pdf_bytes_rejected (__main__.ReleaseFreshnessTests.test_changed_pdf_bytes_rejected) ... ok\ntest_changed_pdf_source_rejected (__main__.ReleaseFreshnessTests.test_changed_pdf_source_rejected) ... ok\ntest_changed_written_claim_rejected (__main__.ReleaseFreshnessTests.test_changed_written_claim_rejected) ... ok\ntest_consistent_fixture_and_honest_upstream_gap_pass (__main__.ReleaseFreshnessTests.test_consistent_fixture_and_honest_upstream_gap_pass) ... ok\ntest_credentials_excluded_and_ignore_rules_included (__main__.ReleaseFreshnessTests.test_credentials_excluded_and_ignore_rules_included) ... ok\ntest_pages_builder_rejects_credential_paths_before_copying (__main__.ReleaseFreshnessTests.test_pages_builder_rejects_credential_paths_before_copying) ... ok\ntest_recursive_archive_contains_logs_and_rejects_missing_log (__main__.ReleaseFreshnessTests.test_recursive_archive_contains_logs_and_rejects_missing_log) ... ok\ntest_source_omitted_from_both_manifest_and_zip_rejected (__main__.ReleaseFreshnessTests.test_source_omitted_from_both_manifest_and_zip_rejected) ... ok\ntest_stale_public_evidence_copy_rejected (__main__.ReleaseFreshnessTests.test_stale_public_evidence_copy_rejected) ... ok\ntest_unapproved_axiom_rejected (__main__.ReleaseFreshnessTests.test_unapproved_axiom_rejected) ... ok\ntest_unrecorded_new_chapter_rejected (__main__.ReleaseFreshnessTests.test_unrecorded_new_chapter_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.230s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-O",
+        "extension/code/test_release_freshness.py"
+      ],
+      "exit_code": 0,
+      "tests_run": 15,
+      "output": "test_added_source_missing_from_archive_rejected (__main__.ReleaseFreshnessTests.test_added_source_missing_from_archive_rejected) ... ok\ntest_changed_crypto_source_rejected (__main__.ReleaseFreshnessTests.test_changed_crypto_source_rejected) ... ok\ntest_changed_fluid_reference_rejected (__main__.ReleaseFreshnessTests.test_changed_fluid_reference_rejected) ... ok\ntest_changed_formal_log_rejected (__main__.ReleaseFreshnessTests.test_changed_formal_log_rejected) ... ok\ntest_changed_pdf_bytes_rejected (__main__.ReleaseFreshnessTests.test_changed_pdf_bytes_rejected) ... ok\ntest_changed_pdf_source_rejected (__main__.ReleaseFreshnessTests.test_changed_pdf_source_rejected) ... ok\ntest_changed_written_claim_rejected (__main__.ReleaseFreshnessTests.test_changed_written_claim_rejected) ... ok\ntest_consistent_fixture_and_honest_upstream_gap_pass (__main__.ReleaseFreshnessTests.test_consistent_fixture_and_honest_upstream_gap_pass) ... ok\ntest_credentials_excluded_and_ignore_rules_included (__main__.ReleaseFreshnessTests.test_credentials_excluded_and_ignore_rules_included) ... ok\ntest_pages_builder_rejects_credential_paths_before_copying (__main__.ReleaseFreshnessTests.test_pages_builder_rejects_credential_paths_before_copying) ... ok\ntest_recursive_archive_contains_logs_and_rejects_missing_log (__main__.ReleaseFreshnessTests.test_recursive_archive_contains_logs_and_rejects_missing_log) ... ok\ntest_source_omitted_from_both_manifest_and_zip_rejected (__main__.ReleaseFreshnessTests.test_source_omitted_from_both_manifest_and_zip_rejected) ... ok\ntest_stale_public_evidence_copy_rejected (__main__.ReleaseFreshnessTests.test_stale_public_evidence_copy_rejected) ... ok\ntest_unapproved_axiom_rejected (__main__.ReleaseFreshnessTests.test_unapproved_axiom_rejected) ... ok\ntest_unrecorded_new_chapter_rejected (__main__.ReleaseFreshnessTests.test_unrecorded_new_chapter_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.310s\n\nOK\n"
+    }
+  ],
+  "scope": "Synthetic consistency fixtures and negative controls; no scientific verification or authentic compiler run is implied."
+}

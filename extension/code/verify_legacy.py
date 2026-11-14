@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Verify the generated legacy bundle's hashes, size limits and static delivery."""
+
+# Otherwise -O can bypass the source/hash assertions and still publish a pass.
+if not __debug__:
+    raise RuntimeError("Verification requires assertions; run without -O or PYTHONOPTIMIZE")
+
 from concurrent.futures import ThreadPoolExecutor
 from functools import partial
 import hashlib

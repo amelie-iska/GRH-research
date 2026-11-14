@@ -1,0 +1,65 @@
+test_algorithm_cannot_be_selected_by_envelope (test_research_crypto.ArtifactEncryptionTests.test_algorithm_cannot_be_selected_by_envelope) ... ok
+test_changed_algorithm_is_authenticated (test_research_crypto.ArtifactEncryptionTests.test_changed_algorithm_is_authenticated) ... ok
+test_changed_context_fails_even_if_new_context_expected (test_research_crypto.ArtifactEncryptionTests.test_changed_context_fails_even_if_new_context_expected) ... ok
+test_duplicate_and_unknown_json_fields_rejected (test_research_crypto.ArtifactEncryptionTests.test_duplicate_and_unknown_json_fields_rejected) ... ok
+test_each_ciphertext_and_tag_byte_change_rejected (test_research_crypto.ArtifactEncryptionTests.test_each_ciphertext_and_tag_byte_change_rejected) ... ok
+test_each_nonce_byte_change_rejected (test_research_crypto.ArtifactEncryptionTests.test_each_nonce_byte_change_rejected) ... ok
+test_fresh_random_nonce_sample (test_research_crypto.ArtifactEncryptionTests.test_fresh_random_nonce_sample) ... ok
+test_key_and_context_constraints (test_research_crypto.ArtifactEncryptionTests.test_key_and_context_constraints) ... ok
+test_maximum_payload_and_context_roundtrip (test_research_crypto.ArtifactEncryptionTests.test_maximum_payload_and_context_roundtrip) ... ok
+test_noncanonical_base64_pad_bits_rejected (test_research_crypto.ArtifactEncryptionTests.test_noncanonical_base64_pad_bits_rejected) ... ok
+test_nonobject_and_malformed_json_rejected (test_research_crypto.ArtifactEncryptionTests.test_nonobject_and_malformed_json_rejected) ... ok
+test_oversized_payload_rejected (test_research_crypto.ArtifactEncryptionTests.test_oversized_payload_rejected) ... ok
+test_oversized_serialized_envelope_rejected (test_research_crypto.ArtifactEncryptionTests.test_oversized_serialized_envelope_rejected) ... ok
+test_roundtrip_empty_binary_unicode_and_large (test_research_crypto.ArtifactEncryptionTests.test_roundtrip_empty_binary_unicode_and_large) ... ok
+test_strict_version_algorithm_and_base64 (test_research_crypto.ArtifactEncryptionTests.test_strict_version_algorithm_and_base64) ... ok
+test_unicode_context_roundtrip (test_research_crypto.ArtifactEncryptionTests.test_unicode_context_roundtrip) ... ok
+test_unpaired_surrogate_context_rejected (test_research_crypto.ArtifactEncryptionTests.test_unpaired_surrogate_context_rejected) ... ok
+test_utf8_byte_limit_is_not_character_limit (test_research_crypto.ArtifactEncryptionTests.test_utf8_byte_limit_is_not_character_limit) ... ok
+test_wrong_expected_context_rejected (test_research_crypto.ArtifactEncryptionTests.test_wrong_expected_context_rejected) ... ok
+test_wrong_key_rejected (test_research_crypto.ArtifactEncryptionTests.test_wrong_key_rejected) ... ok
+test_encapsulation_roundtrip_and_sizes (test_research_crypto.MLKEMTests.test_encapsulation_roundtrip_and_sizes) ... ok
+test_invalid_lengths_rejected (test_research_crypto.MLKEMTests.test_invalid_lengths_rejected) ... ok
+test_tampering_uses_implicit_rejection (test_research_crypto.MLKEMTests.test_tampering_uses_implicit_rejection) ... ok
+test_wrong_private_key_does_not_recover_secret (test_research_crypto.MLKEMTests.test_wrong_private_key_does_not_recover_secret) ... ok
+test_changed_payload_rejected (test_research_crypto.SignatureTests.test_changed_payload_rejected) ... ok
+test_context_message_framing_unambiguous (test_research_crypto.SignatureTests.test_context_message_framing_unambiguous) ... ok
+test_empty_payload (test_research_crypto.SignatureTests.test_empty_payload) ... ok
+test_roundtrip (test_research_crypto.SignatureTests.test_roundtrip) ... ok
+test_signature_modification_rejected (test_research_crypto.SignatureTests.test_signature_modification_rejected) ... ok
+test_wrong_context_rejected (test_research_crypto.SignatureTests.test_wrong_context_rejected) ... ok
+test_wrong_public_key_rejected (test_research_crypto.SignatureTests.test_wrong_public_key_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 1.195s
+
+OK
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-14T00:16:50.406897+00:00",
+  "status": "passed",
+  "tests_run": 31,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 1.195325730004697,
+  "python": "3.12.14",
+  "cryptography": "50.0.0",
+  "native_backend": "OpenSSL 4.0.1 9 Jun 2026",
+  "algorithms_exercised": [
+    "AES-256-GCM",
+    "ChaCha20-Poly1305",
+    "Ed25519",
+    "ML-KEM-768",
+    "ML-KEM-1024"
+  ],
+  "source_sha256": {
+    "research_crypto.py": "54565f60dc085a9fddabc21c8f260f4611399f428d6d48a6b33772a063ad8116",
+    "test_research_crypto.py": "bbb8303f7a6d3d60b804262ac178e89cadba40b005f66315909f6788ffd94dcf",
+    "verify_crypto.py": "85e6688e432add78653f8372ffe9b08d32d8592732f04bf3e1fdafce14211419",
+    "requirements.txt": "393b9dff0661e807b4f3793c6750cb0b802b9219c7563c83e7a35fb29b90cd59"
+  },
+  "log_sha256": "047c70afefced03eecbcce7b4a9ae0263a5557b6f94b12313d84d56826b73d46",
+  "keys": "Generated ephemerally inside tests; no private keys, shared secrets or plaintext inputs logged.",
+  "scope": "Functional and tamper-rejection regressions for library-backed wrappers. No cryptographic security reduction, Lean proof of the primitives, independent backend audit, FIPS validation, authenticated KEM protocol or quantum-advantage claim."
+}

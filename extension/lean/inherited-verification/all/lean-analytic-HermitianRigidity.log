@@ -1,0 +1,14 @@
+'GRHResearch.Analytic.real_valued_holomorphic_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.conjugate_holomorphic_pair_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.holomorphic_hermitian_family_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.real_valued_holomorphic_constant {U : Set ℂ} {f : ℂ → ℂ} (hU : IsOpen U) (hc : IsPreconnected U)
+  (hf : DifferentiableOn ℂ f U) (hreal : ∀ z ∈ U, (f z).im = 0) {x y : ℂ} (hx : x ∈ U) (hy : y ∈ U) : f x = f y
+'GRHResearch.Analytic.real_valued_holomorphic_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.conjugate_holomorphic_pair_constant {U : Set ℂ} {f g : ℂ → ℂ} (hU : IsOpen U)
+  (hc : IsPreconnected U) (hf : DifferentiableOn ℂ f U) (hg : DifferentiableOn ℂ g U)
+  (hconj : ∀ z ∈ U, g z = star (f z)) {x y : ℂ} (hx : x ∈ U) (hy : y ∈ U) : f x = f y
+'GRHResearch.Analytic.conjugate_holomorphic_pair_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.holomorphic_hermitian_family_constant.{u_1} {ι : Type u_1} {U : Set ℂ} {H : ℂ → Matrix ι ι ℂ}
+  (hU : IsOpen U) (hc : IsPreconnected U) (hentry : ∀ (i j : ι), DifferentiableOn ℂ (fun z => H z i j) U)
+  (hHermitian : ∀ z ∈ U, (H z).IsHermitian) {x y : ℂ} (hx : x ∈ U) (hy : y ∈ U) : H x = H y
+'GRHResearch.Analytic.holomorphic_hermitian_family_constant' depends on axioms: [propext, Classical.choice, Quot.sound]

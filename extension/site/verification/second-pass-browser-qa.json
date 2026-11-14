@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "date": "2026-11-13",
+  "preview": "official managed Sites preview",
+  "desktop_viewport": [
+    1348,
+    926
+  ],
+  "narrow_iframe_css_width": 390,
+  "narrow_content_width": 375,
+  "document_horizontal_overflow": false,
+  "temporary_responsive_harness_removed": true,
+  "pages": [
+    "learning.html",
+    "languages.html",
+    "cosmology.html"
+  ],
+  "observed_checks": {
+    "quantum_toricgt": {
+      "loaded_full_selected_model": true,
+      "four_graph_choices": true,
+      "live_offset_radians": 0.01,
+      "ood_example": "caccbdabcbad",
+      "maximum_normalized_prediction_change": 0.005607,
+      "certified_cost_integer_units": 67,
+      "initial_state_gate_zero_probability_000": 1,
+      "all_seed_run_rows": 9,
+      "aggregate_rows": 3
+    },
+    "grammar": {
+      "qubits": 6,
+      "full_matrix_dimension": 64,
+      "cancelled_pairs": 3,
+      "remaining_gates": 3,
+      "maximum_matrix_residual": 1.11e-16,
+      "invalid_order_word_rejected": true,
+      "empty_word_accepted": true,
+      "causal_intervention_reset_checked": true
+    },
+    "cosmology": {
+      "fixture_loaded": true,
+      "synthetic_snr3_scan_maximum": 4.110988,
+      "synthetic_snr3_global_count": 13,
+      "synthetic_snr3_rank_denominator": 4096,
+      "synthetic_snr5_global_count": 0,
+      "synthetic_snr5_resolution_floor": 0.000244140625,
+      "flat_projection_samples": 96,
+      "face_injection_control_checked": true
+    }
+  },
+  "console_scope": "Observed error entries came from the browser extension metadata script; no application-origin error was observed.",
+  "screenshots": "Desktop live-circuit and narrow-view screenshots were inspected; kept as transient review evidence, not included in the source release."
+}

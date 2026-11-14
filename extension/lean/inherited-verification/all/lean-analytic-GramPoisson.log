@@ -1,0 +1,38 @@
+'GRHResearch.Analytic.normalized_finite_fourier_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.normalized_finite_fourier_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.nonprincipal_independent_coordinate_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GRHResearch.Analytic.nonprincipal_joint_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_dyadic_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_dyadic_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_dyadic_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_dyadic_head_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.Analytic.gram_nonexceptional_accounting' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.normalized_finite_fourier_norm.{u_1} {G : Type u_1} [AddCommGroup G] [Fintype G] (a : G → ℂ)
+  (ψ : AddChar G ℂ) {M : ℝ} (ha : ∀ (x : G), ‖a x‖ ≤ M) : ‖GRHResearch.Analytic.normalizedFiniteFourier a ψ‖ ≤ M
+'GRHResearch.Analytic.normalized_finite_fourier_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.normalized_finite_fourier_zero.{u_1} {G : Type u_1} [AddCommGroup G] [Fintype G] (a : G → ℂ)
+  (ha : ∑ x, a x = 0) : GRHResearch.Analytic.normalizedFiniteFourier a 1 = 0
+'GRHResearch.Analytic.normalized_finite_fourier_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.nonprincipal_independent_coordinate_mean.{u_1, u_2} {F : Type u_1} {I : Type u_2} [Field F]
+  [Fintype F] [Fintype I] (χ : MulChar F ℂ) (hχ : χ ≠ 1) (b : I → ℂ) : ∑ x, ∑ i, χ x * b i = 0
+'GRHResearch.Analytic.nonprincipal_independent_coordinate_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GRHResearch.Analytic.nonprincipal_joint_mean.{u_1, u_2, u_3} {F : Type u_1} {I : Type u_2} {J : Type u_3} [Field F]
+  [Fintype F] [Fintype I] [Fintype J] (χ : MulChar F ℂ) (hχ : χ ≠ 1) (b : I → J → ℂ) : ∑ x, ∑ i, ∑ j, χ x * b i j = 0
+'GRHResearch.Analytic.nonprincipal_joint_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gram_dyadic_head (L : ℕ) : ∑ n ∈ range (L + 1), ↑(n + 1) * 2 ^ n = ↑L * 2 ^ (L + 1) + 1
+'GRHResearch.Analytic.gram_dyadic_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gram_dyadic_total : ∑' (n : ℕ), ↑(n + 1) * (1 / 2) ^ n = 4
+'GRHResearch.Analytic.gram_dyadic_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gram_dyadic_tail (L : ℕ) :
+  ∑' (n : ℕ), ↑(n + L + 2) * (1 / 2) ^ (n + L + 1) = (↑L + 3) * (1 / 2) ^ L
+'GRHResearch.Analytic.gram_dyadic_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gram_dyadic_head_bound (L : ℕ) {Λ : ℝ} (hΛ : 2 ^ L ≤ Λ) :
+  (∑ n ∈ range (L + 1), ↑(n + 1) * 2 ^ n) / Λ ^ 2 ≤ 2 * (↑L + 1) / Λ
+'GRHResearch.Analytic.gram_dyadic_head_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.Analytic.gram_nonexceptional_accounting (Q Y R P C D : ℝ) (hY : Y ≠ 0) (hC : C ≠ 0) (hD : D ≠ 0) :
+  Q / Y ^ 3 * (C * D * (R * P / C)) * C * (Y / (C * D)) ^ 2 = Q / Y * (R * P / (C * D))
+'GRHResearch.Analytic.gram_nonexceptional_accounting' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -35,7 +35,8 @@ if ! git merge-base --is-ancestor origin/main HEAD; then
   printf '%s\n' 'The published main branch has changes not in HEAD. Integrate them before publishing.' >&2
   exit 1
 fi
-git push --set-upstream origin HEAD:refs/heads/main
+git -c credential.helper= -c 'credential.helper=!gh auth git-credential' \
+  push --set-upstream origin HEAD:refs/heads/main
 local_commit=$(git rev-parse HEAD)
 remote_commit=$(git ls-remote --heads origin refs/heads/main | cut -f1)
 if [[ "$local_commit" != "$remote_commit" ]]; then

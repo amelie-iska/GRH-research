@@ -5,6 +5,11 @@ No external dependencies. These finite checks supplement the unbounded proofs
 in the manuscript; they do not claim a general theorem from a finite search.
 """
 from __future__ import annotations
+
+# Refuse before imports or report writes when Python has disabled the checks.
+if not __debug__:
+    raise RuntimeError("Verification requires assertions; run without -O or PYTHONOPTIMIZE")
+
 from collections import Counter
 from fractions import Fraction
 import hashlib

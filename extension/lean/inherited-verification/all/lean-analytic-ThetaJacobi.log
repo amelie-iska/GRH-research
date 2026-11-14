@@ -1,0 +1,114 @@
+GRHResearch.ThetaJacobi.jacobi_conjugate.{u_1} {F : Type u_1} [Field F] [Fintype F] (rho eta : MulChar F ℂ) :
+  star (jacobiSum rho eta) = jacobiSum rho⁻¹ eta⁻¹
+GRHResearch.ThetaJacobi.jacobi_norm_sq.{u_1} {F : Type u_1} [Field F] [Fintype F] (rho eta : MulChar F ℂ) (hr : rho ≠ 1)
+  (he : eta ≠ 1) (hre : rho * eta ≠ 1) : ‖jacobiSum rho eta‖ ^ 2 = ↑(Fintype.card F)
+GRHResearch.ThetaJacobi.shifted_jacobi.{u_1} {F : Type u_1} [Field F] [Fintype F] (rho eta : MulChar F ℂ) (d : F)
+  (hd : d ≠ 0) : ∑ t, rho t * eta (t - d) = rho d * eta (-d) * jacobiSum rho eta
+GRHResearch.ThetaJacobi.cubic_quadratic_product_ne_one.{u_2} {K : Type u_2} [Field K] (rho eta : MulChar K ℂ)
+  (hr : rho ^ 3 = 1) (he : eta ^ 2 = 1) (hrn : rho ≠ 1) : rho * eta ≠ 1
+GRHResearch.ThetaJacobi.cm_determinant.{u_2} {R : Type u_2} [CommRing R] (a b : R) :
+  (cmMatrix a b).det = a ^ 2 - a * b + b ^ 2
+GRHResearch.ThetaJacobi.cm_local_polynomial.{u_2} {R : Type u_2} [CommRing R] (a b t : R) :
+  (1 - t • cmMatrix a b).det = 1 - (2 * a - b) * t + (a ^ 2 - a * b + b ^ 2) * t ^ 2
+GRHResearch.ThetaJacobi.cm_gram_identity.{u_2} {R : Type u_2} [CommRing R] (a b : R) :
+  (cmMatrix a b).transpose * gram * cmMatrix a b = (a ^ 2 - a * b + b ^ 2) • gram
+GRHResearch.ThetaJacobi.cm_gram_positive (x y : ℝ) (h : x ≠ 0 ∨ y ≠ 0) : 0 < 2 * x ^ 2 - 2 * x * y + 2 * y ^ 2
+GRHResearch.ThetaJacobi.f7_local_polynomials (t : ℤ) :
+  (1 - t • cmMatrix 3 2).det = 1 - 4 * t + 7 * t ^ 2 ∧ (1 - t • cmMatrix (-1) (-3)).det = 1 - t + 7 * t ^ 2
+GRHResearch.ThetaJacobi.cellular_inclusion_cycles.{u_2} {R : Type u_2} [CommRing R] :
+  cellularBoundary * homologyInclusion = 0
+GRHResearch.ThetaJacobi.cellular_homology_restriction.{u_2} {R : Type u_2} [CommRing R] (a b : R) :
+  cellularEdge a b * homologyInclusion = homologyInclusion * cmMatrix a b
+GRHResearch.ThetaJacobi.cellular_edge_polynomial.{u_2} {R : Type u_2} [CommRing R] (a b t : R) :
+  (1 - t • cellularEdge a b).det = (1 - (a + b) * t) * (1 - (2 * a - b) * t + (a ^ 2 - a * b + b ^ 2) * t ^ 2)
+GRHResearch.ThetaJacobi.cellular_chain_map (a b : ℚ) :
+  cellularVertex a b * cellularBoundary = cellularBoundary * cellularEdge a b
+'GRHResearch.ThetaJacobi.cellular_inclusion_cycles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.cellular_homology_restriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.cellular_edge_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.cellular_chain_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.conjugation_matrix_identities.{u_2} {R : Type u_2} [CommRing R] :
+  conjugationMatrix * conjugationMatrix = 1 ∧
+    conjugationMatrix * cmMatrix 0 1 = cmMatrix 0 1 * cmMatrix 0 1 * conjugationMatrix ∧
+      conjugationMatrix.transpose * gram * conjugationMatrix = gram
+GRHResearch.ThetaJacobi.inert_real_determinant_nonpositive (M : Matrix (Fin 2) (Fin 2) ℝ)
+  (h : M * cmMatrix 0 1 = cmMatrix 0 1 * cmMatrix 0 1 * M) : M.det ≤ 0
+GRHResearch.ThetaJacobi.no_inert_real_frobenius (q : ℝ) (hq : 0 < q) (M : Matrix (Fin 2) (Fin 2) ℝ)
+  (h : M * cmMatrix 0 1 = cmMatrix 0 1 * cmMatrix 0 1 * M) (hd : M.det = q) : False
+'GRHResearch.ThetaJacobi.conjugation_matrix_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.inert_real_determinant_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.no_inert_real_frobenius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.jacobi_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.jacobi_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.shifted_jacobi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.cubic_quadratic_product_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.cm_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.cm_local_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.cm_gram_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.cm_gram_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRHResearch.ThetaJacobi.f7_local_polynomials' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.jacobi_conjugate.{u_1} {F : Type u_1} [Field F] [Fintype F] (rho eta : MulChar F ℂ) :
+  star (jacobiSum rho eta) = jacobiSum rho⁻¹ eta⁻¹
+'GRHResearch.ThetaJacobi.jacobi_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.jacobi_norm_sq.{u_1} {F : Type u_1} [Field F] [Fintype F] (rho eta : MulChar F ℂ) (hr : rho ≠ 1)
+  (he : eta ≠ 1) (hre : rho * eta ≠ 1) : ‖jacobiSum rho eta‖ ^ 2 = ↑(Fintype.card F)
+'GRHResearch.ThetaJacobi.jacobi_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.shifted_jacobi.{u_1} {F : Type u_1} [Field F] [Fintype F] (rho eta : MulChar F ℂ) (d : F)
+  (hd : d ≠ 0) : ∑ t, rho t * eta (t - d) = rho d * eta (-d) * jacobiSum rho eta
+'GRHResearch.ThetaJacobi.shifted_jacobi' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cubic_quadratic_product_ne_one.{u_2} {K : Type u_2} [Field K] (rho eta : MulChar K ℂ)
+  (hr : rho ^ 3 = 1) (he : eta ^ 2 = 1) (hrn : rho ≠ 1) : rho * eta ≠ 1
+'GRHResearch.ThetaJacobi.cubic_quadratic_product_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cm_determinant.{u_2} {R : Type u_2} [CommRing R] (a b : R) :
+  (GRHResearch.ThetaJacobi.cmMatrix a b).det = a ^ 2 - a * b + b ^ 2
+'GRHResearch.ThetaJacobi.cm_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cm_local_polynomial.{u_2} {R : Type u_2} [CommRing R] (a b t : R) :
+  (1 - t • GRHResearch.ThetaJacobi.cmMatrix a b).det = 1 - (2 * a - b) * t + (a ^ 2 - a * b + b ^ 2) * t ^ 2
+'GRHResearch.ThetaJacobi.cm_local_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cm_gram_identity.{u_2} {R : Type u_2} [CommRing R] (a b : R) :
+  (GRHResearch.ThetaJacobi.cmMatrix a b).transpose * GRHResearch.ThetaJacobi.gram *
+      GRHResearch.ThetaJacobi.cmMatrix a b =
+    (a ^ 2 - a * b + b ^ 2) • GRHResearch.ThetaJacobi.gram
+'GRHResearch.ThetaJacobi.cm_gram_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cm_gram_positive (x y : ℝ) (h : x ≠ 0 ∨ y ≠ 0) : 0 < 2 * x ^ 2 - 2 * x * y + 2 * y ^ 2
+'GRHResearch.ThetaJacobi.cm_gram_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.f7_local_polynomials (t : ℤ) :
+  (1 - t • GRHResearch.ThetaJacobi.cmMatrix 3 2).det = 1 - 4 * t + 7 * t ^ 2 ∧
+    (1 - t • GRHResearch.ThetaJacobi.cmMatrix (-1) (-3)).det = 1 - t + 7 * t ^ 2
+'GRHResearch.ThetaJacobi.f7_local_polynomials' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cellular_inclusion_cycles.{u_2} {R : Type u_2} [CommRing R] :
+  GRHResearch.ThetaJacobi.cellularBoundary * GRHResearch.ThetaJacobi.homologyInclusion = 0
+'GRHResearch.ThetaJacobi.cellular_inclusion_cycles' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cellular_homology_restriction.{u_2} {R : Type u_2} [CommRing R] (a b : R) :
+  GRHResearch.ThetaJacobi.cellularEdge a b * GRHResearch.ThetaJacobi.homologyInclusion =
+    GRHResearch.ThetaJacobi.homologyInclusion * GRHResearch.ThetaJacobi.cmMatrix a b
+'GRHResearch.ThetaJacobi.cellular_homology_restriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cellular_edge_polynomial.{u_2} {R : Type u_2} [CommRing R] (a b t : R) :
+  (1 - t • GRHResearch.ThetaJacobi.cellularEdge a b).det =
+    (1 - (a + b) * t) * (1 - (2 * a - b) * t + (a ^ 2 - a * b + b ^ 2) * t ^ 2)
+'GRHResearch.ThetaJacobi.cellular_edge_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.cellular_chain_map (a b : ℚ) :
+  GRHResearch.ThetaJacobi.cellularVertex a b * GRHResearch.ThetaJacobi.cellularBoundary =
+    GRHResearch.ThetaJacobi.cellularBoundary * GRHResearch.ThetaJacobi.cellularEdge a b
+'GRHResearch.ThetaJacobi.cellular_chain_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.conjugation_matrix_identities.{u_2} {R : Type u_2} [CommRing R] :
+  GRHResearch.ThetaJacobi.conjugationMatrix * GRHResearch.ThetaJacobi.conjugationMatrix = 1 ∧
+    GRHResearch.ThetaJacobi.conjugationMatrix * GRHResearch.ThetaJacobi.cmMatrix 0 1 =
+        GRHResearch.ThetaJacobi.cmMatrix 0 1 * GRHResearch.ThetaJacobi.cmMatrix 0 1 *
+          GRHResearch.ThetaJacobi.conjugationMatrix ∧
+      GRHResearch.ThetaJacobi.conjugationMatrix.transpose * GRHResearch.ThetaJacobi.gram *
+          GRHResearch.ThetaJacobi.conjugationMatrix =
+        GRHResearch.ThetaJacobi.gram
+'GRHResearch.ThetaJacobi.conjugation_matrix_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.inert_real_determinant_nonpositive (M : Matrix (Fin 2) (Fin 2) ℝ)
+  (h :
+    M * GRHResearch.ThetaJacobi.cmMatrix 0 1 =
+      GRHResearch.ThetaJacobi.cmMatrix 0 1 * GRHResearch.ThetaJacobi.cmMatrix 0 1 * M) :
+  M.det ≤ 0
+'GRHResearch.ThetaJacobi.inert_real_determinant_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+GRHResearch.ThetaJacobi.no_inert_real_frobenius (q : ℝ) (hq : 0 < q) (M : Matrix (Fin 2) (Fin 2) ℝ)
+  (h :
+    M * GRHResearch.ThetaJacobi.cmMatrix 0 1 =
+      GRHResearch.ThetaJacobi.cmMatrix 0 1 * GRHResearch.ThetaJacobi.cmMatrix 0 1 * M)
+  (hd : M.det = q) : False
+'GRHResearch.ThetaJacobi.no_inert_real_frobenius' depends on axioms: [propext, Classical.choice, Quot.sound]
