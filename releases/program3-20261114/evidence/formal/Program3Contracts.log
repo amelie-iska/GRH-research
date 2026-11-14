@@ -1,0 +1,32 @@
+Program3Contracts.xor_oracle_involution.{u_1} {X : Type u_1} (f : X → Bool) (input : X × Bool) :
+  Program3Contracts.xorOracle f (Program3Contracts.xorOracle f input) = input
+Program3Contracts.compute_copy_uncompute (x a y : Bool) : (x ^^ a ^^ a, y ^^ a) = (x, y ^^ a)
+Program3Contracts.cyclic_voltage_closure.{u_1} {A : Type u_1} [AddGroup A] (s u v : A) (h : u + v = 0) : s + u + v = s
+Program3Contracts.fiber_average_constant.{u_1} {ι : Type u_1} [Fintype ι] [Nonempty ι] (x : ℝ) :
+  (∑ _i, x) / ↑(Fintype.card ι) = x
+Program3Contracts.replicated_normalization (d numerator denominator : ℝ) (hd : d ≠ 0) (hz : denominator ≠ 0) :
+  d * numerator / (d * denominator) = numerator / denominator
+Program3Contracts.normalized_maxplus_error (a b a' b' δa δb : ℝ) (ha : |a' - a| ≤ δa) (hb : |b' - b| ≤ δb) :
+  |a' - b' - (a - b)| ≤ δa + δb
+Program3Contracts.ising_projection_residual (full projected exact : ℝ) :
+  |full - exact| ≤ |full - projected| + |projected - exact|
+Program3Contracts.kraus_composition_complete.{u_1, u_2, u_3, u_4, u_5} {I : Type u_1} {J : Type u_2} {A : Type u_3}
+  {B : Type u_4} {C : Type u_5} [Fintype I] [Fintype J] [Fintype A] [Fintype B] [Fintype C] [DecidableEq A]
+  [DecidableEq B] (K : I → Matrix B A ℂ) (L : J → Matrix C B ℂ) (hK : ∑ i, (K i).conjTranspose * K i = 1)
+  (hL : ∑ j, (L j).conjTranspose * L j = 1) : ∑ i, ∑ j, (L j * K i).conjTranspose * (L j * K i) = 1
+Program3Contracts.conservative_rank_count {n : ℕ} (scores : Fin n → ℝ) (k : ℕ) :
+  {i | Program3Contracts.upperRank scores i ≤ k}.card ≤ k
+Program3Contracts.rank_probability_bound (m n k : ℕ) (hn : 0 < n) (hm : m ≤ k) : ↑m / ↑n ≤ ↑k / ↑n
+Program3Contracts.false_positive_budget.{u_1} {ι : Type u_1} [Fintype ι] (p : ι → ℝ) (α : ℝ)
+  (h : ∀ (i : ι), p i ≤ α / ↑(Fintype.card ι)) [Nonempty ι] : ∑ i, p i ≤ α
+'Program3Contracts.xor_oracle_involution' depends on axioms: [propext]
+'Program3Contracts.compute_copy_uncompute' does not depend on any axioms
+'Program3Contracts.cyclic_voltage_closure' depends on axioms: [propext]
+'Program3Contracts.fiber_average_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Program3Contracts.replicated_normalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Program3Contracts.normalized_maxplus_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Program3Contracts.ising_projection_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Program3Contracts.kraus_composition_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Program3Contracts.conservative_rank_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Program3Contracts.rank_probability_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Program3Contracts.false_positive_budget' depends on axioms: [propext, Classical.choice, Quot.sound]

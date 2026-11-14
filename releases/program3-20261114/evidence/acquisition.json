@@ -1,0 +1,120 @@
+{
+  "schema": "grh.wmap-acquisition.v1",
+  "retrieved_at_utc": "2026-11-14T14:17:35.982486+00:00",
+  "sources": [
+    {
+      "product": "ILC",
+      "landing": "https://lambda.gsfc.nasa.gov/product/wmap/dr5/ilc_map_get.html",
+      "url": "https://lambda.gsfc.nasa.gov/data/map/dr5/dfp/ilc/wmap_ilc_9yr_v5.fits",
+      "filename": "wmap_ilc_9yr_v5.fits",
+      "bytes": 25174080,
+      "sha256": "4501090f824f9140e916339f9e8e490333f6ffe4257a6ee6a02526c8640099a9",
+      "header": {
+        "PIXTYPE": "HEALPIX",
+        "ORDERING": "NESTED",
+        "NSIDE": 512,
+        "COORDSYS": null,
+        "FIRSTPIX": 0,
+        "LASTPIX": 3145727
+      },
+      "columns": [
+        {
+          "name": "TEMPERATURE",
+          "format": "E",
+          "unit": "mK, thermodynamic"
+        },
+        {
+          "name": "N_OBS",
+          "format": "E",
+          "unit": "counts"
+        }
+      ]
+    },
+    {
+      "product": "V",
+      "landing": "https://lambda.gsfc.nasa.gov/product/wmap/dr5/maps_forered_band_r9_i_9yr_get.html",
+      "url": "https://lambda.gsfc.nasa.gov/data/map/dr5/skymaps/9yr/forered/wmap_band_forered_imap_r9_9yr_V_v5.fits",
+      "filename": "wmap_band_forered_imap_r9_9yr_V_v5.fits",
+      "bytes": 25174080,
+      "sha256": "619231a58e3e2ba5dac9a348daf3ebd8ec72e93a72e2fda2e11706021b9cf29b",
+      "header": {
+        "PIXTYPE": "HEALPIX",
+        "ORDERING": "NESTED",
+        "NSIDE": 512,
+        "COORDSYS": null,
+        "FIRSTPIX": 0,
+        "LASTPIX": 3145727
+      },
+      "columns": [
+        {
+          "name": "TEMPERATURE",
+          "format": "E",
+          "unit": "mK"
+        },
+        {
+          "name": "N_OBS",
+          "format": "E",
+          "unit": "counts"
+        }
+      ]
+    },
+    {
+      "product": "W",
+      "landing": "https://lambda.gsfc.nasa.gov/product/wmap/dr5/maps_forered_band_r9_i_9yr_get.html",
+      "url": "https://lambda.gsfc.nasa.gov/data/map/dr5/skymaps/9yr/forered/wmap_band_forered_imap_r9_9yr_W_v5.fits",
+      "filename": "wmap_band_forered_imap_r9_9yr_W_v5.fits",
+      "bytes": 25174080,
+      "sha256": "ba495f3b0df6e994193ff292408c38b51148ab2a9f65e58ac5b89a51bd152843",
+      "header": {
+        "PIXTYPE": "HEALPIX",
+        "ORDERING": "NESTED",
+        "NSIDE": 512,
+        "COORDSYS": null,
+        "FIRSTPIX": 0,
+        "LASTPIX": 3145727
+      },
+      "columns": [
+        {
+          "name": "TEMPERATURE",
+          "format": "E",
+          "unit": "mK"
+        },
+        {
+          "name": "N_OBS",
+          "format": "E",
+          "unit": "counts"
+        }
+      ]
+    },
+    {
+      "product": "KQ85",
+      "landing": "https://lambda.gsfc.nasa.gov/product/wmap/dr5/masks_get.html",
+      "url": "https://lambda.gsfc.nasa.gov/data/map/dr5/ancillary/masks/wmap_temperature_kq85_analysis_mask_r9_9yr_v5.fits",
+      "filename": "wmap_temperature_kq85_analysis_mask_r9_9yr_v5.fits",
+      "bytes": 25174080,
+      "sha256": "30608930b5a3a2154ff0e4d95b32dd3dcb8fda2151133153a1d59feb97ab8d63",
+      "header": {
+        "PIXTYPE": "HEALPIX",
+        "ORDERING": "NESTED",
+        "NSIDE": 512,
+        "COORDSYS": null,
+        "FIRSTPIX": 0,
+        "LASTPIX": 3145727
+      },
+      "columns": [
+        {
+          "name": "TEMPERATURE",
+          "format": "E",
+          "unit": "mK"
+        },
+        {
+          "name": "N_OBS",
+          "format": "E",
+          "unit": "counts"
+        }
+      ]
+    }
+  ],
+  "attribution": "NASA/WMAP Science Team, LAMBDA/HEASARC; native public scientific products; retain source citations and processing metadata.",
+  "rights_scope": "No blanket license is inferred for third-party papers. Public map-source bytes are linked; this release publishes numerical derivatives and provenance."
+}

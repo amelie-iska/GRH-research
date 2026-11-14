@@ -1,0 +1,43 @@
+{
+  "schema": "grh.cmb-exploratory-followup.v1",
+  "designed_after_initial_results": true,
+  "original_results_sha256": "9a0b94fcef39a3253ea9d68f698a9d7810833b1955d5206d33c84d28fde97ed2",
+  "frozen_model_unchanged": true,
+  "common_ILC_reference": [
+    {
+      "product": "ILC",
+      "common_reference_maximum": 1.75995360455475,
+      "common_reference_surrogate_rank": 0.99609375,
+      "selected_method": 0,
+      "selected_template": 2,
+      "full_sky_rms_microkelvin": 41.6049384750199,
+      "retained_sky_rms_microkelvin": 36.505988503194544
+    },
+    {
+      "product": "V",
+      "common_reference_maximum": 2.3650946546779434,
+      "common_reference_surrogate_rank": 0.818359375,
+      "selected_method": 0,
+      "selected_template": 68,
+      "full_sky_rms_microkelvin": 60.72681375428437,
+      "retained_sky_rms_microkelvin": 36.89596801378864
+    },
+    {
+      "product": "W",
+      "common_reference_maximum": 1.821819927490214,
+      "common_reference_surrogate_rank": 0.9921875,
+      "selected_method": 0,
+      "selected_template": 68,
+      "full_sky_rms_microkelvin": 51.48266960557193,
+      "retained_sky_rms_microkelvin": 36.86904655298411
+    }
+  ],
+  "shared_reference_scope": "Same processed ILC coefficient magnitudes and independently randomized phases for all products. This changes the reference hypothesis and is a sensitivity diagnostic, not new independent evidence.",
+  "masked_cross_product_correlations": {
+    "ILC_V": 0.9759851595735402,
+    "ILC_W": 0.989019230138545,
+    "V_W": 0.986122184599467
+  },
+  "scope": "Exploratory robustness checks retained alongside the initial predeclared scan. Their ranks are not multiplied, pooled with the original family bound, or interpreted as CCC probabilities."
+}
+V-W rank 0.03125

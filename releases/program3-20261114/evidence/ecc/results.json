@@ -1,0 +1,658 @@
+{
+  "schema": "grh.resource-certified-ecc.v1",
+  "curves": [
+    {
+      "curve": {
+        "p": 7,
+        "a": 0,
+        "b": 3
+      },
+      "points": [
+        null,
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "generator": [
+        1,
+        2
+      ],
+      "endomorphism": {
+        "order": 13,
+        "beta": 2,
+        "eigenvalue": 3,
+        "radius": 2,
+        "signed_width": 3,
+        "pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            -2
+          ],
+          [
+            -2,
+            -1
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "phi_generator": [
+          2,
+          2
+        ]
+      },
+      "algorithms": [
+        {
+          "variant": "binary",
+          "circuit_file": "ecc-p7-binary.json",
+          "sha256": "b9052d616b36aa10e3bd7b0921606761b455c1bf4337165c32677ca197e971c2",
+          "resources": {
+            "gates": {
+              "X": 2328,
+              "CCX": 2904
+            },
+            "total_gates": 5232,
+            "logical_qubits": 16,
+            "clean_work_qubits": 5,
+            "depth_all_to_all": 3390,
+            "ccx_layers": 2904,
+            "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+            "physical_qubits": null
+          },
+          "validation": {
+            "full_input_words": 2048,
+            "valid_point_scalar_pairs": 208,
+            "invalid_point_scalar_pairs": 1840,
+            "all_data_words_checked": true,
+            "all_decomposition_and_scratch_return_zero": true,
+            "inverse_replay": true,
+            "superposition_terms": 128,
+            "amplitude_norm": 1.0,
+            "scope": "Exhaustive computational-basis semantics on clean-work inputs plus phase-free linear extension and a complex-amplitude support replay; dense GPU is a separate check."
+          },
+          "stages": [
+            {
+              "name": "controlled add 1G",
+              "first_gate": 0,
+              "last_gate": 1308,
+              "gates": 1308
+            },
+            {
+              "name": "controlled add 2G",
+              "first_gate": 1308,
+              "last_gate": 2616,
+              "gates": 1308
+            },
+            {
+              "name": "controlled add 4G",
+              "first_gate": 2616,
+              "last_gate": 3924,
+              "gates": 1308
+            },
+            {
+              "name": "controlled add 8G",
+              "first_gate": 3924,
+              "last_gate": 5232,
+              "gates": 1308
+            }
+          ]
+        },
+        {
+          "variant": "endomorphism",
+          "circuit_file": "ecc-p7-endomorphism.json",
+          "sha256": "d83f1a14ff4ab1990c6c682e651deb1c2f1fd9e247d28967e7213d51aec35aaa",
+          "resources": {
+            "gates": {
+              "X": 3808,
+              "CCX": 4766
+            },
+            "total_gates": 8574,
+            "logical_qubits": 22,
+            "clean_work_qubits": 5,
+            "depth_all_to_all": 5608,
+            "ccx_layers": 4766,
+            "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+            "physical_qubits": null
+          },
+          "validation": {
+            "full_input_words": 2048,
+            "valid_point_scalar_pairs": 208,
+            "invalid_point_scalar_pairs": 1840,
+            "all_data_words_checked": true,
+            "all_decomposition_and_scratch_return_zero": true,
+            "inverse_replay": true,
+            "superposition_terms": 128,
+            "amplitude_norm": 1.0,
+            "scope": "Exhaustive computational-basis semantics on clean-work inputs plus phase-free linear extension and a complex-amplitude support replay; dense GPU is a separate check."
+          },
+          "stages": [
+            {
+              "name": "coherent signed decomposition",
+              "first_gate": 0,
+              "last_gate": 363,
+              "gates": 363
+            },
+            {
+              "name": "component 0, signed weight 1",
+              "first_gate": 363,
+              "last_gate": 1671,
+              "gates": 1308
+            },
+            {
+              "name": "component 0, signed weight 2",
+              "first_gate": 1671,
+              "last_gate": 2979,
+              "gates": 1308
+            },
+            {
+              "name": "component 0, signed weight -4",
+              "first_gate": 2979,
+              "last_gate": 4287,
+              "gates": 1308
+            },
+            {
+              "name": "component 1, signed weight 1",
+              "first_gate": 4287,
+              "last_gate": 5595,
+              "gates": 1308
+            },
+            {
+              "name": "component 1, signed weight 2",
+              "first_gate": 5595,
+              "last_gate": 6903,
+              "gates": 1308
+            },
+            {
+              "name": "component 1, signed weight -4",
+              "first_gate": 6903,
+              "last_gate": 8211,
+              "gates": 1308
+            },
+            {
+              "name": "uncompute decomposition",
+              "first_gate": 8211,
+              "last_gate": 8574,
+              "gates": 363
+            }
+          ]
+        }
+      ],
+      "endomorphism_ccx_improvement": false
+    },
+    {
+      "curve": {
+        "p": 13,
+        "a": 0,
+        "b": 2
+      },
+      "points": [
+        null,
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          12,
+          12
+        ]
+      ],
+      "generator": [
+        1,
+        4
+      ],
+      "endomorphism": {
+        "order": 19,
+        "beta": 3,
+        "eigenvalue": 11,
+        "radius": 2,
+        "signed_width": 3,
+        "pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            -2,
+            -1
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            -2,
+            -2
+          ],
+          [
+            -1,
+            -2
+          ],
+          [
+            0,
+            -2
+          ],
+          [
+            -2,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "phi_generator": [
+          3,
+          4
+        ]
+      },
+      "algorithms": [
+        {
+          "variant": "binary",
+          "circuit_file": "ecc-p13-binary.json",
+          "sha256": "3005c2ba578c77348efb9d1dc3fff8fec03b389257dfcf36ee6d302463a97425",
+          "resources": {
+            "gates": {
+              "X": 7040,
+              "CCX": 8850
+            },
+            "total_gates": 15890,
+            "logical_qubits": 21,
+            "clean_work_qubits": 7,
+            "depth_all_to_all": 9832,
+            "ccx_layers": 8850,
+            "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+            "physical_qubits": null
+          },
+          "validation": {
+            "full_input_words": 16384,
+            "valid_point_scalar_pairs": 608,
+            "invalid_point_scalar_pairs": 15776,
+            "all_data_words_checked": true,
+            "all_decomposition_and_scratch_return_zero": true,
+            "inverse_replay": true,
+            "superposition_terms": 128,
+            "amplitude_norm": 1.0,
+            "scope": "Exhaustive computational-basis semantics on clean-work inputs plus phase-free linear extension and a complex-amplitude support replay; dense GPU is a separate check."
+          },
+          "stages": [
+            {
+              "name": "controlled add 1G",
+              "first_gate": 0,
+              "last_gate": 3178,
+              "gates": 3178
+            },
+            {
+              "name": "controlled add 2G",
+              "first_gate": 3178,
+              "last_gate": 6356,
+              "gates": 3178
+            },
+            {
+              "name": "controlled add 4G",
+              "first_gate": 6356,
+              "last_gate": 9534,
+              "gates": 3178
+            },
+            {
+              "name": "controlled add 8G",
+              "first_gate": 9534,
+              "last_gate": 12712,
+              "gates": 3178
+            },
+            {
+              "name": "controlled add 16G",
+              "first_gate": 12712,
+              "last_gate": 15890,
+              "gates": 3178
+            }
+          ]
+        },
+        {
+          "variant": "endomorphism",
+          "circuit_file": "ecc-p13-endomorphism.json",
+          "sha256": "c599ca1cb64ad92fd9afe1e18e5c991588e2598460d8abc15f68e70433c2b463",
+          "resources": {
+            "gates": {
+              "X": 9204,
+              "CCX": 11768
+            },
+            "total_gates": 20972,
+            "logical_qubits": 27,
+            "clean_work_qubits": 7,
+            "depth_all_to_all": 13186,
+            "ccx_layers": 11768,
+            "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+            "physical_qubits": null
+          },
+          "validation": {
+            "full_input_words": 16384,
+            "valid_point_scalar_pairs": 608,
+            "invalid_point_scalar_pairs": 15776,
+            "all_data_words_checked": true,
+            "all_decomposition_and_scratch_return_zero": true,
+            "inverse_replay": true,
+            "superposition_terms": 128,
+            "amplitude_norm": 1.0,
+            "scope": "Exhaustive computational-basis semantics on clean-work inputs plus phase-free linear extension and a complex-amplitude support replay; dense GPU is a separate check."
+          },
+          "stages": [
+            {
+              "name": "coherent signed decomposition",
+              "first_gate": 0,
+              "last_gate": 952,
+              "gates": 952
+            },
+            {
+              "name": "component 0, signed weight 1",
+              "first_gate": 952,
+              "last_gate": 4130,
+              "gates": 3178
+            },
+            {
+              "name": "component 0, signed weight 2",
+              "first_gate": 4130,
+              "last_gate": 7308,
+              "gates": 3178
+            },
+            {
+              "name": "component 0, signed weight -4",
+              "first_gate": 7308,
+              "last_gate": 10486,
+              "gates": 3178
+            },
+            {
+              "name": "component 1, signed weight 1",
+              "first_gate": 10486,
+              "last_gate": 13664,
+              "gates": 3178
+            },
+            {
+              "name": "component 1, signed weight 2",
+              "first_gate": 13664,
+              "last_gate": 16842,
+              "gates": 3178
+            },
+            {
+              "name": "component 1, signed weight -4",
+              "first_gate": 16842,
+              "last_gate": 20020,
+              "gates": 3178
+            },
+            {
+              "name": "uncompute decomposition",
+              "first_gate": 20020,
+              "last_gate": 20972,
+              "gates": 952
+            }
+          ]
+        }
+      ],
+      "endomorphism_ccx_improvement": false
+    }
+  ],
+  "field_oracles": [
+    {
+      "operation": "add",
+      "resources": {
+        "gates": {
+          "X": 432,
+          "CCX": 567
+        },
+        "total_gates": 999,
+        "logical_qubits": 13,
+        "clean_work_qubits": 4,
+        "depth_all_to_all": 665,
+        "ccx_layers": 567,
+        "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+        "physical_qubits": null
+      },
+      "checked_input_output_words": 512,
+      "scratch_clean": true,
+      "circuit_file": "field-add.json"
+    },
+    {
+      "operation": "multiply",
+      "resources": {
+        "gates": {
+          "X": 324,
+          "CCX": 486
+        },
+        "total_gates": 810,
+        "logical_qubits": 13,
+        "clean_work_qubits": 4,
+        "depth_all_to_all": 559,
+        "ccx_layers": 486,
+        "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+        "physical_qubits": null
+      },
+      "checked_input_output_words": 512,
+      "scratch_clean": true,
+      "circuit_file": "field-multiply.json"
+    },
+    {
+      "operation": "inverse",
+      "resources": {
+        "gates": {
+          "X": 42,
+          "CCX": 45
+        },
+        "total_gates": 87,
+        "logical_qubits": 8,
+        "clean_work_qubits": 1,
+        "depth_all_to_all": 67,
+        "ccx_layers": 45,
+        "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+        "physical_qubits": null
+      },
+      "checked_input_output_words": 128,
+      "scratch_clean": true,
+      "circuit_file": "field-inverse.json"
+    }
+  ],
+  "assumptions": {
+    "coordinate_system": "affine x,y plus unique infinity bit; no projective conversion hidden",
+    "curve_family": "nonsingular y\u00b2=x\u00b3+b over the declared small prime fields",
+    "base": "public fixed generator; phi(G) is classically computed and recorded",
+    "logical_gates": "ideal X/CX/CCX, connectivity unrestricted",
+    "error_correction": "not included; no physical-qubit or wall-clock advantage asserted",
+    "compiler": "explicit bounded truth-table/Gray-transposition synthesis; exponential in encoding width",
+    "ancillas": "all work and decomposition registers initialized and restored to zero",
+    "decomposition": "exact finite residue table, coherently computed and uncomputed",
+    "success": "deterministic on every word in the declared clean-work domain",
+    "purpose": "arithmetical specification and full resource comparison, not a cryptographic-key recovery service"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "covers": [
+    {
+      "degree": 2,
+      "errors": {
+        "left_inverse": 0.0,
+        "projection": 0.0,
+        "directed_intertwiner": 0.0,
+        "local_layer": 0.0,
+        "global_softmax": 2.220446049250313e-16,
+        "global_maxplus": 0.0
+      },
+      "identifier_failure": 0.07076464608409981
+    },
+    {
+      "degree": 3,
+      "errors": {
+        "left_inverse": 0.0,
+        "projection": 0.0,
+        "directed_intertwiner": 0.0,
+        "local_layer": 0.0,
+        "global_softmax": 4.440892098500626e-16,
+        "global_maxplus": 0.0
+      },
+      "identifier_failure": 0.011084499944020623
+    },
+    {
+      "degree": 5,
+      "errors": {
+        "left_inverse": 0.0,
+        "projection": 2.7755575615628914e-17,
+        "directed_intertwiner": 0.0,
+        "local_layer": 0.0,
+        "global_softmax": 3.3306690738754696e-16,
+        "global_maxplus": 1.1102230246251565e-16
+      },
+      "identifier_failure": 0.050525576066209055
+    }
+  ],
+  "order_checks": [
+    {
+      "degree": 2,
+      "up_voltage": 1,
+      "down_voltage": 0,
+      "cycle_voltage": 1,
+      "uniformizer": 3,
+      "relation_residual": [
+        [
+          -3,
+          3
+        ],
+        [
+          3,
+          -3
+        ]
+      ],
+      "relation_preserved": false,
+      "scope": "Matrix form of uv=pi e on a specified lifted sheet module. A zero special-fiber relation need not lift to this same integral relation."
+    },
+    {
+      "degree": 2,
+      "up_voltage": 1,
+      "down_voltage": 0,
+      "cycle_voltage": 1,
+      "uniformizer": 0,
+      "relation_residual": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "relation_preserved": true,
+      "scope": "Matrix form of uv=pi e on a specified lifted sheet module. A zero special-fiber relation need not lift to this same integral relation."
+    },
+    {
+      "degree": 2,
+      "up_voltage": 1,
+      "down_voltage": 1,
+      "cycle_voltage": 0,
+      "uniformizer": 3,
+      "relation_residual": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "relation_preserved": true,
+      "scope": "Matrix form of uv=pi e on a specified lifted sheet module. A zero special-fiber relation need not lift to this same integral relation."
+    }
+  ]
+}

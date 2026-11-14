@@ -1,0 +1,38 @@
+ECCFiniteGenerated.valid_points : ECCFiniteGenerated.encodings.all ECCFiniteGenerated.onCurve = true
+'ECCFiniteGenerated.valid_points' does not depend on any axioms
+ECCFiniteGenerated.exact_affine_table :
+  ((List.range 13).all fun i =>
+      (List.range 13).all fun j =>
+        ECCFiniteGenerated.enc (ECCFiniteGenerated.add i j) ==
+          ECCFiniteGenerated.affineAdd (ECCFiniteGenerated.enc i) (ECCFiniteGenerated.enc j)) =
+    true
+'ECCFiniteGenerated.exact_affine_table' does not depend on any axioms
+ECCFiniteGenerated.group_associativity :
+  ((List.range 13).all fun i =>
+      (List.range 13).all fun j =>
+        (List.range 13).all fun k =>
+          ECCFiniteGenerated.add (ECCFiniteGenerated.add i j) k ==
+            ECCFiniteGenerated.add i (ECCFiniteGenerated.add j k)) =
+    true
+'ECCFiniteGenerated.group_associativity' does not depend on any axioms
+ECCFiniteGenerated.identity_and_inverse :
+  ((List.range 13).all fun i =>
+      ECCFiniteGenerated.add 0 i == i && ECCFiniteGenerated.add i 0 == i &&
+        (List.range 13).any fun j => ECCFiniteGenerated.add i j == 0 && ECCFiniteGenerated.add j i == 0) =
+    true
+'ECCFiniteGenerated.identity_and_inverse' does not depend on any axioms
+ECCFiniteGenerated.endomorphism_homomorphism :
+  ((List.range 13).all fun i =>
+      (List.range 13).all fun j =>
+        ECCFiniteGenerated.phi.getD (ECCFiniteGenerated.add i j) 99 ==
+          ECCFiniteGenerated.add (ECCFiniteGenerated.phi.getD i 99) (ECCFiniteGenerated.phi.getD j 99)) =
+    true
+'ECCFiniteGenerated.endomorphism_homomorphism' does not depend on any axioms
+ECCFiniteGenerated.decomposition_exact :
+  ((List.range 13).all fun k =>
+      have pair := ECCFiniteGenerated.decomposition.getD k [];
+      ECCFiniteGenerated.mul k 1 ==
+        ECCFiniteGenerated.add (ECCFiniteGenerated.mul (pair.getD 0 99) 1)
+          (ECCFiniteGenerated.mul (pair.getD 1 99) (ECCFiniteGenerated.phi.getD 1 99))) =
+    true
+'ECCFiniteGenerated.decomposition_exact' does not depend on any axioms

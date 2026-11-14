@@ -1,0 +1,74 @@
+\chapter{Resource-certified elliptic arithmetic}
+\label{ch:p3-ecc}
+
+\section{A complete specification before a resource claim}
+
+The original section's criterion is a comparison between complete resource budgets. The implementation fixes a nonsingular short-Weierstrass curve $E:y^2=x^3+ax+b$ over a declared odd prime field, a public fixed generator $G$, an affine coordinate encoding, a gate alphabet and an ancillary-register policy. It generates ordinary fixed-base multiplication and a signed endomorphism decomposition under the same compiler. A shorter arithmetic expression is not counted as an improvement until every operation needed to realize it has been charged.
+
+For $b_p=\lceil\log_2p\rceil$, the point register has $2b_p+1$ bits: $b_p$ each for $x,y$, and a unique infinity word with the top bit set and both coordinates zero. A valid finite point has top bit zero, coordinates below $p$, and satisfies the curve equation. Every other bit string is invalid. Each in-place point translation acts as the group translation on valid words and fixes every invalid word. This extends the mathematical permutation to a total reversible operation on the register.
+
+\begin{proposition}[Total translation and coherent extension]
+For fixed $Q\in E(\mathbb F_p)$, the above map is a permutation of all point words. Its inverse is the extension of translation by $-Q$. Its permutation matrix is unitary, with no input-dependent phase.
+\end{proposition}
+\begin{proof}
+The valid words and invalid words are disjoint invariant subsets. Translation is a bijection on the first with inverse translation by $-Q$, and the identity is a bijection on the second. Their disjoint union is a permutation. Its columns are distinct standard basis vectors and therefore form an orthonormal basis. Linear extension establishes the action on every superposition.
+\end{proof}
+
+The scalar circuit acts on an arbitrary initial valid point, not only infinity:
+\[
+ |k,P,0\rangle\longmapsto|k,P+kG,0\rangle.
+\]
+It preserves the scalar register and restores all declared scratch and decomposition registers. Invalid $P$ remains fixed. The output is deterministic under the ideal logical-gate model.
+
+\section{An emitted gate construction with clean work}
+
+Every finite permutation is decomposed into cycles. A cycle is realized by a sequence of transpositions between one anchor and the remaining cycle entries. To swap two bit strings, choose a Gray path between them. Apply its adjacent transpositions in forward order and then reverse order omitting the last transposition. The resulting permutation swaps only the endpoints; the internal path entries return to their initial locations.
+
+An adjacent Gray transposition flips one target bit conditional on all other data bits matching a pattern. Negative controls are implemented by an $X$ conjugation on the corresponding control wire. A $k$-controlled NOT with $k\ge3$ is lowered to an AND ladder, one final controlled flip, and the reverse ladder. It uses $k-2$ clean work bits and $2k-3$ CCX gates. For zero, one or two controls the primitive is X, CX or CCX directly.
+
+\begin{proposition}[Clean controlled flip]
+On inputs whose ladder work bits are zero, the emitted ladder toggles the target exactly when every control is one, leaves the controls unchanged and restores every work bit to zero.
+\end{proposition}
+\begin{proof}
+The first CCX stores the conjunction of the first two controls. Inductively each following ladder bit stores the conjunction of the controls accumulated so far. The last CCX therefore toggles the target exactly under the full conjunction. The target is not a control in the ladder. Reversing the ladder toggles each stored conjunction off in reverse dependency order while its input controls still have their original values. Negative-control conjugation changes only which input pattern selects the flip and is undone afterward.
+\end{proof}
+
+The compiler emits every primitive rather than treating the controlled operation as a free black box. An independent parser counts the serialized primitives and reconstructs their all-to-all dependency depth. This count is separate from the generator's own count. Physical routing, fault tolerance, logical-error targets and T-gate synthesis are not inferred from an X/CX/CCX table. Those require another explicitly selected compilation architecture.
+
+\section{Field and variable-point oracles}
+
+The field reference supplies XOR-output addition, multiplication and inversion. For inversion, zero has a separate false validity flag rather than an invented inverse. Invalid field words contribute zero oracle output. The general reversible specification is
+\[
+ |x,z,0\rangle\longmapsto|x,z\mathbin{\mathrm{xor}}f(x),0\rangle.
+\]
+Because XOR by a fixed word is an involution for each retained $x$, arbitrary initial output words are supported.
+
+The variable-point addition oracle retains both input points and writes the valid result together with a validity bit. Invalid point input pairs contribute zero to the output register. All valid pairs, all invalid input encodings, and independent nonzero output words are tested. This complements the in-place fixed-base translation circuit; it is not presented as the same register layout or the same resource budget.
+
+The lookup/Gray-path compiler is deliberately explicit and bounded. Its worst-case table cost grows exponentially in the bit width. This is a complete finite reproducibility reference and a test bed for replacing each primitive by a scalable field-arithmetic circuit. It is not a claim of having improved cryptographic-size resource estimates such as [E1]. A future efficient replacement must pass the same total-domain and cleanup contracts before its resource table is comparable.
+
+\section{A fully paid endomorphism comparison}
+
+For the tested $j=0$ curves, choose a nontrivial cube root of unity $\beta\in\mathbb F_p$ and define
+\[
+ \phi(x,y)=(\beta x,y),\qquad \phi(O)=O.
+\]
+The generator's cyclic subgroup has $\phi(G)=[\lambda]G$. The finite decomposition table chooses signed pairs $(a_k,b_k)$ satisfying
+\[
+ k\equiv a_k+\lambda b_k\pmod{\operatorname{ord}(G)}.
+\]
+The circuit coherently computes the signed pair into clean registers, performs controlled additions of the signed powers of $G$ and $\phi(G)$, and uncomputes the pair. Two's-complement sign bits use negative powers in their corresponding controlled addition. Every scalar register word is interpreted modulo the declared subgroup order.
+
+Here the base is public and fixed, so $\phi(G)$ is an explicitly recorded classical constant. This does not make evaluation of $\phi(P)$ on an unknown variable point free. Nor does a fixed-base table justify replacing a general lattice-decomposition algorithm by a costless oracle. The current comparison pays for the exact finite decomposition it actually executes.
+
+\begin{center}\small\input{ecc-table}\end{center}
+
+The endomorphism path costs more in both measured instances. For $p=7$, it uses 4,766 rather than 2,904 CCX gates; for $p=13$, it uses 11,768 rather than 8,850. The complete register counts rise from 16 to 22 and from 21 to 27, respectively. These are decisive answers for this compiler and these instances. They neither rule out a better compiler nor establish a saving at a different field size.
+
+\section{Formal and numerical verification layers}
+
+The Python suite checks the group operation on the complete small point sets, every declared scalar/point data word, invalid encodings, reverse-circuit replay and clean work. The $p=7$ fixed-base domain contains 2,048 scalar/point words; the $p=13$ domain contains 16,384. The gates are phase-free permutations, so complete basis semantics fixes their coherent linear extension. The separately executed GPU test verifies that extension on complex amplitudes across the entire $p=7$ data domain.
+
+The generated Lean certificate uses a direct modular affine-addition formula to check the emitted small-curve table, then checks all table associativity, identity, inverse, endomorphism and scalar-decomposition instances. These are exact finite propositions elaborated by the kernel, not statistical tests. General cleanup and normalized-map lemmas are formalized separately. Neither an exhaustive finite table nor a successful GPU comparison is represented as a formal asymptotic complexity theorem.
+
+This completes the original subsection's concrete artifact program at its declared finite scope: a generator, reversible specification, total-domain tests, actual state-vector execution, independent gate counts and an assumption manifest. The next optimization question now has a reproducible baseline against which a claimed improvement can be falsified.

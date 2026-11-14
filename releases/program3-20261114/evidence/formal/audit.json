@@ -1,0 +1,154 @@
+{
+  "schema": "grh.program3.formal-audit.v1",
+  "utc": "2026-11-14T14:18:42.763144+00:00",
+  "source_commit": "e97aafb8c0757734d541460c70ed7e9d9a3743ee",
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "lean_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "modules": [
+    {
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "Program3Contracts.xor_oracle_involution": [
+          "propext"
+        ],
+        "Program3Contracts.cyclic_voltage_closure": [
+          "propext"
+        ],
+        "Program3Contracts.fiber_average_constant": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Program3Contracts.replicated_normalization": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Program3Contracts.normalized_maxplus_error": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Program3Contracts.ising_projection_residual": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Program3Contracts.kraus_composition_complete": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Program3Contracts.conservative_rank_count": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Program3Contracts.rank_probability_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Program3Contracts.false_positive_budget": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "Program3Contracts.compute_copy_uncompute": []
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "Program3Contracts.xor_oracle_involution": "Program3Contracts.xor_oracle_involution.{u_1} {X : Type u_1} (f : X \u2192 Bool) (input : X \u00d7 Bool) :\n  Program3Contracts.xorOracle f (Program3Contracts.xorOracle f input) = input",
+        "Program3Contracts.compute_copy_uncompute": "Program3Contracts.compute_copy_uncompute (x a y : Bool) : (x ^^ a ^^ a, y ^^ a) = (x, y ^^ a)",
+        "Program3Contracts.cyclic_voltage_closure": "Program3Contracts.cyclic_voltage_closure.{u_1} {A : Type u_1} [AddGroup A] (s u v : A) (h : u + v = 0) : s + u + v = s",
+        "Program3Contracts.fiber_average_constant": "Program3Contracts.fiber_average_constant.{u_1} {\u03b9 : Type u_1} [Fintype \u03b9] [Nonempty \u03b9] (x : \u211d) :\n  (\u2211 _i, x) / \u2191(Fintype.card \u03b9) = x",
+        "Program3Contracts.replicated_normalization": "Program3Contracts.replicated_normalization (d numerator denominator : \u211d) (hd : d \u2260 0) (hz : denominator \u2260 0) :\n  d * numerator / (d * denominator) = numerator / denominator",
+        "Program3Contracts.normalized_maxplus_error": "Program3Contracts.normalized_maxplus_error (a b a' b' \u03b4a \u03b4b : \u211d) (ha : |a' - a| \u2264 \u03b4a) (hb : |b' - b| \u2264 \u03b4b) :\n  |a' - b' - (a - b)| \u2264 \u03b4a + \u03b4b",
+        "Program3Contracts.ising_projection_residual": "Program3Contracts.ising_projection_residual (full projected exact : \u211d) :\n  |full - exact| \u2264 |full - projected| + |projected - exact|",
+        "Program3Contracts.kraus_composition_complete": "Program3Contracts.kraus_composition_complete.{u_1, u_2, u_3, u_4, u_5} {I : Type u_1} {J : Type u_2} {A : Type u_3}\n  {B : Type u_4} {C : Type u_5} [Fintype I] [Fintype J] [Fintype A] [Fintype B] [Fintype C] [DecidableEq A]\n  [DecidableEq B] (K : I \u2192 Matrix B A \u2102) (L : J \u2192 Matrix C B \u2102) (hK : \u2211 i, (K i).conjTranspose * K i = 1)\n  (hL : \u2211 j, (L j).conjTranspose * L j = 1) : \u2211 i, \u2211 j, (L j * K i).conjTranspose * (L j * K i) = 1",
+        "Program3Contracts.conservative_rank_count": "Program3Contracts.conservative_rank_count {n : \u2115} (scores : Fin n \u2192 \u211d) (k : \u2115) :\n  {i | Program3Contracts.upperRank scores i \u2264 k}.card \u2264 k",
+        "Program3Contracts.rank_probability_bound": "Program3Contracts.rank_probability_bound (m n k : \u2115) (hn : 0 < n) (hm : m \u2264 k) : \u2191m / \u2191n \u2264 \u2191k / \u2191n",
+        "Program3Contracts.false_positive_budget": "Program3Contracts.false_positive_budget.{u_1} {\u03b9 : Type u_1} [Fintype \u03b9] (p : \u03b9 \u2192 \u211d) (\u03b1 : \u211d)\n  (h : \u2200 (i : \u03b9), p i \u2264 \u03b1 / \u2191(Fintype.card \u03b9)) [Nonempty \u03b9] : \u2211 i, p i \u2264 \u03b1"
+      },
+      "printed_types_cover_every_declaration": true,
+      "module": "Program3Contracts",
+      "declarations": 11,
+      "source_sha256": "f5e7f305e5761a9f1c312a81543a9b5698db4c3620f1fd71ddcf076daad25360",
+      "log_sha256": "1ba079a0048d6f937065ecee82a71c4ae0867ca9cdaa4f22c9e0cfc481f42ee6"
+    },
+    {
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "CCCGeometry.middle_form_conformal_exponent": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CCCGeometry.quartic_root_expansion": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CCCGeometry.quartic_root_reciprocal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CCCGeometry.cubic_weierstrass_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CCCGeometry.cubic_solution_transport": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "CCCGeometry.middle_form_conformal_exponent": "CCCGeometry.middle_form_conformal_exponent (\u03a9 : \u211d) : \u03a9 ^ (4 - 2 * 2) = 1",
+        "CCCGeometry.quartic_root_expansion": "CCCGeometry.quartic_root_expansion (a b c d e r x : \u211d) :\n  a * (r + x) ^ 4 + b * (r + x) ^ 3 + c * (r + x) ^ 2 + d * (r + x) + e =\n    a * r ^ 4 + b * r ^ 3 + c * r ^ 2 + d * r + e + (4 * a * r ^ 3 + 3 * b * r ^ 2 + 2 * c * r + d) * x +\n          (6 * a * r ^ 2 + 3 * b * r + c) * x ^ 2 +\n        (4 * a * r + b) * x ^ 3 +\n      a * x ^ 4",
+        "CCCGeometry.quartic_root_reciprocal": "CCCGeometry.quartic_root_reciprocal (a b c d e r u : \u211d) (hu : u \u2260 0)\n  (hr : a * r ^ 4 + b * r ^ 3 + c * r ^ 2 + d * r + e = 0) :\n  u ^ 4 * (a * (r + 1 / u) ^ 4 + b * (r + 1 / u) ^ 3 + c * (r + 1 / u) ^ 2 + d * (r + 1 / u) + e) =\n    (4 * a * r ^ 3 + 3 * b * r ^ 2 + 2 * c * r + d) * u ^ 3 + (6 * a * r ^ 2 + 3 * b * r + c) * u ^ 2 +\n        (4 * a * r + b) * u +\n      a",
+        "CCCGeometry.cubic_weierstrass_identity": "CCCGeometry.cubic_weierstrass_identity (A B C D u : \u211d) :\n  A ^ 2 * (A * u ^ 3 + B * u ^ 2 + C * u + D) =\n    (A * u + B / 3) ^ 3 + (A * C - B ^ 2 / 3) * (A * u + B / 3) + (2 * B ^ 3 / 27 - A * B * C / 3 + A ^ 2 * D)",
+        "CCCGeometry.cubic_solution_transport": "CCCGeometry.cubic_solution_transport (A B C D u v : \u211d) (h : v ^ 2 = A * u ^ 3 + B * u ^ 2 + C * u + D) :\n  (A * v) ^ 2 =\n    (A * u + B / 3) ^ 3 + (A * C - B ^ 2 / 3) * (A * u + B / 3) + (2 * B ^ 3 / 27 - A * B * C / 3 + A ^ 2 * D)"
+      },
+      "printed_types_cover_every_declaration": true,
+      "module": "CCCGeometry",
+      "declarations": 5,
+      "source_sha256": "cc5a2a8721ddcfce1ceb9cec03cf08d4149ea2218888912537623345bd3ce2ba",
+      "log_sha256": "ec5c150049eb819c54a0499df48da32794ded79826f7fcc9845bf7170dc034d5"
+    },
+    {
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "ECCFiniteGenerated.valid_points": [],
+        "ECCFiniteGenerated.exact_affine_table": [],
+        "ECCFiniteGenerated.group_associativity": [],
+        "ECCFiniteGenerated.identity_and_inverse": [],
+        "ECCFiniteGenerated.endomorphism_homomorphism": [],
+        "ECCFiniteGenerated.decomposition_exact": []
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "ECCFiniteGenerated.valid_points": "ECCFiniteGenerated.valid_points : ECCFiniteGenerated.encodings.all ECCFiniteGenerated.onCurve = true",
+        "ECCFiniteGenerated.exact_affine_table": "ECCFiniteGenerated.exact_affine_table :\n  ((List.range 13).all fun i =>\n      (List.range 13).all fun j =>\n        ECCFiniteGenerated.enc (ECCFiniteGenerated.add i j) ==\n          ECCFiniteGenerated.affineAdd (ECCFiniteGenerated.enc i) (ECCFiniteGenerated.enc j)) =\n    true",
+        "ECCFiniteGenerated.group_associativity": "ECCFiniteGenerated.group_associativity :\n  ((List.range 13).all fun i =>\n      (List.range 13).all fun j =>\n        (List.range 13).all fun k =>\n          ECCFiniteGenerated.add (ECCFiniteGenerated.add i j) k ==\n            ECCFiniteGenerated.add i (ECCFiniteGenerated.add j k)) =\n    true",
+        "ECCFiniteGenerated.identity_and_inverse": "ECCFiniteGenerated.identity_and_inverse :\n  ((List.range 13).all fun i =>\n      ECCFiniteGenerated.add 0 i == i && ECCFiniteGenerated.add i 0 == i &&\n        (List.range 13).any fun j => ECCFiniteGenerated.add i j == 0 && ECCFiniteGenerated.add j i == 0) =\n    true",
+        "ECCFiniteGenerated.endomorphism_homomorphism": "ECCFiniteGenerated.endomorphism_homomorphism :\n  ((List.range 13).all fun i =>\n      (List.range 13).all fun j =>\n        ECCFiniteGenerated.phi.getD (ECCFiniteGenerated.add i j) 99 ==\n          ECCFiniteGenerated.add (ECCFiniteGenerated.phi.getD i 99) (ECCFiniteGenerated.phi.getD j 99)) =\n    true",
+        "ECCFiniteGenerated.decomposition_exact": "ECCFiniteGenerated.decomposition_exact :\n  ((List.range 13).all fun k =>\n      have pair := ECCFiniteGenerated.decomposition.getD k [];\n      ECCFiniteGenerated.mul k 1 ==\n        ECCFiniteGenerated.add (ECCFiniteGenerated.mul (pair.getD 0 99) 1)\n          (ECCFiniteGenerated.mul (pair.getD 1 99) (ECCFiniteGenerated.phi.getD 1 99))) =\n    true"
+      },
+      "printed_types_cover_every_declaration": true,
+      "module": "ECCFiniteGenerated",
+      "declarations": 6,
+      "source_sha256": "8cc5a0ffac0541b5a7b5baa2e349431a50cc2c2d8ac806082d43922632ce8722",
+      "log_sha256": "12742fb5b61f2e2bf1fecca7c6e0a2e0c69cc6932a669666e2466a1d58d5548b"
+    }
+  ],
+  "new_declarations": 22,
+  "status": "verified"
+}

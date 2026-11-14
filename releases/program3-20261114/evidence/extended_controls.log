@@ -1,0 +1,74 @@
+{
+  "cover_spectrum": [
+    {
+      "degree": 1,
+      "vertices": 3,
+      "positive_gap": 3.0,
+      "exact_gap": 2.9999999999999996,
+      "base_intertwining_error": 0.0
+    },
+    {
+      "degree": 2,
+      "vertices": 6,
+      "positive_gap": 0.9999999999999996,
+      "exact_gap": 0.9999999999999998,
+      "base_intertwining_error": 0.0
+    },
+    {
+      "degree": 3,
+      "vertices": 9,
+      "positive_gap": 0.4679111137620429,
+      "exact_gap": 0.46791111376204386,
+      "base_intertwining_error": 0.0
+    },
+    {
+      "degree": 5,
+      "vertices": 15,
+      "positive_gap": 0.17290908471479777,
+      "exact_gap": 0.17290908471479818,
+      "base_intertwining_error": 0.0
+    },
+    {
+      "degree": 8,
+      "vertices": 24,
+      "positive_gap": 0.06814834742186289,
+      "exact_gap": 0.0681483474218634,
+      "base_intertwining_error": 0.0
+    }
+  ],
+  "gate_learning_baselines": {
+    "rows": [
+      {
+        "seed": 17,
+        "initial_channel_raw_test_mse": 0.275696584592337,
+        "initial_channel_train_only_linear_readout_test_mse": 0.00011686920996930537,
+        "initial_channel_train_design_condition": 12.288389637569187,
+        "fitted_readout": [
+          -1.9828873587565854,
+          0.9972824757733459
+        ],
+        "learned_channel_test_mse": 6.149586897191156e-05,
+        "constant_test_mse": 0.026029266711438806,
+        "learned_gates_improve_over_frozen_readout": true
+      },
+      {
+        "seed": 29,
+        "initial_channel_raw_test_mse": 0.8059548195935202,
+        "initial_channel_train_only_linear_readout_test_mse": 5.5542240833618494e-06,
+        "initial_channel_train_design_condition": 7.733446995270814,
+        "fitted_readout": [
+          1.217650385835711,
+          0.9511431069894672
+        ],
+        "learned_channel_test_mse": 0.0009693251728498913,
+        "constant_test_mse": 0.026029266711438806,
+        "learned_gates_improve_over_frozen_readout": false
+      }
+    ],
+    "post_initial_experiment_diagnostic": true,
+    "weights_retrained": false,
+    "selection": "Frozen initialization determined by the same public seed. Only its scalar readout is fitted on training couplings; test couplings do not select it.",
+    "exact_target_observable_oracle_mse": 0.0,
+    "oracle_scope": "The full input density matrix and declared ZZ observable determine the target exactly. This is an analytic oracle, not an equally compressed learned representation."
+  }
+}

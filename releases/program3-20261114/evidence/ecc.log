@@ -1,0 +1,137 @@
+{
+  "curves": [
+    {
+      "p": 7,
+      "algorithms": [
+        [
+          "binary",
+          {
+            "gates": {
+              "X": 2328,
+              "CCX": 2904
+            },
+            "total_gates": 5232,
+            "logical_qubits": 16,
+            "clean_work_qubits": 5,
+            "depth_all_to_all": 3390,
+            "ccx_layers": 2904,
+            "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+            "physical_qubits": null
+          }
+        ],
+        [
+          "endomorphism",
+          {
+            "gates": {
+              "X": 3808,
+              "CCX": 4766
+            },
+            "total_gates": 8574,
+            "logical_qubits": 22,
+            "clean_work_qubits": 5,
+            "depth_all_to_all": 5608,
+            "ccx_layers": 4766,
+            "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+            "physical_qubits": null
+          }
+        ]
+      ]
+    },
+    {
+      "p": 13,
+      "algorithms": [
+        [
+          "binary",
+          {
+            "gates": {
+              "X": 7040,
+              "CCX": 8850
+            },
+            "total_gates": 15890,
+            "logical_qubits": 21,
+            "clean_work_qubits": 7,
+            "depth_all_to_all": 9832,
+            "ccx_layers": 8850,
+            "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+            "physical_qubits": null
+          }
+        ],
+        [
+          "endomorphism",
+          {
+            "gates": {
+              "X": 9204,
+              "CCX": 11768
+            },
+            "total_gates": 20972,
+            "logical_qubits": 27,
+            "clean_work_qubits": 7,
+            "depth_all_to_all": 13186,
+            "ccx_layers": 11768,
+            "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+            "physical_qubits": null
+          }
+        ]
+      ]
+    }
+  ],
+  "field_oracles": [
+    {
+      "operation": "add",
+      "resources": {
+        "gates": {
+          "X": 432,
+          "CCX": 567
+        },
+        "total_gates": 999,
+        "logical_qubits": 13,
+        "clean_work_qubits": 4,
+        "depth_all_to_all": 665,
+        "ccx_layers": 567,
+        "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+        "physical_qubits": null
+      },
+      "checked_input_output_words": 512,
+      "scratch_clean": true,
+      "circuit_file": "field-add.json"
+    },
+    {
+      "operation": "multiply",
+      "resources": {
+        "gates": {
+          "X": 324,
+          "CCX": 486
+        },
+        "total_gates": 810,
+        "logical_qubits": 13,
+        "clean_work_qubits": 4,
+        "depth_all_to_all": 559,
+        "ccx_layers": 486,
+        "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+        "physical_qubits": null
+      },
+      "checked_input_output_words": 512,
+      "scratch_clean": true,
+      "circuit_file": "field-multiply.json"
+    },
+    {
+      "operation": "inverse",
+      "resources": {
+        "gates": {
+          "X": 42,
+          "CCX": 45
+        },
+        "total_gates": 87,
+        "logical_qubits": 8,
+        "clean_work_qubits": 1,
+        "depth_all_to_all": 67,
+        "ccx_layers": 45,
+        "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+        "physical_qubits": null
+      },
+      "checked_input_output_words": 128,
+      "scratch_clean": true,
+      "circuit_file": "field-inverse.json"
+    }
+  ]
+}

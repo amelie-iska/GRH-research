@@ -1,0 +1,23 @@
+{
+  "schema": "grh.variable-add-audit.v1",
+  "resources": {
+    "gates": {
+      "X": 10800,
+      "CCX": 16250
+    },
+    "total_gates": 27050,
+    "logical_qubits": 34,
+    "clean_work_qubits": 12,
+    "depth_all_to_all": 17285,
+    "ccx_layers": 16250,
+    "gate_set": "X, CX, CCX; all-to-all connectivity; no routing or error correction charged",
+    "physical_qubits": null
+  },
+  "all_input_words": 16384,
+  "valid_point_pairs": 169,
+  "invalid_input_words": 16215,
+  "nonzero_output_checks": 512,
+  "scratch_clean": true,
+  "circuit_sha256": "ede27d40e9fa180e1fb474c80cba7c6db49730b6c416a5c232ff4e2ccecbd287",
+  "scope": "Exhaustive input domain on zero output, structural XOR-output form plus 512 independent nonzero-output checks. No dense 34-qubit GPU claim."
+}

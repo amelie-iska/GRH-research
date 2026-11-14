@@ -1,0 +1,41 @@
+{
+  "schema": "grh.cmb.joint-phase-control.v1",
+  "designed_after_initial_scan": true,
+  "trained_weights_unchanged": true,
+  "original_results_sha256": "9a0b94fcef39a3253ea9d68f698a9d7810833b1955d5206d33c84d28fde97ed2",
+  "group_action": "One common unit-modulus harmonic phase per l,m across ILC,V,W; real signs for m=0.",
+  "preserved": "Every per-mode product a_lm^A conjugate(a_lm^B), including auto-power and relative cross-product phase.",
+  "max_relative_crossproduct_error": 6.631213800544364e-16,
+  "search_size": {
+    "products": 3,
+    "methods": 3,
+    "templates": 72
+  },
+  "calibration_draws": 511,
+  "joint_maximum": 3.6457051087734755,
+  "joint_rank": 0.017578125,
+  "selected_product": "V",
+  "selected_method": 1,
+  "selected_template": 11,
+  "template": {
+    "center_index": 3,
+    "lon_deg": 315.0,
+    "lat_deg": 66.44353569089876,
+    "width_deg": 24.0,
+    "center": [
+      0.28259708263021954,
+      -0.28259708263021965,
+      0.9166666666666666
+    ]
+  },
+  "null_validation": {
+    "draws": 256,
+    "rejections": 9,
+    "fraction": 0.03515625,
+    "wilson_interval": [
+      0.018604096092635542,
+      0.0654527704282918
+    ]
+  },
+  "scope": "Exploratory family-wide conditional phase-group rank, preserving observed product dependence at harmonic level. No independent-products assumption or extra Bonferroni factor is used. Group invariance of real noise/foreground processing remains unestablished; this is not a CCC posterior or a full-instrument detection significance."
+}
