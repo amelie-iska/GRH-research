@@ -8,7 +8,13 @@
   <title>Orders, Complexes &amp; Quantum Arithmetic — Research Companion</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="certificate-bridge.css">
   <script src="math.js" defer></script>
+  <script src="exact-rational.js" defer></script>
+  <script src="certificate-bridge.js" defer></script>
+  <script src="certificate-bridge-ui.js" defer></script>
+  <script src="finite-resolution-core.js" defer></script>
+  <script src="finite-resolution-ui.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -116,10 +122,12 @@
       <header class="lab-heading"><p class="lab-index">LABORATORY 05 <span>Homological information → spectral limits</span></p><h3 id="hodge-title">An index can stay fixed as an eigenvalue vanishes.</h3><p>This finite complex has Euler index zero for every ε. Its middle Laplacian acquires an arbitrarily small eigenvalue, so the index alone supplies no positive lower spectral bound.</p></header>
       <div class="equation">d₀ = (ε, 0)ᵀ &nbsp; · &nbsp; d₁ = (0, 1) &nbsp; · &nbsp; Δ₁ = diag(ε², 1)</div>
       <figure class="svg-figure"><svg id="hodgeSvg" viewBox="0 0 660 360" role="img" aria-label="The eigenvalues epsilon squared and one plotted as epsilon varies from zero to one."></svg><figcaption><span class="key teal">λ₁ = ε²</span><span class="key ochre">λ₂ = 1</span><span class="key point">current ε</span><span class="interaction-hint">The chart axes are linear; the control resolves small ε logarithmically.</span></figcaption></figure>
-      <div class="controls-grid two"><label>log₁₀ ε <output id="hodgeLogOut" for="hodgeLog">−0.5</output><input id="hodgeLog" type="range" min="-4" max="0" step="0.05" value="-0.5" data-lab="hodge"></label><label class="checkbox-label"><input id="hodgeZero" type="checkbox" data-lab="hodge"> Set the exact degenerate case ε = 0</label></div>
+      <div class="controls-grid two"><label>log₁₀ ε <output id="hodgeLogOut" for="hodgeLog">−0.5</output><input id="hodgeLog" type="range" min="-4" max="0" step="0.05" value="-0.5" data-lab="hodge"></label><label class="checkbox-label"><input id="hodgeZero" type="checkbox" data-lab="hodge"> Set the exact degenerate case ε = 0</label><label class="checkbox-label"><input id="hodgeExact" type="checkbox" checked data-lab="hodge"> Use an exact rational ε for the certificate</label><label>Exact ε, between 0 and 1<input id="hodgeRational" type="text" value="1/3" maxlength="164" class="certificate-exact-input" data-lab="hodge" aria-describedby="hodgeExactStatus"></label></div>
+      <p id="hodgeExactStatus" class="scientific-note" aria-live="polite">The rational input controls the exact model; its plotted position is a numerical rendering.</p>
       <div class="result-block"><p id="hodge-summary" class="state-summary" aria-live="polite"></p><dl class="measurements four"><div><dt>Least eigenvalue</dt><dd id="hodgeMin"></dd></div><div><dt>Smallest positive eigenvalue</dt><dd id="hodgePositive"></dd></div><div><dt>dim ker Δ₁</dt><dd id="hodgeKernel"></dd></div><div><dt>Euler index</dt><dd>0</dd></div></dl></div>
       <p class="scientific-note"><strong>The distinction at zero.</strong> For ε&gt;0, the smallest positive eigenvalue is ε². At ε=0, zero enters the spectrum, while the smallest <em>strictly positive</em> eigenvalue is one. The vanishing coercivity constant and the jump in the kernel are different statements. This example explains why an index theorem does not establish the Yang–Mills mass gap.</p>
       <details><summary>Read the finite-dimensional Hodge calculation</summary><p>The composition d₁d₀ is zero. With standard Euclidean inner products, Δ₁=d₀d₀ᵀ+d₁ᵀd₁. Its quadratic form is ε²a²+b², so the kernel is zero for ε&gt;0 and the first coordinate line for ε=0. In the latter case the cohomology dimensions are (1,1,0), whose alternating sum is still zero. An analytic elliptic complex requires differential operators and symbol exactness in addition to this algebraic chain relation.</p><p class="source-line">Source: manuscript, Hodge theory, elliptic complexes, and the separation of index from coercivity.</p></details>
+      <div id="hodgeCertificate"></div>
     </article>
 
     <article id="gauge" class="lab-card" aria-labelledby="gauge-title">
@@ -130,6 +138,7 @@
       <div class="result-block"><p id="gauge-summary" class="state-summary" aria-live="polite"></p><dl class="measurements"><div><dt>Holonomy residual |W′−W|</dt><dd id="gaugeResidual"></dd></div><div><dt>Plaquette action 1−Re W</dt><dd id="gaugeAction"></dd></div><div><dt>Gauge group</dt><dd>U(1)</dd></div></dl></div>
       <p class="scientific-note"><strong>Scope of this model.</strong> This is one abelian plaquette, not a continuum limit or a nonabelian Yang–Mills construction. It demonstrates gauge cancellation exactly; the residual reports only floating-point arithmetic in the display.</p>
       <details><summary>Read the cancellation proof and edge data</summary><p>Write Uᵢ,ᵢ₊₁=exp(i aᵢ). A gauge transformation changes aᵢ to aᵢ+λᵢ−λᵢ₊₁. Summing over the four cyclic edges cancels every vertex phase, so the product W=exp(i Σaᵢ) is invariant. For nonabelian groups the ordered product is conjugated by the gauge element at the base vertex; its trace is invariant.</p><div class="table-wrap"><table><caption>Oriented edge phases in radians</caption><thead><tr><th>Edge</th><th>Original</th><th>Transformed</th></tr></thead><tbody id="gaugeTable"></tbody></table></div><p class="source-line">Source: manuscript, lattice gauge variables and the continuum construction problem.</p></details>
+      <div data-resolution-lab="u1-plaquette"></div>
     </article>
     </div>
   </div>

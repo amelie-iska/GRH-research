@@ -1,0 +1,39 @@
+{
+  "artifact_sha256": {
+    "binary64-replay.json": "54c56138a3fdb8a6246a80c3ca25ccc7493598b37111b1cfe5a14ef622a08757",
+    "cases.json": "0a79f2ca06f11d5d92995a6f132dfa2bb624f164e94da8a8374ec2cd1c9585d7",
+    "negative-controls.json": "2e95e509b68cf765ebbe14e8c3757e85034c95a5863c38e7257a9e8b564cc541",
+    "variance-replay.json": "5533ca9f1fd8c92bef174adbb9a257f8fedd3d53a0678bcc6d4579a709cae479"
+  },
+  "binary64_conversion_cases": 9,
+  "exact_variances_replayed": 288,
+  "generated_at_utc": "2026-11-14T02:43:50.096105+00:00",
+  "invalid_parameter_cases": 29,
+  "model_tamper_rejections": 3,
+  "node_version": "v24.22.1",
+  "nonfinite_rejections": 3,
+  "python_optimized": true,
+  "python_version": "3.12.14",
+  "schema": "grh-cosmology-moment-audit-v1",
+  "scope": [
+    "Independent Python Fraction and JavaScript BigInt arithmetic agree on every returned field.",
+    "All 288 variances are independently reconstructed from the full finite factor columns.",
+    "The exact stored binary64 constants define the finite model; transcendental kernel evaluation and physical Gaussianity are not certified.",
+    "The Lean measure bound remains conditional on its measurable, integrable, and even-moment assumptions.",
+    "Calibration rank values have exact finite arithmetic; no exchangeability theorem or physical detection claim is asserted.",
+    "Test counts identify separate evidence classes and are not an aggregate theorem count."
+  ],
+  "source_sha256": {
+    "extension/code/cosmology_certificate.py": "4b89a35a6ae4ec7b5a32c4a2302de473e2bf5c4d14a868b3c26bae4172d188c4",
+    "extension/code/verify_cosmology_moments.py": "9fa96daf974b0f102e246a4680d7accd3b100fced10e21684a8792492cbb15ee",
+    "extension/review/cosmology/build_moment_contract.py": "d133dc1df78ba3e1f5a0cdded3830d4c7bd9125aeb7f9d2045c3c7cc3874d5d8",
+    "extension/site/cosmology-calibration-core.js": "8f6023b0a727fbbc586378b25394d758207238990d1e2848d48250d42effc4eb",
+    "extension/site/data/cosmology-moment-model.json": "c7c029dc275e6589567e98e853a8808ae65feb5c86200e3445278718e572b907",
+    "extension/site/data/cosmology-noise-factor.json": "f047c4e3f96ef819d21757dbd990950b403fc86af1d1905f704a861a2b306668",
+    "extension/site/data/cosmology-synthetic.json": "6e97e9612d6e1fe0c0cda9f9441ebf1d238e33de907d3075e6a6468b52736970",
+    "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c"
+  },
+  "sources_unchanged_during_audit": true,
+  "status": "passed",
+  "valid_cross_language_cases": 32
+}

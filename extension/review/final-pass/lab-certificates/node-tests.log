@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: canonical rational parser rejects coercion, noncanonical strings and resource overflow
+ok 1 - canonical rational parser rejects coercion, noncanonical strings and resource overflow
+  ---
+  duration_ms: 1.47915
+  type: 'test'
+  ...
+# Subtest: exact decimal text and sign normalization do not pass through Number
+ok 2 - exact decimal text and sign normalization do not pass through Number
+  ---
+  duration_ms: 0.762081
+  type: 'test'
+  ...
+# Subtest: display-only rational conversion avoids Infinity/Infinity and premature underflow
+ok 3 - display-only rational conversion avoids Infinity/Infinity and premature underflow
+  ---
+  duration_ms: 0.392387
+  type: 'test'
+  ...
+# Subtest: strict JSON rejects duplicate/escaped duplicate keys, numbers, invalid syntax and oversized UTF8
+ok 4 - strict JSON rejects duplicate/escaped duplicate keys, numbers, invalid syntax and oversized UTF8
+  ---
+  duration_ms: 1.680482
+  type: 'test'
+  ...
+# Subtest: Hodge positive and zero boundaries preserve the two different gap quantities
+ok 5 - Hodge positive and zero boundaries preserve the two different gap quantities
+  ---
+  duration_ms: 2.201381
+  type: 'test'
+  ...
+# Subtest: toral powers and exact point map agree with independent integer oracles
+ok 6 - toral powers and exact point map agree with independent integer oracles
+  ---
+  duration_ms: 4.797532
+  type: 'test'
+  ...
+# Subtest: weighted replay distinguishes a holding contraction, failed bound and noncontracting bound
+ok 7 - weighted replay distinguishes a holding contraction, failed bound and noncontracting bound
+  ---
+  duration_ms: 0.953905
+  type: 'test'
+  ...
+# Subtest: 80-digit parameter domain remains exact for weights far beyond binary64 precision
+ok 8 - 80-digit parameter domain remains exact for weights far beyond binary64 precision
+  ---
+  duration_ms: 0.32964
+  type: 'test'
+  ...
+# Subtest: tampered derived results, unknown fields, wrong lab and stale bindings fail closed
+ok 9 - tampered derived results, unknown fields, wrong lab and stale bindings fail closed
+  ---
+  duration_ms: 3.524541
+  type: 'test'
+  ...
+# Subtest: validated round-trip restores exact parameters and invalid import never prepares or mutates controls
+ok 10 - validated round-trip restores exact parameters and invalid import never prepares or mutates controls
+  ---
+  duration_ms: 2.698408
+  type: 'test'
+  ...
+# Subtest: a control that cannot restore exact state rolls back without accepting a rounded import
+ok 11 - a control that cannot restore exact state rolls back without accepting a rounded import
+  ---
+  duration_ms: 1.482671
+  type: 'test'
+  ...
+# Subtest: cosmology certificate retains conditional moment scope and exact finite rank arithmetic
+ok 12 - cosmology certificate retains conditional moment scope and exact finite rank arithmetic
+  ---
+  duration_ms: 79.051427
+  type: 'test'
+  ...
+# Subtest: Lean return path contains fixed theorem applications and rejects source injection
+ok 13 - Lean return path contains fixed theorem applications and rejects source injection
+  ---
+  duration_ms: 12.756211
+  type: 'test'
+  ...
+# Subtest: independent Python replay agrees on 128 rational gain instances and edge contracts
+ok 14 - independent Python replay agrees on 128 rational gain instances and edge contracts
+  ---
+  duration_ms: 481.497048
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 758.228144

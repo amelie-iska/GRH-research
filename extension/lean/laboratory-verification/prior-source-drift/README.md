@@ -1,0 +1,3 @@
+# Preserved source-stability failure
+
+All eleven emitted Lean specializations compiled and all six false mathematical controls were rejected. The aggregate record is nevertheless failed because the JavaScript emitter changed during the early freeze window. The recorded emitter hash was f7ed3908885f0ac439a52247cba936c6130fd6bff6e16a07c207ebf2c5b6bde8; the frozen final emitter is 521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1. Final source-bound exports were independently regenerated and found byte-identical to these checked Lean inputs. The parent directory contains the subsequent stable audit; this historical failure is not relabeled as a pass.

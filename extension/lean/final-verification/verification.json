@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-14T01:33:03.265652+00:00",
+  "checked_at_utc": "2026-11-14T02:37:51.405658+00:00",
   "status": "verified",
-  "module_count": 7,
-  "declaration_count": 121,
+  "module_count": 9,
+  "declaration_count": 131,
   "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
   "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
   "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
   "mathlib_tracked_files_clean": true,
-  "checker_sha256": "7aa82b2fe986518966e8e1e1f26b115d9c18d464e85df880284722c7df424e53",
-  "lakefile_sha256": "2f95c0d22ff6d1a7119a10223070ca13acb3078bc4d2897560e57cb03bf629e8",
+  "checker_sha256": "4636244480c1a18dd573dfa78664d77efa8c3f1124236051b5fae93ba0824f52",
+  "lakefile_sha256": "81554fb8f9f92b6a53c643a17915ced504c55f90e9c67061bfc714403b6e0fd7",
   "provenance_sha256": {
-    "checker": "7aa82b2fe986518966e8e1e1f26b115d9c18d464e85df880284722c7df424e53",
-    "lakefile": "2f95c0d22ff6d1a7119a10223070ca13acb3078bc4d2897560e57cb03bf629e8",
+    "checker": "4636244480c1a18dd573dfa78664d77efa8c3f1124236051b5fae93ba0824f52",
+    "lakefile": "81554fb8f9f92b6a53c643a17915ced504c55f90e9c67061bfc714403b6e0fd7",
     "lean_toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
     "lean_binary": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
     "lake_binary": "5f3828d1d1977654cf5602c40ac4ee52b64f7dcf34d64c5877d7b7d2d3616344",
@@ -20,6 +20,32 @@
   },
   "configuration_unchanged_during_check": true,
   "warnings_treated_as_errors": true,
+  "local_imports_rebuilt_from_current_source": true,
+  "local_import_sources_unchanged_during_check": true,
+  "local_import_builds": [
+    {
+      "module": "BridgeTheorems",
+      "source": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "exit_code": 0,
+      "status": "verified",
+      "source_unchanged_during_build": true,
+      "olean_sha256": "d2131c11442c5b577c96d2bd921432ce0eadfd8acce6860798863c495c6661b9",
+      "log": "BridgeTheorems.import-build.log",
+      "log_sha256": "ade8d8baaa9d3b0c332389db051b79d05185c16081e1ddcf69d5e5344dffe259"
+    },
+    {
+      "module": "FluidInterfaces",
+      "source": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "exit_code": 0,
+      "status": "verified",
+      "source_unchanged_during_build": true,
+      "olean_sha256": "d7e99be836817a9f08046bef33e1f6da2cb144c5262bcaaef93d491e35c1c439",
+      "log": "FluidInterfaces.import-build.log",
+      "log_sha256": "8ebef3ba31ea4979aa3cc37ec26749dfe4a94c13468fb7f21f1faad978e34f77"
+    }
+  ],
   "command": "python extension/lean/verify_all.py --toolchain <pinned-toolchain> --mathlib <pinned-mathlib>",
   "modules": [
     {
@@ -175,7 +201,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 17.78358164599922,
+      "elapsed_seconds": 14.728218489006395,
       "declaration_count": 25,
       "declarations": [
         "ResearchBridge.complex_range_le_kernel",
@@ -263,7 +289,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 4.109832214002381,
+      "elapsed_seconds": 3.1427831719920505,
       "declaration_count": 7,
       "declarations": [
         "ResearchQuantum.pauliX_square",
@@ -377,7 +403,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 4.750792705002823,
+      "elapsed_seconds": 4.453014950006036,
       "declaration_count": 16,
       "declarations": [
         "DiagramGrammar.context_sound",
@@ -614,7 +640,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 23.895605204001185,
+      "elapsed_seconds": 20.948820839999826,
       "declaration_count": 34,
       "declarations": [
         "FluidInterfaces.dot_self_nonneg",
@@ -751,7 +777,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 6.4030481850059005,
+      "elapsed_seconds": 5.602085370992427,
       "declaration_count": 16,
       "declarations": [
         "ReductionContracts.factorization_iff_fiber_constant",
@@ -885,7 +911,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 3.9355644510069396,
+      "elapsed_seconds": 4.824627952999435,
       "declaration_count": 17,
       "declarations": [
         "TransportContracts.suffix_transport_telescope",
@@ -959,7 +985,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 2.257022090998362,
+      "elapsed_seconds": 2.619361724006012,
       "declaration_count": 6,
       "declarations": [
         "WeightedGainContracts.row_ratio_iff",
@@ -972,6 +998,118 @@
       "source_unchanged_during_check": true,
       "log": "WeightedGainContracts.log",
       "log_sha256": "79be90d4807d1eb48df1f6478c3a2004db7cc0d90093f0af0c45a45225c0ffad"
+    },
+    {
+      "module": "LaboratoryContracts",
+      "source": "extension/lean/LaboratoryContracts.lean",
+      "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "LaboratoryContracts.hodge_family_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "LaboratoryContracts.hodge_family_kernel": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "LaboratoryContracts.quadratic_cover_certificate": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "LaboratoryContracts.square_perturbation_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "LaboratoryContracts.hodge_family_certificate": "LaboratoryContracts.hodge_family_certificate (\u03b5 : \u211d) (h\u03b50 : 0 \u2264 \u03b5) (h\u03b51 : \u03b5 \u2264 1) :\n  ResearchBridge.hodgeMatrix \u03b5 0 0 1 = !![\u03b5 ^ 2, 0; 0, 1] \u2227\n    (\u2200 (a b : \u211d), \u03b5 ^ 2 * (a ^ 2 + b ^ 2) \u2264 ResearchBridge.hodgeEnergy \u03b5 0 0 1 a b) \u2227 (0 < \u03b5 ^ 2 \u2194 \u03b5 \u2260 0)",
+        "LaboratoryContracts.hodge_family_kernel": "LaboratoryContracts.hodge_family_kernel (\u03b5 a b : \u211d) :\n  (ResearchBridge.hodgeMatrix \u03b5 0 0 1).mulVec ![a, b] = 0 \u2194 (\u03b5 = 0 \u2228 a = 0) \u2227 b = 0",
+        "LaboratoryContracts.quadratic_cover_certificate": "LaboratoryContracts.quadratic_cover_certificate (k : \u2115) :\n  (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k \u2227 0 < (FluidInterfaces.renormalizationMatrix ^ k).det",
+        "LaboratoryContracts.square_perturbation_bound": "LaboratoryContracts.square_perturbation_bound (B e d : \u211d) (he : |e| \u2264 d) : |(B + e) ^ 2 - B ^ 2| \u2264 d * (2 * |B| + d)"
+      },
+      "printed_types_cover_every_declaration": true,
+      "exit_code": 0,
+      "elapsed_seconds": 4.140955954993842,
+      "declaration_count": 4,
+      "declarations": [
+        "LaboratoryContracts.hodge_family_certificate",
+        "LaboratoryContracts.hodge_family_kernel",
+        "LaboratoryContracts.quadratic_cover_certificate",
+        "LaboratoryContracts.square_perturbation_bound"
+      ],
+      "source_unchanged_during_check": true,
+      "log": "LaboratoryContracts.log",
+      "log_sha256": "29a65eb59b199fc32cf3443cac886334e71eb09519c0f1970dc18b78a037a7d0"
+    },
+    {
+      "module": "CosmologyCalibration",
+      "source": "extension/lean/CosmologyCalibration.lean",
+      "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "CosmologyCalibration.finite_family_false_positive_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CosmologyCalibration.scan_even_moment_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CosmologyCalibration.scan_uniform_even_moment_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CosmologyCalibration.scan_even_moment_threshold": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CosmologyCalibration.rank_fraction_bounds": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "CosmologyCalibration.rank_fraction_threshold_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "CosmologyCalibration.finite_family_false_positive_bound": "CosmologyCalibration.finite_family_false_positive_bound.{u_1, u_2} {\u03a9 : Type u_1} {\u03b9 : Type u_2} [MeasurableSpace \u03a9]\n  (\u03bc : MeasureTheory.Measure \u03a9) [MeasureTheory.IsProbabilityMeasure \u03bc] (tests : Finset \u03b9) (events : \u03b9 \u2192 Set \u03a9)\n  (budget : \u03b9 \u2192 \u211d) (hmeas : \u2200 j \u2208 tests, MeasurableSet (events j)) (htail : \u2200 j \u2208 tests, \u03bc.real (events j) \u2264 budget j) :\n  MeasurableSet (\u22c3 j \u2208 tests, events j) \u2227 \u03bc.real (\u22c3 j \u2208 tests, events j) \u2264 min 1 (\u2211 j \u2208 tests, budget j)",
+        "CosmologyCalibration.scan_even_moment_bound": "CosmologyCalibration.scan_even_moment_bound.{u_1, u_2} {\u03a9 : Type u_1} {\u03b9 : Type u_2} [MeasurableSpace \u03a9]\n  (\u03bc : MeasureTheory.Measure \u03a9) [MeasureTheory.IsProbabilityMeasure \u03bc] (tests : Finset \u03b9) (score : \u03b9 \u2192 \u03a9 \u2192 \u211d) (k : \u2115)\n  (t : \u211d) (M : \u03b9 \u2192 \u211d) (ht : 0 < t) (hmeas : \u2200 j \u2208 tests, Measurable (score j))\n  (hint : \u2200 j \u2208 tests, MeasureTheory.Integrable (fun \u03c9 => |score j \u03c9| ^ (2 * k)) \u03bc)\n  (hmoment : \u2200 j \u2208 tests, \u222b (\u03c9 : \u03a9), |score j \u03c9| ^ (2 * k) \u2202\u03bc \u2264 M j) :\n  MeasurableSet (CosmologyCalibration.scanEvent tests score t) \u2227\n    \u03bc.real (CosmologyCalibration.scanEvent tests score t) \u2264 min 1 ((\u2211 j \u2208 tests, M j) / t ^ (2 * k))",
+        "CosmologyCalibration.scan_uniform_even_moment_bound": "CosmologyCalibration.scan_uniform_even_moment_bound.{u_1, u_2} {\u03a9 : Type u_1} {\u03b9 : Type u_2} [MeasurableSpace \u03a9]\n  (\u03bc : MeasureTheory.Measure \u03a9) [MeasureTheory.IsProbabilityMeasure \u03bc] (tests : Finset \u03b9) (score : \u03b9 \u2192 \u03a9 \u2192 \u211d) (k : \u2115)\n  (t M : \u211d) (ht : 0 < t) (hmeas : \u2200 j \u2208 tests, Measurable (score j))\n  (hint : \u2200 j \u2208 tests, MeasureTheory.Integrable (fun \u03c9 => |score j \u03c9| ^ (2 * k)) \u03bc)\n  (hmoment : \u2200 j \u2208 tests, \u222b (\u03c9 : \u03a9), |score j \u03c9| ^ (2 * k) \u2202\u03bc \u2264 M) :\n  MeasurableSet (CosmologyCalibration.scanEvent tests score t) \u2227\n    \u03bc.real (CosmologyCalibration.scanEvent tests score t) \u2264 min 1 (\u2191tests.card * M / t ^ (2 * k))",
+        "CosmologyCalibration.scan_even_moment_threshold": "CosmologyCalibration.scan_even_moment_threshold.{u_1, u_2} {\u03a9 : Type u_1} {\u03b9 : Type u_2} [MeasurableSpace \u03a9]\n  (\u03bc : MeasureTheory.Measure \u03a9) [MeasureTheory.IsProbabilityMeasure \u03bc] (tests : Finset \u03b9) (score : \u03b9 \u2192 \u03a9 \u2192 \u211d) (k : \u2115)\n  (t M \u03b1 : \u211d) (ht : 0 < t) (hmeas : \u2200 j \u2208 tests, Measurable (score j))\n  (hint : \u2200 j \u2208 tests, MeasureTheory.Integrable (fun \u03c9 => |score j \u03c9| ^ (2 * k)) \u03bc)\n  (hmoment : \u2200 j \u2208 tests, \u222b (\u03c9 : \u03a9), |score j \u03c9| ^ (2 * k) \u2202\u03bc \u2264 M) (hbudget : \u2191tests.card * M \u2264 \u03b1 * t ^ (2 * k)) :\n  MeasurableSet (CosmologyCalibration.scanEvent tests score t) \u2227\n    \u03bc.real (CosmologyCalibration.scanEvent tests score t) \u2264 \u03b1",
+        "CosmologyCalibration.rank_fraction_bounds": "CosmologyCalibration.rank_fraction_bounds (draws exceedances : \u2115) (hcount : exceedances \u2264 draws) :\n  0 < CosmologyCalibration.rankFraction draws exceedances \u2227\n    1 / (\u2191draws + 1) \u2264 CosmologyCalibration.rankFraction draws exceedances \u2227\n      CosmologyCalibration.rankFraction draws exceedances \u2264 1",
+        "CosmologyCalibration.rank_fraction_threshold_iff": "CosmologyCalibration.rank_fraction_threshold_iff (draws exceedances : \u2115) (\u03b1 : \u211a) :\n  CosmologyCalibration.rankFraction draws exceedances \u2264 \u03b1 \u2194 1 + \u2191exceedances \u2264 \u03b1 * (\u2191draws + 1)"
+      },
+      "printed_types_cover_every_declaration": true,
+      "exit_code": 0,
+      "elapsed_seconds": 6.4336716560064815,
+      "declaration_count": 6,
+      "declarations": [
+        "CosmologyCalibration.finite_family_false_positive_bound",
+        "CosmologyCalibration.scan_even_moment_bound",
+        "CosmologyCalibration.scan_uniform_even_moment_bound",
+        "CosmologyCalibration.scan_even_moment_threshold",
+        "CosmologyCalibration.rank_fraction_bounds",
+        "CosmologyCalibration.rank_fraction_threshold_iff"
+      ],
+      "source_unchanged_during_check": true,
+      "log": "CosmologyCalibration.log",
+      "log_sha256": "3bcfc44630ff627ecdaa22a2c769105257ff28938f9f7779bec3aec082a4f3ef"
     }
   ],
   "scope": "Fresh elaboration, printed types and actual foundational axiom dependencies for exactly the listed finite-interface declarations. Cached compiled imports and the named Lean/mathlib toolchain are trusted. No claim of complete monograph, continuum Navier-Stokes, GRH, Yang-Mills or cryptographic implementation verification.",

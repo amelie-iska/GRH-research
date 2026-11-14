@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "status": "verified-components-proposed-manuscript-labels",
+  "declaration_count": 10,
+  "scope": "10 new selected components, not complete manuscript environments. Runtime/model assumptions remain explicit.",
+  "declarations": [
+    {
+      "declaration": "LaboratoryContracts.hodge_family_certificate",
+      "manuscript_claim_id": "thm:workbench-hodge-contract",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/LaboratoryContracts.lean",
+      "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+      "kernel_printed_type": "LaboratoryContracts.hodge_family_certificate (\u03b5 : \u211d) (h\u03b50 : 0 \u2264 \u03b5) (h\u03b51 : \u03b5 \u2264 1) :\n  ResearchBridge.hodgeMatrix \u03b5 0 0 1 = !![\u03b5 ^ 2, 0; 0, 1] \u2227\n    (\u2200 (a b : \u211d), \u03b5 ^ 2 * (a ^ 2 + b ^ 2) \u2264 ResearchBridge.hodgeEnergy \u03b5 0 0 1 a b) \u2227 (0 < \u03b5 ^ 2 \u2194 \u03b5 \u2260 0)",
+      "type_sha256": "ffbbb20e969c4e6c28c5d7b4c35f9b711a9d98bcdcde4942ec998352bd7a4637",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "LaboratoryContracts.hodge_family_kernel",
+      "manuscript_claim_id": "thm:workbench-hodge-contract",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/LaboratoryContracts.lean",
+      "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+      "kernel_printed_type": "LaboratoryContracts.hodge_family_kernel (\u03b5 a b : \u211d) :\n  (ResearchBridge.hodgeMatrix \u03b5 0 0 1).mulVec ![a, b] = 0 \u2194 (\u03b5 = 0 \u2228 a = 0) \u2227 b = 0",
+      "type_sha256": "69faac8e524591799d92b8741d8c6283f2299a23614c0b7356d6b77d58bd21ad",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "LaboratoryContracts.quadratic_cover_certificate",
+      "manuscript_claim_id": "prop:workbench-cover-certificate",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/LaboratoryContracts.lean",
+      "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+      "kernel_printed_type": "LaboratoryContracts.quadratic_cover_certificate (k : \u2115) :\n  (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k \u2227 0 < (FluidInterfaces.renormalizationMatrix ^ k).det",
+      "type_sha256": "658f7e1724cecd982506f997f8d4de07bda7aca610f3503dea1b726d688fa4ee",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "LaboratoryContracts.square_perturbation_bound",
+      "manuscript_claim_id": "prop:fr-local-wilson-bound",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/LaboratoryContracts.lean",
+      "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+      "kernel_printed_type": "LaboratoryContracts.square_perturbation_bound (B e d : \u211d) (he : |e| \u2264 d) : |(B + e) ^ 2 - B ^ 2| \u2264 d * (2 * |B| + d)",
+      "type_sha256": "3fe8c1d151810b9e3e7fb065f188e4bbbd8aa0ae097259550364cddcd9d3a859",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "CosmologyCalibration.finite_family_false_positive_bound",
+      "manuscript_claim_id": "prop:workbench-familywise-bound",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/CosmologyCalibration.lean",
+      "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+      "kernel_printed_type": "CosmologyCalibration.finite_family_false_positive_bound.{u_1, u_2} {\u03a9 : Type u_1} {\u03b9 : Type u_2} [MeasurableSpace \u03a9]\n  (\u03bc : MeasureTheory.Measure \u03a9) [MeasureTheory.IsProbabilityMeasure \u03bc] (tests : Finset \u03b9) (events : \u03b9 \u2192 Set \u03a9)\n  (budget : \u03b9 \u2192 \u211d) (hmeas : \u2200 j \u2208 tests, MeasurableSet (events j)) (htail : \u2200 j \u2208 tests, \u03bc.real (events j) \u2264 budget j) :\n  MeasurableSet (\u22c3 j \u2208 tests, events j) \u2227 \u03bc.real (\u22c3 j \u2208 tests, events j) \u2264 min 1 (\u2211 j \u2208 tests, budget j)",
+      "type_sha256": "450665d3a5561de7e191aeeab7fb25cf3ee985ea9717e030a7ba26a58f65d3d6",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "CosmologyCalibration.scan_even_moment_bound",
+      "manuscript_claim_id": "thm:workbench-even-moment-bound",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/CosmologyCalibration.lean",
+      "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+      "kernel_printed_type": "CosmologyCalibration.scan_even_moment_bound.{u_1, u_2} {\u03a9 : Type u_1} {\u03b9 : Type u_2} [MeasurableSpace \u03a9]\n  (\u03bc : MeasureTheory.Measure \u03a9) [MeasureTheory.IsProbabilityMeasure \u03bc] (tests : Finset \u03b9) (score : \u03b9 \u2192 \u03a9 \u2192 \u211d) (k : \u2115)\n  (t : \u211d) (M : \u03b9 \u2192 \u211d) (ht : 0 < t) (hmeas : \u2200 j \u2208 tests, Measurable (score j))\n  (hint : \u2200 j \u2208 tests, MeasureTheory.Integrable (fun \u03c9 => |score j \u03c9| ^ (2 * k)) \u03bc)\n  (hmoment : \u2200 j \u2208 tests, \u222b (\u03c9 : \u03a9), |score j \u03c9| ^ (2 * k) \u2202\u03bc \u2264 M j) :\n  MeasurableSet (CosmologyCalibration.scanEvent tests score t) \u2227\n    \u03bc.real (CosmologyCalibration.scanEvent tests score t) \u2264 min 1 ((\u2211 j \u2208 tests, M j) / t ^ (2 * k))",
+      "type_sha256": "97143eece55b29f9494601b786f2236f207ac2af93d57db13f7b87cc056989e5",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "CosmologyCalibration.scan_uniform_even_moment_bound",
+      "manuscript_claim_id": "thm:workbench-even-moment-bound",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/CosmologyCalibration.lean",
+      "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+      "kernel_printed_type": "CosmologyCalibration.scan_uniform_even_moment_bound.{u_1, u_2} {\u03a9 : Type u_1} {\u03b9 : Type u_2} [MeasurableSpace \u03a9]\n  (\u03bc : MeasureTheory.Measure \u03a9) [MeasureTheory.IsProbabilityMeasure \u03bc] (tests : Finset \u03b9) (score : \u03b9 \u2192 \u03a9 \u2192 \u211d) (k : \u2115)\n  (t M : \u211d) (ht : 0 < t) (hmeas : \u2200 j \u2208 tests, Measurable (score j))\n  (hint : \u2200 j \u2208 tests, MeasureTheory.Integrable (fun \u03c9 => |score j \u03c9| ^ (2 * k)) \u03bc)\n  (hmoment : \u2200 j \u2208 tests, \u222b (\u03c9 : \u03a9), |score j \u03c9| ^ (2 * k) \u2202\u03bc \u2264 M) :\n  MeasurableSet (CosmologyCalibration.scanEvent tests score t) \u2227\n    \u03bc.real (CosmologyCalibration.scanEvent tests score t) \u2264 min 1 (\u2191tests.card * M / t ^ (2 * k))",
+      "type_sha256": "419f76c3cd449b430aba0c7c66e9642034322d13c099a2912f1bab0c1b53e3c4",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "CosmologyCalibration.scan_even_moment_threshold",
+      "manuscript_claim_id": "cor:workbench-moment-threshold",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/CosmologyCalibration.lean",
+      "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+      "kernel_printed_type": "CosmologyCalibration.scan_even_moment_threshold.{u_1, u_2} {\u03a9 : Type u_1} {\u03b9 : Type u_2} [MeasurableSpace \u03a9]\n  (\u03bc : MeasureTheory.Measure \u03a9) [MeasureTheory.IsProbabilityMeasure \u03bc] (tests : Finset \u03b9) (score : \u03b9 \u2192 \u03a9 \u2192 \u211d) (k : \u2115)\n  (t M \u03b1 : \u211d) (ht : 0 < t) (hmeas : \u2200 j \u2208 tests, Measurable (score j))\n  (hint : \u2200 j \u2208 tests, MeasureTheory.Integrable (fun \u03c9 => |score j \u03c9| ^ (2 * k)) \u03bc)\n  (hmoment : \u2200 j \u2208 tests, \u222b (\u03c9 : \u03a9), |score j \u03c9| ^ (2 * k) \u2202\u03bc \u2264 M) (hbudget : \u2191tests.card * M \u2264 \u03b1 * t ^ (2 * k)) :\n  MeasurableSet (CosmologyCalibration.scanEvent tests score t) \u2227\n    \u03bc.real (CosmologyCalibration.scanEvent tests score t) \u2264 \u03b1",
+      "type_sha256": "a354d6aa053afc55507f6989d1b48ea65f9197a8188944c95ca57515eb39033e",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "CosmologyCalibration.rank_fraction_bounds",
+      "manuscript_claim_id": "prop:workbench-rank-arithmetic",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/CosmologyCalibration.lean",
+      "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+      "kernel_printed_type": "CosmologyCalibration.rank_fraction_bounds (draws exceedances : \u2115) (hcount : exceedances \u2264 draws) :\n  0 < CosmologyCalibration.rankFraction draws exceedances \u2227\n    1 / (\u2191draws + 1) \u2264 CosmologyCalibration.rankFraction draws exceedances \u2227\n      CosmologyCalibration.rankFraction draws exceedances \u2264 1",
+      "type_sha256": "d89872c08cc966112b60342d1c66838f757ffbb1eef8796420c1e2f9ebac207a",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "declaration": "CosmologyCalibration.rank_fraction_threshold_iff",
+      "manuscript_claim_id": "prop:workbench-rank-arithmetic",
+      "coverage": "selected-component",
+      "whole_manuscript_formalization_claim": false,
+      "source": "extension/lean/CosmologyCalibration.lean",
+      "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+      "kernel_printed_type": "CosmologyCalibration.rank_fraction_threshold_iff (draws exceedances : \u2115) (\u03b1 : \u211a) :\n  CosmologyCalibration.rankFraction draws exceedances \u2264 \u03b1 \u2194 1 + \u2191exceedances \u2264 \u03b1 * (\u2191draws + 1)",
+      "type_sha256": "a415161f01cf719cb64f5e0477b4b33b66ae071313d8ed48d9cf2e4c8cfb3a53",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  ]
+}

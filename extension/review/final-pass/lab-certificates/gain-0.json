@@ -1,0 +1,87 @@
+{
+  "schema": "grh-lab-certificate-v1",
+  "contract": "weighted-gain-v1",
+  "binding": {
+    "binding_schema": "grh-lab-source-type-binding-v1",
+    "lab_url": "https://amelie-iska.github.io/GRH-research/fluids.html#gain-title",
+    "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+    "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+    "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+    "runtime_sources": {
+      "extension/code/verify_lab_certificate.py": "a7c5565ad0ab29d7b4516585692a0d9a0fbf672c4153e97d2f68e63da1648099",
+      "extension/site/certificate-bridge-ui.js": "403b1a64b92e16650f2aeba2f4a67d274b594c8ec1c817799b70f3a310110b3e",
+      "extension/site/certificate-bridge.js": "521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1",
+      "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c",
+      "extension/site/fluids.js": "cf638e9b4533525ee531e5aae624093259f69e881f4e611f7b03f5d4dfe387ff"
+    },
+    "scope": "Exact inequalities for the supplied nonnegative two-block gain matrix, positive weights and rate. Domain-valid domination of a physical update is an additional hypothesis.",
+    "theorems": [
+      {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "module": "WeightedGainContracts",
+        "name": "WeightedGainContracts.row_ratio_iff",
+        "printed_type": "WeightedGainContracts.row_ratio_iff.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (G : Matrix ι ι K) (w : ι → K) (q : K) (hw : ∀ (i : ι), 0 < w i) :\n  (∀ (i : ι), G.mulVec w i / w i ≤ q) ↔ ∀ (i : ι), G.mulVec w i ≤ q * w i",
+        "source": "extension/lean/WeightedGainContracts.lean",
+        "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+        "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/WeightedGainContracts.lean",
+        "type_sha256": "8a7e6f1ddbfded5165e1d11c5d689242d6d405c3855e9df50885cc56dcea5e96"
+      },
+      {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "module": "WeightedGainContracts",
+        "name": "WeightedGainContracts.matrix_action_weighted_bound",
+        "printed_type": "WeightedGainContracts.matrix_action_weighted_bound.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (A G : Matrix ι ι K) (w x : ι → K) (q r : K) (hw : ∀ (i : ι), 0 < w i)\n  (hG : ∀ (i j : ι), 0 ≤ G i j) (hgain : ∀ (i : ι), G.mulVec w i ≤ q * w i) (hA : ∀ (i j : ι), |A i j| ≤ G i j)\n  (hx : ∀ (i : ι), |x i| ≤ r * w i) (i : ι) : |A.mulVec x i| ≤ q * r * w i",
+        "source": "extension/lean/WeightedGainContracts.lean",
+        "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+        "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/WeightedGainContracts.lean",
+        "type_sha256": "f231ce168ac93d4c79ae2f3cbe18c10adfb2c2dd4a5f7ad33a6e9122b62c0b4c"
+      }
+    ]
+  },
+  "parameters": {
+    "matrix": [
+      [
+        "1/4",
+        "3/2"
+      ],
+      [
+        "3/32",
+        "1/4"
+      ]
+    ],
+    "rate": "5/8",
+    "weights": [
+      "4/1",
+      "1/1"
+    ]
+  },
+  "result": {
+    "left_sides": [
+      "5/2",
+      "5/8"
+    ],
+    "right_sides": [
+      "5/2",
+      "5/8"
+    ],
+    "slacks": [
+      "0/1",
+      "0/1"
+    ],
+    "row_ratios": [
+      "5/8",
+      "5/8"
+    ],
+    "maximum_ratio": "5/8",
+    "bound_holds": true,
+    "certifies_contraction_of_supplied_gain": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "finite-resolution-ui-checks-v1",
+  "status": "passed",
+  "checked_at_utc": "2026-11-14T02:42:19.154Z",
+  "node_version": "v24.22.1",
+  "checks": [
+    "three distinct families mount with labels, table captions and numerical scope",
+    "Nyquist input clears old results and correction recovers through the change event",
+    "empty and nonfinite controls fail without reusing a stale report",
+    "real-arithmetic energy exactness is not formatted as zero numerical error for all inputs",
+    "zero-time heat reports unresolved rates and retains separate budgets",
+    "the gauge panel preserves raw cancellation, stable value and withheld rates",
+    "coarse gauge flux warns about phase aliasing without changing the declared family",
+    "display helpers distinguish an unavailable value, exact zero and an unresolved rate"
+  ],
+  "evidence_scope": "In-memory DOM behavior: labels, status text, event updates, invalid-input clearing, restored valid controls and retained numerical limitations. No browser rendering, screen-reader, keyboard, network or layout claim.",
+  "browser_rendered": false,
+  "source_sha256": {
+    "extension/site/finite-resolution-ui.js": "d71bca595ccf01359211c2c7607f1fb762fef3df54c98865050bf681db4e5903",
+    "extension/site/finite-resolution-core.js": "d1c223fc944fd36638315bf49e1f3157a29560910e4e491cb046c48225d94fa9",
+    "extension/site/verify-finite-resolution-ui.cjs": "293d88a352f4bfa590860d851dce3e312966510e04c3c39679a7efc5d9f242c8"
+  }
+}

@@ -7,6 +7,7 @@
   const colors = {ink: "#182b29", teal: "#14695e", ochre: "#a65b19", muted: "#596b64", grid: "#d4ddd5", paper: "#fcfdf9"};
   const svgNS = "http://www.w3.org/2000/svg";
   let playing = false, lastFrame = 0, lastDraw = 0, currentHeat = null, saveTimer = null;
+  let coverCertificate = null, gainCertificate = null;
   const f = (value, digits = 4) => Number(value).toFixed(digits).replace("-", "−");
   const scientific = value => value === 0 ? "0" : Math.abs(value) >= 0.01 && Math.abs(value) < 10000 ? f(value, 4) : value.toExponential(3).replace("e-", "e−");
   const complexText = z => `${f(z[0], 5)} ${z[1] >= 0 ? "+" : "−"} ${f(Math.abs(z[1]), 5)}i`;
@@ -203,7 +204,13 @@
     ["heatSteps", "heatStepsOut", "steps", 0, drawHeat], ["scalingTau", "scalingTauOut", "logTau", 1, drawScaling], ["scalingH", "scalingHOut", "h", 4, drawScaling]
   ];
   function updateControls() {
-    for (const [id, out, key, digits, , suffix = ""] of bindings) { byId(id).value = state[key]; setText(out, f(state[key], digits) + suffix); }
+    for (const [id, out, key, digits, , suffix = ""] of bindings) {
+      byId(id).value = state[key];
+      // The exact cover certificate and the canvas use the same hundredth-grid
+      // state, including when a shared URL supplied an off-grid decimal.
+      if (id === "coverX" || id === "coverY") state[key] = Number(byId(id).value);
+      setText(out, f(state[key], digits) + suffix);
+    }
     for (let i = 0; i < 4; i++) { byId("fluidTheta" + i).value = state.angles[i]; setText("fluidTheta" + i + "Out", f(state.angles[i], 2)); }
     byId("flowView").value = state.view; byId("heatInitial").value = state.initial;
     byId("flowYaw").disabled = state.view === "flat"; byId("flowPitch").disabled = state.view === "flat";
@@ -234,7 +241,7 @@
   byId("resetFluid").addEventListener("click", () => { stop(); Object.assign(state, M.stateFromSearch("")); all(); saveState(); setText("fluidStatus", "All four laboratories reset to their documented defaults."); });
   byId("copyFluidLink").addEventListener("click", async () => {
     const url = new URL(window.location.href); url.search = M.stateToSearch(state); history.replaceState(null, "", url.search + url.hash);
-    try { await navigator.clipboard.writeText(url.href); setText("fluidStatus", "Configuration link copied. It restores every displayed control."); }
+    try { await navigator.clipboard.writeText(url.href); setText("fluidStatus", "Configuration link copied for the four original fluid laboratories. Exact gain parameters travel in their certificate."); }
     catch { setText("fluidStatus", "The address bar now contains this configuration; copy that address to share it."); }
   });
   const flowCanvas = byId("flowCanvas"); let drag = null;
@@ -250,6 +257,26 @@
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   reduced.addEventListener("change", event => { if (event.matches) stop(); });
   all();
+  if (window.LabCertificateUI) {
+    const B = window.LabCertificateBridge, R = window.ExactRational;
+    const readCover = () => ({power: B.userRational(byId("coverPower").value), x: B.userRational(byId("coverX").value), y: B.userRational(byId("coverY").value)});
+    window.LabCertificateUI.mount(byId("coverCertificate"), {contract: "quadratic-cover-v1", readParameters: readCover, watch: [byId("coverPower"), byId("coverX"), byId("coverY")], prepareImport: p => {
+      const before = {power: state.power, x: state.x, y: state.y};
+      const restore = values => {Object.assign(state, values); updateControls(); drawCover(); saveState();};
+      const after = {power: R.toNumber(R.parse(p.power)), x: R.toNumber(R.parse(p.x)), y: R.toNumber(R.parse(p.y))};
+      return {commit: () => restore(after), rollback: () => restore(before)};
+    }}).then(controller => {coverCertificate = controller; window.CoverCertificate = controller;});
+    const gainIds = ["gain00", "gain01", "gain10", "gain11", "gainW0", "gainW1", "gainRate"];
+    const gainDefaults = gainIds.map(id => byId(id).value);
+    const readGain = () => {const v = gainIds.map(id => B.userRational(byId(id).value)); return {matrix: [[v[0], v[1]], [v[2], v[3]]], weights: [v[4], v[5]], rate: v[6]};};
+    window.LabCertificateUI.mount(byId("gainCertificate"), {contract: "weighted-gain-v1", readParameters: readGain, watch: gainIds.map(byId), prepareImport: p => {
+      const before = gainIds.map(id => byId(id).value), after = [...p.matrix[0], ...p.matrix[1], ...p.weights, p.rate];
+      const restore = values => gainIds.forEach((id, i) => {byId(id).value = values[i];});
+      return {commit: () => restore(after), rollback: () => restore(before)};
+    }}).then(controller => {gainCertificate = controller; window.GainCertificate = controller;});
+    byId("resetFluid").addEventListener("click", () => {gainIds.forEach((id, i) => {byId(id).value = gainDefaults[i];}); coverCertificate?.refresh(); gainCertificate?.refresh();});
+    window.addEventListener("popstate", () => coverCertificate?.refresh());
+  }
   fetch("data/fluids-reference.json").then(response => { if (!response.ok) throw new Error("Reference file unavailable"); return response.json(); }).then(data => {
     if (data.schema !== "fluid-reference-v1") throw new Error("Reference schema mismatch");
     const summary = data.summary;

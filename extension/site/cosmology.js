@@ -477,7 +477,19 @@
     drawMap();drawHistogram();renderTables();updateURL();
     global.CCCCurrent = {state: {...state}, maximum: current.maximum, selectedLocalP: current.selectedLocalP,
       globalP: current.globalP, exceedances: current.exceedances, winner: current.winner};
+    global.dispatchEvent(new CustomEvent('grh:cosmology-update', {detail: {state: {...state}}}));
   }
+
+  // Explicit scientific-control adapter used only after certificate validation.
+  // Camera/view settings are display state and are preserved on restoration.
+  global.CCCLab = Object.freeze({
+    getState: () => ({...state}),
+    getDataset: () => data,
+    setInjection: parameters => {
+      state = normalizeState({...state, center: parameters.center, width: parameters.width, snr: parameters.snr});
+      update();
+    }
+  });
 
   async function initialize() {
     drawChannel();
@@ -510,6 +522,7 @@
     $("recordedResults").innerHTML = data.benchmark.experiments.map(record => `<tr><th scope="row">${record.injected_matched_snr}</th><td>${record.scan_maximum.toFixed(6)}</td><td>${formatP(record.selected_template_uncorrected_one_sided_p)}</td><td>${record.global_rank_p.toFixed(8)}</td></tr>`).join("");
     update();
     global.document.documentElement.dataset.cosmologyReady = "true";
+    global.dispatchEvent(new CustomEvent('grh:cosmology-ready'));
     let resizePending = false;
     const redraw = () => {
       if (resizePending) return;
@@ -530,6 +543,7 @@
     $("cosmologyLoadStatus").dataset.error = "true";
     $("cosmologyLoadStatus").textContent = "The interactive fixture could not be loaded. The recorded benchmark and primary-source links below remain available. Reload this page to retry.";
     global.document.documentElement.dataset.cosmologyReady = "error";
+    global.dispatchEvent(new CustomEvent('grh:cosmology-error'));
     console.error("Cosmology fixture:", error);
   });
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at_utc": "2026-11-14T02:45:00.591205+00:00",
+  "scope": "Affected existing Node mathematical/numerical regression suites only. These are not browser rendering or interaction checks.",
+  "suites": [
+    {
+      "suite": "math",
+      "command": [
+        "node",
+        "extension/site/verify-math.cjs"
+      ],
+      "exit_code": 0,
+      "source_hashes": {
+        "extension/site/verify-math.cjs": "8229b475692f33b0af344693eeaeae2314209cd9d3bdcf7ed12e992f90c2862b",
+        "extension/site/math.js": "81cf1c37b64c25ae376055644490b526f5365fddeaed0860b01213f6dc7e8049",
+        "extension/site/app.js": "cdda1611fe416a91af54f93bdd2a6b9d42abdba8284656ad22b7be1146a10e67"
+      },
+      "sources_unchanged_during_check": true,
+      "result": {
+        "status": "passed",
+        "scope": "finite companion models only",
+        "curvePoints": 19,
+        "ellipticAssociativityTriples": 6859,
+        "maxConeResidual": 1.6653345369377348e-16,
+        "maxFourierOffSupportProbability": 2.178602969161071e-34,
+        "maxGaugeResidual": 4.47545209131181e-16,
+        "torusSeamResidual": 6.613092715395707e-16
+      },
+      "log": "extension/review/final-pass/lab-regressions/math.log",
+      "log_sha256": "e2043d5c45961fee5811e36f94abb1f49bbdb3de0b74cfea3ab8cb12fdaf1542"
+    },
+    {
+      "suite": "fluids",
+      "command": [
+        "node",
+        "extension/site/verify-fluids.cjs"
+      ],
+      "exit_code": 0,
+      "source_hashes": {
+        "extension/site/verify-fluids.cjs": "b81c3fa7d18727cae76e0f27c4cf30f2b1b1e475ab0676958f1963da0004021e",
+        "extension/site/fluid-core.js": "7ed819affd8af6c71e5fd2078d2b473fbfeea61604f41a56492ac930f90ec931",
+        "extension/site/fluids.js": "cf638e9b4533525ee531e5aae624093259f69e881f4e611f7b03f5d4dfe387ff",
+        "extension/site/data/fluids-reference.json": "00860f03dd04cad4ab54121ecb0286c3718222808dc5f07bbae7f2c9a5a7c750"
+      },
+      "sources_unchanged_during_check": true,
+      "result": {
+        "status": "passed",
+        "checked_at_utc": "2026-11-14T02:45:00.579Z",
+        "node_version": "v24.22.1",
+        "independent_reference": "Python symbolic expressions, dense complex128 matrices, and exact integer arithmetic",
+        "circuit_cases": 16,
+        "feature_gradient_cases": 64,
+        "complete_fibre_points_checked": 8865,
+        "finite_difference_momentum_residuals": [
+          3.0268311917436286e-06,
+          7.567098417315954e-07,
+          1.8918498517761506e-07
+        ],
+        "maximum_errors": {
+          "taylor_green_reference": 2.220446049250313e-16,
+          "fibre_cover_residual": 7.531752999057062e-13,
+          "character_pullback_residual": 1.0087010091869239e-13,
+          "complex_amplitude_reference": 2.220446049250313e-16,
+          "probability_reference": 5.551115123125783e-16,
+          "pauli_feature_reference": 4.440892098500626e-16,
+          "circuit_norm": 3.3306690738754696e-16,
+          "diffusivity_reference": 5.551115123125783e-17,
+          "parameter_shift_reference": 2.220446049250313e-16,
+          "nonlinear_chain_reference": 6.938893903907228e-17,
+          "heat_probability_reference": 3.469446951953614e-18,
+          "heat_entropy_reference": 4.440892098500626e-15,
+          "heat_contrast_reference": 3.469446951953614e-18,
+          "heat_mass": 8.881784197001252e-16,
+          "heat_fourier_eigenmode": 1.734723475976807e-18,
+          "scaling_exponent": 1.7763568394002505e-15,
+          "scaling_energy_product": 4.218847493575595e-15
+        },
+        "checks": [
+          "independent Python reference comparison",
+          "manufactured PDE residual second-order convergence",
+          "exact BigInt determinant powers",
+          "complete toral fibres and character pullback",
+          "actual complex circuit and chain-rule gradient",
+          "heat positivity, normalization, entropy, contrast",
+          "Fourier eigenmode",
+          "periodic endpoint obstruction to strict mixing",
+          "scale-energy product",
+          "URL state and bounds"
+        ],
+        "hashes": {
+          "core": "7ed819affd8af6c71e5fd2078d2b473fbfeea61604f41a56492ac930f90ec931",
+          "reference": "00860f03dd04cad4ab54121ecb0286c3718222808dc5f07bbae7f2c9a5a7c750",
+          "verification_script": "b81c3fa7d18727cae76e0f27c4cf30f2b1b1e475ab0676958f1963da0004021e"
+        },
+        "scope": "Finite mathematical and numerical interfaces; not verification of the upstream continuum singularity proof or quantum advantage."
+      },
+      "log": "extension/review/final-pass/lab-regressions/fluids.log",
+      "log_sha256": "05565d153e5efac7327bda607fd27643aa6eb67d72a78cdaa41cb4ed489631f3"
+    },
+    {
+      "suite": "cosmology",
+      "command": [
+        "node",
+        "extension/site/verify-cosmology.cjs"
+      ],
+      "exit_code": 0,
+      "source_hashes": {
+        "extension/site/verify-cosmology.cjs": "dc81e939ba3ad8af050e5af03d17ef42d98607948903d7052df60a954e738080",
+        "extension/site/cosmology.js": "d339af3df6bb09d735835086c0ccc10c42d116533d5482ac25f1b0632945baad",
+        "extension/site/data/cosmology-synthetic.json": "6e97e9612d6e1fe0c0cda9f9441ebf1d238e33de907d3075e6a6468b52736970"
+      },
+      "sources_unchanged_during_check": true,
+      "result": {
+        "status": "passed",
+        "recorded_python_cases": 4,
+        "template_pairings_checked": 288,
+        "maximum_pairing_error": 1.5543122344752192e-15,
+        "unit_directions_checked": 96,
+        "checks": [
+          "exact global ranks and ties",
+          "normal tails against Python",
+          "projection geometry",
+          "URL bounds and round trip",
+          "histogram count preservation"
+        ]
+      },
+      "log": "extension/review/final-pass/lab-regressions/cosmology.log",
+      "log_sha256": "1ee2bf73d2a95160f7f5fc01b0b78ec03a740f87e1bae62c7f9d6a864c89f0f4"
+    }
+  ]
+}

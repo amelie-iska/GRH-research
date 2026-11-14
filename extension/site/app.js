@@ -7,6 +7,7 @@
   const controls = [...document.querySelectorAll('[data-lab]')];
   const defaults = new Map(controls.map(c => [c.id, c.type === 'checkbox' ? c.checked : c.value]));
   const reports = {};
+  let hodgeCertificate = null;
   const value = id => Number($(id).value);
   const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
   const fmt = (n, digits = 3) => {
@@ -44,7 +45,9 @@
       for (const c of controls) {
         if (!Object.hasOwn(data, c.id)) continue;
         if (c.type === 'checkbox') { if (typeof data[c.id] === 'boolean') c.checked = data[c.id]; }
-        else if (c.tagName === 'SELECT') {
+        else if (c.id === 'hodgeRational') {
+          try { const epsilon = window.LabCertificateBridge.userRational(data[c.id]); window.LabCertificateBridge.evaluate('hodge-family-v1', {epsilon}); c.value = epsilon; } catch (_) { /* Keep the exact default. */ }
+        } else if (c.tagName === 'SELECT') {
           if ([...c.options].some(o => o.value === String(data[c.id]))) c.value = String(data[c.id]);
         } else {
           const n = Number(data[c.id]);
@@ -253,8 +256,16 @@
     set('fourierTotal',data.total.toFixed(12));set('fourierLeak',tiny(data.offSupportMax));reports.fourier=data;
   }
   function renderHodge() {
-    syncOutputs('hodge');const zero=$('hodgeZero').checked,epsilon=zero?0:10**value('hodgeLog'),data=M.hodge(epsilon);
-    $('hodgeLog').disabled=zero;
+    syncOutputs('hodge');const zero=$('hodgeZero').checked,exact=$('hodgeExact').checked;
+    $('hodgeLog').disabled=zero||exact;$('hodgeRational').disabled=zero||!exact;
+    let epsilon,exactParameter=null;
+    try {
+      if(zero){epsilon=0;exactParameter='0/1';}
+      else if(exact){exactParameter=window.LabCertificateBridge.userRational($('hodgeRational').value);window.LabCertificateBridge.evaluate('hodge-family-v1',{epsilon:exactParameter});epsilon=window.ExactRational.toNumber(window.ExactRational.parse(exactParameter));}
+      else epsilon=10**value('hodgeLog');
+      set('hodgeExactStatus',exactParameter===null?'Logarithmic exploration uses a numerical epsilon. Enable the exact rational input to export a theorem-contract instance.':`Exact model parameter ε = ${exactParameter}. The plotted position and decimal metrics are numerical renderings; the certificate retains the rational value.`);
+    } catch(error){set('hodgeExactStatus',`Invalid exact input: ${error.message} The last valid plot remains visible.`);return;}
+    const data=M.hodge(epsilon);data.exactParameter=exactParameter;
     const rawWidth=$('hodgeSvg').getBoundingClientRect().width||660,mobile=rawWidth<510;
     const {el,width,height}=svgSize('hodgeSvg',mobile?270:340),left=43,right=width-26,top=36,bottom=height-52;
     const px=x=>left+(right-left)*x,py=y=>bottom-(bottom-top)*y;
@@ -311,5 +322,19 @@
   window.addEventListener('resize',()=>{if(resizeScheduled)return;resizeScheduled=true;requestAnimationFrame(()=>{resizeScheduled=false;renderAll();});});
   if('IntersectionObserver' in window){const nav=[...document.querySelectorAll('.lab-nav a')];const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting)nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));},{rootMargin:'-10% 0px -65% 0px',threshold:0});document.querySelectorAll('.lab-card').forEach(card=>observer.observe(card));}
   readURL();renderAll();
+  if(window.LabCertificateUI){
+    const readParameters=()=>{
+      if($('hodgeZero').checked)return {epsilon:'0/1'};
+      if(!$('hodgeExact').checked)throw new Error('Enable the exact rational ε input before exporting a certificate.');
+      return {epsilon:window.LabCertificateBridge.userRational($('hodgeRational').value)};
+    };
+    window.LabCertificateUI.mount($('hodgeCertificate'),{contract:'hodge-family-v1',readParameters,watch:[$('hodgeZero'),$('hodgeExact'),$('hodgeRational'),$('hodgeLog')],prepareImport:parameters=>{
+      const before={zero:$('hodgeZero').checked,exact:$('hodgeExact').checked,rational:$('hodgeRational').value};
+      const restore=s=>{$('hodgeZero').checked=s.zero;$('hodgeExact').checked=s.exact;$('hodgeRational').value=s.rational;renderHodge();writeURL(false);};
+      return {commit:()=>restore({zero:parameters.epsilon==='0/1',exact:true,rational:parameters.epsilon}),rollback:()=>restore(before)};
+    }}).then(controller=>{hodgeCertificate=controller;window.HodgeCertificate=controller;});
+    $('resetAll').addEventListener('click',()=>hodgeCertificate?.refresh());
+    window.addEventListener('popstate',()=>hodgeCertificate?.refresh());
+  }
   window.ResearchCompanion=Object.freeze({getState:saveState,getReport:()=>JSON.parse(JSON.stringify(reports)),renderAll});
 })();

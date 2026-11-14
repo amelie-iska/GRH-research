@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at_utc": "2026-11-14T02:44:32.895327+00:00",
+  "source_hashes": {
+    "extension/code/build_lab_contract_registry.py": "d1b6a83718e974377a8e78edf7d0fe6278fa8439843417450212e006f03f80ec",
+    "extension/code/cosmology_certificate.py": "4b89a35a6ae4ec7b5a32c4a2302de473e2bf5c4d14a868b3c26bae4172d188c4",
+    "extension/code/test_lab_certificate.py": "773c905b09e3286cce5e8e16fd9e1b7188e2c06ee66b3789b04ae5e0483a656f",
+    "extension/code/verify_lab_bridge.py": "0be4b0b7795480716aa902bdee9b86f52292ff596ebe28bd9768cfbe8a26ee31",
+    "extension/code/verify_lab_certificate.py": "a7c5565ad0ab29d7b4516585692a0d9a0fbf672c4153e97d2f68e63da1648099",
+    "extension/lean/BridgeTheorems.lean": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+    "extension/lean/CosmologyCalibration.lean": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+    "extension/lean/FluidInterfaces.lean": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+    "extension/lean/LaboratoryContracts.lean": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+    "extension/lean/WeightedGainContracts.lean": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+    "extension/lean/final-verification/verification.json": "363000db314f6da5079cd282955221ced692a5bd1957f8ddeebd48c1265b8b71",
+    "extension/lean/laboratory-verification/verification.json": "30615cd855623df7fb6f32d9775f7309b8a3d78f68bb4e51003ea610f704048d",
+    "extension/lean/verify_laboratory_contracts.py": "2dbaf7fe7a535811bca2bf3fcb098c600042f2ca4c16771979a9c968d09257f5",
+    "extension/site/app.js": "cdda1611fe416a91af54f93bdd2a6b9d42abdba8284656ad22b7be1146a10e67",
+    "extension/site/certificate-bridge-ui.js": "403b1a64b92e16650f2aeba2f4a67d274b594c8ec1c817799b70f3a310110b3e",
+    "extension/site/certificate-bridge.js": "521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1",
+    "extension/site/cosmology-calibration-core.js": "8f6023b0a727fbbc586378b25394d758207238990d1e2848d48250d42effc4eb",
+    "extension/site/cosmology-calibration-ui.js": "b824e3ce9e7948961facce0293ee8aa1c31b75158da229dca4576ae8a026b150",
+    "extension/site/cosmology.js": "d339af3df6bb09d735835086c0ccc10c42d116533d5482ac25f1b0632945baad",
+    "extension/site/data/certificate-contracts.json": "3fa69197b3c276b315af73c14204de6f4cdc41f43ce1c512d4ae42eedae68e22",
+    "extension/site/data/cosmology-moment-model.json": "c7c029dc275e6589567e98e853a8808ae65feb5c86200e3445278718e572b907",
+    "extension/site/data/cosmology-noise-factor.json": "f047c4e3f96ef819d21757dbd990950b403fc86af1d1905f704a861a2b306668",
+    "extension/site/data/cosmology-synthetic.json": "6e97e9612d6e1fe0c0cda9f9441ebf1d238e33de907d3075e6a6468b52736970",
+    "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c",
+    "extension/site/export-certificate-examples.cjs": "0c812ffffa19a74a26288d3827d7989961fe3b1f370e3cb2ea81320ccf613c22",
+    "extension/site/fluid-core.js": "7ed819affd8af6c71e5fd2078d2b473fbfeea61604f41a56492ac930f90ec931",
+    "extension/site/fluids.js": "cf638e9b4533525ee531e5aae624093259f69e881f4e611f7b03f5d4dfe387ff",
+    "extension/site/math.js": "81cf1c37b64c25ae376055644490b526f5365fddeaed0860b01213f6dc7e8049",
+    "extension/site/verify-certificate-bridge.cjs": "40add84831954adcd199da40e252847aace02f1d52b98850d01fc8694431c21f"
+  },
+  "sources_unchanged_during_check": true,
+  "registry": "extension/site/data/certificate-contracts.json",
+  "registry_sha256": "3fa69197b3c276b315af73c14204de6f4cdc41f43ce1c512d4ae42eedae68e22",
+  "contracts": [
+    "cosmology-calibration-v1",
+    "hodge-family-v1",
+    "quadratic-cover-v1",
+    "weighted-gain-v1"
+  ],
+  "tests": [
+    {
+      "name": "node-tests",
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "extension/site/verify-certificate-bridge.cjs"
+      ],
+      "exit_code": 0,
+      "test_count": 14,
+      "log": "node-tests.log",
+      "log_sha256": "54c4ab4bb2282e4731f2a088b8c790fefaf17dd1edf9e007e1b0b17c4c35a23f"
+    },
+    {
+      "name": "python-tests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "extension/code/test_lab_certificate.py"
+      ],
+      "exit_code": 0,
+      "test_count": 8,
+      "log": "python-tests.log",
+      "log_sha256": "71eed044e57cefcbe09795456853ebe4dd83329513ffd783413c33b7036306b0"
+    }
+  ],
+  "cross_language_replay_cases": 132,
+  "source_bound_exports": 11,
+  "independent_replays": 11,
+  "kernel_instance_record": "extension/lean/laboratory-verification/verification.json",
+  "kernel_instance_record_sha256": "30615cd855623df7fb6f32d9775f7309b8a3d78f68bb4e51003ea610f704048d",
+  "kernel_checked_emitted_instances": 11,
+  "kernel_rejected_negative_controls": 6,
+  "exported_instances": [
+    {
+      "name": "hodge-zero",
+      "contract": "hodge-family-v1",
+      "certificate": "hodge-zero.json",
+      "certificate_sha256": "18a446a79b8c7d827fa78367f4ad39f46c087335e5eb8c56a80ddf9eacde95c4",
+      "lean": "hodge-zero.lean",
+      "lean_sha256": "3a66e8d85eecb22681b1428e131b8a16875283b826d3bd2f2af87c56a4750f27",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "hodge-third",
+      "contract": "hodge-family-v1",
+      "certificate": "hodge-third.json",
+      "certificate_sha256": "e65386cbc1c5ca0a114f0cd5955bc02aad6f9dc177621f5f0906144094b8e112",
+      "lean": "hodge-third.lean",
+      "lean_sha256": "70af2f8ecafbed6bc2417923355ffe3444f70da4b7aabc67edb8336c3689e223",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "hodge-one",
+      "contract": "hodge-family-v1",
+      "certificate": "hodge-one.json",
+      "certificate_sha256": "03f6ef54df4899fef57deb02e7c330c5ebabd994a7519fbf60fa1c7c13dd481b",
+      "lean": "hodge-one.lean",
+      "lean_sha256": "97f370328e505b0c3bec06f6af8f326ea98a9c4fe7d4426542ccff1145405fcb",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "cover-zero",
+      "contract": "quadratic-cover-v1",
+      "certificate": "cover-zero.json",
+      "certificate_sha256": "d44820c8c2b07088c85372d54ebe4f230fc6e46385db326b034f68778d951c55",
+      "lean": "cover-zero.lean",
+      "lean_sha256": "741ec961e3247d0102e2f096133f49f6f30a9018d3f6885641edbeff4b2db1df",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "cover-three",
+      "contract": "quadratic-cover-v1",
+      "certificate": "cover-three.json",
+      "certificate_sha256": "1414cdf5a01c2a2487ec84f8b53d43a4d3229ed72443096b7a043da7253de58a",
+      "lean": "cover-three.lean",
+      "lean_sha256": "8a6b1f685955e22ece5ac5e141139a370214641ba210c599838ae3619826a7a7",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "gain-0",
+      "contract": "weighted-gain-v1",
+      "certificate": "gain-0.json",
+      "certificate_sha256": "79c16b7d66b47c45ff18123a2a0cc361fc711ee47cfff77956654762e7bb2954",
+      "lean": "gain-0.lean",
+      "lean_sha256": "0af0ead6e5286e1ab2881857079682cc19651829b3210772cbe012d2011fdacb",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "gain-1",
+      "contract": "weighted-gain-v1",
+      "certificate": "gain-1.json",
+      "certificate_sha256": "57f737e7078427745b82b558244cece2935edd579c163c991020d400b46a2383",
+      "lean": "gain-1.lean",
+      "lean_sha256": "b4b914a281c3dc3b47ce8e77dd36bc9c8b90bc0a3fc2ac6b4c589732540247e9",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "gain-2",
+      "contract": "weighted-gain-v1",
+      "certificate": "gain-2.json",
+      "certificate_sha256": "a03f646ee0e8e105f06d7ff018aa80f7c60418f115a2607df59b94b5f5fa96ba",
+      "lean": "gain-2.lean",
+      "lean_sha256": "a026a921cf25b11db19d4143ebf48ed5232060032181240989a139d4a7ed7549",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "cosmology-budget-passes",
+      "contract": "cosmology-calibration-v1",
+      "certificate": "cosmology-budget-passes.json",
+      "certificate_sha256": "8d06e84ea00cd8e54405b5c90b88996e50ee7e319940cdab5862517561bf4e4e",
+      "lean": "cosmology-budget-passes.lean",
+      "lean_sha256": "d5318805d0753839c8bc630c3f5c20f16c9d1b3d22a6b42f22f45c4fcbd66eca",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "cosmology-budget-fails",
+      "contract": "cosmology-calibration-v1",
+      "certificate": "cosmology-budget-fails.json",
+      "certificate_sha256": "5861bb5ff37e914d396da8d7fa6d16964272d34ac072e2a302d60d71ce185c43",
+      "lean": "cosmology-budget-fails.lean",
+      "lean_sha256": "4813f507465bb3e3966fffc0de720ba23e58056909f2d4459c57c723da2026a4",
+      "byte_identical_to_kernel_checked_template": true
+    },
+    {
+      "name": "cosmology-capped-one",
+      "contract": "cosmology-calibration-v1",
+      "certificate": "cosmology-capped-one.json",
+      "certificate_sha256": "b9d3cb57769e88f8752324a82d3094ca45b0fdd9fd8caf6639bfb2072fd3be82",
+      "lean": "cosmology-capped-one.lean",
+      "lean_sha256": "4813f507465bb3e3966fffc0de720ba23e58056909f2d4459c57c723da2026a4",
+      "byte_identical_to_kernel_checked_template": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "extension/review/final-pass/lab-certificates/cosmology-budget-fails.json",
+      "bytes": 7943,
+      "sha256": "5861bb5ff37e914d396da8d7fa6d16964272d34ac072e2a302d60d71ce185c43"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cosmology-budget-fails.lean",
+      "bytes": 2729,
+      "sha256": "4813f507465bb3e3966fffc0de720ba23e58056909f2d4459c57c723da2026a4"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cosmology-budget-passes.json",
+      "bytes": 8155,
+      "sha256": "8d06e84ea00cd8e54405b5c90b88996e50ee7e319940cdab5862517561bf4e4e"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cosmology-budget-passes.lean",
+      "bytes": 2388,
+      "sha256": "d5318805d0753839c8bc630c3f5c20f16c9d1b3d22a6b42f22f45c4fcbd66eca"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cosmology-capped-one.json",
+      "bytes": 7940,
+      "sha256": "b9d3cb57769e88f8752324a82d3094ca45b0fdd9fd8caf6639bfb2072fd3be82"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cosmology-capped-one.lean",
+      "bytes": 2729,
+      "sha256": "4813f507465bb3e3966fffc0de720ba23e58056909f2d4459c57c723da2026a4"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cover-three.json",
+      "bytes": 3406,
+      "sha256": "1414cdf5a01c2a2487ec84f8b53d43a4d3229ed72443096b7a043da7253de58a"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cover-three.lean",
+      "bytes": 839,
+      "sha256": "8a6b1f685955e22ece5ac5e141139a370214641ba210c599838ae3619826a7a7"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cover-zero.json",
+      "bytes": 3397,
+      "sha256": "d44820c8c2b07088c85372d54ebe4f230fc6e46385db326b034f68778d951c55"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/cover-zero.lean",
+      "bytes": 836,
+      "sha256": "741ec961e3247d0102e2f096133f49f6f30a9018d3f6885641edbeff4b2db1df"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/export-manifest.json",
+      "bytes": 4061,
+      "sha256": "09883e8b4d5db7b8097d4b4ee7d8ec608904e9466a057ce974cb7b1e76b9b252"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/gain-0.json",
+      "bytes": 3859,
+      "sha256": "79c16b7d66b47c45ff18123a2a0cc361fc711ee47cfff77956654762e7bb2954"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/gain-0.lean",
+      "bytes": 1066,
+      "sha256": "0af0ead6e5286e1ab2881857079682cc19651829b3210772cbe012d2011fdacb"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/gain-1.json",
+      "bytes": 3866,
+      "sha256": "57f737e7078427745b82b558244cece2935edd579c163c991020d400b46a2383"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/gain-1.lean",
+      "bytes": 1106,
+      "sha256": "b4b914a281c3dc3b47ce8e77dd36bc9c8b90bc0a3fc2ac6b4c589732540247e9"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/gain-2.json",
+      "bytes": 3862,
+      "sha256": "a03f646ee0e8e105f06d7ff018aa80f7c60418f115a2607df59b94b5f5fa96ba"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/gain-2.lean",
+      "bytes": 1066,
+      "sha256": "a026a921cf25b11db19d4143ebf48ed5232060032181240989a139d4a7ed7549"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/hodge-one.json",
+      "bytes": 4069,
+      "sha256": "03f6ef54df4899fef57deb02e7c330c5ebabd994a7519fbf60fa1c7c13dd481b"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/hodge-one.lean",
+      "bytes": 1175,
+      "sha256": "97f370328e505b0c3bec06f6af8f326ea98a9c4fe7d4426542ccff1145405fcb"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/hodge-third.json",
+      "bytes": 4069,
+      "sha256": "e65386cbc1c5ca0a114f0cd5955bc02aad6f9dc177621f5f0906144094b8e112"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/hodge-third.lean",
+      "bytes": 1175,
+      "sha256": "70af2f8ecafbed6bc2417923355ffe3444f70da4b7aabc67edb8336c3689e223"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/hodge-zero.json",
+      "bytes": 4070,
+      "sha256": "18a446a79b8c7d827fa78367f4ad39f46c087335e5eb8c56a80ddf9eacde95c4"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/hodge-zero.lean",
+      "bytes": 1175,
+      "sha256": "3a66e8d85eecb22681b1428e131b8a16875283b826d3bd2f2af87c56a4750f27"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/independent-replays.json",
+      "bytes": 11370,
+      "sha256": "42f2d346bd1ab875bf84d8f364dbd42dcf6090d963bc543b338eca6bc7825c07"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/node-tests.log",
+      "bytes": 3459,
+      "sha256": "54c4ab4bb2282e4731f2a088b8c790fefaf17dd1edf9e007e1b0b17c4c35a23f"
+    },
+    {
+      "path": "extension/review/final-pass/lab-certificates/python-tests.log",
+      "bytes": 1298,
+      "sha256": "71eed044e57cefcbe09795456853ebe4dd83329513ffd783413c33b7036306b0"
+    }
+  ],
+  "scope": "Exact protocol/arithmetic replay, adversarial input and reversible transaction tests, plus byte identity with separately kernel-checked fixed-template instances. This does not prove JavaScript execution, canvas geometry, probability-model hypotheses or the whole manuscript. Browser rendering/interaction QA is recorded separately."
+}

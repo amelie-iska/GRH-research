@@ -1,0 +1,19 @@
+.certificate-panel{margin-top:1.5rem;padding:1.2rem;border:1px solid #c7d7cc;background:#f4f8f2;border-radius:6px;min-width:0}
+.certificate-panel h4{font-size:1.15rem;margin:0 0 .6rem;color:#123d39}
+.certificate-panel p{line-height:1.6}
+.certificate-scope{font-size:.85rem;color:#485e55}
+.certificate-status{padding:.65rem .8rem;background:#e3eee5;border-left:3px solid #14695e;font-size:.9rem;overflow-wrap:anywhere}
+.certificate-status[data-state=error],.certificate-status[data-state=failed-bound]{background:#fff0dc;border-left-color:#a65b19;color:#683b12}
+.certificate-result,.certificate-command{font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;max-height:18rem;overflow:auto;padding:.8rem;background:#fff;border:1px solid #d4ddd5}
+.certificate-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}
+.certificate-actions .button,.certificate-panel>.button{font-size:.8rem;padding:.6rem .8rem;cursor:pointer}
+.certificate-panel button:disabled{opacity:.45;cursor:not-allowed}
+.certificate-label{display:block;font-size:.85rem;margin:.8rem 0 .4rem;font-weight:600}
+.certificate-text{box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;padding:.7rem;border:1px solid #bacdc0;background:#fff;color:#182b29;resize:vertical;margin-bottom:.6rem}
+.certificate-bindings{margin-top:1rem;font-size:.85rem;overflow-wrap:anywhere}
+.certificate-bindings li{margin:.5rem 0}
+.certificate-exact-input{width:100%;max-width:17rem;box-sizing:border-box;padding:.55rem;border:1px solid #bacdc0;background:#fff;font:14px ui-monospace,SFMono-Regular,Consolas,monospace;color:#182b29}
+.certificate-gain-inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:1rem 0}
+.certificate-gain-inputs label{display:grid;gap:.35rem;font-size:.85rem}
+.certificate-gain-inputs input{max-width:100%}
+@media(max-width:600px){.certificate-panel{padding:.9rem}.certificate-gain-inputs{grid-template-columns:repeat(2,minmax(0,1fr))}.certificate-actions .button{width:100%}}

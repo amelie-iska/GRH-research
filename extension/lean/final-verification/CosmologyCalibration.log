@@ -1,0 +1,37 @@
+CosmologyCalibration.finite_family_false_positive_bound.{u_1, u_2} {Ω : Type u_1} {ι : Type u_2} [MeasurableSpace Ω]
+  (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ] (tests : Finset ι) (events : ι → Set Ω)
+  (budget : ι → ℝ) (hmeas : ∀ j ∈ tests, MeasurableSet (events j)) (htail : ∀ j ∈ tests, μ.real (events j) ≤ budget j) :
+  MeasurableSet (⋃ j ∈ tests, events j) ∧ μ.real (⋃ j ∈ tests, events j) ≤ min 1 (∑ j ∈ tests, budget j)
+'CosmologyCalibration.finite_family_false_positive_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+CosmologyCalibration.scan_even_moment_bound.{u_1, u_2} {Ω : Type u_1} {ι : Type u_2} [MeasurableSpace Ω]
+  (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ] (tests : Finset ι) (score : ι → Ω → ℝ) (k : ℕ)
+  (t : ℝ) (M : ι → ℝ) (ht : 0 < t) (hmeas : ∀ j ∈ tests, Measurable (score j))
+  (hint : ∀ j ∈ tests, MeasureTheory.Integrable (fun ω => |score j ω| ^ (2 * k)) μ)
+  (hmoment : ∀ j ∈ tests, ∫ (ω : Ω), |score j ω| ^ (2 * k) ∂μ ≤ M j) :
+  MeasurableSet (CosmologyCalibration.scanEvent tests score t) ∧
+    μ.real (CosmologyCalibration.scanEvent tests score t) ≤ min 1 ((∑ j ∈ tests, M j) / t ^ (2 * k))
+'CosmologyCalibration.scan_even_moment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+CosmologyCalibration.scan_uniform_even_moment_bound.{u_1, u_2} {Ω : Type u_1} {ι : Type u_2} [MeasurableSpace Ω]
+  (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ] (tests : Finset ι) (score : ι → Ω → ℝ) (k : ℕ)
+  (t M : ℝ) (ht : 0 < t) (hmeas : ∀ j ∈ tests, Measurable (score j))
+  (hint : ∀ j ∈ tests, MeasureTheory.Integrable (fun ω => |score j ω| ^ (2 * k)) μ)
+  (hmoment : ∀ j ∈ tests, ∫ (ω : Ω), |score j ω| ^ (2 * k) ∂μ ≤ M) :
+  MeasurableSet (CosmologyCalibration.scanEvent tests score t) ∧
+    μ.real (CosmologyCalibration.scanEvent tests score t) ≤ min 1 (↑tests.card * M / t ^ (2 * k))
+'CosmologyCalibration.scan_uniform_even_moment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+CosmologyCalibration.scan_even_moment_threshold.{u_1, u_2} {Ω : Type u_1} {ι : Type u_2} [MeasurableSpace Ω]
+  (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ] (tests : Finset ι) (score : ι → Ω → ℝ) (k : ℕ)
+  (t M α : ℝ) (ht : 0 < t) (hmeas : ∀ j ∈ tests, Measurable (score j))
+  (hint : ∀ j ∈ tests, MeasureTheory.Integrable (fun ω => |score j ω| ^ (2 * k)) μ)
+  (hmoment : ∀ j ∈ tests, ∫ (ω : Ω), |score j ω| ^ (2 * k) ∂μ ≤ M) (hbudget : ↑tests.card * M ≤ α * t ^ (2 * k)) :
+  MeasurableSet (CosmologyCalibration.scanEvent tests score t) ∧
+    μ.real (CosmologyCalibration.scanEvent tests score t) ≤ α
+'CosmologyCalibration.scan_even_moment_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+CosmologyCalibration.rank_fraction_bounds (draws exceedances : ℕ) (hcount : exceedances ≤ draws) :
+  0 < CosmologyCalibration.rankFraction draws exceedances ∧
+    1 / (↑draws + 1) ≤ CosmologyCalibration.rankFraction draws exceedances ∧
+      CosmologyCalibration.rankFraction draws exceedances ≤ 1
+'CosmologyCalibration.rank_fraction_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+CosmologyCalibration.rank_fraction_threshold_iff (draws exceedances : ℕ) (α : ℚ) :
+  CosmologyCalibration.rankFraction draws exceedances ≤ α ↔ 1 + ↑exceedances ≤ α * (↑draws + 1)
+'CosmologyCalibration.rank_fraction_threshold_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,78 @@
+{
+  "schema": "grh-lab-certificate-v1",
+  "contract": "quadratic-cover-v1",
+  "binding": {
+    "binding_schema": "grh-lab-source-type-binding-v1",
+    "lab_url": "https://amelie-iska.github.io/GRH-research/fluids.html#toral-cover",
+    "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+    "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+    "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+    "runtime_sources": {
+      "extension/code/verify_lab_certificate.py": "a7c5565ad0ab29d7b4516585692a0d9a0fbf672c4153e97d2f68e63da1648099",
+      "extension/site/certificate-bridge-ui.js": "403b1a64b92e16650f2aeba2f4a67d274b594c8ec1c817799b70f3a310110b3e",
+      "extension/site/certificate-bridge.js": "521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1",
+      "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c",
+      "extension/site/fluid-core.js": "7ed819affd8af6c71e5fd2078d2b473fbfeea61604f41a56492ac930f90ec931",
+      "extension/site/fluids.js": "cf638e9b4533525ee531e5aae624093259f69e881f4e611f7b03f5d4dfe387ff"
+    },
+    "scope": "Integer determinant identity and positivity for J powers. Exact point arithmetic is replayed; topological covering/fibre claims and trigonometric drawing are not newly kernel-checked here.",
+    "theorems": [
+      {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "module": "FluidInterfaces",
+        "name": "FluidInterfaces.renormalization_power_determinant",
+        "printed_type": "FluidInterfaces.renormalization_power_determinant (k : ℕ) : (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k",
+        "source": "extension/lean/FluidInterfaces.lean",
+        "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+        "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/FluidInterfaces.lean",
+        "type_sha256": "09b8af000f0705ac667eee8f0749f49e5cffb4a8bbb99c4e3295d556707c3fb8"
+      },
+      {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "module": "LaboratoryContracts",
+        "name": "LaboratoryContracts.quadratic_cover_certificate",
+        "printed_type": "LaboratoryContracts.quadratic_cover_certificate (k : ℕ) :\n  (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k ∧ 0 < (FluidInterfaces.renormalizationMatrix ^ k).det",
+        "source": "extension/lean/LaboratoryContracts.lean",
+        "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+        "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/LaboratoryContracts.lean",
+        "type_sha256": "658f7e1724cecd982506f997f8d4de07bda7aca610f3503dea1b726d688fa4ee"
+      }
+    ]
+  },
+  "parameters": {
+    "power": "3/1",
+    "x": "7/25",
+    "y": "63/100"
+  },
+  "result": {
+    "matrix": [
+      [
+        "38/1",
+        "50/1"
+      ],
+      [
+        "50/1",
+        "138/1"
+      ]
+    ],
+    "determinant": "2744/1",
+    "degree_nonzero": true,
+    "target_mod_one": [
+      "7/50",
+      "47/50"
+    ],
+    "lifted_frequency": [
+      "38/1",
+      "50/1"
+    ],
+    "integer_degree_identity": true
+  }
+}

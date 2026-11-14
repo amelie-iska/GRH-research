@@ -1,16 +1,17 @@
 # Exact formal interfaces
 
-The current package contains **121 selected theorem declarations in seven
-default Lake libraries**. `ReductionContracts.lean` adds 16 declarations,
-`TransportContracts.lean` adds 17, and `WeightedGainContracts.lean` adds six
-to the previous four-module, 82-declaration snapshot. The current fresh check
+The current package contains **131 selected theorem declarations in nine
+default Lake libraries**. `LaboratoryContracts.lean` adds four declarations and
+`CosmologyCalibration.lean` adds six to the preceding seven-module,
+121-declaration snapshot. The current fresh check
 and complete printed types/axioms are in
 [`final-verification/verification.json`](final-verification/verification.json)
 and its per-module logs. The historical records below retain their original
 sources and counts; they are not relabeled as checks of the new modules.
 
-The [new declaration map](new-declarations.md) links each of the 39 additions
-to its precise manuscript component and states where formal coverage stops.
+The [declaration map](new-declarations.md) and the
+[laboratory/calibration formalization note](laboratory-calibration-formalization.md)
+identify the mathematical components and state where formal coverage stops.
 No whole continuum PDE proof, complete monograph, GRH, Yang–Mills mass-gap
 construction, or implemented cryptographic security theorem is claimed here.
 
@@ -24,7 +25,7 @@ python extension/lean/verify_all.py \
 ```
 
 Run that command from the repository root. It checks the compiler revision,
-clean tracked mathlib pin, all seven Lake targets, current source hashes, actual
+clean tracked mathlib pin, all nine Lake targets, current source hashes, actual
 theorem types, axiom inventories and source stability during elaboration.
 The fresh checker now passes `-DwarningAsError=true` to Lean and independently
 rejects warning-bearing output, absent printed types and unexpected axioms.
@@ -32,6 +33,15 @@ Compiler, checker and configuration hashes must stay unchanged during the run.
 Standard foundational dependencies remain disclosed. Cached compiled imports
 and the named compiler are part of the trusted environment; this command is
 not a from-source rebuild of the entire Lean/mathlib dependency graph.
+
+The laboratory module imports the original Hodge and fluid modules. The driver
+rebuilds these two project imports from their current sources into a temporary
+directory, records source/log/compiled-object hashes, checks source stability,
+and deletes that temporary cache after the audit. It does not accept an old
+project `.olean` as evidence for a changed source file.
+
+The preceding 121-declaration manifest remains in Git commit
+`6838f5292b345fc5eff4f2bc2109dc5b46a9a8b8`; its historical proof scope is unchanged.
 
 The historical [final integration audit](../review/final-pass/independent-formal-crypto-final-20261113.md)
 records the prior 115-declaration run in the integration clone and the separate
@@ -64,7 +74,7 @@ they are never installed as project theorem sources.
 ## Portable inherited-package verification
 
 The original `lean/` arithmetic and `lean-analytic/` packages remain separate
-from the seven extension modules. Their public theorem/lemma inventory currently
+from the nine extension modules. Their public theorem/lemma inventory currently
 contains **7 arithmetic and 361 analytic declarations**. This source inventory
 is not itself a successful build count: consult each verification record's
 `verified_declaration_count`, `blocked_module_count` and exact source hashes.
@@ -123,12 +133,16 @@ From this directory, with the matching Lean toolchain installed:
 ```sh
 lake update
 lake exe cache get
+lake build
 lake env lean BridgeTheorems.lean
 lake env lean QuantumInterfaces.lean
 lake env lean DiagramGrammar.lean
 lake env lean FluidInterfaces.lean
 lake env lean ReductionContracts.lean
 lake env lean TransportContracts.lean
+lake env lean WeightedGainContracts.lean
+lake env lean LaboratoryContracts.lean
+lake env lean CosmologyCalibration.lean
 ```
 
 The fresh-check driver above appends type and axiom commands for every selected

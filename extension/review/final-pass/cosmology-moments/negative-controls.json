@@ -1,0 +1,195 @@
+{
+  "invalid_parameters": [
+    {
+      "javascript_error": "TypeError",
+      "name": "unexpected-key",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "missing-key",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "numeric-input",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "boolean-input",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "noncanonical-natural",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "negative-natural",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "unreduced-rational",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "decimal-as-rational",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "nonfinite-text",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "zero-denominator",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "negative-denominator",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "negative-zero",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "zero-threshold",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "negative-threshold",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "threshold-too-large",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "zero-alpha",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "negative-alpha",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "alpha-too-large",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "zeroth-moment",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "unsupported-moment",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "last-center-overflow",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "width-overflow",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "negative-snr",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "snr-overflow",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "snr-off-control-grid",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "eighty-one-digit-denominator",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "RangeError",
+      "name": "eighty-one-digit-numerator",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "null-object",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    },
+    {
+      "javascript_error": "TypeError",
+      "name": "array-object",
+      "python_error": "ValueError",
+      "rejected_by_both": true
+    }
+  ],
+  "model_tampering": [
+    {
+      "error": "ValueError",
+      "name": "dataset_sha256",
+      "rejected": true
+    },
+    {
+      "error": "ValueError",
+      "name": "factor_sha256",
+      "rejected": true
+    },
+    {
+      "error": "ValueError",
+      "name": "understated-envelope",
+      "rejected": true
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-14T02:40:44.928962+00:00",
+  "status": "failed",
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "source_sha256": {
+    "checker": "2dbaf7fe7a535811bca2bf3fcb098c600042f2ca4c16771979a9c968d09257f5",
+    "proof_checker": "4636244480c1a18dd573dfa78664d77efa8c3f1124236051b5fae93ba0824f52",
+    "proof_manifest": "363000db314f6da5079cd282955221ced692a5bd1957f8ddeebd48c1265b8b71",
+    "lean_binary": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+    "lake_binary": "5f3828d1d1977654cf5602c40ac4ee52b64f7dcf34d64c5877d7b7d2d3616344",
+    "mathlib_manifest": "d1208145605d20579ecc91977126e7647e0216a3f7b7d2b9a55d33d040bcd0b8",
+    "generator": "f7ed3908885f0ac439a52247cba936c6130fd6bff6e16a07c207ebf2c5b6bde8",
+    "BridgeTheorems": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+    "FluidInterfaces": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+    "WeightedGainContracts": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+    "LaboratoryContracts": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+    "CosmologyCalibration": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2"
+  },
+  "bound_sources_unchanged_during_check": false,
+  "generated_specializations": 11,
+  "negative_controls": 6,
+  "checks": 17,
+  "fresh_local_imports": [
+    {
+      "module": "BridgeTheorems",
+      "exit_code": 0,
+      "passed": true,
+      "log": "BridgeTheorems.import-build.log",
+      "log_sha256": "ade8d8baaa9d3b0c332389db051b79d05185c16081e1ddcf69d5e5344dffe259",
+      "olean_sha256": "d2131c11442c5b577c96d2bd921432ce0eadfd8acce6860798863c495c6661b9"
+    },
+    {
+      "module": "FluidInterfaces",
+      "exit_code": 0,
+      "passed": true,
+      "log": "FluidInterfaces.import-build.log",
+      "log_sha256": "8ebef3ba31ea4979aa3cc37ec26749dfe4a94c13468fb7f21f1faad978e34f77",
+      "olean_sha256": "d7e99be836817a9f08046bef33e1f6da2cb144c5262bcaaef93d491e35c1c439"
+    },
+    {
+      "module": "WeightedGainContracts",
+      "exit_code": 0,
+      "passed": true,
+      "log": "WeightedGainContracts.import-build.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "f5f16d60bfb4a07b8c14bbbc2022afd05dd53ba368f0e8d9d175d0f4fec42947"
+    },
+    {
+      "module": "LaboratoryContracts",
+      "exit_code": 0,
+      "passed": true,
+      "log": "LaboratoryContracts.import-build.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "866745d8698ecf679d5b8d0470754e131b36fe96ba227a09331d8c98a84e15e8"
+    },
+    {
+      "module": "CosmologyCalibration",
+      "exit_code": 0,
+      "passed": true,
+      "log": "CosmologyCalibration.import-build.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "olean_sha256": "92350187b1d5efb9c0cf2ce57d15c85914aa0cc30bd99b7af87fd3918bc6f6f1"
+    }
+  ],
+  "results": [
+    {
+      "case": "hodge-zero",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "3a66e8d85eecb22681b1428e131b8a16875283b826d3bd2f2af87c56a4750f27",
+      "source_unchanged_during_check": true,
+      "log": "hodge-zero.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "hodge-third",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "70af2f8ecafbed6bc2417923355ffe3444f70da4b7aabc67edb8336c3689e223",
+      "source_unchanged_during_check": true,
+      "log": "hodge-third.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "hodge-one",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "97f370328e505b0c3bec06f6af8f326ea98a9c4fe7d4426542ccff1145405fcb",
+      "source_unchanged_during_check": true,
+      "log": "hodge-one.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "cover-zero",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "741ec961e3247d0102e2f096133f49f6f30a9018d3f6885641edbeff4b2db1df",
+      "source_unchanged_during_check": true,
+      "log": "cover-zero.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "cover-three",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "8a6b1f685955e22ece5ac5e141139a370214641ba210c599838ae3619826a7a7",
+      "source_unchanged_during_check": true,
+      "log": "cover-three.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "gain-0",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "0af0ead6e5286e1ab2881857079682cc19651829b3210772cbe012d2011fdacb",
+      "source_unchanged_during_check": true,
+      "log": "gain-0.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "gain-1",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "b4b914a281c3dc3b47ce8e77dd36bc9c8b90bc0a3fc2ac6b4c589732540247e9",
+      "source_unchanged_during_check": true,
+      "log": "gain-1.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "gain-2",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "a026a921cf25b11db19d4143ebf48ed5232060032181240989a139d4a7ed7549",
+      "source_unchanged_during_check": true,
+      "log": "gain-2.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "cosmology-budget-passes",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "d5318805d0753839c8bc630c3f5c20f16c9d1b3d22a6b42f22f45c4fcbd66eca",
+      "source_unchanged_during_check": true,
+      "log": "cosmology-budget-passes.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "cosmology-budget-fails",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "4813f507465bb3e3966fffc0de720ba23e58056909f2d4459c57c723da2026a4",
+      "source_unchanged_during_check": true,
+      "log": "cosmology-budget-fails.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "cosmology-capped-one",
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "4813f507465bb3e3966fffc0de720ba23e58056909f2d4459c57c723da2026a4",
+      "source_unchanged_during_check": true,
+      "log": "cosmology-capped-one.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "hodge-outside-domain",
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "0b65200bb19af64d59ad168eb232f9f34d0996c7f88fa32459520870de820e09",
+      "source_unchanged_during_check": true,
+      "log": "hodge-outside-domain.log",
+      "log_sha256": "45310d74c809650a1d8104b53b7d952b8018bdffec9a8230bb53af66a0723655"
+    },
+    {
+      "case": "hodge-zero-positive",
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "a5c2110ce4bb7c24b1799841c4018c3c7cd55e0525bc7865b091a050d837addb",
+      "source_unchanged_during_check": true,
+      "log": "hodge-zero-positive.log",
+      "log_sha256": "2823c7d22caabb528bf1b00e6435a90642166b793848dbbe27ad55782738164e"
+    },
+    {
+      "case": "cover-wrong-degree",
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "e88a3d7aab58577ce318c7d91118231026db3005e88b6c2075431ca03f1e4283",
+      "source_unchanged_during_check": true,
+      "log": "cover-wrong-degree.log",
+      "log_sha256": "032560378ed149a6efda832d8b1034105a5f05fe4ffa4a001f768d9c74fb1c5b"
+    },
+    {
+      "case": "gain-false-feasibility",
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "e1b8e3d35bac2c3f49fc2114cd96ba615183c57066acfa194ca8e1df26aeee4d",
+      "source_unchanged_during_check": true,
+      "log": "gain-false-feasibility.log",
+      "log_sha256": "05d594c3f6fa5e4ea9e072f974f5122d00b40fb3e5bb452233c7f05588ee890e"
+    },
+    {
+      "case": "moment-false-budget",
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "387b7dd87344142cc46426b60e882b5aa40b77d551b5fea786fbe67eae6b5a40",
+      "source_unchanged_during_check": true,
+      "log": "moment-false-budget.log",
+      "log_sha256": "daca7587a6077a71188b9cb4cd6179d6d471c3ebde05f058112f3a2c1d676d4a"
+    },
+    {
+      "case": "rank-false-zero",
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "warning_count": 0,
+      "source_sha256": "f05e087f13f9b28557c54f101e90b5ca7ec34362ccd3d1bce1dcc5bf7f662464",
+      "source_unchanged_during_check": true,
+      "log": "rank-false-zero.log",
+      "log_sha256": "40481e8186d5ab49045248843b78e4a9f273cf81b78656cb44ad432b0a0bd29d"
+    }
+  ],
+  "scope": "Actual fixed-template browser exports compiled under the pinned Lean kernel; six false domain/arithmetic specializations rejected. The registered generic declarations have separate complete type and foundational-axiom evidence. This does not prove JavaScript execution, the Gaussian model, calibration exchangeability, or a pseudorandom generator.",
+  "additional_registered_theorem_declarations": 0
+}

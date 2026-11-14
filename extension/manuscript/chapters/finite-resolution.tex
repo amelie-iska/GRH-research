@@ -1,0 +1,468 @@
+\chapter{Finite resolution, analytic error budgets and laboratory limits}
+\label{ch:finite-resolution}
+
+\reviewstatus{Release dated 13 November 2026, America/Los\_Angeles.
+This chapter supplies written truncation bounds for three declared analytic
+families and connects them to the existing laboratory kernels. Independent
+80-decimal-digit reference calculations and focused numerical tests check
+selected instances. The algebraic square-perturbation component is separately
+identified in the Lean companion; the trigonometric estimates, continuum
+sampling assumptions and floating-point evaluations are not promoted to
+Lean or interval certificates. A finite-box diffusion gap, a finite-field
+example and a sampled exact flow have different meanings. No continuum
+regularity, mass-gap, arbitrary-field convergence or physical quantum
+advantage result follows from these diagnostics.}
+
+\section{Which limit is being tested?}
+
+A refinement study must hold a physical problem fixed while changing a
+declared approximation. In the flow and heat panels the periodic box has
+side length $L=2\pi$ and the mesh width is $h=L/n$. The gauge panel
+instead uses one centered cell of side $h=1/n$ inside a unit-square patch.
+Its central curvature and quadratic variation are held fixed as the cell
+shrinks. These are different families; the old single-plaquette flux
+slider has no mesh width of its own.
+
+\begin{longtable}{p{.22\textwidth}p{.67\textwidth}}
+\toprule Quantity & Meaning and limitation\\\midrule
+\endhead
+Analytic truncation & A proved bound in real arithmetic, conditional on the
+stated field, smoothness, grid and step restrictions.\\
+Observed error & A difference between evaluated formulas or kernels.
+It can reflect cancellation and library arithmetic as well as truncation.\\
+Rounding indicator & A heuristic scale involving machine precision and
+conditioning. It is not a directed-rounding enclosure.\\
+Finite-volume effect & Dependence on the physical box size $L$.
+Refining $n$ at fixed $L$ does not test $L\to\infty$.\\
+Model discrepancy & A difference between a chosen family and the intended
+physical system, boundary conditions, measured parameters or initial data.
+Mesh refinement alone does not estimate it.\\
+\bottomrule
+\end{longtable}
+
+For two errors $E_h,E_{h/2}>0$, the observed rate is
+$\log(E_h/E_{h/2})/\log2$. It is an observation on that pair of grids.
+The implementation withholds it when either error is at its heuristic
+rounding scale or a reference has underflowed. It does not force an expected
+rate by selecting favorable grids. In particular, errors from two
+approximations may cancel, making their sum appear unusually accurate.
+
+The new functions in \path{extension/site/finite-resolution-core.js}
+reuse the existing \texttt{taylorGreen}, \texttt{heatStep} and
+\texttt{gaugePlaquette} implementations. They introduce no new time-marching
+Navier--Stokes solver. The adjacent panels have explicitly separate
+diagnostic controls, so animation or a finite certificate import cannot
+silently change the meaning of a refinement table.
+
+\section{Taylor--Green derivatives and a nonlinear residual}
+
+Write $a=e^{-2\nu t}$, with $\nu,t\ge0$, and use the existing solution
+\[
+ u=a\sin x\cos y,\qquad v=-a\cos x\sin y,\qquad
+ p=\frac{a^2}{4}(\cos2x+\cos2y).
+\]
+All quantities are sampled on the $n\times n$ periodic grid. We require
+$n\ge5$: the velocity frequency one and pressure frequency two are then
+strictly below Nyquist. Let $D_{x,h},D_{y,h}$ be centered first differences,
+$\Delta_h$ the five-point Laplacian, and
+$s(z)=\sin z/z$, with $s(0)=1$. Exact Fourier calculation gives
+\[
+ D_{x,h}e^{ikx}=ik\,s(kh)e^{ikx},\qquad
+ -\Delta_he^{i(k_xx+k_yy)}
+ =\frac4{h^2}\left(\sin^2\frac{k_xh}{2}
+                   +\sin^2\frac{k_yh}{2}\right)e^{i(k_xx+k_yy)}.
+\]
+Here and below the maximum norm of a vector takes the largest absolute
+component over the sampled grid.
+
+\begin{proposition}[Bounds for the sampled manufactured flow]
+\label{prop:fr-taylor-green}
+Put $\lambda_h=8\sin^2(h/2)/h^2$ and
+$\omega=2a\sin x\sin y$. In real arithmetic,
+\begin{align*}
+ \|D_{x,h}v-D_{y,h}u-\omega\|_\infty
+     &\le \frac{ah^2}{3},\\
+ \|\Delta_h(u,v)+2(u,v)\|_\infty
+     &\le \frac{ah^2}{6},\\
+ D_{x,h}u+D_{y,h}v&=0.
+\end{align*}
+With the time derivative evaluated analytically, define
+\[
+ R_h=\partial_t(u,v)
+   +uD_{x,h}(u,v)+vD_{y,h}(u,v)
+   +(D_{x,h}p,D_{y,h}p)-\nu\Delta_h(u,v).
+\]
+Then
+\[
+ \|R_h\|_\infty\le \frac{\nu ah^2}{6}+\frac{a^2h^2}{4}.
+\]
+\end{proposition}
+\begin{proof}
+Taylor's integral remainder gives
+$|1-s(z)|\le z^2/6$ and
+$0\le1-4\sin^2(z/2)/z^2\le z^2/12$ for $z\ne0$.
+Thus the computed curl is $s(h)\omega$,
+$0\le2-\lambda_h\le h^2/6$, and the first two bounds follow.
+The two centered divergence terms are
+$as(h)\cos x\cos y$ and its negative.
+
+The advective and pressure derivatives carry different Fourier
+multipliers. Direct substitution gives
+\[
+ \begin{split}
+ R_{h,x}&=\nu(\lambda_h-2)u+
+       \frac{a^2}{2}\sin2x\,\{s(h)-s(2h)\},\\
+ R_{h,y}&=\nu(\lambda_h-2)v+
+       \frac{a^2}{2}\sin2y\,\{s(h)-s(2h)\}.
+ \end{split}
+\]
+Since $0<h\le2\pi/5<\pi$, we have $0\le s(h)\le1$ and
+\[
+ 0\le s(h)-s(2h)=s(h)(1-\cos h)\le h^2/2.
+\]
+Taking maximum component norms proves the residual estimate.
+\end{proof}
+
+This calculation tests a nonlinear product and a pressure cancellation,
+not just a linear derivative. Nevertheless it measures consistency on
+one known solution. A small residual does not by itself bound the error
+of an arbitrary numerical trajectory. Such a conclusion also needs
+stability, compatible initial data and control of the relevant solution
+class.
+
+\begin{proposition}[Exact energy quadrature for this Fourier family]
+\label{prop:fr-energy-quadrature}
+For every grid admitted above, the real-arithmetic average
+\[
+ E_n=\frac1{n^2}\sum_{j,\ell=0}^{n-1}
+       \frac{u(jh,\ell h)^2+v(jh,\ell h)^2}{2}
+\]
+equals the continuum average $a^2/4$.
+\end{proposition}
+\begin{proof}
+The energy density is
+$a^2(1-\cos2x\cos2y)/4$. The geometric sum
+$\sum_{j=0}^{n-1}e^{4\pi i j/n}$ vanishes for $n\ge5$,
+so the product cosine term has zero grid average. Its integral has zero
+average as well.
+\end{proof}
+
+The exactness is a finite Fourier identity. More general periodic
+quadrature is governed by regularity and aliasing; the Fourier explanation
+in \citet[Section~3]{frTrefethenWeideman2014} supplies broader context.
+We do not infer exact quadrature for an arbitrary smooth velocity field.
+The implementation uses compensated summation and still records the
+floating-point energy discrepancy.
+
+\section{Heat at fixed physical time}
+
+Let $k=(k_x,k_y)\in\Z^2$, with $|k_x|,|k_y|<n/2$, and initially take
+$k\ne0$. On the same torus use the normalized grid probability
+\[
+ p^0_{j\ell}=\frac{1+\frac12\cos(k_xjh+k_y\ell h)}{n^2}.
+\]
+The zero mode is treated separately as the uniform probability. Let
+$T=m\Delta t$, where $m$ is a positive integer when $T>0$, and require
+\[
+ r=\frac{\nu\Delta t}{h^2}\le\frac14.
+\]
+The existing heat step is the convex combination
+\[
+ p^{s+1}_{j\ell}=(1-4r)p^s_{j\ell}
+    +r(p^s_{j+1,\ell}+p^s_{j-1,\ell}
+        +p^s_{j,\ell+1}+p^s_{j,\ell-1}).
+\]
+Define
+\[
+ \lambda=|k|^2,\qquad
+ \lambda_h=\frac4{h^2}
+   \left(\sin^2\frac{k_xh}{2}+\sin^2\frac{k_yh}{2}\right),
+ \quad x=\nu\Delta t\lambda_h,\quad q=1-x.
+\]
+The discrete, spatially discrete continuous-time, and continuum mode
+amplitudes are, respectively,
+$A_d=q^m$, $A_s=e^{-\nu T\lambda_h}$ and $A_c=e^{-\nu T\lambda}$.
+For $T=0$ all are one and the step count is zero.
+
+\begin{proposition}[Separated spatial and time budgets]
+\label{prop:fr-heat-mode}
+Under these assumptions,
+\begin{align*}
+ |A_s-A_c|&\le
+    \min\left(1,\frac{\nu T h^2}{12}(k_x^4+k_y^4)\right)=:B_s,\\
+ |A_d-A_s|&\le\min\left(2,\frac{mx^2}{2}\right)=:B_t,\\
+ |A_d-A_c|&\le\min(2,B_s+B_t).
+\end{align*}
+The formulas and bounds remain valid when $q<0$.
+\end{proposition}
+\begin{proof}
+The trigonometric remainder used above gives
+$0\le\lambda-\lambda_h\le h^2(k_x^4+k_y^4)/12$.
+The map $z\mapsto e^{-\nu Tz}$ has derivative of magnitude at most
+$\nu T$ for $z\ge0$, and its values lie in $[0,1]$. This proves the
+first bound.
+
+Since $0\le x\le8r\le2$, we have $|q|\le1$. For $b=e^{-x}$,
+\[
+ |q^m-b^m|
+ \le |q-b|\sum_{j=0}^{m-1}|q|^j|b|^{m-1-j}
+ \le m|q-b|.
+\]
+The integral remainder
+$e^{-x}-(1-x)=\int_0^x(x-s)e^{-s}\,ds$
+lies between zero and $x^2/2$. The amplitudes also have absolute value at
+most one, proving the second bound with its cap of two. The triangle
+inequality proves the third. No step uses $q\ge0$.
+\end{proof}
+
+An admissible negative multiplier changes the sign of a Fourier component;
+it does not make this nonnegative initial probability become negative.
+The channel remains a convex combination of translations. At the
+positivity boundary an even-grid checkerboard can have multiplier $-1$,
+so positivity alone does not imply strict convergence to equilibrium.
+The implemented diagnostic tests an admissible negative-mode case and
+separately rejects an unstable CFL ratio.
+
+The probability discrepancy at a grid point is at most
+$|A_d-A_c|/(2n^2)$ and its discrete $\ell^1$ norm is at most
+$|A_d-A_c|/2$. These conversion factors matter when an amplitude bound
+is used in an observable or control norm.
+
+The default refinement chooses
+$m=\max(1,\lceil5\nu T/h^2\rceil)$ for $T>0$ and $m=0$ at $T=0$.
+It keeps $r\le1/5$ and holds $T$ fixed. For $\nu T>0$,
+\[
+ \frac{mx^2}{2}
+ =\frac{\nu^2T^2\lambda_h^2}{2m}
+ \le\frac{\nu T h^2\lambda^2}{10},
+\]
+so the sum of the two analytic budgets is $O(h^2)$ for a fixed mode.
+Holding the original time step fixed at all grid sizes would eventually
+violate the positivity restriction.
+
+The two signed errors can oppose one another: the spatial Laplacian
+underestimates the decay rate, whereas forward Euler can overestimate
+decay for a low-frequency stable mode. With $\nu=0.08$, $T=1$ and
+$k=(1,0)$, the recorded total amplitude errors at
+$n=8,16,32,64$ are approximately
+$9.12\times10^{-4}$, $3.26\times10^{-5}$,
+$3.12\times10^{-5}$ and $1.10\times10^{-5}$.
+The intervening observed rates are about $4.805$, $0.067$ and $1.501$.
+They are retained alongside the separate spatial and time errors.
+They neither refute the proved upper bound nor establish a higher
+convergence order.
+
+The point and peak fixtures in the original heat view use grid-index
+widths. Varying $n$ changes their physical width. The smooth Fourier
+family above therefore provides a declared consistency test; no
+fixed-data continuum limit is inferred for those other fixtures.
+
+\subsection{A finite box has its own diffusion gap}
+
+For a square periodic box of arbitrary side $L$, the continuum heat
+generator's smallest positive eigenvalue for $\nu>0$ is
+$g_L=\nu(2\pi/L)^2$. The corresponding five-point generator value is
+\[
+ g_{L,n}=\frac{4\nu}{(L/n)^2}\sin^2\frac{\pi}{n},\qquad
+ 0\le1-\frac{g_{L,n}}{g_L}
+     =1-\left(\frac{\sin(\pi/n)}{\pi/n}\right)^2
+     \le\frac{\pi^2}{3n^2}.
+\]
+This follows from the discrete Fourier eigenvalues and the same cosine
+remainder. The diagnostic reports both values for $L=2\pi$ and uses
+$0\le g_L-g_{L,n}\le\nu h^2/12$; at $\nu=0$ both gaps are zero.
+These are generator eigenvalues, not an absolute mixing gap for every
+discrete-time channel.
+
+At fixed $L$, refinement approaches a positive continuum box gap.
+Increasing $L$ instead sends $g_L$ to zero. Thus a finite-volume diffusion
+gap does not establish a volume-uniform lower bound, and it has no
+automatic interpretation as a quantum Yang--Mills mass gap.
+
+\section{A local U(1) plaquette with declared curvature}
+
+Wilson's lattice construction motivates retaining a gauge-invariant loop
+quantity while examining the small-cell limit. The classical lattice
+approximation and the quantized continuum limit already require separate
+arguments in that construction.\cite[Section~III.A]{frWilson1974}
+The present example is the explicitly Abelian local calculation below.
+
+On $C_h=[-h/2,h/2]^2$, set
+\[
+ B(x,y)=B_0+\kappa(x^2+y^2),\qquad
+ \overline B_h=B_0+\frac{\kappa h^2}{6},\qquad
+ \Phi_h=\int_{C_h}B\,dx\,dy=h^2\overline B_h.
+\]
+There is no edge-integration approximation. Reusing the existing four-link
+product gives $W=e^{i\Phi_h}$ in real arithmetic. The normalized local
+action density is
+\[
+ Q_h=\frac{2(1-\Re W)}{h^4}
+     =\frac{4\sin^2(\Phi_h/2)}{h^4}.
+\]
+The target is the central value $B_0^2$, not a spatially averaged field
+energy over the entire unit square.
+
+\begin{proposition}[Local cell averaging and small-angle budget]
+\label{prop:fr-local-wilson-bound}
+Suppose an exact cell mean obeys
+$|\overline B_h-B_0|\le d$. Then
+\[
+ |Q_h-B_0^2|
+ \le d(2|B_0|+d)+\frac{h^4}{12}(|B_0|+d)^4.
+\]
+For the displayed quadratic field one may take
+$d=|\kappa|h^2/6$. More generally, for a twice continuously
+differentiable scalar field on $C_h$ with
+$|B_{xx}|\le M_{xx}$ and $|B_{yy}|\le M_{yy}$, one may take
+$d=h^2(M_{xx}+M_{yy})/24$.
+\end{proposition}
+\begin{proof}
+For real $z$, Taylor's remainder and $1-\cos z\le z^2/2$ give
+$0\le z^2-2(1-\cos z)\le z^4/12$. Hence
+\[
+ |Q_h-\overline B_h^2|
+ \le h^4|\overline B_h|^4/12
+ \le h^4(|B_0|+d)^4/12.
+\]
+Writing $e=\overline B_h-B_0$, the factorization
+$(B_0+e)^2-B_0^2=e(2B_0+e)$ gives
+$|\overline B_h^2-B_0^2|\le d(2|B_0|+d)$.
+The triangle inequality proves the asserted budget.
+
+For the quadratic field, integrate $x^2+y^2$ over the square.
+For the smooth-field version, the one-dimensional midpoint remainder is
+bounded in average by $Mh^2/24$ because the linear term integrates to
+zero and the quadratic remainder is at most $Mx^2/2$. Apply this
+first in $y$ at each $x$ and then in $x$ at $y=0$.
+The two resulting bounds add; no mixed derivative bound is needed.
+\end{proof}
+
+The freshly kernel-checked formal component
+\path{LaboratoryContracts.square_perturbation_bound}
+encodes exactly the factorization-based scalar estimate from
+$|e|\le d$. Its role is a component of
+Proposition~\ref{prop:fr-local-wilson-bound}; it does not prove the
+smoothness assumptions, cell integration, cosine remainder or numerical
+evaluation. If a separate flux approximation had a certified error
+$|\widehat\Phi_h-\Phi_h|\le\eta_\Phi$, the same argument could use
+$d+\eta_\Phi/h^2$ for its inferred cell mean. That additional error is
+zero in the implemented exact-flux family and is not estimated for a
+general measured field.
+
+For $\kappa=0$ the bound is $O(h^4)$; with a varying field it is
+generally $O(h^2)$. A special vanishing central field can remove the
+leading term, so these generic rates are not lower bounds on error.
+Likewise, $W$ only records flux modulo $2\pi$. The examples with
+fluxes $8$ and $8+2\pi$ have the same Wilson quantity and different
+unwrapped $B_0^2$ at $h=1$. The bound never resolves that ambiguity.
+The UI flags $|\Phi_h|\ge\pi$ and retains this negative control.
+
+\subsection{Cancellation is visible before it is repaired}
+
+The raw implementation forms a product of four complex link phases and
+subtracts its real part from one. The equivalent sine-squared expression
+avoids this subtraction for a small flux. At $B_0=1$, $\kappa=0$ and
+$n=65536$, the recorded binary64 raw density is zero, while the stable
+value rounds to one. The real analytic deficit is positive and about
+$4.52\times10^{-21}$; the 80-digit reference retains it. Therefore
+the stable zero error at this scale receives an unresolved rate rather
+than a claim of perfect convergence.
+
+The raw error can be amplified on the scale
+$\epsilon_{\rm mach}/h^4$. The code exposes a deliberately labeled
+heuristic multiple of that scale, alongside a heuristic for the stable
+formula. These are diagnostic estimates, not verified outward-rounded
+enclosures. The ECMAScript specification makes the relevant ordinary
+sine, cosine and exponential evaluations implementation-approximated;
+it does not turn these formulas into rigorous intervals.\cite{frECMAScriptLiving}
+
+\section{Exact topology, finite arithmetic and nonlinear stability}
+
+An exact invariant and a sampling error should not share an unlabeled
+error bar. The existing finite cell complex satisfies its boundary
+identity algebraically; the Hodge parameter family has an exact kernel
+change at zero; and the integer matrix $J^k$ has determinant $14^k$.
+Rasterization or display quadrature does not change those statements.
+A numerical rank inferred from a tolerance, however, may change when
+the tolerance or conditioning changes. The exact laboratory bridge
+therefore uses rational or integer inputs for its finite contracts.
+
+The elliptic-curve example over a fixed finite field is an exact finite
+model. It is not a grid approximation to a real fluid or gauge field.
+Similarly, refining the drawn torus does not change its algebraic
+covering degree. A continuum relation would require a specified sequence
+of objects, comparison maps and an explicit convergence theorem.
+
+There is a useful conditional connection from a residual to a nonlinear
+trajectory error. Suppose $\dot y=F(y)$, the surrogate $z$ is absolutely
+continuous, and both paths stay in a region on which $F$ has Lipschitz
+constant $K\ge0$ in a specified norm. If
+$r=\dot z-F(z)$ is integrable, the integral equations and Gronwall's
+inequality give
+\[
+ \|z(t)-y(t)\|
+ \le e^{Kt}\|z(0)-y(0)\|
+      +\int_0^t e^{K(t-s)}\|r(s)\|\,ds.
+\]
+Indeed the triangle inequality gives the corresponding integral
+inequality for the error; multiplying the usual comparison function
+by $e^{-Kt}$ and integrating yields the displayed estimate.
+It is a conditional finite-dimensional stability statement.
+The Taylor--Green grid residual alone supplies neither the common
+invariant region nor a continuum PDE Lipschitz estimate.
+
+For a contractive feedback realization, the appropriate bookkeeping is
+different. If a reference map $T$ has contraction factor $q<1$ in the
+chosen weighted norm and an implemented map obeys a \emph{uniform}
+one-step error bound $\|\widetilde T(x)-T(x)\|\le\eta$, then
+\[
+ e_{m+1}\le qe_m+\eta,\qquad
+ e_m\le q^m e_0+\frac{1-q^m}{1-q}\eta.
+\]
+The second formula follows by iterating the first geometric sum.
+The required $\eta$ may include spatial, time, arithmetic, encoding
+and model errors, but only after they are expressed in the same norm
+and with compatible deterministic or probabilistic hypotheses.
+An error verified on one Fourier mode cannot be inserted as a uniform
+bound for all states. A heuristic rounding scale cannot be inserted
+as a certified summand. These conditions explain how the finite
+weighted-gain results in Chapter~\ref{ch:quantum-tropical-realizations}
+can consume a valid numerical budget without absorbing unsupported
+continuum or physical assumptions.
+
+\section{Implementation evidence and reproduction}
+
+The independent reference generator uses 80 decimal digits and exact
+spectral expressions, including the nonlinear residual symbol. It
+retains both binary64 comparison values and longer decimal strings.
+The focused numerical verifier checks 24 reference cases,
+24 Taylor--Green grid cases, 36 heat-budget cases and 23 invalid-input
+controls. It also compares repeated calls to the existing heat kernel,
+tests the constant and varying-curvature gauge families, and preserves
+phase aliases, raw cancellation, underflow and zero-error cases.
+The largest recorded reference discrepancies are approximately
+$4.98\times10^{-15}$ for the sampled flow,
+$1.11\times10^{-15}$ for heat and
+$2.57\times10^{-16}$ for the gauge scalar formulas.
+These figures describe the retained run, not uniform arithmetic bounds.
+
+The isolated UI verifier checks eight behavioral groups using an
+in-memory DOM fixture: labeled controls and table captions, invalid-input
+clearing, recovery, event updates and visible numerical limitations.
+It does not claim a rendered-browser, keyboard or screen-reader audit.
+Exact run dates in the machine-readable records are labeled UTC.
+
+\begin{lstlisting}
+python3 extension/code/build_finite_resolution_reference.py
+node extension/site/verify-finite-resolution.cjs
+node extension/site/verify-finite-resolution-ui.cjs
+\end{lstlisting}
+
+The numerical and UI receipts are
+\path{extension/verification/finite-resolution-node.json} and
+\path{extension/verification/finite-resolution-ui.json}.
+The source ledger and exact reading scope are in
+\path{extension/review/finite-resolution-20261113.md}.
+These records keep the analytic contract, implementation comparison,
+formal component and remaining physical assumptions separately inspectable.

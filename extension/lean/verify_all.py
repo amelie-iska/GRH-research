@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Freshly elaborate all seven finite-interface modules with exact pinned tools.
+"""Freshly elaborate the registered interface modules with exact pinned tools.
 
 This driver makes no downloads or source changes. It captures actual theorem
 types and axiom dependencies, verifies source stability during checking, and
@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -30,7 +31,10 @@ MODULES = {
     "ReductionContracts": ("ReductionContracts", 16),
     "TransportContracts": ("TransportContracts", 17),
     "WeightedGainContracts": ("WeightedGainContracts", 6),
+    "LaboratoryContracts": ("LaboratoryContracts", 4),
+    "CosmologyCalibration": ("CosmologyCalibration", 6),
 }
+LOCAL_IMPORTS = ("BridgeTheorems", "FluidInterfaces")
 
 
 def digest(path: Path) -> str:
@@ -162,7 +166,8 @@ def main() -> int:
             audit.write_text(source + "\n" + commands + "\n")
             process = subprocess.run([str(lake), "env", str(lean),
                                       "-DwarningAsError=true", str(audit)],
-                                     cwd=args.mathlib, text=True, capture_output=True, timeout=180)
+                                     cwd=args.mathlib, env=lean_environment,
+                                     text=True, capture_output=True, timeout=180)
         log = process.stdout + process.stderr
         stable = source_hash == digest(source_path)
         evaluation = evaluate_lean_output(names, log, process.returncode, stable)
@@ -177,11 +182,51 @@ def main() -> int:
             "log": log_path.name, "log_sha256": digest(log_path),
         }
 
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        results = list(executor.map(check, MODULES))
+    # New contracts import two existing project modules. Build those imports
+    # from their current source in an isolated temporary directory; do not use
+    # an untracked project .olean or mutate a shared mathlib cache. The same
+    # modules also receive the full declaration/type/axiom audit above.
+    local_import_results = []
+    with tempfile.TemporaryDirectory(prefix="grh-local-imports-") as local_tmp:
+        local_cache = Path(local_tmp)
+        lean_environment = os.environ.copy()
+        prior_path = lean_environment.get("LEAN_PATH")
+        lean_environment["LEAN_PATH"] = str(local_cache) + (
+            os.pathsep + prior_path if prior_path else "")
+        for module in LOCAL_IMPORTS:
+            source_path = root / (module + ".lean")
+            source_hash = digest(source_path)
+            target = local_cache / (module + ".olean")
+            process = subprocess.run(
+                [str(lake), "env", str(lean), "-DwarningAsError=true",
+                 "--root=" + str(root), "-o", str(target), str(source_path)],
+                cwd=args.mathlib, env=lean_environment, text=True,
+                capture_output=True, timeout=180)
+            log = process.stdout + process.stderr
+            log_path = output_dir / (module + ".import-build.log")
+            log_path.write_text(log)
+            stable = source_hash == digest(source_path)
+            passed = (process.returncode == 0 and stable and target.is_file()
+                      and not re.search(r"\bwarning:", log) and "sorryAx" not in log)
+            local_import_results.append({
+                "module": module, "source": f"extension/lean/{module}.lean",
+                "source_sha256": source_hash, "exit_code": process.returncode,
+                "status": "verified" if passed else "failed",
+                "source_unchanged_during_build": stable,
+                "olean_sha256": digest(target) if target.is_file() else None,
+                "log": log_path.name, "log_sha256": digest(log_path),
+            })
+            if not passed:
+                raise RuntimeError(f"fresh project import build failed: {module}; see {log_path}")
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            results = list(executor.map(check, MODULES))
+        imports_stable = all(
+            digest(root / (item["module"] + ".lean")) == item["source_sha256"]
+            for item in local_import_results)
     stable_provenance = all(digest(path) == initial_hashes[name]
                             for name, path in provenance_paths.items())
-    success = all(item["status"] == "verified" for item in results) and stable_provenance
+    success = (all(item["status"] == "verified" for item in results)
+               and stable_provenance and imports_stable)
     report = {
         "schema_version": 1, "checked_at_utc": datetime.now(timezone.utc).isoformat(),
         "status": "verified" if success else "failed", "module_count": len(results),
@@ -193,6 +238,9 @@ def main() -> int:
         "provenance_sha256": initial_hashes,
         "configuration_unchanged_during_check": stable_provenance,
         "warnings_treated_as_errors": True,
+        "local_imports_rebuilt_from_current_source": True,
+        "local_import_sources_unchanged_during_check": imports_stable,
+        "local_import_builds": local_import_results,
         "command": "python extension/lean/verify_all.py --toolchain <pinned-toolchain> --mathlib <pinned-mathlib>",
         "modules": results,
         "scope": "Fresh elaboration, printed types and actual foundational axiom dependencies for exactly the listed finite-interface declarations. Cached compiled imports and the named Lean/mathlib toolchain are trusted. No claim of complete monograph, continuum Navier-Stokes, GRH, Yang-Mills or cryptographic implementation verification.",

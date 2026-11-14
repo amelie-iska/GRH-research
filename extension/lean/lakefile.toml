@@ -1,6 +1,6 @@
 name = "research_bridge"
-version = "0.5.0"
-defaultTargets = ["BridgeTheorems", "QuantumInterfaces", "DiagramGrammar", "FluidInterfaces", "ReductionContracts", "TransportContracts", "WeightedGainContracts"]
+version = "0.6.0"
+defaultTargets = ["BridgeTheorems", "QuantumInterfaces", "DiagramGrammar", "FluidInterfaces", "ReductionContracts", "TransportContracts", "WeightedGainContracts", "LaboratoryContracts", "CosmologyCalibration"]
 
 [[require]]
 name = "mathlib"
@@ -27,3 +27,9 @@ name = "TransportContracts"
 
 [[lean_lib]]
 name = "WeightedGainContracts"
+
+[[lean_lib]]
+name = "LaboratoryContracts"
+
+[[lean_lib]]
+name = "CosmologyCalibration"

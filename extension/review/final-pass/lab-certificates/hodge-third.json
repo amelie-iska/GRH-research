@@ -1,0 +1,79 @@
+{
+  "schema": "grh-lab-certificate-v1",
+  "contract": "hodge-family-v1",
+  "binding": {
+    "binding_schema": "grh-lab-source-type-binding-v1",
+    "lab_url": "https://amelie-iska.github.io/GRH-research/index.html#hodge",
+    "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+    "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+    "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+    "runtime_sources": {
+      "extension/code/verify_lab_certificate.py": "a7c5565ad0ab29d7b4516585692a0d9a0fbf672c4153e97d2f68e63da1648099",
+      "extension/site/app.js": "cdda1611fe416a91af54f93bdd2a6b9d42abdba8284656ad22b7be1146a10e67",
+      "extension/site/certificate-bridge-ui.js": "403b1a64b92e16650f2aeba2f4a67d274b594c8ec1c817799b70f3a310110b3e",
+      "extension/site/certificate-bridge.js": "521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1",
+      "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c",
+      "extension/site/math.js": "81cf1c37b64c25ae376055644490b526f5365fddeaed0860b01213f6dc7e8049"
+    },
+    "scope": "Exact rational Hodge-family diagonal, coercivity, positive-gap boundary and kernel equation; rendering and dimension reporting are separate finite computations.",
+    "theorems": [
+      {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "module": "BridgeTheorems",
+        "name": "ResearchBridge.hodge_family_diagonal",
+        "printed_type": "ResearchBridge.hodge_family_diagonal (t : ℝ) : ResearchBridge.hodgeMatrix t 0 0 1 = !![t ^ 2, 0; 0, 1]",
+        "source": "extension/lean/BridgeTheorems.lean",
+        "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+        "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/BridgeTheorems.lean",
+        "type_sha256": "630d851dd57f6406f573dc7ee14ae77233e05059cc43f743002b3a80fe805dc7"
+      },
+      {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "module": "LaboratoryContracts",
+        "name": "LaboratoryContracts.hodge_family_certificate",
+        "printed_type": "LaboratoryContracts.hodge_family_certificate (ε : ℝ) (hε0 : 0 ≤ ε) (hε1 : ε ≤ 1) :\n  ResearchBridge.hodgeMatrix ε 0 0 1 = !![ε ^ 2, 0; 0, 1] ∧\n    (∀ (a b : ℝ), ε ^ 2 * (a ^ 2 + b ^ 2) ≤ ResearchBridge.hodgeEnergy ε 0 0 1 a b) ∧ (0 < ε ^ 2 ↔ ε ≠ 0)",
+        "source": "extension/lean/LaboratoryContracts.lean",
+        "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+        "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/LaboratoryContracts.lean",
+        "type_sha256": "ffbbb20e969c4e6c28c5d7b4c35f9b711a9d98bcdcde4942ec998352bd7a4637"
+      },
+      {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "module": "LaboratoryContracts",
+        "name": "LaboratoryContracts.hodge_family_kernel",
+        "printed_type": "LaboratoryContracts.hodge_family_kernel (ε a b : ℝ) :\n  (ResearchBridge.hodgeMatrix ε 0 0 1).mulVec ![a, b] = 0 ↔ (ε = 0 ∨ a = 0) ∧ b = 0",
+        "source": "extension/lean/LaboratoryContracts.lean",
+        "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+        "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/LaboratoryContracts.lean",
+        "type_sha256": "69faac8e524591799d92b8741d8c6283f2299a23614c0b7356d6b77d58bd21ad"
+      }
+    ]
+  },
+  "parameters": {
+    "epsilon": "1/3"
+  },
+  "result": {
+    "diagonal": [
+      "1/9",
+      "1/1"
+    ],
+    "least_eigenvalue": "1/9",
+    "smallest_positive_eigenvalue": "1/9",
+    "kernel_dimension": "0/1",
+    "euler_index": "0/1",
+    "positive_gap": true,
+    "coercivity_constant": "1/9"
+  }
+}

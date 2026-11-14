@@ -1,0 +1,318 @@
+\chapter{A live verification workbench and finite-search probability bounds}
+\label{chap:verification-workbench}
+
+\reviewstatus{This chapter supplies written arguments for finite interfaces
+and identifies their selected Lean components. The companion exports exact
+parameter certificates, independently replays them, restores validated state,
+and emits fixed-template Lean specializations. Browser arithmetic, successful
+Lean compilation, and an experimentally adequate model are distinct evidence.
+The probability statements use an actual measure and integral, with their
+noise-model assumptions explicit.}
+
+\section{What crosses the laboratory--proof boundary}
+
+A laboratory displays a real-valued model through floating-point
+approximations while a theorem quantifies over exact real numbers. Connecting
+the two requires a precise interpretation of the controls. The workbench uses
+reduced rational strings for exact parameters and canonical natural-number
+strings for finite indices. An input \(1/3\) denotes that rational number;
+its canvas image is an approximation. A logarithmic slider value such as
+\(10^{-s}\) is not silently renamed as an exact rational approximation.
+
+Each certificate carries a schema, a contract, exact parameters, a recomputable
+result, and bindings to theorem names, source hashes, compiler-printed types,
+actual axiom dependencies, runtime/model hashes and the pinned compiler. The
+parser rejects duplicate keys, unknown fields, JSON numeric literals,
+noncanonical fractions, excessive nesting and oversized inputs. These checks
+protect the record's meaning. A content hash is not a signature.
+
+A control adjustment immediately evaluates its finite exact condition.
+Export preserves that state and its evidence boundary. Import validates the
+complete record, recomputes its result, commits a reversible change and reads
+back the controls; unsuccessful restoration rolls back. A separate operation
+generates Lean source from fixed templates and validated literals. Checking
+that file with the pinned compiler is the return path to the proof system.
+The web page itself does not run a Lean kernel.
+
+\begin{longtable}{p{.22\textwidth}p{.33\textwidth}p{.36\textwidth}}
+\toprule
+Live contract & Exact finite result & Retained obligation\\
+\midrule
+\endhead
+Hodge family & Diagonal energy, coercivity scalar, zero boundary and kernel
+coordinates & Other complexes require their own hypotheses.\\
+Quadratic cover & Integer power, positive determinant and rational point image
+modulo one & The emitted Lean file checks determinant components; covering
+topology and fibre drawings have separate arguments.\\
+Weighted gain & Every row product, slack and weighted row ratio & The matrix
+must dominate the actual dynamics on its invariant domain.\\
+Cosmology scan & Stored-coefficient scores, finite ranks and a conditional
+moment budget & The score model must satisfy measurable, integrable and
+true-moment hypotheses.\\
+\bottomrule
+\end{longtable}
+
+The public registry gives reverse links from theorem interfaces to their
+laboratories. The source/type map identifies each supported manuscript
+component. Source links point to the current repository branch, while hashes
+identify the reviewed bytes. An older certificate should be replayed against
+its original release rather than have a failed binding silently replaced.
+
+\section{Exact algebraic boundaries}
+
+\begin{theorem}[The displayed Hodge family]\label{thm:workbench-hodge-contract}
+For \(0\leq\varepsilon\leq1\), let
+\[
+ H_\varepsilon=\begin{pmatrix}\varepsilon^2&0\\0&1\end{pmatrix},
+ \qquad E_\varepsilon(a,b)=\varepsilon^2a^2+b^2.
+\]
+Then \(E_\varepsilon(a,b)\geq\varepsilon^2(a^2+b^2)\), and
+\(\varepsilon^2>0\) if and only if \(\varepsilon\neq0\).
+For any real \(\varepsilon,a,b\),
+\[
+ H_\varepsilon(a,b)^{\mathsf T}=0
+ \quad\Longleftrightarrow\quad
+ ((\varepsilon=0\ \text{or}\ a=0)\ \text{and}\ b=0).
+\]
+\end{theorem}
+\begin{proof}
+The energy difference is \((1-\varepsilon^2)b^2\geq0\). A real square
+is positive precisely when its base is nonzero. The kernel equations are
+\(\varepsilon^2a=0\) and \(b=0\), giving the stated alternative.
+\end{proof}
+
+The Lean declarations
+\texttt{LaboratoryContracts.hodge\_family\_certificate} and
+\texttt{hodge\_family\_kernel} use the existing matrix and energy definitions.
+They do not infer topology from pixel brightness or an eigenvalue cutoff.
+Exact zero changes the formal case even when a small positive value looks
+indistinguishable on the canvas. The logarithmic mode remains available for
+exploration; its generic values do not produce rational certificates.
+
+\begin{proposition}[Quadratic-order power determinants]
+\label{prop:workbench-cover-certificate}
+For \(J=\left(\begin{smallmatrix}3&1\\1&5\end{smallmatrix}\right)\)
+and every \(k\in\N\), one has \(\det(J^k)=14^k>0\).
+\end{proposition}
+\begin{proof}
+Direct evaluation gives \(\det J=15-1=14\). Determinant multiplicativity
+gives the power identity, including \(k=0\), and positive numbers have positive
+natural powers.
+\end{proof}
+
+The live interface also computes \(J^kx\bmod\Z^2\) exactly. The existing
+covering-space argument explains its degree; the new Lean specialization
+establishes the determinant components. Import respects the hundredth-step
+point controls and powers \(0,\ldots,3\). An off-grid point is rejected
+rather than rounded.
+
+For a supplied nonnegative gain matrix \(G\), positive weights \(w_i\), and
+proposed rate \(q\geq0\), the weighted laboratory checks
+\[
+ (Gw)_i\leq qw_i,\qquad s_i=qw_i-(Gw)_i,\qquad
+ \max_i\frac{(Gw)_i}{w_i}\leq q.
+\]
+The earlier weighted-gain theorem gives a norm bound for this envelope.
+The additional condition \(q<1\) gives its contraction flag. A holding
+bound with \(q\geq1\) lacks that flag. A failed row remains a valid negative
+calculation; its generated Lean file proves the exhibited violation. Neither
+outcome establishes that a learned operator, discretization or quantum
+feedback rule is dominated by the entered matrix.
+
+\section{A probability space for the complete finite search}
+
+\begin{proposition}[Finite-family false-positive bound]
+\label{prop:workbench-familywise-bound}
+Let \((\Omega,\mathcal A,\mu)\) be a probability space, \(I\) a finite set,
+and \(A_j\in\mathcal A\). If \(\mu(A_j)\leq b_j\), then
+\[
+ \mu\Bigl(\bigcup_{j\in I}A_j\Bigr)
+ \leq \min\Bigl(1,\sum_{j\in I}b_j\Bigr).
+\]
+\end{proposition}
+\begin{proof}
+The union is measurable. Finite subadditivity gives the sum bound, and the
+probability-space assumption bounds its measure by one.
+\end{proof}
+
+\begin{theorem}[Even moments control a fixed-threshold scan]
+\label{thm:workbench-even-moment-bound}
+Let \(Z_j:\Omega\to\R\) be measurable for \(j\in I\), let \(k\in\N\),
+and let \(t>0\) be fixed. Suppose \(|Z_j|^{2k}\) is integrable and
+\(\int |Z_j|^{2k}\,d\mu\leq M_j\). Then
+\[
+ \mu\{\exists j\in I:Z_j\geq t\}
+ \leq \min\left(1,\frac{\sum_{j\in I}M_j}{t^{2k}}\right).
+\]
+If every \(M_j\leq M\), the upper bound is at most
+\(\min(1,|I|M/t^{2k})\).
+\end{theorem}
+\begin{proof}
+The crossing event for score \(j\) implies
+\(|Z_j|^{2k}\geq t^{2k}\). Markov's integral inequality gives
+\[
+ \mu\{Z_j\geq t\}\leq
+ \frac{\int |Z_j|^{2k}\,d\mu}{t^{2k}}\leq\frac{M_j}{t^{2k}}.
+\]
+Apply Proposition~\ref{prop:workbench-familywise-bound} and factor out the
+common positive denominator. The uniform bound follows by summation.
+\end{proof}
+
+The Lean proof uses the Bochner integral, the probability-measure typeclass,
+and the pinned mathlib Markov lemma
+\texttt{MeasureTheory.mul\_meas\_ge\_le\_integral\_of\_nonneg}
+\citep{wbMathlibPinned}. Measurability, integrability and true moment
+inequalities remain hypotheses in the printed type. No independence between
+scores is required. The mathematical interface permits \(k=0\), which is
+usually uninformative; the live domain uses \(1\leq k\leq16\).
+
+\begin{corollary}[An exact scalar budget implies conditional risk control]
+\label{cor:workbench-moment-threshold}
+Under the uniform assumptions above, if
+\(|I|M\leq\alpha t^{2k}\), then
+\(\mu\{\exists j\in I:Z_j\geq t\}\leq\alpha\).
+\end{corollary}
+\begin{proof}
+Divide by the positive \(t^{2k}\) and apply
+Theorem~\ref{thm:workbench-even-moment-bound}.
+\end{proof}
+
+The browser checks the scalar premise exactly; its emitted Lean instance
+applies the actual measure theorem with the remaining assumptions visible.
+If \(\alpha=1\), the capped bound may meet the budget while
+\(|I|M>\alpha t^{2k}\). The exporter then uses the capped uniform theorem
+and does not assert the false stronger premise.
+
+\section{A finite Gaussian model and exact variance envelope}
+
+The declared illustrative null model is
+\[
+ \xi\sim N(0,I_{96}),\qquad Y=L\xi,\qquad
+ Z_j=w_j^{\mathsf T}Y,\quad j=1,\ldots,288.
+\]
+The stored lower-triangular \(L\) and filters \(w_j\) were selected numerically.
+Every stored binary64 coefficient is then interpreted as its exact dyadic
+rational value. This defines a concrete finite model. It does not identify
+the rounded factor with an unrounded analytic covariance kernel, or give a
+pseudorandom output an ideal Gaussian distribution.
+
+Independence and unit variances of the coordinates give
+\[
+ v_j=\operatorname{Var}(Z_j)=\|L^{\mathsf T}w_j\|_2^2.
+\]
+The builder computes these finite sums exactly with dyadic integers. An
+independent Python implementation recomputes every full-column dot product
+with rational arithmetic, compares all 288 variances, and checks
+\[
+ v_j\leq v_*=\frac{1000000000001}{1000000000000}.
+\]
+This outward envelope is deliberately slightly larger than one. Nominal
+numerical normalization does not imply the exact identity \(v_j=1\).
+
+\begin{proposition}[Gaussian moments for the declared finite null]
+\label{prop:workbench-gaussian-moment}
+Under this ideal Gaussian model, for \(k\geq1\),
+\[
+ \mathbb E|Z_j|^{2k}=(2k-1)!!\,v_j^k
+ \leq M_k:=(2k-1)!!\,v_*^k.
+\]
+\end{proposition}
+\begin{proof}
+A linear combination of independent centered Gaussians is centered Gaussian:
+multiplication of characteristic functions gives
+\(\prod_\ell e^{-s^2a_\ell^2/2}=e^{-s^2\sum_\ell a_\ell^2/2}\).
+For the standard normal density
+\(\phi(x)=(2\pi)^{-1/2}e^{-x^2/2}\), polynomial moments are finite,
+the integration-by-parts boundary term vanishes, and \(\phi'(x)=-x\phi(x)\)
+gives
+\[
+ \int_{\R}x^{2k}\phi(x)\,dx
+ =(2k-1)\int_{\R}x^{2k-2}\phi(x)\,dx.
+\]
+Iteration from the zeroth moment yields \((2k-1)!!\). Scale by
+\(\sqrt{v_j}\), handle \(v_j=0\) directly, and use monotonicity of
+nonnegative natural powers.
+\end{proof}
+
+This is a written argument and explicit model obligation. The current Lean
+module formalizes the subsequent measure implication, rather than the full
+Gaussian product-space construction and moment identity. For \(k=8\) and
+\(t=6\), the 288-filter bound is approximately \(2.06934\times10^{-4}\).
+The decimal renders an exact rational result. It is a conservative bound
+under the declared null, not a probability that a cosmological
+interpretation is true.
+
+The threshold and statistic must be fixed for this theorem. Exploring
+thresholds and moment orders is supported, but selecting a new threshold
+after inspecting the same sky changes the statistical procedure and needs
+its own error-control argument. Adding filters likewise changes the
+declared family. The theorem covers the 288 specified scores.
+
+\section{Finite calibration ranks have a separate meaning}
+
+The stored calibration has \(N=4095\) maxima. If \(c\) are at least as
+large as the observed statistic, its finite rank is
+\(r_N(c)=(1+c)/(N+1)\). Exact replay interprets stored coefficients and
+calibration maxima as exact binary64 constants, performs score arithmetic
+in \(\Q\), and compares without a floating-point tolerance. The original
+canvas readout rounds arithmetic; close ties can distinguish the two.
+
+\begin{proposition}[Finite rank arithmetic]\label{prop:workbench-rank-arithmetic}
+For \(N,c\in\N\) with \(c\leq N\),
+\[
+ 0<r_N(c),\qquad \frac1{N+1}\leq r_N(c)\leq1.
+\]
+For rational \(\alpha\),
+\[
+ r_N(c)\leq\alpha
+ \quad\Longleftrightarrow\quad 1+c\leq\alpha(N+1).
+\]
+\end{proposition}
+\begin{proof}
+The denominator is positive and \(1\leq1+c\leq N+1\). Division gives
+the bounds; multiplication by the positive denominator gives the equivalence.
+\end{proof}
+
+Both arithmetic components are Lean checked. They do not establish
+exchangeability of simulated and observed scores, a probability law for the
+fixed calibration sample, or a physical false-positive rate. The exact
+resolution floor is \(1/4096\). At the four recorded signal-to-noise settings
+\(0,1,3,5\), replay gives \(1893/4096,\ 741/4096,\ 7/2048,\ 1/4096\),
+respectively. These are source-bound finite benchmark outputs.
+
+\section{Connecting formal budgets, control and numerical residuals}
+
+The same separation of obligations links the workbench to nonlinear operators
+and quantum--tropical constructions. A nonnegative matrix is a gain envelope
+only after bounding the actual model increments on a specified domain. A
+rational certificate then checks the remaining finite inequality. A
+probability certificate checks a risk budget after establishing the score
+moments. A finite-resolution diagnostic supplies a consistency residual only
+for its declared mesh family and observable. These interfaces compose when
+their domains, norms and meanings agree.
+
+For example, suppose a model update is contractive with factor \(q<1\) and
+the numerical realization adds a disturbance bounded by \(\eta_n\). If
+\(e_{n+1}\leq qe_n+\eta_n\), iteration gives
+\[
+ e_n\leq q^n e_0+\sum_{j=0}^{n-1}q^{n-1-j}\eta_j.
+\]
+The earlier control chapter proves the relevant recurrence.
+The finite-resolution chapter identifies spatial, temporal and observable
+residuals that can contribute to \(\eta_j\), with real-arithmetic scope and
+floating-point qualifications. A displayed \(q<1\) cannot supply a missing
+residual estimate or prove that a substrate obeys the chosen equation.
+
+For a generatively proposed substrate, identify measured states and
+observables, fit a model with explicit uncertainty, establish its invariant
+domain and gain envelope, quantify discretization and realization errors,
+and then apply the finite certificate. Natural substrates require the same
+identification work. Quantum channels retain complete positivity,
+normalization, readout and noise obligations. Tropical weights describe a
+declared dominant-scale or positive-gain calculation; omitted quantum phases
+remain additional information.
+
+The workbench makes exact local assertions actionable: expose a failed
+premise, change a parameter, inspect its theorem type, and reproduce a checked
+specialization. The continuum, statistical-model and hardware obligations
+remain visible as the next mathematical or experimental work.

@@ -1,0 +1,12 @@
+LaboratoryContracts.hodge_family_certificate (ε : ℝ) (hε0 : 0 ≤ ε) (hε1 : ε ≤ 1) :
+  ResearchBridge.hodgeMatrix ε 0 0 1 = !![ε ^ 2, 0; 0, 1] ∧
+    (∀ (a b : ℝ), ε ^ 2 * (a ^ 2 + b ^ 2) ≤ ResearchBridge.hodgeEnergy ε 0 0 1 a b) ∧ (0 < ε ^ 2 ↔ ε ≠ 0)
+'LaboratoryContracts.hodge_family_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+LaboratoryContracts.hodge_family_kernel (ε a b : ℝ) :
+  (ResearchBridge.hodgeMatrix ε 0 0 1).mulVec ![a, b] = 0 ↔ (ε = 0 ∨ a = 0) ∧ b = 0
+'LaboratoryContracts.hodge_family_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+LaboratoryContracts.quadratic_cover_certificate (k : ℕ) :
+  (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k ∧ 0 < (FluidInterfaces.renormalizationMatrix ^ k).det
+'LaboratoryContracts.quadratic_cover_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+LaboratoryContracts.square_perturbation_bound (B e d : ℝ) (he : |e| ≤ d) : |(B + e) ^ 2 - B ^ 2| ≤ d * (2 * |B| + d)
+'LaboratoryContracts.square_perturbation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

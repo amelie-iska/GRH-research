@@ -1,0 +1,237 @@
+{
+  "schema": "grh-lab-contract-registry-v1",
+  "status": "verified",
+  "meaning": "Bindings identify compiler-printed interfaces and reviewed sources; importing a certificate performs exact replay, not Lean kernel execution.",
+  "contracts": {
+    "hodge-family-v1": {
+      "binding_schema": "grh-lab-source-type-binding-v1",
+      "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+      "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+      "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "theorems": [
+        {
+          "module": "BridgeTheorems",
+          "source": "extension/lean/BridgeTheorems.lean",
+          "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/BridgeTheorems.lean",
+          "name": "ResearchBridge.hodge_family_diagonal",
+          "printed_type": "ResearchBridge.hodge_family_diagonal (t : ℝ) : ResearchBridge.hodgeMatrix t 0 0 1 = !![t ^ 2, 0; 0, 1]",
+          "type_sha256": "630d851dd57f6406f573dc7ee14ae77233e05059cc43f743002b3a80fe805dc7",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "module": "LaboratoryContracts",
+          "source": "extension/lean/LaboratoryContracts.lean",
+          "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/LaboratoryContracts.lean",
+          "name": "LaboratoryContracts.hodge_family_certificate",
+          "printed_type": "LaboratoryContracts.hodge_family_certificate (ε : ℝ) (hε0 : 0 ≤ ε) (hε1 : ε ≤ 1) :\n  ResearchBridge.hodgeMatrix ε 0 0 1 = !![ε ^ 2, 0; 0, 1] ∧\n    (∀ (a b : ℝ), ε ^ 2 * (a ^ 2 + b ^ 2) ≤ ResearchBridge.hodgeEnergy ε 0 0 1 a b) ∧ (0 < ε ^ 2 ↔ ε ≠ 0)",
+          "type_sha256": "ffbbb20e969c4e6c28c5d7b4c35f9b711a9d98bcdcde4942ec998352bd7a4637",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "module": "LaboratoryContracts",
+          "source": "extension/lean/LaboratoryContracts.lean",
+          "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/LaboratoryContracts.lean",
+          "name": "LaboratoryContracts.hodge_family_kernel",
+          "printed_type": "LaboratoryContracts.hodge_family_kernel (ε a b : ℝ) :\n  (ResearchBridge.hodgeMatrix ε 0 0 1).mulVec ![a, b] = 0 ↔ (ε = 0 ∨ a = 0) ∧ b = 0",
+          "type_sha256": "69faac8e524591799d92b8741d8c6283f2299a23614c0b7356d6b77d58bd21ad",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "runtime_sources": {
+        "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c",
+        "extension/site/certificate-bridge.js": "521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1",
+        "extension/site/certificate-bridge-ui.js": "403b1a64b92e16650f2aeba2f4a67d274b594c8ec1c817799b70f3a310110b3e",
+        "extension/code/verify_lab_certificate.py": "a7c5565ad0ab29d7b4516585692a0d9a0fbf672c4153e97d2f68e63da1648099",
+        "extension/site/app.js": "cdda1611fe416a91af54f93bdd2a6b9d42abdba8284656ad22b7be1146a10e67",
+        "extension/site/math.js": "81cf1c37b64c25ae376055644490b526f5365fddeaed0860b01213f6dc7e8049"
+      },
+      "lab_url": "https://amelie-iska.github.io/GRH-research/index.html#hodge",
+      "scope": "Exact rational Hodge-family diagonal, coercivity, positive-gap boundary and kernel equation; rendering and dimension reporting are separate finite computations."
+    },
+    "quadratic-cover-v1": {
+      "binding_schema": "grh-lab-source-type-binding-v1",
+      "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+      "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+      "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "theorems": [
+        {
+          "module": "FluidInterfaces",
+          "source": "extension/lean/FluidInterfaces.lean",
+          "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/FluidInterfaces.lean",
+          "name": "FluidInterfaces.renormalization_power_determinant",
+          "printed_type": "FluidInterfaces.renormalization_power_determinant (k : ℕ) : (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k",
+          "type_sha256": "09b8af000f0705ac667eee8f0749f49e5cffb4a8bbb99c4e3295d556707c3fb8",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "module": "LaboratoryContracts",
+          "source": "extension/lean/LaboratoryContracts.lean",
+          "source_sha256": "9c47365ded56abee515cb909f8b572f332a34767c9c31ff3a79c90a6425e34cf",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/LaboratoryContracts.lean",
+          "name": "LaboratoryContracts.quadratic_cover_certificate",
+          "printed_type": "LaboratoryContracts.quadratic_cover_certificate (k : ℕ) :\n  (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k ∧ 0 < (FluidInterfaces.renormalizationMatrix ^ k).det",
+          "type_sha256": "658f7e1724cecd982506f997f8d4de07bda7aca610f3503dea1b726d688fa4ee",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "runtime_sources": {
+        "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c",
+        "extension/site/certificate-bridge.js": "521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1",
+        "extension/site/certificate-bridge-ui.js": "403b1a64b92e16650f2aeba2f4a67d274b594c8ec1c817799b70f3a310110b3e",
+        "extension/code/verify_lab_certificate.py": "a7c5565ad0ab29d7b4516585692a0d9a0fbf672c4153e97d2f68e63da1648099",
+        "extension/site/fluids.js": "cf638e9b4533525ee531e5aae624093259f69e881f4e611f7b03f5d4dfe387ff",
+        "extension/site/fluid-core.js": "7ed819affd8af6c71e5fd2078d2b473fbfeea61604f41a56492ac930f90ec931"
+      },
+      "lab_url": "https://amelie-iska.github.io/GRH-research/fluids.html#toral-cover",
+      "scope": "Integer determinant identity and positivity for J powers. Exact point arithmetic is replayed; topological covering/fibre claims and trigonometric drawing are not newly kernel-checked here."
+    },
+    "weighted-gain-v1": {
+      "binding_schema": "grh-lab-source-type-binding-v1",
+      "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+      "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+      "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "theorems": [
+        {
+          "module": "WeightedGainContracts",
+          "source": "extension/lean/WeightedGainContracts.lean",
+          "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/WeightedGainContracts.lean",
+          "name": "WeightedGainContracts.row_ratio_iff",
+          "printed_type": "WeightedGainContracts.row_ratio_iff.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (G : Matrix ι ι K) (w : ι → K) (q : K) (hw : ∀ (i : ι), 0 < w i) :\n  (∀ (i : ι), G.mulVec w i / w i ≤ q) ↔ ∀ (i : ι), G.mulVec w i ≤ q * w i",
+          "type_sha256": "8a7e6f1ddbfded5165e1d11c5d689242d6d405c3855e9df50885cc56dcea5e96",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "module": "WeightedGainContracts",
+          "source": "extension/lean/WeightedGainContracts.lean",
+          "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/WeightedGainContracts.lean",
+          "name": "WeightedGainContracts.matrix_action_weighted_bound",
+          "printed_type": "WeightedGainContracts.matrix_action_weighted_bound.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype ι] (A G : Matrix ι ι K) (w x : ι → K) (q r : K) (hw : ∀ (i : ι), 0 < w i)\n  (hG : ∀ (i j : ι), 0 ≤ G i j) (hgain : ∀ (i : ι), G.mulVec w i ≤ q * w i) (hA : ∀ (i j : ι), |A i j| ≤ G i j)\n  (hx : ∀ (i : ι), |x i| ≤ r * w i) (i : ι) : |A.mulVec x i| ≤ q * r * w i",
+          "type_sha256": "f231ce168ac93d4c79ae2f3cbe18c10adfb2c2dd4a5f7ad33a6e9122b62c0b4c",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "runtime_sources": {
+        "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c",
+        "extension/site/certificate-bridge.js": "521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1",
+        "extension/site/certificate-bridge-ui.js": "403b1a64b92e16650f2aeba2f4a67d274b594c8ec1c817799b70f3a310110b3e",
+        "extension/code/verify_lab_certificate.py": "a7c5565ad0ab29d7b4516585692a0d9a0fbf672c4153e97d2f68e63da1648099",
+        "extension/site/fluids.js": "cf638e9b4533525ee531e5aae624093259f69e881f4e611f7b03f5d4dfe387ff"
+      },
+      "lab_url": "https://amelie-iska.github.io/GRH-research/fluids.html#gain-title",
+      "scope": "Exact inequalities for the supplied nonnegative two-block gain matrix, positive weights and rate. Domain-valid domination of a physical update is an additional hypothesis."
+    },
+    "cosmology-calibration-v1": {
+      "binding_schema": "grh-lab-source-type-binding-v1",
+      "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+      "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+      "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "theorems": [
+        {
+          "module": "CosmologyCalibration",
+          "source": "extension/lean/CosmologyCalibration.lean",
+          "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/CosmologyCalibration.lean",
+          "name": "CosmologyCalibration.scan_even_moment_threshold",
+          "printed_type": "CosmologyCalibration.scan_even_moment_threshold.{u_1, u_2} {Ω : Type u_1} {ι : Type u_2} [MeasurableSpace Ω]\n  (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ] (tests : Finset ι) (score : ι → Ω → ℝ) (k : ℕ)\n  (t M α : ℝ) (ht : 0 < t) (hmeas : ∀ j ∈ tests, Measurable (score j))\n  (hint : ∀ j ∈ tests, MeasureTheory.Integrable (fun ω => |score j ω| ^ (2 * k)) μ)\n  (hmoment : ∀ j ∈ tests, ∫ (ω : Ω), |score j ω| ^ (2 * k) ∂μ ≤ M) (hbudget : ↑tests.card * M ≤ α * t ^ (2 * k)) :\n  MeasurableSet (CosmologyCalibration.scanEvent tests score t) ∧\n    μ.real (CosmologyCalibration.scanEvent tests score t) ≤ α",
+          "type_sha256": "a354d6aa053afc55507f6989d1b48ea65f9197a8188944c95ca57515eb39033e",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "module": "CosmologyCalibration",
+          "source": "extension/lean/CosmologyCalibration.lean",
+          "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/CosmologyCalibration.lean",
+          "name": "CosmologyCalibration.scan_uniform_even_moment_bound",
+          "printed_type": "CosmologyCalibration.scan_uniform_even_moment_bound.{u_1, u_2} {Ω : Type u_1} {ι : Type u_2} [MeasurableSpace Ω]\n  (μ : MeasureTheory.Measure Ω) [MeasureTheory.IsProbabilityMeasure μ] (tests : Finset ι) (score : ι → Ω → ℝ) (k : ℕ)\n  (t M : ℝ) (ht : 0 < t) (hmeas : ∀ j ∈ tests, Measurable (score j))\n  (hint : ∀ j ∈ tests, MeasureTheory.Integrable (fun ω => |score j ω| ^ (2 * k)) μ)\n  (hmoment : ∀ j ∈ tests, ∫ (ω : Ω), |score j ω| ^ (2 * k) ∂μ ≤ M) :\n  MeasurableSet (CosmologyCalibration.scanEvent tests score t) ∧\n    μ.real (CosmologyCalibration.scanEvent tests score t) ≤ min 1 (↑tests.card * M / t ^ (2 * k))",
+          "type_sha256": "419f76c3cd449b430aba0c7c66e9642034322d13c099a2912f1bab0c1b53e3c4",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "module": "CosmologyCalibration",
+          "source": "extension/lean/CosmologyCalibration.lean",
+          "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/CosmologyCalibration.lean",
+          "name": "CosmologyCalibration.rank_fraction_bounds",
+          "printed_type": "CosmologyCalibration.rank_fraction_bounds (draws exceedances : ℕ) (hcount : exceedances ≤ draws) :\n  0 < CosmologyCalibration.rankFraction draws exceedances ∧\n    1 / (↑draws + 1) ≤ CosmologyCalibration.rankFraction draws exceedances ∧\n      CosmologyCalibration.rankFraction draws exceedances ≤ 1",
+          "type_sha256": "d89872c08cc966112b60342d1c66838f757ffbb1eef8796420c1e2f9ebac207a",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        },
+        {
+          "module": "CosmologyCalibration",
+          "source": "extension/lean/CosmologyCalibration.lean",
+          "source_sha256": "cf7a2d460dc314e5d15ec0c61445f5e334f623f2746494426759af946c4658b2",
+          "source_url": "https://github.com/amelie-iska/GRH-research/blob/main/extension/lean/CosmologyCalibration.lean",
+          "name": "CosmologyCalibration.rank_fraction_threshold_iff",
+          "printed_type": "CosmologyCalibration.rank_fraction_threshold_iff (draws exceedances : ℕ) (α : ℚ) :\n  CosmologyCalibration.rankFraction draws exceedances ≤ α ↔ 1 + ↑exceedances ≤ α * (↑draws + 1)",
+          "type_sha256": "a415161f01cf719cb64f5e0477b4b33b66ae071313d8ed48d9cf2e4c8cfb3a53",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ]
+        }
+      ],
+      "runtime_sources": {
+        "extension/site/exact-rational.js": "ab9451e6638985517dc1e62f99fd90e4e48e858272096eb2e946ec92f8004d2c",
+        "extension/site/certificate-bridge.js": "521a7c2de61ccb849cc2b3bcea4176abf9fcc0b1e11c5794e4e683427f36e0d1",
+        "extension/site/certificate-bridge-ui.js": "403b1a64b92e16650f2aeba2f4a67d274b594c8ec1c817799b70f3a310110b3e",
+        "extension/code/verify_lab_certificate.py": "a7c5565ad0ab29d7b4516585692a0d9a0fbf672c4153e97d2f68e63da1648099",
+        "extension/site/cosmology-calibration-core.js": "8f6023b0a727fbbc586378b25394d758207238990d1e2848d48250d42effc4eb",
+        "extension/site/cosmology.js": "d339af3df6bb09d735835086c0ccc10c42d116533d5482ac25f1b0632945baad",
+        "extension/site/cosmology-calibration-ui.js": "b824e3ce9e7948961facce0293ee8aa1c31b75158da229dca4576ae8a026b150",
+        "extension/code/cosmology_certificate.py": "4b89a35a6ae4ec7b5a32c4a2302de473e2bf5c4d14a868b3c26bae4172d188c4",
+        "extension/site/data/cosmology-synthetic.json": "6e97e9612d6e1fe0c0cda9f9441ebf1d238e33de907d3075e6a6468b52736970",
+        "extension/site/data/cosmology-moment-model.json": "c7c029dc275e6589567e98e853a8808ae65feb5c86200e3445278718e572b907",
+        "extension/site/data/cosmology-noise-factor.json": "f047c4e3f96ef819d21757dbd990950b403fc86af1d1905f704a861a2b306668"
+      },
+      "lab_url": "https://amelie-iska.github.io/GRH-research/cosmology.html#calibration-contract",
+      "scope": "Exact finite-score/rank arithmetic on stored binary64 constants, plus a probability bound conditional on measurable integrable scores and their true even-moment bounds. The ideal Gaussian law, Gaussian moment identity, PRNG law and physical observation model are separate obligations."
+    }
+  }
+}
