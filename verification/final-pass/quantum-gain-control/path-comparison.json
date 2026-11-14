@@ -1,0 +1,706 @@
+{
+  "weighted_gain": [
+    [
+      {
+        "numerator": "1",
+        "denominator": "4"
+      },
+      {
+        "numerator": "3",
+        "denominator": "8"
+      }
+    ],
+    [
+      {
+        "numerator": "3",
+        "denominator": "8"
+      },
+      {
+        "numerator": "1",
+        "denominator": "4"
+      }
+    ]
+  ],
+  "horizons": [
+    {
+      "horizon": 1,
+      "ordinary_product": [
+        [
+          {
+            "numerator": "1",
+            "denominator": "4"
+          },
+          {
+            "numerator": "3",
+            "denominator": "8"
+          }
+        ],
+        [
+          {
+            "numerator": "3",
+            "denominator": "8"
+          },
+          {
+            "numerator": "1",
+            "denominator": "4"
+          }
+        ]
+      ],
+      "maximum_path_products": [
+        [
+          {
+            "numerator": "1",
+            "denominator": "4"
+          },
+          {
+            "numerator": "3",
+            "denominator": "8"
+          }
+        ],
+        [
+          {
+            "numerator": "3",
+            "denominator": "8"
+          },
+          {
+            "numerator": "1",
+            "denominator": "4"
+          }
+        ]
+      ],
+      "path_counts": [
+        [
+          {
+            "numerator": "1",
+            "denominator": "1"
+          },
+          {
+            "numerator": "1",
+            "denominator": "1"
+          }
+        ],
+        [
+          {
+            "numerator": "1",
+            "denominator": "1"
+          },
+          {
+            "numerator": "1",
+            "denominator": "1"
+          }
+        ]
+      ],
+      "ordinary_row_norm": {
+        "numerator": "5",
+        "denominator": "8"
+      },
+      "maximum_single_path_weight": {
+        "numerator": "3",
+        "denominator": "8"
+      },
+      "multiplicity_row_bound": {
+        "numerator": "5",
+        "denominator": "8"
+      },
+      "coarse_bound": {
+        "numerator": "3",
+        "denominator": "4"
+      }
+    },
+    {
+      "horizon": 2,
+      "ordinary_product": [
+        [
+          {
+            "numerator": "13",
+            "denominator": "64"
+          },
+          {
+            "numerator": "3",
+            "denominator": "16"
+          }
+        ],
+        [
+          {
+            "numerator": "3",
+            "denominator": "16"
+          },
+          {
+            "numerator": "13",
+            "denominator": "64"
+          }
+        ]
+      ],
+      "maximum_path_products": [
+        [
+          {
+            "numerator": "9",
+            "denominator": "64"
+          },
+          {
+            "numerator": "3",
+            "denominator": "32"
+          }
+        ],
+        [
+          {
+            "numerator": "3",
+            "denominator": "32"
+          },
+          {
+            "numerator": "9",
+            "denominator": "64"
+          }
+        ]
+      ],
+      "path_counts": [
+        [
+          {
+            "numerator": "2",
+            "denominator": "1"
+          },
+          {
+            "numerator": "2",
+            "denominator": "1"
+          }
+        ],
+        [
+          {
+            "numerator": "2",
+            "denominator": "1"
+          },
+          {
+            "numerator": "2",
+            "denominator": "1"
+          }
+        ]
+      ],
+      "ordinary_row_norm": {
+        "numerator": "25",
+        "denominator": "64"
+      },
+      "maximum_single_path_weight": {
+        "numerator": "9",
+        "denominator": "64"
+      },
+      "multiplicity_row_bound": {
+        "numerator": "15",
+        "denominator": "32"
+      },
+      "coarse_bound": {
+        "numerator": "9",
+        "denominator": "16"
+      }
+    },
+    {
+      "horizon": 3,
+      "ordinary_product": [
+        [
+          {
+            "numerator": "31",
+            "denominator": "256"
+          },
+          {
+            "numerator": "63",
+            "denominator": "512"
+          }
+        ],
+        [
+          {
+            "numerator": "63",
+            "denominator": "512"
+          },
+          {
+            "numerator": "31",
+            "denominator": "256"
+          }
+        ]
+      ],
+      "maximum_path_products": [
+        [
+          {
+            "numerator": "9",
+            "denominator": "256"
+          },
+          {
+            "numerator": "27",
+            "denominator": "512"
+          }
+        ],
+        [
+          {
+            "numerator": "27",
+            "denominator": "512"
+          },
+          {
+            "numerator": "9",
+            "denominator": "256"
+          }
+        ]
+      ],
+      "path_counts": [
+        [
+          {
+            "numerator": "4",
+            "denominator": "1"
+          },
+          {
+            "numerator": "4",
+            "denominator": "1"
+          }
+        ],
+        [
+          {
+            "numerator": "4",
+            "denominator": "1"
+          },
+          {
+            "numerator": "4",
+            "denominator": "1"
+          }
+        ]
+      ],
+      "ordinary_row_norm": {
+        "numerator": "125",
+        "denominator": "512"
+      },
+      "maximum_single_path_weight": {
+        "numerator": "27",
+        "denominator": "512"
+      },
+      "multiplicity_row_bound": {
+        "numerator": "45",
+        "denominator": "128"
+      },
+      "coarse_bound": {
+        "numerator": "27",
+        "denominator": "64"
+      }
+    },
+    {
+      "horizon": 4,
+      "ordinary_product": [
+        [
+          {
+            "numerator": "313",
+            "denominator": "4096"
+          },
+          {
+            "numerator": "39",
+            "denominator": "512"
+          }
+        ],
+        [
+          {
+            "numerator": "39",
+            "denominator": "512"
+          },
+          {
+            "numerator": "313",
+            "denominator": "4096"
+          }
+        ]
+      ],
+      "maximum_path_products": [
+        [
+          {
+            "numerator": "81",
+            "denominator": "4096"
+          },
+          {
+            "numerator": "27",
+            "denominator": "2048"
+          }
+        ],
+        [
+          {
+            "numerator": "27",
+            "denominator": "2048"
+          },
+          {
+            "numerator": "81",
+            "denominator": "4096"
+          }
+        ]
+      ],
+      "path_counts": [
+        [
+          {
+            "numerator": "8",
+            "denominator": "1"
+          },
+          {
+            "numerator": "8",
+            "denominator": "1"
+          }
+        ],
+        [
+          {
+            "numerator": "8",
+            "denominator": "1"
+          },
+          {
+            "numerator": "8",
+            "denominator": "1"
+          }
+        ]
+      ],
+      "ordinary_row_norm": {
+        "numerator": "625",
+        "denominator": "4096"
+      },
+      "maximum_single_path_weight": {
+        "numerator": "81",
+        "denominator": "4096"
+      },
+      "multiplicity_row_bound": {
+        "numerator": "135",
+        "denominator": "512"
+      },
+      "coarse_bound": {
+        "numerator": "81",
+        "denominator": "256"
+      }
+    },
+    {
+      "horizon": 5,
+      "ordinary_product": [
+        [
+          {
+            "numerator": "781",
+            "denominator": "16384"
+          },
+          {
+            "numerator": "1563",
+            "denominator": "32768"
+          }
+        ],
+        [
+          {
+            "numerator": "1563",
+            "denominator": "32768"
+          },
+          {
+            "numerator": "781",
+            "denominator": "16384"
+          }
+        ]
+      ],
+      "maximum_path_products": [
+        [
+          {
+            "numerator": "81",
+            "denominator": "16384"
+          },
+          {
+            "numerator": "243",
+            "denominator": "32768"
+          }
+        ],
+        [
+          {
+            "numerator": "243",
+            "denominator": "32768"
+          },
+          {
+            "numerator": "81",
+            "denominator": "16384"
+          }
+        ]
+      ],
+      "path_counts": [
+        [
+          {
+            "numerator": "16",
+            "denominator": "1"
+          },
+          {
+            "numerator": "16",
+            "denominator": "1"
+          }
+        ],
+        [
+          {
+            "numerator": "16",
+            "denominator": "1"
+          },
+          {
+            "numerator": "16",
+            "denominator": "1"
+          }
+        ]
+      ],
+      "ordinary_row_norm": {
+        "numerator": "3125",
+        "denominator": "32768"
+      },
+      "maximum_single_path_weight": {
+        "numerator": "243",
+        "denominator": "32768"
+      },
+      "multiplicity_row_bound": {
+        "numerator": "405",
+        "denominator": "2048"
+      },
+      "coarse_bound": {
+        "numerator": "243",
+        "denominator": "1024"
+      }
+    },
+    {
+      "horizon": 6,
+      "ordinary_product": [
+        [
+          {
+            "numerator": "7813",
+            "denominator": "262144"
+          },
+          {
+            "numerator": "1953",
+            "denominator": "65536"
+          }
+        ],
+        [
+          {
+            "numerator": "1953",
+            "denominator": "65536"
+          },
+          {
+            "numerator": "7813",
+            "denominator": "262144"
+          }
+        ]
+      ],
+      "maximum_path_products": [
+        [
+          {
+            "numerator": "729",
+            "denominator": "262144"
+          },
+          {
+            "numerator": "243",
+            "denominator": "131072"
+          }
+        ],
+        [
+          {
+            "numerator": "243",
+            "denominator": "131072"
+          },
+          {
+            "numerator": "729",
+            "denominator": "262144"
+          }
+        ]
+      ],
+      "path_counts": [
+        [
+          {
+            "numerator": "32",
+            "denominator": "1"
+          },
+          {
+            "numerator": "32",
+            "denominator": "1"
+          }
+        ],
+        [
+          {
+            "numerator": "32",
+            "denominator": "1"
+          },
+          {
+            "numerator": "32",
+            "denominator": "1"
+          }
+        ]
+      ],
+      "ordinary_row_norm": {
+        "numerator": "15625",
+        "denominator": "262144"
+      },
+      "maximum_single_path_weight": {
+        "numerator": "729",
+        "denominator": "262144"
+      },
+      "multiplicity_row_bound": {
+        "numerator": "1215",
+        "denominator": "8192"
+      },
+      "coarse_bound": {
+        "numerator": "729",
+        "denominator": "4096"
+      }
+    },
+    {
+      "horizon": 7,
+      "ordinary_product": [
+        [
+          {
+            "numerator": "19531",
+            "denominator": "1048576"
+          },
+          {
+            "numerator": "39063",
+            "denominator": "2097152"
+          }
+        ],
+        [
+          {
+            "numerator": "39063",
+            "denominator": "2097152"
+          },
+          {
+            "numerator": "19531",
+            "denominator": "1048576"
+          }
+        ]
+      ],
+      "maximum_path_products": [
+        [
+          {
+            "numerator": "729",
+            "denominator": "1048576"
+          },
+          {
+            "numerator": "2187",
+            "denominator": "2097152"
+          }
+        ],
+        [
+          {
+            "numerator": "2187",
+            "denominator": "2097152"
+          },
+          {
+            "numerator": "729",
+            "denominator": "1048576"
+          }
+        ]
+      ],
+      "path_counts": [
+        [
+          {
+            "numerator": "64",
+            "denominator": "1"
+          },
+          {
+            "numerator": "64",
+            "denominator": "1"
+          }
+        ],
+        [
+          {
+            "numerator": "64",
+            "denominator": "1"
+          },
+          {
+            "numerator": "64",
+            "denominator": "1"
+          }
+        ]
+      ],
+      "ordinary_row_norm": {
+        "numerator": "78125",
+        "denominator": "2097152"
+      },
+      "maximum_single_path_weight": {
+        "numerator": "2187",
+        "denominator": "2097152"
+      },
+      "multiplicity_row_bound": {
+        "numerator": "3645",
+        "denominator": "32768"
+      },
+      "coarse_bound": {
+        "numerator": "2187",
+        "denominator": "16384"
+      }
+    },
+    {
+      "horizon": 8,
+      "ordinary_product": [
+        [
+          {
+            "numerator": "195313",
+            "denominator": "16777216"
+          },
+          {
+            "numerator": "12207",
+            "denominator": "1048576"
+          }
+        ],
+        [
+          {
+            "numerator": "12207",
+            "denominator": "1048576"
+          },
+          {
+            "numerator": "195313",
+            "denominator": "16777216"
+          }
+        ]
+      ],
+      "maximum_path_products": [
+        [
+          {
+            "numerator": "6561",
+            "denominator": "16777216"
+          },
+          {
+            "numerator": "2187",
+            "denominator": "8388608"
+          }
+        ],
+        [
+          {
+            "numerator": "2187",
+            "denominator": "8388608"
+          },
+          {
+            "numerator": "6561",
+            "denominator": "16777216"
+          }
+        ]
+      ],
+      "path_counts": [
+        [
+          {
+            "numerator": "128",
+            "denominator": "1"
+          },
+          {
+            "numerator": "128",
+            "denominator": "1"
+          }
+        ],
+        [
+          {
+            "numerator": "128",
+            "denominator": "1"
+          },
+          {
+            "numerator": "128",
+            "denominator": "1"
+          }
+        ]
+      ],
+      "ordinary_row_norm": {
+        "numerator": "390625",
+        "denominator": "16777216"
+      },
+      "maximum_single_path_weight": {
+        "numerator": "6561",
+        "denominator": "16777216"
+      },
+      "multiplicity_row_bound": {
+        "numerator": "10935",
+        "denominator": "131072"
+      },
+      "coarse_bound": {
+        "numerator": "6561",
+        "denominator": "65536"
+      }
+    }
+  ]
+}

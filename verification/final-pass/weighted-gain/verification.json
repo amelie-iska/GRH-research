@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at_utc": "2026-11-14T01:34:36.359096+00:00",
+  "python": "3.12.14",
+  "test_methods_run": 15,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seed": 20261114,
+  "randomized_exact_cases_checked": 256,
+  "scalar_rejection_cases": 84,
+  "derived_field_mutation_cases": 16,
+  "standalone_cli_cases_checked": 21,
+  "source_sha256": {
+    "extension/code/test_weighted_gain.py": "faae15bacb6d7fb159e4c9c8833be98903a6e0c29514d76c94546ff13e23148a",
+    "extension/code/verify_toric_transport.py": "b22fed38f4998e54baca0c0f29a587582137dbf9e5f219e0b8850a8f9ff70847",
+    "extension/code/check_weighted_gain_witness.py": "85b2c1ac08cc7fc76495961d24060e90e21c9808cdb3b7a1343cfea23e355b89"
+  },
+  "sources_unchanged_during_tests": true,
+  "scope": "Exact finite weighted-gain input/replay regressions, including an independent integer common-denominator oracle. No optimizer, model gain-envelope, continuum or cryptographic certification."
+}

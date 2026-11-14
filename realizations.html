@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A precise proposal for quantum-tropical fluid realizations: admissible quantum channels, graph control, an exact feedback example, seven physical substrate families and a reproducible design pipeline.">
+  <meta name="theme-color" content="#123d39">
+  <title>Quantum-Tropical Realizations — Integral Structures</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fluids.css">
+  <style>
+    .realizations-page .r-lede{max-width:650px}
+    .realizations-page .r-hero-note{font-size:12px;line-height:1.9;color:var(--muted);max-width:620px}
+    .realizations-page .r-rate{font:52px/1.2 var(--serif);color:var(--deep);margin:12px 0 14px}
+    .realizations-page .r-panel{padding-bottom:30px}
+    .realizations-page .r-prose{max-width:960px;font-size:14px;line-height:1.9;color:var(--muted)}
+    .realizations-page .r-prose strong{color:var(--ink)}
+    .realizations-page .r-layer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:24px 0}
+    .realizations-page .r-layer-grid article{padding:22px;background:var(--soft);border-top:2px solid var(--teal);min-width:0}
+    .realizations-page .r-layer-grid h3{font:400 25px/1.25 var(--serif);margin-bottom:13px}
+    .realizations-page .r-layer-grid p{font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:0}
+    .realizations-page .r-layer-number{font:10px var(--mono);letter-spacing:1px;color:var(--ochre);display:block;margin-bottom:12px}
+    .realizations-page .r-example-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:30px;margin:24px 0}
+    .realizations-page .r-example-grid h3{font:400 25px/1.25 var(--serif)}
+    .realizations-page .r-example-grid p{font-size:13px;line-height:1.9;color:var(--muted)}
+    .realizations-page .r-example-grid code{font:12px/1.8 var(--mono);overflow-wrap:anywhere;color:var(--deep)}
+    .realizations-page .r-matrix{width:auto;min-width:230px;border:1px solid var(--line);margin-bottom:16px}
+    .realizations-page .r-matrix caption{font-size:12px;padding:10px 14px}
+    .realizations-page .r-matrix th,.realizations-page .r-matrix td{font-size:14px;padding:12px 18px}
+    .realizations-page .r-result{padding:23px;background:var(--teal-light);border:1px solid var(--line)}
+    .realizations-page .r-result dl{margin:0}
+    .realizations-page .r-result dl>div{padding:12px 0;border-bottom:1px solid var(--line)}
+    .realizations-page .r-result dl>div:first-child{padding-top:0}
+    .realizations-page .r-result dl>div:last-child{border-bottom:0;padding-bottom:0}
+    .realizations-page .r-result dt{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:4px}
+    .realizations-page .r-result dd{margin:0;font:21px/1.4 var(--serif);color:var(--deep)}
+    .realizations-page .r-table-wrap{overflow-x:auto;border:1px solid var(--line);margin:24px 0;max-width:100%}
+    .realizations-page .r-table-wrap:focus-visible{outline:3px solid var(--ochre);outline-offset:4px}
+    .realizations-page .r-table-wrap table{min-width:760px;table-layout:fixed}
+    .realizations-page .r-table-wrap caption{padding:14px;font-size:12px;line-height:1.75}
+    .realizations-page .r-table-wrap th,.realizations-page .r-table-wrap td{white-space:normal;vertical-align:top;font-family:var(--sans);font-size:12px;line-height:1.85;padding:16px}
+    .realizations-page .r-table-wrap th:first-child{width:22%}
+    .realizations-page .r-table-wrap th[scope=row]{font-size:13px;background:var(--white);font-weight:700}
+    .realizations-page .r-table-wrap td p{margin-bottom:8px}
+    .realizations-page .r-table-wrap td p:last-child{margin-bottom:0}
+    .realizations-page .r-pipeline{counter-reset:step;list-style:none;padding:0;margin:24px 0}
+    .realizations-page .r-pipeline li{counter-increment:step;display:grid;grid-template-columns:44px minmax(0,1fr);gap:15px;border-top:1px solid var(--line);padding:20px 0}
+    .realizations-page .r-pipeline li:before{content:counter(step,decimal-leading-zero);font:13px var(--mono);color:var(--ochre);padding-top:5px}
+    .realizations-page .r-pipeline h3{font-size:15px;line-height:1.5;margin-bottom:7px}
+    .realizations-page .r-pipeline p{font-size:13px;line-height:1.9;color:var(--muted);margin:0;max-width:950px}
+    .realizations-page .r-evidence-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:25px}
+    .realizations-page .r-evidence-grid article{border-top:1px solid var(--line);padding-top:20px}
+    .realizations-page .r-evidence-grid h3{font-size:15px;margin-bottom:12px}
+    .realizations-page .r-evidence-grid p,.realizations-page .r-evidence-grid a{font-size:12px;line-height:1.9}
+    .realizations-page .r-evidence-grid p{color:var(--muted)}
+    .realizations-page .r-evidence-grid a{display:block;margin:10px 0}
+    .realizations-page .r-small{font-size:12px;line-height:1.9;color:var(--muted)}
+    .realizations-page .r-page-foot{padding:6px 0 35px}
+    @media(max-width:900px){.realizations-page .r-layer-grid{grid-template-columns:1fr}.realizations-page .r-example-grid{grid-template-columns:1fr 1fr;gap:22px}.realizations-page .r-evidence-grid{grid-template-columns:1fr;gap:20px}}
+    @media(max-width:580px){.realizations-page .r-example-grid{grid-template-columns:1fr}.realizations-page .r-layer-grid article{padding:20px}.realizations-page .r-prose{font-size:13px}.realizations-page .r-panel{padding-bottom:23px}.realizations-page .r-table-wrap th,.realizations-page .r-table-wrap td{padding:13px}.realizations-page .r-pipeline li{grid-template-columns:32px minmax(0,1fr);gap:10px}.realizations-page .r-rate{font-size:46px}}
+    @media print{.realizations-page .r-layer-grid,.realizations-page .r-example-grid,.realizations-page .r-evidence-grid{display:block}.realizations-page .r-table-wrap{overflow:visible}.realizations-page .r-table-wrap table{min-width:0}.realizations-page .r-panel{break-inside:auto}.realizations-page .f-section-nav{display:none}}
+  </style>
+</head>
+<body class="realizations-page">
+  <a class="skip-link" href="#realizations-main">Skip to operator realizations</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true">Λ</span><span>INTEGRAL STRUCTURES<small>Quantum-tropical realization proposal</small></span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Research atlas</a><a href="fluids.html">Fluid laboratory</a><a href="learning.html">Quantum ToricGT</a><a href="realizations.html" aria-current="page">Realizations</a></nav>
+    <a class="header-download" href="downloads/fluid-extension.pdf">Read the extension →</a>
+  </header>
+  <main id="realizations-main" class="section-width">
+    <section class="f-hero" aria-labelledby="realizations-title">
+      <div>
+        <p class="eyebrow"><span class="small-rule"></span> QUANTUM CHANNELS · TROPICAL CONTROL · PHYSICAL SYSTEMS</p>
+        <h1 id="realizations-title">Quantum operations.<br><em>Physical realizations.</em></h1>
+        <p class="hero-lede r-lede">Connect graph models to states, controls and measurements. An exact feedback example gives the finite foundation; a seven-substrate research program specifies what a physical realization must demonstrate.</p>
+        <p class="r-hero-note">The combined architecture is a research proposal. The mathematical example and its exact implementation have separate evidence from the physical building blocks described in the literature.</p>
+        <div class="hero-actions"><a class="button primary" href="#exact-example">Inspect the exact example ↓</a><a class="button secondary" href="downloads/fluid-extension.pdf">Read the manuscript</a></div>
+      </div>
+      <aside class="f-hero-aside" aria-labelledby="hero-certificate-title">
+        <p class="f-kicker" id="hero-certificate-title">A WEIGHTED CONTRACTION CERTIFICATE</p>
+        <p class="r-rate">q = 5/8</p>
+        <p>Two qubit states feed a nonlinear classical controller. Positive weights expose a strict contraction even though the largest unweighted gain-row sum is 7/4.</p>
+        <a href="verification/final-pass/quantum-gain-control/verification.json">Inspect the exact check record (JSON) →</a>
+      </aside>
+    </section>
+
+    <nav class="f-section-nav" aria-label="Realization sections"><a href="#three-layers"><span>01</span> Three layers</a><a href="#exact-example"><span>02</span> Exact feedback</a><a href="#substrates"><span>03</span> Seven substrates</a><a href="#design"><span>04</span> Generative design</a><a href="#evidence"><span>05</span> Evidence</a></nav>
+
+    <section class="f-panel r-panel" id="three-layers" aria-labelledby="layers-title">
+      <header class="f-panel-heading"><span class="f-number">01</span><div><h2 id="layers-title">One interface, three explicit layers.</h2><p>A realization needs a map from the graph model to an admissible operation and a measurable physical response. Each layer preserves different information.</p></div><span class="f-badge">Proposed interface</span></header>
+      <div class="r-layer-grid">
+        <article><span class="r-layer-number">QUANTUM STATE</span><h3>Admissible operations</h3><p>Specify a density matrix, its operator algebra and the available channels. Classical location with quantum internal states uses a direct sum; coherence between locations requires off-diagonal blocks in a larger algebra.</p></article>
+        <article><span class="r-layer-number">GRAPH CONTROL</span><h3>Tropical routing</h3><p>Positive route weights admit logarithmic bounds and max-plus comparisons. Complex amplitudes also carry phase: a largest-path envelope does not recover interference or the sum of all paths.</p></article>
+        <article><span class="r-layer-number">PHYSICAL MODEL</span><h3>Measured realization</h3><p>Declare the substrate, encoding, controls, readout and operating domain. A fluid interpretation also needs physical scales, conservation laws, closure assumptions and a controlled approximation.</p></article>
+      </div>
+      <p class="r-prose">For every fixed setting, a <strong>completely positive, trace-preserving channel</strong> is linear in its input density matrix. Nonlinearity can enter through a classical controller, conditioning on a measured outcome, or a stated mean-field approximation. These mechanisms carry different physical obligations.</p>
+      <p class="r-small">The reviewed ToricGT code supplies graph tokens, finite Weyl features and a mixture of ordinary and max-plus aggregation. A physical compiler must check the algebraic relations it preserves; equal scalar path counts do not make noncommuting quantum operations interchangeable.</p>
+    </section>
+
+    <section class="f-panel r-panel" id="exact-example" aria-labelledby="example-title">
+      <header class="f-panel-heading"><span class="f-number">02</span><div><h2 id="example-title">An exact nonlinear feedback example.</h2><p>The controller uses two qubit-state expectations. A fixed control selects a valid channel; the state-dependent selection makes the coupled ideal feedback map nonlinear.</p></div><span class="f-badge">Exact rational checks</span></header>
+      <div class="f-equation" role="math" aria-label="Each output state is one quarter of its input state plus three quarters of the replacement state tau of the control. Tau of u equals one half of the quantity identity plus u times Z.">ρ′<sub>i</sub> = ¼ρ<sub>i</sub> + ¾τ(u<sub>i</sub>), &nbsp; τ(u) = (I + uZ)/2, &nbsp; Z = diag(1, −1)</div>
+      <div class="r-example-grid">
+        <div>
+          <h3>A controller with a global bound</h3>
+          <p>Let z<sub>i</sub> = Tr(Zρ<sub>i</sub>). The controls are <code>u₁ = clip(2z₂ + ¼, −1, 1)</code> and <code>u₂ = clip(z₁/8, −1, 1)</code>. Clipping keeps every replacement state positive and has Lipschitz constant one.</p>
+          <table class="r-matrix"><caption>Trace-distance gain matrix G</caption><thead><tr><th scope="col">Output</th><th scope="col">Input 1</th><th scope="col">Input 2</th></tr></thead><tbody><tr><th scope="row">State 1</th><td>1/4</td><td>3/2</td></tr><tr><th scope="row">State 2</th><td>3/32</td><td>1/4</td></tr></tbody></table>
+          <p>For w = (4, 1), exact multiplication gives <strong>Gw = (5/8)w</strong>. The weighted maximum of the two trace distances therefore contracts. The unweighted row bound 7/4 fails that contraction test; it does not establish divergence.</p>
+        </div>
+        <aside class="r-result" aria-label="Exact example results">
+          <dl>
+            <div><dt>Weighted contraction rate</dt><dd>5/8</dd></div>
+            <div><dt>Largest unweighted row sum</dt><dd>7/4</dd></div>
+            <div><dt>Fixed-point Z expectations</dt><dd>(1/3, 1/24)</dd></div>
+            <div><dt>Conditional eventual readout-error envelope</dt><dd>ε/2</dd></div>
+          </dl>
+        </aside>
+      </div>
+      <p class="r-prose">The last bound assumes each measured expectation has error at most ε at every relevant step. Finite-shot confidence, calibration bias and the time horizon must be supplied by a readout protocol. The exact mathematical recurrence assumes the required expectations are available.</p>
+      <p class="r-small">This model is a tuple of two qubit states, with no entanglement between those blocks. The evidence includes rational channel checks, trajectories and an independently replayed gain witness, including a rejected proposed rate. It reports no quantum hardware experiment or trained fluid controller.</p>
+      <div class="hero-actions"><a class="button secondary" href="verification/final-pass/quantum-gain-control/verification.json">Read the verification record</a><a class="button secondary" href="https://github.com/amelie-iska/GRH-research/blob/main/extension/code/check_weighted_gain_witness.py">Inspect the independent checker</a></div>
+    </section>
+
+    <section class="f-panel r-panel" id="substrates" aria-labelledby="substrates-title">
+      <header class="f-panel-heading"><span class="f-number">03</span><div><h2 id="substrates-title">Seven substrate families, distinct capabilities.</h2><p>These papers demonstrate ingredients for a possible realization. The connection to the combined quantum-tropical architecture is a proposal developed in this project.</p></div><span class="f-badge f-badge-ochre">Research candidates</span></header>
+      <div class="r-table-wrap" role="region" tabindex="0" aria-labelledby="substrate-table-caption">
+        <table>
+          <caption id="substrate-table-caption">Evidence and the additional realization test. On a narrow screen, scroll this table horizontally.</caption>
+          <thead><tr><th scope="col">Substrate</th><th scope="col">Demonstrated ingredient</th><th scope="col">Proposed role and required test</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Exciton-polariton fluids</th><td><p>Driven interacting fields and observed superfluid-flow behavior.</p><p><a href="https://arxiv.org/abs/1205.6500">Carusotto &amp; Ciuti</a> · <a href="https://arxiv.org/abs/0812.2748">Amo et al.</a></p></td><td>Use spatial modes as a graph-fluid interface. Calibrate its response and distinguish mean-field behavior from a claim requiring quantum correlations.</td></tr>
+            <tr><th scope="row">Ultracold atomic gases</th><td><p>Localized dissipation controls selected many-body condensate dynamics.</p><p><a href="https://arxiv.org/abs/1212.4824">Barontini et al.</a></p></td><td>Test a small network of controlled quantum-matter modes. Establish the available operations, preparation and measurement budget.</td></tr>
+            <tr><th scope="row">Superconducting cavities</th><td><p>Engineered two-photon loss confines an oscillator to a quantum-state manifold.</p><p><a href="https://arxiv.org/abs/1412.4633">Leghtas et al.</a></p></td><td>Explore finite bosonic encodings and dissipative memory. Bound occupation-cutoff leakage, decoherence and control error.</td></tr>
+            <tr><th scope="row">Integrated photonics</th><td><p>Programmable transport measured with continuous-wave laser inputs and photodiode intensities.</p><p><a href="https://arxiv.org/html/1507.03406v3">Harris et al., including Methods</a></p></td><td>Calibrate coherent wave routing and phase controls. Nonclassical-state computation requires separate preparation and validation.</td></tr>
+            <tr><th scope="row">Magnonic networks</th><td><p>A YIG spin-wave device performs reservoir tasks with computer readout.</p><p><a href="https://doi.org/10.1002/aisy.202300228">Namiki et al.</a></p></td><td>Provide a physical nonlinear-memory baseline. Measure transfer behavior and total readout cost; a quantum processor is a further claim.</td></tr>
+            <tr><th scope="row">Soft bodies and fluid-structure systems</th><td><p>Soft silicone-body dynamics support nonlinear computation through a trained readout.</p><p><a href="https://doi.org/10.1038/srep10487">Nakajima et al.</a></p></td><td>Co-design geometry, sensors and actuation for a classical reservoir. Identify its operating domain and robustness budget.</td></tr>
+            <tr><th scope="row">Natural pigment-protein networks</th><td><p>Open-system transport studies constrain broad claims about useful long-lived electronic coherence.</p><p><a href="https://doi.org/10.1073/pnas.1702261114">Duan et al.</a> · <a href="https://doi.org/10.1126/sciadv.abc4631">Zerah Harush &amp; Dubi</a></p></td><td>Use measured coupling motifs as design priors. Distinguish electronic and vibrational effects, transport function and programmable control.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="r-prose">A fair comparison uses the same task, bandwidth, output accuracy and resource budget. Include state preparation, reset, calibration, sensors and control electronics. Biological origin or microscopic quantum physics alone does not establish a programmable quantum learning system.</p>
+      <p class="r-small">The natural-system sources concern specified systems and conditions. They support neither a universal dismissal of quantum biology nor a general quantum-computing claim. <a href="verification/quantum-tropical-substrates-20261113.md">Read the exact source-access and reading-scope ledger.</a></p>
+    </section>
+
+    <section class="f-panel r-panel" id="design" aria-labelledby="design-title">
+      <header class="f-panel-heading"><span class="f-number">04</span><div><h2 id="design-title">Generate a candidate. Measure its operator.</h2><p>Material generation and device-geometry optimization address different stages. Both need a physical forward model and an independently checked realization target.</p></div><span class="f-badge f-badge-ochre">Proposed design pipeline</span></header>
+      <ol class="r-pipeline">
+        <li><div><h3>Define the target and its cost</h3><p>Specify the quiver, retained relations, state space, observables, error tolerance and resource budget. Decide whether the task needs nonclassical quantum processing or a classical wave response.</p></div></li>
+        <li><div><h3>Propose a material or geometry</h3><p>Condition a generator on the required properties and hard constraints. Preserve the model version and seeds. <a href="https://doi.org/10.1038/s41586-025-08628-5">MatterGen</a> supplies a crystal-generation precedent; <a href="https://doi.org/10.1021/acs.nanolett.9b01857">physics-driven generative photonics</a> supplies a geometry-search precedent.</p></div></li>
+        <li><div><h3>Evaluate the appropriate physics</h3><p>Model the declared regime, boundary conditions, loss and uncertainty. Check conservation or channel admissibility, accessible controls and reduced-model error. A predicted material property is not a demonstrated quantum channel.</p></div></li>
+        <li><div><h3>Design and certify the controller</h3><p>Fit the task on declared data, preserve held-out conditions, and justify a gain envelope. Independently replay the finite witness and propagate solver, fabrication and readout errors through its budget.</p></div></li>
+        <li><div><h3>Calibrate, test and compare</h3><p>An actual experimental study must measure the encoding, operation and readout, including drift. Compare with conventional solvers and simpler learning systems at equal accuracy, charging preparation, measurement, reset and controller costs.</p></div></li>
+      </ol>
+      <p class="r-small">A simulator-only result remains a simulator result. The cited generative methods do not establish a ToricGT implementation, a universal quantum device or a guaranteed global design optimum.</p>
+    </section>
+
+    <section class="f-proof" id="evidence" aria-labelledby="evidence-title">
+      <p class="eyebrow"><span class="small-rule"></span> PROOF · IMPLEMENTATION · SOURCE SCOPE</p>
+      <h2 id="evidence-title">Follow each claim to its evidence.</h2>
+      <div class="r-evidence-grid">
+        <article><h3>Mathematical argument</h3><p>The extension defines the direct-sum channel, the positive tropical limit and the exact feedback law. The formal type map identifies the weighted-gain components with Lean coverage.</p><a href="downloads/fluid-extension.pdf">Read the fluid extension (PDF) →</a><a href="verification/formal-type-map.json">Inspect the formal type map (JSON) →</a></article>
+        <article><h3>Independent checks</h3><p>The finite implementation uses exact rational arithmetic. Supplied gain witnesses are replayed by a separate checker; accepted and rejected cases are retained.</p><a href="verification/final-pass/quantum-gain-control/verification.json">Inspect the exact verification record (JSON) →</a><a href="downloads/source.zip">Download the reproducible source (ZIP) →</a></article>
+        <article><h3>Primary research</h3><p>The source note records the reviewed repository revisions, seventeen bibliography keys and the precise selected passages or abstracts read. It preserves access limits.</p><a href="verification/quantum-tropical-substrates-20261113.md">Read the research and provenance note →</a><a href="https://github.com/amelie-iska/GRH-research">Open the project repository →</a></article>
+      </div>
+    </section>
+    <p class="r-small r-page-foot">This finite realization framework supplies no new solution of the Navier–Stokes Millennium problem, GRH or the continuum Yang–Mills mass-gap problem. Physical demonstrations, continuum limits and application-specific security arguments remain separate research obligations.</p>
+  </main>
+  <footer class="site-footer section-width"><a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true">Λ</span><span>INTEGRAL STRUCTURES<small>Mathematical structure, explicit evidence</small></span></a><p>Quantum-tropical realization proposal<br>Source review continued 14 November 2026</p><a href="#realizations-main">Back to the top ↑</a></footer>
+</body>
+</html>

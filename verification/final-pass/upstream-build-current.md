@@ -27,7 +27,7 @@ The cache reached 2,303 successful downloads and 2,341 attempted transfers in th
 
 The final-target build and independent Comparator run were therefore not executed. The released final axiom report was not independently reproduced. This outcome is a dependency-transport blocker, not a demonstrated defect in the mathematical proof.
 
-## Transcript and literature continuity
+## Earlier transcript attempt (retained history)
 
 The earlier [coverage ledger](../navier-stokes/microscopic-source-coverage.json) records a complete exposed English YouTube transcript review through the public browser interface: 249 timed segments from 00:00 through 32:36. It separately records that an executor-local transcript export was not verified. This pass inspected that ledger and attempted a fresh public retrieval: the watch page exposed English caption metadata, while the caption request returned an empty body. The earlier DOM review is retained as prior evidence; it is not represented as a new full transcript reading.
 
@@ -40,3 +40,22 @@ Other full-text access gaps recorded in the earlier ledger remain explicit. A ne
 - [upstream-cache-current.log](upstream-cache-current.log): authentic cache output, retained without substituting a synthetic success log.
 
 The JSON records SHA-256 hashes for the manuscript, official problem statement, compiler distribution, final adapter, prior provenance ledgers, and current audit/log evidence. Downloaded papers remain review inputs rather than being republished with this report.
+
+## Latest offline and transcript continuation
+
+The [offline continuation](upstream-offline-20261113.json) used existing files
+only: one additional artifact was unpacked, giving 3,161 mathlib-library
+`.olean` files. Of 210 direct external imports in the pinned solution closure,
+125 remain missing; `Mathlib.Init.olean` is also absent. The exact missing
+archive was not found in the inspected existing local caches. Neither the
+full target nor the independent Comparator was run. No new download command,
+source change or pin change occurred, and independent kernel verification
+remains incomplete.
+
+The [transcript continuation](../navier-stokes/source-gap-continuation-20261113.json)
+subsequently reread all 249 entries and verified a 35,743-byte canonical UTF-8
+extraction in a private source cache. Its SHA-256 is
+`0cbc23bb1d1d6c3fe46f46dcfa337f4aa78f0d8966f377eea35ea525e86e3884`.
+The public record preserves the failed exporter attempt separately from the
+successful DOM extraction; 32:36 is the last entry's start time. The six
+remaining original-paper access gaps are unchanged.

@@ -2,11 +2,11 @@
 
 Exact declaration types and manually reviewed component correspondences, not a claim that all manuscript environments are formalized.
 
-This snapshot records **115 verified declarations**; 68 are mapped to precise manuscript components. No composite manuscript environment is marked fully formalized.
+This snapshot records **121 verified declarations**; 74 are mapped to precise manuscript components. No composite manuscript environment is marked fully formalized.
 
 Prefer kernel_printed_type when present: it includes elaborated implicit parameters and typeclass hypotheses. Otherwise the unchanged source signature and recorded section context are provided, with the exact source hash. Local definitions in the same module remain part of its interpretation.
 
-Fresh local checks are recorded in `extension/lean/final-verification/verification.json` and its six raw logs. Those checks concern the local Lean 4.24 companion; the upstream continuum Lean 4.34 build has its separate incomplete status.
+Fresh local checks are recorded in `extension/lean/final-verification/verification.json` and its seven raw logs. Those checks concern the local Lean 4.24 companion; the upstream continuum Lean 4.34 build has its separate incomplete status.
 
 ## Boundaries
 
@@ -1822,3 +1822,108 @@ TransportContracts.two_arrow_transport.{u_1, u_2} {R : Type u_1} {V : Type u_2} 
 ```
 
 - **toric-transport-audit.001** (thm:typed-transport-telescope): Two-arrow noncommutative telescope
+
+### WeightedGainContracts.feasibility_mono
+
+Source: `extension/lean/WeightedGainContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+WeightedGainContracts.feasibility_mono.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]
+  [IsStrictOrderedRing K] [Fintype ι] (G : Matrix ι ι K) (w : ι → K) (q q' : K) (hw : ∀ (i : ι), 0 < w i)
+  (hqq' : q ≤ q') (hgain : ∀ (i : ι), G.mulVec w i ≤ q * w i) (i : ι) : G.mulVec w i ≤ q' * w i
+```
+
+- **toric-transport-audit.015** (prop:weighted-gain-feasibility): A fixed positive weight vector remains feasible when the proposed rate increases
+
+### WeightedGainContracts.gain_bound
+
+Source: `extension/lean/WeightedGainContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+WeightedGainContracts.gain_bound.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]
+  [IsStrictOrderedRing K] [Fintype ι] (G : Matrix ι ι K) (w d d' : ι → K) (q r : K) (hG : ∀ (i j : ι), 0 ≤ G i j)
+  (hgain : ∀ (i : ι), G.mulVec w i ≤ q * w i) (hr : 0 ≤ r) (hd : ∀ (i : ι), d i ≤ r * w i)
+  (hstep : ∀ (i : ι), d' i ≤ G.mulVec d i) (i : ι) : d' i ≤ q * r * w i
+```
+
+- **toric-transport-audit.016** (thm:weighted-gain-propagation, eq:weighted-residual-convolution): Nonnegative finite block-gain comparison propagates a componentwise radius; this nondividing result needs no positivity assumption on weights
+
+### WeightedGainContracts.gain_iteration_with_residual
+
+Source: `extension/lean/WeightedGainContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+WeightedGainContracts.gain_iteration_with_residual.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]
+  [IsStrictOrderedRing K] [Fintype ι] (G : ℕ → Matrix ι ι K) (w : ι → K) (q r₀ : K) (δ : ℕ → K) (d : ℕ → ι → K)
+  (hG : ∀ (n : ℕ) (i j : ι), 0 ≤ G n i j) (hgain : ∀ (n : ℕ) (i : ι), (G n).mulVec w i ≤ q * w i) (hq : 0 ≤ q)
+  (hr₀ : 0 ≤ r₀) (hδ : ∀ (n : ℕ), 0 ≤ δ n) (hzero : ∀ (i : ι), d 0 i ≤ r₀ * w i)
+  (hstep : ∀ (n : ℕ) (i : ι), d (n + 1) i ≤ (G n).mulVec (d n) i + δ n * w i) (n : ℕ) (i : ι) :
+  d n i ≤ WeightedGainContracts.errorBudget q r₀ δ n * w i
+```
+
+- **toric-transport-audit.016** (thm:weighted-gain-propagation, eq:weighted-residual-convolution): Time-varying block gains sharing weights and rate propagate the initial radius plus the explicit finite geometric residual convolution
+
+### WeightedGainContracts.matrix_action_weighted_bound
+
+Source: `extension/lean/WeightedGainContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+WeightedGainContracts.matrix_action_weighted_bound.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]
+  [IsStrictOrderedRing K] [Fintype ι] (A G : Matrix ι ι K) (w x : ι → K) (q r : K) (hw : ∀ (i : ι), 0 < w i)
+  (hG : ∀ (i j : ι), 0 ≤ G i j) (hgain : ∀ (i : ι), G.mulVec w i ≤ q * w i) (hA : ∀ (i j : ι), |A i j| ≤ G i j)
+  (hx : ∀ (i : ι), |x i| ≤ r * w i) (i : ι) : |A.mulVec x i| ≤ q * r * w i
+```
+
+- **toric-transport-audit.016** (thm:weighted-gain-propagation, eq:weighted-residual-convolution): The actual signed matrix action satisfies the certified weighted component bound under entrywise domination and positive weights
+
+### WeightedGainContracts.matrix_iteration_with_residual
+
+Source: `extension/lean/WeightedGainContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+WeightedGainContracts.matrix_iteration_with_residual.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]
+  [IsStrictOrderedRing K] [Fintype ι] (A G : ℕ → Matrix ι ι K) (w : ι → K) (q r₀ : K) (δ : ℕ → K) (u e : ℕ → ι → K)
+  (hG : ∀ (n : ℕ) (i j : ι), 0 ≤ G n i j) (hgain : ∀ (n : ℕ) (i : ι), (G n).mulVec w i ≤ q * w i)
+  (hA : ∀ (n : ℕ) (i j : ι), |A n i j| ≤ G n i j) (hq : 0 ≤ q) (hr₀ : 0 ≤ r₀) (hδ : ∀ (n : ℕ), 0 ≤ δ n)
+  (hzero : ∀ (i : ι), |u 0 i| ≤ r₀ * w i) (he : ∀ (n : ℕ) (i : ι), |e n i| ≤ δ n * w i)
+  (hu : ∀ (n : ℕ), u (n + 1) = (A n).mulVec (u n) + e n) (n : ℕ) (i : ι) :
+  |u n i| ≤ WeightedGainContracts.errorBudget q r₀ δ n * w i
+```
+
+- **toric-transport-audit.016** (thm:weighted-gain-propagation, eq:weighted-residual-convolution): The actual time-varying inhomogeneous matrix recurrence satisfies that budget when every signed residual obeys its component bound
+
+### WeightedGainContracts.row_ratio_iff
+
+Source: `extension/lean/WeightedGainContracts.lean`. Verification: `extension/lean/final-verification/verification.json`.
+
+Reported foundational dependencies: `Classical.choice`, `Quot.sound`, `propext`.
+
+Elaborated type:
+
+```lean
+WeightedGainContracts.row_ratio_iff.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K] [LinearOrder K]
+  [IsStrictOrderedRing K] [Fintype ι] (G : Matrix ι ι K) (w : ι → K) (q : K) (hw : ∀ (i : ι), 0 < w i) :
+  (∀ (i : ι), G.mulVec w i / w i ≤ q) ↔ ∀ (i : ι), G.mulVec w i ≤ q * w i
+```
+
+- **toric-transport-audit.015** (prop:weighted-gain-feasibility): Positive-denominator row ratios are equivalent to componentwise feasibility over an ordered field

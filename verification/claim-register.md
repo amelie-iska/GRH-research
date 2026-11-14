@@ -2,11 +2,11 @@
 
 This register inventories every theorem, proposition, lemma, corollary, conjecture, and problem environment reachable from the current manuscript main file. It records what evidence is present; it is not a universal proof certificate.
 
-The snapshot contains **269 claim environments** in **31 included TeX files**. **262** have attached local proof environments. 6 general results are explicitly cited external theorems. 5 local arguments are classified as conditional transfer or deduction criteria because their additional inputs are not established by those claims.
+The snapshot contains **273 claim environments** in **32 included TeX files**. **266** have attached local proof environments. 6 general results are explicitly cited external theorems. 5 local arguments are classified as conditional transfer or deduction criteria because their additional inputs are not established by those claims.
 
 A separate list classifies 9 major external statements from the new fluid chapters, including the released continuum theorem and the kinetic-limit and quantum-algorithm literature. These prose records are not added to the number of locally proved environments.
 
-The 115 verified Lean declarations are governed by their successful verification manifests and raw logs. This register maps 68 declarations to exact components of 25 manuscript claims. **No complete composite environment is marked as fully formalized.** A partial map is never counted as a Lean proof of the entire proposition.
+The 121 verified Lean declarations are governed by their successful verification manifests and raw logs. This register maps 74 declarations to exact components of 27 manuscript claims. **No complete composite environment is marked as fully formalized.** A partial map is never counted as a Lean proof of the entire proposition.
 
 ## Meaning of the status labels
 
@@ -259,9 +259,13 @@ A separate mathematical reading, with per-claim findings and its own reviewed so
 | toric-transport-audit.012 | toric-transport-audit.tex | proposition: A nilpotent Jacobian with arbitrarily large gain | Local argument | Partial components: TransportContracts.nonnormal_shear_square_zero, TransportContracts.nonnormal_shear_unit_image, TransportContracts.nonnormal_shear_gain_squared, TransportContracts.nonnormal_shear_strict_gain, TransportContracts.nonnormal_shear_second_jvp_zero, TransportContracts.nonnormal_shear_not_normal |
 | toric-transport-audit.013 | toric-transport-audit.tex | theorem: Finite path-multiplicity bound | Local argument | Not mapped |
 | toric-transport-audit.014 | toric-transport-audit.tex | proposition: Decaying maximal paths with an expanding linear map | Local argument | Not mapped |
-| toric-transport-audit.015 | toric-transport-audit.tex | proposition: Fixed-rate feasibility is linear | Local argument | Not mapped |
-| toric-transport-audit.016 | toric-transport-audit.tex | proposition: Binary log loss with correct endpoint conventions | Local argument | Not mapped |
-| toric-transport-audit.017 | toric-transport-audit.tex | proposition: Independent disjoint components can carry one bit jointly | Local argument | Not mapped |
+| toric-transport-audit.015 | toric-transport-audit.tex | proposition: Fixed-rate feasibility is linear | Local argument | Partial components: WeightedGainContracts.row_ratio_iff, WeightedGainContracts.feasibility_mono |
+| toric-transport-audit.016 | toric-transport-audit.tex | theorem: Common weighted gain and accumulated residuals | Local argument | Partial components: WeightedGainContracts.gain_bound, WeightedGainContracts.matrix_action_weighted_bound, WeightedGainContracts.gain_iteration_with_residual, WeightedGainContracts.matrix_iteration_with_residual |
+| toric-transport-audit.017 | toric-transport-audit.tex | proposition: Binary log loss with correct endpoint conventions | Local argument | Not mapped |
+| toric-transport-audit.018 | toric-transport-audit.tex | proposition: Independent disjoint components can carry one bit jointly | Local argument | Not mapped |
+| quantum-tropical-realizations.001 | quantum-tropical-realizations.tex | proposition: Conservative transport on a direct-sum algebra | Local argument | Not mapped |
+| quantum-tropical-realizations.002 | quantum-tropical-realizations.tex | proposition: Controlled tropical limit of a positive sum | Local argument | Not mapped |
+| quantum-tropical-realizations.003 | quantum-tropical-realizations.tex | proposition: A physical channel family and a contracting feedback law | Local argument | Not mapped |
 | cyclic-cosmology.001 | cyclic-cosmology.tex | proposition: Connection change and null trajectories | Local argument | Not mapped |
 | cyclic-cosmology.002 | cyclic-cosmology.tex | proposition: Hodge scaling and the four-dimensional Maxwell system | Local argument | Not mapped |
 | cyclic-cosmology.003 | cyclic-cosmology.tex | theorem: Quartic compactification and conformal time | Local argument | Not mapped |
@@ -549,16 +553,29 @@ Source: `extension/manuscript/chapters/fluid-circuit-repairs.tex`.
 - **TransportContracts.nonnormal_shear_second_jvp_zero**: A second Jacobian-vector product is zero on every input
 - **TransportContracts.nonnormal_shear_not_normal**: For nonzero M, the matrix does not commute with its transpose
 
+### toric-transport-audit.015 — Fixed-rate feasibility is linear
+
+- **WeightedGainContracts.row_ratio_iff**: Positive-denominator row ratios are equivalent to componentwise feasibility over an ordered field
+- **WeightedGainContracts.feasibility_mono**: A fixed positive weight vector remains feasible when the proposed rate increases
+
+### toric-transport-audit.016 — Common weighted gain and accumulated residuals
+
+- **WeightedGainContracts.gain_bound**: Nonnegative finite block-gain comparison propagates a componentwise radius; this nondividing result needs no positivity assumption on weights
+- **WeightedGainContracts.matrix_action_weighted_bound**: The actual signed matrix action satisfies the certified weighted component bound under entrywise domination and positive weights
+- **WeightedGainContracts.gain_iteration_with_residual**: Time-varying block gains sharing weights and rate propagate the initial radius plus the explicit finite geometric residual convolution
+- **WeightedGainContracts.matrix_iteration_with_residual**: The actual time-varying inhomogeneous matrix recurrence satisfies that budget when every signed residual obeys its component bound
+
 The remaining verified declarations are not forced into a broader manuscript statement. They still have the scope and types recorded in their source files and verification manifests. Examples include scalar quadric expansions, abstract binary-character commutation, and a restricted binary-noise bound. Similar terminology alone does not establish a formal correspondence.
 
 ## Proposed research and incomplete goals outside the environment list
 
+- **Quantum-tropical fluid realizations and generative substrate design** — Finite channel and feedback statements have written proofs and exact example checks. A trained fluid model, generatively designed physical device, experimental realization and quantum advantage remain separate uncompleted milestones. Source: extension/manuscript/chapters/quantum-tropical-realizations.tex.
 - **Arithmetic zero-location/GRH bridge** — No GRH theorem is asserted; arithmetic identification and analytic convergence inputs remain obligations. Source: extension/manuscript/chapters/foundations.tex.
 - **Uniform metric control for arithmetic modules** — Construct and certify distortion bounds with explicit dependence on arithmetic input sizes. Source: extension/manuscript/chapters/synthesis.tex.
 - **Resource-certified improvements to ECC quantum arithmetic** — A full reversible circuit, ancilla policy, success probability, and cost comparison are required; no general speedup is established. Source: extension/manuscript/chapters/synthesis.tex.
 - **New lattice-cryptographic security reduction** — Module structure and correctness identities are not claimed to prove hardness or a new security reduction. Source: extension/manuscript/chapters/cryptography.tex.
 - **Uniform physical Yang--Mills mass gap** — Requires an analytic infrared estimate surviving the stated limits and the correct reconstructed vacuum sector; no mass-gap theorem is asserted. Source: extension/manuscript/chapters/synthesis.tex.
-- **Complete Lean formalization and complete linked-source proof audit** — The companion verifies 115 selected declarations and documents source coverage; it does not formalize all manuscript or source theorems or fully review every outbound linked work. Source: extension/manuscript/chapters/source-concordance.tex.
+- **Complete Lean formalization and complete linked-source proof audit** — The companion verifies 121 selected declarations and documents source coverage; it does not formalize all manuscript or source theorems or fully review every outbound linked work. Source: extension/manuscript/chapters/source-concordance.tex.
 - **Fresh upstream continuum Navier--Stokes kernel and Comparator verification** — Exact upstream tools and sources were pinned. The fresh build attempt stopped at dependency artifacts after rate-limited cache retrieval; source inspection and the successful local companion checks are not substituted for that verification. Source: extension/manuscript/chapters/navier-stokes-release.tex.
 - **New continuum conclusions from finite learned fluid models** — Finite energy stability, exact recurrence identities and circuit simulations do not establish mesh-uniform regularity, a hydrodynamic joint limit, unforced positive-viscosity blowup, or an improved continuum existence theorem. Source: extension/manuscript/chapters/fluid-structures.tex.
 - **Trained quantum fluid ToricGT with demonstrated quantum advantage** — The new fluid companion supplies an explicit finite circuit and constrained model proposal, with classical simulation and structural checks. It does not claim a trained fluid model, quantum hardware execution of those new examples, or a proved end-to-end speedup. Source: extension/manuscript/chapters/quantum-fluid.tex.
@@ -567,7 +584,7 @@ The remaining verified declarations are not forced into a broader manuscript sta
 
 The source audit checked all registered theorem modules and the Lean configuration after stripping nested block comments, line comments, and strings. It found no project axiom declaration, sorry/admit/sorryAx placeholder, unsafe declaration, or native_decide invocation. The module hashes, declaration sets, and print-axioms inventories match the existing successful verification manifests. Their reported dependencies are limited to propext, Classical.choice, and Quot.sound; the audit does not claim that foundational axioms are absent.
 
-**The inventory generator itself does not run Lean.** Fresh second-pass kernel runs of all six modules are recorded in extension/lean/final-verification/verification.json and its six module logs. All 115 declaration-level dependency reports, printed types, source hashes and log hashes match the current successful record. The existing 35 precise component declarations remain mapped; validated additions are merged without reclassifying any composite manuscript statement as fully formalized. Earlier three-, four-, and 109-declaration six-module checks remain historical records.
+**The inventory generator itself does not run Lean.** Fresh second-pass kernel runs of all registered modules are recorded in extension/lean/final-verification/verification.json and its module logs. All 121 declaration-level dependency reports, printed types, source hashes and log hashes match the current successful record. The existing 35 precise component declarations remain mapped; validated additions are merged without reclassifying any composite manuscript statement as fully formalized. Earlier three-, four-, and 109-declaration six-module checks remain historical records.
 
 The local successful check does not complete the upstream continuum Navier--Stokes build, which used a different toolchain and stopped at missing dependency artifacts. That outcome remains in navier-stokes/release-build-verification.json.
 
