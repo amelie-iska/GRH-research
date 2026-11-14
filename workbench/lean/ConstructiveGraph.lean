@@ -1,8 +1,9 @@
 import Mathlib.Tactic
 
 /-! Exact constructive interfaces. These declarations prove the displayed
-identities and conditional transfer statements, not an entire Lean formalization
-of compactness, neural approximation, TokenGT, or a quantum device. -/
+identities and conditional transfer statements. The continuous compact-domain
+network construction is proved in the accompanying exposition; the separate
+FiniteGraphNetworks module proves complete finite-table realization. -/
 set_option autoImplicit false
 open scoped BigOperators
 namespace ConstructiveGraph
@@ -10,9 +11,9 @@ namespace ConstructiveGraph
  theorem softmax_gather_inverse (S x n : ℝ) (hn : n ≠ 0) (hp : n+1 ≠ 0) :
     (n+1)*((S+x)/(n+1))-n*(S/n)=x := by
   field_simp
-  <;> ring
+  ring
 
- theorem one_hot_slot (x B b : ℝ) (hB : 0 ≤ B) (hx : |x| ≤ B)
+ theorem one_hot_slot (x B b : ℝ) (hx : |x| ≤ B)
     (hb : b=0 ∨ b=1) :
     max 0 (x+B*b)-max 0 (x-B*b)-B*b=x*b := by
   rw [abs_le] at hx
