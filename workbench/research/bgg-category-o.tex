@@ -1,0 +1,173 @@
+\section{Three BGG constructions, with their domains kept separate}
+\label{sec:wb-bgg-domains}
+
+The BGG layer supplies a systematic language for generators, relations, standard objects, resolutions and controlled changes of presentation. It is useful to the present program precisely when those data are retained. It is not a universal identification of every quiver, neural network, quantum model or physical process with category $\mathcal O$.
+
+Three constructions must first be distinguished. Classical BGG category $\mathcal O$ is a category of modules over a complex semisimple Lie algebra's universal enveloping algebra. A BGG resolution resolves an appropriate finite-dimensional highest-weight module by Verma modules. The exterior--symmetric BGG correspondence relates graded exterior-algebra modules, linear complexes over a symmetric algebra and, in the appropriate quotient/derived formulation, coherent sheaves on projective space. The names and some homological techniques overlap, but these are not the same category or the same theorem [B1--B4]. The project's existing finite exterior/BGG certificates belong to the latter algebraic interface unless another construction explicitly connects them to highest-weight theory.
+
+Fix a complex semisimple Lie algebra with triangular decomposition
+\[
+ \mathfrak g=\mathfrak n^-\oplus\mathfrak h\oplus\mathfrak n^+,
+ \qquad \mathfrak b=\mathfrak h\oplus\mathfrak n^+.
+\]
+An object of classical $\mathcal O$ is a finitely generated $U(\mathfrak g)$-module that is a direct sum of $\mathfrak h$-weight spaces and is locally finite for $U(\mathfrak n^+)$. In this setting one can equivalently phrase the local finiteness condition using the Borel action. These are structural hypotheses, not labels attached to an arbitrary embedding. For a weight $\lambda$, the Verma module is
+\[
+ M(\lambda)=U(\mathfrak g)\otimes_{U(\mathfrak b)}\mathbb C_\lambda,
+\]
+where $\mathfrak n^+$ acts trivially on the highest-weight line. It has a simple highest-weight quotient $L(\lambda)$. The theory of projective covers, blocks, standard filtrations and reciprocity requires this ambient category and its stated field assumptions [B1,B2,B4].
+
+The practical question for ToricGT/Mora-3 is therefore constructive: which graph tokens encode a weight, generator, relation, module map or resolution component; which operator realizes the relevant action; and which checker verifies the required identities? A directed attention graph alone answers none of those questions. The finite examples below provide a reproducible starting point rather than asserting a completed categorical implementation.
+
+\section{An exact highest-weight example and its truncation failure}
+\label{sec:wb-bgg-sl2}
+
+Take $\mathfrak{sl}_2$ with generators $e,f,h$ and relations
+\[
+ [e,f]=h,\qquad [h,e]=2e,\qquad [h,f]=-2f.
+\]
+On the Verma basis $v_i=f^iv_0$, $i\ge0$, the actions are
+\[
+ fv_i=v_{i+1},\qquad hv_i=(\lambda-2i)v_i,\qquad
+ ev_i=i(\lambda-i+1)v_{i-1},\quad ev_0=0.
+\]
+For example, the coefficient of $v_i$ in $(ef-fe)v_i$ is
+\[
+ (i+1)(\lambda-i)-i(\lambda-i+1)=\lambda-2i.
+\]
+The other two commutators follow by comparing the two weights adjacent to a raising or lowering step. Thus this is an exact infinite-dimensional representation, not merely a finite matrix pattern that happens to look triangular.
+
+\begin{proposition}[The $\mathfrak{sl}_2$ BGG short exact sequence]
+For an integer $n\ge0$, the vector $v_{n+1}\in M(n)$ is singular and generates a submodule isomorphic to $M(-n-2)$. The quotient is the $(n+1)$-dimensional simple module $L(n)$, giving
+\[
+ 0\longrightarrow M(-n-2)\longrightarrow M(n)
+ \longrightarrow L(n)\longrightarrow0.
+\]
+\end{proposition}
+\begin{proof}
+The raising coefficient at $i=n+1$ is zero, and its weight is $n-2(n+1)=-n-2$. Map the basis element $w_j$ of $M(-n-2)$ to $v_{n+1+j}$. This map commutes with $f$ and $h$. For $e$, the two coefficients are both $-j(n+1+j)$, so it is a module map. Its images are distinct basis vectors, hence it is injective. The quotient has basis $v_0,\ldots,v_n$. Its lowering map stops at $v_n$ and its nonzero raising coefficients connect every lower weight to the highest line. Any nonzero submodule contains a weight vector, and repeated raising reaches that line; repeated lowering then generates the entire quotient. It is therefore simple.
+\end{proof}
+
+The corresponding formal character subtraction removes the infinite tail:
+\[
+ \frac{e^n}{1-e^{-2}}-\frac{e^{-n-2}}{1-e^{-2}}
+   =e^n+e^{n-2}+\cdots+e^{-n}.
+\]
+This is a controlled cancellation between characters of specified modules. It is not the same operation as replacing a sum of arbitrary positive path weights by a tropical maximum.
+
+The quadratic central element $C=ef+fe+h^2/2$ acts with scalar $\lambda(\lambda+2)/2$ on this Verma representation. Substituting $-\lambda-2$ gives the same scalar. Thus a central scalar or character summary can identify a block-level relation without distinguishing the two modules or their extension structure. This is another reason not to infer module equivalence from a single spectral or compressed invariant.
+
+\begin{proposition}[An arbitrary cutoff is usually not a representation]
+Keep only $v_0,\ldots,v_{K-1}$ and set $fv_{K-1}=0$, retaining the other displayed coefficients. Then $[e,f]-h$ vanishes on the first $K-1$ basis vectors, but on the last one equals
+\[
+ ([e,f]-h)v_{K-1}=K(K-1-\lambda)v_{K-1}.
+\]
+The cutoff satisfies this relation exactly only when $\lambda=K-1$.
+\end{proposition}
+\begin{proof}
+At the top vector, $ef$ is zero, $fe$ has coefficient $(K-1)(\lambda-K+2)$, and $h$ has coefficient $\lambda-2(K-1)$. Subtraction and expansion give $K(K-1-\lambda)$. Away from the boundary, the original Verma computation remains unchanged.
+\end{proof}
+
+This defect is an explicit finite-size artifact. A large cutoff can satisfy many interior tests and still fail the algebra at its boundary. The finite quotient $L(n)$ with $K=n+1$ is different: the discarded tail is an actual submodule. Numerical truncation and categorical quotient are not synonyms. The same methodological lesson applies to the fluid/gauge laboratories and to bounded latent workspaces: inspect the boundary relations rather than infer an infinite theorem from interior agreement.
+
+The implemented exact checker verifies $L(n)$ for $0\le n\le8$, several rational-weight cutoff cases, Casimir coefficients and singular-vector embeddings. Six separate Lean theorems check the coefficient identities used here. They do not constitute a Lean formalization of category $\mathcal O$ or exactness of the infinite resolution. The distinction is retained in the proof receipts.
+
+\section{Blocks, Ext data and quivers with relations}
+\label{sec:wb-bgg-blocks}
+
+A block of category $\mathcal O$ can be studied through a projective generator $P$ and its endomorphism algebra. With left-module conventions, one uses $A=\operatorname{End}(P)^{\rm op}$; equivalently, the original endomorphism algebra acts on the right of $\operatorname{Hom}(P,-)$. The opposite-ring convention matters for directed composition. In the relevant finite block setting, this gives a finite-dimensional algebraic model of the category, despite the individual Verma modules being infinite-dimensional [B2].
+
+The quiver of a basic algebra records simple objects and first extensions, while relations and higher homological information determine how those extensions compose. A Bruhat graph, a neural architecture graph and an Ext-quiver are not automatically identical. A representation learner that stores only an adjacency matrix can discard precisely the relation and extension data needed to distinguish modules. Suitable targets include standard-filtration multiplicities, morphism dimensions, relation satisfaction and selected higher Ext groups, with explicit finite algorithms or external oracles for the examples used.
+
+BGG reciprocity relates the multiplicity of a Verma standard in a projective standard filtration to an appropriate composition multiplicity in a Verma module. In the classical convention,
+\[
+ (P(\lambda):M(\mu))=[M(\mu):L(\lambda)].
+\]
+This is an attributed theorem of the category, not an identity obeyed by arbitrary nonnegative matrices predicted by a network [B1,B4]. It suggests a useful consistency test: predict the two sides through independently constructed views of a finite example and reject disagreement. But enforcing equality alone does not identify the correct multiplicities; an all-zero prediction would satisfy many such equalities without representing the intended objects.
+
+Beilinson--Ginzburg--Soergel establish Koszul structures and duality patterns in the stated category-$\mathcal O$ settings. A Koszul grading means that the semisimple degree-zero part has a linear graded projective resolution; it is not merely a convenient integer feature on a graph. Their principal-block and parabolic--singular statements retain their hypotheses and indexing conventions [B2]. The ordinary BGG resolution of a dominant-integral finite-dimensional $L(\lambda)$ has degree-$i$ terms built from $M(w\cdot\lambda)$ with $\ell(w)=i$. These are Verma modules, not a claim that every term is projective. The dot action is $w\cdot\lambda=w(\lambda+\rho)-\rho$.
+
+For a neural grammar, the standards and projectives provide different types of construction object. A proposed rewrite between complexes must preserve the actual differential and its grading, not only the alternating sum of dimensions. Equality of a Grothendieck-group class is weaker than isomorphism; a chain map is weaker than a quasi-isomorphism; a derived equivalence is stronger still. This hierarchy can become part of the model's type system and certificate vocabulary.
+
+\section{Exterior BGG certificates, exactness and integral obstructions}
+\label{sec:wb-exterior-bgg}
+
+Let $E_1,\ldots,E_m$ act on a finite graded space and satisfy
+\[
+ E_i^2=0,\qquad E_iE_j+E_jE_i=0\quad(i\ne j).
+\]
+For commuting scalar coordinates $x_i$, define $d(x)=\sum_i x_iE_i$. Expansion gives $d(x)^2=0$. This is the elementary linear-complex mechanism underlying the exterior/symmetric interface. The full BGG correspondence adds grading, functors and categorical identifications; the identity alone is not the whole correspondence [B3].
+
+\begin{proposition}[A quantified relation defect]
+For bounded operators and any submultiplicative operator norm,
+\[
+ \|d(x)^2\|\le
+ \sum_i |x_i|^2\|E_i^2\|+
+ \sum_{i<j}|x_ix_j|\|E_iE_j+E_jE_i\|.
+\]
+\end{proposition}
+\begin{proof}
+Expand the square, group the two ordered cross terms for each unordered pair, and apply the triangle inequality and scalar homogeneity. No optimization or statistical assumption enters this estimate.
+\end{proof}
+
+The bound gives a meaningful train-time diagnostic when the matrices are learned: the declared relation residuals control a specified differential residual on a bounded coordinate domain. A numerical zero at a few sampled $x$ values does not prove the relations everywhere. A small residual also does not imply proximity to a genuine representation without an additional stability theorem. The norm and metric must be fixed: arbitrary ill-conditioned basis changes can distort residual sizes, whereas unitary changes preserve the usual operator and Frobenius norms.
+
+The executable example uses left exterior multiplication on a bitmask-indexed wedge basis. For any nonzero rational vector $x$, choose a covector $a$ with $a(x)=1$. Contraction $\iota_a$ satisfies
+\[
+ \iota_a\,d(x)+d(x)\,\iota_a=I.
+\]
+The identity follows on each wedge monomial from the contraction derivation rule. It supplies an actual contracting homotopy, hence exactness of that finite exterior complex over the field. At $x=0$, the differential vanishes and the cohomology is the whole graded space. The checker retains both cases instead of treating $d^2=0$ as a synonym for exactness.
+
+Integral coefficients change the conclusion. The one-generator complex
+\[
+ 0\longrightarrow\mathbb Z\xrightarrow{\;2\;}\mathbb Z\longrightarrow0
+\]
+has a $\mathbb Z/2\mathbb Z$ cokernel, although it becomes contractible over $\mathbb Q$ using the coefficient $1/2$. Reduction modulo two kills the differential. This gives a concrete connection to the orders program: scalar extension, reduction and integral exactness preserve different information. A rational or finite-field rank check cannot replace a certificate of an integral module claim.
+
+\section{How to use the material in the neural research program}
+\label{sec:wb-bgg-neural}
+
+A defensible architecture extension stores a typed finite presentation: the algebra and field, generator matrices or actions, grading/weight labels, relations, chosen module truncation or quotient, and a metric. A graph-to-graph network can predict missing maps, propose a resolution step, retrieve a structurally analogous complex, or choose a rewrite. An independent exact or interval checker then verifies the property appropriate to that proposal. The graph-UAP discussion concerns representability of bounded encodings; category $\mathcal O$ supplies additional structure on the encoded objects, not a shortcut around the UAP hypotheses.
+
+For ToricGT or TropicalGT, tropical scores can rank candidate generators, Bruhat moves or resolution components. Their scores need not themselves be module morphisms. For Mora-3, a typed graph/forest head can represent alternative derivation histories while the analogy module retrieves source complexes using condition-only keys. The relation/path checker prevents an attractive embedding match from reversing a morphism or dropping a required branch. A stronger transfer requires chain maps and commutation witnesses, not only a graph match.
+
+A chain-map penalty has the concrete form $\|d_YT-Td_X\|$, with sources and targets in the correct degrees. A homotopy witness for two maps requires $T-S=d_YH+Hd_X$ with the appropriate graded components. These are proposed training/verification objectives unless a particular run and certificate are supplied. They are not evidence that the current 16 real-data component runs learned category-$\mathcal O$ structure: those runs used likelihood and retrieval, not these algebraic losses.
+
+Avoid vacuous algebraic success. Setting all generator matrices to zero satisfies many homogeneous relations but represents only a trivial or collapsed object. A useful objective must additionally bind the intended dimensions, weights, ranks, central character or task readout, and measure whether the constraints improve held-out prediction or search cost. Fixed exterior operators make $d^2=0$ true by construction; that fact alone says nothing about whether learned data features are informative.
+
+GFlowNet construction states may include a partial complex, a proposed morphism and its pending obligations. Rewards can favor valid completed objects, novelty and compactness while a verifier enforces exact relations. The target measure must still specify whether terminal objects are presentations, histories or equivalence classes. BGG resolutions do not eliminate multiplicity from a sampling law. A learned compressor must charge the presentation, grading, certificate and retrieval memory wherever they are not public side information.
+
+For dynamical models, a sequence of learned state updates may be tested for compatibility with a fixed algebra action or a chain complex. If the action itself changes, transport between the actions is additional data. A small commutator residual at one time does not guarantee stability of the entire switched system. Combine a domain-wide residual estimate with the earlier error-propagation or weighted-gain certificate; retain protected memory when a globally contractive workspace would erase required distinctions.
+
+\section{Tropical, toric, hypertoric and surface connections}
+\label{sec:wb-bgg-geometry}
+
+Root systems and Weyl chambers provide exact combinatorial geometry in highest-weight theory. Neural activation fans and cluster tropicalizations also produce polyhedral structures, but an arbitrary rational fan need not be a Weyl fan and an arbitrary mutation need not be a reflection. A connection requires a map of lattices, compatible relations and a statement of what is preserved. Merely using the same word ``chamber'' supplies no theorem.
+
+Hypertoric category $\mathcal O$ is a substantive external bridge rather than a visual analogy. Braden--Licata--Proudfoot--Webster study invariant subalgebras of a Weyl algebra under torus actions and corresponding categories related to quantized hypertoric geometry. Under their regularity/integrality hypotheses, the categories have highest-weight and Koszul structures, with Gale-dual arrangements controlling a duality [B6]. The corrected version 5, including its correction to Lemma 8.25, is the referenced version. The required quantized polarized arrangement, lattice and parameter data must be constructed before applying that result to a model.
+
+This suggests a precise research path: begin with a small integral arrangement; build its documented algebra/category; encode standards, allowed paths and relations as typed graphs; then evaluate whether a learned policy can predict or navigate those objects efficiently. Compare against exact combinatorial algorithms. A phase vector in ToricGT or a tropical support cell is not already a hypertoric quantization, so the initial stage is a construction and validation task, not an asserted categorical identity.
+
+Gentle surface algebras offer another representation-theoretic family. The earlier surface models retain curves, grading/line fields, stops and relations. Category-$\mathcal O$ block algebras and gentle algebras need not share global dimension or the same derived category. The radical-square-zero oriented triangle discussed earlier has infinite global dimension; it must not be silently identified with a finite-global-dimension regular category-$\mathcal O$ block. A common language of quivers, complexes and derived functors is useful without identifying the families.
+
+Soergel bimodules and their diagrammatic/compositional theory provide externally justified categorifications linked to Hecke and Coxeter structures; the Hodge-theoretic character results retain their own hypotheses [B5]. They suggest additional certified grammar relations and graded targets, but no Soergel implementation or learned character-table result is claimed in this release. A later extension should specify the coefficient field, realization, grading and diagrammatic relations, and test them independently before using their outputs as supervision.
+
+\section{Quantum information, orders and the GRH/Hilbert--P\'olya boundary}
+\label{sec:wb-bgg-analytic}
+
+Finite-dimensional $\mathfrak{sl}_2$ modules can be related to compact-real-form spin representations after choosing a compatible positive Hermitian form. In the basis above for $L(n)$, positive squared norms can be chosen recursively so that $\|v_i\|^2=i(n-i+1)\|v_{i-1}\|^2$. This makes the displayed raising and lowering actions adjoint in that weighted inner product. The construction does not equip every Verma module or every object of $\mathcal O$ with a physical positive-definite quantum-state interpretation.
+
+A quantum implementation additionally needs a finite encoding, admissible Hamiltonians/channels, preparation, measurement and an error budget. Nonsemisimple extensions are algebraic data, not automatically density matrices or implementable quantum channels. A categorical zero relation and a zero composition of unconditional trace-preserving channels are different notions, as established in the earlier realization chapter. A nonunitary change of module basis does not establish unitary equivalence of a physical evolution.
+
+Integral orders require a compatible lattice and control of denominators, torsion and bad primes. The elementary $2$-differential example demonstrates the failure of transferring rational exactness unchanged to an integral setting. Integral forms of enveloping algebras are not, merely by being integral forms, finite-rank orders in a fixed finite-dimensional algebra under the monograph's definition. One must identify the actual finite algebra and full lattice needed for an orders theorem.
+
+For a Hilbert--P\'olya proposal, algebraic central characters, Casimir spectra or Koszul duality do not identify the zeros of a specified arithmetic $L$-function. One still needs a Hilbert space, a densely defined self-adjoint operator with its domain, and the required arithmetic spectral or determinant identity. Finite representations and exact categorical identities can organize candidate constructions, symmetry checks and trace calculations. They do not supply the missing analytic identity, a continuum convergence theorem or a proof of GRH by themselves.
+
+Cryptographic claims remain separate as well. A complicated representation category, a large Weyl group, mutation dynamics or a learned search policy is not a security reduction. The algebraic machinery may help construct or analyze instances, detect leaked invariants, or certify a finite computation. Security requires an explicit threat model and problem-specific evidence. No cryptographic primitive is replaced by a novel unreviewed category-$\mathcal O$ construction in this release.
+
+\section{An executable agenda and the limits of the current evidence}
+
+The current algebraic implementation covers exact small $\mathfrak{sl}_2$ quotients, singular-vector coefficients, Casimir checks, cutoff defects, exterior anticommutation, $d^2=0$ and an explicit rational contracting homotopy. Written proofs establish the elementary general statements. The six Lean declarations formalize selected polynomial identities, not the full external category theory. These examples are constructed mathematical tests and remain separate from the genuinely measured-data experiments in the preceding chapter.
+
+The next scientifically meaningful comparison would add a specified relation-preserving head to a frozen native architecture and compare it with matched unconstrained and trivial-representation controls on held-out algebraic structures and real tasks. It would evaluate whether the constraints improve code length, transfer, proof-search cost or robustness after charging their compute and storage. It must retain wrong-direction, boundary-truncation, bad-prime and collapsed-feature controls. No such trained BGG improvement is claimed from the present pilot.
+
+For discovering structure in physical data, BGG methods can supply candidate algebraic descriptions, invariants and consistency checks. A learned description is persuasive when it predicts new observations, survives perturbation and transfers through verified maps. Even then, algebraic regularity or compression is not evidence of a hidden intentional message without an independently testable encoding/communication hypothesis. The purpose of this synthesis is to make those tests more exact, not to turn representation theory into an inference about intent.
