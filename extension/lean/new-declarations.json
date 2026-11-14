@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "declaration_count": 33,
+  "declarations": [
+    {
+      "declaration": "ReductionContracts.factorization_iff_fiber_constant",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "thm:reduction-fiber-factorization",
+      "scope": "Exact set-theoretic equivalence for a surjective observation map",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.reduced_output_unique",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "thm:reduction-fiber-factorization",
+      "scope": "Uniqueness on the surjective observed state space",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.discrete_closure_iff",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "thm:reduction-fiber-factorization",
+      "scope": "Specialization to a discrete state update",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.mismatched_fiber_excludes_closure",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "thm:reduction-fiber-factorization",
+      "scope": "Two indistinguishable inputs with different outputs exclude every deterministic closure",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.discrete_trajectory_preserved",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-trajectory",
+      "scope": "Exact intertwining at every natural-number step",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.fiber_error_lower_bound",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-error-diameter",
+      "scope": "Triangle-inequality error lower bound in a seminormed additive group",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.fiber_diameter_le_twice_error",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-error-diameter",
+      "scope": "Uniform epsilon error implies at most twice-epsilon pair separation",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.signedPartner_constant_coefficient",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "Constant coefficient of the explicit rational polynomial",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.signedPartner_linear_coefficient",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "Linear coefficient of the explicit rational polynomial",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.signedPartner_ne_zero",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "The second summand is nonzero",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.signedPartner_order",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "The second summand has order one",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.signed_cancellation_identity",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "The sum is exactly the prescribed higher monomial",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.signed_cancellation_sum_ne_zero",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "The residual polynomial is nonzero",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.signed_cancellation_order",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "Its order is the arbitrary integer k+2",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.signed_cancellation_strict",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "The residual order strictly exceeds the minimum summand order",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "ReductionContracts.no_universal_minimum_rule",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_and_axiom_log": "extension/lean/final-verification/ReductionContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/reduction-contracts.tex",
+      "manuscript_anchor": "prop:reduction-signed-order",
+      "scope": "There is no universal exact minimum rule for signed polynomial addition",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.suffix_transport_telescope",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:typed-transport-telescope",
+      "scope": "Arbitrary finite path with all arrows acting on the same module",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.closed_path_residual",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:typed-transport-telescope",
+      "scope": "Closed-path endpoint residual",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.flat_closed_path_zero",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:typed-transport-telescope",
+      "scope": "Identity holonomy makes the closed residual zero",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.two_arrow_transport",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:typed-transport-telescope",
+      "scope": "Two-arrow noncommutative telescope",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.fixed_vector_closed_path_zero",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "thm:typed-transport-telescope",
+      "scope": "Fixing the initial vector suffices without full flatness",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.scalar_counterexample_flat",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:transport-prefix-counterexample",
+      "scope": "The counterexample has identity holonomy",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.scalar_prefix_counterexample",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:transport-prefix-counterexample",
+      "scope": "The incorrect prefix sum is exactly 3/2",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.scalar_suffix_correction",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:transport-prefix-counterexample",
+      "scope": "Correct suffix transport gives zero for the same data",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.positive_damping_bound_not_contracting",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:transport-damping-obstruction",
+      "scope": "The displayed upper bound is at least one for L\u22651 and eta\u22650",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.expanding_scalar_damping",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:transport-damping-obstruction",
+      "scope": "The scalar multiplier is greater than one for positive damping",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.trace_preserving_composite_nonzero",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:transport-trace-zero-obstruction",
+      "scope": "Two real linear trace-preserving maps cannot have zero composite if a trace-one vector exists",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.nonnormal_shear_square_zero",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:nonnormal-jvp",
+      "scope": "The explicit real matrix [[0,M],[0,0]] squares to zero",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.nonnormal_shear_unit_image",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:nonnormal-jvp",
+      "scope": "Its image on the explicit Euclidean unit vector (0,1) is (M,0)",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.nonnormal_shear_gain_squared",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:nonnormal-jvp",
+      "scope": "Exact coordinate squared norm of that image is M squared",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.nonnormal_shear_strict_gain",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:nonnormal-jvp",
+      "scope": "The one-step squared gain exceeds one when M>1",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.nonnormal_shear_second_jvp_zero",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:nonnormal-jvp",
+      "scope": "A second Jacobian-vector product is zero on every input",
+      "whole_manuscript_formalization_claim": false
+    },
+    {
+      "declaration": "TransportContracts.nonnormal_shear_not_normal",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_and_axiom_log": "extension/lean/final-verification/TransportContracts.log",
+      "manuscript_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+      "manuscript_anchor": "prop:nonnormal-jvp",
+      "scope": "For nonzero M, the matrix does not commute with its transpose",
+      "whole_manuscript_formalization_claim": false
+    }
+  ],
+  "scope": "Selected finite component mappings; stronger typing, analytic, quantum-channel and security claims retain their separate written/external status."
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "quantum-toricgt-browser-fullforward-verification-v1",
+  "passed": true,
+  "node": "v24.22.1",
+  "cases": [
+    {
+      "split": "test",
+      "index": 0,
+      "id": "3807087669d99d02e18cf9b4622d744136e00a67800d131e3bb8b0bb6998e7f1",
+      "text": "acdcccb",
+      "node_prediction_max_error": 5.791199653160106e-7,
+      "certificate_match": true
+    },
+    {
+      "split": "test",
+      "index": 1,
+      "id": "2ce5b48fc4018514ab20b3dcd803bf8d0c4253e71deb2e8deac6b48c51f7361e",
+      "text": "bdaa",
+      "node_prediction_max_error": 6.807938264241642e-7,
+      "certificate_match": true
+    },
+    {
+      "split": "ood",
+      "index": 0,
+      "id": "88788f84a5748be657fda24cc068213a95c7ce17da1c49ed69ad8ce5684c6952",
+      "text": "caccbdabcbad",
+      "node_prediction_max_error": 4.1613615620050837e-7,
+      "certificate_match": true
+    },
+    {
+      "split": "ood",
+      "index": 1,
+      "id": "df05567b2ffc0c62a3b00c5c6df2c1f303696b86455873543e03465051e8797f",
+      "text": "bbddbddbcba",
+      "node_prediction_max_error": 3.870244185133487e-7,
+      "certificate_match": true
+    }
+  ],
+  "max_node_prediction_error": 6.807938264241642e-7,
+  "theta_override_max_prediction_change": 0.5549729257839224,
+  "source_sha256": {
+    "reference.js": "fcaa63640ffc24f719467daa060d31935dee80cf256d6dc6919e3bf51bdf6cce",
+    "graph-reference.js": "c320c8003c177c8c7ecc21aa93c6e0c90ce91b1aeb0f32c1ade40471ca698e58",
+    "results/browser-weights.json": "6ed4c44d2883b6dfd8d73393affe5cf3f24ea67620880e5c3242d0ec27147e50"
+  },
+  "precision": "JavaScript float64 plus erf approximation versus PyTorch CUDA float32; tolerance2e-5 in normalized prediction."
+}

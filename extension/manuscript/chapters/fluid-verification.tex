@@ -1,0 +1,91 @@
+\chapter{Fluid verification, reproducibility and proof dependencies}
+
+\section{Current verification boundary}
+
+The final local companion has 115 selected declarations across six modules,
+including 16 reduction contracts and 17 transport declarations. All six were
+freshly checked with Lean 4.24.0 and the pinned mathlib revision, with zero
+warnings and only the disclosed standard foundational axioms. Exact types,
+source hashes and logs are retained under \texttt{lean/final-verification}.
+The earlier 82-declaration fluid-era records below remain identifiable
+historical checks of the first four modules. Neither record completes the
+separate upstream Navier--Stokes full build, which remains blocked by missing
+rate-limited dependency artifacts.
+
+\label{ch:fluid-verification}
+
+\section{What was checked and what each check means}
+
+The fluid extension has three distinct verification layers. The manuscript gives explicit proofs of the displayed finite statements and analytical interfaces. The local Lean package checks selected statements with precisely typed hypotheses. The executable examples compare independently implemented finite calculations. None of these layers is interchangeable with the complete upstream continuum development.
+
+The additional file \path{extension/lean/FluidInterfaces.lean} contains 34 theorem declarations. It was elaborated successfully by Lean 4.24.0 against the same pinned mathlib revision as the earlier companion,
+\begin{center}\small\texttt{f897ebcf72cd16f89ab4577d0c826cd14afaafc7}.\end{center}
+The check returned exit code zero and no warnings. Every declaration has a printed type and an axiom report. The only reported foundations are \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}; no admitted theorem or project-specific axiom is introduced. The verified source SHA-256 is
+\begin{center}\scriptsize
+\texttt{9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2}.
+\end{center}
+All four modules were freshly rechecked together for this extension, with unchanged source hashes and zero warnings. The individual logs and declaration-by-declaration axiom comparisons are retained in \path{extension/review/navier-stokes/local-kernel-verification.json}. Thus the companion contains 82 selected declarations: 25 original interfaces, seven quantum interfaces, sixteen diagram interfaces and these 34 fluid interfaces. This is a count of exact declarations, not a claim that 82 complete manuscript theorems, every numerical implementation, or the continuum singularity construction have been formalized here.
+
+\begin{longtable}{p{.25\textwidth}p{.08\textwidth}p{.56\textwidth}}
+\toprule Family & Count & Checked content and its boundary\\\midrule
+\endhead
+Finite energy & 11 & Finite real matrix work identities, pressure cancellation under the stated constraint, nonnegative factorized viscosity, and an actual time derivative of coordinate kinetic energy. No continuum regularity conclusion.\\
+Orthogonal reduction & 5 & Kernel residual, orthogonality, Pythagorean energy split, energy nonincrease and best approximation for a symmetric idempotent matrix. No closure or trajectory error theorem.\\
+Chain continuity & 2 & Boundary flux has zero subsequent boundary, and adding such a flux preserves the divergence. The complex equation is explicit.\\
+Schur elimination & 1 & Equivalence of a block system and its eliminated system when the required block is a linear equivalence. No assumption that every block is invertible.\\
+Discrete memory & 3 & All-step hidden-state expansion, resolved memory identity and the obstruction to an instantaneous closure. No decay assumption is inserted into the recurrence.\\
+Forbidden composition & 1 & A strict lower block, then a block diagonal map, then another strict lower block has zero composite. This is one exact operator pattern from the Volterra discussion.\\
+Quadratic order & 11 & The faithful order representation, addition and multiplication, norm determinant, matrix polynomial, determinant of every power, and absence of a commuting real linear complex structure. The topological covering interpretation is proved separately in the manuscript.\\
+\bottomrule
+\end{longtable}
+
+The component map in \path{extension/review/navier-stokes/formalization-map.json} and the main claim register link these declarations to the statements they actually support. A matrix energy identity is a component of the finite ODE existence argument, not a Lean proof of that entire existence theorem. The exact discrete memory recurrence is not a Lean proof of the continuous integral formula. Likewise the determinant of $J^k$ is not, by itself, a formalized covering-space degree theorem.
+
+\section{The separate upstream Navier--Stokes formalization}
+
+The released project uses a different toolchain: Lean 4.34.0-rc2 and its own pinned mathlib dependency. Its repository is pinned at
+\begin{center}\small\texttt{f9e8bc5b38b6e212696e8a30e3e91517af887bbd}.\end{center}
+The audited final solution target has a local import closure of 609 modules. A comment- and string-aware source scan of this closure finds no admitted placeholders or project axiom declarations, and no challenge module is imported by that closure. This is useful source evidence but is not a kernel check.
+
+A fresh upstream build was attempted with the exact verified compiler archive. Dependency-cache retrieval encountered HTTP 429 responses. The subsequent direct target check stopped because imported build artifacts were missing, before theorem-body elaboration. The full upstream kernel check and independent Comparator check therefore remain uncompleted in this work. The supplied \path{release-build-verification.json} records these outcomes, while \path{release-verify.py} supplies a pinned reproduction route. A failed dependency download neither verifies nor refutes the theorem. The local 34-declaration result is kept entirely separate from this upstream result.
+
+The complete 166-page paper was read across the two mathematical reviewers, with every page attributed in \path{release-source-manifest.json}. That reading supports the exposition and the precise statement of the forced whole-space and periodic results. It does not substitute for the missing fresh formal build, nor does it turn a proof of forced breakdown into an unforced theorem.
+
+\section{Independent finite computational checks}
+
+The new program \path{extension/code/verify_fluid_interfaces.py} constructs exact integer cell complexes for six periodic square grids, with $L=3,\ldots,8$. It checks the zero boundary composite and the expected finite ranks. It independently evaluates symbolic Taylor--Green equations and dense complex-matrix circuit operations. Its machine-readable output is \path{extension/verification/fluids-python.json}.
+
+The browser core is separately checked by \path{extension/site/verify-fluids.cjs}, which consumes independent Python reference data. The recorded comparison covers sixteen circuit inputs, 64 parameter-feature derivative cases and 8,865 complete toral-fibre points. The maximum amplitude discrepancy is about $2.22\times10^{-16}$; the maximum character-pullback discrepancy is about $1.01\times10^{-13}$; and the heat-channel probability discrepancy is about $3.47\times10^{-18}$. These are floating-point discrepancies, not exact-real proof bounds. The finite-difference momentum residual decreases from $3.03\times10^{-6}$ to $7.57\times10^{-7}$ to $1.89\times10^{-7}$ under successive halvings of the step, consistent with the method's second-order error on this manufactured solution.
+
+The channel checks distinguish the live diagonal-state simulation from the separate coherent-state matrix test. Positivity, trace preservation and complete positivity follow analytically from the Kraus form in Chapter~\ref{ch:quantum-fluid}; finite Choi and density-matrix calculations test the implemented instances. The circuit is simulated classically and is untrained. The circuit register and the periodic position register are distinct systems. No NVIDIA acceleration is required or claimed for these small new examples; the earlier GPU surface-code and ToricGT experiments retain their separate recorded execution evidence.
+
+\section{Reproduction commands}
+
+From the repository root, the finite computations can be repeated with:
+\begin{lstlisting}
+python3 extension/code/verify_fluid_interfaces.py
+node extension/site/verify-fluids.cjs
+\end{lstlisting}
+The first script requires the numerical and symbolic dependencies stated in its source. The second uses the generated reference data. The local formal check can be repeated using the installed pinned toolchain:
+\begin{lstlisting}
+python3 extension/review/navier-stokes/formalization-verify.py \
+  --toolchain /absolute/path/to/lean-4.24.0-linux \
+  --mathlib /absolute/path/to/mathlib4-v4.24.0
+\end{lstlisting}
+Alternatively, from a correctly resolved Lake package, run
+\begin{lstlisting}
+lake env lean FluidInterfaces.lean
+\end{lstlisting}
+The manuscript entry points share the same chapter sources. With the listed TeX packages installed:
+\begin{lstlisting}
+python3 extension/manuscript/build_pdf.py
+python3 extension/manuscript/build_pdf.py \
+  --main fluid-extension --min-pages 1
+\end{lstlisting}
+The full monograph keeps the 100-page lower gate. The standalone supplement is not padded to a target length. Both builds reject undefined references, missing characters and overfull boxes, and retain their actual compiler logs and source hashes. Visual review is recorded separately from those mechanical gates.
+
+\section{The complete selected fluid formalization}
+
+The following is the source actually checked, including its type and axiom audit block. Its finite types are part of the theorem statements; replacing them with function spaces would create a different theorem and new analytic obligations.
+
+\lstinputlisting{../lean/FluidInterfaces.lean}

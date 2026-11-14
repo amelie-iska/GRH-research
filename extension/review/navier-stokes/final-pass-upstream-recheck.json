@@ -1,0 +1,98 @@
+{
+  "schema_version": 2,
+  "started_at_utc": "2026-11-13T23:20:52.225940+00:00",
+  "source_revision": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+  "compiler": "Lean (version 4.34.0-rc2, x86_64-unknown-linux-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+  "dependency_pins": {
+    "Comparator": {
+      "expected": "19e111e2141cf333c7daff0f64c5f24acc91dd2e",
+      "observed": "19e111e2141cf333c7daff0f64c5f24acc91dd2e"
+    },
+    "mathlib": {
+      "expected": "85e3a25e006c35636f0e53b0e9296caca2685bc0",
+      "observed": "85e3a25e006c35636f0e53b0e9296caca2685bc0"
+    },
+    "lean4export": {
+      "expected": "cacf989bd75f608700820f6afc595f32e7a99a4d",
+      "observed": "cacf989bd75f608700820f6afc595f32e7a99a4d"
+    },
+    "plausible": {
+      "expected": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+      "observed": "d9598f07b1bc701f1e3aae163d2681c1fd978793"
+    },
+    "LeanSearchClient": {
+      "expected": "ba67e212be1197b84c1f1f6299488a10a3002713",
+      "observed": "ba67e212be1197b84c1f1f6299488a10a3002713"
+    },
+    "importGraph": {
+      "expected": "d8823026ac7ef130c253089d95685f9877b95323",
+      "observed": "d8823026ac7ef130c253089d95685f9877b95323"
+    },
+    "proofwidgets": {
+      "expected": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+      "observed": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f"
+    },
+    "aesop": {
+      "expected": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+      "observed": "18889deb9e83ea7420ef51c160d6f88552e744e3"
+    },
+    "Qq": {
+      "expected": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+      "observed": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3"
+    },
+    "batteries": {
+      "expected": "d54dddc581e08be364c278052863524bff7a99a9",
+      "observed": "d54dddc581e08be364c278052863524bff7a99a9"
+    },
+    "Cli": {
+      "expected": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af",
+      "observed": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+    }
+  },
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "lean_threads": 2,
+  "download_parallel_limit": 2,
+  "per_transfer_retries": 0,
+  "download_rate_limit": "2/s",
+  "cache_target": "Mathlib.Init",
+  "cache_attempt_count": 1,
+  "old_evidence_preserved": true,
+  "prior_evidence_file": "extension/review/navier-stokes/release-build-verification.json",
+  "curl_wrapper_sha256": "942913e8541e90b2c24d5d33fa3cc8e12bbbfc0715ff59e423b13b2e34a8361a",
+  "status": "historical_attempt_closed_unverified",
+  "terminal": true,
+  "original_status": "running",
+  "original_record_sha256": "7bca7841ca27f9d856556df05264733c2499d41aeb10ab355dc6b3a1e4dda021",
+  "reconciled_at_utc": "2026-11-14T00:08:03.326741+00:00",
+  "superseded_by": "extension/review/final-pass/upstream-build-current.json",
+  "superseding_evidence_sha256": "0b7139762cff156d39311ad8d027471dc79cd9830fa0efd992700aafb2351d2f",
+  "current_verification_status": "blocked_dependency_cache_http_429",
+  "fresh_final_kernel_verified": false,
+  "reconciliation": {
+    "earlier_attempt_exit_recorded": false,
+    "explanation": "This historical start-only record never recorded a terminal process outcome. It is closed as unverified, not converted into a success or assigned the later attempt exit code. The separate later bounded retry authenticates HTTP 429 and explicit process termination; it is the current upstream verification record. Original settings above remain historical intent and are not represented as the effective settings of the later retry.",
+    "later_cache_exit_code": -15,
+    "later_cache_stop_reason": "rate_limit_detected_stopped_to_reduce_load",
+    "later_full_target_build_status": "not_run_after_incomplete_cache",
+    "later_independent_comparator_status": "not_run",
+    "artifact_inspection": [
+      {
+        "checkout": "/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream",
+        "checkout_present": true,
+        "navier_stokes_olean_count": 0,
+        "endpoint_olean_present": false
+      },
+      {
+        "checkout": "/workspace/scratch/e5799a11269a/upstream-ns-verification",
+        "checkout_present": true,
+        "navier_stokes_olean_count": 0,
+        "endpoint_olean_present": false
+      }
+    ],
+    "new_network_retry_performed": false,
+    "cheap_endpoint_check_outcome": "No compiled NavierStokes modules or endpoint artifacts are present in either cached upstream checkout; no cached endpoint can be re-elaborated without the missing import build."
+  }
+}

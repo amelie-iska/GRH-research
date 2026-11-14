@@ -1,0 +1,675 @@
+\chapter{Executable quantum codes and neural circuits on dessins}
+\label{ch:quantum-surfaces}
+
+\section{From a drawing to a quantum computation}
+
+A dessin becomes relevant to a quantum circuit only after the underlying
+combinatorics determine concrete Hilbert spaces, operators, and gates.  This
+chapter carries out that construction.  It supplies oriented cellulations,
+their clean-dessin permutations, binary boundary matrices, commuting Pauli
+checks, an executable encoder, and a small trainable circuit whose output
+can be independently derived.  The smallest live example has eighteen
+data qubits, rather than a picture of eighteen unrelated two-level systems.
+Its state has entanglement enforced by the same incidence relations that
+describe the torus.
+
+The construction is the homological surface-code construction introduced
+by Kitaev, within the Calderbank--Shor--Steane framework
+\cite{QSKitaev2003,QSCalderbankShor1996,QSSteane1996}.  Here the contribution
+is a reproducible connection to the manuscript's orders, complexes and
+dessins, together with exact examples and verification artifacts.  Existing
+hypermap-code literature already studies broader embedded combinatorial
+objects; the mere use of a dessin does not establish a new code family or
+better parameters \cite{QSLeslie2013,QSSarvepalli2014}.
+
+There are three computational representations.  The browser executes the
+eighteen-qubit gate sequence as a full complex state vector.  Larger
+Clifford computations can use stabilizer or Pauli-frame representations.
+GPU state-vector experiments use the resources stated in their recorded
+reports.  These representations answer different computational questions.
+The size of a stabilizer simulation is not evidence that the same machine
+stored an arbitrary state on that many qubits.
+
+\section{Oriented cells and clean-dessin permutations}
+
+Let $\Sigma$ be a connected, closed, oriented surface with a finite cellular
+embedding of a graph.  Let $V,E,F$ denote its numbers of vertices, edges
+and disk faces.  An oriented edge has a tail and a head; reversing it
+produces the other dart of the same unoriented edge.  There are therefore
+$2E$ darts.  Put a black vertex at every original vertex and a white vertex
+at the midpoint of every edge.  The resulting bipartite graph is clean:
+every white vertex has degree two.
+
+Write $\sigma_1$ for dart reversal and $\varphi$ for the permutation that
+follows the oriented boundary of a face.  Our convention is
+\[
+ \sigma_0=\varphi\sigma_1,\qquad
+ \sigma_\infty=(\sigma_0\sigma_1)^{-1}=\varphi^{-1},
+\]
+with products acting from right to left.  The cycles of $\sigma_0$ are
+the rotations at black vertices, the transpositions of $\sigma_1$ are
+white vertices, and the cycles of $\sigma_\infty$ are faces with reversed
+boundary orientation.  The code checks these identities as permutations;
+it does not infer them from the apparent shape of a rendered mesh.
+
+\begin{proposition}[Genus from permutation cycles]
+For the connected oriented cellulation above,
+\[
+ 2-2g=c(\sigma_0)+c(\sigma_1)+c(\sigma_\infty)-2E
+      =V-E+F,
+\]
+where $c$ denotes the number of cycles.
+\end{proposition}
+\begin{proof}
+Subdividing each edge inserts one white vertex and replaces that edge by
+two bipartite edges.  The new numbers of vertices and edges are $V+E$ and
+$2E$; the disk faces are unchanged.  Its Euler characteristic is therefore
+$(V+E)-2E+F=V-E+F$.  The three cycle counts are $V,E,F$, by their
+definitions.  The classification formula for a connected closed oriented
+surface gives the final value $2-2g$.
+\end{proof}
+
+An abstract rotation system needs a manifold check.  The boundary cycles
+must use every dart exactly once, and all darts based at a given vertex
+must form one rotation cycle.  Multiple rotation cycles at one declared
+vertex would create a nonmanifold identification.  The implementation
+checks these conditions, checks graph connectivity, and requires every
+unoriented edge to occur twice in face boundaries with opposite signs.
+Thus the Euler characteristic is attached to an actual closed oriented
+cellulation, not merely to three integers satisfying an equation.
+
+The Riemann existence theorem realizes a transitive permutation triple
+with product one as monodromy of a branched covering of the Riemann sphere.
+For a dessin, its branch values can be chosen as $0,1,\infty$.  Belyi's
+theorem relates this situation to curves defined over algebraic numbers
+\cite{QSBelyi1980}.  These are external existence theorems.  The generated
+permutations are explicit; algebraic coefficients of the higher-genus
+Belyi maps are not computed by this implementation.  Nor does a Euclidean
+rendering specify the uniformizing metric of that Belyi pair.
+
+\section{An explicit elliptic Belyi model}
+
+The algebraic curve
+\[
+ E_0:\quad y^2=x^3-x
+\]
+provides a direct connection with elliptic-curve theory.  Its smooth
+projective completion has genus one, and the meromorphic function
+$\beta=x^2$ has degree four.
+
+\begin{proposition}[A clean degree-four elliptic dessin]
+The branch values of $\beta:E_0\to\mathbb P^1$ lie in
+$\{0,1,\infty\}$.  Its ramification partitions over these values are
+$(4)$, $(2,2)$ and $(4)$, respectively.  Its dessin has one black vertex,
+two white vertices and one face.
+\end{proposition}
+\begin{proof}
+At $(0,0)$, the curve equation gives $x=-y^2+O(y^6)$, so $\beta$ has
+a zero of order four.  At $(r,0)$ for $r=1$ or $r=-1$, the derivative of
+$x^3-x$ is two.  Thus $x-r=y^2/2+O(y^4)$, and
+$\beta-1=2r(x-r)+O((x-r)^2)$ has order two.  At the point at infinity,
+$x$ has a pole of order two, so $\beta$ has a pole of order four.
+These fibers already account for degree four.  Away from them, a critical
+point would require $x=0$ or a critical point of the degree-two projection
+to the $x$-line; the latter occur at $x=0,1,-1,\infty$, already listed.
+The multiplicities give the claimed partitions and cycle counts.
+\end{proof}
+
+Topologically the dessin is a two-loop graph on a torus with disk
+complement.  Choose its two loop classes as generators of the fundamental
+group.  The connected unramified cover associated with
+$L_x\mathbb Z\oplus L_y\mathbb Z\subseteq\mathbb Z^2$ has degree
+$L_xL_y$.  Pulling back the dessin gives the square torus cellulation
+used below.  The covering becomes holomorphic for the pulled-back complex
+structure, so composing it with $\beta$ gives a clean Belyi map of degree
+$4L_xL_y$.  This supplies a genuine elliptic-surface interpretation of
+the torus family without requiring numerical evaluation of elliptic
+functions during circuit execution.
+
+For comparison, an explicit higher-genus family is
+\[
+ C_g:\quad y^2=1+x^{2g+1},\qquad \beta_g=-x^{2g+1}=1-y^2,
+ \quad g\geq1.
+\]
+The double cover of the $x$-sphere has $2g+2$ simple branch points,
+including infinity, so its smooth completion has genus $g$.  The displayed
+Belyi map has two black vertices of valency $2g+1$, $2g+1$ white vertices
+of valency two, and one face.  Locally this follows from the two points
+over $x=0$, the simple roots of $1+x^{2g+1}$, and the pole orders at
+infinity.  Its degree is $2(2g+1)$ and its Euler characteristic is
+$2-(2g+1)+1=2-2g$.
+
+This last dessin is an instructive warning.  Collapsing its white
+subdivision produces two vertices, $2g+1$ parallel edges and one face.
+The face boundary is zero modulo two, so the corresponding code has no
+nontrivial $Z$ checks and distance one.  Genus alone does not make an
+error-correcting code useful.  The executable higher-genus cases instead
+use the nondegenerate connected-sum cellulations constructed below.
+
+\section{The cellular chain complex is the stabilizer specification}
+
+Work over $\mathbb F_2$.  Give the cellular vector spaces their cell bases:
+\[
+ C_2=\mathbb F_2^F\xrightarrow{\partial_2}
+ C_1=\mathbb F_2^E\xrightarrow{\partial_1}\mathbb F_2^V=C_0.
+\]
+The boundary of an edge is the sum of its endpoints; a loop contributes
+twice and hence zero.  The boundary of a face is the parity of its edge
+occurrences.  Since the boundary of a closed polygon has each vertex an
+even number of times, $\partial_1\partial_2=0$.  Define
+\[
+ H_X=\partial_1,\qquad H_Z=\partial_2^{\mathsf T}.
+\]
+Their rows are the vertex stars and face boundaries.  In the actual files
+the rows are sparse lists of qubit indices.  They are not dense floating
+matrices subsequently rounded to binary values.
+
+Place one qubit on each original edge.  For $a,b\in\mathbb F_2^E$, put
+\[
+ X(a)=\prod_eX_e^{a_e},\qquad Z(b)=\prod_eZ_e^{b_e}.
+\]
+The single-qubit identity $XZ=-ZX$ gives
+\[
+ X(a)Z(b)=(-1)^{a\cdot b}Z(b)X(a).
+\]
+Let $A_v$ be the $X$ product on the star of vertex $v$, and $B_f$ the
+$Z$ product on the boundary of face $f$.
+
+\begin{theorem}[Commutation from the chain identity]
+All $A_v$ and $B_f$ commute.  Their common $+1$ eigenspace is a CSS
+code with
+\[
+ k=E-\operatorname{rank}H_X-\operatorname{rank}H_Z
+\]
+logical qubits.
+\end{theorem}
+\begin{proof}
+Two products of $X$ operators commute, as do two products of $Z$
+operators.  The commutation sign of $A_v$ with $B_f$ is the $(v,f)$
+entry of $H_XH_Z^{\mathsf T}=\partial_1\partial_2=0$.
+Choose independent rows in the two matrices.  Their Pauli generators
+are independent jointly: an identity product must have zero $X$ mask
+and zero $Z$ mask separately.  Ordering all $X$ factors before all $Z$
+factors introduces no sign because these groups commute.  Thus the
+generated stabilizer group contains $2^r$ elements, where
+$r=\operatorname{rank}H_X+\operatorname{rank}H_Z$, and does not contain
+$-I$.
+
+The projector onto the common $+1$ eigenspace is
+$P=2^{-r}\sum_{S\in\mathcal S}S$.  Multiplication in the finite
+group proves $P^2=P$, and Hermiticity follows because its elements
+are Hermitian involutions.  Every nonidentity Pauli has trace zero,
+while $I$ has trace $2^E$.  Therefore
+$\dim\operatorname{im}P=\operatorname{tr}P=2^{E-r}=2^k$.
+\end{proof}
+
+\begin{theorem}[Logical qubits on a closed oriented surface]
+For a connected closed oriented surface of genus $g$,
+\[
+ \operatorname{rank}H_X=V-1,\qquad
+ \operatorname{rank}H_Z=F-1,\qquad k=2g.
+\]
+\end{theorem}
+\begin{proof}
+A vector in $\ker\partial_1^{\mathsf T}$ assigns equal binary
+values to the two endpoints of every edge.  Connectivity forces it
+to be constant.  Its kernel has dimension one, so
+$\operatorname{rank}\partial_1=V-1$.
+
+Assign a coefficient $a_f$ to each face.  In
+$\partial_2\sum_fa_ff$, the coefficient of an edge separating faces
+$f$ and $f'$ is $a_f+a_{f'}$.  The dual graph is connected: a path
+between face interiors can be perturbed to cross edges transversely
+and avoid vertices.  Consequently the kernel consists exactly of
+the constant face assignments, and
+$\operatorname{rank}\partial_2=F-1$.  The all-face sum really has
+zero boundary because each edge occurs twice.  Substitution in the
+CSS formula gives $k=E-V-F+2=2-(V-E+F)=2g$.
+\end{proof}
+
+This is a quantitative use of topology, but its quantity is the dimension
+of a finite code space.  It does not compute a classical cryptographic
+secret or a continuum field-theory mass.  The theorem also explains why
+one must retain the dependent checks: the products of all star checks
+and of all face checks are each identity, although the checks remain
+useful local observables.
+
+\section{Logical operators, distance and syndrome}
+
+A $Z$ string commutes with every star precisely when its edge mask belongs
+to $\ker\partial_1$.  Multiplying it by a face stabilizer adds a boundary.
+Thus its logical class lies in
+\[
+ H_1(\Sigma;\mathbb F_2)=\ker\partial_1/\operatorname{im}\partial_2.
+\]
+Similarly $X$ strings are classified by
+$\ker H_Z/\operatorname{row}H_X$, the corresponding cohomological
+quotient.  The dot product is their commutation pairing.  A nonzero pairing
+means that the associated logical $X$ and $Z$ anticommute.  This provides
+the operator interpretation of the $2g$ homology generators.
+
+For an error $X(a)Z(b)$, its syndrome is
+\[
+ s_X=H_Xb,\qquad s_Z=H_Za.
+\]
+Each syndrome bit records an anticommuting check.  A single $Z$ error
+creates star defects at the edge endpoints, and a single $X$ error creates
+defects on its two adjacent faces.  A recovery with the same syndrome
+can still differ from the error by a nontrivial logical loop.  Therefore
+displaying an error syndrome is not by itself a demonstration of a decoder.
+Repeated noisy syndrome extraction and decoding require the additional
+protocol assumptions studied in surface-code memory analyses
+\cite{QSDennis2002}.
+
+For the $L_x\times L_y$ square torus with $L_x,L_y\geq3$, index the
+horizontal and vertical edges by
+\[
+ h(x,y)=yL_x+x,\qquad v(x,y)=L_xL_y+yL_x+x,
+\]
+using coordinates modulo the two lengths.  A face at $(x,y)$ has oriented
+boundary
+\[
+ h(x,y)+v(x+1,y)-h(x,y+1)-v(x,y).
+\]
+There are $L_xL_y$ vertices and faces, and $2L_xL_y$ qubits.
+
+\begin{proposition}[Distance of the rectangular torus code]
+The square torus construction has parameters
+\[
+ [[2L_xL_y,\ 2,\ \min(L_x,L_y)]].
+\]
+\end{proposition}
+\begin{proof}
+The logical dimension is the preceding theorem.  A binary cycle is a
+union of closed edge paths.  If its homology class is nonzero, at least
+one constituent path has odd winding in a periodic direction.  Lift that
+path to the square lattice in the plane.  Its endpoint displacement has
+a nonzero coordinate equal to an integral multiple of $L_x$ or $L_y$.
+Each edge changes one coordinate by one, so the path has length at least
+$\min(L_x,L_y)$.  The same argument applies to the dual square lattice.
+Straight horizontal and vertical loops attain the corresponding lengths,
+so the minimum is attained.
+
+For completeness, a mixed Pauli logical operator cannot improve this
+minimum.  Its $X$ and $Z$ masks satisfy their separate centralizer
+conditions.  If both were stabilizer masks, their product would also
+be a stabilizer.  At least one is a nontrivial logical mask, and the
+weight of their union is at least the weight of that component.
+\end{proof}
+
+On the eighteen-qubit torus, examples of conjugate logical pairs are
+\[
+ Z_{\rm h}=Z_0Z_1Z_2,\quad X_{\rm h}=X_0X_3X_6,
+ \qquad
+ Z_{\rm v}=Z_9Z_{12}Z_{15},\quad X_{\rm v}=X_9X_{10}X_{11}.
+\]
+The displayed matched pairs overlap once; unmatched pairs have zero
+overlap.  All commute with the stabilizers.  The backend also checks
+distance independently by exhaustively testing increasing Pauli-support
+weights modulo the stabilizer row spaces.  For CSS codes it suffices to
+test the two pure types, by the last paragraph of the proof.
+
+\section{Higher genus by a verified connected sum}
+
+To obtain genus two, take two copies of the $3\times3$ torus and remove
+one open square face from each.  If their boundary vertices are
+$a_0,\ldots,a_3$ and $b_0,\ldots,b_3$ in their original face
+orientations, identify $a_i$ with $b_{-i}$, with indices modulo four.
+This reverses the boundary orientation.  The boundary edge
+$a_i a_{i+1}$ is paired with the reverse of
+$b_{-i-1}b_{-i}$.
+
+The new counts are
+\[
+ V=9+9-4=14,\quad E=18+18-4=32,\quad F=9+9-2=16.
+\]
+Thus $\chi=-2$ and $g=2$.  Pairing edges explicitly is important:
+identifying every edge with the same unordered endpoint pair would
+incorrectly merge distinct parallel edges in more general maps.  The
+implementation retains edge identities, reverses their incidence signs
+when required, and reconstructs every face and vertex rotation cycle.
+
+A second connected sum with a third torus gives
+$(V,E,F)=(19,46,23)$ and genus three.  The selected remaining face has
+four distinct vertices, so its closure is an embedded disk even when it
+shares vertices with the earlier seam.  The same manifold checks are
+repeated after gluing.  The counts are not accepted as a substitute for
+these checks.
+
+\begin{longtable}{lrrrrrr}
+\toprule
+Cellulation & $E$ & $g$ & $\operatorname{rank}H_X$ &
+$\operatorname{rank}H_Z$ & $k$ & $d$\\\midrule
+$3\times3$ torus &18&1&8&8&2&3\\
+$3\times5$ torus &30&1&14&14&2&3\\
+Two tori, connected sum &32&2&13&15&4&3\\
+Three tori, connected sum &46&3&18&22&6&3\\
+$32\times32$ torus &2048&1&1023&1023&2&32\\\bottomrule
+\end{longtable}
+
+The first four distances are checked by exhaustive search through weight
+three, including proof by enumeration that smaller nontrivial logical
+supports do not exist.  The last distance uses the rectangular-torus
+theorem, not a search over $2^{2048}$ masks.  At a genus-two seam, some
+star checks have weight six; the genus-three example has star weights up
+to eight.  All their face checks have weight four.  These constructions
+increase the number of logical qubits, but the chosen small cells retain
+distance three.  They do not establish an improved asymptotic rate-distance
+tradeoff.
+
+\section{A deterministic encoder with a complete proof}
+
+Let $W=\operatorname{row}H_X\subseteq\mathbb F_2^E$ and let
+$r=\dim W$.  The prepared code state is
+\begin{equation}
+ |\Omega\rangle=2^{-r/2}\sum_{w\in W}|w\rangle.
+ \label{eq:surface-encoded-state}
+\end{equation}
+Distinct binary strings label orthonormal computational basis vectors,
+so the normalization follows from $|W|=2^r$.
+
+\begin{proposition}[Stabilizers and logical sector of the prepared state]
+Every star and face stabilizes $|\Omega\rangle$.  Every $Z(b)$ with
+$b\in\ker H_X$ also has eigenvalue $+1$ on this state.  Thus the state
+chooses the simultaneous $+1$ sector of a full set of logical $Z$
+operators.
+\end{proposition}
+\begin{proof}
+An $X$ star adds an element of $W$ to each summation label, permuting
+$W$ and leaving its uniform sum invariant.  For $b\in\ker H_X$,
+every $w\in W$ satisfies $b\cdot w=0$, so
+$Z(b)|w\rangle=(-1)^{b\cdot w}|w\rangle=|w\rangle$.
+The face masks lie in $\ker H_X$ by the chain identity.  The remaining
+homologically nontrivial masks provide the logical $Z$ conditions.
+\end{proof}
+
+Reduce $H_X$ to a binary reduced row-echelon basis
+$r_1,\ldots,r_r$, with pivot positions $p_1,\ldots,p_r$.
+On an all-zero register, apply a Hadamard to each pivot.  Then, for every
+nonpivot position $q$ with $(r_i)_q=1$, apply
+$\mathrm{CX}_{p_i\to q}$.  This is the actual gate sequence in the JSON
+files, not merely a reference to an abstract encoding unitary.
+
+\begin{theorem}[Correctness of the encoder]
+The specified Hadamard--CNOT circuit prepares
+\eqref{eq:surface-encoded-state} exactly in the ideal gate model.
+\end{theorem}
+\begin{proof}
+After the Hadamards, the pivot bits range uniformly over
+$u=(u_1,\ldots,u_r)\in\mathbb F_2^r$, with amplitude $2^{-r/2}$,
+and all other bits are zero.  Reduced row-echelon form makes the pivot
+submatrix the identity.  No later CNOT targets a pivot.  Therefore its
+control retains $u_i$, and the final nonpivot bit $q$ is
+$\sum_i u_i(r_i)_q$.  The entire output string is
+$\sum_i u_ir_i$.  Independence of the rows makes this a bijection
+from $\mathbb F_2^r$ to $W$.  CNOTs permute basis states without phases,
+which proves the claimed uniform positive sum.
+\end{proof}
+
+The circuits have respectively $42,74,82,134$ gates for the eighteen,
+thirty, thirty-two and forty-six-qubit cases.  The eighteen-qubit circuit
+uses eight Hadamards and thirty-four CNOTs.  This is an algebraic encoder;
+some CNOT endpoints are distant in the surface drawing.  A nearest-neighbor
+hardware compilation would need routing, scheduling and extra gates.
+Local stabilizer supports do not automatically make this particular
+preparation circuit local.
+
+The implementation uses little-endian basis indices: qubit $q$ is bit $q$
+of the array index.  Each gate specifies its name and target, a control for
+CNOT, and an angle for rotations.  This convention is shared by the
+browser and the CPU/GPU interfaces.  An inconsistent bit convention could
+produce a normalized state while assigning its amplitudes to the wrong
+qubits, so normalization alone is not an adequate validation.
+
+\section{A finite Hamiltonian with a provable gap}
+
+The same checks define the positive Hamiltonian
+\[
+ H_{\rm code}=\sum_v\frac{I-A_v}{2}
+              +\sum_f\frac{I-B_f}{2}.
+\]
+Every term is an orthogonal projector and all terms commute.  The ground
+space is exactly the CSS code space.
+
+\begin{proposition}[Gap in the specified projector normalization]
+For a connected closed oriented cellulation containing at least one edge
+with distinct endpoints, the smallest positive eigenvalue of $H_{\rm code}$
+is two. In particular, this applies to all four simulated torus and
+connected-sum cellulations in this chapter.
+\end{proposition}
+\begin{proof}
+Commuting Hermitian involutions admit a simultaneous eigenbasis.  In it,
+the energy is the number of violated checks.  The relations
+$\prod_vA_v=I$ and $\prod_fB_f=I$ force the number of violations of
+each type to be even.  Consequently any nonzero energy is at least two.
+Choose an edge with distinct endpoints and apply its $Z$ operator to
+$|\Omega\rangle$.  Exactly its two endpoint stars change sign; all face
+checks retain eigenvalue $+1$.  This nonzero vector has energy two,
+which proves that the lower bound is attained.
+\end{proof}
+
+This statement adds operator and normalization data that an Euler
+characteristic does not contain.  It is a gap theorem for an explicit
+finite commuting-projector $\mathbb Z_2$ gauge model.  It is not the
+mass-gap theorem for nonabelian continuum Yang--Mills theory.  Even the
+physical questions within the code model require care: a growing error
+string can move its endpoints without increasing the number of defects.
+A gap alone therefore does not prove a passive, thermally self-correcting
+memory or a fault-tolerance threshold.  Those conclusions need dynamical
+noise and recovery assumptions \cite{QSDennis2002}.
+
+\section{A surface-local variational neural circuit}
+
+Cong, Choi and Lukin introduced QCNNs using repeated local unitary layers,
+measurement-conditioned pooling, and progressively reduced system size.
+Their applications include phase recognition and optimization of quantum
+error correction \cite{QSCong2019}.  The present demonstrator is more
+specific: it is a trainable four-parameter quantum correlator on a star
+of an encoded surface state.  It has executable non-Clifford rotations
+and a measured output, but does not reproduce that paper's multiscale
+QCNN, learned decoder, or claimed performance comparisons.
+
+Let the first star in the eighteen-qubit cellulation have ordered support
+\[
+ (q_0,q_1,q_2,q_3)=(0,2,9,15).
+\]
+The classical input is $s=(s_0,s_1,s_2,s_3)\in\{-1,1\}^4$, and the
+trainable vector is $\theta\in\mathbb R^4$.  Define
+\[
+ \phi_i=s_i\pi/2+\theta_i,\qquad
+ R_Y(\phi_i)=\exp(-i\phi_iY/2).
+\]
+Apply these rotations to the four listed qubits of $|\Omega\rangle$.
+Then apply CNOTs with controls $q_1,q_2,q_3$ and common target $q_0$.
+The output is the expectation of $Z_{q_0}$.  Four-edge stars make this
+circuit local in the cellulation's edge-incidence sense; a physical chip
+still needs a specified coupling graph to realize those interactions.
+
+\begin{theorem}[Exact output of the variational correlator]
+For the specified state, patch and gates,
+\begin{equation}
+ f_\theta(s)=\left(\prod_{i=0}^3s_i\right)
+              \left(\prod_{i=0}^3\cos\theta_i\right).
+ \label{eq:qnn-exact-output}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Conjugating $Z_{q_0}$ backward through the three CNOTs gives
+$Z_{q_0}Z_{q_1}Z_{q_2}Z_{q_3}$.  Direct multiplication of the
+two-by-two rotation matrix gives
+\[
+ R_Y(\phi)^\dagger ZR_Y(\phi)=\cos\phi\,Z-\sin\phi\,X.
+\]
+Expand the product of these four expressions.  Any term other than the
+all-$X$ term contains a nonempty subset of $Z$ factors on the star.
+The four neighbors of its center are distinct.  A chosen $Z$ edge is
+incident to a neighboring vertex with no other edge in that subset.
+Thus its $Z$ mask has nonzero incidence and is not in $\ker H_X$.
+
+More explicitly, for a Pauli $X(a)Z(b)$, the expansion of
+$\langle\Omega|X(a)Z(b)|\Omega\rangle$ is zero unless $a\in W$;
+when $a\in W$, it is $|W|^{-1}\sum_{w\in W}(-1)^{b\cdot w}$.
+If $b$ is not orthogonal to $W$, pairing $w$ with $w+w_0$ for a
+vector satisfying $b\cdot w_0=1$ makes this sum zero.  Therefore all
+the terms just identified have zero expectation.
+
+The all-$X$ product is exactly the star stabilizer and has expectation
+one.  Its coefficient is $\prod_i(-\sin\phi_i)=\prod_i\sin\phi_i$,
+because there are four factors.  Finally
+$\sin(s_i\pi/2+\theta_i)=s_i\cos\theta_i$, proving the formula.
+\end{proof}
+
+This theorem makes the neural experiment independently checkable.  A
+state-vector implementation must execute the rotations and CNOTs, and
+its result can be compared with the product formula.  The formula itself
+is an efficient classical baseline.  Training this circuit therefore
+does not demonstrate a quantum computational advantage or solve a
+previously unknown classification problem.
+
+\section{Training, parameter shifts and the meaning of a held-out input}
+
+The target is the four-bit parity $y(s)=\prod_i s_i$.  For a nonempty
+training set $T$, use mean squared error
+\[
+ \mathcal L(\theta)=|T|^{-1}\sum_{s\in T}(f_\theta(s)-y(s))^2.
+\]
+Let $C(\theta)=\prod_i\cos\theta_i$.  The exact output theorem gives
+\begin{equation}
+ \mathcal L(\theta)=(C(\theta)-1)^2,
+ \qquad
+ \partial_j\mathcal L
+ =-2(C-1)\sin\theta_j\prod_{i\ne j}\cos\theta_i.
+ \label{eq:qnn-loss-gradient}
+\end{equation}
+These identities include points where $\cos\theta_j=0$, unlike an
+expression written using $\tan\theta_j$ and division by that cosine.
+They supply an independent reference gradient.
+
+The quantum parameter-shift identity for this circuit is
+\[
+ \partial_j f_\theta(s)
+ =\tfrac12\bigl(f_{\theta+(\pi/2)e_j}(s)
+                -f_{\theta-(\pi/2)e_j}(s)\bigr).
+\]
+To prove it directly, hold the other parameters fixed in
+\eqref{eq:qnn-exact-output} and apply
+$[\cos(t+\pi/2)-\cos(t-\pi/2)]/2=-\sin t$.
+More generally this two-evaluation rule follows when a parameter appears
+once in a gate generated by a Pauli operator divided by two.  Repeated
+occurrences require a sum of gatewise derivative contributions, and
+different generator spectra require an appropriate rule
+\cite{QSSchuld2019}.  The shift formula applies to the expectation;
+the loss derivative then uses the ordinary chain rule.  Shifting the
+entire squared loss by $\pm\pi/2$ is generally not the same calculation.
+
+The recorded training specification uses initial angles
+$(0.65,-0.4,0.5,-0.6)$, four sign inputs
+$++++,-+++,--++,+-++$, twenty-four gradient steps, and learning rate
+$0.2$.  All sixteen possible sign inputs are then evaluated, including
+twelve not used in the numerical updates.  The theorem explains why the
+same learned scale controls every input: the loss is independent of which
+nonempty subset of the truth table was selected.  Consequently the
+held-out results are useful software checks, but they cannot support a
+statistical generalization claim for an unknown data distribution.
+
+If the output were measured physically, each shot would produce $+1$ or
+$-1$, with mean $f_\theta(s)$.  For $M$ independent shots, the sample
+mean has variance $(1-f_\theta(s)^2)/M$.  A full-state simulator can
+compute the expectation directly without sampling noise.  Its gradient
+agreement therefore verifies numerical circuit implementation, not the
+sample complexity or robustness of training on a noisy device.  The
+report distinguishes these modes explicitly.
+
+\section{Execution evidence and scaling}
+
+The CPU validation executes the forty-two encoder gates on a complex128
+array of length $2^{18}=262144$.  It compares the result with an
+independently constructed row-space superposition and evaluates all nine
+star and nine face expectations.  The recorded norm squared is
+$0.9999999999999989$, the maximum amplitude discrepancy is below
+$4.2\times10^{-17}$, and the state has exactly 256 nonzero amplitudes
+at the expected locations.  The sixteen variational input computations
+agree with \eqref{eq:qnn-exact-output} to below $1.1\times10^{-15}$.
+These are floating-point execution results; the encoder and output
+theorems above provide the exact mathematical assertions.
+
+The topology checks are independent of floating-point geometry.  They
+verify edge incidences, oriented face closure, connectivity, rotation
+cycles, Euler characteristic, commutation and binary matrix ranks.  The
+genus-two and genus-three certificates therefore establish nontrivial
+CSS codes even when a browser displays their charts without storing
+their exponentially large state vectors.  A visual drawing can be
+changed without changing the checked combinatorial data.
+
+The sparse grid interface constructs star and face supports in
+$O(L_xL_y)$ storage.  It can supply much larger toric instances to a
+stabilizer backend without allocating a dense parity-check matrix or
+performing generic binary elimination.  The rank formula is then a
+proved topological result, and the manifest identifies whether ranks
+were computed by row reduction or obtained from that theorem.  The
+2048-qubit archived case additionally has exact row-reduction checks.
+
+A complex64 state vector requires $8\cdot2^n$ bytes before workspaces.
+Thirty qubits require 8 GiB; thirty-one require 16 GiB.  A measurement
+ancilla can therefore double the dominant allocation.  Forty-six
+qubits would require 512 TiB for the raw state alone.  These arithmetic
+facts explain why different backends are necessary.  A compressed
+Clifford state or batch of Pauli errors can be processed at a much
+larger qubit count, but arbitrary $R_Y$ rotations generally leave the
+Clifford class.
+
+\subsection{Recorded GPU execution}
+
+\IfFileExists{chapters/quantum-gpu-results.tex}{
+ \input{chapters/quantum-gpu-results.tex}
+}{
+ The GPU execution report is generated separately from this mathematical
+ chapter.  Until that report is included, no GPU timing, peak-memory
+ measurement or completed large-instance run is asserted here.  The
+ executable cases, gate conventions and CPU cross-checks above specify
+ what an additional backend must reproduce.
+}
+
+\section{Extensions with explicit mathematical obligations}
+
+For a prime $p$, the cellular construction extends to qudits of dimension
+$p$.  Retain signed integer incidence matrices and reduce them modulo
+$p$.  Define $X|j\rangle=|j+1\rangle$ and
+$Z|j\rangle=e^{2\pi i j/p}|j\rangle$.  Their products commute exactly
+when the corresponding signed row pairing is zero modulo $p$.
+The integer identity $\partial_1\partial_2=0$ supplies this condition,
+and the connected oriented-surface rank argument again gives $2g$
+logical qudits.  Over composite dimensions, field rank arguments must
+be replaced by module or Smith-normal-form calculations.  This is an
+actual point where integral order and module theory helps prevent an
+invalid inference.  The present executable gate engine remains a qubit
+implementation; the qudit construction is a mathematical extension.
+
+Nonabelian finite-group gauge models require richer local Hilbert spaces
+and constraints.  Kitaev's anyon construction develops that direction,
+but the qubit star-and-face specification cannot simply be relabelled as
+a universal nonabelian simulator \cite{QSKitaev2003}.  Likewise an
+arbitrary hypermap encoding may admit a circuit transformation to a
+surface code, rather than introducing a fundamentally different source
+of protection; constructive comparisons are available in the literature
+\cite{QSSarvepalli2014}.
+
+For learned quantum circuits, a substantive next step would specify a
+noise channel, a family of input states, a training distribution, a
+decoder or observable, and comparison with classical and analytic
+baselines.  Multi-layer pooling and measurement feedback would require
+additional circuit semantics beyond the present four-parameter model.
+Any claim of improved decoding should measure logical failure after
+recovery, not just a reduced training loss or an attractive surface
+visualization.
+
+The connection to the rest of the monograph is now concrete.  A clean
+dessin supplies a rotation system and an integral cell complex.  Reduction
+modulo two supplies compatible binary matrices.  Their zero composite
+becomes commutation of quantum operators.  Homology becomes logical
+Pauli operators.  A row-space construction becomes a finite gate list,
+and a local observable becomes a trainable circuit with a provable output.
+Every transition has specified data and a checkable statement.  These
+are useful new executable interfaces within the project, without
+identifying them with a solution of GRH, an improved ECC attack, or a
+continuum Yang--Mills mass-gap proof.

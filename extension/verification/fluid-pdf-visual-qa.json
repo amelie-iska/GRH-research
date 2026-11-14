@@ -1,0 +1,1479 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-13",
+  "reviewer": "microscopic_review; independent rendered review requested by parent",
+  "pdf": "extension/manuscript/fluid-extension.pdf",
+  "reviewed_pdf_sha256": "c0734e7b2208606f3ee3b7804c99f8f47615740133e8474a66c73179167d1408",
+  "pdf_sha256_at_record_creation": "61c7f315020edac0261bef45b45f05c66b3cbe40d2d5fb8a6273608dfe2b9643",
+  "pdf_pages": 70,
+  "status": "passed within the recorded visual-review scope; transferred to the final PDF by exact all-page RGB render equivalence",
+  "source_or_pdf_edits": false,
+  "method": {
+    "skill": "pdf (read-only; no authoring marker required)",
+    "renderer": "pdftoppm version 26.05.0",
+    "overview_command": "pdftoppm -r 60 -png extension/manuscript/fluid-extension.pdf <external-qa-directory>/overview/fluid-page",
+    "detail_command": "pdftoppm -f PAGE -l PAGE -singlefile -r 150 -png extension/manuscript/fluid-extension.pdf <external-qa-directory>/detail/fluid-page-PAGE",
+    "overview_dpi": 60,
+    "detail_dpi": 150,
+    "overview_review": "All 70 rendered pages visually inspected through eight contact sheets, covering pages 1-9, 10-18, 19-27, 28-36, 37-45, 46-54, 55-63 and 64-70.",
+    "detail_review": "Twenty individual full-page PNGs visually inspected at the detailed rendering resolution. This includes all four finite circuit-repair propositions and every page of the fluid Lean listing.",
+    "overview_image_directory": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview",
+    "contact_sheets": [
+      "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/contact-sheet-01-09.png",
+      "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/contact-sheet-10-18.png",
+      "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/contact-sheet-19-27.png",
+      "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/contact-sheet-28-36.png",
+      "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/contact-sheet-37-45.png",
+      "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/contact-sheet-46-54.png",
+      "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/contact-sheet-55-63.png",
+      "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/contact-sheet-64-70.png"
+    ],
+    "baseline_page_pixel_hashes": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview-page-pixel-hashes.json"
+  },
+  "detail_coverage": [
+    {
+      "pdf_pages": [
+        9
+      ],
+      "content": "Coupled Born-Oppenheimer equations, derivative couplings, gap denominator and finite-unitary population display."
+    },
+    {
+      "pdf_pages": [
+        17
+      ],
+      "content": "Constitutive laws, scaled Boltzmann equation, kernel assumptions and relative-entropy display."
+    },
+    {
+      "pdf_pages": [
+        28,
+        29
+      ],
+      "content": "Sparse Volterra estimate, diagonal realization, cutoff curl correction and differential-polynomial product identity."
+    },
+    {
+      "pdf_pages": [
+        31
+      ],
+      "content": "Complete localization residual and corrected Borel terminal-jet construction."
+    },
+    {
+      "pdf_pages": [
+        40
+      ],
+      "content": "Moment determinant, quantitative contraction estimate and mass-matrix discrete adjoints."
+    },
+    {
+      "pdf_pages": [
+        44
+      ],
+      "content": "Discrete memory recurrence and block-resolvent determinant."
+    },
+    {
+      "pdf_pages": [
+        46
+      ],
+      "content": "Kraus heat channel, heat energy and eigenvalues, Madelung displays."
+    },
+    {
+      "pdf_pages": [
+        50
+      ],
+      "content": "Norm-controlled Carleman estimate and tensor-product generator."
+    },
+    {
+      "pdf_pages": [
+        51,
+        52
+      ],
+      "content": "All four circuit repairs: Propositions 4.14 (partial isometry), 4.15 (reversible equality encoding), 4.16 (normalized rectangular dilation) and 4.17 (linear instrument)."
+    },
+    {
+      "pdf_pages": [
+        53
+      ],
+      "content": "Quantum ToricGT constitutive coefficient and parameter-shift derivative."
+    },
+    {
+      "pdf_pages": [
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "content": "Entire fluid Lean listing, including imports, all theorem bodies, final #check declarations and #print axioms block."
+    }
+  ],
+  "observations": [
+    "No clipped text, overlapping blocks, broken tables, cropped display equations or visible missing-glyph placeholders were observed within the recorded review scope.",
+    "The four circuit repairs have readable bras, kets, daggers, tensor symbols, direct sums, rectangular block matrices and probability formulas; their proofs fit within the text area.",
+    "All eight fluid Lean listing pages preserve readable indentation, line continuation, operators, Unicode mappings and page boundaries. The small filled square for the Lean source symbol U+2B1D is the explicit intentional mapping in lean-listings-unicode.tex, not a missing glyph.",
+    "Headers, page numbers, contents hierarchy and chapter transitions are consistent. Sparse terminal pages retain a short listing tail or bibliography tail; they contain no apparent missing or truncated content."
+  ],
+  "mechanical_support": {
+    "all_page_text_bounding_boxes_inside_page": true,
+    "out_of_page_text_block_count": 0,
+    "note": "PyMuPDF text-block bounds were checked on all 70 pages. This supports, but does not replace, visual inspection; no claim about mathematical correctness or clickable-link behavior follows from this check."
+  },
+  "findings": [],
+  "limitations": [
+    "All pages were reviewed at overview scale, but only the enumerated 20 pages received detailed-resolution visual review.",
+    "This record concerns rendering and layout. It does not rerun Lean, verify ordinary proofs, independently audit source completeness, or test PDF hyperlinks.",
+    "If the PDF is rebuilt, the recorded review applies directly only to the reviewed SHA-256. It may be transferred to a new PDF only with recorded equality of all 70 rendered page pixels using the same rendering parameters, or a fresh visual review of changed pages."
+  ],
+  "overview_page_hashes": [
+    {
+      "pdf_page": 1,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "4b07d1e63dc44c46b6502e7fdbac8cc7f652852694d40d7a806ceb3ff38b14e9",
+      "png_sha256": "dc780aac6b14049cb971d066c50d60dcf5e4d420f804b71942538d2d553a9420",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-01.png"
+    },
+    {
+      "pdf_page": 2,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "3f60d7165cf32cd06029c27929456aacd1132dae74dcfbaf9f44d05791280190",
+      "png_sha256": "e4c828420543c449aa5ca9b30e81731ffe09b52e34b7d93ea385dbb9c9161769",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-02.png"
+    },
+    {
+      "pdf_page": 3,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "4fb17365079993ccefa93aa3076e0cd4f45e8e357fa02a8fa5d13b23f4d5c7dc",
+      "png_sha256": "fa51cc1b8ae253f2eb0f263f5f51b5be23aa02423ad9e8d11e17cb34f719ff0d",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-03.png"
+    },
+    {
+      "pdf_page": 4,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "ef47211000f98631b66a3b93df1bf22a9d3942da9af1eec7bc75cd218e58036e",
+      "png_sha256": "4e06e9c33e460930a29c1c374d3747f35e1b5a50a15c60423b463ff73460a2ea",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-04.png"
+    },
+    {
+      "pdf_page": 5,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "677c866eb67ea8fae71b9f1a52c14f689015a32997f5a00319551b239da68907",
+      "png_sha256": "42b33347de93e0e186f8682e831235835b549bb69e14c466feefac3a4bc7c8e5",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-05.png"
+    },
+    {
+      "pdf_page": 6,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "ca16dc9d466526a8ccbcb7ab46db07c82227b8f0c57f4bbfc77f16214abfa709",
+      "png_sha256": "a235a23abea6e0ecf42ead4358357ae1e347076f8108c38ba55cde34fb01a9b5",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-06.png"
+    },
+    {
+      "pdf_page": 7,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "716f6d89fc162c1d76321bb101df9a96c3fe4ecf0f561d8aebd354048d00b301",
+      "png_sha256": "59ed1cb5bf1911bfb3e4bc878dc93c8b01c4ac2fa30d7d6c9eea958548709dd7",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-07.png"
+    },
+    {
+      "pdf_page": 8,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "6b7a3213cff35fc14f4563c4757533cdf7437c00e3b2344eb8e4529912a137f0",
+      "png_sha256": "f9c213fbdc9045d48ac6b1760b81f5965af67dfd5f351211fc82e8d21728cb46",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-08.png"
+    },
+    {
+      "pdf_page": 9,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "96d5c53d3b0c734fa4164a2294247b7e98af634301a3459dfc96482276d20cea",
+      "png_sha256": "70c4a7f0db98bc50140bb0666cfd72775476d67cfd4122c2dce57d5c7b863d22",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-09.png"
+    },
+    {
+      "pdf_page": 10,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "219b2e9aa954de0e8ff1af213f3a53a2045dc71a3e9e98064f7be60d755fe9de",
+      "png_sha256": "d37b4132833386683c8c65d39a6866aa089699c9cdc40d282115587044dfc10c",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-10.png"
+    },
+    {
+      "pdf_page": 11,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "aa519eb74d1815d85666abcf7e419e2f3ff94388d725f1006369c9a004ecbec1",
+      "png_sha256": "9efa9d5a85b2ac8c5d815d8241f9b582bb19ad7283c81558b5e3e28802d543ef",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-11.png"
+    },
+    {
+      "pdf_page": 12,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "6a063f3e2a911f51d2d8382e3a8fed822c4e0c0ef38abc2ecc60016aff06ac3c",
+      "png_sha256": "4088c3f36de1b708f62747601adf23f36d087058687a3f94ad37e330bf28b75e",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-12.png"
+    },
+    {
+      "pdf_page": 13,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "d0f2fe012e351ccb8b57773a25b58c4638599b2f190f1bf2765766d8b79f86ad",
+      "png_sha256": "e203d9b4c560e5725f80dca501585d3da779039bf6f1d9d263dafc01a49599dc",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-13.png"
+    },
+    {
+      "pdf_page": 14,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "fffc8c5ca0b9d2409c611ad72e7a3e8bf083d7d67edb7ba00448ffc96514209b",
+      "png_sha256": "caa9750029b1a6630ad1bd8c016c0e129cb52cab27d3820023de2f46ed94c977",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-14.png"
+    },
+    {
+      "pdf_page": 15,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "49c08aefd537c8330ea2997e07b33f386ffcdba71608b7a002f4b1e6d19e316a",
+      "png_sha256": "b9c7425b58b02851b05706e4231e1439582a7bcc537daa904aa02fc62ec69bb0",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-15.png"
+    },
+    {
+      "pdf_page": 16,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "01719d742f15a2f4efe93537de4fce7874b69912ad3c0a06ca28821618242287",
+      "png_sha256": "4495afec67433078cd8770036deab2ab0f1fae048026ff6dd28f3d4fdcee5cc6",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-16.png"
+    },
+    {
+      "pdf_page": 17,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "5dee94a2313147ccfa3dfdec803c06dd62b7b731497033556fe11d436fb16b58",
+      "png_sha256": "80fecd64a674039b7cd6b0852814a06fb64534fd2e117bf904f48e0c459d1765",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-17.png"
+    },
+    {
+      "pdf_page": 18,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "b6d13b7e2577ba9653b427aaed6a07a6cff288045bf333f82126dda058c47e02",
+      "png_sha256": "ae1b827218111cbf47edcb0f5e63affd658034b75f1fdf3db4cd1075c556cd1b",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-18.png"
+    },
+    {
+      "pdf_page": 19,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "d3c362ce1f61fb149e971e519c7052fd8d4786c00762710c08b0489fabb2010a",
+      "png_sha256": "0962d89f1e2ee0451cc2d125450ea925133a2764df53d94470ff40a6362a0c08",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-19.png"
+    },
+    {
+      "pdf_page": 20,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "87350a830872575d2101b8a5d9aa7a0ba5891837cee9c1ced23b4f28ac954c0d",
+      "png_sha256": "62037e7d856dc9c6d21ccf64fbdd6d26d4054ca8552c9e25db5399dcf2f7ba93",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-20.png"
+    },
+    {
+      "pdf_page": 21,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "4dbbc2e98138cb28836b26e1818885e9fdfa250b319d900b4eefa9bde7e75084",
+      "png_sha256": "30433e14f147f3d2b6c7ea5859f319bc6352878714df7844e4c5090175677118",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-21.png"
+    },
+    {
+      "pdf_page": 22,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "007799aa31d8aca72092ce6930b495f22be059f5b362b1e7afc0f5be0205be8c",
+      "png_sha256": "56f86fb0bd997635c4a63bf46bf2fd6b6e0c61bba835b786c48094f11a23c7cf",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-22.png"
+    },
+    {
+      "pdf_page": 23,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "b292156a8564d8aec3866f62140670db82c661aad06790f83124fb6ba4d3424d",
+      "png_sha256": "0c7f677e1eb25bd77e752830ce6ae86d4e2336a8ccecb65f2b4434ea5c068334",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-23.png"
+    },
+    {
+      "pdf_page": 24,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "aa3f90fa4668ac07092d94b09dc6138b8a44dd7c62557119ed8d2e546e9ac19b",
+      "png_sha256": "99d23b357bbfbcc99fd36ce88f28ce6105482268b7347611c00e086364ff9f64",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-24.png"
+    },
+    {
+      "pdf_page": 25,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "32e3d0812dec512b33bdddae61dfffbec22250d26ec8b3480172a8b3810c9a9b",
+      "png_sha256": "93f0740e2b077e852cc7e832f4930ee9e88c225a9711338cedcee340b8aa1cce",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-25.png"
+    },
+    {
+      "pdf_page": 26,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "1c4f253748380c41229d2e623b841eb8c57687d5742cb308f129ff4b2ab6f100",
+      "png_sha256": "9ed25d02d23960add88c3da7e7901dd490c7403aaf57db23f04284edda2a09e6",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-26.png"
+    },
+    {
+      "pdf_page": 27,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "7c0b3174572619c2a130cfe57b68ac88e88ce07a9575d5e40a72cfc57a31c750",
+      "png_sha256": "dbd088618ec78abbe5ce034ae47ce709a59ee7d7965e071eb52179e37d548ce1",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-27.png"
+    },
+    {
+      "pdf_page": 28,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "b4beafd24ef71a9412c9e50fef2b7db55b7332d6fcf192509a7aefef3e85d72b",
+      "png_sha256": "f2039156e39f4c38506beadd3d593752ed01d75e0412921da110d88794bcc5c3",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-28.png"
+    },
+    {
+      "pdf_page": 29,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "4071a7c5a3c5bb5d7c8ba9bd887e02041fb87bdb9ace3742d6a818afc5eb2f56",
+      "png_sha256": "dbc6b561fa02347d2d38d22beb7c0a359f842bdcef0822aa5f4ba59700f116d6",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-29.png"
+    },
+    {
+      "pdf_page": 30,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "34e9c2c5df6599fe10665727bc232df0747d3d649dd8de168f5758257d999739",
+      "png_sha256": "4a100df3808baa6c3000ab4cd015a5c8db2f7d0089dd172d509f5f360247167b",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-30.png"
+    },
+    {
+      "pdf_page": 31,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "50ed033fbbab7c3d4a058dc33aa1d4121211df6f2a2cb451e63d95568ae16bbe",
+      "png_sha256": "b35769c8ede7967971c69b84d304d4280eca9057c600eb372298fb7607fd6749",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-31.png"
+    },
+    {
+      "pdf_page": 32,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "9fbfb609b88056c69993de2a95b01ab7e4893d5acad5ff987603fd44e28a48ea",
+      "png_sha256": "a5d196effee4baebd6cbd6f0daeba852264e4be714df9d33958765a899342a4f",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-32.png"
+    },
+    {
+      "pdf_page": 33,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "c13f9556168035eb6c999951a485b4f27d3f4769c6e6a0edc335e56506033317",
+      "png_sha256": "2d430bcce35e318c1a64347cf7bd3fc5c82d1918845fc5c7e24ac91d47b4f12f",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-33.png"
+    },
+    {
+      "pdf_page": 34,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "5d9d9dadf42ac98a9e6a5d245aa4529f33953213fea6c7ded9871f91eaeb5bbf",
+      "png_sha256": "680bf0afcedddc87401b4d9e738af4333ab6560fc4bf9bdd1b864df1f1b944c6",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-34.png"
+    },
+    {
+      "pdf_page": 35,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "fe09c748b36065c0e4ae3b16bfd6863f2b7b589ff03bc6f42652b564d441ce6a",
+      "png_sha256": "a7c1b2b92d5122113364e37be3d166b7b86c41c79b2f3554a8c825240bd3fb65",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-35.png"
+    },
+    {
+      "pdf_page": 36,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "b4bc2af8eb83448901a443062ff7d58223499f8ac1887da71e46593dfe06bf0b",
+      "png_sha256": "3a1eaee5d616fe6cf70e6c876db00eda7b88910c1068fd0e24ad39a559833b76",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-36.png"
+    },
+    {
+      "pdf_page": 37,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "99d1338945c88bd707ac098d73be641858e1682638cdaef24f80b14ba39624cd",
+      "png_sha256": "1a04b065353ad794f94c196e6bacf390fbe7da0e52217ca8dca6127ab0b42067",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-37.png"
+    },
+    {
+      "pdf_page": 38,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "746c35994efaaebff85fdfb8d745be0a78d1c64403e205e8f509a0fb88917f7a",
+      "png_sha256": "aff4d5e33295c5e79490f65051c0722f87cd93ef61cfe09d5d0cb6402c210bcf",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-38.png"
+    },
+    {
+      "pdf_page": 39,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "0cf6b834353efd44aa0cdd5dfd07d7be25e729291825d42bd13b54a3378edf07",
+      "png_sha256": "5a2979157aabbf506fc66e81a7d601823d181dfd3eefd0244259541cb759822e",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-39.png"
+    },
+    {
+      "pdf_page": 40,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "22eb5cef78367ee56e835d209b88ab93e09c7205e9c3f4e902df170d86a6894d",
+      "png_sha256": "efb9ca7b636eef72f0199c8ff5af9f20d84adceaeeff3137165d3204c858f203",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-40.png"
+    },
+    {
+      "pdf_page": 41,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "9a4b42f9ef7dd04ec97b80af29cac46ae7124435723ae0887563d59fc1d18e8b",
+      "png_sha256": "2adc32026019995bf11bad1873f1e64f440b803af5964e752d5a2143922d9b34",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-41.png"
+    },
+    {
+      "pdf_page": 42,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "acd6094e859104c6e11cef1ab46ac0f18d4898a297504760408d1301654a0165",
+      "png_sha256": "a903206cec5647124f1121b391ba9d2b3403fe716b80cbd6a18e7ab990ca9c10",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-42.png"
+    },
+    {
+      "pdf_page": 43,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "a3f1542e52f47f285bab81d6417e59be1fa8c817742adf95efbcfa8cd602665b",
+      "png_sha256": "b7e29f13b51acb9faa078d9b4abbc884425f64a38ffabd96463b8ce20f42dfec",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-43.png"
+    },
+    {
+      "pdf_page": 44,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "c57175be9edcb2b9769267560b35dd2cbcfaeccaec132f9daf0be493eda8faba",
+      "png_sha256": "29146e46538a8f1ef11970bd049564b0a44832e5182b4f21084f27ed652eba2d",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-44.png"
+    },
+    {
+      "pdf_page": 45,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "2aaa5d4923d2fca8450b1b61b9ad7b9f4309b902a4346c4d540843ad84df1fcc",
+      "png_sha256": "4a9a3fb526b2ae2fc15a9757daca2368c8c1e3d420270c3d36bc4cc6e242eb87",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-45.png"
+    },
+    {
+      "pdf_page": 46,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "4581bd6c6cf52cb801ed71477e210749945958142230c8e07aa5102992ab2c0a",
+      "png_sha256": "5e1fe0e059e5483f5f574cf971d19c374023a2c5bc842a6a4c69d5a5abacbea7",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-46.png"
+    },
+    {
+      "pdf_page": 47,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "e44973eae4c4eea3373472aa365a9a175947ffefb73aa2da458df6040f259105",
+      "png_sha256": "b581c11ea8cfa41217f22bed0ba7ac90a402b519244c9a5f75b7ebcc6a75808c",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-47.png"
+    },
+    {
+      "pdf_page": 48,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "06b3ad4543c711e02ce69dae9e69f485ee617affb168a147f26c789422081aaf",
+      "png_sha256": "25492f21bca053434f1a193da57be324490ded71a6cf08132cae91638903070a",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-48.png"
+    },
+    {
+      "pdf_page": 49,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "481b639ba652595219a1558f6f1957df9ce2bd5a0eb36d2f15c26498f640ab0c",
+      "png_sha256": "6a0e2a9c1b7b8f28cdf515fe475d4eac7db48bc113ef9b124e81fafac3a76b70",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-49.png"
+    },
+    {
+      "pdf_page": 50,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "07b5b919478eebeeda14b09cc2b833e44546f44f27a59f1a492b6a227ff40a96",
+      "png_sha256": "c3031052631ceec1a5bdf1eca33d3a2099d37abf26cb547bb39cc01524cc5c39",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-50.png"
+    },
+    {
+      "pdf_page": 51,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "48f4ecdd25a066c5ff195706bdda56a5ae767756fa8c76e751d71c32c04f0654",
+      "png_sha256": "19308a6c5eaa1876ff018445472889e115f4c05efad759c9aaa656c536c6b10c",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-51.png"
+    },
+    {
+      "pdf_page": 52,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "7352bbd646005a06275d5027f6b22522484a00f7c13fff4b4c670de050d46b58",
+      "png_sha256": "69ef83b9d12a5f01d4501c0066fdca72f9f11bc4e13ab135e272e6256b9563fb",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-52.png"
+    },
+    {
+      "pdf_page": 53,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "6653fef84d1b52665d787563a12434387a1b215a7d7a1831516a1ecc282fb2c4",
+      "png_sha256": "313fb60ca90bf582f75cec254a04922eb49eeb94c5a0afe5a02f84b8e03630f5",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-53.png"
+    },
+    {
+      "pdf_page": 54,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "25e74f07267d45da28df0163fc058608f8adafd923ee4e8c90efc5f2ff1ad8ed",
+      "png_sha256": "9e0ecf55217cc4f8ddb7a24955310f92e743caf845cf489d758e8baff33abcd3",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-54.png"
+    },
+    {
+      "pdf_page": 55,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "8c5254de0a354afb34d9fd04bb4dee6d6168d95c72624cefcf12a21f2e49316e",
+      "png_sha256": "c20787c30c39d621cf7a6bf8985e2e3da4ad128520154cfba9d3266f7093e0a9",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-55.png"
+    },
+    {
+      "pdf_page": 56,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "69ca5fb5260f093dd40caffcde14f99219778b67820d6a2d8b83ea49b480907c",
+      "png_sha256": "ed883eb152b37b59681d9283a08952ae0925c1f99780ef15e0ee1ac9fd67805a",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-56.png"
+    },
+    {
+      "pdf_page": 57,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "32534164136f9767748c28304fc07fdaf1945589e341dede0670ef3165e74724",
+      "png_sha256": "88d588a4505414c4c177a5997a29e1af69bdaf35f80df5a95db1344eec4aad85",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-57.png"
+    },
+    {
+      "pdf_page": 58,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "ff3ba8e62fc42dfb78bac8db46e2fe84fad74386fc54e7409a303bf69338248b",
+      "png_sha256": "94fead6624c900be73498069aeb3adfe6c4f76c83752a435c276f06ed01e2cb9",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-58.png"
+    },
+    {
+      "pdf_page": 59,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "430de8b58726aaf213612516dd36bac60227fb20fd428fc4f9db6beb92a31e6b",
+      "png_sha256": "e26977838de99ee2c78de44567f7cbac6406ed34c240d8de3073e528522bd849",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-59.png"
+    },
+    {
+      "pdf_page": 60,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "5ddbc82ba1bd10c15f9b7ec6ad0295017d380eb5b67ca2ae51e22d901ece2b57",
+      "png_sha256": "96ec34d87e9086a054c9693089ba0921a8efac07f099a7cd12dc261f3a14fff0",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-60.png"
+    },
+    {
+      "pdf_page": 61,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "9795a500e7a1666e8d649a0d6f18d8dc5d1cfdae89e2661354c537cca4f273fa",
+      "png_sha256": "a067a1456995318862b035aa2fc5f08681285ea033015027f9d61a1593010afa",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-61.png"
+    },
+    {
+      "pdf_page": 62,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "dac2fd3bce46e0437234ea1e3c2de02b3042b855dcf62084c9d169277f5f365e",
+      "png_sha256": "d307ee718e1de1d1ef9db001698f03454e1de8915d4bfb65cb5e378a98f77033",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-62.png"
+    },
+    {
+      "pdf_page": 63,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "c3512b270edfcec6934c5f848161e8187e4b9414fb48f3f4c56d8aca2063ee4a",
+      "png_sha256": "4703983193c033de4239e7cea00e1b41047741aca5656fcfd579c6abe537e893",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-63.png"
+    },
+    {
+      "pdf_page": 64,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "a223e1001db40b38837edd32cdb353c80793bed444445dcbb17468bf2a383638",
+      "png_sha256": "d7b82885f1ff7ec061d9781efe64b75b037c58c6f37e99e0f05b5d64448eb27b",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-64.png"
+    },
+    {
+      "pdf_page": 65,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "8cb003195723e55670177a82dfe18e24a580d67d7059075adeb38266a05d9012",
+      "png_sha256": "327f73580687c6222ca18baff1fe06dba5129129812ea5b2fb75aa1f9502ab39",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-65.png"
+    },
+    {
+      "pdf_page": 66,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "26332d1ea93132b012ab866161dfb0e7abe98416e14327545dac3176c3affda5",
+      "png_sha256": "34d533abeb5dbf7e3055b20fb3792ecbbcbefb5d450afc38ef0ae55c01b03658",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-66.png"
+    },
+    {
+      "pdf_page": 67,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "59185a888aa09933cb01dfd35f3b1bcac0470727d7a7c4cf52f7bd9facdd6786",
+      "png_sha256": "87aadb8fb35b50d7f6a9f9d70dc31266933cf0beec1e7e9f505f6763f25a4f8f",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-67.png"
+    },
+    {
+      "pdf_page": 68,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "9d4f850dc3aa3f8722596a121f2b3da2329d30afdbe6c24d9476814ae750986d",
+      "png_sha256": "af9eb9db68a4a6c393ec4ea6aa2e541a6d1bda4e2778590663e4798dab1ff71c",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-68.png"
+    },
+    {
+      "pdf_page": 69,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "c96968ef81db050fd518bedc12ec2ade4dd5d22a98336d625dfcaae03dc167eb",
+      "png_sha256": "4a38085db035b8d538a793bf04f53f3fa913e580090577f7f79b9b50f7d94979",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-69.png"
+    },
+    {
+      "pdf_page": 70,
+      "width": 510,
+      "height": 660,
+      "rgb_pixel_sha256": "57ef9be7e5d6102832b260d5a4bf090db68749d002d49a2a9c8c2c81a4fa1f61",
+      "png_sha256": "5d364458d84e08a45ace4e72ccde2bcdcd38ab63af37f538b3a5d18438e619cb",
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/overview/fluid-page-70.png"
+    }
+  ],
+  "detailed_page_images": [
+    {
+      "pdf_page": 9,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-09.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "0c94d1ead4c3825900353083f59ee16513d95c07d0b1b0c9f42e982442caaa39"
+    },
+    {
+      "pdf_page": 17,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-17.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "21b65180287ead5f13d07734080041ab38f4fa4e60d0a674353c050f78d981a5"
+    },
+    {
+      "pdf_page": 28,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-28.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "102ab229b14ef3ce4f2ca46d3d40d1d4298bf287b1c514aaf9cd921ff6cb0a90"
+    },
+    {
+      "pdf_page": 29,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-29.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "57a0d04803e9ed4ff293bd3fcec57514a65a2237ec5b099d31d26fa555a21b2a"
+    },
+    {
+      "pdf_page": 31,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-31.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "175cbd10b93364c9f602fdbe8b0ecbd141ef1c5738da755db69f2b2376901154"
+    },
+    {
+      "pdf_page": 40,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-40.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "aced4341c178eaadacd96027f3ad25b8113b1c7a98fb0ca4e2d1c898132cf770"
+    },
+    {
+      "pdf_page": 44,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-44.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "9377c0ff7d003a5df8cba4c2e5a2a79e755733badbf0f5b198fc0108a8f6ab0f"
+    },
+    {
+      "pdf_page": 46,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-46.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "28420f99852670198a27094ed41c3baffab19eaacf298448fe516e7566127278"
+    },
+    {
+      "pdf_page": 50,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-50.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "2b50358a687d16bbed1659654d561059a3d38d4c2bdfaec5844ad00d0a869dc5"
+    },
+    {
+      "pdf_page": 51,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-51.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "bb98aeb8f9ebc5c2dce68306ca6eee3855516ec15be7647d64f96ce1aa422136"
+    },
+    {
+      "pdf_page": 52,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-52.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "f21f581f47006edde5df897708de3988a8d0b23f84df9d7b7b4b873fc5c1bae1"
+    },
+    {
+      "pdf_page": 53,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-53.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "b0a28996222c01a7e1e9f633553923596932134c6f8fe10f553b3dead9242757"
+    },
+    {
+      "pdf_page": 58,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-58.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "a0aae1cca471228af5b33aa84d19860bb1f79deac14e8743f18cc37c90497bdb"
+    },
+    {
+      "pdf_page": 59,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-59.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "e631ce93fbd7b1c08ac4d786d63b66a44b1b1c522245e6573466e0f351837f12"
+    },
+    {
+      "pdf_page": 60,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-60.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "d75bcd8ba16ffe13445b094c3d8798e4e9dcfe32842a55b97d1602ec9fb471fc"
+    },
+    {
+      "pdf_page": 61,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-61.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "0c88dd3268b1d744b5f75e2f372f85f17fba7bd519916b8e75e128e3cc80372a"
+    },
+    {
+      "pdf_page": 62,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-62.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "bca9f3236c92ea828ba07806f661b7324d86b376974ff7cf2ec35571847a516a"
+    },
+    {
+      "pdf_page": 63,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-63.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "9e41022d68082e196ec9c812b09bde908fb7418727e4e9c8246e2d172e3646c2"
+    },
+    {
+      "pdf_page": 64,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-64.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "3f594acfbbe2808aaf58e6d4dfb617f89d2d57880da56dec54debfa07ee18267"
+    },
+    {
+      "pdf_page": 65,
+      "image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/detail/fluid-page-65.png",
+      "width": 1275,
+      "height": 1650,
+      "rgb_pixel_sha256": "de7d5562f7cf46c94f5dbba0646f16014b803bf79f353c29c9d737819b154bdf"
+    }
+  ],
+  "initial_visual_review_pdf_sha256": "61c7f315020edac0261bef45b45f05c66b3cbe40d2d5fb8a6273608dfe2b9643",
+  "applicable_final_pdf_sha256": "c0734e7b2208606f3ee3b7804c99f8f47615740133e8474a66c73179167d1408",
+  "record_updated_at_utc": "2026-11-13T21:42:48.231757+00:00",
+  "final_render_comparison": {
+    "compared_at_utc": "2026-11-13T21:42:48.231757+00:00",
+    "baseline_pdf_sha256": "61c7f315020edac0261bef45b45f05c66b3cbe40d2d5fb8a6273608dfe2b9643",
+    "final_pdf_sha256": "c0734e7b2208606f3ee3b7804c99f8f47615740133e8474a66c73179167d1408",
+    "renderer": "pdftoppm",
+    "dpi": 60,
+    "pixel_format": "RGB, row-major, no header",
+    "pages_compared": 70,
+    "pages_identical": 70,
+    "changed_pages": [],
+    "rows": [
+      {
+        "pdf_page": 1,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "4b07d1e63dc44c46b6502e7fdbac8cc7f652852694d40d7a806ceb3ff38b14e9",
+        "final_rgb_pixel_sha256": "4b07d1e63dc44c46b6502e7fdbac8cc7f652852694d40d7a806ceb3ff38b14e9",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-01.png"
+      },
+      {
+        "pdf_page": 2,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "3f60d7165cf32cd06029c27929456aacd1132dae74dcfbaf9f44d05791280190",
+        "final_rgb_pixel_sha256": "3f60d7165cf32cd06029c27929456aacd1132dae74dcfbaf9f44d05791280190",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-02.png"
+      },
+      {
+        "pdf_page": 3,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "4fb17365079993ccefa93aa3076e0cd4f45e8e357fa02a8fa5d13b23f4d5c7dc",
+        "final_rgb_pixel_sha256": "4fb17365079993ccefa93aa3076e0cd4f45e8e357fa02a8fa5d13b23f4d5c7dc",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-03.png"
+      },
+      {
+        "pdf_page": 4,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "ef47211000f98631b66a3b93df1bf22a9d3942da9af1eec7bc75cd218e58036e",
+        "final_rgb_pixel_sha256": "ef47211000f98631b66a3b93df1bf22a9d3942da9af1eec7bc75cd218e58036e",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-04.png"
+      },
+      {
+        "pdf_page": 5,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "677c866eb67ea8fae71b9f1a52c14f689015a32997f5a00319551b239da68907",
+        "final_rgb_pixel_sha256": "677c866eb67ea8fae71b9f1a52c14f689015a32997f5a00319551b239da68907",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-05.png"
+      },
+      {
+        "pdf_page": 6,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "ca16dc9d466526a8ccbcb7ab46db07c82227b8f0c57f4bbfc77f16214abfa709",
+        "final_rgb_pixel_sha256": "ca16dc9d466526a8ccbcb7ab46db07c82227b8f0c57f4bbfc77f16214abfa709",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-06.png"
+      },
+      {
+        "pdf_page": 7,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "716f6d89fc162c1d76321bb101df9a96c3fe4ecf0f561d8aebd354048d00b301",
+        "final_rgb_pixel_sha256": "716f6d89fc162c1d76321bb101df9a96c3fe4ecf0f561d8aebd354048d00b301",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-07.png"
+      },
+      {
+        "pdf_page": 8,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "6b7a3213cff35fc14f4563c4757533cdf7437c00e3b2344eb8e4529912a137f0",
+        "final_rgb_pixel_sha256": "6b7a3213cff35fc14f4563c4757533cdf7437c00e3b2344eb8e4529912a137f0",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-08.png"
+      },
+      {
+        "pdf_page": 9,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "96d5c53d3b0c734fa4164a2294247b7e98af634301a3459dfc96482276d20cea",
+        "final_rgb_pixel_sha256": "96d5c53d3b0c734fa4164a2294247b7e98af634301a3459dfc96482276d20cea",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-09.png"
+      },
+      {
+        "pdf_page": 10,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "219b2e9aa954de0e8ff1af213f3a53a2045dc71a3e9e98064f7be60d755fe9de",
+        "final_rgb_pixel_sha256": "219b2e9aa954de0e8ff1af213f3a53a2045dc71a3e9e98064f7be60d755fe9de",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-10.png"
+      },
+      {
+        "pdf_page": 11,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "aa519eb74d1815d85666abcf7e419e2f3ff94388d725f1006369c9a004ecbec1",
+        "final_rgb_pixel_sha256": "aa519eb74d1815d85666abcf7e419e2f3ff94388d725f1006369c9a004ecbec1",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-11.png"
+      },
+      {
+        "pdf_page": 12,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "6a063f3e2a911f51d2d8382e3a8fed822c4e0c0ef38abc2ecc60016aff06ac3c",
+        "final_rgb_pixel_sha256": "6a063f3e2a911f51d2d8382e3a8fed822c4e0c0ef38abc2ecc60016aff06ac3c",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-12.png"
+      },
+      {
+        "pdf_page": 13,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "d0f2fe012e351ccb8b57773a25b58c4638599b2f190f1bf2765766d8b79f86ad",
+        "final_rgb_pixel_sha256": "d0f2fe012e351ccb8b57773a25b58c4638599b2f190f1bf2765766d8b79f86ad",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-13.png"
+      },
+      {
+        "pdf_page": 14,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "fffc8c5ca0b9d2409c611ad72e7a3e8bf083d7d67edb7ba00448ffc96514209b",
+        "final_rgb_pixel_sha256": "fffc8c5ca0b9d2409c611ad72e7a3e8bf083d7d67edb7ba00448ffc96514209b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-14.png"
+      },
+      {
+        "pdf_page": 15,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "49c08aefd537c8330ea2997e07b33f386ffcdba71608b7a002f4b1e6d19e316a",
+        "final_rgb_pixel_sha256": "49c08aefd537c8330ea2997e07b33f386ffcdba71608b7a002f4b1e6d19e316a",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-15.png"
+      },
+      {
+        "pdf_page": 16,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "01719d742f15a2f4efe93537de4fce7874b69912ad3c0a06ca28821618242287",
+        "final_rgb_pixel_sha256": "01719d742f15a2f4efe93537de4fce7874b69912ad3c0a06ca28821618242287",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-16.png"
+      },
+      {
+        "pdf_page": 17,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "5dee94a2313147ccfa3dfdec803c06dd62b7b731497033556fe11d436fb16b58",
+        "final_rgb_pixel_sha256": "5dee94a2313147ccfa3dfdec803c06dd62b7b731497033556fe11d436fb16b58",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-17.png"
+      },
+      {
+        "pdf_page": 18,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "b6d13b7e2577ba9653b427aaed6a07a6cff288045bf333f82126dda058c47e02",
+        "final_rgb_pixel_sha256": "b6d13b7e2577ba9653b427aaed6a07a6cff288045bf333f82126dda058c47e02",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-18.png"
+      },
+      {
+        "pdf_page": 19,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "d3c362ce1f61fb149e971e519c7052fd8d4786c00762710c08b0489fabb2010a",
+        "final_rgb_pixel_sha256": "d3c362ce1f61fb149e971e519c7052fd8d4786c00762710c08b0489fabb2010a",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-19.png"
+      },
+      {
+        "pdf_page": 20,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "87350a830872575d2101b8a5d9aa7a0ba5891837cee9c1ced23b4f28ac954c0d",
+        "final_rgb_pixel_sha256": "87350a830872575d2101b8a5d9aa7a0ba5891837cee9c1ced23b4f28ac954c0d",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-20.png"
+      },
+      {
+        "pdf_page": 21,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "4dbbc2e98138cb28836b26e1818885e9fdfa250b319d900b4eefa9bde7e75084",
+        "final_rgb_pixel_sha256": "4dbbc2e98138cb28836b26e1818885e9fdfa250b319d900b4eefa9bde7e75084",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-21.png"
+      },
+      {
+        "pdf_page": 22,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "007799aa31d8aca72092ce6930b495f22be059f5b362b1e7afc0f5be0205be8c",
+        "final_rgb_pixel_sha256": "007799aa31d8aca72092ce6930b495f22be059f5b362b1e7afc0f5be0205be8c",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-22.png"
+      },
+      {
+        "pdf_page": 23,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "b292156a8564d8aec3866f62140670db82c661aad06790f83124fb6ba4d3424d",
+        "final_rgb_pixel_sha256": "b292156a8564d8aec3866f62140670db82c661aad06790f83124fb6ba4d3424d",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-23.png"
+      },
+      {
+        "pdf_page": 24,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "aa3f90fa4668ac07092d94b09dc6138b8a44dd7c62557119ed8d2e546e9ac19b",
+        "final_rgb_pixel_sha256": "aa3f90fa4668ac07092d94b09dc6138b8a44dd7c62557119ed8d2e546e9ac19b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-24.png"
+      },
+      {
+        "pdf_page": 25,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "32e3d0812dec512b33bdddae61dfffbec22250d26ec8b3480172a8b3810c9a9b",
+        "final_rgb_pixel_sha256": "32e3d0812dec512b33bdddae61dfffbec22250d26ec8b3480172a8b3810c9a9b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-25.png"
+      },
+      {
+        "pdf_page": 26,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "1c4f253748380c41229d2e623b841eb8c57687d5742cb308f129ff4b2ab6f100",
+        "final_rgb_pixel_sha256": "1c4f253748380c41229d2e623b841eb8c57687d5742cb308f129ff4b2ab6f100",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-26.png"
+      },
+      {
+        "pdf_page": 27,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "7c0b3174572619c2a130cfe57b68ac88e88ce07a9575d5e40a72cfc57a31c750",
+        "final_rgb_pixel_sha256": "7c0b3174572619c2a130cfe57b68ac88e88ce07a9575d5e40a72cfc57a31c750",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-27.png"
+      },
+      {
+        "pdf_page": 28,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "b4beafd24ef71a9412c9e50fef2b7db55b7332d6fcf192509a7aefef3e85d72b",
+        "final_rgb_pixel_sha256": "b4beafd24ef71a9412c9e50fef2b7db55b7332d6fcf192509a7aefef3e85d72b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-28.png"
+      },
+      {
+        "pdf_page": 29,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "4071a7c5a3c5bb5d7c8ba9bd887e02041fb87bdb9ace3742d6a818afc5eb2f56",
+        "final_rgb_pixel_sha256": "4071a7c5a3c5bb5d7c8ba9bd887e02041fb87bdb9ace3742d6a818afc5eb2f56",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-29.png"
+      },
+      {
+        "pdf_page": 30,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "34e9c2c5df6599fe10665727bc232df0747d3d649dd8de168f5758257d999739",
+        "final_rgb_pixel_sha256": "34e9c2c5df6599fe10665727bc232df0747d3d649dd8de168f5758257d999739",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-30.png"
+      },
+      {
+        "pdf_page": 31,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "50ed033fbbab7c3d4a058dc33aa1d4121211df6f2a2cb451e63d95568ae16bbe",
+        "final_rgb_pixel_sha256": "50ed033fbbab7c3d4a058dc33aa1d4121211df6f2a2cb451e63d95568ae16bbe",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-31.png"
+      },
+      {
+        "pdf_page": 32,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "9fbfb609b88056c69993de2a95b01ab7e4893d5acad5ff987603fd44e28a48ea",
+        "final_rgb_pixel_sha256": "9fbfb609b88056c69993de2a95b01ab7e4893d5acad5ff987603fd44e28a48ea",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-32.png"
+      },
+      {
+        "pdf_page": 33,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "c13f9556168035eb6c999951a485b4f27d3f4769c6e6a0edc335e56506033317",
+        "final_rgb_pixel_sha256": "c13f9556168035eb6c999951a485b4f27d3f4769c6e6a0edc335e56506033317",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-33.png"
+      },
+      {
+        "pdf_page": 34,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "5d9d9dadf42ac98a9e6a5d245aa4529f33953213fea6c7ded9871f91eaeb5bbf",
+        "final_rgb_pixel_sha256": "5d9d9dadf42ac98a9e6a5d245aa4529f33953213fea6c7ded9871f91eaeb5bbf",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-34.png"
+      },
+      {
+        "pdf_page": 35,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "fe09c748b36065c0e4ae3b16bfd6863f2b7b589ff03bc6f42652b564d441ce6a",
+        "final_rgb_pixel_sha256": "fe09c748b36065c0e4ae3b16bfd6863f2b7b589ff03bc6f42652b564d441ce6a",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-35.png"
+      },
+      {
+        "pdf_page": 36,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "b4bc2af8eb83448901a443062ff7d58223499f8ac1887da71e46593dfe06bf0b",
+        "final_rgb_pixel_sha256": "b4bc2af8eb83448901a443062ff7d58223499f8ac1887da71e46593dfe06bf0b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-36.png"
+      },
+      {
+        "pdf_page": 37,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "99d1338945c88bd707ac098d73be641858e1682638cdaef24f80b14ba39624cd",
+        "final_rgb_pixel_sha256": "99d1338945c88bd707ac098d73be641858e1682638cdaef24f80b14ba39624cd",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-37.png"
+      },
+      {
+        "pdf_page": 38,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "746c35994efaaebff85fdfb8d745be0a78d1c64403e205e8f509a0fb88917f7a",
+        "final_rgb_pixel_sha256": "746c35994efaaebff85fdfb8d745be0a78d1c64403e205e8f509a0fb88917f7a",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-38.png"
+      },
+      {
+        "pdf_page": 39,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "0cf6b834353efd44aa0cdd5dfd07d7be25e729291825d42bd13b54a3378edf07",
+        "final_rgb_pixel_sha256": "0cf6b834353efd44aa0cdd5dfd07d7be25e729291825d42bd13b54a3378edf07",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-39.png"
+      },
+      {
+        "pdf_page": 40,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "22eb5cef78367ee56e835d209b88ab93e09c7205e9c3f4e902df170d86a6894d",
+        "final_rgb_pixel_sha256": "22eb5cef78367ee56e835d209b88ab93e09c7205e9c3f4e902df170d86a6894d",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-40.png"
+      },
+      {
+        "pdf_page": 41,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "9a4b42f9ef7dd04ec97b80af29cac46ae7124435723ae0887563d59fc1d18e8b",
+        "final_rgb_pixel_sha256": "9a4b42f9ef7dd04ec97b80af29cac46ae7124435723ae0887563d59fc1d18e8b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-41.png"
+      },
+      {
+        "pdf_page": 42,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "acd6094e859104c6e11cef1ab46ac0f18d4898a297504760408d1301654a0165",
+        "final_rgb_pixel_sha256": "acd6094e859104c6e11cef1ab46ac0f18d4898a297504760408d1301654a0165",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-42.png"
+      },
+      {
+        "pdf_page": 43,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "a3f1542e52f47f285bab81d6417e59be1fa8c817742adf95efbcfa8cd602665b",
+        "final_rgb_pixel_sha256": "a3f1542e52f47f285bab81d6417e59be1fa8c817742adf95efbcfa8cd602665b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-43.png"
+      },
+      {
+        "pdf_page": 44,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "c57175be9edcb2b9769267560b35dd2cbcfaeccaec132f9daf0be493eda8faba",
+        "final_rgb_pixel_sha256": "c57175be9edcb2b9769267560b35dd2cbcfaeccaec132f9daf0be493eda8faba",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-44.png"
+      },
+      {
+        "pdf_page": 45,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "2aaa5d4923d2fca8450b1b61b9ad7b9f4309b902a4346c4d540843ad84df1fcc",
+        "final_rgb_pixel_sha256": "2aaa5d4923d2fca8450b1b61b9ad7b9f4309b902a4346c4d540843ad84df1fcc",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-45.png"
+      },
+      {
+        "pdf_page": 46,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "4581bd6c6cf52cb801ed71477e210749945958142230c8e07aa5102992ab2c0a",
+        "final_rgb_pixel_sha256": "4581bd6c6cf52cb801ed71477e210749945958142230c8e07aa5102992ab2c0a",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-46.png"
+      },
+      {
+        "pdf_page": 47,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "e44973eae4c4eea3373472aa365a9a175947ffefb73aa2da458df6040f259105",
+        "final_rgb_pixel_sha256": "e44973eae4c4eea3373472aa365a9a175947ffefb73aa2da458df6040f259105",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-47.png"
+      },
+      {
+        "pdf_page": 48,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "06b3ad4543c711e02ce69dae9e69f485ee617affb168a147f26c789422081aaf",
+        "final_rgb_pixel_sha256": "06b3ad4543c711e02ce69dae9e69f485ee617affb168a147f26c789422081aaf",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-48.png"
+      },
+      {
+        "pdf_page": 49,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "481b639ba652595219a1558f6f1957df9ce2bd5a0eb36d2f15c26498f640ab0c",
+        "final_rgb_pixel_sha256": "481b639ba652595219a1558f6f1957df9ce2bd5a0eb36d2f15c26498f640ab0c",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-49.png"
+      },
+      {
+        "pdf_page": 50,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "07b5b919478eebeeda14b09cc2b833e44546f44f27a59f1a492b6a227ff40a96",
+        "final_rgb_pixel_sha256": "07b5b919478eebeeda14b09cc2b833e44546f44f27a59f1a492b6a227ff40a96",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-50.png"
+      },
+      {
+        "pdf_page": 51,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "48f4ecdd25a066c5ff195706bdda56a5ae767756fa8c76e751d71c32c04f0654",
+        "final_rgb_pixel_sha256": "48f4ecdd25a066c5ff195706bdda56a5ae767756fa8c76e751d71c32c04f0654",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-51.png"
+      },
+      {
+        "pdf_page": 52,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "7352bbd646005a06275d5027f6b22522484a00f7c13fff4b4c670de050d46b58",
+        "final_rgb_pixel_sha256": "7352bbd646005a06275d5027f6b22522484a00f7c13fff4b4c670de050d46b58",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-52.png"
+      },
+      {
+        "pdf_page": 53,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "6653fef84d1b52665d787563a12434387a1b215a7d7a1831516a1ecc282fb2c4",
+        "final_rgb_pixel_sha256": "6653fef84d1b52665d787563a12434387a1b215a7d7a1831516a1ecc282fb2c4",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-53.png"
+      },
+      {
+        "pdf_page": 54,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "25e74f07267d45da28df0163fc058608f8adafd923ee4e8c90efc5f2ff1ad8ed",
+        "final_rgb_pixel_sha256": "25e74f07267d45da28df0163fc058608f8adafd923ee4e8c90efc5f2ff1ad8ed",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-54.png"
+      },
+      {
+        "pdf_page": 55,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "8c5254de0a354afb34d9fd04bb4dee6d6168d95c72624cefcf12a21f2e49316e",
+        "final_rgb_pixel_sha256": "8c5254de0a354afb34d9fd04bb4dee6d6168d95c72624cefcf12a21f2e49316e",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-55.png"
+      },
+      {
+        "pdf_page": 56,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "69ca5fb5260f093dd40caffcde14f99219778b67820d6a2d8b83ea49b480907c",
+        "final_rgb_pixel_sha256": "69ca5fb5260f093dd40caffcde14f99219778b67820d6a2d8b83ea49b480907c",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-56.png"
+      },
+      {
+        "pdf_page": 57,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "32534164136f9767748c28304fc07fdaf1945589e341dede0670ef3165e74724",
+        "final_rgb_pixel_sha256": "32534164136f9767748c28304fc07fdaf1945589e341dede0670ef3165e74724",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-57.png"
+      },
+      {
+        "pdf_page": 58,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "ff3ba8e62fc42dfb78bac8db46e2fe84fad74386fc54e7409a303bf69338248b",
+        "final_rgb_pixel_sha256": "ff3ba8e62fc42dfb78bac8db46e2fe84fad74386fc54e7409a303bf69338248b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-58.png"
+      },
+      {
+        "pdf_page": 59,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "430de8b58726aaf213612516dd36bac60227fb20fd428fc4f9db6beb92a31e6b",
+        "final_rgb_pixel_sha256": "430de8b58726aaf213612516dd36bac60227fb20fd428fc4f9db6beb92a31e6b",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-59.png"
+      },
+      {
+        "pdf_page": 60,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "5ddbc82ba1bd10c15f9b7ec6ad0295017d380eb5b67ca2ae51e22d901ece2b57",
+        "final_rgb_pixel_sha256": "5ddbc82ba1bd10c15f9b7ec6ad0295017d380eb5b67ca2ae51e22d901ece2b57",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-60.png"
+      },
+      {
+        "pdf_page": 61,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "9795a500e7a1666e8d649a0d6f18d8dc5d1cfdae89e2661354c537cca4f273fa",
+        "final_rgb_pixel_sha256": "9795a500e7a1666e8d649a0d6f18d8dc5d1cfdae89e2661354c537cca4f273fa",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-61.png"
+      },
+      {
+        "pdf_page": 62,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "dac2fd3bce46e0437234ea1e3c2de02b3042b855dcf62084c9d169277f5f365e",
+        "final_rgb_pixel_sha256": "dac2fd3bce46e0437234ea1e3c2de02b3042b855dcf62084c9d169277f5f365e",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-62.png"
+      },
+      {
+        "pdf_page": 63,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "c3512b270edfcec6934c5f848161e8187e4b9414fb48f3f4c56d8aca2063ee4a",
+        "final_rgb_pixel_sha256": "c3512b270edfcec6934c5f848161e8187e4b9414fb48f3f4c56d8aca2063ee4a",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-63.png"
+      },
+      {
+        "pdf_page": 64,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "a223e1001db40b38837edd32cdb353c80793bed444445dcbb17468bf2a383638",
+        "final_rgb_pixel_sha256": "a223e1001db40b38837edd32cdb353c80793bed444445dcbb17468bf2a383638",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-64.png"
+      },
+      {
+        "pdf_page": 65,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "8cb003195723e55670177a82dfe18e24a580d67d7059075adeb38266a05d9012",
+        "final_rgb_pixel_sha256": "8cb003195723e55670177a82dfe18e24a580d67d7059075adeb38266a05d9012",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-65.png"
+      },
+      {
+        "pdf_page": 66,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "26332d1ea93132b012ab866161dfb0e7abe98416e14327545dac3176c3affda5",
+        "final_rgb_pixel_sha256": "26332d1ea93132b012ab866161dfb0e7abe98416e14327545dac3176c3affda5",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-66.png"
+      },
+      {
+        "pdf_page": 67,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "59185a888aa09933cb01dfd35f3b1bcac0470727d7a7c4cf52f7bd9facdd6786",
+        "final_rgb_pixel_sha256": "59185a888aa09933cb01dfd35f3b1bcac0470727d7a7c4cf52f7bd9facdd6786",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-67.png"
+      },
+      {
+        "pdf_page": 68,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "9d4f850dc3aa3f8722596a121f2b3da2329d30afdbe6c24d9476814ae750986d",
+        "final_rgb_pixel_sha256": "9d4f850dc3aa3f8722596a121f2b3da2329d30afdbe6c24d9476814ae750986d",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-68.png"
+      },
+      {
+        "pdf_page": 69,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "c96968ef81db050fd518bedc12ec2ade4dd5d22a98336d625dfcaae03dc167eb",
+        "final_rgb_pixel_sha256": "c96968ef81db050fd518bedc12ec2ade4dd5d22a98336d625dfcaae03dc167eb",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-69.png"
+      },
+      {
+        "pdf_page": 70,
+        "width": 510,
+        "height": 660,
+        "baseline_rgb_pixel_sha256": "57ef9be7e5d6102832b260d5a4bf090db68749d002d49a2a9c8c2c81a4fa1f61",
+        "final_rgb_pixel_sha256": "57ef9be7e5d6102832b260d5a4bf090db68749d002d49a2a9c8c2c81a4fa1f61",
+        "identical": true,
+        "final_image": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-overview/fluid-page-70.png"
+      }
+    ],
+    "external_record": "/workspace/scratch/70763186a94c/qa-site/navier-stokes-pdf/final-render-equivalence.json"
+  },
+  "review_transfer": "The initial direct visual review and detailed-page images belong to the initial PDF hash. The final PDF is covered by that review after all 70 pages rendered with the same pdftoppm 60-dpi command produced exactly identical dimensions and raw RGB pixel hashes. No claim of a fresh 150-dpi comparison is made."
+}

@@ -1,0 +1,222 @@
+The executable GPU evidence was obtained on 13 November 2026 on an
+NVIDIA GeForce RTX 4090.  The recorded environment reports
+25,250,627,584 bytes of device memory and 23,960,354,816 initially free
+bytes.  It uses Python 3.12.3, cuQuantum Python 26.11.0, cuStateVec
+1.15.1, cuStabilizer 0.5.0, and CuPy 14.2.0.  The original record is
+\path{extension/quantum/results/gpu-results.json}; it contains nine
+successful experiments, the numerical outputs, timestamps, package
+versions, and the SHA256 of the executed script.  The source and the
+record are retained separately so that a later, larger test does not
+silently replace earlier evidence.
+
+\paragraph{Dense state-vector results.}
+A two-qubit Bell-state calculation first checked amplitude ordering and
+$XX,ZZ$ expectations.  The surface-code runs then executed the emitted
+Hadamard/CNOT encoder using actual cuStateVec matrix applications.  They
+computed all star and face expectations, injected an $X$ error on a
+specified edge, and compared every resulting expectation with the
+predicted incident-face signs.  One thirty-qubit run appended a fresh
+ancilla and four data-to-ancilla CNOTs to extract one face syndrome.
+This final experiment explicitly stored a thirty-one-qubit state.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline
+Data and ancillas & Raw state & Encoder gates & Preparation (s) & Timed total (s)\\
+\hline
+$18+0$ & 2 MiB & 42 & 0.000312 & 0.000537\\
+$30+0$ & 8 GiB & 74 & 0.918804 & 1.204211\\
+$30+1$ & 16 GiB & 74 & 1.838463 & 2.528538\\
+\hline
+\end{tabular}
+\end{center}
+
+All three cases use complex64 amplitudes.  Their recorded norm squared
+is approximately $0.9999997616$ and their maximum pre-error stabilizer
+expectation discrepancy is $2.385\times10^{-7}$.  The extra ancilla has
+$Z$ expectation approximately $-0.9999997616$, as predicted by the
+injected error.  The routine evaluates these expectations directly; it
+does not simulate a finite collection of measurement shots.  The listed
+raw-state sizes are exact allocations implied by the precision and
+qubit count.  The required gate workspace was zero in these runs.
+
+Preparation time covers encoder application and synchronization.  The
+timed total begins after construction of the state-vector object and
+includes preparation, the reported expectation checks, and the inserted
+error and extraction gates.  It excludes state allocation and final
+cleanup.  These are measured intervals for this particular implementation,
+not complete application launch times or portable hardware benchmarks.
+
+\paragraph{Training a circuit that has an exact analytic baseline.}
+The eighteen-qubit neural experiment executed the encoded preparation,
+rotations, fan-in CNOTs, and output expectation on the GPU.  Each gradient
+component was obtained from the parameter-shift expectation evaluations;
+the analytic product formula was used as a validation reference, not as
+a replacement for the quantum gates.  Twenty-four updates at learning
+rate $0.2$ changed the initial mean squared error
+$0.21987940665826008$ to $0.0027618471230164243$, a reduction by a
+factor of approximately $79.6$.  The recorded final angles are
+\[
+ (0.1918860335,-0.1237818552,0.1522945504,-0.1791698376).
+\]
+The largest discrepancy from the exact output formula along the recorded
+training history was $3.093\times10^{-7}$.  All sixteen final truth-table
+entries had the correct sign, including the twelve inputs omitted from
+the updates.  The training and evaluation interval was approximately
+$0.045774$ seconds, excluding the initial encoded-state construction.
+
+The initial angles already give $C(\theta)>0$.  Consequently the
+thresholded sign classifier is correct on all sixteen inputs before
+training as well as afterwards.  The measured improvement is the
+calibration of expectation magnitude and mean squared error; it is not
+an increase from poor classification accuracy to perfect classification.
+The magnitude changes from approximately $0.531087$ to $0.947447$.
+If a single ideal measurement were used to predict parity, the exact
+Born-rule success probability $(1+C)/2$ would accordingly change from
+approximately $0.76554$ to $0.97372$.  These probabilities are deductions
+from computed expectations, not empirically sampled success frequencies.
+
+\paragraph{Pauli frames and the reference-state assumption.}
+For the larger experiments, cuStabilizer stores batched Pauli errors
+relative to a known ideal encoded reference.  It does not store the
+$2^n$ amplitudes of that reference.  The mathematical encoder theorem
+supplies an ideal state with every specified check equal to $+1$.
+The frame experiments assume that state and propagate its errors through
+ideal syndrome extraction.  They do not execute the large encoder or
+construct a generic stabilizer tableau for an arbitrary unknown state.
+
+Each experiment uses 32,768 error realizations with seed 20261113.
+Every data qubit receives an independent $X$ error with probability
+$0.001$ and an independent $Z$ error with the same probability.  Both
+can occur, giving the corresponding $Y$ error up to an irrelevant phase.
+Syndrome ancillas and extraction gates are noiseless.  A star ancilla
+is reset, Hadamard transformed, used as the control for its incident
+CNOTs, Hadamard transformed again, and measured.  A face ancilla receives
+CNOTs controlled by the boundary data qubits and is then measured.
+Measurement randomization is disabled because the stored output is the
+error-induced sign change from the assumed deterministic ideal outcome.
+
+Let $x,z\in\mathbb F_2^E$ be the data error masks.  The exact predicted
+syndrome is
+\[
+ s_X=H_Xz,\qquad s_Z=H_Zx.
+\]
+With these noiseless, freshly reset ancillas, the extraction circuit
+preserves the data error masks.  Hence the implementation can compare
+its measured sign-change bits with sparse binary products computed from
+the returned data frames.  It does so for every stored syndrome byte,
+not merely for a random sample.  Every comparison in the recorded runs
+has zero mismatches.  This checks the consistency of the extraction
+circuit, qubit indexing, packed-bit representation and binary incidence
+calculation.  It does not test a recovery algorithm or estimate a logical
+failure probability.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline
+Case & Data & Ancillas & Apply interval (s) & Timed total (s)\\
+\hline
+Genus two & 32 & 30 & 0.004756 & 3.025362\\
+Torus $L=32$ & 2,048 & 2,048 & 0.005072 & 0.013088\\
+Torus $L=128$ & 32,768 & 32,768 & 0.073878 & 0.165669\\
+Torus $L=512$ & 524,288 & 524,288 & 1.147181 & 2.693085\\
+\hline
+\end{tabular}
+\end{center}
+
+Here the apply interval is a synchronized wall-clock interval around
+noise and extraction circuit application, including host dispatch.  It
+is not a CUDA-event measurement of kernel time alone.  The timed total
+includes simulator setup and exhaustive syndrome verification, but
+excludes topology generation before entry into the timer and final
+cleanup afterwards.  First-use compilation and initialization make the
+genus-two total much larger than its apply interval.  No cross-backend
+speedup is inferred from these differently scoped measurements.
+
+For the $L=512$ experiment, all 2,147,483,648 packed syndrome bytes were
+checked.  There were 68,489,748 violated checks over all shots, giving
+an aggregate syndrome rate of approximately $0.00398663$.  For a
+weight-four check under independent relevant Pauli errors of probability
+$p$, the exact odd-parity probability is
+\[
+ \frac{1-(1-2p)^4}{2}.
+\]
+At $p=0.001$ this is approximately $0.00398802$.  This agreement is a
+useful noise-model sanity check.  Correlations among neighboring checks
+and their global parity constraints mean that the aggregate count should
+not be interpreted as independent Bernoulli samples at every check.
+
+\paragraph{Memory accounting and the scope of a capacity claim.}
+For $S$ shots, the stored row stride in bytes is
+$4\lceil S/32\rceil$.  With $N$ total data-plus-ancilla qubits and $A$
+measured ancillas, the implementation estimates the explicit packed bit
+tables as
+\[
+ B=(2N+A)\,4\lceil S/32\rceil.
+\]
+The factor two accounts for the $X$ and $Z$ frame components.  This is
+an analytic allocation estimate, not an instrumented peak-memory
+measurement.  The first run's $L=512$ case has $B=10$ GiB.  Before
+allocation, the program requires $1.25B$ to fit within available device
+memory after retaining a fixed 2 GiB reserve.  This policy leaves room
+for temporary arrays and the desktop; it does not establish a universal
+memory bound for every library configuration.
+
+A separate followup script, \path{extension/quantum/gpu_capacity.py},
+retains the original experiment source and result unchanged.  It hashes
+its own source, the imported experiment source, the topology source,
+all archived case JSON files, and the original result.  Its capacity
+rule fixes 32,768 shots and chooses the largest multiple of 32 satisfying
+\[
+ 1.25\,(10L^2)(4096)\leq
+       \text{free device bytes}-2\,\mathrm{GiB}.
+\]
+The resulting test is a bounded workload selected under stated memory
+assumptions.  A different shot count, error representation, precision,
+number of observables, or available-memory state changes the achievable
+qubit count.  The dense thirty-one-qubit result and the much larger
+frame results therefore answer different computational questions.
+
+\paragraph{Separate capacity followup.}
+The followup ran from 10:58:12 to 10:58:17 UTC on the same date and
+device.  It successfully exercised the genus-three code with 46 data
+qubits and 42 syndrome ancillas, and then selected $L=640$ from the
+observed free-memory value of 23,922,606,080 bytes.  The latter case has
+819,200 data qubits and 819,200 ancillas, for a total of 1,638,400
+qubits in each of 32,768 Pauli frames.  Its estimated packed tables
+occupy 16,777,216,000 bytes, or 15.625 GiB.  The budget including the
+25 percent overhead allowance and 2 GiB reserve is 23,119,003,648
+bytes, below the recorded available amount.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline
+Case & Apply (s) & Timed body (s) & Full call (s) & Checked bytes\\
+\hline
+Genus three & 0.002198 & 0.081878 & 0.209550 & 172,032\\
+Torus $L=640$ & 1.791833 & 4.327947 & 4.813268 & 3,355,443,200\\
+\hline
+\end{tabular}
+\end{center}
+
+Both cases had zero syndrome-byte mismatches.  The larger test observed
+107,029,374 violated checks, an aggregate rate of approximately
+$0.00398715$.  The additional full-call timer includes topology
+generation and cleanup; it still excludes Python startup, library
+imports, and output-file serialization.  These boundaries make the
+measurements reproducible without calling a host wall-clock interval
+a pure kernel time.
+
+The separate evidence file is
+\path{extension/quantum/results/capacity-results.json}.  Its source and
+case hashes agree with the archived local inputs, and it records that
+those inputs were unchanged during execution.  A byte-exact copy of the
+original first-run JSON is retained as
+\path{extension/quantum/results/gpu-results-remote-original.json}; the
+ordinary first-run JSON has identical parsed values but a few different
+numeric formatting choices.  This distinction explains their different
+file hashes without conflating it with a difference in experiment data.
+The largest completed frame workload is therefore the stated $L=640$
+case under the stated memory policy.  This observation establishes
+neither an absolute maximum qubit count nor the feasibility of arbitrary
+non-Clifford computation at that scale.

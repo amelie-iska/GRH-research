@@ -1,0 +1,1320 @@
+{
+  "checked_at_utc": "2026-11-13T14:56:18.774223+00:00",
+  "method": "HTMLParser attribute/fragment check; no browser or network execution",
+  "scope": "All authored HTML pages under extension/site; preserved legacy HTML is excluded as a source, but authored links into it are checked.",
+  "limitations": [
+    "No claim about external HTTP availability",
+    "Dynamic JavaScript fetch/import/Worker URLs and CSS url() are outside this HTML-attribute check",
+    "Target existence is not an assertion that a download contains the latest release bytes"
+  ],
+  "pages": [
+    {
+      "path": "algebra.html",
+      "sha256": "85853b831600e9c7c73b75c77dc258857f13a65c9b63511a5b715ae3c6316f19"
+    },
+    {
+      "path": "cosmology.html",
+      "sha256": "beba30b7bb0ccef9ed8d07b3316b0614c9bfdd2ca083ad88c466494adf70fc50"
+    },
+    {
+      "path": "index.html",
+      "sha256": "44f125a359b31b260481dde1a7e61fad5c1ba08c1bb08c4214f270d64afaf208"
+    },
+    {
+      "path": "languages.html",
+      "sha256": "1ea2f60e12587c08d458ab7d4d663aebdea707ac27a8576f775fca891ece13ee"
+    },
+    {
+      "path": "learning.html",
+      "sha256": "a020900dc5f8d8d2000690073e7757553e44aa66d0a341a9cc9f88947659166e"
+    },
+    {
+      "path": "quantum.html",
+      "sha256": "42a368162a9489292b0777be19c5df532e168ef1d8d590cbbf874fb2c51085ed"
+    }
+  ],
+  "local_reference_count": 142,
+  "external_references_skipped": 25,
+  "broken_target_count": 0,
+  "broken_targets": [],
+  "checks": [
+    {
+      "source": "algebra.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "favicon.svg",
+      "target": "favicon.svg",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "styles.css",
+      "target": "styles.css",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "algebra.css",
+      "target": "algebra.css",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 8,
+      "element": "script",
+      "attribute": "src",
+      "url": "algebra.js",
+      "target": "algebra.js",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 11,
+      "element": "a",
+      "attribute": "href",
+      "url": "#algebra-main",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 13,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum.html",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html#cone",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 15,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 20,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 22,
+      "element": "a",
+      "attribute": "href",
+      "url": "#minors",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 22,
+      "element": "a",
+      "attribute": "href",
+      "url": "#tableaux",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 22,
+      "element": "a",
+      "attribute": "href",
+      "url": "#gentle",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 22,
+      "element": "a",
+      "attribute": "href",
+      "url": "#matching",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 32,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 40,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 51,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html#cone",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 64,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 66,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 66,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html#cone",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 66,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum.html",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 68,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "algebra.html",
+      "line": 68,
+      "element": "a",
+      "attribute": "href",
+      "url": "#algebra-main",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "favicon.svg",
+      "target": "favicon.svg",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "styles.css",
+      "target": "styles.css",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "cosmology.css",
+      "target": "cosmology.css",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 8,
+      "element": "script",
+      "attribute": "src",
+      "url": "cosmology.js",
+      "target": "cosmology.js",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 11,
+      "element": "a",
+      "attribute": "href",
+      "url": "#cosmology-main",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 13,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "algebra.html",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum.html",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 15,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 20,
+      "element": "a",
+      "attribute": "href",
+      "url": "#synthetic-search",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 22,
+      "element": "a",
+      "attribute": "href",
+      "url": "#synthetic-search",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 22,
+      "element": "a",
+      "attribute": "href",
+      "url": "#channel-model",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 22,
+      "element": "a",
+      "attribute": "href",
+      "url": "#cosmology-reading",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 34,
+      "element": "a",
+      "attribute": "href",
+      "url": "cosmology.html",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 53,
+      "element": "a",
+      "attribute": "href",
+      "url": "data/cosmology-synthetic.json",
+      "target": "data/cosmology-synthetic.json",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 53,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 66,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 68,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "cosmology.html",
+      "line": 68,
+      "element": "a",
+      "attribute": "href",
+      "url": "#cosmology-main",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 9,
+      "element": "link",
+      "attribute": "href",
+      "url": "favicon.svg",
+      "target": "favicon.svg",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 10,
+      "element": "link",
+      "attribute": "href",
+      "url": "styles.css",
+      "target": "styles.css",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 11,
+      "element": "script",
+      "attribute": "src",
+      "url": "math.js",
+      "target": "math.js",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 12,
+      "element": "script",
+      "attribute": "src",
+      "url": "app.js",
+      "target": "app.js",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 15,
+      "element": "a",
+      "attribute": "href",
+      "url": "#main",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 17,
+      "element": "a",
+      "attribute": "href",
+      "url": "#main",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 18,
+      "element": "a",
+      "attribute": "href",
+      "url": "#laboratories",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 18,
+      "element": "a",
+      "attribute": "href",
+      "url": "#research",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 18,
+      "element": "a",
+      "attribute": "href",
+      "url": "algebra.html",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 18,
+      "element": "a",
+      "attribute": "href",
+      "url": "#evidence",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 18,
+      "element": "a",
+      "attribute": "href",
+      "url": "legacy/index.html",
+      "target": "legacy/index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 19,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 29,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum.html",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 30,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 30,
+      "element": "a",
+      "attribute": "href",
+      "url": "#laboratories",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 35,
+      "element": "a",
+      "attribute": "href",
+      "url": "#cone",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 45,
+      "element": "a",
+      "attribute": "href",
+      "url": "learning.html",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 45,
+      "element": "a",
+      "attribute": "href",
+      "url": "languages.html",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 45,
+      "element": "a",
+      "attribute": "href",
+      "url": "cosmology.html",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 51,
+      "element": "a",
+      "attribute": "href",
+      "url": "#torus",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 51,
+      "element": "a",
+      "attribute": "href",
+      "url": "#cone",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 51,
+      "element": "a",
+      "attribute": "href",
+      "url": "#elliptic",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 51,
+      "element": "a",
+      "attribute": "href",
+      "url": "#fourier",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 51,
+      "element": "a",
+      "attribute": "href",
+      "url": "#hodge",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 51,
+      "element": "a",
+      "attribute": "href",
+      "url": "#gauge",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 100,
+      "element": "a",
+      "attribute": "href",
+      "url": "math.js",
+      "target": "math.js",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 138,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 138,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/source.zip",
+      "target": "downloads/source.zip",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 138,
+      "element": "a",
+      "attribute": "href",
+      "url": "legacy/index.html",
+      "target": "legacy/index.html",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 143,
+      "element": "a",
+      "attribute": "href",
+      "url": "verification/verification.json",
+      "target": "verification/verification.json",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 143,
+      "element": "a",
+      "attribute": "href",
+      "url": "verification/quantum-verification.json",
+      "target": "verification/quantum-verification.json",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 143,
+      "element": "a",
+      "attribute": "href",
+      "url": "verification/diagram-verification.json",
+      "target": "verification/diagram-verification.json",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 143,
+      "element": "a",
+      "attribute": "href",
+      "url": "verification/claim-register.md",
+      "target": "verification/claim-register.md",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 143,
+      "element": "a",
+      "attribute": "href",
+      "url": "verification/review-ledger.md",
+      "target": "verification/review-ledger.md",
+      "status": "exists"
+    },
+    {
+      "source": "index.html",
+      "line": 149,
+      "element": "a",
+      "attribute": "href",
+      "url": "#main",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 2,
+      "element": "link",
+      "attribute": "href",
+      "url": "favicon.svg",
+      "target": "favicon.svg",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 2,
+      "element": "link",
+      "attribute": "href",
+      "url": "styles.css",
+      "target": "styles.css",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 2,
+      "element": "link",
+      "attribute": "href",
+      "url": "languages.css",
+      "target": "languages.css",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 2,
+      "element": "script",
+      "attribute": "src",
+      "url": "grammar-core.js",
+      "target": "grammar-core.js",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 2,
+      "element": "script",
+      "attribute": "src",
+      "url": "languages.js",
+      "target": "languages.js",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 3,
+      "element": "a",
+      "attribute": "href",
+      "url": "#main",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 4,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 4,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum.html",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 4,
+      "element": "a",
+      "attribute": "href",
+      "url": "learning.html",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 4,
+      "element": "a",
+      "attribute": "href",
+      "url": "cosmology.html",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 4,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 6,
+      "element": "a",
+      "attribute": "href",
+      "url": "learning.html",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 7,
+      "element": "a",
+      "attribute": "href",
+      "url": "#tensors",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 7,
+      "element": "a",
+      "attribute": "href",
+      "url": "#rewrites",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 7,
+      "element": "a",
+      "attribute": "href",
+      "url": "#grammar",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 7,
+      "element": "a",
+      "attribute": "href",
+      "url": "#recursion",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 7,
+      "element": "a",
+      "attribute": "href",
+      "url": "#causal",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 12,
+      "element": "a",
+      "attribute": "href",
+      "url": "algebra.html",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 29,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "languages.html",
+      "line": 29,
+      "element": "a",
+      "attribute": "href",
+      "url": "#main",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 2,
+      "element": "link",
+      "attribute": "href",
+      "url": "favicon.svg",
+      "target": "favicon.svg",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 2,
+      "element": "link",
+      "attribute": "href",
+      "url": "styles.css",
+      "target": "styles.css",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 2,
+      "element": "link",
+      "attribute": "href",
+      "url": "learning.css",
+      "target": "learning.css",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 2,
+      "element": "script",
+      "attribute": "src",
+      "url": "learning.js",
+      "target": "learning.js",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 3,
+      "element": "a",
+      "attribute": "href",
+      "url": "#main",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 3,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 3,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum.html",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 3,
+      "element": "a",
+      "attribute": "href",
+      "url": "languages.html",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 3,
+      "element": "a",
+      "attribute": "href",
+      "url": "cosmology.html",
+      "target": "cosmology.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 3,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 6,
+      "element": "a",
+      "attribute": "href",
+      "url": "#graph",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 6,
+      "element": "a",
+      "attribute": "href",
+      "url": "#circuit",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 6,
+      "element": "a",
+      "attribute": "href",
+      "url": "#attention",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 6,
+      "element": "a",
+      "attribute": "href",
+      "url": "#benchmark",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 16,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum.html",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 16,
+      "element": "a",
+      "attribute": "href",
+      "url": "toricgt/verification.json",
+      "target": "toricgt/verification.json",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 16,
+      "element": "a",
+      "attribute": "href",
+      "url": "toricgt/benchmark.json",
+      "target": "toricgt/benchmark.json",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 16,
+      "element": "a",
+      "attribute": "href",
+      "url": "toricgt/asset-manifest.json",
+      "target": "toricgt/asset-manifest.json",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 16,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/source.zip",
+      "target": "downloads/source.zip",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 16,
+      "element": "a",
+      "attribute": "href",
+      "url": "languages.html",
+      "target": "languages.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 17,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "learning.html",
+      "line": 17,
+      "element": "a",
+      "attribute": "href",
+      "url": "#main",
+      "target": "learning.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "favicon.svg",
+      "target": "favicon.svg",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "styles.css",
+      "target": "styles.css",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 7,
+      "element": "link",
+      "attribute": "href",
+      "url": "quantum.css",
+      "target": "quantum.css",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 8,
+      "element": "script",
+      "attribute": "src",
+      "url": "quantum-core.js",
+      "target": "quantum-core.js",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 8,
+      "element": "script",
+      "attribute": "src",
+      "url": "quantum.js",
+      "target": "quantum.js",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 11,
+      "element": "a",
+      "attribute": "href",
+      "url": "#quantum-main",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 13,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "algebra.html",
+      "target": "algebra.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "#circuit",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "#qnn",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 14,
+      "element": "a",
+      "attribute": "href",
+      "url": "#recorded",
+      "target": "quantum.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 15,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 32,
+      "element": "a",
+      "attribute": "href",
+      "url": "data/torus3x3.json",
+      "target": "data/torus3x3.json",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 60,
+      "element": "a",
+      "attribute": "href",
+      "url": "data/surface-cases.json",
+      "target": "data/surface-cases.json",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 60,
+      "element": "a",
+      "attribute": "href",
+      "url": "data/cpu-validation.json",
+      "target": "data/cpu-validation.json",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 60,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum-core.js",
+      "target": "quantum-core.js",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 60,
+      "element": "a",
+      "attribute": "href",
+      "url": "quantum-worker.js",
+      "target": "quantum-worker.js",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 62,
+      "element": "a",
+      "attribute": "href",
+      "url": "downloads/paper.pdf",
+      "target": "downloads/paper.pdf",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 64,
+      "element": "a",
+      "attribute": "href",
+      "url": "index.html",
+      "target": "index.html",
+      "status": "exists"
+    },
+    {
+      "source": "quantum.html",
+      "line": 64,
+      "element": "a",
+      "attribute": "href",
+      "url": "#quantum-main",
+      "target": "quantum.html",
+      "status": "exists"
+    }
+  ]
+}

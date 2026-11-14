@@ -1,0 +1,170 @@
+{
+  "generator": "extension/code/make_second_pass_figures.py",
+  "generator_sha256": "6e6cdacb28fdb66e1065cae23cfed65ac1415c94bc4955ddc234ca5c523b143f",
+  "fierz_boundary": {
+    "inputs": [
+      "j",
+      "l"
+    ],
+    "outputs": [
+      "i",
+      "k"
+    ],
+    "summed_adjoint": "a",
+    "exchange_pairs": [
+      [
+        "l",
+        "i"
+      ],
+      [
+        "j",
+        "k"
+      ]
+    ],
+    "direct_pairs": [
+      [
+        "j",
+        "i"
+      ],
+      [
+        "l",
+        "k"
+      ]
+    ],
+    "exchange_coefficient": "1/2",
+    "direct_coefficient": "-1/(2N)",
+    "crossing_is_vertex": false
+  },
+  "fierz_finite_numerical_checks": [
+    {
+      "N": 2,
+      "normalization_max_error": 0.0,
+      "fierz_max_error": 0.0
+    },
+    {
+      "N": 3,
+      "normalization_max_error": 1.1102230246251565e-16,
+      "fierz_max_error": 5.551115123125783e-17
+    },
+    {
+      "N": 4,
+      "normalization_max_error": 1.1102230246251565e-16,
+      "fierz_max_error": 1.1102230246251565e-16
+    },
+    {
+      "N": 5,
+      "normalization_max_error": 1.1102230246251565e-16,
+      "fierz_max_error": 1.1102230246251565e-16
+    }
+  ],
+  "causal_models": {
+    "exogenous_law": "U fair Boolean",
+    "A": {
+      "equations": [
+        "X=U",
+        "Y=X"
+      ],
+      "edges": [
+        [
+          "U",
+          "X"
+        ],
+        [
+          "X",
+          "Y"
+        ]
+      ],
+      "after_do_X_0_edges": [
+        [
+          "X",
+          "Y"
+        ]
+      ],
+      "after_do_X_0_prob_Y_1": "0"
+    },
+    "B": {
+      "equations": [
+        "X=U",
+        "Y=U"
+      ],
+      "edges": [
+        [
+          "U",
+          "X"
+        ],
+        [
+          "U",
+          "Y"
+        ]
+      ],
+      "after_do_X_0_edges": [
+        [
+          "U",
+          "Y"
+        ]
+      ],
+      "after_do_X_0_prob_Y_1": "1/2"
+    },
+    "shared_observations": {
+      "00": "1/2",
+      "11": "1/2"
+    }
+  },
+  "typed_context": {
+    "fixed_maps": [
+      "p:A->B",
+      "q:C->D"
+    ],
+    "replacement": "L=R:B->C",
+    "conclusion": "q o L o p=q o R o p:A->D",
+    "scope": "sequential linear-map contexts; not full tensor/traced/dagger graph syntax"
+  },
+  "rendering": "vector PDF/SVG plus 240dpi PNG; final visual inspection recorded separately",
+  "files": [
+    {
+      "file": "extension/manuscript/figures/second-pass-fierz.pdf",
+      "sha256": "d2f63ee603a261a7a81d7084255954a29197857299cb7abbdda780f07bd89aaf",
+      "bytes": 29836
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-fierz.svg",
+      "sha256": "7583d9b848cfd971439ba98d8c76dc912e55a85fbfc4e9e90214ec64fbdcb2b5",
+      "bytes": 22201
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-fierz.png",
+      "sha256": "6d13bf10738c0f95f0d0ab8a5037782c377fd605bd3ca86f5d4862652144b9a1",
+      "bytes": 77747
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-causal-models.pdf",
+      "sha256": "3742d47dafee811aae3e02c4a2be6c2043ef417a2cea1cf3f3d07943337bd0f8",
+      "bytes": 27491
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-causal-models.svg",
+      "sha256": "e2dfc0a63cfcd3b3169bd2db735d10956b3f873f6ad2e1502218b8b72e7a38cb",
+      "bytes": 39930
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-causal-models.png",
+      "sha256": "b38b62e942583155246a5d8e336b6ef8e3dee84932747a9af1ff9d8be364e423",
+      "bytes": 154079
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-typed-context.pdf",
+      "sha256": "aff52148e051c24893f5a08d4d0dcf1148ec1f8ced81a0b126470b98daccaa20",
+      "bytes": 24267
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-typed-context.svg",
+      "sha256": "b5ca69c7b480e340e71b258fcd4289fd06335be86a8b87d3b2179a29cf62c6c5",
+      "bytes": 12698
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-typed-context.png",
+      "sha256": "b9f6e7e7388592b84b5a54ebbd3781f07c6231baacc4bdf0c6af25d0e08bb734",
+      "bytes": 66528
+    }
+  ]
+}

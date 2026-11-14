@@ -1,0 +1,122 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[letterpaper,margin=1in,headheight=15pt]{geometry}
+\usepackage{microtype,graphicx,booktabs,longtable,array,enumitem}
+\usepackage{xcolor,fancyhdr,listings}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=teal!65!black,citecolor=teal!65!black,urlcolor=blue!55!black]{hyperref}
+\hypersetup{pdftitle={Orders, Complexes, Cryptography and Quantum Yang--Mills},pdfauthor={Research synthesis prepared for Amelie Schreiber},pdfsubject={A rigorous research synthesis with explicit proof and verification boundaries}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Orders, Complexes and Quantum Fields}
+\fancyhead[R]{\small Research monograph}
+\fancyfoot[C]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.2em}}
+\makeatother
+\setlist{itemsep=3pt,topsep=6pt}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{construction}[theorem]{Construction}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{warning}[theorem]{Caution}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\llbracket}{\mathopen{[\![}}
+\newcommand{\rrbracket}{\mathclose{]\!]}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\reviewstatus}[1]{\par\smallskip\noindent\textbf{Evidence status.} #1\par\smallskip}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,columns=fullflexible,keepspaces=true,frame=single,rulecolor=\color{black!20},showstringspaces=false}
+\input{lean-listings-unicode}
+\title{\textbf{Orders, Complexes, Cryptography\\and Quantum Yang--Mills}\\[1em]\Large Arithmetic modules, tensor grammars, quantum learning,\\fluid dynamics and a verifiable spectral research program}
+\author{Prepared for Amelie Schreiber\\[.4em]\normalsize Research synthesis and computational companion}
+\date{13 November 2026\\\small Working research monograph, version 1.3: audited fluid and quiver interfaces}
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\maketitle
+\clearpage
+\hypersetup{pageanchor=true}
+\input{chapters/preface}
+\tableofcontents
+\mainmatter
+\part{Arithmetic structure and the inherited research program}
+\input{chapters/foundations}
+\input{chapters/orders}
+\part{Complexes, topology and spectral information}
+\input{chapters/complexes}
+\input{chapters/standard-monomials}
+\input{chapters/gentle-invariants}
+\part{Cryptography and quantum algorithms}
+\input{chapters/cryptography}
+\input{chapters/implemented-cryptography}
+\input{chapters/quantum-surfaces}
+\part{Typed tensor diagrams and quantum graph learning}
+\input{chapters/tensor-grammars}
+\input{chapters/quantum-toricgt}
+\part{Quantum fields and a precise research synthesis}
+\input{chapters/gauge-theory}
+\input{chapters/character-bridge}
+\part{Information reduction, fluid dynamics and the released singularity proof}
+\input{chapters/microscopic-fluid-limits}
+\input{chapters/navier-stokes-release}
+\input{chapters/fluid-structures}
+\input{chapters/quantum-fluid}
+\input{chapters/reduction-contracts}
+\input{chapters/toric-transport-audit}
+\part{Conformal geometry, information and language}
+\input{chapters/cyclic-cosmology}
+\input{chapters/learning-languages}
+\input{chapters/synthesis}
+\appendix
+\input{chapters/experiments}
+\input{chapters/formalization}
+\input{chapters/fluid-verification}
+\input{chapters/source-concordance}
+\backmatter
+\bibliographystyle{plainnat}
+\bibliography{references,ns-microscopic,ns-release,ns-structures,ns-spin,reduction-contracts,toric-audit,crypto-implementation}
+\end{document}

@@ -1,0 +1,223 @@
+% Reviewed inputs: planning/cutoff-appendix-20261108/WIDE_CORRECTION-v1.md
+% and WIDE_CORRECTION_ADDENDUM-v1.md; exact source pins are in the release receipt.
+\section{Derivations for the wide cutoff correction}
+\label{pca:wide-details}
+
+\subsection{The strict band and its prime terms}
+\label{pca:wide-band-proof}
+
+Use the original \(r,e_0,e_1,J,z_0\) on each side.
+The primal-zero removal at the dyad \(J\le N\zeta<2J\)
+implies \(D/(EE_1(Nh)^2)>Nz_0/4\). Hence
+\[
+ \frac{E N\zeta}{U^2}
+ <\frac{4D}{U^2}\frac{Ne_0}{E_1(Nh)^2}
+ \le\frac{14}{E_1Nh},
+\]
+using \(e_0\mid h\) and \(2D\le7U^2\).
+For a band label \(T_1<Nm<E/T_2\) in
+\eqref{pca:ordered}, \(m\ne1\), so the full inner
+M\"obius sum vanishes. In its omitted part use \(c=m/a\).
+The inner sum in \eqref{pca:ordered} becomes
+\[
+ -\sum_{\substack{c\mid m\\Nc<Nm/T_1}}\mu(c).
+\]
+Here \(1<Nm/T_1<\Omega<14\). In the Eisenstein field the
+primes above two and three lie in \(S\). The remaining
+inert primes have norm at least \(25\), and the only
+possible good prime norms below \(14\) are \(7,13\).
+Two good prime factors already have norm at least \(49\).
+Consequently this sum includes the unit and precisely the
+primes specified in \eqref{pca:wide-factor}.
+Substituting \(n=d/m\) turns \(Nm<E/T_2\) into \(Nn>T_2\).
+The upper bound on \(\Omega\) also proves the two stated
+conditions for vanishing of the prime term and the band.
+
+If a \(p\)-subtraction is present, \(Nm>T_1Np\) and
+\(Nn>T_2\) give \(E N\zeta>Np\,U^2\ge2D\).
+The original primal profile for that individual cutoff is
+\[
+ W\!\left(\frac{E E_1(Nh)^2Nz_0\,Nb}{D}\right),
+ \qquad Nb\ge1 .
+\]
+Its argument exceeds two, since \(E_1(Nh)^2\ge Ne_0\).
+The individual cutoff has zero primal contribution even
+if its dyad survived the original primal-zero removal.
+Its Poisson components are still present in the exact
+paired selection.
+
+\subsection{The fixed-intersection scalar estimate}
+\label{pca:wide-scalar-proof}
+
+Fix the actual row, primal and dual labels, ordered
+factorizations, original dyads, and both deletion allocations.
+Let \(\mathcal L\) be the union of the primes of \(S\), of the
+row, of all these labels, and of \(\mathcal P\).
+Its radical has polynomial norm after the inherited
+\(N\mathfrak k\le D^5\) clip and the original support bounds.
+Choose the exact intersection of \(d\) with \(\mathcal L\)
+as a squarefree ideal \(\delta\), subject to all required
+memberships and deletions. The good \(e_1\) factors,
+conjugate \(d\)-overlaps, and actual new \(d\)-residue
+supports are fixed by these choices. Thus the original
+row phase is fixed on the free part of \(d\), and an
+original zero stays zero. The free part avoids the full
+union \(\mathcal L\).
+
+In the product of the two copies of \eqref{pca:wide-factor},
+their real factors \(\mu(d)\) leave the original outer
+\(\mu(d)\). The step-step term needs one ideal variable
+and a step-correction term uses \(d=mn\).
+For two corrections, use the four cells of primes in \(d\)
+specified by their membership in the two factors \(m_0,m_1\).
+Both \(m_i\)'s and their complements are products of the
+appropriate cells. This is an exact squarefree factorization
+with pairwise coprime cells, including units. Expand the
+finite small-prime choices and assign the fixed primes of
+\(\delta\) among the cells, with at most
+\(4^{\omega(\delta)}\) assignments. The tests \(p\mid m_i\)
+are thereby fixed. The cell ideals have form \(\delta_j q_j\),
+and the sign is \(\mu(\delta)\prod_j\mu(q_j)\).
+
+Select the largest free cell by its norm, with deterministic
+index order on ties, and fix the other free cells. If its
+norm is \(t\), then \(t\ge(Y')^{1/4}\). Its interval lies
+on the scale \(L=Y'/\prod_{\rm other}Nq_j\), with
+\(L\gg(Y')^{1/4}\) for every nonempty selection.
+Its deleted set \(\mathcal T\) consists of \(\mathcal L\)
+and the primes in the other free cells, and still has
+polynomial radical norm. Every factorization inequality
+is an interval test in \(t\), since each \(m_i,n_i\)
+either includes the selected cell or is fixed.
+The tie order changes only an endpoint.
+The original primal and direct tests and the middle
+cutoffs also give finitely many interval tests.
+At fixed labels \(X'\) is proportional to \(1/E\), the
+middle parameter \(M\) is proportional to \(E\), and the
+integer norm equality is fixed. The original strict and
+nonstrict endpoints remain in the scalar sum.
+
+For the fixed field \(\mathbb Q(\omega)\), write
+\(M_{\mathcal T}(x)=\sum_{Nc\le x,\,(c,\mathcal T)=1}\mu(c)\).
+The fixed-field deleted M\"obius input used here is
+\[
+ |M_{\mathcal T}(x)|\ll_\kappa
+ x\log^C(2D)\exp(-c_\kappa\sqrt{\log(2x)})
+\]
+for \(x\ge D^\kappa\) and polynomial radical norm.
+The underlying fixed-field zero-free input is
+Thorner--Zaman, \emph{Algebra \& Number Theory} 13 (2019),
+1039--1068, Theorem~3.1, specialized to the trivial
+extension of this one fixed field.
+The classical truncated Perron shift for the reciprocal
+zeta function gives
+\(M_{\varnothing}(x)\ll x\exp(-c\sqrt{\log(2x)})\).
+A possible fixed exceptional zero affects the fixed
+starting threshold.
+Artificial deletions are transferred exactly by
+\[
+ M_{\mathcal T}(x)
+   =\sum_{\substack{Na\le x\\
+                   \operatorname{supp}a\subseteq\mathcal T}}
+                              M_{\varnothing}(x/Na).
+\]
+All powers of the deleted primes occur in this convolution.
+Split at \(Na=\sqrt x\). In the first range use the
+fixed-field bound. In the second use the elementary ideal
+count and \(1/Na\le x^{-\eta/2}(Na)^{-1+\eta}\), with
+\(\eta\asymp1/\sqrt{\log(2x)}\).
+The finite reciprocal Euler product at \(1-\eta\) costs
+a power of \(\log(2D)\). Indeed, if the deleted radical has
+norm \(\ll D^{C_0}\), split its primes at
+\(\log^2(2D)\). Below that threshold the ideal count bounds
+the reciprocal-power sum by
+\(O((\log(2D))^{2\eta}\log\log(3D))\).
+Above it use the bound \(O(\log(2D))\) for the sum of their
+log norms. For \(x\ge D^\kappa\), these estimates give the
+claimed uniform logarithmic Euler factor and subpower
+decay. The underlying analytic zeta function stays fixed.
+
+After factoring out the fixed scalar and phase, the weight
+is \(E^{-2}G_W(c_0/E)\overline{G_W(c_1/E)}\) for fixed
+positive \(c_i\). Its supremum plus integrated absolute
+derivative is \(O(\mathcal M_{24}(W)^2Y^{-2})\) on each
+remaining interval. This follows from boundedness of the
+radial transform and its first log derivative, and the
+fixed dyadic range of \(E\). Partial summation gives
+\[
+ \ll_\kappa \mathcal M_{24}(W)^2Y^{-2}L\log^C(2D)
+                      \exp(-c_\kappa\sqrt{\log(2Y')}).
+\]
+Here \(L\gg(Y')^{1/4}\) permits the deleted bound with a
+fixed smaller exponent in its polynomial lower cutoff.
+The remaining free cells sum harmonically by the factors
+\(1/Nq_j\) in \(L\). Together with the fixed-prime assignments
+this proves \eqref{pca:wide-scalar}. It applies to a scalar
+with the row and all other ideal labels fixed.
+
+\subsection{The complete partner sum and the equality prefix}
+\label{pca:wide-prefix-proof}
+
+For each \(p\in\mathcal P\), use the coefficient
+\[
+ -\mu(\zeta)\mu(d)
+ \sum_{\substack{mn=d,\;p\mid m\\Nm>T_1Np,\;Nn>T_2}}1
+\]
+on the partner and sum its original ordered factorizations.
+This coefficient is independent of the partner frequency
+and divisor bounded. The individual primal zero above
+proves \(V_d^{[p]}=0\). The exact original Poisson identity
+therefore gives the full complement
+\(-\mathcal E_d^{[p]}\), with the same middle projection.
+Recombining all modes includes the re-expressed direct
+part and preserves every original raw value.
+
+For the elementary equality bound, at fixed \(r,e_0,e_1,J\)
+put \(L_0=D/(E E_1(Nh)^2)\) and \(J'=J/Ne_0\).
+The equal-norm ideals have \(z_0=g\ell\), \(\mathfrak k=g\bar\ell\).
+There are \(O(J'\log(2+2J'))\) choices on the dyad, up to
+the original constant-scale convention. Their norm \(Nz_0\)
+appears inversely in the Poisson scalar, and the equal-norm
+profile scale is comparable to \(L_0/R\).
+Thus the pointwise row bound is at most a subpower times
+\(\mathcal M_{24}(W)L_0 R^{-1/2}(1+L_0/R)^{-4}\).
+The \(O(R)\) original rows give squared counting norm
+\(O((DH)^\epsilon\mathcal M_{24}(W)^2R L_0)\).
+Summing the square roots over the original \(r,e_0,e_1,J\)
+uses the harmonic factors \(1/(Nr\,Ne_0)\) and fixed
+divisor costs. After division by \(D\), the squared norm
+is \(O((DH)^\epsilon\mathcal M_{24}(W)^2R/E)\).
+The same proof handles the modified coefficient because it
+is divisor bounded and row independent at each allocation.
+Apply Cauchy to the original and modified middle projections
+and sum harmonically in \(d\). This proves the target-size
+full-frequency compensation of Section~\ref{pca:wide-core}.
+
+For the pure comparable prefix, keep the correction on the
+equality side. Its coefficient is divisor bounded on its
+fixed labels. A partner correction, when included, is a
+coefficient on \(x\) alone after fixing the other labels.
+The insertion interval remains complete inside the original
+eligibility. The sharp insertion proof with powerful freezing
+and exact common-factor eligibility applies. Its relative
+loss is \(D^{1/16}\) from the erased sieve factor
+\(\Phi(A_1,B/Ns_1)/A_1\ll D^{1/8}\).
+A nonzero equality correction implies \(E_0Nh_0<14\),
+hence \(E_0(Nh_0)^2<196\). Therefore the equality radial
+scale is \(y_0=D/(E E_0(Nh_0)^2 R)\gg D/(ER)\).
+Use both half radial powers and keep the remaining
+equality-side \(7/2\) decay. The fixed-\(d\) rectangle
+is bounded by a constant times
+\[
+ (DH)^\epsilon\mathcal M_{24}(W)^2
+ \frac{R}{E}\,D^{1/16}\left(1+\frac{D}{ER}\right)^{-7/2}.
+\]
+Count the exact original middle subtraction independently
+at the same inherited \(R/E\) cost with the common factors.
+For \(E\le D^{13/56}\), \(D/(ER)\gg D^{1/56}\) at the pure
+scales. The remaining decay pays \(D^{1/16}\) because
+\((7/2)(1/56)=1/16\). Harmonic summation gives the stated
+prefix. The partner-only argument retains its own ratio
+\(N\mathfrak k/Nz\), so the same automatic lower bound on
+its radial scale is unavailable. The coherent masked wide
+divisor sum remains open.

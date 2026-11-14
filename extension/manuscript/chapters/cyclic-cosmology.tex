@@ -1,0 +1,1017 @@
+\chapter{Conformal aeons, elliptic integrals and identifiable cosmic information}
+\label{ch:cyclic-cosmology}
+
+\reviewstatus{This chapter separates proved mathematical statements, conditional
+physical models and observational claims. Eight central papers on conformal
+cyclic cosmology (CCC), its proposed signatures, null tests and communication
+proposal were read in full; selected sections of three larger references were
+also read. Exact versions, file hashes and coverage are recorded in
+\texttt{extension/review/cosmology/}. The finite synthetic experiment below was
+executed. It contains no observed CMB data. The theorems in this chapter are
+ordinary mathematical proofs; they are not represented as a completed Lean
+formalization of cosmology or of the observational pipeline.}
+
+\section{Four questions that require different evidence}
+
+Conformal geometry asks which structures survive a change of metric by a
+positive scalar factor. A cosmological model must additionally specify field
+equations, matter content and matching conditions. A proposed observable must
+specify how those fields reach a detector. A communication claim must further
+specify how a sender's choice changes the distribution of detector outcomes.
+These questions form a useful hierarchy: solving an earlier one supplies
+ingredients for a later one, but does not solve it automatically.
+
+CCC proposes that the conformal future boundary of one expanding cosmic
+aeon can be joined to the conformally regularized beginning of another. Its
+motivation involves the eventual disappearance or irrelevance of massive
+clocks, and a special treatment of the initial gravitational degrees of
+freedom. The framework is developed in several mathematically distinct
+ansatzes; choosing the conformal factor and compatible matter evolution is
+substantive physical work, as the explicit comparisons in
+\citet[Secs.~2--7]{CCMarkwellStevens2023} demonstrate. We use a bridge metric
+to state exactly what a conformal argument does establish.
+
+The observational history also has distinct layers. Gurzadyan and Penrose
+proposed low-variance concentric CMB rings as traces of activity in a preceding
+aeon \citep[pp.~1--6]{CCGurzadyanPenrose2010}. An and collaborators subsequently
+reported a statistical excess of temperature-gradient features interpreted as
+Hawking points \citep[Secs.~3--5]{CCAnEtAl2020}. Independent analyses have
+challenged the significance of these particular statistics: correlated
+Gaussian skies reproduce low-variance features, and searches over multiple
+scales require a global comparison
+\citep[pp.~1--4]{CCMossScottZibin2011}
+\citep[Secs.~2--4]{CCJowScott2020}. Bodnia and collaborators' later neural-network
+and ring searches found no significant evidence for the templates they tested
+after examining unusually bright or dark pixels
+\citep[Secs.~2--4]{CCBodniaEtAl2024}. None of these logical statements establishes
+or excludes every possible CCC realization.
+
+An explicit cross-aeon SETI proposal exists. Gurzadyan and Penrose discuss
+electromagnetic signaling, possible other carriers and an intentionally
+transmitted record \citep[Sec.~2, pp.~2--4]{CCGurzadyanPenrose2016}. This is a
+proposal to investigate a channel, not a report of a decoded message. The
+distinction is central to the mathematics below: a natural correlation may
+carry information about an earlier physical state without carrying an
+intentionally selected symbol.
+
+\section{Conformal geometry with the singular boundary kept explicit}
+
+Let $(U,g)$ be a smooth oriented Lorentzian four-manifold, with signature
+$(-,+,+,+)$, and let $\widetilde g=e^{2f}g$ for a smooth real function $f$.
+All statements in this section hold on $U$, where the factor is finite and
+strictly positive. They do not assert regularity at a zero or pole of that
+factor. Our sign convention differs from some of the cited spinor texts;
+the scaling identities below are independent of that choice.
+
+\begin{proposition}[Connection change and null trajectories]
+\label{prop:cc-null}
+The Levi--Civita connections satisfy
+\begin{equation}
+ \widetilde\nabla_XY=\nabla_XY+X(f)Y+Y(f)X-g(X,Y)\operatorname{grad}_g f.
+ \label{eq:cc-connection}
+\end{equation}
+The metrics have the same null cones and the same unparameterized null
+geodesics. If $k=dx/d\lambda$ is a $g$-affinely parameterized null geodesic,
+then $\widetilde k=e^{-2f}k$ is affinely parameterized for $\widetilde g$;
+equivalently, $d\widetilde\lambda/d\lambda=e^{2f}$ along the curve.
+\end{proposition}
+
+\begin{proof}
+Define $D_XY$ by the right side of \eqref{eq:cc-connection}. The added tensor
+is symmetric in $X,Y$, so $D$ is torsion-free. Expanding
+$X(e^{2f}g(Y,Z))$ and using $\nabla g=0$ shows that the extra terms
+$2X(f)g(Y,Z)$ cancel precisely the four gradient terms contributed by
+$g(D_XY,Z)+g(Y,D_XZ)$. Hence $D\widetilde g=0$. Uniqueness of the
+torsion-free metric connection proves the formula. Also
+$\widetilde g(v,v)=e^{2f}g(v,v)$, so the null cones agree. If
+$\nabla_k k=0$ and $g(k,k)=0$, the formula gives
+$\widetilde\nabla_k k=2k(f)k$. Multiplication by $e^{-2f}$ cancels this
+acceleration:
+\[
+ \widetilde\nabla_{e^{-2f}k}(e^{-2f}k)
+ =e^{-4f}\bigl(\widetilde\nabla_k k-2k(f)k\bigr)=0.
+\]
+The parameter relation follows from the chain rule. Applying the same
+argument with $-f$ proves the converse.
+\end{proof}
+
+\begin{proposition}[Hodge scaling and the four-dimensional Maxwell system]
+\label{prop:cc-maxwell}
+On an oriented pseudo-Riemannian $n$-manifold, the Hodge operators on
+$p$-forms obey
+\begin{equation}
+ \widetilde *\alpha=e^{(n-2p)f}*\alpha.
+ \label{eq:cc-hodge}
+\end{equation}
+Consequently, in dimension four, the source-free equations
+$dF=0$, $d*F=0$ for a two-form $F$ are conformally invariant if $F$ itself
+is kept unchanged.
+\end{proposition}
+
+\begin{proof}
+The inner product on covariant $p$-tensors scales by $e^{-2pf}$ and the
+oriented volume form by $e^{nf}$. For all $p$-forms $\alpha,\beta$,
+\[
+ \alpha\wedge\widetilde *\beta
+ =\langle\alpha,\beta\rangle_{\widetilde g}\,\vol_{\widetilde g}
+ =e^{(n-2p)f}\alpha\wedge *\beta.
+\]
+Nondegeneracy of the wedge pairing gives \eqref{eq:cc-hodge}. For $n=4$,
+$p=2$, its exponent is zero. Exterior differentiation is independent of
+the metric, proving both Maxwell equations unchanged.
+\end{proof}
+
+These statements explain why null propagation and conformally invariant
+fields are natural ingredients in CCC. They do not include charged plasma,
+absorption, scattering, a singular source or a quantum trace anomaly. Each
+requires an additional equation or boundary condition. Tod's account
+carefully distinguishes conformal field weights from physically measured
+energy \citep[Secs.~1.2, 1.3.1 and 3.6]{CCTod2021}.
+
+For example, with our signature the Maxwell stress tensor is
+\[
+ T_{ab}=F_{ac}F_b{}^c-\tfrac14 g_{ab}F_{cd}F^{cd}.
+\]
+Raising one index contributes $e^{-2f}$, and raising both contributes
+$e^{-4f}$. Thus $\widetilde T_{ab}=e^{-2f}T_{ab}$. If $u$ is a unit
+timelike observer, $\widetilde u=e^{-f}u$ is unit for the new metric, so
+\[
+ \widetilde T_{ab}\widetilde u^a\widetilde u^b
+ =e^{-4f}T_{ab}u^a u^b.
+\]
+Conformal preservation of the field equation therefore coexists with
+rescaling of a detector's energy density. Preserving an unparameterized
+light ray does not preserve its clock, frequency, flux or accessible
+information budget.
+
+For a CCC bridge, write
+\begin{equation}
+ \widehat g=\Omega^2g,\qquad \check g=\omega^2g,\qquad
+ \Omega\omega=-1,\qquad \Sigma=\{\omega=0\}.
+ \label{eq:cc-bridge}
+\end{equation}
+The signed factors are conventional; away from $\Sigma$ their absolute
+values determine positive rescalings. In this convention the preceding
+aeon's factor $|\Omega|$ diverges toward crossover, whereas the succeeding
+aeon's factor $\omega$ tends to zero. The regularity of $g$, the extension
+of suitably rescaled fields, and their compatibility with matter equations
+are separate hypotheses at $\Sigma$. Neither preceding proposition can
+be applied there simply by substituting $f=\log 0$.
+
+\section{A genuine elliptic-curve bridge in the Friedmann equation}
+
+There is a precise connection to the earlier elliptic-curve chapters which
+does not require a cosmic signal. Consider a Friedmann--Lema\^{i}tre--Robertson--Walker
+scale factor $a(t)>0$, constant spatial-curvature parameter $\kappa$, a
+cosmological constant $\Lambda$, radiation and pressureless matter. Assume
+the usual separate conservation laws, so that their energy densities are
+$\rho_{r,0}a^{-4}$ and $\rho_{m,0}a^{-3}$. In units with $c=1$, the
+Friedmann equation is
+\[
+ H^2=\frac{8\pi G}{3}
+ \bigl(\rho_{r,0}a^{-4}+\rho_{m,0}a^{-3}\bigr)
+ +\frac{\Lambda}{3}-\frac{\kappa}{a^2},\qquad H=\dot a/a.
+\]
+Define conformal time by $dt=a\,d\eta$. Since $a'=a\dot a=a^2H$,
+\begin{equation}
+ (a')^2=P(a),\qquad
+ P(a)=\alpha+\beta a-\kappa a^2+\delta a^4,
+ \quad \alpha=\frac{8\pi G\rho_{r,0}}3,
+ \quad\beta=\frac{8\pi G\rho_{m,0}}3,
+ \quad\delta=\frac\Lambda3.
+ \label{eq:cc-friedmann}
+\end{equation}
+This reduction is valid on intervals where the stated matter laws hold.
+An additional epoch with different energy transfer need not satisfy the
+same quartic. A Weierstrass representation of such a quartic appears in
+the 2025 CCC proposal, with this limitation explicitly stated
+\citep[Sec.~V, especially p.~13]{CCMeissnerPenrose2025}.
+
+\begin{theorem}[Quartic compactification and conformal time]
+\label{thm:cc-elliptic}
+Suppose $\delta\ne0$ and $P\in\C[a]$ has four distinct roots. The smooth
+compactification $E$ of $y^2=P(a)$ is a connected genus-one curve. After
+choosing any point as origin it is an elliptic curve over $\C$. The form
+$da/y$ extends to an everywhere nonzero holomorphic differential on $E$.
+On a real expanding branch with $P(a)>0$, conformal time satisfies
+\[
+ \eta-\eta_0=\int_{a_0}^{a}\frac{ds}{\sqrt{P(s)}}.
+\]
+Thus the cosmological quadrature is locally an Abelian integral on an
+elliptic curve under the stated hypotheses.
+\end{theorem}
+
+\begin{proof}
+The projection $(a,y)\mapsto a$ is a two-sheeted cover away from the four
+roots. At a root $r$, $P'(r)\ne0$, so the implicit function theorem makes
+$y$ a local coordinate and gives
+$a=r+y^2/P'(r)+O(y^4)$. Each root is a simple branch point. At infinity
+put $z=1/a$ and $w=y/a^2$. The equation becomes
+\[
+ w^2=\delta-\kappa z^2+\beta z^3+\alpha z^4.
+\]
+At $z=0$ there are two distinct points $w=\pm\sqrt\delta$, each smooth
+and unbranched. Adding them compactifies the cover. The curve is connected
+because a rational square cannot have the four simple zeros of $P$;
+equivalently, analytic continuation around one branch point exchanges the
+two sheets.
+
+For completeness, triangulate the base sphere with all four branch points
+among its vertices. Each face and each open edge has two lifts. An ordinary
+vertex has two lifts, while a branch vertex has one. Therefore
+$\chi(E)=2\chi(S^2)-4=0$. For a connected compact orientable surface,
+$\chi(E)=2-2g$, so $g=1$. Choosing a complex point supplies the marked
+point in the definition of an elliptic curve.
+
+At a finite unbranched point, $da/y$ is regular and nonzero. At a branch
+point the displayed local expansion gives
+$da/y=(2/P'(r)+O(y^2))\,dy$, again regular and nonzero. At either point
+at infinity it becomes $-dz/w$, with $w\ne0$. These charts cover $E$.
+Finally, on a chosen expanding real branch \eqref{eq:cc-friedmann} gives
+$d\eta=da/\sqrt{P(a)}$, and integration proves the formula. Changing paths
+on $E$ can add periods; this is the usual multivaluedness of an Abelian
+integral, not an ambiguity in the chosen real initial-value solution.
+\end{proof}
+
+One can see the Weierstrass equation directly. Choose a root $r$ and put
+$u=(a-r)^{-1}$, $v=y/(a-r)^2$. Taylor expansion, which is exact for a
+quartic, gives
+\[
+ v^2=A u^3+B u^2+C u+D,
+ \quad A=P'(r),\ B=\tfrac12P''(r),\ C=\tfrac16P'''(r),\ D=\delta.
+\]
+Since $A\ne0$, the substitutions $X=Au+B/3$, $Y=Av$ give
+\begin{equation}
+ Y^2=X^3+\left(AC-\frac{B^2}{3}\right)X
+ +\left(\frac{2B^3}{27}-\frac{ABC}{3}+A^2D\right),
+ \qquad \frac{da}{y}=-\frac{dX}{Y}.
+ \label{eq:cc-weierstrass}
+\end{equation}
+The substitutions are birational with explicit inverses on the displayed
+charts. Smooth projective models agree after completion. Repeated roots
+invalidate the four-branch-point argument: the original affine equation
+is singular and its normalization can have genus zero. Vanishing
+$\delta$ likewise requires a separate degree analysis. One must not
+declare every special cosmological quadrature a nonsingular elliptic
+curve without checking its discriminant.
+The substitution is defined over $\C$, or over a coefficient-field
+extension containing the chosen root $r$. It need not be defined over
+the original coefficient field, and a real quartic need not have a real
+root with which to make this particular change of variables.
+
+This bridge is algebraic and analytic. Elliptic-curve cryptography instead
+uses finite groups such as $E(\F_q)$ and a discrete-logarithm problem.
+Cosmological density estimates are not automatically exact number-field
+coefficients, and the integral above is not a discrete logarithm. If one
+deliberately chooses algebraic coefficients, one can investigate good
+reduction at suitable primes; security then requires its own group-order
+and parameter analysis. The shared cubic equation supplies mathematical
+language, not a cryptographic attack or a cosmic encryption mechanism.
+
+\section{A spinor contraction that gives a conditional conserved charge}
+
+Tensor diagrams are most useful when their wire types and equations are
+specified. In a flat four-dimensional spin domain, let $S$ be a
+two-dimensional complex spinor space with nondegenerate alternating form
+$\epsilon_{AB}$. Primed indices denote the conjugate spin space. Indices
+are raised with the inverse alternating form, not with a positive
+Hermitian inner product. Work with a smooth symmetric field
+$\psi_{ABCD}=\psi_{(ABCD)}$ and a symmetric field $\kappa^{CD}$.
+
+\begin{proposition}[Spin lowering and Stokes invariance]
+\label{prop:cc-spinor}
+Suppose the fields satisfy
+\begin{equation}
+ \partial^{AA'}\psi_{ABCD}=0,
+ \qquad \partial^{A'(A}\kappa^{CD)}=0.
+ \label{eq:cc-spinor-hypotheses}
+\end{equation}
+Then $\phi_{AB}=\psi_{ABCD}\kappa^{CD}$ satisfies
+$\partial^{AA'}\phi_{AB}=0$. Under the usual spinor identification of a
+symmetric two-spinor with a complex self-dual two-form $F$, the form $F$
+is closed. If two oriented compact two-cycles $S_0,S_1$ bound an oriented
+oriented piecewise-smooth three-chain $W$ in a region where these hypotheses and smoothness hold,
+then
+\begin{equation}
+ \int_{S_1}F=\int_{S_0}F.
+ \label{eq:cc-charge}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The product rule gives
+\[
+ \partial^{AA'}\phi_{AB}
+ =(\partial^{AA'}\psi_{ABCD})\kappa^{CD}
+ +\psi_{ABCD}\partial^{AA'}\kappa^{CD}.
+\]
+The first term vanishes by hypothesis. In the second, complete symmetry
+of $\psi$ allows us to replace the derivative of $\kappa$ by its
+symmetrization in $A,C,D$. This is zero by the second equation of
+\eqref{eq:cc-spinor-hypotheses}.
+
+More explicitly, the corresponding complex two-form has components
+$F_{AA'BB'}=\phi_{AB}\epsilon_{A'B'}$. Its divergence vanishes by the
+equation just proved. Fix the orientation convention in which this spinor
+summand has $*F=iF$; choosing the opposite convention replaces $i$ by
+$-i$ without changing the argument. The vanishing divergence is equivalent
+to $d*F=0$. Since $*F=iF$, it follows that $dF=0$. Stokes' theorem then
+gives $\int_{S_1}F-\int_{S_0}F=\int_WdF=0$.
+\end{proof}
+
+The proof is a small, exact example of a diagrammatic calculation. A
+symmetric four-leg tensor contracts with a symmetric two-leg tensor;
+the derivative term annihilates the relevant symmetric component. The
+proof uses the displayed field equations, not the shape of a diagram.
+In particular, a spinor contraction is not automatically a trace-preserving
+quantum channel. The alternating tensor $\epsilon$, the Hermitian dagger
+of a finite quantum system and the Lorentzian metric are different
+structures even when their index diagrams look similar.
+
+Meissner and Penrose use this type of spin-lowering construction in their
+2025 development of a gravitational-wave epoch and a mass-charge proposal
+\citep[Secs.~II--III]{CCMeissnerPenrose2025}. Their argument begins with a
+weak field on a conformally flat background. On p.~10, its continuation
+into the early succeeding aeon invokes local isotropy to argue for no
+net outward charge flux. A regular closed-form calculation is therefore
+a well-defined mathematical component; identifying its normalization
+with physical mass across a nonlinear, matter-filled crossover needs
+the additional hypotheses. Equation~\eqref{eq:cc-charge} alone proves
+neither a general cosmological existence theorem nor an observed hot spot.
+
+The same source's proposed angular scale is a radius
+$0.03$--$0.04$ radians in its equation~(99), corresponding to a diameter
+about $3.4$--$4.6$ degrees. Its extra conformal interval is inferred using
+the asserted spot scale \citep[Sec.~VI.B]{CCMeissnerPenrose2025}. A parameter
+adjusted to a disputed feature cannot also count as an independent
+confirmation of that feature. A new epoch is scientifically testable
+when it predicts a joint observable distribution whose additional
+consequences can be checked.
+
+\section{From a possible carrier to an identifiable message}
+
+A channel is a probability law, not merely a geometric path. Let $M$ be
+a finite message variable, $X$ a source configuration, $Y$ detector data
+and $Z$ the output of an inference procedure. A possible causal model is
+\begin{equation}
+ M\longrightarrow X\longrightarrow Y\longrightarrow Z.
+ \label{eq:cc-markov}
+\end{equation}
+Writing the chain is an assumption about conditional independence. It
+does not establish that a sender existed. For example, if $\theta$
+describes uncertain transfer physics, an explicit model might be
+\[
+ p(y\mid m)=\int p(y\mid x,\theta)\,
+ p(x\mid m,\theta)\,p(\theta\mid m)\,dx\,d\theta.
+\]
+Replacing $p(\theta\mid m)$ by $p(\theta)$ is an additional independence
+assumption. A physical proposal must explain the source alphabet, its
+energy and timing constraints, its propagation and scattering, the
+detector response, and how alternative messages induce distinct laws.
+
+For the SETI proposal, the conformal Maxwell calculation supplies a
+possible mathematical ingredient. It does not calculate an end-to-end
+coherent channel through the intervening cosmology. The sender,
+encoding, survival of distinguishable states and decoder must be
+specified separately. Long-wavelength transparency and sufficiently
+large signal power are physical requirements, not consequences of
+Proposition~\ref{prop:cc-maxwell}. Conversely, a measured primordial
+correlation can constrain a source distribution even when no sender or
+semantic code is posited.
+
+\begin{theorem}[Classical data processing]
+\label{thm:cc-dpi}
+For finite random variables satisfying $M\to Y\to Z$,
+\[
+ I(M;Z)\le I(M;Y).
+\]
+The statement also holds conditionally on an independently supplied
+training record $D$ when the Markov property holds given $D$.
+\end{theorem}
+
+\begin{proof}
+Use logarithms to base two. For distributions $p,q$ on a finite set,
+\[
+ D(p\Vert q)=\sum_xp(x)\log_2\frac{p(x)}{q(x)}\ge0.
+\]
+Applying
+$\ln u\le u-1$ to $u=q(x)/p(x)$ on the positive support of $p$ proves
+this, with infinite divergence allowed when $q=0<p$.
+Conditional mutual information is an average of such divergences and
+is therefore nonnegative. Expanding the finite entropy definitions gives
+the two chain rules
+\[
+ I(M;Y,Z)=I(M;Y)+I(M;Z\mid Y)
+        =I(M;Z)+I(M;Y\mid Z).
+\]
+The Markov property makes $I(M;Z\mid Y)=0$, so subtraction proves the
+inequality. Apply the same argument to each conditional law given $D=d$
+and average to obtain its conditional version.
+\end{proof}
+
+These definitions follow the information-theoretic formulation introduced
+by Shannon \citep{CCShannon1948}; the proof above states the precise finite
+version used here. A decoder may make information computationally usable
+even though it cannot increase mutual information. Learning a good
+approximation to a likelihood ratio can improve practical inference over
+a poor hand-designed statistic. It cannot distinguish messages that the
+physical channel maps to exactly the same distribution.
+
+\begin{proposition}[Identifiability and its quantitative obstruction]
+\label{prop:cc-identifiability}
+Let $P,Q$ be two possible laws of observed data on a finite set. For any
+randomized test with rejection probability $h(y)\in[0,1]$,
+\[
+ \left|\sum_yh(y)P(y)-\sum_yh(y)Q(y)\right|
+ \le \|P-Q\|_{\mathrm{TV}}
+ :=\tfrac12\sum_y|P(y)-Q(y)|.
+\]
+Stochastic post-processing cannot increase total variation. If every
+message has the same data law, every decoder has identical output laws
+under those messages; for $K$ equally likely messages its success
+probability is at most $1/K$.
+\end{proposition}
+
+\begin{proof}
+Write $v=P-Q=v^+-v^-$ coordinatewise. Its zero total sum gives
+$\sum v^+=\sum v^-=\|P-Q\|_{\mathrm{TV}}$. Since $0\le h\le1$, the
+scalar $\sum hv$ lies between the negative and positive of that quantity.
+For a stochastic kernel $K(z\mid y)$,
+\[
+ \sum_z\left|\sum_yK(z\mid y)v(y)\right|
+ \le\sum_{z,y}K(z\mid y)|v(y)|=\sum_y|v(y)|,
+\]
+proving contraction. If $P(y\mid m)$ is independent of $m$, then so is
+$P(z\mid m)$. With a uniform prior, any output-based guess has success
+$K^{-1}\sum_mP(\text{guess}=m)=1/K$ when it always guesses a member of
+the alphabet, and no larger when abstention is allowed.
+\end{proof}
+
+This obstruction applies equally to classical and quantum-assisted
+learned post-processing of a classical sky map. A powerful model may
+compress noise into an eloquent explanation; that output is not evidence
+for a sender unless the competing source laws actually differ. If one
+chooses an arbitrary decoder after observing a finite pattern, a lookup
+table can assign that pattern to any desired text. Such a construction
+has no independently tested predictive content. A credible coding
+hypothesis instead fixes constraints that predict additional symbols,
+redundancy or independent observations before they are examined.
+
+\begin{proposition}[Finite records and a decoding requirement]
+\label{prop:cc-fano}
+If a recorded observation consists of $N$ samples with at most $b$ bits
+each, then $I(M;Y)\le H(Y)\le Nb$. If a uniformly distributed message
+$M\in\{1,\ldots,K\}$, $K\ge2$, is decoded from $Y$ with error
+probability $P_e$, then
+\[
+ I(M;Y)\ge\log_2K-h_2(P_e)-P_e\log_2(K-1),
+\]
+where $h_2(p)=-p\log_2p-(1-p)\log_2(1-p)$ with the continuous endpoint
+convention.
+\end{proposition}
+
+\begin{proof}
+The record has at most $2^{Nb}$ possible values. Nonnegativity of
+divergence from the uniform law gives $H(Y)\le\log_2(2^{Nb})$; the
+identity $I(M;Y)=H(Y)-H(Y\mid M)$ proves the first bound.
+For a deterministic decoder $\widehat M(Y)$, let
+$E=\mathbf1_{\{M\ne\widehat M\}}$. Since $E$ is a function of $(M,Y)$,
+\[
+ H(M\mid Y)=H(E\mid Y)+H(M\mid E,Y).
+\]
+The first term is at most $H(E)=h_2(P_e)$. When $E=0$, $M$ is known
+from $Y$; when $E=1$, it has at most $K-1$ possibilities. The second
+term is at most $P_e\log_2(K-1)$. Subtract from $H(M)=\log_2K$.
+A randomized decoder can be treated by including its independent random
+seed with $Y$, which leaves $I(M;Y)$ unchanged.
+\end{proof}
+
+An ideal continuum field can be described by infinitely many real
+parameters. That mathematical description does not assert infinitely
+many distinguishable outcomes at finite precision, energy or observing
+time. Proposition~\ref{prop:cc-fano} applies to the actual recorded
+alphabet regardless of how small a conformal diagram makes its source
+region look. A meaningful information-density claim must state the
+resource, observable alphabet and error criterion.
+
+\section{Quantum constraints on a proposed communication channel}
+
+Let $\rho,\sigma$ be density matrices on a finite-dimensional Hilbert
+space. Their trace distance is
+$D(\rho,\sigma)=\frac12\|\rho-\sigma\|_1$. Physical deterministic
+quantum channels are completely positive and trace-preserving; the next
+proof uses only positivity and trace preservation on the relevant
+matrix algebra.
+
+\begin{proposition}[Trace-distance contraction]
+\label{prop:cc-trace}
+For a positive trace-preserving linear map $\Phi$,
+$D(\Phi(\rho),\Phi(\sigma))\le D(\rho,\sigma)$. For every measurement
+event represented by $0\le E\le I$,
+$|\tr E(\rho-\sigma)|\le D(\rho,\sigma)$.
+\end{proposition}
+
+\begin{proof}
+The Hermitian matrix $X=\rho-\sigma$ has a Jordan decomposition
+$X=X_+-X_-$ with $X_\pm\ge0$ and
+$\|X\|_1=\tr X_++\tr X_-$. Positivity, the triangle inequality and
+trace preservation imply
+\[
+ \|\Phi(X)\|_1\le\|\Phi(X_+)\|_1+\|\Phi(X_-)\|_1
+ =\tr X_++\tr X_-.
+\]
+Also $\tr X=0$, so $\tr X_+=\tr X_-=D(\rho,\sigma)$.
+The inequalities $0\le E\le I$ bound $\tr EX$ between
+$-\tr X_-$ and $\tr X_+$.
+\end{proof}
+
+\begin{corollary}[No deterministic cloning of nonorthogonal pure states]
+\label{cor:cc-cloning}
+A quantum channel cannot map both
+$|\psi\rangle\langle\psi|$ and $|\phi\rangle\langle\phi|$ to their
+respective tensor squares when
+$0<|\langle\psi,\phi\rangle|<1$.
+\end{corollary}
+
+\begin{proof}
+Put $c=|\langle\psi,\phi\rangle|$. In the two-dimensional span of the
+states, choose phases and a basis with
+$|\phi\rangle=c|\psi\rangle+\sqrt{1-c^2}|e\rangle$.
+The difference of their rank-one projectors has trace zero and eigenvalues
+$\pm\sqrt{1-c^2}$, so their trace distance is $\sqrt{1-c^2}$.
+The tensor-square states have overlap $c^2$ and distance
+$\sqrt{1-c^4}>\sqrt{1-c^2}$, contradicting
+Proposition~\ref{prop:cc-trace}.
+\end{proof}
+
+This is the precise obstruction underlying the no-cloning result
+\citep{CCWoottersZurek1982}. Orthogonal classical labels can be copied;
+the theorem concerns unknown nonorthogonal states. It does not prevent
+ordinary redundancy in an encoded classical message.
+
+\begin{proposition}[No signalling by a local unconditioned operation]
+\label{prop:cc-nosignalling}
+Let $\rho_{AB}$ be a joint state. A trace-preserving operation on $A$
+with Kraus operators $K_j:A\to A'$ leaves the reduced state on $B$
+unchanged after its unreported outcome is discarded.
+\end{proposition}
+
+\begin{proof}
+For every observable $O_B$,
+\begin{align*}
+ &\tr\left[(I_{A'}\otimes O_B)
+ \sum_j(K_j\otimes I_B)\rho_{AB}(K_j^\dagger\otimes I_B)\right]\\
+ &\quad=\tr\left[\rho_{AB}
+ \left(\sum_jK_j^\dagger K_j\otimes O_B\right)\right]
+ =\tr[\rho_{AB}(I_A\otimes O_B)].
+\end{align*}
+Equality against every $O_B$ determines equality of the reduced density
+matrices. Conditioning on a particular outcome changes the formula,
+but identifying that subensemble requires an outcome record to reach
+the observer.
+\end{proof}
+
+Entanglement therefore does not replace the propagation law in
+\eqref{eq:cc-markov}. The finite-dimensional theorem is not itself a
+construction of quantum fields on a crossover; it specifies what an
+ordinary local quantum-information model would permit.
+
+There is also a simple exact dimension bound. If $K$ states in a
+$d$-dimensional Hilbert space are perfectly distinguished by a POVM
+$\{E_j\}$, then $K\le d$. Indeed, $\tr E_j\rho_j=1$ makes $E_j$ act as
+the identity on the support of $\rho_j$, while
+$\tr E_j\rho_i=0$ makes it vanish on the support of $\rho_i$ for
+$i\ne j$. To justify these implications, for positive $A,B$ the equality
+$\tr AB=0$ gives $\|A^{1/2}B^{1/2}\|_{\mathrm{HS}}^2=0$.
+Apply this to $A=I-E_j,B=\rho_j$, and to $A=E_j,B=\rho_i$.
+The respective supports lie in orthogonal eigenspaces of $E_j$.
+Their nonzero dimensions sum to at most $d$. This perfect-decoding bound
+does not by itself give a noisy channel capacity, but it excludes an
+unbounded perfectly readable alphabet in a fixed finite system.
+
+Finally, discarding degrees of freedom has no universal direction of
+entropy change. A pure Bell state has zero joint von Neumann entropy
+but either marginal has one bit. Conversely,
+$\rho_{AB}=I_A/d\otimes|0\rangle\langle0|_B$ has entropy $\log_2d$,
+while its $B$ marginal has zero entropy. Unitary conjugation preserves
+the eigenvalues and hence entropy. A proposed cosmological entropy
+reset must specify a state, algebra of observables and dynamical map;
+neither taking a partial trace nor conformally changing the metric is
+alone an entropy theorem of the required kind.
+
+\section{Ring statistics, matched filters and the cost of searching}
+\label{sec:cc-statistics}
+
+An observational claim needs a statistic and a probability law for that
+statistic under a specified null. Let $x\in\R^n$ be a vector of map
+samples with a centered Gaussian null $N(0,C)$, where $C$ is positive
+definite. In an actual analysis $C$ must reflect the chosen signal
+spectrum, beam, mask and instrumental noise, with foreground residuals
+treated explicitly. A white-noise null and a correlated sky generally
+answer different questions.
+
+\begin{proposition}[Quadratic-form moments]
+\label{prop:cc-quadratic}
+For a real symmetric matrix $A$ and $x\sim N(\mu,C)$,
+\begin{align*}
+ \mathbb E[x^{\mathsf T}Ax]&=\tr(AC)+\mu^{\mathsf T}A\mu,\\
+ \operatorname{Var}(x^{\mathsf T}Ax)
+ &=2\tr((AC)^2)+4\mu^{\mathsf T}ACA\mu.
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+Write $x=\mu+C^{1/2}z$ for $z\sim N(0,I)$ and diagonalize the symmetric
+matrix $C^{1/2}AC^{1/2}=U\diag(\lambda_i)U^{\mathsf T}$.
+The coordinates of $U^{\mathsf T}z$ are independent standard Gaussians.
+The quadratic term arising from $z$ is therefore $\sum_i\lambda_i Z_i^2$,
+whose mean is $\sum_i\lambda_i=\tr(AC)$ and variance is
+$2\sum_i\lambda_i^2=2\tr((AC)^2)$. The remaining random term is
+$2\mu^{\mathsf T}AC^{1/2}z$, of variance $4\mu^{\mathsf T}ACA\mu$.
+Its covariance with the quadratic term is zero because all centered
+Gaussian third moments vanish. The constant term is
+$\mu^{\mathsf T}A\mu$.
+\end{proof}
+
+For nonnegative annular weights $w_i$ with $\sum_iw_i=1$, the weighted
+variance is
+\[
+ V=\sum_iw_ix_i^2-\left(\sum_iw_ix_i\right)^2
+ =x^{\mathsf T}\bigl(\diag(w)-ww^{\mathsf T}\bigr)x.
+\]
+Its null expectation depends on all covariances between the samples,
+not only on their individual variances. A localized nonzero mean also
+alters both moments. This explains why a few unusual pixels and the
+choice of reference baseline can change a low-variance search.
+The published null analyses examine precisely such effects
+\citep[pp.~2--4]{CCMossScottZibin2011}
+\citep[Secs.~2--3]{CCBodniaEtAl2024}. Multiplying nominal ring
+probabilities is justified only when the required independence or
+conditional factorization has been established; concentric annuli in
+a correlated sky do not acquire independence from their appearance.
+
+\begin{theorem}[A fixed-template matched filter]
+\label{thm:cc-matched}
+Let $t\ne0$ be a fixed template and suppose $x\sim N(a t,C)$ with
+known positive definite $C$. The maximum-likelihood amplitude and its
+variance are
+\begin{equation}
+ \widehat a=\frac{t^{\mathsf T}C^{-1}x}{t^{\mathsf T}C^{-1}t},
+ \qquad \operatorname{Var}(\widehat a)=\frac1{t^{\mathsf T}C^{-1}t}.
+ \label{eq:cc-matched}
+\end{equation}
+The normalized score
+$R_t=t^{\mathsf T}C^{-1}x/\sqrt{t^{\mathsf T}C^{-1}t}$
+has distribution $N(a\sqrt{t^{\mathsf T}C^{-1}t},1)$.
+\end{theorem}
+
+\begin{proof}
+Apart from a constant, the negative log likelihood is
+$\frac12(x-at)^{\mathsf T}C^{-1}(x-at)$. Its derivative in $a$ vanishes
+at \eqref{eq:cc-matched}, and its second derivative
+$t^{\mathsf T}C^{-1}t$ is strictly positive. A linear functional of a
+Gaussian vector is Gaussian. Its mean and variance are obtained by
+substitution, using $C^{-1}CC^{-1}=C^{-1}$.
+\end{proof}
+
+For one template selected before seeing the data, the one-sided null
+probability is $1-\Phi(R_t)$. If a search scans a family
+$\mathcal T=\{t_1,\ldots,t_m\}$ and reports its largest score,
+the statistic is instead
+\begin{equation}
+ S(x)=\max_{1\le j\le m}R_{t_j}(x).
+ \label{eq:cc-scan}
+\end{equation}
+The selected template's normal tail is not the null tail of $S$.
+For valid individual $p$-values, the union bound gives
+$\Pr(\min_jp_j\le\alpha/m)\le\alpha$ without independence.
+If they actually were independent uniforms, the probability of at least
+one value below $u$ would be $1-(1-u)^m$. Correlated templates require
+their joint law or a valid full-scan simulation, not a guessed number
+of independent trials.
+
+Jow and Scott explicitly compared the scan across their scale grid in
+each simulated sky, obtaining a probability to exceed of $13\%$ for
+their global statistic \citep[Sec.~3, pp.~6--7]{CCJowScott2020}. This
+number is conditional on that pipeline and null model. It is not a
+posterior probability that CCC is true or false. Their result illustrates
+why a locally striking feature can become ordinary once the selection
+operation is included.
+
+\begin{theorem}[Finite Monte Carlo rank calibration]
+\label{thm:cc-rankp}
+Let $S_0,S_1,\ldots,S_B$ be exchangeable null statistics, with $S_0$
+the observed statistic and $S_1,\ldots,S_B$ simulation statistics.
+Then
+\begin{equation}
+ p_{\mathrm{MC}}=
+ \frac{1+\#\{b\in\{1,\ldots,B\}:S_b\ge S_0\}}{B+1}
+ \label{eq:cc-rankp}
+\end{equation}
+satisfies $\Pr(p_{\mathrm{MC}}\le\alpha)\le\alpha$ for
+$0\le\alpha\le1$. With no ties, its values are uniform on
+$\{1/(B+1),\ldots,1\}$.
+\end{theorem}
+
+\begin{proof}
+With no ties, exchangeability makes the position of $S_0$ in descending
+order uniform among $B+1$ positions. Formula~\eqref{eq:cc-rankp} is that
+position divided by $B+1$. At most $\lfloor\alpha(B+1)\rfloor$
+positions satisfy the inequality, proving the bound. With ties, attach
+independent continuous tie-breaking variables. The randomized descending
+rank is uniform by the same argument. Counting every statistic tied
+with $S_0$ as at least as large gives the largest rank within its tied
+block, which is no smaller than the randomized rank. The reported
+$p$-value is therefore conservative.
+\end{proof}
+
+Exchangeability is the essential hypothesis. Every simulation must run
+the same location search, scale search, masks, feature selection and
+reported maximum as the observed map. A trained model may be held fixed
+if it was trained independently of all compared maps. If the observed
+map guided training, threshold selection or architecture selection, those
+choices belong in the selection procedure. Fitting nuisance parameters
+on the observed data and simulating from the fitted value does not
+automatically produce exchangeability. Re-fitting them in each parametric
+bootstrap realization can be necessary, yet the resulting calibration
+is generally approximate unless an additional exact argument applies.
+
+There is a related geometric trap. On a spherical coordinate patch the
+round metric is $d\theta^2+\sin^2\theta\,d\phi^2$. A proposed sky twist
+$T_S(\theta,\phi)=(\theta,\phi+S\theta)$ has pullback
+\[
+ T_S^*g=(1+S^2\sin^2\theta)d\theta^2
+ +2S\sin^2\theta\,d\theta\,d\phi+\sin^2\theta\,d\phi^2.
+\]
+For $S\ne0$ away from the poles this is not a scalar multiple of $g$,
+so the twist is not conformal for the round metric. More fundamentally,
+even a genuine non-isometric conformal map need not preserve an
+isotropic Gaussian covariance $C(n\cdot n')$. Distorting the data can
+change correlations and thus the detection statistic under an ordinary
+null. A transformed comparison requires the same transformation of
+properly generated null maps and a recalibrated complete procedure.
+
+\section{What a neural search and a new cosmic observable can establish}
+
+Bodnia and collaborators' HawkingNet search uses a ResNet18-based
+classifier trained on injected profiles, and investigates simulation-to-data
+mismatch and unusually bright or dark spots
+\citep[Sec.~4 and App.~A]{CCBodniaEtAl2024}. Its injection study uses
+amplitudes $100$--$400\,\mu\mathrm K$ and a quoted angular-width parameter
+$0.7$--$1.2$ degrees. A model validated on this family is sensitive to
+that family; it is not automatically a test of every profile obtainable
+from a revised crossover model. Equally, changing a profile after a
+negative test creates a new testable hypothesis rather than erasing the
+previous result.
+
+A network score is a statistic. It is a likelihood ratio only if the
+training distributions and calibration justify that interpretation. A
+large score on a foreground residual or a simulation mismatch may show
+that the classifier has learned a discriminative feature unrelated to
+the proposed cosmology. Precision requires separate tests of injection
+recovery, false-positive rate under realistic nulls, nuisance robustness
+and generalization to held-out realizations. The comparison should
+include ordinary matched filters and other classical methods with
+comparable data and tuning budgets.
+
+Repeated observations of the same sky have a useful but limited role.
+If $Y_1=S+N_1$ and $Y_2=S+N_2$ with independent zero-mean instrumental
+noises independent of the sky, their covariance is
+\begin{equation}
+ \operatorname{Cov}\begin{pmatrix}Y_1\\Y_2\end{pmatrix}
+ =\begin{pmatrix}C_S+C_{N_1}&C_S\\C_S&C_S+C_{N_2}\end{pmatrix}.
+ \label{eq:cc-samesky}
+\end{equation}
+The off-diagonal blocks are not zero. Agreement between satellites can
+disfavor an instrumental artifact, but the same chance cosmic feature
+will appear in both. Counting them as independent draws of the cosmic
+sky would double-count that part of the evidence.
+
+\begin{proposition}[The elementary full-sky cosmic-variance calculation]
+\label{prop:cc-cosmicvariance}
+In an isotropic centered real Gaussian sky, use a real orthonormal
+spherical-harmonic basis at fixed $\ell$. Its $d_\ell=2\ell+1$
+coefficients $a_{\ell m}$ are independent $N(0,C_\ell)$. The estimator
+\[
+ \widehat C_\ell=\frac1{2\ell+1}\sum_m a_{\ell m}^2
+\]
+has mean $C_\ell$ and variance $2C_\ell^2/(2\ell+1)$.
+\end{proposition}
+
+\begin{proof}
+Isotropy makes the covariance scalar on the degree-$\ell$ harmonic
+space; Gaussianity then turns diagonal covariance into independence.
+Each squared coefficient has mean $C_\ell$ and variance $2C_\ell^2$.
+Sum these independent variables and divide by $d_\ell^2$.
+\end{proof}
+
+More pixels do not create additional independent low-$\ell$ modes.
+Noise reduction, sky coverage and additional observables can nevertheless
+improve a particular test. Masks and foregrounds change the practical
+covariance; the simple proposition is not a formula for every cut-sky
+estimator. Planck's isotropy and statistics analysis discusses the
+different roles of temperature, polarization and residual systematics
+\citep[Secs.~1--2 and 8]{CCPlanck2020}.
+
+Polarization supplies additional information only through a specified
+joint prediction. For jointly centered Gaussian vectors $T,E$ with invertible
+$C_{TT}$,
+\begin{equation}
+ E\mid T\sim N\left(C_{ET}C_{TT}^{-1}T,
+ C_{EE}-C_{ET}C_{TT}^{-1}C_{TE}\right).
+ \label{eq:cc-conditional-polarization}
+\end{equation}
+To prove it, set $R=E-C_{ET}C_{TT}^{-1}T$. Direct multiplication gives
+$\operatorname{Cov}(R,T)=0$ and the displayed covariance for $R$.
+Joint Gaussianity makes $R$ independent of $T$, yielding the formula.
+A temperature-selected feature should therefore be tested against a
+conditional polarization law, rather than declaring its polarization
+an independent arbitrary anomaly. A model with no predicted polarization
+profile cannot obtain a precise exclusion from the absence of an
+unspecified profile.
+
+The polarization field also has a type that a graph model should respect.
+Under a local basis rotation by $\chi$, one convention is
+$Q+iU\mapsto e^{-2i\chi}(Q+iU)$. A learned operation that treats this
+as a basis-independent scalar has silently discarded a symmetry
+requirement. Scalar temperature features, spin-two polarization features,
+frequency channels and masks should have distinct declared transformation
+rules. The typed tensor framework elsewhere in this monograph supplies
+a language for enforcing such rules; it does not replace a physical
+transfer calculation.
+
+\begin{proposition}[A forecast with linear nuisance templates]
+\label{prop:cc-forecast}
+Suppose $x\sim N(a t+B\theta,C)$, with known $C>0$, and the columns of
+$B$ linearly independent. After fitting the nuisance parameter $\theta$,
+the information for $a$ is
+\begin{equation}
+ F_a=t^{\mathsf T}C^{-1}t
+ -t^{\mathsf T}C^{-1}B(B^{\mathsf T}C^{-1}B)^{-1}B^{\mathsf T}C^{-1}t.
+ \label{eq:cc-forecast}
+\end{equation}
+It is nonnegative and vanishes exactly when $t$ lies in the column space
+of $B$. When $F_a>0$, the variance of the fitted amplitude is $1/F_a$.
+\end{proposition}
+
+\begin{proof}
+Whiten the problem: $z=C^{-1/2}x$, $v=C^{-1/2}t$ and
+$W=C^{-1/2}B$. Least squares over $\theta$ removes the orthogonal
+projection $P_W=W(W^{\mathsf T}W)^{-1}W^{\mathsf T}$. The remaining
+model has template $(I-P_W)v$ and independent unit covariance on the
+orthogonal complement of $\im W$. Its squared template norm is
+$v^{\mathsf T}(I-P_W)v$, which expands to \eqref{eq:cc-forecast}.
+It vanishes precisely when $v\in\im W$, equivalently $t\in\im B$.
+The matched-filter calculation on the complement gives variance $1/F_a$.
+\end{proof}
+
+This elementary Schur-complement calculation says exactly what a new
+measurement must improve: the distinguishable part of the signal after
+nuisance fitting. Historical CMB forecasts provide examples of combining
+instrument noise, foreground uncertainty and external data
+\citep[Sec.~2.6]{CCSimons2019}. Their numerical forecasts cannot be
+repurposed as a CCC sensitivity forecast without a CCC template and a
+joint likelihood. We make no claim here about an instrument's present
+operating status. The same principle applies to galaxy distributions,
+spectral distortions or gravitational-wave observations: a new catalog
+is useful when its selection function and its predicted covariance with
+the proposed source are specified.
+
+\section{A reproducible synthetic search, with its actual result}
+\label{sec:cc-synthetic}
+
+The repository contains an executed demonstration in
+\path{extension/review/cosmology/synthetic_search.py}, with output
+\texttt{synthetic-results.json}. It uses no observed sky and no fitted
+$\Lambda$CDM spectrum. Its purpose is to make the difference between a
+fixed-template probability and a full-search probability directly
+inspectable.
+
+There are $96$ deterministic Fibonacci-sphere directions $n_i$.
+The Gaussian covariance is
+\begin{equation}
+ C_{ij}=\exp\left(\frac{n_i\cdot n_j-1}{\ell_c^2}\right)
+ +\sigma^2\delta_{ij},\qquad \ell_c=0.35,\quad\sigma=0.20.
+ \label{eq:cc-toy-covariance}
+\end{equation}
+It is strictly positive definite. Indeed,
+$e^{\kappa n_i\cdot n_j}=\sum_{r\ge0}\kappa^r
+\langle n_i^{\otimes r},n_j^{\otimes r}\rangle/r!$ is a convergent
+sum of Gram matrices with nonnegative coefficients. Multiplication by
+$e^{-\kappa}$ preserves positive semidefiniteness and adding
+$\sigma^2I$ gives the lower eigenvalue bound $\sigma^2$.
+
+For each direction and each width $w\in\{0.18,0.30,0.45\}$ radians,
+the template has entries
+$e^{-\theta_i^2/(2w^2)}$ minus their discrete mean, where $\theta_i$
+is angular distance from the chosen center. All $288$ templates are
+included in the maximum \eqref{eq:cc-scan}. A fixed NumPy PCG64 seed
+$20261113$ generates one base sky, $4095$ independent calibration skies
+and $2048$ further validation skies. The declared injected template is
+center $0$, width $0.30$, and the same base sky receives normalized
+matched-filter signal strengths $s=0,1,3,5$:
+\[
+ x_s=x_0+s\frac{t}{\sqrt{t^{\mathsf T}C^{-1}t}}.
+\]
+This normalization increases the score of that fixed template by exactly
+$s$. No seed was searched for an attractive result.
+
+\begin{center}
+\small
+\begin{tabular}{rrrr}
+\toprule
+Injected $s$ & Scan maximum & Selected local tail & Global rank $p$\\
+\midrule
+$0$ & $2.717146$ & $0.00329237$ & $0.46215820$\\
+$1$ & $3.087799$ & $0.00100823$ & $0.18090820$\\
+$3$ & $4.110988$ & $0.0000196985$ & $0.00341797$\\
+$5$ & $6.041391$ & $7.63956\times10^{-10}$ & $0.00024414$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The unperturbed synthetic sky illustrates the selection effect: its best
+local normal tail is about $0.0033$, whereas almost half of the calibrated
+null scans are at least as extreme. The strongest injection has zero
+calibration exceedances. Its rank value is therefore $1/4096$, the finite
+resolution of this experiment; it is not a claim to have measured a
+smaller tail probability. The two intermediate rows also show that the
+winning template can differ from the injected one because templates and
+noise are correlated.
+
+At nominal threshold $0.05$, the independent finite validation sample has
+$119$ rejections among $2048$ skies, a fraction $0.0581055$. This is a
+diagnostic conditional on one calibration set, not a proof that the
+conditional rejection rate equals $0.05$. The exact rank theorem concerns
+the joint null distribution of the observation and calibration draws.
+The implementation checks the normalized filter variances and the
+injected-score identity to errors below $4\times10^{-15}$ and
+$2\times10^{-15}$ respectively. Its covariance minimum eigenvalue is
+approximately $0.0528566$, above the proved $0.04$ lower bound. Software
+versions, source hash, ring-moment diagnostics and actual elapsed time
+are recorded with the result.
+
+This experiment supports only the mathematical and computational claims
+just specified. It does not recover the published CCC statistics, train
+HawkingNet, implement a Boltzmann transfer code, or analyze Planck data.
+The companion visualization uses the same declared template bank and
+calibration; rotating its sphere changes the view, not the data or the
+statistic.
+
+\section{A testable program for learned tensor and graph models}
+
+A cohesive research program can now be stated without conflating its
+parts. First specify a physical source and crossover model sufficiently
+well to generate a joint distribution of observable fields. The bridge
+metric, conformal field weights and spinor identities constrain this
+model, but do not determine all of its transfer parameters. The
+Friedmann elliptic curve can solve a background quadrature on intervals
+where its matter assumptions hold; it does not provide the missing
+perturbation transfer function.
+
+Next discretize the observable field with explicit types. A spherical
+graph may carry scalar temperature, spin-two polarization and frequency
+metadata. Tensor contractions should respect the corresponding basis
+changes. A quantum implementation must additionally specify a state
+preparation map, finite Hilbert dimensions, allowed channels, measured
+observables and the number of shots. The same diagram can describe
+different mathematics unless its types, contractions and normalizations
+are fixed. Algebraic rewrite correctness is distinct from the empirical
+adequacy of the physical distribution on which the diagram operates.
+
+Then compare inference procedures under identical information and
+resource constraints. Injection families should span physically justified
+parameter uncertainty. Null families should include the relevant ordinary
+cosmology, instrumental uncertainty and foreground alternatives. Freeze
+the complete statistic before evaluation, or reproduce its adaptive
+selection in the calibration. Report detection power as a function of
+signal and nuisance parameters, together with held-out false-positive
+rates and ordinary classical baselines. If a quantum learned graph model
+improves sample efficiency or computational cost, that is a separate
+measurable result; a visually complex quantum circuit does not establish
+either improvement.
+
+Finally, a semantic-message claim needs a distinct comparison beyond
+physical anomaly detection. A natural prior-aeon source law and an
+intentional encoding law must make different predictions for independent
+data. Redundancy, a constrained code family or repeated independently
+predicted symbols could in principle make that comparison meaningful.
+An unconstrained translation chosen after seeing the sky cannot. This
+is the content of Proposition~\ref{prop:cc-identifiability}, not a
+restriction on which cosmological hypotheses may be explored.
+
+\begin{problem}[An end-to-end cross-aeon inference problem]
+Specify a family of regularized crossover solutions, source states and
+detector kernels for which the induced laws $P_\theta(Y\mid M)$ are
+well-defined. Establish their identifiability after the declared nuisance
+parameters are fitted. Derive a joint temperature, polarization or other
+observable prediction and calibrate a fixed statistic against a realistic
+null. Only after these steps, compare an intentional code hypothesis with
+natural source alternatives and quantify its decoding error.
+\end{problem}
+
+The problem connects conformal geometry, elliptic curves, complexes of
+field equations, tensor contraction and information theory in a precise
+way. Each contributes a defined mathematical object or a constraint.
+The missing physical transfer law and the empirical comparison remain
+explicit research tasks rather than being supplied by analogy.

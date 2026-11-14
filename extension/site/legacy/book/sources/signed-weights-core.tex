@@ -1,0 +1,96 @@
+% Generated shared reviewed material.
+% Actual signed gcd-one budget and character identification; no power saving.
+\section{A bound for the signed coprime slice and an exact character twist}\label{sw:core}
+The coprime-column contribution can be negative, so it needs its own bound.
+Fix the original $\nu,S$, one common possibly complex smooth $W$ supported
+in $[1,2]$, $D>1$, $U\ge1$ and $U^2\le D$. Consider an actual block
+\[
+ u=u_0v_1v_2^2,\quad A_j\le Nv_j<2A_j\ (j=1,2),\quad Nu\le H,
+ \qquad R=A_1A_2,\quad M=\max(A_1,A_2).
+\]
+The good ideals $v_1,v_2$ are squarefree and coprime, with their literal
+primary/ray representatives; all other good factors are the unit ideal.
+Let $F$ be the actual indicator, including capacity and every row mask.
+In the remaining neighborhoods the first factor is nonunit, so the
+primitive row character is nonprincipal and $E_u=I_u$ there.
+For $X,Y\in\{A_U,C_U,\mu\}$ define the actual signed slice
+\begin{equation}\label{sw:slice}
+ S_1^{XY}=\frac1D\sum_uF(u)
+ \sum_{\substack{m,n\ \mathrm{squarefree,good}\\(m,n)=1}}
+ X(m)Y(n)\nu(m)\overline{\nu(n)}\chi_m(u)\overline{\chi_n(u)}
+ W(Nm/D)\overline{W(Nn/D)}.
+\end{equation}
+All columns in this formula are the original annular columns, including
+raw zero sentinels. No positive-semidefinite claim about the coprime
+truncation is made.
+
+\begin{proposition}[A bound for the actual signed $h=1$ slice]\label{sw:budget}
+Uniformly in the original cutoff and this actual block,
+\begin{equation}\label{sw:bound}
+ |S_1^{XY}|\ll_{\nu,S,\epsilon}\|W\|_\infty^2(HD)^\epsilon
+ \min\left\{R+\frac{DR}{M}+\frac{D^{2/3}R}{M^{1/3}},\ D+R^2\right\}.
+\end{equation}
+The exact identity underlying the estimate is
+\begin{equation}\label{sw:mobius}
+ \begin{aligned}
+ DS_1^{XY}&=\sum_{\substack{d\ \mathrm{squarefree}\\(d,S)=1}}\mu(d)
+ \sum_{\substack{u\ \mathrm{in\ the\ actual\ block}\\(d,u)=1}}
+ T_d^X(u)\overline{T_d^Y(u)},\\
+ T_d^X(u)&=\sum_{\substack{a\ \mathrm{squarefree}\\(a,dS)=1}}
+ X(da)\nu(a)\chi_a(u)W(Nd\,Na/D).
+ \end{aligned}
+\end{equation}
+In particular $X(da)$ is not replaced by $X(d)X(a)$, and the mask
+$(d,u)=1$ remains.
+\end{proposition}
+The proof applies the accepted block sieves inside each positive row norm
+in~\eqref{sw:mobius}, then explicitly loses the $d$ signs in an absolute
+triangle. At $H=D^{3/4}$ the two remaining power-scale neighborhoods
+$A_1\asymp D^{5/12},A_2\asymp D^{1/6}$ and
+$A_1\asymp D^{3/4},A_2\asymp1$, with feasible capacity constants, both
+retain power $7/6$. The desired $3/4$ still needs a signed saving of
+$5/12$. This proves a separate signed-slice bound; it does not improve the
+published global envelope or supply the missing cancellation.
+
+There is also an exact arithmetic description of the two-pivot phase.
+Put $\delta=1+2\omega$ and, at each good prime ideal $p$, set
+$j(p)=J_p(\chi_p,\chi_p^2)$. Extend $j$ multiplicatively on squarefree
+columns. Let $\Psi(a)$ be the unique generator of an ideal prime to
+$2\delta$ satisfying $\Psi(a)\equiv1\pmod{2\delta}$.
+\begin{proposition}[The actual Jacobi column twist]\label{sw:twist}
+The map $\Psi$ is an algebraic Hecke character with exact finite conductor
+$(2\delta)$, of norm $12$, and principal convention
+$\Psi((\alpha))=\alpha$ for $\alpha\equiv1\pmod{2\delta}$
+(infinity type $(1,0)$). For good squarefree columns,
+\begin{equation}\label{sw:character}
+ (j(p))=p,\quad -j(p)=\Psi(p),\qquad
+ \mu(m)j(m)=\Psi(m).
+\end{equation}
+Define $\vartheta(m)=\Psi(m)/\sqrt{Nm}$ and
+$\rho(m)=j(m)/\sqrt{Nm}=\mu(m)\vartheta(m)$ on those columns.
+In the high window the actual gauged coefficients are
+$b_A=(r_U-1)\vartheta\nu W$, $b_C=r_U\vartheta\nu W$ and
+$b_\mu=\vartheta\nu W$.
+\end{proposition}
+This does not replace the original row kernel. Its compensating inverse
+gauge remains, so all ordinary coefficient/operator norms are unchanged.
+The new character has nonzero infinity type and is not silently covered
+by a theorem stated only for finite-order twists. The identities in
+\eqref{sw:character} involving $\mu$ must not be extended to arbitrary
+nonsquarefree sixth factors.
+
+A fresh fixed-profile example takes $\nu=1$, $S$ the primes above $2,3$,
+literal unit one and primary row generators $1$ modulo $3$. It lies in an
+actual $A_6=1$ block at $D=60000$, $U=244$, $H=3833$, $A_1=37$, $A_2=7$.
+All $20$ rows of the stated literal class are nonprincipal. A selected
+$q$ has exactly two legal column orientations, of norms $97051/96091$
+and its reversal. Their correlations in the $\omega$ basis are
+$(-4,-2)$ and $(-2,2)$, with mean $-3$. Their selected contribution is
+$S_{1,q}^{AA}=-1/10000$; deleting the mean gives zero.
+The centered squared norm is $6$, not zero, and the proposed
+variance-only Cauchy bound would incorrectly require $36\le12$.
+This refutes that centering rule in a fixed-profile row block, not the
+asymptotic target. Other $q$ contributions remain.
+The \href{../profile-uniformity.html#fixed-h1}{coprime-kernel inspector}
+shows the actual rows, raw zeros, two-column Gram matrix and compensated
+gauge; no training or arithmetic spectrum is inferred from that finite view.

@@ -1,0 +1,844 @@
+\chapter{The Navier--Stokes release: exact scope and proof interfaces}
+\label{ch:navier-stokes-release}
+
+\reviewstatus{The 166-page released manuscript has been read in full across the
+two mathematical review passes recorded in the source ledger. The repository
+revision, final theorem statements, dependency graph, and selected implementation
+modules have been inspected. Reading a mathematical proof, rebuilding a Lean
+target, and independently checking an exported kernel certificate are distinct
+operations; their actual outcomes are recorded separately. The propositions
+proved in this chapter explain mathematical interfaces of the construction.
+They do not replace the analytic construction imported from the release.}
+
+\section{What the released theorem says}
+
+OpenAI's release of 8 September 2026 concerns a smooth, externally forced,
+three-dimensional incompressible flow. It supplies a manuscript and Lean
+formalization. The Clay Mathematics Institute's response of 11 September
+acknowledges the apparent resolution while describing an ongoing evaluation
+process. These facts must be distinguished from an award decision
+\citep{NSOpenAIAnnouncement2026,NSClayAnnouncement2026}.
+
+Let $\nu>0$ and define the momentum residual
+\begin{equation}
+ \mathcal R_\nu(u,p)
+ =\partial_tu+(u\cdot\nabla)u-\nu\Delta u+\nabla p.
+ \label{eq:ns-residual}
+\end{equation}
+The source's main conclusion can be recorded without changing its quantifiers:
+\begin{align}
+ &f\in C_c^\infty(\R^3\times(0,\infty);\R^3),\qquad
+ u,p\in C^\infty(\R^3\times[0,1)),\nonumber\\
+ &\mathcal R_\nu(u,p)=f,\quad \nabla\cdot u=0,\quad u(\cdot,0)=0,
+ \label{eq:ns-release-equation}\\
+ &\supp u(\cdot,t)\cup\supp p(\cdot,t)\subset K
+ \quad(0\leq t<1),\nonumber\\
+ &\sup_{t<1}\|u(t)\|_2<\infty,\qquad
+ \limsup_{t\uparrow1}\|u(t)\|_\infty=\infty.
+ \label{eq:ns-release-growth}
+\end{align}
+Here $K$ is compact. With the same datum and force there is no global smooth
+whole-space solution with uniformly bounded kinetic energy. A corresponding
+periodic result is also established \citep[Theorem 1.1 and Corollary 10.6]{NSOpenAI2026}.
+
+In Fefferman's formulation, alternatives (A) and (B) impose $f=0$, whereas
+(C) and (D) permit a smooth force satisfying the specified decay conditions.
+The released statements address (C) and (D). They do not logically negate (A)
+or (B): an existential assertion with $f\neq0$ does not supply an example with
+$f=0$. Pressure periodicity is part of the periodic formulation, including its
+erratum \citep{NSFefferman}. The separate Euler result concerns a different
+equation, obtained by setting viscosity to zero, and cannot be transferred to
+positive viscosity by deleting the viscous estimates.
+
+This distinction changes the appropriate goal of the present extension. A
+more informative presentation can expose the cancellation, support, analytic
+norms, and formal dependency interfaces. A stronger theorem would require a
+new mathematical conclusion with all its additional hypotheses discharged.
+The material below provides the former and identifies precisely where the
+source's construction supplies the latter's indispensable analytic inputs.
+
+\section{An exact algebra for residual correction}
+
+The same distinction between a complex and an exact complex encountered
+earlier reappears here. A differential identity constrains what a correction
+can do. It does not prove that a correction of the necessary size, support,
+and regularity exists.
+
+\begin{proposition}[Quadratic residual identity]
+\label{prop:ns-residual-increment}
+For smooth $u,w,p,\pi$, with $\nabla\cdot w=0$,
+\begin{align*}
+ \mathcal R_\nu(u+w,p+\pi)
+ &=\mathcal R_\nu(u,p)+L_{u,\nu}(w,\pi)
+       +\nabla\cdot(w\otimes w),\\
+ L_{u,\nu}(w,\pi)
+ &=\partial_tw+(u\cdot\nabla)w+(w\cdot\nabla)u
+       -\nu\Delta w+\nabla\pi .
+\end{align*}
+The tensor convention is $(w\otimes w)_{ij}=w_iw_j$ and
+$(\nabla\cdot S)_i=\sum_j\partial_jS_{ij}$.
+\end{proposition}
+\begin{proof}
+All terms other than advection are linear. Expanding the latter gives
+$(u+w)_j\partial_j(u_i+w_i)$, with the four products obtained by choosing
+one of $u,w$ in each factor. Moreover,
+$\sum_j\partial_j(w_iw_j)=\sum_jw_j\partial_jw_i+
+w_i\sum_j\partial_jw_j=(w\cdot\nabla)w_i$. This proves every component
+of the identity. No averaging, limiting argument, or neglected term occurs.
+\end{proof}
+
+In particular, solving $L_{u,\nu}(w,\pi)=-\mathcal R_\nu(u,p)$ leaves the
+quadratic residual $\nabla\cdot(w\otimes w)$. A numerical decrease in the
+linear residual alone is therefore an incomplete verification. Conversely,
+if a background satisfies
+$\mathcal R_\nu(u,p)=-\nabla\cdot S+E$, a fluctuation with averaged
+covariance $S$ can cancel the selected mean stress while creating other
+linear and oscillatory terms. Each of those terms needs a place in the next
+residual estimate.
+
+\begin{proposition}[A transverse wave and its covariance]
+\label{prop:ns-transverse-wave}
+Let $a,k\in\R^3$ with $a\cdot k=0$ and put
+$w(x,\phi)=a\cos(k\cdot x+\phi)$. Then
+\[
+ \nabla\cdot w=0,\qquad (w\cdot\nabla)w=0,\qquad
+ \frac1{2\pi}\int_0^{2\pi}w\otimes w\,d\phi
+       =\frac12a\otimes a.
+\]
+The vanishing self-advection statement requires constant $a$ and $k$.
+\end{proposition}
+\begin{proof}
+Differentiating the cosine gives
+$\nabla\cdot w=-(a\cdot k)\sin(k\cdot x+\phi)$ and
+$(w\cdot\nabla)w=-(a\cdot k)a\cos(k\cdot x+\phi)
+\sin(k\cdot x+\phi)$. Both vanish. Integration of
+$\cos^2s=(1+\cos2s)/2$ proves the tensor identity.
+If the amplitude or phase gradient varies, the product rule introduces
+additional derivatives, so this proof gives no cancellation for them.
+\end{proof}
+
+The covariance is an element of $\Sym^2(\R^3)$, with nonnegative quadratic
+form $v\mapsto (a\cdot v)^2/2$. The positivity is a concrete use of a
+symmetric tensor power. A rank-one tensor representation does not by itself
+solve the vector-valued stress-divergence equation; the allowed polarization
+directions and the differential constraints still matter. The exterior-power
+test for independence of two stress directions is developed in
+Chapter~\ref{ch:fluid-structures}.
+
+\begin{proposition}[Averaging and nonlinear closure]
+\label{prop:ns-average-defect}
+Let $P$ be a linear averaging operator on a function algebra with $P1=1$.
+Assume $P^2=P$ and the conditional-expectation identity
+$P(ag)=aP(g)$ whenever $Pa=a$. If $v=Pu$ and $w=u-v$, then
+\[
+ P(u\otimes u)=v\otimes v+P(w\otimes w).
+\]
+If $P$ is positive, the final term is positive semidefinite pointwise in
+the averaged variables.
+\end{proposition}
+\begin{proof}
+Idempotence gives $Pw=0$. Expand $(v+w)\otimes(v+w)$. The two mixed
+terms have zero average by the assumed multiplication identity, and
+$P(v_i v_j)=v_iv_j$. For a constant test vector $b$,
+$b^TP(w\otimes w)b=P((b\cdot w)^2)\geq0$.
+\end{proof}
+
+An orthogonal projection onto an arbitrary collection of modes need not have
+the multiplication property in this proposition. Likewise, averaging an
+extended function $F(x,Y)$ over independent $Y$ and then substituting a phase
+$Y=\Phi(x)$ is different from first restricting and averaging the resulting
+physical function. If $F(x,Y)=\cos(2\pi(Y-x))$ on one-dimensional tori,
+then $\int F(x,Y)dY=0$, whereas $F(x,x)=1$. This elementary example prevents
+an unjustified replacement of a pointwise physical residual by an auxiliary
+mean. The phase derivatives and support geometry in a complete construction
+are precisely what allow these two kinds of expression to be related.
+
+\section{Concentration, energy, and the information lost by norms}
+
+\begin{proposition}[Energy estimate from rest]
+\label{prop:ns-force-energy}
+Let $u,p$ be a smooth solution on $[0,T]$ of
+$\mathcal R_\nu(u,p)=f$, $\nabla\cdot u=0$, $u(0)=0$.
+Assume periodicity, or sufficient decay for the integrations by parts
+below; fixed compact spatial support of $u,p$ is sufficient. If
+$F(t)=\int_0^t\|f(s)\|_2\,ds$, then
+\[
+ \|u(t)\|_2^2+2\nu\int_0^t\|\nabla u(s)\|_2^2\,ds\leq F(t)^2.
+\]
+\end{proposition}
+\begin{proof}
+The pressure pairing is
+$\int u\cdot\nabla p=-\int p\nabla\cdot u=0$.
+Advection contributes
+$\int u\cdot(u\cdot\nabla)u=
+\frac12\int\nabla\cdot(u|u|^2)=0$. Thus
+\[
+ \frac12\frac d{dt}\|u\|_2^2+\nu\|\nabla u\|_2^2=\langle f,u\rangle.
+\]
+Write $y_\delta=(\|u\|_2^2+\delta^2)^{1/2}$, $\delta>0$.
+Then $y_\delta'\leq\|f\|_2$, so
+$y_\delta(t)\leq\delta+F(t)$. Passing to $\delta\downarrow0$ gives
+$\|u(t)\|_2\leq F(t)$. Integrating the energy identity once more,
+\[
+ \|u(t)\|_2^2+2\nu\int_0^t\|\nabla u\|_2^2
+ \leq2\int_0^t F(s)F'(s)\,ds=F(t)^2.
+\]
+The argument on each $T<1$, followed by monotone convergence of the
+nonnegative dissipation integral, also applies up to a singular time.
+\end{proof}
+
+This estimate controls an integral, not the maximum of the integrand.
+Information reduction becomes mathematically consequential at this exact
+point: a small spatial set can carry a large amplitude while making a small
+contribution to $L^2$ energy.
+
+\begin{proposition}[Anisotropic concentration test]
+\label{prop:ns-anisotropic-scaling}
+Let $0<h<1/6$, $\tau>0$, and $W\in C_c^\infty(\R^3;\R^m)$ be nonzero.
+Define the comparison family
+\[
+ V_\tau(x_1,x_2,x_3)=\tau^{-1/2-h}
+ W\left(\frac{x_1}{\tau^{1/2}},
+        \frac{x_2}{\tau^{1/2}},
+        \frac{x_3}{\tau^{1/2-h}}\right).
+\]
+For $1\leq p<\infty$,
+\[
+ \|V_\tau\|_p^p
+  =\tau^{3/2-h-p(1/2+h)}\|W\|_p^p,
+ \qquad
+ \|V_\tau\|_\infty=\tau^{-1/2-h}\|W\|_\infty.
+\]
+Its energy tends to zero, while its maximal amplitude diverges. Moreover,
+$\int_0^{\tau_0}\|\nabla V_\tau\|_2^2\,d\tau<\infty$ for every finite
+$\tau_0>0$. This comparison family is not asserted to solve Navier--Stokes.
+\end{proposition}
+\begin{proof}
+The change of variables has determinant $\tau^{3/2-h}$. This proves the
+norm identities. At $p=2$ the exponent is $1/2-3h>0$. Each of the first
+two spatial derivatives contributes $\tau^{-1/2}$, so its squared norm has
+exponent $-1/2-3h>-1$. The axial derivative contributes
+$\tau^{-1/2+h}$ and has squared-norm exponent $-1/2-h>-1$.
+Both powers are integrable at zero. The supremum formula follows because
+the coordinate dilation is onto.
+\end{proof}
+
+For this family the critical spatial integrability exponent is
+\[
+ p_*(h)=\frac{3/2-h}{1/2+h}<3.
+\]
+At $p=3$, $\|V_\tau\|_3^3=\tau^{-4h}\|W\|_3^3$, which diverges.
+Thus the scaling test does not contradict a regularity theorem requiring
+a bounded critical $L^3$ norm. Such a theorem is a substantially stronger
+statement than an energy bound; the endpoint theorem for the unforced
+Cauchy problem is due to Escauriaza, Seregin, and \v Sver\'ak
+\citep{NSEscauriazaSereginSverak2003}. Our comparison family proves only
+the logical insufficiency of the weaker norm information, independently
+of any existence construction.
+
+\section{Similarity coordinates as an exact change of variables}
+
+The geometry relevant to the release can be organized using the positive
+variables
+\[
+ \tau=1-t,\qquad D=\tfrac12-h,\qquad
+ \tau=q(1-\eta^2),\quad z=q^D\eta,\quad X=\frac{r^2}{2q},
+ \quad 0<h<\tfrac12.
+\]
+The next calculation verifies the differential interface rather than
+assuming that symbolic substitution preserves all derivatives.
+
+\begin{proposition}[Coordinate existence and derivative weights]
+\label{prop:ns-similarity-chain-rule}
+For $\tau>0$ and $z\in\R$ there is a unique
+$q>|z|^{1/D}$ with $q-z^2q^{2h}=\tau$. Set $\eta=zq^{-D}$,
+$d=1-\eta^2$, and $L=1-2h\eta^2$. Then $|\eta|<1$, $L\geq1-2h>0$,
+and for a smooth profile $G(X,\eta)$ and any real $b$,
+\begin{align*}
+ \partial_t(q^bG)&=q^{b-1}L^{-1}
+     (-bG+D\eta\partial_\eta G+X\partial_XG),\\
+ \partial_z(q^bG)&=q^{b-D}L^{-1}
+     (2b\eta G+d\partial_\eta G-2\eta X\partial_XG).
+\end{align*}
+\end{proposition}
+\begin{proof}
+On $q>|z|^{1/D}$, the function $q-z^2q^{2h}$ begins at zero,
+tends to infinity, and has derivative
+$1-2hz^2q^{2h-1}\geq1-2h>0$. The intermediate-value theorem and strict
+monotonicity give existence and uniqueness. The implicit-function theorem
+gives smoothness, and differentiation yields
+\[
+ q_t=-L^{-1},\quad q_z=2\eta q^{1-D}/L,\quad
+ \eta_t=D\eta/(qL),\quad\eta_z=d/(q^DL),
+\]
+\[
+ X_t=X/(qL),\qquad X_z=-2\eta X/(q^DL).
+\]
+The two formulas follow by the product and chain rules. The endpoint $z=0$
+also satisfies them, because the implicit derivative remains nonzero.
+\end{proof}
+
+On bounded profile ranges, a transverse derivative has weight $q^{-1/2}$,
+an axial derivative has weight $q^{-D}$, and a time derivative has weight
+$q^{-1}$. The denominators remain bounded because $L\geq1-2h$.
+Constants can depend on the derivative order and fixed profile parameters.
+They cannot be allowed to hide an extra loss growing with the approximation
+stage if one later intends to sum an infinite correction sequence.
+
+The apparent cylindrical singularity at $r=0$ must also be resolved.
+For instance, if the azimuthal velocity is $r\,a(r^2,z,t)$, then
+\[
+ r\,a(r^2,z,t)e_\theta
+   =a(x_1^2+x_2^2,z,t)(-x_2,x_1,0)
+\]
+is smooth in Cartesian coordinates. Boundedness of a cylindrical component
+alone would not establish this. This is a local regularity condition on a
+representation, comparable to requiring that coordinate expressions of a
+section glue smoothly; it is not supplied by the topology of the domain.
+
+\section{A quadratic relation that controls analytic derivative loss}
+
+An especially useful connection to the project's algebraic methods occurs
+in the analytic linear recursion. The relevant feature is a forbidden
+composition of derivative-carrying blocks. We isolate its mechanism in a
+statement independent of fluid terminology.
+
+\begin{lemma}[Words with no adjacent derivative letters]
+\label{lem:ns-forbidden-words}
+A word of length $k$ in the letters $N,D$ with no consecutive $D$ has at
+most $\lceil k/2\rceil$ occurrences of $D$. The number with exactly $j$
+occurrences is $\binom{k-j+1}{j}$, interpreted as zero when $j>k-j+1$.
+The total number $a_k$ satisfies $a_0=1$, $a_1=2$, and
+$a_k=a_{k-1}+a_{k-2}$ for $k\geq2$.
+\end{lemma}
+\begin{proof}
+Between $j$ derivative letters there are at least $j-1$ other letters, so
+$2j-1\leq k$. If their positions are
+$1\leq i_1<\cdots<i_j\leq k$ with $i_{r+1}\geq i_r+2$, the shifted
+positions $i_r-(r-1)$ form an ordinary $j$-element subset of
+$\{1,\ldots,k-j+1\}$. This is a bijection, proving the binomial formula.
+For the recurrence, an admissible word ending in $N$ is an arbitrary
+admissible word of length $k-1$ followed by $N$. One ending in $D$, when
+$k\geq2$, ends in $ND$ and corresponds to a word of length $k-2$.
+These two classes are disjoint and exhaustive.
+\end{proof}
+
+\begin{proposition}[Sparse Volterra systems]
+\label{prop:ns-sparse-volterra}
+Let $E=E_0\oplus E_1$ be a finite-dimensional normed complex vector space.
+Fix a compact real interval $I$ and let
+$S_\rho=\{z\in\C:\dist(z,I)<\rho\}$. Consider an integral equation
+on $0\leq s\leq a$ and this complex parameter neighborhood,
+\[
+ W=Gf+G(A_0W+A_1\partial_\eta W),\qquad
+ (Gg)(s)=\int_0^s K(s,r)g(r)\,dr.
+\]
+Assume $\|K(s,r)\|\leq1$, $K$ preserves the two summands and is independent
+of $\eta$; the coefficients and kernel are continuous in their radial
+variables; $A_0,A_1,f$ are uniformly bounded and holomorphic in $\eta$;
+and every value and every $\eta$-derivative of $A_1$ maps $E_0$ into $E_1$
+and annihilates $E_1$. On each smaller neighborhood $S_{\rho'}$ with
+$0<\rho'<\rho$, the Picard series converges for every finite $a$.
+It gives the unique solution in the class of solutions bounded and
+holomorphic on a parameter neighborhood strictly larger than the one
+on which they are compared.
+\end{proposition}
+\begin{proof}
+Expand the $k$-fold iterate of $G(A_0+A_1\partial_\eta)$ into words.
+The kernel between adjacent coefficients preserves $E_0,E_1$. Therefore
+\[
+ A_1(s)K(s,r)A_1(r)=0,
+ \qquad A_1(s)K(s,r)\partial_\eta A_1(r)=0.
+\]
+The second identity is necessary: in a composition of two derivative
+operators the first derivative can strike the second coefficient. It
+vanishes for the same block reason. Thus a nonzero word cannot contain
+two adjacent derivative operators, even after expanding the product rule.
+By Lemma~\ref{lem:ns-forbidden-words}, at most
+$p_k=\lceil k/2\rceil$ Cauchy radius losses are required.
+
+Put $\Delta=\rho-\rho'>0$. Distribute that loss in $p_k$ equal parts.
+The Cauchy estimate for one parameter derivative costs at most
+$p_k/\Delta$; when $p_k=0$ use cost one. Operator norms absorb the
+coefficient bounds, and the nested integration domain has volume
+$a^{k+1}/(k+1)!$. Bounding the number of words by $2^k$ gives, after
+enlarging a constant $C$,
+\[
+ \bigl\|[G(A_0+A_1\partial_\eta)]^kGf\bigr\|_{S_{\rho'}}
+ \leq\frac{C^{k+1}a^{k+1}}{(k+1)!}
+       \max\{1,p_k/\Delta\}^{p_k}.
+\]
+Stirling's bound shows that the $k$th root of the right-hand side is
+$O(k^{-1/2})$, tending to zero. Hence the series converges uniformly on
+the smaller neighborhood. Applying the same estimate after one additional
+radius restriction permits differentiation in $\eta$ and termwise
+substitution into the integral equation. If $W_1-W_2=G(A_0+A_1\partial_\eta)
+(W_1-W_2)$, iteration and the same estimate make the difference zero on
+the smaller neighborhood. Analytic continuation gives the stated uniqueness.
+\end{proof}
+
+The source's six-component linear recursion has the splitting
+$E_0=\C^4$, $E_1=\C^2$, with diagonal radial kernels. Its use of the
+above relation is traceable to Lemma 5.1, rather than inferred from a
+superficial resemblance to a quiver \citep{NSOpenAI2026}. The relation
+has three precise interpretations. It eliminates forbidden operator words;
+it limits derivative loss; and, with the integration simplex, it makes a
+convergent analytic solve possible on a common radial interval.
+
+The language of admissible words is regular: a finite automaton needs only
+to remember whether the preceding letter was $D$, plus a rejecting state.
+The analytic conclusion nevertheless requires unbounded iteration and
+quantitative estimates. A regular syntax does not make the represented
+analytic task finite-dimensional.
+
+Nor does this calculation establish a gentle algebra. The abstract
+one-vertex algebra $k\langle N,D\rangle/(D^2)$ is infinite-dimensional,
+and the arrow $N$ has two allowed successors. It therefore fails a usual
+gentle-algebra continuation condition. The honest bridge is to a
+representation with a quadratic zero relation and a controlled path
+language. Any claim of a particular gentle presentation would require
+a separate equivalence or construction.
+
+\section{From formal orders to actual smooth fields}
+
+The order of a term in a formal expansion must not be confused with a
+convergence estimate for the coefficients. Suppose coefficients of order
+$j$ have constants growing faster than every exponential. Positive powers
+of a small parameter do not automatically make their unrestricted sum
+converge. A suitable realization uses cutoffs chosen after the coefficients
+are known.
+
+\begin{lemma}[A diagonal realization estimate]
+\label{lem:ns-diagonal-realization}
+Let $0<q<q_0\leq1$ on an open domain, with $q$ smooth and bounded below
+on every compact subset. Suppose smooth increments $Z_j$, $j\geq1$,
+satisfy
+\[
+ |Z_j|_m\leq C_{j,m}q^{g_j-\ell_m}(1+|\log q|)^{P_{j,m}},
+ \qquad 0<g_1\leq g_2\leq\cdots\longrightarrow\infty,
+\]
+where $|\cdot|_m$ is the pointwise maximum of coordinate derivatives through order
+$m$, and $\ell_m$ is independent of $j$. Assume that differentiating a
+cutoff $\chi(aq)$ costs a power of $q^{-1}$ depending only on derivative
+order, uniformly in $a$ on its transition region. Then one can choose
+$a_{j+1}\geq2a_j$ so that the cutoff sum
+$Z=\sum_{j\geq1}\chi(a_jq)Z_j$ is locally finite and smooth, and its
+tail after a fixed initial block satisfies
+\[
+ \left|Z-\sum_{j=1}^JZ_j\right|_m
+ \leq2^{-J}q^{g_{J+1}/2-L_m}
+ \quad\left(J\geq\max\{1,m\},\ q<\frac1{2a_J}\right).
+\]
+Here $\chi=1$ on $[0,1/2]$, $\chi=0$ on $[1,\infty)$, and $L_m$ is
+independent of $J$.
+\end{lemma}
+\begin{proof}
+The product rule and the cutoff hypothesis bound the $m$th seminorm of
+the $j$th summand by
+$\widehat C_{j,m}q^{g_j-L_m}(1+|\log q|)^{\widehat P_{j,m}}$.
+At stage $j$ impose this finite list of requirements for $0\leq m\leq j$:
+\[
+ \widehat C_{j,m}q^{g_j/2}(1+|\log q|)^{\widehat P_{j,m}}
+ \leq2^{-j}\quad(0<q\leq a_j^{-1}).
+\]
+It is possible because every positive power of $q$ dominates every fixed
+power of $|\log q|$ at zero. Increase $a_j$ further to preserve its geometric
+growth. On a compact subset where $q\geq\delta>0$, terms with
+$a_j>\delta^{-1}$ vanish, proving local finiteness and smoothness.
+If $q<(2a_J)^{-1}$, the first $J$ cutoffs equal one. For $j>J\geq m$,
+the bound just imposed and $g_j\geq g_{J+1}$ give
+\[
+ \sum_{j>J}2^{-j}q^{g_j/2-L_m}
+ \leq2^{-J}q^{g_{J+1}/2-L_m},
+\]
+as required.
+\end{proof}
+
+To preserve a differential constraint, apply the cutoffs to suitable
+potentials. In three-dimensional Euclidean space,
+\[
+ \nabla\times(\chi(a_jq)A_j)
+ =\chi(a_jq)\nabla\times A_j
+   +a_j\chi'(a_jq)\nabla q\times A_j.
+\]
+The second term is a real part of the field and must be retained. Taking
+divergence of the full curl yields zero. Cutting off an already
+divergence-free velocity directly would instead give
+$\nabla\cdot(\chi u)=\nabla\chi\cdot u$, which need not vanish.
+
+\begin{proposition}[All-order residual realization]
+\label{prop:ns-residual-flatness}
+Let $U^{[J]}$ be finite approximations and $U$ their cutoff realization.
+Assume their derivatives have polynomial growth in $q^{-1}$ with
+exponent losses independent of $J$, and that the tail estimate of
+Lemma~\ref{lem:ns-diagonal-realization} applies through every fixed order.
+Let $F$ be a fixed differential polynomial of finite order and degree whose
+coefficient derivatives have polynomial growth in $q^{-1}$. If
+\[
+ |F(U^{[J]})|_m
+ \leq C_{J,m}q^{\rho_J-K_m}(1+|\log q|)^{P_{J,m}}+E_{J,m},
+ \quad \rho_J\to\infty,
+\]
+with $K_m$ independent of $J$ and each fixed $E_{J,m}=O(q^N)$ for every
+$N$, then $|F(U)|_m=O(q^N)$ for every $m,N$.
+\end{proposition}
+\begin{proof}
+Fix $m,N$. Let $s,d$ bound the differential order and polynomial degree
+of $F$. For products use the exact identity
+\[
+ \prod_{i=1}^d a_i-\prod_{i=1}^d b_i
+ =\sum_{r=1}^d
+  \left(\prod_{i<r}a_i\right)(a_r-b_r)
+  \left(\prod_{i>r}b_i\right).
+\]
+The product rule then bounds $F(U)-F(U^{[J]})$ in seminorm $m$ by a
+fixed power of $q^{-1}$ times the tail seminorm $m+s$ and a polynomial
+in the two field seminorms $m+s$. All exponent losses depend on $m,s,d$,
+not $J$. Choose $J$ large enough that both $\rho_J$ and $g_{J+1}/2$
+exceed $N$ plus these losses and one extra unit. Keep that $J$ fixed.
+Shrink the $q$-neighborhood so all its finitely many constants and logarithms
+are absorbed by that extra unit, and the first $J$ cutoffs equal one.
+The finite residual, its fixed flat remainder, and the residual difference
+are then all $O(q^N)$.
+\end{proof}
+
+The order of these quantifiers is essential:
+\[
+ \forall(m,N)\ \exists J\ \exists\delta,C\ 
+  \forall q\in(0,\delta):\ |F(U)|_m\leq Cq^N.
+\]
+It does not assert one $J$ that controls every derivative. It does not
+require summing the flat remainders $E_{J,m}$ over $J$. It also does not
+assert convergence of the uncut formal series. This distinction is the
+analytic counterpart of keeping a filtered algebra, its associated graded
+object, and a completed realization separate.
+
+\section{The finite correction cycle as a verifiable dependency graph}
+
+The source's construction provides the hypotheses needed above through
+separate analytic modules. The following locator table records where to
+check them; the table is a dependency guide, not a substitute proof
+\citep{NSOpenAI2026,NSLean2026}.
+
+\begin{longtable}{p{.20\textwidth}p{.40\textwidth}p{.30\textwidth}}
+\toprule
+Interface & Mathematical obligation & Source location\\
+\midrule\endhead
+Background & Smooth axis; exact exterior; supported compatible stress;
+positive cone margins & Theorem 4.6; Appendices A--C\\
+Order recursion & A common radial interval, moment repair, derivative losses
+independent of formal order & Lemmas 5.1--5.4; Proposition 5.5\\
+Phase geometry & Support separation and compatible finite covering coordinates
+& Section 6\\
+Oscillatory solve & Transverse evolution, damping, real covariance, full curl
+correction & Propositions 7.2, 7.5--7.6; Lemma 7.7\\
+Mean solve & Compact primitives, auxiliary inverse, five moment equations
+& Section 8\\
+Iteration & Full residual recomputation, fixed-domain gains, all physical
+derivatives & Propositions 9.3--9.9\\
+Completion & Smooth forcing, energy, comparison, all viscosities, periodization
+& Section 10\\
+\bottomrule
+\end{longtable}
+
+One can encode a correction state as a typed record rather than a loose
+list of estimated errors. Its fields should include a velocity, pressure,
+potential representation, support certificates, exact preserved moments,
+residual decomposition, and derivative bounds. A correction operation
+must produce a new such record. The pressure and residual are recomputed
+from the updated velocity, so one cannot reuse a previous covariance after
+altering a wave amplitude. This record-based reading is directly compatible
+with the typed graph approach developed earlier in the monograph.
+
+The numerical exponents also permit an elementary exact check. Put
+$\kappa=10^{-5}$, $\sigma_j=1/5+j/10$,
+$B_j=1/2+\sigma_j$, and $C_j=1+\sigma_j$.
+All asserted gains of the source's cycle must exceed $1/10$ after
+derivative losses. For example,
+\[
+ \frac{18}{100}-2\kappa>\frac{17}{100}>\frac1{10},\qquad
+ \sigma_j-3\kappa\geq\frac15-3\kappa>\frac{17}{100},
+\]
+\[
+ \frac12-2\kappa>\frac1{10},\qquad
+ \frac9{10}-4\kappa>\frac1{10}.
+\]
+These rational inequalities certify arithmetic slack once the functional
+estimates are supplied. They do not establish those functional estimates.
+This is a useful separation for learned proof search: a model may propose
+an ordering or an exponent assignment, while exact arithmetic and analytic
+lemmas discharge different obligations.
+
+\section{Localization and smooth force extension}
+
+\begin{proposition}[Localization without a divergence defect]
+\label{prop:ns-potential-localization}
+Suppose $A$, $B e_\theta$ and $p$ are smooth in Cartesian coordinates,
+put $u=\nabla\times A+B e_\theta$, and assume $B$ is independent of $\theta$.
+Let $c$ be a smooth axisymmetric scalar.
+Set
+\[
+ \widetilde u=\nabla\times(cA)+cBe_\theta,
+ \qquad \widetilde p=cp,\qquad a=\nabla c\times A.
+\]
+Then $\widetilde u=cu+a$ and $\nabla\cdot\widetilde u=0$.
+Its residual is exactly
+\begin{align*}
+ \mathcal R_\nu(\widetilde u,cp)
+ ={}&c\mathcal R_\nu(u,p)
+   +(\partial_tc-\nu\Delta c)u-2\nu\sum_j(\partial_jc)\partial_ju
+       +p\nabla c\\
+ &+(c^2-c)(u\cdot\nabla)u+c(u\cdot\nabla c)u\\
+ &+\partial_ta-\nu\Delta a+c(u\cdot\nabla)a
+      +(a\cdot\nabla)(cu)+(a\cdot\nabla)a.
+\end{align*}
+\end{proposition}
+\begin{proof}
+The curl product rule gives $\widetilde u=cu+a$. Divergence of a curl
+is zero; the other term has divergence $r^{-1}\partial_\theta(cB)=0$
+away from the axis and hence everywhere by Cartesian smoothness.
+Expand $\partial_t(cu)$, $\Delta(cu)$, and $\nabla(cp)$ by the product
+rule. Finally,
+$(cu\cdot\nabla)(cu)=c^2(u\cdot\nabla)u+c(u\cdot\nabla c)u$.
+Adding the three advection terms containing $a$ yields the formula.
+\end{proof}
+
+The displayed expression explains why a spatial cutoff requires endpoint
+regularity of the actual potentials as well as the velocity. On a region
+where $c=1$ the extra terms vanish. On its transition region every term
+involving the uncut fields must remain smooth through the terminal time.
+A proof that estimates only $c\mathcal R_\nu(u,p)$ has omitted real terms.
+
+\begin{lemma}[Realization of terminal force jets]
+\label{lem:ns-terminal-jets}
+Let $f(x,t)$ be smooth for $t<T$, supported in a fixed compact set
+$K\subset\R^d$. Suppose every $\partial_x^\alpha\partial_t^jf$
+has a uniform limit $\partial_x^\alpha F_j(x)$ as $t\uparrow T$,
+where $F_j\in C_c^\infty(\R^d)$ are supported in $K$.
+Then $f$ has a smooth extension to $t\geq T$ supported in
+$K\times[T,T+1]$ on that side. If it already vanishes near an initial
+time, the combined extension retains that property.
+\end{lemma}
+\begin{proof}
+Choose a smooth cutoff $\chi$, one near zero and zero for arguments
+at least one, and for $s=t-T\geq0$ define
+\[
+ f_+(x,T+s)=\sum_{j=0}^\infty\chi(b_js)\frac{s^j}{j!}F_j(x).
+\]
+For fixed $\alpha,m$, the product rule and $s\leq b_j^{-1}$ on the
+summand's support give a bound
+\[
+ C_{j,m}b_j^{m-j}\|F_j\|_{C^{|\alpha|}}.
+\]
+Fix $b_0=1$. For $j\geq1$, choose increasing $b_j\geq1$ so that this is at most $2^{-j}$ whenever
+$|\alpha|+m\leq\lfloor j/2\rfloor$. Each step imposes finitely many
+constraints with $m-j<0$, so the choice exists. Every differentiated tail
+converges uniformly. At $s=0$, the $m$th time derivative of a fixed
+summand is $F_m$ when $j=m$ and zero otherwise. Uniform differentiated
+convergence gives the desired jets.
+
+Uniform convergence of the original mixed derivatives makes their limits
+compatible: pass to the limit in the fundamental theorem of calculus
+along a coordinate segment, and then along a time segment. The two
+pieces therefore glue smoothly at $T$. All summands retain support in
+$K$, and vanish for $s\geq1$; uniform convergence of every derivative
+also proves smoothness at that support boundary.
+\end{proof}
+
+Flatness at a single singular point is only part of this lemma's hypotheses.
+One must additionally control all terminal derivatives away from that point,
+including the cutoff transition region. Conversely, vanishing of every jet
+does not force a smooth function to vanish near the point: the function
+$e^{-1/s^2}$ for $s>0$, extended by zero for $s\leq0$, is the standard
+counterexample. Substituting ``analytic'' for ``smooth'' would change the
+problem and invalidate this extension method.
+
+\section{Comparison, quantitative residual checks, and proof strength}
+
+An explicit singular solution rules out a global competitor only after
+uniqueness has been established in the competitor's class. The whole-space
+class in the Clay problem permits no arbitrary decay assumption on the
+pressure. That is why a periodic energy calculation is not by itself a
+complete proof of alternative (C). The source's Lemma 10.5 handles this
+point using a pressure-gradient argument and expanding spatial cutoffs;
+its hypotheses must be preserved in any proof adapter
+\citep{NSOpenAI2026}.
+
+The following separate estimate is useful for the project's computable
+fluid examples and for any learned approximate field.
+
+\begin{proposition}[Residual-to-solution estimate on the flat torus]
+\label{prop:ns-residual-comparison}
+Let $u,v$ be smooth divergence-free periodic vector fields on $[0,T]$,
+and let periodic $p,q$ satisfy
+\[
+ \mathcal R_\nu(u,p)=f,\qquad
+ \mathcal R_\nu(v,q)=f+r.
+\]
+Write $w=v-u$ and $K(t)=\|\nabla u(t)\|_{L^\infty,\mathrm{op}}$.
+If $K$ is integrable, then
+\[
+ \|w(t)\|_2\leq
+ e^{\int_0^tK(a)\,da}\|w(0)\|_2
+ +\int_0^t e^{\int_s^tK(a)\,da}\|r(s)\|_2\,ds.
+\]
+In particular, equal data and $r=0$ imply $v=u$.
+\end{proposition}
+\begin{proof}
+Subtract the equations in the form
+\[
+ \partial_tw+(v\cdot\nabla)w+(w\cdot\nabla)u
+ -\nu\Delta w+\nabla(q-p)=r.
+\]
+Periodic integration and zero divergence remove the transport and pressure
+pairings. Thus
+\[
+ \tfrac12(\|w\|_2^2)'+\nu\|\nabla w\|_2^2
+ \leq K\|w\|_2^2+\|r\|_2\|w\|_2.
+\]
+With $y_\delta=(\|w\|_2^2+\delta^2)^{1/2}$ one has
+$y_\delta'\leq Ky_\delta+\|r\|_2$. Multiplication by
+$e^{-\int_0^tK}$ and integration prove the bound after
+$\delta\downarrow0$.
+\end{proof}
+
+This inequality gives a precise role for a quantum or classical learner:
+it may produce $v$, but a certificate needs its divergence defect, momentum
+residual, initial error, and an appropriate stability coefficient. The
+estimate does not remain effective near blowup merely because the sampled
+residual is small. A pointwise grid evaluation does not bound the continuum
+$L^2$ residual without an interpolation or enclosure argument, and
+$\int K$ can become large. Numerical fitting and a posteriori proof are
+different stages of the same workflow.
+
+The same issue explains why nearby classical results are not interchangeable.
+Nonuniqueness in a weak class does not give blowup of a smooth solution;
+a modified averaged nonlinearity is not the original Navier--Stokes
+nonlinearity; and rough forcing is not smooth forcing. These distinctions
+are visible respectively in the settings of Buckmaster--Vicol,
+Tao, and Albritton--Bru\'e--Colombo
+\citep{NSBuckmasterVicol2019,NSTao2016,NSAlbrittonBrueColombo2022}.
+
+\section{Viscosity, periodization, and preservation of quantifiers}
+
+\begin{proposition}[Viscosity conversion]
+\label{prop:ns-viscosity-conversion}
+If $\mathcal R_1(u,p)=f$ and $\nabla\cdot u=0$, then for $\nu>0$
+\[
+ u_\nu(x,t)=\sqrt\nu\,u(x/\sqrt\nu,t),\quad
+ p_\nu(x,t)=\nu p(x/\sqrt\nu,t),\quad
+ f_\nu(x,t)=\sqrt\nu\,f(x/\sqrt\nu,t)
+\]
+satisfy $\mathcal R_\nu(u_\nu,p_\nu)=f_\nu$ and zero divergence.
+The singular time is unchanged. In three dimensions,
+\[
+ \|u_\nu(t)\|_2^2=\nu^{5/2}\|u(t)\|_2^2,
+ \qquad
+ \nu\|\nabla u_\nu(t)\|_2^2=\nu^{5/2}\|\nabla u(t)\|_2^2.
+\]
+\end{proposition}
+\begin{proof}
+Put $y=x/\sqrt\nu$. Each term of the momentum equation acquires a
+factor $\sqrt\nu$: two spatial derivatives contribute $\nu^{-1}$,
+one contributes $\nu^{-1/2}$, and the amplitudes contribute the stated
+powers. The divergence equals $(\nabla_y\cdot u)(y,t)$. The Jacobian
+of $x=\sqrt\nu y$ is $\nu^{3/2}$, while the velocity square contributes
+$\nu$ and the gradient square contributes one. This proves both norm
+identities. The time argument was not changed.
+\end{proof}
+
+\begin{proposition}[Disjoint-support periodization]
+\label{prop:ns-periodization}
+Suppose smooth whole-space fields $u,p,f$ solve Navier--Stokes with
+viscosity $\nu$ and have common spatial support in a compact set
+$K\Subset(-1/2,1/2)^3$. Then their sums over integer translates define
+smooth periodic fields solving the same equation, with the same viscosity.
+\end{proposition}
+\begin{proof}
+The sums are locally finite. The distinct translated compact supports have
+positive separation, so at each point a neighborhood intersects at most
+one support, unless the fields vanish there. Differential operators
+commute with the sums. In the advection term every mixed product of
+different translates vanishes, leaving the sum of the individual
+advection terms. The same argument gives zero divergence and retains
+periodicity of both velocity and pressure.
+\end{proof}
+
+For a larger compact support one first uses the parabolic scaling
+\[
+ \widetilde u(x,t)=\lambda u(\lambda x,\lambda^2(t-t_0)),\quad
+ \widetilde p(x,t)=\lambda^2p(\lambda x,\lambda^2(t-t_0)),\quad
+ \widetilde f(x,t)=\lambda^3f(\lambda x,\lambda^2(t-t_0)).
+\]
+Choosing $\lambda$ large puts the support inside the cube. If the original
+fields vanish on an initial interval, they extend smoothly by zero before
+$t_0$. For original singular time one, $t_0=1-\lambda^{-2}$ keeps the
+new singular time equal to one. These conditions explain why periodizing
+an arbitrary spatially decaying field would not suffice: overlapping copies
+would create additional nonlinear interactions.
+
+\section{Formal proof provenance and what this extension adds}
+
+The pinned upstream revision is
+\begin{center}\small
+\texttt{f9e8bc5b38b6e212696e8a30e3e91517af887bbd}.
+\end{center}
+Its toolchain is Lean 4.34.0-rc2, with mathlib revision
+\begin{center}\small
+\texttt{85e3a25e006c35636f0e53b0e9296caca2685bc0}.
+\end{center}
+The project's earlier selected Lean declarations use a different toolchain.
+They cannot be merged by silently substituting one compiler for the other.
+An isolated verification script preserves the upstream pins.
+
+The final upstream declarations are
+\begin{quote}\small\ttfamily
+NavierStokes.Comparator.navier\_stokes\_breakdown\_R3\\
+NavierStokes.Comparator.navier\_stokes\_breakdown\_periodic.
+\end{quote}
+Their types quantify over every positive viscosity and retain the exact
+initial-data, forcing, regularity, energy, and periodicity predicates.
+The reference challenge modules intentionally contain unproved challenge
+statements. They are kept separate from the solution imports. A source
+scan that merely counts every occurrence of \texttt{sorry} in the whole
+repository would therefore misdescribe the solution's dependency boundary.
+Conversely, a source scan finding no such token cannot replace kernel
+checking or comparison of the definitions with the intended mathematics.
+
+The inspection found 816 files under the Navier--Stokes source directory
+and 609 local modules in the final solution's import closure. Selected
+modules were read in detail; all 609 were not manually reviewed. The
+upstream metadata reports only the standard dependencies
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound} for
+the final results. The accompanying verification ledger distinguishes
+that upstream report from any fresh build and independent Comparator
+execution performed in this extension \citep{NSLean2026}.
+
+In this review the exact compiler distribution was downloaded and its
+published SHA-256 checksum matched. Dependency cache retrieval then failed
+with HTTP 429 responses after partial decompression. A direct attempt to
+elaborate the final module stopped at missing local import artifacts.
+Consequently this pass did not complete a fresh build of the final upstream
+theorems, and did not run the independent Comparator certificate check.
+The source audit found no challenge import and no unproved-placeholder token
+in the 609-module local solution closure, after removing comments and string
+literals. That lexical result has the narrower meaning stated here; it is
+not a substitute for the uncompleted kernel verification.
+
+The extension's new contribution is an explicit mathematical organization:
+quadratic residual calculus; exact information-loss identities; norm
+scaling that separates energy from regularity; a forbidden-word estimate
+that explains a common analytic domain; all-order realization with
+correct quantifiers; potential-based localization; and a quantitative
+residual comparison for learned fields. Chapter~\ref{ch:fluid-structures}
+then develops the arithmetic, exterior-power, and filtered-algebra
+connections, while Chapter~\ref{ch:quantum-fluid} treats quantum
+representations and learning.
+
+These are rigorous bridges because each has a specified map or estimate.
+They do not identify a finite surface-code complex with the continuum
+Navier--Stokes equation, or turn a learned function into an existence
+theorem without a stability certificate. They also preserve the released
+theorem's force. Removing that force, imposing a different physical
+constitutive law, or deriving the same singular flow from a microscopic
+quantum state would be a further theorem with additional analytic content.

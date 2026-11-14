@@ -1,0 +1,1523 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-13",
+  "title": "OpenAI Navier–Stokes release audit",
+  "release_date": "2026-09-08",
+  "clay_response_date": "2026-09-11",
+  "official_release_url": "https://openai.com/index/navier-stokes-solution/",
+  "clay_response_url": "https://www.claymath.org/news/navier-stokes-announcement/",
+  "theorem_scope": {
+    "viscosity": "every real nu > 0",
+    "equation": "three-dimensional incompressible forced Navier–Stokes",
+    "initial_velocity": "zero",
+    "force": "C_c^infinity(R^3 x (0,infinity); R^3)",
+    "velocity_pressure": "smooth on R^3 x [0,1), fixed compact spatial support",
+    "energy": "uniformly bounded L2 velocity norm",
+    "singularity": "limsup_{t -> 1-} ||u(t)||_infinity = infinity",
+    "comparison": "no global smooth competitor with the same data and force and uniformly bounded kinetic energy",
+    "clay_alternatives": [
+      "C",
+      "D"
+    ],
+    "not_claimed": [
+      "unforced positive-viscosity blowup",
+      "award of the Millennium Prize",
+      "new stronger PDE theorem from this extension"
+    ]
+  },
+  "sources": [
+    {
+      "id": "NSOpenAI2026",
+      "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+      "filename": "navier-stokes.pdf",
+      "bytes": 2959204,
+      "sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+      "pages": 166,
+      "review": "complete extracted-page reading jointly; selected mathematical interfaces checked in detail"
+    },
+    {
+      "id": "NSFefferman",
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf",
+      "filename": "fefferman.pdf",
+      "bytes": 203736,
+      "sha256": "c1b5f27b1a64705cfaf1afceea513db5deedca8a18ca56ab32e7f86445a06d0c",
+      "pages": 6,
+      "review": "complete extracted-text reading including pressure-periodicity erratum"
+    },
+    {
+      "id": "EulerAdjacent",
+      "url": "https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf",
+      "filename": "euler.pdf",
+      "bytes": 535142,
+      "sha256": "a0c234518e6c489e16996805023eb2e75c00b7c03455f7a3a5be2c124954bfdd",
+      "pages": 57,
+      "review": "downloaded; not fully read in this audit; not included in full-reading claim"
+    }
+  ],
+  "paper_coverage": {
+    "complete_union": true,
+    "method": "Full extracted pages in bounded, untruncated text segments; this records reading, not independent reconstruction of every proof.",
+    "release_reviewer_ranges": [
+      [
+        1,
+        61
+      ],
+      [
+        100,
+        125
+      ],
+      [
+        144,
+        156
+      ],
+      [
+        165,
+        166
+      ]
+    ],
+    "root_reviewer_ranges": [
+      [
+        62,
+        99
+      ],
+      [
+        126,
+        144
+      ],
+      [
+        157,
+        165
+      ]
+    ],
+    "root_review_record": "primary-root-review.json",
+    "root_review_record_sha256": "070cd0eabc521b673e47b0133935020e184c1eccdff5d6dc32685227b2c0dc63",
+    "page_records": [
+      {
+        "page": 1,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "1b24d58a211d340682c55ed340878c1371964cbdc9ca7754c51890e6bf1cf08d",
+        "text_characters": 3378
+      },
+      {
+        "page": 2,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "9ca3e01ce56a5077f4a46b4315521f368680c6123802d2113076b05df835df76",
+        "text_characters": 4191
+      },
+      {
+        "page": 3,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "506a09520e3d5877f889a9b982881a8acd67770257c60287f5ed0098bb577524",
+        "text_characters": 3605
+      },
+      {
+        "page": 4,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "eb0fbae4226535b1ddcd3497cb20ebff39d86bf4706ef574e85dd03e867bf092",
+        "text_characters": 2386
+      },
+      {
+        "page": 5,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "7d48042d70cbc0533df35f7f2f639cacba7492b0cc4d573f697a83e08b03e97c",
+        "text_characters": 3803
+      },
+      {
+        "page": 6,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "29c8d5b90145ba0124d5b016be3950c5724badc54b2d2bb2d3c84e3e4630c754",
+        "text_characters": 3936
+      },
+      {
+        "page": 7,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b411b65fc3d22456bc1f6041ac204aa8a88955b9f8e989c3549abf6e130d83d3",
+        "text_characters": 3755
+      },
+      {
+        "page": 8,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "e078cb481ba6f64cdbd3b3caec5857dc3a188b907ae208c9789a0733d9703ae9",
+        "text_characters": 3747
+      },
+      {
+        "page": 9,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "f5c3cf4f29719d1d1a2a7c5faa851f78e130ac7ec47ff73a16bc070c4f057bcb",
+        "text_characters": 4918
+      },
+      {
+        "page": 10,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "24c74843238d719003204366948a3e188c122c3d81d7f247185e0f48491f3d46",
+        "text_characters": 3529
+      },
+      {
+        "page": 11,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "cac403e220a06671425c4c9da401fd6ae7e35b7a14859756d88a517ccd059dc6",
+        "text_characters": 3450
+      },
+      {
+        "page": 12,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "cc16a4af40f79839ad63fdd40824e687f6d4b5547049bd196c67df715647b87e",
+        "text_characters": 4100
+      },
+      {
+        "page": 13,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "92a934e8dd06c85292e42c1826621fd2bf0ff6900cda77d79418a450a7c04fd8",
+        "text_characters": 3309
+      },
+      {
+        "page": 14,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "0163ea0f9f100a88693986d6da5d54e8316c1ecea4e9780df8aab8d2e2cd2aaf",
+        "text_characters": 3873
+      },
+      {
+        "page": 15,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "52ee8c6b2e7d1a9854e5923fb4aad610879d893c88f9470b87ca48d6aef3290b",
+        "text_characters": 3473
+      },
+      {
+        "page": 16,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "e3a0098a7442a27a56d21038deb9ca6aa6cd3362502e360ae35c575221e59291",
+        "text_characters": 3773
+      },
+      {
+        "page": 17,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "8df1204c60aa7d7924098a237931d2d2bfa6c9cde1b51137db86f020285caacd",
+        "text_characters": 4297
+      },
+      {
+        "page": 18,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "51bc9b71b4f2a59759c82369943168c40442ea59f9e1a86d982cfc6cbe73bc5a",
+        "text_characters": 3274
+      },
+      {
+        "page": 19,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "0746de42c3e9124227b4c51158aba8ad61d6b712123277758efbf471a43d27c1",
+        "text_characters": 3554
+      },
+      {
+        "page": 20,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "f8bd8e020ca34698343dd05e3ccd2964f3e6ba2525e69d4211afd5b009ec3774",
+        "text_characters": 3467
+      },
+      {
+        "page": 21,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "8cac9dbf7b0703169b7b98c4d5dfc2cc54e06a54f6d9b20145d2135599b8544d",
+        "text_characters": 3919
+      },
+      {
+        "page": 22,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "756799b36df467b9a372af016660c8abaf49052fd5b52145d29182748e62f1c0",
+        "text_characters": 3673
+      },
+      {
+        "page": 23,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "ca106a3ac8d233e8b22b97cb91564201739b1234a7d44116f672992139e375b1",
+        "text_characters": 3850
+      },
+      {
+        "page": 24,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "625ce5cec71f9f03c0fc4d30d632498eec95a2e49b50312fb917f0de27656292",
+        "text_characters": 3867
+      },
+      {
+        "page": 25,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "6830925a0eacd17663ccf1f07748ae70b80b7a49853499921e4ea898fa2956fa",
+        "text_characters": 3898
+      },
+      {
+        "page": 26,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "5a1ab04764ad24e5cfd75b62998971bf920dbad4b84ae15c52ac710dfd636dca",
+        "text_characters": 4381
+      },
+      {
+        "page": 27,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "8544b6b3c0536ce30e2d849e48fac597d88b5e446bcfec526092083883cfcee9",
+        "text_characters": 4163
+      },
+      {
+        "page": 28,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "cd8ebf541f1f22cd8ddfefbb1ad8d9ffcaa01644b363e383e02e88748a4819fc",
+        "text_characters": 3968
+      },
+      {
+        "page": 29,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "a33c276f5579a995c5375fa628d7d2e660f7409a2e2e9a3b30b850248d22e9fb",
+        "text_characters": 3957
+      },
+      {
+        "page": 30,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "9040966739690169b90a4bb869a94de42799f32c6229203f3507768adf929040",
+        "text_characters": 4538
+      },
+      {
+        "page": 31,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b8fca4ec5f20f5ec8963b721ff7c094bc754b66a22c13de49a9b25d3b530da54",
+        "text_characters": 3768
+      },
+      {
+        "page": 32,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "5132b8be272b61c17807ff180f52337bb46b416252c8f7170bc65e3fcfbe2776",
+        "text_characters": 3590
+      },
+      {
+        "page": 33,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "055e2293cb22f53212927cea519c6f08d217660dd601e81dd43aaa3d872686d1",
+        "text_characters": 4168
+      },
+      {
+        "page": 34,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "5c63a3edefb3d5e4b7dc0f6e9883e9fc76d7c0f2836fa0adc2310e22c2071d4d",
+        "text_characters": 3669
+      },
+      {
+        "page": 35,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "5fb49cb9ee06a57c4b5a969c744dcaa1e833348a640880c315266f451af7b631",
+        "text_characters": 3409
+      },
+      {
+        "page": 36,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "40dfa68da613f4306e076a8291a41fb0fb323f83f9bb947f88feec88f0bdab22",
+        "text_characters": 4335
+      },
+      {
+        "page": 37,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "c502bb236014ae00d110aa12f24032990c91249fe4c234674b3a55025610f9a2",
+        "text_characters": 4830
+      },
+      {
+        "page": 38,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "ee4afb37d12c1fc854db587d806803583010baab48f22792fc76745386b142a2",
+        "text_characters": 3956
+      },
+      {
+        "page": 39,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b2a3d940ce308238486a60d67bc127e4dad8d11e9cdc3b4cccb27f8e3a662171",
+        "text_characters": 3787
+      },
+      {
+        "page": 40,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b2d8a5ab0a0291e35e0f1643126eaea5e145878fbef1235e43d210273ea1dba3",
+        "text_characters": 4061
+      },
+      {
+        "page": 41,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "65c9369455e512ab3a133ce641cc9b18f14b063f8b9d8c9ff842cac1d865e4f5",
+        "text_characters": 4302
+      },
+      {
+        "page": 42,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b9cdec7927ef36bf19d3efee5c2dac7313a19facdd2af242db6266f40ab3a97d",
+        "text_characters": 3991
+      },
+      {
+        "page": 43,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "619c41db5587ea732d78dfe786c4e099f373259df59778749f0b20bc054ea5cd",
+        "text_characters": 4028
+      },
+      {
+        "page": 44,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "21537223bc8fd16995a5ad6a4004cf992761a8ef7e01e2c47cd3406854bfa31d",
+        "text_characters": 3767
+      },
+      {
+        "page": 45,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "fe8d51f01117a0952203d6087e328274342e9e1c4a3ca7668eda75c19bf02f10",
+        "text_characters": 3662
+      },
+      {
+        "page": 46,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "d53190a953003430a619dc798d00a7875e4eefb6a087d2822cb8ce5125924b2f",
+        "text_characters": 4327
+      },
+      {
+        "page": 47,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "dd8389d653f50950c013c9d2a83818c8c27fef892b225c30bf54e88d74965c93",
+        "text_characters": 4281
+      },
+      {
+        "page": 48,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "46b0ce7ecacc1a8d66ab8f2c9a4455816e5e1f59ea503fbb36ceb227a3548900",
+        "text_characters": 3751
+      },
+      {
+        "page": 49,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "485b61f50bc30be917110baab32ad436fe7aed7347d481a7bf75f035eee16f91",
+        "text_characters": 4447
+      },
+      {
+        "page": 50,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "33fd773f8b555ed9f2a06adf227bed66ed88c5211793a7a8eb3afe1f05300206",
+        "text_characters": 3864
+      },
+      {
+        "page": 51,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "dd5efa2ae666c13ceb277731b23acb8a18e63e8123b31b4dc0ec49ead114671f",
+        "text_characters": 4232
+      },
+      {
+        "page": 52,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "e16a63dc60f5c1c0616142b6c8df77c96075c7bbeb77b6a14f1c7357753c3566",
+        "text_characters": 3763
+      },
+      {
+        "page": 53,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "4b2b556ced847fc931009bf527e65d0c4b7121af1694e60e6853bf1264f15656",
+        "text_characters": 6298
+      },
+      {
+        "page": 54,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b4f5869d39184bdecf8afa2a0af737e68303adccffc3df5af259cca30af74c6d",
+        "text_characters": 4177
+      },
+      {
+        "page": 55,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "32677cc3be4efd7f1e3d12f725890097627cb101d2fb9e93ff279c1e48b60993",
+        "text_characters": 3758
+      },
+      {
+        "page": 56,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "84a6d0a5bf1dcbbcec09452e7536ac6c21e7a2496d8a9ed43c017977c9620fc4",
+        "text_characters": 3789
+      },
+      {
+        "page": 57,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "45f6de6ba6b40f44b3af93518a0cdca8f73d8d0b040e6eecaecd9f47af983a56",
+        "text_characters": 4458
+      },
+      {
+        "page": 58,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "305d8636aa4626b61a6d5f645b16836583eccfd77492e298835cd219d703c035",
+        "text_characters": 3656
+      },
+      {
+        "page": 59,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "84172a1d380ee1be8ba3177b95c215028474f6e24e0d1455b45e4fee8efc0f4d",
+        "text_characters": 3786
+      },
+      {
+        "page": 60,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "dedbaeec527a32959d3ed27253c2e36b0799af49beb7431d4138287470ce491b",
+        "text_characters": 3942
+      },
+      {
+        "page": 61,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b86382275b24ba891cb52e20c1a5d832d54bc27967405efd7045664c6adafe74",
+        "text_characters": 3878
+      },
+      {
+        "page": 62,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "317090fdfdf126583eed6af06fb9db581753bcf887508c469eb567f898c79742",
+        "text_characters": 3751
+      },
+      {
+        "page": 63,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "5c53cae12853a93ef2f4673e6a6e5f759912ca2d28e9282de6108bc1e08ccaca",
+        "text_characters": 4068
+      },
+      {
+        "page": 64,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "1cbcb157d46580008cc36bb07313225c58777625ee656d1a22ca971571aace83",
+        "text_characters": 3869
+      },
+      {
+        "page": 65,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "7ee460a998c06cf95bb1207418a67668d3556aa3ff157ec4aebd9061e2c35d1c",
+        "text_characters": 4665
+      },
+      {
+        "page": 66,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "dc9194767d232a9007e270be87d47377cb5e7665ce2e69e29d829efd0e4f9eb4",
+        "text_characters": 3605
+      },
+      {
+        "page": 67,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "a37296a76f6573a7c3fc302abe73ccfbfe4dc6fc678310702f88ff56478794a7",
+        "text_characters": 3855
+      },
+      {
+        "page": 68,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "324309a20dcacfc39eb2d10f24ac55c256e4659dc911343c402a81358fc0cc02",
+        "text_characters": 3696
+      },
+      {
+        "page": 69,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "0716363f30b70a58b54c30bd9857c175a0441f7091e71ee541c4a7273eb6d70e",
+        "text_characters": 3822
+      },
+      {
+        "page": 70,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "dfe6a57c6ff2eeeb58400942c043636681284b326dc91c280689e5b1abaafb49",
+        "text_characters": 3320
+      },
+      {
+        "page": 71,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "0b2b44bf3c59984d78112e392343f98f98d79036b4335e741aa88ee22701d77e",
+        "text_characters": 3274
+      },
+      {
+        "page": 72,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "18d9386422f1048628392e17c91bc0433056120e053748ec2f3bae6028923122",
+        "text_characters": 3740
+      },
+      {
+        "page": 73,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "a0093288069561fde6369974e889ed67f274d49ba7fee4ab2c6135d7e65aa712",
+        "text_characters": 3926
+      },
+      {
+        "page": 74,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "ab3bdfee6290dffdc6afd97b645f68390e0edd39e6891a2bf8d5e721a497fb12",
+        "text_characters": 4385
+      },
+      {
+        "page": 75,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "ae9738a4b6617e5b7bf5265f1967122ccafd77eb9798efcec25c96605012c3b5",
+        "text_characters": 4225
+      },
+      {
+        "page": 76,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "7306b5d34ba70a5aac38d52d5f49a3d5d15a15056cd78a5d7a9e9fbe1cf0e762",
+        "text_characters": 3893
+      },
+      {
+        "page": 77,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "2dbc96b26ddfd4330c4705a0f893b003935be2f4fb8c60eb7443beec58c7c160",
+        "text_characters": 3976
+      },
+      {
+        "page": 78,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "82c205ce65ae132d3be6066111a5af3ed79e28538b18369147bee6a475ae0c1a",
+        "text_characters": 3941
+      },
+      {
+        "page": 79,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "56d2ffb79e1464f878a14e48cf4489a844f9bf4a0d475acf59f4e6aca857b439",
+        "text_characters": 4105
+      },
+      {
+        "page": 80,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "18abcdd70f7076b377a87019f2577721d32df72177a8c6414a80be4de1631caa",
+        "text_characters": 3599
+      },
+      {
+        "page": 81,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "1f2b011c6a91533b05bc62bc0ae3a9d3369267937b4f14fbfc69649a9794ce7c",
+        "text_characters": 4315
+      },
+      {
+        "page": 82,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "9b419b9e08645d5f8637993c22be1e23a39c146401378068ec7fe54f248509dc",
+        "text_characters": 4191
+      },
+      {
+        "page": 83,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "a161fc6a2ebc8f989beac0f7e27bfae74c65b4894c09109dc7351c17bbc2b588",
+        "text_characters": 4403
+      },
+      {
+        "page": 84,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "e949fc67708f39b80410a10ff29e1ff4737b73ee9b86d6a681f30ee9a1674d3e",
+        "text_characters": 3759
+      },
+      {
+        "page": 85,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "1da0ea21bf2fd951c7df948029ccd38b0fe8f4209a8f6ce727e559179a6d6360",
+        "text_characters": 3924
+      },
+      {
+        "page": 86,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "f51350161bc7ec03e6dae801dcc6228f023583409b54937eb3f652e798ed9569",
+        "text_characters": 3766
+      },
+      {
+        "page": 87,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "b25351f0e0aff8f5f040cb418583fb18f0e15ae7e93c07f52d41d3bf38fb40c0",
+        "text_characters": 3612
+      },
+      {
+        "page": 88,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "11da2ed1cfc2d4004ec9ef8c42af8b8b4c2cc01ddfcecbaa02adf720b773d68f",
+        "text_characters": 4122
+      },
+      {
+        "page": 89,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "fe1c78a00ffe502ce8da53d3b085402e155f89064a99ab02b524db9b1dbf68cc",
+        "text_characters": 3743
+      },
+      {
+        "page": 90,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "e0017f57efded900dc78d20d6c54db140ac2568fea5ac815bc9e6454d4d26e98",
+        "text_characters": 4397
+      },
+      {
+        "page": 91,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "439a2c38ee5b3d4e87a612e979d478f5b6b10853dfe9abd1f875a781b50bd8dc",
+        "text_characters": 4015
+      },
+      {
+        "page": 92,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "2d6d77d8a096f1b07b98adf70a7117aabd182fb46990b3dfd3aee01cdb6f8a66",
+        "text_characters": 3849
+      },
+      {
+        "page": 93,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "fde3a5813fa0c3a0e3cc76e141a62b008ef81ee2938e96fed7e9095325208484",
+        "text_characters": 3820
+      },
+      {
+        "page": 94,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "815fb41626588a67a40d0f62a96e8e22dc9b0eb8191ed9d5e7a127bd5521f0ed",
+        "text_characters": 4407
+      },
+      {
+        "page": 95,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "1f3bc3f0c4af7dd137011412663442c14f7ed7b020d0428572ada6283d654125",
+        "text_characters": 3746
+      },
+      {
+        "page": 96,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "ff8e68de317bf547a32754a84d7db668cd0a8dfbfc3dc50616ab93142556cb2d",
+        "text_characters": 4064
+      },
+      {
+        "page": 97,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "0203b0e90e89064fa5dd278c45abc253d4027ff25272ce530e00c41e4e14ce9b",
+        "text_characters": 3792
+      },
+      {
+        "page": 98,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "23d5f6f99820d7aaddc6399456fb7d5ddc01ee10e598582fe7e122aa2baf23e3",
+        "text_characters": 3884
+      },
+      {
+        "page": 99,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "5f301af18378620fa349ef0eec7f21d82acdbabec2e8101559e73fab492e4444",
+        "text_characters": 4168
+      },
+      {
+        "page": 100,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "d74c2d853cf4f26d518cf6a3e11ded7c0f8799c70f27d8b338fda6b43971d180",
+        "text_characters": 3798
+      },
+      {
+        "page": 101,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "82f6b7735ca270319c5024c5b46497b3dd12801c7ea48a9c6eadca836cc9d310",
+        "text_characters": 3713
+      },
+      {
+        "page": 102,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "2b0c37e017f7088c510a8196d07db32d32d1fca669750be6f4257b512e7ed60a",
+        "text_characters": 3521
+      },
+      {
+        "page": 103,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "60db3d0f3ada32ffa8f7377da94f35355db1bb587e6b1ee9296a2817dd9b4260",
+        "text_characters": 4053
+      },
+      {
+        "page": 104,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "0c092af9f1e67ae3d927ac459d0374d4a7ccfa3fe072c1197c5f1ddc0b07f6c8",
+        "text_characters": 4290
+      },
+      {
+        "page": 105,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "2ce96c78e6df4d2d08b1798fbbbb0858981e620dec6d8de165d28772a603d53a",
+        "text_characters": 3991
+      },
+      {
+        "page": 106,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "8b20c7454e8a3b20d03994fffbf08f1fcf8843d7033c50a0586432ed18dea7bd",
+        "text_characters": 3895
+      },
+      {
+        "page": 107,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b8a8ee16e6165a2e997149f2150fb499d23f2a5fb2c3060ebdb51f3571298f57",
+        "text_characters": 4389
+      },
+      {
+        "page": 108,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "f24850b4935e39ae0fab85f4a862f32055f14bd616b1305729906ca94318808d",
+        "text_characters": 3614
+      },
+      {
+        "page": 109,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "efaa8b1c48bf85f759d0f077c11f23b23e16a45f41cbf7b9c5b215f8d226b2c6",
+        "text_characters": 4282
+      },
+      {
+        "page": 110,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "e8b0f06d88886831a551755eadcefbd283af4fa05301a7110a1c371e3778fdb4",
+        "text_characters": 3482
+      },
+      {
+        "page": 111,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b18c9b020febb29a51ccb1a9f5446a088268119861c5fbe052c4bedeb2e11afa",
+        "text_characters": 3865
+      },
+      {
+        "page": 112,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "c5bea2a89aeff26d21c246328a0337616e75441cff9034c8e954868d00575d1c",
+        "text_characters": 3714
+      },
+      {
+        "page": 113,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "f2f17addefe6d3071fc8b60f6f50097b4ac3b80eccf4a159279f43c4c22116ab",
+        "text_characters": 3907
+      },
+      {
+        "page": 114,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "d3728ee90e196028fcab0176aaf5ee0f0528eae110622238754a4172a02545a3",
+        "text_characters": 3827
+      },
+      {
+        "page": 115,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "2d73ffcd646b538140a8259eb561675fba83011e3418485bc4505127628a2e6e",
+        "text_characters": 3726
+      },
+      {
+        "page": 116,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b37cff2794d7ac739e0ddd9feca4dfb8388e94c3f8adc01763de5f105cc5513e",
+        "text_characters": 3612
+      },
+      {
+        "page": 117,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b61dcb1cd2644c6d04c4aa487fde98c5ebbd6886bb0db4aef121a1b49c795635",
+        "text_characters": 3759
+      },
+      {
+        "page": 118,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "5332dc3c925254de6333cbf485211d162fb6df10fe88835bdbeb50499e8ce2aa",
+        "text_characters": 3579
+      },
+      {
+        "page": 119,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "75a1e892d4d4ed39d6d87456cbfe7a243d587dbfa8026387c3ec735e0888b78d",
+        "text_characters": 4620
+      },
+      {
+        "page": 120,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "e743a15a9302cb7d2a7e226f0ec8a4d87ab45cea3f0a29b0b794a38b189eb840",
+        "text_characters": 4715
+      },
+      {
+        "page": 121,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "d306092b6108977f856fd208c62791f265b4dfe270a165d56d2b0b490104ed16",
+        "text_characters": 3614
+      },
+      {
+        "page": 122,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "8b9248a4889172872a564415887513275c939ec9be580ca232e5efce65e3f0c0",
+        "text_characters": 4081
+      },
+      {
+        "page": 123,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "25d99dc29af4d8065a47378456cd34cb90db3a2d530d42c3326b4716594be9a9",
+        "text_characters": 3748
+      },
+      {
+        "page": 124,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "610c472fbdee84d0aa1839d9cc02fe9637a499c492ddbfe5b578cc986ae9fb8d",
+        "text_characters": 3975
+      },
+      {
+        "page": 125,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "6de87a02ffcd8089161e287fb79191d4e4a6728fbc34626e27c5168855041843",
+        "text_characters": 3304
+      },
+      {
+        "page": 126,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "22dfb839a10032dd4d6a7db7886197f8021d12f4187821f81614d35fd301cc91",
+        "text_characters": 3548
+      },
+      {
+        "page": 127,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "0c15847edcfa316c2cc5ef42205565360eff2edab4dcb5dd178add15df747dde",
+        "text_characters": 3955
+      },
+      {
+        "page": 128,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "7ab1b04158d62214e7f98afcc2984d23f775cd7456c17cf6202f2e63b3529660",
+        "text_characters": 3396
+      },
+      {
+        "page": 129,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "0ac04a725e5241e73931a56e0617e943bea148a1ee6ac2163a5d226654f4f76c",
+        "text_characters": 3837
+      },
+      {
+        "page": 130,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "50cee327ff112326be662171dadd851bb0848e6dd9c20ab6a58ef2602349d99a",
+        "text_characters": 4042
+      },
+      {
+        "page": 131,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "499a511975ad82687614ecfcc7e6fc88e2b182ef6f5ead6e372d2f3dc86f7c5c",
+        "text_characters": 4282
+      },
+      {
+        "page": 132,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "e2498af4e162c3f18175dea60df6788f472ece08287ead9a11f660aaf74defe7",
+        "text_characters": 4164
+      },
+      {
+        "page": 133,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "d8661b5f427440c6f204757acc900d723a87cd2b4fe16ddd6cdc6583ec5f074f",
+        "text_characters": 4052
+      },
+      {
+        "page": 134,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "cfdf145368a3b37c90fd7ef1c9b3887fe28dee40fde7a75c83390bfe6d767f13",
+        "text_characters": 3990
+      },
+      {
+        "page": 135,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "4630ffa71cfaf1353d2d16f3177669f29f08212cc21417764caf20532b5391ad",
+        "text_characters": 3948
+      },
+      {
+        "page": 136,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "dcedcee3622ce1230c5af4fba5ff114d5835eafbf61990601541c975a84e9b84",
+        "text_characters": 3751
+      },
+      {
+        "page": 137,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "f0b098ccc864eba2bbc31d8b88bf4b9fff0ca90ff833dec6f6fe1bbc18fc6e39",
+        "text_characters": 4256
+      },
+      {
+        "page": 138,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "af52d5ed70d8b58ec59bc6735968346a1a550b0e9bcd9bfbf009839b576872d7",
+        "text_characters": 3779
+      },
+      {
+        "page": 139,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "e1fc6a81874736d108870f20ab3819ea8b46e3823ff24a44801d2dde54ee1b3c",
+        "text_characters": 4523
+      },
+      {
+        "page": 140,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "a0b7778debe6a759b336b523b46526137e0a1c2adc75763e453878ae53ec3a6e",
+        "text_characters": 4608
+      },
+      {
+        "page": 141,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "764ca0418005bde49f39793e322068a93f4afd3e486147692e2b1b13bddafd6d",
+        "text_characters": 5079
+      },
+      {
+        "page": 142,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "091773eb19b4d6e64eb4b9bc2f10ba873961f9cb20b47ff479f2e2b3e2bffca2",
+        "text_characters": 4120
+      },
+      {
+        "page": 143,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "78e5909a501075c2dc292b1e82cbfddc289cb2b6648e6a4f1120d19d187013d7",
+        "text_characters": 3940
+      },
+      {
+        "page": 144,
+        "readers": [
+          "navier_stokes_release",
+          "root"
+        ],
+        "extracted_text_sha256": "c369e9bfd847806633ef2b8bac41b3121ac0c1c4d4f979c030ed7d41188d90b1",
+        "text_characters": 3392
+      },
+      {
+        "page": 145,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "414b9e6fc0f48ce552fc7f51ed22ab4487e4c7f2d3a20e5f8c6c5251d78df2bb",
+        "text_characters": 4084
+      },
+      {
+        "page": 146,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "33ae4af9bd70434a1539db6f9e629ae7924a3612277d949c7654c3ef1b73fce3",
+        "text_characters": 3854
+      },
+      {
+        "page": 147,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "f887f0f2d5b418757b7543d2ffa470584ec970603c078cb137b07c226b02ffcb",
+        "text_characters": 3481
+      },
+      {
+        "page": 148,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "52e63ae9c76635db28b3e27769c9cbbd3750d3af7d6a5816192b546fa374ed61",
+        "text_characters": 3779
+      },
+      {
+        "page": 149,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "7d3fe8e9f6c47230e57ea88c2a7a4444d946235865039891825652b9cee16924",
+        "text_characters": 3703
+      },
+      {
+        "page": 150,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "b762a81b371b8537ba92d99bc020a04ef2e051a5a89d9ccb8f47003ccb242fdc",
+        "text_characters": 3858
+      },
+      {
+        "page": 151,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "0e48e571d71ee6172d2759b165a1e1868390b8020bf131b56cc8132c38c13d72",
+        "text_characters": 4289
+      },
+      {
+        "page": 152,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "7a18658b35398de4686bb5a949d844345c29721f1516e588a3421f089ede0fdd",
+        "text_characters": 3865
+      },
+      {
+        "page": 153,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "caa940b43c6a921a6e4ded5829fc32ebbdb2f17e6264903757acf19a7d82ad6b",
+        "text_characters": 4098
+      },
+      {
+        "page": 154,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "d96eb095bf43c0abb0c70514336d70086bab16c45ad9e140379be5960b053d27",
+        "text_characters": 3610
+      },
+      {
+        "page": 155,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "0a112ece194bf3302897af4a8e6da2be1232c25905a0481eefdec9d412483826",
+        "text_characters": 4374
+      },
+      {
+        "page": 156,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "892acd57f05169753cf6058cc0b6fe75cbf8d4c7374291050ad40c86e704efbe",
+        "text_characters": 4110
+      },
+      {
+        "page": 157,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "d52d995f0f6a49c3c2682d87cb97b4693de455075184e447515097d447d36102",
+        "text_characters": 4086
+      },
+      {
+        "page": 158,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "df93e2df128d6dac1564f9b61e4c0aaee7a3e11d0b26b9ac9b202d42e4afe928",
+        "text_characters": 4032
+      },
+      {
+        "page": 159,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "20244dbba2be2b3a5f51891c0763e729df1f3747f15cc2786da02866cb8e9077",
+        "text_characters": 4218
+      },
+      {
+        "page": 160,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "3f12cc6d979263d30937c3af99b9da50e6205704bebffcee8c72488b0f1ddce2",
+        "text_characters": 3592
+      },
+      {
+        "page": 161,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "7c4100dc914f0b26474e73ad3d9480f3df99b92e8532a9604e6f7ad5ca7bd5fc",
+        "text_characters": 4536
+      },
+      {
+        "page": 162,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "dbe61305d23a293236d0d643d421850b88d42454229b99f344ae998053931440",
+        "text_characters": 4068
+      },
+      {
+        "page": 163,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "16b743e4e859f7cace2c6872a497c7420c8a9a512c28c65c2416b6c037eaadde",
+        "text_characters": 4232
+      },
+      {
+        "page": 164,
+        "readers": [
+          "root"
+        ],
+        "extracted_text_sha256": "d04db8407bf2f878ce414ac2bfebc283ce0eda89d331ca1e2745de12a57e3a35",
+        "text_characters": 3889
+      },
+      {
+        "page": 165,
+        "readers": [
+          "navier_stokes_release",
+          "root"
+        ],
+        "extracted_text_sha256": "bcce45290cadd6ec5b3a811f31766feb15ead2a3afd8fe7f1e4906020df9d47b",
+        "text_characters": 4836
+      },
+      {
+        "page": 166,
+        "readers": [
+          "navier_stokes_release"
+        ],
+        "extracted_text_sha256": "a5d94c77247600bb82cf649b07e9c0b774a3a6c004bb7961008e313af90a49c6",
+        "text_characters": 1305
+      }
+    ]
+  },
+  "repository": {
+    "url": "https://github.com/openai/NavierStokesAndEuler",
+    "revision": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+    "tree": "a503f07635f200c0f2f9c5361df1fa07f95c4741",
+    "tracked_files": 2669,
+    "navier_stokes_files": 816,
+    "solution_local_import_closure_modules": 609,
+    "manually_read_files": [
+      {
+        "path": "README.md",
+        "sha256": "25f3752edf6d674064b67f995691ddd15bffaf347822086cba3fbd5333781f49",
+        "bytes": 2470
+      },
+      {
+        "path": "formalization.yaml",
+        "sha256": "d9866d5c1fdc16832f098e5f2affa96baf0b156a5f34b9be015d793e1abe2fdd",
+        "bytes": 4555
+      },
+      {
+        "path": "lean-toolchain",
+        "sha256": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88",
+        "bytes": 29
+      },
+      {
+        "path": "lakefile.toml",
+        "sha256": "97b2804da5b9a2cd0aaf44ce42b7c39e9947beff9d2ac01a11e0d3d867af1c09",
+        "bytes": 662
+      },
+      {
+        "path": "lake-manifest.json",
+        "sha256": "5ec1dc8e009008d0efb9601cd38f6ba54e753fd538b0e5f8c3e6c5ec72ee1e09",
+        "bytes": 3810
+      },
+      {
+        "path": "NavierStokes/ProblemStatement.lean",
+        "sha256": "d2f5cdf24a060acd41011b50492e89058991965e18d2cb797c58d915f95af633",
+        "bytes": 8107
+      },
+      {
+        "path": "NavierStokes/ComparatorSolution.lean",
+        "sha256": "52950d5d618a8d34c9bfbdb16641c81c276e97b6d7fd2a76c08577353f0b0227",
+        "bytes": 1359
+      },
+      {
+        "path": "NavierStokes/ComparatorR3Theorem.lean",
+        "sha256": "d05cd1c55e78709dabe1996546eb6ddaaa46e602d2ef1b05c6e2085320781207",
+        "bytes": 2098
+      },
+      {
+        "path": "NavierStokes/ComparatorTheorem.lean",
+        "sha256": "629c992327e531611c20165eb14db24edcabcf8f646a1d2689be9ac6fe2a9c68",
+        "bytes": 2711
+      },
+      {
+        "path": "NavierStokes/ComparatorDefinitions.lean",
+        "sha256": "8d90e0f9eee14f8b01773852083a02fd58bda59d4de2abb60d1787bbc9f6ebf4",
+        "bytes": 10979
+      },
+      {
+        "path": "NavierStokes/R3/Theorem.lean",
+        "sha256": "e896ba297671c33d516d41fa47e7e186438b71ec14ab0738d3d3fc9e4df341cb",
+        "bytes": 3850
+      },
+      {
+        "path": "NavierStokes/PeriodicPaperComparator.lean",
+        "sha256": "cc43036123e52c0f2aa895a9c6cc2ef8f222831f0fbb6a1988b6414567ff10a2",
+        "bytes": 2674
+      },
+      {
+        "path": "ComparatorChallenges/README.md",
+        "sha256": "f28c5f581d7bbc9504db467b88686a89ad5a94e4fd38b48a1866ae6224b5a1d8",
+        "bytes": 665
+      },
+      {
+        "path": "ComparatorChallenges/NavierStokes.json",
+        "sha256": "7610ecead7b390d80ff7f4229a3ff8f18d630e046f7ad1de4f92c7e8e76845b8",
+        "bytes": 375
+      }
+    ],
+    "manual_review_scope": "Final theorem types, adapters, PDE and regularity definitions, theorem assembly, pins and metadata. Not all 609 local solution modules, nor all 2669 repository files, were manually reviewed.",
+    "lexical_audit_record": "release-source-audit.json",
+    "lexical_scan_is_kernel_verification": false,
+    "upstream_metadata_status": "self-assessed",
+    "upstream_reported_final_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "formal_verification": {
+    "fresh_final_kernel_check_passed": false,
+    "independent_comparator_check_passed": false,
+    "details": "release-build-verification.json"
+  },
+  "new_chapter": "extension/manuscript/chapters/navier-stokes-release.tex",
+  "bibliography": "extension/manuscript/ns-release.bib"
+}

@@ -1,0 +1,301 @@
+% Generated shared reviewed material.
+% Full scoped proof; original signed estimate and determinant bridge remain open.
+\section{Proof of the signed-slice budget and its surviving analytic burden}\label{sw:details}
+\subsection{Gcd inversion before an absolute bound}
+Insert $\mathbf1_{(m,n)=1}=\sum_{d\mid m,\ d\mid n}\mu(d)$ in
+\eqref{sw:slice}, and write $m=da,n=db$. Squarefreeness forces
+$(a,d)=(b,d)=1$. The common factors give
+$\nu(d)\overline{\nu(d)}=1$ and
+$\chi_d(u)\overline{\chi_d(u)}=\mathbf1_{(d,u)=1}$.
+This proves~\eqref{sw:mobius}, retaining the original coefficient
+$X(da)$ and the full row-zero mask. For $X=Y$ each inner squared row sum
+is nonnegative; its $\mu(d)$-weighted sum need not be.
+
+Put $L=D/Nd$. Whenever a column survives, $L\ge1/2$.
+The actual divisor-assignment bound and ideal counting give
+\[
+ \sum_{\substack{a\ \mathrm{squarefree}\\(a,dS)=1}}
+ |X(da)\nu(a)W(Nd\,Na/D)|^2
+       \ll_\eta D^\eta\|W\|_\infty^2 L.
+\]
+Indeed $N(da)\le2D$, $|X(da)|\ll_\eta D^\eta$ uniformly in $d,U$,
+and there are $O(L)$ ideals of norm at most $2L$ for $L\ge1/2$.
+This includes $C_U$ by $C_U=A_U+\mu$ on the active annulus.
+There is no multiplicativity assertion for $X(da)$.
+For $L\ge1$, the powered block bound and the ordinary-conductor comparison
+of Section~\ref{mcs:core}, followed by Cauchy for the cross term, imply
+\begin{equation}\label{sw:divisor-budget}
+ |G_d^{XY}|\ll (HD)^\eta\|W\|_\infty^2 L
+ \min\left\{R+\frac{LR}{M}+\frac{L^{2/3}R}{M^{1/3}},\ L+R^2\right\},
+\end{equation}
+where $G_d^{XY}$ denotes the inner row sum in~\eqref{sw:mobius}.
+The raw $(d,u)$ restriction is only enlarged inside these positive norms;
+$u_0$ is a fixed column multiplier of modulus at most one.
+For $1/2\le L<1$, only the unit column can survive. The direct row count
+is $O(R)$, and the right side of~\eqref{sw:divisor-budget} is at least a
+constant times $R$ since $R\ge1$ and $L\ge1/2$.
+Thus this endpoint does not require a sieve with an unstated subunit length.
+
+Now take the absolute triangle in $d$ explicitly. The two estimates may
+be summed separately and their minimum taken. The elementary ideal sums
+\[
+ \sum_{Nd\le2D}\frac1{Nd}\ll\log(2D),\qquad
+ \sum_d(Nd)^{-2}\ll1,\qquad \sum_d(Nd)^{-5/3}\ll1
+\]
+turn the first estimate into
+$R\log(2D)+DR/M+D^{2/3}R/M^{1/3}$ after division by $D$;
+the second gives $D+R^2\log(2D)$.
+Absorb the logarithms with smaller internal exponents to obtain
+\eqref{sw:bound}. All raw zeros, literal/ray/squarefree/capacity restrictions
+were retained before the stated positive enlargements. No bound for an
+indefinite submatrix was inferred from positivity of a larger Gram matrix.
+
+At the mixed power-scale point the powered exponents are
+$7/12,7/6,10/9$, and the ordinary exponents are $1,7/6$.
+At the pure point they are $3/4,1,7/6$ versus $1,3/2$.
+These are upper-bound exponents with feasible dyadic constants, not actual
+energy lower bounds. A sufficient $h=1$ target for the A--A combination is
+\begin{equation}\label{sw:target}
+ \left|\sum_d\mu(d)G_d^{AA}\right|
+       \ll_{\nu,S,W,\epsilon}DH(HD)^\epsilon.
+\end{equation}
+At $H=D^{3/4}$ this asks for power $7/4$ before division by $D$, while
+\eqref{sw:bound} gives $13/6$, leaving $5/12$.
+This is sufficient for this slice, not a necessary bound for every separate
+C--C/C--$\mu$ term if their signed assembly cancels further.
+The quantities $G_d$ depend on prime supports, $X(da)$ and row deletions;
+they are not an independent smooth function of $Nd$ to which a scalar
+M\"obius partial-sum estimate can simply be applied.
+
+\subsection{The correctly oriented Jacobi generator}
+At a good prime ideal $p$, let $n=Np$ and $\chi=\chi_p$ be the literal
+positive sextic residue character. In $\mathcal O/p$, its value reduces
+to $x^{(n-1)/6}$. For $j(p)=J(\chi,\chi^2)$, the elementary Gauss--Jacobi
+identity and the three nontrivial Gauss norms give $|j(p)|^2=n$.
+Reduction in that \emph{same} residue field gives
+\[
+ j(p)\equiv\sum_x x^{(n-1)/6}(1-x)^{(n-1)/3}=0\pmod p.
+\]
+Every exponent after expansion lies strictly between $0$ and $n-1$,
+so the finite-field power sums vanish. Hence $(j(p))=p$.
+This includes an inert prime of norm $p_0^2$, and inverting the literal
+character conjugates the ideal at a split prime.
+
+This raw sum equals the old $J(\chi^2,\chi^3)$: the quotient of the two
+Gauss--Jacobi expressions is
+$G(\chi)G(\chi^5)/G(\chi^3)^2=1$.
+It differs from the theta-curve Frobenius normalization by its explicitly
+stated factor $-\chi^3(-1)$; that sign is not imported silently.
+No new Gauss or Jacobi norm theorem is claimed.
+
+Let $f=(2\delta)$. The six units map bijectively onto
+$(\mathcal O/f)^\times$: the components at $2$ and $\delta$ have orders
+three and two, with complementary kernels. Since $\mathcal O$ is a PID,
+every ideal prime to $f$ has a unique generator $\Psi(a)\equiv1\pmod f$.
+Uniqueness gives multiplicativity. If $u_f(\alpha)$ is the unit having
+the residue of $\alpha$ modulo $f$, then
+\[
+ \Psi((\alpha))=\alpha/u_f(\alpha),\qquad
+ |\Psi(a)|^2=Na.
+\]
+This explicitly defines the finite part and the principal infinity-type
+convention. The finite conductor divides $f$. A proper divisor omits a
+component: the unit $-1$ is $1$ modulo $2$, and $\omega$ is $1$ modulo
+$\delta$. A smaller defining modulus would require the unit ideal to
+have value $-1$ or $\omega$. Thus the finite conductor is exactly $f$.
+
+To identify the actual $j(p)$, now reduce in the \emph{character-value}
+ring, a different operation from reduction modulo $p$ above.
+Modulo $\delta$, a sixth root $v$ satisfies $v=v^3$ and $v^2=1$.
+The zero branches at $x=0,1$ are kept, so
+$j(p)\equiv\sum_{x\ne0,1}\chi^3(x)=-1\pmod\delta$.
+Modulo $2$, $v=v^4$, and
+$J(\chi,\chi^2)\equiv J(\chi^4,\chi^2)=-\chi^4(-1)=-1$.
+The inverse-character Jacobi identity here follows by the bijection
+$x/(1-x)$ onto the nonzero field elements other than $-1$.
+Consequently $-j(p)\equiv1\pmod f$, proving $-j(p)=\Psi(p)$.
+Multiplication proves~\eqref{sw:character} on squarefree columns.
+For nonsquarefree ideals $\mu$ vanishes, so that last identity must not
+be extended to arbitrary sixth factors. This construction establishes the
+fixed character directly; it assumes no elliptic modularity, spectral
+comparison, or distribution of prime arguments.
+
+\subsection{The actual two-factor completion, not a new row kernel}
+Freeze the literal $u_0,v_3,v_4,v_5,v_6$ and put
+$Z=u_0v_3^3v_4^4v_5^5v_6^6$. The last factor is arbitrary, with its allowed
+overlaps. For $h=1$, write $q=mn\ne1$, $Q=Nq$,
+$\theta=\chi_m\overline{\chi_n}$ and $\xi_q=\theta^3$.
+For $q=(\beta)$ use the original inverse-different pairing
+$e_\beta(z)=\exp(2\pi i\operatorname{Tr}(z/(\delta\beta)))$.
+Let $F(v_1,v_2)$ be the exact common finite weight, retaining the first-five
+coprimality, primary/ray and capacity restrictions. It must be independent
+of the column orientation. Define
+\begin{align*}
+ \widehat F_q(k_1,k_2)&=\sum_{v_1,v_2}F(v_1,v_2)
+                       e_\beta(-k_1v_1-k_2v_2),\\
+ T_{q,F}(\theta)&=\sum_{k_1,k_2\in(\mathcal O/q)^\times}
+           \widehat F_q(k_1,k_2)\overline{\theta(k_1k_2^2)}.
+\end{align*}
+Periodization sums every actual representative; no injectivity assumption
+is needed. The primitive powers $\theta,\theta^2$ have zero Gauss sums
+at nonunit frequencies, including at inert primes. Exact inversion gives
+\[
+ \sum F\theta(v_1)\theta(v_2)^2
+  =Q^{-2}\tau_\beta(\theta)\tau_\beta(\theta^2)T_{q,F}(\theta)
+  =Q^{-2}J_q(\theta,\theta^2)\tau_\beta(\xi_q)T_{q,F}(\theta).
+\]
+Jacobi sums CRT without additive-generator multipliers, so
+$J_q=j(m)\overline{j(n)}=\sqrt Q\,\rho(m)\overline{\rho(n)}$.
+The quadratic central phase is the already recorded period-four law
+\[
+ \gamma(\beta)=\tau_\beta(\xi_q)/\sqrt Q
+     =\tfrac12\{1+i^{-b}+i^a+i^{b-a}\},\qquad \beta=a+b\omega.
+\]
+For composite squarefree $q$, identifying $\tau_\beta(\xi_q)$ with
+$\sum_xe_\beta(x^2)$ requires CRT expansion of the local root counts;
+$1+\xi_q$ is not the root-count function on a composite ring.
+The known quadratic Gaussian evaluation is reused, not retested as a new
+phase theorem. Its pairing is exactly the displayed $e_\beta$.
+
+With $b_X=\rho X\nu W$, the actual two-pivot identity is
+\begin{equation}\label{sw:dual}
+ DS_1^{XY}=\sum_q\frac{\gamma(\beta_q)}{Q}
+   \sum_{mn=q} b_X(m)\overline{b_Y(n)}\theta_{m,n}(Z)
+                        T_{q,F}(\theta_{m,n}).
+\end{equation}
+The two Gauss magnitudes, equivalently the central Gauss and Jacobi
+magnitudes, give exactly $1/Q$.
+There is no extra $\xi_q(-1)$ in this two-factor identity; the full
+six-factor formula of Section~\ref{jdq:core} retains that sign.
+If $\beta$ changes to $u\beta$, both $\gamma$ and $T$ acquire the same
+quadratic sign $\xi_q(u)$, which cancels in their product.
+If $Z$ shares any prime with $q$, $\theta(Z)=0$, including at a
+sixth-power collision. No dropped primitive-conductor prime is restored.
+
+Multiplying columns by $\rho$ changes the kernel by its compensating
+inverse unitary gauge. It preserves operator norms and eigenvalues even
+for an indefinite coprime-truncated matrix. A fixed-character coefficient
+estimate cannot replace a bound for the actual $q$-dependent $T_{q,F}$.
+At the pure endpoint $v_2=c$ with $(c,q)=1$, exact summation gives
+\[
+ T_{q,F}(\theta)=\theta(c)^2\tau_\beta(\overline{\theta^2})
+       \sum_{k_1\in(\mathcal O/q)^\times}\widehat F_1(k_1)
+                                      \overline{\theta(k_1)}.
+\]
+Since $\theta^2(-1)=1$, the extra Gauss pair multiplies to $Q$,
+returning the original one-pivot scalar $\tau_\beta(\theta)/Q$.
+A nonunit $c$ gives the original zero. Thus a putative central-phase gain
+cannot be retained after discarding a literal length-one Fourier factor.
+
+\subsection{A central reciprocal remains after the gauge}
+On squarefree columns put $B_U=\mu A_U$ and
+$\vartheta=\Psi/\sqrt N$. The original ternary assignment gives exactly
+\[
+ B_U(m)=\sum_{abc=m\atop Na,Nb\le U}\mu(c),\qquad
+ \rho(m)A_U(m)=\vartheta(m)B_U(m).
+\]
+All factors are squarefree and pairwise coprime. Fix a nonzero numerator
+$z$ and keep the full deleted set $T=S\cup\operatorname{supp}(z)$.
+Write $\Xi$ for the unitary primitive character of
+$\vartheta\nu\kappa_z$, with these raw deletions retained.
+Its nonzero infinity type prevents a silent reuse of a finite-order-only
+moment theorem. For $\Re s>1$,
+\begin{align*}
+ J_U^{\sharp,T}(s)&=\sum_{m\ \mathrm{squarefree},\ (m,T)=1}
+                   B_U(m)\Xi(m)(Nm)^{-s}=N_U^T(s)/L^T(s,\Xi),\\
+ N_U^T(s)&=\sum_{\substack{a,b\ \mathrm{squarefree}\\(a,b)=1,\ (ab,T)=1\\Na,Nb\le U}}
+ \frac{\Xi(ab)}{(Nab)^s}\prod_{p\mid ab}(1-\Xi(p)(Np)^{-s})^{-1}.
+\end{align*}
+Fixing $a,b$ leaves the M\"obius Euler product in $c$; this proves the
+identity by absolute convergence. The numerator is finite and analytic
+for $\Re s>0$. At $U=1$ it is one, so the series is exactly $1/L^T(s,\Xi)$.
+That boundary identity is not a high-window counterexample. It shows why
+cancellation of central reciprocal poles cannot simply be inferred from
+the column-character identification.
+
+For $x_p=\Xi(p)(Np)^{-s}$, $\alpha_p=(Np)^{-v}$ and
+$\beta_p=(Np)^{-w}$, the gauged three-placement Euler factor is
+$1+x_p(\alpha_p+\beta_p-1)$, with the opposite signs from the ungauged
+factor in Section~\ref{sb:core}. In the initial absolute domain it gives
+\[
+ \prod_{p\notin T}\{1+x_p(\alpha_p+\beta_p-1)\}
+ =\frac{L^T(s+v,\Xi)L^T(s+w,\Xi)}{L^T(s,\Xi)}\prod_{p\notin T}H_p,
+\]
+where
+\[
+ H_p=\frac{\{1+x_p(\alpha_p+\beta_p-1)\}
+                 (1-x_p\alpha_p)(1-x_p\beta_p)}{1-x_p}.
+\]
+Expansion gives
+\begin{align*}
+ H_p-1&=\frac{x_p^2(\alpha_p+\beta_p-\alpha_p^2-\beta_p^2-\alpha_p\beta_p)}{1-x_p}\\
+ &\quad+\frac{x_p^3\alpha_p\beta_p(\alpha_p+\beta_p-1)}{1-x_p}.
+\end{align*}
+Thus the correction converges normally in the open region $\Re s>0$
+where the real parts of all of
+\[
+ \begin{gathered}
+ 2s+v,\ 2s+w,\ 2s+2v,\ 2s+2w,\ 2s+v+w,\\
+ 3s+2v+w,\ 3s+v+2w,\ 3s+v+w
+ \end{gathered}
+\]
+exceed one. In particular, for $\Re s\ge1/2+\eta$ and
+$\Re v,\Re w\ge0$, its terms differ from one by
+$O_\eta((Np)^{-1-2\eta})$. Deleted primes only remove factors.
+Finite correction factors may vanish; no zero-free product is asserted.
+The displayed factorization is first an absolute-domain identity and is
+used meromorphically only where the functions have been continued.
+At $v=w=0$ it simplifies to $L^T(s,\Xi)/L^T(2s,\Xi^2)$, a special
+slice cancellation which does not remove the general central reciprocal.
+No finite-height inversion is declared exact without truncation errors;
+no new contour, reciprocal family moment or analytic saving is proved.
+Most importantly, this fixed-$z$ coefficient series is not the actual
+$q$-dependent joint weight in~\eqref{sw:dual}.
+
+\subsection{The fixed-profile remaining-sector diagnostic}
+Use the fixed smoothstep $s(t)=e^{-1/t}/(e^{-1/t}+e^{-1/(1-t)})$ for
+$0<t<1$, extended by zero and one at the two sides, and set
+$W(y)=s(8(y-1))s(8(2-y))$. It is smooth, supported in $[1,2]$, and
+identically one on $[9/8,15/8]$, independently of $D$.
+Take $\nu=1$ and $S$ the primes above $2,3$.
+At $D=60000,U=244,H=3833$, select the actual block $A_1=37,A_2=7$,
+literal unit one and primary row generators $1$ modulo $3$. Complete enumeration gives $44$ candidate pairs,
+with two coprimality and $22$ capacity rejections, leaving $20$ distinct
+nonprincipal rows. The first outside-$S$ valuation is one in each row.
+
+Choose $\mathfrak p_p=(p,\omega-\lambda_p)$ for
+\[
+ (p,\lambda_p)\in\{(37,10),(43,6),(61,13),(307,17),(313,98)\}.
+\]
+Their product $q$ has exactly two legal annular column orientations:
+$97051/96091$ and its reversal. Direct small- and long-divisor assignments
+give $r_U=(0,2)$, $\mu=(-1,1)$, $C_U=(0,2)$ and $A_U=(1,1)$.
+Both profile values are exactly one. Twelve orientation/row evaluations
+are raw zeros. Exact residue-field exponentiation yields
+\[
+ \Gamma_1=-4-2\omega,\qquad \Gamma_2=-2+2\omega,
+ \qquad \Gamma_{\rm av}=-3.
+\]
+Here $\Gamma_{\rm av}$ is the orientation average.
+With $a^{AA}=(-1,-1)$ and $\mu(q)=-1$,
+\[
+ S_{1,q}^{AA}=-6/60000=-1/10000,\qquad
+ \sum_r a_r(\Gamma_r-\Gamma_{\rm av})=0.
+\]
+The centered norm is
+$\sum_r|\Gamma_r-\Gamma_{\rm av}|^2=6$ and $\sum_r|a_r|^2=2$,
+whereas $|\sum_ra_r\Gamma_r|^2=36>12$.
+A variance-only Cauchy bound therefore fails even with nonzero variance.
+It is not a negative full row energy or an asymptotic counterexample.
+
+The corresponding \emph{selected two-column} Gram matrix has diagonal
+$14,20$ and the displayed conjugate off-diagonal entries. Its eigenvalues
+are $17\pm\sqrt{21}$ and its $A$ quadratic form is $28$ before division
+by $D$. Removing the diagonal for coprimality gives eigenvalues
+$\pm2\sqrt3$ and the $A$ form $-6$. Other original columns and $q$ values
+have not been suppressed in a full-family claim: this display is a
+selected-$q$ contribution with its complete stated row block.
+All finite data and scalar identities have independent exact checks;
+no finite spectrum or learned label implies a determinant or GRH theorem.
+The next estimate must retain the signed mean, reciprocal burden and
+actual coupled $q$ weights, closing the still-open $5/12$ gap.

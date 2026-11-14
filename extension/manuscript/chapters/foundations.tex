@@ -1,0 +1,121 @@
+\chapter{A common language with explicit interfaces}
+\label{ch:interfaces}
+\section{The mathematical objects that must be kept distinct}
+The word ``lattice'' appears in three different settings in this project. An arithmetic lattice is a finitely generated torsion-free module over an integral base, often with an action of an order. A Euclidean lattice is a discrete subgroup of a real inner-product space, of full rank in its real span. A lattice gauge theory is a field theory on a discrete cell structure. The first can produce the second after choosing an embedding and a metric. The third can use modules and chain complexes as part of its discretization. Neither passage is an equality of definitions.
+
+Similarly, an algebraic complex, a differential complex and an elliptic curve are unrelated uses of two familiar words until additional maps have been specified. A complex of modules satisfies $d_{i+1}d_i=0$. A differential complex is a sequence of differential operators with the same composition property. Its ellipticity is a condition on the principal symbols away from the zero section of the cotangent bundle. An elliptic curve is a smooth projective genus-one curve with a chosen point. The term ``elliptic'' in elliptic-curve cryptography does not make the group operation an elliptic partial differential operator.
+
+The meaningful connections are more precise. The endomorphism ring of an elliptic curve acts on its integral $\ell$-adic Tate modules for $\ell$ different from the field characteristic, and can be a quadratic or quaternion order. A presentation of an order-module can be studied through a complex of projective modules. Families of such complexes define algebraic varieties with rank strata. Geometric differential complexes can have these algebraic patterns as their pointwise symbols. Index theory assigns a stable integer to the resulting Fredholm problem. Quantum theory imposes further analytic conditions on correlation functions and on a reconstructed Hilbert space. This series of interfaces gives a coherent research program without treating every object as an instance of the same theorem.
+
+\begin{definition}[Interface data]
+An interface between two mathematical settings consists of a specified object map, a specified morphism map, hypotheses under which the map is defined, and the properties it preserves. If the application is computational, it also includes representations, algorithms and a cost model. If the application is spectral, it also includes inner products, operator domains and convergence topology.
+\end{definition}
+
+This definition is methodological rather than a new category-theoretic construction. It prevents a common failure: a functor preserves an algebraic invariant, and one then informally assumes that it preserves a norm, a sampling law or a computational complexity class. The latter conclusions require their own theorems.
+
+\section{A small order that already contains the key issues}
+Let $k$ be a field, let $R=k[[u]]$, and consider
+\[
+ \Lambda=R[X]/(X^2-uX).
+\]
+Write $x$ for the image of $X$ and $y=u-x$. Then $xy=0$, and $\Lambda$ is the simplest completed nodal order in the inherited surface-order program. Its geometric presentation is $k[[x,y]]/(xy)$, with the central parameter $u=x+y$. The following calculation makes the order structure transparent without assuming a general classification theorem. The broader surface construction and its conventions are discussed in the original research sources \cite{GRHRepo,SchreiberSurfaceI,SchreiberSurfaceII}.
+
+\begin{proposition}[Normalization and conductor of the nodal order]
+The map
+\[
+ \Phi:\Lambda\longrightarrow R\times R,\qquad
+ \Phi(a+bx)=(a+bu,a)
+\]
+is an injective $R$-algebra homomorphism with image
+\[
+ \{(f,g)\in R\times R:f\equiv g\pmod u\}.
+\]
+Consequently $\Lambda$ is free of rank two over $R$, has generic algebra
+$k((u))\times k((u))$, has normalization $R\times R$, and has conductor $uR\times uR$ in that normalization.
+\end{proposition}
+\begin{proof}
+Every class in $R[X]/(X^2-uX)$ has a unique representative $a+bX$, because the relation is monic of degree two. Thus $1,x$ form an $R$-basis. The proposed image of $x$ is $(u,0)$, whose square is $u(u,0)$, so the map respects the defining relation. If $\Phi(a+bx)=0$, the second coordinate gives $a=0$, and the first gives $bu=0$. Since $R$ is a domain, $b=0$. A pair is in the image exactly when $f-g$ is divisible by $u$, proving the image statement.
+
+After inverting $u$, any pair $(f,g)$ can be written as $\Phi(g+(f-g)x/u)$, so the generic algebra is the product of two fields. The ring $R\times R$ is generated as a $\Lambda$-algebra by the integral idempotent $(1,0)$, so it is finite and integral over $\Lambda$. Conversely, an element of $k((u))\times k((u))$ integral over $\Lambda$ is integral over $R$ by transitivity, since $\Lambda$ is finite over $R$. Both coordinates therefore belong to the integrally closed ring $R$. This proves the normalization assertion. An element $(f,g)$ of $R\times R$ belongs to the conductor precisely when its product with every $(r,s)$ lies in the image of $\Phi$. Multiplication by $(1,0)$ and $(0,1)$ shows that both $f$ and $g$ must be divisible by $u$. That condition is sufficient because both resulting coordinates are zero modulo $u$. Hence the conductor is exactly $uR\times uR$.
+\end{proof}
+
+The example exhibits three levels at once. Over the fraction field there are two separate branches. Integrally their constant terms are glued. At the special fibre $u=0$, the relation becomes $x^2=0$, so the fibre is the algebra of dual numbers. The generic algebra, the integral order and the special fibre are different objects with different module categories. A proof using one level cannot be transferred to another merely because the same symbol $x$ appears.
+
+\begin{example}[A parameter is not an eigenvalue]
+In the basis $(1,x)$, multiplication by $x$ is
+\[
+ M_x=\begin{pmatrix}0&0\\1&u\end{pmatrix},\qquad
+ M_y=\begin{pmatrix}u&0\\-1&0\end{pmatrix}.
+\]
+They satisfy $M_xM_y=M_yM_x=0$ and $M_x+M_y=uI$. These identities hold in $M_2(R)$. To ask about Hermitian positivity, one must first choose a specialization of $u$, an embedding into a field with involution and a positive inner product. The displayed integral matrices are not automatically self-adjoint in the standard complex inner product.
+\end{example}
+
+This is directly relevant to the proposed relationship with elliptic complexes. The matrix relation gives a complex, but it gives no symbol exactness away from zero. It also gives no elliptic estimate and no continuum Hamiltonian. These distinctions are productive: the algebraic model provides equations to formalize, while the analytic model identifies the additional estimates that would be required.
+
+\section{What survives from the GRH program}
+The pinned GRH repository develops surface orders from clean dessins, projective resolutions indexed by forbidden paths, determinant identities, representation-theoretic components and several arithmetic estimates. Its current book explicitly records that the original unconditional GRH claims do not follow from the constructions. It identifies an unresolved arithmetic spectral comparison, and distinguishes finite computational checks from analytic and categorical proofs \cite{GRHRepo}.
+
+The extension here uses the surviving architecture: specify a category, prove exact algebraic identities, introduce a metric only when it is needed, and isolate the arithmetic comparison as a separate statement. The construction of a positive matrix can be valuable even when it does not yet compute an $L$-function. An exact projective resolution can be valuable even when its determinant has cycle factors rather than prime factors. The absence of the final comparison does not invalidate those intermediate mathematical results.
+
+For orientation, a primitive nonprincipal Dirichlet character $\chi$ of conductor $q$ has a completed $L$-function
+\[
+ \Lambda(s,\chi)=\left(\frac q\pi\right)^{(s+a)/2}
+ \Gamma\left(\frac{s+a}{2}\right)L(s,\chi),
+ \qquad \chi(-1)=(-1)^a.
+\]
+This normalization centers its functional equation at $1/2$. For a modular elliptic-curve $L$-function in its usual arithmetic normalization, the center is $1$. Changing to unitary normalization shifts the variable. A sentence about a ``critical line'' has no mathematical content until the normalization and the $L$-function family are fixed. Standard analytic definitions and the Dirichlet normalization are recorded in the NIST reference \cite{DLMFL}.
+
+\begin{proposition}[Positive pencils have real generalized eigenvalues]
+Let $A,B\in M_n(\C)$ be Hermitian, with $B$ positive definite. If
+\[
+ \det(A-zB)=0,
+\]
+then $z\in\R$. In particular, the polynomial
+\[
+ P(s)=\det\bigl(A+i(s-\tfrac12)B\bigr)
+\]
+has every zero on the line $\Re s=1/2$.
+\end{proposition}
+\begin{proof}
+Singularity gives a nonzero $v$ such that $Av=zBv$. Multiplying by the conjugate transpose $v^*$ gives
+$v^*Av=zv^*Bv$. Both quadratic forms are real because the matrices are Hermitian; the second is strictly positive. Hence
+$z=(v^*Av)/(v^*Bv)$ is real. For the second statement set
+$z=-i(s-1/2)$. Its imaginary part is $-(\Re s-1/2)$, which vanishes exactly on the stated line.
+\end{proof}
+
+The proof is short, exact and powerful. Its limitation is equally exact: it says nothing about whether $P(s)$ equals an arithmetic function, or whether a sequence of these polynomials converges to one after multiplication by a nonvanishing factor. The required arithmetic comparison is an independent theorem.
+
+\begin{proposition}[A precise conditional zero-location transfer]
+Let $U\subset\C$ be connected and open, let $\ell=\{s:\Re s=1/2\}$, and let $F_N$ be holomorphic on $U$. Suppose that every $F_N$ is zero-free on $U\setminus\ell$, that $F_N$ converges uniformly on compact subsets of $U$ to a holomorphic function $F$, and that $F$ is not identically zero. Then $F$ is zero-free on $U\setminus\ell$.
+\end{proposition}
+\begin{proof}
+Assume $F(s_0)=0$ for some $s_0\in U\setminus\ell$. Since $U$ is connected and $F$ is not identically zero, its zeros are isolated. Choose a closed disk $D$ about $s_0$ contained in $U\setminus\ell$, with no zero of $F$ on its boundary. The continuous function $|F|$ has a strictly positive minimum $m$ on that boundary. Uniform convergence on the boundary gives $|F_N-F|<m$ for all sufficiently large $N$. Rouch\'e's theorem then gives the same positive number of zeros for $F_N$ and $F$ inside $D$, counted with multiplicity, contradicting the zero-free hypothesis. This argument uses the standard complex-analytic Rouch\'e theorem; it does not establish the hypotheses for any $L$-function.
+\end{proof}
+
+For an arithmetic application one must supply $F_N$, prove the exact normalization, establish compact-uniform convergence on a domain large enough for the conclusion, and rule out the zero function. Pointwise agreement at a finite list of sample values is insufficient. So is convergence only on the critical line. The proof uses a two-dimensional complex neighborhood around every alleged off-line zero.
+
+\begin{example}[Why a finite Euler product is not the desired approximant]
+For $p>1$ and $\Re s>0$, one has
+$|p^{-s}|=p^{-\Re s}<1$. Thus $1-\chi(p)p^{-s}\ne0$ when $|\chi(p)|\le1$. Every finite reciprocal Euler product is therefore zero-free wherever it is defined in that half-plane. This does not give compact-uniform convergence to a completed $L$-function throughout its critical strip. The continuation from the absolutely convergent region is part of the missing analytic argument; replacing it with a finite-product identity would assume the desired conclusion.
+\end{example}
+
+\section{Determinants, cohomology and spectra}
+A determinant appears in at least four roles in this subject. An ordinary matrix determinant detects singularity. A determinant line of a perfect complex records alternating exterior powers. A regularized determinant encodes an infinite spectrum and depends on a regularization procedure. An Euler product describes arithmetic local factors in a region of convergence before analytic continuation. They can interact through theorems, but their names do not identify them.
+
+The finite positive-pencil proposition concerns the first role. The algebraic theory of complexes naturally supplies the second. Elliptic operators lead to the third. The GRH program seeks a carefully normalized comparison with the fourth. A chain of identifications would have to respect multiplicity, normalization, convergence and the entire analytic domain. The size of the missing work is not measured by how similar the formulas look.
+
+The same discipline matters for Yang--Mills. The index of an elliptic deformation complex is a stable alternating dimension. A mass gap is a strictly positive lower bound on the spectrum of a Hamiltonian above the vacuum. The first survives many continuous deformations that can drive nonzero eigenvalues arbitrarily close to zero. Later chapters give an explicit family proving that the first cannot imply the second without additional estimates.
+
+\section{A map of rigorous and prospective connections}
+\begin{longtable}{p{.22\textwidth}p{.32\textwidth}p{.36\textwidth}}
+\toprule
+Starting structure & Established connection & Additional obligation for the requested application\\\midrule
+Integral order & Acts on lattices; when realized in $\End(E)$, on the appropriate Tate modules & A metric, efficient presentation and error law for cryptographic use\\
+Elliptic curve & Endomorphism ring is an arithmetic order in the relevant cases & Efficiently known endomorphisms and a proved circuit cost improvement\\
+Algebraic complex & Rank, exactness, homology and determinantal strata & A specified differential-operator realization and exact symbols\\
+Elliptic complex & Fredholm cohomology and topological index & Quantitative coercivity to bound nonzero spectra\\
+Wilson lattice gauge theory & Finite regularized correlation functions & A controlled continuum and infinite-volume construction\\
+Wightman theory & Hilbert-space field theory with spectral axioms & A positive spectral threshold above the vacuum\\
+Positive spectral pencil & Zeros constrained to a line & Exact comparison and analytic convergence to an arithmetic target\\\bottomrule
+\end{longtable}
+Every row will be expanded with formulas. The table also identifies where new research could be meaningful. The objective is a family of explicit bridges with testable claims, rather than a claim that one broad analogy has solved all of the underlying problems.

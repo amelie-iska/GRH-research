@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checks_run": 69,
+  "summary": {
+    "local_finite_declarations": 115,
+    "crypto_tests": 25,
+    "upstream_final_kernel_verified": false
+  },
+  "failures": [],
+  "input_sha256": {
+    "extension/crypto/requirements.txt": "393b9dff0661e807b4f3793c6750cb0b802b9219c7563c83e7a35fb29b90cd59",
+    "extension/crypto/research_crypto.py": "54565f60dc085a9fddabc21c8f260f4611399f428d6d48a6b33772a063ad8116",
+    "extension/crypto/test_research_crypto.py": "125ad844ae9de546ef4c96105e63e465f0d96a66439327b12edc1c48316c5349",
+    "extension/crypto/verification.json": "01c470bab5086236b478c91f626688bc77f7a8846f61658e0349a1bf9b5a3af4",
+    "extension/crypto/verification.log": "aee66d8e87a5ee88a18448ba490a791e9f60b3159f9d86430b660ddbb6587cdc",
+    "extension/crypto/verify_crypto.py": "85e6688e432add78653f8372ffe9b08d32d8592732f04bf3e1fdafce14211419",
+    "extension/lean/BridgeTheorems.lean": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+    "extension/lean/DiagramGrammar.lean": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+    "extension/lean/FluidInterfaces.lean": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+    "extension/lean/QuantumInterfaces.lean": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+    "extension/lean/ReductionContracts.lean": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+    "extension/lean/TransportContracts.lean": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+    "extension/lean/final-verification/BridgeTheorems.log": "34aa2c02e22bebfcb63c99225f4eeabe87a779eacaded257e2f7d2c4a728eb1c",
+    "extension/lean/final-verification/DiagramGrammar.log": "dfd1c7de8ae586afff86e64b1debf5083f8d27e4c3e31823052aba98fc67c867",
+    "extension/lean/final-verification/FluidInterfaces.log": "7691709de948461dc00915981025fe55ba95f91309a2654735687e1bcdea59f0",
+    "extension/lean/final-verification/QuantumInterfaces.log": "4975d697da0b298d4c5689a0bb2f52669783d55272ad8699d72ca52752136a76",
+    "extension/lean/final-verification/ReductionContracts.log": "f83168394396b1f030ad45bc016b43a81c99ac6f87b25293dc3c6c3d704398f8",
+    "extension/lean/final-verification/TransportContracts.log": "317482e234ac21f26b4a355b2f371a66177e6c60038ec74c52737c478a9e7162",
+    "extension/lean/final-verification/verification.json": "9568040c5e2626b15876c068603a57f8536455774407f93481ed3469badfdc45",
+    "extension/lean/lakefile.toml": "eae91e42d02c8a94b8eef98fe58b72c64379b444f3051e6809cb1c20a5bf614e",
+    "extension/lean/lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "extension/lean/verify_all.py": "769c01ed29f95dedcfb3da5f30691c7146a8118b357b7893d78dcf08670936ac",
+    "extension/review/final-pass/check_evidence_health.py": "445ae03a44dd86644e6efe1048302a44542beed37f75f84a7c4c1132acecaf6e",
+    "extension/review/final-pass/upstream-build-current.json": "0b7139762cff156d39311ad8d027471dc79cd9830fa0efd992700aafb2351d2f",
+    "extension/review/final-pass/upstream-cache-current.log": "2220a3cc91d8a00a1ab5ebbb5475ca545d6f3569bdc23c22ac1710571f56e43d",
+    "extension/review/final-pass/upstream-source-current.json": "7ee4542827bed4bbdf42b046f58cb219306d1a91b5690d0806641cfbf8810144",
+    "extension/review/navier-stokes/final-pass-upstream-recheck.json": "240f32842b124dc7cc24bb5218e13322049df154456136644505f30a544ca93f"
+  },
+  "scope": "Offline integrity and consistency check of selected current evidence. No Lean rerun, cryptographic security proof, record authenticity guarantee, or continuum proof verification is performed.",
+  "negative_controls": [
+    {
+      "case": "changed_Lean_source",
+      "rejected_for_expected_reason": true,
+      "expected_failure": "local.source_hash"
+    },
+    {
+      "case": "changed_Lean_log",
+      "rejected_for_expected_reason": true,
+      "expected_failure": "local.log_hash"
+    },
+    {
+      "case": "wrong_mathlib_pin",
+      "rejected_for_expected_reason": true,
+      "expected_failure": "local.mathlib_pin"
+    },
+    {
+      "case": "unapproved_local_axiom",
+      "rejected_for_expected_reason": true,
+      "expected_failure": "local.axiom_boundary"
+    },
+    {
+      "case": "stale_running_record",
+      "rejected_for_expected_reason": true,
+      "expected_failure": "history.terminal"
+    },
+    {
+      "case": "source_audit_mislabeled_kernel_success",
+      "rejected_for_expected_reason": true,
+      "expected_failure": "upstream.success_without_endpoint"
+    },
+    {
+      "case": "missing_endpoint_log_and_axioms",
+      "rejected_for_expected_reason": true,
+      "expected_failure": "upstream.endpoint_evidence_missing"
+    },
+    {
+      "case": "changed_crypto_source",
+      "rejected_for_expected_reason": true,
+      "expected_failure": "crypto.source_hash"
+    }
+  ]
+}

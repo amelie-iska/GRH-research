@@ -1,0 +1,773 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-14T00:08:36.469870+00:00",
+  "status": "verified",
+  "module_count": 6,
+  "declaration_count": 115,
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "mathlib_tracked_files_clean": true,
+  "checker_sha256": "769c01ed29f95dedcfb3da5f30691c7146a8118b357b7893d78dcf08670936ac",
+  "lakefile_sha256": "eae91e42d02c8a94b8eef98fe58b72c64379b444f3051e6809cb1c20a5bf614e",
+  "command": "python extension/lean/verify_all.py --toolchain <pinned-toolchain> --mathlib <pinned-mathlib>",
+  "modules": [
+    {
+      "module": "BridgeTheorems",
+      "source": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "status": "verified",
+      "exit_code": 0,
+      "elapsed_seconds": 20.973938591996557,
+      "warning_count": 0,
+      "declaration_count": 25,
+      "declarations": [
+        "ResearchBridge.complex_range_le_kernel",
+        "ResearchBridge.complex_rank_bound",
+        "ResearchBridge.middle_exact_iff_rank_sum",
+        "ResearchBridge.euler_rank_identity",
+        "ResearchBridge.cone_perturbation",
+        "ResearchBridge.cone_tangent_second_order",
+        "ResearchBridge.cone_split_identity",
+        "ResearchBridge.cone_equal_norm_iff",
+        "ResearchBridge.koszul_zero_composite",
+        "ResearchBridge.hodge_positive_semidefinite",
+        "ResearchBridge.hodge_quadratic_identity",
+        "ResearchBridge.hodge_energy_nonnegative",
+        "ResearchBridge.hodge_energy_zero_iff",
+        "ResearchBridge.hodge_characteristic_identity",
+        "ResearchBridge.hodge_characteristic_factor",
+        "ResearchBridge.hodge_family_diagonal",
+        "ResearchBridge.hodge_family_arbitrarily_small_energy",
+        "ResearchBridge.shear_determinant_one",
+        "ResearchBridge.shear_inverse",
+        "ResearchBridge.shear_e2_image",
+        "ResearchBridge.shear_e2_norm_squared",
+        "ResearchBridge.hidden_kernel_relation",
+        "ResearchBridge.hidden_collision_relation",
+        "ResearchBridge.noise_cancellation",
+        "ResearchBridge.binary_noise_bound"
+      ],
+      "axioms_per_declaration": {
+        "ResearchBridge.complex_range_le_kernel": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.complex_rank_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.middle_exact_iff_rank_sum": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.euler_rank_identity": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.cone_perturbation": [
+          "propext"
+        ],
+        "ResearchBridge.cone_tangent_second_order": [
+          "propext"
+        ],
+        "ResearchBridge.cone_split_identity": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.cone_equal_norm_iff": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.koszul_zero_composite": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_positive_semidefinite": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_quadratic_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_energy_nonnegative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_energy_zero_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_characteristic_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_characteristic_factor": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_family_diagonal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_family_arbitrarily_small_energy": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.shear_determinant_one": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.shear_inverse": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.shear_e2_image": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.shear_e2_norm_squared": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hidden_kernel_relation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hidden_collision_relation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.noise_cancellation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.binary_noise_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "source_unchanged_during_check": true,
+      "log": "BridgeTheorems.log",
+      "log_sha256": "34aa2c02e22bebfcb63c99225f4eeabe87a779eacaded257e2f7d2c4a728eb1c"
+    },
+    {
+      "module": "QuantumInterfaces",
+      "source": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "status": "verified",
+      "exit_code": 0,
+      "elapsed_seconds": 8.761633961010375,
+      "warning_count": 0,
+      "declaration_count": 7,
+      "declarations": [
+        "ResearchQuantum.pauliX_square",
+        "ResearchQuantum.pauliZ_square",
+        "ResearchQuantum.pauli_anticommutation",
+        "ResearchQuantum.binarySign_add",
+        "ResearchQuantum.shift_phase_commutation",
+        "ResearchQuantum.boundary_phase_shift_commute",
+        "ResearchQuantum.euler_surface_rank_substitution"
+      ],
+      "axioms_per_declaration": {
+        "ResearchQuantum.pauliX_square": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.pauliZ_square": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.pauli_anticommutation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.binarySign_add": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.shift_phase_commutation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.boundary_phase_shift_commute": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.euler_surface_rank_substitution": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "source_unchanged_during_check": true,
+      "log": "QuantumInterfaces.log",
+      "log_sha256": "4975d697da0b298d4c5689a0bb2f52669783d55272ad8699d72ca52752136a76"
+    },
+    {
+      "module": "DiagramGrammar",
+      "source": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "status": "verified",
+      "exit_code": 0,
+      "elapsed_seconds": 4.068075237009907,
+      "warning_count": 0,
+      "declaration_count": 16,
+      "declarations": [
+        "DiagramGrammar.context_sound",
+        "DiagramGrammar.structural_sound",
+        "DiagramGrammar.rewriteStep_sound",
+        "DiagramGrammar.derivation_sound",
+        "DiagramGrammar.structural_derivation_sound",
+        "DiagramGrammar.linearEquiv_cancellation",
+        "DiagramGrammar.equivRule_sound",
+        "DiagramGrammar.equiv_derivation_sound",
+        "DiagramGrammar.tensor_interchange",
+        "DiagramGrammar.tensor_trace_factorization",
+        "DiagramGrammar.rectangular_trace_cyclicity",
+        "DiagramGrammar.identity_loop_value",
+        "DiagramGrammar.complex_transport",
+        "DiagramGrammar.homotopy_implies_exact",
+        "DiagramGrammar.exact_transport",
+        "DiagramGrammar.matrix_hodge_conjugacy"
+      ],
+      "axioms_per_declaration": {
+        "DiagramGrammar.context_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.structural_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.rewriteStep_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.derivation_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.structural_derivation_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.linearEquiv_cancellation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.equivRule_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.equiv_derivation_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.tensor_interchange": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.tensor_trace_factorization": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.rectangular_trace_cyclicity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.identity_loop_value": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.complex_transport": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.homotopy_implies_exact": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.exact_transport": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.matrix_hodge_conjugacy": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "source_unchanged_during_check": true,
+      "log": "DiagramGrammar.log",
+      "log_sha256": "dfd1c7de8ae586afff86e64b1debf5083f8d27e4c3e31823052aba98fc67c867"
+    },
+    {
+      "module": "FluidInterfaces",
+      "source": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "status": "verified",
+      "exit_code": 0,
+      "elapsed_seconds": 19.614013034006348,
+      "warning_count": 0,
+      "declaration_count": 34,
+      "declarations": [
+        "FluidInterfaces.dot_self_nonneg",
+        "FluidInterfaces.kineticEnergy_nonneg",
+        "FluidInterfaces.transpose_work",
+        "FluidInterfaces.skew_transport_work",
+        "FluidInterfaces.factorized_viscosity_work",
+        "FluidInterfaces.factorized_viscosity_nonneg",
+        "FluidInterfaces.pressure_work_zero",
+        "FluidInterfaces.finite_fluid_work_identity",
+        "FluidInterfaces.unforced_work_nonpositive",
+        "FluidInterfaces.kinetic_energy_derivative",
+        "FluidInterfaces.finite_fluid_energy_derivative",
+        "FluidInterfaces.projection_residual_kernel",
+        "FluidInterfaces.projection_residual_orthogonal",
+        "FluidInterfaces.projection_energy_split",
+        "FluidInterfaces.projection_energy_nonincrease",
+        "FluidInterfaces.projection_best_approximation",
+        "FluidInterfaces.boundary_flux_divergence_zero",
+        "FluidInterfaces.boundary_flux_update_preserves_divergence",
+        "FluidInterfaces.schur_elimination_iff",
+        "FluidInterfaces.hidden_recurrence_expansion",
+        "FluidInterfaces.resolved_memory_identity",
+        "FluidInterfaces.hidden_state_prevents_autonomous_closure",
+        "FluidInterfaces.lower_diagonal_lower_zero",
+        "FluidInterfaces.renormalization_is_quadratic_order_element",
+        "FluidInterfaces.quadratic_order_one",
+        "FluidInterfaces.quadratic_order_addition",
+        "FluidInterfaces.quadratic_generator_square",
+        "FluidInterfaces.renormalization_quadratic_identity",
+        "FluidInterfaces.renormalization_determinant",
+        "FluidInterfaces.renormalization_power_determinant",
+        "FluidInterfaces.quadratic_order_multiplication",
+        "FluidInterfaces.quadratic_order_determinant",
+        "FluidInterfaces.quadratic_order_representation_injective",
+        "FluidInterfaces.no_commuting_complex_structure"
+      ],
+      "axioms_per_declaration": {
+        "FluidInterfaces.renormalization_is_quadratic_order_element": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_one": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_addition": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.dot_self_nonneg": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.kineticEnergy_nonneg": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.transpose_work": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.skew_transport_work": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.factorized_viscosity_work": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.factorized_viscosity_nonneg": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.pressure_work_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.finite_fluid_work_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.unforced_work_nonpositive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.kinetic_energy_derivative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.finite_fluid_energy_derivative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_residual_kernel": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_residual_orthogonal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_energy_split": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_energy_nonincrease": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_best_approximation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.boundary_flux_divergence_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.boundary_flux_update_preserves_divergence": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.schur_elimination_iff": [
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.hidden_recurrence_expansion": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.resolved_memory_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.hidden_state_prevents_autonomous_closure": [
+          "propext"
+        ],
+        "FluidInterfaces.lower_diagonal_lower_zero": [
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_generator_square": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.renormalization_quadratic_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.renormalization_determinant": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.renormalization_power_determinant": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_multiplication": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_determinant": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_representation_injective": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.no_commuting_complex_structure": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "source_unchanged_during_check": true,
+      "log": "FluidInterfaces.log",
+      "log_sha256": "7691709de948461dc00915981025fe55ba95f91309a2654735687e1bcdea59f0"
+    },
+    {
+      "module": "ReductionContracts",
+      "source": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "status": "verified",
+      "exit_code": 0,
+      "elapsed_seconds": 5.88185903300473,
+      "warning_count": 0,
+      "declaration_count": 16,
+      "declarations": [
+        "ReductionContracts.factorization_iff_fiber_constant",
+        "ReductionContracts.reduced_output_unique",
+        "ReductionContracts.discrete_closure_iff",
+        "ReductionContracts.mismatched_fiber_excludes_closure",
+        "ReductionContracts.discrete_trajectory_preserved",
+        "ReductionContracts.fiber_error_lower_bound",
+        "ReductionContracts.fiber_diameter_le_twice_error",
+        "ReductionContracts.signedPartner_constant_coefficient",
+        "ReductionContracts.signedPartner_linear_coefficient",
+        "ReductionContracts.signedPartner_ne_zero",
+        "ReductionContracts.signedPartner_order",
+        "ReductionContracts.signed_cancellation_identity",
+        "ReductionContracts.signed_cancellation_sum_ne_zero",
+        "ReductionContracts.signed_cancellation_order",
+        "ReductionContracts.signed_cancellation_strict",
+        "ReductionContracts.no_universal_minimum_rule"
+      ],
+      "axioms_per_declaration": {
+        "ReductionContracts.factorization_iff_fiber_constant": [
+          "Classical.choice"
+        ],
+        "ReductionContracts.reduced_output_unique": [
+          "Quot.sound"
+        ],
+        "ReductionContracts.discrete_closure_iff": [
+          "Classical.choice"
+        ],
+        "ReductionContracts.fiber_error_lower_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.fiber_diameter_le_twice_error": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.signedPartner_constant_coefficient": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.signedPartner_linear_coefficient": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.signedPartner_ne_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.signedPartner_order": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.signed_cancellation_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.signed_cancellation_sum_ne_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.signed_cancellation_order": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.signed_cancellation_strict": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.no_universal_minimum_rule": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ReductionContracts.mismatched_fiber_excludes_closure": [],
+        "ReductionContracts.discrete_trajectory_preserved": []
+      },
+      "unexpected_axioms": {},
+      "source_unchanged_during_check": true,
+      "log": "ReductionContracts.log",
+      "log_sha256": "f83168394396b1f030ad45bc016b43a81c99ac6f87b25293dc3c6c3d704398f8"
+    },
+    {
+      "module": "TransportContracts",
+      "source": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "status": "verified",
+      "exit_code": 0,
+      "elapsed_seconds": 4.499685733986553,
+      "warning_count": 0,
+      "declaration_count": 17,
+      "declarations": [
+        "TransportContracts.suffix_transport_telescope",
+        "TransportContracts.closed_path_residual",
+        "TransportContracts.flat_closed_path_zero",
+        "TransportContracts.two_arrow_transport",
+        "TransportContracts.fixed_vector_closed_path_zero",
+        "TransportContracts.scalar_counterexample_flat",
+        "TransportContracts.scalar_prefix_counterexample",
+        "TransportContracts.scalar_suffix_correction",
+        "TransportContracts.positive_damping_bound_not_contracting",
+        "TransportContracts.expanding_scalar_damping",
+        "TransportContracts.trace_preserving_composite_nonzero",
+        "TransportContracts.nonnormal_shear_square_zero",
+        "TransportContracts.nonnormal_shear_unit_image",
+        "TransportContracts.nonnormal_shear_gain_squared",
+        "TransportContracts.nonnormal_shear_strict_gain",
+        "TransportContracts.nonnormal_shear_second_jvp_zero",
+        "TransportContracts.nonnormal_shear_not_normal"
+      ],
+      "axioms_per_declaration": {
+        "TransportContracts.suffix_transport_telescope": [
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.closed_path_residual": [
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.flat_closed_path_zero": [
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.two_arrow_transport": [
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.fixed_vector_closed_path_zero": [
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.scalar_counterexample_flat": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.scalar_prefix_counterexample": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.scalar_suffix_correction": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.positive_damping_bound_not_contracting": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.expanding_scalar_damping": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.trace_preserving_composite_nonzero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.nonnormal_shear_square_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.nonnormal_shear_unit_image": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.nonnormal_shear_gain_squared": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.nonnormal_shear_strict_gain": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.nonnormal_shear_second_jvp_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "TransportContracts.nonnormal_shear_not_normal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "source_unchanged_during_check": true,
+      "log": "TransportContracts.log",
+      "log_sha256": "317482e234ac21f26b4a355b2f371a66177e6c60038ec74c52737c478a9e7162"
+    }
+  ],
+  "scope": "Fresh elaboration, printed types and actual foundational axiom dependencies for exactly the listed finite-interface declarations. Cached compiled imports and the named Lean/mathlib toolchain are trusted. No claim of complete monograph, continuum Navier-Stokes, GRH, Yang-Mills or cryptographic implementation verification.",
+  "upstream_continuum_build_performed": false
+}

@@ -1,0 +1,101 @@
+diff --git a/extension/manuscript/chapters/cryptography.tex b/extension/manuscript/chapters/cryptography.tex
+index e4797cd..d99be8f 100644
+--- a/extension/manuscript/chapters/cryptography.tex
++++ b/extension/manuscript/chapters/cryptography.tex
+@@ -179,7 +179,7 @@ Let $\Lambda\subset\R^n$ be a Euclidean lattice with basis matrix $B\in\GL_n(\R)
+  \Lambda^*=\{y\in\R^n:\langle y,x\rangle\in\Z\text{ for every }x\in\Lambda\}
+  =B^{-T}\Z^n,
+ \]
+-and its first minimum is
++and, for $n\ge1$, its first minimum is
+ $\lambda_1(\Lambda)=\min_{0\ne x\in\Lambda}\|x\|_2$.
+ The minimum exists because a lattice has finitely many points in every bounded region and has no accumulation at zero.
+ 
+diff --git a/extension/manuscript/chapters/gauge-theory.tex b/extension/manuscript/chapters/gauge-theory.tex
+index 2dcba56..050eeef 100644
+--- a/extension/manuscript/chapters/gauge-theory.tex
++++ b/extension/manuscript/chapters/gauge-theory.tex
+@@ -514,7 +514,7 @@ reflection-positivity and transfer-matrix theorems
+ can be proved directly.
+ 
+ \begin{proposition}[Positive-type Wilson link weight]
+-Let $\rho:G\to U(m)$ be unitary, $\chi(g)=\operatorname{Tr}\rho(g)$,
++Let $\rho:G\to U(m)$ be a unitary representation, $\chi(g)=\operatorname{Tr}\rho(g)$,
+ and $c\geq0$.  The function $w(g)=\exp(c\operatorname{Re}\chi(g))$
+ is of positive type: for all $g_1,\ldots,g_n\in G$ and
+ $z_1,\ldots,z_n\in\mathbb C$,
+@@ -536,7 +536,7 @@ representation.  Products of characters are characters of tensor products.
+ Expanding
+ \[
+  w(g)=\sum_{a,b\geq0}\frac{(c/2)^{a+b}}{a!b!}
+-                  \chi(g)^a\overline{\chi(g)}^{,b}
++                  \chi(g)^a\overline{\chi(g)}^{b}
+ \]
+ therefore expresses $w$ as a limit of nonnegative linear combinations of
+ positive-type functions.  Since $|\chi(g)|\leq m$, the double series
+@@ -588,7 +588,7 @@ under the additional continuity and boundedness estimates required in
+ reconstruction, induces a strongly continuous self-adjoint contraction
+ semigroup.  Its generator is a nonnegative self-adjoint operator $H$ and
+ the semigroup is $e^{-tH}$.  A complete reconstruction must also supply
+-field domains, distributional regularity, locality, analytic continuation,+and the Poincare action.  The original Osterwalder--Schrader papers state
++field domains, distributional regularity, locality, analytic continuation, and the Poincare action.  The original Osterwalder--Schrader papers state
+ precise regularity and growth hypotheses for these conclusions
+ \cite{OS1973,OS1975}.  The quotient lemma alone supplies none of them.
+ 
+diff --git a/extension/manuscript/chapters/orders.tex b/extension/manuscript/chapters/orders.tex
+index 873bcea..7feeb51 100644
+--- a/extension/manuscript/chapters/orders.tex
++++ b/extension/manuscript/chapters/orders.tex
+@@ -487,7 +487,7 @@ form by an indefinite one.
+ 
+ \begin{proposition}[When a transport controls minima]
+ Let $T:V\to W$ be a linear isomorphism of finite-dimensional
+-real inner-product spaces, and suppose
++real inner-product spaces with $\dim V>0$, and suppose
+ $a\|v\|\le\|Tv\|\le b\|v\|$ for all $v$, with
+ $0<a\le b$. For a full Euclidean lattice $L\subseteq V$,
+ \[
+diff --git a/extension/manuscript/chapters/quantum-surfaces.tex b/extension/manuscript/chapters/quantum-surfaces.tex
+index ef6fcdb..23b4801 100644
+--- a/extension/manuscript/chapters/quantum-surfaces.tex
++++ b/extension/manuscript/chapters/quantum-surfaces.tex
+@@ -432,8 +432,10 @@ Every term is an orthogonal projector and all terms commute.  The ground
+ space is exactly the CSS code space.
+ 
+ \begin{proposition}[Gap in the specified projector normalization]
+-For the cellulations constructed here, the smallest positive eigenvalue
+-of $H_{\rm code}$ is two.
++For a connected closed oriented cellulation containing at least one edge
++with distinct endpoints, the smallest positive eigenvalue of $H_{\rm code}$
++is two. In particular, this applies to all four simulated torus and
++connected-sum cellulations in this chapter.
+ \end{proposition}
+ \begin{proof}
+ Commuting Hermitian involutions admit a simultaneous eigenbasis.  In it,
+diff --git a/extension/manuscript/chapters/standard-monomials.tex b/extension/manuscript/chapters/standard-monomials.tex
+index ec34dae..1575d37 100644
+--- a/extension/manuscript/chapters/standard-monomials.tex
++++ b/extension/manuscript/chapters/standard-monomials.tex
+@@ -1155,6 +1155,8 @@ The chain monomials form a free \(k[t]\)-basis
+ of the family.
+ \end{proposition}
+ \begin{proof}
++If \(P\) is empty, then \(A=k\) and the family \(k[t]\)
++proves the assertion. Assume from now on that \(P\ne\varnothing\).
+ Let \(h(p)\) be the maximum number of strict
+ steps in a chain starting at \(p\) and going
+ upward.  Put \(D_p=3^{h(p)}\), choose an integer
+diff --git a/extension/manuscript/chapters/synthesis.tex b/extension/manuscript/chapters/synthesis.tex
+index 098d037..ba14170 100644
+--- a/extension/manuscript/chapters/synthesis.tex
++++ b/extension/manuscript/chapters/synthesis.tex
+@@ -296,7 +296,8 @@ or a proposed cryptographic reduction.
+ \begin{corollary}[Why pointwise equivalence is insufficient]
+ For a family of isomorphisms $T_j$, positive constants $m_j$ for each fixed
+ $j$ do not imply a uniform positive lower bound for the transported quadratic
+-forms. Even when $q(v)=\|v\|^2$, the choice $T_j=j^{-1}I$ gives
++forms. On $V=W=\mathbb R$, with $j\ge1$ and $q(v)=\|v\|^2$,
++the choice $T_j=j^{-1}I$ gives
+ $q_{T_j}(w)=j^{-2}\|w\|^2$.
+ \end{corollary}
+ \begin{proof}

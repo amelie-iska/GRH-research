@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-13",
+  "recorded_utc": "2026-11-13T23:33:31.686894+00:00",
+  "status": "fresh_source_audit_passed; fresh_final_kernel_build_not_completed",
+  "upstream": {
+    "repository": "https://github.com/openai/NavierStokesAndEuler",
+    "remote_head_checked_with": "git ls-remote https://github.com/openai/NavierStokesAndEuler.git HEAD refs/heads/main",
+    "revision": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+    "tree": "a503f07635f200c0f2f9c5361df1fa07f95c4741",
+    "tracked_tree_clean_after": true,
+    "local_isolated_checkout": "/workspace/scratch/e5799a11269a/upstream-ns-verification",
+    "tracked_files": 2669,
+    "local_solution_closure_modules": 609,
+    "local_solution_closure_bytes": 20364883,
+    "challenge_module_in_solution_closure": false,
+    "lexical_counts": {
+      "sorry": 0,
+      "admit": 0,
+      "sorryAx": 0,
+      "axiom": 0,
+      "unsafe": 0,
+      "native_decide": 0,
+      "implemented_by": 0
+    },
+    "all_dependency_pins_match": true
+  },
+  "toolchain": {
+    "lean_toolchain": "leanprover/lean4:v4.34.0-rc2",
+    "compiler": "Lean (version 4.34.0-rc2, x86_64-unknown-linux-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+    "mathlib_revision": "85e3a25e006c35636f0e53b0e9296caca2685bc0"
+  },
+  "primary_sources_rechecked_online": [
+    {
+      "url": "https://openai.com/index/navier-stokes-solution/",
+      "date": "2026-09-08",
+      "scope": "Official analytical and Lean release, forced alternatives C and D"
+    },
+    {
+      "url": "https://www.claymath.org/news/navier-stokes-announcement/",
+      "date": "2026-09-11",
+      "scope": "Apparent settlement announcement with ongoing unhurried evaluation; no prize award claimed"
+    },
+    {
+      "url": "https://github.com/openai/NavierStokesAndEuler",
+      "scope": "Current README and exact current main revision checked"
+    }
+  ],
+  "source_assets": [
+    {
+      "name": "OpenAI manuscript",
+      "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+      "sha256": "0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f",
+      "bytes": 2959204,
+      "hash_scope": "existing previously retrieved asset; byte hash recomputed in this pass"
+    },
+    {
+      "name": "Official Clay formulation",
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf",
+      "sha256": "c1b5f27b1a64705cfaf1afceea513db5deedca8a18ca56ab32e7f86445a06d0c",
+      "bytes": 203736,
+      "hash_scope": "existing previously retrieved asset; byte hash recomputed in this pass"
+    },
+    {
+      "name": "Lean compiler distribution",
+      "url": "https://github.com/leanprover/lean4/releases/download/v4.34.0-rc2/lean-4.34.0-rc2-linux.tar.zst",
+      "sha256": "3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8",
+      "bytes": 580281129,
+      "hash_scope": "existing previously retrieved asset; byte hash recomputed in this pass"
+    },
+    {
+      "name": "Final theorem adapter",
+      "url": "https://github.com/openai/NavierStokesAndEuler/blob/f9e8bc5b38b6e212696e8a30e3e91517af887bbd/NavierStokes/ComparatorSolution.lean",
+      "sha256": "52950d5d618a8d34c9bfbdb16641c81c276e97b6d7fd2a76c08577353f0b0227",
+      "bytes": 1359,
+      "hash_scope": "fresh isolated checkout at current remote HEAD"
+    }
+  ],
+  "cache_attempt": {
+    "label": "cache",
+    "command": [
+      "/workspace/scratch/70763186a94c/research/navier-stokes/release/lean-4.34.0-rc2-linux/bin/lake",
+      "exe",
+      "cache",
+      "get"
+    ],
+    "exit_code": -15,
+    "elapsed_seconds": 92.104,
+    "stop_reason": "rate_limit_detected_stopped_to_reduce_load",
+    "log": "upstream-cache-current.log",
+    "log_sha256": "2220a3cc91d8a00a1ab5ebbb5475ca545d6f3569bdc23c22ac1710571f56e43d"
+  },
+  "throttle": {
+    "per_process_curl_configuration": "parallel-max = 4\nrate = 20/s\nconnect-timeout = 20\nmax-time = 120\nretry-max-time = 180\n",
+    "configuration_sha256": "55474b857379554f69893a5ee2f5bb8348faad51a3fb9f0f2176b5d66a20f341",
+    "maximum_parallel_transfers_configured": 4,
+    "rate_option_effective": false,
+    "rate_note": "Installed curl manual explicitly says --rate has no effect with --parallel. Four-transfer concurrency was the effective configured throttle; no 20 requests/second limit is claimed.",
+    "isolated_cache_directory": "/workspace/scratch/e5799a11269a/upstream-mathlib-cache",
+    "global_configuration_modified": false
+  },
+  "cache_observations": {
+    "successful_download_count_at_last_progress": 2303,
+    "attempted_at_last_progress": 2341,
+    "reported_download_failures_at_last_progress": 38,
+    "http_429_diagnostics": 34,
+    "other_failures_retained_in_log": true,
+    "mathlib_olean_count_before": 2124,
+    "mathlib_olean_count_after": 3160,
+    "source_cache_complete": false
+  },
+  "full_target_build": {
+    "status": "not_run_after_incomplete_cache",
+    "target": "NavierStokes.ComparatorSolution",
+    "reason": "Rate-limited cache retry stopped; missing dependencies still prevent the intended bounded final-target verification."
+  },
+  "independent_comparator": {
+    "status": "not_run",
+    "reason": "No completed final-target build; independent checker tools not provisioned in this pass."
+  },
+  "theorems": [
+    "NavierStokes.Comparator.navier_stokes_breakdown_R3",
+    "NavierStokes.Comparator.navier_stokes_breakdown_periodic"
+  ],
+  "scope_limits": [
+    "Clean lexical source audit does not establish kernel acceptance.",
+    "No claim of successful current full upstream build or independently reproduced final axiom report.",
+    "No unforced positive-viscosity blowup result is inferred from forced alternatives C and D.",
+    "No claim of a stronger analytic theorem from the project's finite algebraic interfaces."
+  ],
+  "prior_transcript_review": {
+    "ledger": "../navier-stokes/microscopic-source-coverage.json",
+    "ledger_sha256": "a2e23d4cfeaca162d8857aecb5777820fb01288657d061a04c2e09dc37a72e40",
+    "status_recorded_in_prior_ledger": "complete_exposed_english_transcript_reviewed",
+    "recorded_segments": 249,
+    "recorded_timestamps": [
+      "00:00",
+      "32:36"
+    ],
+    "fresh_full_transcript_review_in_this_pass": false,
+    "fresh_retrieval_result": "Public watch page exposed English caption metadata; timed-caption response was empty. Prior DOM review is retained as prior evidence, not newly claimed reading.",
+    "independently_verified_executor_transcript_export": false
+  },
+  "evidence": {
+    "source_audit_file": "upstream-source-current.json",
+    "source_audit_sha256": "7ee4542827bed4bbdf42b046f58cb219306d1a91b5690d0806641cfbf8810144",
+    "cache_log_file": "upstream-cache-current.log",
+    "cache_log_sha256": "2220a3cc91d8a00a1ab5ebbb5475ca545d6f3569bdc23c22ac1710571f56e43d",
+    "prior_release_review_sha256": "eeaed76943a1d4fdbad5c99710468d3635f56042edb09973d8bca25dcf9e809d",
+    "prior_release_source_manifest_sha256": "f96f1d649548ad78d6c90e25504e66eaa5b45c19386761e8e613e417c8a870a1"
+  }
+}

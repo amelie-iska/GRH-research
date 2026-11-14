@@ -1,0 +1,122 @@
+FluidInterfaces.renormalization_is_quadratic_order_element :
+  FluidInterfaces.renormalizationMatrix = FluidInterfaces.quadraticOrderMatrix 4 1
+FluidInterfaces.quadratic_order_one : FluidInterfaces.quadraticOrderMatrix 1 0 = 1
+FluidInterfaces.quadratic_order_addition (a b c d : ℤ) :
+  FluidInterfaces.quadraticOrderMatrix a b + FluidInterfaces.quadraticOrderMatrix c d =
+    FluidInterfaces.quadraticOrderMatrix (a + c) (b + d)
+FluidInterfaces.dot_self_nonneg.{u_1} {n : Type u_1} [Fintype n] (u : n → ℝ) : 0 ≤ u ⬝ᵥ u
+FluidInterfaces.kineticEnergy_nonneg.{u_1} {n : Type u_1} [Fintype n] (u : n → ℝ) : 0 ≤ FluidInterfaces.kineticEnergy u
+FluidInterfaces.transpose_work.{u_1, u_2} {n : Type u_1} {m : Type u_2} [Fintype n] [Fintype m] (L : Matrix m n ℝ)
+  (u : n → ℝ) (v : m → ℝ) : u ⬝ᵥ Lᵀ *ᵥ v = L *ᵥ u ⬝ᵥ v
+FluidInterfaces.skew_transport_work.{u_1} {n : Type u_1} [Fintype n] (J : Matrix n n ℝ) (hJ : Jᵀ = -J) (u : n → ℝ) :
+  u ⬝ᵥ J *ᵥ u = 0
+FluidInterfaces.factorized_viscosity_work.{u_1, u_2} {n : Type u_1} {m : Type u_2} [Fintype n] [Fintype m]
+  (L : Matrix m n ℝ) (u : n → ℝ) : u ⬝ᵥ (Lᵀ * L) *ᵥ u = L *ᵥ u ⬝ᵥ L *ᵥ u
+FluidInterfaces.factorized_viscosity_nonneg.{u_1, u_2} {n : Type u_1} {m : Type u_2} [Fintype n] [Fintype m]
+  (L : Matrix m n ℝ) (u : n → ℝ) : 0 ≤ u ⬝ᵥ (Lᵀ * L) *ᵥ u
+FluidInterfaces.pressure_work_zero.{u_1, u_3} {n : Type u_1} {p : Type u_3} [Fintype n] [Fintype p] (B : Matrix p n ℝ)
+  (u : n → ℝ) (pressure : p → ℝ) (hu : B *ᵥ u = 0) : u ⬝ᵥ Bᵀ *ᵥ pressure = 0
+FluidInterfaces.finite_fluid_work_identity.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3} [Fintype n]
+  [Fintype m] [Fintype p] (J : Matrix n n ℝ) (hJ : Jᵀ = -J) (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ)
+  (u force : n → ℝ) :
+  u ⬝ᵥ (J *ᵥ u - ν • (Dᵀ * D) *ᵥ u - (Lᵀ * L) *ᵥ u + force) = u ⬝ᵥ force - ν * D *ᵥ u ⬝ᵥ D *ᵥ u - L *ᵥ u ⬝ᵥ L *ᵥ u
+FluidInterfaces.unforced_work_nonpositive.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3} [Fintype n]
+  [Fintype m] [Fintype p] (J : Matrix n n ℝ) (hJ : Jᵀ = -J) (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ) (hν : 0 ≤ ν)
+  (u : n → ℝ) : u ⬝ᵥ (J *ᵥ u - ν • (Dᵀ * D) *ᵥ u - (Lᵀ * L) *ᵥ u) ≤ 0
+FluidInterfaces.kinetic_energy_derivative.{u_1} {n : Type u_1} [Fintype n] (u : ℝ → n → ℝ) (v : n → ℝ) (t : ℝ)
+  (hu : ∀ (i : n), HasDerivAt (fun s => u s i) (v i) t) :
+  HasDerivAt (fun s => FluidInterfaces.kineticEnergy (u s)) (u t ⬝ᵥ v) t
+FluidInterfaces.finite_fluid_energy_derivative.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3} [Fintype n]
+  [Fintype m] [Fintype p] (J : Matrix n n ℝ) (hJ : Jᵀ = -J) (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ)
+  (u : ℝ → n → ℝ) (force : n → ℝ) (t : ℝ)
+  (hu : ∀ (i : n), HasDerivAt (fun s => u s i) ((J *ᵥ u t - ν • (Dᵀ * D) *ᵥ u t - (Lᵀ * L) *ᵥ u t + force) i) t) :
+  HasDerivAt (fun s => FluidInterfaces.kineticEnergy (u s))
+    (u t ⬝ᵥ force - ν * D *ᵥ u t ⬝ᵥ D *ᵥ u t - L *ᵥ u t ⬝ᵥ L *ᵥ u t) t
+FluidInterfaces.projection_residual_kernel.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hP : P * P = P)
+  (u : n → ℝ) : P *ᵥ (u - P *ᵥ u) = 0
+FluidInterfaces.projection_residual_orthogonal.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hs : Pᵀ = P)
+  (hi : P * P = P) (u v : n → ℝ) : (u - P *ᵥ u) ⬝ᵥ P *ᵥ v = 0
+FluidInterfaces.projection_energy_split.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hs : Pᵀ = P)
+  (hi : P * P = P) (u : n → ℝ) :
+  FluidInterfaces.kineticEnergy u = FluidInterfaces.kineticEnergy (P *ᵥ u) + FluidInterfaces.kineticEnergy (u - P *ᵥ u)
+FluidInterfaces.projection_energy_nonincrease.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hs : Pᵀ = P)
+  (hi : P * P = P) (u : n → ℝ) : FluidInterfaces.kineticEnergy (P *ᵥ u) ≤ FluidInterfaces.kineticEnergy u
+FluidInterfaces.projection_best_approximation.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hs : Pᵀ = P)
+  (hi : P * P = P) (u v : n → ℝ) (hv : P *ᵥ v = v) :
+  FluidInterfaces.kineticEnergy (u - P *ᵥ u) ≤ FluidInterfaces.kineticEnergy (u - v)
+FluidInterfaces.boundary_flux_divergence_zero.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3} [Fintype n]
+  [Fintype p] (B : Matrix m n ℝ) (C : Matrix n p ℝ) (hcomplex : B * C = 0) (q : p → ℝ) : B *ᵥ C *ᵥ q = 0
+FluidInterfaces.boundary_flux_update_preserves_divergence.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3}
+  [Fintype n] [Fintype p] (B : Matrix m n ℝ) (C : Matrix n p ℝ) (hcomplex : B * C = 0) (u : n → ℝ) (q : p → ℝ) :
+  B *ᵥ (u + C *ᵥ q) = B *ᵥ u
+FluidInterfaces.schur_elimination_iff.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3} [Field K]
+  [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (A : X →ₗ[K] X) (B : Y →ₗ[K] X) (C : X →ₗ[K] Y)
+  (D : Y ≃ₗ[K] Y) (x : X) (y : Y) (f : X) (g : Y) :
+  A x + B y = f ∧ C x + D y = g ↔ (FluidInterfaces.schurComplement A B C D) x = f - B (D.symm g) ∧ y = D.symm (g - C x)
+FluidInterfaces.hidden_recurrence_expansion.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3} [Field K]
+  [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (C : X →ₗ[K] Y) (D : Module.End K Y) (p : ℕ → X)
+  (q : ℕ → Y) (hstep : ∀ (n : ℕ), q (n + 1) = D (q n) + C (p n)) (n : ℕ) :
+  q n = (D ^ n) (q 0) + ∑ k ∈ Finset.range n, (D ^ (n - 1 - k)) (C (p k))
+FluidInterfaces.resolved_memory_identity.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3} [Field K]
+  [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (A : Module.End K X) (B : Y →ₗ[K] X) (C : X →ₗ[K] Y)
+  (D : Module.End K Y) (p : ℕ → X) (q : ℕ → Y) (hp : ∀ (n : ℕ), p (n + 1) = A (p n) + B (q n))
+  (hq : ∀ (n : ℕ), q (n + 1) = D (q n) + C (p n)) (n : ℕ) :
+  p (n + 1) = A (p n) + B ((D ^ n) (q 0)) + ∑ k ∈ Finset.range n, B ((D ^ (n - 1 - k)) (C (p k)))
+FluidInterfaces.hidden_state_prevents_autonomous_closure.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3}
+  [Field K] [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (A : Module.End K X) (B : Y →ₗ[K] X) (y : Y)
+  (hy : B y ≠ 0) : ¬∃ F, ∀ (x : X) (z : Y), F x = A x + B z
+FluidInterfaces.lower_diagonal_lower_zero.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3} [Field K]
+  [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (L M : X →ₗ[K] Y) (DX : Module.End K X)
+  (DY : Module.End K Y) : FluidInterfaces.lowerBlock L ∘ₗ LinearMap.prodMap DX DY ∘ₗ FluidInterfaces.lowerBlock M = 0
+FluidInterfaces.quadratic_generator_square :
+  FluidInterfaces.quadraticGenerator * FluidInterfaces.quadraticGenerator = 2 • 1
+FluidInterfaces.renormalization_quadratic_identity :
+  FluidInterfaces.renormalizationMatrix * FluidInterfaces.renormalizationMatrix -
+        8 • FluidInterfaces.renormalizationMatrix +
+      14 • 1 =
+    0
+FluidInterfaces.renormalization_determinant : FluidInterfaces.renormalizationMatrix.det = 14
+FluidInterfaces.renormalization_power_determinant (k : ℕ) : (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k
+FluidInterfaces.quadratic_order_multiplication (a b c d : ℤ) :
+  FluidInterfaces.quadraticOrderMatrix a b * FluidInterfaces.quadraticOrderMatrix c d =
+    FluidInterfaces.quadraticOrderMatrix (a * c + 2 * b * d) (a * d + b * c)
+FluidInterfaces.quadratic_order_determinant (a b : ℤ) :
+  (FluidInterfaces.quadraticOrderMatrix a b).det = a ^ 2 - 2 * b ^ 2
+FluidInterfaces.quadratic_order_representation_injective :
+  Function.Injective fun ab => FluidInterfaces.quadraticOrderMatrix ab.1 ab.2
+FluidInterfaces.no_commuting_complex_structure (I : Matrix (Fin 2) (Fin 2) ℝ)
+  (hc : I * !![3, 1; 1, 5] = !![3, 1; 1, 5] * I) : I * I ≠ -1
+'FluidInterfaces.renormalization_is_quadratic_order_element' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.quadratic_order_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.quadratic_order_addition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.dot_self_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.kineticEnergy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.transpose_work' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.skew_transport_work' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.factorized_viscosity_work' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.factorized_viscosity_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.pressure_work_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.finite_fluid_work_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.unforced_work_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.kinetic_energy_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.finite_fluid_energy_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.projection_residual_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.projection_residual_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.projection_energy_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.projection_energy_nonincrease' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.projection_best_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.boundary_flux_divergence_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.boundary_flux_update_preserves_divergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.schur_elimination_iff' depends on axioms: [propext, Quot.sound]
+'FluidInterfaces.hidden_recurrence_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.resolved_memory_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.hidden_state_prevents_autonomous_closure' depends on axioms: [propext]
+'FluidInterfaces.lower_diagonal_lower_zero' depends on axioms: [propext, Quot.sound]
+'FluidInterfaces.quadratic_generator_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.renormalization_quadratic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.renormalization_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.renormalization_power_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.quadratic_order_multiplication' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.quadratic_order_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.quadratic_order_representation_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FluidInterfaces.no_commuting_complex_structure' depends on axioms: [propext, Classical.choice, Quot.sound]

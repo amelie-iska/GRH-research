@@ -1,0 +1,284 @@
+\chapter{Orders, complexes and the algebra of a fluid singularity}
+\label{ch:fluid-structures}
+\reviewstatus{This chapter gives original, explicit proofs of the finite algebraic and differential identities used to interpret the released construction. The construction of the singular Navier--Stokes solution remains the external theorem of \citet{NSOpenAI2026}, reviewed in Chapter~\ref{ch:navier-stokes-release}. The real auxiliary torus, the physical three-dimensional fluid, a Riemann surface and a quantum register are different objects. Every identification below specifies which structure it preserves.}
+
+\section{What a useful reformulation must preserve}
+
+The central opportunity is to reorganize the proof into mathematical interfaces that the inherited project already studies: integral endomorphisms, exterior powers, complexes, quadratic tensor maps, moment determinants and filtered operator algebras. This is more informative than attaching algebraic terminology to a picture of a vortex. It also creates obligations. A change of notation must preserve the domain, positive viscosity, zero initial data, compact smooth forcing, bounded kinetic energy and the claimed divergence of velocity. An algebraic identity must not silently replace an analytic estimate that is uniform in the concentrating scale.
+
+In the released proof the physical equation is on $\R^3$, with a subsequent periodic construction on $\mathbb T^3$. The auxiliary $\mathbb T^2$ carries oscillatory labels and is evaluated along a prescribed phase map. It is neither the physical domain nor a quantum phase space. A surface-algebra model can encode incidence, permitted paths and local tensor types. To obtain an actual fluid discretization one must additionally choose a metric, a volume form, boundary conditions, constitutive parameters and approximation operators. Those data will remain visible throughout this chapter.
+
+\section{The de Rham complex behind incompressible motion}
+
+Let $M$ be an oriented flat three-dimensional manifold without boundary, or use fields on $\R^3$ for which the integrations below have no boundary terms. Write $\alpha=u^\flat$ for the velocity one-form, $\delta$ for the metric codifferential and $\Delta_H=d\delta+\delta d$ for the nonnegative Hodge Laplacian. With the usual Euclidean sign convention, $\Delta_H$ acts componentwise as minus the coordinate Laplacian. Thus incompressibility is $\delta\alpha=0$.
+
+\begin{proposition}[The differential-form momentum equation]
+\label{prop:fluid-forms}
+For a smooth divergence-free velocity, the usual forced Navier--Stokes equation is equivalent to
+\[
+ \partial_t\alpha+\iota_u d\alpha+\nu\Delta_H\alpha+d\pi=f^\flat,
+ \qquad \delta\alpha=0,\qquad \pi=p+\tfrac12|u|^2.
+\]
+Its vorticity two-form $\omega=d\alpha$ satisfies
+\[
+ \partial_t\omega+\mathcal L_u\omega+\nu\Delta_H\omega=df^\flat.
+\]
+\end{proposition}
+\begin{proof}
+The $i$th component of $\iota_u d\alpha$ is
+$\sum_j u_j(\partial_j u_i-\partial_i u_j)
+=(u\cdot\nabla)u_i-\partial_i(|u|^2/2)$.
+Adding $d\pi$ restores the advective and pressure terms. The sign of $\Delta_H$ gives $-\nu\Delta u$ on the left. Apply $d$ to this equation. It commutes with $\partial_t$ and with $d\delta+\delta d$ because $d^2=0$. Cartan's identity gives
+$d\iota_u\omega=\mathcal L_u\omega-\iota_u d\omega=\mathcal L_u\omega$.
+The pressure disappears by $d^2\pi=0$.
+\end{proof}
+
+This places exterior powers in their proper role. The momentum flux $u\otimes u$ is symmetric; vorticity is alternating. The two occupy $\operatorname{Sym}^2$ and $\bigwedge^2$ tensor types, respectively. They interact through differential operators and metric contractions. Exchanging their symmetry types would change the equation.
+
+\begin{proposition}[Energy and the work of a differential]
+\label{prop:fluid-energy}
+Under the hypotheses just stated,
+\[
+ \frac{d}{dt}\frac12\|u\|_2^2+\nu\|\nabla u\|_2^2
+ =\langle f,u\rangle_{L^2}.
+\]
+In particular neither pressure nor transport contributes to the total kinetic-energy derivative.
+\end{proposition}
+\begin{proof}
+The pressure contribution is $\langle d p,\alpha\rangle=\langle p,\delta\alpha\rangle=0$. Pointwise, $\langle\iota_u d\alpha,\alpha\rangle=d\alpha(u,u)=0$, and $\langle d(|u|^2/2),\alpha\rangle$ integrates to zero. Integration by parts gives $\langle-\Delta u,u\rangle=\|\nabla u\|_2^2$. Finally $\langle\partial_tu,u\rangle=\tfrac12\partial_t\|u\|_2^2$.
+\end{proof}
+
+The proposition controls an integral. It does not bound $\|u\|_\infty$. This matters especially in the newly released construction: concentration makes the energetic cost of a large speed small. The scale computation in Chapter~\ref{ch:navier-stokes-release} is therefore compatible with this identity, rather than a violation of it. Nor does dissipation imply that every individual mode decreases: transport can redistribute energy between scales while its total work vanishes.
+
+On a curved manifold one must specify which viscous operator is intended. The Hodge Laplacian, the rough Laplacian and the divergence of a symmetric strain tensor differ by curvature contributions under standard conventions. A topological surface model cannot choose between them. The flat torus examples below fix the Hodge convention explicitly. Their familiar three-dimensional torus drawing is a visualization of periodic coordinates, not an assertion that the induced metric of the embedded doughnut is flat.
+
+\section{A quadratic order occurs in the actual construction}
+
+Section~6 of \citet{NSOpenAI2026} chooses the integer matrix
+\[
+ J=\begin{pmatrix}3&1\\1&5\end{pmatrix},\qquad
+ A=J-4I=\begin{pmatrix}-1&1\\1&1\end{pmatrix}.
+\]
+Its arithmetic controls two different derivative scales on an auxiliary torus. This is a direct meeting point with the orders developed earlier in the monograph.
+
+\begin{proposition}[The integral quadratic-order representation]
+\label{prop:fluid-order}
+One has $A^2=2I$, $J^2-8J+14I=0$ and $\det J=14$. The map
+\[
+ \rho:\Z[\sqrt2]\longrightarrow M_2(\Z),\qquad
+ a+b\sqrt2\longmapsto aI+bA
+\]
+is an injective unital ring homomorphism, and
+\[
+ \det\rho(a+b\sqrt2)=a^2-2b^2.
+\]
+Consequently $J=\rho(4+\sqrt2)$ and $\det(J^k)=14^k$ for every integer $k\ge0$.
+\end{proposition}
+\begin{proof}
+Matrix multiplication gives $A^2=2I$. Hence
+$(aI+bA)(cI+dA)=(ac+2bd)I+(ad+bc)A$, the multiplication law of the quadratic order. Its matrix is
+$\left(\begin{smallmatrix}a-b&b\\b&a+b\end{smallmatrix}\right)$, whose determinant is $a^2-2b^2$. If it is the zero matrix its off-diagonal entry gives $b=0$, then $a=0$, proving injectivity. Expanding $(J-4I)^2=2I$ gives the polynomial identity. Determinants are multiplicative, including the case $k=0$.
+\end{proof}
+
+The determinant is also the scalar by which the top exterior power acts:
+$\bigwedge^2J=14\operatorname{id}_{\bigwedge^2\Z^2}$. Thus the same alternating-tensor construction that gave the determinant and Cauchy--Binet earlier now measures a covering multiplicity. Since $14$ is not a unit of $\Z$, this is a covering endomorphism, not an invertible integral change of basis.
+
+\begin{proposition}[Covering multiplicity and exact averaging]
+\label{prop:fluid-covering}
+The map $\pi_k:\R^2/\Z^2\to\R^2/\Z^2$ given by $[y]\mapsto[J^ky]$ is a surjective covering with $14^k$ points in each fiber. For normalized Haar measure,
+\[
+ \int_{\mathbb T^2}F(J^ky)\,dy=\int_{\mathbb T^2}F(y)\,dy
+\]
+for every continuous $F$.
+\end{proposition}
+\begin{proof}
+Invertibility over $\R$ gives surjectivity. A fiber is a translate of
+$(J^{-k}\Z^2)/\Z^2$, isomorphic to $\Z^2/J^k\Z^2$. Integer row and column operations reduce the latter quotient to Smith normal form, whose order is $|\det J^k|=14^k$. Locally the real linear map is a diffeomorphism, proving the covering assertion. For a character $e_n(y)=e^{2\pi i n\cdot y}$, pullback gives $e_{(J^k)^Tn}$. Because $J^k$ is invertible, this character has nonzero integral exactly when $n=0$. Finite linear combinations of characters satisfy the integral identity. Uniform approximation by trigonometric polynomials extends it to continuous functions.
+\end{proof}
+
+This argument does not invoke a long-time ergodic limit. It is an exact identity for a finite covering. In the released proof one uses a common auxiliary torus for overlapping dyadic bands, keeping the difference of covering levels bounded. Its derivative factors are then uniformly bounded even though the absolute covering level grows. Omitting this distinction would lose the uniformity needed later in the estimates.
+
+\begin{proposition}[Why this is not a complex elliptic-curve endomorphism]
+\label{prop:fluid-no-complex}
+There is no real linear complex structure $C$ on $\R^2$, meaning $C^2=-I$, that commutes with $J$.
+\end{proposition}
+\begin{proof}
+The real symmetric matrix $J$ has distinct real eigenvalues $4-\sqrt2$ and $4+\sqrt2$. Every commuting map preserves each of its one-dimensional real eigenspaces. On each, $C$ is multiplication by a real scalar $c$, so $C^2$ is multiplication by $c^2\ge0$ and cannot be $-1$.
+\end{proof}
+
+Therefore the auxiliary covering has an arithmetic description by a quadratic order, but cannot be advertised as a holomorphic endomorphism of one fixed complex elliptic curve. The fact that its underlying real manifold is a torus supplies too little structure for that conclusion. This distinction also prevents an unsupported identification with the elliptic-curve groups used by cryptography.
+
+\section{The number-field norm supplies an analytic estimate}
+
+Set $b=\sqrt2-1$, $v_r=(1,-b)$ and $v_t=(b,1)$. Direct calculation gives
+$Jv_r=(4-\sqrt2)v_r$ and $Jv_t=(4+\sqrt2)v_t$. Their irrational directions are useful because no nonzero integer frequency is perpendicular to either one, and the failure of perpendicularity has a quantitative lower bound.
+
+\begin{lemma}[A quadratic small-divisor bound]
+\label{lem:fluid-small-divisors}
+There is an explicit constant $c=(1+(1+\sqrt2)^2)^{-1/2}>0$ such that
+\[
+ |v_r\cdot n|\ge c/|n|_2,\qquad |v_t\cdot n|\ge c/|n|_2
+ \quad(n\in\Z^2\setminus\{0\}).
+\]
+\end{lemma}
+\begin{proof}
+For the first expression put $a=n_1+n_2$ and $d=-n_2$. Then $v_r\cdot n=a+d\sqrt2$. Its algebraic norm $a^2-2d^2$ is a nonzero integer: otherwise irrationality of $\sqrt2$ would force $a=d=0$, and hence $n=0$. Its absolute value is at least one. The conjugate is $n_1+(1+\sqrt2)n_2$, of absolute value at most $c^{-1}|n|_2$ by Cauchy--Schwarz. Dividing the norm by this bound proves the first assertion. The other direction is $(n_2-n_1)+n_1\sqrt2$, whose conjugate has the same coefficient norm.
+\end{proof}
+
+\begin{proposition}[A tame inverse of a torus directional derivative]
+\label{prop:fluid-fourier-inverse}
+Let $v$ be either direction above, and let $F$ be a smooth zero-mean function on $\mathbb T^2$. There is a unique smooth zero-mean $\phi$ satisfying $v\cdot\nabla\phi=F$, namely
+\[
+ \phi(y)=\sum_{n\ne0}\frac{\widehat F(n)}{2\pi i\,v\cdot n}e^{2\pi i n\cdot y}.
+\]
+For every real $s$ there is $C_s$ with
+$\|\phi\|_{H^s}\le C_s\|F\|_{H^{s+1}}$. For every nonnegative integer $m$, one also has $\|\phi\|_{C^m}\le C_m\|F\|_{C^{m+4}}$.
+\end{proposition}
+\begin{proof}
+The lemma bounds the inverse multiplier by $C|n|$. Squaring and summing the weighted Fourier coefficients proves the Sobolev estimate. For the uniform derivative estimate, integration by parts bounds a Fourier coefficient of a $C^{m+4}$ function by $C(1+|n|)^{-m-4}\|F\|_{C^{m+4}}$. Multiplying by the $m$ derivative factors and the inverse divisor leaves $C(1+|n|)^{-3}$, summable in two dimensions. This proves uniform convergence of all required derivative series. Applying the same argument for arbitrarily large $m$ proves smoothness. Uniqueness follows because every nonzero Fourier coefficient of a solution of the homogeneous equation vanishes, and the zero coefficient was prescribed.
+\end{proof}
+
+Here an integral norm identity yields a finite derivative loss, which is then paid for using smoothness at every fixed order. That is a genuine analytic contribution of the arithmetic structure. It is not an estimate uniform in derivative order, and it would not justify infinite-order flatness from a fixed finite regularity assumption. In Section~8 of the released proof, repeated integration by parts along such directions makes compact-support cutoff errors smaller than any specified power. The number of input derivatives increases with the requested power.
+
+\section{Symmetric tensors, covariance and the stress correction}
+
+For a real velocity perturbation $w$ averaged by a positive probability measure, $\langle w\otimes w\rangle$ is positive semidefinite: for every $a$ its quadratic form is $\langle(a\cdot w)^2\rangle\ge0$. It belongs to the symmetric tensor representation. A single $w\otimes w$ has rank at most one, so all its two-by-two minors vanish. The determinantal variety describes this algebraic rank constraint, but averaging rank-one matrices can produce a full-rank matrix. Rank should not be transported through an average without proof.
+
+The released construction needs two specified radial cross-flux components rather than an arbitrary covariance matrix. If $b_+$ and $b_-$ have disjoint auxiliary supports, their mixed products vanish pointwise. Writing
+\[
+ \mathcal C(w)=\left\langle w_r(w_\theta,w_z)\right\rangle,
+ \qquad H=[\mathcal C(b_+)\mid\mathcal C(b_-)],
+\]
+gives $\mathcal C(a_+b_++a_-b_-)=H(a_+^2,a_-^2)^T$. A cross-flux vector itself is not a positive semidefinite matrix; positivity concerns the coefficients of this two-ray representation.
+
+\begin{proposition}[Positive realization and a signed tangent inverse]
+\label{prop:fluid-covariance}
+Let $H\in\GL_2(\R)$, let $s\in\R^2$ satisfy $y=H^{-1}s\in(0,\infty)^2$, and put $a_i=\sqrt{y_i}$. For $C(a)=H(a_1^2,a_2^2)^T$, define
+\[
+ L_a\sigma=\operatorname{diag}(2a_1,2a_2)^{-1}H^{-1}\sigma.
+\]
+Then $C(a)=s$, $D C(a)L_a\sigma=\sigma$, and
+\[
+ C(a+L_a\sigma)=s+\sigma+H\big((L_a\sigma)_1^2,(L_a\sigma)_2^2\big)^T.
+\]
+The last term is generally nonzero.
+\end{proposition}
+\begin{proof}
+The first identity substitutes $a_i^2=y_i$. Differentiating the coordinate squares gives $D C(a)=H\operatorname{diag}(2a_1,2a_2)$, whose displayed right inverse exists since both amplitudes are positive. Expanding $(a_i+h_i)^2=a_i^2+2a_ih_i+h_i^2$ proves the final identity.
+\end{proof}
+
+This is the same distinction between tangent information and an exact finite deformation that appeared in the varieties-of-complexes chapter. The determinant of $H$ proves a local algebraic inverse exists. The PDE proof additionally needs a lower bound for that determinant, control of derivatives of $H^{-1}$, and flat edge factors that permit division by the leading amplitudes. It keeps those amplitudes fixed while applying signed increments and accounts for the quadratic remainder at each subsequent step. Replacing this procedure by the claim that every target stress is a positive covariance would be false.
+
+The Schur-functor viewpoint is useful here without overreach. In characteristic zero, the flip on $V\otimes V$ yields the complementary projectors $(I+\mathrm{flip})/2$ and $(I-\mathrm{flip})/2$ onto symmetric and alternating tensors. The velocity covariance uses the first; the differential two-form uses the second. Higher tensor lifts use Young symmetries to remove redundant coordinates. Integral straightening theory controls the corresponding bases before denominators are inverted. None of these representation decompositions by itself supplies the scale estimates of the analytic construction.
+
+\section{Moment determinants and exact compatibility}
+
+Compactly supported primitives have obstructions. If $(\partial_r+e/r)\phi=g$ with $\phi$ compactly supported away from zero, multiplication by $r^e$ and integration gives $\int r^e g\,dr=0$. Conversely, for real $e$ and $g\in C_c^\infty((0,\infty))$ satisfying that moment condition,
+$\phi(r)=r^{-e}\int_0^r s^e g(s)\,ds$ is compactly supported and solves the equation. This elementary exactness criterion is the prototype for the weighted radial inverses in the proof. Torus-dependent coefficients require the additional phase shifts and flat remainders described there.
+
+\begin{proposition}[Independence of ordered moment functionals]
+\label{prop:fluid-moments}
+Let $\alpha_1,\ldots,\alpha_m$ be distinct real numbers, and let $\beta_j$ be nonzero, nonnegative smooth bumps supported inside disjoint ordered intervals $0<I_1<\cdots<I_m$. Then
+\[
+ B_{ij}=\int_{I_j}x^{\alpha_i}\beta_j(x)\,dx
+\]
+defines an invertible matrix. Smooth variation over a compact parameter set gives bounded inverse derivatives provided all the hypotheses, including distinctness of the exponents, persist there.
+\end{proposition}
+\begin{proof}
+A nonzero linear combination of $m$ distinct powers has at most $m-1$ distinct positive zeros. For induction divide by the smallest power. If the resulting expression is a nonzero constant, it has no zeros. Otherwise its nonzero derivative is a combination of at most $m-1$ distinct powers and has at most $m-2$ zeros by the induction hypothesis; Rolle's theorem then proves the assertion. Hence $\det[x_j^{\alpha_i}]$ never vanishes for $0<x_1<\cdots<x_m$. It has constant sign on that connected chamber. Multilinearity and Fubini give
+\[
+ \det B=\int_{I_1\times\cdots\times I_m}
+ \det[x_j^{\alpha_i}]\prod_j\beta_j(x_j)\,dx_1\cdots dx_m.
+\]
+The integrand has a fixed sign and is nonzero on a set of positive measure. Thus the determinant cannot vanish. Compactness bounds it away from zero for a compact family satisfying the hypotheses. The adjugate formula and repeated differentiation give the inverse-derivative bounds.
+\end{proof}
+
+For geometrically rescaled copies of one bump, the matrix becomes a Vandermonde matrix after row normalization. This connects the proof to the same alternating determinants and interpolation combinatorics used earlier. The quantitative limitation is crucial: if two exponents coalesce, the inverse can diverge. The parameter called $\lambda$ in the source is fixed before the high radial frequency is chosen. Sending it to zero inside an argument that needs a bounded inverse would alter the proof.
+
+\begin{lemma}[A controlled quadratic moment correction]
+\label{lem:fluid-quadratic-moments}
+Suppose $B$ is invertible, $Q$ is bilinear, $\|B^{-1}\|\le\beta$, $\|Q\|\le\kappa$, and $\|d\|\le d_0$. If $8\beta^2\kappa d_0\le1$, the equation $Bc+Q(c,c)=d$ has a unique solution in the closed ball $\|c\|\le2\beta d_0$.
+\end{lemma}
+\begin{proof}
+Set $r=2\beta d_0$ and $T(c)=B^{-1}(d-Q(c,c))$. For $\|c\|\le r$,
+$\|T(c)\|\le\beta d_0+\beta\kappa r^2\le3r/4\le r$.
+For two points in the ball, bilinearity gives
+$\|T(c)-T(c')\|\le2\beta\kappa r\|c-c'\|\le\tfrac12\|c-c'\|$.
+The contraction theorem gives the unique fixed point in that ball. The fixed-point equation is exactly the required moment equation.
+\end{proof}
+
+The estimate is a local solvability statement. It does not establish that a whole family of discrepancies is small; that must be proved from the profile construction and its order of parameter choices. This is the appropriate division of labor between algebraic elimination and analysis.
+
+\section{From varieties of complexes to compatible fluid discretization}
+
+Let a finite oriented cell decomposition of a closed surface have real cochains $C^0,C^1,C^2$ and coboundary matrices
+$d_0:C^0\to C^1$, $d_1:C^1\to C^2$ with $d_1d_0=0$. The matrix entries are signed incidence numbers. These matrices give a point of the affine variety of complexes defined by the entries of $d_1d_0$. Additional rank conditions select the strata studied earlier. The underlying incidence relation is exact over the integers; a floating-point residual is only a computational check of its implementation.
+
+Choose symmetric positive definite mass matrices $M_0,M_1,M_2$. Define
+\[
+ \delta_1=M_0^{-1}d_0^TM_1,\qquad
+ \delta_2=M_1^{-1}d_1^TM_2,\qquad
+ L_1=d_0\delta_1+\delta_2d_1.
+\]
+These are the chosen discrete adjoints and Hodge operator. Geometry enters through the $M_j$, not through the relation $d_1d_0=0$ alone. Stable approximation requires additional commuting projection and norm estimates; finite element exterior calculus makes these requirements precise \cite{NSFEEC2006,NSFEEC2010}.
+
+\begin{proposition}[Discrete Hodge energy and incompressible subspace]
+\label{prop:fluid-discrete-hodge}
+For every $x\in C^1$,
+\[
+ x^TM_1L_1x=\|\delta_1x\|_{M_0}^2+\|d_1x\|_{M_2}^2\ge0.
+\]
+Moreover $L_1$ preserves $\ker\delta_1$. A velocity of the form $\delta_2\psi$ belongs to this kernel.
+\end{proposition}
+\begin{proof}
+The definitions identify $d_0$ and $\delta_1$, and $d_1$ and $\delta_2$, as adjoints in the indicated inner products. Move each adjoint across the pairing to obtain the sum of squares. Taking adjoints of $d_1d_0=0$ gives $\delta_1\delta_2=0$. Therefore
+$\delta_1L_1=(\delta_1d_0)\delta_1$, which is zero on $\ker\delta_1$. The last assertion is the same zero-composition identity.
+\end{proof}
+
+An arbitrary algebraic change of basis preserves the complex equation. It preserves the numerical energy only if the metric is transported as well. If $x'=Tx$, then the corresponding matrix is $M'_1=T^{-T}M_1T^{-1}$. Retaining the identity metric after a badly conditioned change of basis can change coercivity constants arbitrarily. This repeats, in the fluid setting, the distinction between homological equivalence and quantitative spectral control.
+
+\begin{theorem}[An energy-certified finite learned evolution]
+\label{thm:fluid-finite-closure}
+Work in orthonormal coordinates on a finite-dimensional divergence-free subspace. Let $K(a)$ be a locally Lipschitz skew-symmetric matrix, $L$ a symmetric positive semidefinite matrix, and $B_\theta(a)$ a locally Lipschitz matrix. For continuous forcing $g(t)$, consider
+\[
+ \dot a=-K(a)a-\nu La-B_\theta(a)^TB_\theta(a)a+g(t),\qquad\nu>0.
+\]
+It satisfies
+\[
+ \tfrac12\frac d{dt}|a|^2
+ =-\nu a^TLa-|B_\theta(a)a|^2+a\cdot g(t).
+\]
+Every solution exists for all finite positive times, provided the displayed coefficients are defined and locally Lipschitz on the whole finite-dimensional space.
+\end{theorem}
+\begin{proof}
+For a skew matrix $a^TK(a)a$ equals its own negative, hence is zero. The factorized term has work $|B_\theta(a)a|^2$. This proves the identity. Young's inequality yields
+$\frac d{dt}|a|^2\le |a|^2+|g(t)|^2$.
+Gronwall gives a finite bound on every finite interval because $g$ is continuous. A locally Lipschitz finite-dimensional ODE can be continued while its solution stays in a compact subset of its domain. The bound therefore rules out finite-time escape and proves global continuation.
+\end{proof}
+
+The theorem is a useful design rule for a learned closure, including one whose matrix entries are produced by quantum expectation values. It is also a useful warning: every fixed finite model can be globally well behaved while the continuum family develops unbounded pointwise velocity. The equivalence constant between a grid energy norm and the maximum grid value typically diverges under refinement. Global continuation of each finite ODE cannot be passed to the continuum without uniform regularity and consistency estimates.
+
+The dissipative ansatz is deliberately restrictive. True interscale transfer can include backscatter, while $-B_\theta^TB_\theta$ never injects resolved energy. A trained model in this class must be assessed for that modeling bias. The algebraic certificate proves stability of its own evolution, not fidelity to the exact coarse dynamics.
+
+\section{Gentle algebras, path relations and quantitative interfaces}
+
+The project uses gentle surface algebras to organize permitted local paths and relations. A compatible use here is to let vertices label local field types or mesh patches, arrows label permitted transfers, and quadratic relations encode compositions known to vanish. The equation $d^2=0$ is one such zero composition. The derivative-block relation in the Volterra construction, discussed in Chapter~\ref{ch:navier-stokes-release}, is another actual example. Counting admissible words then bounds how often a derivative-losing operator can appear.
+
+One must verify the gentle conditions for the chosen quiver and relations. A free algebra with a single relation $b^2=0$ is not automatically gentle: allowed continuations at its other generator can violate the required local uniqueness. Nor does an arbitrary triangulated surface incidence quiver become gentle merely because it is drawn on a surface. The valid general statement is that a representation of a specified path algebra with relations encodes the corresponding exact operator identities. Calling it gentle requires the extra combinatorial checks already described in the earlier chapters.
+
+An associated graded construction is likewise conditional on a specified filtration. If classes $\mathcal M_\alpha$ obey
+$\mathcal M_\alpha\mathcal M_\beta\subseteq\mathcal M_{\alpha+\beta}$,
+they track orders under multiplication. If a derivative maps $\mathcal M_\alpha$ into $\mathcal M_{\alpha-\kappa}$, its loss must be included in a correction cycle. Logarithmic factors and flat shell weights are part of the analytic definition. A finitely generated semigroup algebra, a flat toric degeneration, normality or a Schur-module decomposition does not follow solely from this notation. Such claims require the corresponding algebraic hypotheses and proofs.
+
+Standard monomial theory is valuable when one introduces an actual finite coordinate ring of rank constraints, tensor symmetries or moment minors. It provides bases, relations and algebraic elimination. The Navier--Stokes construction further needs positivity margins, compact support and all-order differentiability. These conditions are not encoded by an affine scheme over $\C$. In particular positivity is real semialgebraic or analytic data, and flat nonzero functions cannot be recovered from a convergent analytic Taylor series at their flat endpoint.
+
+\section{Determinants, spectra and what the reformulation adds}
+
+For a finite positive operator $L$ with eigenvalues $\lambda_j$, the identities
+\[
+ \det(sI+L)=\prod_j(s+\lambda_j),\qquad
+ \frac d{ds}\log\det(sI+L)=\operatorname{tr}(sI+L)^{-1}
+\]
+hold for $s>0$ by diagonalization and ordinary differentiation. Exterior powers and Schur constructions organize coefficients of the determinant. A continuum determinant requires a specified regularization and domain; a spectral zeta function requires convergence or analytic continuation. No identification with an arithmetic $L$-function, its zeros, or the inherited GRH program follows from these finite identities.
+
+The improvement supplied by this extension is therefore explicit: the integral torus covering is expressed as an order action; its norm becomes a small-divisor estimate; covariance realization becomes a quadratic map with a retained remainder; moment matching becomes a determinant and contraction problem; incompressibility becomes a complex relation; and learned finite models receive a verifiable energy interface. The released proof's analytic construction is preserved rather than replaced. A stronger theorem, such as a result for unforced Navier--Stokes or a quantitative algorithm producing its full singular field, would require additional work beyond these reformulations.

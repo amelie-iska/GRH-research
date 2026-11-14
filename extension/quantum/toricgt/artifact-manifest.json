@@ -1,0 +1,202 @@
+{
+  "schema": "quantum-toricgt-artifact-manifest-v1",
+  "training_sources_unchanged": {
+    "verify.py": true,
+    "model.py": true,
+    "data.py": true,
+    "train.py": true,
+    "reference.py": true
+  },
+  "dataset_sha256": "4147088938a0742d956aceb7e50a3c7206d349b8f1196cb7a3b6fefb1a774156",
+  "runs": 9,
+  "physical_quantum_hardware": false,
+  "backend": "PyTorch CUDA exact statevector/autograd simulation",
+  "training_uses_custatevec": false,
+  "whole_chapter_lean_formalized": false,
+  "files": {
+    "README.md": {
+      "bytes": 11254,
+      "sha256": "4b35c7fbb62840d7b41de307ae8339034b8ebad878fe3f10af365e0df7b88a3f"
+    },
+    "algebra_checks.py": {
+      "bytes": 2706,
+      "sha256": "9322564a8a17d0812349ee6e6aebd0056acd0b167d1e6990a6f38d6524670b32"
+    },
+    "data/dataset-v1.json": {
+      "bytes": 2685669,
+      "sha256": "4147088938a0742d956aceb7e50a3c7206d349b8f1196cb7a3b6fefb1a774156"
+    },
+    "data.py": {
+      "bytes": 13018,
+      "sha256": "a447be870125d3284ed5e8505bcbe244437fc0046739f3fe7a3f4147b0dd8373"
+    },
+    "graph-reference.js": {
+      "bytes": 8454,
+      "sha256": "c320c8003c177c8c7ecc21aa93c6e0c90ce91b1aeb0f32c1ade40471ca698e58"
+    },
+    "model.py": {
+      "bytes": 8382,
+      "sha256": "6c47d2575bca4be71da04535e34ae23110b50cea334a28b15f2155590ce51c6c"
+    },
+    "package.json": {
+      "bytes": 68,
+      "sha256": "994b1083e837de92c8bb783f0f95c84331b62e57bff02249f9bb364377ee701e"
+    },
+    "reference.js": {
+      "bytes": 3140,
+      "sha256": "fcaa63640ffc24f719467daa060d31935dee80cf256d6dc6919e3bf51bdf6cce"
+    },
+    "reference.py": {
+      "bytes": 2027,
+      "sha256": "1a6387d7c8af91b2bdb735c91f42683eb553fe6a195f2e2b93eefeaeb5f75f39"
+    },
+    "results/algebra-checks.json": {
+      "bytes": 1126,
+      "sha256": "a345c05e9f44e2f9d7412d16598e1eb441bfd2a1d2239c4c8ac5362318beb6fd"
+    },
+    "results/browser-benchmark.json": {
+      "bytes": 24904,
+      "sha256": "283e9bb0e40777767f77a45b1b46d2d86805456ad1aa7730932f65546b6aee95"
+    },
+    "results/browser-circuit-verification.json": {
+      "bytes": 197,
+      "sha256": "e211d8bb62ced2413e3db01cf99b1a1901453b35a83ab1e5a695612310a36449"
+    },
+    "results/browser-fullforward-verification.json": {
+      "bytes": 1679,
+      "sha256": "a771dd6f436f74d2df683f523910a5bc1637384e6a96af888d80afdc802cd16f"
+    },
+    "results/browser-graphs.json": {
+      "bytes": 6868,
+      "sha256": "635fa417721b9eee2d84c090b80cddd9a8eb7e177c4e14bb70285e0fd4d73c88"
+    },
+    "results/browser-weights.json": {
+      "bytes": 527773,
+      "sha256": "6ed4c44d2883b6dfd8d73393affe5cf3f24ea67620880e5c3242d0ec27147e50"
+    },
+    "results/cuda-verification-final.json": {
+      "bytes": 66693,
+      "sha256": "c31430b78f59c4d8171e32dc522ec119ce33bd2055dc5fa4c9ee690ea541d944"
+    },
+    "results/execution-record.json": {
+      "bytes": 1229,
+      "sha256": "19011b2462c824cf02a9c1561e97bdf7be3983079448929ae4e96158c7a16d7b"
+    },
+    "results/numpy-verification.json": {
+      "bytes": 65064,
+      "sha256": "f473a57c93bbbd81947f6e2a3fb1d586f697773bfdb4323b75b4806c25c83132"
+    },
+    "results/training-v1/benchmark.json": {
+      "bytes": 30253,
+      "sha256": "8aed164d145f6440d66e87007b20713a0b86e33cbd76e51c53c6f1a9a2afe6f7"
+    },
+    "results/training-v1/classical-seed17/run.json": {
+      "bytes": 1241831,
+      "sha256": "ca0a15436e912ae6938a865ac22252c04145825b80cc788b3ab673e2cf5d291b"
+    },
+    "results/training-v1/classical-seed17/weights.npz": {
+      "bytes": 112200,
+      "sha256": "a015658ece0dca75e48db95e83807e129e54da5818138549f465a858b9adee77"
+    },
+    "results/training-v1/classical-seed29/run.json": {
+      "bytes": 1242021,
+      "sha256": "1ba81553a5403c747cc666a6dfefdfdec0c13b736516aaaf65bebe7616f01664"
+    },
+    "results/training-v1/classical-seed29/weights.npz": {
+      "bytes": 112119,
+      "sha256": "a1b2f480e3fdf858a74c17e2034bec38483d57ea1850f568215749394ccf4079"
+    },
+    "results/training-v1/classical-seed43/run.json": {
+      "bytes": 1241012,
+      "sha256": "4eb71305f3b6b0e9d2072a3316622cce1550d48b7601973725dde51a90168dae"
+    },
+    "results/training-v1/classical-seed43/weights.npz": {
+      "bytes": 112177,
+      "sha256": "dac31d9e775c76fcbdb2ef4b2b32ae490684f217ae5049fb2f8a46b2a85408dc"
+    },
+    "results/training-v1/frozen-seed17/run.json": {
+      "bytes": 1240890,
+      "sha256": "07da0fd567ea29337eec14a26dad172d8459bbaba160600caac6ab85998140fa"
+    },
+    "results/training-v1/frozen-seed17/weights.npz": {
+      "bytes": 112154,
+      "sha256": "6e6ab391d88e207350219bb999f5fa6fffeb89e0dd332d0e1330d20115ce5600"
+    },
+    "results/training-v1/frozen-seed29/run.json": {
+      "bytes": 1241061,
+      "sha256": "269d63787007e4bc3077ee772c0ba4bda400150e1559893c72d9684fb082c836"
+    },
+    "results/training-v1/frozen-seed29/weights.npz": {
+      "bytes": 112144,
+      "sha256": "7c5c390c71753ceb2b06a3087e19f01a221ec68dc8f895961dac02ce98908781"
+    },
+    "results/training-v1/frozen-seed43/run.json": {
+      "bytes": 1240634,
+      "sha256": "bb68f4cb6b25e5149b9c28c97a48e422508527918c7b0351ee0aefa1090183d2"
+    },
+    "results/training-v1/frozen-seed43/weights.npz": {
+      "bytes": 112188,
+      "sha256": "337a062a1eea29de787c91e907921a2564edb240eda81f09f876ddea32f6133e"
+    },
+    "results/training-v1/protocol.json": {
+      "bytes": 1204,
+      "sha256": "052a61dd4594753e5407a0b919ed91e0068bb47d36b9267e3332646f04ef0f0b"
+    },
+    "results/training-v1/quantum-seed17/run.json": {
+      "bytes": 1241462,
+      "sha256": "71ae65d141db6493c3cc5ad16392fabbbcfeec5a34689f7f79b3414ad0ac390d"
+    },
+    "results/training-v1/quantum-seed17/trace.json": {
+      "bytes": 263847,
+      "sha256": "99bb86db8ea1afb976d144d3f2869133964ecb587bba6563d04ffa80246c6ce7"
+    },
+    "results/training-v1/quantum-seed17/weights.npz": {
+      "bytes": 112156,
+      "sha256": "31ef054d6f180b49cc2e9c86d6660e348cec70e4df5202ef4030ab42e985ab12"
+    },
+    "results/training-v1/quantum-seed29/run.json": {
+      "bytes": 1241720,
+      "sha256": "d83882a2a5e18b2b3b0144199ec30507396f5c2bdbfa563dab60d182b9195c4f"
+    },
+    "results/training-v1/quantum-seed29/trace.json": {
+      "bytes": 263636,
+      "sha256": "10c13238da4ef65875d22f72e7946ce76388141daee5001e4e2dc7791a61e88c"
+    },
+    "results/training-v1/quantum-seed29/weights.npz": {
+      "bytes": 112141,
+      "sha256": "0d1c0207d08e4133897385335fa6202d3c3312d70cb0915180eb179169c6c6f1"
+    },
+    "results/training-v1/quantum-seed43/run.json": {
+      "bytes": 1241222,
+      "sha256": "f75a05d889c9a745bda9df7d36e6279174a9e553b2204d8fdf3dab21aa967aa6"
+    },
+    "results/training-v1/quantum-seed43/trace.json": {
+      "bytes": 263922,
+      "sha256": "c60d1e51327a50b08734e633457bb03e77bb14af4ed6e6e9d742a0cfd6626f39"
+    },
+    "results/training-v1/quantum-seed43/weights.npz": {
+      "bytes": 112128,
+      "sha256": "6b6afc5c102a822ddde8a990a6d83712bf2af3569e8c9a16d911867e07d0944b"
+    },
+    "results/training-v1.log": {
+      "bytes": 11771,
+      "sha256": "889e9397d1d98fba46ee0afd276a79d153bb1d6d5af1a7a7bdd796e3a326161a"
+    },
+    "train.py": {
+      "bytes": 13118,
+      "sha256": "d8a1297bc168c664193deef770d98b9c82fdd4f62f5874b936cbc397f2e6fbcf"
+    },
+    "verify-graph-reference.mjs": {
+      "bytes": 2331,
+      "sha256": "d2636cf77319b9d2544639c124e56262018bdf0307af21a3a844d8a66e9839f3"
+    },
+    "verify-reference.mjs": {
+      "bytes": 1273,
+      "sha256": "3cbac109e96bfb16f4399674032c8b572b0623ad65c604dcb1a855b586057475"
+    },
+    "verify.py": {
+      "bytes": 8653,
+      "sha256": "045c9c45588a3cffbaed82033a75fa2ea7740103c4e3b69110a5b5ecbf119a6b"
+    }
+  }
+}

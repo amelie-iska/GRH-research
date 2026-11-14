@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-13",
+  "status": "static_and_mathematical_checks_passed_rendered_QA_blocked",
+  "url": "http://127.0.0.1:8765/",
+  "staticChecks": {
+    "uniqueIDs": 102,
+    "labelledNativeControls": 22,
+    "rangeControlsWithOutput": 19,
+    "labelledVisuals": 8,
+    "keyboardFocusableInteractiveCanvases": 2,
+    "validInternalFragments": 14,
+    "CSSParseErrors": [],
+    "JSSyntax": "passed",
+    "autoAnimation": false,
+    "externalRuntimeDependencies": false
+  },
+  "mathChecks": {
+    "status": "passed",
+    "scope": "finite companion models only",
+    "curvePoints": 19,
+    "ellipticAssociativityTriples": 6859,
+    "maxConeResidual": 1.6653345369377348e-16,
+    "maxFourierOffSupportProbability": 2.178602969161071e-34,
+    "maxGaugeResidual": 4.47545209131181e-16,
+    "torusSeamResidual": 6.613092715395707e-16
+  },
+  "renderedChecks": {
+    "status": "blocked",
+    "pageIdentity": "not executed",
+    "notBlank": "not executed",
+    "frameworkOverlay": "not executed",
+    "consoleHealth": "not executed",
+    "screenshots": "not captured",
+    "controlInteractions": "not executed",
+    "responsiveOverflow": "not executed",
+    "reducedMotionComputedStyle": "not executed",
+    "URLHistoryInteraction": "not executed"
+  },
+  "browserPluginFailure": "Browser access requires the originating browser context. Open ChatGPT in the browser with the connected extension and try again.",
+  "headlessFallbackFailure": "Chromium process_singleton_posix.cc:297: socket() failed: Operation not permitted (1). No page loaded.",
+  "attemptedFallback": "Playwright 1.62.0 with provided /usr/bin/chromium; no account or profile reused.",
+  "remainingReleaseIntegration": [
+    "downloads/paper.pdf",
+    "downloads/source.zip",
+    "legacy/index.html",
+    "verification/verification.json",
+    "Set repository link only after real repository publication."
+  ],
+  "sourceHashes": {
+    "index.html": "af4c11255406eb6e7975b8235e9fdc65655f2ae62cba972ca1dc17ec4e0989c4",
+    "styles.css": "11645321a525893f116aeccf7ac7bb0ae7d63426ee5edd5854328fa792a84ace",
+    "app.js": "48836f4a6a80dab3d3fa6fef13837a9a0002b38d1a698e233e81b9e7bee15430",
+    "math.js": "81cf1c37b64c25ae376055644490b526f5365fddeaed0860b01213f6dc7e8049"
+  }
+}

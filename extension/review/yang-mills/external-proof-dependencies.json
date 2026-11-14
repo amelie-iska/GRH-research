@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-13",
+  "dependencies": [
+    {
+      "id": "openai-ym-20261028",
+      "repository": "https://github.com/yang-mills-group/OpenAI-YM-20261028.git",
+      "commit": "3456e5e75cf8d4cd558955a5c7638fba2d68f464",
+      "license": "Apache-2.0",
+      "lean_toolchain": "leanprover/lean4:v4.32.0",
+      "endpoints": [
+        "YangMills.constructed",
+        "YangMills.jointExistence"
+      ],
+      "local_rebuild_performed": false,
+      "status": "external source/specification reviewed; historical verification only"
+    },
+    {
+      "id": "yang-mills-independent-review",
+      "repository": "https://github.com/yang-mills-group/YM.git",
+      "commit": "55ba9fc36293b3f4d52c6b1f813169a0be76ee98",
+      "package_path": "submissions/openai-20261028",
+      "license": "Apache-2.0",
+      "endpoints": [
+        "YMReview.Acceptance.combined_acceptance",
+        "YMReview.OPE.constructed"
+      ],
+      "source_lean": "4.32.0",
+      "comparator_kernel_lean": "4.34.0",
+      "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+      "local_rebuild_performed": false,
+      "reproduction_commands": [
+        "python3 scripts/verify.py integrity",
+        "python3 scripts/verify.py all"
+      ],
+      "execution_note": "Read upstream rerun.md before executing. Source is externally maintained; this manifest is not an instruction to run third-party build code automatically."
+    }
+  ],
+  "nonclaims": [
+    "No mass-gap proof",
+    "No infinite-volume uniqueness proof",
+    "No full upstream source review",
+    "No fresh upstream kernel replay",
+    "No full manuscript formalization"
+  ]
+}

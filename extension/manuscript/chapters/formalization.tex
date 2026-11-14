@@ -1,0 +1,322 @@
+\chapter{The Lean 4 companion: verified statements and explicit limits}
+
+\section{Current six-module verification}
+
+The current companion contains 115 selected theorem declarations in six
+modules: 25 in \texttt{BridgeTheorems}, seven in \texttt{QuantumInterfaces},
+16 in \texttt{DiagramGrammar}, 34 in \texttt{FluidInterfaces}, 16 in
+\texttt{ReductionContracts}, and 17 in \texttt{TransportContracts}.
+The final verification records a fresh compiler check, exact printed types,
+source hashes and axiom dependencies for every declaration, with no warnings
+or unexpected axioms. Its authoritative record is
+\texttt{lean/final-verification/verification.json} and the six module logs.
+The formal type map identifies 68 declarations with precise partial
+components of 25 manuscript environments; no whole composite environment is
+labelled completely formalized. This verification covers the selected local
+interfaces, not the full upstream continuum proof or cryptographic security.
+
+The following section preserves the original 25-declaration module's exact
+verification record, which remains a component of the current package.
+
+\section{Original module verification result}
+
+The file \texttt{lean/BridgeTheorems.lean} contains 25 named theorem
+declarations. It was compiled successfully with Lean 4.24.0 on Linux, using
+mathlib revision
+\begin{center}\small\texttt{f897ebcf72cd16f89ab4577d0c826cd14afaafc7}.\end{center}
+The compiler exited with status zero. Every declaration has a corresponding
+\texttt{\#print axioms} command in the audit block. The resulting dependencies
+are subsets of the standard set
+\[
+ \{\texttt{propext},\ \texttt{Classical.choice},\ \texttt{Quot.sound}\}.
+\]
+No declaration in this companion uses \texttt{sorry}, \texttt{sorryAx}, or a
+new project axiom. The actual compiler output is preserved in
+\texttt{lean/verification.log}; the toolchain, source hash, declaration names
+and axiom lists are preserved in \texttt{lean/verification.json}. Those files
+describe a completed local check, not a proposed future build.
+
+The source hash of the verified Lean file is
+\begin{center}\scriptsize
+\texttt{a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba}.
+\end{center}
+If the file is edited, that hash and the build evidence must be regenerated.
+The pinned toolchain and dependency commit make the verification target
+unambiguous. They do not by themselves prove that a later modified file has
+been checked.
+
+\section{Why this is selected formalization}
+
+The present development formalizes an elementary mathematical spine through
+the monograph. It does not formalize every theorem cited or proved in the
+paper. In particular it does not contain a formal proof of the full
+Buchsbaum--Eisenbud acyclicity criterion, the Atiyah--Singer index theorem,
+the correctness and complexity of Shor's physical circuit model, a worst-case
+LWE security reduction, the inherited arithmetic determinant conjectures, or
+the Yang--Mills construction. It proves neither GRH nor a Yang--Mills mass
+gap. Stating this scope is necessary to interpret what the compiler has
+actually certified.
+
+There are three different proof layers in the deliverable. First, the paper
+gives complete elementary proofs of many finite and algebraic results.
+Second, it states deep external theorems with citations and their relevant
+hypotheses. Third, the companion checks 82 selected formal declarations across
+the original 25-declaration file, the seven-declaration quantum supplement,
+the sixteen-declaration diagram and transport supplement, and the
+34-declaration fluid supplement in Appendix~\ref{ch:fluid-verification}.
+These layers overlap, but they are not identical. A citation to a formal
+upstream project is also different from compiling that project during this
+work. The Yang--Mills dependency manifest records the frozen external source
+and assessment, and explicitly states that the full external development
+was not rebuilt here.
+
+\section{Linear complexes and rank}
+
+The first group of declarations works with arbitrary linear maps
+$A:V_0\to V_1$ and $B:V_1\to V_2$ over a field. The zero-composition
+hypothesis is an equality of linear maps, not a numerical tolerance:
+\[
+ B\circ A=0.
+\]
+The declaration \path{complex_range_le_kernel} proves
+$\im A\subseteq\ker B$. Under finite dimensionality of the middle space,
+\path{complex_rank_bound} proves the adjacent-rank inequality, and
+\path{middle_exact_iff_rank_sum} proves that equality is equivalent to
+middle exactness. These statements are useful formal interfaces because
+they distinguish the complex condition from the stronger exactness
+condition.
+
+The Euler-rank identity is stated over signed integers. This avoids a common
+formalization trap: subtraction on natural numbers is truncated, whereas
+the ordinary algebraic cancellation of alternating dimensions assumes
+signed arithmetic or hypotheses ensuring every subtraction is valid. The
+geometric interpretation of the ranks as dimensions of actual cohomology
+groups is supplied by the preceding linear-algebra results and the paper.
+
+\section{The cone and its tangent calculation}
+
+The definition \texttt{cone} is the polynomial
+$x_1y_1+x_2y_2$ over a commutative ring. Its perturbation theorem is an exact
+polynomial identity with a quadratic remainder. Given a point on the cone
+and a direction satisfying the linearized equation, the second theorem
+identifies the residual as $t^2(u_1v_1+u_2v_2)$. It does not incorrectly
+assert that every tangent vector gives a straight line lying on the
+variety.
+
+The sum-and-difference identity supplies the algebra behind the real
+torus-link parameterization. It is stated without division, so it is valid
+over every commutative ring. The geometric step that divides by $\sqrt2$ and
+identifies circles takes place over $\R$ in the paper. The Lean theorem
+checks the polynomial part; it does not claim a formal homeomorphism of the
+link with a torus. Similarly, the two-generator Koszul declaration proves
+zero composition only. Regular-sequence hypotheses are needed for an
+exactness theorem and are not silently inferred from commutativity.
+
+\section{Hodge positivity and the characteristic polynomial}
+
+The generic matrix theorem proves that
+\[
+ AA^*+B^*B
+\]
+is positive semidefinite for finite real matrices. This statement does not
+require $BA=0$. That is mathematically appropriate: positivity of the sum of
+two squares is weaker than its interpretation as the Laplacian of a
+complex. The paper uses the complex condition when identifying its kernel
+with cohomology.
+
+The coordinate calculation uses $A=(x_1,x_2)^T$ and
+$B=(y_1,y_2)$ and proves the quadratic-form identity
+\[
+ z^T\Delta_1z=(x_1z_1+x_2z_2)^2+(y_1z_1+y_2z_2)^2.
+\]
+The energy is nonnegative, and vanishes exactly when both displayed linear
+forms vanish. The characteristic determinant is checked before imposing
+the complex equation:
+\[
+ \det(tI-\Delta_1)
+ =(t-\|x\|^2)(t-\|y\|^2)-(x\cdot y)^2.
+\]
+On the cone $x\cdot y=0$, it factors into the two squared-length factors.
+Retaining the defect term in the general identity helps prevent accidental
+use of the factorization off the variety.
+
+The final Hodge declarations check the diagonal family and the existence of
+arbitrarily small energy along a fixed unit direction. This is a formal
+finite-dimensional obstruction to inferring a uniform coercivity constant
+from exactness alone. It is not a formal theorem about the spectrum of an
+interacting quantum-field Hamiltonian.
+
+\section{Integral shears, cyclic kernels and noisy arithmetic}
+
+The shear declarations compute the determinant, inverse, image of a basis
+vector, and its squared norm. Together they make precise the distinction
+between an invertible integral map and a map with bounded Euclidean
+distortion. They do not formalize a complete lattice-reduction algorithm or
+its asymptotic runtime.
+
+The cyclic-kernel declarations work in \texttt{ZMod q}. They prove the
+algebraic relation underlying
+$aP+b(dP)=(a+bd)P$ and the collision equation. The formal file does not
+construct a quantum state, a unitary Fourier transform, a reversible
+elliptic-curve circuit, or a success-probability measure. Those require a
+substantially larger formal specification. The Fourier proof in the paper
+and the finite numerical experiment have their own clearly stated status.
+
+The noise-cancellation declaration is a matrix identity over a commutative
+ring, using compatible finite index types. It proves that the public linear
+terms cancel and isolates the remaining error. The binary-noise bound is a
+real inequality used in an elementary correctness argument. Neither proves
+computational indistinguishability, chosen-ciphertext security, or the
+security of ML-KEM. Correctness algebra and security reductions answer
+different questions.
+
+\section{Reading an axiom audit}
+
+The appearance of \texttt{Classical.choice} in a declaration does not mean
+that an arbitrary new cryptographic or analytic hypothesis has been added.
+It identifies use of Lean's standard classical foundation. Likewise
+\texttt{propext} and \texttt{Quot.sound} are standard logical principles in
+the mathlib environment. What would materially change this audit is a new
+project axiom asserting a difficult target, or an unproved placeholder that
+introduces \texttt{sorryAx}.
+
+Absence of such placeholders is necessary, but is not a complete review of a
+formal result. One must still read the theorem's type. A theorem of the form
+``if a uniform gap exists, then a uniform gap exists'' can compile without
+any placeholder and yet supply no new mathematics. An empty index type can
+make a supposedly universal statement vacuous. An unconnected construction
+witness can prove an existential object while failing to connect it to the
+intended lattice approximants. These are specification issues, not failures
+of the kernel. The external Yang--Mills review discussed in the main text
+illustrates why keeping the construction witness in the acceptance target
+matters.
+
+The present file makes each assumption explicit with
+\texttt{set\_option autoImplicit false}. Its declarations are short enough
+to inspect directly. This improves auditability, but it does not erase the
+need to compare their types with the intended mathematical prose.
+
+\section{Rebuilding and extending the companion}
+
+The tracked \texttt{lean-toolchain} and \texttt{lakefile.toml} specify the
+compiler and exact mathlib revision. A conventional build obtains that
+toolchain, resolves the pinned package, obtains the corresponding compiled
+cache if desired, and runs \texttt{lake build}. The README also records the
+actual environment used for this verification. Downloaded toolchains and
+mathlib caches are dependencies, not vendored proof evidence.
+
+Any extension should add a theorem-to-text mapping and preserve the axiom
+audit. For example, formalizing the nodal periodic resolution would require
+a quotient algebra, a basis equivalence and module maps, followed by kernel
+and image computations. Formalizing the torus-link topology would require
+continuous maps and an inverse homeomorphism. Formalizing the Fourier
+sampling theorem would require finite-dimensional complex Hilbert spaces,
+a normalized state, a unitary operator and a probability interpretation.
+Each is a meaningful project. Replacing those requirements by a single
+axiom bearing the desired theorem's name would not satisfy them.
+
+\section{Seven additional quantum and binary-chain declarations}
+
+The additional file \path{QuantumInterfaces.lean} was compiled against the
+same pinned toolchain. Its seven declarations have printed theorem types
+and foundational dependency reports in \texttt{quantum-\allowbreak verification.log};
+the independent \texttt{quantum-\allowbreak verification.json} records its hash and
+inventory. The original 25-declaration file and its verification manifest
+remain unchanged. These two files supply the first 32 selected declarations;
+the second-pass module below adds sixteen.
+
+Three theorems verify $X^2=Z^2=I$ and $XZ=-ZX$ for the actual integer
+matrices $X=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$ and
+$Z=\left(\begin{smallmatrix}1&0\\0&-1\end{smallmatrix}\right)$. Further
+declarations define the sign character $\chi$ of $\mathbb F_2$ and prove
+\[
+ \chi(a+b)=\chi(a)\chi(b).
+\]
+For a binary vector space $C$, a linear functional $\ell:C\to\mathbb F_2$,
+and an amplitude function $\psi:C\to R$ with $R$ any commutative ring, the
+implemented operators are
+\[
+ (X_a\psi)(v)=\psi(v+a),\qquad
+ (Z_\ell\psi)(v)=\chi(\ell(v))\psi(v).
+\]
+The theorem \path{shift_phase_commutation} derives
+$X_aZ_\ell=\chi(\ell(a))Z_\ell X_a$ as equality of functions. The general
+coefficient ring includes complex amplitudes, but the formal declaration
+does not assert an additional analytical Hilbert-space theorem.
+
+For actual maps $d_2:C_2\to C_1$ and $d_1:C_1\to C_0$ over $\mathbb F_2$
+with $d_1d_2=0$, \path{boundary_phase_shift_commute} sets $a=d_2f$ and
+uses the functional $\ell d_1$. Their pairing vanishes by the given
+composition equation, so the corresponding shift and phase operators
+commute. The result thus verifies a concrete algebraic interface used in
+CSS constructions; it does not assume the desired commutation as its own
+premise. The seventh theorem derives
+\[
+ E-(V-1)-(F-1)=2g
+\]
+from the separately supplied integer equation $V-E+F=2-2g$. Surface
+classification, the ranks of cellular boundary maps, and error-correction
+performance are outside this arithmetic substitution. No complete quantum
+circuit or QNN training procedure is claimed formalized.
+
+\section{Sixteen additional diagram and transport declarations}
+
+The second-pass file \path{DiagramGrammar.lean} was compiled with exit
+status zero under the same pinned Lean 4.24.0 and mathlib environment.
+Its actual output is \path{diagram-verification.log}; its declaration and
+axiom inventory is \path{diagram-verification.json}. The source hash is
+\begin{center}\scriptsize
+\texttt{871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6}.
+\end{center}
+All 48 declarations across the three modules were also freshly rechecked
+during the second pass, with source hashes preserved in the audit ledger.
+
+The typed syntax has objects, identity maps, typed generators, and sequential
+composition. A context has one typed hole. The declarations
+\path{context_sound}, \path{rewriteStep_sound}, and
+\path{derivation_sound} prove that semantically equal rules remain equal in
+such contexts and through finite derivations. Structural identity and
+associativity rules have their own soundness proof. An explicit family of
+linear-equivalence generators adds inverse cancellation, and
+\path{equiv_derivation_sound} verifies finite derivations using those actual
+rules. These statements verify the sequential component of
+Theorem~\ref{thm:typed-rewrite-soundness}; they do not encode the full graphical
+tensor, dagger, trace, measurement, or channel syntax.
+
+Separate finite-matrix declarations verify tensor interchange, trace
+factorization, rectangular trace cyclicity, and the dimension value of a
+closed identity loop. They are algebraic component theorems, not an implicit
+coherence theorem for arbitrary drawings. The complex-transport declaration
+uses actual linear equivalences to preserve a zero composite. The
+exactness-transport declaration preserves image--kernel equality, and
+\path{homotopy_implies_exact} derives exactness from an explicit contracting
+homotopy identity. These hypotheses are meaningful data, not names for the
+desired conclusion.
+
+Finally \path{matrix_hodge_conjugacy} proves a finite complex-matrix identity
+with the necessary endpoint conditions $U_0^\dagger U_0=I$ and
+$U_2^\dagger U_2=I$. Its algebraic identity allows an arbitrary middle
+matrix $U_1$; unitarity of $U_1$ is the further condition used for the
+spectral interpretation in Proposition~\ref{thm:unitary-chain-transport}.
+The formal statement therefore supports the displayed finite conjugacy
+component. It does not assert an infinite-dimensional gap or a continuum
+Yang--Mills result.
+
+\section{Complete verified companion sources}
+
+The following listing reproduces the verified file so that the mathematical
+types, proof scripts and audit commands can be read together. The separate
+source file is the authoritative build input.
+
+\lstinputlisting{../lean/BridgeTheorems.lean}
+
+The additional quantum and binary-chain file follows. Its source and audit
+are independent of the preceding file.
+
+\lstinputlisting{../lean/QuantumInterfaces.lean}
+
+The second-pass typed diagram, matrix contraction, and complex-transport
+module follows. Its exact statement types and foundational dependency
+commands are part of the authoritative source.
+
+\lstinputlisting{../lean/DiagramGrammar.lean}

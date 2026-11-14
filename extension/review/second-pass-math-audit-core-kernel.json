@@ -1,0 +1,297 @@
+{
+  "records": [
+    {
+      "source_file": "BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "exit_code": 0,
+      "elapsed_seconds": 12.620083653004258,
+      "theorem_count": 25,
+      "axioms_per_theorem": {
+        "ResearchBridge.complex_range_le_kernel": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.complex_rank_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.middle_exact_iff_rank_sum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.euler_rank_identity": [
+          "propext",
+          "Quot.sound"
+        ],
+        "ResearchBridge.cone_perturbation": [
+          "propext"
+        ],
+        "ResearchBridge.cone_tangent_second_order": [
+          "propext"
+        ],
+        "ResearchBridge.cone_split_identity": [
+          "propext",
+          "Quot.sound"
+        ],
+        "ResearchBridge.cone_equal_norm_iff": [
+          "propext",
+          "Quot.sound"
+        ],
+        "ResearchBridge.koszul_zero_composite": [
+          "propext",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hodge_positive_semidefinite": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hodge_quadratic_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hodge_energy_nonnegative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hodge_energy_zero_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hodge_characteristic_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hodge_characteristic_factor": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hodge_family_diagonal": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hodge_family_arbitrarily_small_energy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.shear_determinant_one": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.shear_inverse": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.shear_e2_image": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.shear_e2_norm_squared": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hidden_kernel_relation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "ResearchBridge.hidden_collision_relation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "ResearchBridge.noise_cancellation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchBridge.binary_noise_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "command": [
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+        "env",
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+        "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/BridgeTheorems.lean"
+      ],
+      "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0"
+    },
+    {
+      "source_file": "QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "exit_code": 0,
+      "elapsed_seconds": 4.06954696700268,
+      "theorem_count": 7,
+      "axioms_per_theorem": {
+        "ResearchQuantum.pauliX_square": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchQuantum.pauliZ_square": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchQuantum.pauli_anticommutation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchQuantum.binarySign_add": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchQuantum.shift_phase_commutation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchQuantum.boundary_phase_shift_commute": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ResearchQuantum.euler_surface_rank_substitution": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "command": [
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+        "env",
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+        "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/QuantumInterfaces.lean"
+      ],
+      "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0"
+    },
+    {
+      "source_file": "DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "exit_code": 0,
+      "elapsed_seconds": 3.9312829929986037,
+      "theorem_count": 16,
+      "axioms_per_theorem": {
+        "DiagramGrammar.context_sound": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.structural_sound": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.rewriteStep_sound": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.derivation_sound": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.structural_derivation_sound": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.linearEquiv_cancellation": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.equivRule_sound": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.equiv_derivation_sound": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.tensor_interchange": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.tensor_trace_factorization": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.rectangular_trace_cyclicity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.identity_loop_value": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.complex_transport": [
+          "propext",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.homotopy_implies_exact": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.exact_transport": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "DiagramGrammar.matrix_hodge_conjugacy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "command": [
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+        "env",
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+        "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/DiagramGrammar.lean"
+      ],
+      "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+      "status": "verified",
+      "checked_at_utc": "2026-11-13T14:30:51.147294+00:00",
+      "lean_version": "4.24.0",
+      "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "theorems": [
+        "DiagramGrammar.context_sound",
+        "DiagramGrammar.structural_sound",
+        "DiagramGrammar.rewriteStep_sound",
+        "DiagramGrammar.derivation_sound",
+        "DiagramGrammar.structural_derivation_sound",
+        "DiagramGrammar.linearEquiv_cancellation",
+        "DiagramGrammar.equivRule_sound",
+        "DiagramGrammar.equiv_derivation_sound",
+        "DiagramGrammar.tensor_interchange",
+        "DiagramGrammar.tensor_trace_factorization",
+        "DiagramGrammar.rectangular_trace_cyclicity",
+        "DiagramGrammar.identity_loop_value",
+        "DiagramGrammar.complex_transport",
+        "DiagramGrammar.homotopy_implies_exact",
+        "DiagramGrammar.exact_transport",
+        "DiagramGrammar.matrix_hodge_conjugacy"
+      ],
+      "scope": "Typed sequential syntax and one-hole contexts, finite contextual derivation soundness, explicit structural/inverse rules for linear-equivalence generators; separate finite matrix tensor/trace identities, complex/exactness transport, homotopy exactness, and Hodge matrix conjugacy. Not a complete tensor/traced/dagger graph syntax, quantum-channel calculus, full physical QNN, Yang-Mills, GRH, or semantic-completeness formalization."
+    }
+  ],
+  "total_verified_declarations": 48,
+  "all_exit_codes_zero": true
+}

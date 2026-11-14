@@ -1,0 +1,85 @@
+{
+  "schema": "ccc-freshness-check-v1",
+  "search_date": "2026-11-13",
+  "cutoff": "2026-11-13",
+  "method": "Bounded current-date primary-source discovery using system1 search with recency hints, followed by direct primary metadata/abstract checks. Not an exhaustive systematic review.",
+  "queries": [
+    {
+      "q": "\"conformal cyclic cosmology\" 2026 CMB Hawking points gravitational wave epoch",
+      "recency_days": 365,
+      "domains": [
+        "arxiv.org"
+      ]
+    },
+    {
+      "q": "\"conformal cyclic cosmology\" \"2026\" observational signatures",
+      "recency_days": 365,
+      "domains": [
+        "aanda.org",
+        "academic.oup.com",
+        "iopscience.iop.org",
+        "link.springer.com"
+      ]
+    },
+    {
+      "q": "\"cross-aeon\" communication \"2026\"",
+      "recency_days": 365
+    },
+    {
+      "q": "\"Hawking points\" \"2026\" Planck analysis",
+      "recency_days": 365,
+      "domains": [
+        "arxiv.org",
+        "iopscience.iop.org",
+        "academic.oup.com",
+        "aanda.org"
+      ]
+    },
+    {
+      "q": "\"cross-aeon\" \"signal\" Penrose 2025 2026",
+      "recency_days": 730,
+      "domains": [
+        "arxiv.org",
+        "link.springer.com",
+        "iopscience.iop.org"
+      ]
+    }
+  ],
+  "primary_checks": [
+    {
+      "url": "https://arxiv.org/abs/2503.24263",
+      "finding": "Submission history still exposes only v1, 31 March 2025. This is the fully read twenty-page GWE proposal in the main source ledger."
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.27014v1",
+      "title": "Conformal Cyclic Cosmology from Varying Fundamental Constants",
+      "authors": [
+        "Marosek, Konrad",
+        "Balcerzak, Adam"
+      ],
+      "date": "2026-08-27",
+      "version": "v1",
+      "coverage": "Primary abstract and submission metadata only; no full-paper review or proof audit.",
+      "html_sha256": "b9a1ac86614c6eee6103a128146fd7d2c24a15c97ba5face68079f4d006be003",
+      "retrieval": "Search-service direct open failed, but ordinary public HTTPS retrieval of the primary arXiv abstract succeeded.",
+      "finding": "A later theoretical varying-constants/bimetric model relevant to possible conformal transitions; its abstract does not report a CMB detection or decoded intentional message."
+    },
+    {
+      "url": "https://doi.org/10.1088/1475-7516/2024/05/009",
+      "finding": "Publisher identifies publication on 2 May 2024. The reviewed v3 preprint was dated 25 January 2024."
+    }
+  ],
+  "excluded_or_out_of_scope_hits": [
+    {
+      "url": "https://github.com/EdonZo/ccc-hawking-points/blob/main/paper/draft.md",
+      "status": "Internal draft found during discovery; not relied upon as validation evidence.",
+      "reason": "No independent audit or full replication performed here; its asserted MP2025 6–8-degree prediction conflicts with the primary equation (99) radius 0.03–0.04 radians. It is not promoted to a new confirmed observational result."
+    },
+    {
+      "url": "https://link.springer.com/article/10.1140/epjc/s10052-026-15765-2",
+      "status": "Adjacent cyclic-universe theory, not a CCC CMB/message detection; discovery abstract only."
+    }
+  ],
+  "conclusion": "This bounded search did not locate a substantiated later empirical confirmation of the reviewed CCC signatures or any established intentional cross-aeon message. It did locate a later theoretical paper, so the chapter does not call the 2025 work the latest CCC paper of any kind.",
+  "limits": "Search indexing and recency hints can omit relevant work. Absence from these results is not proof that no later publication exists. Sources added here do not increase the eight-paper full-reading totals."
+}

@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "python",
+        "extension/code/verify_examples.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.095,
+      "log": "extension/review/final-pass/release-verify_examples.log"
+    },
+    {
+      "command": [
+        "python",
+        "extension/code/verify_invariants.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.062,
+      "log": "extension/review/final-pass/release-verify_invariants.log"
+    },
+    {
+      "command": [
+        "python",
+        "extension/code/verify_fluid_interfaces.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.231,
+      "log": "extension/review/final-pass/release-verify_fluid_interfaces.log"
+    },
+    {
+      "command": [
+        "python",
+        "extension/code/verify_toric_transport.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.393,
+      "log": "extension/review/final-pass/release-verify_toric_transport.log"
+    },
+    {
+      "command": [
+        "python",
+        "extension/quantum/surface_codes.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.542,
+      "log": "extension/review/final-pass/release-surface_codes.log"
+    },
+    {
+      "command": [
+        "python",
+        "extension/quantum/toricgt/algebra_checks.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.037,
+      "log": "extension/review/final-pass/release-algebra_checks.log"
+    },
+    {
+      "command": [
+        "node",
+        "extension/site/verify-math.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.109,
+      "log": "extension/review/final-pass/release-verify-math.log"
+    },
+    {
+      "command": [
+        "node",
+        "extension/site/verify-quantum.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 1.074,
+      "log": "extension/review/final-pass/release-verify-quantum.log"
+    },
+    {
+      "command": [
+        "node",
+        "extension/site/verify-quantum-worker.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 2.435,
+      "log": "extension/review/final-pass/release-verify-quantum-worker.log"
+    },
+    {
+      "command": [
+        "node",
+        "extension/site/verify-algebra.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.248,
+      "log": "extension/review/final-pass/release-verify-algebra.log"
+    },
+    {
+      "command": [
+        "node",
+        "extension/site/verify-grammar.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.339,
+      "log": "extension/review/final-pass/release-verify-grammar.log"
+    },
+    {
+      "command": [
+        "node",
+        "extension/site/verify-cosmology.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.122,
+      "log": "extension/review/final-pass/release-verify-cosmology.log"
+    },
+    {
+      "command": [
+        "node",
+        "extension/site/verify-fluids.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.104,
+      "log": "extension/review/final-pass/release-verify-fluids.log"
+    }
+  ]
+}

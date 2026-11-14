@@ -1,0 +1,94 @@
+\section{Exact finite repairs for collision block encodings}
+\label{sec:fluid-circuit-repairs}
+
+The detailed algorithm of \citet{NSJennings2026} makes it possible to inspect the finite maps underlying its collision encoding. In the reviewed arXiv version~2, Appendix~D, equation~(D56), gives a purported unitary for an equality map, while Appendix~I, equation~(I65), gives a matrix dilation without its necessary contraction normalization. We supply explicit finite replacements. These proofs concern the two interfaces; they do not establish Carleman convergence, a total resource bound, or quantum advantage for the complete fluid algorithm.
+
+Let $\mathcal H$ have orthonormal basis $\{|a\rangle:a\in\{0,1\}^n\}$, with $n\ge1$. Padding a position register to a power of two permits this notation. Define
+\[
+ S=\sum_a|a,0\rangle\langle a,a|,\qquad
+ \Pi_{\mathrm{eq}}=\sum_a|a,a\rangle\langle a,a|,\qquad
+ \Pi_0=\sum_a|a,0\rangle\langle a,0|.
+\]
+The register $0$ is the all-zero bit string. The map $S$ retains equal input positions and resets the second register on that subspace.
+
+\begin{proposition}[Equality map as a partial isometry]
+\label{prop:fluid-equality-partial-isometry}
+One has $S^\dagger S=\Pi_{\mathrm{eq}}$, $SS^\dagger=\Pi_0$, and $\|S\|=1$. The expression
+\[
+ B=S\otimes I+(S-I)\otimes X
+\]
+on two position registers and a flag qubit is not unitary.
+\end{proposition}
+\begin{proof}
+Multiply the two finite sums for $S$ and $S^\dagger$. Orthonormality eliminates every cross term, giving the two projectors. Hence $S$ is isometric on the equality subspace and zero on its orthogonal complement, which proves the norm statement. For any nonzero $a$,
+\[
+ B|a,a,0\rangle
+ =|a,0,0\rangle+|a,0,1\rangle-|a,a,1\rangle.
+\]
+The three output vectors are pairwise orthogonal. Thus a unit input has output squared norm three, contradicting unitarity.
+\end{proof}
+
+This counterexample applies to the expression printed in (D56), with its stated square embedding $S=\sum_a|a,0\rangle\langle a,a|$. It is not an obstruction to constructing an equality block encoding.
+
+\begin{proposition}[Reversible equality encoding and its success probability]
+\label{prop:fluid-equality-unitary}
+Define $U|a,b\rangle=|a,b\mathbin{\mathrm{xor}}a\rangle$. Then $U$ is unitary and $\Pi_0U=S$. A flag measurement can realize this block with success probability $\|Sx\|^2$ on any normalized input $x\in\mathcal H\otimes\mathcal H$.
+\end{proposition}
+\begin{proof}
+The basis permutation $U$ is its own inverse. Applying $\Pi_0$ to its output retains exactly the inputs with $b=a$, proving $\Pi_0U=S$. For an explicit flag, define the reversible basis permutation
+\[
+ V|a,c,z\rangle=|a,c,z\mathbin{\mathrm{xor}}\mathbf1_{c\ne0}\rangle,
+ \qquad W=V(U\otimes I).
+\]
+Both factors are unitary. Starting the flag in $|0\rangle$ and retaining outcome zero gives
+\[
+ (I\otimes\langle0|)W(x\otimes|0\rangle)=Sx.
+\]
+The Born rule yields success probability $\|Sx\|^2$. Writing $x=\sum_{a,b}x_{ab}|a,b\rangle$ makes this probability $\sum_a|x_{aa}|^2$. When it is positive, the conditional output is $Sx/\|Sx\|$; when it is zero, that outcome never occurs.
+\end{proof}
+
+No copying of an arbitrary unknown quantum state occurs here. The XOR operation copies a basis label into a zero register, and on superpositions acts coherently, generally producing correlations. Applied to $x\otimes x$, the equality branch contains squared amplitudes, but preparing two copies already presupposes repeated access to the state preparation. Its success probability remains part of the operation.
+
+\begin{proposition}[Contraction-normalized rectangular dilation]
+\label{prop:fluid-halmos-dilation}
+Let $A:\mathcal H_{\mathrm{in}}\to\mathcal H_{\mathrm{out}}$ be a finite complex matrix and let $\alpha>0$ satisfy $\alpha\ge\|A\|$. Put $C=A/\alpha$ and
+\[
+ D_{\mathrm{out}}=(I-CC^\dagger)^{1/2},\qquad
+ D_{\mathrm{in}}=(I-C^\dagger C)^{1/2}.
+\]
+Then
+\[
+ \mathcal U_C=
+ \begin{pmatrix}C&D_{\mathrm{out}}\\D_{\mathrm{in}}&-C^\dagger\end{pmatrix}
+ :\mathcal H_{\mathrm{in}}\oplus\mathcal H_{\mathrm{out}}
+ \longrightarrow\mathcal H_{\mathrm{out}}\oplus\mathcal H_{\mathrm{in}}
+\]
+is unitary. On normalized input $(x,0)$, projection onto the first output summand succeeds with probability $\|Ax\|^2/\alpha^2$ and, when successful, produces $Ax/\|Ax\|$. Conversely, a block of a unitary representing $A/\alpha$ requires $\alpha\ge\|A\|$.
+\end{proposition}
+\begin{proof}
+Take a singular-value decomposition $C=L\Sigma R^\dagger$. Every singular value $s_j$ lies in $[0,1]$. The positive square roots therefore exist, and the SVD gives
+$CD_{\mathrm{in}}=D_{\mathrm{out}}C$: on each paired singular direction both sides multiply by $s_j\sqrt{1-s_j^2}$, and both vanish on the unpaired directions. Consequently
+\[
+ \mathcal U_C\mathcal U_C^\dagger
+ =\begin{pmatrix}
+ CC^\dagger+D_{\mathrm{out}}^2&CD_{\mathrm{in}}-D_{\mathrm{out}}C\\
+ D_{\mathrm{in}}C^\dagger-C^\dagger D_{\mathrm{out}}&D_{\mathrm{in}}^2+C^\dagger C
+ \end{pmatrix}=I.
+\]
+The same calculation gives $\mathcal U_C^\dagger\mathcal U_C=I$. Its action on $(x,0)$ is $(Cx,D_{\mathrm{in}}x)$, proving the measurement formulas. Finally, the norm of a compression of a unitary is at most one, so any such block must satisfy $\|A/\alpha\|\le1$.
+\end{proof}
+
+Thus (I65) must use the contraction $\Sigma_2/\alpha$, including the same scaling inside both square roots. The reviewed paper's equation~(D58a) gives $\alpha=6/\bar\tau^\star$ for its $D=2$ collision matrix. A normalization cannot be removed merely because the requested output is eventually renormalized: it determines the success amplitude and enters the resources of the larger block-encoding algorithm.
+
+\begin{proposition}[Linear instrument, conditional normalization]
+\label{prop:fluid-postselection-instrument}
+The successful and unsuccessful branches of the preceding dilation define linear completely positive maps
+\[
+ \rho\longmapsto C\rho C^\dagger,\qquad
+ \rho\longmapsto D_{\mathrm{in}}\rho D_{\mathrm{in}}.
+\]
+Their total trace equals $\operatorname{tr}\rho$. Normalizing the successful branch does not turn it into deterministic nonlinear quantum evolution.
+\end{proposition}
+\begin{proof}
+Each branch has a single Kraus operator and is completely positive: after any ancillary extension it sends a positive operator to a conjugate of that operator. Since $C^\dagger C+D_{\mathrm{in}}^2=I$, cyclicity of trace proves the trace identity. The conditional state is divided by $\operatorname{tr}(C\rho C^\dagger)$ only after the corresponding random outcome occurs. Discarding that probability would change the physical operation.
+\end{proof}

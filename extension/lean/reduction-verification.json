@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "source_file": "ReductionContracts.lean",
+  "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+  "status": "verified",
+  "checked_at_utc": "2026-11-13T23:18:06.883188+00:00",
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "command": [
+    "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+    "env",
+    "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+    "/workspace/scratch/1ebad4ebf485/GRH-research/extension/lean/ReductionContracts.lean"
+  ],
+  "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+  "exit_code": 0,
+  "elapsed_seconds": 3.7033564150042366,
+  "warning_count": 0,
+  "theorem_count": 16,
+  "theorems": [
+    "ReductionContracts.factorization_iff_fiber_constant",
+    "ReductionContracts.reduced_output_unique",
+    "ReductionContracts.discrete_closure_iff",
+    "ReductionContracts.mismatched_fiber_excludes_closure",
+    "ReductionContracts.discrete_trajectory_preserved",
+    "ReductionContracts.fiber_error_lower_bound",
+    "ReductionContracts.fiber_diameter_le_twice_error",
+    "ReductionContracts.signedPartner_constant_coefficient",
+    "ReductionContracts.signedPartner_linear_coefficient",
+    "ReductionContracts.signedPartner_ne_zero",
+    "ReductionContracts.signedPartner_order",
+    "ReductionContracts.signed_cancellation_identity",
+    "ReductionContracts.signed_cancellation_sum_ne_zero",
+    "ReductionContracts.signed_cancellation_order",
+    "ReductionContracts.signed_cancellation_strict",
+    "ReductionContracts.no_universal_minimum_rule"
+  ],
+  "axioms_per_theorem": {
+    "ReductionContracts.factorization_iff_fiber_constant": [
+      "Classical.choice"
+    ],
+    "ReductionContracts.reduced_output_unique": [
+      "Quot.sound"
+    ],
+    "ReductionContracts.discrete_closure_iff": [
+      "Classical.choice"
+    ],
+    "ReductionContracts.mismatched_fiber_excludes_closure": [],
+    "ReductionContracts.discrete_trajectory_preserved": [],
+    "ReductionContracts.fiber_error_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.fiber_diameter_le_twice_error": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.signedPartner_constant_coefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.signedPartner_linear_coefficient": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.signedPartner_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.signedPartner_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.signed_cancellation_identity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.signed_cancellation_sum_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.signed_cancellation_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.signed_cancellation_strict": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ReductionContracts.no_universal_minimum_rule": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "unexpected_axioms": [],
+  "forbidden_tokens_outside_comments_and_strings": [],
+  "log_file": "reduction-verification.log",
+  "log_sha256": "06a24752a285692685be029c19bcfd58e41853a03cca176b3361e533efb9f98a",
+  "scope": "Exact fiber-factorization and discrete closure, approximation lower bounds, and signed polynomial order identities. This does not verify continuum Navier\u2013Stokes, microscopic limits, GRH, or Yang\u2013Mills."
+}

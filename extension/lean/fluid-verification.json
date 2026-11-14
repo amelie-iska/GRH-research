@@ -1,0 +1,228 @@
+{
+  "source_file": "FluidInterfaces.lean",
+  "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+  "status": "verified",
+  "checked_at_utc": "2026-11-13T21:15:26.242666+00:00",
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "command": [
+    "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+    "env",
+    "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+    "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/FluidInterfaces.lean"
+  ],
+  "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+  "exit_code": 0,
+  "elapsed_seconds": 17.75015313300537,
+  "warning_count": 0,
+  "theorem_count": 34,
+  "theorems": [
+    "FluidInterfaces.dot_self_nonneg",
+    "FluidInterfaces.kineticEnergy_nonneg",
+    "FluidInterfaces.transpose_work",
+    "FluidInterfaces.skew_transport_work",
+    "FluidInterfaces.factorized_viscosity_work",
+    "FluidInterfaces.factorized_viscosity_nonneg",
+    "FluidInterfaces.pressure_work_zero",
+    "FluidInterfaces.finite_fluid_work_identity",
+    "FluidInterfaces.unforced_work_nonpositive",
+    "FluidInterfaces.kinetic_energy_derivative",
+    "FluidInterfaces.finite_fluid_energy_derivative",
+    "FluidInterfaces.projection_residual_kernel",
+    "FluidInterfaces.projection_residual_orthogonal",
+    "FluidInterfaces.projection_energy_split",
+    "FluidInterfaces.projection_energy_nonincrease",
+    "FluidInterfaces.projection_best_approximation",
+    "FluidInterfaces.boundary_flux_divergence_zero",
+    "FluidInterfaces.boundary_flux_update_preserves_divergence",
+    "FluidInterfaces.schur_elimination_iff",
+    "FluidInterfaces.hidden_recurrence_expansion",
+    "FluidInterfaces.resolved_memory_identity",
+    "FluidInterfaces.hidden_state_prevents_autonomous_closure",
+    "FluidInterfaces.lower_diagonal_lower_zero",
+    "FluidInterfaces.renormalization_is_quadratic_order_element",
+    "FluidInterfaces.quadratic_order_one",
+    "FluidInterfaces.quadratic_order_addition",
+    "FluidInterfaces.quadratic_generator_square",
+    "FluidInterfaces.renormalization_quadratic_identity",
+    "FluidInterfaces.renormalization_determinant",
+    "FluidInterfaces.renormalization_power_determinant",
+    "FluidInterfaces.quadratic_order_multiplication",
+    "FluidInterfaces.quadratic_order_determinant",
+    "FluidInterfaces.quadratic_order_representation_injective",
+    "FluidInterfaces.no_commuting_complex_structure"
+  ],
+  "axioms_per_theorem": {
+    "FluidInterfaces.renormalization_is_quadratic_order_element": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.quadratic_order_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.quadratic_order_addition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.dot_self_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.kineticEnergy_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.transpose_work": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.skew_transport_work": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.factorized_viscosity_work": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.factorized_viscosity_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.pressure_work_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.finite_fluid_work_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.unforced_work_nonpositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.kinetic_energy_derivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.finite_fluid_energy_derivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.projection_residual_kernel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.projection_residual_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.projection_energy_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.projection_energy_nonincrease": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.projection_best_approximation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.boundary_flux_divergence_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.boundary_flux_update_preserves_divergence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.schur_elimination_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.hidden_recurrence_expansion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.resolved_memory_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.hidden_state_prevents_autonomous_closure": [
+      "propext"
+    ],
+    "FluidInterfaces.lower_diagonal_lower_zero": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.quadratic_generator_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.renormalization_quadratic_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.renormalization_determinant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.renormalization_power_determinant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.quadratic_order_multiplication": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.quadratic_order_determinant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.quadratic_order_representation_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FluidInterfaces.no_commuting_complex_structure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "unexpected_axioms": [],
+  "verification_log_sha256": "8ebef3ba31ea4979aa3cc37ec26749dfe4a94c13468fb7f21f1faad978e34f77",
+  "axiom_log_sha256": "9f63084dbdaff023a9d8cfb545bf46b759a92f156bc046228cfd13bd3dd0c7a5",
+  "source_unchanged_during_check": true,
+  "scope": "Finite real matrix energy and actual coordinate time derivatives; orthogonal reduction and approximation; boundary-flux continuity; exact linear Schur and discrete memory elimination; strict-lower/diagonal block nilpotence; exact quadratic-order and renormalization matrix identities. The new module does not import, recheck, extend, or replace the released continuum Navier-Stokes formalization. It proves no CFD continuum convergence, mesh-uniform regularity, hydrodynamic limit, quantum advantage, or complete surface algebra reconstruction. The matrix determinant is not itself a formal proof of a covering-space degree."
+}

@@ -1,0 +1,35 @@
+{
+  "status": "verified",
+  "exit_code": 0,
+  "lean_version": "4.24.0",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "source_file": "QuantumInterfaces.lean",
+  "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+  "theorem_count": 7,
+  "theorems": [
+    "ResearchQuantum.pauliX_square",
+    "ResearchQuantum.pauliZ_square",
+    "ResearchQuantum.pauli_anticommutation",
+    "ResearchQuantum.binarySign_add",
+    "ResearchQuantum.shift_phase_commutation",
+    "ResearchQuantum.boundary_phase_shift_commute",
+    "ResearchQuantum.euler_surface_rank_substitution"
+  ],
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/QuantumInterfaces.lean"
+  ],
+  "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+  "axioms_per_theorem": {
+    "ResearchQuantum.pauliX_square": "[propext, Classical.choice, Quot.sound]",
+    "ResearchQuantum.pauliZ_square": "[propext, Classical.choice, Quot.sound]",
+    "ResearchQuantum.pauli_anticommutation": "[propext, Classical.choice, Quot.sound]",
+    "ResearchQuantum.binarySign_add": "[propext, Classical.choice, Quot.sound]",
+    "ResearchQuantum.shift_phase_commutation": "[propext, Classical.choice, Quot.sound]",
+    "ResearchQuantum.boundary_phase_shift_commute": "[propext, Classical.choice, Quot.sound]",
+    "ResearchQuantum.euler_surface_rank_substitution": "[propext, Classical.choice, Quot.sound]"
+  },
+  "scope": "Actual finite Pauli identities and binary character/chain-boundary operator commutation. Euler formula is conditional integer rank substitution. No complete surface topology, quantum circuit, QNN algorithm, or quantum field theory formalization."
+}

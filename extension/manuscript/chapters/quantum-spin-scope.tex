@@ -1,0 +1,67 @@
+\section{A global compatibility test for a spin representation}
+\label{sec:quantum-spin-scope}
+
+Meng and Yang~\cite{NSMengYang2024} give a two-component spin representation of viscous flow. Their evolution is nonlinear and non-Hermitian. In the constant-density formulation, their Eq.~(15) requires an auxiliary scalar $\phi$ satisfying
+\begin{equation}
+ \omega\cdot\nabla\phi
+ =-\frac{2\nu}{\rho_0}|\nabla\psi|^2(u\cdot\omega),
+ \qquad \omega=\nabla\times u.
+ \label{eq:spin-auxiliary-compatibility}
+\end{equation}
+The source explicitly leaves global solvability open. The following calculation makes a necessary global condition concrete. It concerns a particular global lift, not the existence of the velocity field.
+
+\begin{proposition}[Periodic compatibility for a smooth global lift]
+\label{prop:spin-periodic-compatibility}
+Let $\mathbb T^3=(\mathbb R/2\pi\mathbb Z)^3$, let $\nu,\rho_0,m,\hbar>0$, and fix a time. Suppose $\psi:\mathbb T^3\to\mathbb C^2$ is a globally defined $C^3$ periodic spinor with $\psi^*\psi=\rho_0$, and $\phi:\mathbb T^3\to\mathbb R$ is a globally defined $C^2$ periodic scalar. Define
+\[
+ u_j=\frac{\hbar}{m\rho_0}\operatorname{Im}(\psi^*\partial_j\psi),
+ \qquad |\nabla\psi|^2=\sum_{j=1}^3\|\partial_j\psi\|^2,
+ \qquad \omega=\nabla\times u.
+\]
+If \eqref{eq:spin-auxiliary-compatibility} holds, then
+\[
+ \int_{\mathbb T^3}|\nabla\psi|^2(u\cdot\omega)\,dx=0,
+ \qquad
+ |\nabla\psi|^2\geq\frac{m^2\rho_0}{\hbar^2}|u|^2.
+\]
+\end{proposition}
+\begin{proof}
+Periodicity and $\nabla\cdot\omega=0$ give
+$\int\omega\cdot\nabla\phi=-\int\phi\nabla\cdot\omega=0$.
+Integrating \eqref{eq:spin-auxiliary-compatibility} and using $\nu/\rho_0>0$ proves the first assertion. For each coordinate, the complex Cauchy--Schwarz inequality gives
+\[
+ |\operatorname{Im}(\psi^*\partial_j\psi)|^2
+ \leq |\psi^*\partial_j\psi|^2
+ \leq\rho_0\|\partial_j\psi\|^2.
+\]
+Summing and substituting the definition of $u$ gives the second assertion.
+\end{proof}
+
+\begin{proposition}[A smooth fluid solution excluded by these global-lift assumptions]
+\label{prop:spin-beltrami-obstruction}
+For every $\nu>0$, the velocity and pressure
+\[
+ u(t,x,y,z)=e^{-\nu t}(\sin z,\cos z,0),\qquad p=0
+\]
+are a smooth periodic solution of
+$\partial_tu+(u\cdot\nabla)u=-\nabla p+\nu\Delta u$,
+$\nabla\cdot u=0$, for all $t\geq0$.
+At no finite time can this velocity satisfy all the global-lift assumptions of Proposition~\ref{prop:spin-periodic-compatibility}.
+\end{proposition}
+\begin{proof}
+The components depend only on $z$, and the third component vanishes. Hence the divergence and advective derivative are zero. Direct differentiation gives $\Delta u=-u$, $\partial_tu=-\nu u$, and $\nabla\times u=u$, establishing the equations. Set $a=e^{-\nu t}>0$. Then $|u|^2=u\cdot\omega=a^2$ everywhere. The preceding pointwise bound would imply
+\[
+ \int_{\mathbb T^3}|\nabla\psi|^2(u\cdot\omega)\,dx
+ \geq\frac{m^2\rho_0}{\hbar^2}a^4(2\pi)^3>0,
+\]
+contradicting its necessary zero value.
+\end{proof}
+
+The hypotheses include a single-valued periodic auxiliary scalar and a single globally defined smooth periodic spinor. Patchwise lifts, transition functions, singularities, other boundary conditions, or a different auxiliary system require a separate analysis and are not ruled out by this proposition. The example has an explicitly smooth solution: it provides no evidence of fluid blowup. Nor does it contradict the source's acknowledged global qualification. It identifies a concrete obligation before treating a local or conditional representation as a global equivalence for all periodic flows. These two propositions have complete ordinary proofs here; they are not included among the companion's Lean-checked declarations.
+
+\paragraph{A separate algebraic obligation.}
+For a finite real matrix $A$, let $A^+$ be its Moore--Penrose pseudoinverse. Substitution shows that $f=A^+S$ solves $Af=S$ exactly if and only if $AA^+S=S$. A singular-value decomposition makes $AA^+$ the orthogonal projector onto $\operatorname{range}A$; otherwise the residual is $(I-AA^+)S$. At positive rank,
+\[
+ \|A^+S\|\leq\frac{\|S\|}{\sigma_{\min}^+(A)},
+\]
+where $\sigma_{\min}^+$ is the smallest positive singular value. The compatible example $A_\varepsilon=\operatorname{diag}(\varepsilon,0)$, $S=(1,0)^T$, $\varepsilon>0$, has $A_\varepsilon^+S=(\varepsilon^{-1},0)^T$. Thus the notation of a pseudoinverse does not remove conditioning problems near rank changes. When applying such an auxiliary solve to a spin-field model, range compatibility and uniform estimates must be established for its actual structured right-hand side. The generic example alone does not decide that structured question.

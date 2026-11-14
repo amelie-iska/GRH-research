@@ -1,0 +1,281 @@
+{
+  "checked_at_utc": "2026-11-13T14:55:56.384366+00:00",
+  "reason": "TOC number-column-width correction in main.tex; carry forward detailed body-page QA only after actual text and raster comparison.",
+  "previous_pdf_sha256": "01644e8852792f562874480ffe67eebd2b7dc7c8d14e9f097fb33c2b2f0c8ba5",
+  "rebuilt_pdf_sha256": "54a4827700834ea29fa097e843a29a769ba9f846c7623c50b969bb688d6a5575",
+  "previous_qa_record": "extension/manuscript/second-pass-rendered-qa.json",
+  "previous_qa_record_sha256": "d363b2c103f9eca632e7963aa9b2840247a0f5b3537d7a61306b6b7280bd33cb",
+  "previous_qa_record_preserved_unchanged": true,
+  "rebuilt_pdf_file": "extension/manuscript/main.pdf",
+  "rebuilt_pdf_pages": 248,
+  "method": "Extract text with pdftotext -layout to locate corresponding body pages; render each rebuilt page with the same Poppler command and 140 dpi; compare RGB pixels using PIL.ImageChops.difference and compare PNG SHA256 hashes.",
+  "comparison_count": 14,
+  "all_compared_pages_pixel_identical": true,
+  "all_compared_png_bytes_identical": true,
+  "comparisons": [
+    {
+      "original_pdf_page": 76,
+      "rebuilt_pdf_page": 76,
+      "printed_page": 65,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "f1f392a510cedd56446c4fac053c550ebae44638d9f3407fe12837a1bc65f8e3",
+      "rebuilt_png_sha256": "f1f392a510cedd56446c4fac053c550ebae44638d9f3407fe12837a1bc65f8e3",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 114,
+      "rebuilt_pdf_page": 114,
+      "printed_page": 103,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "ceca26b107b8a5007d0ce197663ddd452aa34ba4a6f98e0eb76c0b06e38193ef",
+      "rebuilt_png_sha256": "ceca26b107b8a5007d0ce197663ddd452aa34ba4a6f98e0eb76c0b06e38193ef",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 125,
+      "rebuilt_pdf_page": 125,
+      "printed_page": 114,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "801dd0e2ea09aa1e7d2ce72597a23d22a10a6585835b722ff3ca76aafd00036e",
+      "rebuilt_png_sha256": "801dd0e2ea09aa1e7d2ce72597a23d22a10a6585835b722ff3ca76aafd00036e",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 127,
+      "rebuilt_pdf_page": 127,
+      "printed_page": 116,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "58f582dd6bf960fb0337abc6f661d2c5ff827d408a90f2998678ea0612530ae3",
+      "rebuilt_png_sha256": "58f582dd6bf960fb0337abc6f661d2c5ff827d408a90f2998678ea0612530ae3",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 145,
+      "rebuilt_pdf_page": 145,
+      "printed_page": 134,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "28047341eaee49b83eaea9573567bde1953eedb0db0aadaac6f077171bdfb9bc",
+      "rebuilt_png_sha256": "28047341eaee49b83eaea9573567bde1953eedb0db0aadaac6f077171bdfb9bc",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 147,
+      "rebuilt_pdf_page": 147,
+      "printed_page": 136,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "3e07cf0c9770de7e74c8b14861e284a9d0b182d3c481bf2bad7e9c0fd98939d1",
+      "rebuilt_png_sha256": "3e07cf0c9770de7e74c8b14861e284a9d0b182d3c481bf2bad7e9c0fd98939d1",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 188,
+      "rebuilt_pdf_page": 188,
+      "printed_page": 177,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "8b5f14eea7960cd6bb5c85c30656d91e22c05def52ad07722f9a0506d0e0bdcf",
+      "rebuilt_png_sha256": "8b5f14eea7960cd6bb5c85c30656d91e22c05def52ad07722f9a0506d0e0bdcf",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 189,
+      "rebuilt_pdf_page": 189,
+      "printed_page": 178,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "64f955ca2e544842bd4703891f4bd32d8f424f5819f2c91aa133f3c7f061cf9b",
+      "rebuilt_png_sha256": "64f955ca2e544842bd4703891f4bd32d8f424f5819f2c91aa133f3c7f061cf9b",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 196,
+      "rebuilt_pdf_page": 196,
+      "printed_page": 185,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "26c2ff6340f4d877eb48fbdf80af08e2040627bbf85509c1c9e00a1a6a486a11",
+      "rebuilt_png_sha256": "26c2ff6340f4d877eb48fbdf80af08e2040627bbf85509c1c9e00a1a6a486a11",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 228,
+      "rebuilt_pdf_page": 228,
+      "printed_page": 217,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "0a3cab34e1f21f8b0769c114e621315245036138674b58aa54a76c66bd699e60",
+      "rebuilt_png_sha256": "0a3cab34e1f21f8b0769c114e621315245036138674b58aa54a76c66bd699e60",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 229,
+      "rebuilt_pdf_page": 229,
+      "printed_page": 218,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "37b12c012d18d2ed6bfed77a5438cf1b81ab4becef0fcf09d99d44c0514e3fa9",
+      "rebuilt_png_sha256": "37b12c012d18d2ed6bfed77a5438cf1b81ab4becef0fcf09d99d44c0514e3fa9",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 230,
+      "rebuilt_pdf_page": 230,
+      "printed_page": 219,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "e3446712ffcc0cc9000571440f7ce1eb053691da9db96856d66a4776a4f19606",
+      "rebuilt_png_sha256": "e3446712ffcc0cc9000571440f7ce1eb053691da9db96856d66a4776a4f19606",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 231,
+      "rebuilt_pdf_page": 231,
+      "printed_page": 220,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "ff177c149f4693d75afb8586196718e49115ff583e0080e8569e0b055b00b971",
+      "rebuilt_png_sha256": "ff177c149f4693d75afb8586196718e49115ff583e0080e8569e0b055b00b971",
+      "png_bytes_identical": true
+    },
+    {
+      "original_pdf_page": 232,
+      "rebuilt_pdf_page": 232,
+      "printed_page": 221,
+      "normalized_extracted_text_identical": true,
+      "raster_dimensions": [
+        1190,
+        1540
+      ],
+      "pixels_identical": true,
+      "different_pixel_count": 0,
+      "original_png_sha256": "adbf890739aa43da8ff2ebab2fd8211ccddea835129aa3dc4657380ea273a8e6",
+      "rebuilt_png_sha256": "adbf890739aa43da8ff2ebab2fd8211ccddea835129aa3dc4657380ea273a8e6",
+      "png_bytes_identical": true
+    }
+  ],
+  "findings": [],
+  "scope": "The prior visual conclusions for the three figures, corrected theorem pages, benchmark table, and complete new Lean listing apply unchanged to these corresponding rebuilt pages.",
+  "limits": [
+    "The TOC itself is reviewed separately by the release owner.",
+    "Only these 14 body pages are claimed pixel-identical by this addendum; no universal all-page equality assertion is made.",
+    "This rendering comparison does not create new mathematical or Lean verification claims."
+  ],
+  "comparison_renders_outside_git": "/workspace/scratch/70763186a94c/qa-second-pass-pdf/toc-rebuild",
+  "claim_register_metadata_refresh": {
+    "previous_register_sha256": "f22792b2f351a9343e74e4c85eb97e448ed6054b33f657d2a73f6ed13044a92c",
+    "refreshed_register_sha256": "425d65d7cbce97fc34fda40368fe790acc4dbf25f3458605a6e28faadfd1c961",
+    "counts_unchanged": true,
+    "all_claim_records_and_mappings_unchanged": true,
+    "lean_source_audit_unchanged": true,
+    "changed_input_file_records": [
+      {
+        "path": "extension/manuscript/main.tex",
+        "old": {
+          "path": "extension/manuscript/main.tex",
+          "sha256": "5ca2b921bb71c0386c5a1889e15bf4d86fa4cc542d1ac9ed188b958635799cb3",
+          "bytes": 4414,
+          "lines": 110
+        },
+        "new": {
+          "path": "extension/manuscript/main.tex",
+          "sha256": "7a995ef5b9ef143a53313526d8bdbffb4cb703f4c52f275420333d5d1ca6bf04",
+          "bytes": 4500,
+          "lines": 113
+        }
+      }
+    ],
+    "counts": {
+      "included_tex_files": 21,
+      "claim_environments": 180,
+      "by_environment": {
+        "proposition": 122,
+        "lemma": 14,
+        "theorem": 38,
+        "corollary": 5,
+        "problem": 1
+      },
+      "by_status": {
+        "local_argument_present": 168,
+        "conditional_local_argument": 5,
+        "external_cited": 6,
+        "proposed_open_problem": 1
+      },
+      "attached_proof_environments": 173,
+      "whole_environments_marked_fully_formalized": 0,
+      "environments_with_partial_formal_components": 8,
+      "verified_declarations_mapped_to_precise_components": 14,
+      "authoritative_verified_declarations": 48
+    }
+  }
+}

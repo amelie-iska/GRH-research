@@ -1,0 +1,206 @@
+{
+  "backend": "NumPy CPU complex128 full state vector",
+  "n": 18,
+  "dimension": 262144,
+  "norm_squared": 0.9999999999999989,
+  "nonzero_amplitudes": 256,
+  "max_amplitude_error": 4.163336342344337e-17,
+  "stabilizer_expectations": {
+    "A0": 0.9999999999999989,
+    "A1": 0.9999999999999989,
+    "A2": 0.9999999999999989,
+    "A3": 0.9999999999999989,
+    "A4": 0.9999999999999989,
+    "A5": 0.9999999999999989,
+    "A6": 0.9999999999999989,
+    "A7": 0.9999999999999989,
+    "A8": 0.9999999999999989,
+    "B0": 0.9999999999999987,
+    "B1": 0.9999999999999987,
+    "B2": 0.9999999999999987,
+    "B3": 0.9999999999999987,
+    "B4": 0.9999999999999987,
+    "B5": 0.9999999999999987,
+    "B6": 0.9999999999999987,
+    "B7": 0.9999999999999987,
+    "B8": 0.9999999999999987
+  },
+  "qnn": {
+    "patch": [
+      0,
+      2,
+      9,
+      15
+    ],
+    "theta": [
+      0.65,
+      -0.4,
+      0.5,
+      -0.6
+    ],
+    "cases": [
+      {
+        "signs": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "actual_expectation": 0.5310870936280221,
+        "analytic_expectation": 0.5310870936280226
+      },
+      {
+        "signs": [
+          -1,
+          1,
+          1,
+          1
+        ],
+        "actual_expectation": -0.531087093628022,
+        "analytic_expectation": -0.5310870936280226
+      },
+      {
+        "signs": [
+          1,
+          -1,
+          1,
+          1
+        ],
+        "actual_expectation": -0.5310870936280221,
+        "analytic_expectation": -0.5310870936280226
+      },
+      {
+        "signs": [
+          -1,
+          -1,
+          1,
+          1
+        ],
+        "actual_expectation": 0.531087093628022,
+        "analytic_expectation": 0.5310870936280226
+      },
+      {
+        "signs": [
+          1,
+          1,
+          -1,
+          1
+        ],
+        "actual_expectation": -0.531087093628022,
+        "analytic_expectation": -0.5310870936280226
+      },
+      {
+        "signs": [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "actual_expectation": 0.5310870936280216,
+        "analytic_expectation": 0.5310870936280226
+      },
+      {
+        "signs": [
+          1,
+          -1,
+          -1,
+          1
+        ],
+        "actual_expectation": 0.531087093628022,
+        "analytic_expectation": 0.5310870936280226
+      },
+      {
+        "signs": [
+          -1,
+          -1,
+          -1,
+          1
+        ],
+        "actual_expectation": -0.5310870936280216,
+        "analytic_expectation": -0.5310870936280226
+      },
+      {
+        "signs": [
+          1,
+          1,
+          1,
+          -1
+        ],
+        "actual_expectation": -0.5310870936280221,
+        "analytic_expectation": -0.5310870936280226
+      },
+      {
+        "signs": [
+          -1,
+          1,
+          1,
+          -1
+        ],
+        "actual_expectation": 0.531087093628022,
+        "analytic_expectation": 0.5310870936280226
+      },
+      {
+        "signs": [
+          1,
+          -1,
+          1,
+          -1
+        ],
+        "actual_expectation": 0.5310870936280221,
+        "analytic_expectation": 0.5310870936280226
+      },
+      {
+        "signs": [
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "actual_expectation": -0.531087093628022,
+        "analytic_expectation": -0.5310870936280226
+      },
+      {
+        "signs": [
+          1,
+          1,
+          -1,
+          -1
+        ],
+        "actual_expectation": 0.531087093628022,
+        "analytic_expectation": 0.5310870936280226
+      },
+      {
+        "signs": [
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "actual_expectation": -0.5310870936280216,
+        "analytic_expectation": -0.5310870936280226
+      },
+      {
+        "signs": [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "actual_expectation": -0.531087093628022,
+        "analytic_expectation": -0.5310870936280226
+      },
+      {
+        "signs": [
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "actual_expectation": 0.5310870936280216,
+        "analytic_expectation": 0.5310870936280226
+      }
+    ],
+    "max_identity_error": 9.992007221626409e-16
+  },
+  "hardware_execution": false
+}

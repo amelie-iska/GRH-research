@@ -1,0 +1,149 @@
+\chapter{Implemented cryptography and verifiable artifact contracts}
+\label{ch:implemented-cryptography}
+
+\reviewstatus{Executable library-backed encryption, signature and key-encapsulation
+interfaces, with 25 passing regression-test methods and preserved runtime evidence.
+The framing and tests are local contributions. The cryptographic primitives are
+external implementations; no new security reduction or Lean verification of those
+implementations is claimed.}
+
+\section{From mathematical examples to executable interfaces}
+
+The finite curve, hidden-relation and noise calculations in
+Chapters~\ref{ch:quantum-crypto} and~\ref{ch:pqc} explain mathematical mechanisms.
+The new \path{extension/crypto/} directory supplies a separate operational layer:
+authenticated artifact encryption, signatures and post-quantum key encapsulation.
+Its Python interface delegates every cryptographic primitive to
+\texttt{cryptography}~50.0.0 and its native backend. This choice makes the
+implementation boundary inspectable without presenting an educational arithmetic
+example as a deployed cryptosystem \cite{CryptoAPI50AEAD,CryptoAPI50Ed25519,CryptoAPI50MLKEM}.
+
+\begin{longtable}{p{.23\textwidth}p{.28\textwidth}p{.39\textwidth}}
+\toprule
+Function family & Primitive & Contract exercised\\\midrule
+Artifact encryption & AES-256-GCM; ChaCha20-Poly1305 & Byte confidentiality and
+authentication of ciphertext plus public version, algorithm and context\\
+Artifact signatures & Ed25519 & Verification of context-framed bytes relative
+to a separately trusted public key\\
+Key encapsulation & ML-KEM-768; ML-KEM-1024 & Creation and recovery of a shared
+secret through the backend's standard encapsulation API\\\bottomrule
+\end{longtable}
+
+The algorithm sources are the GCM recommendation, the ChaCha20--Poly1305 and
+EdDSA RFCs, and FIPS~203 for ML-KEM
+\cite{CryptoGCM38D,CryptoRFC8439,CryptoRFC8032,CryptoFIPS203}.
+ML-KEM's module-lattice basis connects conceptually to the preceding order-lattice
+discussion. Its security is not derived here from a finite determinant, a Hodge
+gap, a tropical model, GRH, or the fluid construction. A standard algorithm and a
+FIPS-validated cryptographic module are also different claims: this release
+records no module-validation certificate.
+
+\section{Authenticated serialization and expected context}
+
+The encryption envelope contains exactly five JSON fields:
+\texttt{version}, \texttt{algorithm}, \texttt{context}, \texttt{nonce} and
+\texttt{ciphertext}. The parser rejects unknown or duplicate fields, incorrect
+types, unsupported versions, noncanonical base64 and invalid lengths. Version is
+the integer~1; even the JSON Boolean \texttt{true} is rejected instead of being
+accepted through Python's integer comparison. The plaintext limit is 16~MiB and
+the context contains 1--1024 UTF-8 bytes. Context is authenticated public metadata,
+so confidential information belongs in the encrypted payload.
+
+Associated data consists of a fixed application-domain prefix and the compact,
+sorted-key JSON encoding of version, algorithm and context. The recipient supplies
+the expected algorithm and expected context independently of the incoming
+envelope. These expectations cannot safely be copied from attacker-controlled
+metadata. Altering a header and simultaneously selecting the altered expectation
+still fails the library's authentication check. The full 16-byte authentication
+tag is retained, and no plaintext is returned before verification succeeds.
+These are concrete wrapper contracts around the external AEAD APIs, not an
+independent proof of those APIs' computational security \cite{CryptoAPI50AEAD}.
+
+Each encryption generates a fresh 96-bit random nonce internally. The interface
+does not accept caller-selected nonces. For $m$ ideal independent uniform draws,
+the union bound over pairs gives
+\[
+ \Pr[\text{a nonce collision}]\leq
+ \binom m2\,2^{-96}=\frac{m(m-1)}{2^{97}}.
+\]
+For $m\leq2^{20}$ this particular probability is below $2^{-57}$. This calculation
+addresses nonce collisions only; it is not the complete AEAD forgery or privacy
+bound. Random sampling does not guarantee perpetual uniqueness. The stateless
+wrapper cannot enforce a distributed key-use quota or retain a counter across
+process restarts. Applications need their own key lifecycle and usage policy,
+with independent keys for different algorithms and purposes. A fresh key for a
+single artifact is the simplest example, while secure storage and distribution
+of that key remain application responsibilities.
+
+\section{Signatures, replay and scientific meaning}
+
+The signature wrapper signs a separate domain prefix, the four-byte big-endian
+length of the UTF-8 context, the context itself, and the exact artifact bytes.
+The explicit length prevents the ambiguity between, for example, context
+\texttt{a} followed by message \texttt{bc} and context \texttt{ab} followed by
+message \texttt{c}. This is ordinary Ed25519 applied to the framed byte string;
+it is not the distinct Ed25519ctx variant specified in the EdDSA family
+\cite{CryptoRFC8032,CryptoAPI50Ed25519}.
+
+Verification requires an authenticated association between the public key and
+the intended signer. A valid signature authenticates bytes relative to that key;
+it does not establish that the signed mathematical assertion is true. Signing
+a verification manifest can preserve provenance, while its actual proof or
+test evidence must still be checked. The example keys are ephemeral and do not
+constitute an author identity or an archival trust anchor.
+
+An authentic old envelope or signature remains authentic when replayed.
+Putting an artifact identifier or release number in the expected context binds
+that value, but preventing a second acceptance requires receiver state.
+Likewise, byte-exact signatures do not automatically identify semantically
+equivalent JSON encodings; any required canonicalization is an application
+contract. No secret key belongs in a public repository or client-side static
+site, and Python object destruction is not a guarantee of memory zeroization.
+
+\section{The post-quantum boundary}
+
+The two ML-KEM interfaces return and recover 32-byte shared secrets using the
+native library. The exercised ML-KEM-768 public-key and ciphertext lengths are
+1184 and 1088 bytes; ML-KEM-1024 uses 1568 bytes for each. The tests serialize
+and reload public keys, encapsulate, decapsulate and check these sizes against
+the documented API \cite{CryptoAPI50MLKEM}.
+
+ML-KEM is a key-encapsulation mechanism, not a signature scheme or complete
+authenticated transport protocol \cite{CryptoFIPS203}. It does not establish
+either party's identity, specify file encryption or prevent replay. In
+particular, an invalid ciphertext of the correct length normally yields a
+rejection secret through implicit rejection; a returned byte string is not
+evidence that the ciphertext is valid. The regression checks this behavior and
+checks that malformed lengths are rejected. Combining these functions into a
+KEM/DEM transport would require separately specified authentication, transcript
+binding, derivation and lifecycle rules; this release makes no such protocol
+claim. Ed25519 remains a classical signature, so its presence beside ML-KEM does
+not make every component post-quantum.
+
+\section{Recorded execution and formal coverage}
+
+The recorded execution used Python~3.12.14,
+\texttt{cryptography}~50.0.0 and OpenSSL~4.0.1. All five algorithm choices in the
+table were exercised. The 25 test methods passed with no failures, errors or
+skips; parameterized cases additionally cover empty, binary, Unicode and larger
+payloads; ciphertext, tag and nonce changes; wrong keys, contexts and algorithms;
+parser ambiguity; signature changes; context framing; both KEM parameter sets;
+implicit rejection; and incorrect KEM lengths. Private keys and shared secrets
+were generated in memory and were neither persisted nor printed.
+
+\begin{lstlisting}
+python extension/crypto/verify_crypto.py
+\end{lstlisting}
+
+The reproducible evidence is \path{extension/crypto/verification.json} together
+with \path{extension/crypto/verification.log}. The JSON record identifies the
+runtime versions and hashes the exact implementation, test driver, dependency
+pin and test log. A successful finite test run is not a proof for all inputs,
+a security reduction, an independent backend audit or a certification claim.
+
+The companion Lean noise-cancellation and hidden-relation lemmas concern the
+finite algebra stated in their types. They do not formalize this Python code,
+the native backend, signature unforgeability, chosen-ciphertext security,
+side-channel resistance or authenticated key distribution. Keeping those
+interfaces explicit permits useful connections between arithmetic research and
+cryptographic engineering without changing the evidentiary meaning of either.

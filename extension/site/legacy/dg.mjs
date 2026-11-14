@@ -1,0 +1,29 @@
+import {windowModel,thetaExt} from './dg-model.mjs';
+const $=id=>document.getElementById(id),state={yaw:.6,pitch:.45};
+const text=(id,t)=>$(id).textContent=t;
+function canvas(id){const e=$(id),r=e.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);if(!r.width||!r.height)return;const w=Math.round(r.width*d),h=Math.round(r.height*d);if(e.width!==w||e.height!==h){e.width=w;e.height=h;}const c=e.getContext('2d');c.setTransform(d,0,0,d,0,0);c.clearRect(0,0,r.width,r.height);return {c,w:r.width,h:r.height};}
+function update(){
+ const mode=$('mode').value,N=Number($('size').value),theta=Number($('phase').value),m=windowModel(mode,N);state.model=m;state.phase=theta;
+ text('windowTitle',`Monomial window N=${N}`);text('counts',`dε = ${mode==='node'?'ξη':mode==='unit'?'1':'0'}\n(dim C⁻¹, dim C⁰) = (${m.odd.length}, ${m.even.length})\nExact finite differential rank = ${m.rank}\n(dim H⁻¹, dim H⁰) = (${m.homology})`);
+ text('cohomology',mode==='node'?'Infinite model: H⁻¹=0, H⁰=k[ξ,η]/(ξη)':'Infinite model: '+(mode==='unit'?'H*=0; d h+h d=1':'H⁻¹=R, H⁰=R, R=k[ξ,η]'));
+ text('windowScope',mode==='node'?'Source exponents 0≤i,j≤N−1; target exponents 0≤i,j≤N. Every arrow stays in the window. The 2N+1 surviving target monomials lie on the two axes. The full quotient remains infinite dimensional.':mode==='unit'?'Both layers use 0≤i,j≤N. Every coefficient is paired; this example cannot be a unital DG resolution of a nonzero field.':'Both layers use the same ambient polynomial window; all differentials vanish. This comparison is not the nodal quotient.');
+ const angle=theta*Math.PI/180,qr=Math.cos(angle),qi=Math.sin(angle),fmt=x=>(Math.abs(x)<1e-12?0:x).toFixed(3),cfmt=(re,im)=>fmt(re)+(im< -1e-12?'−':'+')+fmt(Math.abs(im))+'i';
+ text('clock',`q=e^{iθ}, θ=${theta}°\nσq(ξ)=qξ, σq(η)=q⁻¹η, σq(ε)=ε\nσq(u)=(${cfmt(qr,qi)})ξ\n       +(${cfmt(qr,-qi)})η\nMonomial ξⁱηʲ weight: q^(i−j)`);
+ text('DVR',theta%360===0?'This phase fixes u and the chosen k[[u]] pointwise.':theta%180===0?'This phase preserves k[[u]] via u↦−u, but is not linear over its fixed pointwise action.':'This phase preserves the node relation but does not preserve the chosen diagonal k[[u]] subring.');
+ drawDG();drawTheta();
+}
+function drawDG(){const r=canvas('dgCanvas');if(!r)return;const {c,w,h}=r,m=state.model,N=Math.max(1,m.N),scale=Math.min(w/3.2,h/2.8),project=([i,j,z])=>{const x=i/N-.5,y=j/N-.5,rx=x*Math.cos(state.yaw)-y*Math.sin(state.yaw),ry=x*Math.sin(state.yaw)+y*Math.cos(state.yaw),depth=ry*Math.cos(state.pitch)-z*Math.sin(state.pitch),s=scale/(1+depth*.12);return {x:w/2+rx*s,y:h*.3-(ry*Math.sin(state.pitch)+z*Math.cos(state.pitch))*s,depth};};
+ c.lineWidth=1;c.strokeStyle='#60937e55';for(const [a,b] of m.arrows){const p=project(a),q=project(b);c.beginPath();c.moveTo(p.x,p.y);c.lineTo(q.x,q.y);c.stroke();const dx=q.x-p.x,dy=q.y-p.y,l=Math.hypot(dx,dy)||1;c.beginPath();c.moveTo(q.x,q.y);c.lineTo(q.x-dx/l*7-dy/l*3,q.y-dy/l*7+dx/l*3);c.lineTo(q.x-dx/l*7+dy/l*3,q.y-dy/l*7-dx/l*3);c.fillStyle='#60937e';c.fill();}
+ [...m.even,...m.odd].map(p=>({p,q:project(p)})).sort((a,b)=>b.q.depth-a.q.depth).forEach(({p,q})=>{c.beginPath();c.arc(q.x,q.y,m.N>4?3.5:5,0,Math.PI*2);c.fillStyle=`hsl(${(150+state.phase*(p[0]-p[1]))%360} 35% ${p[2]===0?34:61}%)`;c.fill();if(m.N<=3){c.fillStyle='#345149';c.font='11px ui-monospace,monospace';c.fillText(`${p[0]},${p[1]}`,q.x+7,q.y-5);}});
+ c.fillStyle='#145e4d';c.font='14px Georgia';c.fillText('C⁰ · ξⁱηʲ',20,24);c.fillText('C⁻¹ · ξⁱηʲε',20,h-24);
+}
+function drawTheta(){const kind=$('surface').value,n=Number($('degree').value),matrix=thetaExt(kind,n);state.theta={kind,n,matrix};text('thetaTitle',`${kind==='elliptic'?'Elliptic':'Spherical'} theta · n=${n}`);text('extMatrix','dim Extⁿ(Sᵢ,Sⱼ), rows i / columns j\n'+matrix.map(r=>r.join('  ')).join('\n'));text('extScope',kind==='elliptic'?'For n>0, two summands end at j=i−n mod3. Self Ext¹ and Ext² vanish; self Ext³ has dimension2.':'For positive even n, self Ext has dimension2. For odd n, one summand reaches each other vertex. Self Ext¹ vanishes.');
+ const r=canvas('thetaCanvas');if(!r)return;const {c,w,h}=r,pts=Array.from({length:3},(_,i)=>({x:w/2+Math.cos(i*2*Math.PI/3-Math.PI/2)*Math.min(w,h)*.32,y:h/2+Math.sin(i*2*Math.PI/3-Math.PI/2)*Math.min(w,h)*.32}));
+ for(let j=0;j<3;j++)if(matrix[0][j]){const a=pts[0],b=pts[j];c.strokeStyle='#60937e';c.lineWidth=2;c.beginPath();if(j===0){c.arc(a.x,a.y-18,24,0,Math.PI*1.8);c.stroke();}else{c.moveTo(a.x,a.y+16);c.lineTo(b.x,b.y-16);c.stroke();}c.fillStyle='#145e4d';c.font='15px ui-monospace';c.fillText(matrix[0][j],(a.x+b.x)/2+12,(a.y+b.y)/2-18);}
+ pts.forEach((p,i)=>{c.beginPath();c.arc(p.x,p.y,17,0,Math.PI*2);c.fillStyle=i===0?'#145e4d':'#8baa88';c.fill();c.fillStyle='white';c.font='14px Georgia';c.textAlign='center';c.fillText('S'+i,p.x,p.y+5);});c.textAlign='left';
+}
+for(const id of ['mode','size','phase','surface','degree'])$(id).oninput=update;
+$('mode').onchange=update;$('surface').onchange=update;$('resetCamera').onclick=()=>{state.yaw=.6;state.pitch=.45;drawDG();};
+let drag;$('dgCanvas').onpointerdown=e=>{drag=[e.clientX,e.clientY,state.yaw,state.pitch];$('dgCanvas').setPointerCapture(e.pointerId);};$('dgCanvas').onpointermove=e=>{if(drag){state.yaw=drag[2]+(e.clientX-drag[0])*.01;state.pitch=Math.max(-.7,Math.min(.9,drag[3]+(e.clientY-drag[1])*.007));drawDG();}};$('dgCanvas').onpointerup=()=>drag=null;$('dgCanvas').onpointercancel=()=>drag=null;
+const observer=new ResizeObserver(()=>{drawDG();drawTheta();});observer.observe($('dgCanvas'));observer.observe($('thetaCanvas'));
+if(new URLSearchParams(location.search).has('embed'))document.body.classList.add('embed');window.dgLab={snapshot:()=>({mode:state.model.mode,N:state.model.N,rank:state.model.rank,homology:state.model.homology,phase:state.phase,theta:state.theta,yaw:state.yaw})};update();document.body.dataset.ready='true';

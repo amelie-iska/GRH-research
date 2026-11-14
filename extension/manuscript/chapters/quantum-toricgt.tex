@@ -1,0 +1,1037 @@
+\chapter{A trainable quantum interface for ToricGT}
+\label{chap:quantum-toricgt}
+
+\reviewstatus{This chapter supplies an original, bounded implementation and
+elementary proofs for a quantum feature interface to a graph transformer.
+It reports nine completed GPU training runs and independent numerical checks.
+It does not identify this implementation with the complete upstream ToricGT
+program, a biomolecular language model, or a quantum computer. The simulation
+uses three qubits per graph token. Its exact path certificates are classical
+mathematical certificates, with their own proofs and verification code.}
+
+\section{Which architecture is being extended?}
+
+A useful connection between algebra and learning begins with a precise
+interface. A theorem about a ring, a circuit, or a chain complex does not
+automatically become a theorem about a trained predictor. We therefore give
+each part of the construction a separate role. Graph structure specifies
+legal objects; a finite circuit supplies trainable features; a transformer
+predicts a value function; and an independent checker determines what a
+proposed solution actually establishes.
+
+The implementation sources reviewed for this extension are pinned to
+\texttt{amelie-iska/ToricGT} commit
+\texttt{a5199bc989a6fb170e21220e5e87bf95bc2fc0b4} and
+\texttt{amelie-iska/ToricGT-Program} commit
+\texttt{f91ba1811b5a4f70d53c7120acf8ca2a0049f85b}.
+The four source modules inspected in full implement graph tokenization,
+tropical attention, finite Weyl matrices, and Soft-MoE routing. The program
+overview requires empirical evaluation of proposed algebraic auxiliaries;
+it does not make their utility follow from their names.
+\cite{qtToricGTCode,qtToricGTProgram}
+
+Our model retains vertex and edge tokens, endpoint incidence, a mixture of
+ordinary and max-plus attention, and four experts with two slots each.
+Its new component is a jointly trained circuit feature encoder. The older
+repository example under \path{examples/quantum_tokengt} used a frozen
+three-qubit feature construction and trained a classical attention head.
+The present experiment trains both the input-to-angle map and twelve circuit
+offsets. This is a concrete change in the optimization problem, not an
+increase in the number of qubits. The larger surface-code circuits described
+elsewhere in this monograph are separate experiments.
+
+There are also deliberate changes to the upstream graph encoding. The
+reviewed tokenizer contains learned identifier embeddings. Such a table is
+not automatically invariant under arbitrary renaming of vertices. Here the
+identifiers enter only through equality of endpoints, equivalently through
+inner products of orthonormal identifier vectors. Intrinsic byte positions
+remain ordinary input attributes. A permutation of storage order transports
+these attributes; it does not change the underlying string. This distinction
+will be used explicitly in the equivariance proof.
+
+The ToricBLM source located during this review is the author's June 2026
+proposal, which discusses graph tokens and affine steering regions. It is
+useful as a design source. An independently pinned, trained ToricBLM
+repository was not located in the reviewed material. Consequently this
+chapter makes no claim to reproduce its proposed 100-million-parameter
+biomolecular model, its biological validation program, or broad claims of
+generalization.\cite{qtToricBLM}
+
+The selected task is exact weighted tokenization on small directed acyclic
+graphs. It gives the learner a meaningful combinatorial problem while
+keeping the teacher and certificate transparent. This choice also makes a
+limitation explicit: dynamic programming already solves the task efficiently.
+The experiment tests whether a particular trainable representation works;
+it does not establish a computational advantage over that algorithm.
+
+\section{Tokenization graphs and exact solution certificates}
+
+\subsection{The fixed-vocabulary problem}
+
+Let a string have length $n$. Its byte boundaries are vertices
+$0,1,\ldots,n$. An allowed token occupying the substring from boundary $i$
+to boundary $j$ gives an edge $e:i\to j$, where $i<j$. An edge has integer
+cost $c_e$. Every one-byte edge is available, so a path to $n$ exists from
+every vertex. A complete tokenization is a directed path from $0$ to $n$.
+In the experiment, candidate tokens have length at most three and the
+alphabet has four symbols. Costs depend on a recorded, bounded control
+parameter; the full graph and its costs are supplied to the model.
+
+The colored-DAG formulation follows the tokenization viewpoint of
+ConvexTok. Its vocabulary-selection problem and its decoding problem must
+be distinguished. Choosing a globally shared vocabulary under a size budget
+is a discrete optimization problem. Once the allowed vocabulary is fixed,
+the remaining path problem on a DAG admits the elementary solution below.
+\cite{qtConvexTok}
+
+\begin{proposition}[Bellman recursion on a finite token DAG]
+\label{qt:bellman}
+Suppose all edges point from smaller to larger vertex indices and every
+nonterminal vertex reaches $n$. Set $d(n)=0$ and, in decreasing order of $i$,
+define
+\[
+ d(i)=\min_{e:i\to j}\{c_e+d(j)\}.
+\]
+Then $d(i)$ is the minimum cost of a path from $i$ to $n$. Choosing a
+minimizing edge at every visited vertex produces an optimal path.
+\end{proposition}
+\begin{proof}
+At $n$ the only path of length zero costs zero. Suppose the assertion holds
+for vertices larger than $i$. Every path beginning at $i$ has a first edge
+$i\to j$ and a remaining path beginning at $j$. By the induction hypothesis
+its cost is at least $c_e+d(j)$, hence at least the displayed minimum.
+Conversely choose an edge attaining the minimum and append an optimal path
+from its target. The result attains $d(i)$. The graph is finite and every
+edge strictly increases the index, so this procedure terminates. Backward
+induction proves every assertion.
+\end{proof}
+
+The recursion works even with negative edge costs because there are no
+directed cycles. Our sampled costs are positive, which makes their
+interpretation as token costs convenient but is not needed for this proof.
+With outgoing adjacency lists, the arithmetic work is linear in the number
+of edges. This is the exact teacher used during dataset generation.
+
+\begin{proposition}[A checkable primal--dual certificate]
+\label{qt:path-certificate}
+Let $p:V\to\R$ satisfy $p(n)=0$ and
+\[
+ p(i)-p(j)\leq c_e \qquad(e:i\to j).
+\]
+For every path $P$ from $0$ to $n$,
+$p(0)\leq C(P):=\sum_{e\in P}c_e$.
+If equality holds for one legal path, that path is optimal.
+The Bellman distances in Proposition~\ref{qt:bellman} give such a potential
+and equality on every path obtained by choosing minimizing edges.
+\end{proposition}
+\begin{proof}
+Write the successive vertices of $P$ as $i_0=0,i_1,\ldots,i_m=n$.
+Adding its $m$ inequalities gives
+\[
+ \sum_{r=0}^{m-1}c_{i_r i_{r+1}}
+ \geq \sum_{r=0}^{m-1}(p(i_r)-p(i_{r+1}))
+ =p(0)-p(n)=p(0).
+\]
+Thus $p(0)$ is a lower bound for every feasible solution. A path attaining
+the bound is optimal. The Bellman minimum implies
+$d(i)\leq c_e+d(j)$ for each outgoing edge, and a minimizing edge makes
+this inequality an equality. Summing along the resulting path proves the
+last assertion.
+\end{proof}
+
+The certificate checker verifies the token substrings, continuity of the
+path, its endpoint, all potential inequalities, and equality of the final
+cost and lower bound. It uses literal integers, rather than a numerical
+tolerance. A learned value function $\widehat d$ supplies a candidate path
+by minimizing $c_e+\widehat d(j)$ at each step. Rounded predictions supply
+an initial integral potential. Backward replacement
+\[
+ p(i)\leftarrow\min\bigl(p(i),\min_{i\to j}(c_{ij}+p(j))\bigr)
+\]
+makes that potential feasible while preserving $p(n)=0$. Feasibility does
+not force the proposed path to attain its lower bound. This is why the
+experiment reports the frequency of an immediately certified learned
+proposal separately from the frequency of a merely optimal learned path.
+
+If the certificate does not close, an exact dynamic-programming repair is
+available. The final output is then certified, but its certainty belongs
+to the checker and repair algorithm. Calling this a perfect neural success
+rate would conceal the distinction between prediction and verification.
+The stored results retain the original proposal, its regret, its initial
+certificate, whether repair was required, and the final certificate.
+
+\subsection{A separate vocabulary-selection relaxation}
+
+For completeness, consider several token DAGs with a shared finite set of
+token colors $\mathcal C$. For each document let $f_e$ indicate whether an
+edge is used, and let $y_c$ indicate whether a priced token color is included.
+Byte edges need no color budget. With the incidence convention
+$B e=e_{\mathrm{source}(e)}-e_{\mathrm{target}(e)}$, impose
+\[
+ Bf=e_s-e_t,\qquad f_e\leq y_{c(e)}\text{ on priced edges},\qquad
+ \sum_c y_c\leq K.
+\]
+The integer program uses binary variables and minimizes the number, or
+specified weighted cost, of used edges. Replacing binary variables by
+intervals $[0,1]$ gives a linear relaxation. A rounded vocabulary must be
+evaluated by decoding again; a fractional flow is not itself a vocabulary.
+Our companion implements this small formulation on the three strings
+\texttt{abca}, \texttt{bcab}, and \texttt{cabc} with budget two.
+
+\begin{lemma}[Integral unit flows on an ordered DAG]
+\label{qt:unit-flow}
+Let every edge of a finite graph increase a fixed vertex order. If
+$f\in\N^E$ and $Bf=e_s-e_t$, with distinct vertices $s$ first and $t$ last, then $f$ is the
+incidence vector of one directed $s$--$t$ path.
+\end{lemma}
+\begin{proof}
+At $s$, incoming flow is zero and outgoing flow is one. Integrality selects
+exactly one outgoing edge of multiplicity one. Follow it. At an internal
+vertex reached by a unit of flow, conservation supplies an outgoing edge
+with positive integral multiplicity unless the vertex is $t$. Increasing
+order prevents repetition and forces eventual arrival at $t$; otherwise a
+last visited nonterminal vertex would violate conservation. Subtract this
+path's flow from $f$. The remainder is nonnegative and has zero boundary.
+A nonzero nonnegative flow with zero boundary on a DAG is impossible:
+choose its first vertex incident to a positive outgoing edge. No positive
+incoming edge can enter that vertex, contradicting conservation. Therefore
+the remainder is zero.
+\end{proof}
+
+\begin{proposition}[An exact lower bound from a rational LP dual]
+\label{qt:lp-dual}
+For the real linear program
+\[
+ \min c^T x,\qquad Ax=b,\quad Hx\leq h,\quad 0\leq x\leq\mathbf1,
+\]
+suppose $y$ is unrestricted, $z\leq0$, $u\leq0$, and
+$A^T y+H^Tz+u\leq c$ coordinatewise. Then every feasible $x$ satisfies
+\[
+ c^Tx\geq b^Ty+h^Tz+\mathbf1^Tu.
+\]
+If a feasible integer solution attains this lower bound, it solves both
+the relaxation and the integer problem.
+\end{proposition}
+\begin{proof}
+Multiply the coordinatewise dual inequality by $x\geq0$ and sum. This gives
+$c^Tx\geq y^TAx+z^THx+u^Tx$. The equality constraint supplies $y^Tb$.
+Because $z\leq0$ and $Hx\leq h$, one has $z^THx\geq z^Th$.
+Because $u\leq0$ and $x\leq\mathbf1$, one has $u^Tx\geq u^T\mathbf1$.
+Combining these bounds proves the claim. Integer feasible points form a
+subset of the relaxation's feasible set, so equality proves optimality in
+both problems.
+\end{proof}
+
+The numerical LP solver proposes multipliers. The checker converts them
+to rational numbers and explicitly checks the displayed inequalities.
+If rounding a proposed multiplier changes feasibility, the coordinate
+correction
+$u_j=\min(0,c_j-(A^Ty+H^Tz)_j)$ restores the required inequality.
+The resulting exact lower bound for the recorded example is $6$.
+Exhaustive enumeration of the allowed two-color vocabularies also gives
+cost $6$. The equality certifies this particular finite example. It does
+not assert that the relaxation is integral for arbitrary corpora.
+
+\section{A finite Weyl encoder with trainable gates}
+
+\subsection{The noncommutative algebra is explicit}
+
+Let $q\geq2$, let $\omega=\exp(2\pi i/q)$, and index the standard basis of
+$\C^q$ cyclically. Define
+\[
+ Ue_j=\omega^j e_j,\qquad Ve_j=e_{j-1}.
+\]
+The backward-shift convention fixes the sign in the commutation relation.
+These are the finite matrices used as an algebraic ingredient in the
+reviewed ToricGT module.\cite{qtWeylCode}
+
+\begin{proposition}[Finite Weyl relations and matrix basis]
+\label{qt:weyl}
+The operators $U,V$ are unitary, $U^q=V^q=I$, and $VU=\omega UV$.
+The $q^2$ matrices $U^rV^s$, $0\leq r,s<q$, are an orthogonal basis of
+$M_q(\C)$ for the Hilbert--Schmidt inner product.
+\end{proposition}
+\begin{proof}
+The diagonal entries of $U$ have modulus one and $V$ permutes an
+orthonormal basis, so both are unitary. Their $q$th powers are the identity.
+On $e_j$ the two products satisfy
+$VUe_j=\omega^j e_{j-1}$ and $UVe_j=\omega^{j-1}e_{j-1}$, proving the
+relation, including the cyclic case $j=0$ because $\omega^q=1$.
+
+If $s\not\equiv0\pmod q$, $U^rV^s$ has zero diagonal and trace zero.
+If $s=0$, its trace is $\sum_{j=0}^{q-1}\omega^{rj}$, equal to zero unless
+$r=0$, when it equals $q$. Indeed, for $r\neq0$ the geometric sum multiplied
+by $1-\omega^r$ is $1-\omega^{rq}=0$ and $1-\omega^r\neq0$.
+Using the commutation relation, the product
+$(U^rV^s)^*U^{r'}V^{s'}$ is a nonzero scalar times
+$U^{r'-r}V^{s'-s}$. Its trace is therefore zero for distinct pairs and is
+$q$ for identical pairs. There are $q^2$ nonzero orthogonal matrices in a
+$q^2$-dimensional vector space, which proves the basis assertion.
+\end{proof}
+
+This finite algebra has a perfectly ordinary classical matrix
+representation. The word ``noncommutative'' establishes neither quantum
+hardware usage nor a computational speedup. In the implementation $q=8$;
+one vector of dimension eight is represented by three qubits, not by eight
+qubits or by three independent eight-level systems. A finite representation
+at a rational phase parameter also does not by itself approximate every property of an
+irrational noncommutative torus.
+
+\subsection{Circuit and measurements}
+
+For a token feature vector $x\in\R^8$, the input encoder computes six angles
+\[
+ a(x)=\pi\tanh(W_a x+b_a).
+\]
+There are two circuit layers. In layer $\ell\in\{0,1\}$, for each
+$r\in\{0,1,2\}$ apply, in this order,
+\[
+ R_Y(a_r+\theta_{\ell r0}),\qquad
+ R_Z(a_{r+3}+\theta_{\ell r1}),
+\]
+to qubit $r$, then apply controlled-NOT gates $0\to1$ and $1\to2$.
+The initial state is $|000\rangle$ and qubit zero is the most significant
+bit. There are twelve learned offsets $\theta_{\ell rb}$. The six input
+angles are reused in both layers; this matters when differentiating the
+input encoder.
+
+For the resulting unit vector $\psi(x;\theta)$ define
+\[
+ f(x;\theta)=
+ (\Re\langle U\rangle,\Im\langle U\rangle,
+  \Re\langle V\rangle,\Im\langle V\rangle,
+  \Re\langle UV\rangle,\Im\langle UV\rangle),
+ \quad \langle T\rangle=\psi^*T\psi.
+\]
+These are real features. For a unitary $T$, its real and imaginary
+expectations are expectations of the Hermitian operators
+$(T+T^*)/2$ and $(T-T^*)/(2i)$. Thus the feature definition has a
+measurement interpretation, although estimating several noncommuting
+observables generally requires separate state preparations. The present
+experiments calculate expectations in a classical statevector simulator;
+they do not include shot noise or noisy physical gates.
+
+\begin{lemma}[Normalization and feature bounds]
+\label{qt:bounds}
+The displayed circuit preserves norm. Each of its six real features lies
+in $[-1,1]$. Moreover, for unit vectors $\psi,\varphi$ and an operator $T$
+with $\|T\|\leq1$,
+\[
+ |\psi^*T\psi-\varphi^*T\varphi|\leq2\|\psi-\varphi\|.
+\]
+\end{lemma}
+\begin{proof}
+Both Pauli rotations are unitary and controlled-NOT is a permutation of an
+orthonormal basis; their product preserves norm. Cauchy--Schwarz gives
+$|\psi^*T\psi|\leq\|\psi\|\,\|T\psi\|\leq1$ for the three unitary
+operators under consideration. Real and imaginary parts have no larger
+absolute value. Finally write the expectation difference as
+\[
+ (\psi-\varphi)^*T\psi+\varphi^*T(\psi-\varphi)
+\]
+and apply the triangle inequality and Cauchy--Schwarz to the two summands.
+\end{proof}
+
+\subsection{What the parameter-shift formula actually differentiates}
+
+The familiar two-evaluation rule applies to an expectation whose parameter
+occurs in one gate with a two-eigenvalue generator. The general analytic
+gradient framework is developed by Schuld and collaborators.
+\cite{QSSchuld2019} The short proof here fixes the normalization and
+the composition rule needed by this implementation.
+
+\begin{proposition}[Single-occurrence Pauli parameter shift]
+\label{qt:shift}
+Let $P=P^*$, $P^2=I$, and
+$R(t)=\exp(-itP/2)$. For fixed state $\eta$ and Hermitian $H$, put
+$F(t)=\eta^*R(t)^*H R(t)\eta$. Then
+\[
+ F'(t)=\tfrac12\{F(t+\pi/2)-F(t-\pi/2)\}.
+\]
+The same identity holds for each real feature above when the varied
+offset occurs in exactly one gate of that token's circuit.
+\end{proposition}
+\begin{proof}
+The identity $P^2=I$ splits the exponential series into even and odd powers:
+$R(t)=I\cos(t/2)-iP\sin(t/2)$. On expanding $R^*HR$, the coefficients of
+$H$, $PHP$, and $i(PH-HP)$ are respectively
+$\cos^2(t/2)$, $\sin^2(t/2)$, and $\sin(t/2)\cos(t/2)$.
+Consequently $F(t)=A+B\cos t+C\sin t$ for real constants $A,B,C$.
+Its derivative is $-B\sin t+C\cos t$, and the displayed shifted difference
+has exactly this value. Gates preceding $R$ can be absorbed into $\eta$;
+gates following it can be absorbed by conjugating $H$. Each real or
+imaginary Weyl feature uses a Hermitian observable as explained above, so
+the same argument applies to each feature.
+\end{proof}
+
+\begin{proposition}[Hybrid gradient with shared parameters]
+\label{qt:chain-rule}
+Let $f_{tj}(\theta)$ be feature $j$ of token $t$ and let a differentiable
+classical computation give loss $L=\ell((f_{tj})_{t,j})$. If offset
+$\theta_k$ occurs once in each token circuit, then
+\[
+ \frac{\partial L}{\partial\theta_k}
+ =\sum_{t,j}\frac{\partial\ell}{\partial f_{tj}}
+ \frac{f_{tj}(\theta_k+\pi/2)-f_{tj}(\theta_k-\pi/2)}2,
+\]
+where each difference changes only that occurrence in that token circuit
+and the classical derivatives are evaluated at the original features.
+If a parameter occurs in several gates, sum these contributions over its
+occurrences before applying its outer chain rule.
+\end{proposition}
+\begin{proof}
+Temporarily replace every gate occurrence by an independent variable.
+The ordinary multivariable chain rule expresses the derivative of $L$ as
+the sum of its feature adjoints multiplied by the feature derivatives.
+Proposition~\ref{qt:shift} evaluates each such derivative. Identifying
+occurrence variables with the shared parameter sums their derivatives,
+again by the chain rule. This proves both statements.
+\end{proof}
+
+It would generally be incorrect to replace the derivative of the entire
+nonlinear loss by half the difference of two shifted losses. For example,
+if $f(t)=\cos t$ and $L(t)=f(t)^2$, those two shifted losses are equal,
+whereas $L'(t)=-\sin(2t)$ is usually nonzero. The graph attention and
+expert networks are nonlinear functions of the features. Our verification
+therefore compares their feature adjoints composed with independent
+parameter-shift Jacobians against automatic differentiation of the full
+loss. At max-plus ties a classical derivative may fail to exist; the
+implementation uses its framework's subgradient convention. The analytic
+identity above is asserted at differentiability points, not as a unique
+derivative at every tie.
+
+The circuit offsets each have a single occurrence per token. An input
+angle occurs once in each of the two layers, so its derivative has two
+occurrence contributions. The input-to-angle map then contributes its
+ordinary derivative $\pi\operatorname{sech}^2(W_ax+b_a)$. Automatic
+differentiation performs this composition during training; the independent
+shift check specifically audits the shared circuit offsets.
+
+\section{A graph transformer whose symmetries can be stated precisely}
+
+\subsection{Tokens and incidence}
+
+For a vertex $i$, use endpoint pair $(i,i)$; for an edge $i\to j$, use
+$(i,j)$. Each token has eight scalar attributes: vertex and edge indicators,
+the two byte positions divided by twelve, token span divided by twelve,
+cost divided by thirty-two, the bounded control divided by two, and the
+edge's cost slope divided by two. Inapplicable entries are zero.
+The endpoint-incidence matrix is
+\[
+ R_{tu}=\tfrac14\sum_{a,b=1}^2
+   \mathbf1\{\operatorname{end}_a(t)=\operatorname{end}_b(u)\}.
+\]
+Equivalently replace the indicator by the inner product of orthonormal
+endpoint vectors. This encoding uses equality structure, not a coordinate
+choice in the identifier space. Vertex and edge tokenization has a primary
+antecedent in TokenGT; its general expressivity results involve additional
+architecture hypotheses and are not claimed for this small model.
+\cite{qtTokenGT}
+
+The initial hidden table is
+\[
+ X_t=W_x x_t+b_x+W_f f(x_t;\theta)+b_f\in\R^{24}.
+\]
+It has two graph blocks and two attention heads per block. Each block
+normalizes token rows, forms learned queries, keys, and values, and centers
+and normalizes each query and key before forming scores. For one head the
+scores have the form
+\[
+ S_{tu}=\frac{q_t^T k_u}{\sqrt{12}}+\rho R_{tu},\qquad \rho>0.
+\]
+The two aggregation operations are
+\[
+ A^{\rm soft}_{t r}=\sum_u
+ \frac{e^{S_{tu}}}{\sum_v e^{S_{tv}}}v_{ur},
+ \qquad
+ A^{\rm max}_{t r}=\max_u(S_{tu}+v_{ur}).
+\]
+A learned sigmoid gate mixes them. The head outputs are concatenated and
+mapped back to width twenty-four with a residual connection. The graph
+here is fully observed; no autoregressive next-byte probability is being
+reported. A causal language model would require a separate reveal-order
+mask and proof that endpoint attributes expose no future information.
+
+\begin{lemma}[Associativity of finite max-plus contraction]
+\label{qt:maxplus}
+For finite compatible matrices with entries in
+$\R\cup\{-\infty\}$, define
+$(A\odot B)_{ik}=\max_j(A_{ij}+B_{jk})$, with the usual convention for
+$-\infty$ and $\max\varnothing=-\infty$. Then $(A\odot B)\odot C=A\odot(B\odot C)$.
+Splitting the contracted index set into blocks and taking the maximum of
+the block maxima gives the same result.
+\end{lemma}
+\begin{proof}
+Both parenthesizations at entry $(i,l)$ equal
+$\max_{j,k}(A_{ij}+B_{jk}+C_{kl})$. Finite maxima can be taken in either
+order. A maximum over a finite disjoint union is the maximum of the maxima
+over its pieces, proving the second statement.
+\end{proof}
+
+This justifies an exact blockwise max-plus reduction when its scores and
+values are already fixed. It does not make the whole graph network
+piecewise affine in its raw input or in its parameters: normalized
+queries and keys, their dot products, quantum expectations, softmax,
+layer normalization, and GELU activations are nonlinear.
+
+\subsection{Soft experts and a permutation proof}
+
+For an $m\times d$ token table $X$ and eight learned slot keys, form logits
+$L_{ts}$ by scaled cosine similarity. In the implementation each vector
+$v$ is normalized as $v/\max(\|v\|_2,10^{-6})$, including the zero vector;
+this convention is also used for the centered queries and keys. Row layer
+normalization uses its population variance plus $10^{-5}$ under the square
+root. These positive constants make every displayed row operation defined
+at constant or zero rows. Define two differently normalized
+arrays
+\[
+ D_{ts}=\frac{e^{L_{ts}}}{\sum_{u=1}^m e^{L_{us}}},\qquad
+ C_{ts}=\frac{e^{L_{ts}}}{\sum_{r=1}^8 e^{L_{tr}}}.
+\]
+The slot inputs are $\widetilde X=D^TX$. Two slots are assigned to each
+of four learned feed-forward experts, giving output slots
+$\widetilde Y$. The token output is $C\widetilde Y$, multiplied by a
+learned residual coefficient. Dispatch normalizes over tokens; combination
+normalizes over slots. Confusing those axes changes the model.
+\cite{qtSoftMoE}
+
+\begin{proposition}[Equivariance of the implemented mathematical architecture]
+\label{qt:equivariance}
+Let $P$ be a permutation matrix on the valid tokens of a nonempty graph.
+Transport token attributes and incidence by $X\mapsto PX$ and
+$R\mapsto PRP^T$. Every displayed graph block and the rowwise readout
+commute with this action. Thus the predicted node values are permuted
+along with the corresponding node tokens. A coordinated renaming of
+endpoint identifiers also leaves the incidence data unchanged.
+\end{proposition}
+\begin{proof}
+Rowwise affine maps, rowwise normalizations, coordinatewise activations,
+and the identical token circuit commute with left multiplication by $P$.
+Queries, keys, and values therefore transform to $PQ,PK,PV$, so their
+score matrix transforms to $PSP^T$. Row softmax transforms by the same
+two-sided permutation, and its product with the permuted values is the
+permutation of the original output. For max-plus attention, relabeling
+the finite maximizing index merely reorders the same candidates, giving
+the same conclusion. Residual addition and concatenation preserve it.
+
+For the expert layer, $L$ transforms to $PL$. Consequently dispatch and
+combination transform to $PD$ and $PC$. The slot inputs are unchanged:
+$(PD)^T(PX)=D^TX$. Each expert acts on those unchanged slots, so the
+output slots are unchanged. Multiplication by $PC$ permutes the final
+token outputs. Induction over the blocks and the final rowwise readout
+proves the assertion. Finally, a bijective renaming preserves every
+endpoint equality appearing in $R$, which proves the last statement.
+\end{proof}
+
+The claim concerns attributed graphs. Changing a byte position while
+keeping a token in place changes an attribute and can change the answer.
+Likewise, erasing edge direction or swapping the semantic source and
+target is not the token-storage permutation in the proposition. Masks
+must be transported too when padding or causal restrictions are present.
+In exact mathematics, padded keys are absent from sums and maxima. The
+implementation checks the relevant finite-precision masking behavior
+numerically, including insertion of padding and token permutations.
+
+\section{Toric path relations, graph rewrites, and steering regions}
+
+\subsection{A small commutative algebra with an exact graph meaning}
+
+Let $G$ be a finite directed graph and give its edge variables the incidence
+degrees $d_e=e_{\mathrm{target}(e)}-e_{\mathrm{source}(e)}\in\Z^V$,
+the columns of a matrix $D$. Thus $D=-B$ for the flow matrix above, which does not
+change the kernel. Consider the algebra map
+\[
+ \Phi:k[z_e:e\in E]\longrightarrow
+ k[t_v^{\pm1}:v\in V],\qquad
+ z_e\longmapsto t_{\mathrm{target}(e)}/t_{\mathrm{source}(e)}.
+\]
+For a nonnegative exponent vector $u$, its image has exponent vector
+$Du$ with this incidence convention. Multiplication forgets the order
+in which edges were listed; it retains their net boundary.
+
+\begin{proposition}[The binomial kernel of the boundary code]
+\label{qt:binomial-kernel}
+The kernel of $\Phi$ is the ideal generated by all
+$z^u-z^v$ with $u,v\in\N^E$ and $Du=Dv$.
+In particular, two directed paths with the same initial and final vertices
+have the same image under $\Phi$.
+\end{proposition}
+\begin{proof}
+Every displayed binomial maps to zero. Conversely write a polynomial in
+the kernel as a finite sum $\sum_u c_u z^u$ and group its terms according
+to the integer vector $Du$. Distinct Laurent monomials are linearly
+independent over $k$. Thus within each group the coefficients sum to zero.
+Choose one exponent $u_0$ in a nonempty group. That group's contribution
+equals $\sum_{u\ne u_0}c_u(z^u-z^{u_0})$, a sum of the stated binomials.
+Adding the finitely many groups proves the kernel assertion. Along a path,
+the incidence columns telescope to $e_t-e_s$, proving the final claim.
+\end{proof}
+
+For three arrows $a:0\to1$, $b:1\to2$, and $c:0\to2$, the two complete
+paths give the relation $z_a z_b-z_c$. In this example the whole kernel is
+$(z_a z_b-z_c)$. One may eliminate $z_c$, leaving the polynomial ring in
+$z_a,z_b$; their incidence vectors are linearly independent, so their
+images satisfy no further polynomial relation. The unit-flow polytope is
+\[
+ (f_a,f_b,f_c)=(\lambda,\lambda,1-\lambda),\qquad0\leq\lambda\leq1.
+\]
+The two integer endpoints are the two tokenizations. For edge costs
+$c_a,c_b,c_c$, the preferred endpoint changes on the wall
+$c_a+c_b=c_c$. The same comparison determines which side of the path
+binomial is selected by the corresponding weight. This is an explicit
+connection among a graph problem, a polytope, a binomial ideal, and a
+piecewise-linear optimal value function.
+
+The kernel relation alone does not certify an arbitrary sequence of
+rewrite operations. The vector $u-v$ may have negative entries, and
+applying it to a current state may leave the nonnegative orthant.
+Even nonnegative boundary-preserving changes on a cyclic graph can add
+a disconnected circulation. The DAG and unit-flow hypotheses in
+Lemma~\ref{qt:unit-flow} are what turn a nonnegative solution with the
+correct boundary into one legal path.
+
+\begin{proposition}[A constrained rewrite preserves legal tokenization]
+\label{qt:rewrite}
+On the ordered DAG of Lemma~\ref{qt:unit-flow}, let $x$ be a legal path
+flow and let $\delta\in\Z^E$ satisfy $B\delta=0$.
+If $x+\delta\geq0$ coordinatewise, then $x+\delta$ is another legal
+path flow with the same endpoints. Its cost change is exactly $c^T\delta$.
+\end{proposition}
+\begin{proof}
+Linearity gives $B(x+\delta)=Bx+B\delta=e_s-e_t$.
+The assumed nonnegative integral vector therefore satisfies
+Lemma~\ref{qt:unit-flow} and is a path. The cost identity follows by
+distributivity: $c^T(x+\delta)-c^Tx=c^T\delta$.
+\end{proof}
+
+A graph grammar can use such a local replacement when its interface and
+nonnegativity tests are explicit. If declared path relations are made
+columns of a map $\partial_2:C_2\to C_1$, their zero boundary gives
+$\partial_1\partial_2=0$. A replacement by $\partial_2 w$ preserves the
+homology class of a cycle. This is a genuine chain-complex connection to
+the earlier chapters. It is weaker than proving that every algebraically
+equivalent trajectory is semantically interchangeable. Dependencies,
+labels, resource limits, and external facts need their own preservation
+conditions. The commutative algebra records the chosen invariant; it
+cannot reconstruct information intentionally discarded by abelianization.
+
+\subsection{Affine margins and nonlinear circuit coordinates}
+
+Suppose a finite decision system uses affine scores
+$\ell_j(z)=a_j^Tz+b_j$ on a feature space. A fixed strict sign pattern of
+these scores determines an open polyhedral region. It may be empty, and
+there may be many disconnected regions after pulling it back through a
+nonlinear encoder. The affine-space statement is the useful part of the
+steering proposal; identifying a region with a scientifically correct
+reasoning mechanism would require additional evidence.
+
+\begin{proposition}[Preserving a finite affine sign pattern]
+\label{qt:margin}
+Let $s_j\in\{-1,1\}$ and suppose
+$s_j\ell_j(z)\geq\gamma>0$ for every $j$. If
+$|a_j^T\Delta z|<\gamma$ for every $j$, then
+$s_j\ell_j(z+\Delta z)>0$ for every $j$.
+In particular it suffices that
+$\|\Delta z\|_2<\gamma/\max_j\|a_j\|_2$ when the denominator is positive.
+If every $a_j=0$, every perturbation preserves the signs.
+\end{proposition}
+\begin{proof}
+For each $j$,
+$s_j\ell_j(z+\Delta z)=s_j\ell_j(z)+s_j a_j^T\Delta z
+\geq\gamma-|a_j^T\Delta z|>0$.
+Cauchy--Schwarz gives the sufficient norm bound. If all coefficients
+vanish, all scores are constant.
+\end{proof}
+
+The proof applies, for example, to a finite list of path-cost comparisons
+when the edge costs depend affinely on $z$. To use it in circuit parameters
+one also needs a bound on the feature change. Here is a directly proved
+bound for the twelve independent offsets, with the token input held fixed.
+
+\begin{lemma}[A conservative circuit-offset perturbation bound]
+\label{qt:circuit-lipschitz}
+For the token circuit above and two offset vectors $\theta,\theta'$,
+\[
+ \|\psi(\theta')-\psi(\theta)\|
+ \leq\tfrac12\|\theta'-\theta\|_1,
+ \qquad
+ \|f(\theta')-f(\theta)\|_2
+ \leq\sqrt6\,\|\theta'-\theta\|_1.
+\]
+\end{lemma}
+\begin{proof}
+For a Pauli rotation the derivative has operator norm $1/2$.
+Integrating along the real angle interval gives
+$\|R(t')-R(t)\|\leq|t'-t|/2$.
+Subtract two products of unitary gates by replacing one factor at a time.
+The operator norm of each difference term is at most the norm difference
+of that one factor, because all other factors are unitary. The sum over
+the twelve independently varied gates proves the state bound.
+Lemma~\ref{qt:bounds} then bounds the absolute change of each of the six
+features by $\|\theta'-\theta\|_1$. Summing their squared bounds proves
+the second inequality.
+\end{proof}
+
+Combining these propositions gives a sufficient margin condition for an
+\emph{affine readout directly on the six features}. It does not give the
+same constant for the full transformer. The latter's nonlinear layers
+and learned weights contribute further Lipschitz factors; max-plus ties
+also require the appropriate nonsmooth interpretation. Moreover a
+polyhedron in expectation-feature space need not have a polyhedral
+preimage in angle space. Even the one-qubit feature $\cos\theta$ has
+periodic, nonlinear level sets. This qualification prevents a useful
+local sign guarantee from becoming an unsupported global geometry claim.
+
+\section{Three source corrections with complete small counterarguments}
+
+The reviewed ToricGT V text contains several elementary interfaces that
+are useful when their hypotheses are retained. The following localized
+qualifications concern its saturation example, a sign in its predictive
+transfer definition, and a proposed monotonicity interpretation of
+coverage homology. The original pinned sources are preserved. The review
+ledger records the exact commit, path, and line ranges; the corrections
+here are new mathematical explanations, not silent edits to that source.
+\cite{qtToricGTAlgebra}
+
+\subsection{Saturation is relative to the generated lattice}
+
+\begin{proposition}[The parity semigroup is normal in its own group]
+\label{qt:parity-normal}
+Let
+$Q=\N(2,0)+\N(0,2)+\N(1,1)\subseteq\Z^2$. Then
+\[
+ \operatorname{gp}(Q)=\{(a,b)\in\Z^2:a+b\text{ is even}\},
+ \qquad
+ Q=\operatorname{gp}(Q)\cap\R_{\geq0}^2.
+\]
+In particular $Q$ is saturated in $\operatorname{gp}(Q)$, and $(1,0)$ is
+not a saturation hole in that group.
+\end{proposition}
+\begin{proof}
+Each generator has even coordinate sum, so every integer combination
+does too. Conversely if $a+b$ is even, then $a-b$ is even and
+$(a,b)=((a-b)/2)(2,0)+b(1,1)$ is an integer combination of generators.
+This proves the group description.
+
+For nonnegative $(a,b)$ with even sum, the coordinates have the same
+parity. If both are even, use $(a/2)(2,0)+(b/2)(0,2)$. If both are odd,
+use $((a-1)/2)(2,0)+((b-1)/2)(0,2)+(1,1)$. All coefficients are
+nonnegative integers, proving the intersection formula. If
+$m(a,b)\in Q$ with $m>0$ and $(a,b)\in\operatorname{gp}(Q)$, then
+$a,b\geq0$, so the formula implies $(a,b)\in Q$.
+Finally $(1,0)$ has odd coordinate sum and is outside the generated group.
+\end{proof}
+
+The fact that $2(1,0)\in Q$ does not contradict normality: its antecedent
+omits membership in $\operatorname{gp}(Q)$. If one instead studies the
+larger ambient lattice $\Z^2$, that is a different lattice specification.
+This is the same distinction that matters when proving normality of the
+semigroup degenerations in the standard-monomial chapters.
+
+\subsection{Inclusions do not make Betti numbers monotone}
+
+\begin{proposition}[A point, a circle, and a filled triangle]
+\label{qt:betti-counterexample}
+There exist inclusions of finite simplicial complexes
+$K_0\subset K_1\subset K_2$ for which the first Betti numbers over
+$\Q$ are $0,1,0$, respectively. Thus inclusion alone implies neither
+nondecreasing nor nonincreasing first Betti numbers.
+\end{proposition}
+\begin{proof}
+Take $K_0$ to be vertex $0$, $K_1$ the boundary of the triangle on
+vertices $0,1,2$, and $K_2$ the filled triangle. In $K_1$, orient the
+edges $0\to1$, $1\to2$, $2\to0$. The boundary matrix is
+\[
+ \partial_1=
+ \begin{pmatrix}-1&0&1\\1&-1&0\\0&1&-1\end{pmatrix}.
+\]
+Its first two columns are independent and its three columns sum to zero,
+so its rank is two and its kernel is spanned by $(1,1,1)^T$.
+There are no two-simplices in $K_1$, giving $\dim H_1(K_1;\Q)=1$.
+In $K_2$, orient the added triangle so that
+$\partial_2(1)=(1,1,1)^T$. This map has rank one and its image equals
+$\ker\partial_1$; hence $H_1(K_2;\Q)=0$.
+The point has no one-chains, so $H_1(K_0;\Q)=0$ as well.
+\end{proof}
+
+A growing coverage complex can create a class and later kill it. A
+statement that a support construction grows under evidence addition may
+be correct while a monotone ``hole penalty'' conclusion is not justified.
+One must specify induced homology maps, persistence intervals, and what
+the complexes represent. Even a genuine persistent class is a property
+of that representation, not a theorem that a scientific assertion is
+false or that all relevant evidence has been gathered.
+
+\subsection{Use one sign for predictive gain}
+
+For normalized predictive distributions with positive probabilities on
+the observed symbols, define the unaugmented codelengths
+\[
+ C_0=-\sum_t\log_2q_0(b_t\mid b_{<t}),\qquad
+ C_1=-\sum_t\log_2q_1(b_t\mid b_{<t}).
+\]
+Their gain is
+\[
+ C_0-C_1=\sum_t\log_2\frac{q_1(b_t\mid b_{<t})}
+                                  {q_0(b_t\mid b_{<t})}.
+\]
+If a deployed auxiliary costs $B$ additional bits, the total codelength
+gain is $C_0-C_1-B$. Positive gain means improvement with this convention.
+For a single observed symbol with $q_0=1/4$ and $q_1=1/2$, the
+unaugmented gain is one bit. Reversing the ratio gives minus one bit.
+Artifact-adjusted gain and ordinary predictive bits per byte should be
+named separately, rather than changing the metric's definition mid-proof.
+These identities say nothing about the task accuracy of a neural model
+unless the probabilities and evaluation protocol have been supplied.
+
+The companion's \path{algebra_checks.py} verifies the displayed boundary
+ranks and zero composition exactly over $\Q$, checks the parity
+decomposition on $545$ bounded pairs, and records the rational probability
+example. The general semigroup claim follows from its proof above, not
+from finite enumeration. The finite checks provide reproducible
+illustrations and catch transcription mistakes.
+
+\section{Completed learning experiment and numerical evidence}
+
+\subsection{Protocol and comparators}
+
+The fixed dataset contains $512$ training graphs and $128$ graphs in each
+of the validation, test, and length-shift sets. All underlying strings
+are distinct across the four sets. Training, validation, and ordinary
+test strings have lengths four through eight; the length-shift set has
+lengths nine through twelve. Token availability and integer cost parameters
+are sampled from the recorded generator. Each byte fallback costs sixteen
+integer units. In the following tables one unit of reported cost equals
+that byte-fallback cost, so integer teacher costs are divided by sixteen.
+The network itself predicts distances divided by thirty-two.
+
+All three model variants use the same graph encoder layout, width
+twenty-four, two attention blocks, four experts per block, and scalar node
+readout. The trainable quantum and classical variants each contain
+$25{,}515$ trainable parameters. The classical feature comparator uses
+the same six encoded angles and twelve phase parameters, with bounded
+features
+\[
+ g_j(a;p)=\tfrac12\bigl(\sin(a_j+p_j)
+             +\cos(a_{j-1}+p_{j+6})\bigr),\qquad j\pmod6.
+\]
+The other input and graph layers are identical. This is a matched
+parameter-count comparator, not a claim that it exhausts possible
+classical architectures. In the frozen-circuit ablation, both the
+$54$-parameter angle encoder and twelve circuit offsets are frozen, while
+the remaining $25{,}449$ parameters are trained.
+
+Each variant is trained at seeds $17,29,43$ for eighty epochs, batch size
+thirty-two, AdamW learning rate $0.0015$, weight decay $10^{-4}$, and a
+cosine learning-rate schedule ending at one tenth of its initial value.
+The loss is mean squared error over valid node predictions, with padded
+and edge-token targets excluded. The same initialization seed and
+minibatch ordering are used for the corresponding variants. For each run,
+the checkpoint with lowest validation node loss is selected before its
+test and length-shift metrics are computed. The representative browser
+checkpoint is the quantum run with lowest validation loss, not a
+checkpoint chosen for its test score. A preceding two-epoch smoke run
+checked execution and export; its results were not candidate checkpoints
+for the reported experiment.
+
+The runs used PyTorch $2.8.0$ with CUDA $12.8$ on an NVIDIA GeForce RTX
+4090. They were classical GPU statevector simulations with analytic
+expectations and automatic differentiation, not quantum-hardware
+experiments and not cuStateVec training. The existing environment was
+used without changing its packages. Process allocation was capped at
+one tenth of GPU memory. The largest measured PyTorch allocation during
+the nine runs was $183{,}426{,}048$ bytes, about $175$ MiB; this allocator
+measurement does not include every CUDA-context allocation or the memory
+of other applications. The full set of runs completed in approximately
+$109$ seconds.\cite{qtExperiment}
+
+\subsection{Results, including the negative evidence}
+
+Table~\ref{qt:benchmark} reports means and sample standard deviations over
+the three seeds. ``Optimal'' refers to the original learned proposal.
+The initial certificate is stricter: the proposal must attain the lower
+bound produced from its rounded, repaired potential. A proposal may be
+optimal even when that particular potential does not certify it.
+All final paths pass exact certification after the separately reported
+dynamic-programming repair where required.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{llrrr}
+\toprule
+Set & Variant & Node RMSE & Optimal (\%) & Initial cert. (\%)\\
+\midrule
+Test & Trainable quantum & $0.265\pm0.003$ & $83.85\pm2.39$ & $24.74\pm0.45$\\
+Test & Classical & $0.266\pm0.009$ & $84.38\pm0.78$ & $30.47\pm5.63$\\
+Test & Frozen quantum & $0.284\pm0.011$ & $83.07\pm1.97$ & $25.78\pm5.12$\\
+\midrule
+Longer & Trainable quantum & $0.684\pm0.150$ & $54.69\pm3.41$ & $6.51\pm3.85$\\
+Longer & Classical & $0.790\pm0.117$ & $50.00\pm4.75$ & $5.47\pm3.41$\\
+Longer & Frozen quantum & $0.676\pm0.069$ & $52.86\pm0.90$ & $9.90\pm2.26$\\
+\bottomrule
+\end{tabular}
+\caption{Measured learning outcomes on the fixed token-DAG dataset.
+Uncertainty entries are sample standard deviations over three seeds,
+not confidence intervals or statistical significance claims.}
+\label{qt:benchmark}
+\end{table}
+
+The mean proposal cost regret on the ordinary test set is $0.0386$ for
+the trainable quantum model, $0.0356$ for the classical comparator, and
+$0.0399$ for frozen quantum features. On longer strings these means are
+$0.2246$, $0.2625$, and $0.2324$, respectively. The mixed ordering is
+substantive evidence: the classical comparator has slightly better
+ordinary-test path accuracy and regret, while the trainable quantum model
+has somewhat better mean path accuracy and regret under this length shift.
+Frozen quantum features have a slightly lower mean length-shift node
+RMSE than the trainable circuit. Three seeds on one synthetic task do not
+support a general superiority conclusion for any of the variants.
+
+The twelve quantum offsets change by Euclidean norms $0.146$, $0.151$,
+and $0.158$ at the selected checkpoints, while the corresponding changes
+in the frozen ablation are exactly zero. Initial gradients for the
+circuit offsets and angle encoder are recorded. This establishes that
+the new circuit feature map participates in training. It does not show
+that every parameter is identifiable, that all gradients are equally
+useful, or that optimization found a global minimum.
+
+A batch of thirty-two graph forwards takes approximately $2.56$ ms for
+the trainable quantum variant and $1.81$ ms for the classical comparator
+on the measured GPU, after warm-up and synchronization. These are small
+model-forward timings, excluding exact path repair and data preparation.
+The exact dynamic program is an algorithmic baseline with zero regret;
+the model comparison does not establish an end-to-end speed advantage
+over it. No inference about a physical quantum device follows from these
+classical timings.
+
+\subsection{Independent checks and browser execution}
+
+The circuit is implemented three ways: indexed PyTorch tensor operations,
+independent dense NumPy Kronecker matrices, and a dependency-free JavaScript
+statevector reference. The GPU verification uses double precision and
+reports a maximum PyTorch--NumPy state difference of $3.73\cdot10^{-16}$,
+feature difference of $4.45\cdot10^{-16}$, and automatic-differentiation
+versus parameter-shift Jacobian difference of $3.34\cdot10^{-16}$ on
+the recorded cases. The full nonlinear-loss chain-rule check differs by
+$1.12\cdot10^{-16}$. These are observed numerical agreement bounds on
+finite tests, not formal floating-point error theorems.
+
+The same verification includes forty-eight independent exhaustive path
+enumerations, exact rational LP-dual checks, token permutation and
+padding checks, and the two normalization axes of the expert router.
+Finite differences provide an additional numerical gradient check, but
+the analytic parameter-shift identity is the mathematical reference.
+All source and dataset hashes associated with the training runs are
+retained. Checkpoints use ordinary NumPy array archives, and per-example
+predictions and certificates are stored in JSON. The complete results
+of all nine runs are retained, including the runs that do not favor
+the quantum variant.
+
+The browser runs the whole selected graph model. Its
+\texttt{runGraph} function accepts the graph, exported weights and optional
+circuit offsets. It recomputes input
+angles, circuit expectations, both attention blocks, expert routing,
+node predictions, and the candidate path. The optional offset tensor
+has shape $2\times3\times2$. It changes the circuit offsets for every
+token and propagates the resulting features through the full model.
+The interface then checks the candidate and, if necessary, displays the
+separate exact repair. Recorded predictions are not substituted for the
+live computation.
+
+JavaScript uses double arithmetic and an approximation to the error
+function in GELU. Against saved GPU predictions on two ordinary-test and
+two length-shift graphs, the largest discrepancy in normalized node
+prediction is $6.81\cdot10^{-7}$. The four learned paths and final exact
+certificates agree. Increasing one circuit offset by $0.4$ radians changes
+the full model's predictions by as much as $0.555$ in the checked example;
+the interactive control therefore changes the actual model computation.
+This comparison is recorded with the hashes of the JavaScript modules
+and exported weights.\cite{qtExperiment}
+
+\section{Connections that follow, and research questions that remain}
+
+The finite Weyl algebra is the strongest direct connection to quantum
+algorithm theory in this experiment. Clock and shift matrices encode
+finite translation and character operations. Similar algebra is central
+to finite Fourier analysis. Here, however, their expectations are learned
+features of a very small circuit. No hidden subgroup is identified, no
+elliptic-curve discrete logarithm is extracted, and no improvement to
+Shor's complexity follows. The earlier cryptographic chapters identify
+the additional problem-specific structures required for those claims.
+
+The binomial path kernel connects more directly to the standard-monomial
+and semigroup chapters. It is an actual quotient map with a proved kernel,
+and its simplest path comparison is an actual initial-term wall. The
+parity example shows why the lattice used for normalization must be
+specified. A hidden feature called a ``toric coordinate'' is not by
+itself a point on a chosen toric variety; one must supply the monomial
+map, relations, and any positivity or saturation hypotheses. Our finite
+path construction supplies those data in an elementary setting.
+
+Graph rewrites connect to complexes through the condition
+$\partial_1\partial_2=0$ and to learning through proposal and acceptance.
+A trainable model may suggest a boundary-preserving replacement; exact
+checks enforce the interface and nonnegativity constraints. This is a
+practical division of labor for a graph grammar. Extending it to arbitrary
+typed hypergraphs requires the appropriate matching and gluing conditions,
+which are developed separately in the graph-rewrite chapter. It is not
+justified by a count-vector identity alone.
+
+There is also a useful possible quantum extension whose theorem can be
+stated independently of its implementation. It makes precise what it
+would mean for a variational state to remain within a declared feasible
+space. It is not the circuit trained in the preceding experiment.
+
+\begin{proposition}[A constraint-preserving variational interface]
+\label{qt:feasible-hilbert}
+Let $\Omega$ be a finite set, $F\subseteq\Omega$ nonempty, and
+$\Pi_F$ the orthogonal projector onto the span of basis vectors
+$|x\rangle$ with $x\in F$. Let $\psi_0$ be a unit vector in this subspace.
+If every gate $G_j$ is unitary and commutes with $\Pi_F$, the resulting
+state $\psi=G_m\cdots G_1\psi_0$ remains in that subspace. Measurement in
+the indicated basis returns an element of $F$ with probability one.
+For a real cost function $c$ on $F$, put
+$H_c=\sum_{x\in F}c(x)|x\rangle\langle x|$ on this subspace and
+$c_* =\min_{x\in F}c(x)$. Then
+$\langle H_c\rangle\geq c_*$. If every nonoptimal cost is at least
+$c_*+\Delta$ for some $\Delta>0$, the probability of a nonoptimal outcome
+is at most $(\langle H_c\rangle-c_*)/\Delta$.
+\end{proposition}
+\begin{proof}
+Commutation gives
+$\Pi_F G_j\eta=G_j\Pi_F\eta=G_j\eta$ whenever $\Pi_F\eta=\eta$.
+Induction proves subspace preservation, and unitarity preserves norm.
+Writing $\psi=\sum_{x\in F}\alpha_x|x\rangle$ gives
+$\sum_x|\alpha_x|^2=1$ and
+$\langle H_c\rangle=\sum_x c(x)|\alpha_x|^2$.
+This is a convex combination of costs and is at least $c_*$.
+Subtracting $c_*$ and retaining only nonoptimal terms yields
+\[
+ \langle H_c\rangle-c_*
+ \geq\Delta\sum_{x:c(x)>c_*}|\alpha_x|^2,
+\]
+which is the claimed probability bound.
+\end{proof}
+
+To make this a useful algorithm one must efficiently encode $F$, prepare
+$\psi_0$, construct expressive gates commuting with its projector, and
+estimate the cost. Those are substantial additional tasks. In particular,
+the three-qubit feature circuit in this chapter has no basis state for
+every tokenization path of an arbitrary graph. Its unitarity certifies
+normalization, while the separate graph checker certifies tokenization.
+Confusing these two invariants would erase the main proof boundary.
+
+Finally, the finite graph and tensor operations do not by themselves
+establish a continuum gauge theory, an elliptic index theorem, a positive
+Yang--Mills mass gap, or a cosmological model. They can provide finite
+data structures and exactly checked algebraic interfaces for such
+research. A field-theoretic or cosmological conclusion additionally
+requires the physical interpretation, limiting procedure, analytic
+hypotheses, and observational tests appropriate to that problem. The
+cosmology and gauge-theory chapters retain those requirements. The
+achievement established here is narrower and concrete: a source-grounded
+trainable quantum graph feature model, explicit mathematical guarantees
+for its finite interfaces, measured comparator results, and a live
+reproducible implementation.
+
+

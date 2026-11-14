@@ -1,0 +1,806 @@
+\chapter{Corrected transport, information and quantum contracts for tropical quivers}
+\label{ch:toric-transport-audit}
+\reviewstatus{This chapter adds explicit corrections to selected claims in the pinned Tropical Quivers and ToricGT research manuscripts. Eleven finite declarations in TransportContracts.lean are kernel checked; the information-theoretic and stochastic-limit discussions are mathematical arguments with stated hypotheses, not a formalization of all source papers. None of the statements below extends the external forced Navier--Stokes theorem to the unforced problem.}
+
+\section{Source scope and a quantitative contract}
+
+The source revisions are Tropical\_Quivers\_of\_Archs \cite{ToricAuditQuivers2026} commit
+\texttt{2b6ab79a685e2c6233fb8892e59589951feeddad} and ToricGT-Program commit
+\texttt{f91ba1811b5a4f70d53c7120acf8ca2a0049f85b}.\footnote{Primary sources:
+\url{https://github.com/amelie-iska/Tropical_Quivers_of_Archs/tree/2b6ab79a685e2c6233fb8892e59589951feeddad}
+and \url{https://github.com/amelie-iska/ToricGT-Program/tree/f91ba1811b5a4f70d53c7120acf8ca2a0049f85b}.}
+The companion review gives
+the exact files, inspected sections, and unresolved coverage. The first
+repository contains a manuscript and its PDF. The second contains five
+research-program papers, earlier versions, reference PDFs, and a ToricGT
+gitlink. The gitlink points at a separate code revision. A proposed
+architecture, a numerical experiment and a proved theorem remain different
+kinds of evidence.
+
+The useful common interface is a finite typed representation with a
+specified metric, update map, certificate and error budget. A surface
+cellulation provides incidence maps; a gentle algebra additionally imposes
+path relations; a physical fluid requires constitutive laws and analytic
+estimates; a quantum channel requires complete positivity and trace
+preservation. Each additional structure has its own contract. The following
+corrections make those contracts compositional without identifying them.
+
+\section{Suffix transport is the correct cyclic coboundary}
+
+Let $V_0,\ldots,V_k$ be vector spaces, let
+$A_j:V_{j-1}\to V_j$ be linear maps, and let $x_j\in V_j$. Define the edge
+residual $r_j=x_j-A_jx_{j-1}$ and the suffix transport
+\[
+ T_j=A_kA_{k-1}\cdots A_{j+1}:V_j\longrightarrow V_k,
+ \qquad T_k=I_{V_k}.
+\]
+Composition acts right to left. In particular $T_j$ transports a residual
+from the target of edge $j$ to the endpoint of the path. No commutativity,
+inverse, equal dimension or flatness assumption is required.
+
+\begin{theorem}[Typed transport telescope]
+\label{thm:typed-transport-telescope}
+With the preceding notation,
+\[
+ \sum_{j=1}^{k}T_jr_j=x_k-A_k\cdots A_1x_0.
+\]
+For a closed path, $V_k=V_0$ and $x_k=x_0$, this equals $(I-H)x_0$, where
+$H=A_k\cdots A_1$ is the based holonomy. It vanishes for every initial
+vector if and only if $H=I$.
+\end{theorem}
+\begin{proof}
+Expand the left side as
+\[
+ \sum_{j=1}^{k}A_k\cdots A_{j+1}x_j
+ -\sum_{j=1}^{k}A_k\cdots A_jx_{j-1}.
+\]
+The term in the first sum with index $j<k$ equals the term in the second
+sum with index $j+1$. These cancel in their common target space. The two
+remaining terms are $x_k$ and $-A_k\cdots A_1x_0$. On a closed path, the
+residual is zero on every vector precisely when the linear map $I-H$ is
+zero. For a particular vector it is enough that $Hx_0=x_0$.
+\end{proof}
+
+The equal-space specialization is formalized by induction in
+\texttt{TransportContracts.suffix\_transport\_telescope}. Its recursive
+form is
+\[
+ s_0=0,\qquad s_{j+1}=A_{j+1}s_j+r_{j+1}.
+\]
+This is also an efficient implementation: the accumulated discrepancy is
+transported once per edge, rather than storing all suffix matrices.
+
+\begin{proposition}[A flat-cycle counterexample to prefix transport]
+\label{prop:transport-prefix-counterexample}
+Take scalar arrows $A_1=2$, $A_2=1/2$ and states
+$x_0=x_2=0$, $x_1=1$. Then $A_2A_1=1$. Nevertheless the alternative
+prefix-weighted expression
+\[
+ A_1r_1+(A_1A_2)r_2=\frac32
+\]
+is nonzero. The suffix expression $A_2r_1+r_2$ is zero.
+\end{proposition}
+\begin{proof}
+Here $r_1=1$ and $r_2=-1/2$. Substitution gives
+$2-1/2=3/2$ for prefixes and $1/2-1/2=0$ for suffixes.
+\end{proof}
+
+The pinned Tropical Quivers section on elliptic complexes used forward
+prefix products as transport back to a cycle basepoint. The counterexample
+shows that its asserted flatness implication does not follow from that
+formula. Replacing prefixes by the suffixes above repairs the direction
+and multiplication order simultaneously. The source is retained unchanged;
+this chapter is an explicit amendment.
+
+\section{A positive Laplacian does not itself supply a complex}
+
+For finite inner-product spaces, let $D_0:C^0\to C^1$ and
+$D_1:C^1\to C^2$ be arbitrary linear maps. Define
+$L_1=D_0D_0^*+D_1^*D_1$. Positivity holds with no complex assumption:
+\[
+ \langle w,L_1w\rangle=\|D_0^*w\|^2+\|D_1w\|^2\ge0,
+ \qquad \ker L_1=\ker D_0^*\cap\ker D_1.
+\]
+However, an orthogonal exact/coexact/harmonic decomposition requires
+$D_1D_0=0$.
+
+\begin{proposition}[Exact hypothesis for orthogonal Hodge components]
+The subspaces $\operatorname{im}D_0$ and $\operatorname{im}D_1^*$ are
+orthogonal if and only if $D_1D_0=0$. Under that hypothesis,
+\[
+ C^1=\operatorname{im}D_0\ \mathbin{\oplus^{\perp}}
+ \operatorname{im}D_1^*\ \mathbin{\oplus^{\perp}}\ \ker L_1.
+\]
+\end{proposition}
+\begin{proof}
+For every $x,y$,
+$\langle D_0x,D_1^*y\rangle=\langle D_1D_0x,y\rangle$.
+Vanishing of all these pairings is equivalent to $D_1D_0=0$ by
+nondegeneracy. The orthogonal complement of the sum of the two images is
+$\ker D_0^*\cap\ker D_1=\ker L_1$. Finite dimensionality gives the
+orthogonal direct sum. For arbitrary maps the two images can overlap;
+positivity of $L_1$ does not remove that overlap.
+\end{proof}
+
+For covariant quiver differences, Theorem~\ref{thm:typed-transport-telescope}
+identifies the curvature defect of each based face as $I-H$. An
+approximately flat numerical connection is therefore not an exact chain
+complex. Its residual norm can be reported and penalized, but its
+``cohomology'' must not be treated as the cohomology of an exact differential
+unless the relation is established. For gentle algebras the corresponding
+path relations must likewise be checked in the actual representation.
+Continuum ellipticity, mesh-uniform coercivity and convergence remain
+additional analytic requirements.
+
+\section{What a prefix-derived certificate can add}
+
+The mutual-information identities in ToricGT II--IV need an explicit
+distinction between the entire available prefix and a lossy model state.
+The source definition makes its certificate measurable from the full
+prefix, so it cannot add Bayes information to that same full prefix.
+
+\begin{proposition}[Deterministic certificates have zero extra Bayes information]
+Let $B,X,Z$ be finite random variables and suppose $Z=f(X)$. Then
+\[
+ H(B\mid X,Z)=H(B\mid X),\qquad I(B;Z\mid X)=0.
+\]
+The same conditional-expectation conclusion holds when $Z$ is measurable
+with respect to a sigma-field $\mathcal F$ and $B$ has a finite alphabet.
+\end{proposition}
+\begin{proof}
+For every $x$ of positive probability, the event $X=x$ already fixes
+$Z=f(x)$. Thus the conditional distribution of $B$ given $(X,Z)$ is the
+conditional distribution given $X$. Their conditional entropies coincide,
+and their difference is the displayed mutual information. In the sigma-field
+form, $\sigma(\mathcal F,Z)=\mathcal F$, so both conditional expectations
+condition on the same sigma-field.
+\end{proof}
+
+This does not imply that computable certificates are useless. Let
+$S=g(X)$ be the representation actually available to a bounded predictor.
+In general $I(B;Z\mid S)$ can be positive, even though
+$I(B;Z\mid X)=0$. For example, take $X$ uniform on $\{0,1,2,3\}$,
+$B=Z=X\bmod2$, and $S=\lfloor X/2\rfloor$. Given $S$, $B$ is a fair bit;
+given $(S,Z)$, it is known. The corresponding improvement is one bit, while
+the improvement beyond complete $X$ is zero.
+
+\begin{proposition}[Actual predictor improvement includes approximation error]
+Let $q_0(\cdot\mid S)$ and $q_1(\cdot\mid S,Z)$ be normalized predictors
+positive on the support of the target, with finite expected log losses
+$L_0,L_1$. In base-two units,
+\begin{align*}
+ L_0-L_1={}&I(B;Z\mid S)\\
+ &+\mathbb E\,D_{\rm KL}\bigl(p(\cdot\mid S)\|q_0(\cdot\mid S)\bigr)\\
+ &-\mathbb E\,D_{\rm KL}\bigl(p(\cdot\mid S,Z)\|q_1(\cdot\mid S,Z)\bigr).
+\end{align*}
+\end{proposition}
+\begin{proof}
+For each conditioning value, insert and subtract $-\log_2p(B\mid\cdot)$
+in the expected log loss. This gives conditional entropy plus conditional
+KL divergence for each predictor. Subtract the two decompositions and use
+the defining entropy difference for conditional mutual information.
+\end{proof}
+
+A deterministic topology, toric or proof certificate can therefore reduce
+the approximation or optimization error of a restricted neural predictor.
+That is a measurable training benefit, not new information beyond its
+complete source data. A deployable certificate should be evaluated by
+held-out predictive loss and its separately accounted artifact and runtime
+cost. Leakage control still requires every certificate to be available
+before the predicted observation; it does not require its usefulness to
+come from a positive conditional mutual information given all that data.
+This distinction also prevents a finite topological invariant from being
+mistaken for extra evidence about a physical system.
+
+\section{Damping and stochastic limits require their own hypotheses}
+
+For a map $F$ with Lipschitz bound $L$ and $0<\eta\le1$, the relaxed map
+$G_\eta=(1-\eta)I+\eta F$ has the upper bound
+$\operatorname{Lip}(G_\eta)\le(1-\eta)+\eta L$.
+When $L>1$, that upper bound is greater than one for every positive $\eta$.
+It cannot certify contraction by decreasing $\eta$.
+
+\begin{proposition}[Damping cannot repair every expanding cycle]
+\label{prop:transport-damping-obstruction}
+For $F(x)=2x$ on $\mathbb R$, $G_\eta(x)=(1+\eta)x$, so its exact
+Lipschitz constant is greater than one for every $\eta>0$.
+\end{proposition}
+\begin{proof}
+For distinct $x,y$, the ratio
+$|G_\eta(x)-G_\eta(y)|/|x-y|$ equals $1+\eta>1$.
+\end{proof}
+
+The pinned manuscript's assertion that the displayed bound restores
+contraction for $L>1$ is therefore incorrect. Damping can still stabilize
+other maps: for $F(x)=-2x$, the relaxed multiplier is $1-3\eta$, whose
+absolute value is less than one for $0<\eta<2/3$. The correct test concerns
+the actual map, a valid norm bound, or a justified local Jacobian criterion;
+an unnecessarily large upper bound is not an exact Lipschitz constant.
+
+\begin{proposition}[A sufficient dissipativity condition for relaxation]
+\label{prop:transport-dissipative-relaxation}
+Let $b$ be a map on a real Hilbert space and suppose that, for all $x,y$,
+\[
+ \langle b(x)-b(y),x-y\rangle\le-\mu\|x-y\|^2,
+ \qquad \|b(x)-b(y)\|\le L_b\|x-y\|,
+\]
+where $0<\mu\le L_b$. If $0<\eta<2\mu/L_b^2$, then
+$x\mapsto x+\eta b(x)$ is a contraction with bound
+$\sqrt{1-2\mu\eta+L_b^2\eta^2}<1$.
+\end{proposition}
+\begin{proof}
+For $d=x-y$ and $e=b(x)-b(y)$, expand
+$\|d+\eta e\|^2=\|d\|^2+2\eta\langle d,e\rangle+\eta^2\|e\|^2$.
+The assumptions bound this by
+$(1-2\mu\eta+L_b^2\eta^2)\|d\|^2$.
+The coefficient is nonnegative since its minimum over $\eta$ is
+$1-\mu^2/L_b^2\ge0$, and it is less than one on the stated interval.
+Taking square roots proves the assertion.
+\end{proof}
+
+For $G_\eta=(1-\eta)I+\eta F$, apply the proposition to $b=F-I$.
+This supplies a usable sufficient condition rather than an inference from
+$\operatorname{Lip}(F)>1$. A learned skew-plus-dissipative fluid closure may
+preserve the energy of one trajectory while failing this two-trajectory
+condition when its coefficients depend on the state; that additional
+derivative control must be established separately.
+
+The stochastic ``embedding fluid'' passage needs a second qualification.
+The continuous/hybrid GFlowNet theory of \citet{ToricAuditLahlou2023}
+does not, by its balance identities alone, establish a small-step limit.
+Let a small update have conditional mean
+$\mathbb E[\Delta Z\mid Z=z]=b(z)\Delta t+o(\Delta t)$ and conditional
+second moment
+$\mathbb E[\Delta Z\Delta Z^T\mid Z=z]=a(z)\Delta t+o(\Delta t)$.
+For a smooth compactly supported test function $\varphi$, Taylor expansion,
+with a controlled remainder, gives
+\[
+ \frac{\mathbb E[\varphi(Z+\Delta Z)-\varphi(Z)\mid Z=z]}{\Delta t}
+ \longrightarrow b\cdot\nabla\varphi+
+ \frac12\sum_{i,j}a_{ij}\partial_i\partial_j\varphi.
+\]
+Under the additional tightness, moment and convergence assumptions needed
+for a diffusion limit, the density consequently satisfies
+\[
+ \partial_t\rho=-\nabla\cdot(b\rho)
+ +\frac12\sum_{i,j}\partial_i\partial_j(a_{ij}\rho).
+\]
+This conservative Markov limit has no independently generated source or sink.
+Terms $\sigma_{\rm src}-\sigma_{\rm sink}$ require separately specified
+branching, killing or injection dynamics, with their own scaling and
+convergence hypotheses; they do not follow from the displayed conditional
+first and second moments alone.
+The pure continuity equation follows only when the second-order term
+vanishes in the chosen scaling, or when the current has been defined to
+include that diffusive contribution. A GFlowNet balance objective by itself
+does not supply this limit. Likewise an antisymmetric-Jacobian penalty is a
+useful proposed regularizer, not a theorem that semantic circular reasoning
+has been eliminated or that physical Navier--Stokes dynamics is reproduced.
+
+\section{Quantum and gentle-algebra versions of the transport contract}
+
+The transport identity extends directly to linear maps between matrix
+spaces. Let $\Phi_j$ be quantum channels and let $\rho_j$ be proposed
+density operators. Set $r_j=\rho_j-\Phi_j(\rho_{j-1})$. The $r_j$ are
+Hermitian trace-zero discrepancies, not density operators. Applying
+Theorem~\ref{thm:typed-transport-telescope} to the underlying real vector
+spaces of Hermitian matrices gives
+\[
+ \sum_j(\Phi_k\circ\cdots\circ\Phi_{j+1})(r_j)
+ =\rho_k-(\Phi_k\circ\cdots\circ\Phi_1)(\rho_0).
+\]
+Trace-norm contractivity of each channel on Hermitian discrepancies then
+bounds the final discrepancy by $\sum_j\|r_j\|_1$. This uses actual channel
+assumptions; an arbitrary learned real connector does not acquire them by
+being called quantum. A noisy cycle need not have identity holonomy, and
+no inverse quantum operation is assumed.
+
+For completeness, this contractivity has a short finite-dimensional proof.
+For Hermitian $Y$, spectral decomposition gives
+$\|Y\|_1=\max_{-I\le K\le I}\operatorname{Tr}(KY)$.
+The adjoint of a positive trace-preserving map is positive and unital, so
+$-I\le K\le I$ implies $-I\le\Phi^*(K)\le I$. Therefore
+$\operatorname{Tr}(K\Phi(Y))=\operatorname{Tr}(\Phi^*(K)Y)\le\|Y\|_1$.
+Taking the maximum proves $\|\Phi(Y)\|_1\le\|Y\|_1$; the triangle
+inequality applied to the telescope gives the stated error bound. Complete
+positivity supplies the stronger physical requirement of positivity after
+adjoining an arbitrary ancillary system.
+
+\begin{proposition}[Trace preservation obstructs a zero path relation]
+\label{prop:transport-trace-zero-obstruction}
+Suppose $\Phi$ and $\Psi$ are composable trace-preserving linear maps on
+matrix spaces containing a normalized state $\rho$. Then
+$\Psi\circ\Phi$ is not the zero map. Hence a nontrivial relation
+$ba=0$ of a gentle path algebra cannot be represented by making both
+composable arrows $a,b$ into trace-preserving channels on those full spaces.
+\end{proposition}
+\begin{proof}
+Trace preservation gives
+$\operatorname{Tr}(\Psi(\Phi(\rho)))=\operatorname{Tr}\rho=1$.
+The zero map would instead produce trace zero. This contradiction uses
+only linearity, normalization and trace preservation, so it applies in
+particular to completely positive trace-preserving channels.
+\end{proof}
+
+The proposition is formalized as
+\texttt{TransportContracts.trace\_preserving\_composite\_nonzero} with an
+abstract linear trace functional. A legitimate quantum interpretation of
+forbidden paths can use completely positive trace-nonincreasing instrument
+branches, explicit rejection flags, or linear amplitude maps whose ranges
+and kernels enforce the relation. For instrument branches, a forbidden
+composition has zero probability; the complete instrument, including all
+outcomes, is trace preserving. Normalizing a postselected branch is a
+separate nonlinear state update and its success probability must be retained.
+This distinction aligns the gentle algebra with operational quantum
+information without assigning impossible channel semantics to its arrows.
+
+\section{Tropical approximation is not an automatic universality transfer}
+
+Finite ReLU networks give continuous piecewise-affine functions. With
+arbitrary real slopes they can be expressed using differences of maxima of
+real affine functions. Classical lattice-based toric geometry imposes
+integrality or rationality data beyond this statement. Nonzero biases also
+produce polyhedral complexes rather than necessarily conical fans. These
+are compatible descriptions once the category and homogenization convention
+are specified.
+
+Softmax is smooth and is not a finite piecewise-affine map on an open
+nontrivial logit region. A local piecewise-affine surrogate therefore needs
+an approximation error bound. Moreover, dot-product logits with both query
+and key variable are bilinear. A maximum of such scores need not be
+piecewise affine in the joint inputs. The finite maximum-reduction identity
+used by ring evaluation remains exact, independently of whether the score
+functions are tropical polynomials.
+
+The graph-universality argument in the Tropical Quivers manuscript also
+requires a measure-specific step. The cited primary transformer theorem
+is Yun et al.~\cite{ToricAuditYun2020}; the separate TokenGT construction is
+\citet{ToricAuditTokenGT2022}. Yun et al.'s Theorems~2--3 use
+$L^p$, $1\le p<\infty$, rather than the uniform norm asserted by the
+fixed-cell theorem in the program's Paper~I.
+Approximation in ambient Lebesgue
+$L^p$ does not in general imply approximation on a lower-dimensional
+tokenized graph family. For example,
+$g_\epsilon(t)=\max(1-|t|/\epsilon,0)$ has
+$\|g_\epsilon\|_{L^p(\mathbb R)}^p=2\epsilon/(p+1)$, tending to zero,
+while $g_\epsilon(0)=1$ for every $\epsilon>0$. A tokenized domain supported
+at that point sees no convergence. A valid transfer must specify the
+graph-domain measure or prove uniform approximation there, and must match
+the graph-relabeling action to the token symmetry group. Continuous
+detokenization, finite padded sizes and admissible output types must also
+be retained. Expressive approximation under those assumptions does not
+establish that gradient descent finds the approximant or that unseen
+physical distributions generalize.
+
+The bundled transformer-geometry reference is version 1 of
+\texttt{2604.14727}. Its current version 2 \cite{ToricAuditSuLiu2026}
+explicitly distinguishes fixed-key
+top-one routing, a log-lifted value parameterization, and finite-temperature
+approximations.
+That distinction should be retained when importing its geometry into a
+trainable quiver with jointly varying keys and queries. The separate
+tropical-attention paper \cite{ToricAuditHashemi2025} proposes a specified
+algebraic kernel and reports algorithmic benchmarks. Its Appendix~C also
+contains the localized errors repaired next, so this extension does not
+import that proof package wholesale or transfer its claims to a different
+dot-product-plus-maximum operation.
+
+\section{Independent repairs to the tropical-attention reference}
+
+Version~2 of \citet{ToricAuditHashemi2025}, Appendix~C's proof of
+Lemma~3.1, uses $v_\lambda(a)=\log a-\lambda$ for $a>0$ and claims a
+non-Archimedean additive inequality. This logarithm is an Archimedean
+coordinate change. Neither a constant offset nor projective normalization
+turns ordinary addition into exact maximum.
+
+\begin{proposition}[Exact logarithmic identities and dequantization error]
+\label{prop:tropical-log-repair}
+For $a,b>0$ and real $\lambda$,
+\[
+ v_\lambda(ab)=v_\lambda(a)+v_\lambda(b)+\lambda.
+\]
+For any $m\ge1$, $z_1,\ldots,z_m\in\mathbb R$ and $\tau>0$,
+\[
+ M\le\tau\log\left(\sum_{j=1}^m e^{z_j/\tau}\right)
+ \le M+\tau\log m,
+ \qquad M=\max_j z_j.
+\]
+In particular, for $a=b=1$,
+$v_\lambda(a+b)=\log2-\lambda>
+\max\{v_\lambda(a),v_\lambda(b)\}$.
+\end{proposition}
+\begin{proof}
+The product identity follows by expanding $\log(ab)=\log a+\log b$.
+Factoring $e^{M/\tau}$ out of the sum leaves a number between one and
+$m$. Apply the increasing logarithm and multiply by $\tau>0$ to obtain
+the two bounds. The displayed counterexample follows from $\log2>0$.
+\end{proof}
+
+Thus the source's product offset has the wrong sign, and its additive
+inequality omits a strictly positive term even on positive inputs.
+The valid limiting statement is convergence to maximum as $\tau\downarrow0$
+for a fixed finite number of terms, with the explicit error above. If the
+number of terms varies, $\tau\log m$ must also be controlled.
+For signed or complex terms, cancellation requires additional information,
+as proved in Proposition~\ref{prop:reduction-signed-order}. These
+corrections do not invalidate ordinary maximum-plus dynamic programming.
+
+The same Appendix~C, Lemma~C.1, uses a large finite penalty as if it were
+the exact value $-\infty$. A finite mask can be exact on a bounded input
+domain, but it is not an input-independent annihilator on unbounded values.
+
+\begin{proposition}[When a finite tropical mask is exact]
+\label{prop:tropical-finite-mask}
+Suppose a desired maximum has at least one admissible candidate of score
+at least $L$. Suppose every excluded unpenalized candidate has score at
+most $U$. Giving every excluded candidate an additive penalty $-M$ makes
+it strictly unable to attain the maximum whenever $M>U-L$.
+Without an upper bound on excluded values, no fixed finite $M$ guarantees
+this conclusion.
+\end{proposition}
+\begin{proof}
+Every penalized excluded score is at most $U-M<L$, below an admissible
+score. Conversely, with an admissible score zero and any finite penalty
+$M$, an excluded raw score $M+1$ becomes one and wins.
+\end{proof}
+
+An explicit $-\infty$ structural mask, or a proved range and sufficient
+finite margin, repairs the construction. An all-masked query needs its own
+defined output. Bounds on learned input features and their perturbations
+must be included in a claimed finite-margin certificate.
+The source also assigns $-\infty$ to excluded value entries in that proof.
+If such entries are genuinely enforced, they remove those candidates
+independently of the finite score penalty. The defect identified here is
+the inference from a large finite penalty alone; it is not a counterexample
+to a separately and exactly masked maximum.
+
+\begin{proposition}[Exact-step and bounded-length tropical paths]
+\label{prop:tropical-horizon-repair}
+Write $\oplus=\max$ and $\otimes=+$ for scalar tropical operations, with
+their induced matrix operations. Let $D$ be a finite tropical matrix and
+let $I$ have zero diagonal and $-\infty$ elsewhere. Then
+\[
+ v_{t+1}=D\otimes v_t\quad\Longrightarrow\quad
+ v_t=D^{\otimes t}\otimes v_0,
+\]
+whereas
+\[
+ w_{t+1}=w_t\oplus(D\otimes w_t),\quad w_0=v_0
+ \quad\Longrightarrow\quad
+ w_t=\left(\bigoplus_{j=0}^{t}D^{\otimes j}\right)\otimes v_0.
+\]
+Thus a pure $t$-step update and a finite Kleene closure are different
+operations in general.
+\end{proposition}
+\begin{proof}
+The first identity is induction and associativity. For the second,
+distribute $D$ over the inductive sum; adding the previous sum retains
+precisely powers zero through $t+1$. Idempotence removes duplicate terms.
+For a direct counterexample take the one-by-one matrix $D=(-1)$ and
+$v_0=0$. At $t=2$ the pure update is $-2$, while the maximum of the
+zeroth, first and second powers applied to $v_0$ is zero. Even the source's
+convention summing powers zero through $t-1$ gives zero, not $-2$.
+\end{proof}
+
+This repairs the mismatch in Theorem~C.5 of the reference. For maximum-plus
+longest-path closure, deleting a repeated cycle can only improve a path
+when every cycle has nonpositive total weight. Under that hypothesis a
+best finite path can be chosen with at most $n-1$ edges, with the length-zero
+path allowed. For minimum-plus shortest paths the corresponding hypothesis
+is absence of negative-weight cycles. The sign and semiring cannot be
+interchanged. On graphs with profitable cycles, a bounded-horizon
+computation is still defined, but it is not the unbounded closure.
+
+These are complete finite arguments for the operations actually used.
+They do not assert that a trained attention stack has learned the exact
+parameters, nor that any method solves arbitrary NP-hard instances in
+polynomial resources. The end-to-end scientific contract remains a measured
+prediction together with independently checked algebraic structure.
+
+\section{A nonnormal obstruction to a Jacobian power certificate}
+
+The Tropical Quivers manuscript's section on Jacobian spectral-radius
+estimation iterates $v\mapsto Jv/\|Jv\|$ but labels the resulting estimate
+as the largest singular value. For nonnormal matrices these are different
+quantities. The following exact witness isolates the error without any
+floating-point approximation.
+
+\begin{proposition}[A nilpotent Jacobian with arbitrarily large gain]
+\label{prop:nonnormal-jvp}
+For any real $M>1$, put
+\[
+ J_M=\begin{pmatrix}0&M\\0&0\end{pmatrix},\qquad
+ e_2=\begin{pmatrix}0\\1\end{pmatrix}.
+\]
+Then $J_M^2=0$, $\rho(J_M)=0$, and $\|J_M\|_2=M$.
+Nevertheless $\|J_Me_2\|_2^2=M^2>1$, while the next application of
+$J_M$ is zero. In particular, a vanishing or small eigenvalue power probe
+does not certify one-step Euclidean contraction.
+\end{proposition}
+\begin{proof}
+Direct multiplication gives $J_M^2=0$ and
+$J_M^TJ_M=\operatorname{diag}(0,M^2)$, whereas
+$J_MJ_M^T=\operatorname{diag}(M^2,0)$. Thus $J_M$ is nonnormal and
+both eigenvalues are zero. For $x=(x_1,x_2)$,
+$\|J_Mx\|_2^2=M^2x_2^2\le M^2\|x\|_2^2$, with equality at
+$x=e_2$. This proves the norm formula and all remaining assertions.
+\end{proof}
+
+For a general real Jacobian, singular-norm power iteration uses
+$J^TJ$, requiring both a Jacobian-vector product and its adjoint product.
+Even that correction does not turn a finite numerical estimate into a
+certified upper bound: a Rayleigh quotient samples a direction and can
+miss the maximizing singular direction. A contraction certificate needs a
+proved upper bound, a validated enclosure, or an explicitly controlled
+operator parametrization. The nilpotent example can have powers that
+eventually vanish while still amplifying perturbations at the first step.
+
+The companion formalizes its explicit matrix products, nonnormality and
+squared coordinate gain. The spectral-radius and operator-norm conclusions
+are the written finite-dimensional argument above; the corresponding Lean
+components are not represented as a complete analytic norm formalization.
+
+\section{Path multiplicity separates tropical growth from operator stability}
+
+The max-plus cocycle in \citet{ToricAuditQuivers2026} records the largest
+logarithmic path weight. An ordinary matrix product adds contributions
+from many paths. Its operator growth therefore needs a multiplicity term.
+This is a qualification of the source's contraction interpretation, not
+a rejection of its max-plus subadditivity calculation.
+
+Let $A_t:\mathbb C^{d_{t-1}}\to\mathbb C^{d_t}$, $1\le t\le T$ and $T\ge1$, with
+each $d_t\ge1$, and set $P_T=A_T\cdots A_1$. An admissible path from $j$
+to $i$ is a sequence $(i_0,\ldots,i_T)$ with $i_0=j$, $i_T=i$ and
+all $A_t(i_t,i_{t-1})\ne0$. Let $C_T(i,j)$ count these paths and let
+$W_T(i,j)$ be their maximum absolute product weight, taking both values
+to be zero when no admissible path exists. Thus $W_T$ is a maximum-product
+matrix product; its logarithm, with $\log0=-\infty$, is the corresponding
+max-plus product. Let $S_t$ be the zero--one support matrix of $A_t$.
+
+\begin{theorem}[Finite path-multiplicity bound]
+\label{thm:tropical-path-multiplicity}
+With the preceding notation,
+\[
+ |P_T(i,j)|\le (|A_T|\cdots|A_1|)(i,j)
+ \le C_T(i,j)W_T(i,j),
+ \qquad C_T=S_T\cdots S_1.
+\]
+Writing $N_T=\max_i\sum_jC_T(i,j)$ and
+$m_T=\max_{i,j}W_T(i,j)$ gives the induced row-sum norm bound
+\[
+ \|P_T\|_\infty
+ \le\max_i\sum_j C_T(i,j)W_T(i,j)
+ \le N_Tm_T.
+\]
+For square $n$-dimensional arrows, $N_T\le n^T$. Consequently, whenever
+$m_T>0$ eventually and
+$\limsup_{T\to\infty}T^{-1}\log m_T+\log n<0$, the ordinary matrix
+products decay exponentially in this norm.
+\end{theorem}
+\begin{proof}
+Expand each entry of $P_T$ as the sum over the intermediate indices.
+The triangle inequality bounds its absolute value by the sum of the
+absolute path weights. Each nonzero summand is at most $W_T(i,j)$,
+and exactly $C_T(i,j)$ such paths occur. Multiplying the support matrices
+counts those paths, proving the entrywise assertions. Sum over $j$ and
+maximize over $i$ to obtain the norm inequalities. In dimension $n$, a
+fixed final index leaves $T$ freely chosen earlier indices, so there
+are at most $n^T$ paths ending at that index. The strict limsup inequality
+then gives constants $c>0$ and $T_0$ with
+$n^Tm_T\le e^{-cT}$ for $T\ge T_0$.
+\end{proof}
+
+If $m_T=0$ at any time, every path of that length vanishes, so all later
+products are zero and the conclusion holds directly. More precise bounds
+can retain $N_T$ or the entire entrywise table instead of $n^T$.
+Using $\log(\epsilon+|A_t(i,j)|)$ with $\epsilon>0$, as in the source,
+increases path weights and produces a conservative maximum-product upper
+bound; it does not remove the number of summed paths. Conversely, signed
+or complex cancellation can make $P_T$ smaller than the positive bound.
+These inequalities do not recover such cancellation from magnitudes.
+
+\begin{proposition}[Decaying maximal paths with an expanding linear map]
+\label{prop:tropical-branching-counterexample}
+For $n\ge2$ and $1/n<a<1$, let $A=a\mathbf1\mathbf1^T$ on
+$\mathbb R^n$. Every length-$k$ path has weight $a^k$, so its tropical
+growth exponent is $\log a<0$. Nevertheless
+\[
+ A\mathbf1=na\mathbf1,\qquad
+ A^k=n^{k-1}a^k\mathbf1\mathbf1^T,\qquad
+ \|A^k\|_\infty=(na)^k>1 \quad(k\ge1).
+\]
+The path-multiplicity norm bound is attained.
+\end{proposition}
+\begin{proof}
+Each entry is $a$, and each row has $n$ entries. The eigenvector identity
+follows by row summation. Since
+$(\mathbf1\mathbf1^T)^2=n\mathbf1\mathbf1^T$, induction gives the
+power formula. Its row sum is $(na)^k$. There are $n^{k-1}$ paths between
+any prescribed pair of endpoints and $n^k$ paths ending at a prescribed
+final vertex, so both multiplicity inequalities are equalities.
+\end{proof}
+
+For example, $n=2$, $a=3/4$ gives individual path decay $(3/4)^T$ and
+ordinary growth $(3/2)^T$. Thus a negative maximal-path exponent alone
+cannot certify contraction of a learned fluid closure, a quiver update,
+or a quantum-amplitude surrogate. A separately proved norm inequality
+or a preserved stochastic/channel structure is required. The exact
+regression computes support counts and maximum weights by dynamic
+programming and compares them against exhaustive path enumeration on
+small, possibly rectangular, signed rational examples. It is a validation
+of finite products, not an estimate of an infinite-time physical exponent.
+
+\section{Weighted small-gain certification at a fixed rate}
+
+The weighted small-gain criterion in \citet{ToricAuditQuivers2026} is
+useful, but its instruction to minimize the weighted row bound by a
+linear program needs a qualification. Suppose $G\ge0$ is a finite
+matrix of valid block Lipschitz gains. For positive weights $w_i$ define
+$\|x\|_{\infty,w}=\max_i\|x_i\|/w_i$. Its row bound is
+\[
+ q(w)=\max_i \frac{(Gw)_i}{w_i}.
+\]
+
+\begin{proposition}[Fixed-rate feasibility is linear]
+\label{prop:weighted-gain-feasibility}
+For fixed $q\ge0$, $q(w)\le q$ is equivalent to the componentwise
+linear inequalities $Gw\le qw$, $w_i>0$. If fixed bounds
+$0<\ell_i\le w_i\le u_i$ are imposed, feasibility is a linear-program
+problem. Feasibility is monotone in $q$. Jointly minimizing $q$ over
+$w$ in this representation is not a linear program because $qw_i$
+contains products of variables.
+\end{proposition}
+\begin{proof}
+Multiply each row-ratio inequality by its positive denominator $w_i$.
+At fixed $q$, every resulting coefficient is fixed, so the inequalities
+and box bounds are linear. If a weight vector is feasible at $q$, it
+remains feasible at every larger rate because its coordinates are
+positive. If $q$ is also variable, $qw_i$ is bilinear, which establishes
+the final qualification.
+\end{proof}
+
+One may bisect a certified bracket of rates and solve the fixed-rate
+feasibility problems. A returned numerical witness should still be
+checked with exact arithmetic or validated error bounds before it is used
+as a proof of contraction. The checker supplied here verifies a given
+rational witness and does not claim to solve the optimization problem.
+For
+\[
+ G=\begin{pmatrix}0&2\\1/8&0\end{pmatrix},\qquad
+ w=\begin{pmatrix}4\\1\end{pmatrix},
+ \qquad Gw=\tfrac12w,
+\]
+the unweighted row bound is two, while the weighted bound is $1/2$.
+For any positive feasible weights, the two inequalities multiply to
+$1/4\le q^2$, so a proposed rate $q=2/5$ is impossible. These exact
+equalities and the rejection are included in the regression. Bounds on
+$G$ must hold over the claimed domain; a few sampled Jacobians do not
+establish them.
+
+\section{Proper scoring must include its probability boundary}
+
+The cross-entropy theorem in \citet{ToricAuditOracle2026} optimizes over
+$q(Z)\in(0,1)$ but does not exclude deterministic conditional labels.
+When $\eta(Z)=\mathbb P(Y=1\mid Z)$ equals zero or one, its stated
+minimizer lies outside that open interval.
+
+\begin{proposition}[Binary log loss with correct endpoint conventions]
+\label{prop:oracle-logloss-endpoints}
+For $\eta\in[0,1]$, extend
+\[
+ R_\eta(q)=-\eta\log_2q-(1-\eta)\log_2(1-q)
+\]
+to $q\in[0,1]$ by assigning zero to a zero-probability term and
+$+\infty$ to a positive-probability event assigned probability zero.
+Then $R_\eta$ is uniquely minimized at $q=\eta$. Over the restricted
+domain $q\in(0,1)$ the minimizer exists precisely when $0<\eta<1$;
+for $\eta=0$ or $1$, its infimum is zero and is not attained.
+\end{proposition}
+\begin{proof}
+If $0<\eta<1$, both endpoints have infinite risk. In the interior,
+$R_\eta'(q)=(q-\eta)/(q(1-q)\ln2)$, which is negative below
+$\eta$ and positive above it. Thus the interior minimum is unique.
+If $\eta=0$, the risk is $-\log_2(1-q)$, uniquely minimized at zero.
+Every interior $q$ has positive risk and is improved by replacing it
+with $q/2$; the risk tends to zero as $q\downarrow0$. If $\eta=1$,
+the risk is $-\log_2q$, uniquely minimized at one. Every interior
+$q$ is improved by $(1+q)/2$, and the risk tends to zero as
+$q\uparrow1$. These cases prove all assertions.
+\end{proof}
+
+Applying this argument conditionally gives the Bayes statement for
+measurable forecasts with the corresponding admissible range. A sigmoid
+with finite logits produces only interior probabilities, so deterministic
+targets need not admit a finite-logit optimum. The proper-scoring theorem
+does not by itself prove empirical calibration of a restricted, finitely
+trained oracle. Calibration and useful held-out control remain measured
+properties, with the prefix and artifact accounting established earlier.
+
+\section{Predictive synergy is not determined by geometric overlaps}
+
+The last context-utility theorem of \citet{ToricAuditMemory2026} proposes
+an additive information decomposition over independent sheaf components,
+with overlap corrections determined by Cech data. The usual chain rule
+for mutual information contains conditional statistical terms; independence
+of source components alone does not remove predictive synergy.
+
+\begin{proposition}[Independent disjoint components can carry one bit jointly]
+\label{prop:context-xor-synergy}
+Let $X,Y$ be independent fair bits, let $B=X\mathbin{\mathrm{xor}}Y$,
+and let the additive statistic be $T=X+Y$. Then $B$ is determined by
+$T$, but
+\[
+ I(B;X)=I(B;Y)=0,\qquad
+ I(B;T)=I(B;X,Y)=1.
+\]
+The two source components may be stored on disjoint pieces with no
+overlap restriction data.
+\end{proposition}
+\begin{proof}
+The four pairs $(X,Y)$ have probability $1/4$. Conditional on either
+value of either source bit, $B$ remains a fair bit, so both individual
+mutual informations vanish. The target is a fair bit overall and equals
+$T\bmod2$, so its conditional entropy given $T$ is zero. It is also
+determined by the pair $(X,Y)$. Its unconditional entropy is one bit,
+which proves the other equalities. The storage locations of the two
+source bits impose no restriction on this joint probability law.
+\end{proof}
+
+For arbitrary finite variables and conditioning context $C$, the exact
+decomposition is
+\begin{align*}
+ I(B;X,Y\mid C)
+ &=I(B;X\mid C)+I(B;Y\mid X,C)\\
+ &=I(B;X\mid C)+I(B;Y\mid C)
+   +I(X;Y\mid B,C)-I(X;Y\mid C).
+\end{align*}
+Both identities follow by expanding conditional mutual information as
+differences of conditional entropies and applying the entropy chain rule.
+Even if $I(X;Y\mid C)=0$, conditioning on the target can make the
+sources dependent. In the example, $I(X;Y\mid B)=1$, and there is
+no source overlap whose absence would force this correction to vanish.
+Additional probabilistic factorization assumptions are needed to replace
+these terms by a particular geometric-overlap model. Compatibility of local
+sections alone is insufficient. If $X,Y$ are already determined by the
+complete conditioning prefix, all extra conditional information is zero,
+as proved earlier; the example applies when the actual predictor has
+retained only a smaller context.
+
+The regression checks the complete rational probability table, all
+pairwise-independence equalities, deterministic recovery from $T$, and
+the conditional dependence given $B$. Its reported one-bit values follow
+from these fair and deterministic distributions. The general entropy and
+log-loss arguments in this section are written proofs; they are not added
+to the count of Lean-checked declarations.
+
+\section{Implications for the research program}
+
+The repaired transport identity provides a shared finite contract for
+surface cochains, quiver connectors, quantum instruments and learned
+trajectory residuals. It can support a structure-preserving fluid model,
+but a Navier--Stokes proof still needs the external construction's analytic
+estimates. The corresponding GRH/Hilbert--P\'olya program still requires a
+precise arithmetic spectral identification and operator-domain control;
+finite self-adjoint matrices do not identify their spectra with zeta zeros.
+A positive finite Hodge spectrum likewise does not establish a uniform
+continuum Yang--Mills mass gap. Finally, a path-algebra certificate can
+authenticate a structural computation only when an actual cryptographic
+protocol binds it to a message and a threat model; difficult-looking
+tropical equations are not, by themselves, hardness assumptions.
+
+The exact regression script tests 288 generic rational paths, additional
+rectangular paths, 128 flat cycles with noncommuting arrows, the prefix
+counterexample, positive damping examples and the finite information
+example. It also compares tropical dynamic programming against exhaustive
+bounded-path enumeration and records the finite-mask and horizon
+counterexamples. The new path-multiplicity checks also compare exact
+products with an independent enumeration, including changing dimensions,
+and retain a dense example attaining the bound. Fixed-rate small-gain
+witnesses, the proper-scoring endpoint inequalities and the full XOR
+probability table are checked separately. The logarithmic statements are ordinary mathematical
+proofs above; the exact regression encodes their positive-input
+counterexamples using the monotonicity of the logarithm, without treating
+floating-point logarithms as formal certificates. The Lean log records
+the exact theorem types and axiom dependencies for its seventeen selected
+declarations. Those records state what has been checked and leave the
+larger scientific and analytic obligations visible.

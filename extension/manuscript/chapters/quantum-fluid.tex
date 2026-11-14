@@ -1,0 +1,345 @@
+\chapter{Quantum information, exact reduction and learned fluid models}
+\label{ch:quantum-fluid}
+\reviewstatus{The reduction, channel and scalar Carleman statements below are proved explicitly. The computational companion evaluates finite classical simulations of the stated models. Quantum algorithms cited here have their own input, error and readout assumptions. No quantum speedup, trained fluid ToricGT model, or numerical reproduction of the released singular solution is claimed.}
+
+\section{Information reduction is a map, not an autonomous dynamics}
+
+The microscopic-to-macroscopic hierarchy in Chapter~\ref{ch:microscopic-fluid-limits} is naturally expressed by maps that retain observables. Examples include taking a partial trace, a one-particle marginal, a velocity moment, an angular average, or a projection onto a finite set of modes. These maps can be exact even when the subsequent closed evolution is approximate. The distinction is elementary: knowing a projected state need not determine the derivative of that state.
+
+\begin{proposition}[The obstruction to an exact instantaneous closure]
+\label{prop:fluid-closure-obstruction}
+Consider $\dot x=Ax+Bz$ on finite-dimensional vector spaces. If $By\ne0$ for some hidden vector $y$, no function $F(x)$ can satisfy $F(x)=Ax+Bz$ for every pair $(x,z)$.
+\end{proposition}
+\begin{proof}
+For fixed $x$, compare the hidden states $z=0$ and $z=y$. The proposed equality gives both $F(x)=Ax$ and $F(x)=Ax+By$, contradicting $By\ne0$.
+\end{proof}
+
+The statement does not rule out a closure on a specified invariant manifold, a conditional expectation under a prescribed ensemble, or an approximation with controlled error. It rules out omitting those hypotheses. It applies equally to a classical neural network and a quantum learned function: an expressive predictor cannot make an insufficient input state mathematically sufficient.
+
+\begin{theorem}[Exact memory from a linear hidden subsystem]
+\label{thm:fluid-memory}
+Let $A,B,C,D$ be constant compatible finite matrices and consider
+\[
+ \dot x=Ax+Bz,\qquad \dot z=Cx+Dz.
+\]
+Then
+\[
+ \dot x(t)=Ax(t)+Be^{tD}z(0)
+       +\int_0^t Be^{(t-s)D}Cx(s)\,ds.
+\]
+Conversely, any continuously differentiable $x$ satisfying this equation, together with
+$z(t)=e^{tD}z(0)+\int_0^t e^{(t-s)D}Cx(s)\,ds$, satisfies the original system.
+\end{theorem}
+\begin{proof}
+Multiply the hidden equation by $e^{-tD}$ and differentiate the product. Integration gives the displayed expression for $z$. Substitution gives the equation for $x$. In the converse direction, differentiate the finite matrix-exponential integral using the fundamental theorem of calculus. This recovers $\dot z=Cx+Dz$, and substitution gives the other equation.
+\end{proof}
+
+This is a finite, fully explicit version of the memory mechanism associated with projection methods \cite{NSMori1965}. The memory kernel is $K(t)=Be^{tD}C$, and the hidden initial condition supplies a separate term. Dropping that term is not justified simply by calling it noise. Its distribution and correlations must be supplied if a stochastic description is intended.
+
+For example, with scalar equations $\dot x=-2x+z$, $\dot z=x-3z$, the exact kernel is $e^{-3t}$. Even when $z(0)=0$, replacing the reduced equation by $\dot x=-2x$ discards a nonzero convolution. A fast-relaxation approximation can instead use $z\approx x/3$, but its error depends on the relative time scales and initial layer. Exact elimination and time-scale approximation are different steps.
+
+\begin{proposition}[Discrete memory and the resolvent determinant]
+\label{prop:fluid-discrete-memory}
+For $x_{n+1}=Ax_n+Bz_n$, $z_{n+1}=Cx_n+Dz_n$,
+\[
+ z_n=D^nz_0+\sum_{j=0}^{n-1}D^{n-1-j}Cx_j,
+\]
+and substitution gives the exact resolved recurrence. If $sI-D$ is invertible, the determinant of the full block resolvent satisfies
+\[
+ \det\begin{pmatrix}sI-A&-B\\-C&sI-D\end{pmatrix}
+ =\det(sI-D)\det\bigl(sI-A-B(sI-D)^{-1}C\bigr).
+\]
+\end{proposition}
+\begin{proof}
+The hidden-state formula follows by induction, with the sum empty at $n=0$. Multiplying by $D$ and adding $Cx_n$ advances the sum to $n+1$. For the determinant, multiply the block matrix on the left by
+$\left(\begin{smallmatrix}I&B(sI-D)^{-1}\\0&I\end{smallmatrix}\right)$, whose determinant is one. The upper-right block becomes zero and the upper-left block becomes the displayed Schur complement. The determinant of the resulting block triangular matrix is the product of its diagonal-block determinants.
+\end{proof}
+
+This links the project's determinant calculus to an actual information-reduction operation. The frequency dependence of the Schur complement is the transform of a memory kernel. Replacing it by a constant is a modeling approximation. The existence of its inverse does not provide a uniform condition-number bound, especially near a spectral pole.
+
+\section{Coarse-graining and the unresolved stress}
+
+For a normalized nonnegative averaging kernel, write $\bar u=\langle u\rangle$ and
+$R=\langle u\otimes u\rangle-\bar u\otimes\bar u$. The quadratic nonlinearity ensures that the equation for $\bar u$ contains a contribution involving $R$. A projection that retains only $\bar u$ has discarded information relevant to the momentum equation.
+
+\begin{proposition}[Covariance as the exact quadratic defect]
+\label{prop:fluid-filter-covariance}
+For a probability average with finite second moments (at a fixed observation point, when the average is spatially local),
+\[
+ R=\langle(u-\bar u)\otimes(u-\bar u)\rangle\succeq0,
+ \quad \operatorname{tr}R=\langle|u|^2\rangle-|\bar u|^2.
+\]
+If a linear filter commutes with spatial derivatives, filtering $\nabla\cdot(u\otimes u)$ gives
+$\nabla\cdot(\bar u\otimes\bar u)+\nabla\cdot R$.
+\end{proposition}
+\begin{proof}
+Expand the centered product, use $\langle u\rangle=\bar u$ and $\langle1\rangle=1$, and take traces. Testing the matrix against any vector gives an average of a square. The final identity follows by linearity, the definition of $R$, and the assumed derivative commutation.
+\end{proof}
+
+For a convolution evaluated at $x$, the centered integrand in this proof is $u(y)-\bar u(x)$, averaged over $y$. It is not $u(y)-\bar u(y)$ for a general non-idempotent filter.
+
+A sharp Fourier truncation need not be a positive averaging kernel. Its quadratic defect is still defined, but the positive-semidefinite conclusion requires the probability-average hypothesis. Similarly, a filter near a wall need not commute with differentiation. Those are concrete places where otherwise plausible information-theoretic arguments fail if their maps are left unspecified.
+
+In the released blowup proof, oscillatory perturbations generate selected averaged quadratic fluxes. The authors construct those fluxes and bound their errors; they do not infer them from an assumed generic turbulence closure. The covariance inverse in Proposition~\ref{prop:fluid-covariance} captures one finite algebraic component of that construction. Its analytic realization retains the carrier phase, exact curl correction, support separation and derivative estimates.
+
+\section{A quantum observable can have the same closure obstruction}
+
+For a finite quantum system with density matrix $\rho$ and Hermitian observable $O$, the retained datum $\operatorname{tr}(\rho O)$ is only one linear functional of the state. Even noiseless knowledge of it need not determine its future derivative.
+
+\begin{example}[Identical observed value, opposite future derivative]
+Take $\hbar=1$, Hamiltonian $H=X$ and observable $O=Z$, with Pauli matrices in the conventions of the earlier quantum chapters. The states
+$\rho_\pm=(I\pm Y)/2$ both have $\operatorname{tr}(\rho_\pm Z)=0$. Unitary evolution gives
+\[
+ \frac d{dt}\langle Z\rangle=i\langle[X,Z]\rangle=2\langle Y\rangle,
+\]
+so their derivatives are $+2$ and $-2$.
+\end{example}
+
+The commutator is obtained by direct multiplication, $[X,Z]=-2iY$. Thus the example requires no interpretive claim about measurement disturbance. The retained statistic simply omits a degree of freedom that matters dynamically. A reduced density matrix can likewise acquire memory when a subsystem is coupled to an environment. A time-homogeneous Markov semigroup requires additional assumptions; it does not follow from partial trace alone.
+
+The same point controls proposed quantum information explanations of viscosity. Closed unitary evolution preserves von Neumann entropy. Effective irreversible evolution arises after a specified reduction and limiting or modeling assumptions. A completely positive trace-preserving map provides a consistent finite open-system operation, but an arbitrary such map is not a derivation of the Navier--Stokes constitutive law.
+
+\section{An explicit heat channel on a periodic surface grid}
+
+Let the position register have orthonormal basis $\{|j,k\rangle: j,k\in\Z/L\Z\}$. Let $T_x,T_y$ be the unitary permutations that translate by one grid point. For $0\le r\le1/4$ define
+\[
+ \Phi_r(\rho)=(1-4r)\rho+r\bigl(T_x\rho T_x^\dagger+T_x^\dagger\rho T_x
+                    +T_y\rho T_y^\dagger+T_y^\dagger\rho T_y\bigr).
+\]
+
+\begin{proposition}[A trace-preserving quantum diffusion step]
+\label{prop:fluid-heat-channel}
+The map $\Phi_r$ is completely positive, trace preserving and unital. Its diagonal probabilities obey
+\[
+ p'_{jk}=(1-4r)p_{jk}+r(p_{j-1,k}+p_{j+1,k}+p_{j,k-1}+p_{j,k+1}).
+\]
+They remain nonnegative, sum to one, and their Shannon entropy cannot decrease.
+\end{proposition}
+\begin{proof}
+Use Kraus operators $\sqrt{1-4r}I$, $\sqrt r T_x$, $\sqrt r T_x^\dagger$, $\sqrt r T_y$, $\sqrt r T_y^\dagger$. Their adjoint products sum to $I$, as do the reversed products. This proves complete positivity, trace preservation and unitality. Taking diagonal entries gives the stencil. It is a convex combination of translations of the probability vector. The function $-s\log s$ is concave on $[0,1]$, with its continuous value zero at zero. Jensen's inequality at each site, followed by summation and translation invariance, proves the entropy assertion.
+\end{proof}
+
+\begin{proposition}[Discrete heat energy and eigenvalues]
+\label{prop:fluid-heat-spectrum}
+Let $L$ be a positive integer, $h>0$ and $\nu\ge0$. On the periodic $L\times L$ grid, define $\Delta_h p=h^{-2}(T_x+T_x^{-1}+T_y+T_y^{-1}-4I)p$. Then
+\[
+ -\langle p,\Delta_h p\rangle
+ =h^{-2}\sum_{j,k}\bigl((p_{j+1,k}-p_{jk})^2+(p_{j,k+1}-p_{jk})^2\bigr).
+\]
+The Fourier mode $e^{2\pi i(aj+bk)/L}$ has eigenvalue
+$-4h^{-2}[\sin^2(\pi a/L)+\sin^2(\pi b/L)]$.
+The heat equation $\dot p=\nu\Delta_hp$ therefore contracts squared Euclidean norm and preserves the constant mode.
+\end{proposition}
+\begin{proof}
+Expand each squared difference and reindex periodic sums to obtain the quadratic identity. Translation acts on the Fourier mode by $e^{\pm2\pi ia/L}$ or $e^{\pm2\pi ib/L}$. The formula follows from $2\cos\theta-2=-4\sin^2(\theta/2)$. Differentiating $\tfrac12\|p\|^2$ along the heat equation and using the first identity proves contraction. All shifts fix the constant vector.
+\end{proof}
+
+With $r=\nu\Delta t/h^2$, the channel gives an explicit heat step. Its positivity requires the displayed time-step bound. The continuous semigroup is the limit of these steps, equivalently the exponential of the random-translation generator. This is an exact finite quantum-channel interpretation of scalar diffusion. The browser computes it classically on a $16\times16$ grid. The position space has dimension $256$, representable by eight qubits, but the computation is not an eight-qubit hardware experiment or a solution of nonlinear Navier--Stokes. A signed velocity field is also not a probability distribution; any encoding of it must preserve signs and normalization by an additional construction.
+
+\section{What the Madelung transformation does and does not derive}
+
+On a simply connected open region where a smooth scalar wave function does not vanish, write $\psi=\sqrt\rho\,e^{iS/\hbar}$. For a particle of mass $m>0$ in a real potential $V$, substitute this into
+$i\hbar\partial_t\psi=-(\hbar^2/2m)\Delta\psi+V\psi$.
+
+\begin{proposition}[The local quantum hydrodynamic equations]
+\label{prop:fluid-madelung}
+With $v=\nabla S/m$ and $Q=-(\hbar^2/2m)\Delta\sqrt\rho/\sqrt\rho$, one obtains
+\[
+ \partial_t\rho+\nabla\cdot(\rho v)=0,
+ \qquad
+ \partial_tS+\frac{|\nabla S|^2}{2m}+V+Q=0.
+\]
+Consequently $m(\partial_tv+(v\cdot\nabla)v)=-\nabla(V+Q)$ and $\nabla\times v=0$ in that region.
+\end{proposition}
+\begin{proof}
+Differentiate the amplitude-phase product twice. Its Laplacian is
+\[
+ e^{iS/\hbar}\left[\Delta\sqrt\rho+
+ \frac{2i}{\hbar}\nabla\sqrt\rho\cdot\nabla S+
+ \frac{i}{\hbar}\sqrt\rho\,\Delta S-
+ \frac1{\hbar^2}\sqrt\rho\,|\nabla S|^2\right].
+\]
+Equate imaginary parts and multiply by $2\sqrt\rho$ to obtain continuity. Divide the real part by $\sqrt\rho$ to obtain the second equation. Its gradient gives the velocity equation because the Hessian of $S$ is symmetric, so $\nabla(|v|^2/2)=(v\cdot\nabla)v$. The curl of a gradient is zero.
+\end{proof}
+
+There is no viscous term in this calculation. At zeros of $\psi$ the amplitude-phase chart fails; around a closed loop with a single-valued nonzero wave function the phase winding can give circulation $2\pi\hbar n/m$. One scalar phase on a nonvanishing simply connected patch therefore cannot represent an arbitrary smooth vortical incompressible velocity. More general spinor, mixed-state or multi-component encodings may represent richer currents, but their dynamical correspondence must be separately derived. The Born--Oppenheimer and kinetic limits reviewed earlier are distinct routes, not consequences of the scalar Madelung identity alone.
+
+\section{Carleman lifting and the symmetric algebra}
+
+Consider a finite quadratic system $\dot x=Ax+B(x\otimes x)+c$, with $x\in\R^n$. Differentiating a tensor power gives
+\[
+ \frac d{dt}x^{\otimes m}
+ =\sum_{j=1}^m x^{\otimes(j-1)}\otimes\dot x\otimes x^{\otimes(m-j)}.
+\]
+Substitution couples tensor degrees $m-1,m,m+1$. Thus the infinite collection of powers evolves linearly in a larger space. This is an identity along an existing solution, not a conclusion that the infinite system has a bounded solution for all time.
+
+All tensors $x^{\otimes m}$ are symmetric. In commuting coordinates the degree-$m$ monomials form a basis of dimension $\binom{n+m-1}{m}$ rather than $n^m$. The symmetric algebra and its standard monomials therefore provide an exact reduction of redundant tensor coordinates. Differentiation acts as a derivation on this algebra. Exterior powers have a different role: they encode determinants and rank constraints, not powers of one commuting vector, whose repeated wedge is zero.
+
+\begin{proposition}[An exact scalar truncation calculation]
+\label{prop:fluid-carleman}
+Let $N\ge1$ be an integer, $\alpha>0$, $\beta\ge0$, $x_0>0$, and consider
+$\dot x=-\alpha x+\beta x^2$. Put $r=\beta x_0/\alpha$ and $z(t)=r(1-e^{-\alpha t})$. Before the denominator vanishes,
+\[
+ x(t)=\frac{x_0e^{-\alpha t}}{1-z(t)}.
+\]
+Truncate the lifted equations
+$\dot y_m=-m\alpha y_m+m\beta y_{m+1}$ at $m=N$ by setting $y_{N+1}=0$ and $y_m(0)=x_0^m$. Their first component is
+\[
+ y_1^{(N)}(t)=x_0e^{-\alpha t}\sum_{j=0}^{N-1}z(t)^j,
+ \qquad
+ x(t)-y_1^{(N)}(t)=x_0e^{-\alpha t}\frac{z(t)^N}{1-z(t)}.
+\]
+If $r<1$, the error is bounded by $x_0r^N/(1-r)$ for all $t\ge0$. If $r>1$, the nonlinear solution blows up at $t_*=-\alpha^{-1}\log(1-1/r)$; the finite lifted system does not remove that singularity.
+\end{proposition}
+\begin{proof}
+For the exact equation, $w=1/x$ satisfies $\dot w=\alpha w-\beta$. Solving this linear equation yields the displayed formula. The truncated triangular system is solved by downward variation of constants. More explicitly its $m$th component is
+\[
+ y_m^{(N)}(t)=x_0^m e^{-m\alpha t}
+ \sum_{j=0}^{N-m}\binom{m+j-1}{j}z(t)^j.
+\]
+Differentiate this expression, use $z'=\beta x_0e^{-\alpha t}$ and
+$j\binom{m+j-1}{j}=m\binom{m+j-1}{j-1}$, and check the initial values. Uniqueness for the finite linear system proves the formula. At $m=1$ it is the geometric partial sum. Subtracting from the exact rational expression gives the remainder. The bound follows from $0\le z(t)\le r<1$. When $r>1$, the denominator first vanishes at the stated positive time, while the numerator remains positive.
+\end{proof}
+
+This calculation is a small, rigorous model of the convergence issue faced by quantum linearization. The finite lift is globally solvable even when it no longer approximates the nonlinear solution. It follows that solving a truncated lifted system, classically or quantum mechanically, cannot establish continuum regularity without a truncation estimate valid in the relevant regime.
+
+\section{What the quantum-algorithm literature actually supplies}
+
+\citet{NSLiu2021} analyze a dissipative quadratic ODE algorithm with a parameter measuring nonlinear and forcing strength relative to linear dissipation. Their stated favorable regime requires $R<1$, together with sparse access, state preparation, error and solution-norm assumptions. The final output is a normalized quantum state encoding a vector; obtaining a full classical velocity field has an additional readout cost. Their numerical Burgers examples outside the sufficient regime are evidence about those examples, not a theorem covering every Reynolds number. The retrieved arXiv source is version~4, dated 7 July 2026. That correction adds $\|F_0\|\le\|F_2\|$ to the relevant convergence statements. It does not repair a separate eigenvalue-to-norm inference in the printed Lemma~1, which must not be imported into this project.
+
+\begin{proposition}[A counterexample to eigenvalue-only norm decay]
+\label{prop:fluid-nonnormal-counterexample}
+For the real quadratic system $\dot u=F_1u+F_2(u\otimes u)+F_0$, choose
+\[
+ F_1=\begin{pmatrix}-1&4\\0&-2\end{pmatrix},\quad
+ F_2=\begin{pmatrix}1/100&0&0&0\\0&0&0&0\end{pmatrix},\quad
+ F_0=\begin{pmatrix}1/1000\\0\end{pmatrix},\quad
+ u(0)=\begin{pmatrix}1/2\\1/2\end{pmatrix}.
+\]
+The matrix $F_1$ is diagonalizable with strictly negative eigenvalues. In the Euclidean and induced spectral norms, the source's parameter is $R=3\sqrt2/500<1$, and $\|F_0\|\le\|F_2\|$. Nevertheless
+\[
+ \left.\frac d{dt}\|u(t)\|^2\right|_{t=0}=\frac{1007}{2000}>0.
+\]
+In particular these hypotheses do not imply $\|u(t)\|<\|u(0)\|$ for every positive sufficiently small $t$.
+\end{proposition}
+\begin{proof}
+The distinct eigenvalues are $-1,-2$, the three relevant norms are
+$\|u(0)\|=1/\sqrt2$, $\|F_2\|=1/100$, $\|F_0\|=1/1000$,
+and substitution gives the stated $R$. Direct evaluation gives
+$\dot u(0)=(3007/2000,-1)^T$. Therefore
+$2u(0)^T\dot u(0)=1007/2000$. The bound asserted by the source's equation (4.2), with spectral real part $-1$, would instead be
+$-1+3\sqrt2/500<0$. The exact positive derivative contradicts that bound and yields an interval of initial norm increase by differentiability.
+\end{proof}
+
+The problem is that $u^*(F_1+F_1^*)u$ is controlled by the largest eigenvalue of the Hermitian part, not by twice the largest real part of the eigenvalues of an arbitrary nonnormal matrix. The source specifies Euclidean and spectral norms and does not first transform the system into an eigenbasis. Its scalar rescaling leaves $F_1$ unchanged. The counterexample concerns that particular printed inference; it is not a claim that every application or a suitably repaired quantum algorithm fails.
+
+\begin{proposition}[A sufficient dissipative norm hypothesis]
+\label{prop:fluid-dissipative-ball}
+Suppose $(F_1+F_1^*)/2\preceq-\alpha I$ with $\alpha>0$, $\|F_2\|\le\beta$, and $\|F_0(t)\|\le\gamma$, with continuous forcing. If a radius $a>0$ satisfies $\beta a^2-\alpha a+\gamma<0$, every solution starting in $\|u(0)\|\le a$ remains in that ball and continues for all positive times.
+\end{proposition}
+\begin{proof}
+At a nonzero state of radius $r$, differentiation and Cauchy--Schwarz give
+$\dot r\le-\alpha r+\beta r^2+\gamma$. At the boundary $r=a$ the right side is strictly negative. Continuity makes it negative on a sufficiently small annulus about that radius, so a trajectory cannot first cross that annulus outwards. A boundary initial state immediately moves inward by the same inequality. Thus the ball is invariant. The polynomial vector field is locally Lipschitz in the state, and continuity of the forcing on each finite time interval and boundedness of the trajectory give global finite-dimensional continuation.
+\end{proof}
+
+This repaired condition is stronger than spectral stability and is exactly the kind of additional metric information demanded throughout the monograph. A weighted inner product can sometimes establish such a condition, but its conditioning and the transformed nonlinear norm must then enter the quantitative and algorithmic bounds. We use only the independently proved estimates here, not the unrepaired general norm-decay lemma.
+
+Non-dissipative extensions also need hypotheses. Theorem~1.1 of the reviewed version of \citet{NSWu2025} assumes a diagonalizable $F_1$, eigenvalues with nonpositive real parts, a uniform solution bound $\|x(t)\|_1\le\mu$, and the strictly positive resonance gap
+\[
+ \Delta=\inf_{k,\,m\in\N^n,\,|m|\ge2}
+       \left|\lambda_k-\sum_jm_j\lambda_j\right|>0.
+\]
+Here $\N$ includes zero. Its stated estimate uses
+$R_r=4e\mu\kappa_1(W)\|F_2\|_1/\Delta$; geometric convergence requires $R_r<1$. Merely asserting that each individual resonance expression is nonzero does not establish a positive infimum over infinitely many expressions. The condition also has a particularly restrictive consequence for real systems.
+
+\begin{proposition}[Real nonresonance excludes neutral oscillatory modes]
+\label{prop:fluid-real-nonresonance}
+Let $F_1$ be a real matrix, with all eigenvalues in the closed left half-plane. If no eigenvalue equals a sum of at least two eigenvalues, allowing repetition, then every eigenvalue has strictly negative real part.
+\end{proposition}
+\begin{proof}
+A zero eigenvalue violates the hypothesis because $0=0+0$. A nonzero purely imaginary eigenvalue $i\omega$ of a real matrix has the conjugate eigenvalue $-i\omega$. Then $i\omega=2i\omega+(-i\omega)$ is a sum with three terms, again violating the hypothesis. These are all possibilities on the imaginary axis, so the nonpositive real parts are strictly negative.
+\end{proof}
+
+Consequently, the title of that paper cannot be used to assert a theorem for arbitrary real conservative or neutral fluid systems. Its numerical examples and its precise theorem assumptions must be assessed separately. This observation does not refute its nonresonant estimate; it identifies the real-system domain in which that estimate could apply. We do not use the source's stronger estimate as a dependency of the released singularity proof. A direct estimate adequate for the present finite comparison is as follows.
+
+\begin{proposition}[A norm-controlled short-time Carleman estimate]
+\label{prop:fluid-carleman-contractivity}
+Let $N\ge1$ be an integer. Suppose $\dot x=F_1x+F_2x^{\otimes2}$ on $[0,T]$, with $\|x(t)\|\le M$. Use compatible Euclidean tensor norms or compatible $\ell^1$ tensor norms, and assume $\|e^{tF_1}\|\le1$ for $t\ge0$. For the degree-$N$ Carleman truncation initialized by $y_j(0)=x(0)^{\otimes j}$,
+\[
+ \|x(t)-y_1(t)\|\le M\bigl(M\|F_2\|t\bigr)^N,
+ \qquad 0\le t\le T.
+\]
+In particular the right side converges geometrically in $N$ when $M\|F_2\|T<1$.
+\end{proposition}
+\begin{proof}
+The diagonal degree-$j$ generator is
+$A_{j,j}=\sum_{i=0}^{j-1}I^{\otimes i}\otimes F_1\otimes I^{\otimes(j-1-i)}$.
+Its semigroup is $(e^{tF_1})^{\otimes j}$ and is contractive under the stated norms. The adjacent block is the analogous sum with $F_2$ replacing one input slot; its norm is at most $j\|F_2\|$. Write $\eta_j=x^{\otimes j}-y_j$. All initial errors vanish, and the sole terminal forcing is $A_{N,N+1}x^{\otimes(N+1)}$. Repeated variation of constants expresses $\eta_1$ as an $N$-fold ordered integral. The integrand norm is at most
+$N!\|F_2\|^N M^{N+1}$. The ordered simplex has volume $t^N/N!$, giving the bound.
+\end{proof}
+
+Diagonalizability with nonpositive spectral real parts alone does not imply contractivity in the original norm. If $F_1=W\Lambda W^{-1}$, one can apply the proposition to $z=W^{-1}x$, with the transformed nonlinearity $\widetilde F_2=W^{-1}F_2(W\otimes W)$ and a bound on $z$. Returning to $x$ costs $\|W\|$. This makes the conditioning visible instead of silently discarding it. Semisimplicity of neutral eigenspaces also differs from claiming that every eigenvalue has geometric multiplicity one. These distinctions correct misleading shortcuts in the preliminary estimates of the reviewed preprint without importing them into our argument.
+
+For our project the required interface is a bound for the particular lifted operator and initial state, on the requested time interval, with its dependence on discretization made explicit.
+
+The September 2026 end-to-end study by \citet{NSJennings2026} is especially relevant. It accounts for Carleman truncation, time stepping, conditioning, unitary block construction and observable extraction in a lattice-Boltzmann approach. Its shifted formulation and discrete lifting address specific earlier bottlenecks, but its conclusions concern selected observables and parameter regimes. The paper reports numerical convergence and nonconvergence behavior under changing truncation order, and distinguishes proven bounds from fitted scaling. We retain that distinction. Neither its quantum encoding nor its finite Reynolds-number experiments are a proof of the released three-dimensional singularity theorem.
+
+Two further approaches deserve separate names. Variational quantum methods can represent nonlinear functionals using several copies of a state and a chosen ansatz \cite{NSLubasch2020}. Their practical result depends on optimization, ansatz approximation, measurement variance and implementation costs. Tensor-network methods such as \citet{NSGourianov2022} can exploit interscale correlations on classical computers; their compression depends on the ranks needed by the particular flow. A tensor-network simulation is not a quantum-device execution. Both can be useful research tools without claiming a universal exponential speedup.
+
+For every proposed fluid algorithm, the complete cost should specify at least the spatial approximation, time discretization, nonlinear lift or ansatz error, state preparation, success probability, conditioning and requested observable. Normalizing a large vector does not make its small physically relevant component free to read out. A statement polynomial in the number of qubits can still have a large or exponential dependence on physical accuracy, evolution time or a hidden condition number.
+
+\input{chapters/fluid-circuit-repairs}
+\input{chapters/quantum-spin-scope}
+
+\section{A mathematically constrained quantum ToricGT extension}
+
+The previously implemented quantum ToricGT was trained and checked on tokenization-path data. Its weights cannot be presented as a validated fluid model. The reusable component is its architecture: incidence-aware vertex and edge tokens, local quantum features, classical aggregation and an explicit certificate after prediction. This section specifies a fluid adaptation and proves the structural certificate independently of training.
+
+For a surface mesh, tokens should include oriented incidence, the chosen mass matrices, local coordinates or invariant metric features, boundary tags, resolved velocity and any retained memory state. A surface's embedding alone is insufficient. Gauge-like changes of cochain basis should transform the fields and metric together. Under mesh relabeling, the local circuit input and classical aggregation must obey a stated equivariance rule; otherwise predictions can depend on arbitrary vertex numbering.
+
+Let $|\psi_\theta(x)\rangle=U_\theta(x)|0\rangle$ be a normalized finite circuit and let
+$q_j(x)=\langle\psi_\theta(x)|O_j|\psi_\theta(x)\rangle$ for Hermitian $O_j$ with $\|O_j\|\le1$. Then $q_j\in[-1,1]$. A classical readout can construct a matrix $B_\theta(x)$ and a skew matrix $K_\theta(x)=\tfrac12(A_\theta(x)-A_\theta(x)^T)$. In divergence-free coordinates, use the vector field of Theorem~\ref{thm:fluid-finite-closure}. The resulting dissipation identity is true for every choice of circuit parameters; it does not rely on the optimizer finding a good model.
+
+\begin{proposition}[A parameterized positive constitutive coefficient]
+\label{prop:fluid-positive-readout}
+Let $0<\nu_{\min}<\nu_{\max}$ and let $\ell_\theta(x)$ be any finite real readout of circuit features. Then
+\[
+ \nu_\theta(x)=\nu_{\min}+
+ (\nu_{\max}-\nu_{\min})\frac1{1+e^{-\ell_\theta(x)}}
+\]
+lies strictly between the two bounds. If the readout is locally Lipschitz, using this coefficient in a factorized finite viscosity preserves the energy sign in Theorem~\ref{thm:fluid-finite-closure}.
+\end{proposition}
+\begin{proof}
+The exponential is positive, so the logistic factor is strictly between zero and one. Its derivative is bounded. Composition with a locally Lipschitz readout is locally Lipschitz. Multiplication of a squared norm by a positive scalar preserves nonnegativity, giving the asserted sign.
+\end{proof}
+
+\begin{proposition}[The circuit derivative and a nonlinear loss]
+\label{prop:fluid-parameter-shift}
+Suppose one parameter occurs in one gate $e^{-i\theta P/2}$ with $P=P^*$ and $P^2=I$. For any expectation $q(\theta)$ measured after the full circuit,
+\[
+ q'(\theta)=\tfrac12[q(\theta+\pi/2)-q(\theta-\pi/2)].
+\]
+For a differentiable loss $L(q_1,\ldots,q_m)$, its derivative is the chain-rule sum
+$\sum_j(\partial L/\partial q_j)q'_j$. Shifting the entire nonlinear loss is not generally the same operation.
+\end{proposition}
+\begin{proof}
+Expand the gate as $\cos(\theta/2)I-i\sin(\theta/2)P$. The expectation is of the form $a+b\cos\theta+c\sin\theta$ after the fixed preceding and following operations are absorbed into the state and observable. Differentiation and the two shifted trigonometric identities prove the first assertion. The second is ordinary multivariable differentiation. For example, if $q=\cos\theta$ and $L=q^2$, shifting $L$ by $\pm\pi/2$ gives equal values and an erroneous zero, whereas $L'=-\sin2\theta$ in general.
+\end{proof}
+
+Shared parameters in multiple gates require a sum of gate-occurrence derivatives. The previous ToricGT experiments already distinguish this chain rule from an incorrect whole-loss shift. For a fluid extension it is equally essential: a conservation or energy penalty is a nonlinear loss and must be differentiated correctly.
+
+\subsection{A concrete training and validation specification}
+
+A future trained fluid ToricGT should be assessed against the same dynamical problem solved by its classical baselines. Data must identify viscosity, forcing, domain, mesh, time step, reference solver and truncation error. Split by trajectories and physical parameter families, not by randomly mixing nearby snapshots of the same trajectory. Include independently held-out meshes and resolutions. Compare with a classical model of similar trainable size, a frozen-circuit model, the physical baseline without learned closure and an exact manufactured solution.
+
+Report resolved trajectory error, derivative or stress error where available, divergence, energy balance, pressure residual and total wall time including data transfer and readout. A projection or repair can make a constraint pass even when a predictor is inaccurate, so pre-repair and post-repair results must be distinguished. A small training residual is not a certified PDE residual unless its sampling, quadrature and interpolation errors have also been bounded.
+
+Memory is a plausible place to use learning: approximate a stable auxiliary realization of a kernel, with enough state to distinguish histories that share the same instantaneous resolved velocity. This is more defensible than asking a memoryless network to invert an information-losing projection. For a linear stable hidden subsystem, Theorem~\ref{thm:fluid-memory} supplies a reference target and a complete exact comparison. For a nonlinear flow, the corresponding error and stability hypotheses require new analysis.
+
+\section{The executable examples and their proof boundaries}
+
+The new laboratory separates four tasks. The Taylor--Green field is an exact two-dimensional periodic Navier--Stokes solution with known pressure and decay, used to test derivatives and normalization. The integer covering panel evaluates the actual order matrix from the released proof. The circuit panel computes a two-qubit state and uses its bounded features to select a positive heat-channel parameter. The concentrating-core panel displays the released scaling exponents, without claiming to compute the source's fully corrected singular field.
+
+The heat circuit is an untrained parameterized example. It is not a fluid-trained ToricGT, and the finite heat channel does not include the nonlinear momentum term. The code records actual finite invariants and numerical discrepancies. The companion's selected Lean declarations formalize energy, projection, finite memory and order identities, with precise component mappings; they do not certify every browser operation or every theorem in these chapters.
+
+Taken together, these examples make information reduction operational. One can see which quantities are preserved by a complex, which are lost under projection, which reappear as a memory kernel or a quadratic stress, and which remain controlled by a positive quantum-channel construction. The released Navier--Stokes proof then occupies its proper place: a continuum construction whose all-order analytic estimates establish a forced singularity, and whose algebraic components can be understood and checked within this wider framework.

@@ -1,0 +1,346 @@
+\chapter{Elliptic-curve arithmetic and quantum period finding}
+\label{ch:quantum-crypto}
+\section{The group problem and its arithmetic representation}
+Let $p>3$ be prime and consider the nonsingular projective completion of
+\[
+ E:\quad y^2=x^3+ax+b,\qquad 4a^3+27b^2\ne0\pmod p.
+\]
+The point at infinity is denoted by $O$. The group law on $E(\F_p)$ is the usual algebraic group structure of an elliptic curve. Its existence and associativity can be established through divisor classes, identifying $P$ with $[P-O]\in\Pic^0(E)$; this is a standard external theorem of elliptic-curve theory, not a consequence of a drawing of chords \cite{SilvermanAEC}. For computations, if $P=(x_1,y_1)$ and $Q=(x_2,y_2)$ have distinct $x$ coordinates, set
+\[
+ m=(y_2-y_1)(x_2-x_1)^{-1},\quad
+ x_3=m^2-x_1-x_2,\quad y_3=m(x_1-x_3)-y_1.
+\]
+Then $P+Q=(x_3,y_3)$. For doubling, replace the slope by
+$m=(3x_1^2+a)(2y_1)^{-1}$ when $y_1\ne0$. The exceptional cases are
+$P+O=P$, $P+(-P)=O$, and $2P=O$ when $y_1=0$. All inverses are in $\F_p$.
+
+These formulas follow by substituting the line through the points into the cubic. The resulting monic cubic in $x$ has roots $x_1,x_2,x_3$ and coefficient of $x^2$ equal to $-m^2$, so their sum is $m^2$. Reflection in the $x$ axis gives the group-law output rather than the third point of intersection. Tangency replaces the two distinct roots by a repeated root. This derivation explains the formula, while the divisor-class construction supplies associativity.
+
+An implementation must distinguish formulas valid on a dense open subset from a total group operation. A denominator that is generically nonzero can vanish on exceptional points. A reversible quantum circuit must implement a bijection on its entire represented state space, or provide a precise bound for any omitted amplitudes. Calling the exceptional cases ``rare'' without a probability or operator-norm analysis is not a correctness proof. This distinction has been central to the evolution from early resource analyses to more explicit quantum point-addition constructions \cite{ProosZalka,Roetteler,Luo2026}.
+
+Fix $P\in E(\F_p)$ of prime order $q$ and $Q\in\langle P\rangle$. The elliptic-curve discrete-logarithm problem is to find $d\in\Z/q\Z$ such that $Q=dP$. The parameter controlling generic group difficulty is the subgroup order $q$, not automatically the field size $p$. For a cryptographic subgroup these sizes are usually comparable in logarithmic scale, but the mathematical statements should preserve their different roles.
+
+\begin{example}[A completely reproducible finite curve]
+Take $p=17$, $a=b=2$ and $P=(5,1)$. The discriminant condition holds because
+$4\cdot2^3+27\cdot2^2=140\equiv4\pmod{17}$.
+The companion enumerates every affine solution, adds $O$, and checks that the group has 19 elements and that $P$ generates it. For instance,
+\[
+ 2P=(6,3),\qquad 3P=(10,6),\qquad 7P=(0,6).
+\]
+Every pairwise addition and every associativity triple in this finite model is checked. These exhaustive computations certify this small example, not an asymptotic complexity theorem or a deployed cryptographic implementation.
+\end{example}
+
+\section{The relation subgroup}
+The structural step in Shor's discrete-logarithm algorithm is to replace the unknown scalar by a hidden relation. Define
+\[
+ f:(\Z/q\Z)^2\longrightarrow\langle P\rangle,
+ \qquad f(a,b)=aP+bQ.
+\]
+Writing $Q=dP$ gives $f(a,b)=(a+db)P$.
+
+\begin{proposition}[Kernel and cosets]
+The kernel of $f$ is
+\[
+ H_d=\{(-dt,t):t\in\Z/q\Z\}.
+\]
+Two inputs have the same image exactly when they lie in the same coset of $H_d$. The subgroup has $q$ elements and index $q$.
+\end{proposition}
+\begin{proof}
+Since $P$ has order $q$, $f(a,b)=O$ if and only if $a+db=0$ in $\Z/q\Z$. This is equivalent to $(a,b)=(-db,b)$, proving the kernel formula. For any homomorphism, $f(x)=f(y)$ is equivalent to $f(x-y)=O$, hence to $x-y\in H_d$. The parametrization by $t$ is injective because its second coordinate is $t$, so $|H_d|=q$. The ambient group has $q^2$ elements, giving the index.
+\end{proof}
+
+The kernel is an algebraic object, while the algorithm also needs an efficient reversible implementation of $f$. Knowing that a homomorphism exists is not enough. Its output representation, the point arithmetic, its workspace and the cost of uncomputing ancillary registers all enter the complexity analysis. The reduction to a subgroup is general; the cost of realizing it depends on the group presentation \cite{Shor,ProosZalka}.
+
+\section{Fourier sampling with every normalization explicit}
+Write $G=(\Z/q\Z)^2$, and let $\zeta=\exp(2\pi i/q)$. Its characters are
+\[
+ \chi_{u,v}(a,b)=\zeta^{ua+vb},\qquad (u,v)\in G.
+\]
+Use the Fourier transform convention
+\[
+ \mathcal F|a,b\rangle
+ =\frac1q\sum_{u,v\in\Z/q\Z}\zeta^{ua+vb}|u,v\rangle.
+\]
+The factor $1/q$ is $1/\sqrt{|G|}$. A normalized coset state is
+\[
+ |x+H_d\rangle=\frac1{\sqrt q}\sum_{t\in\Z/q\Z}|x+(-dt,t)\rangle.
+\]
+Such a state can be obtained by evaluating $f$ coherently on a uniform input and measuring the output. Discarding the output gives the corresponding mixture over cosets, which has the same Fourier outcome probabilities.
+
+\begin{lemma}[Character cancellation]
+If $z\in\C$ satisfies $z^q=1$, then
+\[
+ \sum_{t=0}^{q-1}z^t=\begin{cases}q,&z=1,\\0,&z\ne1.\end{cases}
+\]
+\end{lemma}
+\begin{proof}
+The first case is a sum of $q$ ones. In the second case, multiplying the sum by $1-z$ telescopes to $1-z^q=0$. Since $1-z\ne0$ in the field $\C$, the sum is zero.
+\end{proof}
+
+\begin{theorem}[Exact annihilator distribution]
+Measuring $\mathcal F|x+H_d\rangle$ gives the uniform distribution on
+\[
+ H_d^\perp=\{(u,v):v=du\pmod q\}.
+\]
+If $q$ is prime, any observed pair with $u\ne0$ determines $d=vu^{-1}\pmod q$. The probability of this event in one ideal sample is $1-1/q$.
+\end{theorem}
+\begin{proof}
+The amplitude of $(u,v)$ is
+\[
+ \frac{\chi_{u,v}(x)}{q\sqrt q}
+ \sum_{t=0}^{q-1}\zeta^{t(-ud+v)}.
+\]
+The lemma makes it zero unless $v=du$. If equality holds, the amplitude is
+$\chi_{u,v}(x)/\sqrt q$, whose squared absolute value is $1/q$. There are exactly $q$ such pairs, one for each $u$, so the probabilities sum to one. A nonzero $u$ is invertible in $\F_q$. Exactly one of the $q$ possible values is zero, giving the success probability. Finally, the candidate can be verified by checking $Q=dP$.
+\end{proof}
+
+This proof gives the exact finite Fourier mechanism. A practical circuit often uses transforms over power-of-two register sizes rather than exactly over $\Z/q\Z$. Its rounding, distributional approximation and classical reconstruction require additional arguments; they are addressed in the original algorithmic literature \cite{Shor,ProosZalka}. The exact model in the companion deliberately isolates the clean mathematical kernel from those implementation details.
+
+\begin{example}[The seven-point frequency line]
+For $q=7$ and $d=3$, the outcomes are
+\[
+ (0,0),(1,3),(2,6),(3,2),(4,5),(5,1),(6,4),
+\]
+each with probability $1/7$. The picture is a line over a finite field, not a straight line in a continuous Euclidean square. Connecting adjacent displayed points by a real segment is a visual convention. The companion instead labels modular coordinates and shows the probability at each actual discrete pair.
+\end{example}
+
+\section{What an endomorphism order contributes}
+Suppose an explicitly computable endomorphism $\varphi$ preserves $\langle P\rangle$ and acts there as multiplication by a known $\lambda\in\Z/q\Z$. Then
+\[
+ (a+b\lambda)P=aP+b\varphi(P).
+\]
+The integer relation lattice
+\[
+ L_\lambda=\{(a,b)\in\Z^2:a+b\lambda\equiv0\pmod q\}
+\]
+has an elementary integral description. Choose an integer representative of $\lambda$.
+
+\begin{proposition}[Relation lattice and covolume]
+The vectors $(q,0)$ and $(-\lambda,1)$ form a $\Z$-basis of $L_\lambda$. Its index in $\Z^2$, and hence its Euclidean covolume in the standard metric, is $q$.
+\end{proposition}
+\begin{proof}
+Both displayed vectors satisfy the relation. If $(a,b)\in L_\lambda$, there is an integer $k$ with $a+b\lambda=kq$. Hence
+$(a,b)=k(q,0)+b(-\lambda,1)$.
+The two vectors are independent, and the determinant of their column matrix is $q$. The determinant-index formula gives the index and covolume. Alternatively the homomorphism $(a,b)\mapsto a+b\lambda\pmod q$ is surjective and has this kernel, so the quotient has $q$ elements.
+\end{proof}
+
+The relation lattice supports short scalar decompositions and structured arithmetic. It does not reveal the unknown scalar relating an arbitrary $Q$ to $P$. Indeed, the lattice depends on the known $\lambda$ and $q$, not on that unknown scalar. The potential saving is in the implementation of group operations or scalar multiplication; a theorem about the endomorphism ring is not itself a theorem about the number of Toffoli gates.
+
+For a proposed quantum improvement, the relevant comparison is explicit. If a baseline group evaluation uses $N_a$ additions and $N_d$ doublings, and the revised evaluation uses $N'_a,N'_d$ plus $N_\varphi$ endomorphism applications, a necessary gate-budget comparison is
+\[
+ N'_a C_a+N'_d C_d+N_\varphi C_\varphi+C_{\rm conversion}+C_{\rm cleanup}
+ <N_aC_a+N_dC_d.
+\]
+The constants refer to the same gate set and error model. The corresponding live-qubit and depth inequalities must also be checked. Removing an arithmetic operation while adding a costly coherent lookup or inversion can increase the total cost. The order-theoretic view is useful because it provides a principled source of candidate decompositions; the circuit evidence still decides whether they help.
+
+\section{A faithful comparison of recent algorithmic developments}
+Shor's theorem establishes polynomial-time quantum algorithms for factoring and discrete logarithms with efficient group operations. Regev's multidimensional construction instead organizes modular products through an integer relation lattice and reduces the size of an individual coherent circuit under an arithmetic hypothesis in its original version. It uses roughly $\sqrt n$ independently repeated circuits for an $n$-bit input, followed by classical lattice processing \cite{Shor,RegevFactoring}. Thus ``smaller circuit'' and ``smaller total gate count'' are distinct claims.
+
+Pilatte's 2026 result removes the relevant conjectural dependence for modified factoring and multiplicative discrete-logarithm algorithms. In the formulation of Theorems 1.1 and 1.2, the individual circuit has
+\[
+ O(n^{3/2}\log^3 n)\ \text{gates},\qquad O(n\log^3 n)\ \text{qubits},
+\]
+and is called $O(\sqrt n)$ times with classical randomized polynomial-time processing and constant success probability. The discrete-logarithm theorem is stated for $g,y\in(\Z/N\Z)^\times$, with $y\in\langle g\rangle$. This group and representation hypothesis must be retained \cite{Pilatte2026}. Multiplying the number of calls by the per-call gate count gives an $O(n^2\log^3 n)$ upper comparison for total gates at this level of abstraction. The coherent circuit size improvement can still matter physically, but it should not be described as a universal $n^{3/2}$ total-time algorithm.
+
+The reason arithmetic enters is especially instructive. A relation lattice built from small integers can have very different geometry from one built from arbitrary residues. Pilatte proves the necessary short-basis statements using analytic number theory, including zero-density estimates, and modifies the generator selection to handle subgroup obstructions. An unconditional theorem for this setting is not an unconditional theorem about every elliptic-curve lift. It is precisely the kind of example in which analytic number theory supplies a computationally meaningful bridge, with its domain stated correctly.
+
+Barbulescu, B\^arc\u{a}u and Pa\c{s}ol extend the multidimensional strategy to elliptic curves through small-height rational data. Their published account explicitly retains number-theoretic conjectural hypotheses for the claimed asymptotic improvement. The primary publisher record and author conference presentation were inspected; the complete subscription chapter was not independently proof-audited in this review \cite{Barbulescu2025,BarbulescuSlides}. A legitimate research direction is to identify concrete curve families and height bounds meeting those hypotheses. Merely replacing multiplication by elliptic addition in a pseudocode template does not prove the same cost bound.
+
+\begin{longtable}{p{.25\textwidth}p{.37\textwidth}p{.28\textwidth}}
+\toprule
+Result & Precise contribution used here & Boundary retained\\\midrule
+Shor; Proos--Zalka & Period finding and elliptic-curve group-operation realization & Fault-tolerant quantum computation and explicit arithmetic cost\\
+Roetteler et al. & Reversible network resource estimates over prime fields & A specific circuit family and gate model\\
+Regev & Multidimensional relation-lattice sampling and shorter coherent circuits & Original number-theoretic hypothesis; repeated calls\\
+Eker\aa--G\"artner & Extensions to logarithms, orders and related multiplicative tasks & Representation and classical processing assumptions\\
+Pilatte & Unconditional modified factoring and multiplicative-DLP guarantees & The theorem's stated group, generator distribution and logarithmic factors\\
+Barbulescu et al. & Elliptic-curve extension using arithmetic small-height structure & Its additional number-theoretic conjectures\\
+Luo et al., v3 & Explicit space-efficient inversion and point-addition construction & Logical resources; current version and lower-order terms\\\bottomrule
+\end{longtable}
+
+The 2017 Roetteler et al. bound gives at most
+$9n+2\lceil\log_2n\rceil+10$ logical qubits and
+$448n^3\log_2n+4090n^3$ Toffoli gates for the specified construction \cite{Roetteler}. Luo et al.'s September 2026 version reports the leading space expression
+$3n+6\lfloor\log_2n\rfloor+O(1)$, a concrete 835-logical-qubit estimate at 256 bits, and leading Toffoli expression
+$1056n^3/\log_2n+O(n^2)$ \cite{Luo2026}. The version pin matters: earlier metadata gave different coefficients. The asymptotic $O(1)$ and $O(n^2)$ terms must not be silently set to zero when comparing concrete instances.
+
+The 2026 PRX Quantum resource study by Babbush and collaborators reports different low-gate tradeoffs and supplies a zero-knowledge certificate for committed, undisclosed circuit details \cite{Babbush2026}. The certificate checks resource bounds and 9,024 pseudorandom point-addition cases generated through a Fiat--Shamir-style hash procedure; it is not a universal correctness proof on all computational basis states. Its false-pass estimate is conditional on the stated sampling and ideal-hash assumptions. This is relevant published evidence, but it is a different reproducibility category from an openly inspectable circuit. Its architectural runtime estimates additionally assume an error-correction architecture and physical error rates. Logical-qubit counts, physical-qubit counts and elapsed wall-clock predictions are not interchangeable units.
+
+\section{What could count as a new improvement}
+A rigorous new result could take several forms. It could reduce a proved gate count at equal live-qubit and error budgets. It could reduce qubits at a specified gate penalty. It could prove a family of elliptic curves satisfies a previously conditional small-height hypothesis. It could improve classical lattice reconstruction with a complete success analysis. It could formalize a previously unaudited arithmetic subroutine and expose a correctness defect in a cost estimate.
+
+This monograph establishes none of these as a new asymptotic cryptanalytic breakthrough. It proposes a route to investigate them: use known order actions to enumerate algebraically valid transformations, compile each into a reversible representation, prove its functional equivalence, then compare costs with an identical accounting method. The selected Lean lemmas and exhaustive small models provide reusable interfaces for that route. They do not replace a complete algorithm or its complexity analysis.
+
+\chapter{Order lattices, noise and post-quantum cryptography}
+\label{ch:pqc}
+\section{From a module to a geometry}
+Let $\Lambda\subset\R^n$ be a Euclidean lattice with basis matrix $B\in\GL_n(\R)$, so $\Lambda=B\Z^n$. Its covolume is $|\det B|$, its dual is
+\[
+ \Lambda^*=\{y\in\R^n:\langle y,x\rangle\in\Z\text{ for every }x\in\Lambda\}
+ =B^{-T}\Z^n,
+\]
+and, for $n\ge1$, its first minimum is
+$\lambda_1(\Lambda)=\min_{0\ne x\in\Lambda}\|x\|_2$.
+The minimum exists because a lattice has finitely many points in every bounded region and has no accumulation at zero.
+
+\begin{proposition}[Dual-basis formula]
+For an invertible real matrix $B$, the dual of $B\Z^n$ is $B^{-T}\Z^n$.
+\end{proposition}
+\begin{proof}
+A vector $y$ belongs to the dual exactly when $y^TBz\in\Z$ for every integer vector $z$. Testing the standard basis vectors shows that this is equivalent to $B^Ty\in\Z^n$. Solving for $y$ gives the formula. It also yields
+$\det(\Lambda^*)=1/\det(\Lambda)$ for covolumes.
+\end{proof}
+
+An arithmetic order $\mathcal O$ in a number field $K$ has finite rank as a $\Z$-module. The archimedean embedding sends a fractional ideal or an order-module into a real vector space. Real embeddings contribute one coordinate and a complex pair contributes two real coordinates, conventionally scaled by $\sqrt2$ when using the standard trace-compatible Euclidean norm. The chosen metric is part of the cryptographic instance. A coefficient embedding and the canonical embedding are related by a real linear map, whose condition number controls the distortion of lengths and error distributions \cite{LPRRingLWE}.
+
+For a fractional ideal $I$ of the maximal order of a number field, the trace dual is
+\[
+ I^\vee=\{x\in K:\Tr_{K/\Q}(xI)\subset\Z\}.
+\]
+When $I$ is invertible, this equals $\mathfrak D^{-1}I^{-1}$, where
+$\mathfrak D^{-1}=\mathcal O_K^\vee$ is the codifferent. To see the identity, the trace condition says exactly that $xI\subset\mathfrak D^{-1}$; multiplication by $I^{-1}$ gives the result. For noninvertible ideals in a nonmaximal order, one should use the ideal quotient rather than assume the same inverse formula. This is one place where the book's local order theory directly prevents a cryptographic algebra mistake.
+
+At complex places one must distinguish the trace pairing from the positive
+Euclidean pairing. Write $j(x)$ using real embeddings and the coordinates
+$(\sqrt2\operatorname{Re}\tau(x),\sqrt2\operatorname{Im}\tau(x))$ for each
+chosen complex embedding. Let $J$ negate every imaginary coordinate and fix
+the other coordinates. Direct multiplication of complex numbers gives
+$\langle j(x),Jj(y)\rangle=\Tr_{K/\Q}(xy)$. Consequently
+\[
+ j(I)^*=Jj(I^\vee).
+\]
+Indeed $j(I^\vee)$ is exactly the lattice of vectors whose pairing through
+$J$ with $j(I)$ is integral. The involution $J$ acts on the real coordinate
+space; it need not come from an automorphism of an arbitrary number field.
+Thus trace duality and Euclidean duality should not be identified without
+this correction.
+
+\section{An algebraic equivalence need not preserve short vectors}
+\begin{proposition}[Unimodular changes can have unbounded metric distortion]
+For each positive integer $N$, the matrix
+\[
+ U_N=\begin{pmatrix}1&N\\0&1\end{pmatrix}
+\]
+is an automorphism of the abelian group $\Z^2$ and has determinant one. Nevertheless
+$\|U_N(0,1)^T\|_2=\sqrt{N^2+1}$, so its operator norm is unbounded as $N\to\infty$.
+\end{proposition}
+\begin{proof}
+The inverse is $\left(\begin{smallmatrix}1&-N\\0&1\end{smallmatrix}\right)$, which also has integer entries. Thus the map and its inverse preserve the integer lattice as a set. Its value on the unit vector $(0,1)$ is $(N,1)$, giving the norm formula and the lower bound on the operator norm.
+\end{proof}
+
+The example has two complementary readings. If $U_N$ is regarded as a change of basis of the same Euclidean lattice, the lattice itself has not changed, but the coordinate distribution described as ``independent small coefficients'' changes its geometric meaning. If it is regarded as a linear map between two metric module presentations, it is not an isometry. In either reading, categorical equivalence alone does not transfer the sampling or short-vector problem with its parameters intact.
+
+For a random vector $e$ with mean zero and covariance $\Sigma$, the transformed vector has covariance
+\[
+ \operatorname{Cov}(Te)=T\Sigma T^T.
+\]
+This follows immediately by expanding
+$\mathbb E[(Te)(Te)^T]=T\mathbb E[ee^T]T^T$.
+For a square invertible $T$ and spherical covariance $\sigma^2I$, it becomes $\sigma^2TT^T$, which, for $\sigma>0$, is spherical exactly when $TT^T=cI$ for some $c>0$, equivalently when $T$ is a scaled orthogonal transformation. This exact calculation is a basic obligation in any proposed transfer of LWE to a new order or Morita-equivalent module category.
+
+\section{Noisy linear equations}
+For a modulus $q$, a dimension $n$, a secret $s\in(\Z/q\Z)^n$ and a chosen error law $\chi$, a learning-with-errors sample has the form
+\[
+ a\ \leftarrow\ (\Z/q\Z)^n,\qquad e\leftarrow\chi,\qquad
+ b=\langle a,s\rangle+e\pmod q.
+\]
+The search task asks for $s$ from many samples; the decisional task asks to distinguish this law from uniform samples. The error law, number of samples, modulus, dimension and distribution of the secret are part of the problem, not optional details. An assertion that ``LWE is hard'' suppresses parameters that a precise reduction must state.
+
+Regev's theorem gives a quantum reduction from appropriate worst-case lattice problems to specified LWE instances. In a standard formulation, for a suitable modulus and Gaussian error family with $\alpha q>2\sqrt n$, an efficient LWE solver yields a quantum algorithm for worst-case GapSVP and SIVP at approximation factor $\widetilde O(n/\alpha)$, with the exact parameter restrictions supplied by the original theorem \cite{RegevLWE}. This is a conditional hardness implication. It is not a proof that no quantum algorithm can solve those lattice problems, and it is not a blanket theorem for every small-error distribution used in every implementation.
+
+Ring-LWE packages several coordinates into algebraic multiplication in an order, and module-LWE uses vectors of ring elements. The foundational ring-LWE reduction uses ideal lattices and a carefully specified canonical-embedding error family \cite{LPRRingLWE}. A noncommutative order can likewise support noisy module equations as a definition, but defining the equations is easier than proving a secure distribution, a worst-case reduction or useful concrete parameters. Noncommutativity should be treated as extra structure to analyze, not as an automatic source of security.
+
+\section{A complete elementary correctness calculation}
+The following is an educational linear-encryption skeleton. It is not a complete KEM and does not claim chosen-ciphertext security. Let
+$A\in(\Z/q\Z)^{m\times n}$, $s\in(\Z/q\Z)^n$, and
+$b=As+e$. Choose a short vector $r\in\Z^m$, short errors
+$e_1\in\Z^n,e_2\in\Z$, and an encoded message $\mu\in\Z/q\Z$. Form
+\[
+ u=A^Tr+e_1,
+ \qquad v=b^Tr+e_2+\mu\pmod q.
+\]
+The receiver computes $v-s^Tu$.
+
+\begin{proposition}[Noise cancellation identity]
+With the notation above,
+\[
+ v-s^Tu=\mu+e^Tr+e_2-s^Te_1\pmod q.
+\]
+If the message encoding has decision radius $\rho$ in circular distance modulo $q$, decryption is correct whenever the centered integer representative of the total error has absolute value less than $\rho$.
+\end{proposition}
+\begin{proof}
+Substitute $b=As+e$:
+\[
+ v-s^Tu=(As+e)^Tr+e_2+\mu-s^T(A^Tr+e_1).
+\]
+The two terms $s^TA^Tr$ cancel, leaving the displayed expression. If the residual error lies within the decision radius of the message's encoding point, the nearest encoding rule returns that message by the definition of the radius.
+\end{proof}
+
+For binary encoding at $0$ and $\lfloor q/2\rfloor$, a conservative open decoding radius is half their minimum circular separation. Compression, rounding and a ring coefficient representation add further error terms in a real scheme. The correctness proof should include them rather than appeal only to this simplified identity. NIST's ML-KEM standard specifies a complete mechanism and three parameter sets, and its current publication page records an errata note; this monograph does not replace that specification \cite{NIST203}.
+
+For the following real-valued bound, choose and fix integer lifts of $s,e,e_1,e_2$; $r$ is already an integer vector. Norms refer to those lifts, and reducing their residual modulo $q$ yields the preceding modular identity.
+
+\begin{proposition}[A deterministic bound on the toy error]
+If $\|e\|_\infty\le B_e$, $\|r\|_1\le B_r$, $|e_2|\le B_2$,
+$\|s\|_1\le B_s$, and $\|e_1\|_\infty\le B_1$, then
+\[
+ |e^Tr+e_2-s^Te_1|\le B_eB_r+B_2+B_sB_1.
+\]
+\end{proposition}
+\begin{proof}
+The triangle inequality bounds the absolute value by
+$\sum_i|e_i||r_i|+|e_2|+\sum_j|s_j||(e_1)_j|$.
+Use the coordinatewise bounds in the two sums.
+\end{proof}
+
+This is a worst-case sufficient condition. A failure-probability estimate for Gaussian or bounded random errors can be much sharper, but must specify independence and tails. A numerical sample in which every trial decrypts correctly does not prove a negligible failure probability over the full randomness space.
+
+\section{Why the noiseless hidden-subgroup argument does not transfer directly}
+The quantum Fourier argument in the previous chapter required an efficiently evaluable deterministic function constant on exactly the cosets of a subgroup. LWE samples are noisy observations. For a fixed secret, the conditional law of $b$ given $a$ is a translated error distribution, not a deterministic group homomorphism.
+
+One may enlarge the domain to include a sampled error variable, but then the map
+$(a,e)\mapsto\langle a,s\rangle+e$ has a different domain distribution and requires access to the unknown $s$ if one tries to evaluate it coherently. The public samples are not automatically an oracle for that map on arbitrary inputs. This explains the failure of a direct substitution into the earlier proof. It does not rule out all quantum algorithms for LWE; the computational hardness question remains an assumption supported by its reduction framework and cryptanalytic study.
+
+The relation lattice used in Regev's factoring algorithm and the random lattices underlying LWE also play different roles. The former is a hidden relation object whose approximate dual can be sampled by a specially available group oracle. The latter is part of a noisy recovery problem whose public data does not provide the same oracle. Sharing a geometric language is useful for designing reductions, but does not itself supply one.
+
+\section{Orders, local structure and a responsible design criterion}
+The Roggenkamp framework suggests asking how an order behaves locally at primes dividing the modulus or discriminant. Does the module remain projective? Are there small quotients exposing unusually concentrated error? Does a decomposition of the algebra split the instance into easier components? Are coefficient and canonical norms comparable with a uniform bound? Is the reduction map efficiently computable and distribution preserving? These are concrete mathematical questions arising from order theory.
+
+For example, a product algebra acts componentwise. If both the public equations and the error law split into independent factors, solving the components separately solves the original instance. A designer cannot count the total vector-space dimension as though the factors were computationally inseparable. Conversely, an algebraic decomposition may be difficult to obtain from a chosen encoding; that computational obstacle must be stated and analyzed rather than assumed from the abstract decomposition.
+
+\begin{proposition}[Product decomposition of a noisy module equation]
+Let $R=R_1\times R_2$ and let all vectors and matrices be over $R$. Projecting
+$b=As+e$ to either factor gives $b_i=A_is_i+e_i$. If algorithms recover $s_1$ and $s_2$ from the two projected instances, their pair recovers $s$ in the original instance.
+\end{proposition}
+\begin{proof}
+The coordinate projections are ring homomorphisms, hence commute with every matrix addition and multiplication. Equality in a direct product is coordinatewise. The pair of recovered vectors is therefore exactly the original secret vector.
+\end{proof}
+
+The proposition makes no claim that every order has such an efficiently accessible product decomposition. Its use is diagnostic: extra algebraic structure can help computation on both sides of a security reduction. The correct research objective is to prove which structures preserve the desired hardness and improve implementation, not simply to maximize algebraic sophistication.
+
+\section{Other cryptographic families and the limits of the common framework}
+\begin{longtable}{p{.19\textwidth}p{.36\textwidth}p{.35\textwidth}}
+\toprule
+Family & Relevant mathematical interface & What does not follow automatically\\\midrule
+RSA and multiplicative Diffie--Hellman & Integer orders, unit groups, order finding, relation lattices & A theorem about ECC gate counts does not supply RSA resource counts\\
+Elliptic-curve signatures and key exchange & Finite abelian subgroups and endomorphism arithmetic & Extra endomorphisms do not protect the subgroup from Shor's general mechanism\\
+Isogeny-based constructions & Ideal classes, quaternion orders, oriented isogenies & Hardness of one isogeny task does not imply security of every protocol with auxiliary data\\
+Lattice-based KEMs and signatures & Noisy modules, duality, norm bounds and reductions & An order-module equivalence need not preserve errors or concrete security\\
+Code-based constructions & Linear maps, syndrome kernels and decoding metrics & Chain-complex notation does not turn noisy decoding into noiseless period finding\\
+Hash-based signatures & Finite function assumptions, combinatorial verification & No order-theoretic proof of a hash assumption is supplied here\\
+Quantum key distribution & Quantum states, measurements and authenticated classical communication & Field-theoretic existence or a Yang--Mills gap is not a security proof for a QKD protocol\\\bottomrule
+\end{longtable}
+
+The broad connection is through rigorously represented maps, kernels, distributions and verification. It is useful to compare these families within that language, but their security definitions differ. A key-establishment mechanism, a signature scheme and a quantum communication protocol require different games, interfaces and adversary models. The original proofs and standards remain the authoritative sources for their security claims.
+
+\section{A quantitative requirement for any proposed generalization}
+Suppose a map $T$ converts one family of metric module instances into another. A useful reduction needs at least three bounds: a polynomial bound for computing $T$ and recovering answers, a bound on the distortion of the relevant geometric quantity, and a bound on the statistical distance between the transformed input law and the target law. The first is computational, the second geometric and the third probabilistic. None is implied by a bare equivalence of module categories.
+
+For norm distortion, if $T$ is invertible then
+\[
+ \|T^{-1}\|^{-1}\|x\|\le\|Tx\|\le\|T\|\|x\|.
+\]
+The upper bound is the definition of operator norm. The lower bound follows from
+$\|x\|=\|T^{-1}Tx\|\le\|T^{-1}\|\|Tx\|$.
+Thus an approximation factor may deteriorate by the condition number
+$\kappa(T)=\|T\|\|T^{-1}\|$. If this grows exponentially in the input dimension, an algebraically simple transformation may be useless for a polynomial-factor hardness transfer. The elementary shear family shows why recording the metric is essential.

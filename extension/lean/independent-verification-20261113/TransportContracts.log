@@ -1,0 +1,34 @@
+TransportContracts.suffix_transport_telescope.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) :
+  TransportContracts.transportedResidual A x n = x n - (TransportContracts.holonomy A n) (x 0)
+'TransportContracts.suffix_transport_telescope' depends on axioms: [propext, Quot.sound]
+TransportContracts.closed_path_residual.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0) :
+  TransportContracts.transportedResidual A x n = x 0 - (TransportContracts.holonomy A n) (x 0)
+'TransportContracts.closed_path_residual' depends on axioms: [propext, Quot.sound]
+TransportContracts.flat_closed_path_zero.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0)
+  (hflat : TransportContracts.holonomy A n = 1) : TransportContracts.transportedResidual A x n = 0
+'TransportContracts.flat_closed_path_zero' depends on axioms: [propext, Quot.sound]
+TransportContracts.two_arrow_transport.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A B : Module.End R V) (x y z : V) : B (y - A x) + (z - B y) = z - (B * A) x
+'TransportContracts.two_arrow_transport' depends on axioms: [propext, Quot.sound]
+TransportContracts.fixed_vector_closed_path_zero.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]
+  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0)
+  (hfixed : (TransportContracts.holonomy A n) (x 0) = x 0) : TransportContracts.transportedResidual A x n = 0
+'TransportContracts.fixed_vector_closed_path_zero' depends on axioms: [propext, Quot.sound]
+TransportContracts.scalar_counterexample_flat : 1 / 2 * 2 = 1
+'TransportContracts.scalar_counterexample_flat' depends on axioms: [propext, Classical.choice, Quot.sound]
+TransportContracts.scalar_prefix_counterexample : 2 * (1 - 2 * 0) + 2 * (1 / 2) * (0 - 1 / 2 * 1) = 3 / 2
+'TransportContracts.scalar_prefix_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+TransportContracts.scalar_suffix_correction : 1 / 2 * (1 - 2 * 0) + (0 - 1 / 2 * 1) = 0
+'TransportContracts.scalar_suffix_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+TransportContracts.positive_damping_bound_not_contracting (L eta : ℝ) (hL : 1 ≤ L) (heta : 0 ≤ eta) :
+  1 ≤ 1 - eta + eta * L
+'TransportContracts.positive_damping_bound_not_contracting' depends on axioms: [propext, Classical.choice, Quot.sound]
+TransportContracts.expanding_scalar_damping (eta : ℝ) (heta : 0 < eta) : 1 < 1 - eta + eta * 2
+'TransportContracts.expanding_scalar_damping' depends on axioms: [propext, Classical.choice, Quot.sound]
+TransportContracts.trace_preserving_composite_nonzero.{u_1} {V : Type u_1} [AddCommGroup V] [Module ℝ V]
+  (trace : V →ₗ[ℝ] ℝ) (A B : Module.End ℝ V) (hA : ∀ (x : V), trace (A x) = trace x)
+  (hB : ∀ (x : V), trace (B x) = trace x) (rho : V) (hnormalized : trace rho = 1) : B * A ≠ 0
+'TransportContracts.trace_preserving_composite_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]

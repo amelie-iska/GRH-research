@@ -287,3 +287,13 @@ outputs/datasets/synthetic-training-20261104/
 
 # Versioned public-site staging bundles and separate publisher Git metadata.
 outputs/publication/site-*/
+
+# Research extension runtime and transfer files
+.venv-quantum/
+/quantum-*.log
+*.transfer.b64
+*.transfer.tar.gz
+extension/manuscript/.texbuild/
+
+# Local second-pass source-reading cache; bibliographic hashes are retained.
+research/second-pass/

@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "compiler": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "source": "extension/lean/TransportContracts.lean",
+  "source_sha256": "8c2cf4e173469c228d2abf4eb20990209b078e8e240e25cc5769bff265848ed1",
+  "declarations": [
+    "TransportContracts.suffix_transport_telescope",
+    "TransportContracts.closed_path_residual",
+    "TransportContracts.flat_closed_path_zero",
+    "TransportContracts.two_arrow_transport",
+    "TransportContracts.fixed_vector_closed_path_zero",
+    "TransportContracts.scalar_counterexample_flat",
+    "TransportContracts.scalar_prefix_counterexample",
+    "TransportContracts.scalar_suffix_correction",
+    "TransportContracts.positive_damping_bound_not_contracting",
+    "TransportContracts.expanding_scalar_damping",
+    "TransportContracts.trace_preserving_composite_nonzero"
+  ],
+  "axioms_by_declaration": {
+    "TransportContracts.suffix_transport_telescope": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TransportContracts.closed_path_residual": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TransportContracts.flat_closed_path_zero": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TransportContracts.two_arrow_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TransportContracts.fixed_vector_closed_path_zero": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TransportContracts.scalar_counterexample_flat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TransportContracts.scalar_prefix_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TransportContracts.scalar_suffix_correction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TransportContracts.positive_damping_bound_not_contracting": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TransportContracts.expanding_scalar_damping": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "TransportContracts.trace_preserving_composite_nonzero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "unexpected_axioms": {},
+  "log_sha256": "8bacc96673a30022a070d9126669316aefd8feeb0b83a2396b0e1a6ea387e802",
+  "checker_sha256": "4295be881898b3a9f2c0c386a6e8a14af0b22b811f24833f8da604331f63b753",
+  "scope": "Fresh kernel elaboration and axiom inventory for exactly the listed finite declarations."
+}

@@ -1,0 +1,1381 @@
+\chapter{Orders as integral arithmetic structures}
+\label{ch:orders}
+
+\section{The role of the two volumes}
+
+The first attached volume is \emph{Lattices over Orders I}, by Klaus W.
+Roggenkamp and Verena Huber-Dyson, published in 1970 as volume 115 of
+\emph{Lecture Notes in Mathematics}. Its five chapters develop modules,
+homological algebra, Morita equivalence and separability, maximal orders,
+and the Higman ideal with extensions of lattices. The second volume is
+by Roggenkamp. The first volume is particularly useful here because it
+explains precisely which integral information disappears upon extending
+scalars to a field. This is the information that must be retained when
+one passes between elliptic curves, ideals, finite modules, and geometric
+realizations of arithmetic lattices. Our notation uses ordinary
+left-to-right function application, whereas the book often places
+homomorphisms opposite the scalars. This change of convention must be
+remembered when comparing endomorphism rings and opposite rings
+\cite{RoggenkampHuberDyson1970}.
+
+The corrections printed at the end of Volume II are part of the
+source, not optional editorial detail. They add a restriction
+excluding totally definite quaternion matrix components to a
+cancellation assertion in the introduction, and replace an invalid
+torsion-decomposition step in the proof at chapter-page IV.13 by
+an argument using completion and evaluation maps. We use those
+corrections when interpreting the structural results; the elementary
+proofs below do not depend on the faulty decomposition
+\cite[Corrections Vol.~I]{v2Roggenkamp1970II}.
+
+There is a genuine common language, but not a common theorem that
+automatically solves all of the problems in this monograph. An order is
+an integral algebra. A lattice over it is a module satisfying a finiteness
+and torsion condition. A Euclidean lattice carries additional metric
+data. A lattice in a lattice gauge theory is a discretization of space
+or spacetime. These objects can interact through explicit constructions,
+but the shared word ``lattice'' supplies no such construction by itself.
+The present chapter builds the arithmetic objects and specifies the
+extra structure required at each subsequent step.
+
+The scope of the proofs is deliberate. Elementary statements used in
+the later bridges are proved below. Structural theorems whose proofs
+require a substantial additional theory are identified as external
+results. A proof over an arbitrary field, a theorem over a Dedekind
+domain, and a theorem about a positive Hilbert-space operator have
+different hypotheses; replacing one of those settings by another is
+itself a mathematical obligation.
+
+\section{Full lattices and orders}
+
+Throughout this chapter, let $R$ be a Dedekind domain with fraction
+field $K$, and let $A$ be a finite-dimensional separable $K$-algebra.
+An $R$-algebra structure on $A$ is understood through the central
+embedding $R\subseteq K\subseteq A$. The number-field example is
+$R=\mathcal O_K$, but many elementary arguments need only that $R$ be
+a noetherian domain. Unless explicitly stated otherwise, modules are
+unital and finitely generated.
+
+\begin{definition}[Arithmetic lattice and order]
+An $R$-lattice is a finitely generated torsion-free $R$-module. If $V$
+is a finite-dimensional $K$-vector space, a full lattice in $V$ is an
+$R$-submodule $L\subseteq V$ satisfying $K L=V$ and the preceding
+finiteness condition. An $R$-order in $A$ is a subring
+$\Lambda\subseteq A$ containing $1_A$, which is a full $R$-lattice
+in $A$. A left $\Lambda$-lattice is a left $\Lambda$-module whose
+underlying $R$-module is an $R$-lattice.
+\end{definition}
+
+The word ``full'' refers to the specified ambient vector space. It
+does not mean that the lattice is free over $\Lambda$. Even its
+underlying $R$-module need not be free when $R$ is not a principal
+ideal domain. The basic Dedekind-domain theorem says that a finitely
+generated torsion-free $R$-module is projective. Projectivity over $R$
+does not imply projectivity over an arbitrary order $\Lambda$.
+This distinction is central to the first volume's treatment of
+lattices and extensions \cite[Chs.~I and IV]{RoggenkampHuberDyson1970}.
+
+\begin{proposition}[Common denominators]
+\label{prop:common-denominators}
+Let $L$ and $M$ be full $R$-lattices in the same finite-dimensional
+$K$-space $V$. There exist nonzero $r,s\in R$ such that
+$rL\subseteq M$ and $sM\subseteq L$. Consequently $L\cap M$ is
+full, and both $(L+M)/L$ and $(L+M)/M$ are finitely generated torsion
+$R$-modules.
+\end{proposition}
+
+\begin{proof}
+Choose finite generating sets $l_1,\ldots,l_a$ of $L$ and
+$m_1,\ldots,m_b$ of $M$. Since $KM=V$, each $l_i$ is a finite
+$K$-linear combination of the $m_j$. A common nonzero denominator
+for these finitely many coefficients gives $r\in R\setminus\{0\}$
+with $r l_i\in M$ for every $i$, hence $rL\subseteq M$.
+Interchanging the two lattices gives $s$. Thus $rL$ lies in
+$L\cap M$ and spans $V$, while $L\cap M$ is finitely generated
+because it is a submodule of the noetherian module $L$. The quotient
+$(L+M)/L$ is finitely generated and killed by $s$; the other quotient
+is killed by $r$.
+\end{proof}
+
+Over the ring of integers of a number field, a finitely generated
+torsion module is finite as a set. Over an arbitrary Dedekind domain,
+that last conclusion requires finite residue fields and must not be
+silently inserted. Even in the number-field case, finiteness gives no
+useful complexity bound until the denominators and their bit lengths
+are controlled.
+
+\begin{proposition}[A stable integral model]
+\label{prop:stable-model}
+If $V$ is a finite-dimensional left $A$-module and $\Lambda$ is an
+$R$-order in $A$, then $V$ contains a full left $\Lambda$-lattice.
+\end{proposition}
+
+\begin{proof}
+Choose a $K$-basis $v_1,\ldots,v_n$ of $V$ and put
+$L=\sum_{i=1}^n\Lambda v_i$. Multiplication by $\Lambda$ preserves
+$L$. If $a_1,\ldots,a_t$ generate $\Lambda$ over $R$, then the
+finitely many vectors $a_jv_i$ generate $L$ over $R$. As a submodule
+of a $K$-vector space, $L$ is torsion-free. Since $1\in\Lambda$,
+the vectors $v_i$ lie in $L$, so $KL=V$.
+\end{proof}
+
+This simple construction explains why rational representations admit
+integral models, while also explaining their nonuniqueness. Choosing a
+basis is not the same as classifying all stable lattices. The scalar
+extension functor $K\otimes_R-$ can send nonisomorphic lattices to
+isomorphic $A$-modules.
+
+\begin{example}[An order that retains a congruence]
+For a nonzero ideal $\mathfrak a\subseteq R$, consider
+\[
+ \Lambda_{\mathfrak a}=
+ \left\{\begin{pmatrix}a&b\\c&d\end{pmatrix}:
+ a,b,d\in R,\ c\in\mathfrak a\right\}\subseteq M_2(K).
+\]
+The lower-left entry of a product is $ca'+dc'$, which again belongs
+to $\mathfrak a$. Thus this is an order. Tensoring with $K$ removes
+the condition $c\in\mathfrak a$, giving all of $M_2(K)$. The
+congruence data remains relevant to integral module theory even
+though the ambient rational algebra is unchanged.
+\end{example}
+
+\section{Endomorphism orders and faithful models}
+
+\begin{proposition}[Endomorphisms of a full lattice]
+\label{prop:end-order}
+Let $L$ be a full $R$-lattice in $V$. Each $R$-linear endomorphism
+of $L$ extends uniquely to a $K$-linear endomorphism of $V$, and
+\[
+ \operatorname{End}_R(L)=
+ \{T\in\operatorname{End}_K(V):T(L)\subseteq L\}
+\]
+is an $R$-order in $\operatorname{End}_K(V)$.
+\end{proposition}
+
+\begin{proof}
+Torsion-freeness identifies $L$ with its image in $K\otimes_RL=V$.
+Tensoring an endomorphism with $K$ supplies the extension; uniqueness
+follows because $L$ spans $V$. The displayed set is closed under
+addition and composition and contains the identity. Since $L$ is a
+finite projective $R$-module, it is a summand of $R^N$ for some $N$.
+Its endomorphism module is therefore a summand of, in particular a
+finite submodule of, $\operatorname{Hom}_R(R^N,R^N)$, so it is
+finitely generated and torsion-free. Finally, if
+$T\in\operatorname{End}_K(V)$, common denominators for the images
+of finitely many generators of $L$ give nonzero $r\in R$ with
+$rT(L)\subseteq L$. Hence every $T$ belongs to
+$K\operatorname{End}_R(L)$.
+\end{proof}
+
+For a full lattice $I\subseteq A$, its two multiplier orders are
+\[
+ O_L(I)=\{a\in A:aI\subseteq I\},\qquad
+ O_R(I)=\{a\in A:Ia\subseteq I\}.
+\]
+The distinction matters in a quaternion algebra: a left ideal of
+$O$ usually has a different right order. A computation that changes
+the side without changing the convention can reverse composition or
+identify the wrong endomorphism ring.
+
+\begin{proposition}[Multiplier orders]
+Both $O_L(I)$ and $O_R(I)$ are $R$-orders in $A$.
+\end{proposition}
+
+\begin{proof}
+Consider $O_L(I)$. Left multiplication embeds $A$ into
+$\operatorname{End}_K(A)$, since an element acting as zero sends
+$1$ to zero. The inverse image of $\operatorname{End}_R(I)$ is
+therefore a torsion-free $R$-module, and it is finite because it is
+isomorphic to a submodule of the finite module
+$\operatorname{End}_R(I)$. It is a ring containing $1$. To prove
+fullness, choose any full lattice $L\subseteq A$. For finite
+generators of $L$ and $I$, clear the finitely many denominators
+needed to put each product into $I$. This gives nonzero $r\in R$
+such that $(rL)I\subseteq I$, so $rL\subseteq O_L(I)$. The same
+argument using right multiplication proves the other assertion.
+\end{proof}
+
+An arithmetic representation can now be studied through three
+related objects: its module $L$, the order acting on the left, and
+the commuting endomorphisms acting on the right. The first volume
+systematizes this viewpoint through generators and Morita theory
+\cite[Ch.~III]{RoggenkampHuberDyson1970}. One must nevertheless keep
+the integral module, not just its rational endomorphism algebra.
+For example, knowing that the latter is a quadratic field does not
+determine the conductor of the integral order.
+
+\section{Localization, support, and what local data detects}
+
+For a maximal ideal $\mathfrak p$ of $R$, write
+$R_{\mathfrak p}$ for the localization and
+$M_{\mathfrak p}=R_{\mathfrak p}\otimes_R M$. Write
+$\widehat R_{\mathfrak p}$ for the completion. These are distinct
+constructions. A statement proved for complete discrete valuation
+rings does not automatically hold for an uncompleted local ring.
+The first volume treats localization and completion separately
+\cite[Ch.~I, \S\S6--9]{RoggenkampHuberDyson1970}.
+
+\begin{lemma}[A local membership test]
+\label{lem:local-membership}
+Let $M$ be an $R$-module and $x\in M$. If the image of $x$ in
+$M_{\mathfrak p}$ is zero for every maximal ideal $\mathfrak p$,
+then $x=0$.
+\end{lemma}
+
+\begin{proof}
+Suppose $x\ne0$. Its annihilator
+$J=\{r\in R:rx=0\}$ is a proper ideal, hence is contained in
+a maximal ideal $\mathfrak p$. If $x/1=0$ in
+$M_{\mathfrak p}$, the definition of localization supplies
+$s\notin\mathfrak p$ with $sx=0$. This puts $s\in J\subseteq
+\mathfrak p$, a contradiction.
+\end{proof}
+
+\begin{proposition}[Equality from localized inclusions]
+If $L,M\subseteq V$ are lattices, then $L\subseteq M$ if and
+only if $L_{\mathfrak p}\subseteq M_{\mathfrak p}$ for every
+maximal ideal $\mathfrak p$. In particular, equality of the
+embedded local lattices implies $L=M$.
+\end{proposition}
+
+\begin{proof}
+One implication follows from functoriality. For the converse,
+apply Lemma~\ref{lem:local-membership} to the image of each
+$l\in L$ in $(L+M)/M$. Localization is exact, so all its
+localized images vanish.
+\end{proof}
+
+Equality of embedded lattices is stronger than abstract local
+isomorphism. To see why, let $R$ be a Dedekind domain with a
+nonprincipal invertible ideal $I$. For each $\mathfrak p$, the
+local ring $R_{\mathfrak p}$ is a discrete valuation ring and
+$I_{\mathfrak p}$ is a free module of rank one. Thus
+$I_{\mathfrak p}\simeq R_{\mathfrak p}$ for every prime. But
+$I\not\simeq R$ as an $R$-module: an isomorphism would send
+$1$ to a generator of $I$, making it principal. The missing data
+is the ideal class, an obstruction to making the local
+trivializations compatible globally.
+
+\begin{definition}[Genus]
+Two $\Lambda$-lattices are in the same genus if their completions
+are isomorphic as $\widehat\Lambda_{\mathfrak p}$-modules for
+every nonzero prime $\mathfrak p$. When a local-isomorphism version
+is used, its equivalence to this definition must be established in
+the applicable setting.
+\end{definition}
+
+Roggenkamp's 1969 work on irreducible lattices studies precisely the
+interaction between maximal overorders, commuting endomorphism
+orders, and classes within a genus. Its opening proposition also
+supplies a useful cancellation-of-denominators observation: if two
+lattices already carry the action of an overorder, a homomorphism
+linear over the smaller order is linear over the larger one
+\cite[Prop.~1]{Roggenkamp1969Irreducible}. We prove that observation
+in our conventions because it prevents several side-changing errors.
+
+\begin{lemma}[Linearity over an overorder]
+Let $\Lambda\subseteq\Gamma$ be $R$-orders in $A$, and let
+$M,N$ be $\Gamma$-lattices. Every $\Lambda$-linear map
+$f:M\to N$ is $\Gamma$-linear.
+\end{lemma}
+
+\begin{proof}
+By Proposition~\ref{prop:common-denominators}, there is nonzero
+$r\in R$ with $r\Gamma\subseteq\Lambda$. For
+$\gamma\in\Gamma$ and $m\in M$, $R$-linearity and
+$\Lambda$-linearity give
+\[
+ r f(\gamma m)=f((r\gamma)m)=(r\gamma)f(m)
+             =r\gamma f(m).
+\]
+Torsion-freeness of $N$ permits cancellation of $r$, giving
+$f(\gamma m)=\gamma f(m)$.
+\end{proof}
+
+The hypothesis that both modules carry the overorder action is
+essential. It does not assert that every lattice over $\Lambda$
+extends to a lattice over every maximal order containing $\Lambda$.
+Extending the action is itself a structural problem.
+
+\section{An explicit Morita equivalence}
+
+An equivalence of module categories is one of the strongest algebraic
+bridges available in order theory. It preserves module-theoretic
+information, but it does not preserve a metric that was never part
+of the category. The following elementary case makes both facts
+visible without invoking the general Morita theorem.
+
+\begin{theorem}[Matrix Morita equivalence]
+\label{thm:matrix-morita}
+Let $S$ be a unital ring, $B=M_n(S)$ with $n\ge1$, and
+$e=E_{11}$. The functors
+\[
+ F(M)=eM,\qquad G(N)=S^n\otimes_S N
+\]
+give inverse equivalences between left $B$-modules and left
+$S$-modules. Here $eBe\simeq S$, and $S^n$ is the usual
+$(B,S)$-bimodule of columns.
+\end{theorem}
+
+\begin{proof}
+For a left $B$-module $M$, define
+\[
+ \alpha_M:S^n\otimes_S eM\longrightarrow M,
+ \qquad e_i\otimes m\longmapsto E_{i1}m.
+\]
+The balancing relation is respected because multiplication by an
+entry of $S$ in a column agrees with the action of the corresponding
+corner matrix on $eM$. An inverse is
+\[
+ \beta_M(m)=\sum_{i=1}^n e_i\otimes E_{1i}m.
+\]
+Each $E_{1i}m$ lies in $eM$. The identities
+$\sum_iE_{i1}E_{1i}=\sum_iE_{ii}=1$ give
+$\alpha_M\beta_M=1_M$. On a generator $e_j\otimes m$,
+$\beta_M\alpha_M$ equals
+$\sum_i e_i\otimes E_{1i}E_{j1}m=e_j\otimes m$,
+since $E_{11}m=m$. The maps commute with module homomorphisms and
+$\alpha_M$ is $B$-linear, as is checked on matrix units. Finally,
+$e(S^n\otimes_SN)$ consists of the first-coordinate copy of $N$,
+giving a natural isomorphism $FG(N)\simeq N$. These natural
+isomorphisms prove the equivalence.
+\end{proof}
+
+If $S$ is an $R$-order, these functors restrict to the appropriate
+finite $R$-lattices: taking a direct summand preserves finite
+generation and torsion-freeness, and $G$ is a finite direct sum on
+underlying $R$-modules. More general Morita equivalences replace
+$S^n$ by a finitely generated projective generator, or
+\emph{progenerator}; their treatment is a central component of
+Roggenkamp and Huber-Dyson's first volume
+\cite[Ch.~III, \S\S1--2]{RoggenkampHuberDyson1970}.
+
+To connect this with complexes, apply $F$ degree by degree. Since
+$F$ is exact, kernels and images are preserved up to canonical
+isomorphism, and therefore
+\[
+ H^i(F(C^\bullet))\simeq F(H^i(C^\bullet)).
+\]
+This is a categorical statement about homology. It provides no
+identity between spectra of analytic Laplacians placed on the two
+complexes after choosing unrelated inner products.
+
+\begin{example}[The missing metric]
+The abelian groups $\mathbb Z^2$ with quadratic forms
+$Q_1(x,y)=x^2+y^2$ and
+$Q_T(x,y)=T^2x^2+T^{-2}y^2$, $T>0$, are identical as
+$\mathbb Z$-modules. Their covolumes in the corresponding
+Euclidean realizations are both one, but their shortest nonzero
+lengths are $1$ and $\min(T,T^{-1})$. No theorem of module
+equivalence can force those numbers to agree. Any proposed
+cryptographic or spectral transfer must additionally control the
+chosen form and the distortion of the transporting maps.
+\end{example}
+
+\section{Trace pairings, dual lattices, and discriminants}
+
+Let $t:A\to K$ be a $K$-linear functional such that
+$\langle x,y\rangle=t(xy)$ is nondegenerate and
+$t(xy)=t(yx)$. Important examples are the field trace in a
+separable field extension and the reduced trace in a central simple
+algebra. We explicitly assume $t(\Lambda)\subseteq R$ whenever
+integrality of a pairing on $\Lambda$ is used. The distinction
+between an ordinary matrix trace and a reduced trace is relevant
+in positive characteristic.
+
+\begin{definition}[Trace dual]
+For a full lattice $L\subseteq A$, define
+\[
+ L^{\#}=\{x\in A:t(xL)\subseteq R\}.
+\]
+When $R=\mathbb Z$, $A=K$ is a number field, and
+$L=\mathcal O_K$, the trace dual is the inverse different,
+also called the codifferent.
+\end{definition}
+
+\begin{proposition}[Trace duality]
+\label{prop:trace-dual}
+The lattice $L^{\#}$ is naturally isomorphic to
+$\operatorname{Hom}_R(L,R)$ under $x\mapsto(y\mapsto t(xy))$.
+It is full and $(L^{\#})^{\#}=L$.
+\end{proposition}
+
+\begin{proof}
+Nondegeneracy identifies $A$ with $\operatorname{Hom}_K(A,K)$.
+Every $R$-linear functional $L\to R$ extends uniquely to a
+$K$-linear functional on $KL=A$, so the displayed map is a
+bijection onto $\operatorname{Hom}_R(L,R)$. The latter is a
+finite projective module of the same rank as $L$, proving fullness.
+Since finite projective modules are canonically isomorphic to their
+double duals, applying the identification twice gives the final
+equality inside $A$. The elementary double-dual statement follows
+first for $R^n$ by coordinates and then for its direct summands.
+\end{proof}
+
+There is a bimodule structure compatible with this identification:
+if $\phi\in\operatorname{Hom}_R(\Lambda,R)$, put
+$(a\phi b)(x)=\phi(bxa)$. Cyclicity of the trace converts this
+into left and right multiplication on $\Lambda^{\#}$.
+The trace dual need not be a ring. Treating it as an overorder
+without checking multiplicative closure would confuse a dual
+module with an algebra.
+
+When $R=\mathbb Z$ and $L$ has basis $b_1,\ldots,b_d$, its trace
+Gram matrix is $G=(t(b_ib_j))_{ij}$. In these coordinates,
+$L^{\#}$ has coordinate module $G^{-1}\mathbb Z^d$; here
+symmetry of $G$ follows from the assumption on $t$. If the trace
+pairing is integral on $L$, then
+\[
+ [L^{\#}:L]=|\det G|.
+\]
+This equality follows by multiplying coordinates by $G$: the
+quotient is isomorphic to $\mathbb Z^d/G\mathbb Z^d$, whose
+order is the absolute determinant. The determinant formula is
+understood for a nondegenerate pairing; a singular Gram matrix
+does not define a finite dual quotient.
+
+\begin{proposition}[Change of lattice and discriminant]
+Let $L\subseteq M$ be full $\mathbb Z$-lattices in $A$ of finite
+index $h$. Then
+\[
+ \operatorname{disc}_t(L)=h^2\operatorname{disc}_t(M).
+\]
+\end{proposition}
+
+\begin{proof}
+If $C\in M_d(\mathbb Z)$ expresses a basis of $L$ in a basis
+of $M$, their Gram matrices satisfy $G_L=C^{\mathsf T}G_MC$.
+Taking determinants gives
+$\det G_L=(\det C)^2\det G_M$. The index is
+$|\det C|$, yielding the formula.
+\end{proof}
+
+This is one of the cleanest quantitative bridges in the subject.
+The underlying change of integral structure is measured by an
+index; the bilinear invariant changes by its square. Yet the
+discriminant alone does not determine the shortest vector or the
+complexity of a search problem. Different positive forms can share
+a determinant and have very different minima.
+
+\section{From arithmetic lattices to Euclidean geometry}
+
+For a number field $K$ with $r_1$ real embeddings and $r_2$ pairs
+of complex embeddings, the Minkowski embedding sends $x$ to
+\[
+ \sigma(x)=\bigl(\sigma_1(x),\ldots,\sigma_{r_1}(x),
+ \sqrt2\operatorname{Re}\tau_1(x),
+ \sqrt2\operatorname{Im}\tau_1(x),\ldots\bigr)
+ \in\mathbb R^{r_1+2r_2}.
+\]
+The factor $\sqrt2$ is a convention that makes the squared norm
+$\sum_i|\sigma_i(x)|^2+2\sum_j|\tau_j(x)|^2$. The real-vector
+space isomorphism
+$K\otimes_{\mathbb Q}\mathbb R\simeq
+\mathbb R^{r_1}\times\mathbb C^{r_2}$ makes the image of any full
+$\mathbb Z$-lattice discrete and cocompact. A different coordinate
+basis describes the same lattice, whereas a different positive form
+changes the geometry.
+
+The field trace $\operatorname{Tr}_{K/\mathbb Q}(xy)$ is
+nondegenerate, but it need not be positive definite. In a totally
+imaginary quadratic field, $\operatorname{Tr}(x\bar x)$ supplies
+a positive form, with a specific use of complex conjugation. In a
+general number field, the embedding-based Euclidean form is the
+safe uniform construction. Writing a trace expression without
+specifying the involution can inadvertently replace a positive
+form by an indefinite one.
+
+\begin{proposition}[When a transport controls minima]
+Let $T:V\to W$ be a linear isomorphism of finite-dimensional
+real inner-product spaces with $\dim V>0$, and suppose
+$a\|v\|\le\|Tv\|\le b\|v\|$ for all $v$, with
+$0<a\le b$. For a full Euclidean lattice $L\subseteq V$,
+\[
+ a\lambda_1(L)\le\lambda_1(TL)\le b\lambda_1(L),
+\]
+where $\lambda_1$ is the length of a shortest nonzero vector.
+\end{proposition}
+
+\begin{proof}
+The lower bound follows by applying the lower inequality to every
+nonzero lattice vector and taking the minimum. The upper bound
+follows by applying the upper inequality to a vector realizing
+$\lambda_1(L)$. Such a vector exists because a discrete lattice
+has only finitely many points in any bounded ball.
+\end{proof}
+
+This proof also indicates what a useful algorithmic reduction would
+need: a computable map, polynomially bounded bit complexity, and a
+controlled ratio $b/a$. An abstract isomorphism of modules provides
+none of these quantitative guarantees. They must be proved for the
+specific encoding and norm used by a cryptographic problem.
+
+\section{Quaternion orders as four-dimensional arithmetic}
+
+Over a field $K$ of characteristic different from two, for $a,b\in K^\times$ a quaternion
+algebra $(a,b)_K$ has basis $1,i,j,ij$ with
+$i^2=a$, $j^2=b$, and $ji=-ij$. The standard involution sends
+\[
+ x=x_0+x_1i+x_2j+x_3ij\quad\hbox{to}\quad
+ \bar x=x_0-x_1i-x_2j-x_3ij.
+\]
+Its reduced trace and norm are
+\[
+ \operatorname{trd}(x)=x+\bar x=2x_0,\qquad
+ \operatorname{nrd}(x)=x\bar x
+  =x_0^2-a x_1^2-b x_2^2+ab x_3^2.
+\]
+The presentation is a convenient coordinate system, not a guarantee
+that the displayed $\mathbb Z$-span is maximal when $K=\mathbb Q$.
+
+\begin{proposition}[Multiplicativity of the quaternion norm]
+For $x,y$ in a quaternion algebra,
+$\operatorname{nrd}(xy)=\operatorname{nrd}(x)
+\operatorname{nrd}(y)$.
+\end{proposition}
+
+\begin{proof}
+The defining relations give
+$\overline{xy}=\bar y\bar x$. As $y\bar y$ is a scalar,
+\[
+ (xy)\overline{xy}=xy\bar y\bar x
+ =\operatorname{nrd}(y)x\bar x
+ =\operatorname{nrd}(y)\operatorname{nrd}(x).
+\]
+\end{proof}
+
+For the real Hamilton algebra $\mathbb H=(-1,-1)_{\mathbb R}$,
+the reduced norm is the ordinary sum of four squares. A definite
+rational quaternion algebra becomes $\mathbb H$ after tensoring
+with $\mathbb R$, so a full order is a positive four-dimensional
+Euclidean lattice after choosing coordinates. The three-dimensional
+trace-zero space is useful for visualizing ternary norm forms. A
+three-dimensional projection of the full four-dimensional lattice
+can hide distinct points and shorten projected vectors; it must
+not be used as a shortest-vector certificate.
+
+Left and right orders of a quaternion ideal describe how its two
+ends act. Multiplication of ideals is compatible only when those
+ends match. If $I$ is an $(O_1,O_2)$-bimodule and $J$ is an
+$(O_2,O_3)$-bimodule, then $I\otimes_{O_2}J$ is an
+$(O_1,O_3)$-bimodule. The multiplication map from this tensor
+product into the product lattice $IJ$ requires its own hypotheses
+to be an isomorphism; it is an isomorphism in the invertible-ideal
+setting used for Morita transport.
+
+\section{Maximality, separability, and their limits}
+
+\begin{definition}
+An order is maximal if it is not properly contained in any other
+$R$-order in the same $K$-algebra. An $R$-algebra $\Lambda$ is
+separable if it is projective as a module over
+$\Lambda^e=\Lambda\otimes_R\Lambda^{\mathrm{op}}$, with the
+action $(a\otimes b^{\mathrm{op}})x=axb$.
+\end{definition}
+
+The separability of $A$ over $K$ does not imply the separability of
+an integral order over $R$. Ramification is an obstruction.
+Roggenkamp's short paper \emph{A Remark on Separable Orders}
+characterizes separable orders over rings of integers using
+maximality together with unramified conditions on the centers and
+the simple algebra components. This result is a useful warning:
+``maximal'' and ``separable over the base ring'' cannot be used
+interchangeably \cite{Roggenkamp1969Separable}.
+
+For the main arithmetic setting, the first volume develops the
+existence and local structure of maximal orders in separable
+algebras, and their relationship with progenerators
+\cite[Ch.~IV]{RoggenkampHuberDyson1970}. Applying those results to
+an algorithm requires a representation of the order, arithmetic in
+its coefficient ring, and a procedure for recognizing membership.
+The abstract existence theorem does not itself construct a basis
+with useful complexity guarantees.
+
+There is also a conceptual boundary worth stating precisely. An
+order can support a category of modules, a Grothendieck group of
+projectives, and finite complexes. Those are algebraic invariants.
+An elliptic operator requires a smooth manifold, vector bundles,
+and a principal symbol satisfying an exactness or invertibility
+condition away from the zero cotangent vector. A quantum field
+theory requires further analytic and probabilistic data. The
+intervening structures are the subject of subsequent chapters;
+they cannot be inferred merely from the existence of a maximal
+order.
+
+\section{A finite certificate for maximal overorders}
+
+There is a useful elementary special case of the existence theory.
+Assume now $R=\mathbb Z$ and that $A$ carries the nondegenerate
+trace pairing used above, with the additional property that
+$t(\Gamma)\subseteq\mathbb Z$ for every order $\Gamma$ in $A$.
+This holds for the field trace on number fields and for reduced
+trace on rational quaternion algebras. The trace-integrality fact
+uses that an element of an order is integral and that the relevant
+trace of an integral element is an integer; it is part of the
+separable-algebra machinery in the first volume
+\cite[III, \S6; IV, Theorem~1.4]{RoggenkampHuberDyson1970}.
+
+\begin{proposition}[Bounding all overorders]
+If $\Lambda$ is an order and $\Gamma$ is an order containing it,
+then $\Lambda\subseteq\Gamma\subseteq\Lambda^{\#}$. In
+particular, there are only finitely many overorders of $\Lambda$,
+and at least one of them is maximal.
+\end{proposition}
+
+\begin{proof}
+For $\gamma\in\Gamma$ and $\lambda\in\Lambda$, their product
+belongs to $\Gamma$, so $t(\gamma\lambda)\in\mathbb Z$.
+This is exactly the condition $\gamma\in\Lambda^{\#}$.
+The quotient $\Lambda^{\#}/\Lambda$ is a finite abelian group.
+An intermediate lattice is determined by its subgroup in this
+quotient, and a finite group has finitely many subgroups.
+Overorders are a subset of those intermediate lattices; hence
+they form a finite nonempty partially ordered set. A maximal
+element $\Gamma$ of this set cannot have a proper overorder,
+because any such overorder would still contain $\Lambda$.
+\end{proof}
+
+This argument gives a finite verification strategy for small
+examples. Compute a trace-dual basis, enumerate the relevant
+finite quotient's subgroups, lift each subgroup to a lattice,
+and test that the lifted lattice contains the identity and is
+closed under multiplication. A multiplication test requires only
+the products of basis elements: bilinearity then covers every
+pair of elements. Each product can be expressed exactly in the
+candidate basis, and membership is equivalent to integral
+coordinates.
+
+The proposition is an existence and certification statement,
+not a polynomial-time maximal-order algorithm. The number of
+subgroups can be large, and the quotient size depends on the
+discriminant. A complexity theorem would have to control those
+quantities in terms of the bit length of the input. The general
+existence theorem in the book is IV.4.6; local detection of
+maximality is IV.4.8, and the hereditary property is IV.4.19
+\cite{RoggenkampHuberDyson1970}. These are separate theorems,
+not interchangeable definitions.
+
+\section{Averaging and integral extension obstructions}
+
+The first volume's final chapter studies projective homomorphisms
+and ideals that annihilate extensions. A finite-group example
+shows the mechanism directly and also explains why a denominator
+that is harmless over a field can matter over an integral base
+\cite[Ch.~V]{RoggenkampHuberDyson1970}.
+
+\begin{proposition}[An integral averaging lift]
+Let $G$ be a finite group, let $R$ be a commutative ring, and
+let
+\[
+ 0\longrightarrow N\longrightarrow M
+   \mathop{\longrightarrow}^{q} L\longrightarrow0
+\]
+be an exact sequence of left $R[G]$-modules that splits as a
+sequence of $R$-modules. Then there is an $R[G]$-linear map
+$T:L\to M$ with $qT=|G|\,1_L$.
+\end{proposition}
+
+\begin{proof}
+Choose an $R$-linear section $s:L\to M$ of $q$, and define
+\[
+ T(l)=\sum_{g\in G}g\,s(g^{-1}l).
+\]
+The map is $R$-linear. For $h\in G$, replacing $g$ by $hu$
+in the sum gives
+\[
+ T(hl)=\sum_{u\in G}hu\,s(u^{-1}l)=hT(l),
+\]
+so $T$ is $R[G]$-linear. Since $q$ is $G$-equivariant and
+$qs=1_L$, each summand satisfies
+$q(g\,s(g^{-1}l))=g(g^{-1}l)=l$. Summing gives
+$qT(l)=|G|l$.
+\end{proof}
+
+If $|G|$ is a unit in $R$, dividing $T$ by $|G|$ produces
+an equivariant section, so the original exact sequence splits
+as $R[G]$-modules. This is the averaging mechanism behind
+Maschke's theorem in the field case. If $|G|$ is not invertible,
+the proof still supplies a lift of a multiple of the identity,
+but not necessarily a section. This residual multiple is
+precisely the kind of information measured by annihilators of
+extension classes.
+
+For completeness, one can state the extension consequence
+without concealing the role of the lift. Pull the sequence back
+along the map $|G|1_L:L\to L$. The pullback module is
+\[
+ P=\{(m,l)\in M\oplus L:q(m)=|G|l\}.
+\]
+The map $l\mapsto(T(l),l)$ is an $R[G]$-linear section of
+$P\to L$. Thus this pullback extension is split. Under the
+standard identification of extension classes with
+$\operatorname{Ext}^1_{R[G]}(L,N)$, pullback by scalar
+multiplication is multiplication by that scalar, so $|G|$
+annihilates the extension class. The identification itself is
+developed in the book's Chapter II, \S5.
+
+The condition that the sequence split over $R$ holds in the
+arithmetic-lattice setting when $L$ is projective as an
+$R$-module. It need not hold for arbitrary $R$-modules. The
+argument therefore records its exact input rather than
+silently extending an assertion about lattices to all modules.
+
+\begin{example}[A denominator that cannot be removed]
+Let $k$ have characteristic $p$, and let $G=C_p$ have generator
+$g$. The two-dimensional representation with
+$g\mapsto\left(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\right)$
+is well-defined because $(1+N)^p=1$ when $N^2=0$.
+Its first-coordinate line is a trivial subrepresentation,
+and the quotient is also trivial. There is no invariant
+complement: a vector $(a,1)$ spanning a candidate complement
+is sent to $(a+1,1)$, which is not in its span. Thus the
+extension is nonsplit. Here $|G|=p=0$ in $k$, so the
+averaging proposition does not supply a nonzero multiple of
+the identity that can be inverted.
+\end{example}
+
+This example concerns an exact sequence and a representation.
+It does not assert a physical mass gap, nor a cryptographic
+hardness gap. Its contribution to the broader program is a
+precise obstruction: a rational or generic-fiber splitting
+can fail integrally at primes dividing a denominator. Such
+failure must be retained in any proposed bridge that uses
+integral complexes or reductions modulo primes.
+
+\chapter{Elliptic curves through their endomorphism lattices}
+\label{ch:elliptic-orders}
+
+\section{Two arithmetic questions attached to the same curve}
+
+An elliptic curve has a group of points and a ring of endomorphisms.
+These are different mathematical objects, and cryptographic problems
+can use either one. In conventional elliptic-curve cryptography, one
+usually fixes a large cyclic subgroup $\langle P\rangle$ of
+$E(\mathbb F_q)$ and studies the recovery of $d$ from $P$ and
+$[d]P$. In isogeny constructions, one studies maps between curves,
+endomorphism rings, or actions of ideal class groups on suitable
+families. The theory of orders speaks especially directly to the
+second collection of objects. It also clarifies arithmetic used in
+point counting and efficient scalar multiplication, but a description
+of an endomorphism ring is not in itself a discrete-logarithm algorithm.
+
+To keep these roles separate, write
+$\operatorname{End}_{k}(E)$ for maps defined over $k$,
+$\operatorname{End}_{\bar k}(E)$ for geometric endomorphisms,
+and $\operatorname{End}^{0}_{k}(E)=
+\operatorname{End}_{k}(E)\otimes_{\mathbb Z}\mathbb Q$.
+Over finite fields, confusing the first two rings can turn a
+quadratic order into a claimed quaternion order with the wrong
+field of definition. Sutherland explicitly emphasizes this
+distinction in his treatment of ordinary and supersingular curves
+\cite{Sutherland2023Ordinary}.
+
+\section{Complex tori and scalar endomorphisms}
+
+Let $L=\mathbb Z\omega_1+\mathbb Z\omega_2\subseteq\mathbb C$
+with $\omega_1,\omega_2$ linearly independent over $\mathbb R$.
+The quotient $\mathbb C/L$ is a compact one-dimensional complex
+Lie group. The analytic uniformization theorem identifies such
+groups with complex elliptic curves; that theorem is an external
+input here. The following description of their homomorphisms has
+a short direct proof once the elementary lifting property of the
+covering map $\mathbb C\to\mathbb C/L$ is available.
+
+\begin{proposition}[Homomorphisms of complex tori]
+\label{prop:torus-hom}
+Every holomorphic group homomorphism
+$f:\mathbb C/L\to\mathbb C/M$ is induced by a unique scalar
+$\alpha\in\mathbb C$ satisfying $\alpha L\subseteq M$.
+It is an isomorphism if and only if $\alpha L=M$.
+\end{proposition}
+
+\begin{proof}
+Lift $f$ to a holomorphic map $F:\mathbb C\to\mathbb C$ with
+$F(0)=0$. The group-homomorphism property implies
+$F(z+w)-F(z)-F(w)\in M$. This is a continuous function of
+$(z,w)$ taking values in the discrete set $M$, so it is constant;
+at $(0,0)$ it is zero. Thus $F$ is additive. Differentiating
+$F(z+w)=F(z)+F(w)$ with respect to $w$ at zero gives
+$F'(z)=F'(0)=\alpha$. Therefore $F(z)=\alpha z$.
+For $\lambda\in L$, the points $z$ and $z+\lambda$ have the
+same image in the source torus, so $\alpha\lambda\in M$.
+Conversely, that containment makes $z+L\mapsto\alpha z+M$
+well-defined and holomorphic. A nonzero scalar has an inverse
+on the quotient exactly when $\alpha L=M$. The lift fixing
+zero is unique, so $\alpha$ is unique.
+\end{proof}
+
+In particular,
+\[
+ \operatorname{End}(\mathbb C/L)
+   =O(L):=\{\alpha\in\mathbb C:\alpha L\subseteq L\}.
+\]
+This is the multiplier-order construction from the previous chapter,
+now restricted to scalar multiplication on the plane. The
+connection is literal: a holomorphic map of the torus is recorded
+by an arithmetic operation preserving its period lattice.
+
+\begin{theorem}[The elementary complex-multiplication dichotomy]
+\label{thm:cm-dichotomy}
+For a full lattice $L\subseteq\mathbb C$, either $O(L)=\mathbb Z$
+or $O(L)$ is an order in an imaginary quadratic field.
+\end{theorem}
+
+\begin{proof}
+Multiplication by $\alpha\in O(L)$ is represented in a
+$\mathbb Z$-basis of $L$ by a matrix $A_\alpha\in M_2(\mathbb Z)$.
+Its real-linear eigenvalues, after complexification, are
+$\alpha$ and $\bar\alpha$. Consequently
+$\alpha$ satisfies
+$X^2-\operatorname{tr}(A_\alpha)X+\det A_\alpha=0$.
+If $\alpha$ is real, multiplication on the underlying real plane
+is $\alpha$ times the identity in every real basis. Its matrix
+entries are integral, so $\alpha\in\mathbb Z$.
+
+If all elements are real, we have obtained $O(L)=\mathbb Z$.
+Otherwise choose nonreal $\alpha\in O(L)$. Its quadratic
+polynomial is irreducible over $\mathbb Q$, since a real quadratic
+polynomial with a rational root has both roots real. Put
+$K=\mathbb Q(\alpha)$, an imaginary quadratic field. Every
+$\beta\in O(L)$ commutes with $\alpha$, so $A_\beta$ lies in
+the centralizer of $A_\alpha$ in $M_2(\mathbb Q)$. This
+centralizer is $\mathbb Q[A_\alpha]$: choose any nonzero
+$v\in\mathbb Q^2$; $v,A_\alpha v$ form a basis, and a
+commuting operator is uniquely determined by its value on $v$.
+Hence the centralizer has dimension two, and it already contains
+the two-dimensional algebra $\mathbb Q[A_\alpha]$.
+
+It follows that every $\beta$ belongs to $K$. The additive group
+$O(L)$ embeds in $M_2(\mathbb Z)$ and is therefore finitely
+generated. Its rational span is $K$, since it contains $1$ and
+$\alpha$. Thus it is a full $\mathbb Z$-lattice and a ring
+containing $1$, which is exactly an order in $K$.
+\end{proof}
+
+This argument proves an algebraic classification of scalar
+endomorphisms. It does not prove that every finite-field elliptic
+curve can be lifted with all of its geometric endomorphisms to
+characteristic zero. In particular, a quaternion algebra cannot
+embed into the scalar algebra $\mathbb C$. The supersingular
+case below therefore needs a different geometric setting.
+
+\section{Quadratic orders and the conductor}
+
+Let $K$ be a quadratic number field with ring of integers
+$\mathcal O_K=\mathbb Z+\mathbb Z\omega$. A subring finite over
+$\mathbb Z$ consists of algebraic integers, so every order
+$O\subseteq K$ is contained in $\mathcal O_K$. The following
+description gives the integral datum that is lost on passing from
+$O$ to $O\otimes\mathbb Q$.
+
+\begin{theorem}[Quadratic conductor classification]
+\label{thm:quadratic-conductor}
+Every order in $K$ has the form
+\[
+ O_f=\mathbb Z+f\mathcal O_K
+     =\mathbb Z+\mathbb Z(f\omega)
+\]
+for a unique integer $f\ge1$. Its conductor
+$\{x\in\mathcal O_K:x\mathcal O_K\subseteq O_f\}$ equals
+$f\mathcal O_K$, and
+$\operatorname{disc}(O_f)=f^2\operatorname{disc}(\mathcal O_K)$.
+\end{theorem}
+
+\begin{proof}
+Since $\mathbb Z\subseteq O$, the subgroup
+$O/\mathbb Z$ of $\mathcal O_K/\mathbb Z\simeq\mathbb Z$
+is $f\mathbb Z$ for a unique $f\ge1$; it is nonzero because
+$O$ has rank two. Therefore $O=\mathbb Z+\mathbb Z(f\omega)$.
+Conversely, if $\omega^2=t\omega-n$ with $t,n\in\mathbb Z$,
+then
+$(f\omega)^2=ft(f\omega)-f^2n$, proving closure under
+multiplication for every $f$.
+
+Certainly $f\mathcal O_K$ lies in the conductor. Write an element
+of the conductor as $x=a+b\omega$. Since $x=x\cdot1\in O_f$,
+we have $f\mid b$. Since
+$x\omega=-bn+(a+bt)\omega$ also lies in $O_f$, we have
+$f\mid a+bt$, hence $f\mid a$. Thus
+$x\in f\mathcal O_K$, giving the reverse containment.
+The change from the basis $(1,\omega)$ to $(1,f\omega)$ has
+determinant $f$, so the discriminant statement follows from the
+change-of-lattice formula proved in the previous chapter.
+\end{proof}
+
+\begin{example}[A noninvertible ideal in a nonmaximal order]
+Let $O=\mathbb Z[2i]=\mathbb Z+2\mathbb Z i$ and
+$I=2\mathbb Z[i]$. Then $I$ is an $O$-ideal and
+$O(I)=\mathbb Z[i]$, which strictly contains $O$. If $I$ were
+invertible as an $O$-ideal with inverse $J$, the containment
+$xI\subseteq I$ would imply
+$xO=xIJ\subseteq IJ=O$, hence $x\in O$. The element
+$i\in O(I)\setminus O$ contradicts this. Thus the ideal is
+not invertible over $O$, despite being a valid full
+arithmetic lattice.
+\end{example}
+
+This example pinpoints a necessary qualification in class-group
+arguments. One cannot form a group from all nonzero ideals of an
+arbitrary order merely by declaring multiplication. The invertible
+fractional ideals do form a group; the noninvertible ideals are
+additional module-theoretic data.
+
+\section{Ideal classes as a torsor of elliptic curves}
+
+Let $O$ be an imaginary quadratic order. Denote by
+$\operatorname{Pic}(O)$ the group of invertible fractional
+$O$-ideals modulo principal fractional ideals. For an invertible
+ideal $I$, its multiplier ring is $O$ by the argument in the
+preceding example, so $\mathbb C/I$ has endomorphism ring $O$.
+The usual complex-multiplication correspondence identifies the
+proper ideal classes with the corresponding complex elliptic curves;
+the general correspondence is an external theorem, while the
+following action on invertible ideal lattices is elementary
+\cite{Sutherland2023CMTorsor}.
+
+\begin{proposition}[The ideal-class torsor]
+On homothety classes of invertible fractional $O$-ideals, the rule
+\[
+ [\mathfrak a]\cdot[I]=[\mathfrak a^{-1}I]
+\]
+defines a free and transitive action of $\operatorname{Pic}(O)$.
+\end{proposition}
+
+\begin{proof}
+Changing $\mathfrak a$ or $I$ by a nonzero scalar changes
+$\mathfrak a^{-1}I$ by a nonzero scalar, so the rule is
+well-defined. Multiplication of ideals is associative and
+commutative, so it gives a group action. If
+$[\mathfrak a^{-1}I]=[I]$, multiply the equality of ideal classes
+by $[I]^{-1}$ to get $[\mathfrak a]=[O]$; thus the action is
+free. Given $[I]$ and $[J]$, the class
+$[\mathfrak a]=[I][J]^{-1}$ satisfies
+$[\mathfrak a^{-1}I]=[J]$, proving transitivity.
+\end{proof}
+
+A torsor is a set with a free transitive group action, not a group
+with a specified identity. Choosing a base curve identifies its
+isomorphism classes with a class group abstractly. That choice
+does not automatically make discrete logarithms, ideal recovery,
+or group multiplication on curve encodings computationally easy.
+In algorithmic discussions, this distinction separates an efficient
+group action from an efficiently represented group.
+
+For an integral invertible ideal $\mathfrak a\subseteq O$,
+$I\subseteq\mathfrak a^{-1}I$, and the quotient map induces an
+isogeny of complex tori
+\[
+ \phi_{\mathfrak a}:\mathbb C/I\longrightarrow
+ \mathbb C/(\mathfrak a^{-1}I).
+\]
+Its kernel is exactly the finite group
+$\mathfrak a^{-1}I/I$. This follows by testing which cosets
+$z+I$ become zero in the target. For a principal ideal
+$(\alpha)$, the kernel size is
+$[I:\alpha I]$, equal to the absolute determinant of
+multiplication by $\alpha$ and hence to
+$|N_{K/\mathbb Q}(\alpha)|$. The standard general formula is
+$\deg\phi_{\mathfrak a}=[O:\mathfrak a]$ for invertible
+integral ideals; its extension from principal to invertible
+ideals uses local freeness and multiplication of ideal norms
+\cite{Sutherland2023ModularCurves}.
+
+\begin{example}[A visible endomorphism of the square torus]
+For $I=\mathbb Z[i]$, multiplication by $1+i$ has matrix
+\[
+ \begin{pmatrix}1&-1\\1&1\end{pmatrix}
+\]
+in the basis $(1,i)$. Its determinant is two. It therefore gives
+an isogeny of degree two and a kernel of order two. The matrix
+also shows that multiplication rotates by $\pi/4$ and scales
+length by $\sqrt2$. This is an example where the integral
+operation, the geometric norm, and the degree can all be compared
+directly. The comparison works because the metric and embedding
+have been explicitly supplied.
+\end{example}
+
+\section{Finite-field endomorphisms and Frobenius}
+
+The geometric classification is a foundational external theorem:
+in characteristic zero an elliptic curve has geometric endomorphism
+ring $\mathbb Z$ or an imaginary quadratic order. Over an algebraic
+closure of a finite field, an ordinary elliptic curve has an
+imaginary quadratic endomorphism order, while a supersingular curve
+has a maximal order in the rational quaternion algebra ramified at
+$p$ and infinity. The degree is the reduced norm in the quaternion
+case. These statements require the theory of isogenies and cannot
+be deduced from the complex-torus argument alone
+\cite[Theorem~42.1.9]{Voight2021Supersingular}.
+
+If $E$ is defined over $\mathbb F_q$, its $q$-power Frobenius
+$\pi$ satisfies
+\[
+ \pi^2-[t]\pi+[q]=0,
+ \qquad t=q+1-\#E(\mathbb F_q),
+ \qquad |t|\le2\sqrt q.
+\]
+The characteristic equation and Hasse's bound are external inputs
+from elliptic-curve theory \cite{Sutherland2023Hasse,Sutherland2023EndAlgebras}.
+Once they are available, several useful arithmetic conclusions
+are immediate, and it is useful to isolate them from those inputs.
+
+\begin{proposition}[The Frobenius order]
+Suppose $E/\mathbb F_q$ is ordinary, and put
+$K=\mathbb Q(\pi)$. Then
+\[
+ \mathbb Z[\pi]\subseteq\operatorname{End}_{\mathbb F_q}(E)
+ \subseteq\operatorname{End}_{\overline{\mathbb F}_q}(E)
+ \subseteq\mathcal O_K.
+\]
+Moreover, if an intervening order $O$ has index
+$h=[O:\mathbb Z[\pi]]$, then
+$t^2-4q=h^2\operatorname{disc}(O)$.
+\end{proposition}
+
+\begin{proof}
+Frobenius and integer multiplications are defined over
+$\mathbb F_q$, giving the first inclusion. Extending the field
+of definition gives the second. The ordinary classification
+identifies the geometric endomorphism algebra with an imaginary
+quadratic field; it contains the nonrational Frobenius and is
+therefore $K$. Endomorphisms are integral, giving the final
+inclusion. The trace and norm of $\pi$ are $t$ and $q$.
+The trace Gram matrix in the basis $(1,\pi)$ is
+\[
+ \begin{pmatrix}2&t\\t&t^2-2q\end{pmatrix},
+\]
+whose determinant is $t^2-4q$. The index-squared discriminant
+formula now proves the assertion.
+\end{proof}
+
+This proposition provides an explicit bridge to the conductor
+classification. It constrains which orders can contain the
+Frobenius order. It does not determine which one is the full
+endomorphism ring without further information. Nor does knowing
+$\#E(\mathbb F_q)$ produce discrete logarithms in a large
+prime-order subgroup. Point counting and discrete logarithms
+ask different questions even though both use the same curve.
+
+\section{Tate modules as arithmetic lattices}
+
+Let $\ell\ne p$ be a prime. Over an algebraic closure,
+$E[\ell^n]$ is abstractly isomorphic to
+$(\mathbb Z/\ell^n\mathbb Z)^2$. The inverse limit under
+multiplication by $\ell$ is the Tate module
+\[
+ T_\ell(E)=\varprojlim_n E[\ell^n],
+\]
+a free $\mathbb Z_\ell$-module of rank two. Endomorphisms act
+on every torsion level and therefore on this inverse limit.
+This is a direct meeting of the completed-lattice
+theory in the first volume with elliptic-curve arithmetic.
+
+\begin{lemma}[Faithfulness on prime-to-characteristic torsion]
+If an endomorphism $\alpha$ annihilates $E[\ell^n]$ for every
+$n\ge1$, then $\alpha=0$.
+\end{lemma}
+
+\begin{proof}
+A nonzero endomorphism is a finite isogeny, so its kernel has at
+most $\deg\alpha$ geometric points. But $E[\ell^n]$ has
+$\ell^{2n}$ geometric points for every $n$. If all these groups
+lie in the kernel, their cardinalities eventually exceed
+$\deg\alpha$, a contradiction.
+\end{proof}
+
+Thus endomorphisms can be represented by compatible integral
+matrices on Tate modules. Obtaining a full description of the
+endomorphism ring from Galois-equivariant Tate-module maps is a
+deeper theorem of Tate, not merely the faithfulness lemma above
+\cite{Tate1966Endomorphisms}. The distinction mirrors the
+difference between an injective map into a matrix algebra and
+a theorem identifying its image.
+
+For supersingular $E$ with all geometric endomorphisms defined,
+the maximal order has $\mathbb Z$-rank four. Away from $p$, its
+completed algebra is split, and its action on prime-power torsion
+relates it to $M_2(\mathbb Z_\ell)$. At $p$, the algebra is a
+division quaternion algebra. The exceptional prime is not a
+minor implementation detail: the geometry of inseparable
+isogenies and the local ramification require a different
+description. This explains why replacing all local factors by
+the same $2\times2$ matrix model loses arithmetic information.
+
+\section{Quaternion ideals and the Deuring correspondence}
+
+Fix a supersingular curve $E_0/\overline{\mathbb F}_p$ and put
+$O=\operatorname{End}(E_0)$,
+$B=O\otimes_{\mathbb Z}\mathbb Q$. The Deuring correspondence
+relates supersingular elliptic curves to ideal lattices over $O$.
+Its module convention is crucial. The group
+$\operatorname{Hom}(E_0,E)$ is a \emph{right} $O$-module by
+precomposition:
+\[
+ f\cdot\alpha=f\circ\alpha.
+\]
+Postcomposition by an endomorphism of $E$ acts on the left.
+With suitable identifications in the common rational quaternion
+space, the Hom group becomes a full right $O$-ideal. In this
+convention the other endomorphism ring is its left multiplier
+order. The categorical correspondence is an external theorem;
+Voight's treatment develops its ideals and morphisms explicitly
+\cite[\S42.3]{Voight2021Supersingular}.
+
+The next elementary lemma makes the multiplier identification
+transparent once the correspondence has supplied the ideal.
+
+\begin{lemma}[Endomorphisms of a right ideal lattice]
+\label{lem:right-ideal-end}
+Let $O$ be an order in a quaternion algebra $B$, and let
+$I\subseteq B$ be a full right $O$-ideal. Then
+\[
+ \operatorname{End}_O(I)\simeq O_L(I).
+\]
+The map sends $a\in O_L(I)$ to left multiplication by $a$.
+\end{lemma}
+
+\begin{proof}
+Left multiplication preserves $I$ exactly for elements of
+$O_L(I)$ and commutes with right multiplication by $O$, so
+the map is well-defined. It is injective because $I$ spans $B$.
+For surjectivity, extend $f\in\operatorname{End}_O(I)$ to a
+$\mathbb Q$-linear map $f_{\mathbb Q}:B\to B$. Since $O$
+spans $B$, the extension is right $B$-linear. A right
+$B$-linear endomorphism of $B$ is left multiplication by
+$a=f_{\mathbb Q}(1)$, because
+$f_{\mathbb Q}(x)=f_{\mathbb Q}(1\cdot x)=ax$.
+Its preservation of $I$ says $a\in O_L(I)$. Composition of
+left multiplications agrees with multiplication in $O_L(I)$,
+so this is a ring isomorphism.
+\end{proof}
+
+One must also distinguish ideal classes from conjugacy classes
+of maximal orders. Several ideal classes may have isomorphic
+multiplier orders. Recording only an order up to conjugacy can
+forget which ideal class, and therefore which object in the
+correspondence, was present. This is an arithmetic instance of
+a general principle: a derived invariant can classify less
+information than the object from which it was computed.
+
+\section{The quaternion norm and the meaning of degree}
+
+For an elliptic-curve endomorphism $\alpha$, the dual isogeny
+$\widehat\alpha$ satisfies
+$\widehat\alpha\alpha=\alpha\widehat\alpha=[\deg\alpha]$.
+These identities make the degree behave like a norm. In the
+quaternion endomorphism algebra, the dual isogeny is the standard
+involution, and degree agrees with the reduced norm. For a
+nonzero quasi-endomorphism $\alpha/n$, the norm is
+$\deg(\alpha)/n^2$. Thus passage from integral maps to rational
+quasi-isogenies changes the integrality, while retaining the
+norm law.
+
+\begin{proposition}[Degree multiplicativity from duality]
+Assume the dual-isogeny identities and
+$\widehat{\beta\alpha}=\widehat\alpha\widehat\beta$.
+Then $\deg(\beta\alpha)=\deg\beta\deg\alpha$.
+\end{proposition}
+
+\begin{proof}
+Compute
+\[
+ \widehat{\beta\alpha}(\beta\alpha)
+ =\widehat\alpha\widehat\beta\beta\alpha
+ =\widehat\alpha[\deg\beta]\alpha
+ =[\deg\beta\deg\alpha].
+\]
+On the other hand, the dual-isogeny identity for $\beta\alpha$
+makes the left side $[\deg(\beta\alpha)]$. The map
+$\mathbb Z\to\operatorname{End}(E)$, $n\mapsto[n]$, is
+injective, so the integers are equal.
+\end{proof}
+
+This proof illustrates the appropriate form of a conditional
+bridge: its assumptions are already strong theorems of
+elliptic-curve geometry, and the conclusion is a short algebraic
+consequence. It would be misleading to present the short
+calculation as a replacement for the construction of the dual
+isogeny or the proof of its properties.
+
+For numerical visualization, a positive definite quaternion
+norm can display shells $\operatorname{nrd}(x)=c$ in four
+real coordinates. A sequence of three-dimensional slices, or a
+projection controlled by a fourth-coordinate slider, can reveal
+how an ideal lattice meets those shells. Such a picture helps
+explain why a norm equation is a Diophantine constraint. A
+rendered shell is not evidence that an unshown integer point
+exists, and a point drawn with floating-point error is not a
+verified ideal element.
+
+\section{What these bridges establish for cryptography}
+
+The arithmetic theory now supplies several precise translations.
+Complex multiplication translates scalar endomorphisms into
+imaginary quadratic orders. Ideal multiplication translates into
+actions and isogenies when the necessary invertibility hypotheses
+hold. Supersingular endomorphisms translate into maximal
+quaternion orders. Hom groups translate into integral bimodules.
+Prime-to-characteristic torsion translates part of the theory
+into compatible finite matrix modules.
+
+Each translation has a different computational cost. An abstract
+isomorphism, an efficiently computable isomorphism, and a reduction
+preserving a promised distribution are three separate claims.
+To apply the translations to cryptographic security, one must
+specify which of them is actually available. In particular, an
+algorithm given an explicit endomorphism basis need not solve
+the problem of obtaining that basis from a curve equation. A
+class-group action given an ideal factorization need not reveal
+the factorization from the resulting curve. A statement about
+all ideals is not a statement about the small ideals selected
+by a protocol's distribution.
+
+The most useful way to state a proposed new algorithm is therefore
+as a tuple of mathematical data. The input type specifies a curve,
+an order, a basis, a subgroup, or an ideal. The promise specifies
+ordinary or supersingular, maximal or nonmaximal, and any supplied
+orientation. The output specifies a scalar, a morphism, a basis,
+or a witness to equivalence. The cost model counts bit operations
+or fault-tolerant quantum resources. The proof then separates
+correctness from cost and from any average-case assumption.
+
+These requirements expose several invalid shortcuts. The fact
+that an order is a lattice does not reduce arbitrary lattice
+cryptography to an elliptic-curve problem. A four-dimensional
+quaternion lattice is not the same family as a growing-dimensional
+module lattice. A positive norm on an endomorphism algebra is not
+a spectral gap for a quantum field theory. An exact functor
+preserving module homology does not by itself supply a reversible
+quantum circuit. Later chapters can use the constructions above,
+but each claimed transfer must carry its own missing hypotheses.
+
+\section{A worked comparison of three rank-two objects}
+
+It is instructive to hold the rank fixed while changing the
+structure. First consider $L_1=\mathbb Z^2$ as an abelian group.
+Its automorphisms are $\mathrm{GL}_2(\mathbb Z)$, and it has no
+preferred notion of length. Next equip the same module with the
+standard dot product. Its isometries are the much smaller group
+$\mathrm{GL}_2(\mathbb Z)\cap O(2)$, consisting of signed
+permutation matrices. Finally identify it with
+$\mathbb Z[i]\subseteq\mathbb C$ and remember multiplication
+by $i$. Its module endomorphisms commuting with $i$ form the
+ring $\mathbb Z[i]$.
+
+\begin{proposition}[Centralizer of the quarter-turn]
+Let $J=\left(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\right)$.
+An integral matrix commutes with $J$ if and only if it has the
+form
+$\left(\begin{smallmatrix}a&-b\\b&a\end{smallmatrix}\right)$
+with $a,b\in\mathbb Z$. Its determinant is $a^2+b^2$.
+\end{proposition}
+
+\begin{proof}
+Write the matrix as
+$T=\left(\begin{smallmatrix}u&v\\w&z\end{smallmatrix}\right)$.
+Equating entries in $TJ=JT$ gives $z=u$ and $v=-w$.
+Set $a=u$, $b=w$. The determinant formula follows by direct
+expansion. Conversely, any displayed matrix commutes with $J$
+by multiplication.
+\end{proof}
+
+The determinant is the norm of $a+bi$, and the matrix is a
+unit precisely when $a^2+b^2=1$. Hence the scalar automorphisms
+of the square complex torus are $\{1,-1,i,-i\}$. The same
+underlying rank-two group has therefore supported three different
+automorphism questions. This small example is a useful check
+whenever the monograph passes between algebraic, metric, and
+complex-analytic structures.
+
+\section{An exact arithmetic certificate for a quadratic order}
+
+The order $O_f=\mathbb Z+f\mathbb Z i$ provides a complete
+small certificate that can be checked without a numerical
+approximation. In the basis $b_1=1$, $b_2=fi$, its multiplication
+table is
+\[
+ b_1b_1=b_1,\quad b_1b_2=b_2b_1=b_2,
+ \quad b_2b_2=-f^2b_1.
+\]
+Every structure constant is an integer, so the table certifies
+closure under multiplication. The field trace sends
+$a+bi$ to $2a$, and the trace matrix is
+\[
+ G_f=\begin{pmatrix}2&0\\0&-2f^2\end{pmatrix},
+ \qquad \det G_f=-4f^2.
+\]
+Its negative determinant is not an error: the trace pairing
+$\operatorname{Tr}(xy)$ is indefinite on this imaginary
+quadratic field. The positive pairing
+$\operatorname{Tr}(x\bar y)$ has matrix
+$\operatorname{diag}(2,2f^2)$ instead. These two matrices encode
+different bilinear structures on the same order.
+
+\begin{proposition}[Trace dual of the Gaussian suborder]
+For every integer $f\ge1$,
+\[
+ O_f^{\#}=\tfrac12\mathbb Z+\tfrac{i}{2f}\mathbb Z,
+ \qquad [O_f^{\#}:O_f]=4f^2.
+\]
+\end{proposition}
+
+\begin{proof}
+Write $x=a+bi$ with $a,b\in\mathbb Q$. The conditions
+$\operatorname{Tr}(x\cdot1)\in\mathbb Z$ and
+$\operatorname{Tr}(x\cdot fi)\in\mathbb Z$ are
+$2a\in\mathbb Z$ and $-2fb\in\mathbb Z$. They are
+sufficient because $1,fi$ generate $O_f$ additively. This
+proves the displayed description. In the first coordinate,
+the quotient $\tfrac12\mathbb Z/\mathbb Z$ has size two.
+In the imaginary coordinate,
+$\tfrac1{2f}\mathbb Z/f\mathbb Z$ has size $2f^2$.
+Multiplying their sizes gives $4f^2$.
+\end{proof}
+
+For $f=2$, the order has discriminant $-16$, its maximal
+overorder $\mathbb Z[i]$ has discriminant $-4$, and the
+index is two. The discriminant formula reads
+$-16=2^2(-4)$. The conductor is $2\mathbb Z[i]$, which
+also supplied the noninvertible ideal above. Its multiplier
+ring is larger than $O_2$, so no inverse ideal over $O_2$
+can exist. Thus multiplication, discriminant, conductor,
+trace dual, and failure of invertibility are mutually
+consistent in one exact example.
+
+An implementation should output these integer matrices and
+containment witnesses, not merely a decimal determinant.
+A diagram may plot the corresponding point sets, but the
+matrix identities are the certificates. The same separation
+between exact witnesses and geometric display is useful in
+larger quaternion calculations and in the interactive
+companions to this monograph.
+
+\section{A research program that is actually implied}
+
+The preceding material supports a concrete, testable program.
+One can represent orders and their ideals exactly by integral
+bases, verify multiplication tables, compute trace matrices, and
+check discriminant-index identities. One can formalize scalar
+actions and centralizers in finite dimensions before attempting
+the full geometric classification. One can compare localizations
+of a specified lattice, keeping the difference between local
+isomorphism and global equivalence visible. One can design
+interactive diagrams whose point coordinates are generated from
+verified arithmetic rather than artistic approximations.
+
+The next mathematical advance would require a specific theorem
+that the existing translations do not yet provide. Examples are
+a distortion-controlled reduction between explicit arithmetic
+norm problems, a sharper resource analysis for an exact quantum
+arithmetic subroutine, or a new effective bound with fully stated
+analytic assumptions. Each is a well-posed research target. None
+follows simply by adjoining the names of order theory, elliptic
+complexes, quantum algorithms, and Yang--Mills theory.
+
+The didactic value of Roggenkamp and Huber-Dyson's framework is
+that it forces the integral and categorical data to be stated
+before any such claim is made. In that sense the books provide a
+rigorous foundation for investigation: they clarify the objects
+and identify obstructions that a successful new connection would
+have to overcome.
+

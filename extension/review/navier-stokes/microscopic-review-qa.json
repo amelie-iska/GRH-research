@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-11-13T21:32:49.224979+00:00",
+  "source_hashes": {
+    "extension/manuscript/chapters/microscopic-fluid-limits.tex": "c39f88094c9f6c9789963980a67efdfcf4ebe6ef712561b69c0df88069129d3c",
+    "extension/manuscript/ns-microscopic.bib": "37ff84161ae5bc08d31a6b9ee99f28c35fc67837afefec814050c741caa2bb6d",
+    "extension/review/navier-stokes/microscopic-source-review.md": "28ec46a6818657de67f0ee6389f380f3167c3a2e48447d200f95b094aa3b6902",
+    "extension/review/navier-stokes/microscopic-source-coverage.json": "a2e23d4cfeaca162d8857aecb5777820fb01288657d061a04c2e09dc37a72e40"
+  },
+  "structural_checks": {
+    "words_in_tex": 7025,
+    "named_proposition_or_theorem_count": 21,
+    "unique_labels": 43,
+    "duplicate_labels": [],
+    "missing_bibliography_keys": [],
+    "external_crosschapter_refs": [
+      "ch:fluid-structures",
+      "ch:navier-stokes-release",
+      "ch:quantum-fluid"
+    ]
+  },
+  "proof_review": {
+    "author_review": "All21 named proofs checked for stated dimensions, positivity, denominators, differentiability, and integral-interchange assumptions.",
+    "independent_root_review": "Parent agent reported a complete independent reading of all21 named proofs and agreement after finite-basis, rank-range, regularity, and nonzero-denominator qualifications.",
+    "lean_status": "No local Lean certification asserted for these21 chapter results. Finite local Lean modules and upstream continuum verification are recorded in the separate formal map.",
+    "external_theorem_status": "Golse–Saint-Raymond Theorem2.4 and Gallagher–Saint-Raymond–Texier Theorem8 are attributed external results, not locally reproduced complete proofs."
+  },
+  "proofs": [
+    {
+      "environment": "proposition",
+      "name": "Finite-dimensional informational completeness",
+      "label": "prop:micro-tomography"
+    },
+    {
+      "environment": "proposition",
+      "name": "Local operations do not transmit a signal through a marginal",
+      "label": "prop:micro-nosignalling"
+    },
+    {
+      "environment": "proposition",
+      "name": "Slater normalization and dimension",
+      "label": "prop:micro-slater"
+    },
+    {
+      "environment": "proposition",
+      "name": "Exact coupled nuclear equations",
+      "label": "prop:micro-bornhuang"
+    },
+    {
+      "environment": "proposition",
+      "name": "Energy gradients and the gap denominator",
+      "label": "prop:micro-hellmann"
+    },
+    {
+      "environment": "proposition",
+      "name": "Unitary evolution does not supply ground-state relaxation",
+      "label": "prop:micro-no-relaxation"
+    },
+    {
+      "environment": "proposition",
+      "name": "Localization controls the mean-force error",
+      "label": "prop:micro-ehrenfest-error"
+    },
+    {
+      "environment": "proposition",
+      "name": "Liouville volume and fine-grained entropy",
+      "label": "prop:micro-liouville"
+    },
+    {
+      "environment": "proposition",
+      "name": "Elastic reflection",
+      "label": "prop:micro-collision"
+    },
+    {
+      "environment": "proposition",
+      "name": "Classification of smooth collision invariants",
+      "label": "prop:micro-invariants"
+    },
+    {
+      "environment": "proposition",
+      "name": "Weak collision identity",
+      "label": "prop:micro-weak-Q"
+    },
+    {
+      "environment": "theorem",
+      "name": "Classical homogeneous $H$ theorem under explicit regularity",
+      "label": "thm:micro-H"
+    },
+    {
+      "environment": "proposition",
+      "name": "Finite energy does not imply finite positive entropy",
+      "label": "prop:micro-entropy-counterexample"
+    },
+    {
+      "environment": "proposition",
+      "name": "Maxwellian minimizes $H$ at fixed first two moments",
+      "label": "prop:micro-maxwell"
+    },
+    {
+      "environment": "proposition",
+      "name": "Moment equations before closure",
+      "label": "prop:micro-moments"
+    },
+    {
+      "environment": "proposition",
+      "name": "Flux sampling at an equilibrium wall",
+      "label": "prop:micro-flux"
+    },
+    {
+      "environment": "proposition",
+      "name": "The exact frozen-rate majorant identity",
+      "label": "prop:micro-majorant"
+    },
+    {
+      "environment": "proposition",
+      "name": "Sampling variance with correlations",
+      "label": "prop:micro-sampling"
+    },
+    {
+      "environment": "proposition",
+      "name": "What weighted POD actually minimizes",
+      "label": "prop:micro-pod"
+    },
+    {
+      "environment": "proposition",
+      "name": "Interpolation exactness and amplification",
+      "label": "prop:micro-deim"
+    },
+    {
+      "environment": "proposition",
+      "name": "Nonnegative constitutive entropy production",
+      "label": "prop:micro-learned-entropy"
+    }
+  ],
+  "typesetting": {
+    "first_integrated_compile": "Parent reports successful integrated311-page build with no missing references or characters; two overfull boxes in this chapter identified.",
+    "fixes": "Moved derivative-coupling definitions and unitary population trace to displayed mathematics; added n.d. year for undated online sources.",
+    "final_compile_and_visual_qa": "Delegated to parent; no independent final PDF claim in this record."
+  },
+  "coverage_summary": {
+    "source_groups": 24,
+    "recorded_access_attempts": 87,
+    "complete_video_transcript_segments": 249,
+    "volkov_pdf_pages_readable_text": 371,
+    "farhat_replacement_pdf_pages_including_overlays": 627,
+    "full_text_review_not_completed": [
+      "jonsson1961",
+      "cerfon",
+      "parker1959",
+      "valentini2015",
+      "loudon1959",
+      "loudon2016"
+    ]
+  }
+}

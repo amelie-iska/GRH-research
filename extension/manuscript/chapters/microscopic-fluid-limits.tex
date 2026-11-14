@@ -1,0 +1,1319 @@
+\chapter{Microscopic information, kinetic limits, and fluid closure}
+\label{ch:microscopic-fluid-limits}
+
+\reviewstatus{The 249 timed English transcript segments of the requested
+braintruffle video, from 0:00 through 32:36, were reviewed in the public
+YouTube transcript interface.  The timestamped source audit records precisely
+which accompanying papers, lecture decks, and book sections were accessible.
+The full main texts of Stodolna, Vozzi, Itatani, Allen, the abridged English
+J\"onsson article, and all six requested Volkov decks were reviewed.  Several
+other requested originals were accessible only as abstracts or metadata;
+these are not represented as full-text reviews.  The arguments proved below
+are ordinary mathematical proofs.  Their presence here does not assert a
+Lean formalization of the continuum theories.}
+
+\section{What the microscopic perspective establishes}
+
+The video organizes fluid simulation around successive reductions in the
+information retained about a physical system: a quantum state, molecular
+positions and velocities, a velocity distribution, and a few macroscopic
+fields \citep{microBraintruffle2021}.  This is a productive organizing principle
+provided that each reduction is supplied with its own assumptions.  An
+exact change of coordinates, a statistical marginal, an asymptotic limit,
+and an empirical constitutive law are mathematically different operations.
+The distinction determines which conclusions can be carried from one level
+to another.
+
+For example, expanding a wave function in a complete eigenbasis retains
+all information.  Keeping only finitely many modes discards information.
+Taking the partial trace of a many-body density operator discards
+correlations.  Replacing a quantum nuclear state by a classical trajectory
+requires a localization or semiclassical approximation.  Replacing an
+$N$-particle classical distribution by a one-particle distribution requires
+a closure of its correlation hierarchy.  Replacing that distribution by
+density, velocity, and temperature requires another closure.  None of these
+steps follows merely from a count of variables.
+
+The central mathematical lesson is therefore a sequence of conditional
+statements.  The Born--Huang expansion identifies the terms discarded by an
+adiabatic approximation.  Liouville's equation identifies the correlations
+discarded by a kinetic approximation.  Collision invariants identify the
+moments retained by a fluid approximation.  An entropy inequality restricts
+admissible closures but does not determine all their coefficients.  A
+hydrodynamic-limit theorem supplies compactness and convergence information
+that a formal moment calculation does not supply.  The structural results
+in Chapter~\ref{ch:fluid-structures} and the quantum algorithms in
+Chapter~\ref{ch:quantum-fluid} fit into these particular stages.
+
+\subsection{Five distinct mathematical state spaces}
+
+For $N$ distinguishable spinless particles in three dimensions, a pure
+quantum state is a unit vector in $L^2(\R^{3N})$, up to an overall phase.
+An $N$-particle classical microstate is a point of $\R^{6N}$.  An uncertain
+classical state is instead a probability measure on that same phase space;
+when it has a density, that density is a function of $6N$ variables.  Thus
+the video's contrast between a wave function of $3N$ coordinates and a
+classical list of $6N$ numbers compares a general quantum state with a
+single classical microstate.  A comparison of statistical descriptions must
+also include classical ensemble distributions.
+
+The one-particle kinetic density $f(t,x,v)$ is a function on
+$\R^3_x\times\R^3_v$.  In the unit-mass convention used below, its basic
+moments are
+\begin{equation}
+ \rho=\int f\,dv,\qquad
+ \rho u=\int vf\,dv,\qquad
+ 3\rho\theta=\int |v-u|^2f\,dv.
+ \label{eq:micro-basic-moments}
+\end{equation}
+Here $\theta=k_BT/m$ in physical units.  The fluid variables
+$(\rho,u,\theta)$ contain five scalar fields.  They generally do not
+determine $f$, its pressure tensor, or its heat flux.
+
+In the quantum setting, mixed states are positive trace-one operators
+$\varrho$.  A reduced one-particle density matrix and a classical kinetic
+density are different kinds of objects.  A Wigner transform can relate
+them in suitable semiclassical regimes, but a generic Wigner function is
+not a nonnegative probability density.  A classical probabilistic
+interpretation therefore cannot be inserted without a positivity or
+limiting argument.
+
+\section{Measurement, phase, and the limits of tomography}
+
+The experiments cited by the video support wave interference and
+model-dependent reconstruction of electronic structure.  J\"onsson's
+multi-slit experiment compares electron diffraction with interference
+predictions \citep{microJonsson1974}.  Stodolna and collaborators image
+nodal structures in an outgoing electron distribution associated with
+hydrogen Stark states; the detector distribution is related to a
+propagated wave by the apparatus and its model
+\citep{microStodolna2013}.  Itatani's molecular-orbital tomography uses
+high-harmonic emission, alignment information, a reference atom, and a
+recollision approximation \citep{microItatani2004}.  Vozzi's generalized
+tomography improves phase recovery and the treatment of Coulomb
+distortion while retaining finite-bandwidth and reconstruction assumptions
+\citep{microVozzi2011}.
+
+These are not measurements of a particle trajectory or unrestricted
+tomography of an arbitrary many-electron wave function.  In particular, a
+single orbital reconstruction does not by itself determine every
+many-particle correlation.  The distinction can be expressed without
+depending on an interpretation of quantum mechanics.
+
+\begin{proposition}[Finite-dimensional informational completeness]
+\label{prop:micro-tomography}
+Let $E_1,\ldots,E_s$ be positive operators on $\C^d$ satisfying
+$\sum_iE_i=I$.  The probabilities
+$p_i=\Tr(E_i\varrho)$ uniquely determine every density operator
+$\varrho$ if and only if the real linear span of the $E_i$ is the
+space of Hermitian $d\times d$ matrices.
+\end{proposition}
+\begin{proof}
+If the span is the full Hermitian space and two states give the same
+probabilities, their difference $X$ is orthogonal to every Hermitian
+matrix in the inner product $\Tr(XY)$.  Taking $Y=X$ gives
+$\Tr(X^2)=0$, hence $X=0$.
+
+Conversely, if the span is proper, choose a nonzero Hermitian matrix $X$
+orthogonal to it.  Since $I=\sum_iE_i$ belongs to the span,
+$\Tr X=0$.  For sufficiently small $a>0$, both
+$\varrho_\pm=I/d\pm aX$ are positive trace-one matrices.  They are
+distinct and satisfy $\Tr(E_i\varrho_+)=\Tr(E_i\varrho_-)$ for
+every $i$.
+\end{proof}
+
+Position probabilities alone fail this criterion.  The qubit vectors
+$(|0\rangle+|1\rangle)/\sqrt2$ and
+$(|0\rangle-|1\rangle)/\sqrt2$ have identical computational-basis
+probabilities and different relative phase.  Similarly,
+$\psi(x)$ and $e^{i\alpha(x)}\psi(x)$ have the same $|\psi(x)|^2$
+where both define admissible states, but may have different currents and
+future dynamics.  The Born density for a complex wave function is
+$|\psi|^2$, not its algebraic square.
+
+\begin{proposition}[Local operations do not transmit a signal through a marginal]
+\label{prop:micro-nosignalling}
+Let $\varrho_{AB}$ be a density operator on a finite tensor product.
+For operators $K_j$ on $B$ satisfying $\sum_jK_j^*K_j=I_B$, define
+\[
+ \widetilde\varrho_{AB}
+ =\sum_j(I_A\otimes K_j)\varrho_{AB}(I_A\otimes K_j^*).
+\]
+Then $\Tr_B\widetilde\varrho_{AB}=\Tr_B\varrho_{AB}$.
+\end{proposition}
+\begin{proof}
+For every observable $A$ on the first factor, cyclicity of the trace gives
+\[
+ \Tr((A\otimes I)\widetilde\varrho)
+ =\sum_j\Tr((A\otimes K_j^*K_j)\varrho)
+ =\Tr((A\otimes I)\varrho).
+\]
+Equality against every $A$ determines the reduced operator.
+\end{proof}
+
+Conditioning on a recorded outcome can change a conditional state.  The
+outcome record must then be communicated before the other observer can
+condition on it.  Bell correlations consequently do not justify an
+assertion of controllable instantaneous communication.  This qualification
+is needed when using the introductory discussion in van Dommelen's
+book \citep{microVanDommelen}.
+
+\subsection{What the multi-slit formula proves}
+
+In the Fraunhofer approximation, suppose $s$ equally illuminated identical
+slits contribute a common amplitude $a(\vartheta)$ and a phase increment
+$\delta=2\pi d\sin\vartheta/\lambda$ between neighboring slits.
+Linearity gives
+\[
+ A(\vartheta)=a(\vartheta)\sum_{j=0}^{s-1}e^{ij\delta}.
+\]
+The geometric-series identity and continuity at removable singularities
+give
+\begin{equation}
+ |A(\vartheta)|^2
+ =|a(\vartheta)|^2
+ \frac{\sin^2(s\delta/2)}{\sin^2(\delta/2)}.
+ \label{eq:micro-slits}
+\end{equation}
+For a uniformly illuminated slit of width $b$, the Fourier integral
+$\int_{-b/2}^{b/2}e^{2\pi i x\sin\vartheta/\lambda}\,dx$
+supplies a squared sinc envelope.  Equation~\eqref{eq:micro-slits}
+therefore proves the interference factor under stated coherence,
+illumination, and far-field assumptions.  It does not remove the need to
+model the source, finite detector resolution, or partial coherence.
+The reviewed 1974 article explicitly identifies itself as an abridged
+translation; it cannot stand in for a complete review of the longer
+1961 German original \citep{microJonsson1961,microJonsson1974}.
+
+\section{Exterior powers are a physical state constraint}
+
+The project's exterior algebra is directly relevant to identical
+fermions.  Let $V$ be a one-particle space including spin.  The
+antisymmetric $N$-particle subspace is $\bigwedge^N V$, identified
+with the antisymmetric tensors inside $V^{\otimes N}$.  Exchanging two
+complete spin-space labels changes a fermionic state by a sign.  Equality
+of position probabilities under an exchange, by itself, does not specify
+that sign or the spin dependence.
+
+\begin{proposition}[Slater normalization and dimension]
+\label{prop:micro-slater}
+If $e_1,\ldots,e_M$ are an orthonormal basis of the finite-dimensional
+one-particle space $V$, then for
+$1\le i_1<\cdots<i_N\le M$ the tensors
+\[
+ \Psi_{i_1\cdots i_N}
+ =\frac1{\sqrt{N!}}\sum_{\sigma\in S_N}
+   \operatorname{sgn}(\sigma)
+   e_{i_{\sigma(1)}}\otimes\cdots\otimes e_{i_{\sigma(N)}}
+\]
+form an orthonormal basis of $\bigwedge^N V$.  In particular,
+$\dim\bigwedge^N\C^M=\binom MN$, with the dimension zero for
+$N>M$.
+\end{proposition}
+\begin{proof}
+For fixed distinct indices the $N!$ elementary tensors in the sum are
+mutually orthonormal, so the squared norm is $N!/N!=1$.  Different
+index sets have disjoint elementary-tensor supports.  Antisymmetry forces
+the coefficient of any tensor with a repeated index to vanish, and relates
+all coefficients belonging to permutations of a distinct index set by
+the permutation sign.  Thus every antisymmetric tensor is a linear
+combination of the displayed vectors.
+\end{proof}
+
+In position representation this is the normalized Slater determinant.
+The sign representation of the symmetric group selects the Young diagram
+$(1^N)$, while symmetric bosonic tensors select $(N)$.  More general
+Schur functors organize symmetry types of tensor features and multi-index
+responses.  This is a precise use of the algebraic material developed
+earlier in the monograph: a representation specifies allowed states or
+tensor components.  It does not, on its own, furnish a bound for a nonlinear
+fluid equation.
+
+\subsection{Number states and coherent states}
+
+Mathur's accessible introductory modules are useful for interference,
+tensor products, and the distinction between classical amplitude and
+measurement probabilities \citep{microMathur}.  One teaching
+identification needs correction: a state with a fixed number of identical
+bosons in one mode is a number state, and is not a coherent state.
+Let $a|n\rangle=\sqrt n\,|n-1\rangle$.  A coherent state is
+\begin{equation}
+ |\alpha\rangle=e^{-|\alpha|^2/2}
+       \sum_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}|n\rangle.
+ \label{eq:micro-coherent}
+\end{equation}
+The exponential series shows that its squared norm is one.  Shifting
+the summation index shows $a|\alpha\rangle=\alpha|\alpha\rangle$.
+Its number probabilities are
+$e^{-|\alpha|^2}|\alpha|^{2n}/n!$, whose mean and variance are both
+$|\alpha|^2$.  A fixed $|n\rangle$ has number variance zero and
+$\langle a\rangle=0$.  Quantization of the number observable therefore
+does not discretize every complex amplitude or every field expectation.
+This matters when deciding what a quantum neural model's input amplitudes
+and measured outputs represent.
+
+\section{Born--Huang expansion before Born--Oppenheimer truncation}
+
+The video's move from electronic wave functions to molecular potential
+energy surfaces is best made precise by first writing the coupling terms
+that are later neglected.  The treatment in van Dommelen's Section 9.2
+and derivation D.51 distinguishes electronic and nuclear quantum dynamics;
+Allen's molecular-dynamics notes then describe classical motion on a chosen
+potential \citep{microVanDommelen,microAllen2004}.
+
+For an exact, domain-transparent derivation, take a finite electronic
+space $\C^r$, nuclear coordinate $R\in\R^d$, and a $C^2$ family of
+Hermitian matrices $H_e(R)$.  Suppose an orthonormal eigenbasis
+$\phi_n(R)$ can be chosen $C^2$ on the open region being considered.
+For $C^2$ nuclear coefficient functions $\chi_n$, set
+\[
+ H=-\frac{\hbar^2}{2M}\Delta_R+H_e(R),\qquad
+ \Psi(R)=\sum_{n=1}^r\chi_n(R)\phi_n(R).
+\]
+Scalar nuclear repulsion can be included in $H_e$.  The corresponding
+continuum-electronic formulas require common operator domains and the
+regularity needed to justify these derivatives; the finite statement
+does not assert those analytic hypotheses automatically.
+
+\begin{proposition}[Exact coupled nuclear equations]
+\label{prop:micro-bornhuang}
+Set
+\[
+ \begin{aligned}
+ d_{mn}&=\langle\phi_m,\nabla_R\phi_n\rangle,\\
+ \tau_{mn}&=\langle\phi_m,\Delta_R\phi_n\rangle.
+ \end{aligned}
+\]
+Then $H\Psi=E\Psi$ is equivalent to
+\begin{equation}
+ -\frac{\hbar^2}{2M}
+  \left(\Delta\chi_m+
+        2\sum_n d_{mn}\cdot\nabla\chi_n+
+        \sum_n\tau_{mn}\chi_n\right)
+  +E_m(R)\chi_m=E\chi_m
+ \label{eq:micro-bornhuang}
+\end{equation}
+for each $m$.  Moreover, $d_{mn}=-\overline{d_{nm}}$ componentwise.
+\end{proposition}
+\begin{proof}
+Apply the product rule to each
+$\Delta(\chi_n\phi_n)$ and take its electronic inner product with
+$\phi_m$.  Orthonormality gives the first term and diagonalizes
+$H_e$.  Differentiating
+$\langle\phi_m,\phi_n\rangle=\delta_{mn}$ proves the final identity.
+\end{proof}
+
+The usual single-surface approximation retains one electronic sector and
+controls or omits its couplings to others.  Which diagonal geometric
+terms are retained must be specified.  Rephasing
+$\phi_n(R)\mapsto e^{i\gamma_n(R)}\phi_n(R)$ also rephases
+$\chi_n$ and changes diagonal derivative couplings; a claim that they
+vanish everywhere needs a gauge and topology argument.
+
+\begin{proposition}[Energy gradients and the gap denominator]
+\label{prop:micro-hellmann}
+Let $E_n(R)$ be a simple normalized eigenpair of the finite matrix family.
+For a coordinate derivative $\partial_j$,
+\[
+ \partial_j E_n
+ =\langle\phi_n,(\partial_jH_e)\phi_n\rangle,
+ \qquad
+ \langle\phi_m,\partial_j\phi_n\rangle
+ =\frac{\langle\phi_m,(\partial_jH_e)\phi_n\rangle}
+        {E_n-E_m}\quad(m\ne n).
+\]
+If $|E_n-E_m|\ge\gamma>0$ for all $m\ne n$, then
+\[
+ \|(I-|\phi_n\rangle\langle\phi_n|)\partial_j\phi_n\|
+ \le \gamma^{-1}\|\partial_jH_e\|.
+\]
+\end{proposition}
+\begin{proof}
+Differentiate $H_e\phi_n=E_n\phi_n$ and take inner products
+with $\phi_n$ and with $\phi_m$.  The terms containing
+$\partial_j\phi_n$ cancel in the first case.  In the second they
+give the difference $E_n-E_m$.  Squaring the off-diagonal coefficients
+and summing over the orthonormal eigenbasis gives the stated norm bound.
+\end{proof}
+
+Large nuclear mass reduces the prefactor in
+\eqref{eq:micro-bornhuang}; it does not prevent a small electronic gap
+from amplifying the derivative coupling.  Near crossings and conical
+intersections, a single-surface argument requires additional work.
+Likewise, an excited electronic surface may have an adiabatic nuclear
+description.  The Born--Oppenheimer approximation is not a theorem that
+electrons automatically dissipate into their ground state.
+
+\begin{proposition}[Unitary evolution does not supply ground-state relaxation]
+\label{prop:micro-no-relaxation}
+For a time-independent finite Hermitian matrix $H$ and a spectral
+projector $P$, the population
+\[
+ \Tr(Pe^{-itH/\hbar}\varrho_0e^{itH/\hbar})
+\]
+is constant.
+\end{proposition}
+\begin{proof}
+The projector commutes with both exponentials.  Cyclicity of the trace
+reduces the expression to $\Tr(P\varrho_0)$.
+\end{proof}
+
+A bath, emitted radiation, collisions with other degrees of freedom, or
+a specified open-system approximation can generate relaxation.
+Adiabatic following and relaxation are distinct physical mechanisms.
+The video at 21:37--21:53 compresses them into a single explanation;
+equations~\eqref{eq:micro-bornhuang} and
+Proposition~\ref{prop:micro-no-relaxation} state what must be separated.
+
+\section{When a quantum packet behaves approximately as a particle}
+
+For
+$H=P^2/(2M)+V(X)$, the formal Ehrenfest identities are
+\begin{equation}
+ \frac{d}{dt}\langle X\rangle=\frac{\langle P\rangle}{M},
+ \qquad
+ \frac{d}{dt}\langle P\rangle=-\langle\nabla V(X)\rangle.
+ \label{eq:micro-ehrenfest}
+\end{equation}
+They follow from $d\langle A\rangle/dt=(i/\hbar)\langle[H,A]\rangle$
+on a common invariant domain.  For instance, they hold for sufficiently
+regular rapidly decaying solutions for which all integrations by parts
+and differentiated moments are justified.  They are not yet Newton's
+equations for the mean, because
+$\langle\nabla V(X)\rangle$ need not equal
+$\nabla V(\langle X\rangle)$.
+
+\begin{proposition}[Localization controls the mean-force error]
+\label{prop:micro-ehrenfest-error}
+If $\nabla V$ is $L$-Lipschitz and the position distribution has a
+finite second moment, then
+\[
+ \left|\langle\nabla V(X)\rangle-
+       \nabla V(\langle X\rangle)\right|
+ \le L\left\langle|X-\langle X\rangle|^2\right\rangle^{1/2}.
+\]
+\end{proposition}
+\begin{proof}
+Apply the Lipschitz inequality inside the position integral, then the
+triangle inequality and Cauchy--Schwarz for its probability measure.
+\end{proof}
+
+This gives a quantitative condition rather than a universal particle-size
+threshold.  To turn it into a trajectory approximation on a time interval,
+one must control the packet width throughout that interval and estimate
+the resulting perturbation of the classical flow.
+
+For a free particle in one dimension with $\sigma>0$ and
+\[
+ \psi_0(x)=(2\pi\sigma^2)^{-1/4}
+             e^{-x^2/(4\sigma^2)},
+\]
+the exact Heisenberg identity $X(t)=X+tP/M$ gives
+\begin{equation}
+ \operatorname{Var}(X(t))
+ =\sigma^2+\frac{\hbar^2t^2}{4M^2\sigma^2}.
+ \label{eq:micro-gaussian}
+\end{equation}
+Indeed $\operatorname{Var}X=\sigma^2$,
+$\operatorname{Var}P=\hbar^2/(4\sigma^2)$, and the initial
+symmetrized covariance vanishes.  Increasing $M$ slows free spreading
+for a fixed packet, but \eqref{eq:micro-gaussian} still grows with time.
+Heavy particles can also exhibit interference.  A suitable scale
+comparison involves action, wavelength, temperature, environmental
+coupling, and the observable being approximated.
+
+\subsection{One-dimensional Coulomb models require a domain}
+
+The video explicitly uses a softened one-dimensional potential to explain
+electronic forces.  Such a model is pedagogically useful, but it is a
+different operator from the singular expression
+\[
+ -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}-\frac{\kappa}{|x|}.
+\]
+A differential expression does not specify a self-adjoint Hamiltonian
+until its domain and behavior at the singular point are given.
+The reviewed operator-domain analysis by de Oliveira and Verri finds a
+family of self-adjoint realizations for the one-dimensional operator
+initially defined away from the origin
+\citep{microOliveiraVerri2009}.  We use that domain distinction, not
+an unqualified assertion about the spectrum of every regularization.
+The requested Loudon papers are separately registered as unavailable
+full texts in this review \citep{microLoudon1959,microLoudon2016}.
+
+The limit of a family of softened potentials must specify the topology
+of operator convergence and any renormalization of energy.  It cannot
+be inferred merely by drawing potentials that approach $-\kappa/|x|$
+away from zero.  This is the same structural issue that recurs in
+continuum limits of graph Laplacians: a formula for coefficients must be
+accompanied by domains, boundary conditions, and convergence estimates.
+
+\section{Molecular dynamics and conserved microscopic information}
+
+A classical molecular Hamiltonian has the form
+\begin{equation}
+ H(q,p)=\sum_{i=1}^N\frac{|p_i|^2}{2m_i}+U(q),\qquad
+ \dot q_i=\frac{p_i}{m_i},\quad
+ \dot p_i=-\nabla_{q_i}U.
+ \label{eq:micro-md}
+\end{equation}
+The force is the negative gradient of potential energy.  General
+molecular force fields include angular, torsional, many-body, constrained,
+or reactive terms; they need not be sums of pairwise distance functions.
+Allen's notes explain these modeling choices, symplectic integrators,
+constraints, thermostats, and statistical errors
+\citep{microAllen2004}.  Their scope is much wider than the two-particle
+illustration in the video.
+
+\begin{proposition}[Liouville volume and fine-grained entropy]
+\label{prop:micro-liouville}
+Let $H\in C^2(\R^{2n})$ have a smooth Hamiltonian flow $\Phi_t$
+on the interval considered.  Then $\det D\Phi_t=1$.
+If a smooth probability density evolves by
+$f_t=f_0\circ\Phi_{-t}$ and the entropy integral is absolutely
+integrable, then
+\[
+ \int f_t\log f_t\,dq\,dp
+ =\int f_0\log f_0\,dq\,dp.
+\]
+\end{proposition}
+\begin{proof}
+For the Hamiltonian vector field
+$X_H=(\partial_pH,-\partial_qH)$, equality of mixed derivatives
+gives
+$\operatorname{div}X_H=\sum_i(\partial_{q_i}\partial_{p_i}H-
+\partial_{p_i}\partial_{q_i}H)=0$.
+Jacobi's determinant identity for the flow derivative yields
+$\frac d{dt}\det D\Phi_t=(\operatorname{div}X_H)\circ\Phi_t
+\det D\Phi_t=0$.  Its initial value is one.  A change of variables
+in the entropy integral proves the second assertion.
+\end{proof}
+
+Thus a Hamiltonian description preserves fine-grained information.
+Entropy growth in a reduced description is not the destruction of
+information by an invertible microscopic flow.  It involves a
+marginalization, an environment, a limiting operation, or a restriction
+on what is resolved.  Quantum unitary conjugation similarly preserves
+the spectrum of a density operator and hence its von Neumann entropy
+when that entropy is defined.  A reduced subsystem can have changing
+entropy because its correlations with the omitted subsystem change.
+
+\subsection{A useful exact statement about velocity Verlet}
+
+For separable $H=T(p)+U(q)$, the kick
+$(q,p)\mapsto(q,p-h\nabla U(q))$ and drift
+$(q,p)\mapsto(q+h\nabla T(p),p)$ are exact Hamiltonian subflows.
+Their symmetric composition, kick by $h/2$, drift by $h$, kick by
+$h/2$, is symplectic.  This proves preservation of the symplectic form;
+it does not prove exact preservation of the original $H$.
+
+For the scalar oscillator $H=(p^2+\omega^2q^2)/2$, the update is
+\[
+ q'=\left(1-\frac{h^2\omega^2}{2}\right)q+hp,
+ \quad
+ p'=\left(1-\frac{h^2\omega^2}{2}\right)p
+       -h\omega^2\left(1-\frac{h^2\omega^2}{4}\right)q.
+\]
+Direct expansion proves that it preserves
+\begin{equation}
+ \widetilde H_h(q,p)
+ =\frac12p^2+\frac12\omega^2
+       \left(1-\frac{h^2\omega^2}{4}\right)q^2.
+ \label{eq:micro-verlet-invariant}
+\end{equation}
+This quadratic form is positive definite when $0<h\omega<2$.
+It is a valid special-case modified invariant.  In a general nonlinear
+system, a formal or asymptotic modified Hamiltonian from backward error
+analysis must not be promoted to an exact global invariant without the
+additional theorem needed for that claim.
+
+\section{Marginals, correlations, and the kinetic approximation}
+
+For a smooth symmetric $N$-particle density $F_N$, let $F_N^{(s)}$
+denote its $s$-particle marginal.  With unit masses and a pair force
+$K(x)=-\nabla\Phi(x)$, integrating the Liouville equation over all
+but particle 1 gives
+\begin{equation}
+ \partial_tF_N^{(1)}+v\cdot\nabla_xF_N^{(1)}
+ +(N-1)\nabla_v\cdot
+   \int K(x-y)F_N^{(2)}(x,v,y,w)\,dy\,dw=0,
+ \label{eq:micro-bbgky-first}
+\end{equation}
+assuming the boundary terms vanish.  The two-particle marginal appears
+because the force on a particle depends on others.  Its own equation
+involves the three-particle marginal.  This is the BBGKY hierarchy.
+
+\begin{example}[A first marginal cannot determine a pair correlation]
+\label{ex:micro-marginal}
+On $\{0,1\}^2$, let $P$ give mass $1/2$ each to $(0,0)$ and
+$(1,1)$, and let $Q$ give mass $1/2$ each to $(0,1)$ and $(1,0)$.
+Both first and second one-coordinate marginals are uniform.  Nevertheless,
+$P(X=Y)=1$ and $Q(X=Y)=0$.  Thus no function of the one-coordinate
+marginals alone can reconstruct all pair observables.
+\end{example}
+
+Replacing $F_N^{(2)}$ by a product is a substantive assumption.
+For dilute collisions it is the incoming, appropriately scaled
+correlations that matter.  Hard-sphere exclusion already prevents exact
+independence at fixed particle diameter.  The word ``chaos'' in
+propagation of chaos denotes an asymptotic factorization property of
+fixed-order marginals; it is not interchangeable with deterministic
+sensitivity to initial conditions.
+
+\subsection{A rigorous classical-to-kinetic bridge and its time interval}
+
+In the hard-sphere Boltzmann--Grad scaling in dimension $d\ge2$,
+\[
+ N\varepsilon^{d-1}=1,
+ \qquad N\varepsilon^d=\varepsilon\longrightarrow0.
+\]
+The first relation retains an order-one collision scale, while the
+second sends the occupied volume fraction to zero.  Gallagher,
+Saint-Raymond, and Texier give a detailed derivation for hard spheres
+and suitable short-range repulsive potentials
+\citep{microGallagher2013}.  Their hard-sphere theorem propagates
+admissible asymptotic initial factorization on a positive short time
+interval, with convergence of velocity-averaged observables locally
+away from positional diagonals.  It uses weighted uniform bounds on
+the hierarchy and quantitative control of recollisions.
+
+The reviewed source's introductory statement assumes a continuous
+probability density $f_0$ with a Gaussian velocity bound
+\[
+ \sup_{x,v}f_0(x,v)e^{\beta|v|^2/2}<\infty
+ \quad\text{for some }\beta>0.
+\]
+Its precise Theorem 8 includes the admissibility and hierarchy-space
+hypotheses.  The proof does not assert convergence for arbitrary
+finite-$N$ initial data, arbitrarily long times, every potential, or
+every boundary geometry.  This chapter reviewed the introduction,
+main convergence statement, and concluding scope discussion; it does
+not claim to reproduce or independently verify the monograph's complete
+recollision proof.
+
+This time restriction has a practical logical consequence.  A short-time
+particle-to-Boltzmann theorem and a long macroscopic-time
+Boltzmann-to-fluid theorem cannot simply be concatenated.  The former
+must hold uniformly on the time scales required by the latter, or a
+separate joint-limit theorem must be supplied.  No amount of formal
+diagram composition replaces that analytic requirement.
+
+\section{The collision algebra and its five invariants}
+
+We now prove the algebraic facts behind the simplest elastic collision
+operator.  They are useful both for conservative simulation and for
+checking learned collision models.  Set $g=v-v_*$, let
+$n\in S^{d-1}$, and define
+\begin{equation}
+ v'=v-(g\cdot n)n,\qquad
+ v_*'=v_*+(g\cdot n)n.
+ \label{eq:micro-collision}
+\end{equation}
+
+\begin{proposition}[Elastic reflection]
+\label{prop:micro-collision}
+The map \eqref{eq:micro-collision} is an involution with absolute
+Jacobian determinant one.  It preserves total momentum and kinetic
+energy:
+\[
+ v'+v_*'=v+v_*,\qquad
+ |v'|^2+|v_*'|^2=|v|^2+|v_*|^2.
+\]
+\end{proposition}
+\begin{proof}
+The center velocity $V=(v+v_*)/2$ is unchanged and
+$g'=g-2(g\cdot n)n$.  This is an orthogonal reflection, so
+$|g'|=|g|$, its square is the identity, and its determinant has
+absolute value one.  Since
+$|v|^2+|v_*|^2=2|V|^2+|g|^2/2$, all assertions follow after the
+invertible linear change from $(v,v_*)$ to $(V,g)$.
+\end{proof}
+
+A scalar function $\phi$ is a collision invariant when
+$\phi(v)+\phi(v_*)=\phi(v')+\phi(v_*')$ for every elastic
+collision.  The functions $1,v_1,\ldots,v_d,|v|^2$ are immediately
+invariant.  The following proof makes the converse precise under a
+simple regularity assumption.
+
+\begin{proposition}[Classification of smooth collision invariants]
+\label{prop:micro-invariants}
+For $d\ge2$, every $C^2$ collision invariant has the form
+\[
+ \phi(v)=a+b\cdot v+c|v|^2.
+\]
+Consequently the scalar invariant space has dimension $d+2$, hence
+five in three dimensions.
+\end{proposition}
+\begin{proof}
+For fixed $V$ and radius $r$, collisions can send $g$ to any vector
+of the same length: reflection in a suitable hyperplane does so for
+two given vectors.  Hence
+$\phi(V+r\omega)+\phi(V-r\omega)$ is independent of the unit
+vector $\omega$.  Its second-order expansion at $r=0$ implies
+that $\omega^TD^2\phi(V)\omega$ is constant on the unit sphere.
+Taking coordinate vectors and their pairwise sums shows
+$D^2\phi(V)=\lambda(V)I$.
+
+The mixed second derivatives are zero, so $\partial_i\phi(v)$
+depends only on $v_i$.  The equality of all diagonal second
+derivatives then says that a function of $v_i$ alone equals a function
+of $v_j$ alone for independently variable $v_i,v_j$.  Since $d\ge2$,
+each is the same constant.  Integrating twice yields the displayed
+quadratic polynomial.  The converse follows from
+Proposition~\ref{prop:micro-collision}.
+\end{proof}
+
+Some introductory notes group the invariants into three physical
+categories: particle number, momentum, and energy.  Momentum is a vector,
+so those categories contain five independent scalar invariants in
+three dimensions, not three scalar equations.
+
+\subsection{A collision kernel contains more information than a diameter}
+
+For a central classical interaction, the differential cross section is
+obtained from the map between impact parameter $b$ and scattering
+angle $\chi$.  On a branch where the map is invertible,
+\[
+ \frac{d\sigma}{d\Omega}
+ =\frac{b}{\sin\chi}\left|\frac{db}{d\chi}\right|.
+\]
+If multiple branches produce the same angle, their contributions must
+be added.  Angular singularities and grazing collisions require further
+analysis.  The hard-sphere model and the variable hard-sphere model
+used in Volkov's notes do not reproduce every angular distribution of
+a general potential \citep{microVolkov02}.  Matching a viscosity
+law or a mixing statistic is a calibration of particular observables,
+not an equality of the underlying scattering laws.
+
+Internal excitation and chemical reactions add variables, transitions,
+and conservation relations.  Parker's requested paper concerns
+rotational and vibrational relaxation, while Valentini and collaborators'
+requested study concerns nitrogen dissociation on an ab initio potential
+surface \citep{microParker1959,microValentini2015}.  Only their
+accessible abstracts and metadata were reviewed here.  Their reported
+models must not be treated as fully audited derivations or as evidence
+that every gas can be represented by an elastic monatomic kernel.
+
+\section{The weak collision identity and entropy production}
+
+Let $B(g,n)\ge0$ be a collision kernel invariant under exchange of the
+particles and under the pre/post-collision reflection.  Define
+\begin{equation}
+ Q(f,f)(v)=\int_{\R^d}\int_{S^{d-1}}
+       B(v-v_*,n)(f'f_*'-ff_*)\,dn\,dv_*.
+ \label{eq:micro-boltzmann-Q}
+\end{equation}
+Here all four values of $f$ have the same $(t,x)$, when those
+variables are present.  The next statements assume absolute
+integrability of the displayed integrals, so that Fubini's theorem
+and the changes of variables are legitimate.
+
+\begin{proposition}[Weak collision identity]
+\label{prop:micro-weak-Q}
+For an admissible test function $\phi$,
+\begin{align}
+ \int\phi Q(f,f)\,dv
+ &=\frac14\iiint B(f'f_*'-ff_*)
+       (\phi+\phi_* -\phi'-\phi_*')\,dn\,dv_*\,dv
+       \label{eq:micro-weak-Q}\\
+ &=\frac12\iiint Bff_*
+       (\phi'+\phi_*'-\phi-\phi_*)\,dn\,dv_*\,dv.
+       \nonumber
+\end{align}
+\end{proposition}
+\begin{proof}
+Exchange $v$ and $v_*$ in the original integral and average the
+two expressions.  In a second copy, change variables from
+$(v,v_*)$ to $(v',v_*')$.  The measure and $B$ are unchanged,
+the gain-minus-loss factor changes sign, and the test functions
+acquire primes.  Averaging once more gives the first identity.
+Applying the same pre/post change to the gain term gives the second.
+\end{proof}
+
+Testing with collision invariants proves the mass, momentum, and energy
+collision balances.  Testing with the logarithm supplies a stronger
+constraint, subject to the additional integrability needed for that
+unbounded test.
+
+\begin{theorem}[Classical homogeneous $H$ theorem under explicit regularity]
+\label{thm:micro-H}
+Let $f(t,v)>0$ be a differentiable solution of
+$\partial_tf=Q(f,f)$ for which $\int f\log f$ is finite,
+differentiation under the integral is valid, and all terms in
+\eqref{eq:micro-weak-Q} with $\phi=\log f$ are integrable.
+Then
+\begin{equation}
+ \frac{d}{dt}\int f\log f\,dv=-D(f)\le0,
+ \quad
+ D(f)=\frac14\iiint B(f'f_*'-ff_*)
+           \log\frac{f'f_*'}{ff_*}\,dn\,dv_*\,dv.
+ \label{eq:micro-H}
+\end{equation}
+\end{theorem}
+\begin{proof}
+The derivative equals $\int(1+\log f)Q(f,f)\,dv$.
+The constant part vanishes by mass conservation.  Use
+\eqref{eq:micro-weak-Q} for the remaining part.  Since
+$(a-b)(\log a-\log b)\ge0$ for $a,b>0$, the displayed
+entropy production is nonnegative.
+\end{proof}
+
+For spatially varying smooth solutions, transport adds the entropy flux
+$\nabla_x\cdot\int vf\log f\,dv$.  Boundary entropy fluxes must
+then be included.  For weak or renormalized solutions, an entropy
+inequality is established by approximation and lower semicontinuity;
+one cannot simply insert an unjustified logarithmic test into a weak
+equation.
+
+\begin{proposition}[Finite energy does not imply finite positive entropy]
+\label{prop:micro-entropy-counterexample}
+There is a probability density supported in $[0,1]^3$ with finite
+second moment and $\int f\log f=+\infty$.
+\end{proposition}
+\begin{proof}
+Let $c=6/\pi^2$ and choose disjoint measurable sets $A_n$ in
+$[0,1]^3$ with volumes
+$|A_n|=c e^{-n^2}/n^2$.  Such sets exist because the sum of
+their volumes is less than one.  Define $f=e^{n^2}$ on $A_n$
+and $f=0$ elsewhere, with $0\log0=0$.  Then
+\[
+ \int f=c\sum_{n\ge1}n^{-2}=1,
+ \qquad \int|v|^2f\,dv\le3,
+ \qquad \int f\log f=c\sum_{n\ge1}1=+\infty.
+\]
+\end{proof}
+
+This corrects a gap in the elementary entropy discussion in the
+reviewed Volkov slides \citep{microVolkov03}.  Similarly, integrability
+of a continuous density alone does not force pointwise decay to zero
+at infinity: separated continuous spikes of height one and summable
+widths provide a counterexample.  Decay assumptions used in
+integration by parts must therefore be stated, not inferred solely
+from normalization.
+
+\subsection{Entropy minimization is not a convergence proof}
+
+\begin{proposition}[Maxwellian minimizes $H$ at fixed first two moments]
+\label{prop:micro-maxwell}
+Let $f$ be a probability density with mean $u$ and
+$\int|v-u|^2f\,dv=d\theta$, where $\theta>0$.  Set
+\[
+ M_{u,\theta}(v)=(2\pi\theta)^{-d/2}
+       e^{-|v-u|^2/(2\theta)}.
+\]
+Whenever the entropy expressions are defined,
+\[
+ \int f\log f-\int M_{u,\theta}\log M_{u,\theta}
+ =\int f\log\frac{f}{M_{u,\theta}}\ge0.
+\]
+Equality holds exactly when $f=M_{u,\theta}$ almost everywhere.
+\end{proposition}
+\begin{proof}
+The function $\log M_{u,\theta}$ is a quadratic polynomial in
+$v$, so its integral against $f$ agrees with its integral against
+$M_{u,\theta}$.  This proves the identity.  With
+$r=f/M_{u,\theta}$, use $r\log r-r+1\ge0$ and integrate
+against $M_{u,\theta}\,dv$.  Equality in this strictly convex
+inequality requires $r=1$ almost everywhere.
+\end{proof}
+
+Under a positive kernel, sufficient continuity, and $\log f\in C^2$,
+vanishing $D(f)$ forces detailed balance
+$f'f_*'=ff_*$.  Proposition~\ref{prop:micro-invariants} applied to
+$\log f$ then gives the Maxwellian form, with a negative quadratic
+coefficient required by integrability.
+
+These facts characterize entropy minimizers and stationary collision
+equilibria.  They do not prove that every trajectory converges to one.
+If a scalar function $H(t)$ is nonincreasing and bounded below, it
+has a limit, but its derivative need not tend to zero.  For example,
+take a nonnegative smooth function $b$ supported in $(-1/4,1/4)$
+with $b(0)=1$ and define
+\[
+ h(t)=\sum_{n\ge1}b(2^n(t-n)),\qquad
+ H(t)=\int_t^\infty h(s)\,ds.
+\]
+The bumps have disjoint supports and summable areas.  Hence $H$ is
+smooth, nonnegative, and decreasing to zero, while $H'(n)=-1$.
+Even $H'(t)\to0$ alone would not supply compactness of the state
+or identify a unique limit.  Convergence-to-equilibrium theorems require
+the appropriate coercivity, compactness, integrability, and control of
+invariants in the stated regime.
+
+\section{Exact moment balances and the closure problem}
+
+For a smooth unit-mass solution of
+\[
+ \partial_tf+v\cdot\nabla_xf=Q(f,f),
+\]
+assume sufficient velocity integrability to justify the following
+moments.  Let $c=v-u$ and define
+\[
+ P=\int c\otimes c\,f\,dv,\quad
+ e=\frac1{2\rho}\int|c|^2f\,dv,\quad
+ q=\frac12\int|c|^2c f\,dv,
+ \quad E=\frac12\rho|u|^2+\rho e.
+\]
+Here $P$ is a positive semidefinite pressure tensor.  The Cauchy stress
+uses the opposite sign for the kinetic contribution; keeping this
+convention explicit avoids sign errors in viscosity formulas.
+
+\begin{proposition}[Moment equations before closure]
+\label{prop:micro-moments}
+Under these hypotheses,
+\begin{align}
+ \partial_t\rho+\nabla\cdot(\rho u)&=0,
+ \label{eq:micro-mass}\\
+ \partial_t(\rho u)+\nabla\cdot(\rho u\otimes u+P)&=0,
+ \label{eq:micro-momentum}\\
+ \partial_tE+\nabla\cdot(Eu+Pu+q)&=0.
+ \label{eq:micro-energy}
+\end{align}
+\end{proposition}
+\begin{proof}
+Test the kinetic equation with $1,v,|v|^2/2$ and use the collision
+invariants.  Since $\int cf\,dv=0$, expansion of
+$v=u+c$ gives
+$\int v\otimes vf\,dv=\rho u\otimes u+P$.
+Likewise,
+\[
+ \frac12\int |v|^2vf\,dv
+ =\left(\frac12\rho|u|^2+\rho e\right)u+Pu+q.
+\]
+These expansions give all three equations.
+\end{proof}
+
+\begin{example}[Equal five moments, different stress]
+\label{ex:micro-unclosed}
+Let $f_A$ and $f_B$ be centered normalized Gaussian densities on
+$\R^3$ with covariance matrices
+\[
+ A=I,\qquad B=\operatorname{diag}(1+\delta,1-\delta,1),
+ \quad0<\delta<1.
+\]
+They have the same mass, mean, and scalar temperature because
+$\tr A=\tr B=3$.  Their pressure tensors are $A$ and $B$,
+respectively.  Thus the five fluid moments do not determine the
+momentum flux.
+\end{example}
+
+A local Maxwellian imposes $P=\rho\theta I$ and $q=0$, giving
+the Euler fluxes.  An arbitrary local Maxwellian with space- and
+time-dependent parameters is generally not a solution of the full
+Boltzmann equation: its collision term vanishes, but its transport
+term need not.  Euler equations arise as moment equations under
+that closure or as a justified limit, rather than as a proof that
+every Euler solution lifts to an exact local-Maxwellian kinetic
+solution.  This qualification is stated explicitly in the rigorous
+hydrodynamic-limit literature \citep{microGolseSaintRaymond2009}.
+
+\subsection{First-order constitutive laws and scaling}
+
+For a monatomic gas near local equilibrium, a formal
+Chapman--Enskog expansion produces the constitutive form
+\begin{equation}
+ P=pI-2\mu S_0-\zeta(\nabla\cdot u)I,
+ \qquad q=-\kappa\nabla T,
+ \quad
+ S_0=\tfrac12(\nabla u+\nabla u^T)
+          -\tfrac13(\nabla\cdot u)I.
+ \label{eq:micro-constitutive}
+\end{equation}
+The bulk coefficient is zero in the simplest monatomic elastic
+model.  Internal modes and other models change this conclusion.
+The values of the transport coefficients require solving equations
+for the linearized collision operator; conservation and symmetry
+alone do not fix them.
+
+The Knudsen number is the ratio of a microscopic mean free path to
+the macroscopic length scale.  Small Knudsen number, small Mach number,
+and fixed Reynolds number specify distinct relationships among
+scales.  A formal expansion in one does not silently impose the
+others.  A global small value also does not rule out local breakdown
+near a shock, boundary layer, or strongly varying rarefied region.
+Volkov's first and third decks make the physical scale separation
+and the failure of elementary closure in rarefied regimes explicit
+\citep{microVolkov01,microVolkov03}.
+
+\subsection{A precise historical hydrodynamic-limit theorem}
+
+The result of Golse and Saint-Raymond that is useful here concerns
+the scaled equation on $\R^3_x\times\R^3_v$
+\begin{equation}
+ \varepsilon^2\partial_tF_\varepsilon
+ +\varepsilon v\cdot\nabla_xF_\varepsilon
+ =Q(F_\varepsilon,F_\varepsilon),
+ \qquad M(v)=(2\pi)^{-3/2}e^{-|v|^2/2}.
+ \label{eq:micro-hydro-scale}
+\end{equation}
+Their collision kernels obey the exchange and reflection symmetries
+and hard-cutoff bounds of the form
+\[
+ 0<B(z,n)\le C(1+|z|)^\beta|\widehat z\cdot n|,
+ \qquad
+ \int_{S^2}B(z,n)\,dn\ge C^{-1}\frac{|z|}{1+|z|},
+ \quad0\le\beta\le1,
+\]
+with the inequalities understood almost everywhere.  Initial data
+satisfy
+\begin{equation}
+ \sup_{\varepsilon>0}\varepsilon^{-2}
+ H(F^{\mathrm{in}}_\varepsilon\mid M)<\infty,
+ \quad
+ H(F\mid M)=\iint\left(F\log\frac FM-F+M\right)\,dx\,dv.
+ \label{eq:micro-relative-scaling}
+\end{equation}
+Their Theorem 2.4 describes limit points of the fluctuations
+$g_\varepsilon=(F_\varepsilon/M-1)/\varepsilon$ for the
+corresponding renormalized solutions.  In the stated weak local
+topology the limit has the form
+\[
+ g(t,x,v)=u(t,x)\cdot v+
+            \tfrac12\theta(t,x)(|v|^2-5),
+\]
+where $(u,\theta)$ solves an incompressible
+Navier--Stokes--Fourier system and satisfies its energy inequality
+\citep[Theorem 2.4]{microGolseSaintRaymond2009}.
+The initial velocity is determined by the weak limit of the Leray
+projection of the scaled momentum; a corresponding thermal moment
+determines the initial temperature fluctuation.  For appropriate
+well-prepared initial entropy, the velocity is a Leray solution
+with the corresponding initial energy bound.
+
+This is a theorem about a specified collision class, spatial domain,
+scaling, solution concept, and convergence topology.  Its proof uses
+entropy bounds, coercivity of the linearized collision operator,
+velocity averaging, vanishing conservation defects, and control of
+nonlinear fluxes.  It yields weak fluid solutions; it does not by
+itself upgrade them to every stronger regularity or uniqueness
+statement.  Statements about the separate 2026 proof release are
+analyzed in Chapter~\ref{ch:navier-stokes-release}.  That chapter's
+precise theorem must be used with its own forcing and solution
+hypotheses, rather than inferred from this historical limit theorem.
+
+\section{DSMC as a stochastic approximation, with auditable assumptions}
+
+The requested sixth Volkov deck explains direct simulation Monte Carlo
+as a particle approximation to kinetic dynamics, with statistical
+weights, free-flight and collision substeps, cell-based collision
+selection, inflow and wall kernels, and sampling of moments
+\citep{microVolkov06}.  These simulated particles represent weighted
+samples.  Their paths are not claimed to be the paths of every physical
+molecule in the gas.
+
+Three error categories must be distinguished: the physical model
+(collision law and wall interaction), numerical discretization
+(time step, cells, particle count, cutoffs), and statistical estimation.
+Increasing a GPU sample count primarily addresses the latter two
+categories.  It cannot validate a physical collision law by itself.
+
+\begin{proposition}[Flux sampling at an equilibrium wall]
+\label{prop:micro-flux}
+Let a stationary wall emit an equilibrium gas with thermal variance
+$\theta>0$ and inward unit normal $n$.  The normalized velocity
+density of molecules crossing the wall into the domain is
+\[
+ p_{\mathrm{flux}}(v)
+ =\frac{(v\cdot n)_+}{2\pi\theta^2}
+       e^{-|v|^2/(2\theta)}.
+\]
+Its positive normal component $s$ has density
+$(s/\theta)e^{-s^2/(2\theta)}$, and its two tangential
+components are independent centered Gaussians of variance $\theta$.
+\end{proposition}
+\begin{proof}
+A bulk density $M_\theta(v)$ contributes a crossing flux
+$(v\cdot n)_+M_\theta(v)$.  The integral of this flux is
+$\sqrt{\theta/(2\pi)}$.  Dividing by that value gives the
+displayed density.  In orthonormal normal/tangential coordinates
+the exponential and its prefactor factor into the three stated
+one-dimensional densities.
+\end{proof}
+
+Sampling the normal velocity from an unweighted half-Gaussian would
+therefore give the wrong boundary ensemble.  A finite reservoir
+implementation also requires an estimate of the missing high-speed
+tail; the Maxwellian has no finite maximum speed.
+
+\begin{proposition}[The exact frozen-rate majorant identity]
+\label{prop:micro-majorant}
+Consider $K\ge1$ possible events with fixed rates $r_j\ge0$, and
+choose $R>0$ with $R\ge\max_jr_j$.  Generate a Poisson proposal process of rate
+$KR$, choose a label uniformly from $\{1,\ldots,K\}$ at each
+proposal, and accept label $j$ with probability $r_j/R$.
+The accepted events of label $j$ form a Poisson process of rate
+$r_j$; distinct accepted labels have independent counts.
+\end{proposition}
+\begin{proof}
+The probability that a proposal is accepted with label $j$ is
+$r_j/(KR)$.  For an interval of length $t$, condition on its
+Poisson number of proposals and take the joint probability
+generating function of the marked counts.  Summing the Poisson
+series gives
+\[
+ \exp\!\left(t\sum_{j=1}^K r_j(z_j-1)\right)
+ =\prod_{j=1}^K\exp(tr_j(z_j-1)).
+\]
+This is the product of the generating functions of independent
+Poisson variables with the claimed means.  The same argument on
+disjoint time intervals proves the process statement.
+\end{proof}
+
+This proves the sampling principle behind majorant collision schemes.
+It does not alone prove convergence of a full DSMC method whose rates
+change after collisions and whose transport is split in time.  In that
+case the bound must remain valid for the current state and the
+discretization error must be controlled.  If an alleged acceptance
+probability exceeds one, silently clipping it changes the rate.
+A temperature-based constant in illustrative code is not a proof of
+a global bound on an unbounded velocity distribution.
+
+\begin{proposition}[Sampling variance with correlations]
+\label{prop:micro-sampling}
+If $Y_1,\ldots,Y_n$ have finite second moments, then
+\[
+ \operatorname{Var}\!\left(\frac1n\sum_iY_i\right)
+ =\frac1{n^2}\sum_{i,j}\operatorname{Cov}(Y_i,Y_j).
+\]
+For identically distributed independent samples this equals
+$\sigma^2/n$.  For a stationary sequence with variance
+$\sigma^2>0$ and lag correlations $r_k$, it equals
+\[
+ \frac{\sigma^2}{n}
+ \left(1+2\sum_{k=1}^{n-1}(1-k/n)r_k\right).
+\]
+\end{proposition}
+\begin{proof}
+Expand the square of the centered sum and take expectations.
+For a stationary sequence, group off-diagonal pairs by their
+lag; there are $n-k$ pairs at lag $k$ in each direction.
+\end{proof}
+
+Thinning a time series can reduce some correlations but does not prove
+independence.  A central-limit error bar requires its own assumptions;
+a fixed seed provides reproducibility, not randomness certification.
+For independent samples, Chebyshev's inequality gives the explicit
+bound
+$\Pr(|\overline Y-\mathbb EY|\ge a)\le\sigma^2/(na^2)$.
+The statistics and Monte Carlo decks are useful introductions
+\citep{microVolkov04,microVolkov05}; implementations should additionally
+handle finite precision, zero arguments of logarithms, array bounds,
+correct random-number-generator state, and reproducible restart state.
+The period of a generator is constrained by its internal state space,
+not merely by the number of possible values of a single output word.
+
+\section{Reduced models and learned closures}
+
+An orthogonal reduced basis minimizes a chosen projection loss on its
+training snapshots.  That statement does not imply that the projected
+trajectory is stable, that the discarded modes exert no force, or that
+the basis will predict new parameter regimes.  The currently available
+replacement Farhat course decks explicitly distinguish projection
+error from model-dynamics error \citep{microFarhatCourse}.  Their
+complete version-specific review is recorded separately in the source
+audit.
+
+For an orthonormal column matrix $V$, write a full state
+$z=Va+w$ with $V^Tw=0$.  If $\dot z=F(z)$, the exact retained
+coordinate satisfies $\dot a=V^TF(Va+w)$.  Replacing the right
+side by $V^TF(Va)$ is a closure.  The exact memory identity in
+Chapter~\ref{ch:quantum-fluid} explains why eliminated coordinates
+can leave both memory and an initial-condition contribution.
+
+\begin{proposition}[What weighted POD actually minimizes]
+\label{prop:micro-pod}
+Let $X=[x_1\ \cdots\ x_s]\in\R^{n\times s}$, let
+$W=\operatorname{diag}(w_1,\ldots,w_s)$ with $w_j>0$, and
+let $\lambda_1\ge\cdots\ge\lambda_n\ge0$ be the eigenvalues
+of $C=XWX^T$.  Fix $1\le r\le n$.  Among all
+$V\in\R^{n\times r}$ with $V^TV=I$,
+\[
+ \min_V\sum_jw_j\|x_j-VV^Tx_j\|^2
+ =\sum_{i>r}\lambda_i.
+\]
+A minimizing range is spanned by eigenvectors for the largest
+$r$ eigenvalues.
+\end{proposition}
+\begin{proof}
+The objective is $\tr C-\tr(V^TCV)$.  In an orthonormal
+eigenbasis $e_i$ of $C$, put $a_i=\|V^Te_i\|^2$.
+Then $0\le a_i\le1$, $\sum_i a_i=r$, and
+$\tr(V^TCV)=\sum_i\lambda_i a_i$.  Transferring any weight
+from a smaller eigenvalue to an unfilled larger one cannot decrease
+this sum.  Its maximum is therefore $\sum_{i\le r}\lambda_i$,
+and the indicated eigenspace attains it.
+\end{proof}
+
+The proposition concerns the chosen snapshots and weights.  It contains
+no assertion about an unsampled parameter or a differential equation.
+Indeed the stable matrix
+\[
+ A=\begin{pmatrix}-1&10\\0&-1\end{pmatrix},\qquad
+ V=2^{-1/2}\begin{pmatrix}1\\1\end{pmatrix}
+\]
+has both eigenvalues equal to $-1$, while its orthogonal Galerkin
+reduction is $V^TAV=4$.  The reduced scalar solution grows
+exponentially.  Nonsymmetric stable dynamics are therefore not
+automatically preserved by orthogonal projection.
+
+For Petrov--Galerkin projection with full-column-rank trial and test
+matrices $V,W$, the matrix $W^TV$ must be invertible to use
+$\Pi=V(W^TV)^{-1}W^T$.  Direct multiplication gives
+$\Pi^2=\Pi$, $\operatorname{range}\Pi=\operatorname{range}V$,
+and $\ker\Pi=\ker W^T=(\operatorname{range}W)^\perp$.
+The direction of this oblique projection is the latter kernel.
+
+\subsection{Hyperreduction adds another controlled approximation}
+
+State reduction need not make a nonlinear residual cheap to evaluate.
+Let $U\in\R^{n\times r}$ have orthonormal columns and let
+$P\in\R^{n\times r}$ select $r$ coordinates.  If
+$P^TU$ is invertible, the discrete empirical interpolation map is
+\[
+ D=U(P^TU)^{-1}P^T.
+\]
+
+\begin{proposition}[Interpolation exactness and amplification]
+\label{prop:micro-deim}
+For every $y\in\R^n$, $DU=U$, $P^TDy=P^Ty$, and
+\[
+ \|y-Dy\|
+ \le\left(1+\|(P^TU)^{-1}\|\right)
+       \|(I-UU^T)y\|.
+\]
+\end{proposition}
+\begin{proof}
+The first two identities follow by cancellation of $P^TU$.
+Because $D$ is the identity on the range of $U$,
+$(I-D)y=(I-D)(I-UU^T)y$.
+Use $\|I-D\|\le1+\|D\|$ and the unit operator norms
+of $U$ and $P^T$ to obtain the estimate.
+\end{proof}
+
+The bound is deliberately elementary; sharper oblique-projection
+bounds are possible.  Even this version shows why a small discarded
+snapshot norm is insufficient if the sampled basis is ill-conditioned.
+For oversampled least squares, full column rank of $P^TU$ is the
+corresponding uniqueness and exact-reproduction requirement.
+An online cost independent of $n$ additionally requires that sampled
+nonlinear entries and the restricted reconstruction can be evaluated
+without assembling all $n$ entries.  A dense nonlocal nonlinear map
+can violate that requirement.
+
+Other reduction methods have different hypotheses.  Classical balanced
+truncation concerns stable finite-dimensional linear time-invariant
+systems, with reachability and observability conditions, and its usual
+input--output error estimate assumes zero initial state.  An empirical
+balanced-POD approximation does not inherit every exact balancing
+guarantee.  Moment matching requires the relevant full and reduced
+resolvents to exist at its interpolation nodes.  Grassmann-chart
+interpolation requires the chart to be valid, fixed subspace rank,
+and appropriate alignment before interpolating reduced operators.
+The detailed Farhat review documents these distinctions
+\citep{microFarhatCourse}.
+
+Likewise, a weighted finite-element energy
+$\widetilde U(q)=\sum_e\xi_e U_e(q)$ with fixed weights has
+gradient $\sum_e\xi_e\nabla U_e(q)$.  If a neural model makes
+$\xi_e=\xi_e(q)$, the gradient instead includes
+$\sum_e U_e(q)\nabla\xi_e(q)$.  Omitting those terms loses the
+claimed potential-force relation.  A preservation theorem for a
+fixed-weight mechanical hyperreduction must therefore be re-proved
+when the weights become state dependent or the equation changes to
+a different fluid formulation.
+
+\subsection{A provable constraint for a neural constitutive model}
+
+A classical or quantum neural model can be used to predict constitutive
+coefficients from invariant local features.  For example, a model can
+output nonnegative scalars $\mu,\zeta,\kappa$ in
+\eqref{eq:micro-constitutive}.  This architecture has a limited but
+useful exact guarantee.
+
+\begin{proposition}[Nonnegative constitutive entropy production]
+\label{prop:micro-learned-entropy}
+For $T>0$, let the viscous stress be
+$\tau=2\mu S_0+\zeta(\nabla\cdot u)I$ and the heat flux
+$q=-\kappa\nabla T$, with $\mu,\zeta,\kappa\ge0$.
+Then
+\[
+ \frac{\tau:\nabla u}{T}
+       -\frac{q\cdot\nabla T}{T^2}
+ =\frac{2\mu|S_0|^2}{T}
+  +\frac{\zeta(\nabla\cdot u)^2}{T}
+  +\frac{\kappa|\nabla T|^2}{T^2}\ge0.
+\]
+\end{proposition}
+\begin{proof}
+The symmetric stress is orthogonal in the Frobenius inner product to
+the antisymmetric part of $\nabla u$.  The traceless symmetric
+part $S_0$ is orthogonal to $I$.  Decompose the symmetric part of
+$\nabla u$ into $S_0+(\nabla\cdot u)I/3$ and substitute the
+heat-flux formula.
+\end{proof}
+
+If the scalar inputs are rotational invariants, these constitutive
+tensors transform correctly under rotations.  Dependence on gradients
+and thermodynamic invariants also permits Galilean covariance.
+Neither property proves accurate transport coefficients.  Moreover,
+nonnegative entropy production does not by itself make
+$P=pI-\tau$ positive semidefinite far from equilibrium.  A kinetic
+moment model that requires realizable covariances can instead
+parameterize $P=LL^T$ or another positive-definite form and impose
+the remaining energy and flux constraints explicitly.  These are
+different requirements and must be checked together.
+
+Tensor decomposition makes these constraints transparent.  In three
+dimensions a rank-two tensor splits into scalar trace, antisymmetric,
+and symmetric traceless pieces, of dimensions $1,3,5$.  The
+antisymmetric piece is an exterior-square representation; the
+symmetric pieces arise from symmetric tensor powers and their
+trace decomposition.  Schur functors and invariant contractions
+therefore help build features and outputs with known transformation
+laws.  Determinants test nonsingularity or volume change in specified
+finite-dimensional maps.  They do not determine a turbulent closure
+or imply the analytic estimates required for a continuum theorem.
+
+For a quantum version of ToricGT, the surface or dessin specifies
+connectivity and admissible local operations, while circuit parameters
+specify a family of quantum channels and observables.  A conservation
+law can be enforced by restricting channels or observables to a
+specified invariant sector.  A measured expectation then estimates a
+well-defined feature or coefficient.  State preparation, finite-shot
+variance, circuit approximation, and the relation between that feature
+and the physical kinetic state remain separate parts of the model.
+The quantum-fluid chapter discusses these algorithmic costs and
+encodings.  Learning on a surface does not identify an arbitrary
+three-dimensional fluid with a two-dimensional toric code.
+
+\section{What passes from complexes to a continuum theorem}
+
+On a finite cell complex, the boundary-of-boundary identity supplies
+exact incidence relations.  Its adjoint cochain identities, Hodge
+decompositions, and positive semidefinite Laplacians can enforce
+discrete conservation and isolate harmonic components.  A gentle
+surface algebra or a dessin provides additional combinatorial
+organization of local operators.  A variety of complexes organizes
+matrices with prescribed compositions and rank conditions.  These
+constructions can certify the algebraic structure of a discretization
+or constrain a neural architecture.
+
+To pass from such a model to a continuum claim requires a separate
+chain of estimates: consistency of the geometric approximation,
+stability uniform in mesh size, compactness in a topology suitable
+for nonlinear products, identification of the limiting equation,
+and preservation of the required initial and boundary data.
+Spectral gaps on individual finite graphs need not have a uniform
+positive lower bound as the graphs are refined.  Rank constraints
+on finitely many matrices need not control high-frequency
+concentration.  A learned closure with positive entropy production
+need not supply the required continuum regularity.
+
+The constructive role of the project's algebra is to make some
+requirements exact and testable, then to identify which analytic
+requirements are still independent.  Chapter~\ref{ch:fluid-structures}
+proves the finite structural statements, and
+Chapter~\ref{ch:navier-stokes-release} identifies the actual theorem
+and proof obligations of the recent release.  The microscopic
+derivations in this chapter provide the physical interpretation and
+the correct hierarchy of approximations without changing those
+theorems' hypotheses.

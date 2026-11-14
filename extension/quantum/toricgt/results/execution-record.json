@@ -1,0 +1,32 @@
+{
+  "schema": "quantum-toricgt-execution-record-v1",
+  "device_name": "iska",
+  "device_id": "bc45923d-5fd4-412d-b1fd-3f6ac089ed5c",
+  "training_interpreter": "/home/iska/miniconda3/envs/tokengt/bin/python",
+  "training_process_pid": 2067645,
+  "training_process_exit_code": 0,
+  "training_process_wall_seconds": 109.02,
+  "final_cuda_verification_pid": 2070375,
+  "final_cuda_verification_exit_code": 0,
+  "torch_allocation_fraction_cap": 0.1,
+  "cpu_threads": 2,
+  "package_installations_performed": false,
+  "other_jobs_stopped_or_changed": false,
+  "post_run_gpu_compute_processes": [
+    {
+      "pid": 1210855,
+      "process": "python",
+      "used_memory_MiB": 386
+    },
+    {
+      "pid": 1739501,
+      "process": "/usr/share/rustdesk/rustdesk",
+      "used_memory_MiB": 424
+    }
+  ],
+  "post_run_note": "The pre-existing Python and RustDesk processes remained; the benchmark process had exited. This is a process observation, not a guarantee about unrelated applications.",
+  "transfer_archive_sha256": "6d0aa315b8656f791a71a7cfbd78f01ad793d02818f9bf673587c1fb8cb9a673",
+  "transfer_archive_bytes": 2613495,
+  "checkpoint_and_run_record_hashes_verified": true,
+  "task_temporary_remote_base64_files_removed": true
+}

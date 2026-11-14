@@ -1,0 +1,424 @@
+\chapter{A worked bridge: orders, periodic complexes and spectra}
+\label{ch:worked-bridge}
+
+The preceding chapters provide several legitimate connections, each with a
+specified domain of validity. We now place them beside one another in a single
+calculation. Its purpose is to identify exactly which structures survive a
+change of viewpoint. The example is elementary enough to calculate without
+appealing to an existence theorem, but rich enough to distinguish a generic
+semisimple algebra, an integral order, a singular special fiber, an infinite
+projective resolution, and a positive finite-dimensional Hodge operator. It
+also directly uses the nodal order occurring in the inherited research
+program \citep{GRHRepo,SchreiberSurfaceI,SchreiberSurfaceII}.
+
+\section{The order and its two complementary elements}
+
+Let $R$ be a commutative integral domain, let $u\in R$ be nonzero, and set
+\[
+ \Lambda=R[X]/(X^2-uX),\qquad x=\overline X,\qquad y=u-x.
+\]
+Then $xy=yx=0$. The polynomial is monic, so every element of $\Lambda$ has a
+unique expression $a+bx$, with $a,b\in R$. Relative to the basis $(1,x)$,
+multiplication by $x$ and $y$ is represented by
+\[
+ M_x=\begin{pmatrix}0&0\\1&u\end{pmatrix},\qquad
+ M_y=\begin{pmatrix}u&0\\-1&0\end{pmatrix}.
+\]
+These matrices exhibit the zero-composition condition as an identity over the
+coefficient ring, before any choice of scalar field or inner product.
+
+\begin{proposition}[An exact periodic complex]\label{prop:periodic-order}
+There is an exact complex of free $\Lambda$-modules
+\[
+ \cdots\xrightarrow{x}\Lambda\xrightarrow{y}\Lambda
+ \xrightarrow{x}\Lambda\xrightarrow{y}\Lambda\xrightarrow{x}\cdots.
+\]
+Here an arrow labelled by an element denotes multiplication by that element.
+Moreover, with $M=\Lambda/x\Lambda$, the augmented sequence
+\[
+ \cdots\xrightarrow{x}\Lambda\xrightarrow{y}\Lambda
+ \xrightarrow{x}\Lambda\longrightarrow M\longrightarrow0
+\]
+is a free resolution of $M$.
+\end{proposition}
+\begin{proof}
+For $a+bx\in\Lambda$,
+\[
+ x(a+bx)=(a+ub)x,\qquad y(a+bx)=a(u-x)=ay.
+\]
+Uniqueness of the basis expansion gives
+\[
+ \ker M_x=R(x-u)=Ry,\qquad \im M_y=Ry.
+\]
+It also gives $\ker M_y=Rx$: the coefficient of $x$ in $ay$ is $-a$, so
+$ay=0$ implies $a=0$. Finally $\im M_x=Rx$, since $x=x\cdot1$. Thus the
+kernel of each arrow is the image of the preceding one. The quotient map
+onto $M$ has kernel $x\Lambda=Rx$, which verifies exactness at the augmented
+term. Every unaugmented term is the free module $\Lambda$ of rank one.
+\end{proof}
+
+The ring need not be a domain: indeed $xy=0$. This is not a defect in the
+argument. The coefficient ring $R$ is a domain, whereas the order $\Lambda$
+is a ring with zero divisors. Keeping those two statements separate prevents
+an erroneous cancellation of $x$ or $y$. In particular, this is not a
+regular-sequence Koszul resolution. It is a periodic resolution arising from
+the explicit annihilator identities.
+
+\section{Tensor products detect information that ranks omit}
+
+The module $M$ is isomorphic to $R$ as an $R$-module, with $x$ acting as zero.
+The action of $y$ on $M$ is consequently multiplication by $u$. Tensoring the
+resolution with $M$ over $\Lambda$ produces the chain complex
+\[
+ \cdots\xrightarrow{0}R\xrightarrow{u}R
+ \xrightarrow{0}R\xrightarrow{u}R\xrightarrow{0}R.
+\]
+The rightmost copy is in degree zero.
+
+\begin{proposition}[An explicit derived obstruction]\label{prop:tor-node}
+For $M=\Lambda/(x)$ as above,
+\[
+ \Tor^{\Lambda}_{2j+1}(M,M)\cong R/uR\quad(j\geq0),
+ \qquad
+ \Tor^{\Lambda}_{2j}(M,M)=0\quad(j\geq1).
+\]
+In degree zero $M\otimes_\Lambda M\cong R$.
+\end{proposition}
+\begin{proof}
+The displayed free resolution computes the derived tensor product. Its odd
+differentials are zero, and its positive even differentials are
+multiplication by $u$. Since $R$ is a domain and $u\ne0$, the latter maps are
+injective. The homology in positive even degree is therefore zero. In odd
+degree the kernel is all of $R$ and the incoming image is $uR$, giving
+$R/uR$. In degree zero the incoming differential is zero. This establishes
+all the assertions directly from the definition of homology.
+\end{proof}
+
+If $u$ is a unit, the positive Tor groups vanish, and the generic splitting
+is already available over $R$. If $u$ is a nonunit, the odd groups record a
+defect supported on its vanishing locus. Their $R$-rank is zero, so taking
+generic ranks erases this information completely. This is a concrete reason
+to retain the exact category of lattices and derived functors when comparing
+orders. A rational representation and its integral model can agree in rank
+while disagreeing substantially in extension theory.
+
+This example also guards against a misleading computational inference.
+Efficient manipulation of the two small matrices computes this particular
+resolution. It says nothing about a polynomial-time procedure for arbitrary
+module classification, arbitrary syzygies, or a cryptographic search problem.
+The presentation size, coefficient bit lengths, and demanded output are part
+of any complexity statement.
+
+\section{Generic splitting and singular specialization}
+
+Over the fraction field $K$ of $R$, the two elements
+\[
+ e_x=x/u,\qquad e_y=y/u
+\]
+are orthogonal idempotents with $e_x+e_y=1$. Thus
+$K\otimes_R\Lambda\cong K\times K$. The denominators matter: if $u$ is not
+invertible in $R$, these idempotents need not belong to $\Lambda$ itself.
+The generic decomposition therefore need not be an integral decomposition.
+This is the same elementary obstruction that appears when an overorder
+introduces idempotents unavailable in the smaller order.
+
+For $R=k[u]$ or $k[[u]]$, reduction modulo $u$ gives
+\[
+ \Lambda/u\Lambda\cong k[X]/(X^2).
+\]
+The special fiber has a nonzero nilpotent, whereas the generic fiber is a
+product of fields. The periodic maps reduce to multiplication by $X$ and
+$-X$, whose image and kernel both equal $kX$. Thus exactness survives this
+particular reduction. This conclusion follows from an explicit calculation;
+it must not be generalized to a statement that every exact complex remains
+exact after arbitrary nonflat base change. Proposition~\ref{prop:tor-node}
+already demonstrates the contrary phenomenon for another tensor operation.
+
+\section{The finite Hodge operator of the same complex}
+
+We next work over $\R$ and evaluate the parameter at a real number $t$.
+This is a finite matrix family. Equip every copy of $\R^2$ with the standard
+Euclidean inner product, and take the consecutive differentials
+\[
+ A_t=\begin{pmatrix}0&0\\1&t\end{pmatrix},\qquad
+ B_t=\begin{pmatrix}t&0\\-1&0\end{pmatrix}.
+\]
+Their composite vanishes for every $t$, and each matrix has rank one.
+The middle Hodge Laplacian is
+\[
+ \Delta_t=A_tA_t^T+B_t^TB_t.
+\]
+
+\begin{proposition}[Exactness and an explicit metric gap]
+For every $t\in\R$,
+\[
+ \Delta_t=(1+t^2)I_2.
+\]
+Its kernel is zero and its least eigenvalue is $1+t^2\geq1$.
+For every $\eta>0$, replacing both differentials by
+$\eta A_t,\eta B_t$ preserves their images, kernels and exactness but
+replaces the Laplacian by $\eta^2(1+t^2)I_2$.
+\end{proposition}
+\begin{proof}
+Direct multiplication gives
+\[
+ A_tA_t^T=\begin{pmatrix}0&0\\0&1+t^2\end{pmatrix},\qquad
+ B_t^TB_t=\begin{pmatrix}1+t^2&0\\0&0\end{pmatrix}.
+\]
+Adding proves the identity. A scalar multiple of the identity has the stated
+eigenvalues. Multiplication of a linear map by a nonzero scalar changes
+neither its image nor its kernel. Its contribution to $AA^T+B^TB$ is
+multiplied by the square of that scalar, which proves the final assertion.
+\end{proof}
+
+Several lessons are visible simultaneously. A singular algebraic fiber does
+not force this chosen finite Hodge gap to close. Conversely, exactness and
+the same algebraic rank stratum do not provide a positive lower bound when
+the scale of the differential is allowed to vary. The inner product and
+normalization of the operator are essential data. The latter statement is
+the finite counterpart of the much larger distinction between a topological
+index and a uniform physical spectral gap. It supplies a counterexample to
+an inference; it does not model the interacting Yang--Mills Hamiltonian.
+
+\section{How the cryptographic comparison enters}
+
+The derived obstruction $R/uR$ and the cyclic hidden subgroup in the
+cryptography chapter are both quotients of explicitly presented modules.
+That common language is useful: one can write maps, calculate kernels and
+compare exact sequences. Their computational roles are nevertheless
+different. A presentation of $R/uR$ includes its relation $u$. In an elliptic
+curve discrete logarithm instance $Q=dP$, the unknown $d$ is precisely the
+parameter of the hidden kernel
+\[
+ H_d=\{(-dt,t):t\in\Z/q\Z\}.
+\]
+Writing $H_d$ symbolically does not compute $d$. Fourier sampling obtains
+information about its annihilator using a quantum evaluation procedure for
+the public map $(a,b)\mapsto aP+bQ$. A useful algorithmic bridge must explain
+how representations of the relevant maps are obtained without first solving
+the hidden problem.
+
+Similarly, writing down a lattice basis after knowing a secret scalar is not
+a reduction from an unknown scalar to lattice reduction. The basis of the
+endomorphism relation lattice in the cryptography chapter is available when
+the action of the specified endomorphism on the cyclic subgroup is known.
+That availability is an input condition. The abstract existence of an
+endomorphism in an order does not automatically provide its efficient
+evaluation, its scalar action on a selected subgroup, or a short basis in a
+specified metric.
+
+\chapter{A quantitative synthesis and a research program}
+
+\section{The information that each theory actually supplies}
+
+The most useful common objects are modules with extra structure and complexes
+of maps between them. The relevant extra structure changes from chapter to
+chapter. An order-lattice is an integral module inside a rational
+representation. A cryptographic lattice is supplied with a norm,
+representation and probability distribution. An elliptic complex is supplied
+with differential operators and an exact principal-symbol sequence away from
+the zero section. A quantum theory is supplied with positive correlation
+functionals, spacetime covariance, locality and a reconstruction procedure.
+
+These additions are not optional embellishments to an otherwise complete
+algebraic answer. They determine which questions are meaningful. The matrix
+equation $BA=0$ determines a variety of complexes, but no quantum resource
+cost. A $K$-theory class determines the stable topological input to an index
+pairing, but no absolute time scale. A free abelian group determines neither
+the length of a shortest vector nor the distribution of a sampled error.
+
+\begin{longtable}{p{.20\textwidth}p{.33\textwidth}p{.37\textwidth}}
+\toprule
+Interface & Data retained & Additional data needed for the next question\\
+\midrule\endhead
+Order to rational algebra & Scalar extension, representation, rank & Integral
+conductor, local structure and lattice class\\
+Order to geometric lattice & An embedding into a real vector space & Positive
+form, basis, coefficient sizes and distortion bounds\\
+Complex to cohomology & Kernel modulo image & Chosen inner products and
+quantitative singular values\\
+Elliptic symbol to index & Symbol $K$-class and characteristic pairing & Domains,
+boundary conditions and estimates on positive spectrum\\
+Group action to quantum algorithm & An abstract operation or oracle & Reversible
+implementation, cleanup, precision and total resource accounting\\
+Lattice action to LWE problem & Module arithmetic & Error law, parameter regime,
+sample distribution and a reduction\\
+Euclidean correlations to a QFT & Positive continuum functionals and axioms &
+Control of phases, quantitative large-distance decay and spectral support\\
+\bottomrule
+\end{longtable}
+
+The table organizes a rigorous synthesis because each row is an interface
+with testable requirements. It prevents a conclusion from one category being
+silently reinterpreted as a conclusion in another.
+
+\section{A general comparison estimate}
+
+There is a simple quantitative principle behind several of these interfaces.
+Let $V$ be a finite-dimensional real inner-product space, let $\Delta$ be a
+positive semidefinite self-adjoint operator, and suppose its kernel is $K$.
+A gap statement is a lower bound on the orthogonal complement of $K$:
+\[
+ \langle v,\Delta v\rangle\geq c\|v\|^2\qquad(v\perp K).
+\]
+Algebraic identifications transport vectors. To transport this inequality,
+they must also control norms and quadratic forms.
+
+\begin{proposition}[Transport of a coercivity bound]
+Let $V,W$ be finite-dimensional real inner-product spaces, $T:W\to V$ a
+linear isomorphism, and $q$ a nonnegative quadratic form on $V$ with kernel
+$K$. Suppose
+\[
+ q(v)\geq c\,\operatorname{dist}(v,K)^2\quad(v\in V),
+ \qquad \|Tw\|\geq m\|w\|\quad(w\in W)
+\]
+with $c,m>0$. Put $q_T(w)=q(Tw)$ and $K_T=T^{-1}K$. Then
+\[
+ q_T(w)\geq cm^2\,\operatorname{dist}(w,K_T)^2.
+\]
+\end{proposition}
+\begin{proof}
+For every $k\in K$, write $k=Tz$ with $z\in K_T$. Then
+$\|Tw-k\|=\|T(w-z)\|\geq m\|w-z\|$. Taking the infimum over $k$, equivalently
+over $z$, gives
+$\operatorname{dist}(Tw,K)\geq m\operatorname{dist}(w,K_T)$.
+Apply the assumed bound for $q$ and square the latter inequality.
+\end{proof}
+
+This estimate has deliberately modest scope. It does not construct $T$, prove
+that $m$ stays away from zero in a limit, or identify a finite matrix with a
+physical Hamiltonian. It shows exactly what must be added to an algebraic
+identification to transport a lower spectral bound. The same smallest
+singular value controls distortion of short vectors in a lattice. The same
+absence of a uniform bound can invalidate a proposed continuum-limit argument
+or a proposed cryptographic reduction.
+
+\begin{corollary}[Why pointwise equivalence is insufficient]
+For a family of isomorphisms $T_j$, positive constants $m_j$ for each fixed
+$j$ do not imply a uniform positive lower bound for the transported quadratic
+forms. On $V=W=\mathbb R$, with $j\ge1$ and $q(v)=\|v\|^2$,
+the choice $T_j=j^{-1}I$ gives
+$q_{T_j}(w)=j^{-2}\|w\|^2$.
+\end{corollary}
+\begin{proof}
+The displayed identity follows from homogeneity of the norm. Its least
+Rayleigh quotient is $j^{-2}$, which tends to zero. Each $T_j$ remains an
+isomorphism.
+\end{proof}
+
+\section{A diagram with explicit logical boundaries}
+
+There is a defensible route from the two books to the other topics. Integral
+orders organize endomorphism rings and modules. These produce complexes and
+deformation problems, whose finite algebra can be studied through rank
+strata. Smooth geometric counterparts have symbol complexes and index
+classes. Gauge theory supplies a particularly important elliptic deformation
+complex. Finite abelian groups and modules also support the character theory
+underlying quantum hidden-subgroup algorithms. The links are structural and,
+in examples such as the preceding chapter, computationally explicit.
+
+What is absent is a theorem making the path transitive at the level of the
+most difficult conclusions. An endomorphism order does not turn an ASD index
+into an ECC discrete logarithm algorithm. A positive finite Hodge Laplacian
+does not establish a uniform infinite-volume Yang--Mills gap. A functional
+equation and real coefficients do not identify an arithmetic determinant
+with a self-adjoint operator. These omissions are the mathematical content of
+the remaining research questions, rather than details to be supplied by an
+unlabelled analogy.
+
+\section{Three concrete research directions}
+
+\subsection{Arithmetic modules with explicit metric control}
+
+A productive first direction is to choose a family of orders and record,
+together, its integral presentation, archimedean embeddings, positive form,
+local conductor, and a basis with certified coefficient sizes. The codifferent
+calculation in the cryptography chapter provides the correct dual object
+under a trace pairing. The shear example shows why a module isomorphism alone
+cannot certify a short-vector comparison. A useful theorem would provide a
+uniform, explicit distortion bound for a specified family of transformations,
+with the bound expressed in the same parameter as the input bit length.
+
+For an imaginary quadratic order, one can begin with explicit ideal lattices
+and the complex absolute-value metric. One must state which ideals are
+invertible, whether the order is maximal, how the discriminant varies, and
+which basis or reduced representative is produced. These restrictions are
+essential for a valid theorem about dual ideals or norm comparison. Extending
+such a theorem to noncommutative orders requires specifying left versus right
+modules and the chosen involution or positive representation.
+
+The computational companion provides small exact examples, not an asymptotic
+complexity result. A subsequent study should measure both coefficient growth
+and geometric distortion. Reporting only a favorable rank or module
+decomposition would leave the main quantitative issue unanswered.
+
+\subsection{Resource-certified elliptic-curve quantum arithmetic}
+
+A second direction is to express an elliptic-curve endomorphism decomposition
+as a reversible circuit with a complete cost model. The intended comparison
+must fix the curve family, coordinate system, field arithmetic, ancillary
+register policy, error-correction assumptions if any, and success
+probability. Every decomposition step needs an implementable procedure with
+its own input and output sizes. Ancillas must be uncomputed or their residual
+entanglement explicitly included in the algorithm.
+
+The relevant research question is then a concrete inequality between complete
+resource budgets. A shorter scalar decomposition may improve one term while
+introducing additional endomorphism evaluation, basis conversion or cleanup.
+The comparison chapter states that accounting explicitly. Its inequality is
+a criterion for a possible improvement; it is not evidence that the criterion
+has already been met. Likewise the multiplicative-group result of
+\citet{Pilatte2026} cannot be transported to arbitrary ECC merely by replacing
+multiplication notation with point addition.
+
+For reproducibility, a useful artifact would include a circuit generator,
+small-instance state-vector checks, a reversible arithmetic specification,
+gate counting under a named gate set, and a machine-readable list of
+assumptions. An independent implementation should recover the same count
+from the generated circuits. Resource tables based on public circuits and
+resource tables whose circuit details are withheld should be identified as
+different forms of evidence, even when both are mathematically interesting.
+
+\subsection{From elliptic estimates to a uniform physical gap}
+
+A third direction begins with the Yang--Mills existence framework reviewed in
+this manuscript. The independent assessment separates existence from the
+mass-gap problem \citep{YMReview2026}. A further theorem needs a quantitative
+bound strong enough to survive ultraviolet and infinite-volume limiting
+procedures, together with a correct identification of the reconstructed
+observables and vacuum sector.
+
+The spectral theorem argument in the gauge chapter gives a precise target:
+uniform exponential decay on the orthogonal complement of the vacuum is
+equivalent to a positive lower spectral threshold, with the stated domain
+and cyclicity conditions. The UV counterexample there proves that matching
+leading short-distance behavior cannot alone establish this target. A new
+mass-gap argument must therefore add infrared information. The ASD index
+formula may organize classical deformation spaces, but it does not provide
+the required estimate for the interacting quantum Hamiltonian.
+
+Formalization could assist by making the limiting and reconstruction
+interfaces explicit. The hard step would remain a proved analytic estimate,
+not a declaration naming a gap constant. A sound Lean statement must quantify
+over the relevant cutoffs and volumes, give the correct normalization, and
+make positivity of the common lower bound an actual conclusion or a clearly
+identified hypothesis. The formalization appendix explains this distinction
+using smaller declarations that can be compiled in the present project.
+
+\section{What this monograph establishes}
+
+This work supplies a coherent collection of explicit constructions,
+elementary proofs, counterexamples to invalid transfers, a source audit,
+selected machine-checked algebra, and reproducible finite experiments. It
+does not assert a proof of GRH, a Yang--Mills mass gap, a generally faster ECC
+algorithm, or a new security reduction for lattice cryptography. Those would
+require additional theorems not contained in the source material or proved
+here.
+
+The strongest common principle obtained from the comparison is quantitative:
+an algebraic or categorical connection becomes an algorithmic or spectral
+connection only after its representations, metrics, probability laws,
+normalizations and limiting operations are controlled. The examples make
+each part of that principle testable. The research directions above specify
+what a successful next theorem would have to say and what evidence would
+make it independently assessable.

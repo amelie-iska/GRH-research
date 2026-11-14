@@ -1,0 +1,28 @@
+{
+  "method": "Poppler pdftoppm -f 1 -singlefile -r 140 -png; all three rendered images visually inspected",
+  "figure_count": 3,
+  "findings": [],
+  "checks": [
+    "Fierz T^a vertices and summed adjoint edge visible",
+    "Fierz free input/output labels and coefficients match delta contractions",
+    "Crossing visibly has no tensor vertex",
+    "Both observational causal graphs and removed intervention edges agree with their equations",
+    "Probabilities 0 and 1/2 agree with fair-Boolean structural models",
+    "Sequential context has matching B-to-C replacement types",
+    "No clipped text, overlapping labels, or missing math glyphs observed"
+  ],
+  "files": [
+    {
+      "file": "extension/manuscript/figures/second-pass-causal-models.pdf",
+      "sha256": "3742d47dafee811aae3e02c4a2be6c2043ef417a2cea1cf3f3d07943337bd0f8"
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-fierz.pdf",
+      "sha256": "d2f63ee603a261a7a81d7084255954a29197857299cb7abbdda780f07bd89aaf"
+    },
+    {
+      "file": "extension/manuscript/figures/second-pass-typed-context.pdf",
+      "sha256": "aff52148e051c24893f5a08d4d0dcf1148ec1f8ced81a0b126470b98daccaa20"
+    }
+  ]
+}

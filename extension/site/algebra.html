@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Exact interactive calculations for Plücker minors, Schur tableaux, gentle representations, and a corrected matching-semigroup presentation.">
+  <meta name="theme-color" content="#123d39"><title>Algebra You Can Check — Integral Structures</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="algebra.css">
+  <script src="algebra.js" defer></script>
+</head>
+<body class="algebra-page">
+<a class="skip-link" href="#algebra-main">Skip to the algebra laboratory</a>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true">Λ</span><span>INTEGRAL STRUCTURES<small>Exact algebra companion</small></span></a>
+  <nav aria-label="Main navigation"><a href="index.html">Research atlas</a><a href="quantum.html">Quantum circuits</a><a href="index.html#cone">4D complex lab</a></nav>
+  <a class="header-download" href="downloads/paper.pdf">Read the paper →</a>
+</header>
+<main id="algebra-main" class="section-width">
+  <section class="a-hero" aria-labelledby="algebra-title">
+    <div><h1 id="algebra-title">Algebra you<br>can <em>check.</em></h1><p class="hero-lede">Change a matrix, browse a basis, decompose a complex, and reduce a monomial to its unique normal form.</p></div>
+    <div class="a-hero-note"><p>Four constructions connect exterior algebra and standard monomials to gentle representations. Every displayed identity is recomputed with exact integer arithmetic.</p><p>The manuscript supplies the proofs and general theorems. These finite calculations make their inputs and conclusions inspectable.</p><a href="downloads/paper.pdf">Open the research monograph →</a></div>
+  </section>
+  <nav class="a-section-nav" aria-label="Algebra modules"><a href="#minors"><span>01</span> Minors</a><a href="#tableaux"><span>02</span> Tableaux</a><a href="#gentle"><span>03</span> Gentle modules</a><a href="#matching"><span>04</span> Normal forms</a></nav>
+
+  <section id="minors" class="a-panel" aria-labelledby="minors-title">
+    <header class="a-panel-heading"><span class="a-number">01</span><div><h2 id="minors-title">Six minors, one relation.</h2><p>The two rows of a 2 × 4 matrix determine an exterior product. Its six coordinates obey a quadratic relation.</p></div></header>
+    <div class="a-two-col">
+      <div><h3>Edit the matrix</h3><p class="a-small" id="matrix-hint">Enter integers from −9 to 9. Columns are numbered 1–4.</p><div class="a-matrix-input" id="matrixInputs" role="group" aria-label="Editable two by four matrix" aria-describedby="matrix-hint"></div><div class="a-actions"><button class="button secondary" id="matrixExample">Example</button><button class="button secondary" id="matrixDependent">Dependent rows</button><button class="button secondary" id="matrixZero">Zero matrix</button></div><p class="a-small">p<sub>ij</sub> = m<sub>1i</sub>m<sub>2j</sub> − m<sub>1j</sub>m<sub>2i</sub>, for i &lt; j.</p></div>
+      <div><h3>Exterior coordinates</h3><dl class="a-minor-grid" id="minorValues"></dl><p class="a-status" id="matrixStatus" role="status" aria-live="polite"></p></div>
+    </div>
+    <div class="equation a-equation">p<sub>12</sub>p<sub>34</sub> − p<sub>13</sub>p<sub>24</sub> + p<sub>14</sub>p<sub>23</sub> = 0</div>
+    <p class="a-calculation" id="pluckerCalculation"></p>
+    <details class="a-details"><summary>Why this identity matters</summary><p>Expanding the three products cancels every term in pairs. The result is a polynomial identity over every commutative ring. A nonzero exterior product gives a projective point of Gr(2,4) over a field; zero minors give the zero exterior product, which is not a projective point. The displayed row rank is computed over ℚ and can change after reduction modulo a prime.</p><p>Straightening rewrites products that violate a chosen tableau order using relations such as this one. A basis theorem also needs a proof of independence, beyond the ability to rewrite expressions.</p><p class="source-line">Source: manuscript, “Two-row tableaux and the Plücker algebra.” <a href="downloads/paper.pdf">Read the proof</a>.</p></details>
+  </section>
+
+  <section id="tableaux" class="a-panel" aria-labelledby="tableaux-title">
+    <header class="a-panel-heading"><span class="a-number">02</span><div><h2 id="tableaux-title">A basis in fifteen fillings.</h2><p>For shape (3,2) and entries 1, 2, 3, semistandard means weakly increasing rows and strictly increasing columns.</p></div></header>
+    <div class="a-tableau-layout"><div class="a-tableau-focus"><div id="tableauLarge" class="a-large-tableau" role="img" aria-label="Selected semistandard tableau"></div><div class="a-tableau-controls"><button class="button secondary" id="tableauPrevious" aria-label="Previous tableau">Previous</button><label for="tableauSelect">Tableau<select id="tableauSelect"></select></label><button class="button secondary" id="tableauNext" aria-label="Next tableau">Next</button></div></div><div class="a-tableau-reading"><h3 id="tableauPosition">Selected filling</h3><dl class="a-rule-list"><div><dt>Rows are weakly increasing</dt><dd id="tableauRows"></dd></div><div><dt>Columns are strictly increasing</dt><dd id="tableauColumns"></dd></div><div><dt>Weight monomial</dt><dd id="tableauWeight" class="a-weight"></dd></div></dl><p class="a-small">The exponent of xᵢ counts entries equal to i. Summing these fifteen weight monomials gives the Schur character s<sub>(3,2)</sub>(x₁,x₂,x₃).</p></div></div>
+    <h3 class="a-gallery-title">Browse the complete basis</h3><div id="tableauGallery" class="a-tableau-gallery" role="group" aria-label="All fifteen semistandard tableaux"></div>
+    <div class="a-hook-band"><div><span class="a-result-label">Hook–content dimension</span><strong id="hookDimension"></strong></div><p id="hookCalculation"></p></div>
+    <details class="a-details"><summary>Hook lengths and characteristic assumptions</summary><p>The hook–content product is ∏<sub>(i,j)∈λ</sub>(3+j−i)/h<sub>ij</sub>. For shape (3,2), the hook lengths are 4, 3, 1 in the first row and 2, 1 in the second; the corresponding contents plus 3 are 3, 4, 5 and 2, 3. Thus 360/24 = 15 as an integer identity.</p><p>The integral Schur module has this tableau basis; its rank remains 15 after base change, including to positive characteristic. Irreducibility and semisimple representation decompositions are additional characteristic-zero results. Dividing by the hook product 24 inside a field of characteristic 2 or 3 is not a valid substitute for the integral construction.</p><p class="source-line">Source: manuscript, “Partitions and a characteristic-free Schur presentation,” including the Akin–Buchsbaum–Weyman basis theorem. <a href="downloads/paper.pdf">Read the theorem and qualifications</a>.</p></details>
+  </section>
+
+  <section id="gentle" class="a-panel" aria-labelledby="gentle-title">
+    <header class="a-panel-heading"><span class="a-number">03</span><div><h2 id="gentle-title">A relation determines the modules.</h2><p>For the quiver 1 → 2 → 3 with ba = 0, a representation is a complex k<sup>p</sup> → k<sup>q</sup> → k<sup>r</sup>. Its two ranks determine its decomposition over any field.</p></div></header>
+    <div class="a-dimension-controls" role="group" aria-label="Dimensions and ranks"><label>Dimension p<input id="dimP" type="number" min="0" max="6" step="1" value="1"></label><label>Dimension q<input id="dimQ" type="number" min="0" max="6" step="1" value="2"></label><label>Dimension r<input id="dimR" type="number" min="0" max="6" step="1" value="1"></label><label>Rank u of U<select id="rankU"></select></label><label>Rank v of V<select id="rankV"></select></label></div>
+    <div class="a-actions"><button id="a3Quadric" class="button secondary">Quadric (1,2,1)</button><button id="a3Nodal" class="button secondary">Two components (1,1,1)</button><button id="a3Larger" class="button secondary">Larger example (3,4,2)</button></div>
+    <p class="a-status" id="a3Status" role="status" aria-live="polite"></p>
+    <figure class="a-quiver"><svg id="a3Diagram" viewBox="0 0 660 240" role="img" aria-label="Canonical basis decomposition of the selected complex"></svg><figcaption>Teal arrows are M₁₂ summands; ochre arrows are M₂₃ summands. Unjoined basis points are simple modules. This diagram specifies actual canonical matrices.</figcaption></figure>
+    <div class="equation a-equation" id="a3Decomposition"></div><p class="a-calculation" id="a3Dimensions"></p><p id="a3GeometryNote" class="a-small"></p>
+    <div class="a-rank-pairs"><h3>Allowable rank pairs</h3><p class="a-small">0 ≤ u ≤ min(p,q), 0 ≤ v ≤ min(q,r), and u+v ≤ q. Select a pair to change the decomposition.</p><div id="rankPairs" role="group" aria-label="Allowable pairs of ranks"></div></div>
+    <details class="a-details"><summary>Inspect U, V, and the zero composite</summary><p>In this chosen basis, U has an identity in its first u positions. V uses the next v middle coordinates, so VU is exactly zero. Zero-dimensional spaces are allowed.</p><div class="a-matrices" id="a3Matrices"></div><p id="a3Composition" class="a-calculation"></p><p>The multiplicities are M₁₂ᵘ ⊕ M₂₃ᵛ ⊕ S₁ᵖ⁻ᵘ ⊕ S₂ᑫ⁻ᵘ⁻ᵛ ⊕ S₃ʳ⁻ᵛ. Choosing bases of im U, a complement in ker V, and a complement to ker V proves this decomposition. Each of these five modules has endomorphism ring k and is indecomposable.</p><p class="source-line">Source: manuscript, “Complete module decomposition for the two-arrow relation.” The (1,2,1) equation is x₁y₁+x₂y₂=0: <a href="index.html#cone">explore its four-dimensional real cone</a>.</p></details>
+  </section>
+
+  <section id="matching" class="a-panel" aria-labelledby="matching-title">
+    <header class="a-panel-heading"><span class="a-number">04</span><div><h2 id="matching-title">Two rewrites, one normal form.</h2><p>Eight monomial generators map into ten underlying variables. Reduce paired Y and Z factors while preserving every exponent.</p></div></header>
+    <div class="a-relations"><div class="equation">Y₁Y₂ = <strong>B₁</strong>X₁X₂</div><div class="equation">Z₁Z₂ = B₁B₂</div></div>
+    <p class="a-small">The first factor is B₁. Direct multiplication corrects B₂ in the printed relation of Carroll–Weyman, arXiv v1, Example 8.20. Set input exponents from 0 to 12; reduction can produce larger exponents.</p>
+    <div id="generatorControls" class="a-generator-controls" role="group" aria-label="Eight nonnegative generator exponents"></div>
+    <div class="a-actions"><button id="matchingMixed" class="button secondary">Mixed example</button><button id="matchingY" class="button secondary">Check Y₁Y₂</button><button id="matchingZ" class="button secondary">Check Z₁Z₂</button><button id="matchingOne" class="button secondary">Unit monomial</button></div>
+    <div class="a-normal-form"><div><span class="a-result-label">Input monomial</span><p id="matchingInput"></p></div><div><span class="a-result-label">Unique reduced monomial</span><p id="matchingOutput"></p></div></div>
+    <p class="a-status" id="matchingStatus" role="status" aria-live="polite"></p><p class="a-calculation" id="matchingSteps"></p>
+    <div class="a-table-scroll" tabindex="0" aria-label="Ten underlying exponent coordinates; scroll horizontally on narrow screens"><table><caption>Exact exponent preservation in the ten underlying variables</caption><thead><tr><th scope="col">Expression</th><th scope="col">a₁</th><th scope="col">a₂</th><th scope="col">a₃</th><th scope="col">a₄</th><th scope="col">a₅</th><th scope="col">b₁</th><th scope="col">b₂</th><th scope="col">b₃</th><th scope="col">b₄</th><th scope="col">b₅</th></tr></thead><tbody id="matchingVectors"></tbody></table></div>
+    <div id="matchingBalances" class="a-balance-grid" aria-label="Four matching balance equations"></div>
+    <details class="a-details"><summary>Why reduction terminates and the correction is necessary</summary><p>Each rewrite removes two Y factors or two Z factors. The right sides create neither Y nor Z, so both reductions terminate and commute. A reduced monomial contains neither both Y₁,Y₂ nor both Z₁,Z₂. The integer kernel calculation in the manuscript proves that two reduced monomials with the same ten-coordinate vector are identical; this establishes uniqueness beyond the displayed finite examples.</p><p id="matchingCorrection"></p><p>The grading comes from the underlying variables: deg Xᵢ = 2, deg Yᵢ = 4, deg Zᵢ = 3, deg B₁ = 4, deg B₂ = 2. The relations have degrees 8 and 6. Treating all eight generator symbols as degree one would not preserve these relations.</p><p class="source-line">Primary source: <a href="https://arxiv.org/abs/1106.0774v1">Carroll–Weyman, Semi-Invariants for Gentle String Algebras, Example 8.20</a>. Correction and full normal-form proof: <a href="downloads/paper.pdf">manuscript, “A matching semigroup with two explicit binomial relations.”</a></p></details>
+  </section>
+  <section class="a-reading"><h2>Follow the maps between constructions.</h2><p>Minors are exterior coordinates. Tableaux organize Schur bases and straightening. The relation ba=0 turns a gentle representation into a complex. Matching equations then give a concrete semi-invariant semigroup with a verified presentation. Each transition retains its field, grading, and proof assumptions.</p><p><a href="downloads/paper.pdf">Read the complete proofs</a> · <a href="index.html#cone">Explore the complex variety in 4D</a> · <a href="quantum.html">Follow a cellular complex into a quantum code</a></p></section>
+</main>
+<footer class="site-footer section-width"><a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true">Λ</span><span>INTEGRAL STRUCTURES<small>Return to the research atlas</small></span></a><p>Exact integers. Explicit bases. Checkable normal forms.<br>Numerical examples accompany their mathematical proofs.</p><a href="#algebra-main">Back to top ↑</a></footer>
+<noscript><p class="noscript-message">JavaScript is required for editable calculations. The mathematical descriptions, source links, and monograph remain available.</p></noscript>
+</body>
+</html>

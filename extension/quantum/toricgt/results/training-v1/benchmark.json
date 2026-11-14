@@ -1,0 +1,877 @@
+{
+  "schema": "quantum-toricgt-benchmark-v1",
+  "dataset_sha256": "4147088938a0742d956aceb7e50a3c7206d349b8f1196cb7a3b6fefb1a774156",
+  "source_sha256": {
+    "verify.py": "045c9c45588a3cffbaed82033a75fa2ea7740103c4e3b69110a5b5ecbf119a6b",
+    "model.py": "6c47d2575bca4be71da04535e34ae23110b50cea334a28b15f2155590ce51c6c",
+    "data.py": "a447be870125d3284ed5e8505bcbe244437fc0046739f3fe7a3f4147b0dd8373",
+    "train.py": "d8a1297bc168c664193deef770d98b9c82fdd4f62f5874b936cbc397f2e6fbcf",
+    "reference.py": "1a6387d7c8af91b2bdb735c91f42683eb553fe6a195f2e2b93eefeaeb5f75f39"
+  },
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "modes": [
+    "quantum",
+    "classical",
+    "frozen"
+  ],
+  "epochs": 80,
+  "batch_size": 32,
+  "learning_rate": 0.0015,
+  "weight_decay": 0.0001,
+  "selection": "Lowest validation node MSE within each predeclared run; test and OOD are scored once after selection.",
+  "backend": "PyTorch CUDA exact statevector/autograd simulation",
+  "quantum_hardware": false,
+  "quantum_advantage_established": false,
+  "python": "3.11.6",
+  "torch": "2.8.0+cu128",
+  "numpy": "2.4.6",
+  "cuda_runtime": "12.8",
+  "device": "cuda",
+  "runs": [
+    {
+      "name": "quantum-seed17",
+      "seed": 17,
+      "mode": "quantum",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 3,
+      "circuit_parameter_count": 12,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25515,
+      "selected_epoch": 80,
+      "best_validation_mse": 0.013774622231721878,
+      "training_wall_seconds": 14.288623139029369,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 2.5625604088418186,
+      "theta_change_norm": 0.14594265818595886,
+      "cuda_peak_allocated_bytes": 183420928,
+      "cuda_peak_reserved_bytes": 207618048,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.22584017344411716,
+          "source_cost_rmse": 0.32708175265825307,
+          "mean_proposal_regret_cost": 0.037353515625,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.857421875,
+          "initial_certificate_fraction": 0.197265625,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.23473067317009833,
+          "source_cost_rmse": 0.34115330195623556,
+          "mean_proposal_regret_cost": 0.0419921875,
+          "max_proposal_regret_cost": 1.3125,
+          "optimal_proposal_fraction": 0.8828125,
+          "initial_certificate_fraction": 0.265625,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.2629056889382799,
+          "source_cost_rmse": 0.34793252476867664,
+          "mean_proposal_regret_cost": 0.03466796875,
+          "max_proposal_regret_cost": 0.6875,
+          "optimal_proposal_fraction": 0.859375,
+          "initial_certificate_fraction": 0.25,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.8370406812856083,
+          "source_cost_rmse": 1.0865851307990195,
+          "mean_proposal_regret_cost": 0.20703125,
+          "max_proposal_regret_cost": 1.625,
+          "optimal_proposal_fraction": 0.5703125,
+          "initial_certificate_fraction": 0.0390625,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "quantum-seed17/run.json",
+      "record_sha256": "71ae65d141db6493c3cc5ad16392fabbbcfeec5a34689f7f79b3414ad0ac390d",
+      "weights_sha256": "31ef054d6f180b49cc2e9c86d6660e348cec70e4df5202ef4030ab42e985ab12"
+    },
+    {
+      "name": "classical-seed17",
+      "seed": 17,
+      "mode": "classical",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 0,
+      "circuit_parameter_count": 0,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25515,
+      "selected_epoch": 80,
+      "best_validation_mse": 0.014981988817453384,
+      "training_wall_seconds": 10.511146526085213,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 1.8024774035438895,
+      "theta_change_norm": 0.1159605011343956,
+      "cuda_peak_allocated_bytes": 182443008,
+      "cuda_peak_reserved_bytes": 207618048,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.22889581663030328,
+          "source_cost_rmse": 0.3358077576961649,
+          "mean_proposal_regret_cost": 0.0382080078125,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.833984375,
+          "initial_certificate_fraction": 0.220703125,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.24480186941650087,
+          "source_cost_rmse": 0.367352916802833,
+          "mean_proposal_regret_cost": 0.0380859375,
+          "max_proposal_regret_cost": 1.1875,
+          "optimal_proposal_fraction": 0.875,
+          "initial_certificate_fraction": 0.2421875,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.27445310267430145,
+          "source_cost_rmse": 0.3682024341378148,
+          "mean_proposal_regret_cost": 0.03564453125,
+          "max_proposal_regret_cost": 0.6875,
+          "optimal_proposal_fraction": 0.84375,
+          "initial_certificate_fraction": 0.2890625,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.8498458007181783,
+          "source_cost_rmse": 0.8688072584104902,
+          "mean_proposal_regret_cost": 0.31591796875,
+          "max_proposal_regret_cost": 1.875,
+          "optimal_proposal_fraction": 0.46875,
+          "initial_certificate_fraction": 0.03125,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "classical-seed17/run.json",
+      "record_sha256": "ca0a15436e912ae6938a865ac22252c04145825b80cc788b3ab673e2cf5d291b",
+      "weights_sha256": "a015658ece0dca75e48db95e83807e129e54da5818138549f465a858b9adee77"
+    },
+    {
+      "name": "frozen-seed17",
+      "seed": 17,
+      "mode": "frozen",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 3,
+      "circuit_parameter_count": 12,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25449,
+      "selected_epoch": 80,
+      "best_validation_mse": 0.016722464933991432,
+      "training_wall_seconds": 11.116672069067135,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 2.579692006111145,
+      "theta_change_norm": 0.0,
+      "cuda_peak_allocated_bytes": 183421440,
+      "cuda_peak_reserved_bytes": 209715200,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.23646842323039674,
+          "source_cost_rmse": 0.34292517441384734,
+          "mean_proposal_regret_cost": 0.038330078125,
+          "max_proposal_regret_cost": 1.125,
+          "optimal_proposal_fraction": 0.857421875,
+          "initial_certificate_fraction": 0.2734375,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.2586307401218303,
+          "source_cost_rmse": 0.3594988910820111,
+          "mean_proposal_regret_cost": 0.06103515625,
+          "max_proposal_regret_cost": 2.0625,
+          "optimal_proposal_fraction": 0.8359375,
+          "initial_certificate_fraction": 0.265625,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.2884472020419697,
+          "source_cost_rmse": 0.40300344469704946,
+          "mean_proposal_regret_cost": 0.03955078125,
+          "max_proposal_regret_cost": 0.6875,
+          "optimal_proposal_fraction": 0.828125,
+          "initial_certificate_fraction": 0.3125,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.6784199701589657,
+          "source_cost_rmse": 0.9956706375597918,
+          "mean_proposal_regret_cost": 0.224609375,
+          "max_proposal_regret_cost": 1.875,
+          "optimal_proposal_fraction": 0.5390625,
+          "initial_certificate_fraction": 0.0859375,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "frozen-seed17/run.json",
+      "record_sha256": "07da0fd567ea29337eec14a26dad172d8459bbaba160600caac6ab85998140fa",
+      "weights_sha256": "6e6ab391d88e207350219bb999f5fa6fffeb89e0dd332d0e1330d20115ce5600"
+    },
+    {
+      "name": "quantum-seed29",
+      "seed": 29,
+      "mode": "quantum",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 3,
+      "circuit_parameter_count": 12,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25515,
+      "selected_epoch": 80,
+      "best_validation_mse": 0.014364255592226982,
+      "training_wall_seconds": 14.14329302101396,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 2.5679314509034157,
+      "theta_change_norm": 0.15102992951869965,
+      "cuda_peak_allocated_bytes": 183426048,
+      "cuda_peak_reserved_bytes": 207618048,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.22127390790259743,
+          "source_cost_rmse": 0.3277488657482276,
+          "mean_proposal_regret_cost": 0.0445556640625,
+          "max_proposal_regret_cost": 0.875,
+          "optimal_proposal_fraction": 0.8359375,
+          "initial_certificate_fraction": 0.21484375,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.23970194485841773,
+          "source_cost_rmse": 0.36576271969977425,
+          "mean_proposal_regret_cost": 0.05029296875,
+          "max_proposal_regret_cost": 1.1875,
+          "optimal_proposal_fraction": 0.859375,
+          "initial_certificate_fraction": 0.2265625,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.2642773211510682,
+          "source_cost_rmse": 0.367777604764446,
+          "mean_proposal_regret_cost": 0.04638671875,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.8125,
+          "initial_certificate_fraction": 0.2421875,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.67648138040095,
+          "source_cost_rmse": 0.8068736772077547,
+          "mean_proposal_regret_cost": 0.24609375,
+          "max_proposal_regret_cost": 1.75,
+          "optimal_proposal_fraction": 0.5078125,
+          "initial_certificate_fraction": 0.046875,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "quantum-seed29/run.json",
+      "record_sha256": "d83882a2a5e18b2b3b0144199ec30507396f5c2bdbfa563dab60d182b9195c4f",
+      "weights_sha256": "0d1c0207d08e4133897385335fa6202d3c3312d70cb0915180eb179169c6c6f1"
+    },
+    {
+      "name": "classical-seed29",
+      "seed": 29,
+      "mode": "classical",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 0,
+      "circuit_parameter_count": 0,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25515,
+      "selected_epoch": 80,
+      "best_validation_mse": 0.015795769169926643,
+      "training_wall_seconds": 9.880282870028168,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 1.8074609455652535,
+      "theta_change_norm": 0.11134495586156845,
+      "cuda_peak_allocated_bytes": 182443008,
+      "cuda_peak_reserved_bytes": 209715200,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.23723664897830582,
+          "source_cost_rmse": 0.34307516666510707,
+          "mean_proposal_regret_cost": 0.03662109375,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.845703125,
+          "initial_certificate_fraction": 0.201171875,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.2513624408691692,
+          "source_cost_rmse": 0.3491684142583363,
+          "mean_proposal_regret_cost": 0.0390625,
+          "max_proposal_regret_cost": 1.3125,
+          "optimal_proposal_fraction": 0.8984375,
+          "initial_certificate_fraction": 0.2265625,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.26768259111472964,
+          "source_cost_rmse": 0.35714708456052274,
+          "mean_proposal_regret_cost": 0.0419921875,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.8359375,
+          "initial_certificate_fraction": 0.2578125,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.8637708768516053,
+          "source_cost_rmse": 0.9854142619947771,
+          "mean_proposal_regret_cost": 0.28955078125,
+          "max_proposal_regret_cost": 1.875,
+          "optimal_proposal_fraction": 0.4765625,
+          "initial_certificate_fraction": 0.0390625,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "classical-seed29/run.json",
+      "record_sha256": "1ba81553a5403c747cc666a6dfefdfdec0c13b736516aaaf65bebe7616f01664",
+      "weights_sha256": "a1b2f480e3fdf858a74c17e2034bec38483d57ea1850f568215749394ccf4079"
+    },
+    {
+      "name": "frozen-seed29",
+      "seed": 29,
+      "mode": "frozen",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 3,
+      "circuit_parameter_count": 12,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25449,
+      "selected_epoch": 78,
+      "best_validation_mse": 0.016246840357780457,
+      "training_wall_seconds": 11.221429720986634,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 2.5649628485552967,
+      "theta_change_norm": 0.0,
+      "cuda_peak_allocated_bytes": 183421440,
+      "cuda_peak_reserved_bytes": 209715200,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.24597454211365638,
+          "source_cost_rmse": 0.35610038382857256,
+          "mean_proposal_regret_cost": 0.044189453125,
+          "max_proposal_regret_cost": 1.125,
+          "optimal_proposal_fraction": 0.841796875,
+          "initial_certificate_fraction": 0.212890625,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.2549261882018437,
+          "source_cost_rmse": 0.3613161816450009,
+          "mean_proposal_regret_cost": 0.03466796875,
+          "max_proposal_regret_cost": 1.1875,
+          "optimal_proposal_fraction": 0.8984375,
+          "initial_certificate_fraction": 0.2578125,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.291917861613602,
+          "source_cost_rmse": 0.4051724266443309,
+          "mean_proposal_regret_cost": 0.044921875,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.8125,
+          "initial_certificate_fraction": 0.2109375,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.7429843439657833,
+          "source_cost_rmse": 0.913988876988274,
+          "mean_proposal_regret_cost": 0.26171875,
+          "max_proposal_regret_cost": 1.875,
+          "optimal_proposal_fraction": 0.5234375,
+          "initial_certificate_fraction": 0.0859375,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "frozen-seed29/run.json",
+      "record_sha256": "269d63787007e4bc3077ee772c0ba4bda400150e1559893c72d9684fb082c836",
+      "weights_sha256": "7c5c390c71753ceb2b06a3087e19f01a221ec68dc8f895961dac02ce98908781"
+    },
+    {
+      "name": "quantum-seed43",
+      "seed": 43,
+      "mode": "quantum",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 3,
+      "circuit_parameter_count": 12,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25515,
+      "selected_epoch": 77,
+      "best_validation_mse": 0.014944863505661488,
+      "training_wall_seconds": 14.13036054908298,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 2.5576373445801437,
+      "theta_change_norm": 0.15764325857162476,
+      "cuda_peak_allocated_bytes": 183426048,
+      "cuda_peak_reserved_bytes": 209715200,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.22389563895383,
+          "source_cost_rmse": 0.3361150948195806,
+          "mean_proposal_regret_cost": 0.033203125,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.86328125,
+          "initial_certificate_fraction": 0.240234375,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.2444983722290313,
+          "source_cost_rmse": 0.3680172593018272,
+          "mean_proposal_regret_cost": 0.04736328125,
+          "max_proposal_regret_cost": 1.3125,
+          "optimal_proposal_fraction": 0.875,
+          "initial_certificate_fraction": 0.2421875,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.26849118955904405,
+          "source_cost_rmse": 0.3756302495058028,
+          "mean_proposal_regret_cost": 0.03466796875,
+          "max_proposal_regret_cost": 0.6875,
+          "optimal_proposal_fraction": 0.84375,
+          "initial_certificate_fraction": 0.25,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.5375539431006787,
+          "source_cost_rmse": 0.6779233055767785,
+          "mean_proposal_regret_cost": 0.220703125,
+          "max_proposal_regret_cost": 1.875,
+          "optimal_proposal_fraction": 0.5625,
+          "initial_certificate_fraction": 0.109375,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "quantum-seed43/run.json",
+      "record_sha256": "f75a05d889c9a745bda9df7d36e6279174a9e553b2204d8fdf3dab21aa967aa6",
+      "weights_sha256": "6b6afc5c102a822ddde8a990a6d83712bf2af3569e8c9a16d911867e07d0944b"
+    },
+    {
+      "name": "classical-seed43",
+      "seed": 43,
+      "mode": "classical",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 0,
+      "circuit_parameter_count": 0,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25515,
+      "selected_epoch": 80,
+      "best_validation_mse": 0.014136198908090591,
+      "training_wall_seconds": 9.998661946039647,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 1.8094555009156466,
+      "theta_change_norm": 0.10721113532781601,
+      "cuda_peak_allocated_bytes": 182443008,
+      "cuda_peak_reserved_bytes": 207618048,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.22315672626185454,
+          "source_cost_rmse": 0.3305933218221348,
+          "mean_proposal_regret_cost": 0.0360107421875,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.857421875,
+          "initial_certificate_fraction": 0.306640625,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.23779149613130063,
+          "source_cost_rmse": 0.3571432739699932,
+          "mean_proposal_regret_cost": 0.0244140625,
+          "max_proposal_regret_cost": 0.5,
+          "optimal_proposal_fraction": 0.8828125,
+          "initial_certificate_fraction": 0.3671875,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.25726950423869144,
+          "source_cost_rmse": 0.35184279791582646,
+          "mean_proposal_regret_cost": 0.029296875,
+          "max_proposal_regret_cost": 0.5625,
+          "optimal_proposal_fraction": 0.8515625,
+          "initial_certificate_fraction": 0.3671875,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.6552234295155629,
+          "source_cost_rmse": 0.8168551866073767,
+          "mean_proposal_regret_cost": 0.18212890625,
+          "max_proposal_regret_cost": 1.75,
+          "optimal_proposal_fraction": 0.5546875,
+          "initial_certificate_fraction": 0.09375,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "classical-seed43/run.json",
+      "record_sha256": "4eb71305f3b6b0e9d2072a3316622cce1550d48b7601973725dde51a90168dae",
+      "weights_sha256": "dac31d9e775c76fcbdb2ef4b2b32ae490684f217ae5049fb2f8a46b2a85408dc"
+    },
+    {
+      "name": "frozen-seed43",
+      "seed": 43,
+      "mode": "frozen",
+      "width": 24,
+      "layers": 2,
+      "qubits_per_quantum_token": 3,
+      "circuit_parameter_count": 12,
+      "feature_phase_parameters": 12,
+      "total_parameters": 25515,
+      "trainable_parameters": 25449,
+      "selected_epoch": 79,
+      "best_validation_mse": 0.015099258162081242,
+      "training_wall_seconds": 11.319593856111169,
+      "inference_batch_graphs": 32,
+      "inference_batch_ms": 2.5727179599925876,
+      "theta_change_norm": 0.0,
+      "cuda_peak_allocated_bytes": 183421440,
+      "cuda_peak_reserved_bytes": 207618048,
+      "metrics": {
+        "train": {
+          "node_rmse_cost": 0.22658661187875903,
+          "source_cost_rmse": 0.32876963627598443,
+          "mean_proposal_regret_cost": 0.041748046875,
+          "max_proposal_regret_cost": 0.875,
+          "optimal_proposal_fraction": 0.8359375,
+          "initial_certificate_fraction": 0.224609375,
+          "final_certified_fraction": 1.0
+        },
+        "validation": {
+          "node_rmse_cost": 0.24575807748337586,
+          "source_cost_rmse": 0.3554108692197271,
+          "mean_proposal_regret_cost": 0.04248046875,
+          "max_proposal_regret_cost": 1.1875,
+          "optimal_proposal_fraction": 0.8671875,
+          "initial_certificate_fraction": 0.2421875,
+          "final_certified_fraction": 1.0
+        },
+        "test": {
+          "node_rmse_cost": 0.2707580620753281,
+          "source_cost_rmse": 0.3664141398220659,
+          "mean_proposal_regret_cost": 0.03515625,
+          "max_proposal_regret_cost": 0.8125,
+          "optimal_proposal_fraction": 0.8515625,
+          "initial_certificate_fraction": 0.25,
+          "final_certified_fraction": 1.0
+        },
+        "ood": {
+          "node_rmse_cost": 0.6059542032647672,
+          "source_cost_rmse": 0.7831898546721946,
+          "mean_proposal_regret_cost": 0.2109375,
+          "max_proposal_regret_cost": 1.75,
+          "optimal_proposal_fraction": 0.5234375,
+          "initial_certificate_fraction": 0.125,
+          "final_certified_fraction": 1.0
+        }
+      },
+      "record": "frozen-seed43/run.json",
+      "record_sha256": "bb68f4cb6b25e5149b9c28c97a48e422508527918c7b0351ee0aefa1090183d2",
+      "weights_sha256": "337a062a1eea29de787c91e907921a2564edb240eda81f09f876ddea32f6133e"
+    }
+  ],
+  "gpu_name": "NVIDIA GeForce RTX 4090",
+  "representative_trace": "quantum-seed17/trace.json",
+  "aggregate": {
+    "quantum": {
+      "test": {
+        "node_rmse_cost": {
+          "mean": 0.26522473321613077,
+          "sample_std": 0.00291078108278665,
+          "values": [
+            0.2629056889382799,
+            0.2642773211510682,
+            0.26849118955904405
+          ]
+        },
+        "source_cost_rmse": {
+          "mean": 0.36378012634630846,
+          "sample_std": 0.014275008377616076,
+          "values": [
+            0.34793252476867664,
+            0.367777604764446,
+            0.3756302495058028
+          ]
+        },
+        "mean_proposal_regret_cost": {
+          "mean": 0.03857421875,
+          "sample_std": 0.0067658234670659265,
+          "values": [
+            0.03466796875,
+            0.04638671875,
+            0.03466796875
+          ]
+        },
+        "optimal_proposal_fraction": {
+          "mean": 0.8385416666666666,
+          "sample_std": 0.023867581744561665,
+          "values": [
+            0.859375,
+            0.8125,
+            0.84375
+          ]
+        },
+        "initial_certificate_fraction": {
+          "mean": 0.24739583333333334,
+          "sample_std": 0.004510548978043952,
+          "values": [
+            0.25,
+            0.2421875,
+            0.25
+          ]
+        }
+      },
+      "ood": {
+        "node_rmse_cost": {
+          "mean": 0.6836920015957456,
+          "sample_std": 0.14987351794320858,
+          "values": [
+            0.8370406812856083,
+            0.67648138040095,
+            0.5375539431006787
+          ]
+        },
+        "source_cost_rmse": {
+          "mean": 0.8571273711945175,
+          "sample_std": 0.20891432973345744,
+          "values": [
+            1.0865851307990195,
+            0.8068736772077547,
+            0.6779233055767785
+          ]
+        },
+        "mean_proposal_regret_cost": {
+          "mean": 0.224609375,
+          "sample_std": 0.01982205383807074,
+          "values": [
+            0.20703125,
+            0.24609375,
+            0.220703125
+          ]
+        },
+        "optimal_proposal_fraction": {
+          "mean": 0.546875,
+          "sample_std": 0.034053897996411515,
+          "values": [
+            0.5703125,
+            0.5078125,
+            0.5625
+          ]
+        },
+        "initial_certificate_fraction": {
+          "mean": 0.06510416666666667,
+          "sample_std": 0.03853814736184569,
+          "values": [
+            0.0390625,
+            0.046875,
+            0.109375
+          ]
+        }
+      }
+    },
+    "classical": {
+      "test": {
+        "node_rmse_cost": {
+          "mean": 0.2664683993425742,
+          "sample_std": 0.008655906078727533,
+          "values": [
+            0.27445310267430145,
+            0.26768259111472964,
+            0.25726950423869144
+          ]
+        },
+        "source_cost_rmse": {
+          "mean": 0.3590641055380546,
+          "sample_std": 0.008346595198053587,
+          "values": [
+            0.3682024341378148,
+            0.35714708456052274,
+            0.35184279791582646
+          ]
+        },
+        "mean_proposal_regret_cost": {
+          "mean": 0.03564453125,
+          "sample_std": 0.00634765625,
+          "values": [
+            0.03564453125,
+            0.0419921875,
+            0.029296875
+          ]
+        },
+        "optimal_proposal_fraction": {
+          "mean": 0.84375,
+          "sample_std": 0.0078125,
+          "values": [
+            0.84375,
+            0.8359375,
+            0.8515625
+          ]
+        },
+        "initial_certificate_fraction": {
+          "mean": 0.3046875,
+          "sample_std": 0.05633673867912483,
+          "values": [
+            0.2890625,
+            0.2578125,
+            0.3671875
+          ]
+        }
+      },
+      "ood": {
+        "node_rmse_cost": {
+          "mean": 0.7896133690284488,
+          "sample_std": 0.1165931765500807,
+          "values": [
+            0.8498458007181783,
+            0.8637708768516053,
+            0.6552234295155629
+          ]
+        },
+        "source_cost_rmse": {
+          "mean": 0.8903589023375479,
+          "sample_std": 0.08632146599098542,
+          "values": [
+            0.8688072584104902,
+            0.9854142619947771,
+            0.8168551866073767
+          ]
+        },
+        "mean_proposal_regret_cost": {
+          "mean": 0.2625325520833333,
+          "sample_std": 0.07086865909295953,
+          "values": [
+            0.31591796875,
+            0.28955078125,
+            0.18212890625
+          ]
+        },
+        "optimal_proposal_fraction": {
+          "mean": 0.5,
+          "sample_std": 0.04752158226795484,
+          "values": [
+            0.46875,
+            0.4765625,
+            0.5546875
+          ]
+        },
+        "initial_certificate_fraction": {
+          "mean": 0.0546875,
+          "sample_std": 0.034053897996411515,
+          "values": [
+            0.03125,
+            0.0390625,
+            0.09375
+          ]
+        }
+      }
+    },
+    "frozen": {
+      "test": {
+        "node_rmse_cost": {
+          "mean": 0.2837077085769666,
+          "sample_std": 0.011348188307108301,
+          "values": [
+            0.2884472020419697,
+            0.291917861613602,
+            0.2707580620753281
+          ]
+        },
+        "source_cost_rmse": {
+          "mean": 0.3915300037211487,
+          "sample_std": 0.021777995436216082,
+          "values": [
+            0.40300344469704946,
+            0.4051724266443309,
+            0.3664141398220659
+          ]
+        },
+        "mean_proposal_regret_cost": {
+          "mean": 0.039876302083333336,
+          "sample_std": 0.0048909437504286194,
+          "values": [
+            0.03955078125,
+            0.044921875,
+            0.03515625
+          ]
+        },
+        "optimal_proposal_fraction": {
+          "mean": 0.8307291666666666,
+          "sample_std": 0.019661027175184247,
+          "values": [
+            0.828125,
+            0.8125,
+            0.8515625
+          ]
+        },
+        "initial_certificate_fraction": {
+          "mean": 0.2578125,
+          "sample_std": 0.05122998847110938,
+          "values": [
+            0.3125,
+            0.2109375,
+            0.25
+          ]
+        }
+      },
+      "ood": {
+        "node_rmse_cost": {
+          "mean": 0.6757861724631721,
+          "sample_std": 0.06855302716045324,
+          "values": [
+            0.6784199701589657,
+            0.7429843439657833,
+            0.6059542032647672
+          ]
+        },
+        "source_cost_rmse": {
+          "mean": 0.8976164564067535,
+          "sample_std": 0.10718238143885964,
+          "values": [
+            0.9956706375597918,
+            0.913988876988274,
+            0.7831898546721946
+          ]
+        },
+        "mean_proposal_regret_cost": {
+          "mean": 0.232421875,
+          "sample_std": 0.02627660946694084,
+          "values": [
+            0.224609375,
+            0.26171875,
+            0.2109375
+          ]
+        },
+        "optimal_proposal_fraction": {
+          "mean": 0.5286458333333334,
+          "sample_std": 0.009021097956087904,
+          "values": [
+            0.5390625,
+            0.5234375,
+            0.5234375
+          ]
+        },
+        "initial_certificate_fraction": {
+          "mean": 0.09895833333333333,
+          "sample_std": 0.022552744890219755,
+          "values": [
+            0.0859375,
+            0.0859375,
+            0.125
+          ]
+        }
+      }
+    }
+  }
+}

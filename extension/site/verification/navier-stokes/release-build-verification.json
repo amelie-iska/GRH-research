@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-13",
+  "status": "source_and_statement_audit_completed; fresh_final_build_not_completed",
+  "source_revision": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+  "compiler": "Lean (version 4.34.0-rc2, x86_64-unknown-linux-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+  "distribution": {
+    "url": "https://github.com/leanprover/lean4/releases/download/v4.34.0-rc2/lean-4.34.0-rc2-linux.tar.zst",
+    "bytes": 580281129,
+    "sha256": "3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8",
+    "release_digest": "sha256:3d011041203acacf300d343a39673f7d233743397993797c941346ae9e5df1a8"
+  },
+  "dependency_pins_match": true,
+  "cache_attempt": {
+    "command": [
+      "lake",
+      "exe",
+      "cache",
+      "get"
+    ],
+    "exit_code": 1,
+    "log_sha256": "c59865410d53064004c632a3e7191730a0c9c94fda46f5a51fca546153af68b2",
+    "log_bytes": 1183014,
+    "reported_decompressed_files": 2211,
+    "reported_failed_downloads": 12201,
+    "observed_failure": "HTTP 429 rate-limit responses; no source or toolchain modification attempted",
+    "warning_context": "Cache CLI also emits a generic divergence/cache warning. The tracked source tree and actual dependency revisions match the pinned manifest; the observed transport failures are recorded directly.",
+    "repeated_mass_retry": false
+  },
+  "direct_elaboration_attempt": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "NavierStokes/ComparatorSolution.lean"
+    ],
+    "exit_code": 1,
+    "log_sha256": "e6c78394524fe18bd678396a0960616c547f1314f6d6fcd6b3e0143f8df53db9",
+    "diagnostic": "NavierStokes/ComparatorSolution.lean:1:0: error: unknown module prefix 'NavierStokes'\n\nNo directory 'NavierStokes' or file 'NavierStokes.olean' in the search path entries:\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/Cli/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/batteries/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/Qq/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/aesop/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/proofwidgets/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/importGraph/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/LeanSearchClient/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/plausible/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/lean4export/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/mathlib/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/packages/Comparator/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/upstream/.lake/build/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/lean-4.34.0-rc2-linux/lib/lean\n/workspace/scratch/70763186a94c/research/navier-stokes/release/lean-4.34.0-rc2-linux/lib/lean\n",
+    "interpretation": "Final imported NavierStokes .olean modules have not been built. This attempt did not reach checking of the final theorem bodies and is not evidence of a mathematical or Lean proof error."
+  },
+  "full_lake_build": {
+    "status": "not_run_after_incomplete_cache",
+    "reason": "A local source module imports all of Mathlib. Thousands of missing dependencies made a narrowly targeted, resource-bounded fresh build infeasible within this pass."
+  },
+  "comparator": {
+    "status": "not_run",
+    "fresh_final_certificate_checked": false,
+    "required_executables": {
+      "landrun": null,
+      "lean4export": null,
+      "nanoda_bin": null
+    }
+  },
+  "upstream_axiom_claim": {
+    "status": "reported_by_upstream_metadata_not_reproduced",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_scan": {
+    "target_closure_modules": 609,
+    "challenge_imported": false,
+    "suspicious_token_counts": {
+      "sorry": 0,
+      "admit": 0,
+      "sorryAx": 0,
+      "axiom": 0,
+      "unsafe": 0,
+      "native_decide": 0,
+      "implemented_by": 0
+    },
+    "scope": "Local project closure only; lexical screening is not kernel verification."
+  },
+  "reproduction_script": "release-verify.py",
+  "tracked_tree_clean_after": true
+}

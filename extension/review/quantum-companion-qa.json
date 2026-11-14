@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-13",
+  "static": {
+    "uniqueIds": 82,
+    "labelledNativeControls": 16,
+    "validFragments": 5,
+    "JavaScriptSyntax": "passed",
+    "CSSParse": "Not run: available Python runtimes lacked tinycss2; CSS rendering remains for deployment QA.",
+    "stableSelectAccessibleNames": {
+      "surfaceCase": "Surface and code",
+      "surfaceView": "View",
+      "selectedQubit": "Physical qubit",
+      "gateKind": "Gate",
+      "gateTarget": "Target",
+      "gateControl": "Control",
+      "qnnSample": "Input signs",
+      "trainSteps": "Training steps"
+    }
+  },
+  "numerical": {
+    "status": "passed",
+    "execution": "Node.js, same core imported by worker",
+    "n": 18,
+    "dimension": 262144,
+    "bytesPerState": 4194304,
+    "encoderGates": 42,
+    "preparedSupport": 256,
+    "normSquared": 1.0000000000000002,
+    "maxStabilizerResidual": 2.220446049250313e-16,
+    "maxSingleErrorSyndromeResidual": 2.220446049250313e-16,
+    "qnnInputPatterns": 16,
+    "maxQnnReferenceResidual": 2.3314683517128287e-15,
+    "maxParameterShiftGradientResidual": 4.884981308350689e-15,
+    "initialMSE": 0.21987931376221662,
+    "afterOneUpdateMSE": 0.15086234535813617,
+    "elapsedSeconds": 1.081063329
+  },
+  "renderedBrowserQA": "Not performed by this reviewer. Root separately reports deployed-browser preparation passed (norm 1, support 256, all 18 stabilizers +1); its broader rendered interaction review is ongoing.",
+  "sourceHashes": {
+    "quantum.html": "766e448faf9aacc3fac8ca3d32e97bf6bdea0c587b579bf43d0d985475f0ec24",
+    "quantum.css": "cd69de10bb95607975897df7a49e3bb8eb2a0b903fff2f789832cba0bb76f6b3",
+    "quantum-core.js": "2dd4867470c6f403f4eb6dd9bb1faa509a5fb56f89cc169728139cd38984cb4c",
+    "quantum-worker.js": "9ac7c129237269950fef99026d04af728354677c6f9272ba408157633cce1aa4",
+    "quantum.js": "e985915a68a0c7d6570b9109770057168bb6f775fd0e9b2fd22ae9c860173a72"
+  },
+  "workerProtocol": {
+    "status": "passed",
+    "execution": "actual worker handler in Node VM",
+    "checks": [
+      "init",
+      "step",
+      "prepare",
+      "Pauli error",
+      "reset",
+      "play/pause cancellation",
+      "QNN run",
+      "training and held-out report"
+    ],
+    "browserIntegration": "requires separate rendered browser check"
+  },
+  "recordedGPU": {
+    "source": "site/data/gpu-results.json",
+    "experiments": 9,
+    "records_loaded_from_actual_files": true,
+    "dense_total_qubit_max": 31,
+    "pauli_frame_total_qubit_max": 1048576,
+    "representations_separated": true,
+    "qnn_history_steps": 24,
+    "initialSignAccuracyAlreadyPerfect": true,
+    "separateCapacityFollowup": {
+      "source": "site/data/capacity-results.json",
+      "experiments": 2,
+      "passed": true,
+      "largest_tested_frame_data_qubits": 819200,
+      "ancillas": 819200,
+      "total_qubits": 1638400,
+      "shots": 32768,
+      "estimated_table_bytes": 16777216000,
+      "synchronized_apply_seconds": 1.7918329359963536,
+      "timed_body_seconds": 4.3279473460279405,
+      "full_call_seconds": 4.81326768710278,
+      "syndrome_bytes_checked": 3355443200,
+      "mismatches": 0,
+      "universal_capacity_claim": false
+    }
+  }
+}

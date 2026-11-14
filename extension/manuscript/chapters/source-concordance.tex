@@ -1,0 +1,319 @@
+\chapter{Source concordance, review coverage, and mathematical provenance}
+\label{ch:source-concordance}
+
+\section{What the review establishes}
+
+The mathematical argument in this monograph rests on several different kinds
+of evidence. A bibliographic inventory identifies sources. Text extraction
+makes a document searchable. Reading a passage identifies its claims and
+hypotheses. Reconstructing a proof checks its inference. A successful Lean
+compilation checks a precisely stated formal declaration relative to its
+dependencies. These activities support different conclusions, and this
+chapter records their actual extent. The resulting account is substantial
+but is not a claim to have proved, formalized, or independently verified every
+statement in every linked document.
+
+There are two relevant authorship layers. The supplied classical books on
+lattices over orders are by Klaus W. Roggenkamp, with Verena Huber-Dyson as
+coauthor of Volume~I; Volume~II is authored by Roggenkamp
+\cite{RoggenkampHuberDyson1970,v2Roggenkamp1970II}. The modern research
+repositories and linked surface-order manuscripts are associated with
+Amelie Schreiber \cite{GRHRepo,SchreiberSurfaceI,SchreiberSurfaceII}.
+Neither author's complete research oeuvre has been reviewed. Our use of
+selected additional papers by Roggenkamp concerns concrete questions about
+orders, irreducible lattices, and Bass-type phenomena
+\cite{Roggenkamp1969Irreducible,Roggenkamp1969Separable,v2RoggenkampBass1971}.
+It does not license a statement about everything either author has written.
+
+\section{The fixed source snapshot}
+
+The primary repository was examined at commit
+\texttt{dbd954eede\allowbreak{}479a512983\allowbreak{}1e4e7c3053\allowbreak{}7389ae973d}
+\cite{GRHRepo}. Four important source files received complete text review:
+\path{book/main.tex}, the generated chapter
+\path{book/chapters/reviewed-mathematics.tex}, and
+\path{papers/core.tex} and \path{papers/details.tex}. Their measured
+coverage is as follows. Words are whitespace-delimited source tokens, so the
+counts include mathematical notation and LaTeX commands; they are coverage
+measurements rather than estimates of polished prose length.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+Source file & Lines & Source words\\
+\hline
+Book entry point & 67 & 466\\
+Reviewed mathematics chapter & 1453 & 23652\\
+Core paper & 1072 & 6123\\
+Details paper & 1621 & 9893\\
+\hline
+Total & 4213 & 40134\\
+\hline
+\end{tabular}
+\end{center}
+
+Complete reading of these files does not mean that every transitive
+\texttt{input} was reviewed in the same audit. The book entry point includes
+many other chapters. The two papers also include separate short-row-pair and
+M\"obius-splitting files. Each source retains its own coverage status in the
+companion review. Likewise, reading a discussion of an external theorem
+does not constitute an independent proof audit of that theorem's original
+paper. The distinction matters especially for analytic number theory,
+operator algebras, derived equivalences, and arithmetic descent.
+
+The linked mathematics submodule was inventoried at commit
+{\small\texttt{4eaee87548\allowbreak{}250b2682af\allowbreak{}fda7d05d94\allowbreak{}7c05554bae}}. Its tree contains
+174,524 files. This is a file-tree inventory, not a claim that those files
+were all read. The repository link inventory contains 409 distinct external
+URLs. A URL may identify a paper, a documentation page, a repository, or a
+repeated discussion of a result; it is not automatically one independent
+theorem or one reviewed document. These 409 destinations have not all been
+reviewed. The two linked author manuscripts, with 223 and 265 PDF pages at
+their pinned snapshots, were extracted and selectively reviewed
+\cite{SchreiberSurfaceI,SchreiberSurfaceII}. Their complete proofs were not
+audited page by page. These explicit limits prevent a large source manifest
+from being mistaken for a completed universal verification.
+
+\section{The classical books: extraction and passage coverage}
+
+All 309 PDF pages of Volume~I were extracted by optical character recognition,
+and all resulting page text was read. Selected mathematical statements were
+also checked against page images. Formula reconstruction remains selective:
+OCR can lose subscripts, reverse inclusion signs, merge displayed matrices,
+or turn a quantified condition into an apparently unconditional statement.
+Consequently ``all page text read'' is stronger than a table-of-contents
+survey but weaker than a verified transcription or a complete proof audit
+\cite{RoggenkampHuberDyson1970}.
+
+All 392 PDF pages of Volume~II were likewise processed by OCR, and all
+resulting page text has now been read across the review team. The initial
+review covered 158 pages, including the complete extracted prose of
+Chapters~VII and VIII, selected passages in the remaining chapters, and the
+final errata. Two complementary supplemental reads covered the remaining
+101 and 133 pages without gaps. The extraction contains approximately
+99,149 whitespace-delimited words. It is a working aid, not an authoritative
+mathematical edition. The page coverage manifests distinguish extraction,
+complete OCR-content reading, and selected visual verification. Some densely
+typeset classifications and matrix displays remain badly garbled in OCR;
+their presence and role were reviewed, but their formulas and proofs were
+not thereby certified \cite{v2Roggenkamp1970II}.
+
+Volume~II also uses two page coordinate systems. Its printed page~114 is
+PDF page~119; printed page~139 is PDF page~144; and the printed errata
+page~387 is PDF page~392. Keeping these coordinates explicit makes the most
+important comparisons reproducible. Full copyrighted scans and bulk OCR are
+not reproduced as new research content. The public companion instead
+contains original notes, coverage metadata, bibliographic identifiers, and
+the new derivations needed by the present argument.
+
+\section{Three decisive anchors in Volume~II}
+
+The first anchor is the discussion of topological connections on printed
+page~114. It motivates a bridge from modules over rings of continuous
+functions to vector bundles, but a modern statement must specify which
+K-theory is meant. For a compact Hausdorff space, the finite projective
+module--vector bundle correspondence gives the familiar interpretation of
+\(K_0(C(X,\mathbb C))\) as complex topological \(K^0(X)\)
+\cite{v2Roggenkamp1970II,v2Swan1962}. This does not identify algebraic
+and topological K-theory in every degree. Already at a point,
+\(K_1^{\mathrm{alg}}(\mathbb C)=\mathbb C^\times\), whereas
+\(K_1^{\mathrm{top}}(\mathbb C)=0\). The present manuscript therefore
+uses the historical connection with its category, topology, and degree
+specified, rather than allowing the notation \(K_1\) alone to carry an
+unjustified comparison.
+
+The second anchor is the weighted Gram-rank argument on printed page~139.
+For a real matrix \(X\) and a positive diagonal matrix \(W\),
+\[
+ \ker(X^{\mathsf T}WX)=\ker X,
+ \qquad
+ \operatorname{rank}(X^{\mathsf T}WX)=\operatorname{rank}X.
+\]
+Indeed, \(v^{\mathsf T}X^{\mathsf T}WXv\) is a sum of positive weights
+times squares. Its vanishing forces every component of \(Xv\) to vanish.
+This elementary argument, checked against the scan, supplies a genuine
+connection to the Hodge quadratic forms developed in the complexes chapter
+\cite{v2Roggenkamp1970II}. It also identifies the necessary hypothesis:
+positivity of the coefficient form. With an indefinite weight, cancellation
+can invalidate the kernel identity. Over a finite field, a nonzero vector
+can be isotropic, so a real positivity argument cannot simply be transferred.
+The algebraic identity and the ordered-field inference must remain separate.
+
+The third anchor is the 1970 errata on printed page~387. It includes a
+restriction involving totally definite quaternion components for a statement
+in Volume~I and a correction to the argument on Volume~I, chapter-page~IV.13.
+The latter concerns an unjustified order-linear splitting of torsion and
+torsion-free parts. The replacement argument uses the appropriate local
+and faithfully flat module-theoretic methods
+\cite{v2Roggenkamp1970II,RoggenkampHuberDyson1970}. This correction is
+material to any attempt to reuse the books for equivalences of module
+categories. Our matrix-ring Morita calculation has an independent direct
+proof and does not invoke the faulty splitting. A historical source should
+be read together with its published corrections, especially when the
+correction changes the mechanism of a proof.
+
+\section{What survives scrutiny in the upstream research program}
+
+The fully read source files contain substantial mathematical repairs and
+careful negative results. They distinguish infinite orders from finite
+quotients, path degree from the formal order parameter, and algebraic,
+formal, Laurent, and operator-norm completions. Their nodal examples have
+explicit alternating resolutions. Their semi-invariant constructions
+distinguish determinant weights from ordinary invariants, and their
+representation-theoretic examples state where Schur constructions cease to
+preserve additivity or a chosen scalar action \cite{GRHRepo}. These are
+useful structural results even when they do not settle the eventual analytic
+problem.
+
+The same source explicitly identifies limitations of several proposed
+arithmetic transfers. A complex dessin does not by itself recover rational
+descent data. Inserting a known two-dimensional arithmetic matrix into a
+larger projective module changes an ordinary determinant by multiplicity.
+A later branch coefficient functor can remove a particular multiplicity,
+but it changes the determinant target and gives up specified symmetries.
+Tame descent can preserve an endomorphism order while failing to preserve
+the desired integral column module. None of these distinctions can be
+replaced by a generic assertion that the categories are ``equivalent''
+\cite{GRHRepo}.
+
+The analytic papers are equally explicit about the missing global step.
+Self-adjoint finite spectral data yield a critical-line conclusion only
+after an appropriately normalized determinant converges locally uniformly
+to the intended arithmetic function. Strong operator convergence alone
+does not provide trace-norm determinant convergence. Finite Euler products
+cannot supply a locally uniform zero-bearing limit on a region where the
+approximants remain zero-free and the limit is nonzero. Positivity of an
+unrelated matrix kernel does not prove positivity of an arithmetic moment
+form. The papers' conditional closure statements are useful because they
+locate these obligations precisely; they do not discharge them
+\cite{GRHRepo}.
+
+There is one editorial qualification worth retaining in future revisions.
+An earlier discussion says that no multiplicity-removing functor has been
+supplied, whereas a later chapter constructs a branch functor under changed
+requirements. The earlier sentence is accurate when restricted to the naive
+tensor insertion being discussed. Read globally, it is too broad. The
+mathematical distinction is between failure of that insertion and success
+of a narrower construction that relinquishes symmetry. The review records
+this qualification rather than silently replacing either claim.
+
+\section{From sources to the new theorems in this monograph}
+
+The complexes chapters distinguish three kinds of dependence. Elementary
+results such as the dimension of a two-step rank stratum, its tangent
+equation, finite Hodge decomposition, and the orthogonal quadric calculation
+receive proofs in the text. The Buchsbaum--Eisenbud exactness criterion and
+the geometry of varieties of complexes are attributed to their separate
+primary sources; the latter attribution includes De Concini and Strickland
+\cite{v2BE1973,v2DS1981,v2DEP1982}. The Atiyah--Singer index theorem and
+the analytical existence theory behind elliptic Hodge decomposition remain
+external advanced results, stated with their hypotheses rather than
+presented as newly proved here \cite{v2AS1968I,v2AS1968III}.
+
+This discipline matters at the gauge-theoretic interface. The covariant
+derivative squares to a curvature action. A deformation sequence is a
+complex under specified background conditions, such as flatness or the
+anti-self-dual equation in the appropriate projected sequence. Its index
+concerns a classical elliptic problem and cannot, without another theorem,
+be read as a positive spectral gap for an interacting quantum Hamiltonian
+\cite{v2AHS1978,v2AB1983}. The Yang--Mills chapter separately assesses the
+recent construction and its stated acceptance criteria. The source
+concordance does not enlarge those claims.
+
+\section{A finite-field correction in the source matrix reductions}
+
+A further qualification arises in Volume~II, printed page~351
+(chapter-page X~65; PDF page~356), in the reduction of extension matrices
+over a cubic finite-field extension \cite{v2Roggenkamp1970II}. The scan
+asserts that, outside characteristic~3, one may choose a primitive element
+whose cube belongs to the base field. Visual inspection confirms that this
+is an overstatement in the source, rather than an OCR error. The weaker
+relation used subsequently has the following direct justification.
+
+\begin{proposition}[Trace-zero cubic presentation]
+Let \(S/k\) be an extension of finite fields of degree~3, with
+\(\operatorname{char}k\ne3\). There is an element \(\alpha\) generating
+\(S\) over \(k\), and elements \(a,b\in k\) with \(b\ne0\), such that
+\[
+ \alpha^3=a\alpha+b,
+ \qquad
+ \alpha^{-1}=b^{-1}\alpha^2-ab^{-1}.
+\]
+There need not be a generator whose cube lies in \(k\).
+\end{proposition}
+
+\begin{proof}
+Choose \(\beta\in S\setminus k\). The tower formula shows that
+\([k(\beta):k]\) divides~3 and is greater than~1, hence equals~3.
+Thus \(\beta\) generates \(S\). The field trace is \(k\)-linear,
+and the trace of \(c\in k\) is \(3c\): multiplication by \(c\) on
+the three-dimensional vector space \(S\) has matrix \(cI_3\).
+Division by~3 is permitted, so put
+\[
+ \alpha=\beta-\frac{\operatorname{Tr}_{S/k}(\beta)}3.
+\]
+Then \(\operatorname{Tr}_{S/k}(\alpha)=0\). Since the subtracted
+quantity lies in \(k\), the element \(\alpha\) remains outside
+\(k\) and generates \(S\).
+
+Its monic minimal polynomial has degree~3. In the basis
+\(1,\alpha,\alpha^2\), multiplication by \(\alpha\) has the
+corresponding companion matrix. Its trace is the negative of the
+quadratic coefficient, so that coefficient vanishes. We may therefore
+write the polynomial as \(T^3-aT-b\). Its constant term cannot vanish:
+otherwise \(T\) would divide this irreducible cubic. Consequently
+\(b\ne0\), and the polynomial equation gives
+\(\alpha(\alpha^2-a)=b\). Multiplication by \(b^{-1}\) proves the
+inverse formula.
+
+For the last assertion, take \(S=\mathbb F_8\) and \(k=\mathbb F_2\).
+Every polynomial \(T^3-c\), with \(c\in\mathbb F_2\), has a root in
+\(\mathbb F_2\): choose~0 when \(c=0\) and~1 when \(c=1\).
+It is therefore reducible. It cannot be the degree-three minimal
+polynomial of a generator of \(\mathbb F_8/\mathbb F_2\).
+\end{proof}
+
+This repair establishes exactly the depressed-cubic relation and quadratic
+inverse expression needed at that point. It leaves the source's separate
+characteristic-3 argument separate. It also illustrates the scope of the
+review: correcting this local assertion does not certify every subsequent
+matrix transformation or formalize the classification theorem in Lean.
+
+\section{Formal proofs, computations, and remaining coverage}
+
+The original Lean companion file contains 25 selected declarations compiled against
+Lean~4.24.0 and the pinned mathlib revision recorded in its manifest. Their
+types concern actual finite-dimensional maps, concrete matrix identities,
+real positive semidefiniteness, a determinant factorization, modular kernel
+relations, and noise cancellation. Each declaration has a printed dependency
+report; the successful build contains no project-specific axiom or
+\texttt{sorry}. Standard foundational dependencies are recorded rather than
+described as an absence of all axioms. This is a precise verification result
+for the declarations present in the file.
+
+An additional seven-declaration file verifies finite Pauli identities,
+binary phase and shift commutation, the chain-boundary specialization, and
+a conditional integer Euler-rank substitution. Its independent successful
+build and axiom audit supplied the first 32 selected declarations. The
+second audit adds sixteen declarations in DiagramGrammar, bringing the
+three-module inventory to 48; its scope is recorded in the formalization appendix.
+
+It is not a formalization of every theorem in either classical book, the
+entire source repository, Shor's quantum circuit, the Atiyah--Singer index
+theorem, or a Yang--Mills continuum construction. Upstream reports of earlier
+formal components likewise retain their literal theorem scopes. A numerical
+example, a source-code formula, and a proved quantified theorem are different
+deliverables even when they concern the same matrix. The companion manifests
+make those distinctions visible.
+
+The synthesis chapter's periodic order example was also checked directly:
+the annihilators give the stated exact alternating resolution; tensoring
+with the quotient gives the claimed odd-degree torsion groups; and the
+real finite matrix specialization has middle Hodge operator
+\((1+t^2)I\). Scaling the differentials then preserves middle exactness
+while sending the least Hodge eigenvalue to zero. These calculations show
+why the review's main limitation is mathematical as well as bibliographic:
+an algebraic identification does not supply the uniform estimates required
+by a spectral limit or the cost bounds required by an algorithmic claim.
+Completing the unreviewed corpus would improve coverage; proving those
+additional estimates would require genuinely additional mathematics.

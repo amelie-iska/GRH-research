@@ -1,0 +1,72 @@
+{
+  "schema": "quantum-toricgt-algebra-qualifications-v1",
+  "passed": true,
+  "normal_semigroup": {
+    "generators": [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "group_lattice": "a+b is even",
+    "cone": "nonnegative quadrant",
+    "tested_pairs": 545,
+    "excluded_candidate": [
+      1,
+      0
+    ],
+    "general_proof": "Use k=0 for even/even, k=1 for odd/odd, then (a,b)=((a-k)/2)(2,0)+((b-k)/2)(0,2)+k(1,1)."
+  },
+  "homology_inclusions": {
+    "boundary1": [
+      [
+        -1,
+        0,
+        1
+      ],
+      [
+        1,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        -1
+      ]
+    ],
+    "boundary2": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "boundary1_rank_over_Q": 2,
+    "boundary2_rank_over_Q": 1,
+    "betti1_point_circle_disk": [
+      0,
+      1,
+      0
+    ]
+  },
+  "transfer_sign": {
+    "q_old": "1/4",
+    "q_new": "1/2",
+    "log2_new_over_old": 1,
+    "log2_old_over_new": -1,
+    "positive_gain_convention": "log2(q_new/q_old)"
+  }
+}

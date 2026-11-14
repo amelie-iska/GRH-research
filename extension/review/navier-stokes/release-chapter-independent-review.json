@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-13",
+  "reviewer": "microscopic_review, independent of the release-chapter author",
+  "source": "extension/manuscript/chapters/navier-stokes-release.tex",
+  "source_sha256": "a00306177dd8d7ad254fba284a98491fb9af7c67838ff97fd335c0fee5b77c9b",
+  "coverage": {
+    "all_chapter_lines_read": true,
+    "current_line_count": 844,
+    "named_ordinary_proofs_reviewed": 15,
+    "proof_environment_count": 15,
+    "scope": "Full authored chapter, including ordinary proofs, examples, hypotheses, and distinctions between local bridge results and externally supplied continuum construction."
+  },
+  "outcome": "No unresolved mathematical error found in the 15 ordinary proofs after one explicit-hypothesis clarification.",
+  "findings": [
+    {
+      "label": "prop:ns-potential-localization",
+      "kind": "hypothesis ambiguity",
+      "issue": "Smoothness of u alone would not imply smoothness of the vector potential A or of the cutoff correction grad(c) cross A; the original wording did not unambiguously assert the individual Cartesian regularity requirements.",
+      "resolution": "Parent explicitly required A, B e_theta, and p to be smooth in Cartesian coordinates before defining u. The revised statement was reread.",
+      "status": "resolved"
+    }
+  ],
+  "results": [
+    {
+      "label": "prop:ns-residual-increment",
+      "title": "Quadratic residual identity",
+      "status": "passed ordinary mathematical review",
+      "check": "Exact expansion of the quadratic advection term; divergence of the correction is preserved under the stated assumption."
+    },
+    {
+      "label": "prop:ns-transverse-wave",
+      "title": "A transverse wave and its covariance",
+      "status": "passed ordinary mathematical review",
+      "check": "Transversality gives zero divergence and zero self-advection for the constant-amplitude wave; phase covariance has factor one half. Variable amplitudes are explicitly excluded from that exact conclusion."
+    },
+    {
+      "label": "prop:ns-average-defect",
+      "title": "Averaging and nonlinear closure",
+      "status": "passed ordinary mathematical review",
+      "check": "Idempotence and the conditional-multiplication property give the stated covariance decomposition. Positivity is conditional on a positive averaging operator, and is not attributed to an arbitrary modal projection."
+    },
+    {
+      "label": "prop:ns-force-energy",
+      "title": "Energy estimate from rest",
+      "status": "passed ordinary mathematical review",
+      "check": "The regularized square-root argument and integration of the energy identity give the stated squared accumulated-force bound, with the stated decay or periodicity sufficient for integration by parts."
+    },
+    {
+      "label": "prop:ns-anisotropic-scaling",
+      "title": "Anisotropic concentration test",
+      "status": "passed ordinary mathematical review",
+      "check": "Jacobian, velocity norm, and transverse/axial gradient exponents check. The restriction 0<h<1/6 gives finite integrated dissipation; the field is a scaling test, not asserted to solve the equations."
+    },
+    {
+      "label": "prop:ns-similarity-chain-rule",
+      "title": "Coordinate existence and derivative weights",
+      "status": "passed ordinary mathematical review",
+      "check": "The implicit coordinate is uniquely defined on its stated branch, with denominator 1-2h eta^2 positive. All displayed t, z and radial coordinate derivatives check."
+    },
+    {
+      "label": "lem:ns-forbidden-words",
+      "title": "Words with no adjacent derivative letters",
+      "status": "passed ordinary mathematical review",
+      "check": "The maximal derivative count, binomial word count, and Fibonacci recurrence check, including the empty word."
+    },
+    {
+      "label": "prop:ns-sparse-volterra",
+      "title": "Sparse Volterra systems",
+      "status": "passed ordinary mathematical review",
+      "check": "The grading makes adjacent derivative letters vanish even when differentiation hits their coefficient. Cauchy losses, the nested Volterra factorial, convergence on smaller complex neighborhoods, and uniqueness by iteration check under the stated analytic and grading assumptions."
+    },
+    {
+      "label": "lem:ns-diagonal-realization",
+      "title": "A diagonal realization estimate",
+      "status": "passed ordinary mathematical review",
+      "check": "The cutoff sequence can be chosen to handle the finite derivative set at each stage. Local finiteness and the tail bound have the stated order-dependent quantifiers; logarithmic growth is absorbed only after a power margin is reserved."
+    },
+    {
+      "label": "prop:ns-residual-flatness",
+      "title": "All-order residual realization",
+      "status": "passed ordinary mathematical review",
+      "check": "The differential-polynomial product-difference identity and uniform-in-order polynomial growth losses yield flatness for each fixed derivative and target order. The proof does not interchange an uncontrolled infinite sum of flat errors."
+    },
+    {
+      "label": "prop:ns-potential-localization",
+      "title": "Localization without a divergence defect",
+      "status": "passed ordinary mathematical review",
+      "check": "The product-rule expansion retains the curl correction grad(c) cross A and all mixed advection terms. Cartesian smoothness of A, B e_theta, and p is now explicit; axisymmetry ensures the swirl divergence vanishes."
+    },
+    {
+      "label": "lem:ns-terminal-jets",
+      "title": "Realization of terminal force jets",
+      "status": "passed ordinary mathematical review",
+      "check": "With b_0=1 fixed, all adjustable terms have j>=1 and negative b_j exponent for the finite derivative constraints. Uniform convergence of every derivative tail realizes the required jets, and the fundamental theorem of calculus justifies the two-sided smooth gluing."
+    },
+    {
+      "label": "prop:ns-residual-comparison",
+      "title": "Residual-to-solution estimate on the flat torus",
+      "status": "passed ordinary mathematical review",
+      "check": "The difference equation, torus pressure cancellation, operator-norm gradient coefficient, and regularized Gronwall estimate check. This proposition is explicitly periodic and is not substituted for the cited whole-space pressure-comparison argument."
+    },
+    {
+      "label": "prop:ns-viscosity-conversion",
+      "title": "Viscosity conversion",
+      "status": "passed ordinary mathematical review",
+      "check": "Every momentum-equation term scales by sqrt(nu); the kinetic-energy and viscosity-weighted dissipation factors are nu^(5/2). The singular time is unchanged."
+    },
+    {
+      "label": "prop:ns-periodization",
+      "title": "Disjoint-support periodization",
+      "status": "passed ordinary mathematical review",
+      "check": "The common compact support lies strictly inside the unit cube, so distinct integer translates have a gap and nonlinear cross terms vanish. The parabolic rescaling preserves viscosity and fixes singular time one; initial zero-time extension requires the stated vanishing interval."
+    }
+  ],
+  "source_scope_checks": [
+    {
+      "source": "OpenAI, Finite Time Blowup for Navier-Stokes, Theorem 1.1, PDF page 1",
+      "coverage": "The exact theorem statement was reread in this audit.",
+      "conclusion": "Matches positive viscosity, compact smooth forcing, zero initial datum, fixed compact spatial support, bounded preterminal kinetic energy, unbounded velocity, and exclusion of a global smooth competitor with uniformly bounded kinetic energy."
+    },
+    {
+      "source": "Same source, Lemma 10.5, PDF pages 121-122",
+      "coverage": "Statement and beginning of the pressure-comparison argument only; no new full independent verification of this external lemma.",
+      "conclusion": "Whole-space comparison assumes a smooth competitor with a uniform L2 bound on each interval ending before blowup, with no imposed growth bound on pressure. The chapter properly separates this from its elementary periodic comparison proposition."
+    },
+    {
+      "source": "Same source, Corollary 10.6, PDF pages 125-126",
+      "coverage": "Statement, rescaling, disjoint periodization, and initial-zero extension portion reread.",
+      "conclusion": "Matches the periodic formulation and its fixed-viscosity time/space rescaling."
+    },
+    {
+      "source": "Charles Fefferman, Existence and Smoothness of the Navier-Stokes Equation, problem statement pages 1-4",
+      "coverage": "Problem statement text read in this audit.",
+      "conclusion": "Alternatives A/B specify unforced global regularity and C/D allow forcing in their breakdown alternatives. The chapter keeps those quantifiers distinct."
+    }
+  ],
+  "limits": [
+    "This is an independent ordinary-mathematics review of the authored chapter, not a new independent proof of the entire 166-page external continuum construction.",
+    "External publication, institutional evaluation, repository provenance and operational build-status claims remain covered by their separate source and build ledgers.",
+    "No new Lean kernel verification or upstream final-theorem build is claimed by this audit. The authored chapter itself records the remaining upstream build limitation.",
+    "The 15 bridge proofs do not establish unforced blowup, a general zero-forcing reduction, or a new derivation of global regularity from discrete complexes."
+  ],
+  "edits_by_this_reviewer": "Only this audit JSON was written. The single chapter clarification was applied by the parent after coordination."
+}

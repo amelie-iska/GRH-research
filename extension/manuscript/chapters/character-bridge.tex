@@ -1,0 +1,241 @@
+\chapter{A character family inside a variety of complexes}
+\label{ch:character-bridge}
+
+There is a concrete bridge from a complex multiplication order to a
+parameterized variety of complexes.  The bridge uses characters of the
+underlying rank-two lattice, and its elementary algebra can be written down
+completely.  It supplements the continuous flat-torus spectrum with a finite
+cochain model, an explicit pullback map, and a quantitative contracting
+homotopy.  It also supplies a useful example of cohomology jumping under
+specialization.  No cryptographic complexity improvement or interacting
+quantum-field spectral estimate is asserted.
+
+\section{A universal complex over the character torus}
+
+Put $S=\mathbb C[X^{\pm1},Y^{\pm1}]$, the Laurent polynomial ring, and
+write $A=X-1$, $B=Y-1$.  Consider the cochain complex
+\begin{equation}
+ 0\longrightarrow S\xrightarrow{D_0}S^2
+ \xrightarrow{D_1}S\longrightarrow0,
+ \qquad
+ D_0=\begin{pmatrix}A\\B\end{pmatrix},\quad
+ D_1=\begin{pmatrix}-B&A\end{pmatrix}.
+ \label{eq:character-universal}
+\end{equation}
+Its degrees are $0,1,2$.  The identity $D_1D_0=0$ follows from
+commutativity.  This is a Koszul complex for two regular parameters, unlike
+the periodic resolution in the worked nodal-order example.
+
+\begin{proposition}[Universal exactness and the exceptional fiber]
+The universal complex has $H^0=H^1=0$ and
+$H^2=S/(X-1,Y-1)\cong\mathbb C$.  After specialization at
+$(u,v)\in(\mathbb C^\times)^2$, its differentials are
+\[
+ d_0=\begin{pmatrix}u-1\\v-1\end{pmatrix},\qquad
+ d_1=\begin{pmatrix}-(v-1)&u-1\end{pmatrix}.
+\]
+The specialized complex is exact if $(u,v)\ne(1,1)$.  At $(1,1)$
+its cohomology dimensions are $(1,2,1)$.
+\end{proposition}
+\begin{proof}
+The ring $S$ is a domain, so $D_0$ is injective.  If
+$-Bp+Aq=0$, reduction modulo $A$ gives $B\overline p=0$ in
+$S/(A)\cong\mathbb C[Y^{\pm1}]$.  The latter ring is a domain and
+$B$ is nonzero in it.  Thus $p=Ar$ for some $r\in S$; substitution
+and cancellation of $A$ give $q=Br$.  This proves
+$\ker D_1=\operatorname{im}D_0$.  The image of $D_1$ is the ideal
+$(A,B)$, proving the cokernel assertion.
+
+In a specialized fiber, put $a=u-1$, $b=v-1$.  If $(a,b)\ne(0,0)$,
+the first map has rank one, the second is surjective, and their composite
+vanishes.  The kernel of the second therefore has dimension one and equals
+the image of the first.  If $a=b=0$, both maps vanish and the cohomology is
+the entire graded vector space.
+\end{proof}
+
+The assignment $(u,v)\mapsto(d_0,d_1)$ is a regular map from an algebraic
+torus to the variety of complexes with dimension vector $(1,2,1)$.  Its
+image lies in the equation $d_1d_0=0$.  The generic rank pair is $(1,1)$;
+the identity character maps to rank pair $(0,0)$.  These are the explicit
+rank and determinantal data that connect the example to the general theory
+of varieties of complexes \cite{v2BE1973,v2DS1981,v2DEP1982}.
+
+The distinction between the universal cohomology and the fiber cohomology
+is essential.  Evaluation at $(1,1)$ is a nonflat base change.  Indeed,
+appending $S\to\mathbb C$ to \eqref{eq:character-universal} and
+reversing the degree indexing gives a free resolution of the augmentation
+module $\mathbb C$.  Tensoring it with that module makes every differential
+zero, so
+\[
+ \operatorname{Tor}_0^S(\mathbb C,\mathbb C)=\mathbb C,\qquad
+ \operatorname{Tor}_1^S(\mathbb C,\mathbb C)=\mathbb C^2,\qquad
+ \operatorname{Tor}_2^S(\mathbb C,\mathbb C)=\mathbb C,
+\]
+and higher Tor groups vanish.  The exceptional fiber records derived
+information, rather than contradicting the universal exactness calculation.
+
+\section{Characters, local coefficients and sign conventions}
+
+Let $\Lambda=\mathbb Z\omega_1+\mathbb Z\omega_2\subset\mathbb C$,
+and $E=\mathbb C/\Lambda$.  A unitary representation
+$\rho:\Lambda\to U(1)$ is determined by
+$u=\rho(\omega_1)$ and $v=\rho(\omega_2)$.  Here $\rho$ denotes
+parallel-transport holonomy.  A bundle with this convention is
+\[
+ (\mathbb C\times\mathbb C)/
+ ((z,w)\sim(z+\lambda,\rho(\lambda)^{-1}w)).
+\]
+Consequently its sections have automorphy multiplier $\rho^{-1}$.
+The flat-torus chapter uses the automorphy character $\chi$;
+the conventions agree by setting $\rho=\chi^{-1}$.
+
+A torus has a cell presentation with one vertex, two oriented edges and
+one oriented face.  With a consistent choice of lifted cells, its cochains
+with these rank-one coefficients have the displayed differences $u-1$
+and $v-1$, and the oriented face supplies the row $(-(v-1),u-1)$.
+Changing all character conventions to their inverses gives an equivalent
+model and leaves the conclusions below unchanged.
+
+The cohomology dimensions also follow directly in the smooth model.
+Write $u=e^{2\pi is}$, $v=e^{2\pi it}$, and use real coordinates
+$z=x_1\omega_1+x_2\omega_2$.  Coefficient functions have Fourier
+frequencies $k=(m-s,n-t)$, with $(m,n)\in\mathbb Z^2$.  On each
+mode the flat exterior derivative is exterior multiplication by
+$2\pi i(k_1dx_1+k_2dx_2)$.  When $k\ne0$, contraction by
+$k_1\partial_{x_1}+k_2\partial_{x_2}$, divided by
+$2\pi i|k|^2$, is a contracting homotopy: the exterior multiplication
+and contraction anticommutator equals $|k|^2$ times the identity.
+For a fixed nontrivial character every mode is nonzero, with frequencies
+bounded away from zero.  The resulting multipliers preserve rapidly
+decreasing Fourier coefficients and therefore smooth forms.  All
+cohomology vanishes.  For the trivial character, only the constant mode
+survives and has dimensions $(1,2,1)$.  Thus the finite and differential
+complexes exhibit precisely the same cohomology jump.
+
+\section{A complete Hodge calculation}
+
+Equip the three finite cochain spaces with their standard Hermitian inner
+products.  For $a=u-1$, $b=v-1$, put
+\[
+ \sigma(u,v)=|a|^2+|b|^2.
+\]
+
+\begin{proposition}[Finite Laplacians and a quantitative homotopy]
+The degree-zero, degree-one and degree-two Hodge Laplacians are
+\[
+ \Delta_0=\sigma I_1,\qquad
+ \Delta_1=\sigma I_2,\qquad
+ \Delta_2=\sigma I_1.
+\]
+For $\sigma>0$, the maps $h^1=d_0^*/\sigma$ and
+$h^2=d_1^*/\sigma$ satisfy $dh+hd=I$.  Their operator norms are
+$\sigma^{-1/2}$.
+\end{proposition}
+\begin{proof}
+The endpoint products $d_0^*d_0$ and $d_1d_1^*$ equal $\sigma$.
+At the middle term,
+\[
+ d_0d_0^*+d_1^*d_1
+ =\begin{pmatrix}|a|^2&a\overline b\\b\overline a&|b|^2\end{pmatrix}
+ +\begin{pmatrix}|b|^2&-\overline b a\\-\overline a b&|a|^2\end{pmatrix}
+ =\sigma I_2.
+\]
+Division by $\sigma$ gives the homotopy identities in every degree.
+Each nonzero row or column differential has operator norm
+$\sqrt\sigma$, proving the norm assertion for its adjoint divided by
+$\sigma$.
+\end{proof}
+
+For unitary characters,
+\[
+ \sigma=4\sin^2(\pi s)+4\sin^2(\pi t).
+\]
+Choose $s,t\in[-1/2,1/2]$ and let $\delta^2=s^2+t^2$.  Concavity
+of sine on $[0,\pi/2]$ and the inequality $\sin x\le x$ give
+\[
+ 16\delta^2\le\sigma\le4\pi^2\delta^2.
+\]
+This supplies explicit estimates for the failure of a uniformly bounded
+contracting homotopy as the character approaches the identity.  The Euler
+characteristic remains $1-2+1=0$ throughout.  Exactness holds at every
+nontrivial character, but its quantitative inverse becomes unbounded.
+The number $\sigma$ belongs to this chosen finite cellular metric; it is
+not the continuum Laplacian eigenvalue formula or a Yang--Mills mass.
+
+\section{An order action with an explicit cochain map}
+
+Suppose $\alpha\Lambda\subseteq\Lambda$ and write its matrix on column
+lattice coordinates as
+$M=\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)$.
+Pullback by $[z]\mapsto[\alpha z]$ sends the character pair to
+\begin{equation}
+ (u',v')=(u^av^c,u^bv^d).
+ \label{eq:character-monomial}
+\end{equation}
+This assertion concerns the multiplier ring of a complex lattice; when
+that ring has rank two it is an imaginary quadratic order, as proved in
+the flat-torus chapter.
+
+For every integer $r$, define the Laurent polynomial
+$S_r(z)=(z^r-1)/(z-1)$, with its polynomial value at $z=1$.
+For $r>0$ it is $1+\cdots+z^{r-1}$, for $r=0$ it is zero, and
+for $r<0$ it is $-\sum_{j=r}^{-1}z^j$.  In all cases $S_r(1)=r$.
+Set
+\[
+ F_M(u,v)=
+ \begin{pmatrix}
+ v^cS_a(u)&S_c(v)\\
+ v^dS_b(u)&S_d(v)
+ \end{pmatrix}.
+\]
+
+\begin{theorem}[A character pullback bridge]
+The maps $1$, $F_M(u,v)$ and $\det F_M(u,v)$ in degrees $0,1,2$
+form a cochain map from the complex at $(u,v)$ to the complex at
+$(u',v')$.  At the trivial character the induced maps are
+$1$, $M^{\mathsf T}$ and $\det M$, respectively.
+If $\alpha\ne0$, precisely $\det M=|\alpha|^2$ unitary characters
+pull back to the trivial character.
+\end{theorem}
+\begin{proof}
+The identity
+$u^av^c-1=v^cS_a(u)(u-1)+S_c(v)(v-1)$, and its counterpart for
+$(b,d)$, show that $d'_0=F_Md_0$.  For any two-by-two matrix $F$ and
+column $x$, the alternating row associated to $Fx$, multiplied by $F$,
+equals $\det(F)$ times the alternating row associated to $x$.
+This follows by expanding the two coordinates, or from
+$F^{\mathsf T}JF=(\det F)J$ with
+$J=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$.
+Hence $d'_1F_M=(\det F_M)d_1$, proving the second cochain identity.
+At $(1,1)$ the differentials vanish and
+$F_M(1,1)=\left(\begin{smallmatrix}a&c\\b&d\end{smallmatrix}\right)
+=M^{\mathsf T}$, proving the stated cohomology maps.
+
+Multiplication by a nonzero complex number has real determinant
+$|\alpha|^2$.  Changing from a real orthonormal basis to a lattice basis
+does not change its determinant, so
+$[\Lambda:\alpha\Lambda]=\det M=|\alpha|^2$.
+A character pulls back trivially exactly when it is trivial on
+$\alpha\Lambda$, equivalently when it factors through the finite group
+$\Lambda/\alpha\Lambda$.  A finite abelian group has as many unitary
+characters as elements: decompose it into cyclic factors and choose one
+root of unity for each generator.  This proves the count.
+\end{proof}
+
+The theorem makes an order action, a character pairing, a variety of
+complexes, and a cohomology jump coexist in a single explicit diagram.
+Its cochain map is an algebraic representative obtained from the displayed
+factorization; no choice of a hidden scalar is required.  For example,
+$\alpha=n$ kills exactly the $n^2$ torsion characters.  Several initially
+acyclic character complexes consequently map to a fiber with nonzero
+cohomology.  The map is not asserted to be a cohomology isomorphism.
+
+These finite torsion characters also carry the evaluation pairings used in
+finite Fourier analysis.  The present theorem supplies their algebraic
+structure and functorial maps.  An efficient encoding, a hidden-function
+oracle, and a resource analysis remain separate requirements for a quantum
+algorithm.  Similarly, the explicit estimate for $\sigma$ is a bound in
+a specified finite complex.  Connecting it to a physical Hamiltonian would
+require a proved operator comparison and estimates uniform in the relevant
+limits.  The bridge is substantial precisely because its conclusions and
+its remaining obligations can both be stated exactly.

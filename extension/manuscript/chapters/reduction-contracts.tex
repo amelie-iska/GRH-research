@@ -1,0 +1,191 @@
+\chapter{Exact reduction contracts and the information lost by tropicalization}
+\label{ch:reduction-contracts}
+
+\reviewstatus{This chapter adds exact factorization, discrete trajectory, error,
+and signed polynomial results. The companion module
+\texttt{ReductionContracts.lean} contains sixteen kernel-checked declarations
+with a per-declaration axiom manifest. The cited analytic-forcing obstruction
+is an external theorem, not a result formalized by this module.}
+
+Information reduction becomes a mathematical claim when the retained data
+determine the quantity being predicted. This chapter supplies a necessary and
+sufficient condition, then a quantitative obstruction when the condition fails.
+It also shows precisely why the orders of two signed terms do not determine
+the order of their sum. These statements make the project's graph, order, and
+tropical interfaces testable without identifying them with a continuum proof.
+
+\section{The exact closure criterion}
+
+Let $X$ be a state space, $Y$ the space of retained observations, and $Z$ an
+output space. A map $P:X\to Y$ describes what the representation retains;
+$Q:X\to Z$ describes what a model must predict. No topology or probability
+distribution is needed for the following statement.
+
+\begin{theorem}[Factorization through retained information]
+\label{thm:reduction-fiber-factorization}
+Suppose $P$ is surjective. There is a map $G:Y\to Z$ satisfying
+$G(Px)=Qx$ for every $x$ if and only if
+\[
+ Px=Py\quad\Longrightarrow\quad Qx=Qy
+ \qquad(x,y\in X).
+\]
+When it exists, $G$ is unique.
+\end{theorem}
+\begin{proof}
+If $G$ exists, equal observations have equal images under $G$, proving the
+condition. Conversely, for each $b\in Y$ choose $x_b$ with $P(x_b)=b$ and
+define $G(b)=Q(x_b)$. The fiber condition makes this independent of the
+choice and gives $G(Px)=Qx$. If $G,H$ both factor $Q$, surjectivity gives,
+for every $b=Px$, the equality $G(b)=Qx=H(b)$.
+\end{proof}
+
+Surjectivity is a modeling convention, not a demand that a compressed
+representation cover an arbitrary ambient tensor space: one can take $Y$ to
+be the image of $P$. The theorem proves existence of a set-theoretic map.
+It does not prove that $G$ is continuous, measurable, Lipschitz, efficiently
+computable, or representable by a particular neural architecture. Those are
+separate requirements on a usable model.
+
+For a discrete update $F:X\to X$, take $Q=P\circ F$. Then the criterion
+is exactly preservation of the equivalence relation $x\sim y$ defined by
+$Px=Py$. This gives a precise meaning to an exact reduced dynamics.
+
+\begin{proposition}[Propagation of an exact discrete reduction]
+\label{prop:reduction-trajectory}
+Suppose $P\circ F=G\circ P$, $u_{n+1}=F(u_n)$,
+$v_{n+1}=G(v_n)$, and $Pu_0=v_0$. Then $Pu_n=v_n$ for every natural
+number $n$.
+\end{proposition}
+\begin{proof}
+The initial equality is given. If it holds at $n$, then
+$Pu_{n+1}=PF(u_n)=G(Pu_n)=G(v_n)=v_{n+1}$. Induction proves the claim.
+\end{proof}
+
+For a differentiable observation of a continuous-time trajectory
+$\dot x=F(x)$, the chain rule instead gives
+\[
+ \frac{d}{dt}P(x(t))=DP(x(t))F(x(t)).
+\]
+The quantity to factor is therefore $Q(x)=DP(x)F(x)$. Only for a linear
+observation does this become $Q(x)=PF(x)$. A nonlinear tokenizer or learned
+coordinate map cannot silently use the linear rule. The factorization
+theorem applies to this $Q$ as a map, while differentiability and existence
+of trajectories remain analytic premises. The Lean trajectory declaration
+in this chapter concerns discrete time only.
+
+For example, $P(x,y)=x$ discards the variable needed to predict $Q(x,y)=y$.
+States $(0,0)$ and $(0,1)$ share their observation and have distinct outputs.
+No deterministic function of the observation alone can give both outputs.
+Adding a memory state or retaining $y$ can change the representation and
+remove this obstruction; additional network capacity on the same input cannot.
+
+\section{A lower bound on every approximate closure}
+
+The preceding obstruction has a quantitative version, independent of how
+$G$ is trained or parameterized.
+
+\begin{proposition}[Unresolved diameter bounds approximation error]
+\label{prop:reduction-error-diameter}
+Let $Z$ be a seminormed additive commutative group. For any
+$P:X\to Y$, $Q:X\to Z$, and $G:Y\to Z$, if $Px=Py$, then
+\[
+ \|Qx-Qy\|\leq\|Qx-G(Px)\|+\|Qy-G(Py)\|.
+\]
+Consequently, if each error on the right is at most $\varepsilon$,
+then $\|Qx-Qy\|\leq2\varepsilon$.
+\end{proposition}
+\begin{proof}
+Put $g=G(Px)=G(Py)$ and write
+$Qx-Qy=(Qx-g)+(g-Qy)$. The triangle inequality and
+$\|g-Qy\|=\|Qy-g\|$ give the first assertion. Bounding the two terms
+separately gives the second.
+\end{proof}
+
+This is a worst-case bound on a specified pair. A probabilistic average-loss
+claim additionally needs a distribution and a loss; a sampled dataset does
+not establish a diameter bound on every unseen fiber. The theorem provides
+a diagnostic for proposed reductions: find equal retained states with
+separated target stresses or derivatives. A quantum expectation readout,
+graph embedding, or toric feature map is subject to the same criterion once
+its accessible classical observation has been specified.
+
+\section{Signed cancellation is invisible to orders alone}
+
+For $p\in\mathbb Q[X]$, let $\operatorname{ord}_0(p)$ be its smallest
+exponent with nonzero coefficient, with $\operatorname{ord}_0(0)=\infty$.
+The finite-order statements below use nonzero inputs and nonzero residuals,
+so they do not exploit a convention at zero. Tropical order calculations
+are useful bookkeeping, but their additive rule must retain the possibility
+of cancellation; compare the positive-semiring setting of
+\citet{ReductionLitvinov2005}.
+
+\begin{proposition}[Arbitrarily large cancellation gain]
+\label{prop:reduction-signed-order}
+For every integer $k\geq0$, put
+\[
+ p=X,\qquad q_k=-X+X^{k+2}.
+\]
+Then $p,q_k,p+q_k$ are nonzero and
+\[
+ \operatorname{ord}_0(p)=\operatorname{ord}_0(q_k)=1,
+ \qquad \operatorname{ord}_0(p+q_k)=k+2>1.
+\]
+In particular, the identity
+$\operatorname{ord}_0(p+q)=\min\{\operatorname{ord}_0p,
+\operatorname{ord}_0q\}$ is false in general even for nonzero summands
+and a nonzero sum.
+\end{proposition}
+\begin{proof}
+The constant coefficients vanish. The coefficient of $X$ in $p$ is one
+and that in $q_k$ is minus one, since $k+2\geq2$. Each summand has order
+one and is nonzero. Their sum is exactly $X^{k+2}$, which is nonzero
+and has order $k+2$. This proves all assertions.
+\end{proof}
+
+The integer $k$ is arbitrary. Thus no fixed correction to the minimum of
+the input orders can recover all cancellation gains. Signed leading
+coefficients must first be compared; when they cancel, higher coefficients
+must be examined. For complex amplitudes, phases carry analogous information.
+This issue is especially consequential for a momentum residual: its
+transport, pressure, temporal, and viscous terms carry signs, and smallness
+of their exact sum is a different property from the size of each term.
+An order graph can organize candidate balances. A proof must still establish
+the coefficient identities and bounds on the remaining terms.
+
+\section{A current analytic obstruction to removing the force}
+
+Theorem~1.1 of \citet{ReductionCIV2026}, version~2, addresses suitable weak
+solutions smooth before the candidate singular time. It assumes a uniform
+spatial $C^2$ bound on the force, spatial analyticity locally uniform on
+interior time intervals, the anisotropic angular-mean bounds in its
+equations~(1.7a)--(1.7b) through derivative order two, and exact axisymmetry
+on a positive-radius core at every earlier time. Under these hypotheses the
+candidate point is regular. Zero forcing meets the force hypotheses.
+Consequently, preserving this structural class while deleting the force
+cannot retain the released singularity. This is an obstruction to that
+specified class, not a global unforced regularity theorem and not a
+disproof of the smooth forced construction. The cited analytic theorem is
+used as an external result; this extension has not formalized its proof.
+
+For the project's future developments, this gives three concrete obligations.
+A proposed information reduction must state its fibers and the outputs they
+determine. A tropical residual certificate must retain signed coefficients
+where leading orders tie. A transformed fluid theorem must preserve its
+forcing and regularity hypotheses, or separately prove the replacements.
+These obligations are compatible with graph-based proof search and quantum
+learning, but they cannot be discharged by an analogy between representations.
+
+\section{Formal coverage and reproducibility}
+
+The companion module proves the two directions and uniqueness in
+Theorem~\ref{thm:reduction-fiber-factorization}, its discrete-closure
+specialization and a mismatched-fiber obstruction,
+Proposition~\ref{prop:reduction-trajectory}, both inequalities in
+Proposition~\ref{prop:reduction-error-diameter}, and every polynomial
+assertion in Proposition~\ref{prop:reduction-signed-order}.
+The declarations use ordinary set-theoretic functions, actual seminorms,
+and actual rational polynomials; no placeholder predicate stands in for
+the missing analytic theorem. The verification manifest records the source
+hash, exact compiler and mathlib pins, process exit code, and each
+declaration's foundational dependencies. Its sixteen checked declarations
+are additional to the earlier finite fluid and quantum modules.

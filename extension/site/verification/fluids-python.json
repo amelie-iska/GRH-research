@@ -1,0 +1,331 @@
+{
+  "status": "passed",
+  "seed": 20261113,
+  "checked_at_utc": "2026-11-13T21:19:44.763161+00:00",
+  "representation": "CPU binary64 finite computations, symbolic identities, and exact integer/modular linear algebra",
+  "cochain_complexes": [
+    {
+      "L": 3,
+      "vertices": 9,
+      "edges": 18,
+      "faces": 9,
+      "integer_composition_nonzeros": 0,
+      "ranks": [
+        8,
+        8
+      ],
+      "rank_prime": 101,
+      "rank_certificate": "modular lower rank n-1 plus exact constant-vector/cosum upper rank n-1",
+      "betti": [
+        1,
+        2,
+        1
+      ],
+      "min_hodge_eigenvalue": -8.881784197001256e-16,
+      "hodge_nullity_numeric": 2,
+      "quadratic_form_residual": 1.4210854715202004e-14
+    },
+    {
+      "L": 4,
+      "vertices": 16,
+      "edges": 32,
+      "faces": 16,
+      "integer_composition_nonzeros": 0,
+      "ranks": [
+        15,
+        15
+      ],
+      "rank_prime": 101,
+      "rank_certificate": "modular lower rank n-1 plus exact constant-vector/cosum upper rank n-1",
+      "betti": [
+        1,
+        2,
+        1
+      ],
+      "min_hodge_eigenvalue": -5.762118988774629e-16,
+      "hodge_nullity_numeric": 2,
+      "quadratic_form_residual": 1.4210854715202004e-14
+    },
+    {
+      "L": 5,
+      "vertices": 25,
+      "edges": 50,
+      "faces": 25,
+      "integer_composition_nonzeros": 0,
+      "ranks": [
+        24,
+        24
+      ],
+      "rank_prime": 101,
+      "rank_certificate": "modular lower rank n-1 plus exact constant-vector/cosum upper rank n-1",
+      "betti": [
+        1,
+        2,
+        1
+      ],
+      "min_hodge_eigenvalue": -1.9715132304476413e-15,
+      "hodge_nullity_numeric": 2,
+      "quadratic_form_residual": 2.842170943040401e-14
+    },
+    {
+      "L": 6,
+      "vertices": 36,
+      "edges": 72,
+      "faces": 36,
+      "integer_composition_nonzeros": 0,
+      "ranks": [
+        35,
+        35
+      ],
+      "rank_prime": 101,
+      "rank_certificate": "modular lower rank n-1 plus exact constant-vector/cosum upper rank n-1",
+      "betti": [
+        1,
+        2,
+        1
+      ],
+      "min_hodge_eigenvalue": -4.440892098500626e-16,
+      "hodge_nullity_numeric": 2,
+      "quadratic_form_residual": 0.0
+    },
+    {
+      "L": 7,
+      "vertices": 49,
+      "edges": 98,
+      "faces": 49,
+      "integer_composition_nonzeros": 0,
+      "ranks": [
+        48,
+        48
+      ],
+      "rank_prime": 101,
+      "rank_certificate": "modular lower rank n-1 plus exact constant-vector/cosum upper rank n-1",
+      "betti": [
+        1,
+        2,
+        1
+      ],
+      "min_hodge_eigenvalue": 2.497791353432117e-16,
+      "hodge_nullity_numeric": 2,
+      "quadratic_form_residual": 5.684341886080802e-14
+    },
+    {
+      "L": 8,
+      "vertices": 64,
+      "edges": 128,
+      "faces": 64,
+      "integer_composition_nonzeros": 0,
+      "ranks": [
+        63,
+        63
+      ],
+      "rank_prime": 101,
+      "rank_certificate": "modular lower rank n-1 plus exact constant-vector/cosum upper rank n-1",
+      "betti": [
+        1,
+        2,
+        1
+      ],
+      "min_hodge_eigenvalue": -2.4424906541753444e-15,
+      "hodge_nullity_numeric": 2,
+      "quadratic_form_residual": 0.0
+    }
+  ],
+  "taylor_green": {
+    "symbolic_divergence_momentum_curl_residuals": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "sample_count": 16,
+    "energy_average_errors": [
+      0.0,
+      2.7755575615628914e-17,
+      0.0
+    ],
+    "domain": "flat (R / 2pi Z)^2, unit density, zero force",
+    "pressure_sign": "+(cos(2x)+cos(2y))*exp(-4nu*t)/4"
+  },
+  "quadratic_order": {
+    "exact_symbolic_identities": 4,
+    "powers": [
+      {
+        "k": 0,
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "determinant": 1
+      },
+      {
+        "k": 1,
+        "matrix": [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "determinant": 14
+      },
+      {
+        "k": 2,
+        "matrix": [
+          [
+            10,
+            8
+          ],
+          [
+            8,
+            26
+          ]
+        ],
+        "determinant": 196
+      },
+      {
+        "k": 3,
+        "matrix": [
+          [
+            38,
+            50
+          ],
+          [
+            50,
+            138
+          ]
+        ],
+        "determinant": 2744
+      },
+      {
+        "k": 4,
+        "matrix": [
+          [
+            164,
+            288
+          ],
+          [
+            288,
+            740
+          ]
+        ],
+        "determinant": 38416
+      },
+      {
+        "k": 5,
+        "matrix": [
+          [
+            780,
+            1604
+          ],
+          [
+            1604,
+            3988
+          ]
+        ],
+        "determinant": 537824
+      },
+      {
+        "k": 6,
+        "matrix": [
+          [
+            3944,
+            8800
+          ],
+          [
+            8800,
+            21544
+          ]
+        ],
+        "determinant": 7529536
+      }
+    ],
+    "limitation": "determinant identities; no independent reproduction of the full analytic singularity construction"
+  },
+  "circuit": {
+    "cases": 16,
+    "gates": 7,
+    "parameters": 4,
+    "qubits": 2,
+    "reference": "independent NumPy dense Kronecker matrices; complex128; q0 is most significant bit",
+    "max_feature_shift_vs_finite_difference_error": 2.9914003218944885e-10,
+    "max_nu_chain_rule_error": 3.982999000062826e-11,
+    "training": "none",
+    "hardware": "classical CPU simulation"
+  },
+  "heat_channel": {
+    "diagonal_grid": [
+      16,
+      16
+    ],
+    "trajectories": [
+      {
+        "r": 0.1322935157958759,
+        "steps": 30,
+        "kind": "peaks",
+        "entropy": 7.6235369632329615,
+        "contrast": 0.0010207412745443624,
+        "mass": 1.0,
+        "min_entropy_increment": 0.019455282297429655,
+        "max_mass_error": 2.220446049250313e-16
+      },
+      {
+        "r": 0.12,
+        "steps": 50,
+        "kind": "stripe",
+        "entropy": 7.958157762112025,
+        "contrast": 0.00011163291528824119,
+        "mass": 1.0,
+        "min_entropy_increment": 0.0015966675592471447,
+        "max_mass_error": 1.1102230246251565e-16
+      },
+      {
+        "r": 0.25,
+        "steps": 8,
+        "kind": "point",
+        "entropy": 5.088333979751366,
+        "contrast": 0.017329548485577106,
+        "mass": 1.0,
+        "min_entropy_increment": 0.19505447743358584,
+        "max_mass_error": 0.0
+      },
+      {
+        "r": 0,
+        "steps": 5,
+        "kind": "peaks",
+        "entropy": 5.169430930386797,
+        "contrast": 0.017658607869770512,
+        "mass": 1.0,
+        "min_entropy_increment": 0.0,
+        "max_mass_error": 0.0
+      }
+    ],
+    "coherent_density_check_dimension": 9,
+    "choi_dimension": 81,
+    "min_choi_eigenvalue": -5.67296990489208e-16,
+    "completeness_max_error": 2.220446049250313e-16,
+    "unitality_max_error": 2.220446049250313e-16,
+    "coherent_entropy_before": 2.5164755807297445,
+    "coherent_entropy_after": 3.0646255852689586,
+    "scope": "random-unitary CPTP heat channel; not incompressible Navier-Stokes and not a GPU run"
+  },
+  "scaling": {
+    "symbolic_energy_exponent_residual": "0",
+    "h_range": [
+      0.002,
+      0.009
+    ],
+    "minimum_energy_exponent": 0.473,
+    "scope": "scaling illustration only; not the upstream singular solution"
+  },
+  "script_sha256": "eeaefc57eb59efebbf49ae805b68fc760bfd20d9043b35b8bc3b6fa2fab87f4b"
+}

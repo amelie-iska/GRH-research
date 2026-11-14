@@ -1,0 +1,100 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[letterpaper,margin=1in,headheight=15pt]{geometry}
+\usepackage{microtype,graphicx,booktabs,longtable,array,enumitem}
+\usepackage{xcolor,fancyhdr,listings}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=teal!65!black,citecolor=teal!65!black,urlcolor=blue!55!black]{hyperref}
+\hypersetup{pdftitle={Fluid Dynamics, Orders and Quantum Information},pdfauthor={Research synthesis prepared for Amelie Schreiber},pdfsubject={A rigorous research synthesis with explicit proof and verification boundaries}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Fluid Dynamics and Quantum Information}
+\fancyhead[R]{\small Research monograph}
+\fancyfoot[C]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.2em}}
+\makeatother
+\setlist{itemsep=3pt,topsep=6pt}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{construction}[theorem]{Construction}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{warning}[theorem]{Caution}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\llbracket}{\mathopen{[\![}}
+\newcommand{\rrbracket}{\mathclose{]\!]}}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Span}{span}
+\newcommand{\reviewstatus}[1]{\par\smallskip\noindent\textbf{Evidence status.} #1\par\smallskip}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,columns=fullflexible,keepspaces=true,frame=single,rulecolor=\color{black!20},showstringspaces=false}
+\input{lean-listings-unicode}
+\title{\textbf{Fluid Dynamics, Orders\\and Quantum Information}\\[1em]\Large Microscopic reduction, finite complexes, quantum learning\\and a structural reading of the 2026 Navier--Stokes release}
+\author{Prepared for Amelie Schreiber\\[.4em]\normalsize A standalone extension of the research monograph}
+\date{13 November 2026\\\small Version 1.3: audited fluid and quiver interfaces}
+\begin{document}
+\frontmatter
+\hypersetup{pageanchor=false}
+\maketitle
+\clearpage
+\hypersetup{pageanchor=true}
+\chapter*{Purpose and scope}
+This supplement develops the fluid-dynamics extension of \emph{Orders, Complexes, Cryptography and Quantum Yang--Mills}. It contains the same six fluid, reduction and quiver chapters and the fluid verification appendix as the complete monograph, with independent pagination. The bibliography identifies the primary sources, and the companion repository contains the source coverage, exact formal declarations, numerical programs and interactive laboratory.
+
+The contribution is an explicit mathematical interpretation and a collection of proved interfaces. The released continuum singularity theorem is attributed to its source. The selected local Lean declarations and finite computations have their own verification records. We do not present a stronger unforced theorem, a fully formalized version of every chapter, or a trained fluid model where none was executed.
+\tableofcontents
+\mainmatter
+\input{chapters/microscopic-fluid-limits}
+\input{chapters/navier-stokes-release}
+\input{chapters/fluid-structures}
+\input{chapters/quantum-fluid}
+\input{chapters/reduction-contracts}
+\input{chapters/toric-transport-audit}
+\appendix
+\input{chapters/fluid-verification}
+\backmatter
+\bibliographystyle{plainnat}
+\bibliography{references,ns-microscopic,ns-release,ns-structures,ns-spin,reduction-contracts,toric-audit}
+\end{document}

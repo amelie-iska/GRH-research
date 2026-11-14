@@ -1,0 +1,142 @@
+{
+  "checked_at_utc": "2026-11-13T14:53:10.309015+00:00",
+  "pdf_file": "extension/manuscript/main.pdf",
+  "pdf_sha256": "01644e8852792f562874480ffe67eebd2b7dc7c8d14e9f097fb33c2b2f0c8ba5",
+  "pdf_bytes": 1658476,
+  "pdf_pages": 248,
+  "reviewer": "orders_volume_one independent bounded rendered-page QA",
+  "renderer": "pdftoppm version 26.05.0",
+  "render_command_pattern": "pdftoppm -f PAGE -l PAGE -singlefile -r 140 -png main.pdf OUTPUT_PREFIX",
+  "render_directory_outside_git": "/workspace/scratch/70763186a94c/qa-second-pass-pdf",
+  "visual_review_method": "Each of the 14 full-page PNGs was opened and visually inspected after rendering. Text extraction was used only to locate pages.",
+  "inspected_pdf_pages": [
+    76,
+    114,
+    125,
+    127,
+    145,
+    147,
+    188,
+    189,
+    196,
+    228,
+    229,
+    230,
+    231,
+    232
+  ],
+  "complete_new_lean_listing_pages": [
+    228,
+    229,
+    230,
+    231,
+    232
+  ],
+  "findings": [],
+  "blocking_findings": 0,
+  "page_reviews": [
+    {
+      "pdf_page": 76,
+      "printed_page": 65,
+      "review_note": "Empty-poset repair in Proposition 9.1 and the complete weight/flatness proof: hypothesis and formulas visible, no clipping.",
+      "render_sha256": "f1f392a510cedd56446c4fac053c550ebae44638d9f3407fe12837a1bc65f8e3",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 114,
+      "printed_page": 103,
+      "review_note": "Proposition 14.8 finite toric-code gap: nonloop-edge hypothesis and projector normalization visible, formula and proof fit.",
+      "render_sha256": "ceca26b107b8a5007d0ce197663ddd452aa34ba4a6f98e0eb76c0b06e38193ef",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 125,
+      "printed_page": 114,
+      "review_note": "Figure 15.1 Fierz contraction: T^a vertices, adjoint contraction, free indices, coefficients and vertical-orientation caption remain legible and consistent with Proposition 15.5.",
+      "render_sha256": "801dd0e2ea09aa1e7d2ce72597a23d22a10a6585835b722ff3ca76aafd00036e",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 127,
+      "printed_page": 116,
+      "review_note": "Figure 15.2 typed context: B-to-C boundaries, equality and sequential-only scope are legible; theorem and caption fit.",
+      "render_sha256": "58f582dd6bf960fb0337abc6f661d2c5ff827d408a90f2998678ea0612530ae3",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 145,
+      "printed_page": 134,
+      "review_note": "Table 16.1 ToricGT benchmark: all six rows, mean +/- standard-deviation entries, labels, and uncertainty qualification fit.",
+      "render_sha256": "28047341eaee49b83eaea9573567bde1953eedb0db0aadaac6f077171bdfb9bc",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 147,
+      "printed_page": 136,
+      "review_note": "Proposition 16.17 feasible-Hilbert/cost-gap bound: nonempty feasible set, unit state, commutation/unitarity, and probability bound render clearly.",
+      "render_sha256": "3e07cf0c9770de7e74c8b14861e284a9d0b182d3c481bf2bad7e9c0fd98939d1",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 188,
+      "printed_page": 177,
+      "review_note": "Centered-Gaussian hypothesis and conditional-polarization equation (22.13), with full-sky cosmic-variance proposition, render correctly.",
+      "render_sha256": "8b5f14eea7960cd6bb5c85c30656d91e22c05def52ad07722f9a0506d0e0bdcf",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 189,
+      "printed_page": 178,
+      "review_note": "Continuation of the conditional-Gaussian proof and nuisance Schur complement: matrix indices/inverses and display equation fit.",
+      "render_sha256": "64f955ca2e544842bd4703891f4bd32d8f424f5819f2c91aa133f3c7f061cf9b",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 196,
+      "printed_page": 185,
+      "review_note": "Figure 23.1 causal models: both shared observational laws, removed incoming X arrows, and different intervention probabilities 0 versus 1/2 are visible; caption is complete.",
+      "render_sha256": "26c2ff6340f4d877eb48fbdf80af08e2040627bbf85509c1c9e00a1a6a486a11",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 228,
+      "printed_page": 217,
+      "review_note": "Start of DiagramGrammar.lean listing: imports, scope comment, typed Diagram/Context constructors and beginning of fill are complete within frame.",
+      "render_sha256": "0a3cab34e1f21f8b0769c114e621315245036138674b58aa54a76c66bd699e60",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 229,
+      "printed_page": 218,
+      "review_note": "Sequential semantics/context/rewrite listing: forall symbols and linear-map subscripts render, wrapped lines remain readable and no symbols are missing.",
+      "render_sha256": "37b12c012d18d2ed6bfed77a5438cf1b81ab4becef0fcf09d99d44c0514e3fa9",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 230,
+      "printed_page": 219,
+      "review_note": "Equivalence rewrite and tensor-component listing: equivalence symbols, linear subscripts, tensor Kronecker subscript k and formulas render correctly.",
+      "render_sha256": "e3446712ffcc0cc9000571440f7ce1eb053691da9db96856d66a4776a4f19606",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 231,
+      "printed_page": 220,
+      "review_note": "Trace/loop, complex/exactness transport and contracting-homotopy listing: membership and angle brackets render correctly; proof lines fit.",
+      "render_sha256": "ff177c149f4693d75afb8586196718e49115ff583e0080e8569e0b055b00b971",
+      "result": "no_layout_or_glyph_issue_observed"
+    },
+    {
+      "pdf_page": 232,
+      "printed_page": 221,
+      "review_note": "Hodge-conjugacy listing and all 16 check/axiom commands: complex-field glyph, adjoint superscripts and both endpoint conditions render; final audit commands are complete.",
+      "render_sha256": "adbf890739aa43da8ff2ebab2fd8211ccddea835129aa3dc4657380ea273a8e6",
+      "result": "no_layout_or_glyph_issue_observed"
+    }
+  ],
+  "limits": [
+    "This is bounded visual QA of the selected pages, not a claim to have visually inspected every page of the 248-page monograph.",
+    "The separate mathematical audit and Lean kernel records govern proof scope; rendering does not verify mathematics or executable code.",
+    "No manuscript source was edited during this visual QA."
+  ]
+}

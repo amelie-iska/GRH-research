@@ -1,0 +1,25 @@
+ResearchQuantum.pauliX_square : ResearchQuantum.pauliX * ResearchQuantum.pauliX = 1
+ResearchQuantum.pauliZ_square : ResearchQuantum.pauliZ * ResearchQuantum.pauliZ = 1
+ResearchQuantum.pauli_anticommutation :
+  ResearchQuantum.pauliX * ResearchQuantum.pauliZ = -(ResearchQuantum.pauliZ * ResearchQuantum.pauliX)
+ResearchQuantum.binarySign_add.{u_1} {R : Type u_1} [CommRing R] (a b : ZMod 2) :
+  ResearchQuantum.binarySign (a + b) = ResearchQuantum.binarySign a * ResearchQuantum.binarySign b
+ResearchQuantum.shift_phase_commutation.{u_1, u_2} {R : Type u_1} {C : Type u_2} [CommRing R] [AddCommGroup C]
+  [Module (ZMod 2) C] (a : C) (ell : C →ₗ[ZMod 2] ZMod 2) (psi : C → R) :
+  ResearchQuantum.bitShift a (ResearchQuantum.parityPhase ell psi) = fun v =>
+    ResearchQuantum.binarySign (ell a) * ResearchQuantum.parityPhase ell (ResearchQuantum.bitShift a psi) v
+ResearchQuantum.boundary_phase_shift_commute.{u_1, u_2, u_3, u_4} {R : Type u_1} {C0 : Type u_2} {C1 : Type u_3}
+  {C2 : Type u_4} [CommRing R] [AddCommGroup C0] [AddCommGroup C1] [AddCommGroup C2] [Module (ZMod 2) C0]
+  [Module (ZMod 2) C1] [Module (ZMod 2) C2] (d1 : C1 →ₗ[ZMod 2] C0) (d2 : C2 →ₗ[ZMod 2] C1) (hcomplex : d1 ∘ₗ d2 = 0)
+  (ell : C0 →ₗ[ZMod 2] ZMod 2) (f : C2) (psi : C1 → R) :
+  ResearchQuantum.bitShift (d2 f) (ResearchQuantum.parityPhase (ell ∘ₗ d1) psi) =
+    ResearchQuantum.parityPhase (ell ∘ₗ d1) (ResearchQuantum.bitShift (d2 f) psi)
+ResearchQuantum.euler_surface_rank_substitution (V E F g : ℤ) (hEuler : V - E + F = 2 - 2 * g) :
+  E - (V - 1) - (F - 1) = 2 * g
+'ResearchQuantum.pauliX_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.pauliZ_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.pauli_anticommutation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.binarySign_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.shift_phase_commutation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.boundary_phase_shift_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.euler_surface_rank_substitution' depends on axioms: [propext, Classical.choice, Quot.sound]

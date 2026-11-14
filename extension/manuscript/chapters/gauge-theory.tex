@@ -1,0 +1,1474 @@
+\chapter{Gauge fields, curvature, and the meaning of a complex}
+\label{chap:gauge}
+
+\section{The precise connection to the preceding algebra}
+
+The theory of orders concerns modules carrying a multiplication action.  The
+theory of complexes concerns maps whose consecutive compositions vanish.  Gauge
+theory adds a third ingredient: the maps are differential operators depending on
+a connection, and the obstruction to their composing to zero is curvature.
+This observation supplies a concrete bridge between the subjects, but it also
+identifies the hypothesis that any proposed bridge must preserve.  An arbitrary
+covariant exterior derivative is not a differential in a cochain complex.
+Its square is a curvature action.  A flat connection removes that obstruction;
+an anti-self-dual connection removes the appropriate projected obstruction.
+Neither operation turns a classical deformation problem into a construction of
+the quantum vacuum.
+
+The following derivations fix conventions sufficiently explicitly to permit
+comparison with both algebraic complexes and formal proofs.  The foundational
+gauge theory dates to Yang and Mills; the geometric analysis of the
+anti-self-dual deformation complex is due to Atiyah, Hitchin, and Singer
+\cite{YM1954,AHS1978}.  The proofs below are elementary derivations of the
+identities used here.  The analytic index formula and reconstruction theorems
+are identified separately as external results.
+
+Let $M$ be a smooth, oriented Riemannian manifold without boundary and let
+$G$ be a compact Lie group.  Let $P\to M$ be a principal $G$-bundle and write
+$\operatorname{ad}P=P\times_{\operatorname{Ad}}\mathfrak g$.  Choose an
+$\operatorname{Ad}$-invariant positive definite inner product on
+$\mathfrak g$.  If $G$ is realized as a compact matrix group in $U(m)$, a
+positive multiple of $-\operatorname{Re}\operatorname{Tr}(XY)$ is an example
+on its skew-Hermitian Lie algebra.  The numerical multiple matters when
+comparing coupling constants, instanton charges, and short-distance
+coefficients.  It does not change the differential identities.
+
+The affine space of smooth connections has tangent space
+$\Omega^1(M;\operatorname{ad}P)$.  In a local trivialization a connection is
+a Lie-algebra-valued one-form $A$, with
+\begin{equation}
+ F_A=dA+\tfrac12[A\wedge A],\qquad
+ d_A\alpha=d\alpha+[A\wedge\alpha].
+ \label{eq:curvature-conventions}
+\end{equation}
+For homogeneous forms the bracket includes exterior multiplication and the
+Lie bracket.  In coordinates this means
+\[
+ (F_A)_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu+[A_\mu,A_\nu],
+ \qquad D_\mu X=\partial_\mu X+[A_\mu,X].
+\]
+The bracket is graded antisymmetric:
+$[\alpha\wedge\beta]=-(-1)^{pq}[\beta\wedge\alpha]$ for degrees $p,q$.
+In particular it is symmetric for two one-forms.  Keeping this sign is
+essential in the second variation.
+
+\begin{proposition}[Curvature is the failure of the complex identity]
+For every adjoint-valued form $\alpha$,
+\begin{equation}
+ d_A^2\alpha=[F_A\wedge\alpha],\qquad d_AF_A=0.
+ \label{eq:curvature-square}
+\end{equation}
+Consequently, if $F_A=0$, the sequence
+$\Omega^0(\operatorname{ad}P)\xrightarrow{d_A}
+\Omega^1(\operatorname{ad}P)\xrightarrow{d_A}\cdots$ is a complex.
+\end{proposition}
+
+\begin{proof}
+For a degree-zero section $s$, direct expansion gives
+\[
+ (D_\mu D_\nu-D_\nu D_\mu)s
+ =[\partial_\mu A_\nu-\partial_\nu A_\mu,s]
+   +[A_\mu,[A_\nu,s]]-[A_\nu,[A_\mu,s]]
+ =[F_{\mu\nu},s],
+\]
+where the last equality is the Jacobi identity.  Antisymmetrizing the same
+calculation in the additional form indices gives the first identity for every
+degree; differentiation of the scalar form coefficients contributes the
+ordinary identity $d^2=0$.  Equivalently, the graded Leibniz rule and graded
+Jacobi identity give
+$d_A^2=[dA+\frac12[A\wedge A],\cdot]$ directly.
+For the second identity, the cyclic sum of
+$D_\lambda F_{\mu\nu}$ has cancelling second derivatives and cancelling
+first-derivative brackets.  The remaining terms are
+$[A_\lambda,[A_\mu,A_\nu]]$ and their cyclic permutations, whose sum is
+zero by Jacobi.  This is precisely $d_AF_A=0$.  If $F_A=0$, the first
+identity says that every consecutive composition is zero.
+\end{proof}
+
+One must not reverse the last implication without a hypothesis on the
+representation.  A central curvature can act trivially in the adjoint
+representation.  For instance an abelian connection may have nonzero
+curvature although its induced adjoint differential is the ordinary exterior
+derivative.  For a centerless Lie algebra the statement that
+$[F_A,\phi]=0$ for every local adjoint section $\phi$ does force $F_A=0$.
+This qualification is a small example of the semantic checks required when a
+formal statement is used as a bridge between different mathematical settings.
+
+\section{Gauge covariance and the variational equations}
+
+Use the convention
+$A^u=u^{-1}Au+u^{-1}du$ for a gauge transformation $u$.
+Then $d_{A^u}(u^{-1}\alpha u)=u^{-1}(d_A\alpha)u$ and
+$F_{A^u}=u^{-1}F_Au$.  These formulas can be checked in a local matrix
+representation by differentiating $u^{-1}u=1$.  Since the chosen inner
+product is invariant, the Yang--Mills functional
+\begin{equation}
+ S(A)=\frac{1}{2g^2}\int_M |F_A|^2\,d\operatorname{vol}
+ \label{eq:yang-mills-action}
+\end{equation}
+is gauge invariant.  Here $g>0$ is fixed.  On a noncompact manifold all
+variations used below have compact support, or sufficient decay to justify
+integration by parts.  On a manifold with boundary a boundary condition must
+be supplied; omitting that condition changes the Euler--Lagrange problem.
+
+\begin{proposition}[First and second variations]
+For $a,b\in\Omega^1(M;\operatorname{ad}P)$,
+\begin{align}
+ F_{A+ta}&=F_A+t\,d_Aa+\tfrac12t^2[a\wedge a],\label{eq:curvature-variation}\\
+ DS_A(a)&=g^{-2}\langle d_A^*F_A,a\rangle_{L^2},\label{eq:ym-first}\\
+ D^2S_A(a,b)&=g^{-2}\left(
+ \langle d_Aa,d_Ab\rangle_{L^2}
+ +\langle F_A,[a\wedge b]\rangle_{L^2}\right).
+ \label{eq:ym-second}
+\end{align}
+Thus a smooth connection is stationary for all permitted variations if and
+only if $d_A^*F_A=0$.
+\end{proposition}
+
+\begin{proof}
+Substitute $A+ta$ into \eqref{eq:curvature-conventions}.  The linear terms
+are $da+[A\wedge a]=d_Aa$ because the bracket of one-forms is symmetric.
+The quadratic term is $\frac12t^2[a\wedge a]$.  Differentiating
+$\frac12g^{-2}\langle F,F\rangle$ once gives
+$g^{-2}\langle F_A,d_Aa\rangle$, which equals
+$g^{-2}\langle d_A^*F_A,a\rangle$ by the definition of the formal
+adjoint.  Mixed differentiation of $F_{A+sa+tb}$ gives
+$\partial_s\partial_tF=[a\wedge b]$.  Applying the product rule to the
+norm square proves the Hessian formula.  If the first variation vanishes
+for every compactly supported $a$, the fundamental lemma of the calculus of
+variations gives the stated equation; its converse follows from the formula.
+\end{proof}
+
+The equation $d_AF_A=0$ is an identity, while $d_A^*F_A=0$ is a field
+equation.  Their different logical roles are important.  Imposing the first
+does not restrict the set of connections, whereas imposing the second
+selects the classical Yang--Mills critical points.  In a Lean development the
+Bianchi identity should be proved from the definition of curvature, not
+added as an unexplained assumption that could conceal an inconsistent
+definition.
+
+The infinitesimal gauge direction is $d_A\phi$, because
+$\frac{d}{dt}|_{t=0} A^{\exp(t\phi)}=d_A\phi$.  At a critical point,
+the Hessian annihilates these directions in its associated bilinear form.
+One way to see this without a coordinate calculation is to differentiate
+the gauge invariance identity twice along a gauge orbit and a transverse
+variation.  The term involving acceleration of the orbit is paired with
+$DS_A$, which is zero at a critical point.  Thus the degeneracy is forced by
+symmetry, and the unmodified Hessian cannot be elliptic on all one-forms.
+
+For a nonzero covector $\xi$, omit the harmless factor $i$ in the symbol
+convention.  The principal symbol of $d_A$ is exterior multiplication by
+$\xi$; that of its adjoint is contraction by $\xi^\sharp$, up to the
+consistent sign for a first-order adjoint.  The principal symbol of the
+nonnegative second-order operator $d_A^*d_A$ on one-forms is
+\[
+ a\longmapsto |\xi|^2a-\xi\,\iota_{\xi^\sharp}a.
+\]
+It vanishes on multiples of $\xi$.  Adding the gauge-fixing term
+$d_Ad_A^*$ changes this to $|\xi|^2a$.  Curvature contributes only
+lower-order terms to the Hessian.  Accordingly the gauge-fixed Hessian is
+elliptic, although its lower-order part need not be positive at an arbitrary
+critical point.  Ellipticity concerns invertibility of the principal symbol;
+positivity is a separate property of the complete operator.
+
+\section{Four dimensions and self-duality}
+
+Suppose now that $\dim M=4$.  On two-forms the Hodge star satisfies
+$*^2=1$, and hence
+\[
+ \Lambda^2=\Lambda^2_+\oplus\Lambda^2_-,\qquad
+ F_A^\pm=\tfrac12(F_A\pm *F_A).
+\]
+The two summands are orthogonal.  Define
+$Q(A)=\int_M\langle F_A\wedge F_A\rangle$, where the invariant
+pairing is extended to forms.  Then
+\begin{equation}
+ \|F_A\|_2^2=\|F_A^+\|_2^2+\|F_A^-\|_2^2,
+ \qquad Q(A)=\|F_A^+\|_2^2-\|F_A^-\|_2^2.
+ \label{eq:energy-topology}
+\end{equation}
+For a closed manifold, $Q(A)$ is constant as the connection varies on a
+fixed bundle.  Its normalization as an integral characteristic number depends
+on the representation and the invariant form.
+
+\begin{proposition}[Energy bound and classical minimizers]
+With the conventions above,
+$S(A)\geq |Q(A)|/(2g^2)$.  Equality holds exactly when one of
+$F_A^+$ or $F_A^-$ vanishes.  Every such connection satisfies the
+Yang--Mills equation.
+\end{proposition}
+
+\begin{proof}
+For nonnegative $x,y$, $x+y\geq|x-y|$, with equality if and only if
+$xy=0$.  Apply this to the squared norms in
+\eqref{eq:energy-topology}.  A smooth form with zero $L^2$ norm is zero,
+so equality is the self-dual or anti-self-dual condition.  If
+$*F_A=\pm F_A$, then $d_A*F_A=\pm d_AF_A=0$ by Bianchi.  The
+formula for the formal adjoint, $d_A^*=\pm *d_A*$ in the relevant
+degree, therefore gives $d_A^*F_A=0$.
+\end{proof}
+
+For completeness, the connection independence of $Q$ follows directly from
+the first variation.  Differentiation gives
+$2\int_M\langle d_Aa\wedge F_A\rangle$.
+Invariance of the pairing and Bianchi identify the integrand with
+$d\langle a\wedge F_A\rangle$.  Stokes' theorem makes the integral
+zero on a closed manifold.  The statement requires an additional boundary
+analysis on noncompact spaces; finite action alone should not be silently
+substituted for all the boundary hypotheses needed in a particular theorem.
+
+This is a useful first encounter with a topological quantity controlling an
+analytic variational problem.  It is nevertheless a statement about
+classical connections.  It gives neither an interacting quantum Hilbert
+space nor a positive lowest nonzero quantum energy.  In particular a
+positive action of a nontrivial instanton is not the mass of a lowest
+particle.  The action of a Euclidean field configuration and the spectrum
+of a reconstructed Hamiltonian are different objects.
+
+\section{The anti-self-dual deformation complex}
+
+At an anti-self-dual connection, $F_A^+=0$.  Linearization of this equation
+gives $d_A^+a=0$, where $d_A^+=\pi_+d_A$.  Quotienting by
+infinitesimal gauge transformations leads to
+\begin{equation}
+ 0\longrightarrow\Omega^0(\operatorname{ad}P)
+ \xrightarrow{d_A}\Omega^1(\operatorname{ad}P)
+ \xrightarrow{d_A^+}\Omega^2_+(\operatorname{ad}P)
+ \longrightarrow0.
+ \label{eq:asd-complex}
+\end{equation}
+The following proof gives both parts of the assertion that this is an
+elliptic complex.  Having the correct ranks is not by itself sufficient:
+one needs the composition identity and exactness of the symbol at every
+nonzero cotangent vector.
+
+\begin{theorem}[Exactness of the anti-self-dual symbol sequence]
+If $F_A^+=0$, then $d_A^+d_A=0$.  For every nonzero covector $\xi$,
+the symbol sequence of \eqref{eq:asd-complex} is exact.
+\end{theorem}
+
+\begin{proof}
+For an adjoint section $\phi$, the curvature identity gives
+$d_A^+d_A\phi=\pi_+[F_A,\phi]=[F_A^+,\phi]=0$.
+For symbol exactness the Lie algebra factor is passive, so it suffices to
+work with ordinary real forms.  Rescale and choose an oriented orthonormal
+coframe $e^1,e^2,e^3,e^4$ with $\xi=|\xi|e^1$.  The first symbol sends
+$c$ to $c\xi$ and is injective.  If
+$a=\sum_j a_je^j$, the second sends it to
+\[
+ \frac{|\xi|}{2}\sum_{j=2}^4a_j
+ \left(e^1\wedge e^j+*(e^1\wedge e^j)\right).
+\]
+The three parenthesized forms are mutually orthogonal and nonzero, and
+they span the three-dimensional self-dual space.  The map is therefore
+surjective and its kernel consists precisely of multiples of $e^1$.
+This kernel is the image of the first symbol.  Tensoring the exact
+finite-dimensional sequence with $\mathfrak g$ preserves exactness.
+\end{proof}
+
+The proof displays a direct algebraic connection to varieties of complexes:
+each nonzero cotangent vector determines a pair of linear maps satisfying a
+zero-product equation and a particular exact rank condition.  The geometric
+content is the existence of a smooth family of these maps, with specified
+homogeneity in $\xi$, over the punctured cotangent bundle.  A single
+algebraic complex cannot replace that family.  Its global symbol class is
+the input to index theory.
+
+Let $H_A^0,H_A^1,H_A^2$ denote the cohomology of
+\eqref{eq:asd-complex}.  On a closed manifold elliptic theory makes these
+spaces finite dimensional and gives harmonic representatives after choosing
+Sobolev completions.  Their meanings are distinct: $H_A^0$ contains
+infinitesimal stabilizers, $H_A^1$ infinitesimal deformations modulo gauge,
+and $H_A^2$ obstructions.  The operator
+\[
+ L_A=d_A^*\oplus d_A^+:
+ \Omega^1(\operatorname{ad}P)\longrightarrow
+ \Omega^0(\operatorname{ad}P)\oplus\Omega^2_+(\operatorname{ad}P)
+\]
+has index $\dim H_A^1-\dim H_A^0-\dim H_A^2$.
+At an irreducible, unobstructed connection this is the local dimension of
+the moduli space.  Without those conditions the same integer is a virtual
+dimension, not an assertion that the quotient is a manifold.
+
+\begin{theorem}[Atiyah--Hitchin--Singer index formula, external]
+For an $SU(2)$ bundle on a closed, connected, oriented Riemannian four-manifold,
+write $k=\langle c_2(P\times_{SU(2)}\mathbb C^2),[M]\rangle$ with
+the convention in which anti-self-dual instantons have positive $k$.
+Then
+\begin{equation}
+ \operatorname{ind}L_A=8k-3(1-b_1(M)+b_2^+(M)).
+ \label{eq:asd-index}
+\end{equation}
+\end{theorem}
+
+This external theorem is an application of the analytic index theorem to
+the symbol just computed \cite{AHS1978}.  The proof of the symbol
+calculation above is not a proof of the index theorem.  On $S^4$ the
+formula becomes $8k-3$ for the unframed irreducible problem.  Framing at
+a point removes the three-dimensional constant gauge quotient in the usual
+regular situation and gives $8k$.  Comparing these numbers without
+recording framing conventions creates a spurious disagreement.
+
+\section{A finite-dimensional algebraic model: monads and ADHM}
+
+There is a stronger bridge than a resemblance between equations.  The
+Atiyah--Drinfeld--Hitchin--Manin construction relates appropriate
+finite-dimensional algebraic data to framed instantons
+\cite{ADHM1978}.  We use only its elementary complex identity here, and
+state the correspondence as an external theorem rather than re-proving its
+analytic and algebro-geometric foundations.
+
+Let $V,W$ be finite-dimensional complex vector spaces.  Choose
+$B_1,B_2\in\operatorname{End}(V)$,
+$I\in\operatorname{Hom}(W,V)$, and
+$J\in\operatorname{Hom}(V,W)$.  Set
+\[
+ \mu_{\mathbb C}=[B_1,B_2]+IJ.
+\]
+For $z=(z_1,z_2)\in\mathbb C^2$, define
+\[
+ \alpha_z(v)=((B_1-z_1)v,(B_2-z_2)v,Jv),
+ \quad
+ \beta_z(v_1,v_2,w)=-(B_2-z_2)v_1+(B_1-z_1)v_2+Iw.
+\]
+Their types are $V\to V\oplus V\oplus W\to V$.  Direct
+multiplication gives
+\begin{equation}
+ \beta_z\alpha_z=[B_1,B_2]+IJ=\mu_{\mathbb C}.
+ \label{eq:adhm-composition}
+\end{equation}
+Thus the complex moment-map equation is exactly a zero-composition
+condition, valid simultaneously for all $z$.
+
+If $\alpha_z$ is injective and $\beta_z$ surjective for every relevant
+$z$, the middle cohomology has dimension $\dim W$.  Indeed
+$\dim\ker\beta_z=2\dim V+\dim W-\dim V$, and quotienting
+by the $\dim V$-dimensional image of $\alpha_z$ leaves $\dim W$.
+These constant-rank conditions give a vector bundle locally.  They are
+essential: the equation $\mu_{\mathbb C}=0$ alone permits rank drops
+and singular objects.
+
+For unitary instantons the real moment-map equation also enters:
+\[
+ [B_1,B_1^*]+[B_2,B_2^*]+II^*-J^*J=0.
+\]
+Together with the appropriate stability and regularity conditions, the
+data modulo the unitary action on $V$ yield the ADHM correspondence.
+The complex equation explains why varieties of complexes are relevant;
+the real equation, positivity, and rank conditions explain why arbitrary
+points of a variety of complexes are insufficient.  In particular this
+construction describes classical instantons.  Its finite-dimensional
+algebra does not prove a quantum mass gap or an algorithm for elliptic-curve
+discrete logarithms.
+
+The monad identity is also a good candidate for machine checking: matrix
+multiplication, commutators, scalar identities, and dimensions have clear
+finite specifications.  Formalizing the full ADHM correspondence would
+require extensive differential geometry and analysis beyond that elementary
+identity.  Reporting the identity as ``the ADHM theorem verified'' would
+discard almost all of the theorem's content.
+
+\section{Why an index cannot establish a quantitative gap}
+
+An index records a difference of dimensions.  A spectral gap is an
+inequality with a positive numerical constant.  The distinction can be
+proved by an example that is already a complex of finite-dimensional
+vector spaces.
+
+\begin{proposition}[Exactness does not control the smallest singular value]
+For every $\varepsilon>0$, the complex
+$0\to\mathbb R\xrightarrow{\varepsilon}\mathbb R\to0$ is exact,
+but the smallest eigenvalue of either associated nonzero Laplacian is
+$\varepsilon^2$.  There is no positive lower bound valid for all
+$\varepsilon>0$.
+\end{proposition}
+
+\begin{proof}
+Multiplication by a nonzero real number is a bijection, so both cohomology
+groups vanish.  Relative to the standard inner products, the adjoint is
+also multiplication by $\varepsilon$, and $d^*d=dd^*=\varepsilon^2$.
+For any proposed lower bound $c>0$, choosing
+$0<\varepsilon<\sqrt c$ contradicts the bound.
+\end{proof}
+
+The same phenomenon appears geometrically.  On a flat torus of side length
+$L$, the scalar Laplacian has eigenvalues
+$(2\pi/L)^2|n|^2$ for $n\in\mathbb Z^d$.  The first positive one is
+$4\pi^2/L^2$, which tends to zero as $L\to\infty$.  Each fixed torus
+has a compact elliptic problem and a discrete spectrum, yet no
+volume-independent positive gap follows.  The quantum Yang--Mills problem
+contains a much more difficult version of precisely this issue: a bound
+must survive both the ultraviolet limit and unbounded physical volume.
+
+This gives a disciplined place for orders and homological algebra.  They
+can organize integral models, modules, deformation complexes, characteristic
+classes, and exact relations among observables.  To conclude a mass gap
+one still needs coercive estimates or spectral information with constants
+that remain positive in the required limits.  The absence of such an
+estimate is a mathematical missing implication, not a matter of choosing
+more persuasive terminology.
+
+\chapter{From finite gauge lattices to a quantum spectral gap}
+\label{chap:quantum-gap}
+
+\section{Three different uses of the word lattice}
+
+A lattice over an order is a module with a finiteness and torsion-freeness
+condition over the ground ring.  A Euclidean lattice is a discrete subgroup
+of a real inner-product space, with a metric that makes shortest-vector and
+decoding questions meaningful.  A lattice in a lattice gauge theory is a
+discrete approximation to spacetime, equipped with vertices, links, and
+plaquettes.  The first two notions can be related by embeddings of number
+fields and choices of positive forms.  The third need not carry any order
+module structure at all.  Identifying all three because they share a word
+would erase their defining mathematical data.
+
+There are productive interactions nevertheless.  A gauge theory on a finite
+cell complex has incidence maps and chain groups.  A choice of coefficient
+ring can make those chain groups modules over an order.  Discrete Hodge
+operators add positive inner products.  Fourier analysis on finite abelian
+groups, central in quantum algorithms, also diagonalizes many free lattice
+operators.  Each such connection is a construction that can be specified
+and proved.  None entails that the computational hardness of a Euclidean
+lattice problem controls the mass spectrum of an interacting gauge theory.
+
+\section{A finite Wilson model exists by elementary integration}
+
+Let a finite oriented cell complex have a set $E$ of positively oriented
+edges and a set $\mathcal P$ of oriented plaquettes.  Assign $U_e\in G$ to
+each $e\in E$, and use $U_{\bar e}=U_e^{-1}$ for the reverse orientation.
+The ordered product around a plaquette is $U_p$.  For a fixed unitary
+representation $G\subset U(m)$ and $\beta\geq0$, define
+\begin{equation}
+ E_W(U)=\sum_{p\in\mathcal P}
+ \left(1-\frac1m\operatorname{Re}\operatorname{Tr}U_p\right),\quad
+ Z_\beta=\int_{G^E}e^{-\beta E_W(U)}\prod_{e\in E}dh(U_e),
+ \label{eq:wilson-finite}
+\end{equation}
+where $h$ is normalized Haar measure.  Wilson's lattice construction
+preserves gauge invariance before taking any limit \cite{Wilson1974}.
+The following modest result explains exactly how much existence is obtained
+from compactness alone.
+
+\begin{proposition}[Finite-volume normalization and gauge invariance]
+The quantity $Z_\beta$ satisfies
+$e^{-2\beta|\mathcal P|}\leq Z_\beta\leq1$, and
+$d\mu_\beta=Z_\beta^{-1}e^{-\beta E_W}\prod_e dh(U_e)$ is a
+probability measure.  It is invariant under the vertex gauge action
+$U_{xy}\mapsto t_xU_{xy}t_y^{-1}$.
+\end{proposition}
+
+\begin{proof}
+Every eigenvalue of a unitary matrix has modulus one, so
+$-m\leq\operatorname{Re}\operatorname{Tr}U_p\leq m$.
+Thus $0\leq E_W\leq2|\mathcal P|$ and
+$e^{-2\beta|\mathcal P|}\leq e^{-\beta E_W}\leq1$.
+Integration against a probability measure gives the bounds.  In particular
+the normalization is finite and strictly positive.
+Under a vertex transformation the successive $t_y^{-1}t_y$ factors in a
+plaquette cancel, leaving conjugation by the transformation at its initial
+vertex.  Trace is invariant under conjugation, so the action is unchanged.
+Haar measure on a compact group is invariant under both left and right
+translations.  Applying this separately to each edge preserves the product
+measure and proves the last assertion.
+\end{proof}
+
+The proof works for every finite complex and every compact matrix group.
+It contains no control as the number of plaquettes tends to infinity or as
+the lattice spacing tends to zero.  The lower bound on $Z_\beta$ itself
+degenerates exponentially with $|\mathcal P|$.  Dividing by $Z_\beta$
+produces a probability measure, but does not remove the need for uniform
+bounds on the observables whose limits one wants to take.
+
+An observable such as a product of finitely many matrix entries is bounded
+at fixed lattice spacing.  A renormalized curvature observable typically
+contains negative powers of the spacing and cutoff-dependent mixing with
+other observables.  Its bound can diverge as the spacing tends to zero.
+Consequently, compactness of $G$ is compatible with difficult and highly
+singular continuum limits.  The relevant estimates must concern the
+renormalized observables and their correlations, not merely the unscaled
+link variables.
+
+\section{Reflection positivity is additional structure}
+
+Let $\vartheta$ reflect Euclidean time and let $\mathcal A_+$ denote a
+space of observables supported at positive times.  Write
+$\Theta F=\overline{F\circ\vartheta}$, with any required adjoint on
+field labels.  Reflection positivity asserts
+\begin{equation}
+ \mathbb E[(\Theta F)F]\geq0\qquad(F\in\mathcal A_+).
+ \label{eq:reflection-positive}
+\end{equation}
+It is not a consequence of the ordinary positivity of a probability measure.
+For example, take a symmetric random variable $Z$ with
+$0<\mathbb E[Z^2]<\infty$ and set $X_+=Z$, $X_-=-Z$.
+The joint law is a positive probability measure and is invariant under
+exchanging the two time labels.  Nevertheless, for $F=X_+$,
+$\mathbb E[(\Theta F)F]=\mathbb E[X_-X_+]=-\mathbb E[Z^2]<0$.
+Both positivity and reflection symmetry can hold while reflection positivity
+fails.
+
+The Wilson action has the special structure needed for appropriate lattice
+reflection-positivity and transfer-matrix theorems
+\cite{OSSeiler1978,Luscher1977}.  A useful finite-dimensional ingredient
+can be proved directly.
+
+\begin{proposition}[Positive-type Wilson link weight]
+Let $\rho:G\to U(m)$ be a unitary representation, $\chi(g)=\operatorname{Tr}\rho(g)$,
+and $c\geq0$.  The function $w(g)=\exp(c\operatorname{Re}\chi(g))$
+is of positive type: for all $g_1,\ldots,g_n\in G$ and
+$z_1,\ldots,z_n\in\mathbb C$,
+\[
+ \sum_{i,j}\overline{z_i}z_jw(g_i^{-1}g_j)\geq0.
+\]
+\end{proposition}
+
+\begin{proof}
+The character $\chi$ is of positive type because
+\[
+ \sum_{i,j}\overline{z_i}z_j\chi(g_i^{-1}g_j)
+ =\operatorname{Tr}\left(
+  \Bigl(\sum_i z_i\rho(g_i)\Bigr)^*
+  \Bigl(\sum_j z_j\rho(g_j)\Bigr)\right)\geq0.
+\]
+The conjugate character is the character of the conjugate unitary
+representation.  Products of characters are characters of tensor products.
+Expanding
+\[
+ w(g)=\sum_{a,b\geq0}\frac{(c/2)^{a+b}}{a!b!}
+                  \chi(g)^a\overline{\chi(g)}^{b}
+\]
+therefore expresses $w$ as a limit of nonnegative linear combinations of
+positive-type functions.  Since $|\chi(g)|\leq m$, the double series
+converges uniformly.  For any fixed finite set of points and coefficients,
+the associated nonnegative quadratic forms converge to the displayed
+quadratic form, which remains nonnegative.
+\end{proof}
+
+This lemma proves a kernel positivity statement.  The full lattice theorem
+also needs a factorization compatible with the reflection plane, the
+orientation of links, and the integration of gauge variables.  Those
+additional steps are not omitted by calling the lemma a proof of the full
+Osterwalder--Schrader reconstruction theorem.  The separation of claims is
+particularly useful in a formal development: a locally verified kernel
+identity can be reused without overstating its global consequence.
+
+\section{The Hilbert-space quotient behind reconstruction}
+
+Reflection positivity supplies the semidefinite sesquilinear form
+$(F,G)_{\mathrm{OS}}=\mathbb E[(\Theta F)G]$.
+Assume that the correlation functional is defined on a complex vector
+space $\mathcal V_+$ of finite positive-time field words, that this form
+is Hermitian, and that it is nonnegative on the diagonal.  The following
+quotient step is purely algebraic.
+
+\begin{proposition}[Null vectors and positive quotient]
+For a positive semidefinite Hermitian form $B$ on a complex vector space,
+the set $N=\{v:B(v,v)=0\}$ is a linear subspace and
+$B(v,w)=0$ for every $v\in N$ and $w$.  The induced form on
+$\mathcal V_+/N$ is positive definite.
+\end{proposition}
+
+\begin{proof}
+If $B(w,w)>0$, positivity of
+$B(v+\lambda w,v+\lambda w)$ for every $\lambda\in\mathbb C$
+and minimization of this real quadratic polynomial gives
+$|B(v,w)|^2\leq B(v,v)B(w,w)$.  If $B(w,w)=0$, apply the same
+argument to $w+\varepsilon u$ with a positive-norm $u$ and pass to the
+limit, or examine the linear term of the polynomial directly.  Thus
+Cauchy--Schwarz holds in all cases.  If $v\in N$ it forces
+$B(v,w)=0$.  This orthogonality implies that sums and scalar multiples of
+null vectors are null, and that changing a representative by a null vector
+does not change any inner product.  Finally an equivalence class with zero
+norm has a representative in $N$ and is therefore the zero class.
+\end{proof}
+
+Completing this quotient gives a Hilbert space.  Euclidean time translation,
+under the additional continuity and boundedness estimates required in
+reconstruction, induces a strongly continuous self-adjoint contraction
+semigroup.  Its generator is a nonnegative self-adjoint operator $H$ and
+the semigroup is $e^{-tH}$.  A complete reconstruction must also supply
+field domains, distributional regularity, locality, analytic continuation, and the Poincare action.  The original Osterwalder--Schrader papers state
+precise regularity and growth hypotheses for these conclusions
+\cite{OS1973,OS1975}.  The quotient lemma alone supplies none of them.
+
+One should track test-function spaces carefully.  A correlation kernel
+defined only where $x_i\ne x_j$ is not automatically a tempered
+distribution on all configurations.  Terms supported on the coincidence
+diagonals are invisible on separated tests.  A simple illustration is
+$T$ and $T+c\delta_0$ on $\mathbb R^d$: they agree on every test
+function supported away from the origin, but disagree on a test with
+$f(0)\ne0$.  Even all derivatives of a test vanishing on a diagonal
+make every derivative of the corresponding delta distribution invisible.
+This does not invalidate a separated-point construction.  It specifies the
+extra work necessary to extend it, establish positivity of an extension,
+and prove uniqueness under a chosen normalization.
+
+\section{What the mass-gap statement actually requires}
+
+In the Hamiltonian formulation, fix a complex Hilbert space $\mathcal H$,
+a normalized vacuum $\Omega$, and a nonnegative self-adjoint Hamiltonian
+$H$ with $\ker H=\mathbb C\Omega$.  Let $P_0$ be orthogonal
+projection onto the vacuum.  A positive gap means that there exists
+$\Delta>0$ with
+\begin{equation}
+ \operatorname{spec}(H)\subset\{0\}\cup[\Delta,\infty).
+ \label{eq:mass-gap}
+\end{equation}
+For the Yang--Mills Millennium problem this spectral assertion accompanies
+a nontrivial four-dimensional quantum field theory with the required
+Yang--Mills local-field and short-distance structure.  It is not an
+independent name for any positive matrix eigenvalue
+\cite{JaffeWitten2006}.  Vacuum uniqueness, positive energy, existence of a
+nonzero local observable, and a mass gap are four different conditions.
+
+\begin{theorem}[Spectral gap and Euclidean-time decay]
+Under the hypotheses just stated, the following are equivalent for a fixed
+$\Delta>0$:
+\begin{enumerate}
+ \item \eqref{eq:mass-gap} holds.
+ \item $\|e^{-tH}(1-P_0)\|\leq e^{-t\Delta}$ for every $t\geq0$.
+ \item For every $v\perp\Omega$ and every $t\geq0$,
+ $0\leq\langle v,e^{-tH}v\rangle\leq e^{-t\Delta}\|v\|^2$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Let $E_H$ be the spectral measure of $H$.  Under the first condition,
+the restriction to $\Omega^\perp$ has spectral support in
+$[\Delta,\infty)$.  Functional calculus bounds
+$e^{-t\lambda}$ by $e^{-t\Delta}$ on that support, proving the
+second condition.  Positivity of $e^{-tH}$ and Cauchy--Schwarz then give
+the third.
+
+Conversely suppose the third condition and suppose the spectral projection
+$E_H((0,\Delta))$ is nonzero.  Since $(0,\Delta)$ is a countable
+union of closed intervals $[a,b]$ with $0<a\leq b<\Delta$, one such
+projection is nonzero.  Choose a nonzero $v$ in its range.  It is
+orthogonal to the zero-energy eigenspace, and
+\[
+ \langle v,e^{-tH}v\rangle
+ =\int_{[a,b]}e^{-t\lambda}\,d\langle v,E_H(\lambda)v\rangle
+ \geq e^{-tb}\|v\|^2.
+\]
+For every $t>0$, $e^{-tb}>e^{-t\Delta}$, contradicting the third
+condition.  Thus the projection is zero.  The spectral theorem then gives
+the first condition.  The case $t=0$ is the equality bound and causes no
+exception.
+\end{proof}
+
+For a bounded observable $A$, set
+$a=(A-\langle\Omega,A\Omega\rangle)\Omega$.
+Then $a\perp\Omega$, and the associated Euclidean-time connected
+two-point function is
+\[
+ C_A(t)=\langle a,e^{-tH}a\rangle.
+\]
+The theorem bounds it by $e^{-t\Delta}\|a\|^2$.
+For unbounded smeared fields, the same statement applies once the vacuum
+is in the relevant operator domain and $a$ is a Hilbert-space vector.
+Writing products of unsmeared fields at the same point would evade this
+domain issue, not solve it.  Spatial clustering in a relativistic theory
+requires the locality and spectrum properties that relate time and space;
+the elementary theorem here concerns Euclidean time only.
+
+A useful converse needs control on a total collection of vectors.  If the
+third inequality holds with one common $\Delta$ on a linear dense
+subspace of $\Omega^\perp$, continuity of the bounded operator
+$e^{-tH}$ extends it to every vector, and the theorem proves the gap.
+Control of a single observable cannot do this.  For example take
+$\mathcal H=\mathbb C\Omega\oplus\mathbb C a\oplus L^2(0,1)$,
+let $H\Omega=0$, $Ha=a$, and let $H$ act by multiplication by
+$x$ on $L^2(0,1)$.  The $a$-correlation is exactly
+$e^{-t}\|a\|^2$, but the third summand has spectrum down to zero.
+The complete Hamiltonian has no positive mass gap.
+
+\section{A rigorous countermodel to ultraviolet-to-infrared inference}
+
+Short-distance asymptotics probe high spectral energies, whereas a gap
+concerns low energies.  This distinction can be shown with two explicit
+positive spectral measures.  Define for $t>0$
+\begin{align}
+ C_{\mathrm{g}}(t)&=\int_1^\infty
+       \frac{E^7}{\log^2(e+E)}e^{-tE}\,dE,\\
+ C_{\mathrm{ng}}(t)&=C_{\mathrm{g}}(t)+\int_0^1e^{-tE}\,dE.
+ \label{eq:spectral-countermodel}
+\end{align}
+The first measure has support in $[1,\infty)$; the second has support
+arbitrarily close to zero.  Both Laplace transforms are finite for every
+$t>0$ and have the same leading short-distance behavior.
+
+\begin{proposition}[Identical leading ultraviolet behavior, different gaps]
+For either function in \eqref{eq:spectral-countermodel},
+\[
+ \lim_{t\downarrow0}t^8\log^2(1/t)C(t)=7!.
+\]
+The corresponding positive spectral measures have, respectively, a positive
+lower support bound and no positive lower support bound.
+\end{proposition}
+
+\begin{proof}
+Write $L=\log(1/t)$ and substitute $u=tE$ in the first integral.
+After multiplication by $t^8L^2$, the result is
+\[
+ \int_t^\infty u^7e^{-u}
+       \left(\frac{L}{\log(e+u/t)}\right)^2du.
+\]
+For $u\geq\sqrt t$ and $t<1$,
+$\log(e+u/t)\geq L/2$, so the integrand is at most
+$4u^7e^{-u}$.  For fixed $u>0$ the parenthesized ratio tends to one.
+Dominated convergence on the region $u\geq\sqrt t$, extended by
+zero elsewhere, therefore gives $\int_0^\infty u^7e^{-u}du=7!$.
+The contribution from $t\leq u\leq\sqrt t$ is at most
+$L^2\int_0^{\sqrt t}u^7du=L^2t^4/8$, which tends to zero.
+This proves the first limit.  The additional integral is bounded by one,
+and $t^8\log^2(1/t)\to0$, so it does not change the limit.
+The support assertions follow immediately from the strictly positive
+densities on their respective intervals.
+\end{proof}
+
+These examples are positive spectral models, not constructions of local
+four-dimensional gauge theories.  Their role is logical: a proposed
+inference using only positivity and this ultraviolet asymptotic cannot
+force a gap, because the two examples satisfy those inputs and have
+different infrared support.  Additional Yang--Mills-specific estimates may
+well force a gap.  They must be stated and proved rather than inferred from
+the leading asymptotic alone.
+
+\section{Uniform estimates that would survive a limit}
+
+Here is a precise version of one sufficient missing step.  Work on one
+Hilbert space so that convergence has an unambiguous meaning.  Let $H_n$
+and $H$ be nonnegative self-adjoint operators, and let $P_n,P$ be their
+zero-energy spectral projections.  Assume
+$P_n\to P$ strongly and
+$e^{-tH_n}\to e^{-tH}$ strongly for each $t\geq0$.
+
+\begin{proposition}[Passage of a uniform gap bound]
+If for one $\Delta>0$ and all $n,t\geq0$,
+\[
+ \|e^{-tH_n}(1-P_n)\|\leq e^{-t\Delta},
+\]
+then $\|e^{-tH}(1-P)\|\leq e^{-t\Delta}$ for all $t\geq0$.
+\end{proposition}
+
+\begin{proof}
+For fixed $v$ and $t$, write
+\begin{align*}
+ e^{-tH_n}(1-P_n)v-e^{-tH}(1-P)v
+ &=e^{-tH_n}(P-P_n)v\\
+ &\quad+(e^{-tH_n}-e^{-tH})(1-P)v.
+\end{align*}
+The first term tends to zero since the semigroups are contractions and
+$P_n\to P$ strongly.  The second tends to zero by the assumed strong
+convergence.  Taking norms in the uniform bound and passing to the limit
+gives $\|e^{-tH}(1-P)v\|\leq e^{-t\Delta}\|v\|$.
+Taking the supremum over unit vectors proves the claim.
+\end{proof}
+
+For actual lattice-to-continuum constructions the Hilbert spaces may vary.
+One must first supply compatible embeddings or formulate convergence in
+terms of a common observable algebra and its states.  The proposition is
+a conditional theorem with clear hypotheses; it does not assert that
+Yang--Mills satisfies those hypotheses.  It is useful because it localizes
+the hard work in the uniform bound and the comparison maps, rather than
+hiding it inside the word ``limit.''
+
+Physical units are equally important.  If a transfer matrix $T_a$ is
+normalized to have largest eigenvalue one and corresponds to time step
+$a$, its Hamiltonian is $H_a=-a^{-1}\log T_a$ on the relevant
+spectral subspace.  A bound for a second eigenvalue must therefore be
+interpreted through $-a^{-1}\log\lambda_2(a)$.  Merely proving
+$\lambda_2(a)<1$ separately for each $a$ does not imply a common
+positive physical gap.  For example
+$\lambda_2(a)=e^{-a^2}$ is strictly less than one but gives physical
+gap $a\to0$.  This elementary counterexample rules out a frequent
+confusion between finite-cutoff positivity and continuum spectral control.
+
+\section{Renormalization and what a running coupling can prove}
+
+The passage from the finite Wilson law to continuum fields requires more
+than refinement of a mesh.  The bare coupling and the observable
+normalizations must change with the cutoff.  The four-dimensional
+renormalization-group program of Ba{\l}aban constructs effective actions
+and controls transformations between scales; the 1987 paper cited here
+explicitly works in its small-field approximation
+\cite{Balaban1987}.  The limitation matters: a small-field expansion is
+not automatically control of the full probability measure, and estimates
+for all fields require additional arguments.
+
+The original perturbative discovery of asymptotic freedom determines a
+negative leading beta function for the appropriate nonabelian theories
+\cite{GrossWilczek1973}.  An exact scalar differential equation captures
+the leading behavior without claiming to be the full quantum theory.
+Let $b>0$ and suppose, on an interval of scales $\mu>0$, that
+\begin{equation}
+ \mu\frac{dg}{d\mu}=-b g^3,\qquad g(\mu)>0.
+ \label{eq:one-loop-ode}
+\end{equation}
+Then
+\begin{equation}
+ \frac1{g(\mu)^2}
+ =\frac1{g(\mu_0)^2}+2b\log\frac\mu{\mu_0},
+ \qquad
+ g(\mu)^2=\frac1{2b\log(\mu/\Lambda)},
+ \label{eq:running-coupling-toy}
+\end{equation}
+where
+$\Lambda=\mu_0\exp(-1/(2b g(\mu_0)^2))$ and the displayed positive
+solution is considered only for $\mu>\Lambda$.  The proof is simply
+$\frac{d}{d\log\mu}(g^{-2})=-2g^{-3}\frac{dg}{d\log\mu}=2b$,
+followed by integration.  In particular $g(\mu)\to0$ at large
+$\mu$.
+
+The parameter $\Lambda$ illustrates dimensional transmutation: an
+initial dimensionless coupling together with a reference scale determines
+a dimensional scale.  Equation \eqref{eq:running-coupling-toy} does not
+prove a particle of mass $\Lambda$, a mass gap proportional to
+$\Lambda$, or a controlled continuation through $\mu=\Lambda$.
+Its denominator vanishes there because the leading differential model
+leaves its useful weak-coupling range.  Deducing the infrared spectrum
+from that singularity would replace a missing theorem with an artifact of
+an approximation.
+
+The same distinction appears in the control of irrelevant interactions.
+For a local operator of engineering degree $d$ in four dimensions, the
+classical rescaling factor of its coupling under a length enlargement by
+$b_\mathrm{s}>1$ is $b_\mathrm{s}^{4-d}$.  The exponent explains the
+words relevant, marginal, and irrelevant.  It does not bound the nonlinear
+errors or the infinite collection of generated operators.  A simple
+inequality isolates one of the required analytic mechanisms.
+
+\begin{proposition}[A contractive recurrence with controlled errors]
+Let $0\leq\rho<1$, $a_n\geq0$, $\varepsilon_n\geq0$, and
+$a_{n+1}\leq\rho a_n+\varepsilon_n$.  Then
+\[
+ a_n\leq\rho^n a_0+
+       \sum_{j=0}^{n-1}\rho^{n-1-j}\varepsilon_j.
+\]
+If $\varepsilon_j\leq\varepsilon$ for all $j$, this is at most
+$\rho^n a_0+\varepsilon/(1-\rho)$.  If instead
+$\varepsilon_j\to0$, then $a_n\to0$.
+\end{proposition}
+
+\begin{proof}
+The finite-sum bound follows by induction.  Multiplying the bound for
+$a_n$ by $\rho$ and adding $\varepsilon_n$ gives the bound for
+$a_{n+1}$.  The uniform-error assertion follows from summing a geometric
+series.  For the final assertion fix $\eta>0$ and choose $J$ with
+$\varepsilon_j<(1-\rho)\eta/2$ for $j\geq J$.  The sum over these
+indices is at most $\eta/2$.  The finitely many earlier terms, together
+with $\rho^n a_0$, tend to zero.  For sufficiently large $n$ they
+contribute less than $\eta/2$.  Hence $a_n<\eta$ eventually.
+\end{proof}
+
+A renormalization proof must identify the norms represented by $a_n$,
+show that the nonlinear transformation satisfies the recurrence, and bound
+the errors with the right uniformity in volume and insertion degree.
+The elementary lemma makes none of those analytic inputs disappear.
+What it supplies is a reusable logical step once those inputs exist.
+This is also a sensible formalization boundary: verify the recurrence
+lemma independently, then connect it to the actual effective-action
+estimates through a theorem whose hypotheses remain visible.
+
+\section{Pure phases, clustering, and the order of quantifiers}
+
+Suppose a translation-invariant state is a mixture
+$\omega=\int_X\omega_\xi\,d\nu(\xi)$ of component states.
+Even if every component clusters, the mixture need not.  For a self-adjoint
+observable $A$, assume enough boundedness to pass the large-separation
+limit through the integral.  Component clustering gives
+\[
+ \lim_{|x|\to\infty}\omega(A\,\tau_x(A))
+ =\int_X\omega_\xi(A)^2\,d\nu(\xi).
+\]
+Subtracting $\omega(A)^2$ leaves the variance of
+$\xi\mapsto\omega_\xi(A)$, which can be strictly positive.
+The argument is an elementary proof that a phase decomposition and
+clustering of each phase do not imply clustering of the original mixture.
+
+Likewise, the statement that every diverging volume sequence has a
+convergent subsequence does not assert that all subsequential limits agree.
+The scalar sequence $(-1)^n$ already distinguishes sequential compactness
+from convergence.  In a field theory the extracted object must include all
+correlation functions coherently.  Choosing a different subsequence for
+each observable is weaker than finding one subsequence working for all of
+them.  Conversely, finding one common subsequence remains weaker than
+proving independence of the subsequence.  These distinctions are precisely
+the ones needed to read the recent formal construction correctly.
+
+There is also a separate distinction between uniqueness of a vacuum inside
+one representation and uniqueness of the theory selected by a continuum
+limit.  Two different pure phases can each have a unique vacuum in their
+own Hilbert spaces.  Neither uniqueness statement identifies the phases
+with one another.  A formal verification plan should represent these
+questions with different predicates so that a theorem about one cannot be
+mistakenly reported as a theorem about the other.
+
+\chapter{The 2026 OpenAI Yang--Mills construction: statement and verification}
+\label{chap:openai-ym}
+
+\section{A dated research result, not the older amplitude result}
+
+This chapter records the public evidence available on 13 November 2026.
+OpenAI's announcement dated 26 October 2026 includes a claimed construction
+of four-dimensional pure Yang--Mills theory, as part of broader announced
+work on gauge theories with fermions.  The announcement identifies a
+natural-language Yang--Mills existence proof dated 9 September and a
+completed formalization dated 16 October.  It describes an independent
+group organized around David Gross, with Michael Douglas, Arthur Jaffe,
+Igor Klebanov, and Nikita Nekrasov, to examine and explain the work
+\cite{OpenAICommunity2026}.  These are dates and claims of the announcing
+organization; the subsequent released submission and the independent
+assessment provide the mathematical objects examined here.
+
+The independent group's assessment, dated 10 November 2026, addresses the
+submission of 28 October.  Its stated judgment is that the submitted
+construction yields a Wightman quantum field theory from a four-dimensional
+Wilson lattice scaling limit for the specified simple gauge groups.  It
+explicitly withholds a mass-gap claim and uniqueness of the infinite-volume
+limit.  The assessors also say they do not yet fully understand the proof
+and distinguish their review from a Clay Mathematics Institute decision
+\cite{YMReview2026}.  It is therefore inaccurate both to dismiss the
+announcement as merely a perturbative amplitude calculation and to present
+it as a completed solution of the whole Millennium problem.
+
+The earlier paper on single-minus gluon amplitudes is a different result.
+Its arXiv submission was posted on 12 February 2026, with a second version
+on 9 March.  It concerns special half-collinear kinematics in Klein space
+or complexified momenta, rather than a four-dimensional nonperturbative
+vacuum construction \cite{Guevara2026}.  Its AI-assisted derivation may be
+relevant to research methodology, but it does not supply the infrared
+estimate required in \eqref{eq:mass-gap}.  Conflating the two projects would
+misstate both the scope and the chronology of the recent work.
+
+\section{Immutable source identities and review coverage}
+
+The original public source was inspected at commit
+\texttt{3456e5e75cf8d4cd558955a5c7638fba2d68f464} of
+\texttt{yang-mills-group/OpenAI-YM-20261028}.  The group's review material
+was inspected at commit
+\texttt{55ba9fc36293b3f4d52c6b1f813169a0be76ee98} of
+\texttt{yang-mills-group/YM}.  The accompanying evidence manifest records
+URLs and hashes of the files used in this review.  The 35-page assessment
+was read in full, together with the headline theorem, its public
+specifications, the stronger construction theorem, the combined acceptance
+specification and proof, and selected explanatory verification modules.
+This is a review of those materials, not a claim to have read every proof
+in the approximately million-line upstream development.
+
+The distinction matters operationally.  A source snapshot, a successful
+local compilation, a kernel replay, and an independent semantic review are
+different deliverables.  The present project can pin and analyze an
+external formal result without pretending that a historical upstream build
+was performed again here.  Reproduction instructions must identify the
+toolchain, dependencies, target declarations, and exact evidence actually
+produced by a new run.  A link to an upstream pass is valuable evidence of
+that upstream check; it is not a substitute for a fresh local pass when a
+fresh pass is being claimed.
+
+\section{The headline theorem and its quantifiers}
+
+At the frozen revision, the file \texttt{Solution.lean} proves the
+declaration \texttt{YangMills.jointExistence}.  Its target is defined in
+\texttt{ChallengeSpec.lean}.  In ordinary mathematical notation, its
+quantifier pattern is
+\begin{equation}
+ \forall G\;\bigl(\operatorname{Simple}(G)\Longrightarrow
+ \exists C\,[\operatorname{Reg}(C)\ \wedge\
+ \forall p\in\operatorname{Inc}(\mathbb N)
+ \ \exists q\in\operatorname{Inc}(\mathbb N)
+ \ \exists T\;\operatorname{Properties}(C,T,p\circ q)]\bigr).
+ \label{eq:openai-quantifiers}
+\end{equation}
+Here the gauge-group type is a closed matrix subgroup of a unitary group,
+and simplicity concerns its nonabelian real Lie algebra.  The object $C$
+is one Wilson family, $p$ requests an increasing sequence of physical
+volume indices, $q$ refines it, and $T$ is a continuum hierarchy associated
+to the same family \cite{OpenAIChallenge2026,OpenAISolution2026}.
+
+Several consequences follow from this syntax before any deep proof is
+examined.  The family is chosen before the volume sequence, so this is
+stronger than choosing a new finite model for each requested sequence.
+The hierarchy is selected after refinement, so uniqueness across
+refinements is not a conclusion.  All four fields of
+$\operatorname{Properties}$ concern the same $T$, so the reconstruction,
+operator-product estimates, and trace test cannot be supplied by unrelated
+models.  These are elementary consequences of the order of quantifiers.
+They are exactly the kind of details lost in a slogan such as ``a limit
+exists.''
+
+The public regularity predicate requires a positive logarithmic slope of
+the bare action coefficient, uniformly in volume, continuous and
+gauge-invariant lattice insertions, and one finite lattice stencil for each
+token that works at every cutoff and volume.  The public
+$\operatorname{Properties}$ predicate then bundles a Wilson-limit
+statement, reconstructed fields, a separated-point operator-product
+expansion, and a specified trace-based exclusion of free-field profiles
+\cite{OpenAIChallenge2026}.  The strength of the result rests on the
+definitions and proofs of these structures, not on the short final tactic
+script that assembles them.
+
+\section{A hierarchy with finite-degree local fields}
+
+The formal hierarchy includes a Hilbert space, field labels, a Wightman
+theory, finite-dimensional complex spaces $F_d$ of fields of bounded
+engineering degree, maps from $F_d$ to the full label space, and a
+surjective representation of those fields by lattice tokens.  It also
+includes a compact space $X$ of phases with a probability measure, a
+selected phase, correlation functions for the mixture and phases,
+analytic continuations, OPE channels and coefficients, and a centered
+degree-four trace field \cite{OpenAIChallenge2026}.
+
+This is a structural resemblance to filtered algebra that can be used
+carefully.  If $F_d$ is finite dimensional and increasing with $d$, then
+one can choose successive complements and index finitely many new channels
+at each degree.  Such choices support finite truncations of an expansion.
+They do not imply that multiplication of quantum fields at the same point
+is an everywhere-defined map $F_d\otimes F_e\to F_{d+e}$.
+Coincidence limits need renormalization, and the OPE is an asymptotic
+statement about separated fields.  Replacing that analytic statement by
+an exact multiplication table would change the theorem.
+
+Similarly, a quotient by correlation-null labels is a mathematically
+natural way to obtain faithful fields.  If a preliminary label space $V$
+maps linearly to correlation functions by $R$, the quotient
+$V/\ker R$ injects into the image of $R$ by the first isomorphism
+theorem.  This elementary fact explains why faithfulness of a quotient is
+plausible; it does not prove that the chosen preliminary labels have the
+desired Yang--Mills content.  That latter assertion requires comparison
+with curvature polynomials and control of their null relations.  The
+independent review consequently includes a separate operator-content
+check instead of treating quotient faithfulness as a complete answer
+\cite{YMAcceptance2026}.
+
+\section{The two limits and the physical normalization}
+
+Let $a_N\downarrow0$ denote the chosen spacings and $L_p\to\infty$
+the physical side lengths.  A schematic smeared lattice correlation is
+\begin{equation}
+ C_{N,p}(v;f)=a_N^{4n}
+ \sum_{x_1,\ldots,x_n}
+ f(a_Nx_1,\ldots,a_Nx_n)
+ \int\prod_{j=1}^n I_{N,p}(v_j,x_j;U)\,d\mu_{N,p}(U).
+ \label{eq:openai-correlations}
+\end{equation}
+The original Wilson specification fixes the finite law, positions,
+insertions, and separated-test convergence; the proof retains a full
+ultraviolet limit for the chosen spacing sequence at fixed volume followed
+by the asserted refined volume limit \cite{OpenAIWilson2026}.
+The ordered limit is
+$\lim_{k\to\infty}\lim_{N\to\infty}C_{N,p(q(k))}$.
+No interchange of these limits is implicit.
+
+The distinction can be understood without field theory.  The numbers
+$f_{N,p}=N/(N+p)$ satisfy
+$\lim_p\lim_N f_{N,p}=1$ and
+$\lim_N\lim_p f_{N,p}=0$.  Therefore an ordered limit theorem cannot
+be turned into a joint limit theorem without uniformity of an appropriate
+kind.  In the gauge problem, locality, renormalization, and positivity make
+the situation more structured, but the logical requirement remains.
+
+The stronger acceptance specification also fixes a reference spacing and
+a common reference coupling after renormalization-group evolution, and
+requires the insertions to read out the same reference labels across
+cutoffs and volumes.  Its comparison with another finite lattice
+formalization includes the conversion of coupling conventions by the
+matrix representation dimension \cite{YMAcceptance2026}.  These clauses
+prevent a change in units or a rescaling of observables from masquerading
+as a physically consistent limit.
+
+In particular, the declaration named
+\texttt{TwoPointScale.MassLimit} in the combined specification concerns
+a positive limiting two-point calibration.  Its name must not be read as
+the spectral condition \eqref{eq:mass-gap}.  A nonzero correlation
+provides a scale-sensitive observable; the spectrum could still have
+arbitrarily small positive energies.  The countermodels in the preceding
+chapter demonstrate the logical difference explicitly.
+
+\section{Reconstruction, phases, and test spaces}
+
+The reconstructed theory includes a strongly continuous unitary
+translation representation with spectrum in the forward cone, a dense
+common domain for smeared fields, a normalized cyclic vacuum, adjoint and
+regularity properties, Poincare covariance, and spacelike commutativity.
+The selected phase has vacuum uniqueness.  The formal public definitions
+specify these properties in the field system, rather than leaving the
+meaning of ``Wightman theory'' as an informal comment
+\cite{OpenAITheory2026}.  In this project these are statements of an
+external formal development; our elementary semigroup arguments use their
+consequences conditionally.
+
+There are three separate classes of tests to keep apart.  First,
+lattice-limit statements use smooth compactly supported tests away from
+coincidences.  Second, the review's independent scalar OS comparison uses
+Schwartz tests flat to every order on coincidence diagonals.  Third, the
+reconstructed Wightman distributions act on unrestricted Schwartz tests.
+The review compares the selected centered trace hierarchy to a separately
+specified OS interface and growth condition
+\cite{YMScalarOS2026}.  These domains have different powers to detect
+contact terms, as the delta-distribution example above shows.
+
+The mixed infinite-volume correlation table is related to phase
+correlations by integration over $X$.  Each phase's reconstructed vacuum
+uniqueness is compatible with nonuniqueness of the mixture's vacuum and
+with disagreement between different infinite-volume subsequences.  The
+combined acceptance theorem keeps the selected scalar field, phase, trace,
+and translation tensor attached to one construction witness
+\cite{YMCombined2026}.  This coherence is mathematically significant.
+It does not remove the remaining uniqueness questions by definition.
+
+\section{The trace law, non-freeness, and OPE estimates}
+
+For the normalized centered stress trace $\Theta$ in the selected phase,
+the public theorem includes a positive leading short-distance constant:
+\begin{equation}
+ \lim_{r\downarrow0}
+ r^8\log^2(1/r)
+ S_{\Theta,\Theta}(-re_0/2,re_0/2)
+ =\frac{3\dim_{\mathbb R}\mathfrak g}{\pi^4}.
+ \label{eq:openai-trace}
+\end{equation}
+The independent trace adapter expresses the same limit in all spatial
+directions for the same centered field and normalization
+\cite{YMLeadingTrace2026}.  The detailed coefficient is convention
+dependent; copying it while changing the normalization of the stress
+tensor would be incorrect.
+
+The public non-freeness test excludes finite combinations of specified
+mass-shell Wick profiles, including finite products of kernels with
+nonnegative masses and homogeneous numerators.  This is a precise
+exclusion class, and the formal target describes it explicitly
+\cite{OpenAIChallenge2026}.  It should not be expanded into an assertion
+excluding every possible Gaussian representation, every generalized free
+field with a continuous mass spectrum, or every conceivable equivalence
+of theories.  These stronger statements would need new definitions and
+proofs.  Nor does \eqref{eq:openai-trace} establish the gap: multiplying
+the examples in \eqref{eq:spectral-countermodel} by the appropriate
+positive constant gives exactly the same leading coefficient with
+different infrared supports.
+
+The separated OPE has an input cluster of fields $v_i$ of total degree
+$w=\sum_i d_i$, a cluster radius $r$, and spectators kept a fixed
+positive distance away.  At cutoff degree $D$ it has the form
+\begin{equation}
+ S^s(v(rx),u(y))=
+ \sum_{d_\alpha\leq D}c_\alpha(v;rx)S^s(o_\alpha(0),u(y))
+ +R_{D,s}(r),
+ \label{eq:openai-ope}
+\end{equation}
+with bounds of the type
+$|c_\alpha|\leq r^{d_\alpha-w-\varepsilon}$ and
+$|R_{D,s}(r)|\leq r^{D+1-w-\varepsilon}$ for all sufficiently small
+$r$, uniformly over the prescribed separated configurations and phases.
+The same coefficients serve all spectators, phases, and truncation
+degrees.  The independent OPE check restates such bounds directly and
+derives them from the source theorem \cite{YMOPE2026}.
+
+Here ``all orders'' means arbitrarily high \emph{field-degree truncation}
+in this expansion.  It is not a claim that every perturbative loop
+coefficient has been compared with a particular renormalization scheme.
+The difference is visible in the variables: $D$ indexes the degrees of
+local fields, whereas loop order indexes powers of a coupling in a
+perturbative series.  An equality between the two kinds of information
+would be another theorem.  Maintaining this distinction makes the OPE
+result more useful, because it specifies the exact remainder one can
+legitimately use in further arguments.
+
+\section{A stronger acceptance target and the scope of checking}
+
+The original short public target did not retain every connection between
+the lattice construction and the continuum witness.  The review's
+\texttt{CombinedAcceptance} specification explicitly keeps one family,
+one extracted table, and one final construction object with those
+certificates.  Its proof applies the stronger source construction theorem
+once and assembles the additional consequences for that same object
+\cite{YMAcceptance2026,YMCombined2026}.  This is a concrete example of why
+verifying a theorem's proof term and verifying that its type expresses the
+intended scientific claim are distinct activities.
+
+The recorded independent check reports a clean build of 9,470 project
+modules using Lean 4.32.0, with 9,477 supplied source files matched to a
+manifest.  It reports no project axioms, no direct placeholder dependency,
+and no unsafe declarations in the inventoried project declarations.  A
+reference challenge contains a placeholder, but the solution does not
+import that reference proof.  The reported principal proof dependencies
+use the standard axioms of propositional extensionality, classical choice,
+and quotient soundness \cite{YMBuildEvidence2026}.
+
+The group's separate Comparator records cover the public endpoint, the
+combined acceptance endpoint, and the OPE endpoint.  They include controls
+that reject a changed target, an added forbidden axiom, and a changed
+definition.  The historical macOS launcher did not provide Linux process
+isolation, and the check used Comparator's built-in Lean kernel rather
+than another independently implemented kernel
+\cite{YMComparatorEvidence2026}.  These qualifications describe the
+actual experiment.  They do not negate a kernel check, and they should
+not disappear when the check is summarized.
+
+This project distinguishes four levels of confidence.  A well-typed
+declaration verifies a particular proposition relative to its dependencies.
+An axiom audit identifies the assumptions used.  A specification comparison
+checks that a fixed target was not replaced.  Semantic review assesses
+whether the fixed target captures the mathematical and physical claim.
+The last step cannot be reduced to searching for the word
+\texttt{sorry}: a theorem with a vacuous hypothesis can have a completely
+valid proof and still express the wrong scientific question.  Conversely,
+a separate unfinished reference stub is not an assumption of a proof that
+never imports it.  Both observations follow from the dependency structure
+of formal logic.
+
+\section{What can be built on the result now}
+
+The most useful next contributions are statements whose inputs can be
+bound to the already constructed objects.  Examples include a precise
+uniqueness criterion for the phase mixture, a criterion that identifies
+different volume subsequences, or a volume-uniform decay estimate on a
+total observable domain.  Each should specify the family, normalization,
+test spaces, and phase before stating a conclusion.  The spectral
+proposition in the preceding chapter explains exactly how a successful
+uniform estimate would yield a gap.
+
+An algebraic improvement could be valuable without resolving the infrared
+problem.  A clearer description of the filtered local-field spaces might
+simplify the verification of null relations.  A finite presentation of
+low-degree relations could make the operator-content interface easier to
+audit.  A normalized family of finite complexes could organize Ward
+identities and cohomological constraints.  Such work would need to show
+that its algebraic relations are respected by the same renormalized
+correlation hierarchy, rather than merely by a classically related
+polynomial ring.
+
+The appropriate positive conclusion is therefore substantial and precise:
+the current public development supplies a formally verified external
+construction with documented independent checks, and it supplies concrete
+objects to which further theorems can refer.  The remaining gap is not an
+absence of numerical plausibility.  It is the absence, in the reviewed
+claim, of a theorem giving a strictly positive lower bound on the
+nonvacuum energy spectrum in the infinite-volume continuum theory.  The
+present manuscript does not supply that missing theorem and does not label
+its classical or finite-dimensional propositions as substitutes for it.
+
+\chapter{An explicit arithmetic--geometric bridge through elliptic tori}
+\label{chap:elliptic-gauge-bridge}
+
+\section{Orders acting on a complex elliptic curve}
+
+A concrete example can connect orders, elliptic curves, unitary gauge
+fields, and elliptic operators without making a conjectural identification.
+Let $\Lambda=\mathbb Z\omega_1+\mathbb Z\omega_2\subset\mathbb C$
+with $\operatorname{Im}(\omega_2/\omega_1)>0$, and form the complex
+torus $E=\mathbb C/\Lambda$.  Its algebraic realization as a complex
+elliptic curve is the usual uniformization theorem.  The elementary
+constructions below begin with this displayed torus, so they do not need
+uniformization as an unproved step.
+
+For $\alpha\in\mathbb C$, multiplication on $\mathbb C$ descends to
+a map $[z]\mapsto[\alpha z]$ on $E$ exactly when
+$\alpha\Lambda\subseteq\Lambda$.  Necessity follows because each
+$\lambda\in\Lambda$ represents the same point as zero.  Sufficiency
+follows because $z-z'\in\Lambda$ then implies
+$\alpha z-\alpha z'\in\Lambda$.  Thus
+\[
+ \operatorname{End}_{\mathrm{mult}}(E)
+ =\{\alpha\in\mathbb C:\alpha\Lambda\subseteq\Lambda\}
+\]
+is a ring.  If it contains a nonreal $\alpha$, it lies in an imaginary
+quadratic number field and is an order in that field.  To see the essential
+algebra, represent multiplication by $\alpha$ on the chosen lattice basis
+by a matrix $M_\alpha\in M_2(\mathbb Z)$.  Its characteristic
+polynomial is monic of degree two, annihilates $\alpha$, and has negative
+discriminant when $\alpha$ is nonreal.  The finite-index assertion for the
+endomorphism ring is the standard complex-multiplication structure theorem;
+the matrix calculation identifies its integrality mechanism.  One can make
+the order assertion explicit.  Rescale so that
+$\Lambda=\mathbb Z+\mathbb Z\tau$.  Write $\alpha=a+c\tau$ and
+$\alpha\tau=b+d\tau$ with integers $a,b,c,d$.  Since $\alpha$ is
+nonreal, $c\ne0$, and $c\tau^2+(a-d)\tau-b=0$.  Thus
+$K=\mathbb Q(\tau)$ is imaginary quadratic.  Every other multiplier
+$\beta$ has $\beta\cdot1\in\Lambda$, so $\beta\in K$.
+Its integral matrix on $\Lambda$ makes it an algebraic integer, hence
+the multiplier ring lies in $\mathcal O_K$.  It contains
+$\mathbb Z[\alpha]$, a rank-two sublattice of $\mathcal O_K$.
+Therefore it too is a rank-two subring of finite index in
+$\mathcal O_K$, which is exactly an order.  Here the usual fact that
+$\mathcal O_K$ is a rank-two lattice is the number-field theorem
+established or cited in the arithmetic chapters.
+
+This is an actual use of an order acting on a lattice.  It concerns
+endomorphisms of a complex torus and should be compared with the arithmetic
+endomorphism-order results in the earlier chapters.  It does not replace
+the separate problem of computing endomorphisms or discrete logarithms
+over a finite field.
+
+\section{The same lattice controls flat unitary line bundles}
+
+A unitary character $\chi:\Lambda\to U(1)$ determines a line bundle
+\[
+ L_\chi=(\mathbb C\times\mathbb C)/\sim,
+ \qquad (z,v)\sim(z+\lambda,\chi(\lambda)v).
+\]
+Here $\chi$ is the automorphy character: with this quotient convention, parallel-transport holonomy is $\chi^{-1}$. The trivial connection on the product descends because the multipliers
+are constant.  It is flat and unitary.  Conversely, parallel transport of
+a flat unitary line bundle around the two lattice generators gives its
+holonomy character.  In rank one, conjugacy of holonomy characters is
+trivial.  The general relation between stable bundles and unitary
+representations is a deep theorem of Narasimhan and Seshadri; Atiyah's
+classification gives the special structure of bundles on elliptic curves
+\cite{YMNS1965,YMAtiyah1957}.
+
+For this explicit rank-one model, all characters are
+\begin{equation}
+ \chi_{s,t}(m\omega_1+n\omega_2)
+ =\exp(2\pi i(ms+nt)),\qquad
+ (s,t)\in(\mathbb R/\mathbb Z)^2.
+ \label{eq:torus-character}
+\end{equation}
+Indeed a homomorphism out of a free abelian group is uniquely determined
+by the images of its basis, and each unit complex number has an argument
+modulo $2\pi$.  Tensor product of line bundles corresponds to multiplying
+characters, hence adding $(s,t)$.  The characters with $\chi^n=1$ are
+exactly the $n^2$ points with $s,t\in\frac1n\mathbb Z/\mathbb Z$.
+This explains how finite torsion and finite Fourier characters occur inside
+a moduli space of flat connections.
+
+\begin{proposition}[Order action and dual action]
+If $\alpha\Lambda\subseteq\Lambda$, pullback by
+$[z]\mapsto[\alpha z]$ sends $L_\chi$ to the flat line bundle with
+character $\chi\circ\alpha$.  If $M_\alpha$ represents multiplication
+on column lattice coordinates, the corresponding character parameters
+transform by $M_\alpha^{\mathsf T}$ modulo $\mathbb Z^2$.
+\end{proposition}
+
+\begin{proof}
+Under pullback, the constant multiplier for a lattice translation $\lambda$ is the multiplier for $\alpha\lambda$, namely $\chi(\alpha\lambda)$.  If $x=(m,n)^{\mathsf T}$ denotes lattice
+coordinates and $u=(s,t)^{\mathsf T}$ denotes character coordinates,
+then \eqref{eq:torus-character} is $\exp(2\pi i u^{\mathsf T}x)$.
+Precomposition replaces $x$ by $M_\alpha x$, giving
+$u^{\mathsf T}M_\alpha x=(M_\alpha^{\mathsf T}u)^{\mathsf T}x$.
+\end{proof}
+
+The transpose is the same algebraic operation that appears in dual
+lattices and Fourier transforms.  What unifies these examples is the
+evaluation pairing between a module and its characters.  That pairing can
+be formalized directly.  It should not be enlarged into a claim that
+arithmetic elliptic curves, all gauge moduli spaces, and quantum hidden
+subgroup problems are equivalent categories.
+
+\section{An elliptic operator with a completely explicit spectrum}
+
+Take a rectangular torus with side lengths $L_1,L_2>0$ and automorphy parameters
+$(s,t)$.  Sections of its flat line bundle can be represented by smooth
+functions satisfying
+\[
+ f(x+L_1,y)=e^{2\pi is}f(x,y),\qquad
+ f(x,y+L_2)=e^{2\pi it}f(x,y).
+\]
+The nonnegative covariant Laplacian is represented by
+$-\partial_x^2-\partial_y^2$ with these boundary conditions.  Its
+Fourier modes are
+\[
+ f_{m,n}(x,y)=
+ \exp\left(2\pi i\left(\frac{m+s}{L_1}x+
+                              \frac{n+t}{L_2}y\right)\right),
+ \qquad (m,n)\in\mathbb Z^2,
+\]
+with eigenvalues
+\begin{equation}
+ \lambda_{m,n}(s,t)=4\pi^2
+ \left(\frac{(m+s)^2}{L_1^2}+\frac{(n+t)^2}{L_2^2}\right).
+ \label{eq:twisted-spectrum}
+\end{equation}
+The boundary conditions and eigenvalue equation follow by direct
+substitution.  Completeness follows by multiplying by
+$\exp(-2\pi i(sx/L_1+ty/L_2))$, which turns such sections into
+periodic functions, and applying the usual complete Fourier basis of the
+rectangular torus.
+
+There is a zero mode exactly for the trivial character: a zero eigenvalue
+requires $m+s=n+t=0$ for integers $m,n$.  For every nontrivial character
+the lowest eigenvalue is positive, but it tends to zero as the character
+approaches the trivial one.  This example simultaneously exhibits a
+moduli parameter, a jump in a kernel dimension, and failure of a uniform
+spectral bound over moduli.  It can be plotted exactly, without numerically
+solving a differential equation.  A diagram should label its two displayed
+automorphy coordinates and should describe a four-dimensional parameter
+view as a projection or slice if side lengths are varied too.
+
+The corresponding Dolbeault operator
+$\overline\partial_{L_\chi}:\Omega^{0,0}(L_\chi)\to
+\Omega^{0,1}(L_\chi)$ is an elliptic complex on the complex curve.
+Riemann--Roch gives index zero for a degree-zero line bundle on a
+genus-one curve.  Thus the index remains constant while individual kernel
+dimensions and positive eigenvalues vary.  The explicit flat spectrum
+already demonstrates the crucial distinction.  Atiyah--Singer index
+theory organizes stable topological information; it does not fix every
+eigenvalue in a family.
+
+\section{How this bridge relates to cryptography}
+
+The finite $n$-torsion characters above form
+$(\mathbb Z/n\mathbb Z)^2$, and their evaluation pairing is the
+familiar finite Fourier pairing.  A quantum Fourier transform can sample
+characters of a finite abelian group when that group is presented with
+efficient reversible operations.  The mathematical resemblance is exact
+at the level of the pairing.  The complexity statement needs more data:
+an encoding of elements, circuits for the group law, access to the hidden
+function, and a cost model.  A geometric interpretation of characters
+does not automatically provide those resources.
+
+For cryptographic elliptic curves over $\mathbb F_q$, the public
+computational problem usually concerns a specified finite subgroup of
+$E(\mathbb F_q)$ and scalar multiplication in that subgroup.  The
+complex torus model instead uses a lattice in $\mathbb C$.  Relating the
+two requires arithmetic reduction or lifting with its own hypotheses,
+and a proposed algorithm must preserve the relevant unknown and control
+the cost of every conversion.  No such efficient conversion is supplied
+by the flat-line-bundle example.  Its contribution is a rigorous
+conceptual connection, useful for organizing structures and formal
+interfaces, rather than a claimed cryptanalytic improvement.
+
+There is a parallel lesson for lattice-based cryptography.  A module over
+an order can be equipped with a positive form and embedded as a Euclidean
+lattice.  Its dual then represents characters, and Fourier methods can
+be expressed geometrically.  Hardness, however, concerns quantitative
+approximation or average-case distributions.  The purely algebraic
+existence of a dual or a character basis does not bound the complexity of
+finding a shortest vector, recovering a noisy secret, or implementing the
+needed state preparation.  Those are additional statements and belong
+in the algorithmic part of the research program.
+
+\section{A precise synthesis and a testable research program}
+
+The preceding constructions establish a network of actual mathematical
+maps.  Orders act on integral lattices; a complex multiplication order acts
+on an elliptic torus; pullback acts contragrediently on its unitary
+characters; characters specify flat line bundles; their covariant
+differentials form complexes; elliptic symbols yield index classes; and
+finite gauge discretizations provide a setting for quantum reconstruction
+when the necessary analytic limits are proved.  Each arrow has a defined
+domain and codomain.  A useful new result must strengthen one of those
+arrows, or supply a missing quantitative estimate, rather than merely
+draw the same objects closer together in a diagram.
+
+Three research directions are consequently concrete.  First, formalize the
+elementary matrix, character, and deformation identities and connect them
+to existing verified libraries through explicit equivalences.  Second,
+develop finite algebraic presentations of selected gauge-observable
+relations and check their compatibility with one pinned continuum
+construction.  Third, investigate quantitative inequalities on a total
+observable domain, retaining dependence on cutoff, volume, normalization,
+and phase.  Success in the first direction provides reliable infrastructure;
+success in the second may improve exposition and auditing of the
+construction; a sufficiently strong success in the third could address the
+remaining mass-gap question.
+
+These directions have different completion criteria.  A matrix identity
+is complete when its stated assumptions yield its conclusion in the
+kernel.  A compatibility theorem is complete when the diagram of maps
+commutes for the actual objects used by the external construction.
+A mass-gap argument is complete only when its uniform estimates and
+limit passages prove \eqref{eq:mass-gap} for the required nontrivial
+quantum Yang--Mills theory.  Keeping those criteria explicit allows
+substantial intermediate progress to be recognized without relabeling
+it as a solution of an unresolved problem.

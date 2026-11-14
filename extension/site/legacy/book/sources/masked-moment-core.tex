@@ -1,0 +1,195 @@
+% Generated shared reviewed material.
+% Accepted prose AFM proof; explicit external inputs, not a Lean theorem.
+\section{An arithmetic-family moment with every original row retained}
+\label{mm:core}
+Let $K=\mathbb Q(\sqrt{-3})$, $\mathcal O=\mathbb Z[\omega]$, and write
+$N$ for the ideal or element norm. Fix a finite-order Hecke character
+$\nu$ and a finite set $S$ of prime ideals containing those above $6$ and
+those dividing its conductor. For $0\ne u\in\mathcal O$, let $\kappa_u$
+be the character of $K(u^{1/6})/K$ defined using arithmetic Frobenius, and
+put $\psi_u=\operatorname{prim}(\nu\kappa_u)$. Here
+$\operatorname{prim}$ means the underlying primitive Hecke character:
+it is formed before introducing any divisor variable or evaluating
+conductor-dependent zero extensions. The rows below are all actual
+Eisenstein elements, including units and prime powers supported in $S$.
+
+The external inputs are abelian Kummer reciprocity and character
+uniqueness, the primitive Hecke functional equation and its usual
+vertical growth, Stirling's formula, scalar Dedekind-zeta convexity, and
+Blomer--Goldmakher--Louvel's large sieve for their specified sixth-order
+family. We use the pinned
+\href{https://arxiv.org/pdf/1112.1650v1}{arXiv:1112.1650v1},
+Theorem~1.3, Lemma~2.1 and Appendix~II; its Section~5 supplies the
+all-ideal decomposition whose fixed-twist proof is redone here.
+No statement about all primitive characters of comparable conductor,
+Artin holomorphy, Lindel\"of bounds or zero locations is assumed.
+
+\begin{theorem}[The original-family numerator moment]
+\label{mm:afm}
+For every $\varepsilon>0$, uniformly for $H\ge1$ and $t\in\mathbb R$,
+\begin{equation}\label{mm:central}
+ \sum_{0<Nu\le H}|L(1/2+it,\psi_u)|^2
+ \ll_{\nu,S,\varepsilon}H^{1+\varepsilon}(1+|t|)^{1+\varepsilon}.
+\end{equation}
+For every fixed $0<\delta<1/2$, the same estimate holds with
+$1/2+it$ replaced by $1/2+\delta+it$, with the constant also depending
+on $\delta$. If the central bound has constant $C_0$ at an exponent
+$0<\varepsilon_0\le1/4$, an admissible off-central constant is
+\begin{equation}\label{mm:poisson-constant}
+ 200 C_0\left(\frac{3/2+\delta}{1/2-\delta}\right)^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For the canonical BGL character $\vartheta_{\mathfrak a}$,
+Appendix~II gives a radicand $\alpha_{\mathfrak a}$ with
+$(\alpha_{\mathfrak a})_S=\mathfrak a\mathfrak g^{-6}$.
+Since $\mathcal O_S$ is principal, comparison with any literal $u$
+whose outside-$S$ ideal is $\mathfrak a$ gives
+$\kappa_u=\eta\vartheta_{\mathfrak a}$ for one of finitely many fixed
+$S$-unit Kummer twists $\eta$. This is an equality of primitive
+characters, established outside a finite set and extended by uniqueness.
+For each outside-$S$ ideal $\mathfrak a$ and $S$-supported integral
+ideal $\mathfrak b$, at most six elements generate
+$\mathfrak a\mathfrak b$. The resulting $S$-supported multiplicity sum
+converges at exponent $1+\varepsilon$.
+
+For each fixed $\xi=\nu\eta$, split the canonical parameter as
+$\mathfrak a=\mathfrak a_0\mathfrak a_1\mathfrak a_2^6$, where
+$\mathfrak a_0$ is squarefree, $\mathfrak a_1$ is squarefull and
+sixth-power-free, and $(\mathfrak a_0,\mathfrak a_1)=1$.
+The primitive conductor is at most a fixed multiple of
+$N(\mathfrak a_0\mathfrak a_1)$.
+The common-gamma approximate functional equation, with
+$X=H/(N\mathfrak a_2)^6$ and $T=1+|t|$, has common maximal length
+$B=X^{1/2}T(HT)^\eta$ for any sufficiently small fixed $\eta>0$.
+Mellin inversion removes its row-dependent conductor weight.
+Split a column as $\mathfrak b_S\mathfrak b_1\mathfrak b_2$, with
+$\mathfrak b_S$ supported in $S$, $\mathfrak b_1$ squarefree and
+$\mathfrak b_2$ squarefull, the last two coprime and prime to $S$.
+The original primitive values at $\mathfrak b_S$ remain bounded row
+multipliers. The $S$-supported and squarefull column weights are summable
+at $1/2+\eta$. Multiplying squarefree column coefficients by the fixed
+$\xi$ preserves their squared norm, whatever its finite order.
+BGL's large sieve therefore bounds the energy for fixed
+$\mathfrak a_1,\mathfrak a_2$ by
+\[
+ (HT)^{O(\eta)}\{M+B+(MB)^{2/3}\},\qquad
+ M=X/N\mathfrak a_1.
+\]
+Squarefull counting and summation give
+$X+B\sqrt X+(XB)^{2/3}\ll (HT)^{O(\eta)}XT$.
+The $\mathfrak a_2$ sum converges at exponent $6$.
+Principal rows are separated before the pole-free functional equation
+and bounded by scalar zeta convexity. This proves~\eqref{mm:central}.
+
+For the off-central statement divide each $L(s,\psi)$ by
+$(s+1)^{5/4}$ and, on principal rows, also multiply by $(s-1)/(s+1)$.
+These are bounded analytic functions on $\operatorname{Re}s>1/2$,
+continuous on the boundary. Poisson representation and Jensen's
+inequality transfer the central squared moment. The convolution of
+$P_\delta(y)=\delta/[\pi(\delta^2+y^2)]$ with
+$(1+|t|)^{-3/2+\varepsilon_0}$ is at most eleven times that weight
+when $0<\varepsilon_0\le1/4$. Restoring the denominator and the
+principal pole-removal factor gives~\eqref{mm:poisson-constant}.
+The extended edition gives the detailed derivation with all primitive local values.
+\end{proof}
+
+\paragraph{Separate fixed-unitary extension.}
+The moment theorem also holds for any one fixed unitary Hecke character
+$\nu$. For precision choose
+$\nu(\mathfrak a)=\nu_0(\mathfrak a)(N\mathfrak a)^{-i\tau}$, with
+angular parameter $m\in\mathbb Z$ and completed gamma factor
+\[
+ \gamma_\nu(s)=2(2\pi)^{-(s+|m|/2+i\tau)}
+                    \Gamma(s+|m|/2+i\tau).
+\]
+All finite Kummer twists have this same infinity type. Use
+$T_\nu=1+|t+\tau|+|m|$, comparable to $1+|t|$ with
+$\nu$-dependent constants. Pure norm rows have
+$L(s,\psi)=\zeta_K(s+i\tau)$ and are separated before the pole-free
+functional equation; their pole at $1-i\tau$ is removed by
+$(s-1+i\tau)/(s+1+i\tau)$. No uniformity in $m$, $\tau$ or the
+conductor of $\nu$ is asserted. This extension of the moment is separate
+from the following finite-order type-I residue formula.
+
+\subsection{The exact masked remainder and the remaining loss}
+Retain the original zero-extended symbol $\chi_d(u)=(u/d)_6$ on good
+squarefree ideals. Let $\mu$ be the ideal M\"obius function and set
+\[
+ \beta_U(d)=\sum_{ab=d\atop Na,Nb\le U}\mu(a)\mu(b),\quad
+ T(u,d)=S\cup\operatorname{supp}(u)\cup\operatorname{supp}(d).
+\]
+Let $\psi_{u,2}=\operatorname{prim}(\psi_u^2)$, formed independently
+of squaring any zero sentinel. With $\mathfrak f_u$ and
+$\mathfrak f_{u,2}$ the primitive conductors, the full-mask series is
+\begin{align}
+ F_{u,d}(s)
+ &=\frac{L(s,\psi_u)}{L(2s,\psi_{u,2})}C_{T(u,d)}(s),\label{mm:masked}\\
+ C_T(s)
+ &=\frac{\prod_{p\in T,\ p\nmid\mathfrak f_u}
+              (1-\psi_u(p)(Np)^{-s})}
+         {\prod_{p\in T,\ p\nmid\mathfrak f_{u,2}}
+              (1-\psi_{u,2}(p)(Np)^{-2s})}.\notag
+\end{align}
+Initially it equals
+$\sum_{c\ \mathrm{squarefree},\ (c,T)=1}\psi_u(c)(Nc)^{-s}$
+for $\operatorname{Re}s>1$. Every prime of $T$ remains deleted,
+including those forgotten by either primitive conductor.
+
+For finite-order $\nu$, $D\ge1$, $U\ge1$, $U^2\le D$, and
+$W\in C_c^\infty((0,\infty))$ supported in $[1,2]$, put
+\[
+ \widehat W(s)=\int_0^\infty W(x)x^{s-1}\,dx,\qquad
+ \mathcal M_4(W)=\sum_{j=0}^4\sup_x|(x\partial_x)^jW(x)|.
+\]
+On $\sigma=1/2+\delta$, the exact residue-subtracted type-I remainder is
+\begin{equation}\label{mm:remainder}
+ E_u=\frac{D^\delta}{2\pi}\int_{\mathbb R}
+ \widehat W(\sigma+it)D^{it}
+ \sum_{d\ \mathrm{squarefree}\atop(d,S)=1}
+ \frac{\beta_U(d)\nu(d)\chi_d(u)}{(Nd)^{\sigma+it}}
+ F_{u,d}(\sigma+it)\,dt.
+\end{equation}
+This definition retains the actual $\beta_U$, all phases, $d$-masks,
+conductors and the independently primitive square.
+
+\begin{theorem}[An improved masked residual estimate]
+\label{mm:residual}
+Under the preceding finite-order hypotheses, for every $\varepsilon>0$,
+\begin{equation}\label{mm:energy}
+ \sum_{0<Nu\le H}|E_u|^2
+ \ll_{\nu,S,\delta,\varepsilon}
+ \mathcal M_4(W)^2D^{2\delta}U^{2-4\delta}H(HD)^\varepsilon.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The same deleted set in both factors of~\eqref{mm:masked} gives
+$|F_{u,d}(\sigma+it)|\ll (Nu\,Nd)^\eta|L(\sigma+it,\psi_u)|$:
+the reciprocal incomplete Euler product at $2\sigma>1$ is bounded
+by $\zeta_K(2\sigma)$, and its remaining finite numerator is bounded
+by a small power of its radical. Apply Minkowski to~\eqref{mm:remainder}
+in the exact row space and use Theorem~\ref{mm:afm}. The actual coefficient
+sum is at most
+\[
+ \sum_d\frac{|\beta_U(d)|}{(Nd)^{\sigma-\eta}}
+ \le\left(\sum_{Na\le U}(Na)^{-\sigma+\eta}\right)^2
+ \ll U^{1-2\delta+2\eta}.
+\]
+Four Mellin integrations by parts bound the remaining height integral
+by a constant times $\mathcal M_4(W)$. Square the result and absorb
+the small losses using $U^2\le D$.
+\end{proof}
+
+At $H=D^{3/4}$ and $U=D^a$ with fixed $0<a\le1/2$, the upper bound's excess
+over $H$ is $2\delta+(2-4\delta)a$, up to small losses; as
+$\delta\downarrow0$ it still leaves $2a$. This is a limitation of the
+upper bound, not an energy lower bound. The extracted principal residue,
+the original short term at smaller scales and the signed type-II minus
+type-I covariance are not controlled by~\eqref{mm:energy}. The next
+arithmetic task is to estimate the complete $d$-weighted moment before
+its absolute coefficient sum, or establish sufficient signed covariance.
+No positive arithmetic determinant, zero-location theorem or GRH proof
+follows. The analytic argument uses the external classical inputs above;
+finite diagnostics and selected existing Lean local identities do not
+formalize the Hecke functions, approximate functional equation, Poisson
+transfer or these moment bounds.

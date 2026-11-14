@@ -1,0 +1,65 @@
+'ReductionContracts.factorization_iff_fiber_constant' depends on axioms: [Classical.choice]
+'ReductionContracts.reduced_output_unique' depends on axioms: [Quot.sound]
+'ReductionContracts.discrete_closure_iff' depends on axioms: [Classical.choice]
+'ReductionContracts.mismatched_fiber_excludes_closure' does not depend on any axioms
+'ReductionContracts.discrete_trajectory_preserved' does not depend on any axioms
+'ReductionContracts.fiber_error_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.fiber_diameter_le_twice_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.signedPartner_constant_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.signedPartner_linear_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.signedPartner_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.signedPartner_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.signed_cancellation_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.signed_cancellation_sum_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.signed_cancellation_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.signed_cancellation_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductionContracts.no_universal_minimum_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.factorization_iff_fiber_constant.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3}
+  (P : A → B) (Q : A → C) (hP : Function.Surjective P) :
+  (∃ G, ∀ (x : A), G (P x) = Q x) ↔ ∀ (x y : A), P x = P y → Q x = Q y
+'ReductionContracts.factorization_iff_fiber_constant' depends on axioms: [Classical.choice]
+ReductionContracts.reduced_output_unique.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3} (P : A → B)
+  (Q : A → C) (hP : Function.Surjective P) (G H : B → C) (hG : ∀ (x : A), G (P x) = Q x)
+  (hH : ∀ (x : A), H (P x) = Q x) : G = H
+'ReductionContracts.reduced_output_unique' depends on axioms: [Quot.sound]
+ReductionContracts.discrete_closure_iff.{u_1, u_2} {A : Type u_1} {B : Type u_2} (P : A → B) (F : A → A)
+  (hP : Function.Surjective P) : (∃ G, ∀ (x : A), G (P x) = P (F x)) ↔ ∀ (x y : A), P x = P y → P (F x) = P (F y)
+'ReductionContracts.discrete_closure_iff' depends on axioms: [Classical.choice]
+ReductionContracts.mismatched_fiber_excludes_closure.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3}
+  (P : A → B) (Q : A → C) (x y : A) (hxy : P x = P y) (hQ : Q x ≠ Q y) : ¬∃ G, ∀ (a : A), G (P a) = Q a
+'ReductionContracts.mismatched_fiber_excludes_closure' does not depend on any axioms
+ReductionContracts.discrete_trajectory_preserved.{u_1, u_2} {A : Type u_1} {B : Type u_2} (P : A → B) (F : A → A)
+  (G : B → B) (hcomm : ∀ (x : A), P (F x) = G (P x)) (u : ℕ → A) (v : ℕ → B) (hu : ∀ (n : ℕ), u (n + 1) = F (u n))
+  (hv : ∀ (n : ℕ), v (n + 1) = G (v n)) (hzero : P (u 0) = v 0) (n : ℕ) : P (u n) = v n
+'ReductionContracts.discrete_trajectory_preserved' does not depend on any axioms
+ReductionContracts.fiber_error_lower_bound.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {V : Type u_3}
+  [SeminormedAddCommGroup V] (P : A → B) (Q : A → V) (G : B → V) (x y : A) (hxy : P x = P y) :
+  ‖Q x - Q y‖ ≤ ‖Q x - G (P x)‖ + ‖Q y - G (P y)‖
+'ReductionContracts.fiber_error_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.fiber_diameter_le_twice_error.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {V : Type u_3}
+  [SeminormedAddCommGroup V] (P : A → B) (Q : A → V) (G : B → V) (x y : A) (ε : ℝ) (hxy : P x = P y)
+  (hx : ‖Q x - G (P x)‖ ≤ ε) (hy : ‖Q y - G (P y)‖ ≤ ε) : ‖Q x - Q y‖ ≤ 2 * ε
+'ReductionContracts.fiber_diameter_le_twice_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.signedPartner_constant_coefficient (k : ℕ) : (ReductionContracts.signedPartner k).coeff 0 = 0
+'ReductionContracts.signedPartner_constant_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.signedPartner_linear_coefficient (k : ℕ) : (ReductionContracts.signedPartner k).coeff 1 = -1
+'ReductionContracts.signedPartner_linear_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.signedPartner_ne_zero (k : ℕ) : ReductionContracts.signedPartner k ≠ 0
+'ReductionContracts.signedPartner_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.signedPartner_order (k : ℕ) : (ReductionContracts.signedPartner k).trailingDegree = 1
+'ReductionContracts.signedPartner_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.signed_cancellation_identity (k : ℕ) :
+  Polynomial.X + ReductionContracts.signedPartner k = Polynomial.X ^ (k + 2)
+'ReductionContracts.signed_cancellation_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.signed_cancellation_sum_ne_zero (k : ℕ) : Polynomial.X + ReductionContracts.signedPartner k ≠ 0
+'ReductionContracts.signed_cancellation_sum_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.signed_cancellation_order (k : ℕ) :
+  (Polynomial.X + ReductionContracts.signedPartner k).trailingDegree = ↑(k + 2)
+'ReductionContracts.signed_cancellation_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.signed_cancellation_strict (k : ℕ) :
+  min Polynomial.X.trailingDegree (ReductionContracts.signedPartner k).trailingDegree <
+    (Polynomial.X + ReductionContracts.signedPartner k).trailingDegree
+'ReductionContracts.signed_cancellation_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+ReductionContracts.no_universal_minimum_rule :
+  ¬∀ (p q : Polynomial ℚ), p ≠ 0 → q ≠ 0 → p + q ≠ 0 → (p + q).trailingDegree = min p.trailingDegree q.trailingDegree
+'ReductionContracts.no_universal_minimum_rule' depends on axioms: [propext, Classical.choice, Quot.sound]

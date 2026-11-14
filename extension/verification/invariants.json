@@ -1,0 +1,159 @@
+{
+  "matching": {
+    "bounded_coordinate_range": [
+      0,
+      2
+    ],
+    "candidate_vectors": 59049,
+    "all_feasible_vectors_decomposed": 257,
+    "large_constructed_vectors": 100,
+    "exponent_matrix_rank": 6,
+    "integer_kernel_basis": [
+      [
+        -1,
+        -1,
+        1,
+        1,
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    ],
+    "correct_relations": [
+      "Y1*Y2=B1*X1*X2",
+      "Z1*Z2=B1*B2"
+    ],
+    "arxiv_v1_printed_first_relation_fails": true,
+    "generators": {
+      "X1": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "X2": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "Y1": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "Y2": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "Z1": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "Z2": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "B1": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "B2": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    "proof_scope": "General generation, defining ideal and normality proved in chapter; finite checks supplement them."
+  },
+  "schofield": {
+    "exact_block_determinants_checked": 135,
+    "identity": "det([[A,-I],[B,-lambda*I]])=det(B-lambda*A)"
+  },
+  "elliptic_zeta": {
+    "curve": "y^2=x^3+2*x+2",
+    "q": 17,
+    "N1": 19,
+    "N2": 323,
+    "extension_field": "F17[u]/(u^2-3)",
+    "quadratic_nonresidue_check": 16,
+    "numerator_coefficients_ascending": [
+      1,
+      1,
+      17
+    ],
+    "arithmetic": "exact integer pairs modulo 17",
+    "scope": "Point counts checked directly; the general zeta theorem remains an external theorem."
+  },
+  "passed": true,
+  "script_sha256": "12b73c8090aeef63b00786710f30d87aba02c28f1f34611b003f0f65b4d6bd4f"
+}

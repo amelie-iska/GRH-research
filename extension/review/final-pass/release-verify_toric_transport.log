@@ -1,0 +1,83 @@
+{
+  "schema_version": 2,
+  "status": "passed",
+  "arithmetic": "fractions.Fraction for all matrix and damping checks",
+  "seed": 20261113,
+  "generic_path_checks": 288,
+  "rectangular_path_checks": 120,
+  "noncommuting_flat_cycle_checks": 128,
+  "conditional_independence_checks": 16,
+  "prefix_counterexample": {
+    "holonomy": "1",
+    "old_residual": "3/2",
+    "correct_residual": "0"
+  },
+  "positive_damping_counterexamples": [
+    {
+      "eta": "1",
+      "exact_factor": "2"
+    },
+    {
+      "eta": "1/2",
+      "exact_factor": "3/2"
+    },
+    {
+      "eta": "1/10",
+      "exact_factor": "11/10"
+    },
+    {
+      "eta": "1/1000",
+      "exact_factor": "1001/1000"
+    }
+  ],
+  "certificate_information_example": {
+    "I_B_Z_given_complete_X_bits": 0,
+    "I_B_Z_given_lossy_S_bits": 1.0,
+    "definition": "X uniform on {0,1,2,3}; B=Z=X mod 2; S=floor(X/2)"
+  },
+  "tropical_path_enumeration_checks": 96,
+  "tropical_horizon_counterexample": {
+    "D": "[-1]",
+    "v0": "[0]",
+    "steps": 2,
+    "pure_power": "[-2]",
+    "bounded_length_closure": "[0]"
+  },
+  "finite_mask_counterexamples": [
+    {
+      "penalty": "1",
+      "excluded_raw": "2",
+      "masked_max": "1",
+      "admissible_max": "0"
+    },
+    {
+      "penalty": "3",
+      "excluded_raw": "4",
+      "masked_max": "1",
+      "admissible_max": "0"
+    },
+    {
+      "penalty": "17",
+      "excluded_raw": "18",
+      "masked_max": "1",
+      "admissible_max": "0"
+    }
+  ],
+  "logarithmic_counterexamples": {
+    "a": "1",
+    "b": "1",
+    "lambda": "1",
+    "v_lambda_ab": "-1",
+    "incorrect_minus_offset": "-3",
+    "correct_plus_offset": "-1",
+    "additivity_witness": "2 > 1, so log(2) > log(1)=0; no floating-point logarithm used"
+  },
+  "scope": "Finite exact regression examples; the manuscript and Lean contain the general transport proof.",
+  "source_sha256": "4e28a354d52a68b9a0e8f7b3ae32400db99dd23f8aab7d3770562f7de58b19f4",
+  "upstream_pins": {
+    "Tropical_Quivers_of_Archs": "2b6ab79a685e2c6233fb8892e59589951feeddad",
+    "ToricGT-Program": "f91ba1811b5a4f70d53c7120acf8ca2a0049f85b"
+  }
+}
+
+STDERR
