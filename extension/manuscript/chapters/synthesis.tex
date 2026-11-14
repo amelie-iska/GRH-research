@@ -354,30 +354,30 @@ decomposition would leave the main quantitative issue unanswered.
 
 \subsection{Resource-certified elliptic-curve quantum arithmetic}
 
-A second direction is to express an elliptic-curve endomorphism decomposition
-as a reversible circuit with a complete cost model. The intended comparison
-must fix the curve family, coordinate system, field arithmetic, ancillary
-register policy, error-correction assumptions if any, and success
-probability. Every decomposition step needs an implementable procedure with
-its own input and output sizes. Ancillas must be uncomputed or their residual
-entanglement explicitly included in the algorithm.
+The reproducibility program is implemented in the companion's
+\texttt{workbench/program3/ecc.py}, with separate emitted variable-point
+addition oracles, independent gate counting and clean-work verification.
+The current continuation, \emph{Arithmetic, Coverings and Learned Quantum
+Renormalization}, gives the construction, proofs, tested resource comparisons
+and observational controls. Historical editions retain the original research
+direction; this source records its implemented successor.
 
-The relevant research question is then a concrete inequality between complete
-resource budgets. A shorter scalar decomposition may improve one term while
-introducing additional endomorphism evaluation, basis conversion or cleanup.
-The comparison chapter states that accounting explicitly. Its inequality is
-a criterion for a possible improvement; it is not evidence that the criterion
-has already been met. Likewise the multiplicative-group result of
-\citet{Pilatte2026} cannot be transported to arbitrary ECC merely by replacing
-multiplication notation with point addition.
+The comparison fixes nonsingular finite curves, affine coordinates with a
+unique infinity encoding, invalid-word behavior, ideal X/CX/CCX gates and
+ancillary-register initialization. Both the binary path and coherent signed
+endomorphism decomposition include every preparation and cleanup operation.
+Finite exhaustive-domain checks and actual cuStateVec replay are recorded at
+their precise scope. The bounded truth-table compiler is not a polynomial-size
+implementation for cryptographic curves, and logical counts are not
+error-corrected physical resource estimates.
 
-For reproducibility, a useful artifact would include a circuit generator,
-small-instance state-vector checks, a reversible arithmetic specification,
-gate counting under a named gate set, and a machine-readable list of
-assumptions. An independent implementation should recover the same count
-from the generated circuits. Resource tables based on public circuits and
-resource tables whose circuit details are withheld should be identified as
-different forms of evidence, even when both are mathematically interesting.
+In the tested instances, decomposition does not reduce the complete budget.
+The emitted circuits make that result reproducible instead of inferring a
+saving from shorter scalar components alone. The independent source, circuit
+streams, assumption manifest and verification reports accompany the versioned
+continuation. Its hierarchical channel and covering-theory extensions preserve
+the distinction between an arithmetic endomorphism, a quantum channel, a graph
+cover and a learned renormalization map.
 
 \subsection{From elliptic estimates to a uniform physical gap}
 

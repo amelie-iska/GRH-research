@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.Data.Matrix.ConjTranspose
+import Mathlib.LinearAlgebra.Matrix.ConjTranspose
 
 /-! Reversible cleanup, finite-cover averaging, Kraus composition and conservative
 finite ranks. Statistical null invariance and physical interpretation are separate
@@ -42,8 +42,8 @@ theorem normalized_maxplus_error (a b a' b' δa δb : ℝ)
 
 theorem ising_projection_residual (full projected exact : ℝ) :
  |full-exact|≤|full-projected|+|projected-exact| := by
- calc |full-exact|=|(full-projected)+(projected-exact)| := by congr 1 <;> ring
-      _≤|full-projected|+|projected-exact| := abs_add _ _
+ calc |full-exact|=|(full-projected)+(projected-exact)| := by congr 1; ring
+      _≤|full-projected|+|projected-exact| := abs_add_le _ _
 
 theorem kraus_composition_complete
  {I J A B C : Type*} [Fintype I] [Fintype J] [Fintype A] [Fintype B] [Fintype C]

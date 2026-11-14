@@ -73,7 +73,7 @@ def prepare(root):
   if row['product']=='KQ85':
    mask=hp.read_map(p,field=0,nest=False,dtype=np.float64);mask=hp.ud_grade(mask,NSIDE,order_in='RING',order_out='RING');continue
   unit=(row['columns'][0]['unit']or'').lower().strip()
-  if unit not in('mk','mkelvin','mk_cmb'):raise ValueError('Unexpected temperature unit '+repr(unit))
+  if unit not in('mk','mkelvin','mk_cmb','mk, thermodynamic'):raise ValueError('Unexpected temperature unit '+repr(unit))
   native=hp.read_map(p,field=0,nest=False,dtype=np.float64)*1000.
   if not np.all(np.isfinite(native))or np.any(abs(native)>1e7):raise ValueError('Invalid observed temperatures')
   # Coarse pixel averaging first is declared and replayed; use low lmax afterwards.
