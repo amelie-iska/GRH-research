@@ -1,0 +1,45 @@
+name: Integrated research manuscript and page
+on:
+  push:
+    branches: [integrated-research-20261114]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: integrated-research-20261114
+  cancel-in-progress: false
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Preserve exact source for integration review
+        run: |
+          mkdir -p "$RUNNER_TEMP/integrated-research"
+          python - <<'PY'
+          from pathlib import Path
+          import os, subprocess, zipfile, json
+          root=Path.cwd(); out=Path(os.environ['RUNNER_TEMP'])/'integrated-research'
+          paths=subprocess.check_output(['git','ls-files'],text=True).splitlines()
+          with zipfile.ZipFile(out/'integration-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for name in paths:
+                  p=root/name
+                  if not p.is_file(): continue
+                  selected=name.startswith(('extension/manuscript/','extension/site/','workbench/','planning/')) and p.suffix in ('.tex','.bib','.sty','.md','.py','.js','.cjs','.html','.css','.svg')
+                  selected=selected or name in ('README.md','extension/manuscript/main.pdf','extension/lean/verify_all.py','extension/PUBLISHING.md','extension/IMPLEMENTATION_PLAN.md')
+                  if selected: z.write(p,name)
+          (out/'source.json').write_text(json.dumps({'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'scope':'Exact existing main manuscript, current public page sources and workbench additions; no remote computer access.'},indent=2))
+          PY
+      - name: Preserve source artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: integrated-research-${{ github.run_id }}
+          path: ${{ runner.temp }}/integrated-research
+          retention-days: 30
