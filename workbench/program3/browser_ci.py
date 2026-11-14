@@ -1,12 +1,13 @@
-"""Rendered interaction and failure-state checks of the real scientific view."""
-import argparse,hashlib,json,sys,threading
+"""Rendered interaction, independent mixed-state and failure-state checks."""
+import argparse,json,re,sys,threading
 from pathlib import Path
 from datetime import datetime,timezone
+import numpy as np
 from playwright.sync_api import sync_playwright
-
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'workbench'))
 import server
+from program3.quantum_reference import hierarchy_kraus,channel
 
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--evidence',type=Path,required=True);a=p.parse_args();out=a.evidence/'browser';out.mkdir(parents=True,exist_ok=True)
@@ -15,10 +16,14 @@ if __name__=='__main__':
  def check(name,value):
   report['checks'][name]=bool(value)
   if not value:raise AssertionError(name)
+ def ready(page):
+  page.wait_for_function("document.documentElement.dataset.program3Ready==='true' || document.querySelector('#loadStatus').classList.contains('error') || document.querySelector('#skyStatus').classList.contains('error')",timeout=60000)
+  if page.locator('#loadStatus').get_attribute('class')=='error':raise RuntimeError(page.locator('#loadStatus').inner_text())
+  if page.locator('#skyStatus').get_attribute('class')=='error':raise RuntimeError(page.locator('#skyStatus').inner_text())
  try:
   with sync_playwright()as p:
    browser=p.chromium.launch(headless=True);page=browser.new_page(viewport={'width':1365,'height':950},reduced_motion='reduce');page.on('pageerror',lambda e:report['page_errors'].append(str(e)))
-   page.goto(report['url']);page.wait_for_function("document.documentElement.dataset.program3Ready==='true'",timeout=60000)
+   page.goto(report['url']);ready(page)
    check('hash_checked_assets','passed SHA-256' in page.locator('#loadStatus').inner_text())
    check('page_identity','Arithmetic, coverings' in page.title())
    check('actual_gate_execution','Executed every gate' in page.locator('#arithmeticResult').inner_text())
@@ -26,20 +31,23 @@ if __name__=='__main__':
    default=page.locator('#resourceMetrics').inner_text();page.locator('#algorithm').select_option('endomorphism');check('cost_changes',page.locator('#resourceMetrics').inner_text()!=default)
    check('complete_cost_comparison','more CCX' in page.locator('#comparison').inner_text())
    page.locator('#point').select_option('0');check('invalid_word_fixed','invalid point word was fixed' in page.locator('#arithmeticResult').inner_text())
-   page.locator('#curve').select_option('13');check('larger_curve_replay','21'not in page.locator('#resourceMetrics').inner_text()or '27' in page.locator('#resourceMetrics').inner_text())
+   page.locator('#curve').select_option('13');check('larger_curve_replay',page.locator('#resourceMetrics strong').nth(1).inner_text()=='27')
    page.locator('#gateNext').click();check('gate_pagination','Gates 19' in page.locator('#gateRange').inner_text());page.locator('#gatePrevious').click()
    page.locator('#degree').select_option('5');check('cover_degree','15 vertices' in page.locator('#coverResult').inner_text())
    check('integral_obstruction','no' in page.locator('#orderTable').inner_text())
    page.locator('#seed').select_option('29');check('trained_hierarchy','Actual four-qubit replay' in page.locator('#hierarchyResult').inner_text())
    old=page.locator('#hierarchyResult').inner_text();page.locator('#angle').evaluate("e=>{e.value='-1.2';e.dispatchEvent(new Event('input',{bubbles:true}))}");check('gate_parameter_response',old!=page.locator('#hierarchyResult').inner_text())
    page.locator('#coupling').evaluate("e=>{e.value='31';e.dispatchEvent(new Event('input',{bubbles:true}))}");check('heldout_mixed_state','test' in page.locator('#couplingValue').inner_text());check('mixed_density_replay','trace=1.0000000000' in page.locator('#mixedResult').inner_text())
+   data=json.loads((ROOT/'workbench/site/program3-assets/hierarchy.json').read_text());r=next(x for x in data['thermal_runs']if x['seed']==29);rho=np.array(data['thermal'][31]['rho']);outstate=channel(rho,hierarchy_kraus(r['weights']['theta'])[2]);expected=float(r['weights']['slope']*(outstate[0,0]-outstate[1,1]).real+r['weights']['bias']);shown=float(re.search(r'predicted mean ZZ=([-+0-9.eE]+)',page.locator('#mixedResult').inner_text())[1]);check('mixed_state_independent_numeric_parity',abs(shown-expected)<5.1e-7)
+   check('frozen_channel_baseline_visible','Frozen initial channel' in page.locator('#trainingResult').inner_text())
    page.locator('#product').select_option('V');page.wait_for_function("document.querySelector('#skyStatus').textContent.startsWith('V:')")
    expected=json.loads((ROOT/'workbench/site/program3-assets/cmb.json').read_text())['sources']['V']['record']['joint_rank_p']
    check('observed_rank_replayed',abs(float(page.locator('#skyMetrics strong').first.inner_text())-expected)<1e-6)
    page.locator('#template').select_option('5');page.locator('#amplitude').select_option('64');page.wait_for_function("document.querySelector('#skyStatus').textContent.includes('Synthetic injection')")
    check('injection_labeled','Synthetic injection' in page.locator('#skyStatus').inner_text())
    check('exploratory_followup_label','Exploratory' in page.locator('#followupResult').inner_text())
-   before=page.locator('#skyMetrics').inner_text();page.reload();page.wait_for_function("document.documentElement.dataset.program3Ready==='true'",timeout=60000)
+   check('dependent_product_control_visible','shared-phase family control' in page.locator('#jointResult').inner_text())
+   before=page.locator('#skyMetrics').inner_text();page.reload();ready(page)
    check('url_restore',page.locator('#product').input_value()=='V' and page.locator('#amplitude').input_value()=='64' and page.locator('#degree').input_value()=='5')
    check('restored_score',before==page.locator('#skyMetrics').inner_text())
    with page.expect_download()as dl:page.locator('#export').click()
@@ -57,6 +65,8 @@ if __name__=='__main__':
    check('no_page_errors',not report['page_errors']);browser.close()
  except Exception as error:
   report['failure']=type(error).__name__+': '+str(error)
+  try:report['failure_status']={'load':page.locator('#loadStatus').text_content(),'sky':page.locator('#skyStatus').text_content()};page.screenshot(path=str(out/'failure.png'),full_page=True)
+  except Exception:pass
  finally:
   service.shutdown();service.server_close();thread.join();(out/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
  if report.get('failure'):raise SystemExit(1)
