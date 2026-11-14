@@ -1,0 +1,87 @@
+\chapter{Completed next steps: uniform arithmetic and cover-compatible operators}
+\label{ch:integrated-next-steps}
+
+\section{One continuing manuscript and one project entry point}
+This edition integrates the original monograph, \emph{Certified Surface Computation}, and the arithmetic--covering--CCC continuation in the same source-built document. The chapter and theorem counters are shared, the table of contents is regenerated, and the earlier source registers remain inspectable appendices. The current project page and its existing \texttt{downloads/paper.pdf} address are the canonical entry points. Historical releases are retained for provenance, not presented as separate current installments.
+
+The integrations below are executed next steps, not a list of intentions. Their acceptance criteria and measurements are generated from the emitted circuits, fitted coefficients and calibration samples. Their finite scope is stated separately from broader mathematical goals. Replacing a field primitive is not the same as replacing every primitive in a cryptographic-size elliptic algorithm; a finite channel experiment does not establish a continuum field theory; and more Monte Carlo draws do not repair a misspecified observational null.
+
+\section{Uniform reversible field primitives instead of lookup synthesis}
+The previous finite compiler used enumerated tables to make every operation inspectable. The new compiler generates arithmetic uniformly from the bit width and modulus. It implements carry and borrow recurrences, a schoolbook product, constant-divisor binary long division, and exponentiation for inversion. It never enumerates all possible inputs to generate a circuit. The logical alphabet remains X, CX and CCX, making the accounting compatible with the earlier reference.
+
+For bits $x,y,c$, a carry step writes
+\[
+ s=x\mathbin{\mathrm{xor}}y\mathbin{\mathrm{xor}}c,
+ \qquad c'=(x\wedge y)\mathbin{\mathrm{xor}}
+ ((x\mathbin{\mathrm{xor}}y)\wedge c).
+\]
+The two carry terms are disjoint, so the XOR equals their Boolean disjunction. The borrow recurrence for $x-y-b$ is
+\[
+ b'=(\neg x\wedge y)\mathbin{\mathrm{xor}}
+ (\neg(x\mathbin{\mathrm{xor}}y)\wedge b).
+\]
+Both identities can be checked on eight bit triples and then iterated inductively. Each Boolean intermediate is computed into a fresh zero wire. The result and a validity bit are copied into an arbitrary output register, after which the complete computation is reversed. This restores every saved intermediate without erasing the retained input.
+
+\begin{proposition}[Long-division invariant and total reversible oracle]
+Let $p$ be a fixed positive $n$-bit modulus. Before a binary long-division step suppose $0\le r<p$. On consuming the next bit $b$, set $s=2r+b$. One conditional subtraction of $p$ gives the unique remainder $r'$ in $[0,p)$ with $r'\equiv s\pmod p$. Consequently the emitted product-and-reduction circuit computes multiplication modulo $p$. Its compute--copy--uncompute extension is a permutation on every input/output word with clean scratch.
+\end{proposition}
+\begin{proof}
+The invariant gives $0\le s<2p$. If $s<p$ the remainder is $s$; otherwise it is $s-p$. Both are in $[0,p)$ and congruent to $s$. Starting with remainder zero and reading the product bits from most significant to least significant proves the reduction invariant by induction. The carry construction computes the ordinary product before reduction. Finally, for retained input $x$, XOR by the computed output $f(x)$ is an involution on every output word. Reversing the computation restores scratch, proving the claimed reversible extension.
+\end{proof}
+
+Invalid field inputs contribute the all-zero output, including a false validity bit. For inversion, zero is invalid; on nonzero inputs and a declared prime modulus the binary exponent $p-2$ computes the inverse. The validity test is itself emitted and charged. Complete input/output-register tests are run on selected small moduli; wider tests include explicit boundary words and independently seeded arbitrary output registers.
+
+An $n$-bit addition uses $O(n)$ elementary operations, multiplication and long division use $O(n^2)$, and binary-exponent inversion uses $O(n^3)$. Saving all intermediates gives the same polynomial orders for work space. Cleanup doubles the computation rather than changing these orders. This compiler is not claimed to have the single-ancilla efficiency of the distinct ripple-carry construction of Cuccaro and collaborators. That paper is a resource benchmark, not a name applied to a different implementation: \url{https://arxiv.org/abs/quant-ph/0410184}.
+
+\begin{center}\small\input{integrated/uniform-field-table}\end{center}
+
+The new primitive closes the exponential-input-table gap for field arithmetic. The original total-domain elliptic circuits remain available as independent references. Integrating these primitives into a complete variable-point elliptic algorithm, proving all exceptional cases there, and selecting a fault-tolerant architecture are distinct further tasks; the field-oracle result does not silently claim them completed.
+
+\section{A trained neural operator that respects covers and quantum channels}
+For the cycle shift $S_N$, define the lazy walk
+\[
+ P_N=\tfrac12 I+\tfrac14(S_N+S_N^*),\qquad L_N=4(I-P_N).
+\]
+The new time-conditioned network outputs nonnegative coefficients $w_k(t)$ summing to one, with an exact identity channel at $t=0$. It learns
+\[
+ T_{\theta,N}(t)=\sum_{k=0}^{24}w_k(t)P_N^k
+\]
+against the exact graph heat operator $\exp(-tL_N)$. The same coefficients are used at every size. Training uses sizes three and six; validation selects the checkpoint on distinct times; testing uses previously unseen sizes nine, fifteen and twenty-four and a separate time grid. Three independently initialized runs are retained.
+
+\begin{proposition}[Structure is preserved independently of fitting accuracy]
+Every $T_{\theta,N}(t)$ is a nonnegative doubly stochastic matrix. If a covering pullback satisfies $P_NU=UP_M$, then $T_{\theta,N}(t)U=UT_{\theta,M}(t)$. The associated quantum channel
+\[
+ \mathcal P_N(\rho)=\tfrac12\rho+
+ \tfrac14S_N\rho S_N^*+\tfrac14S_N^*\rho S_N
+\]
+and every convex mixture $\sum_kw_k\mathcal P_N^k$ are completely positive and trace-preserving. Their diagonal action agrees with $T_{\theta,N}$.
+\end{proposition}
+\begin{proof}
+Powers and convex combinations preserve nonnegativity and both unit sums. Induction proves $P_N^kU=UP_M^k$, and linearity proves the polynomial identity. Each shift conjugation is a unitary channel. Convex combinations and compositions preserve complete positivity and trace preservation, proving the quantum statement. Taking diagonals commutes with these permutation conjugations, giving the classical walk and its powers.
+\end{proof}
+
+This construction connects the covering and quantum-coarse-graining interfaces with an actual learned operator. Its structural correctness does not depend on a small training loss. Its approximation quality is evaluated independently: for the circulant matrices the operator-norm error is the maximum difference of their Fourier eigenvalues. Browser inference evaluates the exported network and finite walk, not a pre-rendered loss curve.
+
+The exact heat operator has a stronger analytic same-degree baseline. Its infinite walk expansion has Poisson weights with mean $4t$. Truncate after degree $K$ and assign the omitted probability to the identity term. The operator-norm error is at most
+\[
+ 2\Pr\{\operatorname{Poisson}(4t)>K\},
+\]
+because every walk power has norm at most one. The neural model is compared with this baseline; a learned model is not presumed preferable when the physics already supplies the coefficients.
+
+\begin{center}\small\input{integrated/operator-table}\end{center}
+
+The results establish a trained, cover-compatible, probability-preserving finite operator and its CPTP realization. They do not establish an advantage over the analytic kernel. The experiment does not replace the learned Ising channel: it tests size transport and an exact conserved-structure contract that the earlier four-site fit did not test.
+
+\section{Higher-resolution CCC calibration with explicit simulation uncertainty}
+The original WMAP products, 72 templates, three methods and learned QNN parameters are retained. An additional exploratory precision study uses the joint phase action, preserving the complex cross-products between the three map products. It refreshes the independent reference normalization with 512 draws, uses 4,095 calibration realizations and tests 1,024 additional null realizations in bounded batches. Its minimum rank is $1/4096$, rather than $1/512$. This is a new declared precision study, not a backdated replacement for the earlier result.
+
+If $K$ of $B$ independent null simulations exceed the fixed observed score, the Monte Carlo rank is $(1+K)/(B+1)$. The associated binomial interval describes uncertainty in the conditional exceedance probability, with the observed statistic, normalization and surrogate model held fixed. It does not measure the probability that CCC is true. Exact binomial intervals are also reported for the independent null-validation fraction.
+
+\begin{center}\small\input{integrated/calibration-table}\end{center}
+
+Model error is not simulation error. For an event $A$ and proposed null law $Q$, a justified bound $\|P-Q\|_{\mathrm{TV}}\le\delta$ would give $P(A)\le Q(A)+\delta$. No numerical $\delta$ for the real foreground/instrument pipeline is established here. Increasing $B$ shrinks simulation uncertainty under $Q$ but supplies no such missing physical bound. Common-reference sensitivity and frequency-residual results remain alongside the precision study, including disagreements.
+
+\section{Completion ledger and remaining research obligations}
+The uniform field generator, total-domain small-register tests, trained cross-size operator, structural proofs, larger joint calibration, and same-page replay are implemented and executed. The integrated build checks continuous manuscript references and rejects missing source inputs. Browser tests exercise the new controls alongside the original six laboratories, including restoration of shared-page state and exported numerical records.
+
+Broader tasks remain explicitly identified: full polynomial-size elliptic scalar arithmetic with a physical resource model; general trained-QNN infinite-width limits beyond the specified independent/dependency regimes; an observational likelihood incorporating actual instrument and foreground uncertainties; and analytic continuum or physical claims requiring those premises. Each now has more explicit computational or mathematical interfaces against which further completion can be tested. None is deferred merely because of the history of the problem, and none is inferred from a favorable finite example.

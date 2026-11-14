@@ -1,17 +1,24 @@
 name: Integrated research manuscript and page
 on:
   push:
-    branches: [integrated-research-20261114]
+    branches: [integrated-research-20261114, integrated-public-check-20261114]
   workflow_dispatch:
 permissions:
   contents: write
 concurrency:
-  group: integrated-research-20261114
+  group: integrated-research-${{ github.ref_name }}
   cancel-in-progress: false
 jobs:
   integrate:
+    if: github.ref_name == 'integrated-research-20261114'
     runs-on: ubuntu-24.04
     timeout-minutes: 35
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+      CUDA_VISIBLE_DEVICES: ''
+      PYTHONUNBUFFERED: '1'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,26 +27,124 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Preserve exact source for integration review
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated verification dependencies
         run: |
-          mkdir -p "$RUNNER_TEMP/integrated-research"
+          python -m pip install --disable-pip-version-check torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.17.1 sympy soundfile healpy==1.18.1 astropy==7.1.1 pyerfa==2.0.1.5 playwright==1.56.0
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zstd poppler-utils texlive-latex-base texlive-latex-recommended texlive-latex-extra lmodern
+      - name: Execute next steps and integrate native sources
+        id: studies
+        run: |
+          python -m workbench.integration.pipeline studies --out "$RUNNER_TEMP/integrated-evidence" --data "$RUNNER_TEMP/integrated-wmap"
+          git config user.name 'GRH verification'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md extension/manuscript/main.tex extension/manuscript/chapters/synthesis.tex extension/manuscript/integrated extension/site/index.html extension/site/integrated-app.js extension/site/integrated-next-steps.js workbench/site/program3.html
+          git add -f extension/site/workbench extension/site/verification/integration/next-steps.json
+          git commit -m 'Integrate research bodies in one native manuscript and the existing atlas'
+      - name: Run regressions, build the unified document and test the main page
+        id: verify
+        run: python -m workbench.integration.pipeline verify --out "$RUNNER_TEMP/integrated-evidence"
+      - name: Verify pinned Lean declarations
+        if: always() && steps.studies.outcome == 'success'
+        run: |
+          mkdir -p "$RUNNER_TEMP/integrated-tools"
+          cd "$RUNNER_TEMP/integrated-tools"
+          curl --fail --location --retry 2 --max-time 240 -o lean.tar.zst https://github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst
+          tar --zstd -xf lean.tar.zst
+          export PATH="$PWD/lean-4.24.0-linux/bin:$PATH"
+          git clone --filter=blob:none https://github.com/leanprover-community/mathlib4.git mathlib4
+          cd mathlib4
+          git checkout f897ebcf72cd16f89ab4577d0c826cd14afaafc7
+          lake exe cache get Mathlib/Tactic.lean Mathlib/LinearAlgebra/Matrix/ConjTranspose.lean
+          cd "$GITHUB_WORKSPACE"
+          python -m workbench.integration.pipeline formal --out "$RUNNER_TEMP/integrated-evidence" --mathlib "$RUNNER_TEMP/integrated-tools/mathlib4" --lean "$RUNNER_TEMP/integrated-tools/lean-4.24.0-linux/bin/lean"
+      - name: Package accepted unified research
+        run: python -m workbench.integration.pipeline package --out "$RUNNER_TEMP/integrated-evidence"
+      - name: Stage accepted source and Pages branches without promoting them
+        run: |
+          source_branch="integrated-evidence-${GITHUB_RUN_ID}"
+          pages_branch="integrated-pages-${GITHUB_RUN_ID}"
+          git switch -c "$source_branch"
+          git add -f releases/integrated-20261114 extension/manuscript/main.pdf extension/manuscript/build-verification.json extension/manuscript/build-verified.log extension/site/downloads/paper.pdf extension/site/downloads/source.zip extension/site/workbench/program3-report.pdf extension/site/verification/integration/manifest.json
+          git commit -m "Record unified native manuscript and completed next-step evidence (${GITHUB_RUN_ID})"
+          git push origin "HEAD:refs/heads/$source_branch"
+          source_sha="$(git rev-parse HEAD)"
+          git fetch origin gh-pages
+          pages_parent="$(git rev-parse FETCH_HEAD)"
+          git worktree add --detach "$RUNNER_TEMP/integrated-pages" FETCH_HEAD
           python - <<'PY'
+          import os,shutil
           from pathlib import Path
-          import os, subprocess, zipfile, json
-          root=Path.cwd(); out=Path(os.environ['RUNNER_TEMP'])/'integrated-research'
-          paths=subprocess.check_output(['git','ls-files'],text=True).splitlines()
-          with zipfile.ZipFile(out/'integration-source.zip','w',zipfile.ZIP_DEFLATED) as z:
-              for name in paths:
-                  p=root/name
-                  if not p.is_file(): continue
-                  selected=name.startswith(('extension/manuscript/','extension/site/','workbench/','planning/')) and p.suffix in ('.tex','.bib','.sty','.md','.py','.js','.cjs','.html','.css','.svg')
-                  selected=selected or name in ('README.md','extension/manuscript/main.pdf','extension/lean/verify_all.py','extension/PUBLISHING.md','extension/IMPLEMENTATION_PLAN.md')
-                  if selected: z.write(p,name)
-          (out/'source.json').write_text(json.dumps({'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'scope':'Exact existing main manuscript, current public page sources and workbench additions; no remote computer access.'},indent=2))
+          source=Path('extension/site'); target=Path(os.environ['RUNNER_TEMP'])/'integrated-pages'
+          for name in ['index.html','integrated-app.js','integrated-next-steps.js','downloads/paper.pdf','downloads/source.zip']:
+              p=target/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source/name,p)
+          for name in ['workbench','verification/integration']:
+              shutil.copytree(source/name,target/name,dirs_exist_ok=True)
           PY
-      - name: Preserve source artifacts
+          git -C "$RUNNER_TEMP/integrated-pages" switch -c "$pages_branch"
+          git -C "$RUNNER_TEMP/integrated-pages" add -f index.html integrated-app.js integrated-next-steps.js downloads/paper.pdf downloads/source.zip workbench verification/integration
+          git -C "$RUNNER_TEMP/integrated-pages" commit -m "Integrate verified research and experiments on the existing project page (${GITHUB_RUN_ID})"
+          git -C "$RUNNER_TEMP/integrated-pages" push origin "HEAD:refs/heads/$pages_branch"
+          pages_sha="$(git -C "$RUNNER_TEMP/integrated-pages" rev-parse HEAD)"
+          printf '{"source_branch":"%s","source_sha":"%s","pages_branch":"%s","pages_sha":"%s","pages_parent":"%s"}\n' "$source_branch" "$source_sha" "$pages_branch" "$pages_sha" "$pages_parent" > "$RUNNER_TEMP/integrated-evidence/staging.json"
+          cat "$RUNNER_TEMP/integrated-evidence/staging.json"
+      - name: Preserve evidence and diagnostic sources
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: integrated-research-${{ github.run_id }}
-          path: ${{ runner.temp }}/integrated-research
+          path: |
+            ${{ runner.temp }}/integrated-evidence
+            releases/integrated-20261114
+            extension/manuscript/main.tex
+            extension/manuscript/main.pdf
+            extension/manuscript/main.log
+            extension/manuscript/build-verification.json
+            extension/manuscript/integrated
+            extension/site/index.html
+            extension/site/integrated-app.js
+            extension/site/integrated-next-steps.js
+            extension/site/downloads/source.zip
+          if-no-files-found: warn
+          retention-days: 30
+  public-check:
+    if: github.ref_name == 'integrated-public-check-20261114'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install browser checker
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Match public bytes and verify same-page interactions
+        run: |
+          mkdir -p "$RUNNER_TEMP/integrated-public"
+          python - <<'PY'
+          from pathlib import Path
+          import urllib.request,hashlib,json,os
+          root=Path('extension/site');base='https://amelie-iska.github.io/GRH-research/';rows=[]
+          paths=['index.html','integrated-app.js','integrated-next-steps.js','downloads/paper.pdf','downloads/source.zip','verification/integration/next-steps.json','verification/integration/manifest.json','workbench/program3.html','workbench/program3-report.pdf']
+          for name in paths:
+              data=urllib.request.urlopen(base+name,timeout=60).read()
+              if data!=(root/name).read_bytes():raise ValueError('Published bytes differ: '+name)
+              rows.append({'path':name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
+          (Path(os.environ['RUNNER_TEMP'])/'integrated-public/bytes.json').write_text(json.dumps(rows,indent=2))
+          PY
+          python -m workbench.integration.browser_check --base https://amelie-iska.github.io/GRH-research/ --output "$RUNNER_TEMP/integrated-public/browser"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integrated-public-${{ github.run_id }}
+          path: ${{ runner.temp }}/integrated-public
           retention-days: 30
