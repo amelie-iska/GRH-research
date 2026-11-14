@@ -1,0 +1,85 @@
+\chapter{Measured signals, communicative controls and complete code lengths}
+\label{ch:new-physical-controls}
+
+\section{Information available versus computation made accessible}
+
+The source program's conditional-information identity deserves an exact interpretation. In ToricGT-Program Part II, the certificate $Z_t$ is measurable with respect to the full strict-prefix sigma-field $\mathcal F_t$. Consequently
+\[
+ H(B_t\mid\mathcal F_t,Z_t)=H(B_t\mid\mathcal F_t),\qquad
+ I(B_t;Z_t\mid\mathcal F_t)=0.
+\]
+The displayed entropy identity in the source is valid; a positive Bayes-optimal information gain under those same measurability premises is zero. This is not a limitation on useful neural computation. It identifies where the gain actually occurs.
+
+For a restricted context $C_t=\psi(\mathcal F_t)$ or a restricted predictor class, a computed certificate can expose a useful function of the available prefix. Two independent fair bits $(X_1,X_2)$ provide an exact example: let the target and certificate both be $X_1\mathbin{\mathrm{xor}}X_2$. The full prefix already determines the target, while $C=X_1$ has one bit of target uncertainty. Adding the certificate to $C$ removes that bit. The finite entropy calculation and equality of deterministic-augmentation fibers are executable; the latter is checked in Lean.
+
+The corrected performance question is therefore computational: can an architecture compute and exploit a sufficient representation at lower time, memory, sample or description-length cost? A symbolic certificate, learned embedding, retrieved trajectory or tropical support may help a restricted predictor even though it adds no information to the complete input from which it was computed. Any external memory not recoverable from that input is separate side information and must be charged or conditioned on explicitly.
+
+\section{Sequential evidence and the cost of searching a grammar}
+
+Let $p_t(\cdot\mid x_{<t})$ be a specified null predictive law and let $q_t$ be a normalized, prefix-measurable alternative. Assume the alternative is absolutely continuous with respect to the null on each conditional support. Then
+\[
+ M_T=\prod_{t=1}^T\frac{q_t(x_t\mid x_{<t})}{p_t(x_t\mid x_{<t})}
+\]
+has conditional null expectation equal to its previous value. This follows by summing $p_t(x)q_t(x)/p_t(x)=q_t(x)$. For any finite horizon, the probability of a first crossing of $1/\alpha$ is at most $\alpha$.
+
+\begin{proof}
+The first-crossing prefixes form a prefix-free set. At each such prefix $u$, $P(u)\le\alpha Q(u)$. The total $Q$-mass of a prefix-free family is at most one, so summing yields $P(\text{crossing})\le\alpha$. This also gives the infinite-horizon statement by monotone convergence over finite horizons. The finite one-step and budget inequalities are formalized; a finite binary tree test separately enumerates exact first-crossing masses.
+\end{proof}
+
+A prior-weighted mixture of complete candidate laws pays for selection through its weights. The code-length advantage $\log_2 M_T$ is interpretable relative to the specified null; an unvalidated physical noise model does not inherit its calibration merely because the algebra is correct. In cosmology, a grammar adapted after inspecting the same sky must be incorporated into the null experiment or separated by an independent training/evaluation design. This is a direct route from model capacity and compression to a controlled test, rather than a search for whichever pattern looks most like a message.
+
+\section{Two additional measured controls}
+
+The new study acquires actual GWOSC GW150914 strain from Hanford and Livingston and eighteen LibriSpeech utterances from three distinct speakers. All source files have recorded byte hashes. These extend the original four-process study and text control; they do not replace or selectively edit its outcomes.
+
+For speech, six utterances from speaker 6930 form training, six from 1320 form validation and six from 5639 form test. Audio remains mono 16-bit PCM at 16 kHz. These are a small, explicitly re-split subset of the public test-clean archive, not an official LibriSpeech ASR benchmark. Speaker separation tests acoustic transfer; it does not by itself establish semantic comprehension or generalization across a population of speakers. Matching utterance transcripts are retained as independent provenance of known communication and are never supplied as predictor inputs.
+
+For gravitational-wave strain, training uses H1 seconds 0--8 and validation uses H1 seconds 8--12 relative to GPS 1126259446; test uses L1 seconds 24--28. The cataloged event near 16.44 seconds is excluded from fitting. A declared $10^{-24}$ strain-unit fixed-point representation is used for integer coding, with its quantization error recorded. Exact decoding of that representation does not claim preservation of every bit of the original floating-point or ASCII file.
+
+Both studies fit the actual pinned Mora-3 TokenGT and tropical modules at width 16 with one layer, using seeds 17 and 29 and 80 optimizer updates. A training-only quantizer and normalization map build directed eight-lag input graphs. Each split supplies 2,400 sampled target windows; no target or future-dependent edge enters an input. Validation selects checkpoint, count baseline and retrieval mixture. The full runs, source hashes and per-target arrays are retained.
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Held-out source & Count & Ordinary & Tropical & Ordinary+memory & Tropical+memory\\
+\midrule
+Speech speaker 5639 & 2.2405 & 2.6111 & 2.7917 & 2.4217 & 2.4720\\
+L1 strain interval & 3.9712 & 2.6296 & 2.6754 & 2.6106 & 2.7414\\
+\bottomrule
+\end{tabular}
+\end{center}
+Entries are bits per quantized target symbol, averaging both recorded neural seeds. The count baseline wins the speech comparison. Both native variants beat that selected count baseline on this detector-transfer interval, with substantial seed variability. Retrieval helps some runs and harms others. These are direct measured outcomes, not a universal ranking of the architectures. Model, metadata, context and retrieval costs are separately reported in the sampled-window two-part measures.
+
+\section{An emitted lossless code, not a likelihood-only surrogate}
+
+The new codec emits a real packet. It contains a frozen order-two count model, deterministic positive 16-bit arithmetic-coder frequencies, quantizer representatives, segment lengths and initial samples, exact signed residuals, termination and a decoded-content checksum. A separate decoder reconstructs every declared integer sample. Gamma-coded residuals restore information discarded by binning; no uncharged probability table is supplied to the decoder.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Representation & Original bytes & Emitted bytes & Actual BPB & Exact replay\\
+\midrule
+Speech PCM16 & 2,692,320 & 2,161,121 & 6.4216 & yes\\
+Strain fixed-point int32 & 65,536 & 62,367 & 7.6132 & yes\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The packets include their model/header costs: 1,643 bytes for speech and 1,221 for strain. The public directed successor grammar is a shared decoder convention; segment boundaries and seeds are in the packet. Independent zlib and lzma baselines respectively obtain 5.8805 and 4.8748 BPB on the speech representation, and 6.2821 and 4.7246 on strain. The new reference codec therefore does not outperform those general-purpose baselines. Its contribution here is a complete, inspectable realization of the coding claim: actual bytes, paid side information and exact reconstruction. The whole-stream codec and sampled-window native likelihoods have different exposure and representation contracts and are not merged into one leaderboard.
+
+\section{A physical control that rejects an attractive inference}
+
+A separate retrospective waveform diagnostic uses a fixed 35--350 Hz bandpass, a quarter-second window and a lag scan of approximately $\pm10$ milliseconds. The known-event window reaches absolute interdetector correlation 0.3953. Across 52 off-source windows, the maximum is 0.7177. Thus this simple statistic does not isolate the known event from the chosen off-source controls. It supplies no discovery significance and no evidence of language. This failure is retained because a useful discovery pipeline must distinguish physical signal structure, instrumental structure and search effects before making a semantic claim.
+
+The forward/backward filter is explicitly retrospective and acausal; it is excluded from every predictive feature. A more discriminating event analysis must use its own validated waveform/noise models and independent evaluation. No choice was retuned on these test results and then relabeled as a preregistered success.
+
+\section{Reproduction and source rights}
+
+GWOSC and LibriSpeech publish these sources under CC BY 4.0. The accompanying release records source landing pages, file/member hashes, retained native axes and sample rates, and the fact that only a bounded archive prefix was streamed. Transcript coverage is checked by utterance identifier rather than by matching a speaker name alone. Source objects, model checkpoints, emitted packets, predictions and scripts remain distinguishable artifacts.
+
+The results answer the question posed by this program: what structure is actually predictive, transferable and compressible under a declared representation? The experiments do not substitute that operational question for the separate question of intentional communication. Known speech supplies the latter's independently documented positive control. Physical observations supply structure whose interpretation must be earned by further discriminating tests.
+
+\begin{description}
+\item[C1] LIGO Scientific Collaboration and Virgo Collaboration. \emph{Data release for event GW150914}. DOI 10.7935/K5MW2F23. \url{https://gwosc.org/events/GW150914/}
+\item[C2] Panayotov, Chen, Povey and Khudanpur. \emph{LibriSpeech: an ASR corpus based on public domain audio books}. ICASSP 2015; SLR12 data and license. \url{https://www.openslr.org/12}
+\end{description}

@@ -1,0 +1,17 @@
+\chapter{Reading the linked surface experiment}
+
+The interactive explorer makes a single computation inspectable across four views. Begin with the verified $3\times3$ toric cellulation. Its clean dessin has nine black rotation cycles, eighteen white involution cycles and nine faces on thirty-six darts. The eighteen white midpoint vertices index the physical edge qubits. The Euler characteristic is zero, the two binary check ranks are eight, and the code has two logical qubits.
+
+Select an edge in the torus view, the flat fundamental-domain chart or the token table. The same identifier is highlighted in the geometry, the local circuit and the attention readout. The flat view repeats representatives of periodic boundary vertices; it does not add physical qubits. The torus curves are sampled in the declared periodic parameter coordinates rather than drawn as straight chords through the surface.
+
+Each edge supplies a declared two-dimensional key and four-dimensional value derived from those coordinates. The query, gain, temperature and input signs are interactive. The three operators are kept separate: softmax averages value vectors; score-hard routing averages the values at tied score maximizers; normalized max-plus takes a separate score-plus-value maximum in each output coordinate. The displayed winning edges explain why max-plus and score-hard routing need not choose the same physical control.
+
+The four classical outputs set four $R_Y$ angles on the first star. The worker starts from the checked encoded state, applies those rotations and three CNOTs, and calculates the target $Z$ expectation, patch marginal, stabilizer expectations and toric-code energy. The patch marginal's entropy is a measurement entropy. It is not relabeled as an entanglement entropy.
+
+An independent identity predicts the displayed expectation as the input-sign parity times the product of the four angle cosines. The circuit is nevertheless executed: the identity is a check on execution, not its substitute. NumPy, the browser Float64 kernel and NVIDIA cuStateVec complex128 were compared over nine controller configurations. The maximum GPU/CPU amplitude discrepancy was $6.94\times10^{-18}$; the maximum parameter-shift versus analytic derivative discrepancy was $3.61\times10^{-16}$. These are numerical observations at the recorded versions and tolerances.
+
+Twenty-three rendered-browser checks cover the surface identity, exact topology summary, numerical normalization, all controller modes, sign response, linked selection, keyboard operation, URL restoration, evidence export, stale-result rejection and both mobile orientations. A new input immediately invalidates the old export. A delayed worker response cannot overwrite a newer configuration.
+
+The browser operates as a classical state-vector simulator. The corresponding GPU result uses actual cuStateVec calls. This provides an executable quantum-model realization and a reproducible classical simulation benchmark; it does not report a run on quantum hardware. The controller features are explicit design data, while learned physical encodings require their own training and test evidence.
+
+\IfFileExists{surface-overview.png}{\begin{figure}[p]\centering\includegraphics[width=\textwidth,height=.85\textheight,keepaspectratio]{surface-overview.png}\caption{The linked surface explorer. The surface, classical controller, circuit and observables share the same selected edge and configuration.}\end{figure}}{}

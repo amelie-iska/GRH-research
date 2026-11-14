@@ -3,33 +3,41 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
 \usepackage[letterpaper,margin=1in,headheight=15pt]{geometry}
-\usepackage{microtype,booktabs,longtable,array,enumitem,fancyhdr,xcolor}
+\usepackage{microtype,booktabs,longtable,array,enumitem,fancyhdr,xcolor,graphicx}
 \usepackage[hyphens]{url}
 \usepackage[colorlinks=true,linkcolor=teal!60!black,urlcolor=blue!60!black]{hyperref}
-\hypersetup{pdftitle={Graph computation, information and category O},pdfauthor={Research supplement prepared for Amelie Schreiber}}
+\hypersetup{pdftitle={Certified Surface Computation: Orders, Graph Learning and Quantum Realizations},pdfauthor={Research supplement prepared for Amelie Schreiber}}
 \setlength{\emergencystretch}{3em}
-\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Graph computation and verifiable research}\fancyfoot[C]{\thepage}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Certified Surface Computation}\fancyfoot[C]{\thepage}
 \setcounter{tocdepth}{1}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \newcommand{\WorkbenchResearchRoot}{.}
-\title{\textbf{Graph computation, information\\and category $\mathcal O$}\\[1em]\Large ToricGT, TropicalGT and Mora-3:\\grammars, compression, analogy and explicit verification}
+\title{\textbf{Certified Surface Computation}\\[1em]\Large Integral orders, dessins, graph learning\\and quantum realizations\\[1em]\large A unified program of explicit constructions,\\proofs, physical controls and executable evidence}
 \author{Research supplement prepared for Amelie Schreiber}
-\date{14 November 2026 UTC\\\small Versioned working research; not a claim of a solved cosmological or arithmetic conjecture}
+\date{14 November 2026 UTC\\\small Version 2: source-led proofs and linked surface computation}
 \begin{document}
 \frontmatter\maketitle
-\chapter*{Scope}
-This supplement extends the GRH-research monograph. It separates constructive mathematics, finite Lean proofs, exact arithmetic tests, numerical diagnostics, actual small native-model experiments and proposed integrations. The empirical study uses measured or observation-derived data and separately reports model and retrieval costs. No hidden physical message, cosmic communication, full-model training completion or quantum advantage is claimed. Repository commits and data receipts are the authority for execution status; mathematical constructions alone are not empirical results.
+\chapter*{The program and its standard of proof}
+A finite presentation becomes scientifically useful when its realizations are explicit. This volume develops that principle across gentle relations, integral orders, BGG structures, graph-to-graph computation, quantum spin systems, nonlinear dynamics and information-bearing observations. The common language is constructive: identify the object, specify the map, prove the preserved identity and measure the error introduced by approximation.
+
+The volume includes a source-linked archive of the underlying research proofs, a direct uniform graph-approximation construction, selected Lean formalizations, independently executed CPU/browser/GPU circuits, exact finite spectral and channel realizations, and measured-data experiments with complete coding costs. Positive results are stated as results. Conditional transports retain their premises. Empirical comparisons retain every outcome. These are the rules that let a broad program accumulate knowledge rather than merely accumulate analogies.
+
+The earlier 37-page supplement and its measured results remain reproducible historical artifacts. This edition integrates the new proofs, controls and visual workbench while preserving their provenance. The central surface explorer is available at \url{https://amelie-iska.github.io/GRH-research/workbench/surface.html}; its export binds the displayed configuration to the actual computed observations.
 \tableofcontents\mainmatter
+\input{unified-program}
+\input{source-proof-repair}
 \chapter{Graph languages and computational mechanisms}
 \input{language-graph-computation}
-\chapter{Physical data, coding and experimental scope}
+\chapter{Physical data, coding and the first measured study}
 \input{physical-information}
 \input{results-summary}
-\chapter{BGG, category \texorpdfstring{$\mathcal O$}{O} and the structural synthesis}
+\input{information-and-controls}
+\chapter{BGG, category \texorpdfstring{$\mathcal O$}{O} and structural synthesis}
 \input{bgg-category-o}
+\input{surface-guide}
 \appendix
 \begingroup\footnotesize\sloppy\input{references}\endgroup
 \end{document}
