@@ -1,0 +1,102 @@
+% Authored research extension. Included by language-graph-computation.tex.
+\section{From function approximation to graph computation: the precise claim}
+\label{sec:wb-language-expressivity}
+
+\noindent\textbf{Evidence status.} This extension develops mathematical arguments and an implementation audit, not new trained-model results. The finite contract and probability modules have their own Lean receipts; the propositions in this language extension are ordinary written proofs unless explicitly identified otherwise. The architecture families are source-pinned in the reference register. A research manuscript, an implemented module, a tested execution and a trained capability are distinct evidence objects.
+
+The strongest defensible position is not that an unrestricted approximation theorem makes every trained network a universal scientist. It is that graph-valued neural computation can represent syntax, execute mechanisms, search derivations, and participate in independently checked semantic transformations. ToricGT, TropicalGT and Mora-3 make several of those objects explicit: vertex and edge tokens, typed intermediate graphs, semiring operations, continuous latent trajectories, branching forests, retrieval, and certificate-aware objectives. These structures permit more informative mechanisms and tests than treating the system solely as a next-word predictor. Whether they improve a particular learned model must still be measured.
+
+Five questions should be kept separate. \emph{Representability} asks whether a function belongs to an architecture's approximation class. \emph{Computability} asks what a uniform machine can do with scalable time and memory. \emph{Complexity} charges the resources required. \emph{Learnability} concerns the data and algorithm that select parameters. \emph{Semantic competence} concerns correctness against an interpretation, including permitted interventions and compositions. No one of these is a synonym for the other four. A construction may establish representability while being exponentially large; a universal interpreter may be impossible to identify from the available observations; a compact network may generalize well on one distribution without deciding an unbounded language.
+
+The claim that a system is ``only learning a function'' therefore supplies no computational obstruction. Parsers, circuit interpreters, theorem checkers, simulators and compilers all compute functions, partial functions or conditional distributions. The substantive questions concern which function, what representation, what algorithm, what evidence and what cost. Conversely, describing any arbitrary input-output fit as understanding is too permissive. Here operational understanding means successful, independently evaluated use of a specified semantics across compositions, counterfactuals, equivalent presentations and held-out structures. It does not assert consciousness or identify a neural implementation with human development.
+
+\subsection{What the source audit establishes}
+
+The graph-universality discussion in \emph{Tropical Quivers of Architectures}, at commit \texttt{2b6ab79}, explicitly invokes an $L^p$ sequence approximation theorem on bounded compact graph-token domains [P1,R1]. The ToricGT manuscript at \texttt{a5199bc} instead writes a supremum-norm conclusion while citing the same result [P2]. That upgrade requires another argument: it is not supplied merely by citing the $L^p$ theorem. The following treatment retains the positive representational program while making its necessary interfaces explicit.
+
+The distinction is elementary. For $k\ge2$, put
+\[
+ b_k(x)=\max\{0,1-k|x-1/2|\},\qquad x\in[0,1].
+\]
+Then $\sup_x b_k(x)=1$, while direct integration gives
+\[
+ \int_0^1 b_k(x)^p\,dx=\frac{2}{k(p+1)}\longrightarrow0.
+\]
+Thus vanishing average approximation error does not imply uniformly correct decisions. This is especially relevant when graph incidences, exact symmetries or grammatical acceptance live on a thin subset of an ambient token space. Ambient Lebesgue $L^p$ control does not automatically control a distribution supported on a lower-dimensional encoded graph family. The approximation measure must be stated, not silently changed after tokenization.
+
+Yun and collaborators establish the cited sequence results in their specified $L^p$ metric; TokenGT supplies a graph-structural expressivity construction, including higher-order constructions with their own token and head costs [R1,R2]. Neither citation by itself establishes that every fixed node-and-edge implementation, arbitrary identifier convention, final normalization and graph decoder has uniform graph-to-graph universality. An architecture theorem must reach the implemented boundary rather than stop at an informal resemblance.
+
+\subsection{A graph-to-graph approximation contract}
+
+Let $\mathcal G_{N,M}$ be a finite disjoint union of graph cells with at most $N$ vertices and $M$ edges, finitely many discrete types, and attributes in compact Euclidean sets. Each cell fixes incidence, types and padding masks. Let $H$ be the finite relabeling group appropriate to the chosen domain. Input and output representations have actions $\rho_{\rm in}$ and $\rho_{\rm out}$; these need not have the same dimensions. A faithful tokenizer
+\[
+ E:\mathcal G_{N,M}\longrightarrow K\subset\mathbb R^d
+\]
+must be continuous and injective on the intended information, with continuous inverse on its image. For compact source and Hausdorff target, a continuous injection is a homeomorphism onto its image. A model receiving only a quotient representation cannot distinguish graphs collapsed by that quotient.
+
+A target $F$ is equivariant when
+\[
+ F(hG)=\rho_{\rm out}(h)F(G),\qquad
+ E(hG)=\rho_{\rm in}(h)E(G).
+\]
+Only relabelings with a defined action on the target are included. Graph generation with newly allocated output vertices needs an output-slot convention, a quotient-valued target, or an explicit decoder; reusing an input permutation matrix for a differently sized output is not a definition. Likewise, graph relabeling is a subgroup of all possible token permutations. Extending an equivariant function to a larger permutation orbit requires consistency on orbit intersections and stabilizers.
+
+\begin{proposition}[Conditional transfer through faithful interfaces]
+Suppose $E$ is a homeomorphism onto $K$, $F$ is continuous, and an architecture class $\mathcal A$ is uniformly dense for $\widetilde F=F\circ E^{-1}$ on $K$. Then for every $\epsilon>0$ some $A\in\mathcal A$ satisfies
+\[
+ \sup_{G\in\mathcal G_{N,M}}\|A(E(G))-F(G)\|<\epsilon.
+\]
+If an output reconstruction $D$ is $L_D$-Lipschitz on a neighborhood containing both the exact and approximated outputs, the reconstructed error is at most $L_D\epsilon$.
+\end{proposition}
+\begin{proof}
+The first inequality is precisely the assumed approximation inequality after substituting $E(G)\in K$. Apply the Lipschitz inequality for $D$ pointwise for the second conclusion. A decoder defined only on the valid graph manifold cannot be applied to an off-manifold approximation without an additional extension or projection.
+\end{proof}
+
+This proposition is intentionally explicit about where the universality hypothesis enters. It transfers a valid theorem; it does not manufacture a stronger theorem for its source class. An $L^p$ variant holds for a declared graph probability measure and its pushforward under $E$ when the approximating class is dense for that pushforward measure. The original ambient $L^p$ result is not automatically that statement.
+
+There is also a constructive uniform existence result that avoids the metric ambiguity. It is useful as a corrected theoretical baseline, although its direct implementation can be expensive.
+
+\begin{proposition}[Finite-group symmetrization preserves uniform approximation]
+Let $K$ be compact and $H$-invariant. Assume $H$ acts linearly on input and output spaces and the output norm is invariant under the action. Let $F:K\to\mathbb R^q$ be continuous and equivariant. If $N$ uniformly approximates $F$ within $\epsilon$, then
+\[
+ N_H(x)=\frac1{|H|}\sum_{h\in H}\rho_{\rm out}(h^{-1})
+ N(\rho_{\rm in}(h)x)
+\]
+is equivariant and uniformly approximates $F$ within $\epsilon$.
+\end{proposition}
+\begin{proof}
+For $g\in H$, substitute $k=hg$ in the sum defining $N_H(\rho_{\rm in}(g)x)$. Since $h^{-1}=gk^{-1}$, the output factor $\rho_{\rm out}(g)$ comes outside the sum, proving equivariance. Each summand's error from $F(x)$ has norm below $\epsilon$ by equivariance of $F$ and invariance of the norm. The triangle inequality bounds their average by $\epsilon$.
+\end{proof}
+
+Ordinary continuous nonpolynomial neural approximation results supply uniformly dense base classes under their usual hypotheses [R3]. The displayed wrapper therefore gives a mathematically sound uniformly approximating equivariant neural graph family with faithful finite-dimensional interfaces. It does not prove the same property for a particular fixed-width TokenGT checkpoint. Enumerating $|H|$ relabelings can be factorial in graph size. Replacing the wrapper by an efficient equivariant architecture is a separate constructive task.
+
+For discrete finite domains there is an even more direct existence proof. Suppose $x_1,\ldots,x_s$ are distinct encoded graphs. Choose $\delta>0$ below their minimum pairwise $\ell_\infty$ distance and define
+\[
+ \phi_i(x)=\operatorname{ReLU}\left(1-\frac{\|x-x_i\|_\infty}{\delta}\right).
+\]
+Absolute values and finite maxima are realizable by ReLU networks using $|z|=\operatorname{ReLU}(z)+\operatorname{ReLU}(-z)$ and $\max(a,b)=\operatorname{ReLU}(a-b)+b$. Thus $N(x)=\sum_i y_i\phi_i(x)$ exactly realizes any prescribed finite graph table $x_i\mapsto y_i$. This proves finite representability, not an efficient algorithm or an explanation of generalization. Its explicit size dependence is precisely why a universal-approximation slogan cannot substitute for algorithm design.
+
+\subsection{Decoding margins and discontinuous grammar rules}
+
+A discrete syntax decision requires a margin or an exact interpreter. If the correct coordinate of a target score vector exceeds every competitor by at least $\gamma>0$, a uniform coordinate error below $\gamma/2$ preserves its argmax. An average error cannot guarantee every decision. For a finite atomic evaluation distribution with minimum atom mass $\mu_{\min}>0$, an $L^p(\mu)$ error $\epsilon$ bounds the maximum error by $\epsilon\mu_{\min}^{-1/p}$; this follows because each atom contributes at least its mass times its error to the $p$th moment. This finite-domain observation does not repair an unrelated ambient Lebesgue guarantee.
+
+A bounded grammar need not induce a continuous attribute map. A rule choosing one edge label when a real attribute $x\ge0$ and another when $x<0$ is discontinuous at zero. One may instead retain the branch as discrete state, restrict to a margin-separated domain, approximate a smooth stochastic decision, or measure error under a distribution that controls mass near the boundary. The choice changes the claim. A canonical normal form also needs termination and unambiguous selection; bounded input size alone does not prove those properties for arbitrary rewrite systems.
+
+The pure ReLU/finite-max portion of a model is piecewise affine. Ordinary softmax, LayerNorm, GELU and the logarithmic transformations in some tropical attention implementations are not collectively an exact piecewise-affine map. A local affine fit to such a model must retain its approximation residual and operating region. The geometry of a tropical decision component is valuable without pretending it exactly describes every operation in the complete network.
+
+\subsection{Inheritance by ToricGT, TropicalGT, Mora-3 and hybrid variants}
+
+\begin{proposition}[A genuine bypass preserves a capability class]
+Suppose every function of a base architecture $\mathcal A$ is realizable in an extended architecture $\mathcal B$ by disabling additional branches without changing the base interface, normalization, masks, precision or accessible state. Then every representational capability of $\mathcal A$ is also a capability of $\mathcal B$. If the embedding approximates rather than exactly preserves the base computation, its error must be added to the base approximation error.
+\end{proposition}
+\begin{proof}
+Use the parameter embedding specified by the hypothesis for each base realization. For approximate embedding, apply the triangle inequality. No property of the additional branch is needed beyond the stated embedding.
+\end{proof}
+
+This is the appropriate inheritance argument for optional tropical heads, toric features, quantum features, GFlowNet policy heads and forest-generation modules. The presence of one ordinary attention head or one ReLU layer is not by itself the hypothesis: the full required computation must survive. Replacing all attention by a different operator, forcing a lossy bottleneck, normalizing away an essential register, fixing a finite output vocabulary, or changing a causal mask can invalidate the embedding.
+
+The inspected ToricGT implementation combines ordinary and tropical layers and provides node and edge readouts [P2]. Its tokenizer uses learned slot-indexed node and edge embeddings and slot-indexed toric features. Relabeling the graph while regenerating those slot identifiers need not equal transporting an already tokenized representation. A graph-equivariance claim therefore needs a declared identifier action and a relabeling test, or an invariant construction that removes that dependence. This is an interface obligation, not a proof that graph-token computation is impossible.
+
+Mora-3's inspected TokenGT boundary takes explicit orthonormal identifiers and offers ordinary and tropical attention variants [P4]. Its current encoder rejects a supplied conditional attention mask. Consequently, a theorem requiring a particular causal or random-order conditional decoder is not already an implementation theorem for that encoder. The declared identifier width also bounds how many orthonormal identifiers that interface accepts. Scaling the graph capacity requires scaling or changing the interface, with its costs recorded.
+
+The constructive generalization proposed here is a persistent typed graph state, a shared neural proposal operator, exact or certified local update rules, explicit memory allocation, and an optional quantum or hybrid feature branch. It retains the existing models as proposal and feature mechanisms rather than replacing them with a second unrelated language model. These additions create concrete capabilities to investigate: structured output, relation-preserving rewrite selection, semantic circuit execution, controlled memory, and diverse derivation sampling. They do not create a new class of noncomputable functions.

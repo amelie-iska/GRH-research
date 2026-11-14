@@ -1,0 +1,94 @@
+\section{Graph grammars, uniform computation and the language hierarchy}
+\label{sec:wb-language-machines}
+
+A graph grammar specifies more than an adjacency picture. A rule needs vertex and edge types, ordered ports when order matters, a matching condition, a replacement boundary, and a statement about attributes and side conditions. A derivation records which occurrence was replaced. The denotation of a graph may be a string language, a function, a linear operator, a probabilistic kernel, or a physical model. Equal graph size or equal topology does not imply equal denotation.
+
+For language processing, a useful state contains the input spans, syntactic objects, binding and dependency edges, an explicit stack or workspace, and a derivation history. A graph-to-graph model can propose the next derivation, emit an annotated parse, answer an intervention on a dependency, or reconstruct a sentence from a structured object. These are different targets. The Chomsky hierarchy classifies particular string-language formalisms; an arbitrary typed graph grammar needs a specified string yield and restrictions before it acquires one of those classifications.
+
+\subsection{A uniform graph executor can simulate a Turing machine}
+
+A bounded approximation statement has quantifiers of the form
+\[
+ \forall N,T,\epsilon\quad\exists\theta_{N,T,\epsilon}.
+\]
+It does not imply that one fixed parameter choice computes an unbounded task. Turing completeness requires a uniform computational mechanism, with a clear source of unbounded time or storage. A constructive extension makes that mechanism explicit.
+
+\begin{theorem}[Turing simulation by a persistent local graph executor]
+Fix a deterministic single-tape Turing machine with finite control states and finite tape alphabet. There is a finite typed local graph-rule set, independent of input length and run duration, whose recurrent execution simulates each finite prefix of the machine's computation exactly. The graph uses a directed tape path with one distinguished head/control label and may allocate a blank vertex at either boundary. After $t$ transitions on an input of length $n$, it requires $O(n+t)$ tape vertices. Its finite local transition selector can be represented exactly by a finite ReLU network on one-hot finite-alphabet inputs.
+\end{theorem}
+\begin{proof}
+Represent every allocated tape square by a vertex carrying its symbol. Store predecessor and successor as typed directed edges and mark exactly one vertex with the current control state. For each transition $(q,a)\mapsto(q',b,d)$, create a rule that matches the unique head vertex of state $q$ and symbol $a$, writes $b$, removes its head mark, and transfers state $q'$ to the neighbor in direction $d$. When that neighbor does not exist, the boundary rule first allocates a blank vertex and links it. A stay-put transition updates the same vertex. Halting states have no outgoing transition.
+
+Induction on steps proves equality of the represented tape, control state and head position with the Turing computation: the initial encoding agrees, and the unique applicable transition performs exactly the prescribed write and move. At most one new square is allocated per transition, giving the size bound. The transition table has finitely many inputs. A finite Boolean indicator network on their one-hot encoding selects the appropriate rule exactly, using conjunctions, negations and finite sums. Its parameters depend on the machine, not on $n$ or $t$.
+\end{proof}
+
+This is an architecture-generalization theorem for an explicit graph executor, not a claim that an existing ToricGT or Mora-3 checkpoint has learned a universal interpreter. The graph memory and exact update mechanism are part of the machine. A synchronous implementation scanning all allocated vertices costs $O(t(n+t))$ elementary local checks over $t$ steps; an event-driven implementation can avoid those scans if it provides the specified constant-cost local addressing. Neither access model is free. Floating approximations require certified restoration to the finite symbolic alphabet or a robust error analysis.
+
+A fixed finite-precision system with a fixed total memory budget has finitely many configurations. Its unbounded input-stream behavior is therefore finite-state when no additional storage is available. A fixed learned parameter vector coupled to a growing graph or external tape is a different machine. The contradiction disappears once parameters and working memory are distinguished. Similarly, arbitrarily precise real numbers must not be treated as an uncharged storage oracle.
+
+P\'erez, Barcel\'o and Marinkovic provide an external Turing-completeness theorem for their specified attention model [R4]. Merrill and Sabharwal analyze intermediate decoding as a resource under explicit precision, masking and normalization assumptions [R5]. Those results motivate architectural embeddings and resource accounting; they are not automatically inherited by every softmax, tropical, graph-token or quantized implementation.
+
+\subsection{The hierarchy as a collection of executable resource contracts}
+
+For regular languages, a finite-state transition table can be embedded in a shared finite update. The graph state may contain a single control node with a one-hot state. For context-free recognition, a pushdown construction adds a stack path with push, pop and top-symbol tests; acceptance must use the appropriate deterministic or nondeterministic model rather than assume all context-free languages have deterministic parsers. A finite neural rule selector can encode each finite transition relation, while a search policy handles nondeterministic alternatives.
+
+One-counter Dyck recognition is not a complete model of arbitrary context-free parsing. Two bracket types require the order of unmatched opening types, not just their number. A persistent stack makes that information explicit. A bounded stack can handle a finite depth range; unbounded recognition requires growing stack memory. Length extrapolation should therefore be tested jointly with nesting depth, bracket-type interactions and the actual state invariant.
+
+Context-sensitive languages correspond to the usual noncontracting-grammar/nondeterministic linear-bounded-automaton characterization, with the conventional treatment of the empty word. The memory allowance is proportional to input length. This does not identify all context-sensitive languages with deterministic linear space: that determinization issue must not be silently assumed. Unrestricted grammars correspond to recursively enumerable languages. Acceptance can take unbounded time, and a nonmember may never be rejected. Turing completeness consequently does not provide a halting oracle or decide every recursively enumerable language.
+
+These classical levels become architecture contracts: finite state; a growing stack; linearly bounded tape with nondeterministic search; or a general growing work graph. The neural parameterization can be shared across lengths in each case. The resource restrictions, not the adjective ``neural'', determine the relevant inclusion. A TokenGT-style representation makes trees, stacks and tapes native relational objects; it does not repeal their computational costs.
+
+Natural language is not exhausted by membership in one toy string language. Meaning, reference, pragmatic context, acquisition and causal grounding require additional tasks and assumptions. Conversely, the fact that a language faculty is described algebraically does not imply that the algebra cannot be implemented or approximated by a neural mechanism. A useful experiment asks whether a model acquires the intended composition and invariants rather than a shortcut matching the available examples.
+
+\subsection{Tropical parsing and the cost of a derivation}
+
+Weighted parsing illustrates a concrete advantage of semiring-aligned operations. In a suitably normalized finite context-free grammar, an inside dynamic program combines alternative derivations by a sum and combines subderivations by multiplication. Replacing these operations by maximum and addition gives a Viterbi-style best-score computation in log coordinates. A tropical head can therefore implement a declared finite max-plus recurrence, provided its masks, features and reduction actually realize the required operands. The graph must retain traceback choices when a derivation, rather than only its score, is needed.
+
+The distinction between total mass and best path is mathematical. For finite log weights $a_1,\ldots,a_m$ and $\tau>0$,
+\[
+ \max_i a_i\le\tau\log\sum_i e^{a_i/\tau}
+ \le\max_i a_i+\tau\log m.
+\]
+The inequalities follow by factoring out the largest exponential and bounding the remaining sum between one and $m$. A tropical best-path approximation can lose a multiplicity contribution as large as the displayed term. Ambiguous grammars and merged proof histories make that contribution relevant. With signed or complex amplitudes, cancellation introduces another issue and this positive-sum argument does not reconstruct quantum interference.
+
+The proposed architecture can preserve both a tropical best-derivation channel and an ordinary sum-product or log-sum-exp mass channel. A separate provenance structure records their alternatives. This is more informative than forcing every question into one semiring. It permits best-proof search, uncertainty over parses and semantic checking to share graph structure without claiming they are the same operation.
+
+\section{Circuit interpretation as a testable form of semantic competence}
+\label{sec:wb-circuit-semantics}
+
+An electrical or logic circuit is an especially useful intermediate target because its syntax and semantics can be independently specified. A netlist has component types, ordered or distinguished ports, wire identities, inputs and outputs. A logic graph should distinguish fan-out from duplicated independent random variables. A physical circuit additionally needs units, constitutive laws, boundary conditions and operating assumptions. The model's answer must be evaluated against those semantics, not against visual resemblance between circuit diagrams.
+
+\begin{proposition}[Exact Boolean circuit semantics by shared neural updates]
+Let $C$ be a finite acyclic Boolean circuit using NOT, AND and OR gates, with maximum gate depth $D$. There is a shared finite collection of affine/ReLU gate rules whose depth-wise graph execution computes every gate value exactly on Boolean inputs in $D$ propagation rounds after inputs are installed.
+\end{proposition}
+\begin{proof}
+For $x,y\in\{0,1\}$, define
+\[
+ \operatorname{AND}(x,y)=\operatorname{ReLU}(x+y-1),\quad
+ \operatorname{NOT}(x)=1-x,\quad
+ \operatorname{OR}(x,y)=x+y-\operatorname{AND}(x,y).
+\]
+Checking the four binary input pairs proves the gate identities. Apply the rule corresponding to each node type once its predecessor values are available. Induction on topological depth gives exactly the conventional circuit interpretation. A type selector over the finite gate vocabulary is itself a finite Boolean mechanism. The graph executor supplies the declared wiring and scheduling.
+\end{proof}
+
+The proposition is a constructive semantics result, not a statement that a dense attention layer already implements exact port matching. The needed wiring can be an explicit sparse executor, a hard incidence mask with an exact routing construction, or a learned approximation with a verified margin. The cost includes storing and accessing the graph. Cyclic Boolean circuits require a clocked-state, fixed-point or other semantics; they do not become acyclic merely by drawing them as tokens.
+
+A meaningful circuit-understanding test includes novel compositions of known gates, wire relabelings, interventions that clamp an internal node, fault localization, and equivalence-preserving rewrites. Boolean simulation of a supplied acyclic circuit is different from finding an input that satisfies a circuit, or proving equivalence for every input. The latter tasks can have much greater complexity. A learned heuristic may improve search on a distribution, but a graph encoding does not transform arbitrary satisfiability into a proven polynomial-time procedure.
+
+\subsection{Electrical networks and conditioning}
+
+For a connected passive resistor network with a grounded reference node, positive conductances and specified current injections, the reduced weighted graph Laplacian $L$ is positive definite and the nodal voltages solve $Lv=b$. Indeed, its quadratic form is a sum of conductance-weighted squared voltage differences, including differences from the grounded vertex; connectedness makes that sum positive for a nonzero reduced voltage vector. This argument derives the relevant invertibility rather than assuming it from the word ``circuit''.
+
+If the domain guarantees $\lambda_{\min}(L)\ge\lambda_0>0$, an approximate voltage vector $\hat v$ with residual $r=L\hat v-b$ satisfies
+\[
+ \|\hat v-v\|_2\le\frac{\|r\|_2}{\lambda_0}.
+\]
+This follows from $\hat v-v=L^{-1}r$ and the spectral norm of the inverse. A graph model can propose $\hat v$; an independent residual checker and a justified eigenvalue lower bound certify its error. Without a uniform conditioning bound, small changes in components or topology can produce large solution changes, so a compact-domain approximation claim needs a carefully specified domain.
+
+Capacitors and inductors introduce dynamical state; nonlinear devices introduce nonlinear constitutive relations; switching can create discontinuities. These extensions fit the project's dynamical-systems program only after their equations and solution concepts are declared. An algebraic graph grammar may describe assembly, but it does not supply missing physical parameters or prove stability by itself. In particular, a tropical score selecting a current path is not generally a solution of Kirchhoff's equations: currents combine over paths rather than always taking only the largest one.
+
+\subsection{Causal interpretation, not a semantic label applied afterward}
+
+A structural causal circuit specifies how an intervention replaces a mechanism. The model can be trained or constructed to perform that replacement and compute its consequences. No universal approximator can identify an intervention law from observational data when two causal models induce the same observations and different intervention laws. The obstruction is lack of information, and applies to symbolic and neural methods alike.
+
+A useful criterion therefore separates supplied-model execution, learned-model identification and real-world validation. Correctly executing a supplied circuit is genuine competence at that semantics. Recovering the right circuit from measurements requires another experiment. Claiming that the recovered circuit describes a biological or cosmological mechanism requires independent evidence. The same distinction is maintained for graph grammars learned from physical trajectories.
