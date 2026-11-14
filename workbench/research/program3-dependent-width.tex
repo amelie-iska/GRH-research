@@ -1,0 +1,24 @@
+\section{Cover symmetry and the dependence structure of wide quantum networks}
+
+Exact symmetry and independent random features need not be compatible under an arbitrary parameter-sharing scheme. If every sheet uses the same circuit parameters, repeating a feature does not create independent samples. In particular, for one random feature $\varphi$, the empirical expression $M^{-1}\sum_{r=1}^M\varphi(x)\varphi(y)$ is just $\varphi(x)\varphi(y)$ for every $M$. It does not converge to the averaged RBF kernel by increasing the number of identical copies. The additional executable control retains this rank-one counterexample alongside a genuinely nested sequence of independent features.
+
+A useful general criterion can nevertheless be stated in terms of light-cone dependence. Consider centered random circuit readouts $X_{M,1},\ldots,X_{M,M}$, uniformly bounded by a constant, with a dependency graph of maximum degree $D_M$. This means that two collections with no edge between them are independent. Suppose $M^{-1}\operatorname{Var}(\sum_rX_{M,r})\to\sigma^2$ and $D_M=o(M^{1/4})$.
+
+\begin{proposition}[A sufficient Gaussian finite-dimensional limit]
+Under these assumptions, $M^{-1/2}\sum_rX_{M,r}$ converges in distribution to $N(0,\sigma^2)$. The same assertion holds jointly on any fixed finite input set when the bound and dependency graph apply to the corresponding readout vectors and their normalized covariance matrices converge.
+\end{proposition}
+\begin{proof}
+For each fixed order $k$, the cumulant of the sum is a sum of joint cumulants. A joint cumulant vanishes when its variables split into independent groups. Thus only tuples connected in the dependency graph, allowing repeated indices, contribute. There are at most $C_kM(D_M+1)^{k-1}$ such tuples. Boundedness gives a uniform fixed-order cumulant bound by the moment--cumulant formula. After normalization, the order-$k$ bound is therefore $C'_kM^{1-k/2}(D_M+1)^{k-1}$.
+
+For $k=3$ this tends to zero by $D_M=o(M^{1/4})$; for every fixed $k>3$ it also tends to zero. The first cumulant is zero and the second converges by assumption. The moment--cumulant relations therefore give convergence of all moments to the Gaussian moments. The Gaussian distribution is moment-determinate, so the method of moments gives convergence in distribution. For a finite vector of inputs, apply the same argument to each fixed linear combination and use the Cram\'er--Wold criterion.
+\end{proof}
+
+For randomly initialized circuits, disjoint parameter light cones can supply the required dependency graph. A global shared parameter or a growing cone can violate the bound. Training all gates with a common data-dependent loss can introduce new dependencies, so the initialization theorem is not automatically a theorem about the trained network. The trained-QNN results in [Q2] address this transition under their additional kernel, light-cone and scaling assumptions.
+
+One symmetry-compatible construction uses independent feature channels, each of which is averaged over the same finite deck group. Every channel is then exactly equivariant or invariant as specified, while different channels remain independent. The width limit is taken over those independently initialized channels on a fixed covered graph. Increasing the covering degree is a different limit and can change both the dependency bound and the spectrum. This provides an explicit design rule rather than conflating replication, geometric lifting and statistical width.
+
+\section{Testing whether gate learning improves the representation}
+
+A low error relative to a constant predictor does not by itself show that optimizing quantum gates was necessary. The additional control freezes each seeded initial channel, fits only its scalar affine readout on training couplings, and evaluates the same held-out couplings. It reports the training design's condition number, the frozen-channel/readout error, the raw initialized error and the fully learned channel's error. No learned weights are retrained or selected using this comparison.
+
+The full density matrix and the declared $ZZ$ observable also supply an exact target oracle. Its zero error is a statement about access to the uncompressed input, not an equally constrained learned baseline. Together these comparisons distinguish three effects: information already present in the input, information retained by the channel, and information made accessible by its trained readout. The publication retains a failure to improve over a frozen channel whenever it occurs.

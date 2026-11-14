@@ -1,0 +1,20 @@
+\section{A joint phase action that retains cross-product dependence}
+
+A stronger dependence-aware control acts on the three harmonic maps together. For each mode choose one common unit-modulus phase $\zeta_{\ell m}$ and transform every product by
+\[
+ a_{\ell m}^{(A)}\longmapsto\zeta_{\ell m}a_{\ell m}^{(A)}.
+\]
+Use a real sign for $m=0$. Then every complex harmonic cross-product is preserved exactly in arithmetic:
+\[
+ (\zeta a^{(A)})\overline{(\zeta a^{(B)})}
+ =a^{(A)}\overline{a^{(B)}}.
+\]
+The implementation checks this identity numerically for every surrogate draw. Independent phases per product would preserve auto-power but generally destroy these cross-products; a negative test demonstrates the difference.
+
+The new statistic is one maximum over all three products, all three methods and all 72 templates. Reference normalization, 511 calibration draws and 256 independent validation draws use the shared phase action. This gives one conditional family-wide rank without assuming independence of the product maps and without multiplying their ranks. The learned gates are unchanged.
+
+This control was designed after the first product-specific scan and is labeled exploratory. It improves the representation of cross-product dependence, but it does not turn phase-group invariance into an established fact about the complete instrument and foreground-processing model. Its interpretation is still conditional on that hypothesis. Both the original scan and the new family control are retained, including disagreement between them.
+
+\begin{center}\small\input{joint-table}\end{center}
+
+The common-reference, frequency-difference and joint-phase tests therefore answer different robustness questions. None is selected retrospectively as the uniquely valid answer because it gives a preferred tail. Their frozen configurations, source hashes, score arrays and validation outcomes make those distinctions reproducible.

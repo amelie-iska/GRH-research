@@ -46,6 +46,7 @@ jobs:
           if ! git diff --cached --quiet; then git commit -m 'Apply source-checked program-three preflight repairs and finite arithmetic certificates'; fi
           git rev-parse HEAD
       - name: Python, measured controls and browser replay data
+        id: science
         run: |
           python workbench/program3/run_ci.py --data "$RUNNER_TEMP/program3-data" --evidence "$RUNNER_TEMP/program3-evidence"
       - name: Pinned Lean and strict declaration audit
@@ -62,6 +63,7 @@ jobs:
           cd "$GITHUB_WORKSPACE"
           python workbench/program3/formal_audit.py --mathlib "$RUNNER_TEMP/program3-tools/mathlib4" --lean "$RUNNER_TEMP/program3-tools/lean-4.24.0-linux/bin/lean" --output "$RUNNER_TEMP/program3-evidence/formal"
       - name: Render and interact with the actual browser implementation
+        if: always() && steps.science.outcome == 'success'
         run: |
           python workbench/program3/browser_ci.py --evidence "$RUNNER_TEMP/program3-evidence"
       - name: Build the research supplement and package evidence

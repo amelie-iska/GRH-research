@@ -1,8 +1,7 @@
-"""Strict declaration/type/axiom audit of the new formal modules."""
+"""Strict audit: run every module, retain every failure, accept only full coverage."""
 import argparse,hashlib,importlib.util,json,os,re,subprocess
 from pathlib import Path
 from datetime import datetime,timezone
-
 ROOT=Path(__file__).resolve().parents[2]
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -17,10 +16,12 @@ if __name__=='__main__':
  for module,count in [('Program3Contracts',11),('CCCGeometry',5),('ECCFiniteGenerated',6)]:
   f=ROOT/'workbench/lean'/(module+'.lean');before=sha(f);code=helper.stripped_code(f.read_text());names=[module+'.'+n for n in re.findall(r'^\s*theorem\s+([A-Za-z0-9_]+)',code,re.M)]
   if len(names)!=count:raise ValueError('Unexpected theorem inventory '+module)
-  cmd=[str(a.lean.parent/'lake'),'env',str(a.lean),str(f)]
-  proc=subprocess.run(cmd,cwd=a.mathlib,text=True,capture_output=True,timeout=240,env=env);text=proc.stdout+proc.stderr;(a.output/(module+'.log')).write_text(text)
-  r=helper.evaluate_lean_output(names,text,proc.returncode,before==sha(f));r.update(module=module,declarations=count,source_sha256=before,log_sha256=sha(a.output/(module+'.log')));result['modules'].append(r)
-  (a.output/'audit.json').write_text(json.dumps(result,indent=2)+'\n')
-  print(module,r['status'],flush=True)
-  if r['status']!='verified':print(text,flush=True);raise SystemExit(1)
- result['new_declarations']=sum(x['declarations']for x in result['modules']);result['status']='verified';(a.output/'audit.json').write_text(json.dumps(result,indent=2)+'\n')
+  try:
+   proc=subprocess.run([str(a.lean.parent/'lake'),'env',str(a.lean),str(f)],cwd=a.mathlib,text=True,capture_output=True,timeout=240,env=env);text=proc.stdout+proc.stderr;exit_code=proc.returncode
+  except subprocess.TimeoutExpired as error:
+   text='Formal elaboration exceeded the explicit 240-second module budget.\n'+str(error.stdout or '')+str(error.stderr or '');exit_code=124
+  (a.output/(module+'.log')).write_text(text);r=helper.evaluate_lean_output(names,text,exit_code,before==sha(f));r.update(module=module,declarations=count,source_sha256=before,log_sha256=sha(a.output/(module+'.log')));result['modules'].append(r)
+  (a.output/'audit.json').write_text(json.dumps(result,indent=2)+'\n');print(module,r['status'],flush=True)
+  if r['status']!='verified':print(text,flush=True)
+ result['new_declarations']=sum(x['declarations']for x in result['modules']);result['status']='verified'if all(x['status']=='verified'for x in result['modules'])else'failed';(a.output/'audit.json').write_text(json.dumps(result,indent=2)+'\n')
+ if result['status']!='verified':raise SystemExit(1)
