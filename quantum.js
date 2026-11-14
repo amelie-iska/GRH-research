@@ -43,7 +43,8 @@
       const res=await fetch(item.path);if(!res.ok)throw new Error(`Surface file unavailable (${res.status}).`);
       const data=Q.normalizeModel(await res.json());if(token!==loadVersion)return;model=data;
       selected=0;check=null;circuit=model.prepare_circuit.slice();cursor=0;
-      $('qModelTitle').textContent=model.label+' · '+model.n+' qubits';
+      const qubitLabel=' · '+model.n+' qubits';
+      $('qModelTitle').textContent=model.label.endsWith(qubitLabel)?model.label:model.label+qubitLabel;
       $('qMode').textContent=item.browserLive?'LIVE BROWSER · FLOAT64':'COMBINATORIAL CASE · RECORDED RUNS';
       $('executionBadge').textContent=item.browserLive?'18-qubit live worker':'No dense browser allocation';
       $('recordedOnlyNotice').hidden=item.browserLive;
