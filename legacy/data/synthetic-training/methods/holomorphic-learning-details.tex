@@ -1,0 +1,280 @@
+\section{A certifiable analytic learning lane}
+\subsection{Targets, fields and arithmetic scope}
+The output is a complex holomorphic function, not an unconstrained real MLP
+on $\mathbb R^2$. Fix a center $c$ and a finite family of targets $F_\chi$
+analytic on a neighborhood of the closed radius-$r$ disk. Certified values
+of $M_{r,\chi}\ge\sup|F_\chi|$ and of an evaluation error $\eta$ are inputs
+to the quantitative theorem. They must be obtained without GRH or the desired
+arithmetic positivity. A finite conductor family uses the maximum of its
+independently bounded constants; this is not a uniform theorem over all
+conductors. Arithmetic character data are exact discrete inputs, not rounded
+embedding labels.
+
+For primitive nonprincipal Dirichlet characters, the completed function is
+entire and a direct bound is given below. Pole-cleared zeta/Dedekind targets
+and known holomorphic Hecke or elliptic targets require their own explicit
+normalization and growth bounds. General Artin holomorphy is not assumed.
+Approximating on a compact domain avoiding possible poles does not prove that
+those poles are absent. Real/complex analytic norms, finite-field algebra and
+tropical semirings must likewise retain their distinct meanings.
+
+\subsection{A finite holomorphic readout theorem}
+Write $F(c+z)=\sum_{n\ge0}a_nz^n$ and choose
+$0<R<\rho<r$, integers $m>N\ge0$ and sample angles $\theta_j=2\pi j/m$.
+Let $|y_j-F(c+\rho e^{i\theta_j})|\le\eta$, including all quadrature and
+rounding errors. The model and empirical objective are
+\[
+ p_b(c+z)=\sum_{n=0}^N b_n(z/\rho)^n,\qquad
+ \mathcal L(b)=\frac1{2m}\sum_{j=0}^{m-1}
+ \left|\sum_{n=0}^Nb_ne^{in\theta_j}-y_j\right|^2.
+\]
+This is a fixed holomorphic feature layer and a learned complex linear
+readout. It is a genuine convex learning problem; no nonlinear feature-learning
+claim is attached to its guarantee.
+
+\begin{proposition}[Four-part uniform error bound]\label{hl:finite}
+Put $u=R/\rho$, $v=R/r$ and $w=(\rho/r)^m$. Let
+$b_n^*=m^{-1}\sum_jy_je^{-in\theta_j}$, and take gradient descent with
+$0<\gamma<2$. After $k$ steps from $b^0$, on $|s-c|\le R$,
+\[
+ \begin{split}
+ |p_{b^k}(s)-F(s)|\le{}&
+ \frac{|1-\gamma|^k\|b^0-b^*\|_2}{\sqrt{1-u^2}}
+ +\eta\frac{1-u^{N+1}}{1-u}\\
+ &+M_r\frac{w}{1-w}\frac{1-v^{N+1}}{1-v}
+ +M_r\frac{v^{N+1}}{1-v}.
+ \end{split}
+\]
+The terms are optimization, certified sample error, Cauchy aliasing and
+analytic truncation, respectively.
+\end{proposition}
+\begin{proof}
+Discrete Fourier orthogonality gives $A^*A/m=I$ for
+$A_{jn}=e^{in\theta_j}$, since $m>N$. In real and imaginary coordinates the
+gradient is $b-b^*$; hence
+$b^k-b^*=(1-\gamma)^k(b^0-b^*)$. Cauchy--Schwarz bounds its evaluation by
+$\|b^k-b^*\|_2(\sum_{n=0}^Nu^{2n})^{1/2}$, giving the first term.
+The displayed iteration is in exact arithmetic. A numerical FFT/GD implementation
+must also bound coefficient-rounding error; a coefficient error of norm $d_k$
+adds at most $d_k/\sqrt{1-u^2}$ to the evaluation budget.
+This is convergence to the projected least-squares optimum; the empirical
+residual need not vanish when the labels have components outside the model.
+
+For exact samples, the Fourier coefficient divided by $\rho^n$ is
+$a_n+\sum_{\ell\ge1}a_{n+\ell m}\rho^{\ell m}$.
+Uniform convergence on the sampling circle permits interchanging sums.
+Cauchy's estimate $|a_j|\le M_rr^{-j}$ bounds the alias by
+$M_rr^{-n}w/(1-w)$. Sample errors contribute at most $\eta\rho^{-n}$.
+Multiply by $R^n$, sum the two finite geometric series and add
+$\sum_{n>N}M_r(R/r)^n$. These are exactly the last three terms.
+\end{proof}
+
+Choose $N$, then $m>N$, then $\eta$ and the optimization tolerance so that
+each displayed term is at most $\varepsilon/4$. All four can tend to zero;
+thus any fixed compact subdisk and finite independently bounded target family
+have arbitrary-accuracy approximation. This claim needs a certified oracle
+bound, not an empirical test-set MSE. The present high-precision demonstrator
+is explicitly numerical and does not relabel its floating evaluations as
+interval certificates.
+
+\subsection{The infinite-width limit and its actual rate}
+Choose $R<\rho<r_0<r$ and use features $\phi_n(z)=(z/r_0)^n$.
+Their kernel has the compact-uniform limit
+\[
+ K_N(z,w)=\sum_{n=0}^N\phi_n(z)\overline{\phi_n(w)}
+ \longrightarrow K(z,w)=\frac1{1-z\bar w/r_0^2}.
+\]
+The geometric tail proves this limit directly; positivity follows because
+each quadratic form is a sum of squared feature combinations. The readout
+space is the sequence space $\ell^2$ with bounded evaluation on $|z|<r_0$.
+On the radius-$\rho$ circle its population coefficient Gram operator is
+diagonal with eigenvalues $\lambda_n=(\rho/r_0)^{2n}$.
+
+\begin{proposition}[Infinite-feature readout convergence]\label{hl:infinite}
+Suppose the initial coefficient error $e(0)$ is in $\ell^2$, as for zero
+initialization and the analytic target above. Population gradient flow has
+$e_n(t)=e^{-\lambda_nt}e_n(0)$ and converges in $\ell^2$, hence uniformly on
+every $|z|\le R<r_0$. If $\beta>0$ and
+$\sum_n\lambda_n^{-2\beta}|e_n(0)|^2\le B_\beta^2$, then
+\[
+ \|p_t-F\|_{|z|\le R}
+ \le\frac{B_\beta}{\sqrt{1-(R/r_0)^2}}
+       \left(\frac{\beta}{et}\right)^\beta,\qquad t>0.
+\]
+For zero initialization this source condition holds whenever
+$(r_0/r)(r_0/\rho)^{2\beta}<1$, with
+$B_\beta\le M_r[1-((r_0/r)(r_0/\rho)^{2\beta})^2]^{-1/2}$.
+\end{proposition}
+\begin{proof}
+The diagonal loss gives the scalar ODE in each coordinate. Dominated
+convergence, with majorant $|e_n(0)|^2$, proves norm convergence. Evaluation
+is bounded by the geometric-series factor. Under the source condition,
+$\|e(t)\|_2\le B_\beta\sup_{\lambda>0}\lambda^\beta e^{-t\lambda}$;
+the maximum occurs at $\lambda=\beta/t$. Cauchy's coefficient estimate gives
+$|a_n r_0^n|\le M_r(r_0/r)^n$, and summing the resulting geometric series
+proves the explicit source bound.
+\end{proof}
+
+There is no width-uniform exponential rate: $\lambda_n\to0$. At finite
+degree the slowest mode has rate $(\rho/r_0)^{2N}$. Fourier whitening recovers
+the identity Gram matrix in Proposition~\ref{hl:finite}, but its unbounded
+infinite-dimensional preconditioner must not be called a free uniform rate.
+Ridge adds a positive rate floor and a calculable bias; its coefficient bias
+factor is $\alpha/(\lambda_n+\alpha)$, and $\alpha$ must tend to zero for
+unbiased convergence. A standard Gaussian-process initialization need not
+lie in the kernel's RKHS; the stated $\ell^2$ hypothesis cannot be silently
+applied to it. These exact fixed-feature statements are distinct from the
+nonlinear NTK limits of deep networks \cite{HLNTK} and from the trained
+few-qubit feature-learning circuits.
+
+\subsection{An unconditional primitive-Dirichlet size oracle}
+For a primitive nonprincipal character of conductor $q$, parity $a\in\{0,1\}$
+and root number $|\epsilon_\chi|=1$, put $d=\pi/q$ and
+$\theta_\chi(t)=\sum_{n\ge1}\chi(n)n^a e^{-dn^2t}$.
+The standard primitive theta transformation and Mellin identity give
+\[
+ \Lambda(s,\chi)=\int_1^\infty\theta_\chi(t)t^{(s+a)/2-1}\,dt
+ +\epsilon_\chi\int_1^\infty\theta_{\bar\chi}(t)t^{(1-s+a)/2-1}\,dt.
+\]
+The character conjugation and root number are retained. These standard
+functional/analytic inputs are unconditional in the stated Dirichlet scope
+\cite{HLDirichlet}; this text does not claim a new Lean proof of Poisson
+summation. Exponential decay makes both integrals entire in $s$.
+
+For $|s-c|\le r$, choose an integer
+$k\ge\max(0,(1+|\operatorname{Re}c|+r+a)/2-1)$ and define
+\[
+ Q_k(x)=\sum_{j=0}^k\frac{k!}{(k-j)!x^{j+1}}.
+\]
+Integration by parts gives
+$\int_1^\infty t^ke^{-xt}\,dt=e^{-x}Q_k(x)$.
+Consequently $M_r=2\sum_{n\ge1}n^ae^{-dn^2}Q_k(dn^2)$ is a valid
+finite upper bound. For a computable finite version, choose $n_0\ge1$ and sum through $n_0-1$;
+the remaining one-integral sum is at most
+\[
+ C_a Q_k(dn_0^2)
+ \frac{e^{-dn_0^2/2}}{1-e^{-dn_0}},\qquad
+ C_0=1,\quad C_1=(de)^{-1/2}.
+\]
+Indeed $n^ae^{-dn^2/2}\le C_a$, $Q_k$ decreases, and
+$(n_0+j)^2\ge n_0^2+2n_0j$. Twice this tail covers both Mellin terms.
+The same bound controls theta truncation, with no assumption about zeros.
+
+After truncating the $n$ sum and the $t$ integral, elementary interval
+exponential, logarithm, sine and cosine evaluation on a compact interval,
+with a bounded-derivative quadrature remainder, gives an arbitrary requested
+certified $\eta$. The explicit exponential tails control both truncations.
+This proves computability of the oracle; it does not assert that an ordinary
+high-precision special-function call is already a validated implementation.
+For a finite conductor cutoff, take the maximum of the computed bounds.
+
+\subsection{Additional objectives and what they can certify}
+\subsubsection{Contour-aware approximation and active learning.}
+Augment the coefficient objective with independent interval enclosures of
+$|p-F|$ on contours, derivative-weighted losses and adaptive samples near
+small $|p|$. If $\sup_C|p-F|<\inf_C|p|$ on a Jordan contour, Rouch\'e's
+theorem transfers the exact interior zero count of $p$ to $F$. An interval
+root count and a strict margin are acceptance conditions. Sampling finitely
+many heights alone proves no exhaustion of the off-critical domain.
+
+\subsubsection{Arithmetic and functional-equation residuals.}
+Use exact character masks, conductor dependence, primitive Euler factors,
+gamma normalization and the conjugate functional equation as structural
+features or independently verified residuals. On $\operatorname{Re}s\ge1+\delta$,
+with $\delta>0$, for $N\ge3$ the logarithmic-derivative Dirichlet tail has the elementary bound
+$N^{-\delta}(\log N/\delta+1/\delta^2)$, from
+$\Lambda(n)\le\log n$ and integral comparison. This is a useful certified
+training region; it does not extend absolute convergence into the critical
+strip. A functional equation alone also does not locate zeros.
+
+\subsubsection{Operator and determinant refinement.}
+Learn compatible finite compressions, graph-norm/domain residuals,
+self-adjoint boundary conditions and uniform Schatten-tail bounds from the
+actual infinite dessin/order construction. Trace-norm convergence transfers
+ordinary Fredholm determinants, with the standard bound
+\[
+ |\det(I+A)-\det(I+B)|
+ \le\|A-B\|_1e^{1+\|A\|_1+\|B\|_1}
+\]
+\cite{HLFredholm}. Strong resolvent convergence alone does not supply this
+bound. A reciprocal critical-spectrum model typically needs a genus-one
+regularized determinant and Hilbert--Schmidt control; it must not silently
+be treated as trace class. The arithmetic determinant identification remains
+an independent obligation even when the learned operators are Hermitian.
+
+\subsubsection{Certificate-guided moment and algebra learning.}
+For the actual original-family low-gcd moment, use adversarial legal masks,
+conductors, short rows and retained II--I covariance to search for a sharp
+envelope or counterexample. Rational/interval or exact symbolic checking must
+certify a proposed inequality uniformly. A sum-of-squares or dual certificate
+can prove its stated parameter box; extrapolating it to all conductors needs
+a separate analytic argument. Preserve exact locally gentle relations,
+surface-order completions, determinant semi-invariant weights and module
+category labels in the representation architecture. Small relation loss is
+not an exact functor or an arithmetic comparison.
+
+\subsubsection{Quantum kernels, width and proof search.}
+Quantum feature Gram positivity is not Weil/arithmetic positivity. A proved
+finite Gram lower bound gives a readout rate, while growing width requires
+the actual limiting kernel and initialization hypotheses. Proof-guided
+co-training can learn proposed identities or compression maps, then export
+rational/algebraic candidates for independent Lean/interval validation.
+Validation, rather than a confidence score, decides which claims survive.
+
+\subsection{A decisive obstruction to a false universal guarantee}
+\begin{proposition}\label{hl:real-root-floor}
+No sequence of real-rooted polynomials converges locally uniformly on
+$\mathbb C$ to $1+z^2$. Every such polynomial has error at least $7/16$
+somewhere on $|z-i|=1/4$.
+\end{proposition}
+\begin{proof}
+On that circle, $|1+z^2|=|z-i||z+i|\ge(1/4)(2-1/4)=7/16$.
+A smaller uniform error would, by Rouch\'e, force a zero of the polynomial
+inside the disk, whereas all of its zeros are real and the disk misses the
+real axis. The same argument excludes local-uniform convergence.
+\end{proof}
+Thus a claim that an everywhere-real-zero/self-adjoint determinant family
+universally approximates the completed arithmetic target may already contain
+the missing GRH bridge. Hurwitz transfers zero-freeness only after independent
+local-uniform convergence and a nonzero limit have been proved. The analytic
+learner above deliberately proves approximation without asserting that
+spectral restriction. Its learned functions are evidence-bearing candidates,
+not a completed GRH proof. All new analytic/probabilistic statements here are
+prose proofs and scoped computations; no complete new Lean layer is claimed.
+
+
+\subsection{Exact rational constants without transcendental rounding}
+The next implementation step certifies growth and analytic-tail constants,
+while leaving sample evaluation and coefficient rounding separate. Put
+$\delta=3/q<\pi/q$ and, for an integer $L\ge1$, define
+\[
+ U_L(x)=(1+x/L)^{-L},\qquad x>0.
+\]
+The binomial coefficients give
+$(1+x/L)^L\le\sum_{j\ge0}x^j/j!=e^x$, so $e^{-x}\le U_L(x)<1$.
+Every evaluation of $U_L$ at a positive rational argument is exact rational.
+With the same $Q_k$ as above, choose $n_0\ge1$ and let
+\[
+ \widehat M=2\left[
+ \sum_{n=1}^{n_0-1} n^aU_L(\delta n^2)Q_k(\delta n^2)
+ +C_aQ_k(\delta n_0^2)
+ \frac{U_L(\delta n_0^2/2)}{1-U_L(\delta n_0)}\right],
+ \quad C_0=1,\quad C_1=\frac{1+\delta^{-1}}2.
+\]
+This rational number bounds $|\Lambda(s,\chi)|$ on the specified disk.
+Indeed decreasing $d$ to $\delta$ increases the positive integral majorant.
+For $a=1$, the maximum of $x e^{-\delta x^2/2}$ is
+$(\delta e)^{-1/2}\le\delta^{-1/2}\le(1+\delta^{-1})/2$.
+Split the Gaussian exponent into two halves, use
+$(n_0+j)^2\ge n_0^2+2n_0j$, and sum the resulting geometric tail.
+Replacing its numerator and ratio by $U_L$ increases the bound, since its
+denominator stays strictly positive. This proves the formula.
+
+For the actual conductors $3,4,5$, center $1/2$, radius $12/5$, $n_0=8$
+and $L=16$, exact fraction arithmetic gives respectively
+$\widehat M<4$, $\widehat M<10$, $\widehat M<6$.
+Using $\widehat M$ (or these integer upper bounds) and the rational radii
+$R=7/10$, $\rho=6/5$ makes the Cauchy-alias and Taylor terms exact rational
+certificates as well. Full numerator/denominator records and the executable
+\texttt{certify\_learning\_constants.py} are supplied. This certifies
+constants, not the complex sample oracle, floating optimizer or GRH.

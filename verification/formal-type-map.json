@@ -1,0 +1,2998 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-14T00:33:48.980488+00:00",
+  "purpose": "Exact declaration types and manually reviewed component correspondences, not a claim that all manuscript environments are formalized.",
+  "declaration_count": 115,
+  "declarations_with_manuscript_components": 68,
+  "whole_environments_marked_fully_formalized": 0,
+  "claim_register": "extension/review/claim-register.json",
+  "lean_source_audit": {
+    "method": "Source, configuration, checker, exact printed-type and raw-log audit against the current successful six-module verification manifest. This inventory generator does not invoke Lean.",
+    "new_kernel_run_performed": false,
+    "separate_fresh_local_kernel_verification": {
+      "path": "extension/lean/final-verification/verification.json",
+      "sha256": "0e22a8acbc9e9076a63af813d2f719cd64e27d30256f6f37c4950d77ac0868c8",
+      "status": "verified",
+      "checked_at_utc": "2026-11-14T00:17:41.403883+00:00",
+      "module_count": 6,
+      "declaration_count": 115,
+      "scope": "Fresh elaboration, printed types and actual foundational axiom dependencies for exactly the listed finite-interface declarations. Cached compiled imports and the named Lean/mathlib toolchain are trusted. No claim of complete monograph, continuum Navier-Stokes, GRH, Yang-Mills or cryptographic implementation verification.",
+      "upstream_continuum_kernel_verification_performed": false
+    },
+    "authoritative_verified_declaration_count": 115,
+    "project_axiom_or_admitted_placeholder_detected": false,
+    "foundational_axioms_are_not_claimed_absent": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "verified_modules": [
+      {
+        "source_file": "extension/lean/BridgeTheorems.lean",
+        "manifest_file": "extension/lean/final-verification/verification.json",
+        "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+        "manifest_source_hash_matches": true,
+        "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+        "verification_log_sha256": "34aa2c02e22bebfcb63c99225f4eeabe87a779eacaded257e2f7d2c4a728eb1c",
+        "verification_log_axioms_match_manifest": true,
+        "declaration_count": 25,
+        "source_declarations_match_manifest": true,
+        "print_axioms_covers_every_declaration": true,
+        "kernel_printed_types_cover_every_declaration": true,
+        "audit_commands_provenance": "verify_all.py appends #check and #print axioms for every selected declaration",
+        "forbidden_tokens_outside_comments_and_strings": [],
+        "reported_dependencies": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "nonstandard_reported_dependencies": []
+      },
+      {
+        "source_file": "extension/lean/QuantumInterfaces.lean",
+        "manifest_file": "extension/lean/final-verification/verification.json",
+        "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+        "manifest_source_hash_matches": true,
+        "verification_log": "extension/lean/final-verification/QuantumInterfaces.log",
+        "verification_log_sha256": "4975d697da0b298d4c5689a0bb2f52669783d55272ad8699d72ca52752136a76",
+        "verification_log_axioms_match_manifest": true,
+        "declaration_count": 7,
+        "source_declarations_match_manifest": true,
+        "print_axioms_covers_every_declaration": true,
+        "kernel_printed_types_cover_every_declaration": true,
+        "audit_commands_provenance": "verify_all.py appends #check and #print axioms for every selected declaration",
+        "forbidden_tokens_outside_comments_and_strings": [],
+        "reported_dependencies": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "nonstandard_reported_dependencies": []
+      },
+      {
+        "source_file": "extension/lean/DiagramGrammar.lean",
+        "manifest_file": "extension/lean/final-verification/verification.json",
+        "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+        "manifest_source_hash_matches": true,
+        "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+        "verification_log_sha256": "dfd1c7de8ae586afff86e64b1debf5083f8d27e4c3e31823052aba98fc67c867",
+        "verification_log_axioms_match_manifest": true,
+        "declaration_count": 16,
+        "source_declarations_match_manifest": true,
+        "print_axioms_covers_every_declaration": true,
+        "kernel_printed_types_cover_every_declaration": true,
+        "audit_commands_provenance": "verify_all.py appends #check and #print axioms for every selected declaration",
+        "forbidden_tokens_outside_comments_and_strings": [],
+        "reported_dependencies": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "nonstandard_reported_dependencies": []
+      },
+      {
+        "source_file": "extension/lean/FluidInterfaces.lean",
+        "manifest_file": "extension/lean/final-verification/verification.json",
+        "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+        "manifest_source_hash_matches": true,
+        "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+        "verification_log_sha256": "7691709de948461dc00915981025fe55ba95f91309a2654735687e1bcdea59f0",
+        "verification_log_axioms_match_manifest": true,
+        "declaration_count": 34,
+        "source_declarations_match_manifest": true,
+        "print_axioms_covers_every_declaration": true,
+        "kernel_printed_types_cover_every_declaration": true,
+        "audit_commands_provenance": "verify_all.py appends #check and #print axioms for every selected declaration",
+        "forbidden_tokens_outside_comments_and_strings": [],
+        "reported_dependencies": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "nonstandard_reported_dependencies": []
+      },
+      {
+        "source_file": "extension/lean/ReductionContracts.lean",
+        "manifest_file": "extension/lean/final-verification/verification.json",
+        "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+        "manifest_source_hash_matches": true,
+        "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+        "verification_log_sha256": "f83168394396b1f030ad45bc016b43a81c99ac6f87b25293dc3c6c3d704398f8",
+        "verification_log_axioms_match_manifest": true,
+        "declaration_count": 16,
+        "source_declarations_match_manifest": true,
+        "print_axioms_covers_every_declaration": true,
+        "kernel_printed_types_cover_every_declaration": true,
+        "audit_commands_provenance": "verify_all.py appends #check and #print axioms for every selected declaration",
+        "forbidden_tokens_outside_comments_and_strings": [],
+        "reported_dependencies": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "nonstandard_reported_dependencies": []
+      },
+      {
+        "source_file": "extension/lean/TransportContracts.lean",
+        "manifest_file": "extension/lean/final-verification/verification.json",
+        "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+        "manifest_source_hash_matches": true,
+        "verification_log": "extension/lean/final-verification/TransportContracts.log",
+        "verification_log_sha256": "317482e234ac21f26b4a355b2f371a66177e6c60038ec74c52737c478a9e7162",
+        "verification_log_axioms_match_manifest": true,
+        "declaration_count": 17,
+        "source_declarations_match_manifest": true,
+        "print_axioms_covers_every_declaration": true,
+        "kernel_printed_types_cover_every_declaration": true,
+        "audit_commands_provenance": "verify_all.py appends #check and #print axioms for every selected declaration",
+        "forbidden_tokens_outside_comments_and_strings": [],
+        "reported_dependencies": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "nonstandard_reported_dependencies": []
+      }
+    ],
+    "other_lean_files": [],
+    "all_authoritative_declaration_names": [
+      "DiagramGrammar.complex_transport",
+      "DiagramGrammar.context_sound",
+      "DiagramGrammar.derivation_sound",
+      "DiagramGrammar.equivRule_sound",
+      "DiagramGrammar.equiv_derivation_sound",
+      "DiagramGrammar.exact_transport",
+      "DiagramGrammar.homotopy_implies_exact",
+      "DiagramGrammar.identity_loop_value",
+      "DiagramGrammar.linearEquiv_cancellation",
+      "DiagramGrammar.matrix_hodge_conjugacy",
+      "DiagramGrammar.rectangular_trace_cyclicity",
+      "DiagramGrammar.rewriteStep_sound",
+      "DiagramGrammar.structural_derivation_sound",
+      "DiagramGrammar.structural_sound",
+      "DiagramGrammar.tensor_interchange",
+      "DiagramGrammar.tensor_trace_factorization",
+      "FluidInterfaces.boundary_flux_divergence_zero",
+      "FluidInterfaces.boundary_flux_update_preserves_divergence",
+      "FluidInterfaces.dot_self_nonneg",
+      "FluidInterfaces.factorized_viscosity_nonneg",
+      "FluidInterfaces.factorized_viscosity_work",
+      "FluidInterfaces.finite_fluid_energy_derivative",
+      "FluidInterfaces.finite_fluid_work_identity",
+      "FluidInterfaces.hidden_recurrence_expansion",
+      "FluidInterfaces.hidden_state_prevents_autonomous_closure",
+      "FluidInterfaces.kineticEnergy_nonneg",
+      "FluidInterfaces.kinetic_energy_derivative",
+      "FluidInterfaces.lower_diagonal_lower_zero",
+      "FluidInterfaces.no_commuting_complex_structure",
+      "FluidInterfaces.pressure_work_zero",
+      "FluidInterfaces.projection_best_approximation",
+      "FluidInterfaces.projection_energy_nonincrease",
+      "FluidInterfaces.projection_energy_split",
+      "FluidInterfaces.projection_residual_kernel",
+      "FluidInterfaces.projection_residual_orthogonal",
+      "FluidInterfaces.quadratic_generator_square",
+      "FluidInterfaces.quadratic_order_addition",
+      "FluidInterfaces.quadratic_order_determinant",
+      "FluidInterfaces.quadratic_order_multiplication",
+      "FluidInterfaces.quadratic_order_one",
+      "FluidInterfaces.quadratic_order_representation_injective",
+      "FluidInterfaces.renormalization_determinant",
+      "FluidInterfaces.renormalization_is_quadratic_order_element",
+      "FluidInterfaces.renormalization_power_determinant",
+      "FluidInterfaces.renormalization_quadratic_identity",
+      "FluidInterfaces.resolved_memory_identity",
+      "FluidInterfaces.schur_elimination_iff",
+      "FluidInterfaces.skew_transport_work",
+      "FluidInterfaces.transpose_work",
+      "FluidInterfaces.unforced_work_nonpositive",
+      "ReductionContracts.discrete_closure_iff",
+      "ReductionContracts.discrete_trajectory_preserved",
+      "ReductionContracts.factorization_iff_fiber_constant",
+      "ReductionContracts.fiber_diameter_le_twice_error",
+      "ReductionContracts.fiber_error_lower_bound",
+      "ReductionContracts.mismatched_fiber_excludes_closure",
+      "ReductionContracts.no_universal_minimum_rule",
+      "ReductionContracts.reduced_output_unique",
+      "ReductionContracts.signedPartner_constant_coefficient",
+      "ReductionContracts.signedPartner_linear_coefficient",
+      "ReductionContracts.signedPartner_ne_zero",
+      "ReductionContracts.signedPartner_order",
+      "ReductionContracts.signed_cancellation_identity",
+      "ReductionContracts.signed_cancellation_order",
+      "ReductionContracts.signed_cancellation_strict",
+      "ReductionContracts.signed_cancellation_sum_ne_zero",
+      "ResearchBridge.binary_noise_bound",
+      "ResearchBridge.complex_range_le_kernel",
+      "ResearchBridge.complex_rank_bound",
+      "ResearchBridge.cone_equal_norm_iff",
+      "ResearchBridge.cone_perturbation",
+      "ResearchBridge.cone_split_identity",
+      "ResearchBridge.cone_tangent_second_order",
+      "ResearchBridge.euler_rank_identity",
+      "ResearchBridge.hidden_collision_relation",
+      "ResearchBridge.hidden_kernel_relation",
+      "ResearchBridge.hodge_characteristic_factor",
+      "ResearchBridge.hodge_characteristic_identity",
+      "ResearchBridge.hodge_energy_nonnegative",
+      "ResearchBridge.hodge_energy_zero_iff",
+      "ResearchBridge.hodge_family_arbitrarily_small_energy",
+      "ResearchBridge.hodge_family_diagonal",
+      "ResearchBridge.hodge_positive_semidefinite",
+      "ResearchBridge.hodge_quadratic_identity",
+      "ResearchBridge.koszul_zero_composite",
+      "ResearchBridge.middle_exact_iff_rank_sum",
+      "ResearchBridge.noise_cancellation",
+      "ResearchBridge.shear_determinant_one",
+      "ResearchBridge.shear_e2_image",
+      "ResearchBridge.shear_e2_norm_squared",
+      "ResearchBridge.shear_inverse",
+      "ResearchQuantum.binarySign_add",
+      "ResearchQuantum.boundary_phase_shift_commute",
+      "ResearchQuantum.euler_surface_rank_substitution",
+      "ResearchQuantum.pauliX_square",
+      "ResearchQuantum.pauliZ_square",
+      "ResearchQuantum.pauli_anticommutation",
+      "ResearchQuantum.shift_phase_commutation",
+      "TransportContracts.closed_path_residual",
+      "TransportContracts.expanding_scalar_damping",
+      "TransportContracts.fixed_vector_closed_path_zero",
+      "TransportContracts.flat_closed_path_zero",
+      "TransportContracts.nonnormal_shear_gain_squared",
+      "TransportContracts.nonnormal_shear_not_normal",
+      "TransportContracts.nonnormal_shear_second_jvp_zero",
+      "TransportContracts.nonnormal_shear_square_zero",
+      "TransportContracts.nonnormal_shear_strict_gain",
+      "TransportContracts.nonnormal_shear_unit_image",
+      "TransportContracts.positive_damping_bound_not_contracting",
+      "TransportContracts.scalar_counterexample_flat",
+      "TransportContracts.scalar_prefix_counterexample",
+      "TransportContracts.scalar_suffix_correction",
+      "TransportContracts.suffix_transport_telescope",
+      "TransportContracts.trace_preserving_composite_nonzero",
+      "TransportContracts.two_arrow_transport"
+    ],
+    "new_component_mapping_provenance": {
+      "path": "extension/lean/new-declarations.json",
+      "sha256": "73639787341ebea44766a326e626f995d8d5398074abb05b6a962d2b772105c2",
+      "declaration_count": 33,
+      "previous_precise_component_declarations_preserved": 35
+    }
+  },
+  "declarations": [
+    {
+      "name": "DiagramGrammar.complex_transport",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem complex_transport\n    (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2) (h : B.comp A = 0)\n    (e0 : V0 ≃ₗ[K] W0) (e1 : V1 ≃ₗ[K] W1) (e2 : V2 ≃ₗ[K] W2) :\n    (e2.toLinearMap.comp (B.comp e1.symm.toLinearMap)).comp\n      (e1.toLinearMap.comp (A.comp e0.symm.toLinearMap)) = 0",
+      "kernel_printed_type": "DiagramGrammar.complex_transport.{u_1, u_2, u_3, u_4, u_5, u_6, u_7} {K : Type u_1} {V0 : Type u_2} {V1 : Type u_3}\n  {V2 : Type u_4} {W0 : Type u_5} {W1 : Type u_6} {W2 : Type u_7} [Semiring K] [AddCommMonoid V0] [AddCommMonoid V1]\n  [AddCommMonoid V2] [AddCommMonoid W0] [AddCommMonoid W1] [AddCommMonoid W2] [Module K V0] [Module K V1] [Module K V2]\n  [Module K W0] [Module K W1] [Module K W2] (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2) (h : B ∘ₗ A = 0) (e0 : V0 ≃ₗ[K] W0)\n  (e1 : V1 ≃ₗ[K] W1) (e2 : V2 ≃ₗ[K] W2) : (↑e2 ∘ₗ B ∘ₗ ↑e1.symm) ∘ₗ ↑e1 ∘ₗ A ∘ₗ ↑e0.symm = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "tensor-grammars.009",
+          "claim_labels": [
+            "thm:unitary-chain-transport"
+          ],
+          "claim_source": "extension/manuscript/chapters/tensor-grammars.tex",
+          "component": "The zero-composition equation is preserved under independent linear equivalences. Match A=d2, B=d1, e0=F2, e1=F1, e2=F0. The general homology-quotient isomorphism is not proved by this declaration.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "DiagramGrammar.context_sound",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem context_sound (rho : ∀ (a b : Obj), Gen a b → V a →ₗ[K] V b)\n    {a b x y : Obj} {d e : Diagram Gen a b}\n    (h : denote rho d = denote rho e) (C : Context Gen a b x y) :\n    denote rho (fill C d) = denote rho (fill C e)",
+      "kernel_printed_type": "DiagramGrammar.context_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z} [Semiring K]\n  {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]\n  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b) {a b x y : Obj} {d e : DiagramGrammar.Diagram Gen a b}\n  (h : DiagramGrammar.denote rho d = DiagramGrammar.denote rho e) (C : DiagramGrammar.Context Gen a b x y) :\n  DiagramGrammar.denote rho (DiagramGrammar.fill C d) = DiagramGrammar.denote rho (DiagramGrammar.fill C e)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "tensor-grammars.007",
+          "claim_labels": [
+            "thm:typed-rewrite-soundness"
+          ],
+          "claim_source": "extension/manuscript/chapters/tensor-grammars.tex",
+          "component": "Equality is preserved by typed one-hole sequential contexts. This syntax has identity, typed generators, and sequential composition; no tensor-context or density-operator syntax is formalized here.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "DiagramGrammar.derivation_sound",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem derivation_sound\n    (rho : ∀ (a b : Obj), Gen a b → V a →ₗ[K] V b)\n    (Rules : ∀ {a b : Obj}, Diagram Gen a b → Diagram Gen a b → Prop)\n    (valid : ∀ {a b} {d e : Diagram Gen a b}, Rules d e → denote rho d = denote rho e)\n    {x y : Obj} {d e : Diagram Gen x y} (h : Derives Rules d e) :\n    denote rho d = denote rho e",
+      "kernel_printed_type": "DiagramGrammar.derivation_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z} [Semiring K]\n  {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]\n  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b)\n  (Rules : {a b : Obj} → DiagramGrammar.Diagram Gen a b → DiagramGrammar.Diagram Gen a b → Prop)\n  (valid :\n    ∀ {a b : Obj} {d e : DiagramGrammar.Diagram Gen a b},\n      Rules d e → DiagramGrammar.denote rho d = DiagramGrammar.denote rho e)\n  {x y : Obj} {d e : DiagramGrammar.Diagram Gen x y} (h : DiagramGrammar.Derives (fun {a b} => Rules) d e) :\n  DiagramGrammar.denote rho d = DiagramGrammar.denote rho e",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "tensor-grammars.007",
+          "claim_labels": [
+            "thm:typed-rewrite-soundness"
+          ],
+          "claim_source": "extension/manuscript/chapters/tensor-grammars.tex",
+          "component": "Every finite derivation of contextual sequential rewrites preserves the exact linear-map denotation, conditional on soundness of each basic rule.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "DiagramGrammar.equivRule_sound",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem equivRule_sound {a b : Obj}\n    {d e : Diagram (fun i j => V i ≃ₗ[K] V j) a b} (h : EquivRule d e) :\n    denote (fun (i j : Obj) (g : V i ≃ₗ[K] V j) => g.toLinearMap) d =\n    denote (fun (i j : Obj) (g : V i ≃ₗ[K] V j) => g.toLinearMap) e",
+      "kernel_printed_type": "DiagramGrammar.equivRule_sound.{u, w, z} {Obj : Type u} {K : Type z} [Semiring K] {V : Obj → Type w}\n  [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)] {a b : Obj}\n  {d e : DiagramGrammar.Diagram (fun i j => V i ≃ₗ[K] V j) a b} (h : DiagramGrammar.EquivRule d e) :\n  DiagramGrammar.denote (fun i j g => ↑g) d = DiagramGrammar.denote (fun i j g => ↑g) e",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.equiv_derivation_sound",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem equiv_derivation_sound {a b : Obj}\n    {d e : Diagram (fun i j => V i ≃ₗ[K] V j) a b} (h : Derives EquivRule d e) :\n    denote (fun (i j : Obj) (g : V i ≃ₗ[K] V j) => g.toLinearMap) d =\n    denote (fun (i j : Obj) (g : V i ≃ₗ[K] V j) => g.toLinearMap) e",
+      "kernel_printed_type": "DiagramGrammar.equiv_derivation_sound.{u, w, z} {Obj : Type u} {K : Type z} [Semiring K] {V : Obj → Type w}\n  [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)] {a b : Obj}\n  {d e : DiagramGrammar.Diagram (fun i j => V i ≃ₗ[K] V j) a b}\n  (h : DiagramGrammar.Derives (fun {a b} => DiagramGrammar.EquivRule) d e) :\n  DiagramGrammar.denote (fun i j g => ↑g) d = DiagramGrammar.denote (fun i j g => ↑g) e",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "tensor-grammars.007",
+          "claim_labels": [
+            "thm:typed-rewrite-soundness"
+          ],
+          "claim_source": "extension/manuscript/chapters/tensor-grammars.tex",
+          "component": "For the explicit linear-equivalence generator system, structural rules and inverse-pair cancellation are proved sound under finite contextual derivations. This is not completeness, confluence, or a certificate for floating-point code.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "DiagramGrammar.exact_transport",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem exact_transport\n    (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2)\n    (hexact : LinearMap.range A = LinearMap.ker B)\n    (e0 : V0 ≃ₗ[K] W0) (e1 : V1 ≃ₗ[K] W1) (e2 : V2 ≃ₗ[K] W2) :\n    LinearMap.range (e1.toLinearMap.comp (A.comp e0.symm.toLinearMap)) =\n      LinearMap.ker (e2.toLinearMap.comp (B.comp e1.symm.toLinearMap))",
+      "kernel_printed_type": "DiagramGrammar.exact_transport.{u_1, u_2, u_3, u_4, u_5, u_6, u_7} {K : Type u_1} {V0 : Type u_2} {V1 : Type u_3}\n  {V2 : Type u_4} {W0 : Type u_5} {W1 : Type u_6} {W2 : Type u_7} [Semiring K] [AddCommMonoid V0] [AddCommMonoid V1]\n  [AddCommMonoid V2] [AddCommMonoid W0] [AddCommMonoid W1] [AddCommMonoid W2] [Module K V0] [Module K V1] [Module K V2]\n  [Module K W0] [Module K W1] [Module K W2] (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2)\n  (hexact : LinearMap.range A = LinearMap.ker B) (e0 : V0 ≃ₗ[K] W0) (e1 : V1 ≃ₗ[K] W1) (e2 : V2 ≃ₗ[K] W2) :\n  LinearMap.range (↑e1 ∘ₗ A ∘ₗ ↑e0.symm) = LinearMap.ker (↑e2 ∘ₗ B ∘ₗ ↑e1.symm)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.homotopy_implies_exact",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem homotopy_implies_exact\n    (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2) (hcomplex : B.comp A = 0)\n    (s : V1 →ₗ[K] V0) (t : V2 →ₗ[K] V1)\n    (hhomotopy : A.comp s + t.comp B = LinearMap.id) :\n    LinearMap.range A = LinearMap.ker B",
+      "kernel_printed_type": "DiagramGrammar.homotopy_implies_exact.{u_1, u_2, u_3, u_4} {K : Type u_1} {V0 : Type u_2} {V1 : Type u_3}\n  {V2 : Type u_4} [Semiring K] [AddCommMonoid V0] [AddCommMonoid V1] [AddCommMonoid V2] [Module K V0] [Module K V1]\n  [Module K V2] (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2) (hcomplex : B ∘ₗ A = 0) (s : V1 →ₗ[K] V0) (t : V2 →ₗ[K] V1)\n  (hhomotopy : A ∘ₗ s + t ∘ₗ B = LinearMap.id) : LinearMap.range A = LinearMap.ker B",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "complexes.025",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/complexes.tex",
+          "component": "The abstract implication from a zero composite and a middle contracting-homotopy identity to image=kernel. The exterior operations, their identity, and the full graded contracting homotopy are not formalized by this declaration.",
+          "whole_statement_formalized": false
+        },
+        {
+          "claim_id": "standard-monomials.004",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/standard-monomials.tex",
+          "component": "The abstract middle exactness consequence once the contraction/creation homotopy and zero-composition equations have been supplied. The exterior algebra and its shuffle signs remain the manuscript's proof.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "DiagramGrammar.identity_loop_value",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem identity_loop_value {a : Type v} [Fintype a] [DecidableEq a] :\n    Matrix.trace (1 : Matrix a a R) = (Fintype.card a : R)",
+      "kernel_printed_type": "DiagramGrammar.identity_loop_value.{u, v} {R : Type u} [CommSemiring R] {a : Type v} [Fintype a] [DecidableEq a] :\n  Matrix.trace 1 = ↑(Fintype.card a)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.linearEquiv_cancellation",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem linearEquiv_cancellation {a b : Obj} (e : V a ≃ₗ[K] V b) :\n    denote (fun (i j : Obj) (g : V i ≃ₗ[K] V j) => g.toLinearMap)\n      (.seq (.atom e) (.atom e.symm)) =\n    denote (fun (i j : Obj) (g : V i ≃ₗ[K] V j) => g.toLinearMap) (.ident a)",
+      "kernel_printed_type": "DiagramGrammar.linearEquiv_cancellation.{u, w, z} {Obj : Type u} {K : Type z} [Semiring K] {V : Obj → Type w}\n  [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)] {a b : Obj} (e : V a ≃ₗ[K] V b) :\n  DiagramGrammar.denote (fun i j g => ↑g) ((DiagramGrammar.Diagram.atom e).seq (DiagramGrammar.Diagram.atom e.symm)) =\n    DiagramGrammar.denote (fun i j g => ↑g) (DiagramGrammar.Diagram.ident a)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.matrix_hodge_conjugacy",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem matrix_hodge_conjugacy\n    {n0 n1 n2 : Type*} [Fintype n0] [Fintype n1] [Fintype n2]\n    [DecidableEq n0] [DecidableEq n2]\n    (A : Matrix n1 n0 ℂ) (B : Matrix n2 n1 ℂ)\n    (U0 : Matrix n0 n0 ℂ) (U1 : Matrix n1 n1 ℂ) (U2 : Matrix n2 n2 ℂ)\n    (h0 : U0ᴴ * U0 = 1) (h2 : U2ᴴ * U2 = 1) :\n    (U1 * A * U0ᴴ) * (U1 * A * U0ᴴ)ᴴ +\n      (U2 * B * U1ᴴ)ᴴ * (U2 * B * U1ᴴ) =\n      U1 * (A * Aᴴ + Bᴴ * B) * U1ᴴ",
+      "kernel_printed_type": "DiagramGrammar.matrix_hodge_conjugacy.{u_1, u_2, u_3} {n0 : Type u_1} {n1 : Type u_2} {n2 : Type u_3} [Fintype n0]\n  [Fintype n1] [Fintype n2] [DecidableEq n0] [DecidableEq n2] (A : Matrix n1 n0 ℂ) (B : Matrix n2 n1 ℂ)\n  (U0 : Matrix n0 n0 ℂ) (U1 : Matrix n1 n1 ℂ) (U2 : Matrix n2 n2 ℂ) (h0 : U0.conjTranspose * U0 = 1)\n  (h2 : U2.conjTranspose * U2 = 1) :\n  U1 * A * U0.conjTranspose * (U1 * A * U0.conjTranspose).conjTranspose +\n      (U2 * B * U1.conjTranspose).conjTranspose * (U2 * B * U1.conjTranspose) =\n    U1 * (A * A.conjTranspose + B.conjTranspose * B) * U1.conjTranspose",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "tensor-grammars.009",
+          "claim_labels": [
+            "thm:unitary-chain-transport"
+          ],
+          "claim_source": "extension/manuscript/chapters/tensor-grammars.tex",
+          "component": "The finite complex-matrix Hodge conjugacy identity, with A=d2, B=d1, U0=F2, U1=F1, U2=F0 and endpoint U-adjoint*U=I hypotheses. Choosing all changes unitary makes inverse equal adjoint as in the text. Infinite-dimensional spectral assertions and homology are outside this lemma.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "DiagramGrammar.rectangular_trace_cyclicity",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem rectangular_trace_cyclicity {a b : Type v} [Fintype a] [Fintype b]\n    (A : Matrix a b R) (B : Matrix b a R) :\n    Matrix.trace (A * B) = Matrix.trace (B * A)",
+      "kernel_printed_type": "DiagramGrammar.rectangular_trace_cyclicity.{u, v} {R : Type u} [CommSemiring R] {a b : Type v} [Fintype a] [Fintype b]\n  (A : Matrix a b R) (B : Matrix b a R) : (A * B).trace = (B * A).trace",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.rewriteStep_sound",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem rewriteStep_sound\n    (rho : ∀ (a b : Obj), Gen a b → V a →ₗ[K] V b)\n    (Rules : ∀ {a b : Obj}, Diagram Gen a b → Diagram Gen a b → Prop)\n    (valid : ∀ {a b} {d e : Diagram Gen a b}, Rules d e → denote rho d = denote rho e)\n    {x y : Obj} {d e : Diagram Gen x y} (h : RewriteStep Rules d e) :\n    denote rho d = denote rho e",
+      "kernel_printed_type": "DiagramGrammar.rewriteStep_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z} [Semiring K]\n  {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]\n  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b)\n  (Rules : {a b : Obj} → DiagramGrammar.Diagram Gen a b → DiagramGrammar.Diagram Gen a b → Prop)\n  (valid :\n    ∀ {a b : Obj} {d e : DiagramGrammar.Diagram Gen a b},\n      Rules d e → DiagramGrammar.denote rho d = DiagramGrammar.denote rho e)\n  {x y : Obj} {d e : DiagramGrammar.Diagram Gen x y} (h : DiagramGrammar.RewriteStep (fun {a b} => Rules) d e) :\n  DiagramGrammar.denote rho d = DiagramGrammar.denote rho e",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.structural_derivation_sound",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem structural_derivation_sound\n    (rho : ∀ (a b : Obj), Gen a b → V a →ₗ[K] V b)\n    {x y : Obj} {d e : Diagram Gen x y} (h : Derives StructuralRule d e) :\n    denote rho d = denote rho e",
+      "kernel_printed_type": "DiagramGrammar.structural_derivation_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z}\n  [Semiring K] {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]\n  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b) {x y : Obj} {d e : DiagramGrammar.Diagram Gen x y}\n  (h : DiagramGrammar.Derives (fun {a b} => DiagramGrammar.StructuralRule) d e) :\n  DiagramGrammar.denote rho d = DiagramGrammar.denote rho e",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.structural_sound",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem structural_sound (rho : ∀ (a b : Obj), Gen a b → V a →ₗ[K] V b)\n    {a b : Obj} {d e : Diagram Gen a b} (h : StructuralRule d e) :\n    denote rho d = denote rho e",
+      "kernel_printed_type": "DiagramGrammar.structural_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z} [Semiring K]\n  {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]\n  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b) {a b : Obj} {d e : DiagramGrammar.Diagram Gen a b}\n  (h : DiagramGrammar.StructuralRule d e) : DiagramGrammar.denote rho d = DiagramGrammar.denote rho e",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.tensor_interchange",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem tensor_interchange {a b c d e f : Type v} [Fintype b] [Fintype e]\n    (A : Matrix a b R) (B : Matrix b c R) (C : Matrix d e R) (D : Matrix e f R) :\n    (A ⊗ₖ C) * (B ⊗ₖ D) = (A * B) ⊗ₖ (C * D)",
+      "kernel_printed_type": "DiagramGrammar.tensor_interchange.{u, v} {R : Type u} [CommSemiring R] {a b c d e f : Type v} [Fintype b] [Fintype e]\n  (A : Matrix a b R) (B : Matrix b c R) (C : Matrix d e R) (D : Matrix e f R) :\n  Matrix.kroneckerMap (fun x1 x2 => x1 * x2) A C * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) B D =\n    Matrix.kroneckerMap (fun x1 x2 => x1 * x2) (A * B) (C * D)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "DiagramGrammar.tensor_trace_factorization",
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "type_signature_source": "theorem tensor_trace_factorization {a b : Type v} [Fintype a] [Fintype b]\n    (A : Matrix a a R) (B : Matrix b b R) :\n    Matrix.trace (A ⊗ₖ B) = Matrix.trace A * Matrix.trace B",
+      "kernel_printed_type": "DiagramGrammar.tensor_trace_factorization.{u, v} {R : Type u} [CommSemiring R] {a b : Type v} [Fintype a] [Fintype b]\n  (A : Matrix a a R) (B : Matrix b b R) : (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) A B).trace = A.trace * B.trace",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/DiagramGrammar.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.boundary_flux_divergence_zero",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem boundary_flux_divergence_zero (B : Matrix m n ℝ) (C : Matrix n p ℝ)\n    (hcomplex : B * C = 0) (q : p → ℝ) : B *ᵥ (C *ᵥ q) = 0",
+      "kernel_printed_type": "FluidInterfaces.boundary_flux_divergence_zero.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3} [Fintype n]\n  [Fintype p] (B : Matrix m n ℝ) (C : Matrix n p ℝ) (hcomplex : B * C = 0) (q : p → ℝ) : B *ᵥ C *ᵥ q = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.011",
+          "claim_labels": [
+            "prop:fluid-discrete-hodge"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "Given matrices B,C with BC=0, B(Cq)=0. With B=delta_1 and C=delta_2 this is the proposition's final divergence-free consequence once delta_1 delta_2=0 is supplied; mass-matrix adjoints and Hodge positivity are not proved by this declaration.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.boundary_flux_update_preserves_divergence",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem boundary_flux_update_preserves_divergence\n    (B : Matrix m n ℝ) (C : Matrix n p ℝ) (hcomplex : B * C = 0)\n    (u : n → ℝ) (q : p → ℝ) :\n    B *ᵥ (u + C *ᵥ q) = B *ᵥ u",
+      "kernel_printed_type": "FluidInterfaces.boundary_flux_update_preserves_divergence.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3}\n  [Fintype n] [Fintype p] (B : Matrix m n ℝ) (C : Matrix n p ℝ) (hcomplex : B * C = 0) (u : n → ℝ) (q : p → ℝ) :\n  B *ᵥ (u + C *ᵥ q) = B *ᵥ u",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.dot_self_nonneg",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem dot_self_nonneg (u : n → ℝ) : 0 ≤ u ⬝ᵥ u",
+      "kernel_printed_type": "FluidInterfaces.dot_self_nonneg.{u_1} {n : Type u_1} [Fintype n] (u : n → ℝ) : 0 ≤ u ⬝ᵥ u",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.factorized_viscosity_nonneg",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem factorized_viscosity_nonneg (L : Matrix m n ℝ) (u : n → ℝ) :\n    0 ≤ u ⬝ᵥ ((Lᵀ * L) *ᵥ u)",
+      "kernel_printed_type": "FluidInterfaces.factorized_viscosity_nonneg.{u_1, u_2} {n : Type u_1} {m : Type u_2} [Fintype n] [Fintype m]\n  (L : Matrix m n ℝ) (u : n → ℝ) : 0 ≤ u ⬝ᵥ (Lᵀ * L) *ᵥ u",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.factorized_viscosity_work",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem factorized_viscosity_work (L : Matrix m n ℝ) (u : n → ℝ) :\n    u ⬝ᵥ ((Lᵀ * L) *ᵥ u) = (L *ᵥ u) ⬝ᵥ (L *ᵥ u)",
+      "kernel_printed_type": "FluidInterfaces.factorized_viscosity_work.{u_1, u_2} {n : Type u_1} {m : Type u_2} [Fintype n] [Fintype m]\n  (L : Matrix m n ℝ) (u : n → ℝ) : u ⬝ᵥ (Lᵀ * L) *ᵥ u = L *ᵥ u ⬝ᵥ L *ᵥ u",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.012",
+          "claim_labels": [
+            "thm:fluid-finite-closure"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The Euclidean Gram term has work u^T(L^T L)u=|Lu|^2. The manuscript's learned closure uses this factorized form; existence of a factorization of a general positive semidefinite physical viscosity matrix is separate.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.finite_fluid_energy_derivative",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem finite_fluid_energy_derivative\n    (J : Matrix n n ℝ) (hJ : Jᵀ = -J)\n    (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ)\n    (u : ℝ → n → ℝ) (force : n → ℝ) (t : ℝ)\n    (hu : ∀ i, HasDerivAt (fun s => u s i)\n      ((J *ᵥ u t - ν • ((Dᵀ * D) *ᵥ u t) - (Lᵀ * L) *ᵥ u t + force) i) t) :\n    HasDerivAt (fun s => kineticEnergy (u s))\n      (u t ⬝ᵥ force - ν * ((D *ᵥ u t) ⬝ᵥ (D *ᵥ u t)) -\n        (L *ᵥ u t) ⬝ᵥ (L *ᵥ u t)) t",
+      "kernel_printed_type": "FluidInterfaces.finite_fluid_energy_derivative.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3} [Fintype n]\n  [Fintype m] [Fintype p] (J : Matrix n n ℝ) (hJ : Jᵀ = -J) (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ)\n  (u : ℝ → n → ℝ) (force : n → ℝ) (t : ℝ)\n  (hu : ∀ (i : n), HasDerivAt (fun s => u s i) ((J *ᵥ u t - ν • (Dᵀ * D) *ᵥ u t - (Lᵀ * L) *ᵥ u t + force) i) t) :\n  HasDerivAt (fun s => FluidInterfaces.kineticEnergy (u s))\n    (u t ⬝ᵥ force - ν * D *ᵥ u t ⬝ᵥ D *ᵥ u t - L *ᵥ u t ⬝ᵥ L *ᵥ u t) t",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.012",
+          "claim_labels": [
+            "thm:fluid-finite-closure"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "At a specified time with the displayed coordinate derivatives, the finite energy derivative equals forcing work minus the two Gram dissipations. State-dependent coefficients may be evaluated at this time, but local existence, Gronwall, continuation, and continuum regularity are not part of the declaration.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.finite_fluid_work_identity",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem finite_fluid_work_identity\n    (J : Matrix n n ℝ) (hJ : Jᵀ = -J)\n    (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ)\n    (u force : n → ℝ) :\n    u ⬝ᵥ (J *ᵥ u - ν • ((Dᵀ * D) *ᵥ u) - (Lᵀ * L) *ᵥ u + force) =\n      u ⬝ᵥ force - ν * ((D *ᵥ u) ⬝ᵥ (D *ᵥ u)) -\n        (L *ᵥ u) ⬝ᵥ (L *ᵥ u)",
+      "kernel_printed_type": "FluidInterfaces.finite_fluid_work_identity.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3} [Fintype n]\n  [Fintype m] [Fintype p] (J : Matrix n n ℝ) (hJ : Jᵀ = -J) (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ)\n  (u force : n → ℝ) :\n  u ⬝ᵥ (J *ᵥ u - ν • (Dᵀ * D) *ᵥ u - (Lᵀ * L) *ᵥ u + force) = u ⬝ᵥ force - ν * D *ᵥ u ⬝ᵥ D *ᵥ u - L *ᵥ u ⬝ᵥ L *ᵥ u",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.012",
+          "claim_labels": [
+            "thm:fluid-finite-closure"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The algebraic work balance for skew transport, factorized physical viscosity, factorized learned dissipation, and forcing.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.hidden_recurrence_expansion",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem hidden_recurrence_expansion (C : X →ₗ[K] Y) (D : Module.End K Y)\n    (p : ℕ → X) (q : ℕ → Y)\n    (hstep : ∀ n : ℕ, q (n + 1) = D (q n) + C (p n)) (n : ℕ) :\n    q n = (D ^ n) (q 0) +\n      ∑ k ∈ Finset.range n, (D ^ (n - 1 - k)) (C (p k))",
+      "kernel_printed_type": "FluidInterfaces.hidden_recurrence_expansion.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3} [Field K]\n  [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (C : X →ₗ[K] Y) (D : Module.End K Y) (p : ℕ → X)\n  (q : ℕ → Y) (hstep : ∀ (n : ℕ), q (n + 1) = D (q n) + C (p n)) (n : ℕ) :\n  q n = (D ^ n) (q 0) + ∑ k ∈ Finset.range n, (D ^ (n - 1 - k)) (C (p k))",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "quantum-fluid.003",
+          "claim_labels": [
+            "prop:fluid-discrete-memory"
+          ],
+          "claim_source": "extension/manuscript/chapters/quantum-fluid.tex",
+          "component": "The all-natural-time expansion z_n=D^n z_0+sum_{k<n}D^(n-1-k)Cx_k from the exact hidden recurrence, including the empty sum at zero.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.hidden_state_prevents_autonomous_closure",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem hidden_state_prevents_autonomous_closure\n    (A : Module.End K X) (B : Y →ₗ[K] X) (y : Y) (hy : B y ≠ 0) :\n    ¬ ∃ F : X → X, ∀ (x : X) (z : Y), F x = A x + B z",
+      "kernel_printed_type": "FluidInterfaces.hidden_state_prevents_autonomous_closure.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3}\n  [Field K] [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (A : Module.End K X) (B : Y →ₗ[K] X) (y : Y)\n  (hy : B y ≠ 0) : ¬∃ F, ∀ (x : X) (z : Y), F x = A x + B z",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "quantum-fluid.001",
+          "claim_labels": [
+            "prop:fluid-closure-obstruction"
+          ],
+          "claim_source": "extension/manuscript/chapters/quantum-fluid.tex",
+          "component": "For linear A and B with B(y) nonzero, no function F of the retained state alone agrees with Ax+Bz for all retained and hidden states. No assertion is made about a restricted invariant manifold or a probabilistic conditional-expectation closure.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.kineticEnergy_nonneg",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem kineticEnergy_nonneg (u : n → ℝ) : 0 ≤ kineticEnergy u",
+      "kernel_printed_type": "FluidInterfaces.kineticEnergy_nonneg.{u_1} {n : Type u_1} [Fintype n] (u : n → ℝ) : 0 ≤ FluidInterfaces.kineticEnergy u",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.kinetic_energy_derivative",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem kinetic_energy_derivative (u : ℝ → n → ℝ) (v : n → ℝ) (t : ℝ)\n    (hu : ∀ i, HasDerivAt (fun s => u s i) (v i) t) :\n    HasDerivAt (fun s => kineticEnergy (u s)) ((u t) ⬝ᵥ v) t",
+      "kernel_printed_type": "FluidInterfaces.kinetic_energy_derivative.{u_1} {n : Type u_1} [Fintype n] (u : ℝ → n → ℝ) (v : n → ℝ) (t : ℝ)\n  (hu : ∀ (i : n), HasDerivAt (fun s => u s i) (v i) t) :\n  HasDerivAt (fun s => FluidInterfaces.kineticEnergy (u s)) (u t ⬝ᵥ v) t",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.012",
+          "claim_labels": [
+            "thm:fluid-finite-closure"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "Actual finite Euclidean kinetic-energy differentiation from coordinate HasDerivAt hypotheses; it neither constructs a trajectory nor proves an ODE existence theorem.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.lower_diagonal_lower_zero",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem lower_diagonal_lower_zero (L M : X →ₗ[K] Y)\n    (DX : Module.End K X) (DY : Module.End K Y) :\n    (lowerBlock L).comp ((DX.prodMap DY).comp (lowerBlock M)) = 0",
+      "kernel_printed_type": "FluidInterfaces.lower_diagonal_lower_zero.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3} [Field K]\n  [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (L M : X →ₗ[K] Y) (DX : Module.End K X)\n  (DY : Module.End K Y) : FluidInterfaces.lowerBlock L ∘ₗ LinearMap.prodMap DX DY ∘ₗ FluidInterfaces.lowerBlock M = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "navier-stokes-release.008",
+          "claim_labels": [
+            "prop:ns-sparse-volterra"
+          ],
+          "claim_source": "extension/manuscript/chapters/navier-stokes-release.tex",
+          "component": "The composition of a strict lower block, a block diagonal map, and another strict lower block is zero. The two lower blocks may differ, as needed when a derivative hits a coefficient. This is only the block algebra; no function-space, Volterra, holomorphic, or convergence theorem is formalized by this declaration.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.no_commuting_complex_structure",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem no_commuting_complex_structure (I : Matrix (Fin 2) (Fin 2) ℝ)\n    (hc : I * !![3, 1; 1, 5] = !![3, 1; 1, 5] * I) :\n    I * I ≠ -(1 : Matrix (Fin 2) (Fin 2) ℝ)",
+      "kernel_printed_type": "FluidInterfaces.no_commuting_complex_structure (I : Matrix (Fin 2) (Fin 2) ℝ)\n  (hc : I * !![3, 1; 1, 5] = !![3, 1; 1, 5] * I) : I * I ≠ -1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.005",
+          "claim_labels": [
+            "prop:fluid-no-complex"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "For a real 2-by-2 matrix C commuting with the displayed J, C*C is not minus the identity. This exact linear-algebra statement does not formalize the subsequent geometry of elliptic curves.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.pressure_work_zero",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem pressure_work_zero (B : Matrix p n ℝ) (u : n → ℝ) (pressure : p → ℝ)\n    (hu : B *ᵥ u = 0) : u ⬝ᵥ (Bᵀ *ᵥ pressure) = 0",
+      "kernel_printed_type": "FluidInterfaces.pressure_work_zero.{u_1, u_3} {n : Type u_1} {p : Type u_3} [Fintype n] [Fintype p] (B : Matrix p n ℝ)\n  (u : n → ℝ) (pressure : p → ℝ) (hu : B *ᵥ u = 0) : u ⬝ᵥ Bᵀ *ᵥ pressure = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.projection_best_approximation",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem projection_best_approximation (P : Matrix n n ℝ)\n    (hs : Pᵀ = P) (hi : P * P = P) (u v : n → ℝ) (hv : P *ᵥ v = v) :\n    kineticEnergy (u - P *ᵥ u) ≤ kineticEnergy (u - v)",
+      "kernel_printed_type": "FluidInterfaces.projection_best_approximation.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hs : Pᵀ = P)\n  (hi : P * P = P) (u v : n → ℝ) (hv : P *ᵥ v = v) :\n  FluidInterfaces.kineticEnergy (u - P *ᵥ u) ≤ FluidInterfaces.kineticEnergy (u - v)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.projection_energy_nonincrease",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem projection_energy_nonincrease (P : Matrix n n ℝ)\n    (hs : Pᵀ = P) (hi : P * P = P) (u : n → ℝ) :\n    kineticEnergy (P *ᵥ u) ≤ kineticEnergy u",
+      "kernel_printed_type": "FluidInterfaces.projection_energy_nonincrease.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hs : Pᵀ = P)\n  (hi : P * P = P) (u : n → ℝ) : FluidInterfaces.kineticEnergy (P *ᵥ u) ≤ FluidInterfaces.kineticEnergy u",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.projection_energy_split",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem projection_energy_split (P : Matrix n n ℝ)\n    (hs : Pᵀ = P) (hi : P * P = P) (u : n → ℝ) :\n    kineticEnergy u = kineticEnergy (P *ᵥ u) + kineticEnergy (u - P *ᵥ u)",
+      "kernel_printed_type": "FluidInterfaces.projection_energy_split.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hs : Pᵀ = P)\n  (hi : P * P = P) (u : n → ℝ) :\n  FluidInterfaces.kineticEnergy u = FluidInterfaces.kineticEnergy (P *ᵥ u) + FluidInterfaces.kineticEnergy (u - P *ᵥ u)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.projection_residual_kernel",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem projection_residual_kernel (P : Matrix n n ℝ) (hP : P * P = P)\n    (u : n → ℝ) : P *ᵥ (u - P *ᵥ u) = 0",
+      "kernel_printed_type": "FluidInterfaces.projection_residual_kernel.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hP : P * P = P)\n  (u : n → ℝ) : P *ᵥ (u - P *ᵥ u) = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.projection_residual_orthogonal",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem projection_residual_orthogonal (P : Matrix n n ℝ)\n    (hs : Pᵀ = P) (hi : P * P = P) (u v : n → ℝ) :\n    (u - P *ᵥ u) ⬝ᵥ (P *ᵥ v) = 0",
+      "kernel_printed_type": "FluidInterfaces.projection_residual_orthogonal.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ) (hs : Pᵀ = P)\n  (hi : P * P = P) (u v : n → ℝ) : (u - P *ᵥ u) ⬝ᵥ P *ᵥ v = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.quadratic_generator_square",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem quadratic_generator_square : quadraticGenerator * quadraticGenerator =\n    (2 : ℤ) • (1 : Matrix (Fin 2) (Fin 2) ℤ)",
+      "kernel_printed_type": "FluidInterfaces.quadratic_generator_square :\n  FluidInterfaces.quadraticGenerator * FluidInterfaces.quadraticGenerator = 2 • 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The displayed integer generator A satisfies A*A=2*I.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.quadratic_order_addition",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem quadratic_order_addition (a b c d : ℤ) :\n    quadraticOrderMatrix a b + quadraticOrderMatrix c d =\n      quadraticOrderMatrix (a + c) (b + d)",
+      "kernel_printed_type": "FluidInterfaces.quadratic_order_addition (a b c d : ℤ) :\n  FluidInterfaces.quadraticOrderMatrix a b + FluidInterfaces.quadraticOrderMatrix c d =\n    FluidInterfaces.quadraticOrderMatrix (a + c) (b + d)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The coefficient-pair matrices obey rho(a,b)+rho(c,d)=rho(a+c,b+d).",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.quadratic_order_determinant",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem quadratic_order_determinant (a b : ℤ) :\n    Matrix.det (quadraticOrderMatrix a b) = a ^ 2 - 2 * b ^ 2",
+      "kernel_printed_type": "FluidInterfaces.quadratic_order_determinant (a b : ℤ) :\n  (FluidInterfaces.quadraticOrderMatrix a b).det = a ^ 2 - 2 * b ^ 2",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The exact norm determinant det(rho(a,b))=a^2-2b^2 over integer pairs.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.quadratic_order_multiplication",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem quadratic_order_multiplication (a b c d : ℤ) :\n    quadraticOrderMatrix a b * quadraticOrderMatrix c d =\n      quadraticOrderMatrix (a * c + 2 * b * d) (a * d + b * c)",
+      "kernel_printed_type": "FluidInterfaces.quadratic_order_multiplication (a b c d : ℤ) :\n  FluidInterfaces.quadraticOrderMatrix a b * FluidInterfaces.quadraticOrderMatrix c d =\n    FluidInterfaces.quadraticOrderMatrix (a * c + 2 * b * d) (a * d + b * c)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The coefficient-pair matrices obey rho(a,b)rho(c,d)=rho(ac+2bd,ad+bc). A bundled ring homomorphism from an algebraic number-field order is not constructed by this identity.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.quadratic_order_one",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem quadratic_order_one :\n    quadraticOrderMatrix 1 0 = (1 : Matrix (Fin 2) (Fin 2) ℤ)",
+      "kernel_printed_type": "FluidInterfaces.quadratic_order_one : FluidInterfaces.quadraticOrderMatrix 1 0 = 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The integer coefficient-pair matrix rho(1,0) is the identity.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.quadratic_order_representation_injective",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem quadratic_order_representation_injective :\n    Function.Injective (fun ab : ℤ × ℤ => quadraticOrderMatrix ab.1 ab.2)",
+      "kernel_printed_type": "FluidInterfaces.quadratic_order_representation_injective :\n  Function.Injective fun ab => FluidInterfaces.quadraticOrderMatrix ab.1 ab.2",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The map from integer pairs (a,b) to their displayed matrix is injective. Identification of these pairs with the order is the manuscript's argument.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.renormalization_determinant",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem renormalization_determinant : Matrix.det renormalizationMatrix = 14",
+      "kernel_printed_type": "FluidInterfaces.renormalization_determinant : FluidInterfaces.renormalizationMatrix.det = 14",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The exact integer determinant of J is 14.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.renormalization_is_quadratic_order_element",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem renormalization_is_quadratic_order_element :\n    renormalizationMatrix = quadraticOrderMatrix 4 1",
+      "kernel_printed_type": "FluidInterfaces.renormalization_is_quadratic_order_element :\n  FluidInterfaces.renormalizationMatrix = FluidInterfaces.quadraticOrderMatrix 4 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The displayed matrix J is the coefficient-pair matrix rho(4,1).",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.renormalization_power_determinant",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem renormalization_power_determinant (k : ℕ) :\n    Matrix.det (renormalizationMatrix ^ k) = 14 ^ k",
+      "kernel_printed_type": "FluidInterfaces.renormalization_power_determinant (k : ℕ) : (FluidInterfaces.renormalizationMatrix ^ k).det = 14 ^ k",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "For every natural k, det(J^k)=14^k; no topological degree is included.",
+          "whole_statement_formalized": false
+        },
+        {
+          "claim_id": "fluid-structures.004",
+          "claim_labels": [
+            "prop:fluid-covering"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "Only the arithmetic input det(J^k)=14^k. Neither the size of the lattice quotient, the covering degree, nor invariance of normalized Haar integration is proved by this Lean declaration.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.renormalization_quadratic_identity",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem renormalization_quadratic_identity :\n    renormalizationMatrix * renormalizationMatrix - 8 • renormalizationMatrix +\n      (14 : ℤ) • (1 : Matrix (Fin 2) (Fin 2) ℤ) = 0",
+      "kernel_printed_type": "FluidInterfaces.renormalization_quadratic_identity :\n  FluidInterfaces.renormalizationMatrix * FluidInterfaces.renormalizationMatrix -\n        8 • FluidInterfaces.renormalizationMatrix +\n      14 • 1 =\n    0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.003",
+          "claim_labels": [
+            "prop:fluid-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "The displayed matrix J satisfies J*J-8*J+14*I=0 over the integers.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.resolved_memory_identity",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem resolved_memory_identity (A : Module.End K X) (B : Y →ₗ[K] X)\n    (C : X →ₗ[K] Y) (D : Module.End K Y) (p : ℕ → X) (q : ℕ → Y)\n    (hp : ∀ n : ℕ, p (n + 1) = A (p n) + B (q n))\n    (hq : ∀ n : ℕ, q (n + 1) = D (q n) + C (p n)) (n : ℕ) :\n    p (n + 1) = A (p n) + B ((D ^ n) (q 0)) +\n      ∑ k ∈ Finset.range n, B ((D ^ (n - 1 - k)) (C (p k)))",
+      "kernel_printed_type": "FluidInterfaces.resolved_memory_identity.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3} [Field K]\n  [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (A : Module.End K X) (B : Y →ₗ[K] X) (C : X →ₗ[K] Y)\n  (D : Module.End K Y) (p : ℕ → X) (q : ℕ → Y) (hp : ∀ (n : ℕ), p (n + 1) = A (p n) + B (q n))\n  (hq : ∀ (n : ℕ), q (n + 1) = D (q n) + C (p n)) (n : ℕ) :\n  p (n + 1) = A (p n) + B ((D ^ n) (q 0)) + ∑ k ∈ Finset.range n, B ((D ^ (n - 1 - k)) (C (p k)))",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "quantum-fluid.003",
+          "claim_labels": [
+            "prop:fluid-discrete-memory"
+          ],
+          "claim_source": "extension/manuscript/chapters/quantum-fluid.tex",
+          "component": "The resulting exact discrete convolution in the retained recurrence. No continuous matrix exponential, continuous-time memory integral, or block-resolvent determinant identity is included.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.schur_elimination_iff",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem schur_elimination_iff\n    (A : X →ₗ[K] X) (B : Y →ₗ[K] X)\n    (C : X →ₗ[K] Y) (D : Y ≃ₗ[K] Y)\n    (x : X) (y : Y) (f : X) (g : Y) :\n    (A x + B y = f ∧ C x + D y = g) ↔\n      (schurComplement A B C D x = f - B (D.symm g) ∧\n        y = D.symm (g - C x))",
+      "kernel_printed_type": "FluidInterfaces.schur_elimination_iff.{u_1, u_2, u_3} {K : Type u_1} {X : Type u_2} {Y : Type u_3} [Field K]\n  [AddCommGroup X] [Module K X] [AddCommGroup Y] [Module K Y] (A : X →ₗ[K] X) (B : Y →ₗ[K] X) (C : X →ₗ[K] Y)\n  (D : Y ≃ₗ[K] Y) (x : X) (y : Y) (f : X) (g : Y) :\n  A x + B y = f ∧ C x + D y = g ↔ (FluidInterfaces.schurComplement A B C D) x = f - B (D.symm g) ∧ y = D.symm (g - C x)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.skew_transport_work",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem skew_transport_work (J : Matrix n n ℝ) (hJ : Jᵀ = -J)\n    (u : n → ℝ) : u ⬝ᵥ (J *ᵥ u) = 0",
+      "kernel_printed_type": "FluidInterfaces.skew_transport_work.{u_1} {n : Type u_1} [Fintype n] (J : Matrix n n ℝ) (hJ : Jᵀ = -J) (u : n → ℝ) :\n  u ⬝ᵥ J *ᵥ u = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "fluid-structures.012",
+          "claim_labels": [
+            "thm:fluid-finite-closure"
+          ],
+          "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+          "component": "A finite real skew-symmetric matrix has zero quadratic work; use J=-K(a) at the current state.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "FluidInterfaces.transpose_work",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem transpose_work (L : Matrix m n ℝ) (u : n → ℝ) (v : m → ℝ) :\n    u ⬝ᵥ (Lᵀ *ᵥ v) = (L *ᵥ u) ⬝ᵥ v",
+      "kernel_printed_type": "FluidInterfaces.transpose_work.{u_1, u_2} {n : Type u_1} {m : Type u_2} [Fintype n] [Fintype m] (L : Matrix m n ℝ)\n  (u : n → ℝ) (v : m → ℝ) : u ⬝ᵥ Lᵀ *ᵥ v = L *ᵥ u ⬝ᵥ v",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "FluidInterfaces.unforced_work_nonpositive",
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "type_signature_source": "theorem unforced_work_nonpositive\n    (J : Matrix n n ℝ) (hJ : Jᵀ = -J)\n    (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ) (hν : 0 ≤ ν)\n    (u : n → ℝ) :\n    u ⬝ᵥ (J *ᵥ u - ν • ((Dᵀ * D) *ᵥ u) - (Lᵀ * L) *ᵥ u) ≤ 0",
+      "kernel_printed_type": "FluidInterfaces.unforced_work_nonpositive.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {p : Type u_3} [Fintype n]\n  [Fintype m] [Fintype p] (J : Matrix n n ℝ) (hJ : Jᵀ = -J) (D : Matrix m n ℝ) (L : Matrix p n ℝ) (ν : ℝ) (hν : 0 ≤ ν)\n  (u : n → ℝ) : u ⬝ᵥ (J *ᵥ u - ν • (Dᵀ * D) *ᵥ u - (Lᵀ * L) *ᵥ u) ≤ 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/FluidInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ReductionContracts.discrete_closure_iff",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem discrete_closure_iff\n    (P : A → B) (F : A → A) (hP : Function.Surjective P) :\n    (∃ G : B → B, ∀ x, G (P x) = P (F x)) ↔\n      (∀ x y, P x = P y → P (F x) = P (F y))",
+      "kernel_printed_type": "ReductionContracts.discrete_closure_iff.{u_1, u_2} {A : Type u_1} {B : Type u_2} (P : A → B) (F : A → A)\n  (hP : Function.Surjective P) : (∃ G, ∀ (x : A), G (P x) = P (F x)) ↔ ∀ (x y : A), P x = P y → P (F x) = P (F y)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.001",
+          "claim_labels": [
+            "thm:reduction-fiber-factorization"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Specialization to a discrete state update",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.discrete_trajectory_preserved",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem discrete_trajectory_preserved\n    (P : A → B) (F : A → A) (G : B → B)\n    (hcomm : ∀ x, P (F x) = G (P x))\n    (u : ℕ → A) (v : ℕ → B)\n    (hu : ∀ n, u (n + 1) = F (u n))\n    (hv : ∀ n, v (n + 1) = G (v n))\n    (hzero : P (u 0) = v 0) : ∀ n, P (u n) = v n",
+      "kernel_printed_type": "ReductionContracts.discrete_trajectory_preserved.{u_1, u_2} {A : Type u_1} {B : Type u_2} (P : A → B) (F : A → A)\n  (G : B → B) (hcomm : ∀ (x : A), P (F x) = G (P x)) (u : ℕ → A) (v : ℕ → B) (hu : ∀ (n : ℕ), u (n + 1) = F (u n))\n  (hv : ∀ (n : ℕ), v (n + 1) = G (v n)) (hzero : P (u 0) = v 0) (n : ℕ) : P (u n) = v n",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.002",
+          "claim_labels": [
+            "prop:reduction-trajectory"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Exact intertwining at every natural-number step",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.factorization_iff_fiber_constant",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem factorization_iff_fiber_constant\n    (P : A → B) (Q : A → C) (hP : Function.Surjective P) :\n    (∃ G : B → C, ∀ x, G (P x) = Q x) ↔\n      (∀ x y, P x = P y → Q x = Q y)",
+      "kernel_printed_type": "ReductionContracts.factorization_iff_fiber_constant.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3}\n  (P : A → B) (Q : A → C) (hP : Function.Surjective P) :\n  (∃ G, ∀ (x : A), G (P x) = Q x) ↔ ∀ (x y : A), P x = P y → Q x = Q y",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.001",
+          "claim_labels": [
+            "thm:reduction-fiber-factorization"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Exact set-theoretic equivalence for a surjective observation map",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.fiber_diameter_le_twice_error",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem fiber_diameter_le_twice_error\n    (P : A → B) (Q : A → V) (G : B → V) (x y : A) (ε : ℝ)\n    (hxy : P x = P y)\n    (hx : ‖Q x - G (P x)‖ ≤ ε) (hy : ‖Q y - G (P y)‖ ≤ ε) :\n    ‖Q x - Q y‖ ≤ 2 * ε",
+      "kernel_printed_type": "ReductionContracts.fiber_diameter_le_twice_error.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {V : Type u_3}\n  [SeminormedAddCommGroup V] (P : A → B) (Q : A → V) (G : B → V) (x y : A) (ε : ℝ) (hxy : P x = P y)\n  (hx : ‖Q x - G (P x)‖ ≤ ε) (hy : ‖Q y - G (P y)‖ ≤ ε) : ‖Q x - Q y‖ ≤ 2 * ε",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.003",
+          "claim_labels": [
+            "prop:reduction-error-diameter"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Uniform epsilon error implies at most twice-epsilon pair separation",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.fiber_error_lower_bound",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem fiber_error_lower_bound\n    (P : A → B) (Q : A → V) (G : B → V) (x y : A)\n    (hxy : P x = P y) :\n    ‖Q x - Q y‖ ≤ ‖Q x - G (P x)‖ + ‖Q y - G (P y)‖",
+      "kernel_printed_type": "ReductionContracts.fiber_error_lower_bound.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {V : Type u_3}\n  [SeminormedAddCommGroup V] (P : A → B) (Q : A → V) (G : B → V) (x y : A) (hxy : P x = P y) :\n  ‖Q x - Q y‖ ≤ ‖Q x - G (P x)‖ + ‖Q y - G (P y)‖",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.003",
+          "claim_labels": [
+            "prop:reduction-error-diameter"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Triangle-inequality error lower bound in a seminormed additive group",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.mismatched_fiber_excludes_closure",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem mismatched_fiber_excludes_closure\n    (P : A → B) (Q : A → C) (x y : A)\n    (hxy : P x = P y) (hQ : Q x ≠ Q y) :\n    ¬ ∃ G : B → C, ∀ a, G (P a) = Q a",
+      "kernel_printed_type": "ReductionContracts.mismatched_fiber_excludes_closure.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3}\n  (P : A → B) (Q : A → C) (x y : A) (hxy : P x = P y) (hQ : Q x ≠ Q y) : ¬∃ G, ∀ (a : A), G (P a) = Q a",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.001",
+          "claim_labels": [
+            "thm:reduction-fiber-factorization"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Two indistinguishable inputs with different outputs exclude every deterministic closure",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.no_universal_minimum_rule",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem no_universal_minimum_rule :\n    ¬ ∀ p q : Polynomial ℚ, p ≠ 0 → q ≠ 0 → p + q ≠ 0 →\n      (p + q).trailingDegree = min p.trailingDegree q.trailingDegree",
+      "kernel_printed_type": "ReductionContracts.no_universal_minimum_rule :\n  ¬∀ (p q : Polynomial ℚ), p ≠ 0 → q ≠ 0 → p + q ≠ 0 → (p + q).trailingDegree = min p.trailingDegree q.trailingDegree",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "There is no universal exact minimum rule for signed polynomial addition",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.reduced_output_unique",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem reduced_output_unique\n    (P : A → B) (Q : A → C) (hP : Function.Surjective P)\n    (G H : B → C) (hG : ∀ x, G (P x) = Q x)\n    (hH : ∀ x, H (P x) = Q x) : G = H",
+      "kernel_printed_type": "ReductionContracts.reduced_output_unique.{u_1, u_2, u_3} {A : Type u_1} {B : Type u_2} {C : Type u_3} (P : A → B)\n  (Q : A → C) (hP : Function.Surjective P) (G H : B → C) (hG : ∀ (x : A), G (P x) = Q x)\n  (hH : ∀ (x : A), H (P x) = Q x) : G = H",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Quot.sound"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.001",
+          "claim_labels": [
+            "thm:reduction-fiber-factorization"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Uniqueness on the surjective observed state space",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.signedPartner_constant_coefficient",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem signedPartner_constant_coefficient (k : ℕ) :\n    (signedPartner k).coeff 0 = 0",
+      "kernel_printed_type": "ReductionContracts.signedPartner_constant_coefficient (k : ℕ) : (ReductionContracts.signedPartner k).coeff 0 = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Constant coefficient of the explicit rational polynomial",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.signedPartner_linear_coefficient",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem signedPartner_linear_coefficient (k : ℕ) :\n    (signedPartner k).coeff 1 = -1",
+      "kernel_printed_type": "ReductionContracts.signedPartner_linear_coefficient (k : ℕ) : (ReductionContracts.signedPartner k).coeff 1 = -1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Linear coefficient of the explicit rational polynomial",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.signedPartner_ne_zero",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem signedPartner_ne_zero (k : ℕ) : signedPartner k ≠ 0",
+      "kernel_printed_type": "ReductionContracts.signedPartner_ne_zero (k : ℕ) : ReductionContracts.signedPartner k ≠ 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "The second summand is nonzero",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.signedPartner_order",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem signedPartner_order (k : ℕ) : (signedPartner k).trailingDegree = 1",
+      "kernel_printed_type": "ReductionContracts.signedPartner_order (k : ℕ) : (ReductionContracts.signedPartner k).trailingDegree = 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "The second summand has order one",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.signed_cancellation_identity",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem signed_cancellation_identity (k : ℕ) :\n    (X : Polynomial ℚ) + signedPartner k = X ^ (k + 2)",
+      "kernel_printed_type": "ReductionContracts.signed_cancellation_identity (k : ℕ) :\n  Polynomial.X + ReductionContracts.signedPartner k = Polynomial.X ^ (k + 2)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "The sum is exactly the prescribed higher monomial",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.signed_cancellation_order",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem signed_cancellation_order (k : ℕ) :\n    ((X : Polynomial ℚ) + signedPartner k).trailingDegree = (k + 2 : ℕ)",
+      "kernel_printed_type": "ReductionContracts.signed_cancellation_order (k : ℕ) :\n  (Polynomial.X + ReductionContracts.signedPartner k).trailingDegree = ↑(k + 2)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "Its order is the arbitrary integer k+2",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.signed_cancellation_strict",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem signed_cancellation_strict (k : ℕ) :\n    min (X : Polynomial ℚ).trailingDegree (signedPartner k).trailingDegree <\n      ((X : Polynomial ℚ) + signedPartner k).trailingDegree",
+      "kernel_printed_type": "ReductionContracts.signed_cancellation_strict (k : ℕ) :\n  min Polynomial.X.trailingDegree (ReductionContracts.signedPartner k).trailingDegree <\n    (Polynomial.X + ReductionContracts.signedPartner k).trailingDegree",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "The residual order strictly exceeds the minimum summand order",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ReductionContracts.signed_cancellation_sum_ne_zero",
+      "source_file": "extension/lean/ReductionContracts.lean",
+      "source_sha256": "eda831773ba4a1427deb714be92a2b9475b172ac06cf6f51ce2b92d237a397e5",
+      "type_signature_source": "theorem signed_cancellation_sum_ne_zero (k : ℕ) :\n    (X : Polynomial ℚ) + signedPartner k ≠ 0",
+      "kernel_printed_type": "ReductionContracts.signed_cancellation_sum_ne_zero (k : ℕ) : Polynomial.X + ReductionContracts.signedPartner k ≠ 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/ReductionContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "reduction-contracts.004",
+          "claim_labels": [
+            "prop:reduction-signed-order"
+          ],
+          "claim_source": "extension/manuscript/chapters/reduction-contracts.tex",
+          "component": "The residual polynomial is nonzero",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchBridge.binary_noise_bound",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem binary_noise_bound (e₁ e₂ r₁ r₂ E : ℝ)\n    (hE : 0 ≤ E) (h₁ : |e₁| ≤ E) (h₂ : |e₂| ≤ E)\n    (hr₁ : r₁ = 0 ∨ r₁ = 1) (hr₂ : r₂ = 0 ∨ r₂ = 1) :\n    |e₁ * r₁ + e₂ * r₂| ≤ 2 * E",
+      "kernel_printed_type": "ResearchBridge.binary_noise_bound (e₁ e₂ r₁ r₂ E : ℝ) (hE : 0 ≤ E) (h₁ : |e₁| ≤ E) (h₂ : |e₂| ≤ E)\n  (hr₁ : r₁ = 0 ∨ r₁ = 1) (hr₂ : r₂ = 0 ∨ r₂ = 1) : |e₁ * r₁ + e₂ * r₂| ≤ 2 * E",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.complex_range_le_kernel",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem complex_range_le_kernel (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂)\n    (h : B.comp A = 0) : LinearMap.range A ≤ LinearMap.ker B",
+      "kernel_printed_type": "ResearchBridge.complex_range_le_kernel.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3}\n  {V₂ : Type u_4} [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁]\n  [Module K V₂] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) : LinearMap.range A ≤ LinearMap.ker B",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.complex_rank_bound",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem complex_rank_bound [FiniteDimensional K V₁]\n    (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B.comp A = 0) :\n    Module.finrank K (LinearMap.range A) + Module.finrank K (LinearMap.range B)\n      ≤ Module.finrank K V₁",
+      "kernel_printed_type": "ResearchBridge.complex_rank_bound.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3} {V₂ : Type u_4}\n  [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁] [Module K V₂]\n  [FiniteDimensional K V₁] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) :\n  Module.finrank K ↥(LinearMap.range A) + Module.finrank K ↥(LinearMap.range B) ≤ Module.finrank K V₁",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "complexes.011",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/complexes.tex",
+          "component": "The adjacent-rank inequality rank(A)+rank(B)<=dim(V1), assuming BA=0.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchBridge.cone_equal_norm_iff",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem cone_equal_norm_iff (u₁ u₂ v₁ v₂ : R) :\n    cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) = 0 ↔\n      u₁ ^ 2 + u₂ ^ 2 = v₁ ^ 2 + v₂ ^ 2",
+      "kernel_printed_type": "ResearchBridge.cone_equal_norm_iff.{u_1} {R : Type u_1} [CommRing R] (u₁ u₂ v₁ v₂ : R) :\n  ResearchBridge.cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) = 0 ↔ u₁ ^ 2 + u₂ ^ 2 = v₁ ^ 2 + v₂ ^ 2",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.cone_perturbation",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem cone_perturbation (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R) :\n    cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) =\n      cone x₁ x₂ y₁ y₂ +\n        t * (y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂) +\n        t ^ 2 * cone u₁ u₂ v₁ v₂",
+      "kernel_printed_type": "ResearchBridge.cone_perturbation.{u_1} {R : Type u_1} [CommRing R] (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R) :\n  ResearchBridge.cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) =\n    ResearchBridge.cone x₁ x₂ y₁ y₂ + t * (y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂) +\n      t ^ 2 * ResearchBridge.cone u₁ u₂ v₁ v₂",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.cone_split_identity",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem cone_split_identity (u₁ u₂ v₁ v₂ : R) :\n    cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) =\n      (u₁ ^ 2 + u₂ ^ 2) - (v₁ ^ 2 + v₂ ^ 2)",
+      "kernel_printed_type": "ResearchBridge.cone_split_identity.{u_1} {R : Type u_1} [CommRing R] (u₁ u₂ v₁ v₂ : R) :\n  ResearchBridge.cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) = u₁ ^ 2 + u₂ ^ 2 - (v₁ ^ 2 + v₂ ^ 2)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.cone_tangent_second_order",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem cone_tangent_second_order (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R)\n    (h₀ : cone x₁ x₂ y₁ y₂ = 0)\n    (h₁ : y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂ = 0) :\n    cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) =\n      t ^ 2 * cone u₁ u₂ v₁ v₂",
+      "kernel_printed_type": "ResearchBridge.cone_tangent_second_order.{u_1} {R : Type u_1} [CommRing R] (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R)\n  (h₀ : ResearchBridge.cone x₁ x₂ y₁ y₂ = 0) (h₁ : y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂ = 0) :\n  ResearchBridge.cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) = t ^ 2 * ResearchBridge.cone u₁ u₂ v₁ v₂",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.euler_rank_identity",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem euler_rank_identity (a b c r s : ℤ) :\n    (a - r) - (b - r - s) + (c - s) = a - b + c",
+      "kernel_printed_type": "ResearchBridge.euler_rank_identity (a b c r s : ℤ) : a - r - (b - r - s) + (c - s) = a - b + c",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "complexes.012",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/complexes.tex",
+          "component": "The integer identity (a-r)-(b-r-s)+(c-s)=a-b+c after dimension substitution.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchBridge.hidden_collision_relation",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hidden_collision_relation (x a b c d : ZMod q) :\n    hiddenLinear x a b = hiddenLinear x c d ↔\n      (a - c) + x * (b - d) = 0",
+      "kernel_printed_type": "ResearchBridge.hidden_collision_relation {q : ℕ} (x a b c d : ZMod q) :\n  ResearchBridge.hiddenLinear x a b = ResearchBridge.hiddenLinear x c d ↔ a - c + x * (b - d) = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hidden_kernel_relation",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hidden_kernel_relation (x a b : ZMod q) :\n    hiddenLinear x a b = 0 ↔ a = -(x * b)",
+      "kernel_printed_type": "ResearchBridge.hidden_kernel_relation {q : ℕ} (x a b : ZMod q) : ResearchBridge.hiddenLinear x a b = 0 ↔ a = -(x * b)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hodge_characteristic_factor",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hodge_characteristic_factor (x₁ x₂ y₁ y₂ t : ℝ)\n    (h : cone x₁ x₂ y₁ y₂ = 0) :\n    Matrix.det (t • (1 : Matrix (Fin 2) (Fin 2) ℝ) - hodgeMatrix x₁ x₂ y₁ y₂) =\n      (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2))",
+      "kernel_printed_type": "ResearchBridge.hodge_characteristic_factor (x₁ x₂ y₁ y₂ t : ℝ) (h : ResearchBridge.cone x₁ x₂ y₁ y₂ = 0) :\n  (t • 1 - ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂).det = (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2))",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hodge_characteristic_identity",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hodge_characteristic_identity (x₁ x₂ y₁ y₂ t : ℝ) :\n    Matrix.det (t • (1 : Matrix (Fin 2) (Fin 2) ℝ) - hodgeMatrix x₁ x₂ y₁ y₂) =\n      (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2)) -\n        (cone x₁ x₂ y₁ y₂) ^ 2",
+      "kernel_printed_type": "ResearchBridge.hodge_characteristic_identity (x₁ x₂ y₁ y₂ t : ℝ) :\n  (t • 1 - ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂).det =\n    (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2)) - ResearchBridge.cone x₁ x₂ y₁ y₂ ^ 2",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hodge_energy_nonnegative",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hodge_energy_nonnegative (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :\n    0 ≤ hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂",
+      "kernel_printed_type": "ResearchBridge.hodge_energy_nonnegative (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) : 0 ≤ ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hodge_energy_zero_iff",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hodge_energy_zero_iff (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :\n    hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂ = 0 ↔\n      x₁ * z₁ + x₂ * z₂ = 0 ∧ y₁ * z₁ + y₂ * z₂ = 0",
+      "kernel_printed_type": "ResearchBridge.hodge_energy_zero_iff (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :\n  ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂ = 0 ↔ x₁ * z₁ + x₂ * z₂ = 0 ∧ y₁ * z₁ + y₂ * z₂ = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hodge_family_arbitrarily_small_energy",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hodge_family_arbitrarily_small_energy (ε : ℝ) (hε : 0 < ε) :\n    ∃ t : ℝ, 0 < t ∧ cone t 0 0 1 = 0 ∧\n      hodgeEnergy t 0 0 1 1 0 < ε",
+      "kernel_printed_type": "ResearchBridge.hodge_family_arbitrarily_small_energy (ε : ℝ) (hε : 0 < ε) :\n  ∃ t, 0 < t ∧ ResearchBridge.cone t 0 0 1 = 0 ∧ ResearchBridge.hodgeEnergy t 0 0 1 1 0 < ε",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hodge_family_diagonal",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hodge_family_diagonal (t : ℝ) :\n    hodgeMatrix t 0 0 1 = !![t ^ 2, 0; 0, 1]",
+      "kernel_printed_type": "ResearchBridge.hodge_family_diagonal (t : ℝ) : ResearchBridge.hodgeMatrix t 0 0 1 = !![t ^ 2, 0; 0, 1]",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hodge_positive_semidefinite",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hodge_positive_semidefinite {m n p : Type*}\n    [Fintype m] [Fintype n] [Fintype p]\n    (A : Matrix n m ℝ) (B : Matrix p n ℝ) :\n    (A * Aᴴ + Bᴴ * B).PosSemidef",
+      "kernel_printed_type": "ResearchBridge.hodge_positive_semidefinite.{u_1, u_2, u_3} {m : Type u_1} {n : Type u_2} {p : Type u_3} [Fintype m]\n  [Fintype n] [Fintype p] (A : Matrix n m ℝ) (B : Matrix p n ℝ) : (A * Aᴴ + Bᴴ * B).PosSemidef",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.hodge_quadratic_identity",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem hodge_quadratic_identity (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :\n    ![z₁, z₂] ⬝ᵥ (hodgeMatrix x₁ x₂ y₁ y₂ *ᵥ ![z₁, z₂]) =\n      hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂",
+      "kernel_printed_type": "ResearchBridge.hodge_quadratic_identity (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :\n  ![z₁, z₂] ⬝ᵥ ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂ *ᵥ ![z₁, z₂] = ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.koszul_zero_composite",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem koszul_zero_composite (x y c : R) : x * (-y * c) + y * (x * c) = 0",
+      "kernel_printed_type": "ResearchBridge.koszul_zero_composite.{u_1} {R : Type u_1} [CommRing R] (x y c : R) : x * (-y * c) + y * (x * c) = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.middle_exact_iff_rank_sum",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem middle_exact_iff_rank_sum [FiniteDimensional K V₁]\n    (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B.comp A = 0) :\n    LinearMap.range A = LinearMap.ker B ↔\n      Module.finrank K (LinearMap.range A) + Module.finrank K (LinearMap.range B)\n        = Module.finrank K V₁",
+      "kernel_printed_type": "ResearchBridge.middle_exact_iff_rank_sum.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3}\n  {V₂ : Type u_4} [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁]\n  [Module K V₂] [FiniteDimensional K V₁] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) :\n  LinearMap.range A = LinearMap.ker B ↔\n    Module.finrank K ↥(LinearMap.range A) + Module.finrank K ↥(LinearMap.range B) = Module.finrank K V₁",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "complexes.011",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/complexes.tex",
+          "component": "Middle exactness iff equality in the adjacent-rank bound, assuming BA=0.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchBridge.noise_cancellation",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem noise_cancellation {R m n : Type*} [CommRing R]\n    [Fintype m] [Fintype n]\n    (A : Matrix m n R) (s : n → R) (e r : m → R) (μ : R) :\n    (((A *ᵥ s + e) ⬝ᵥ r) + μ) - (s ⬝ᵥ (Aᵀ *ᵥ r)) =\n      e ⬝ᵥ r + μ",
+      "kernel_printed_type": "ResearchBridge.noise_cancellation.{u_1, u_2, u_3} {R : Type u_1} {m : Type u_2} {n : Type u_3} [CommRing R] [Fintype m]\n  [Fintype n] (A : Matrix m n R) (s : n → R) (e r : m → R) (μ : R) : (A *ᵥ s + e) ⬝ᵥ r + μ - s ⬝ᵥ Aᵀ *ᵥ r = e ⬝ᵥ r + μ",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchBridge.shear_determinant_one",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem shear_determinant_one (n : ℤ) : Matrix.det (shear n) = 1",
+      "kernel_printed_type": "ResearchBridge.shear_determinant_one (n : ℤ) : (ResearchBridge.shear n).det = 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "cryptography.006",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/cryptography.tex",
+          "component": "The displayed integer shear has determinant one.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchBridge.shear_e2_image",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem shear_e2_image (n : ℤ) : shear n *ᵥ ![0, 1] = ![n, 1]",
+      "kernel_printed_type": "ResearchBridge.shear_e2_image (n : ℤ) : ResearchBridge.shear n *ᵥ ![0, 1] = ![n, 1]",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "cryptography.006",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/cryptography.tex",
+          "component": "The shear sends the second basis vector to (N,1).",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchBridge.shear_e2_norm_squared",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem shear_e2_norm_squared (n : ℤ) :\n    ((shear n *ᵥ ![0, 1]) 0 : ℝ) ^ 2 +\n      ((shear n *ᵥ ![0, 1]) 1 : ℝ) ^ 2 = (n : ℝ) ^ 2 + 1",
+      "kernel_printed_type": "ResearchBridge.shear_e2_norm_squared (n : ℤ) :\n  ↑((ResearchBridge.shear n *ᵥ ![0, 1]) 0) ^ 2 + ↑((ResearchBridge.shear n *ᵥ ![0, 1]) 1) ^ 2 = ↑n ^ 2 + 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "cryptography.006",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/cryptography.tex",
+          "component": "The real squared-coordinate length of that image is N^2+1; the square-root and unbounded-operator-norm conclusion are not formalized here.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchBridge.shear_inverse",
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "type_signature_source": "theorem shear_inverse (n : ℤ) : shear n * shear (-n) = 1",
+      "kernel_printed_type": "ResearchBridge.shear_inverse (n : ℤ) : ResearchBridge.shear n * ResearchBridge.shear (-n) = 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/BridgeTheorems.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "cryptography.006",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/cryptography.tex",
+          "component": "The displayed shear multiplied by the opposite shear is the identity.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchQuantum.binarySign_add",
+      "source_file": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "type_signature_source": "theorem binarySign_add (a b : ZMod 2) :\n    binarySign (R",
+      "kernel_printed_type": "ResearchQuantum.binarySign_add.{u_1} {R : Type u_1} [CommRing R] (a b : ZMod 2) :\n  ResearchQuantum.binarySign (a + b) = ResearchQuantum.binarySign a * ResearchQuantum.binarySign b",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/QuantumInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchQuantum.boundary_phase_shift_commute",
+      "source_file": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "type_signature_source": "theorem boundary_phase_shift_commute\n    (d1 : C1 →ₗ[ZMod 2] C0) (d2 : C2 →ₗ[ZMod 2] C1)\n    (hcomplex : d1.comp d2 = 0) (ell : C0 →ₗ[ZMod 2] ZMod 2)\n    (f : C2) (psi : C1 → R) :\n    bitShift (d2 f) (parityPhase (ell.comp d1) psi) =\n      parityPhase (ell.comp d1) (bitShift (d2 f) psi)",
+      "kernel_printed_type": "ResearchQuantum.boundary_phase_shift_commute.{u_1, u_2, u_3, u_4} {R : Type u_1} {C0 : Type u_2} {C1 : Type u_3}\n  {C2 : Type u_4} [CommRing R] [AddCommGroup C0] [AddCommGroup C1] [AddCommGroup C2] [Module (ZMod 2) C0]\n  [Module (ZMod 2) C1] [Module (ZMod 2) C2] (d1 : C1 →ₗ[ZMod 2] C0) (d2 : C2 →ₗ[ZMod 2] C1) (hcomplex : d1 ∘ₗ d2 = 0)\n  (ell : C0 →ₗ[ZMod 2] ZMod 2) (f : C2) (psi : C1 → R) :\n  ResearchQuantum.bitShift (d2 f) (ResearchQuantum.parityPhase (ell ∘ₗ d1) psi) =\n    ResearchQuantum.parityPhase (ell ∘ₗ d1) (ResearchQuantum.bitShift (d2 f) psi)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/QuantumInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchQuantum.euler_surface_rank_substitution",
+      "source_file": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "type_signature_source": "theorem euler_surface_rank_substitution (V E F g : ℤ)\n    (hEuler : V - E + F = 2 - 2 * g) :\n    E - (V - 1) - (F - 1) = 2 * g",
+      "kernel_printed_type": "ResearchQuantum.euler_surface_rank_substitution (V E F g : ℤ) (hEuler : V - E + F = 2 - 2 * g) :\n  E - (V - 1) - (F - 1) = 2 * g",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/QuantumInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "quantum-surfaces.004",
+          "claim_labels": [],
+          "claim_source": "extension/manuscript/chapters/quantum-surfaces.tex",
+          "component": "The integer substitution E-(V-1)-(F-1)=2g, assuming V-E+F=2-2g; the surface and stabilizer rank hypotheses are not proved by this declaration.",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "ResearchQuantum.pauliX_square",
+      "source_file": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "type_signature_source": "theorem pauliX_square : pauliX * pauliX = 1",
+      "kernel_printed_type": "ResearchQuantum.pauliX_square : ResearchQuantum.pauliX * ResearchQuantum.pauliX = 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/QuantumInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchQuantum.pauliZ_square",
+      "source_file": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "type_signature_source": "theorem pauliZ_square : pauliZ * pauliZ = 1",
+      "kernel_printed_type": "ResearchQuantum.pauliZ_square : ResearchQuantum.pauliZ * ResearchQuantum.pauliZ = 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/QuantumInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchQuantum.pauli_anticommutation",
+      "source_file": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "type_signature_source": "theorem pauli_anticommutation : pauliX * pauliZ = -(pauliZ * pauliX)",
+      "kernel_printed_type": "ResearchQuantum.pauli_anticommutation :\n  ResearchQuantum.pauliX * ResearchQuantum.pauliZ = -(ResearchQuantum.pauliZ * ResearchQuantum.pauliX)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/QuantumInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "ResearchQuantum.shift_phase_commutation",
+      "source_file": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "type_signature_source": "theorem shift_phase_commutation (a : C) (ell : C →ₗ[ZMod 2] ZMod 2)\n    (psi : C → R) :\n    bitShift a (parityPhase ell psi) =\n      fun v => binarySign (ell a) * parityPhase ell (bitShift a psi) v",
+      "kernel_printed_type": "ResearchQuantum.shift_phase_commutation.{u_1, u_2} {R : Type u_1} {C : Type u_2} [CommRing R] [AddCommGroup C]\n  [Module (ZMod 2) C] (a : C) (ell : C →ₗ[ZMod 2] ZMod 2) (psi : C → R) :\n  ResearchQuantum.bitShift a (ResearchQuantum.parityPhase ell psi) = fun v =>\n    ResearchQuantum.binarySign (ell a) * ResearchQuantum.parityPhase ell (ResearchQuantum.bitShift a psi) v",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/QuantumInterfaces.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "not_mapped",
+      "manuscript_components": []
+    },
+    {
+      "name": "TransportContracts.closed_path_residual",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem closed_path_residual (A : ℕ → Module.End R V) (x : ℕ → V)\n    (n : ℕ) (hclosed : x n = x 0) :\n    transportedResidual A x n = x 0 - holonomy A n (x 0)",
+      "kernel_printed_type": "TransportContracts.closed_path_residual.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]\n  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0) :\n  TransportContracts.transportedResidual A x n = x 0 - (TransportContracts.holonomy A n) (x 0)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.001",
+          "claim_labels": [
+            "thm:typed-transport-telescope"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Closed-path endpoint residual",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.expanding_scalar_damping",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem expanding_scalar_damping (eta : ℝ) (heta : 0 < eta) :\n    1 < (1 - eta) + eta * 2",
+      "kernel_printed_type": "TransportContracts.expanding_scalar_damping (eta : ℝ) (heta : 0 < eta) : 1 < 1 - eta + eta * 2",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.006",
+          "claim_labels": [
+            "prop:transport-damping-obstruction"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "The scalar multiplier is greater than one for positive damping",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.fixed_vector_closed_path_zero",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem fixed_vector_closed_path_zero (A : ℕ → Module.End R V) (x : ℕ → V)\n    (n : ℕ) (hclosed : x n = x 0) (hfixed : holonomy A n (x 0) = x 0) :\n    transportedResidual A x n = 0",
+      "kernel_printed_type": "TransportContracts.fixed_vector_closed_path_zero.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]\n  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0)\n  (hfixed : (TransportContracts.holonomy A n) (x 0) = x 0) : TransportContracts.transportedResidual A x n = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.001",
+          "claim_labels": [
+            "thm:typed-transport-telescope"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Fixing the initial vector suffices without full flatness",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.flat_closed_path_zero",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem flat_closed_path_zero (A : ℕ → Module.End R V) (x : ℕ → V)\n    (n : ℕ) (hclosed : x n = x 0) (hflat : holonomy A n = 1) :\n    transportedResidual A x n = 0",
+      "kernel_printed_type": "TransportContracts.flat_closed_path_zero.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]\n  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) (hclosed : x n = x 0)\n  (hflat : TransportContracts.holonomy A n = 1) : TransportContracts.transportedResidual A x n = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.001",
+          "claim_labels": [
+            "thm:typed-transport-telescope"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Identity holonomy makes the closed residual zero",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.nonnormal_shear_gain_squared",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem nonnormal_shear_gain_squared (M : ℝ) :\n    ((nonnormalShear M *ᵥ ![0, 1]) 0) ^ 2 +\n      ((nonnormalShear M *ᵥ ![0, 1]) 1) ^ 2 = M ^ 2",
+      "kernel_printed_type": "TransportContracts.nonnormal_shear_gain_squared (M : ℝ) :\n  (TransportContracts.nonnormalShear M).mulVec ![0, 1] 0 ^ 2 +\n      (TransportContracts.nonnormalShear M).mulVec ![0, 1] 1 ^ 2 =\n    M ^ 2",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.012",
+          "claim_labels": [
+            "prop:nonnormal-jvp"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Exact coordinate squared norm of that image is M squared",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.nonnormal_shear_not_normal",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem nonnormal_shear_not_normal (M : ℝ) (hM : M ≠ 0) :\n    (nonnormalShear M)ᵀ * nonnormalShear M ≠\n      nonnormalShear M * (nonnormalShear M)ᵀ",
+      "kernel_printed_type": "TransportContracts.nonnormal_shear_not_normal (M : ℝ) (hM : M ≠ 0) :\n  (TransportContracts.nonnormalShear M).transpose * TransportContracts.nonnormalShear M ≠\n    TransportContracts.nonnormalShear M * (TransportContracts.nonnormalShear M).transpose",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.012",
+          "claim_labels": [
+            "prop:nonnormal-jvp"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "For nonzero M, the matrix does not commute with its transpose",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.nonnormal_shear_second_jvp_zero",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem nonnormal_shear_second_jvp_zero (M : ℝ) (v : Fin 2 → ℝ) :\n    nonnormalShear M *ᵥ (nonnormalShear M *ᵥ v) = 0",
+      "kernel_printed_type": "TransportContracts.nonnormal_shear_second_jvp_zero (M : ℝ) (v : Fin 2 → ℝ) :\n  (TransportContracts.nonnormalShear M).mulVec ((TransportContracts.nonnormalShear M).mulVec v) = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.012",
+          "claim_labels": [
+            "prop:nonnormal-jvp"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "A second Jacobian-vector product is zero on every input",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.nonnormal_shear_square_zero",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem nonnormal_shear_square_zero (M : ℝ) :\n    nonnormalShear M * nonnormalShear M = 0",
+      "kernel_printed_type": "TransportContracts.nonnormal_shear_square_zero (M : ℝ) :\n  TransportContracts.nonnormalShear M * TransportContracts.nonnormalShear M = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.012",
+          "claim_labels": [
+            "prop:nonnormal-jvp"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "The explicit real matrix [[0,M],[0,0]] squares to zero",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.nonnormal_shear_strict_gain",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem nonnormal_shear_strict_gain (M : ℝ) (hM : 1 < M) :\n    1 < ((nonnormalShear M *ᵥ ![0, 1]) 0) ^ 2 +\n      ((nonnormalShear M *ᵥ ![0, 1]) 1) ^ 2",
+      "kernel_printed_type": "TransportContracts.nonnormal_shear_strict_gain (M : ℝ) (hM : 1 < M) :\n  1 <\n    (TransportContracts.nonnormalShear M).mulVec ![0, 1] 0 ^ 2 +\n      (TransportContracts.nonnormalShear M).mulVec ![0, 1] 1 ^ 2",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.012",
+          "claim_labels": [
+            "prop:nonnormal-jvp"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "The one-step squared gain exceeds one when M>1",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.nonnormal_shear_unit_image",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem nonnormal_shear_unit_image (M : ℝ) :\n    nonnormalShear M *ᵥ ![0, 1] = ![M, 0]",
+      "kernel_printed_type": "TransportContracts.nonnormal_shear_unit_image (M : ℝ) : (TransportContracts.nonnormalShear M).mulVec ![0, 1] = ![M, 0]",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.012",
+          "claim_labels": [
+            "prop:nonnormal-jvp"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Its image on the explicit Euclidean unit vector (0,1) is (M,0)",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.positive_damping_bound_not_contracting",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem positive_damping_bound_not_contracting (L eta : ℝ)\n    (hL : 1 ≤ L) (heta : 0 ≤ eta) :\n    1 ≤ (1 - eta) + eta * L",
+      "kernel_printed_type": "TransportContracts.positive_damping_bound_not_contracting (L eta : ℝ) (hL : 1 ≤ L) (heta : 0 ≤ eta) :\n  1 ≤ 1 - eta + eta * L",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.006",
+          "claim_labels": [
+            "prop:transport-damping-obstruction"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "The displayed upper bound is at least one for L≥1 and eta≥0",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.scalar_counterexample_flat",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem scalar_counterexample_flat : (1 / 2 : ℚ) * 2 = 1",
+      "kernel_printed_type": "TransportContracts.scalar_counterexample_flat : 1 / 2 * 2 = 1",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.002",
+          "claim_labels": [
+            "prop:transport-prefix-counterexample"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "The counterexample has identity holonomy",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.scalar_prefix_counterexample",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem scalar_prefix_counterexample :\n    (2 : ℚ) * (1 - 2 * 0) + (2 * (1 / 2)) * (0 - (1 / 2) * 1) = 3 / 2",
+      "kernel_printed_type": "TransportContracts.scalar_prefix_counterexample : 2 * (1 - 2 * 0) + 2 * (1 / 2) * (0 - 1 / 2 * 1) = 3 / 2",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.002",
+          "claim_labels": [
+            "prop:transport-prefix-counterexample"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "The incorrect prefix sum is exactly 3/2",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.scalar_suffix_correction",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem scalar_suffix_correction :\n    (1 / 2 : ℚ) * (1 - 2 * 0) + (0 - (1 / 2) * 1) = 0",
+      "kernel_printed_type": "TransportContracts.scalar_suffix_correction : 1 / 2 * (1 - 2 * 0) + (0 - 1 / 2 * 1) = 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.002",
+          "claim_labels": [
+            "prop:transport-prefix-counterexample"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Correct suffix transport gives zero for the same data",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.suffix_transport_telescope",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem suffix_transport_telescope (A : ℕ → Module.End R V) (x : ℕ → V)\n    (n : ℕ) : transportedResidual A x n = x n - holonomy A n (x 0)",
+      "kernel_printed_type": "TransportContracts.suffix_transport_telescope.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]\n  [Module R V] (A : ℕ → Module.End R V) (x : ℕ → V) (n : ℕ) :\n  TransportContracts.transportedResidual A x n = x n - (TransportContracts.holonomy A n) (x 0)",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.001",
+          "claim_labels": [
+            "thm:typed-transport-telescope"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Arbitrary finite path with all arrows acting on the same module",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.trace_preserving_composite_nonzero",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem trace_preserving_composite_nonzero\n    {V : Type*} [AddCommGroup V] [Module ℝ V]\n    (trace : V →ₗ[ℝ] ℝ) (A B : Module.End ℝ V)\n    (hA : ∀ x, trace (A x) = trace x)\n    (hB : ∀ x, trace (B x) = trace x)\n    (rho : V) (hnormalized : trace rho = 1) : B * A ≠ 0",
+      "kernel_printed_type": "TransportContracts.trace_preserving_composite_nonzero.{u_1} {V : Type u_1} [AddCommGroup V] [Module ℝ V]\n  (trace : V →ₗ[ℝ] ℝ) (A B : Module.End ℝ V) (hA : ∀ (x : V), trace (A x) = trace x)\n  (hB : ∀ (x : V), trace (B x) = trace x) (rho : V) (hnormalized : trace rho = 1) : B * A ≠ 0",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.008",
+          "claim_labels": [
+            "prop:transport-trace-zero-obstruction"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Two real linear trace-preserving maps cannot have zero composite if a trace-one vector exists",
+          "whole_statement_formalized": false
+        }
+      ]
+    },
+    {
+      "name": "TransportContracts.two_arrow_transport",
+      "source_file": "extension/lean/TransportContracts.lean",
+      "source_sha256": "cea50eb7feebc382e864bc0ca6696c406dd0f2baa56216d5258fd0575bd3242e",
+      "type_signature_source": "theorem two_arrow_transport (A B : Module.End R V) (x y z : V) :\n    B (y - A x) + (z - B y) = z - (B * A) x",
+      "kernel_printed_type": "TransportContracts.two_arrow_transport.{u_1, u_2} {R : Type u_1} {V : Type u_2} [Semiring R] [AddCommGroup V]\n  [Module R V] (A B : Module.End R V) (x y z : V) : B (y - A x) + (z - B y) = z - (B * A) x",
+      "implicit_section_context_for_mapping": "",
+      "verification_manifest": "extension/lean/final-verification/verification.json",
+      "verification_log": "extension/lean/final-verification/TransportContracts.log",
+      "reported_axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "type_evidence": "kernel_printed_type",
+      "mapping_status": "partial_components_only",
+      "manuscript_components": [
+        {
+          "claim_id": "toric-transport-audit.001",
+          "claim_labels": [
+            "thm:typed-transport-telescope"
+          ],
+          "claim_source": "extension/manuscript/chapters/toric-transport-audit.tex",
+          "component": "Two-arrow noncommutative telescope",
+          "whole_statement_formalized": false
+        }
+      ]
+    }
+  ],
+  "type_reading_note": "Prefer kernel_printed_type when present: it includes elaborated implicit parameters and typeclass hypotheses. Otherwise the unchanged source signature and recorded section context are provided, with the exact source hash. Local definitions in the same module remain part of its interpretation.",
+  "excluded_claims": [
+    "Global ODE continuation from a finite energy derivative alone",
+    "Continuous memory from a discrete recurrence theorem",
+    "Covering-space degree or Haar averaging from a matrix determinant alone",
+    "Analytic Volterra convergence from zero block composition alone",
+    "Weighted POD/SVD optimality from a fixed Euclidean projector lemma alone",
+    "Any fresh verification of the upstream continuum Navier--Stokes release"
+  ]
+}

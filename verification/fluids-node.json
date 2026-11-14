@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-14T00:24:01.534Z",
+  "node_version": "v24.22.1",
+  "independent_reference": "Python symbolic expressions, dense complex128 matrices, and exact integer arithmetic",
+  "circuit_cases": 16,
+  "feature_gradient_cases": 64,
+  "complete_fibre_points_checked": 8865,
+  "finite_difference_momentum_residuals": [
+    0.0000030268311917436286,
+    7.567098417315954e-7,
+    1.8918498517761506e-7
+  ],
+  "maximum_errors": {
+    "taylor_green_reference": 2.220446049250313e-16,
+    "fibre_cover_residual": 7.531752999057062e-13,
+    "character_pullback_residual": 1.0087010091869239e-13,
+    "complex_amplitude_reference": 2.220446049250313e-16,
+    "probability_reference": 5.551115123125783e-16,
+    "pauli_feature_reference": 4.440892098500626e-16,
+    "circuit_norm": 3.3306690738754696e-16,
+    "diffusivity_reference": 5.551115123125783e-17,
+    "parameter_shift_reference": 2.220446049250313e-16,
+    "nonlinear_chain_reference": 6.938893903907228e-17,
+    "heat_probability_reference": 3.469446951953614e-18,
+    "heat_entropy_reference": 4.440892098500626e-15,
+    "heat_contrast_reference": 3.469446951953614e-18,
+    "heat_mass": 8.881784197001252e-16,
+    "heat_fourier_eigenmode": 1.734723475976807e-18,
+    "scaling_exponent": 1.7763568394002505e-15,
+    "scaling_energy_product": 4.218847493575595e-15
+  },
+  "checks": [
+    "independent Python reference comparison",
+    "manufactured PDE residual second-order convergence",
+    "exact BigInt determinant powers",
+    "complete toral fibres and character pullback",
+    "actual complex circuit and chain-rule gradient",
+    "heat positivity, normalization, entropy, contrast",
+    "Fourier eigenmode",
+    "periodic endpoint obstruction to strict mixing",
+    "scale-energy product",
+    "URL state and bounds"
+  ],
+  "hashes": {
+    "core": "7ed819affd8af6c71e5fd2078d2b473fbfeea61604f41a56492ac930f90ec931",
+    "reference": "00860f03dd04cad4ab54121ecb0286c3718222808dc5f07bbae7f2c9a5a7c750",
+    "verification_script": "b81c3fa7d18727cae76e0f27c4cf30f2b1b1e475ab0676958f1963da0004021e"
+  },
+  "scope": "Finite mathematical and numerical interfaces; not verification of the upstream continuum singularity proof or quantum advantage."
+}

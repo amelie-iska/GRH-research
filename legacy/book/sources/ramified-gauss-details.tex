@@ -1,0 +1,892 @@
+% Generated shared reviewed material.
+% Canonical extended proofs for ramified-gauss-core.tex.
+% DR2109.07463v3 PDF df888f8527b3647a3428d6677a3e3070aab7439f79f737f3e894218fb64cfef0.
+% de Faveri2610.04045v1 PDF 97720b3cacccbedb9c2014520ad4d128ae23afd0a781bdeff27dab4e86b7c726.
+% Full primary bodies and private reading caches are excluded from public closure.
+\section{Proofs of the ramified transform and full-coefficient prefix bound}
+\label{rg:details}
+The external theta input is the unconditional Section~5 and Appendix~A
+of \href{https://arxiv.org/abs/2109.07463v3}{Dunn--Radziwi\l\l,
+\emph{Bias in cubic Gauss sums: Patterson's conjecture},
+arXiv:2109.07463v3, 14 May 2024}.
+Its GRH-conditional prime theorems are not used.
+The matrix input is the already admitted physical ideal family in
+\href{https://arxiv.org/abs/2610.04045v1}{de Faveri,
+\emph{Optimal large sieve for fixed order characters},
+arXiv:2610.04045v1, Theorem~1.1 and Example~2.2}, at order three.
+The theta modularity and deep cubic norm remain external theorems.
+The constructions and estimates below specify how they apply to the
+actual finite-character family.
+
+\subsection{Fixed residue data, angular order and raw evaluations}
+\label{rg:finite-family-proof}
+The full varying-column phase list, after the arithmetic
+\(\mu A_U\) opening, consists of one \(\vartheta\) or its conjugate,
+the cubic Gauss root, the original finite-order \(\nu\), finite
+source/ray factors, the mod-\(4\) Fourier factors of \(\Gamma\),
+the actual primitive \(S\)-type factors, and residue symbols at the
+fixed numerators \(u_0,\gamma_S,\mathfrak e,\mathfrak w\).
+The set \(N\mathfrak w<64\), the \(S\)-types and the \(\mathfrak e\)
+set are fixed finite sets. The growing \(\mathfrak k\) numerator
+belongs to the cubic frequency instead of this list.
+
+There is a common fixed residue modulus for this list.
+A finite-order Hecke character has infinity type zero and factors
+through its actual conductor. The source group is explicitly a ray
+quotient: Section~2.3.2 of de Faveri defines
+\(\mathcal C=H_{\mathfrak c}\otimes\mathbb Z/6\mathbb Z\)
+for one sufficiently deep \(S\)-supported ray modulus \(\mathfrak c\).
+The chosen primary generators realize these ray characters as finite
+residue characters. The \(\Gamma\) factors are characters of
+\((\mathcal O/(4))^\times\).
+
+The local sixth-power tests also have a fixed finite modulus.
+For a prime \(\mathfrak p\), Hensel's criterion at \(1\) gives
+\(1+\mathfrak p^e\subset(K_{\mathfrak p}^\times)^6\)
+when \(e>2v_{\mathfrak p}(6)\).
+One may use \(e_{(2)}=3\) and \(e_{(\lambda)}=5\).
+These are moduli for testing local classes, not replacements for
+primitive character evaluation moduli.
+For a fixed nonzero integral numerator \(\zeta\), its
+\(n\)-th residue function, \(n\mid6\), is a finite Kummer character
+for \(K(\zeta^{1/n})/K\).
+A safe sextic conductor bound is supplied by the polynomial
+discriminant ideal \((6)^6(\zeta)^5\).
+A field/order discriminant divides this separable polynomial
+discriminant, including when a proper factor supplies the field.
+A fractional numerator can be cleared by a fixed sixth power,
+retaining its original numerator and denominator exclusions.
+This uses finite one-dimensional Kummer characters, without a
+general Artin-holomorphy hypothesis.
+
+A joint finite \(S\)-type or primitive-value selector is not assumed
+multiplicative. If \(\mathcal H\) is its fixed finite residue group,
+write its actual function as
+\begin{equation}\label{rg:joint-selector}
+ \begin{aligned}
+ f(x,y)&=\sum_{\chi,\psi\in\widehat{\mathcal H}}
+                           b_{\chi,\psi}\chi(x)\psi(y),\\
+ b_{\chi,\psi}
+   &=|\mathcal H|^{-2}\sum_{x,y\in\mathcal H}
+                   f(x,y)\overline{\chi(x)\psi(y)},\\
+ \sum_{\chi,\psi}|b_{\chi,\psi}|
+   &\le|\mathcal H|\,\|f\|_\infty .
+ \end{aligned}
+\end{equation}
+Normalized Parseval and Cauchy prove the last line.
+This expansion precedes freezing a primitive type or separating
+column factors. Forbidden primitive \(\mathfrak e/\mathfrak w\)
+values are zero in \(f\); individual Fourier terms can be nonzero
+there, and only their full sum reconstructs the zero.
+No term is individually renamed an original nonzero row.
+
+Thus one may use a common fixed raw modulus \(F_{\rm raw}\) and
+functions
+\begin{equation}\label{rg:raw-character}
+ \kappa_{\rm raw}(\mathfrak a)
+ =\kappa_{\rm prim}(\alpha_{\mathfrak a})
+                         \mathbf1_{(\mathfrak a,F_{\rm raw})=1}.
+\end{equation}
+They are imprimitive residue characters on that modulus.
+All stipulated prime zeros survive a primitive conductor drop.
+
+The Jacobi function \(\rho_J=\mu\vartheta\) is not one of these
+finite characters. Its \(\mu\) has already entered the arithmetic
+coefficient \(B_U\), and its unique remaining angular factor is
+\(\vartheta\), with order \(+1\) or \(-1\) in the two conjugate
+orientations. Common or prefix Jacobi factors stay in their actual
+outer coefficients when those variables are frozen.
+An arbitrary bounded multiplicative function, a growing opposite
+column, a M\"obius coefficient or the nonperiodic density
+\(\prod_{\mathfrak p\mid\mathfrak a}(1-(N\mathfrak p)^{-1})\)
+is not made into a member of this fixed family. That density does
+not occur in \(\mathcal P_X\).
+
+\subsection{Known integral cusps and an explicit absolute coefficient norm}
+\label{rg:cusp-norm-proof}
+Let
+\(\Gamma=\mathrm{SL}_2(\mathcal O)\),
+\(\Gamma_1(3)=\ker(\Gamma\to\mathrm{SL}_2(\mathcal O/(3)))\)
+and
+\(\Gamma_2=\mathrm{SL}_2(\mathbb Z)\Gamma_1(3)\).
+The source theta function is a weight-zero function on hyperbolic
+three-space with
+\(\theta(\delta w)=\chi(\delta)\theta(w)\) for
+\(\delta\in\Gamma_2\).
+The multiplier \(\chi\) is the source Kubota character.
+The quotient \(\Gamma_2\backslash\Gamma\) has \(27\) cosets.
+One can see the finite count from
+\(\mathcal O/(3)\simeq\mathbb F_3[\varepsilon]/(\varepsilon^2)\):
+the reduction kernel in \(\mathrm{SL}_2\) has
+\(3^3\) elements, and \(\mathrm{SL}_2(\mathbb F_3)\) has \(24\).
+
+Fix the published integral representatives \(\gamma_j\) and put
+\(F_j(w)=\theta(\gamma_jw)\).
+For the exact chosen function define its actual Fourier coefficient
+\(a_j(\mu)\) by
+\begin{equation}\label{rg:cusp-expansion}
+ F_j(z,v)=\sigma_jv^{2/3}
+  +\sum_{\mu\ne0}a_j(\mu)vK_{1/3}(4\pi|\mu|v)
+                                        e(\operatorname{Tr}(\mu z)),
+ \qquad e(x)=e^{2\pi ix}.
+\end{equation}
+For those representatives
+\(\sigma_j=3^{5/2}/2\) for \(j\le9\) and zero for \(j\ge10\).
+The support lies in \(\lambda^{-4}\mathcal O\).
+The symbol \(a_j\) always means this actual coefficient;
+a source table using \(d_j(\mu)\), \(d_j(-\mu)\) or a conjugated
+function is converted before using an exact phase formula.
+
+The source formulas (5.7), (5.13), (5.14) and Appendix~A express
+these coefficients through \(\tau,\tau_1,\tau_2\), unit rotations,
+fixed unit factors and additive phases.
+The first nine families have the \(\tau\) absolute norm and the
+other eighteen have the \(\tau_1,\tau_2\) norms.
+Rotations, conjugation and index reversal preserve absolute norm.
+
+\begin{proposition}[Known-cusp absolute norm]\label{rg:cusp-norm}
+For \(1<\sigma<13/12\), every one of these actual cusp families satisfies
+\begin{equation}\label{rg:cusp-norm-bound}
+ \mathcal A_j(\sigma):=
+   \sum_{\mu\ne0}\frac{|a_j(\mu)|}{(N\mu)^\sigma}
+ \le3^8\zeta_K^{(\lambda)}(\sigma)
+                      \zeta_K^{(\lambda)}(3\sigma-\tfrac12).
+\end{equation}
+The right side is independent of a moving good level or a translation.
+Here \(\zeta_K^{(\lambda)}\) omits the prime above \(3\).
+\end{proposition}
+\begin{proof}
+In the \(\tau\) formula write \(c,d\equiv1\pmod3\), with \(c\)
+squarefree and \(d\) arbitrary, possibly sharing primes with \(c\).
+For the first family
+\(\mu=\pm\epsilon\lambda^{3n-4}cd^3\), \(n\ge1\),
+there are at most six sign/unit branches and
+\[
+ |\tau(\mu)|\le3^{n/2+2}\sqrt{Nd}.
+\]
+For the second family
+\(\mu=\pm\lambda^{3n-3}cd^3\), \(n\ge0\),
+there are at most two branches and
+\(|\tau(\mu)|\le3^{n/2+5/2}\sqrt{Nd}\).
+These follow from the literal unnormalized primitive Gauss magnitude
+\(|g(a,c)|=\sqrt{Nc}\) and the source factor \(|d/c|\);
+the fixed Gauss numerators are units modulo good \(c\).
+Retain the separate \(c\) and cube variables. A generic
+\((N\mu)^{1/6}\) coefficient bound would lose convergence near \(1\).
+
+Put \(z=3^{1/2-3\sigma}\) and
+\(Z_{\rm SF}(\sigma)=\sum_{c\ {\rm primary,SF}}(Nc)^{-\sigma}\),
+with the prime \(\lambda\) excluded. Then
+\begin{equation}\label{rg:tau-geometric}
+ \begin{split}
+ \mathcal A_\tau(\sigma)\le
+ \left\{\frac{6\,3^{2+4\sigma}z+
+                         2\,3^{5/2+3\sigma}}{1-z}\right\}
+ Z_{\rm SF}(\sigma)\zeta_K^{(\lambda)}(3\sigma-\tfrac12).
+ \end{split}
+\end{equation}
+The \(\tau_1,\tau_2\) families each have three unit branches at
+\(\lambda^{-4}cd^3\), with magnitude at most \(9\sqrt{Nd}\);
+their possible opposite signs do not change the norm. Consequently
+\begin{equation}\label{rg:tau12-geometric}
+ \mathcal A_{\tau_i}(\sigma)
+ \le27\,3^{4\sigma} Z_{\rm SF}(\sigma)
+                    \zeta_K^{(\lambda)}(3\sigma-\tfrac12),
+ \qquad i=1,2 .
+\end{equation}
+In the stated range \(z\le1/9\),
+\(3^{2+4\sigma}\le3^7\),
+\(3^{5/2+3\sigma}\le3^6\), and
+\(27\,3^{4\sigma}\le3^8\).
+The brace in \eqref{rg:tau-geometric} is at most \(3^8/2\).
+Finally \(Z_{\rm SF}(\sigma)\le\zeta_K^{(\lambda)}(\sigma)\).
+The actual coefficient convention and all unit phases therefore
+give \eqref{rg:cusp-norm-bound}.
+\end{proof}
+
+For later comparison, an affine state
+\(F_j(Az+B,|A|v)\), \(A\ne0\), has index and coefficient
+\begin{equation}\label{rg:affine-coefficient}
+ \nu=A\mu,\qquad
+ a_{j,A,B}(\nu)=|A|\,a_j(\mu)e(\operatorname{Tr}(\mu B)).
+\end{equation}
+Its absolute Dirichlet norm is exactly
+\(|A|^{1-2\sigma}\mathcal A_j(\sigma)\).
+For the ramified diagonal \(A=\lambda^{-2B_0}\), this factor is
+\(3^{B_0(2\sigma-1)}\).
+Commuting a moving translation past that diagonal changes
+\(U(-\lambda^4c/r)\) to \(U(-\lambda^{4+2B_0}c/r)\).
+Together with \(\nu=\lambda^{-2B_0}\mu\) its phase is still
+\(e(-\operatorname{Tr}(\lambda^4\mu c/r))\).
+This explains why an omitted ramified scale changes actual phases,
+even though the eventual absolute bound is fixed-data controlled.
+
+\subsection{Exact rational reduction and the actual Kubota multiplier}
+\label{rg:rational-construction}
+For \(a=A/C\in K\) reduced, choose \(B_0,D_0\in\mathcal O\) with
+\(AD_0-B_0C=1\) and put
+\(\gamma_a=\left(\begin{smallmatrix}A&B_0\\C&D_0\end{smallmatrix}\right)\).
+The Euclidean property of \(\mathcal O\) supplies this choice.
+Let
+\[
+ U(x)=\begin{pmatrix}1&x\\0&1\end{pmatrix},\qquad
+ W_C=\begin{pmatrix}0&-1/C\\C&0\end{pmatrix}.
+\]
+Integral \(a\) is included by \(C=1\).
+Direct multiplication proves
+\begin{equation}\label{rg:rational-matrix}
+ \gamma_a^{-1}U(a)
+ =\begin{pmatrix}D_0&1/C\\-C&0\end{pmatrix}
+ =U(-D_0/C)W_{-C}.
+\end{equation}
+Choose \(j\) with \(\delta_a=\gamma_a\gamma_j^{-1}\in\Gamma_2\).
+Then the exact function identity is
+\begin{equation}\label{rg:rational-theta}
+ \theta(U(a)w)
+ =\chi(\delta_a)F_j(U(-D_0/C)W_{-C}w).
+\end{equation}
+It uses known integral cusp functions rather than an unconstructed
+new cusp coefficient family.
+
+The phase is computable, not an unspecified unit set to one.
+Find a rational integral \(\sigma\in\mathrm{SL}_2(\mathbb Z)\)
+with the same reduction modulo \(3\) as \(\delta_a\).
+Then \(\delta'=\sigma^{-1}\delta_a\in\Gamma_1(3)\).
+If \(\delta'=\left(\begin{smallmatrix}a'&b'\\c'&d'\end{smallmatrix}\right)\),
+the source rule is
+\begin{equation}\label{rg:kubota-rule}
+ \chi(\delta_a)=\chi(\delta')=
+ \begin{cases}
+  (c'/a')_3,&c'\ne0,\\
+  1,&c'=0 .
+ \end{cases}
+\end{equation}
+Here \(a'\equiv1\pmod3\) is nonzero and coprime to \(c'\).
+The index \(j\) can be found by reducing modulo \(3\) and testing the
+\(24\)-element rational subgroup against the \(27\) fixed cosets.
+Equivalently, a finite traversal of elementary generators constructs
+representatives. A representative differing from the published one
+changes its function by the fixed multiplier just computed.
+Its Fourier coefficients and constants carry that multiplier too.
+
+One can also display the fixed ramified states explicitly.
+If a moving good level \(r\) survives the fixed denominator reduction,
+write \(C=c_0r\), with \(c_0\) in a fixed finite set and
+\((c_0,r)=1\). The matrix identity
+\[
+ U(A/C)W_r=\gamma_a U(-D_0/C)
+                       \operatorname{diag}(r/C,C/r)
+\]
+and \(D_0=br+9c_0d\) give the fixed state
+\(F_j|U(-b/c_0)\operatorname{diag}(c_0^{-1},c_0)\)
+followed by the moving translation \(U(-9c_0^2d/r)\).
+The general formula \eqref{rg:rational-theta} also handles cancelled
+or nonunit fixed Fourier residues directly; this special display
+does not impose a primitive Fourier-support condition on them.
+
+\subsection{Radial cusp constants, angular derivatives and the Mellin Jacobian}
+\label{rg:mellin-proof}
+Write \(w=(z,v)\). The action in \eqref{rg:rational-theta} is
+\begin{equation}\label{rg:cusp-action}
+ z'=-D_0/C-\frac{\bar z}{C^2(|z|^2+v^2)},\qquad
+ v'=\frac{v}{NC(|z|^2+v^2)} .
+\end{equation}
+The pulled-back constant of \(F_j\) is therefore
+\begin{equation}\label{rg:pulled-constant}
+ \chi(\delta_a)\sigma_j(NC)^{-2/3}
+                  v^{2/3}(|z|^2+v^2)^{-2/3}.
+\end{equation}
+It is radial in \(z\). Every nonzero pure Wirtinger derivative
+\(\partial_z^m\) or \(\partial_{\bar z}^m\) at \(z=0\) kills it.
+At large \(v\) the original translated theta constant is also
+independent of \(z\). The known nonconstant lattice support gives
+exponential decay after angular differentiation at both ends,
+with the reciprocal-end rate depending on \(NC\).
+
+For completeness, the zeroth-angular constants have not disappeared.
+For a finite combination \(\sum_a c(a)\theta(z+a,v)\) put
+\begin{equation}\label{rg:endpoint-constants}
+ C_\infty=\frac{3^{5/2}}2\sum_a c(a),\qquad
+ C_0^*=\sum_a c(a)\chi(\delta_a)\sigma_{j(a)}(NC_a)^{-2/3}.
+\end{equation}
+Its regularized Mellin transform with weight \(v^{2s-2}\) has residues
+\begin{equation}\label{rg:zeroth-residues}
+ \operatorname*{Res}_{s=1/6}\Lambda(s,0)=-C_\infty/2,
+ \qquad
+ \operatorname*{Res}_{s=5/6}\Lambda(s,0)=C_0^*/2 .
+\end{equation}
+These signs follow by integrating the powers at infinity and zero.
+A projector with zero sum kills \(C_\infty\), but need not kill
+\(C_0^*\). No finite noncubic label implies such a cancellation.
+
+For \(\ell>0\) set
+\(\mathcal D_\ell=(2\pi i)^{-\ell}\partial_z^\ell\);
+for \(\ell<0\) use
+\(\mathcal D_\ell=(2\pi i)^{-|\ell|}\partial_{\bar z}^{|\ell|}\).
+The angular Mellin transform is
+\begin{equation}\label{rg:angular-mellin}
+ \Lambda_a(s,\ell)=\int_0^\infty
+  \mathcal D_\ell[\theta(z+a,v)]_{z=0}
+                                v^{2s+|\ell|-2}\,dv .
+\end{equation}
+For \(\ell\ne0\) it is entire by the endpoint bounds just proved.
+
+\begin{proposition}[Exact angular rational-cusp identity]
+\label{rg:angular-identity}
+For every reduced rational translate and \(\ell\ne0\),
+\begin{equation}\label{rg:mellin-identity}
+ \Lambda_a(s,\ell)=
+ \chi(\delta_a)(-1)^{|\ell|}(C/\bar C)^\ell(NC)^{1-2s}
+                   \Lambda_{j,-D_0/C}(1-s,-\ell).
+\end{equation}
+The right Mellin transform uses the actual known function
+\(F_j(z-D_0/C,v)\).
+\end{proposition}
+\begin{proof}
+For \(\ell>0\), set \(\bar z=0\) in the full-coordinate chain rule.
+Then \(z'\) and \(v'\) in \eqref{rg:cusp-action} are constant as
+functions of \(z\), while \(\bar z'\) is affine with derivative
+\(-1/(\bar C^2v^2)\).
+Thus the pure derivative has exactly the factor
+\(\chi(\delta_a)(-1)^\ell\bar C^{-2\ell}v^{-2\ell}\)
+and the opposite angular derivative of \(F_j\) at
+\((-D_0/C,1/(NCv))\).
+There are no lower angular or radial terms.
+The negative sign case is the conjugate-coordinate calculation.
+
+In the integral substitute \(y=1/(NCv)\).
+Its Jacobian and power weight give
+\((NC)^{-2s+\ell+1}y^{\ell-2s}\,dy\).
+Combining the factor \(\bar C^{-2\ell}\) produces precisely
+\((C/\bar C)^\ell(NC)^{1-2s}\).
+The exponent \(1-2s\), rather than \(-2s\), is essential.
+This proves \eqref{rg:mellin-identity} for both signs.
+\end{proof}
+
+If the real part of the dual Dirichlet variable exceeds one, its series is
+\begin{equation}\label{rg:dual-translated-series}
+ \sum_{\mu\ne0}a_j(\mu)e(-\operatorname{Tr}(\mu D_0/C))
+       (\mu/|\mu|)^{-\ell}(N\mu)^{-(1-s)} .
+\end{equation}
+The additive and angular phases remain literal; their absolute values
+are one only after this exact expression has been established.
+Proposition~\ref{rg:cusp-norm} controls the series.
+
+\subsection{The integral-index primary projector and raw cube completion}
+\label{rg:projector-proof}
+Let \(\kappa\) be any one fixed residue member on the primary section.
+Use a fixed modulus containing its actual conductor and all original
+fixed exclusions. Separate its \(\lambda\)-part \(\kappa_\lambda\)
+and away-\(\lambda\) part \(\kappa_0\).
+Choose \(f\ge2\) containing the \(\lambda\)-conductor, and put
+\begin{equation}\label{rg:primary-projector}
+ \Phi(x)=\kappa_\lambda(x)
+               \mathbf1_{x\equiv1\bmod\lambda^2}
+          \quad(x\bmod\lambda^f),
+ \qquad \Phi(x)=0\text{ on nonunits}.
+\end{equation}
+The entire theta support has \(\lambda^3\mu\in\mathcal O\).
+The correct argument is this integral index, not
+\(\lambda^4\mu\) for a ramified character.
+
+From the two \(\tau\) families above, \(\Phi(\lambda^3\mu)\)
+selects exactly
+\begin{equation}\label{rg:primary-support}
+ \mathcal S=\{\lambda^{-3}cd^3:
+               c,d\equiv1\pmod3,\ c\ {\rm squarefree}\}.
+\end{equation}
+Indeed the first family has positive \(\lambda\)-valuation after
+multiplication by \(\lambda^3\), as do the second-family terms
+with \(n\ge1\). They are killed as nonunits.
+At \(n=0\) the negative branch is \(-1\) modulo \(3\),
+and only the positive branch is \(1\).
+This proves the unit-state selection as well as its valuation condition.
+
+For a moving good squarefree level \(\mathfrak t\), let
+\(\psi_{\mathfrak t}\) be either cubic orientation on its literal
+residue modulus. Let \(F_0\) be the fixed away-\(\lambda\) raw modulus.
+The product
+\(\psi_M(x)=\kappa_0(x)\psi_{\mathfrak t}(x)\)
+is a bounded periodic function on the valid period
+\(M=F_0\mathfrak t\).
+This period is not asserted to be its primitive conductor.
+It is allowed to be imprimitive and to have overlapping
+\(F_0,\mathfrak t\). No value \(\kappa(\mathfrak t)\) is divided out.
+
+Define the coefficient-projected theta function using
+\(\Phi(\lambda^3\mu)\psi_M(\lambda^3\mu)\).
+Its infinite constant is zero. On \(\mathcal S\),
+\(\tau(\mu)=3^{5/2}\widetilde g(c)\sqrt{Nd}\).
+Multiplicativity on the primary section gives the exact cube identity
+\begin{equation}\label{rg:cube-coefficients}
+ \Phi(\lambda^3\mu)\psi_M(\lambda^3\mu)
+ =\kappa(c)\kappa(d)^3\psi_{\mathfrak t}(c)
+                                    \mathbf1_{(d,\mathfrak t)=1}.
+\end{equation}
+Write
+\begin{equation}\label{rg:gauss-dirichlet}
+ \mathcal R_{\kappa,\mathfrak t,\ell}(s)
+ =\sum_{c\ {\rm primary,SF}}
+ \frac{\widetilde g(c)\kappa(c)\psi_{\mathfrak t}(c)
+                                  \Theta_\ell(c)}{(Nc)^s},
+\end{equation}
+with every fixed raw zero in \(\kappa\). Then initially \(\Re s>1\),
+\begin{equation}\label{rg:cube-completion}
+ D_{\Phi,\psi}(s,\ell)
+ =3^{5/2+3s}i^\ell
+ L^{\rm raw}(3s-\tfrac12,\kappa^3\Theta_{3\ell})
+                       \mathcal R_{\kappa,\mathfrak t,\ell}(s).
+\end{equation}
+The factor \(i^\ell\) is the actual angle of \(\lambda^{-3}\).
+The cube series has denominator \((Nd)^{3s-1/2}\), and
+\(L^{\rm raw}\) retains all original exclusions above
+\(\lambda F_0\mathfrak t\), even after primitive conductor drop.
+There is no \(\kappa(\lambda)\) factor or untwisted-zeta substitution.
+Conjugating the whole construction gives the actual conjugate
+Gauss root and opposite angular/cubic orientations.
+
+The full ramified projector has an exact finite translation formula.
+The trace dual of \(\mathcal O\) is \(\lambda^{-1}\mathcal O\), so
+\begin{equation}\label{rg:ramified-fourier}
+ \begin{aligned}
+ b_h&=3^{-f}\sum_{x\bmod\lambda^f}
+         \Phi(x)e(-\operatorname{Tr}(xh/\lambda^{f+1})),\\
+ \Phi(x)&=\sum_{h\bmod\lambda^f}
+                  b_he(\operatorname{Tr}(xh/\lambda^{f+1})),&
+ \sum_h|b_h|&\le3^{f/2}.
+ \end{aligned}
+\end{equation}
+For the away period use normalized Fourier coefficients \(q_u\)
+with positive inversion sign and pairing
+\(e(\operatorname{Tr}(xu/\alpha_M))\).
+Since \(M\) avoids \(\lambda\), that pairing is perfect, and
+\begin{equation}\label{rg:away-fourier}
+ \psi_M(x)=\sum_{u\bmod M}q_u e(\operatorname{Tr}(xu/\alpha_M)),
+ \qquad
+ \sum_u|q_u|\le\sqrt{NM}.
+\end{equation}
+Both mass bounds are Parseval followed by Cauchy.
+They hold for arbitrary bounded periodic functions; no primitive
+Fourier-support condition is inserted.
+
+Consequently the exact projected function is a finite sum of
+\(\theta(z+a_{h,u},v)\) with
+\begin{equation}\label{rg:actual-translates}
+ a_{h,u}=h\lambda^{2-f}+\lambda^3u/\alpha_M,\qquad
+ \sum_{h,u}|b_hq_u|\le3^{f/2}\sqrt{NM}.
+\end{equation}
+The inverse different explains the exponent \(2-f\).
+Every raw zero is reconstructed by this full sum.
+Each reduced denominator \(C_{h,u}\) divides a fixed
+\(\lambda\)-power times \(M\); hence
+\(1\le NC_{h,u}\ll_{\rm fixed}N\mathfrak t\).
+Nonunit Fourier residues may lower that denominator. They remain
+terms of the exact transform, rather than being discarded.
+
+\subsection{The coarse dual bound, safe convexity and literal Perron endpoints}
+\label{rg:sharp-proof}
+Let \(R=N\mathfrak t\), and set
+\[
+ E(s)=L^{\rm raw}(3s-\tfrac12,\kappa^3\Theta_{3\ell})
+                                  \mathcal R_{\kappa,\mathfrak t,\ell}(s).
+\]
+For \(\ell\ne0\) the finite sum of entire angular Mellins is entire.
+The source Fourier--Mellin calculation has factor
+\begin{equation}\label{rg:gamma-factor}
+ \gamma_\ell(s)=\frac14(2\pi)^{-2s-|\ell|}
+ \Gamma(s+\tfrac{|\ell|}{2}-\tfrac16)
+ \Gamma(s+\tfrac{|\ell|}{2}+\tfrac16).
+\end{equation}
+Thus division by \(\gamma_\ell\), whose reciprocal is entire,
+and the nonzero elementary factor in \eqref{rg:cube-completion}
+makes \(E\) entire as well.
+
+On \(s=-\eta+i\tau\), \(0<\eta<1/12\),
+\eqref{rg:mellin-identity}, \eqref{rg:cusp-norm-bound} and
+\eqref{rg:actual-translates} give
+\begin{equation}\label{rg:dual-mass}
+ \begin{split}
+ \sum_{h,u}|b_hq_u|(NC_{h,u})^{1+2\eta}
+                  \mathcal A_{j(h,u)}(1+\eta)
+ &\ll_{\rm fixed,\eta} R^{3/2+2\eta},\\
+ |E(-\eta+i\tau)|
+ &\ll_{\rm fixed,\ell,\eta}
+ R^{3/2+O(\eta)}(1+|\tau|)^{2+O(\eta)} .
+ \end{split}
+\end{equation}
+The height exponent follows from the quotient of the two Gamma
+products. The exact multiplier
+\(\chi(\delta_{h,u})(-1)^{|\ell|}
+ (C_{h,u}/\bar C_{h,u})^\ell\)
+has been written before bounding its modulus.
+This is a conservative \(R^{3/2+\epsilon}\) cost.
+No refined \(R^{1/2+\epsilon}\) Ramanujan estimate is used.
+
+The line \(\Re s=1+\eta\) is absolutely bounded uniformly in \(R\),
+by the original Gauss and cube coefficients. For a requested final
+\(\epsilon>0\), choose \(\eta>0\) sufficiently small in terms of
+\(\epsilon\); the constants may depend on that choice.
+The finite-order continuation from the theta Mellin representation
+permits the damped strip maximum principle.
+Applying it to the entire numerator, then allocating small exponents,
+gives
+\begin{equation}\label{rg:completed-convexity}
+ |E(\sigma+i\tau)|
+ \ll_{\rm fixed,\ell,\epsilon}
+ (R(2+|\tau|))^\epsilon
+ R^{\frac32(1-\sigma)}(1+|\tau|)^{2(1-\sigma)}
+\end{equation}
+on the safe half-strip \(1/2+\eta\le\sigma\le1+\eta\).
+Only there divide by \(L^{\rm raw}\):
+the real part of \(3s-\tfrac12\) exceeds one, so its inverse is
+bounded by absolutely convergent Euler products, uniformly in all
+raw omissions. No inverse-\(L\) continuation through unknown zeros
+or zero-free strip is asserted.
+Equation~\eqref{rg:completed-convexity} therefore bounds
+\(\mathcal R\) on that half-strip.
+
+Here are the endpoint details needed for
+Theorem~\ref{rg:sharp-row}. Replace each real endpoint by the
+half-integer threshold selecting exactly the same integer norms.
+All ideals in a repeated norm fibre are counted. Such a fibre has
+divisor-bounded multiplicity in this quadratic field.
+For an unnormalized sharp prefix at length \(T\), truncated Perron
+at height \(\mathcal H\ge1\) has error
+\begin{equation}\label{rg:perron-error}
+ O_\epsilon\bigl(T^\epsilon[1+(T/\mathcal H)\log(2T)]\bigr).
+\end{equation}
+This follows by summing
+\(\min(1,T/(\mathcal H|n-y|))\) over integer distances from the
+half-integer endpoint \(y\). No norm tie receives a half-weight.
+
+At \(\sigma=1/2+\eta\) the vertical contribution is bounded by
+\[
+ (RT)^\epsilon T^{1/2}R^{3/4}\mathcal H .
+\]
+If \(T\ge R^{3/2}\), choose
+\(\mathcal H=(T/R^{3/2})^{1/4}\).
+On horizontal sides the bound is at most \(T/\mathcal H\),
+up to allocated subpowers, since \(R^{3/2}\mathcal H^2\le T\).
+The vertical integral, truncation and horizontal contributions
+are then \(O((RT)^\epsilon T^{3/4}R^{3/8})\).
+An interval is a difference of two prefixes. If \(T<R^{3/2}\),
+the elementary \(O(T)\) count is the better branch.
+
+Finally apply partial summation to the same
+\(T^{-1/2}W(x)x^{-1/2}\), \(x=N\mathfrak a/T\).
+Its supremum and total variation are bounded by
+\(O(T^{-1/2}V_1(W))\). This proves
+\eqref{rg:sharp-bound} with the exact profile.
+For \(1/2\le T<1\) only the unit can occur; its coefficient and
+profile are literal and satisfy the same bound with a fixed
+endpoint constant. For \(T\le1/2\) there is no contribution.
+This extension uses no analytic theorem at a fictitious length.
+
+\subsection{The actual annular coefficient and exact eleven-factor expansion}
+\label{rg:hb-proof}
+The opened coefficient \(B_U=\mu A_U\) in
+\eqref{rg:opened} is asserted on the actual annulus \(N\mathfrak m>U\).
+It is distinct from original \(C_U\).
+No identity for \(B_U(\mathcal O)\) is needed or asserted.
+Unit factors within the factorization of an annular column are
+essential and stay in every convolution below.
+
+Let \(\mathbf1\) be the constant-one function on good ideals,
+\(\delta_{\mathcal O}\) the ideal-convolution identity, and
+\(M_z(\mathfrak a)=\mu(\mathfrak a)
+ \mathbf1_{N\mathfrak a\le z_0}\), \(z_0=(2D)^{1/5}\).
+The exact good-ideal convolution identity is
+\begin{equation}\label{rg:hb-identity}
+ \mu=\sum_{j=1}^5(-1)^{j-1}\binom5j
+                   \mathbf1^{*(j-1)}*M_z^{*j}
+       +\mathbf1^{*4}*(\mu-M_z)^{*5}.
+\end{equation}
+Indeed \(\mathbf1*\mu=\delta_{\mathcal O}\), so expand
+\(\mu*[\delta_{\mathcal O}
+       -(\delta_{\mathcal O}-\mathbf1*M_z)^{*5}]\);
+also \(\delta_{\mathcal O}-\mathbf1*M_z
+       =\mathbf1*(\mu-M_z)\).
+Each factor of \(\mu-M_z\) has norm strictly above \(z_0\).
+The last term in \eqref{rg:hb-identity} is supported strictly above
+\(z_0^5=2D\) and vanishes at every residual
+\(\mathfrak c\) under consideration.
+
+The \(j\)-th term has \(j\) truncated M\"obius factors and \(j-1\)
+unrestricted coefficient-one factors. Together with the two original
+short factors it has \(2j+1\le11\) labels.
+The \(j=1\) term and unit labels remain. Restricting the total column
+to squarefree support forces all factors to be squarefree and
+pairwise coprime.
+
+Use independent dyads \([M_i,2M_i)\), \(M_i\ge1\), with the original
+own-factor cutoffs at \(U,z_0\). If the box meets the annulus,
+\begin{equation}\label{rg:box-product}
+ D/2^{11}\le P_{\rm box}:=\prod_iM_i\le2D .
+\end{equation}
+Choose the partition from these scales only.
+If some \(M_i\in[P_{\rm box}^{1/3},P_{\rm box}^{2/3}]\), it is
+a balanced subset. If all \(M_i<P_{\rm box}^{1/3}\), multiply
+successive scales until first reaching \(P_{\rm box}^{1/3}\);
+the result is below \(P_{\rm box}^{2/3}\).
+If no balanced subset exists, a unique scale exceeds
+\(P_{\rm box}^{2/3}\); two such scales would have product above
+\(P_{\rm box}\). The product of all remaining scales is below
+\(P_{\rm box}^{1/3}\).
+
+At \(D\ge2^{64}\),
+\[
+ P_{\rm box}^{2/3}\ge D^{2/3}/2^{22/3}>\sqrt D
+                 \ge U,\qquad
+ P_{\rm box}^{2/3}>(2D)^{1/5}.
+\]
+Therefore an unbalanced unique long factor is genuinely one of the
+unrestricted coefficient-one factors. It cannot be an original
+short factor or a truncated M\"obius factor.
+The actual whole prefix \(\mathfrak p\), the product of all remaining
+factors, satisfies \(N\mathfrak p\le2^{10}P_{\rm box}^{1/3}
+ \ll D^{1/3}\).
+The \(j=1\) term has no unrestricted factor and is automatically
+balanced; its unit assignments have not been discarded.
+
+For a fixed box define each macro coefficient by summing all its
+signed assignments within its assigned factor group.
+On a squarefree ideal the number of at most eleven labelled
+factorizations is at most \(11^{\omega(\mathfrak a)}\).
+Fixed binomial factors and dyadic logarithms thus give a uniform
+\(D^\epsilon\) pointwise bound, with every own cutoff retained.
+There is no separate count over \(N\mathfrak a,N\mathfrak b\le U\).
+
+\subsection{Whole-factor cubic matrices and the large-prefix part}
+\label{rg:matrix-proof}
+A balanced partition gives two physical squarefree macro ideals
+\(\mathfrak u,\mathfrak v\), each with scale in fixed multiples of
+\([D^{1/3},D^{2/3}]\) and product comparable to \(D\).
+Their own coefficients contain the original cutoffs and signs.
+Cubic Gauss CRT gives on coprime products
+\begin{equation}\label{rg:gauss-cross}
+ \overline{G_{\mathfrak u\mathfrak v}^{\rm act}}
+ =\overline{G_{\mathfrak u}^{\rm act}}\,
+  \overline{G_{\mathfrak v}^{\rm act}}\,
+                    \chi_{3,\mathfrak u}(\alpha_{\mathfrak v}).
+\end{equation}
+The raw matrix entry is zero at a collision, so summing all
+squarefree macro pairs implements the original squarefree product.
+No primitive root at an overlapping product is invented.
+
+The external physical cubic norm is
+\begin{equation}\label{rg:cubic-input}
+ \bigl\|[\chi_{3,\mathfrak u}(\alpha_{\mathfrak v})]
+                            _{N\mathfrak u\asymp P,\,
+                              N\mathfrak v\asymp L}\bigr\|_{\rm op}
+ \ll_\epsilon(PL)^\epsilon
+                  \sqrt{P+L+(PL)^{2/3}} .
+\end{equation}
+The rows and columns are actual good squarefree ideals.
+All raw fixed/growing multiplicative masks are coefficient
+diagonals in this norm, after finite-selector expansion.
+Ideal counting gives squared coefficient norms \(D^\epsilon\)
+when each coefficient is weighted by the inverse square root norm.
+Separate the one occurrence of the common \(W\) by
+\[
+ W(N\mathfrak uN\mathfrak v/D)
+ =\frac1{2\pi}\int_{\mathbb R}\widehat W(t)D^{-it}
+                       (N\mathfrak u)^{it}(N\mathfrak v)^{it}\,dt .
+\]
+The powers are unitary diagonals, costing \(\mathcal M(W)\) once.
+Balanced boxes therefore cost
+\(\mathcal M(W)D^{1/3+\epsilon}\).
+
+For a Type-I box write \(\mathfrak m=\mathfrak p\mathfrak v\),
+where \(\mathfrak v\) has coefficient one and the intrinsic
+\(H_{\mathfrak p}\) contains all remaining assignments.
+Then \(N\mathfrak p\ll D^{1/3}\).
+The portion \(N\mathfrak p>Z\), with its literal own-variable
+indicator, has dyadic bound
+\[
+ \mathcal M(W)D^\epsilon
+       \sqrt{P+D/P+D^{2/3}},
+\]
+and hence total bound
+\begin{equation}\label{rg:large-prefix}
+ \mathcal M(W)D^\epsilon
+                           [D^{1/3}+\sqrt{D/Z}].
+\end{equation}
+Macro own-factor constraints remain coefficients.
+A chosen equivalent row-dependent norm interval costs the reviewed
+logarithmic interval-Schur factor, preserving complete norm fibres.
+It is not assigned operator norm one.
+
+\subsection{The full original opposite-column mask in the small-prefix row}
+\label{rg:deletion-proof}
+Freeze the original \(\mathfrak n\), the exact
+\(\mathfrak k,\mathfrak s,\mathfrak w,\mathfrak e\), and a finite
+source component before estimating a Type-I row.
+The original pair mask is exactly
+\begin{equation}\label{rg:prefix-mask}
+ \mathbf1_{(\mathfrak p\mathfrak v,\mathfrak n)=1}
+ =\mathbf1_{(\mathfrak p,\mathfrak n)=1}
+                 \mathbf1_{(\mathfrak v,\mathfrak n)=1}.
+\end{equation}
+The first factor stays in the actual prefix coefficient, along with
+all original prefix/\(\mathfrak k,\mathfrak s,\mathfrak w\) collisions,
+fixed numerator zeros and prefix phases.
+The intrinsic arithmetic \(H_{\mathfrak p}\) still depends only on
+its own factor assignments. Multiplication by these outer factors
+preserves its divisor bound. A forbidden prefix is zero before
+a row bound is applied.
+
+The remaining long-variable deletion is
+\[
+ Q=\operatorname{rad}_{\rm good}
+    (\mathfrak p\mathfrak n\mathfrak k\mathfrak s\mathfrak w).
+\]
+It is not a substitute for the first factor in
+\eqref{rg:prefix-mask}, and the growing \(\mathfrak n\) is not
+part of a fixed character conductor.
+On the nonzero support \(\mathfrak p,\mathfrak k\) are squarefree
+and coprime, by the original \(\eta(\mathfrak k)^2\) zero.
+The physical cubic frequency is \(\mathfrak t=\mathfrak p\mathfrak k\).
+
+The exact deletion formula is
+\begin{equation}\label{rg:deletion-identity}
+ \begin{split}
+ \mathcal F_\psi(T;\mathfrak t;Q,I)
+ =\sum_{\substack{\mathfrak h\mid Q\\(\mathfrak h,\mathfrak t)=1}}
+ &\frac{\mu(\mathfrak h)\psi(\mathfrak h)
+       \overline{G_{\mathfrak h}^{\rm act}}
+       \chi_{3,\mathfrak h}(\alpha_{\mathfrak t})}
+                 {\sqrt{N\mathfrak h}}\\
+ &\cdot\mathcal F_\psi(T/N\mathfrak h;
+                              \mathfrak h\mathfrak t;1,I/N\mathfrak h).
+ \end{split}
+\end{equation}
+Insert \(\sum_{\mathfrak h\mid(Q,\mathfrak v)}\mu(\mathfrak h)\)
+and set \(\mathfrak v=\mathfrak h\mathfrak a\).
+Gauss CRT and reciprocity combine the actual crosses into
+\(\chi_{3,\mathfrak a}(\alpha_{\mathfrak h\mathfrak t})\).
+This raw entry is zero at \((\mathfrak a,\mathfrak h)>1\)
+and encodes the squarefree-product condition. The outer raw entry
+kills \((\mathfrak h,\mathfrak t)>1\).
+No zero is inverted, including if a numerator exponent becomes
+divisible by three. Original interval endpoints divide literally
+by \(N\mathfrak h\).
+
+Here \(T=D/N\mathfrak p\), and the exact product is
+\begin{equation}\label{rg:deletion-product}
+ (T/N\mathfrak h)N(\mathfrak h\mathfrak t)=D N\mathfrak k .
+\end{equation}
+There is no common-long-divisor decomposition between the two
+columns in this proof. The other original column remains fixed.
+
+Using the sharp bound and the original prefix factor gives
+\eqref{rg:small-prefix-weight}.
+For \(T/N\mathfrak h\in[1/2,1)\) use the actual unit contribution;
+smaller arguments contribute zero, with the profile endpoint rule.
+Large frequencies are allowed by the proven all-level sharp bound,
+with its trivial fallback. Thus
+\[
+ \sum_{\mathfrak h\mid Q}(N\mathfrak h)^{-3/8}
+ \le\tau(Q)\ll_\epsilon(NQ)^\epsilon .
+\]
+On the exact support,
+\(N\mathfrak n\le2D\), \(N\mathfrak s\le2V\), \(N\mathfrak w<64\),
+so \(NQ\ll DZV N\mathfrak k\).
+Summing \((N\mathfrak p)^{-3/8}\) over \(N\mathfrak p\le Z\)
+by ideal counting proves the small-prefix column bound
+\begin{equation}\label{rg:small-prefix}
+ V_1(W)(DXA_1)^\epsilon
+                  D^{1/4}(N\mathfrak k)^{3/8+\epsilon}Z^{5/8}.
+\end{equation}
+Every prefix zero was retained until that positive estimate.
+No coherence or orientation mean has been removed.
+
+\subsection{The exact discrete prefix and the final normalization}
+\label{rg:assembly-proof}
+Combine the balanced, large-prefix and small-prefix bounds, and put
+\begin{equation}\label{rg:balancing}
+ Z=D^{2/9},\qquad
+ \sqrt{D/Z}=D^{1/4}Z^{5/8}=D^{7/18}.
+\end{equation}
+The untouched original \(A_U\) column has the elementary bound
+\(B_WD^{1/2+\epsilon}\).
+Apply it after the left estimate and use the original \(A_1/D\) once.
+All finite source/ray/primitive \(\mathfrak e/\mathfrak w\)
+coefficient masses stay fixed, and the actual \(\mathfrak s\)
+family is counted by \(O(V)\) only at the end.
+The scalar \(g_0\) is bounded and is never divided out.
+
+The original finite \(\mathfrak k\) sum is unchanged in the identity.
+Its small-prefix positive majorant is
+\begin{equation}\label{rg:k-majorant}
+ \sum_{\substack{\mathfrak k\ {\rm good,SF}\\
+                      N\mathfrak k\le K_{\rm cut}}}
+       (N\mathfrak k)^{-13/8+\epsilon}
+ \le\zeta_K(13/8-\epsilon),\qquad \epsilon<5/8 .
+\end{equation}
+Product and divisor losses can be allocated smaller exponents first;
+their \(N\mathfrak k\) factors are absorbed by this convergent series.
+Balanced and large-prefix pieces use the easier exponent \(2\).
+This is a bound on a finite sum, not an Euler replacement of the model.
+
+For the optional original unequal-norm projection, a fixed rational
+norm has \(O_\epsilon(D^\epsilon)\) ideal coordinates.
+The actual \(A_U\) and every fixed HB component are divisor-bounded.
+Removing that same fixed-\(\mathfrak n\) fibre costs
+\(O(B_WD^{-1/2+\epsilon})\) in the left column, and therefore
+\(O(B_W^2A_1VD^{-1+\epsilon})\) in the normalized form.
+Conjugate ideals remain different, and a norm inequality has not
+been made multiplicative.
+
+This proves the leading-model part of \eqref{rg:prefix-bound}.
+For the original exact prefix, all its Bessel arguments are at most
+\(\Lambda=A_1X/D^2\), and
+\[
+ |\dot G(x)-g_0|\le3C_0^{-3/2}x .
+\]
+There are \(O(D^2)\) annular column pairs and
+\(A_1/(D\sqrt{F_\Omega})\le A_1/D^2\).
+The coefficient product is \(O(B_W^2D^\epsilon)\),
+the original finite \(\mathfrak k\) absolute budget is bounded by
+\(\sum(N\mathfrak k)^{-2}\), and the actual sixth-part band has
+\(O(V)\) ideals. Only in this remainder are these absolute counts
+taken. They give \eqref{rg:model-error} directly for \(A_U,A_U\).
+No \(A_U\)-to-\(A_Y\) error, principal density or scalar ray-count
+split is introduced.
+
+Finally the exact powers are
+\begin{equation}\label{rg:all-powers}
+ \begin{aligned}
+ 3/4+1/16-1/9&=101/144,&3/4-101/144&=7/144,\\
+ 3/4+1/16-1/6&=31/48,&
+ 13/16+(3/4+3/8-2)&=-1/16 .
+ \end{aligned}
+\end{equation}
+The same norm-fibre correction has power \(-3/16\).
+This completes the pure finite-prefix theorem with its once-only
+normalization and all original finite cutoffs.
+
+\subsection{Verification scope and the remaining arithmetic comparison}
+\label{rg:evidence}
+The accepted evidence includes exact rational cusp matrices and
+finite quotient/coset calculations, angular-coordinate and Mellin
+checks, literal primary-support cases, affine coefficient transport,
+and synthetic scale-composition/exponent checks.
+The typed exponent grid is a formal subfamily; it is not exhaustive
+physical dyad coverage after the constants in
+\eqref{rg:box-product}. The proof uses the separate exact
+\(D\ge2^{64}\) inequalities for those constants.
+None of these checks is actual-family energy data, training,
+asymptotics or a kernel-checked Lean proof.
+
+All original sources, primary versions, raw outputs and failed
+preliminary harnesses remain preserved. The new theorem is a
+prose proof with the identified external theta and cubic-norm
+inputs. Its domain is the representation-fixed pure
+\(\mathcal T_X\) prefix in \eqref{rg:exact-prefix}.
+The infinite dual complement, other pure sectors, mixed and
+neighboring blocks, short/principal assembly, independent positive
+arithmetic determinant and zero-location comparisons remain open.
+The Dirichlet, Hecke, Dedekind, elliptic and general Artin scopes
+retain their separate hypotheses; no Artin holomorphy, desired
+positivity, zero location or GRH premise has been inserted.
+The whole signed and global unsigned comparisons have not changed.

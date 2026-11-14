@@ -1,6 +1,6 @@
 /** Original live segmenter. LP/IP numbers and rational witnesses are saved CPU results. */
 export const tokenKey = t => JSON.stringify(t);
-export const fraction = s => {const [a,b=1]=String(s).split('/').map(Number);return a/b;};
+export const fraction = s => {const [a,b=1]=String(s).split('/legacy/').map(Number);return a/b;};
 export function segment(word, vocabulary, greedy=false) {
   const tokens=[...new Map([...vocabulary,...word.map(s=>[s])].map(t=>[tokenKey(t),t])).values()];
   const match=(t,i)=>i+t.length<=word.length&&t.every((s,j)=>s===word[i+j]);
@@ -84,7 +84,7 @@ if(typeof document!=='undefined'){
     }
   }
   dom.Case.addEventListener('change',chooseCase);dom.Budget.addEventListener('change',chooseBudget);dom.Scheme.addEventListener('change',resetVocabulary);dom.Reset.addEventListener('click',resetVocabulary);dom.Word.addEventListener('change',renderDag);dom.Overlay.addEventListener('change',renderDag);
-  fetch('/data/convextok.json').then(r=>{if(!r.ok)throw Error(`Data HTTP ${r.status}`);return r.json();}).then(d=>{
+  fetch('/legacy/data/convextok.json').then(r=>{if(!r.ok)throw Error(`Data HTTP ${r.status}`);return r.json();}).then(d=>{
     if(d.schema!=='grh-convextok-v1'||d.cases.length!==5)throw Error('Unexpected ConvexTok data schema');data=d;
     options(dom.Case,data.cases.map(c=>[c.id,c.label]),'gap');chooseCase();window.convexTokReady=true;
   }).catch(e=>{dom.Status.textContent=`Cannot load verified examples: ${e.message}`;console.error(e);});

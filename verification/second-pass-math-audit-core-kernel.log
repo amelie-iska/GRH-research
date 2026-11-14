@@ -1,0 +1,148 @@
+### BridgeTheorems.lean
+'ResearchBridge.complex_range_le_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.complex_rank_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.middle_exact_iff_rank_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.euler_rank_identity' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.cone_perturbation' depends on axioms: [propext]
+'ResearchBridge.cone_tangent_second_order' depends on axioms: [propext]
+'ResearchBridge.cone_split_identity' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.cone_equal_norm_iff' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.koszul_zero_composite' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.hodge_positive_semidefinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_quadratic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_energy_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_energy_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_characteristic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_characteristic_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_family_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_family_arbitrarily_small_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.shear_determinant_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.shear_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.shear_e2_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.shear_e2_norm_squared' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hidden_kernel_relation' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.hidden_collision_relation' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.noise_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.binary_noise_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+### QuantumInterfaces.lean
+ResearchQuantum.pauliX_square : ResearchQuantum.pauliX * ResearchQuantum.pauliX = 1
+ResearchQuantum.pauliZ_square : ResearchQuantum.pauliZ * ResearchQuantum.pauliZ = 1
+ResearchQuantum.pauli_anticommutation :
+  ResearchQuantum.pauliX * ResearchQuantum.pauliZ = -(ResearchQuantum.pauliZ * ResearchQuantum.pauliX)
+ResearchQuantum.binarySign_add.{u_1} {R : Type u_1} [CommRing R] (a b : ZMod 2) :
+  ResearchQuantum.binarySign (a + b) = ResearchQuantum.binarySign a * ResearchQuantum.binarySign b
+ResearchQuantum.shift_phase_commutation.{u_1, u_2} {R : Type u_1} {C : Type u_2} [CommRing R] [AddCommGroup C]
+  [Module (ZMod 2) C] (a : C) (ell : C →ₗ[ZMod 2] ZMod 2) (psi : C → R) :
+  ResearchQuantum.bitShift a (ResearchQuantum.parityPhase ell psi) = fun v =>
+    ResearchQuantum.binarySign (ell a) * ResearchQuantum.parityPhase ell (ResearchQuantum.bitShift a psi) v
+ResearchQuantum.boundary_phase_shift_commute.{u_1, u_2, u_3, u_4} {R : Type u_1} {C0 : Type u_2} {C1 : Type u_3}
+  {C2 : Type u_4} [CommRing R] [AddCommGroup C0] [AddCommGroup C1] [AddCommGroup C2] [Module (ZMod 2) C0]
+  [Module (ZMod 2) C1] [Module (ZMod 2) C2] (d1 : C1 →ₗ[ZMod 2] C0) (d2 : C2 →ₗ[ZMod 2] C1) (hcomplex : d1 ∘ₗ d2 = 0)
+  (ell : C0 →ₗ[ZMod 2] ZMod 2) (f : C2) (psi : C1 → R) :
+  ResearchQuantum.bitShift (d2 f) (ResearchQuantum.parityPhase (ell ∘ₗ d1) psi) =
+    ResearchQuantum.parityPhase (ell ∘ₗ d1) (ResearchQuantum.bitShift (d2 f) psi)
+ResearchQuantum.euler_surface_rank_substitution (V E F g : ℤ) (hEuler : V - E + F = 2 - 2 * g) :
+  E - (V - 1) - (F - 1) = 2 * g
+'ResearchQuantum.pauliX_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.pauliZ_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.pauli_anticommutation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.binarySign_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.shift_phase_commutation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.boundary_phase_shift_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchQuantum.euler_surface_rank_substitution' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+### DiagramGrammar.lean
+DiagramGrammar.context_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z} [Semiring K]
+  {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]
+  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b) {a b x y : Obj} {d e : DiagramGrammar.Diagram Gen a b}
+  (h : DiagramGrammar.denote rho d = DiagramGrammar.denote rho e) (C : DiagramGrammar.Context Gen a b x y) :
+  DiagramGrammar.denote rho (DiagramGrammar.fill C d) = DiagramGrammar.denote rho (DiagramGrammar.fill C e)
+DiagramGrammar.structural_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z} [Semiring K]
+  {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]
+  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b) {a b : Obj} {d e : DiagramGrammar.Diagram Gen a b}
+  (h : DiagramGrammar.StructuralRule d e) : DiagramGrammar.denote rho d = DiagramGrammar.denote rho e
+DiagramGrammar.rewriteStep_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z} [Semiring K]
+  {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]
+  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b)
+  (Rules : {a b : Obj} → DiagramGrammar.Diagram Gen a b → DiagramGrammar.Diagram Gen a b → Prop)
+  (valid :
+    ∀ {a b : Obj} {d e : DiagramGrammar.Diagram Gen a b},
+      Rules d e → DiagramGrammar.denote rho d = DiagramGrammar.denote rho e)
+  {x y : Obj} {d e : DiagramGrammar.Diagram Gen x y} (h : DiagramGrammar.RewriteStep (fun {a b} => Rules) d e) :
+  DiagramGrammar.denote rho d = DiagramGrammar.denote rho e
+DiagramGrammar.derivation_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z} [Semiring K]
+  {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]
+  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b)
+  (Rules : {a b : Obj} → DiagramGrammar.Diagram Gen a b → DiagramGrammar.Diagram Gen a b → Prop)
+  (valid :
+    ∀ {a b : Obj} {d e : DiagramGrammar.Diagram Gen a b},
+      Rules d e → DiagramGrammar.denote rho d = DiagramGrammar.denote rho e)
+  {x y : Obj} {d e : DiagramGrammar.Diagram Gen x y} (h : DiagramGrammar.Derives (fun {a b} => Rules) d e) :
+  DiagramGrammar.denote rho d = DiagramGrammar.denote rho e
+DiagramGrammar.structural_derivation_sound.{u, v, w, z} {Obj : Type u} {Gen : Obj → Obj → Type v} {K : Type z}
+  [Semiring K] {V : Obj → Type w} [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)]
+  (rho : (a b : Obj) → Gen a b → V a →ₗ[K] V b) {x y : Obj} {d e : DiagramGrammar.Diagram Gen x y}
+  (h : DiagramGrammar.Derives (fun {a b} => DiagramGrammar.StructuralRule) d e) :
+  DiagramGrammar.denote rho d = DiagramGrammar.denote rho e
+DiagramGrammar.linearEquiv_cancellation.{u, w, z} {Obj : Type u} {K : Type z} [Semiring K] {V : Obj → Type w}
+  [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)] {a b : Obj} (e : V a ≃ₗ[K] V b) :
+  DiagramGrammar.denote (fun i j g => ↑g) ((DiagramGrammar.Diagram.atom e).seq (DiagramGrammar.Diagram.atom e.symm)) =
+    DiagramGrammar.denote (fun i j g => ↑g) (DiagramGrammar.Diagram.ident a)
+DiagramGrammar.equivRule_sound.{u, w, z} {Obj : Type u} {K : Type z} [Semiring K] {V : Obj → Type w}
+  [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)] {a b : Obj}
+  {d e : DiagramGrammar.Diagram (fun i j => V i ≃ₗ[K] V j) a b} (h : DiagramGrammar.EquivRule d e) :
+  DiagramGrammar.denote (fun i j g => ↑g) d = DiagramGrammar.denote (fun i j g => ↑g) e
+DiagramGrammar.equiv_derivation_sound.{u, w, z} {Obj : Type u} {K : Type z} [Semiring K] {V : Obj → Type w}
+  [(a : Obj) → AddCommMonoid (V a)] [(a : Obj) → Module K (V a)] {a b : Obj}
+  {d e : DiagramGrammar.Diagram (fun i j => V i ≃ₗ[K] V j) a b}
+  (h : DiagramGrammar.Derives (fun {a b} => DiagramGrammar.EquivRule) d e) :
+  DiagramGrammar.denote (fun i j g => ↑g) d = DiagramGrammar.denote (fun i j g => ↑g) e
+DiagramGrammar.tensor_interchange.{u, v} {R : Type u} [CommSemiring R] {a b c d e f : Type v} [Fintype b] [Fintype e]
+  (A : Matrix a b R) (B : Matrix b c R) (C : Matrix d e R) (D : Matrix e f R) :
+  Matrix.kroneckerMap (fun x1 x2 => x1 * x2) A C * Matrix.kroneckerMap (fun x1 x2 => x1 * x2) B D =
+    Matrix.kroneckerMap (fun x1 x2 => x1 * x2) (A * B) (C * D)
+DiagramGrammar.tensor_trace_factorization.{u, v} {R : Type u} [CommSemiring R] {a b : Type v} [Fintype a] [Fintype b]
+  (A : Matrix a a R) (B : Matrix b b R) : (Matrix.kroneckerMap (fun x1 x2 => x1 * x2) A B).trace = A.trace * B.trace
+DiagramGrammar.rectangular_trace_cyclicity.{u, v} {R : Type u} [CommSemiring R] {a b : Type v} [Fintype a] [Fintype b]
+  (A : Matrix a b R) (B : Matrix b a R) : (A * B).trace = (B * A).trace
+DiagramGrammar.identity_loop_value.{u, v} {R : Type u} [CommSemiring R] {a : Type v} [Fintype a] [DecidableEq a] :
+  Matrix.trace 1 = ↑(Fintype.card a)
+DiagramGrammar.complex_transport.{u_1, u_2, u_3, u_4, u_5, u_6, u_7} {K : Type u_1} {V0 : Type u_2} {V1 : Type u_3}
+  {V2 : Type u_4} {W0 : Type u_5} {W1 : Type u_6} {W2 : Type u_7} [Semiring K] [AddCommMonoid V0] [AddCommMonoid V1]
+  [AddCommMonoid V2] [AddCommMonoid W0] [AddCommMonoid W1] [AddCommMonoid W2] [Module K V0] [Module K V1] [Module K V2]
+  [Module K W0] [Module K W1] [Module K W2] (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2) (h : B ∘ₗ A = 0) (e0 : V0 ≃ₗ[K] W0)
+  (e1 : V1 ≃ₗ[K] W1) (e2 : V2 ≃ₗ[K] W2) : (↑e2 ∘ₗ B ∘ₗ ↑e1.symm) ∘ₗ ↑e1 ∘ₗ A ∘ₗ ↑e0.symm = 0
+DiagramGrammar.homotopy_implies_exact.{u_1, u_2, u_3, u_4} {K : Type u_1} {V0 : Type u_2} {V1 : Type u_3}
+  {V2 : Type u_4} [Semiring K] [AddCommMonoid V0] [AddCommMonoid V1] [AddCommMonoid V2] [Module K V0] [Module K V1]
+  [Module K V2] (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2) (hcomplex : B ∘ₗ A = 0) (s : V1 →ₗ[K] V0) (t : V2 →ₗ[K] V1)
+  (hhomotopy : A ∘ₗ s + t ∘ₗ B = LinearMap.id) : LinearMap.range A = LinearMap.ker B
+DiagramGrammar.exact_transport.{u_1, u_2, u_3, u_4, u_5, u_6, u_7} {K : Type u_1} {V0 : Type u_2} {V1 : Type u_3}
+  {V2 : Type u_4} {W0 : Type u_5} {W1 : Type u_6} {W2 : Type u_7} [Semiring K] [AddCommMonoid V0] [AddCommMonoid V1]
+  [AddCommMonoid V2] [AddCommMonoid W0] [AddCommMonoid W1] [AddCommMonoid W2] [Module K V0] [Module K V1] [Module K V2]
+  [Module K W0] [Module K W1] [Module K W2] (A : V0 →ₗ[K] V1) (B : V1 →ₗ[K] V2)
+  (hexact : LinearMap.range A = LinearMap.ker B) (e0 : V0 ≃ₗ[K] W0) (e1 : V1 ≃ₗ[K] W1) (e2 : V2 ≃ₗ[K] W2) :
+  LinearMap.range (↑e1 ∘ₗ A ∘ₗ ↑e0.symm) = LinearMap.ker (↑e2 ∘ₗ B ∘ₗ ↑e1.symm)
+DiagramGrammar.matrix_hodge_conjugacy.{u_1, u_2, u_3} {n0 : Type u_1} {n1 : Type u_2} {n2 : Type u_3} [Fintype n0]
+  [Fintype n1] [Fintype n2] [DecidableEq n0] [DecidableEq n2] (A : Matrix n1 n0 ℂ) (B : Matrix n2 n1 ℂ)
+  (U0 : Matrix n0 n0 ℂ) (U1 : Matrix n1 n1 ℂ) (U2 : Matrix n2 n2 ℂ) (h0 : U0.conjTranspose * U0 = 1)
+  (h2 : U2.conjTranspose * U2 = 1) :
+  U1 * A * U0.conjTranspose * (U1 * A * U0.conjTranspose).conjTranspose +
+      (U2 * B * U1.conjTranspose).conjTranspose * (U2 * B * U1.conjTranspose) =
+    U1 * (A * A.conjTranspose + B.conjTranspose * B) * U1.conjTranspose
+'DiagramGrammar.context_sound' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.structural_sound' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.rewriteStep_sound' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.derivation_sound' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.structural_derivation_sound' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.linearEquiv_cancellation' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.equivRule_sound' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.equiv_derivation_sound' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.tensor_interchange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiagramGrammar.tensor_trace_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiagramGrammar.rectangular_trace_cyclicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiagramGrammar.identity_loop_value' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.complex_transport' depends on axioms: [propext, Quot.sound]
+'DiagramGrammar.homotopy_implies_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiagramGrammar.exact_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DiagramGrammar.matrix_hodge_conjugacy' depends on axioms: [propext, Classical.choice, Quot.sound]

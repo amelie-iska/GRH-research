@@ -1,0 +1,43 @@
+{
+  "status": "static review passed",
+  "unique_html_ids": 80,
+  "local_link_checks": 16,
+  "missing_local_links": [],
+  "rendering": {
+    "architecture": "Canvas 2D retained numeric state plus native HTML controls, readouts and tables; SVG for circuits and plots",
+    "why_canvas": "Depth-sorted torus surface, velocity marks, complete finite fibres up to 2744 points, and live heat cells; direct rendering avoids thousands of DOM nodes.",
+    "simultaneous_canvases": 3,
+    "dpr_cap": 2,
+    "typical_backing_store_budget_bytes": "sum(canvas CSS width \u00d7 CSS height \u00d7 min(devicePixelRatio,2)^2 \u00d7 4), about 11 MB for three 600\u00d7400 canvases at DPR 2",
+    "three_dimensional_scope": "Orthographic projection of a parametric torus; physical equations use the explicitly flat coordinate metric.",
+    "repaint": "Per-control changes; resize observer; explicit user-triggered time animation capped near 22 fps; no automatic motion."
+  },
+  "accessibility": {
+    "labels": "Every range/select control has a native label and output. Every canvas/SVG has a text alternative, visible numerical readouts, scientific caption and scope.",
+    "pointer": "Pointer capture with cleanup on release/cancellation; torus canvas touch-action pan-y preserves vertical page scrolling.",
+    "keyboard": "Arrow-key torus rotation and native range/select/button controls; yaw/tilt sliders supply a non-drag alternative.",
+    "targets": "Range controls and buttons are at least 44 CSS pixels high.",
+    "motion": "Initial state is static; animation requires an explicit button; backgrounding or enabling reduced motion stops it.",
+    "color": "Sign labels plus velocity arrows; selected fibre uses a ring and image uses a cross; scaling curves have labels/dash patterns and an exact numeric table.",
+    "mobile": "Single-column figures below 850 px; two-column controls and numerical metrics on small screens; heat history panels stack below 620 px.",
+    "persistence": "URL query encodes every control; copy-link fallback exposes address-bar state; popstate reloads the same numeric model.",
+    "offline": "Numerical models and assets are local. Failure to fetch the independent reference record leaves models running and supplies an explicit record-loading message."
+  },
+  "representation_boundaries": [
+    "Taylor\u2013Green is an analytic 2D flat-torus solution, not a 3D singular solution.",
+    "Toral fibres are complete for k\u22643 and use quotient representatives; no holomorphic elliptic-curve interpretation.",
+    "Two feature qubits are separate from the 256-dimensional diagonal position register.",
+    "The circuit is untrained and simulated on a classical CPU, without shots or a noise model.",
+    "Random translation is a CPTP heat channel, not full incompressible Navier\u2013Stokes.",
+    "Scaling powers are an illustration; no upstream singular-solution simulation or new quantum advantage is asserted."
+  ],
+  "browser_visual_review": "Delegated to root; this record does not claim browser rendering was independently inspected by this subtask.",
+  "hashes": {
+    "fluids.html": "2f98aa5e3d153ee3b79d7c53ba8c6773faf3a3b7d30cc5e28f560c5e3bdb9c10",
+    "fluids.css": "8f494faae96bfdaa2c6eb06601c512137bf4fc3fec22e335e8126d506dd47899",
+    "fluids.js": "4f86e754e54fc767f775b56056d86884b15e5ad0e3e1c2e8cd34285ee5d8977a",
+    "fluid-core.js": "7ed819affd8af6c71e5fd2078d2b473fbfeea61604f41a56492ac930f90ec931",
+    "verify-fluids.cjs": "b81c3fa7d18727cae76e0f27c4cf30f2b1b1e475ab0676958f1963da0004021e",
+    "data/fluids-reference.json": "ce920dbb8f7124909793cf4619b89f55cc150daac65ed1c541972f92ccc2309b"
+  }
+}

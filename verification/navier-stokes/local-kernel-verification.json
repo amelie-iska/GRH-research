@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-13T21:30:23.635201+00:00",
+  "status": "verified",
+  "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "module_count": 4,
+  "declaration_count": 82,
+  "original_sources_manifests_and_logs_unchanged": true,
+  "protected_snapshot_sha256": {
+    "extension/lean/BridgeTheorems.lean": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+    "extension/lean/verification.json": "eced70bcd386e9cf5217333395048e1743a5fd057bde3efdb0af78d1ff66744e",
+    "extension/lean/verification.log": "4be466212af4017f7fd4b309d2665e992f9814533c117a16796abf3305ee2c4b",
+    "extension/lean/QuantumInterfaces.lean": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+    "extension/lean/quantum-verification.json": "485920684eaffaf6e769e84fbeffe5a1eca6c99e37b21039450a5a657450c69c",
+    "extension/lean/quantum-verification.log": "a3131ab151a1bba059fc791152069b928433173b23644190a19dc36f23fa76d2",
+    "extension/lean/DiagramGrammar.lean": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+    "extension/lean/diagram-verification.json": "59f301f7dfce68a99435ba5f048941967f2f49fba5870a9aca34c07ea7831269",
+    "extension/lean/diagram-verification.log": "ecad55a7777fe68b5f31e5e2a4c61f22f07c50ea89aadc2a26ca85724ff017b0",
+    "extension/lean/FluidInterfaces.lean": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+    "extension/lean/fluid-verification.json": "ed2312b56d59595e28523428718b5bf3545fc1aff995ca735b2b2304ad103cce",
+    "extension/lean/fluid-verification.log": "8ebef3ba31ea4979aa3cc37ec26749dfe4a94c13468fb7f21f1faad978e34f77"
+  },
+  "modules": [
+    {
+      "source_file": "extension/lean/BridgeTheorems.lean",
+      "source_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "original_manifest": "extension/lean/verification.json",
+      "status": "verified",
+      "command": [
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+        "env",
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+        "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/BridgeTheorems.lean"
+      ],
+      "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 18.130884546000743,
+      "warning_count": 0,
+      "log": "extension/review/navier-stokes/local-kernel-BridgeTheorems.log",
+      "log_sha256": "ade8d8baaa9d3b0c332389db051b79d05185c16081e1ddcf69d5e5344dffe259",
+      "declaration_count": 25,
+      "axioms_per_declaration": {
+        "ResearchBridge.binary_noise_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.complex_range_le_kernel": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.complex_rank_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.cone_equal_norm_iff": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.cone_perturbation": [
+          "propext"
+        ],
+        "ResearchBridge.cone_split_identity": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.cone_tangent_second_order": [
+          "propext"
+        ],
+        "ResearchBridge.euler_rank_identity": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hidden_collision_relation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hidden_kernel_relation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_characteristic_factor": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_characteristic_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_energy_nonnegative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_energy_zero_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_family_arbitrarily_small_energy": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_family_diagonal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_positive_semidefinite": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.hodge_quadratic_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.koszul_zero_composite": [
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.middle_exact_iff_rank_sum": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.noise_cancellation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.shear_determinant_one": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.shear_e2_image": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.shear_e2_norm_squared": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchBridge.shear_inverse": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "axioms_match_original_manifest": true,
+      "unexpected_axioms": [],
+      "source_unchanged": true,
+      "forbidden_tokens_outside_comments_and_strings": []
+    },
+    {
+      "source_file": "extension/lean/QuantumInterfaces.lean",
+      "source_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "original_manifest": "extension/lean/quantum-verification.json",
+      "status": "verified",
+      "command": [
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+        "env",
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+        "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/QuantumInterfaces.lean"
+      ],
+      "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 8.888902281003539,
+      "warning_count": 0,
+      "log": "extension/review/navier-stokes/local-kernel-QuantumInterfaces.log",
+      "log_sha256": "a3131ab151a1bba059fc791152069b928433173b23644190a19dc36f23fa76d2",
+      "declaration_count": 7,
+      "axioms_per_declaration": {
+        "ResearchQuantum.binarySign_add": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.boundary_phase_shift_commute": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.euler_surface_rank_substitution": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.pauliX_square": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.pauliZ_square": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.pauli_anticommutation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "ResearchQuantum.shift_phase_commutation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "axioms_match_original_manifest": true,
+      "unexpected_axioms": [],
+      "source_unchanged": true,
+      "forbidden_tokens_outside_comments_and_strings": []
+    },
+    {
+      "source_file": "extension/lean/DiagramGrammar.lean",
+      "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "original_manifest": "extension/lean/diagram-verification.json",
+      "status": "verified",
+      "command": [
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+        "env",
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+        "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/DiagramGrammar.lean"
+      ],
+      "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 5.368643449008232,
+      "warning_count": 0,
+      "log": "extension/review/navier-stokes/local-kernel-DiagramGrammar.log",
+      "log_sha256": "ecad55a7777fe68b5f31e5e2a4c61f22f07c50ea89aadc2a26ca85724ff017b0",
+      "declaration_count": 16,
+      "axioms_per_declaration": {
+        "DiagramGrammar.complex_transport": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.context_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.derivation_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.equivRule_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.equiv_derivation_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.exact_transport": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.homotopy_implies_exact": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.identity_loop_value": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.linearEquiv_cancellation": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.matrix_hodge_conjugacy": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.rectangular_trace_cyclicity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.rewriteStep_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.structural_derivation_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.structural_sound": [
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.tensor_interchange": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "DiagramGrammar.tensor_trace_factorization": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "axioms_match_original_manifest": true,
+      "unexpected_axioms": [],
+      "source_unchanged": true,
+      "forbidden_tokens_outside_comments_and_strings": []
+    },
+    {
+      "source_file": "extension/lean/FluidInterfaces.lean",
+      "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+      "original_manifest": "extension/lean/fluid-verification.json",
+      "status": "verified",
+      "command": [
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+        "env",
+        "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+        "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/FluidInterfaces.lean"
+      ],
+      "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 13.756478651994257,
+      "warning_count": 0,
+      "log": "extension/review/navier-stokes/local-kernel-FluidInterfaces.log",
+      "log_sha256": "8ebef3ba31ea4979aa3cc37ec26749dfe4a94c13468fb7f21f1faad978e34f77",
+      "declaration_count": 34,
+      "axioms_per_declaration": {
+        "FluidInterfaces.boundary_flux_divergence_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.boundary_flux_update_preserves_divergence": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.dot_self_nonneg": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.factorized_viscosity_nonneg": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.factorized_viscosity_work": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.finite_fluid_energy_derivative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.finite_fluid_work_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.hidden_recurrence_expansion": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.hidden_state_prevents_autonomous_closure": [
+          "propext"
+        ],
+        "FluidInterfaces.kineticEnergy_nonneg": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.kinetic_energy_derivative": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.lower_diagonal_lower_zero": [
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.no_commuting_complex_structure": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.pressure_work_zero": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_best_approximation": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_energy_nonincrease": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_energy_split": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_residual_kernel": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.projection_residual_orthogonal": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_generator_square": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_addition": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_determinant": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_multiplication": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_one": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.quadratic_order_representation_injective": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.renormalization_determinant": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.renormalization_is_quadratic_order_element": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.renormalization_power_determinant": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.renormalization_quadratic_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.resolved_memory_identity": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.schur_elimination_iff": [
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.skew_transport_work": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.transpose_work": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "FluidInterfaces.unforced_work_nonpositive": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "axioms_match_original_manifest": true,
+      "unexpected_axioms": [],
+      "source_unchanged": true,
+      "forbidden_tokens_outside_comments_and_strings": []
+    }
+  ],
+  "scope": "Fresh Lean kernel elaboration of the four local companion modules only, with their exact existing sources and cached pinned Lean 4.24/mathlib. The printed dependencies are compared declaration by declaration to the original verification manifests. This does not verify every manuscript theorem or any upstream continuum Navier--Stokes release theorem.",
+  "upstream_continuum_kernel_verification_performed": false,
+  "separate_upstream_attempt": "extension/review/navier-stokes/release-build-verification.json"
+}

@@ -1,0 +1,109 @@
+{
+  "source_file": "DiagramGrammar.lean",
+  "source_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+  "exit_code": 0,
+  "elapsed_seconds": 3.9312829929986037,
+  "theorem_count": 16,
+  "axioms_per_theorem": {
+    "DiagramGrammar.context_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.structural_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.rewriteStep_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.derivation_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.structural_derivation_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.linearEquiv_cancellation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.equivRule_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.equiv_derivation_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.tensor_interchange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.tensor_trace_factorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.rectangular_trace_cyclicity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.identity_loop_value": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.complex_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.homotopy_implies_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.exact_transport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "DiagramGrammar.matrix_hodge_conjugacy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "command": [
+    "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lake",
+    "env",
+    "/workspace/scratch/70763186a94c/.tooling/lean-4.24.0-linux/bin/lean",
+    "/workspace/scratch/70763186a94c/Orders-Complexes-Cryptography-YangMills/extension/lean/DiagramGrammar.lean"
+  ],
+  "working_directory": "/workspace/scratch/70763186a94c/.tooling/mathlib4-v4.24.0",
+  "status": "verified",
+  "checked_at_utc": "2026-11-13T14:30:51.147294+00:00",
+  "lean_version": "4.24.0",
+  "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "theorems": [
+    "DiagramGrammar.context_sound",
+    "DiagramGrammar.structural_sound",
+    "DiagramGrammar.rewriteStep_sound",
+    "DiagramGrammar.derivation_sound",
+    "DiagramGrammar.structural_derivation_sound",
+    "DiagramGrammar.linearEquiv_cancellation",
+    "DiagramGrammar.equivRule_sound",
+    "DiagramGrammar.equiv_derivation_sound",
+    "DiagramGrammar.tensor_interchange",
+    "DiagramGrammar.tensor_trace_factorization",
+    "DiagramGrammar.rectangular_trace_cyclicity",
+    "DiagramGrammar.identity_loop_value",
+    "DiagramGrammar.complex_transport",
+    "DiagramGrammar.homotopy_implies_exact",
+    "DiagramGrammar.exact_transport",
+    "DiagramGrammar.matrix_hodge_conjugacy"
+  ],
+  "scope": "Typed sequential syntax and one-hole contexts, finite contextual derivation soundness, explicit structural/inverse rules for linear-equivalence generators; separate finite matrix tensor/trace identities, complex/exactness transport, homotopy exactness, and Hodge matrix conjugacy. Not a complete tensor/traced/dagger graph syntax, quantum-channel calculus, full physical QNN, Yang-Mills, GRH, or semantic-completeness formalization."
+}

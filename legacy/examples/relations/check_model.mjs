@@ -1,0 +1,6 @@
+import assert from'node:assert/strict';import{readFileSync,writeFileSync}from'node:fs';
+import{matrix,filtration,basisSupport,power,multiply,identity,monodromyDet}from'../../web/relations-model.mjs';
+const data=JSON.parse(readFileSync('web/data/relations.json','utf8'));
+for(const c of data.cases){const T=matrix('jordan',c.lam,c.size),f=filtration(T);assert.deepEqual(f.kernel,c.filtration.kernel_dimensions);assert.deepEqual(f.image,c.filtration.image_dimensions);assert.deepEqual(Object.fromEntries(f.blocks.map(x=>[String(x.size),x.count])),c.filtration.nilpotent_blocks);for(let p=0;p<=c.size+1;p++){assert.equal(basisSupport(T,p,'kernel').filter(Boolean).length,f.kernel[p]);assert.equal(basisSupport(T,p,'image').filter(Boolean).length,f.image[p]);}assert.equal(monodromyDet('jordan',c.lam,c.size,c.m,0),1);}
+const f=filtration(matrix('mixed',0,3));assert.deepEqual(f.kernel,data.mixed_fitting.kernel_dimensions);assert.deepEqual(f.blocks,[{size:1,count:1},{size:3,count:1}]);
+const report={passed:true,exact_python_cases:data.cases.length,mixed_fitting:true,basis_supports:true};writeFileSync('outputs/checks/2026-11-03-linear-relations/web-model.json',JSON.stringify(report,null,2)+'\n');console.log(report);

@@ -101,5 +101,5 @@ $('play').addEventListener('click',()=>{
   $('play').textContent='Pause updates';timer=setInterval(()=>{let k=Number($('iteration').value);if(k>=model.steps){stop();return;}$('iteration').value=k+1;draw();},90);
 });
 window.addEventListener('resize',draw);new MutationObserver(()=>{draw();clearTimeout(themeTimer);themeTimer=setTimeout(draw,3100);}).observe(document.documentElement,{attributes:true});
-try{const responses=await Promise.all([fetch('/data/adaptive-readout/summary-v3.json'),fetch('/data/adaptive-theta/family-summary-v2.json')]);if(responses.some(r=>!r.ok))throw Error('Certificate response unavailable');const [fixed,adaptive]=await Promise.all(responses.map(r=>r.json()));dataset=fixed;dataset.runs.push(adaptive);setup();}
+try{const responses=await Promise.all([fetch('/legacy/data/adaptive-readout/summary-v3.json'),fetch('/legacy/data/adaptive-theta/family-summary-v2.json')]);if(responses.some(r=>!r.ok))throw Error('Certificate response unavailable');const [fixed,adaptive]=await Promise.all(responses.map(r=>r.json()));dataset=fixed;dataset.runs.push(adaptive);setup();}
 catch(e){$('status').textContent=`Unable to load certificate replay: ${e.message}`;for(const id of ['play','iteration','family','tolerance','coefficient','certificateSet','sampleNode'])$(id).disabled=true;}

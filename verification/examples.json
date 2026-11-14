@@ -1,0 +1,307 @@
+{
+  "schema": 1,
+  "script_sha256": "6c3b05fb4c3da4000fc24a2303914836ed5529f74c78b4d6bfa0dc66f6c40e8f",
+  "elliptic_curve": {
+    "field_modulus": 17,
+    "a": 2,
+    "b": 2,
+    "group_order": 19,
+    "generator": [
+      5,
+      1
+    ],
+    "generator_order": 19,
+    "multiples": [
+      {
+        "k": 0,
+        "point": "O"
+      },
+      {
+        "k": 1,
+        "point": [
+          5,
+          1
+        ]
+      },
+      {
+        "k": 2,
+        "point": [
+          6,
+          3
+        ]
+      },
+      {
+        "k": 3,
+        "point": [
+          10,
+          6
+        ]
+      },
+      {
+        "k": 4,
+        "point": [
+          3,
+          1
+        ]
+      },
+      {
+        "k": 5,
+        "point": [
+          9,
+          16
+        ]
+      },
+      {
+        "k": 6,
+        "point": [
+          16,
+          13
+        ]
+      },
+      {
+        "k": 7,
+        "point": [
+          0,
+          6
+        ]
+      },
+      {
+        "k": 8,
+        "point": [
+          13,
+          7
+        ]
+      },
+      {
+        "k": 9,
+        "point": [
+          7,
+          6
+        ]
+      },
+      {
+        "k": 10,
+        "point": [
+          7,
+          11
+        ]
+      },
+      {
+        "k": 11,
+        "point": [
+          13,
+          10
+        ]
+      },
+      {
+        "k": 12,
+        "point": [
+          0,
+          11
+        ]
+      },
+      {
+        "k": 13,
+        "point": [
+          16,
+          4
+        ]
+      },
+      {
+        "k": 14,
+        "point": [
+          9,
+          1
+        ]
+      },
+      {
+        "k": 15,
+        "point": [
+          3,
+          16
+        ]
+      },
+      {
+        "k": 16,
+        "point": [
+          10,
+          11
+        ]
+      },
+      {
+        "k": 17,
+        "point": [
+          6,
+          14
+        ]
+      },
+      {
+        "k": 18,
+        "point": [
+          5,
+          16
+        ]
+      }
+    ],
+    "associativity_triples_checked": 6859,
+    "hidden_kernel_secrets_checked": 19,
+    "arithmetic": "exact integer modular arithmetic"
+  },
+  "fourier": {
+    "q": 7,
+    "secret": 3,
+    "support": [
+      {
+        "u": 0,
+        "v": 0,
+        "probability_exact": "1/7"
+      },
+      {
+        "u": 1,
+        "v": 3,
+        "probability_exact": "1/7"
+      },
+      {
+        "u": 2,
+        "v": 6,
+        "probability_exact": "1/7"
+      },
+      {
+        "u": 3,
+        "v": 2,
+        "probability_exact": "1/7"
+      },
+      {
+        "u": 4,
+        "v": 5,
+        "probability_exact": "1/7"
+      },
+      {
+        "u": 5,
+        "v": 1,
+        "probability_exact": "1/7"
+      },
+      {
+        "u": 6,
+        "v": 4,
+        "probability_exact": "1/7"
+      }
+    ],
+    "nonzero_u_success_exact": "6/7",
+    "max_float_probability_error": 2.7755575615628914e-17,
+    "probability_sum": 0.9999999999999997,
+    "status": "floating-point check of a separately proved exact character identity"
+  },
+  "periodic_order": {
+    "parameter_checks": [
+      {
+        "t": -10,
+        "hodge_diagonal": 101
+      },
+      {
+        "t": -9,
+        "hodge_diagonal": 82
+      },
+      {
+        "t": -8,
+        "hodge_diagonal": 65
+      },
+      {
+        "t": -7,
+        "hodge_diagonal": 50
+      },
+      {
+        "t": -6,
+        "hodge_diagonal": 37
+      },
+      {
+        "t": -5,
+        "hodge_diagonal": 26
+      },
+      {
+        "t": -4,
+        "hodge_diagonal": 17
+      },
+      {
+        "t": -3,
+        "hodge_diagonal": 10
+      },
+      {
+        "t": -2,
+        "hodge_diagonal": 5
+      },
+      {
+        "t": -1,
+        "hodge_diagonal": 2
+      },
+      {
+        "t": 0,
+        "hodge_diagonal": 1
+      },
+      {
+        "t": 1,
+        "hodge_diagonal": 2
+      },
+      {
+        "t": 2,
+        "hodge_diagonal": 5
+      },
+      {
+        "t": 3,
+        "hodge_diagonal": 10
+      },
+      {
+        "t": 4,
+        "hodge_diagonal": 17
+      },
+      {
+        "t": 5,
+        "hodge_diagonal": 26
+      },
+      {
+        "t": 6,
+        "hodge_diagonal": 37
+      },
+      {
+        "t": 7,
+        "hodge_diagonal": 50
+      },
+      {
+        "t": 8,
+        "hodge_diagonal": 65
+      },
+      {
+        "t": 9,
+        "hodge_diagonal": 82
+      },
+      {
+        "t": 10,
+        "hodge_diagonal": 101
+      }
+    ],
+    "status": "exact examples; the polynomial identity is proved in the paper"
+  },
+  "cone_link": {
+    "samples": 1681,
+    "max_composition_residual": 1.1102230246251565e-16,
+    "max_unit_sphere_residual": 6.661338147750939e-16,
+    "coordinates": "(x1,x2,y1,y2) in R^4; xy=0; squared norm=1",
+    "status": "floating-point check of an explicit torus-link parameterization"
+  },
+  "noise": {
+    "modulus": 97,
+    "encoded_message": 48,
+    "integer_residual": 1,
+    "integer_bound": 6,
+    "received_residue": 49,
+    "status": "exact educational correctness calculation; no security claim"
+  },
+  "gauge": {
+    "group": "U(1)",
+    "plaquettes": 1,
+    "gauge_invariance_residual": 1.1102230246251565e-16,
+    "status": "floating-point finite gauge-identity illustration, not continuum Yang-Mills"
+  },
+  "passed": true,
+  "scope": "finite educational checks; no proof of a general cryptographic or quantum-field theorem"
+}

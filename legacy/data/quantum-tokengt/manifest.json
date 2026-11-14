@@ -1,0 +1,74 @@
+{
+  "file": "record-5952ba0b9eeaba65.json",
+  "sha256": "5952ba0b9eeaba65c4dddd861cb7a86cbde660d09b3c6d89dd3fddd6c9d62c44",
+  "run": "outputs/experiments/quantum-tokengt/run-20261103-v4",
+  "seed": 20261103,
+  "schema_version": 1,
+  "traces": [
+    {
+      "id": "quantum-tokengt-rg-softmax",
+      "title": "Physical RG / quantum-softmax",
+      "category": "quantum-tokengt-rg",
+      "kind": "trained-checkpoint-replay",
+      "file": "records/quantum-tokengt-rg-softmax-a8d5695a265e6b44.json",
+      "sha256": "a8d5695a265e6b446d60b8943f53695cf363b45679aaab611e6d7cbf318ff60e",
+      "nodes": 39,
+      "checks": 20
+    },
+    {
+      "id": "quantum-tokengt-rg-tropical",
+      "title": "Physical RG / quantum-tropical",
+      "category": "quantum-tokengt-rg",
+      "kind": "trained-checkpoint-replay",
+      "file": "records/quantum-tokengt-rg-tropical-c7b4250e2209f202.json",
+      "sha256": "c7b4250e2209f202d99577181da96365bca297b94fc024d0c279cf8071f9352b",
+      "nodes": 39,
+      "checks": 20
+    },
+    {
+      "id": "quantum-tokengt-rg-hybrid",
+      "title": "Physical RG / quantum-hybrid",
+      "category": "quantum-tokengt-rg",
+      "kind": "trained-checkpoint-replay",
+      "file": "records/quantum-tokengt-rg-hybrid-6a5d64707020ae57.json",
+      "sha256": "6a5d64707020ae57f272edb2c203bd964b47a36bf95494a0f959e034fb56055f",
+      "nodes": 39,
+      "checks": 20
+    },
+    {
+      "id": "quantum-tokengt-rg-classical-hybrid",
+      "title": "Physical RG / classical-hybrid",
+      "category": "quantum-tokengt-rg",
+      "kind": "trained-checkpoint-replay",
+      "file": "records/quantum-tokengt-rg-classical-hybrid-ccbad73a531be5bf.json",
+      "sha256": "ccbad73a531be5bfe7144431a9ac6ac3afe98cb46e52e5310770291341418c8b",
+      "nodes": 26,
+      "checks": 19
+    },
+    {
+      "id": "quantum-tokengt-rg-concept-critic",
+      "title": "Learned concept directions / intervention critic",
+      "category": "quantum-tokengt-rg",
+      "kind": "trained-checkpoint-replay",
+      "file": "records/quantum-tokengt-rg-concept-critic-65f508250e2de93c.json",
+      "sha256": "65f508250e2de93ca23576d2982426e1acf160dc76c7ed16bc8e32c9c4c9bf88",
+      "nodes": 30,
+      "checks": 5
+    },
+    {
+      "id": "quantum-tokengt-rg-continuous-gfn",
+      "title": "Continuous GFlowNet / Gaussian MLP and trajectory balance",
+      "category": "quantum-tokengt-rg",
+      "kind": "trained-checkpoint-replay",
+      "file": "records/quantum-tokengt-rg-continuous-gfn-0eb0db0ce2c60305.json",
+      "sha256": "0eb0db0ce2c60305a58b500e7218a229f37a3b7307a28bffcfafbb83ac46e9c1",
+      "nodes": 66,
+      "checks": 9
+    }
+  ],
+  "qec_layer": {
+    "file": "qec-layer-9ab7dcea6143ccfc.json",
+    "sha256": "9ab7dcea6143ccfce00b596a82642d17f10c3d22f5c89a5d6804eb7ec0266f30",
+    "run": "outputs/experiments/quantum-tokengt/qec-memory-layer-20261103-v1"
+  }
+}

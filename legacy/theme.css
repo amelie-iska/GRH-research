@@ -1,0 +1,85 @@
+/* Original biomechanical / future-bridge skin. Local, reversible, data neutral. */
+html.site-theme-ready { color-scheme: light; }
+html.site-theme-ready body { isolation:isolate; transition:background-color 2100ms ease,color 1350ms ease; }
+[data-theme-material] { transition-property:background-color,color,border-color,box-shadow,filter,border-radius,text-shadow; transition-duration:var(--theme-duration,1200ms); transition-delay:var(--theme-delay,0ms); transition-timing-function:cubic-bezier(.23,.6,.25,1); }
+html.site-theme-ready:not([data-theme-embedded]) body>header { padding-left:226px; }
+html.site-theme-ready:not([data-theme-embedded]) .reader-nav { padding-left:226px; min-height:60px; }
+#theme-switchboard { position:fixed; z-index:1000; top:12px; left:12px; display:flex; gap:7px; align-items:center; }
+#theme-switchboard button { box-sizing:border-box; height:40px; margin:0; cursor:pointer; color:#ccf5f5; background:linear-gradient(125deg,#1b3037,#0a151c); border:1px solid #41616b; border-radius:18px 5px 18px 5px; box-shadow:inset 0 1px #d2ffff16,0 3px 12px #0003; font:10px/1 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.1em; }
+#themeToggle { display:flex; gap:10px; align-items:center; padding:0 13px 0 9px; min-width:153px; }
+#motionToggle { width:34px; padding:0!important; font-size:17px!important; border-radius:5px 12px 5px 12px!important; }
+#motionToggle:disabled { opacity:.65; cursor:default; }
+#theme-switchboard button:hover { border-color:#9df1f2; box-shadow:0 0 14px #57e4e52b; }
+#theme-switchboard button:focus-visible { outline:2px solid #eab17a; outline-offset:4px; }
+#theme-switchboard [hidden] { display:none!important; }
+.theme-reactor { display:block; flex:none; width:23px; height:23px; border-radius:50%; position:relative; border:1px solid #8fcbd1; background:radial-gradient(circle,#8ed7e1 0 2px,transparent 3px 6px,#233d47 7px 8px,transparent 9px),conic-gradient(from 30deg,transparent 0 22%,#7baab2 23% 25%,transparent 26% 55%,#7baab2 56% 58%,transparent 59% 89%,#7baab2 90% 92%,transparent 93%); }
+.theme-reactor:after { content:''; position:absolute; inset:4px; border-radius:50%; border:1px solid #81c6d15e; }
+html[data-theme=biomech] { color-scheme:dark; --ink:#d2e1e6; --muted:#96aeb8; --paper:#070d14; --line:#29404d; --green:#83e5ed; --orange:#e9ae72; --blue:#a7a9ef; --night-panel:#0b1721; }
+html[data-theme=biomech] body { background-color:var(--paper)!important; color:var(--ink)!important; }
+body:before,body:after { content:''; position:fixed; inset:0; pointer-events:none; z-index:-1; opacity:0; transition:opacity 2400ms ease; }
+html[data-theme=biomech] body:before { opacity:1; background:radial-gradient(ellipse at 85% 3%,#314e6733,transparent 45%),radial-gradient(ellipse at 0 80%,#35565322,transparent 55%),repeating-radial-gradient(ellipse at -15% 115%,transparent 0 29px,#79a1ac12 30px 31px,#02050977 32px 39px,transparent 40px 58px); }
+html[data-theme=biomech] body:after { opacity:1; background:linear-gradient(112deg,transparent 30%,#6fdde308 47%,#94e5ef12 49%,transparent 56%); background-size:260% 100%; animation:theme-atmosphere 38s ease-in-out infinite alternate; }
+html[data-theme=biomech] header,html[data-theme=biomech] .reader-nav { color:var(--ink)!important; background:#08131ceF!important; border-color:var(--line)!important; box-shadow:0 1px 0 #95ecf126,0 12px 28px #0003; backdrop-filter:blur(18px); }
+html[data-theme=biomech] .reader-nav span,html[data-theme=biomech] .private { color:var(--muted); }
+html[data-theme=biomech] a { color:var(--green)!important; }
+html[data-theme=biomech] a:hover { color:#cbf8ff!important; text-shadow:0 0 16px #85e9ff88; }
+html[data-theme=biomech] h1,html[data-theme=biomech] h2,html[data-theme=biomech] h3,html[data-theme=biomech] h4 { color:#dceff3!important; font-family:'Avenir Next Condensed','Arial Narrow',system-ui,sans-serif; letter-spacing:.015em; font-weight:500; text-shadow:0 0 30px #72d5ec20; }
+html[data-theme=biomech] .eyebrow,html[data-theme=biomech] .brand,html[data-theme=biomech] .badge,html[data-theme=biomech] label,html[data-theme=biomech] legend { color:var(--green); }
+html[data-theme=biomech] .small,html[data-theme=biomech] .caption,html[data-theme=biomech] .scope,html[data-theme=biomech] .lede { color:var(--muted)!important; }
+html[data-theme=biomech] section { position:relative; border-color:var(--line); }
+html[data-theme=biomech] section:before { content:''; position:absolute; left:-17px; top:36px; width:3px; height:65px; border-radius:7px; opacity:.6; background:linear-gradient(#8adfe8,#8c91cc 60%,transparent); box-shadow:0 0 14px #70c9e33d; pointer-events:none; }
+html[data-theme=biomech] section:after { content:''; position:absolute; right:3px; top:23px; width:4px; height:4px; background:#7bcfd4; border-radius:50%; box-shadow:-10px 0 #a9a2e8,-20px 0 #c9a77a; pointer-events:none; }
+html[data-theme=biomech] .cards article,html[data-theme=biomech] .reader-lab,html[data-theme=biomech] .reader-covering,html[data-theme=biomech] .aux,html[data-theme=biomech] .scene-panel,html[data-theme=biomech] .detail,html[data-theme=biomech] .steps { background:linear-gradient(130deg,#15242e,#09131d 60%,#0d1822)!important; border-color:#354c5a!important; border-radius:23px 5px 23px 5px; box-shadow:inset 1px 0 #97e6e21b,inset 0 1px #b6dfe50a,0 8px 25px #0002; }
+html[data-theme=biomech] pre,html[data-theme=biomech] .result,html[data-theme=biomech] .cell-description { color:#c0dce5!important; background:#09151f!important; border:1px solid #2e4755; border-left:3px solid #737eb1; border-radius:3px 13px 3px 13px; }
+html[data-theme=biomech] .diagram { background:#09151c!important; border-color:#38515e!important; box-shadow:inset 0 0 30px #0004,0 0 20px #52d6e508; }
+html[data-theme=biomech] canvas { background:#e5eff8!important; filter:invert(.96) hue-rotate(165deg) saturate(1.05) contrast(1.04); border-radius:18px 4px 18px 4px; }
+html[data-theme=biomech] .diagram>svg,html[data-theme=biomech] img[src$='.svg'],html[data-theme=biomech] .tensor-grid { filter:invert(.92) hue-rotate(165deg) saturate(.82); }
+html[data-theme=biomech] .tensor-grid button { color:#172d2e!important; }
+html[data-theme=biomech] math { color:var(--ink)!important; }
+html[data-theme=biomech] video,html[data-theme=biomech] iframe { border:1px solid #345563; border-radius:15px 4px 15px 4px; box-shadow:0 0 24px #64baca10; }
+html[data-theme=biomech] select,html[data-theme=biomech] input:not([type=range]):not([type=checkbox]) { background-color:#0c1b26!important; color:var(--ink)!important; border-color:#45606d!important; }
+html[data-theme=biomech] select option { background:#0c1b26; color:var(--ink); }
+html[data-theme=biomech] input[type=range],html[data-theme=biomech] input[type=checkbox] { accent-color:#7bd5e4; }
+html[data-theme=biomech] button:not(#themeToggle):not(#motionToggle) { color:var(--green); border-color:#3e5968; }
+html[data-theme=biomech] button:not(#themeToggle):not(#motionToggle):hover { background-color:#153440; }
+html[data-theme=biomech] .button,html[data-theme=biomech] .tabs button[aria-selected=true],html[data-theme=biomech] #play { color:#d4f5f7!important; background:#17414e!important; box-shadow:inset 0 1px #93e0e62e,0 0 18px #4eceed13; }
+html[data-theme=biomech] .node-list button[aria-current=true] { background:#183543; color:#b7f2f5; border-left-color:#b6a3e6; }
+html[data-theme=biomech] .node-list .tiny-shape { color:#9cb9c5; }
+html[data-theme=biomech] .badge { background:#102832; border-color:#466371; border-radius:10px 2px 10px 2px; }
+html[data-theme=biomech] .badge.reference { color:#ecc194!important; background:#30241b; }
+html[data-theme=biomech] fieldset,html[data-theme=biomech] details { border-color:var(--line); }
+html[data-theme=biomech] summary { color:#a9dce4; }
+html[data-theme=biomech] tr { border-color:#29404d; }
+html[data-theme=biomech] ::selection { background:#467285; color:#f0ffff; }
+html[data-theme=biomech] :focus-visible { outline-color:#ecc092; }
+html[data-theme=biomech] ::-webkit-scrollbar { width:9px; height:9px; }
+html[data-theme=biomech] ::-webkit-scrollbar-track { background:#07121b; }
+html[data-theme=biomech] ::-webkit-scrollbar-thumb { background:#355362; border:2px solid #07121b; border-radius:8px; }
+/* Slow, offset signals rather than rapid strobing or changing scientific values. */
+html[data-theme=biomech] [data-theme-visible=true].eyebrow,html[data-theme=biomech] [data-theme-visible=true].badge,html[data-theme=biomech] [data-theme-visible=true].private { animation:theme-signal 8s ease-in-out infinite alternate; animation-delay:var(--theme-pulse-delay,0s); }
+html[data-theme=biomech] section[data-theme-visible=true]:after { animation:theme-beacon 4.8s ease-in-out infinite; animation-delay:var(--theme-pulse-delay,0s); }
+html[data-theme=biomech] section[data-theme-visible=true]:before { animation:theme-spine 11s ease-in-out infinite alternate; animation-delay:var(--theme-pulse-delay,0s); }
+html[data-theme=biomech] article[data-theme-visible=true],html[data-theme=biomech] .reader-lab[data-theme-visible=true],html[data-theme=biomech] .diagram[data-theme-visible=true] { animation:theme-hull 9s ease-in-out infinite alternate; animation-delay:var(--theme-pulse-delay,0s); }
+html[data-theme=biomech] .theme-reactor { animation:theme-reactor 20s linear infinite; box-shadow:0 0 13px #81e3e945,inset 0 0 7px #9df5f139; }
+html[data-theme=biomech] #motionToggle { animation:theme-signal 6s ease-in-out infinite alternate; }
+html[data-theme-motion=paused] *,html[data-theme-motion=paused] :before,html[data-theme-motion=paused] :after { animation-play-state:paused!important; }
+@keyframes theme-atmosphere { from{background-position:0% 50%}to{background-position:100% 50%} }
+@keyframes theme-reactor { to{transform:rotate(360deg)} }
+@keyframes theme-beacon { 0%,100%{opacity:.45;box-shadow:-10px 0 #a9a2e855,-20px 0 #c9a77a88}45%{opacity:1;box-shadow:-10px 0 #a9a2e8,-20px 0 #c9a77a,0 0 10px #8be7f4} }
+@keyframes theme-spine { from{height:45px;opacity:.35}to{height:100px;opacity:.8} }
+@keyframes theme-signal { 0%{color:#80d6e3;text-shadow:0 0 5px #76d7ec22}55%{color:#b4abed;text-shadow:0 0 13px #bba6ff55}100%{color:#e6b581;text-shadow:0 0 7px #d49b5c33} }
+@keyframes theme-hull { from{box-shadow:inset 1px 0 #97e6e21b,0 0 16px #62c9db08}to{box-shadow:inset 1px 0 #b1a0d53a,0 0 22px #9794de18} }
+@media(max-width:1050px) { html.site-theme-ready:not([data-theme-embedded]) body>header { padding-left:211px; } header nav{gap:12px} }
+@media(max-width:850px) { #themeToggle{min-width:42px;width:42px;padding:0;justify-content:center} .theme-caption{display:none} #theme-switchboard{gap:5px} html.site-theme-ready:not([data-theme-embedded]) body>header{padding-left:108px;padding-right:12px;min-height:64px} html.site-theme-ready:not([data-theme-embedded]) .reader-nav{padding-left:108px;font-size:11px} header nav{display:none} header .brand{font-size:10px;letter-spacing:.075em} header .badge{max-width:105px;font-size:8px;letter-spacing:.06em;text-align:center} }
+@media(prefers-reduced-motion:reduce) { html.site-theme-ready,html.site-theme-ready *{scroll-behavior:auto!important;transition:none!important} html.site-theme-ready *,html.site-theme-ready :before,html.site-theme-ready :after{animation:none!important;transition:none!important} }
+
+html[data-theme=biomech] header:after,html[data-theme=biomech] .reader-nav:after { content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent 10%,#8bdde900 28%,#8bdde9bb 41%,#aaa0e688 48%,transparent 57%,#e5b27966 72%,transparent 90%);background-size:220% 100%;animation:theme-rail 14s ease-in-out infinite alternate; }
+html[data-theme=biomech] .cards article,html[data-theme=biomech] .diagram { position:relative; }
+html[data-theme=biomech] .cards article:before,html[data-theme=biomech] .diagram:before { content:'';position:absolute;left:12px;top:0;width:24%;height:2px;border-radius:6px;background:linear-gradient(90deg,#8399c622,#87dce9aa,#c1a4e666,transparent);pointer-events:none;opacity:.7; }
+html[data-theme=biomech] .cards article[data-theme-visible=true]:before,html[data-theme=biomech] .diagram[data-theme-visible=true]:before { animation:theme-instrument 12s ease-in-out infinite alternate;animation-delay:var(--theme-pulse-delay,0s); }
+@keyframes theme-rail { from{background-position:0% 50%}to{background-position:100% 50%} }
+@keyframes theme-instrument { from{opacity:.25;width:16%}to{opacity:.9;width:47%} }
+html[data-theme=biomech] .scene-wrap { background:#0c1924!important; border-color:#365261; }
+html[data-theme=biomech] .scene-caption { background:#10232e; color:#9dbac4; }
+html[data-theme=biomech] .selected-cell { background:#10232e; color:#c0dce5; border-left-color:#92cddc; }
+html.site-theme-ready:not([data-theme-embedded]) body>main>h1:first-child { margin-top:76px; }

@@ -1,0 +1,184 @@
+% Generated shared reviewed material.
+\section{All-ideal reciprocity and the surviving block obstruction}
+\label{wc:details}
+The proof uses no new zero-free input. Its external analytic ingredient
+is the pinned BGL large sieve and the powered estimates established in
+its proof; elementary ideal counting and the already restored Mellin
+identity supply the remaining interfaces. All constants may depend on
+fixed $K$, $S$, $\nu$ and declared small exponents, never on $U$.
+
+\subsection{Exact recombination retains the primitive corrections}
+On $\operatorname{Re}s>1$, start from the full defining series, with
+its original zero masks:
+\[
+ F_{u,d}(s)=\sum_{c\ \mathrm{squarefree}\atop(c,T(u,d))=1}
+                 \nu(c)\chi_c(u)(Nc)^{-s}.
+\]
+Its primitive ratio involves $L(s,\psi_u)$, the independently primitive
+$L(2s,\psi_{u,2})$ and every deleted Euler factor. Expanding this
+\emph{restored} series gives the exact equality
+\begin{align}\label{wc:recombine}
+ &\sum_{d\ \mathrm{squarefree}\atop(d,S)=1}
+ \beta_U(d)\nu(d)\chi_d(u)(Nd)^{-s}F_{u,d}(s)\notag\\
+ &\qquad=\sum_{m\ \mathrm{squarefree}\atop(m,S)=1}
+               A_U(m)\nu(m)\chi_m(u)(Nm)^{-s}.
+\end{align}
+Indeed $(c,d)=1$ makes $m=cd$ squarefree, with $d\mid m$. If $m$
+meets $u$, both original symbols retain their zero. Only on the
+absolutely convergent line is this infinite series used. Mellin inversion
+there gives the finite smoothed polynomial~\eqref{wc:polynomial}.
+Nothing evaluates~\eqref{wc:recombine} as a Dirichlet series on
+$\operatorname{Re}s=1/2+\delta$ or interchanges a cutoff limit with
+continuation across unknown zeros.
+
+For squarefree $m$, a factorization $ab=d\mid m$ assigns each prime
+to $a$, to $b$, or to neither. The actual inequalities $Na,Nb\le U$
+select a subset of these assignments. Thus
+\[
+ |A_U(m)|\le3^{\omega(m)}\ll_\eta(Nm)^\eta.
+\]
+The last divisor bound follows by choosing a fixed threshold so
+$3\le(Np)^\eta$ beyond it, then absorbing the finitely many smaller
+prime ideals in a constant. When $Nm\le U$ all assignments occur,
+so $A_U(m)=\prod_{p\mid m}(1-1-1)=\mu(m)$; no such simplification
+is made for the length-$D$ columns in general. With
+$\lambda_m=D^{-1/2}A_U(m)\nu(m)W(Nm/D)$, ideal counting and a
+smaller internal $\eta$ give
+\begin{equation}\label{wc:l2}
+ \sum_m|\lambda_m|^2\ll_\eta\|W\|_\infty^2D^\eta,
+ \qquad \operatorname{supp}\lambda\subseteq\{D\le Nm\le2D\}.
+\end{equation}
+
+\subsection{The powered squarefree input and all-ideal pivot}
+Let $\vartheta_a$ be BGL's canonical primitive sixth-order family.
+Their Section~3 defines $B_1^j$ using squarefree row/column ideals and
+kernel $\vartheta_a(m)^j$, while $B_2^j$ uses \emph{all} ideal rows
+and kernel $\vartheta_m(a)^j$. Theorem~1.3 states the squarefree bound
+for $j=1$; its Section~3.2 proves the estimates simultaneously for
+$1\le j\le5$, because the recursion in Lemma~3.4 uses $j\ell$.
+In particular the two inputs needed here are
+\begin{equation}\label{wc:powered-input}
+ B_1^j(M,D)\ll_\eta(MD)^\eta
+                 \{M+D+(MD)^{2/3}\},\qquad j=1,2.
+\end{equation}
+To see the final step in the published recursion explicitly, its
+$E_{4/3}$ estimate is $M^{4/3}+D+(MD)^{2/3}$.
+If $M\le D$, its first term is at most $(MD)^{2/3}$; if $M>D$,
+use reciprocity/duality (3.2) and the estimate with $M,D$ reversed.
+The finite set of powers is treated together; no inference from a
+fixed conductor count to an arbitrary primitive-character sieve occurs.
+
+Write each ideal row uniquely as
+\[
+ a=a_1a_2^2a_3^3a_4^4a_5^5a_6^6,
+\]
+where $a_1,\ldots,a_5$ are pairwise-coprime squarefree ideals and
+$a_6$ is arbitrary. For valuation $6q+r$, $0\le r\le5$, place the
+prime in $a_r$ if $r>0$ and its power $q$ in $a_6$.
+Dyadically let $A_j\le Na_j<2A_j$, with $A_j\ge1$, and put
+$R=\prod_{j=1}^6A_j$. A nonempty block satisfies
+$\prod_jA_j^j\le X$ when $Na\le X$.
+Choose $\ell=1$ if $A_1\ge A_2$, and $\ell=2$ otherwise; put
+$M=A_\ell$. Keep every other ideal fixed. Evaluation of the single
+\emph{column} character gives
+\[
+ \vartheta_m(a)=\vartheta_m(a_\ell)^\ell
+                  \vartheta_m(a/a_\ell^\ell).
+\]
+The second factor is a bounded column multiplier, including its original
+zero if $m$ meets any fixed factor. It may depend on all the fixed
+ideals but not on the pivot row. Pairwise-coprimality and the exact row
+norm restriction merely select a subset of the positive pivot-row sum.
+Apply~\eqref{wc:powered-input} to the first factor. There are
+$O_K(R/M)$ choices of the other ideals by ideal counting. The block
+energy is bounded by
+\begin{equation}\label{wc:block}
+ (XD)^\eta\{R+DR/M+D^{2/3}R/M^{1/3}\}\sum_m|\lambda_m|^2.
+\end{equation}
+
+All three monomial bounds used to sum these blocks are elementary.
+First $R\le\prod_jA_j^j\le X$.
+If $M=A_1$, then
+\[
+ (R/M)^3=A_2^3\cdots A_6^3
+ \le A_1A_2^2A_3^3A_4^4A_5^5A_6^6\le X,
+\]
+since $A_2\le A_1$ and $j\ge3$ for the remaining factors.
+If $M=A_2$, use $A_1\le A_2$ in the same comparison.
+Finally,
+\[
+ \frac{R^3}{M(\prod_jA_j^j)^2}
+ =\frac{A_1}{MA_2A_3^3A_4^5A_5^7A_6^9}\le1.
+\]
+Thus $R/M\le X^{1/3}$ and $R/M^{1/3}\le X^{2/3}$.
+Insert these in~\eqref{wc:block} and sum the logarithmically many
+blocks. This proves the all-ideal estimate used in Theorem~\ref{wc:uniform}.
+It is precisely the mechanism of BGL Lemma~3.4 and (3.6)--(3.9),
+with the final powered bound inserted. The simpler fixed-squarefull-row
+argument would leave the weaker $D\sqrt X$ term.
+
+\subsection{Literal rows, reciprocal orientation and principal count}
+Let $a=(u)_S$ denote the outside-$S$ ideal. The finite $S$-unit
+comparison gives $\kappa_u=\eta_u\vartheta_a$ as primitive
+characters, with $\eta_u$ in a finite fixed set.
+For $(a,m)=1$, BGL reciprocity therefore gives
+\begin{equation}\label{wc:literal-reciprocity}
+ \chi_m(u)=\eta_u(m)C([a],[m])\vartheta_m(a).
+\end{equation}
+The notation is deliberate: the left side is the project's original
+$(u/m)_6$, not BGL's canonical character indexed by $m$.
+When $(a,m)>1$, the left side is zero. The right side is also zero,
+because squarefree $m$ has outside-$S$ primitive conductor exactly $m$.
+Equation~\eqref{wc:literal-reciprocity} hence extends to every pair.
+Using $\vartheta_a(m)$ on noncoprime pairs instead would be false:
+primitive $\vartheta_{b^6}$ has restored primes of $b$, whereas the
+original symbol must still vanish there.
+
+Partition rows by $\eta_u$ and $[a]$, both finite. On each part the
+factor $\eta_u(m)C([a],[m])$ is a fixed modulus-one column multiplier.
+A positive row sum over that part is bounded by the full $B_2^1$ row
+sum. For each $S$-supported ideal $b$ and outside-$S$ ideal $a$, at
+most six actual elements generate $ab$. Thus the required literal energy
+is bounded by the all-ideal norm summed over $b$, with $X=H/Nb$.
+The geometric products
+\[
+ \sum_{b\ S\text{-supported}}(Nb)^{-q}
+   =\prod_{p\in S}(1-(Np)^{-q})^{-1}<\infty,
+ \qquad q=1,\ 1/3,\ 2/3,
+\]
+transfer the three terms without losing any unit or $S$-power row.
+Together with~\eqref{wc:l2}, this proves the claimed $I$ energy.
+
+If $\psi_u$ is principal, $\nu$ is unramified outside $S$, and tame
+Kummer inertia at $v_p(u)$ has order $6/\gcd(6,v_p(u))$.
+It must be trivial, so each such valuation is divisible by $6$.
+Writing $(u)=ba_6^6$ with $b$ supported in $S$, ideal counting gives
+\[
+ \#\{0<Nu\le H:\psi_u=1\}
+ \ll_K H^{1/6}\prod_{p\in S}(1-(Np)^{-1/6})^{-1}.
+\]
+This is only a necessary condition, sufficient for an upper count.
+The exact residue formula~\eqref{wc:principal} and
+$|\widehat W(1)|\le\|W\|_\infty$ then give the principal energy
+bound used above. No sign or positivity of that residue is assumed.
+
+\subsection{What the envelope still fails to prove}
+The $DH^{1/3}$ term is still larger than $H(HD)^\varepsilon$ at
+$H=D^{3/4}$. The monomial comparison itself is saturated by
+$A_1=A_2=X^{1/3}$ and $A_3=\cdots=A_6=1$.
+This proves sharpness of that \emph{particular comparison}, not an
+energy lower bound for actual arithmetic coefficients. In particular,
+no conclusion that the signed $A_U$ cannot cancel is justified.
+The next load-bearing input must exploit those actual truncated M\"obius
+coefficients inside the mixed moment, or establish the required signed
+type-II minus type-I covariance. The smaller-scale short term, principal
+contribution, full arithmetic determinant identification and GRH remain
+separate obligations.
+
+Exact finite checks use the split Eisenstein primes generated by
+$3+\omega$, $4+\omega$, $5+2\omega$, $6+\omega$, of norms
+$7,13,19,31$. Their actual residue symbols are computed in
+$\mathbb Q(\zeta_6)$, retaining sixth-power zeros. Coefficient
+recombination and dyadic inequalities pass; they check finite algebra
+and bookkeeping, not the external analytic sieve or the contour theorem.
+No new Lean declarations accompany this argument.

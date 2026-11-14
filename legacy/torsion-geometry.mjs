@@ -1,0 +1,6 @@
+// Intrinsic torsion changes preserve the explicit bond graph and bond lengths.
+const sub=(a,b)=>a.map((v,i)=>v-b[i]),dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],mul=(a,s)=>a.map(v=>v*s),add=(a,b)=>a.map((v,i)=>v+b[i]);
+export const wrapAngle=x=>(x+Math.PI)%(2*Math.PI)<0?(x+Math.PI)%(2*Math.PI)+Math.PI:(x+Math.PI)%(2*Math.PI)-Math.PI;
+export function torsion(x,[a,b,c,d]){const axis=sub(x[c],x[b]),u=mul(axis,1/Math.hypot(...axis)),p=sub(x[a],x[b]),q=sub(x[d],x[c]),v=sub(p,mul(u,dot(p,u))),w=sub(q,mul(u,dot(q,u)));return Math.atan2(dot(cross(u,v),w),dot(v,w));}
+export function molecularPose(target,angles){const x=target.base_coordinates_angstrom.map(p=>p.slice()),adj=x.map(()=>[]);for(const b of target.bonds){adj[b.a].push(b.b);adj[b.b].push(b.a);}
+ target.torsion_atoms.forEach((quad,k)=>{const [,b,c]=quad,axis=sub(x[c],x[b]),u=mul(axis,1/Math.hypot(...axis)),a=wrapAngle(angles[k]-torsion(x,quad)),co=Math.cos(a),si=Math.sin(a),seen=new Set([b,c]),queue=[c];for(let i=0;i<queue.length;i++)for(const j of adj[queue[i]])if(!seen.has(j)){seen.add(j);queue.push(j);}for(const i of queue){const r=sub(x[i],x[b]);x[i]=add(x[b],add(add(mul(r,co),mul(cross(u,r),si)),mul(u,dot(u,r)*(1-co))));}});return x;}

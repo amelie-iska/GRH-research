@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-13",
+  "surface": "managed cloud browser preview",
+  "app": "quantum.html",
+  "observed": {
+    "encoder": {
+      "gates": 42,
+      "data_qubits": 18,
+      "norm2_display": "1.0000000000",
+      "overlap_display": "1.00000000",
+      "basis_support": 256,
+      "basis_entropy_bits": 8,
+      "all_18_stabilizers": "+1"
+    },
+    "X0_error": {
+      "negative_Z_checks": [
+        "B0",
+        "B6"
+      ],
+      "other_checks": "+1"
+    },
+    "training": {
+      "steps": 1,
+      "theta_display": [
+        0.5743,
+        -0.3579,
+        0.4456,
+        -0.5319
+      ],
+      "prediction_magnitude_display": 0.61159,
+      "held_out_MSE_display": 0.15086,
+      "all_16_signs_correct": true
+    },
+    "genus2": {
+      "n": 32,
+      "k": 4,
+      "chi": -2,
+      "x_rank": 13,
+      "z_rank": 15,
+      "browser_dense_allocation": false
+    },
+    "desktop": {
+      "viewport": 1363,
+      "content_width": 1348
+    },
+    "narrow_iframe": {
+      "viewport": 375,
+      "content_width": 375
+    }
+  },
+  "fixes": [
+    "Explicit stable aria-labels added to the eight dynamically populated select controls after an exact-label selector exposed options being included in label text."
+  ],
+  "console": "Observed errors originated in browser-extension metadata; no application-origin error was observed.",
+  "limits": [
+    "This is browser interaction verification, not a proof of the floating-point engine or quantum advantage.",
+    "Final published URL and later algebra companion require their own final verification."
+  ]
+}

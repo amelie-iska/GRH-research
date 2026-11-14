@@ -1,0 +1,102 @@
+'ResearchBridge.complex_range_le_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.complex_rank_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.middle_exact_iff_rank_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.euler_rank_identity' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.cone_perturbation' depends on axioms: [propext]
+'ResearchBridge.cone_tangent_second_order' depends on axioms: [propext]
+'ResearchBridge.cone_split_identity' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.cone_equal_norm_iff' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.koszul_zero_composite' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.hodge_positive_semidefinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_quadratic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_energy_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_energy_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_characteristic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_characteristic_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_family_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hodge_family_arbitrarily_small_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.shear_determinant_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.shear_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.shear_e2_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.shear_e2_norm_squared' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.hidden_kernel_relation' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.hidden_collision_relation' depends on axioms: [propext, Quot.sound]
+'ResearchBridge.noise_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ResearchBridge.binary_noise_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.complex_range_le_kernel.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3}
+  {V₂ : Type u_4} [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁]
+  [Module K V₂] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) : LinearMap.range A ≤ LinearMap.ker B
+'ResearchBridge.complex_range_le_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.complex_rank_bound.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3} {V₂ : Type u_4}
+  [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁] [Module K V₂]
+  [FiniteDimensional K V₁] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) :
+  Module.finrank K ↥(LinearMap.range A) + Module.finrank K ↥(LinearMap.range B) ≤ Module.finrank K V₁
+'ResearchBridge.complex_rank_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.middle_exact_iff_rank_sum.{u_1, u_2, u_3, u_4} {K : Type u_1} {V₀ : Type u_2} {V₁ : Type u_3}
+  {V₂ : Type u_4} [Field K] [AddCommGroup V₀] [AddCommGroup V₁] [AddCommGroup V₂] [Module K V₀] [Module K V₁]
+  [Module K V₂] [FiniteDimensional K V₁] (A : V₀ →ₗ[K] V₁) (B : V₁ →ₗ[K] V₂) (h : B ∘ₗ A = 0) :
+  LinearMap.range A = LinearMap.ker B ↔
+    Module.finrank K ↥(LinearMap.range A) + Module.finrank K ↥(LinearMap.range B) = Module.finrank K V₁
+'ResearchBridge.middle_exact_iff_rank_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.euler_rank_identity (a b c r s : ℤ) : a - r - (b - r - s) + (c - s) = a - b + c
+'ResearchBridge.euler_rank_identity' depends on axioms: [propext, Quot.sound]
+ResearchBridge.cone_perturbation.{u_1} {R : Type u_1} [CommRing R] (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R) :
+  ResearchBridge.cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) =
+    ResearchBridge.cone x₁ x₂ y₁ y₂ + t * (y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂) +
+      t ^ 2 * ResearchBridge.cone u₁ u₂ v₁ v₂
+'ResearchBridge.cone_perturbation' depends on axioms: [propext]
+ResearchBridge.cone_tangent_second_order.{u_1} {R : Type u_1} [CommRing R] (x₁ x₂ y₁ y₂ u₁ u₂ v₁ v₂ t : R)
+  (h₀ : ResearchBridge.cone x₁ x₂ y₁ y₂ = 0) (h₁ : y₁ * u₁ + y₂ * u₂ + v₁ * x₁ + v₂ * x₂ = 0) :
+  ResearchBridge.cone (x₁ + t * u₁) (x₂ + t * u₂) (y₁ + t * v₁) (y₂ + t * v₂) = t ^ 2 * ResearchBridge.cone u₁ u₂ v₁ v₂
+'ResearchBridge.cone_tangent_second_order' depends on axioms: [propext]
+ResearchBridge.cone_split_identity.{u_1} {R : Type u_1} [CommRing R] (u₁ u₂ v₁ v₂ : R) :
+  ResearchBridge.cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) = u₁ ^ 2 + u₂ ^ 2 - (v₁ ^ 2 + v₂ ^ 2)
+'ResearchBridge.cone_split_identity' depends on axioms: [propext, Quot.sound]
+ResearchBridge.cone_equal_norm_iff.{u_1} {R : Type u_1} [CommRing R] (u₁ u₂ v₁ v₂ : R) :
+  ResearchBridge.cone (u₁ + v₁) (u₂ + v₂) (u₁ - v₁) (u₂ - v₂) = 0 ↔ u₁ ^ 2 + u₂ ^ 2 = v₁ ^ 2 + v₂ ^ 2
+'ResearchBridge.cone_equal_norm_iff' depends on axioms: [propext, Quot.sound]
+ResearchBridge.koszul_zero_composite.{u_1} {R : Type u_1} [CommRing R] (x y c : R) : x * (-y * c) + y * (x * c) = 0
+'ResearchBridge.koszul_zero_composite' depends on axioms: [propext, Quot.sound]
+ResearchBridge.hodge_positive_semidefinite.{u_1, u_2, u_3} {m : Type u_1} {n : Type u_2} {p : Type u_3} [Fintype m]
+  [Fintype n] [Fintype p] (A : Matrix n m ℝ) (B : Matrix p n ℝ) : (A * Aᴴ + Bᴴ * B).PosSemidef
+'ResearchBridge.hodge_positive_semidefinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.hodge_quadratic_identity (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :
+  ![z₁, z₂] ⬝ᵥ ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂ *ᵥ ![z₁, z₂] = ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂
+'ResearchBridge.hodge_quadratic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.hodge_energy_nonnegative (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) : 0 ≤ ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂
+'ResearchBridge.hodge_energy_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.hodge_energy_zero_iff (x₁ x₂ y₁ y₂ z₁ z₂ : ℝ) :
+  ResearchBridge.hodgeEnergy x₁ x₂ y₁ y₂ z₁ z₂ = 0 ↔ x₁ * z₁ + x₂ * z₂ = 0 ∧ y₁ * z₁ + y₂ * z₂ = 0
+'ResearchBridge.hodge_energy_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.hodge_characteristic_identity (x₁ x₂ y₁ y₂ t : ℝ) :
+  (t • 1 - ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂).det =
+    (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2)) - ResearchBridge.cone x₁ x₂ y₁ y₂ ^ 2
+'ResearchBridge.hodge_characteristic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.hodge_characteristic_factor (x₁ x₂ y₁ y₂ t : ℝ) (h : ResearchBridge.cone x₁ x₂ y₁ y₂ = 0) :
+  (t • 1 - ResearchBridge.hodgeMatrix x₁ x₂ y₁ y₂).det = (t - (x₁ ^ 2 + x₂ ^ 2)) * (t - (y₁ ^ 2 + y₂ ^ 2))
+'ResearchBridge.hodge_characteristic_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.hodge_family_diagonal (t : ℝ) : ResearchBridge.hodgeMatrix t 0 0 1 = !![t ^ 2, 0; 0, 1]
+'ResearchBridge.hodge_family_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.hodge_family_arbitrarily_small_energy (ε : ℝ) (hε : 0 < ε) :
+  ∃ t, 0 < t ∧ ResearchBridge.cone t 0 0 1 = 0 ∧ ResearchBridge.hodgeEnergy t 0 0 1 1 0 < ε
+'ResearchBridge.hodge_family_arbitrarily_small_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.shear_determinant_one (n : ℤ) : (ResearchBridge.shear n).det = 1
+'ResearchBridge.shear_determinant_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.shear_inverse (n : ℤ) : ResearchBridge.shear n * ResearchBridge.shear (-n) = 1
+'ResearchBridge.shear_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.shear_e2_image (n : ℤ) : ResearchBridge.shear n *ᵥ ![0, 1] = ![n, 1]
+'ResearchBridge.shear_e2_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.shear_e2_norm_squared (n : ℤ) :
+  ↑((ResearchBridge.shear n *ᵥ ![0, 1]) 0) ^ 2 + ↑((ResearchBridge.shear n *ᵥ ![0, 1]) 1) ^ 2 = ↑n ^ 2 + 1
+'ResearchBridge.shear_e2_norm_squared' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.hidden_kernel_relation {q : ℕ} (x a b : ZMod q) : ResearchBridge.hiddenLinear x a b = 0 ↔ a = -(x * b)
+'ResearchBridge.hidden_kernel_relation' depends on axioms: [propext, Quot.sound]
+ResearchBridge.hidden_collision_relation {q : ℕ} (x a b c d : ZMod q) :
+  ResearchBridge.hiddenLinear x a b = ResearchBridge.hiddenLinear x c d ↔ a - c + x * (b - d) = 0
+'ResearchBridge.hidden_collision_relation' depends on axioms: [propext, Quot.sound]
+ResearchBridge.noise_cancellation.{u_1, u_2, u_3} {R : Type u_1} {m : Type u_2} {n : Type u_3} [CommRing R] [Fintype m]
+  [Fintype n] (A : Matrix m n R) (s : n → R) (e r : m → R) (μ : R) : (A *ᵥ s + e) ⬝ᵥ r + μ - s ⬝ᵥ Aᵀ *ᵥ r = e ⬝ᵥ r + μ
+'ResearchBridge.noise_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ResearchBridge.binary_noise_bound (e₁ e₂ r₁ r₂ E : ℝ) (hE : 0 ≤ E) (h₁ : |e₁| ≤ E) (h₂ : |e₂| ≤ E)
+  (hr₁ : r₁ = 0 ∨ r₁ = 1) (hr₂ : r₂ = 0 ∨ r₂ = 1) : |e₁ * r₁ + e₂ * r₂| ≤ 2 * E
+'ResearchBridge.binary_noise_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

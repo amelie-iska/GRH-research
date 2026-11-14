@@ -29,9 +29,9 @@ export function oddDessin(m){
 }
 const theta=()=>oddDessin(3);
 export function architectureCollection(key){
- const allowed={rg:'/data/rg/',qtoken:'/data/quantum-tokengt/',frontier:'/data/learned-frontier/'};
+ const allowed={rg:'/legacy/data/rg/',qtoken:'/legacy/data/quantum-tokengt/',frontier:'/legacy/data/learned-frontier/'};
  const id=Object.hasOwn(allowed,key)?key:'architecture';
- const base=allowed[id]??'/data/architecture/';
+ const base=allowed[id]??'/legacy/data/architecture/';
  return {id,base,manifest:base+'manifest.json'};
 }
 export function surfaceProfile(trace){

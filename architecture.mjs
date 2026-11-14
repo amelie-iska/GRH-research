@@ -40,7 +40,7 @@ async function loadTrace(id,nodeId=null){
   text('provenance',JSON.stringify(trace.provenance,null,2));text('checks',JSON.stringify(trace.checks,null,2));
   $('recordLink').href=entry?collection.base+entry.file:collection.manifest;text('recordLink',entry?'Hash-verified raw record':'Saved-record manifest');
   const source=trace.provenance.training_source?.path;
-  $('codeLink').href=source?.startsWith('examples/')?'/'+source:'/examples/architecture/README.md';
+  $('codeLink').href=source?.startsWith('examples/')?'/legacy/'+source:'/legacy/examples/architecture/README.md';
   const groups=circuitGroups(trace);$('circuitGroup').replaceChildren();
   for(const key of groups.keys()){const option=new Option(key,key);$('circuitGroup').add(option);}
   $('circuitPanel').hidden=groups.size===0;$('photonicPanel').hidden=trace.category!=='photonic-gaussian';

@@ -1,0 +1,91 @@
+{
+  "reviewed_at_utc": "2026-11-13T21:26:04.663720+00:00",
+  "status": "core arguments verified with explicit minor qualifications sent to root",
+  "files": [
+    {
+      "file": "extension/manuscript/chapters/fluid-structures.tex",
+      "sha256": "0eb34bf576895abd7b7af042e6393266080ee114aaf6419a7a0e7064890c7eaa",
+      "bytes": 27119,
+      "coverage": "complete text read; every displayed proposition/theorem/lemma argument independently checked",
+      "named_environments": 12,
+      "proof_environments": 12
+    },
+    {
+      "file": "extension/manuscript/chapters/quantum-fluid.tex",
+      "sha256": "94689c5797a39eb071bdfebc7a4c42e84e02b0861b5bdb3cfe0c22c0f0db636c",
+      "bytes": 30029,
+      "coverage": "complete text read; every displayed proposition/theorem/lemma argument independently checked",
+      "named_environments": 12,
+      "proof_environments": 12
+    }
+  ],
+  "required_qualifications": [
+    {
+      "file": "extension/manuscript/chapters/fluid-structures.tex",
+      "location": "compact radial primitive paragraph before prop:fluid-moments",
+      "finding": "The converse needs g compactly supported away from zero, not only its vanishing weighted moment.",
+      "recommendation": "State g\u2208C_c^\u221e((0,\u221e)) and real e explicitly."
+    },
+    {
+      "file": "extension/manuscript/chapters/fluid-structures.tex",
+      "location": "prop:fluid-moments proof",
+      "finding": "After division by the smallest power, a nonzero constant has identically zero derivative; the derivative zero-count induction must exclude that case.",
+      "recommendation": "First handle the nonzero constant case (zero positive roots); otherwise invoke the induction hypothesis on the nonzero derivative."
+    },
+    {
+      "file": "extension/manuscript/chapters/quantum-fluid.tex",
+      "location": "prop:fluid-heat-spectrum",
+      "finding": "The contraction conclusion needs nonnegative viscosity and positive grid spacing.",
+      "recommendation": "State positive integer L, h>0, \u03bd\u22650."
+    },
+    {
+      "file": "extension/manuscript/chapters/quantum-fluid.tex",
+      "location": "prop:fluid-carleman and prop:fluid-carleman-contractivity",
+      "finding": "The first component of a finite degree-N truncation requires N\u22651.",
+      "recommendation": "Declare N a positive integer."
+    }
+  ],
+  "clarifications": [
+    {
+      "file": "extension/manuscript/chapters/quantum-fluid.tex",
+      "location": "prop:fluid-filter-covariance",
+      "recommendation": "For a local convolution at fixed x, spell out u(y)\u2212\u016b(x), because filtering (u\u2212\u016b)(y) squared is not the same covariance for a non-idempotent filter."
+    },
+    {
+      "file": "extension/manuscript/chapters/fluid-structures.tex",
+      "location": "prop:fluid-discrete-hodge assumptions",
+      "recommendation": "Positive mass matrices are understood as symmetric positive definite; spelling out symmetric removes any ambiguity."
+    }
+  ],
+  "confirmed_arguments": [
+    "differential-form sign conventions and vorticity equation",
+    "finite-energy integration with stated boundary assumptions",
+    "faithful Z[sqrt2] matrix identities",
+    "toral covering and Haar averaging",
+    "no commuting real complex structure",
+    "quadratic conjugate-norm divisor estimate and C^(m+4) Fourier bound",
+    "signed covariance tangent inverse with quadratic remainder",
+    "quadratic moment contraction constants",
+    "weighted Hodge adjoints and invariant incompressible subspace",
+    "global finite-dimensional dissipative ODE continuation",
+    "continuous/discrete memory and block determinant signs",
+    "Pauli commutator and opposite quantum derivatives",
+    "random-unitary channel entropy proof",
+    "local Madelung equations and circulation limitation",
+    "scalar Carleman coefficients and exact remainder",
+    "real-conjugate neutral-eigenvalue resonance obstruction",
+    "short-time Carleman N! integrand cancelled by simplex t^N/N!",
+    "positive logistic constitutive readout and parameter-shift chain rule"
+  ],
+  "limitations": "Review of original arguments and finite interfaces only; no assertion of independent complete verification of the released continuum proof, upstream algorithm papers, or a fluid-trained ToricGT.",
+  "integration_resolution": {
+    "resolved_at_utc": "2026-11-13T21:28:19.536198+00:00",
+    "required_qualifications": "All four recommendations incorporated in the manuscript.",
+    "clarifications": "Both recommended clarifications incorporated.",
+    "resulting_sources": {
+      "extension/manuscript/chapters/fluid-structures.tex": "fe07b59bd04f903ff6a0d9b5e816327997a800a009d60dda3233e21b2fc4be9a",
+      "extension/manuscript/chapters/quantum-fluid.tex": "5330ed01b9ee03cf469612811282971f40f3a422dfd6e4e4508c6615d23684f6"
+    },
+    "reviewed_snapshot_preserved_above": true
+  }
+}

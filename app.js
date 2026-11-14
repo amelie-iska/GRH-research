@@ -1,71 +1,315 @@
-'use strict';
-const $=id=>document.getElementById(id);
-let angle=.45,tilt=.7,zoom=1,rotating=true,drag=false,previous=[0,0];
-const ctx=$('surfaceCanvas').getContext('2d');
-const configs={theta:{title:'Elliptic theta dessin',desc:'y² = x³ − 1, β = x³. Two trivalent black vertices and three white midpoints. The periodic lifts form a cellular theta graph on the torus.',g:1,E:3,F:1,rank:18,m:3},square:{title:'Elliptic square dessin',desc:'y² = x³ − x, β = x². One four-valent black vertex, two white vertices and one face. The two fundamental torus loops give its contracted graph.',g:1,E:2,F:1,rank:16,m:4},sphere:{title:'Spherical theta dessin',desc:'β = 4z³/(1+z³)² on ℙ¹. The same branch lengths as the elliptic theta, with different pairing and three faces.',g:0,E:3,F:3,rank:18,m:3},g2:{title:'Genus-two hyperelliptic dessin',desc:'y² = x⁵ − 1, β = x⁵. Two black points of degree five, five clean white points, and one face. This view shows a branched-sheet projection in three real coordinates; projected sheets may meet.',g:2,E:5,F:1,rank:50,m:5},g3:{title:'Genus-three hyperelliptic dessin',desc:'y² = x⁷ − 1, β = x⁷. Two degree-seven black points, seven clean white points and one face. Cuts, sheet changes and a one-face polygon are needed to recover the compact surface.',g:3,E:7,F:1,rank:98,m:7}};
-for(const [key,m] of [['g4',9],['g5',11],['g9',19],['g16',33]])configs[key]={title:`Genus-${(m-1)/2} hyperelliptic dessin`,desc:`y² = x^${m} − 1, β = x^${m}. Two black points, ${m} clean white points and one face. The slider rotates the complex curve's four real coordinates before a three-dimensional projection; this is not an injective embedding.`,g:(m-1)/2,E:m,F:1,rank:2*m*m,m};
-configs.hyp={title:'Infinite {7,3} lattice · a finite window',desc:'Regular hyperbolic heptagons, three at each vertex. Reflections in disk-orthogonal geodesic circles generate a bounded numerical patch. The complete lattice is infinite. The hyperboloid has Lorentz metric, not the induced Euclidean metric.',g:'noncompact',E:'∞',F:'∞',rank:'not a finite compact order',m:7};
-function rotate4(x,y,re,im){const a=+$('rotation4d').value;return [x*Math.cos(a)-re*Math.sin(a),y,im];}
-function project(p,w=850,h=520){let [x,y,z]=p;const x1=x*Math.cos(angle)-y*Math.sin(angle),y1=x*Math.sin(angle)+y*Math.cos(angle);return [w/2+zoom*125*x1,h/2+zoom*125*(y1*Math.cos(tilt)-z*Math.sin(tilt))];}
-function path3(points,color,width=1,c=ctx,w=850,h=520){c.beginPath();points.forEach((p,i)=>{const a=project(p,w,h);i?c.lineTo(...a):c.moveTo(...a)});c.strokeStyle=color;c.lineWidth=width;c.stroke();}
-function dot(p,color,r=5,c=ctx,w=850,h=520){const q=project(p,w,h);c.beginPath();c.arc(...q,r,0,Math.PI*2);c.fillStyle=color;c.fill();c.strokeStyle='#fff';c.lineWidth=1;c.stroke();}
-function torus(u,v){return [(1.55+.5*Math.cos(2*Math.PI*v))*Math.cos(2*Math.PI*u),(1.55+.5*Math.cos(2*Math.PI*v))*Math.sin(2*Math.PI*u),.5*Math.sin(2*Math.PI*v)];}
-function sphere(t,p){return [1.65*Math.sin(t)*Math.cos(p),1.65*Math.sin(t)*Math.sin(p),1.65*Math.cos(t)];}
-function surface(){const key=$('surface').value,s=configs[key],N=+$('density').value;ctx.clearRect(0,0,850,520);
- $('surfaceTitle').textContent=s.title;$('surfaceDesc').textContent=s.desc;
- if(key==='hyp'){const count=hyperbolicDraw(ctx,+$('hyperDepth').value,$('hyperboloid').checked,angle,tilt);$('surfaceData').textContent=`{7,3} · angle 2π/3\n${count} heptagons in this window\nDepth cap ${$('hyperDepth').value} · tile cap 450\nDisk |z|<1 / Lorentz hyperboloid\nInfinite tiling; no compact quotient asserted`;return;}
- $('surfaceData').textContent=`genus g = ${s.g}\nedges E = ${s.E} · faces F = ${s.F}\nrank over k[[u]] = ${s.rank}\nA = kQ / (forbidden pairs)\nA is infinite-dimensional`;
- if(key==='theta'||key==='square'){
-  if($('showMesh').checked)for(let j=0;j<N;j++){path3(Array.from({length:81},(_,i)=>torus(i/80,j/N)),'#b0c2b3');path3(Array.from({length:81},(_,i)=>torus(j/N,i/80)),'#b0c2b3');}
-  if($('showGraph').checked){if(key==='theta'){[[1/3,1/3],[-2/3,1/3],[1/3,-2/3]].forEach(([a,b],j)=>{path3(Array.from({length:101},(_,i)=>torus(a*i/100,b*i/100)),['#bc5a35','#346f9e','#145e4d'][j],4);dot(torus(a/2,b/2),'#fff',6)});dot(torus(0,0),'#183e33',8);dot(torus(1/3,1/3),'#183e33',8)}else{path3(Array.from({length:101},(_,i)=>torus(i/100,0)),'#bc5a35',4);path3(Array.from({length:101},(_,i)=>torus(0,i/100)),'#346f9e',4);dot(torus(0,0),'#183e33',8);dot(torus(.5,0),'#fff',7);dot(torus(0,.5),'#fff',7)}}
- }else if(key==='sphere'){
-  if($('showMesh').checked)for(let j=0;j<N;j++){path3(Array.from({length:81},(_,i)=>sphere(Math.PI*i/80,2*Math.PI*j/N)),'#b0c2b3');path3(Array.from({length:81},(_,i)=>sphere(Math.PI*j/N,2*Math.PI*i/80)),'#b0c2b3');}
-  if($('showGraph').checked){for(let j=0;j<3;j++){path3(Array.from({length:81},(_,i)=>sphere(Math.PI*i/80,2*Math.PI*j/3)),'#145e4d',4);dot(sphere(Math.PI/2,2*Math.PI*j/3),'#fff',7)}dot(sphere(0,0),'#183e33',8);dot(sphere(Math.PI,0),'#183e33',8)}
- }else{
-  // Projection (Re x, Im x, Im y), with principal square root y²=x^m−1.
-  const sheet=(r,t,sign)=>{const a=r**s.m*Math.cos(s.m*t)-1,b=r**s.m*Math.sin(s.m*t);const im=Math.sqrt(Math.max(0,(Math.hypot(a,b)-a)/2))*(b<0?-1:1);const re=Math.sqrt(Math.max(0,(Math.hypot(a,b)+a)/2));return rotate4(1.5*r*Math.cos(t),1.5*r*Math.sin(t),sign*.65*re,sign*.65*im)};
-  if($('showMesh').checked)for(const sign of [-1,1])for(let j=0;j<N;j++){// Rays stop at projection branch discontinuities.
-   path3(Array.from({length:40},(_,i)=>sheet(.03+.99*i/39,2*Math.PI*(j+.23)/N,sign)),sign===1?'#87aaba':'#c5aa86');}
-  if($('showGraph').checked)for(let j=0;j<s.m;j++){const t=2*Math.PI*j/s.m;for(const sign of [-1,1])path3(Array.from({length:61},(_,i)=>{const r=i/60;return rotate4(1.5*r*Math.cos(t),1.5*r*Math.sin(t),0,sign*.65*Math.sqrt(1-r**s.m))}),'#145e4d',3);dot(rotate4(1.5*Math.cos(t),1.5*Math.sin(t),0,0),'#fff',6)}
-  dot(rotate4(0,0,0,.65),'#183e33',8);dot(rotate4(0,0,0,-.65),'#183e33',8);
- }
-}
-$('rotate').onclick=()=>{rotating=!rotating;$('rotate').textContent=rotating?'Pause rotation':'Resume rotation'};
-$('surfaceCanvas').onpointerdown=e=>{drag=true;previous=[e.clientX,e.clientY];e.target.setPointerCapture(e.pointerId)};
-$('surfaceCanvas').onpointerup=()=>drag=false;
-$('surfaceCanvas').onpointermove=e=>{if(drag){angle+=(e.clientX-previous[0])*.008;tilt+=(e.clientY-previous[1])*.008;previous=[e.clientX,e.clientY];surface()}};
-$('surfaceCanvas').onwheel=e=>{e.preventDefault();zoom=Math.max(.5,Math.min(2,zoom-e.deltaY*.001));surface()};
-$('surfaceCanvas').onkeydown=e=>{if(e.key==='ArrowRight')angle+=.1;if(e.key==='ArrowLeft')angle-=.1;if(e.key==='ArrowUp')tilt+=.1;if(e.key==='ArrowDown')tilt-=.1;surface()};
-for(const id of ['surface','density','showMesh','showGraph','rotation4d','hyperDepth','hyperboloid'])$(id).oninput=surface;
-const svgStart='<svg viewBox="0 0 800 500" role="img" aria-label="Labelled AR component"><defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#527968"/></marker></defs>';
-const line=(x,y,a,b,label='')=>`<path d="M${x},${y} L${a},${b}" stroke="#527968" fill="none" marker-end="url(#arr)"/><text x="${(x+a)/2+7}" y="${(y+b)/2-5}" font-size="13" fill="#bc5a35">${label}</text>`;
-const node=(x,y,s)=>`<circle cx="${x}" cy="${y}" r="4" fill="#145e4d"/><text x="${x+10}" y="${y+5}" font-family="Georgia" font-size="19">${s}</text>`;
-function ar(){let S=svgStart;const t=$('arType').value,r=+$('radius').value,n=+$('shift').value;
- if(t==='grid'){const gap=170/r;for(let p=-r;p<=r;p++)for(let q=-r;q<=r;q++){const x=400+(p+q)*gap/1.5,y=250+(q-p)*gap/2;const labels={'-1,-1':'A','0,-1':'B','1,-1':'C','-1,0':'D','0,0':'E = M(ab)','1,0':'F','-1,1':'G','0,1':'H','1,1':'I'};const signs={'-1,-1,p':'p','0,-1,p':'i','-1,0,p':'p','0,0,p':'i','-1,1,p':'p','0,1,p':'i','-1,-1,q':'−p','0,-1,q':'p','1,-1,q':'−p','-1,0,q':'−i','0,0,q':'i','1,0,q':'−i'};if(p<r)S+=line(x+7,y-6,x+gap/1.5-7,y-gap/2+6,r===1?signs[`${p},${q},p`]: '');if(q<r)S+=line(x+7,y+6,x+gap/1.5-7,y+gap/2-6,r===1?signs[`${p},${q},q`]: '');S+=node(x,y,r===1?labels[`${p},${q}`]:`T(${p},${q})`)}
- $('arTitle').textContent='One whole ℤA∞∞ component';$('arText').textContent='The grid extends in both directions. Arrows increase one index; τT(p,q)=T(p−1,q−1). The nine displayed strings have four exact signed mesh sequences. This is intrinsic to the H₃ quotient-annihilator category of the infinite Chebyshev order.';$('derivedText').textContent='The module E=M(ab) has infinite projective dimension. Its short exact sequence gives a derived triangle, not automatically a derived AR triangle. Shift '+n+' is a formal derived placement, not a new claimed AR component.';
- }else if(t==='node'){S+=node(180,250,'X')+node(400,250,'Λ')+node(620,250,'Y')+'<path d="M190 235 Q290 130 390 235 M410 235 Q510 130 610 235 M610 270 Q510 375 410 270 M390 270 Q290 375 190 270" stroke="#527968" fill="none" marker-end="url(#arr)"/><text x="285" y="180">iₓ</text><text x="505" y="180">pᵧ</text><text x="505" y="345">iᵧ</text><text x="285" y="345">pₓ</text>';$('arTitle').textContent='Three indecomposable lattices';$('arText').textContent='The central vertex is the unique indecomposable projective. Almost-split rows: 0→X→Λ→Y→0 and 0→Y→Λ→X→0. Opposite branch composites vanish; same branch composites are multiplication by u.';$('derivedText').textContent='After stabilizing, Λ vanishes and suspension swaps X and Y.';
- }else if(t==='stable'){S+=node(230,250,'X')+node(550,250,'Y')+'<text x="300" y="340" font-size="18">ΣX = Y, ΣY = X</text>';$('arTitle').textContent='Two stable vertices; no arrows';$('arText').textContent='Stable End(X)=Stable End(Y)=k and cross-Hom groups vanish. Both AR triangles have zero middle term. The suspension and τ exchange the vertices.';$('derivedText').textContent='This is the stable MCM category of the complete node, not Perf(Λ).';
- }else if(t==='tube'){for(let j=1;j<=5;j++){let x=100+125*(j-1);S+=node(x,250,`T${j}[${n}]`);if(j<5){S+=line(x+15,235,x+105,235,'t');S+=line(x+105,270,x+15,270,'π')}}S+='<text x="115" y="160" font-size="19">τTᵣ = Tᵣ · one fixed λ ≠ 0</text><text x="145" y="360" font-size="18">0 → Tᵣ → Tᵣ₋₁ ⊕ Tᵣ₊₁ → Tᵣ → 0</text>';$('arTitle').textContent='Smooth support · homogeneous tube';$('arText').textContent='Actual polynomial node A=k[x,y]/(xy), x=λ+t, y=0, Tᵣ=k[t]/tʳ. Arrows change length; τ fixes it. Each nonzero λ gives a separate component. These modules are not continuous finite-length modules of the arrow-adic completion.';$('derivedText').textContent='The hereditary smooth-support category has shifted tube components Tᵣ['+n+']; its AR triangles connect to the next shift.';
- }else{S+='<path d="M400 75 L650 250 L400 425 L150 250 Z" fill="#eef3ea" stroke="#527968"/><path d="M215 120 L585 380 M215 380 L585 120" stroke="#bc5a35" stroke-dasharray="4 8"/><rect x="394" y="244" width="12" height="12" fill="#182c2b"/>';for(const [x,y,s]of [[240,250,'I'],[400,360,'II'],[550,250,'III'],[400,150,'IV']])S+=`<text x="${x}" y="${y}" font-size="30">${s}</text>`;S+='<text x="180" y="465" font-size="17">Finite-word quarters · infinite-word diagonals · mixed center</text>';$('arTitle').textContent='Ringel’s quilt tile · comparison resource';$('arText').textContent='Four hook/cohook quarters, contracting and expanding boundary rays, and a mixed two-sided limit word. This schematic is not the finite-module AR quiver. The wind-wheel source is a different special-biserial algebra; no quotient or derived equivalence with our order is assumed.';$('derivedText').textContent='Neither quilt genus nor its limit points determine the Belyi surface or a derived equivalence.';
- }
- $('arDiagram').innerHTML=S+'</svg>';
-}
-for(const id of ['arType','radius','shift'])$(id).oninput=ar;
-function quantum(){const d=+$('dimension').value,k=+$('ticks').value,l=+$('steps').value,c=$('quantumCanvas').getContext('2d');c.clearRect(0,0,850,400);for(let j=0;j<20;j++)path3(Array.from({length:81},(_,i)=>torus(i/80,j/20)),'#bdcaba',1,c,850,400);for(let j=0;j<d;j++){const a=2*Math.PI*k*((j-l+d*20)%d)/d;const p=torus(j/d,0),q=project(p,850,400);dot(p,`hsl(${(a*180/Math.PI+360)%360} 48% 43%)`,12,c,850,400);c.fillStyle='#182c2b';c.font='14px system-ui';c.fillText(`|${j}⟩`,q[0]+13,q[1]-12)}$('quantumData').textContent=`d = ${d} · ζ = exp(2πi/${d})\nCircuit: F → U^${k} → V^${l}\nProbability of each state = 1/${d}\nRelative phases carry the holonomy\nUV − ζVU = 0 (algebraic identity)`;$('circuit').innerHTML='<svg viewBox="0 0 800 150" aria-label="Qudit circuit"><path d="M40 75 H760" stroke="#527968"/>'+[['F',180],['U^'+k,370],['V^'+l,560]].map(([t,x])=>`<rect x="${x-40}" y="40" width="80" height="70" rx="6" fill="#edf1e7" stroke="#527968"/><text x="${x}" y="82" text-anchor="middle" font-size="24">${t}</text>`).join('')+'<text x="45" y="60" font-size="20">|0⟩</text><text x="660" y="125" font-size="15">one d-level carrier</text></svg>';}
-for(const id of ['dimension','ticks','steps'])$(id).oninput=quantum;
-function circuitLayout(model){const n=model.qubits||2,h=70*n+70,w=1100;let s=`<svg viewBox="0 0 ${w} ${h}" aria-label="Gate layout for selected quantum model">`;
- const gate=(x,y,label)=>`<g><title>${label}</title><rect x="${x-23}" y="${y-19}" width="46" height="38" rx="4" fill="#edf1e7" stroke="#527968"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="12">${label}</text></g>`;
- for(let q=0;q<n;q++){const y=55+70*q;s+=`<path d="M60 ${y} H1060" stroke="#a8b9a7"/><text x="10" y="${y+5}" font-size="14">${model.qubits?'q':'m'}${q}</text>`;if(model.modes){s+=gate(150,y,q===0?'S(r)':'S(−r)');}else{s+=gate(135,y,'Prep');for(const x of [230,600])s+=gate(x,y,'Ry')+gate(x+65,y,'Rz');}}
- if(model.modes){for(const [x,label]of [[430,'BS(α)'],[750,'BS(θ)']]){s+=`<path d="M${x} 55 V125" stroke="#145e4d"/>`+gate(x,90,label);}s+='<text x="880" y="100" font-size="15">covariance readout</text>';}else{for(const base of [340,710])for(let q=0;q<n;q++){const a=55+70*q,b=55+70*((q+1)%n),x=base+24*q;if(n===2&&q===1)continue;s+=`<path d="M${x} ${a} V${b}" stroke="#c16b37"/><circle cx="${x}" cy="${a}" r="4" fill="#c16b37"/><circle cx="${x}" cy="${b}" r="4" fill="#c16b37"/>`;}
- const kept=n===9?5:Math.ceil(n/2);for(let q=0;q<n-kept;q++){const x=975+18*q,a=55+70*q,b=55+70*(kept+q);s+=`<path d="M${x} ${a} V${b}" stroke="#145e4d"/><circle cx="${x}" cy="${a}" r="4" fill="#145e4d"/><circle cx="${x}" cy="${b}" r="9" stroke="#145e4d" fill="white"/><path d="M${x-6} ${b} h12 M${x} ${b-6} v12" stroke="#145e4d"/>`;}}
- return s+`<text x="120" y="${h-15}" font-size="13">Local rotations · cycle CZ entanglers · selected pooling CNOTs. Initial encoding and readout are specified in the code.</text></svg>`;}
-let data,modelIndex=0;
-function learning(reset=false){if(!data)return;const model=data.models[+$('model').value||0];if(reset){$('epoch').max=model.curve.length-1;$('epoch').value=model.curve.length-1;$('sample').max=model.examples.length-1;$('sample').value=0;}const epoch=+$('epoch').value,point=model.curve[epoch],last=model.curve.at(-1);$('modelDescription').textContent=model.objective+'. '+model.architecture+'.';$('trainingStats').textContent=`Backend: ${model.backend}\nSeed: ${model.seed || data.seed}\n${model.qubits || model.modes} ${model.qubits?'qubits':'modes'} · ${model.parameters} parameters\nTrain / held-out: ${model.train_size} / ${model.test_size}\nEpoch ${point.epoch}\nTraining loss ${point.train.toPrecision(5)}\nHeld-out loss ${point.test.toPrecision(5)}${model.constant_test_baseline?'\nConstant test baseline '+model.constant_test_baseline.toPrecision(5):''}`;$('sampleData').textContent=JSON.stringify(model.examples[+$('sample').value],null,2);
- const c=$('lossCanvas').getContext('2d');c.clearRect(0,0,850,400);const values=model.curve.flatMap(x=>[x.train,x.test]),min=Math.min(...values)*.7,max=Math.max(...values)*1.3,lo=Math.log10(Math.max(min,1e-7)),hi=Math.log10(max);c.fillStyle='#56706a';c.font='13px system-ui';for(let y=0;y<5;y++){const v=hi-(hi-lo)*y/4,yy=40+290*y/4;c.fillText((10**v).toPrecision(2),8,yy+4);c.strokeStyle='#d5dfd1';c.beginPath();c.moveTo(68,yy);c.lineTo(815,yy);c.stroke()}for(const [key,color]of [['train','#145e4d'],['test','#c16b37']]){c.beginPath();model.curve.forEach((p,i)=>{const x=70+740*i/(model.curve.length-1),y=40+290*(hi-Math.log10(Math.max(p[key],1e-7)))/(hi-lo);i?c.lineTo(x,y):c.moveTo(x,y)});c.strokeStyle=color;c.lineWidth=2.5;c.stroke()}c.fillText('Training (green) · held-out (orange) · logarithmic loss',80,375);c.fillText('Epoch 0',70,350);c.fillText(String(last.epoch),780,350);c.strokeStyle='#487ca8';c.beginPath();c.moveTo(70+740*epoch/(model.curve.length-1),35);c.lineTo(70+740*epoch/(model.curve.length-1),330);c.stroke();
- $('trainingCircuit').innerHTML=circuitLayout(model);
- const boxes=model.display_blocks || ['Input','Quantum circuit','Classical head','Verified output'];$('architecture').innerHTML='<svg viewBox="0 0 1000 150" aria-label="Neural network architecture">'+boxes.map((t,i)=>`<rect x="${15+250*i}" y="40" width="225" height="65" rx="7" fill="#edf1e7" stroke="#527968"/><text x="${127+250*i}" y="78" text-anchor="middle" font-size="15">${t}</text>${i<3?`<path d="M${240+250*i} 72 h25" stroke="#bc5a35"/>`:''}`).join('')+'</svg>';
-}
-$('model').onchange=()=>{modelIndex=+$('model').value;learning(true)};for(const id of ['epoch','sample'])$(id).oninput=()=>learning();
-fetch('data/training.json').then(r=>{if(!r.ok)throw Error('Training output not ready');return r.json()}).then(j=>{data=j;$('model').innerHTML=j.models.map((m,i)=>`<option value="${i}">${m.name}</option>`).join('');learning(true)}).catch(e=>{$('modelDescription').textContent=e.message});
-const embeddedSection=new URLSearchParams(location.search).get('embed');if(embeddedSection){if(embeddedSection!=='learning')document.querySelector('#learning iframe')?.remove();document.querySelectorAll('main>section').forEach(s=>s.hidden=s.id!==embeddedSection);document.querySelector('header').hidden=true;document.querySelector('footer').hidden=true;document.querySelector('main').style.padding='0 12px';rotating=false;$('rotate').textContent='Resume rotation';}
-function animate(){if(rotating&&!drag){angle+=.002;surface();quantum()}requestAnimationFrame(animate)}surface();ar();quantum();animate();
+(function () {
+  'use strict';
+  const M = window.ResearchMath;
+  if (!M) return;
+  const $ = id => document.getElementById(id);
+  const C = {teal: '#14695e', ochre: '#a65b19', ink: '#182b29', muted: '#596b64', line: '#d4ddd5', pale: '#e6efea', gold: '#f7e9d5'};
+  const controls = [...document.querySelectorAll('[data-lab]')];
+  const defaults = new Map(controls.map(c => [c.id, c.type === 'checkbox' ? c.checked : c.value]));
+  const reports = {};
+  const value = id => Number($(id).value);
+  const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+  const fmt = (n, digits = 3) => {
+    if (Math.abs(n) < 5e-13) n = 0;
+    return Number(n.toFixed(digits)).toString().replace('-', '−');
+  };
+  const scientific = n => n === 0 ? '0' : n.toExponential(2).replace('e-', ' × 10⁻').replace('e+', ' × 10^');
+  const tiny = n => n === 0 ? '0' : (Math.abs(n) < 0.001 ? n.toExponential(3) : fmt(n, 6));
+  const set = (id, text) => { $(id).textContent = text; };
+  const degrees = new Set(['torusYaw','torusPitch','coneXW','coneYZ','coneAlpha','coneBeta','coneYaw','conePitch']);
+  function syncOutputs(lab) {
+    controls.filter(c => c.dataset.lab === lab).forEach(c => {
+      const out = $(c.id + 'Out');
+      if (out) out.textContent = fmt(Number(c.value)) + (degrees.has(c.id) ? '°' : '');
+    });
+  }
+  function saveState() {
+    const changed = {};
+    for (const c of controls) {
+      const v = c.type === 'checkbox' ? c.checked : c.value;
+      if (v !== defaults.get(c.id)) changed[c.id] = v;
+    }
+    return changed;
+  }
+  function readURL() {
+    for (const c of controls) {
+      if (c.type === 'checkbox') c.checked = defaults.get(c.id);
+      else c.value = defaults.get(c.id);
+    }
+    try {
+      const raw = new URL(location.href).searchParams.get('state');
+      if (!raw || raw.length > 12000) return;
+      const data = JSON.parse(raw);
+      if (!data || typeof data !== 'object' || Array.isArray(data)) return;
+      for (const c of controls) {
+        if (!Object.hasOwn(data, c.id)) continue;
+        if (c.type === 'checkbox') { if (typeof data[c.id] === 'boolean') c.checked = data[c.id]; }
+        else if (c.tagName === 'SELECT') {
+          if ([...c.options].some(o => o.value === String(data[c.id]))) c.value = String(data[c.id]);
+        } else {
+          const n = Number(data[c.id]);
+          if (Number.isFinite(n)) c.value = String(clamp(n, Number(c.min), Number(c.max)));
+        }
+      }
+    } catch (_) { /* Invalid shared state retains the documented defaults. */ }
+  }
+  function writeURL(push = true) {
+    const url = new URL(location.href), state = saveState();
+    if (Object.keys(state).length) url.searchParams.set('state', JSON.stringify(state));
+    else url.searchParams.delete('state');
+    if (url.href !== location.href) history[push ? 'pushState' : 'replaceState']({}, '', url);
+  }
+
+  function canvasContext(canvas) {
+    const rect = canvas.getBoundingClientRect();
+    const width = Math.max(1, rect.width), height = Math.max(1, rect.height);
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const bw = Math.round(width * dpr), bh = Math.round(height * dpr);
+    if (canvas.width !== bw || canvas.height !== bh) { canvas.width = bw; canvas.height = bh; }
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, width, height);
+    return {ctx, width, height};
+  }
+  function surfaceLines(surface, fixed = 20, samples = 72) {
+    const lines = [];
+    for (let family = 0; family < 2; family++) for (let i = 0; i < fixed; i++) {
+      for (let j = 0; j < samples; j++) {
+        const a = i / fixed, b = j / samples, next = (j + 1) / samples;
+        lines.push({a: family === 0 ? surface(b, a) : surface(a, b),
+          b: family === 0 ? surface(next, a) : surface(a, next), family});
+      }
+    }
+    return lines;
+  }
+  const torusLines = surfaceLines((u, v) => M.torusPoint(u, v), 18, 64);
+  const coneLines = surfaceLines((a, b) => M.conePoint(M.TAU * a, M.TAU * b), 22, 64);
+  function drawGeometry(canvas, lines, options) {
+    const {ctx, width, height} = canvasContext(canvas);
+    const yaw = M.radians(options.yaw), pitch = M.radians(options.pitch);
+    const ca = Math.cos(yaw), sa = Math.sin(yaw), ce = Math.cos(pitch), se = Math.sin(pitch);
+    const scale = options.kind === 'torus' ? Math.min(width * 0.165, height * 0.25)
+      : Math.min(width * 0.31, height * (options.hero ? 0.39 : 0.35)) / Math.max(1, options.radius || 1);
+    function project(p) {
+      const horizontal = ca * p[0] - sa * p[1];
+      const depth0 = sa * p[0] + ca * p[1];
+      const vertical = se * depth0 - ce * p[2];
+      const depth = ce * depth0 + se * p[2];
+      const perspective = 8 / (8 - depth);
+      return {x: width / 2 + scale * perspective * horizontal,
+        y: height * 0.48 + scale * perspective * vertical, depth};
+    }
+    const transformed = lines.map(l => ({...l, p: project(l.a), q: project(l.b)}));
+    transformed.sort((a, b) => a.p.depth + a.q.depth - b.p.depth - b.q.depth);
+    for (const line of transformed) {
+      const depth = (line.p.depth + line.q.depth) / 2;
+      ctx.globalAlpha = clamp(0.58 + depth * 0.15, 0.2, 0.95);
+      ctx.strokeStyle = line.family === 0 ? C.teal : C.ochre;
+      ctx.lineWidth = options.hero ? 0.76 : 0.85;
+      ctx.setLineDash(line.family === 1 ? [2.2, 1.9] : []);
+      ctx.beginPath(); ctx.moveTo(line.p.x, line.p.y); ctx.lineTo(line.q.x, line.q.y); ctx.stroke();
+    }
+    ctx.globalAlpha = 1; ctx.setLineDash([]);
+    if (options.axes) {
+      const origin = project([0, 0, 0]);
+      const length = options.kind === 'torus' ? 1.05 : 0.58;
+      const basis = [[length,0,0],[0,length,0],[0,0,length]];
+      basis.forEach((p, i) => {
+        const end = project(p);
+        ctx.strokeStyle = '#8da398'; ctx.lineWidth = 0.8;
+        ctx.beginPath(); ctx.moveTo(origin.x, origin.y); ctx.lineTo(end.x, end.y); ctx.stroke();
+        ctx.font = '10px Arial'; ctx.fillStyle = C.muted;
+        ctx.fillText(['X','Y','Z'][i] + (options.kind === 'cone' ? '′' : ''), end.x + 4, end.y - 4);
+      });
+    }
+    if (options.point) {
+      const p = project(options.point);
+      ctx.fillStyle = '#fff';ctx.beginPath();ctx.arc(p.x,p.y,7,0,M.TAU);ctx.fill();
+      ctx.fillStyle = C.ochre;ctx.strokeStyle = C.ink;ctx.lineWidth = 1;
+      ctx.beginPath();ctx.arc(p.x,p.y,4.5,0,M.TAU);ctx.fill();ctx.stroke();
+      if (options.pointLabel) {
+        ctx.font = '11px Arial'; ctx.fillStyle = C.ink;
+        const w = ctx.measureText(options.pointLabel).width;
+        const x = clamp(p.x + 12, 8, width - w - 8), y = clamp(p.y - 10, 18, height - 10);
+        ctx.fillStyle = 'rgba(255,255,255,.93)';ctx.fillRect(x-4,y-13,w+8,19);
+        ctx.fillStyle = C.ink;ctx.fillText(options.pointLabel,x,y);
+      }
+    }
+    return project;
+  }
+  function projectConeLines(xw, yz, radius, projection) {
+    const transform = p => M.coneProjection(p.map(x => radius * x), xw, yz, projection);
+    return coneLines.map(l => ({...l, a: transform(l.a), b: transform(l.b)}));
+  }
+  function drawHero() {
+    drawGeometry($('heroCanvas'), projectConeLines(M.radians(37), M.radians(-17), 1, 'perspective'),
+      {yaw:-28,pitch:20,kind:'cone',hero:true,radius:1});
+  }
+  function svgSize(id, height) {
+    const el = $(id), width = Math.max(310, el.getBoundingClientRect().width || 660);
+    el.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    return {el, width, height};
+  }
+  const svgText = (x, y, text, size = 11, attrs = '') => `<text x="${x}" y="${y}" font-size="${size}" ${attrs}>${text}</text>`;
+
+  function renderTorus() {
+    syncOutputs('torus');
+    const a = value('tauReal'), b = value('tauImag'), u = value('torusU'), v = value('torusV');
+    const ub = M.mod(u,1), vb = M.mod(v,1);
+    drawGeometry($('torusCanvas'), torusLines, {yaw:value('torusYaw'),pitch:value('torusPitch'),kind:'torus',axes:true,
+      point:M.torusPoint(u,v),pointLabel:`(${fmt(ub,2)}, ${fmt(vb,2)}) mod ℤ²`});
+    set('torus-summary', `z = ${fmt(u + a*v)} ${b*v >= 0 ? '+' : '−'} ${fmt(Math.abs(b*v))}i; representative (${fmt(ub)}, ${fmt(vb)}) in the lattice basis.`);
+    set('torusArea', `${fmt(b)} = Im τ`);
+    set('torusGram', `[[1, ${fmt(a)}], [${fmt(a)}, ${fmt(a*a+b*b)}]]`);
+    const residual = M.torusSeamResidual();
+    set('torusResidual', tiny(residual));
+    const {el, width} = svgSize('periodSvg', 230);
+    const s = Math.min(76, width/4), ox = width/2 - s/2 - a*s/2, oy = 194;
+    const p = (x,y) => [ox+s*(x+a*y),oy-s*b*y];
+    let body = '<title>Period parallelogram for the current tau</title>';
+    const corners = [p(0,0),p(1,0),p(1,1),p(0,1)];
+    body += `<polygon points="${corners.map(q=>q.join(',')).join(' ')}" fill="${C.pale}" stroke="${C.teal}" stroke-width="1.6"/>`;
+    for (let t=.25;t<1;t+=.25) {
+      const A=p(t,0),B=p(t,1),D=p(0,t),E=p(1,t);
+      body += `<path d="M${A}L${B}M${D}L${E}" stroke="#b4c9bf" fill="none" stroke-width=".7"/>`;
+    }
+    const q = p(ub,vb), first=p(1,0), second=p(0,1);
+    body+=`<circle cx="${q[0]}" cy="${q[1]}" r="5" fill="${C.ochre}" stroke="#fff" stroke-width="2"/>`;
+    body+=svgText(ox-13,oy+17,'0',11)+svgText(first[0]+5,first[1]+17,'1',12)+svgText(second[0]-15,second[1]-10,'τ',15);
+    body+=svgText(width/2,20,`τ = ${fmt(a)} + ${fmt(b)}i`,12,'text-anchor="middle" class="mono"');
+    el.innerHTML=body;
+    reports.torus = {tau:[a,b],coordinates:[u,v],representative:[ub,vb],area:b,seamResidual:residual};
+  }
+  function renderCone() {
+    syncOutputs('cone');
+    const radius=value('coneRadius'),alpha=M.radians(value('coneAlpha')),beta=M.radians(value('coneBeta'));
+    const xw=M.radians(value('coneXW')),yz=M.radians(value('coneYZ')),projection=$('coneProjection').value;
+    const original=M.conePoint(alpha,beta,radius), d=M.coneDiagnostics(original);
+    drawGeometry($('coneCanvas'),projectConeLines(xw,yz,radius,projection),
+      {yaw:value('coneYaw'),pitch:value('conePitch'),kind:'cone',radius,axes:true,
+        point:M.coneProjection(original,xw,yz,projection),pointLabel:radius===0?'cone vertex':`ranks (${d.ranks.join(', ')})`});
+    let maximum=0;
+    for(const l of coneLines) maximum=Math.max(maximum,Math.abs(M.coneDiagnostics(l.a.map(x=>radius*x)).residual));
+    set('cone-summary',`x = (${d.x.map(x=>fmt(x,4)).join(', ')}); y = (${d.y.map(x=>fmt(x,4)).join(', ')}). Squared radius = ${fmt(d.squaredRadius,5)}.`);
+    set('coneResidual',tiny(Math.abs(d.residual)));set('coneMaxResidual',tiny(maximum));
+    set('coneRanks',`(${d.ranks.join(', ')})`);set('coneHomology',`(${d.homology.join(', ')})`);
+    reports.cone={...d,maxSampleResidual:maximum,projection,coordinateConvention:'diagnostics before view rotations'};
+  }
+  const curvePoints=M.ecPoints(), cyclic=Array.from({length:19},(_,k)=>M.ecMultiply(k,[5,1]));
+  function additionExplanation(P) {
+    const Q=[5,1], sum=M.ecAdd(P,Q);
+    if(P===null)return 'Next addition: 𝒪 + P = P = (5, 1).';
+    if(sum===null)return `Next addition: ${M.pointText(P)} + (5, 1) = 𝒪, because these points are inverses.`;
+    const doubling=P[0]===5&&P[1]===1;
+    const numerator=doubling?M.mod(3*P[0]*P[0]+2,17):M.mod(1-P[1],17);
+    const denominator=doubling?M.mod(2*P[1],17):M.mod(5-P[0],17);
+    const inv=M.inverse(denominator,17), slope=M.mod(numerator*inv,17);
+    return `Next addition: λ = ${numerator} / ${denominator} = ${numerator}·${inv} = ${slope} mod 17; ${M.pointText(P)} + P = ${M.pointText(sum)}.`;
+  }
+  function renderElliptic() {
+    syncOutputs('elliptic');const k=value('ecK'),selected=cyclic[k];
+    const initialWidth=$('ecSvg').getBoundingClientRect().width||660, mobile=initialWidth<510;
+    const {el,width}=svgSize('ecSvg',mobile?365:430), size=mobile?width-78:Math.min(350,width-240);
+    const left=48,top=mobile?44:32,step=size/16,bottom=top+size;
+    let body='<title>Elliptic curve points modulo seventeen</title><desc>E has eighteen affine points and one point at infinity. The selected point is '+M.pointText(selected)+'.</desc>';
+    for(let n=0;n<=16;n++) {
+      const x=left+n*step,y=bottom-n*step;
+      body+=`<path d="M${x},${top}V${bottom}M${left},${y}H${left+size}" class="chart-grid"/>`;
+      if(n%2===0){body+=svgText(x,bottom+19,n,10,'text-anchor="middle" class="muted"');body+=svgText(left-12,y+3,n,10,'text-anchor="end" class="muted"');}
+    }
+    body+=svgText(left+size+15,bottom+4,'x',13)+svgText(left-3,top-15,'y',13);
+    for(const P of curvePoints) if(P){const x=left+P[0]*step,y=bottom-P[1]*step,is=selected&&P[0]===selected[0]&&P[1]===selected[1];body+=`<circle cx="${x}" cy="${y}" r="${is?7:3.8}" fill="${is?C.ochre:C.teal}" stroke="${is?C.ink:'#fff'}" stroke-width="${is?1.4:1}"/>`;}
+    const bx=mobile?width-128:left+size+38,by=mobile?3:38,bw=mobile?112:Math.max(120,width-bx-10),bh=mobile?30:70;
+    body+=`<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="2" fill="${selected===null?C.gold:C.pale}" stroke="${selected===null?C.ochre:C.line}"/>`;
+    body+=svgText(bx+bw/2,by+(mobile?20:29),'𝒪 · infinity',mobile?11:15,'text-anchor="middle"');
+    if(!mobile){body+=svgText(bx+bw/2,by+51,selected===null?'selected':'identity element',10,'text-anchor="middle" class="muted"');
+      const cx=bx+bw/2,cy=260,r=48;
+      body+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${C.line}"/>`;
+      for(let n=0;n<19;n++){const angle=M.TAU*n/19-Math.PI/2,x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);body+=`<circle cx="${x}" cy="${y}" r="${n===k?5:2.4}" fill="${n===k?C.ochre:C.teal}"/>`;}
+      body+=svgText(cx,cy+5,`k = ${k}`,15,'text-anchor="middle" class="mono"')+svgText(cx,cy+75,'cycle of scalar multiples',10,'text-anchor="middle" class="muted"');
+      body+=svgText(cx,150,`${k}P = ${M.pointText(selected)}`,14,'text-anchor="middle" class="mono"');
+    }
+    body+=svgText(left+size/2,bottom+40,'residue coordinates in 𝔽₁₇',10,'text-anchor="middle" class="muted"');
+    el.innerHTML=body;
+    set('ec-summary',`[${k}]P = ${M.pointText(selected)}. Adding P gives [${(k+1)%19}]P = ${M.pointText(cyclic[(k+1)%19])}.`);
+    set('ecAddition',additionExplanation(selected));
+    $('ecTable').innerHTML=cyclic.map((P,n)=>`<tr${n===k?' class="selected"':''}><td>${n}</td><td>${M.pointText(P)}</td><td>${P?M.mod(P[1]**2-P[0]**3-2*P[0]-2,17):'point at infinity'}</td></tr>`).join('');
+    reports.elliptic={k,point:selected,curveSize:curvePoints.length,order:19,field:17};
+  }
+  function renderFourier() {
+    syncOutputs('fourier');const d=value('fourierD'),selectedU=value('fourierU'),data=M.fourierDistribution(d),selectedV=M.mod(d*selectedU,7);
+    const rawWidth=$('fourierSvg').getBoundingClientRect().width||660,mobile=rawWidth<510;
+    const {el,width}=svgSize('fourierSvg',mobile?330:390),cell=mobile?Math.min(36,(width-78)/7):42,left=48,top=mobile?36:29,size=7*cell;
+    let body='<title>Fourier probabilities on the annihilator of the hidden subgroup</title><desc>Seven cells have probability one seventh; all other cells have probability zero.</desc>';
+    for(const c of data.cells){const x=left+c.u*cell,y=top+(6-c.v)*cell,selected=c.u===selectedU&&c.v===selectedV;
+      body+=`<rect x="${x+1}" y="${y+1}" width="${cell-2}" height="${cell-2}" rx="1" fill="${c.supported?C.teal:'#edf1eb'}" stroke="${selected?C.ochre:'#d4ddd5'}" stroke-width="${selected?3:0.5}"/>`;
+      body+=svgText(x+cell/2,y+cell/2+4,c.supported?'1/7':'0',mobile?10:11,`text-anchor="middle" style="fill:${c.supported?'#fff':'#7a8c82'}"`);
+    }
+    for(let n=0;n<7;n++){body+=svgText(left+(n+.5)*cell,top+size+19,n,11,'text-anchor="middle"');body+=svgText(left-12,top+(6-n+.5)*cell+4,n,11,'text-anchor="end"');}
+    body+=svgText(left+size+12,top+size+19,'u',13)+svgText(left-12,top-11,'v',13,'text-anchor="end"');
+    if(!mobile){const x=left+size+33;body+=svgText(x,70,'ANNIHILATOR SUPPORT',9,`style="fill:${C.teal}" letter-spacing="1.2"`)+svgText(x,103,`v = ${d}u mod 7`,17,'class="mono"')+svgText(x,151,'Selected frequency',11,'class="muted"')+svgText(x,179,`(${selectedU}, ${selectedV})`,22,'class="mono"')+svgText(x,212,'Probability = 1/7',12);body+=svgText(x,263,selectedU===0?'Origin: no slope information':`d = ${selectedV} · ${M.inverse(selectedU,7)} mod 7`,11,'class="mono"');}
+    body+=svgText(left+size/2,top+size+44,'frequency coordinates in 𝔽₇ × 𝔽₇',10,'text-anchor="middle" class="muted"');el.innerHTML=body;
+    set('fourier-summary',selectedU===0?`At (u,v) = (0,0), probability = 1/7. This sample gives no information about d.`:`At (u,v) = (${selectedU},${selectedV}), probability = 1/7. Since ${selectedU}⁻¹ = ${M.inverse(selectedU,7)}, d = ${selectedV}·${M.inverse(selectedU,7)} = ${d} mod 7.`);
+    set('fourierTotal',data.total.toFixed(12));set('fourierLeak',tiny(data.offSupportMax));reports.fourier=data;
+  }
+  function renderHodge() {
+    syncOutputs('hodge');const zero=$('hodgeZero').checked,epsilon=zero?0:10**value('hodgeLog'),data=M.hodge(epsilon);
+    $('hodgeLog').disabled=zero;
+    const rawWidth=$('hodgeSvg').getBoundingClientRect().width||660,mobile=rawWidth<510;
+    const {el,width,height}=svgSize('hodgeSvg',mobile?270:340),left=43,right=width-26,top=36,bottom=height-52;
+    const px=x=>left+(right-left)*x,py=y=>bottom-(bottom-top)*y;
+    let body='<title>The middle Hodge Laplacian eigenvalues are epsilon squared and one</title>';
+    for(const t of [0,.25,.5,.75,1]){body+=`<path d="M${px(t)},${top}V${bottom}M${left},${py(t)}H${right}" class="chart-grid"/>`;body+=svgText(px(t),bottom+20,fmt(t),10,'text-anchor="middle"')+svgText(left-10,py(t)+4,fmt(t),10,'text-anchor="end"');}
+    const path=Array.from({length:101},(_,i)=>`${i?'L':'M'}${px(i/100)},${py((i/100)**2)}`).join('');
+    body+=`<path d="${path}" fill="none" stroke="${C.teal}" stroke-width="2.6"/><path d="M${left},${top}H${right}" fill="none" stroke="${C.ochre}" stroke-width="2" stroke-dasharray="6 4"/>`;
+    body+=`<path d="M${px(epsilon)},${top}V${bottom}" stroke="#8ca092" stroke-width="1" stroke-dasharray="3 4"/><circle cx="${px(epsilon)}" cy="${py(epsilon*epsilon)}" r="5.5" fill="${C.ochre}" stroke="#fff" stroke-width="2"/>`;
+    body+=svgText(left,top-15,'eigenvalue λ',11,'class="muted"')+svgText(right,bottom+39,'ε',14,'text-anchor="end"')+svgText(px(.58),py(.58**2)-16,'λ₁ = ε²',14,`style="fill:${C.teal}"`)+svgText(right-9,top+21,'λ₂ = 1',13,`text-anchor="end" style="fill:${C.ochre}"`);
+    el.innerHTML=body;
+    set('hodge-summary',`ε = ${tiny(epsilon)}; Δ₁ = diag(${tiny(data.least)}, 1). Cohomology dimensions: (${data.homology.join(', ')}).`);
+    set('hodgeMin',tiny(data.least));set('hodgePositive',tiny(data.smallestPositive));set('hodgeKernel',data.kernelDimension);reports.hodge=data;
+  }
+  function renderGauge() {
+    syncOutputs('gauge');const flux=value('gaugeFlux'),vertex=value('gaugeVertex'),lambda=value('gaugeLambda'),data=M.gaugePlaquette(flux,vertex,lambda);
+    const {el,width}=svgSize('gaugeSvg',365),mobile=width<510,left=mobile?76:width*.27,right=mobile?width-76:width*.73,top=65,bottom=290,cx=(left+right)/2,cy=(top+bottom)/2;
+    const vertices=[[left,top],[right,top],[right,bottom],[left,bottom]];
+    let body='<title>Gauge invariance of a U(1) plaquette</title><defs><marker id="gaugeArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#8ca092"/></marker></defs>';
+    for(let i=0;i<4;i++){const A=vertices[i],B=vertices[(i+1)%4];body+=`<path d="M${A}L${B}" stroke="#8ca092" stroke-width="1.5" fill="none" marker-end="url(#gaugeArrow)"/>`;}
+    const positions=[[cx,top-28],[right+37,cy-8],[cx,bottom+28],[left-37,cy-8]];
+    for(let i=0;i<4;i++){const [x,y]=positions[i],wrap=a=>M.mod(a+Math.PI,M.TAU)-Math.PI;body+=svgText(x,y,fmt(wrap(data.original[i]),2),11,`text-anchor="middle" style="fill:${C.teal}"`)+svgText(x,y+16,fmt(wrap(data.transformed[i]),2),11,`text-anchor="middle" style="fill:${C.ochre}"`);}
+    for(let i=0;i<4;i++){const [x,y]=vertices[i],active=i===vertex;body+=`<circle cx="${x}" cy="${y}" r="${active?8:6}" fill="${active?C.ochre:C.teal}" stroke="#fff" stroke-width="2"/>`;const dy=i<2?19:-14;body+=svgText(x,y+dy,`${i}: λ=${fmt(data.gauge[i],2)}`,10,'text-anchor="middle" class="mono"');}
+    const r=mobile?29:37;
+    body+=`<circle cx="${cx}" cy="${cy-7}" r="${r}" fill="none" stroke="${C.line}"/><path d="M${cx-r},${cy-7}H${cx+r}M${cx},${cy-r-7}V${cy+r-7}" stroke="#e3e9e2"/>`;
+    body+=`<path d="M${cx},${cy-7}L${cx+r*data.W[0]},${cy-7-r*data.W[1]}" stroke="${C.teal}" stroke-width="4"/><path d="M${cx},${cy-7}L${cx+r*data.Wprime[0]},${cy-7-r*data.Wprime[1]}" stroke="${C.ochre}" stroke-width="1.5" stroke-dasharray="3 2"/>`;
+    body+=svgText(cx,cy+r+18,'W′ = W',14,'text-anchor="middle"')+svgText(cx,cy+r+37,`Φ = ${fmt(flux,2)} rad`,10,'text-anchor="middle" class="muted"');el.innerHTML=body;
+    set('gauge-summary',`W = ${fmt(data.W[0],6)} ${data.W[1]>=0?'+':'−'} ${fmt(Math.abs(data.W[1]),6)}i. Transforming vertex ${vertex} by λ=${fmt(lambda)} leaves W unchanged.`);
+    set('gaugeResidual',tiny(data.residual));set('gaugeAction',fmt(data.action,8));
+    $('gaugeTable').innerHTML=data.original.map((a,i)=>`<tr><td>${i} → ${(i+1)%4}</td><td>${fmt(a,6)}</td><td>${fmt(data.transformed[i],6)}</td></tr>`).join('');reports.gauge=data;
+  }
+  const renderers={torus:renderTorus,cone:renderCone,elliptic:renderElliptic,fourier:renderFourier,hodge:renderHodge,gauge:renderGauge};
+  function renderAll(){drawHero();Object.values(renderers).forEach(render=>render());}
+  for(const control of controls){control.addEventListener('input',()=>renderers[control.dataset.lab]());control.addEventListener('change',()=>{renderers[control.dataset.lab]();writeURL(true);});}
+  function setControl(id,n){$(id).value=String(n);}
+  document.querySelectorAll('[data-cone-preset]').forEach(button=>button.addEventListener('click',()=>{
+    const kind=button.dataset.conePreset;setControl('coneRadius',kind==='vertex'?0:1);setControl('coneAlpha',0);
+    setControl('coneBeta',kind==='xzero'?180:kind==='yzero'?0:90);renderCone();writeURL(true);
+  }));
+  $('ecPrevious').addEventListener('click',()=>{setControl('ecK',M.mod(value('ecK')-1,19));renderElliptic();writeURL(true);});
+  $('ecNext').addEventListener('click',()=>{setControl('ecK',M.mod(value('ecK')+1,19));renderElliptic();writeURL(true);});
+  $('resetAll').addEventListener('click',()=>{for(const c of controls){if(c.type==='checkbox')c.checked=defaults.get(c.id);else c.value=defaults.get(c.id);}renderAll();writeURL(true);set('shareStatus','All laboratory parameters reset.');});
+  $('shareView').addEventListener('click',async()=>{writeURL(false);try{await navigator.clipboard.writeText(location.href);set('shareStatus','Link copied with the current parameters.');}catch(_){set('shareStatus','The address bar now contains this view. Copy its URL to share.');}});
+  window.addEventListener('popstate',()=>{readURL();renderAll();});
+  function cameraInteraction(canvasId,yawId,pitchId,lab){
+    const canvas=$(canvasId);let drag=null;
+    const move=(dx,dy)=>{setControl(yawId,M.mod(value(yawId)+dx+180,360)-180);setControl(pitchId,clamp(value(pitchId)+dy,-80,80));renderers[lab]();};
+    canvas.addEventListener('keydown',event=>{const moves={ArrowLeft:[-6,0],ArrowRight:[6,0],ArrowUp:[0,5],ArrowDown:[0,-5]};if(moves[event.key]){event.preventDefault();move(...moves[event.key]);writeURL(true);}else if(event.key==='Home'){event.preventDefault();setControl(yawId,defaults.get(yawId));setControl(pitchId,defaults.get(pitchId));renderers[lab]();writeURL(true);}});
+    canvas.addEventListener('pointerdown',event=>{if(event.pointerType!=='mouse'||event.button!==0)return;drag={x:event.clientX,y:event.clientY};canvas.setPointerCapture(event.pointerId);});
+    canvas.addEventListener('pointermove',event=>{if(!drag)return;move((event.clientX-drag.x)*.45,(event.clientY-drag.y)*.35);drag={x:event.clientX,y:event.clientY};});
+    const end=()=>{if(drag){drag=null;writeURL(true);}};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);canvas.addEventListener('lostpointercapture',end);
+  }
+  cameraInteraction('torusCanvas','torusYaw','torusPitch','torus');cameraInteraction('coneCanvas','coneYaw','conePitch','cone');
+  let resizeScheduled=false;
+  window.addEventListener('resize',()=>{if(resizeScheduled)return;resizeScheduled=true;requestAnimationFrame(()=>{resizeScheduled=false;renderAll();});});
+  if('IntersectionObserver' in window){const nav=[...document.querySelectorAll('.lab-nav a')];const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting)nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));},{rootMargin:'-10% 0px -65% 0px',threshold:0});document.querySelectorAll('.lab-card').forEach(card=>observer.observe(card));}
+  readURL();renderAll();
+  window.ResearchCompanion=Object.freeze({getState:saveState,getReport:()=>JSON.parse(JSON.stringify(reports)),renderAll});
+})();

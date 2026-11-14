@@ -1,0 +1,37 @@
+\section{Learning nonlocal strategies and checking their certificates}
+\label{qg:section}
+A two-player nonlocal game samples questions $x,y$ and scores outputs $a,b$.
+The players may share a state, but communicate neither questions nor outcomes
+during play. Our finite tensor strategies have
+$p(a,b|x,y)=\operatorname{Tr}[\rho(P_a^x\otimes Q_b^y)]$.
+Offline joint optimization is allowed and is distinct from communication
+during the game. We train local measurement frames and a Schmidt angle using
+the exact Born objective, and replay actual checkpoints, probabilities,
+correlations, word moments and simulated shots in the interactive laboratory.
+
+For $0\le\alpha\le2$ use the tilted score
+\[
+ S_\alpha=\alpha\langle A_0\rangle+
+ \langle A_0B_0+A_0B_1+A_1B_0-A_1B_1\rangle.
+\]
+Its classical maximum is $2+\alpha$; its quantum maximum is
+$\sqrt{8+2\alpha^2}$ \cite{GameTilted}. At $\alpha=0$ the uniform CHSH winning
+probability is $1/2+S_0/8$. This conversion does not apply unchanged to the
+tilted objective. The three seeds for each of $\alpha=0,1,3/2$ give nine
+trained runs. One $\alpha=3/2$ run remains at the classical value $3.5$;
+the other runs reach the stated quantum maxima numerically. This retained
+failure rules out a claim of universal convergence of the optimizer.
+
+The magic-square task uses two Bell pairs, local four-dimensional joint
+measurements, row parity $+1$ and column parities $(+1,+1,-1)$. Its classical
+value is $8/9$ and its quantum value is $1$, as proved below. Three further
+trained local-frame runs reach values within $3\cdot10^{-13}$ of one.
+All twelve runs are small CPU simulations with saved seeds and parameters,
+not hardware Bell experiments or evidence for quantum training advantage.
+
+These examples belong to both the closure of finite tensor correlations
+$C_{qa}$ and the commuting-operator set $C_{qc}$. The external theorem
+$\mathrm{MIP}^*=\mathrm{RE}$ separates these sets and implies the negative
+answer to Connes embedding \cite{GameMIP}. We do not reproduce that theorem.
+Finite learned strategies, positive state Gram matrices and finite NPA
+constraints do not witness its separation.

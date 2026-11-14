@@ -1,7 +1,7 @@
 // Exact saved norm groups/raw masks, with explicitly approximate display curves.
 export const PAYLOAD_SHA256='a5dc22785f8abf8d2bcf50fc93c0636101d9e91427ab64512146eff72bac8d43';
 export const PHASES=[[1,0],[0,1],[-1,1],[-1,0],[0,-1],[1,-1]];
-export const fraction=s=>{const[a,b='1']=String(s).split('/');return Number(a)/Number(b);};
+export const fraction=s=>{const[a,b='1']=String(s).split('/legacy/');return Number(a)/Number(b);};
 export const phi=t=>Math.abs(t)>=1?0:Math.exp(1-1/(1-t*t));
 export function nearestGroup(groups,N){let lo=0,hi=groups.length;while(lo<hi){const mid=(lo+hi)>>1;if(groups[mid][0]<N)lo=mid+1;else hi=mid;}if(lo===groups.length)return lo-1;if(lo>0&&N-groups[lo-1][0]<groups[lo][0]-N)return lo-1;return lo;}
 export function phaseMultiply(a,b){return[a[0]*b[0]-a[1]*b[1],a[0]*b[1]+a[1]*b[0]+a[1]*b[1]];}

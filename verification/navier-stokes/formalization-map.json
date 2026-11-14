@@ -1,0 +1,497 @@
+{
+  "source_file": "extension/lean/FluidInterfaces.lean",
+  "source_sha256": "9ac752e3450fd07f9fb23cb4d0283ecee1b70d7a3188ece1cdcff5d8b66934b2",
+  "fresh_theorem_count": 34,
+  "old_modules": [
+    {
+      "file": "BridgeTheorems.lean",
+      "sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "previous_verified_sha256": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+      "unchanged": true,
+      "recompiled_in_this_subtask": false
+    },
+    {
+      "file": "QuantumInterfaces.lean",
+      "sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "previous_verified_sha256": "7592195fd8a6795cbe4062050eaf29a7bfeaa832b35d918ef3de6d6900d2df49",
+      "unchanged": true,
+      "recompiled_in_this_subtask": false
+    },
+    {
+      "file": "DiagramGrammar.lean",
+      "sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "previous_verified_sha256": "871d34de90d99a263094f7abc4aadb51f5012d613c671b04fff43f5a0c35c1c6",
+      "unchanged": true,
+      "recompiled_in_this_subtask": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "finite_energy",
+      "theorems": [
+        "FluidInterfaces.dot_self_nonneg",
+        "FluidInterfaces.kineticEnergy_nonneg",
+        "FluidInterfaces.transpose_work",
+        "FluidInterfaces.skew_transport_work",
+        "FluidInterfaces.factorized_viscosity_work",
+        "FluidInterfaces.factorized_viscosity_nonneg",
+        "FluidInterfaces.pressure_work_zero",
+        "FluidInterfaces.finite_fluid_work_identity",
+        "FluidInterfaces.unforced_work_nonpositive",
+        "FluidInterfaces.kinetic_energy_derivative",
+        "FluidInterfaces.finite_fluid_energy_derivative"
+      ],
+      "theorem_count": 11,
+      "scope": "Finite real matrices; exact coordinate derivative and energy work, not continuum regularity.",
+      "manuscript_mapping": "Exact proper-component matches from extension/review/formal-type-map.json; an empty list deliberately leaves the declaration unassigned to a broader manuscript environment. No full environment is certified.",
+      "manuscript_components": [
+        {
+          "declaration": "FluidInterfaces.dot_self_nonneg",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.kineticEnergy_nonneg",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.transpose_work",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.skew_transport_work",
+          "components": [
+            {
+              "claim_id": "fluid-structures.012",
+              "claim_labels": [
+                "thm:fluid-finite-closure"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "A finite real skew-symmetric matrix has zero quadratic work; use J=-K(a) at the current state.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.factorized_viscosity_work",
+          "components": [
+            {
+              "claim_id": "fluid-structures.012",
+              "claim_labels": [
+                "thm:fluid-finite-closure"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The Euclidean Gram term has work u^T(L^T L)u=|Lu|^2. The manuscript's learned closure uses this factorized form; existence of a factorization of a general positive semidefinite physical viscosity matrix is separate.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.factorized_viscosity_nonneg",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.pressure_work_zero",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.finite_fluid_work_identity",
+          "components": [
+            {
+              "claim_id": "fluid-structures.012",
+              "claim_labels": [
+                "thm:fluid-finite-closure"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The algebraic work balance for skew transport, factorized physical viscosity, factorized learned dissipation, and forcing.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.unforced_work_nonpositive",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.kinetic_energy_derivative",
+          "components": [
+            {
+              "claim_id": "fluid-structures.012",
+              "claim_labels": [
+                "thm:fluid-finite-closure"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "Actual finite Euclidean kinetic-energy differentiation from coordinate HasDerivAt hypotheses; it neither constructs a trajectory nor proves an ODE existence theorem.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.finite_fluid_energy_derivative",
+          "components": [
+            {
+              "claim_id": "fluid-structures.012",
+              "claim_labels": [
+                "thm:fluid-finite-closure"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "At a specified time with the displayed coordinate derivatives, the finite energy derivative equals forcing work minus the two Gram dissipations. State-dependent coefficients may be evaluated at this time, but local existence, Gronwall, continuation, and continuum regularity are not part of the declaration.",
+              "whole_statement_formalized": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orthogonal_reduction",
+      "theorems": [
+        "FluidInterfaces.projection_residual_kernel",
+        "FluidInterfaces.projection_residual_orthogonal",
+        "FluidInterfaces.projection_energy_split",
+        "FluidInterfaces.projection_energy_nonincrease",
+        "FluidInterfaces.projection_best_approximation"
+      ],
+      "theorem_count": 5,
+      "scope": "Symmetric idempotent matrices; energy and best approximation only.",
+      "manuscript_mapping": "Exact proper-component matches from extension/review/formal-type-map.json; an empty list deliberately leaves the declaration unassigned to a broader manuscript environment. No full environment is certified.",
+      "manuscript_components": [
+        {
+          "declaration": "FluidInterfaces.projection_residual_kernel",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.projection_residual_orthogonal",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.projection_energy_split",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.projection_energy_nonincrease",
+          "components": []
+        },
+        {
+          "declaration": "FluidInterfaces.projection_best_approximation",
+          "components": []
+        }
+      ]
+    },
+    {
+      "id": "chain_continuity",
+      "theorems": [
+        "FluidInterfaces.boundary_flux_divergence_zero",
+        "FluidInterfaces.boundary_flux_update_preserves_divergence"
+      ],
+      "theorem_count": 2,
+      "scope": "Actual boundary matrices compose to zero; exactness and harmonic completeness not claimed.",
+      "manuscript_mapping": "Exact proper-component matches from extension/review/formal-type-map.json; an empty list deliberately leaves the declaration unassigned to a broader manuscript environment. No full environment is certified.",
+      "manuscript_components": [
+        {
+          "declaration": "FluidInterfaces.boundary_flux_divergence_zero",
+          "components": [
+            {
+              "claim_id": "fluid-structures.011",
+              "claim_labels": [
+                "prop:fluid-discrete-hodge"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "Given matrices B,C with BC=0, B(Cq)=0. With B=delta_1 and C=delta_2 this is the proposition's final divergence-free consequence once delta_1 delta_2=0 is supplied; mass-matrix adjoints and Hodge positivity are not proved by this declaration.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.boundary_flux_update_preserves_divergence",
+          "components": []
+        }
+      ]
+    },
+    {
+      "id": "schur_elimination",
+      "theorems": [
+        "FluidInterfaces.schur_elimination_iff"
+      ],
+      "theorem_count": 1,
+      "scope": "Hidden block is a linear equivalence; no inverse-conditioning estimate.",
+      "manuscript_mapping": "Exact proper-component matches from extension/review/formal-type-map.json; an empty list deliberately leaves the declaration unassigned to a broader manuscript environment. No full environment is certified.",
+      "manuscript_components": [
+        {
+          "declaration": "FluidInterfaces.schur_elimination_iff",
+          "components": []
+        }
+      ]
+    },
+    {
+      "id": "exact_discrete_memory",
+      "theorems": [
+        "FluidInterfaces.hidden_recurrence_expansion",
+        "FluidInterfaces.resolved_memory_identity",
+        "FluidInterfaces.hidden_state_prevents_autonomous_closure"
+      ],
+      "theorem_count": 3,
+      "scope": "Finite linear recurrences; no autonomous closure on all hidden states if B has a nonzero value.",
+      "manuscript_mapping": "Exact proper-component matches from extension/review/formal-type-map.json; an empty list deliberately leaves the declaration unassigned to a broader manuscript environment. No full environment is certified.",
+      "manuscript_components": [
+        {
+          "declaration": "FluidInterfaces.hidden_recurrence_expansion",
+          "components": [
+            {
+              "claim_id": "quantum-fluid.003",
+              "claim_labels": [
+                "prop:fluid-discrete-memory"
+              ],
+              "claim_source": "extension/manuscript/chapters/quantum-fluid.tex",
+              "component": "The all-natural-time expansion z_n=D^n z_0+sum_{k<n}D^(n-1-k)Cx_k from the exact hidden recurrence, including the empty sum at zero.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.resolved_memory_identity",
+          "components": [
+            {
+              "claim_id": "quantum-fluid.003",
+              "claim_labels": [
+                "prop:fluid-discrete-memory"
+              ],
+              "claim_source": "extension/manuscript/chapters/quantum-fluid.tex",
+              "component": "The resulting exact discrete convolution in the retained recurrence. No continuous matrix exponential, continuous-time memory integral, or block-resolvent determinant identity is included.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.hidden_state_prevents_autonomous_closure",
+          "components": [
+            {
+              "claim_id": "quantum-fluid.001",
+              "claim_labels": [
+                "prop:fluid-closure-obstruction"
+              ],
+              "claim_source": "extension/manuscript/chapters/quantum-fluid.tex",
+              "component": "For linear A and B with B(y) nonzero, no function F of the retained state alone agrees with Ax+Bz for all retained and hidden states. No assertion is made about a restricted invariant manifold or a probabilistic conditional-expectation closure.",
+              "whole_statement_formalized": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nilpotent_blocks",
+      "theorems": [
+        "FluidInterfaces.lower_diagonal_lower_zero"
+      ],
+      "theorem_count": 1,
+      "scope": "Actual strict lower/diagonal/strict lower maps; Volterra analytic estimates not formalized.",
+      "manuscript_mapping": "Exact proper-component matches from extension/review/formal-type-map.json; an empty list deliberately leaves the declaration unassigned to a broader manuscript environment. No full environment is certified.",
+      "manuscript_components": [
+        {
+          "declaration": "FluidInterfaces.lower_diagonal_lower_zero",
+          "components": [
+            {
+              "claim_id": "navier-stokes-release.008",
+              "claim_labels": [
+                "prop:ns-sparse-volterra"
+              ],
+              "claim_source": "extension/manuscript/chapters/navier-stokes-release.tex",
+              "component": "The composition of a strict lower block, a block diagonal map, and another strict lower block is zero. The two lower blocks may differ, as needed when a derivative hits a coefficient. This is only the block algebra; no function-space, Volterra, holomorphic, or convergence theorem is formalized by this declaration.",
+              "whole_statement_formalized": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quadratic_order",
+      "theorems": [
+        "FluidInterfaces.renormalization_is_quadratic_order_element",
+        "FluidInterfaces.quadratic_order_one",
+        "FluidInterfaces.quadratic_order_addition",
+        "FluidInterfaces.quadratic_generator_square",
+        "FluidInterfaces.renormalization_quadratic_identity",
+        "FluidInterfaces.renormalization_determinant",
+        "FluidInterfaces.renormalization_power_determinant",
+        "FluidInterfaces.quadratic_order_multiplication",
+        "FluidInterfaces.quadratic_order_determinant",
+        "FluidInterfaces.quadratic_order_representation_injective",
+        "FluidInterfaces.no_commuting_complex_structure"
+      ],
+      "theorem_count": 11,
+      "scope": "Exact integer matrix order representation and real complex-structure obstruction; topological degree not formalized.",
+      "manuscript_mapping": "Exact proper-component matches from extension/review/formal-type-map.json; an empty list deliberately leaves the declaration unassigned to a broader manuscript environment. No full environment is certified.",
+      "manuscript_components": [
+        {
+          "declaration": "FluidInterfaces.renormalization_is_quadratic_order_element",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The displayed matrix J is the coefficient-pair matrix rho(4,1).",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.quadratic_order_one",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The integer coefficient-pair matrix rho(1,0) is the identity.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.quadratic_order_addition",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The coefficient-pair matrices obey rho(a,b)+rho(c,d)=rho(a+c,b+d).",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.quadratic_generator_square",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The displayed integer generator A satisfies A*A=2*I.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.renormalization_quadratic_identity",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The displayed matrix J satisfies J*J-8*J+14*I=0 over the integers.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.renormalization_determinant",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The exact integer determinant of J is 14.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.renormalization_power_determinant",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "For every natural k, det(J^k)=14^k; no topological degree is included.",
+              "whole_statement_formalized": false
+            },
+            {
+              "claim_id": "fluid-structures.004",
+              "claim_labels": [
+                "prop:fluid-covering"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "Only the arithmetic input det(J^k)=14^k. Neither the size of the lattice quotient, the covering degree, nor invariance of normalized Haar integration is proved by this Lean declaration.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.quadratic_order_multiplication",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The coefficient-pair matrices obey rho(a,b)rho(c,d)=rho(ac+2bd,ad+bc). A bundled ring homomorphism from an algebraic number-field order is not constructed by this identity.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.quadratic_order_determinant",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The exact norm determinant det(rho(a,b))=a^2-2b^2 over integer pairs.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.quadratic_order_representation_injective",
+          "components": [
+            {
+              "claim_id": "fluid-structures.003",
+              "claim_labels": [
+                "prop:fluid-order"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "The map from integer pairs (a,b) to their displayed matrix is injective. Identification of these pairs with the order is the manuscript's argument.",
+              "whole_statement_formalized": false
+            }
+          ]
+        },
+        {
+          "declaration": "FluidInterfaces.no_commuting_complex_structure",
+          "components": [
+            {
+              "claim_id": "fluid-structures.005",
+              "claim_labels": [
+                "prop:fluid-no-complex"
+              ],
+              "claim_source": "extension/manuscript/chapters/fluid-structures.tex",
+              "component": "For a real 2-by-2 matrix C commuting with the displayed J, C*C is not minus the identity. This exact linear-algebra statement does not formalize the subsequent geometry of elliptic curves.",
+              "whole_statement_formalized": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "verification": "extension/lean/fluid-verification.json",
+  "scope_note": "No complete continuum Navier-Stokes proof or full new manuscript environment is certified by this inventory alone.",
+  "component_map_updated_at_utc": "2026-11-13T21:41:15.647166+00:00",
+  "complete_type_map": "extension/review/formal-type-map.json",
+  "claim_register": "extension/review/claim-register.json",
+  "current_total_verified_declarations": 82,
+  "separate_fresh_local_kernel_verification": "extension/review/navier-stokes/local-kernel-verification.json",
+  "historical_verification_note": "The old_modules recompilation flags describe the original fluid-only subtask and are preserved. The later fresh check of all four local modules is recorded separately; it does not recheck the upstream continuum release."
+}

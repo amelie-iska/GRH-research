@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {parsePDB,parseSDF,backboneMesh,bondGeometry} from '../../web/molecular-structure.mjs';
+const dir='web/data/synthetic-training/large-v2/structures/';
+const cage=parsePDB(readFileSync(dir+'1L2Y.pdb','utf8'));
+assert.equal(cage.residues.length,20);assert(cage.atoms.length>250);
+assert.equal(cage.secondary.filter(s=>s.kind==='helix').length,2);
+assert(cage.residues.filter(r=>r.secondary==='alpha').length>=8);
+assert(cage.bonds.some(b=>b.kind==='peptide'));
+for(const b of cage.bonds){const d=Math.hypot(...cage.atoms[b.a].position.map((v,k)=>v-cage.atoms[b.b].position[k]));assert(d>.2&&d<2.5);}
+const zipper=parsePDB(readFileSync(dir+'1HRW.pdb','utf8'));
+assert(zipper.secondary.filter(s=>s.kind==='sheet').length===2);
+assert(zipper.residues.some(r=>r.secondary==='strand'));
+const mesh=backboneMesh(zipper);assert(mesh.length>30&&mesh.some(p=>p.kind==='strand'));
+for(const p of mesh)assert(p.vertices.flat().every(Number.isFinite));
+const sdf=parseSDF(readFileSync(dir+'molecule-0508-c14-p0.sdf','utf8'));
+assert(sdf.atoms.length>10&&sdf.bonds.length>10);
+assert(sdf.backbone.length>=2);assert(sdf.secondary.length===0);
+const broken={...cage,bonds:cage.bonds.filter(b=>b.kind!=='peptide')};assert.equal(backboneMesh(broken).length,0,'No phantom ribbon across disconnected peptide fragments');
+const hidden=bondGeometry([0,0,0],[0,0,.8],1,1);assert(hidden.atomRadiusFraction<.2&&hidden.segments.length>=4);
+console.log({passed:true,cage_residues:cage.residues.length,cage_atoms:cage.atoms.length,covalent_bonds:cage.bonds.length,zipper_ribbon_patches:mesh.length,synthetic_backbone:sdf.backbone.length});

@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-11-13T21:28:19.536747+00:00",
+  "status": "passed for observed desktop and narrow-screen interactions",
+  "preview": "supported Sites managed preview",
+  "desktop_observations": [
+    "home page links to fluid laboratory",
+    "torus flow and flat fundamental domain render",
+    "time changed to 12 with analytic amplitude recomputed",
+    "cover k=3 shows 2744 preimages and degree2744",
+    "theta0 changed and circuit probabilities/diffusivity recomputed",
+    "one-step heat update preserves displayed unit mass",
+    "scaling extremes recompute energy and velocity values"
+  ],
+  "responsive_observations": {
+    "fixture_iframe_width": 390,
+    "content_viewport_width": 375,
+    "content_scroll_width": 375,
+    "horizontal_overflow": false,
+    "visually_checked": [
+      "hero",
+      "circuit section",
+      "native angle controls"
+    ]
+  },
+  "console_note": "Observed errors were browser-extension metadata messages at chrome-extension URLs; no app-source exception was observed in the tested interactions.",
+  "limits": [
+    "No quantum hardware execution",
+    "Visual checks cover selected states, not all parameter combinations",
+    "Links to newly compiled downloads are checked after packaging"
+  ]
+}
