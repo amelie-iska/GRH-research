@@ -37,8 +37,4 @@ Here BPB uses the canonical four-byte fixed-point target value as denominator an
 
 The known human-language control uses the actual Gutenberg English text of \emph{Alice's Adventures in Wonderland}, with boilerplate excluded and disjoint chronological byte spans. Validation selected an order-two count model with smoothing 0.1. Its held-out conditional likelihood is 2.9601 bits per UTF-8 byte; independently applied zlib and lzma produced approximately 3.0386 and 2.9087 bits per byte on that held-out byte segment. The code lengths have different model/coder conditioning and are not a matched total-description-length contest. Authorship/provenance, not compressibility, establishes that this source is human communication. No acoustic or cross-author claim is inferred.
 
-The final measured-study record has SHA-256
-\begin{center}\small\texttt{3eed1b691172b2b3aded5f8117e773594cb2804e59a5f1a2564bc7bcd7bdf630}\end{center}
-and the executed experiment source has SHA-256
-\begin{center}\small\texttt{d1ef909033581b85a874c3286ae2cf75774e9337aaff43973ba295636b0e4d98}\end{center}
-The initial metadata serialization failure and a missing adapter return were corrected before optimizer updates; both failed preflight records remain retained. A requested NOAA global-temperature endpoint returned HTTP 404 and was not represented as a completed dataset. The failed eight-worker Codex launch produced no development results because of an account usage limit; all completed work in this release was subsequently executed directly.
+The publication manifest records source and result hashes, failed preflights and the exact reproduction commands. No failed preflight is counted as a trained run, and no unavailable source is counted as an executed experiment.
