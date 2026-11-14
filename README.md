@@ -8,6 +8,16 @@ The new work is in **extension/**. The inherited repository remains available;
 its original introduction is preserved as **README-UPSTREAM.md**. This project
 does not assert a proof of GRH or of the Yang–Mills mass gap.
 
+## Unified current edition
+
+The current manuscript is built from `extension/manuscript/main.tex`. It includes
+Certified Surface Computation, elliptic arithmetic, covering-compatible learned
+quantum channels, real-WMAP controls and executed next steps in one continuously
+numbered book. The existing homepage embeds the experiments at
+`#integrated-laboratory`; `downloads/paper.pdf` is the same current document.
+Historical releases remain immutable evidence, not current installments.
+The integration record is in `planning/integrated-research-20261114/`.
+
 ## Current implementation and review
 
 The [iterative implementation plan](extension/IMPLEMENTATION_PLAN.md) defines

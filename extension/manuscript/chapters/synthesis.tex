@@ -353,31 +353,9 @@ and geometric distortion. Reporting only a favorable rank or module
 decomposition would leave the main quantitative issue unanswered.
 
 \subsection{Resource-certified elliptic-curve quantum arithmetic}
+The finite reproducibility program is executed in Chapter~\ref{ch:p3-ecc}, within this same monograph. It fixes affine/infinity encoding, total invalid-word behavior, logical gates, clean work, coherent signed decomposition and independent resource accounting. The measured decomposition costs more for the original bounded compiler; this result is retained rather than replaced by an unsupported efficiency claim.
 
-The reproducibility program is implemented in the companion's
-\texttt{workbench/program3/ecc.py}, with separate emitted variable-point
-addition oracles, independent gate counting and clean-work verification.
-The current continuation, \emph{Arithmetic, Coverings and Learned Quantum
-Renormalization}, gives the construction, proofs, tested resource comparisons
-and observational controls. Historical editions retain the original research
-direction; this source records its implemented successor.
-
-The comparison fixes nonsingular finite curves, affine coordinates with a
-unique infinity encoding, invalid-word behavior, ideal X/CX/CCX gates and
-ancillary-register initialization. Both the binary path and coherent signed
-endomorphism decomposition include every preparation and cleanup operation.
-Finite exhaustive-domain checks and actual cuStateVec replay are recorded at
-their precise scope. The bounded truth-table compiler is not a polynomial-size
-implementation for cryptographic curves, and logical counts are not
-error-corrected physical resource estimates.
-
-In the tested instances, decomposition does not reduce the complete budget.
-The emitted circuits make that result reproducible instead of inferring a
-saving from shorter scalar components alone. The independent source, circuit
-streams, assumption manifest and verification reports accompany the versioned
-continuation. Its hierarchical channel and covering-theory extensions preserve
-the distinction between an arithmetic endomorphism, a quantum channel, a graph
-cover and a learned renormalization map.
+Chapter~\ref{ch:integrated-next-steps} completes the next field-arithmetic step with uniform carry, borrow, product, reduction and inversion circuits, together with executed small-domain and wider sampled checks. This replaces exponential input-table synthesis for those primitives, without claiming that a complete large-curve elliptic algorithm or fault-tolerant compilation has already been built. Chapter~\ref{ch:p3-coverings} develops the covering, integral-order and learned-channel constructions; Chapter~\ref{ch:p3-ccc} and the completed-steps chapter supply the observed-sky tests and their calibration limits. Their statements, measurements and interactive examples belong to the same continuing document and project page.
 
 \subsection{From elliptic estimates to a uniform physical gap}
 

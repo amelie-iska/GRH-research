@@ -73,7 +73,16 @@
 \input{lean-listings-unicode}
 \title{\textbf{Orders, Complexes, Cryptography\\and Quantum Yang--Mills}\\[1em]\Large Arithmetic modules, tensor grammars, quantum learning,\\fluid dynamics and a verifiable spectral research program}
 \author{Prepared for Amelie Schreiber\\[.4em]\normalsize Research synthesis and computational companion}
-\date{13 November 2026\\\small Working research monograph, version 1.4: operator realizations and certified control}
+\date{14 November 2026\\\small Unified research monograph, version 1.5: integrated constructions and completed computational steps}
+
+% INTEGRATED-EDITION-20261114: continuous book counters and table of contents.
+\newcommand{\WorkbenchResearchRoot}{../../workbench/research}
+\makeatletter
+\def\input@path{{../../workbench/research/}{../../releases/program3-20261114/evidence/paper/}}
+\makeatother
+\graphicspath{{../../releases/program3-20261114/evidence/paper/}}
+\setlength{\emergencystretch}{3em}
+
 \begin{document}
 \frontmatter
 \hypersetup{pageanchor=false}
@@ -93,6 +102,7 @@
 \part{Cryptography and quantum algorithms}
 \input{chapters/cryptography}
 \input{chapters/implemented-cryptography}
+\input{../../workbench/research/program3-arithmetic}
 \input{chapters/quantum-surfaces}
 \part{Typed tensor diagrams and quantum graph learning}
 \input{chapters/tensor-grammars}
@@ -108,15 +118,47 @@
 \input{chapters/reduction-contracts}
 \input{chapters/toric-transport-audit}
 \input{chapters/quantum-tropical-realizations}
+\input{../../workbench/research/program3-covering-rg}
+\input{../../workbench/research/program3-dependent-width}
+\begin{center}\small\input{gate-controls-table}\end{center}
 \part{Conformal geometry, information and language}
 \input{chapters/cyclic-cosmology}
+\input{../../workbench/research/program3-cosmology}
+\input{../../workbench/research/program3-joint-controls}
 \input{chapters/learning-languages}
+
+\part{Certified surface computation and its measured realizations}
+\input{../../workbench/research/unified-program}
+\input{../../workbench/research/framework-map}
+\input{../../workbench/research/half-density}
+\input{../../workbench/research/source-proof-repair}
+\input{../../workbench/research/finite-formalization}
+\chapter{Graph languages and computational mechanisms}
+\input{../../workbench/research/language-graph-computation}
+\chapter{Physical data, coding and the measured study}
+\input{../../workbench/research/physical-information}
+\input{../../workbench/research/results-summary}
+\input{../../workbench/research/information-and-controls}
+\chapter{BGG, category \texorpdfstring{$\mathcal O$}{O} and structural synthesis}
+\input{../../workbench/research/bgg-category-o}
+\input{../../workbench/research/surface-guide}
+\input{../../workbench/research/surface-diagram}
+\part{Completed computational steps and the unified research program}
+\input{../../workbench/integration/completed-next-steps}
+
 \input{chapters/synthesis}
 \appendix
 \input{chapters/experiments}
 \input{chapters/formalization}
 \input{chapters/fluid-verification}
 \input{chapters/source-concordance}
+
+\begingroup\footnotesize\raggedright
+\input{../../workbench/research/references}
+\input{integrated/program3-source-register}
+\endgroup
+\input{integrated/prior-program3-execution}
+
 \backmatter
 \bibliographystyle{plainnat}
 \bibliography{references,ns-microscopic,ns-release,ns-structures,ns-spin,reduction-contracts,toric-audit,crypto-implementation,quantum-tropical-substrates}
