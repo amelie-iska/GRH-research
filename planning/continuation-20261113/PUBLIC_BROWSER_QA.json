@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "observed_started_utc": "2026-11-14T00:47:40.140Z",
+  "reported_source_main_commit": "6b8b6ec31779fe322804ae45ef3bd2dd440b95b3",
+  "reported_pages_commit": "4741952fa6588ca85ebe369234e746b4ef353149",
+  "commit_provenance": "Reported by parent release task; browser checks below observe rendered public pages.",
+  "pages": [
+    {
+      "name": "fluids",
+      "url": "https://amelie-iska.github.io/GRH-research/fluids.html?time=0&nu=0.08&view=flat&yaw=-30&pitch=36&power=2&x=0.28&y=0.63&steps=1&initial=point&logTau=-8&h=0.006&a0=0.72&a1=-0.45&a2=1.1&a3=0.38",
+      "title": "Flow, Reduction and Structure \u2014 Integral Structures",
+      "actions": [
+        "Opened Fluid laboratory from published home page",
+        "Set t = 0",
+        "Changed coordinate view to Flat fundamental domain",
+        "Increased cover power from 1 to 2",
+        "Selected One position eigenstate, reset to initial state, then applied one channel step"
+      ],
+      "observations": {
+        "flow": "Taylor\u2013Green flat view at time 0.00; mean energy 0.2500. Arrow keys rotate the torus display.",
+        "cover": "All 196 distinct preimages of the image (0.840, 0.620) under J to power 2.",
+        "heat": "Diagonal position distribution after 1 channel steps. Mass 1.0000000000, entropy 2.05589 bits, contrast 0.1439.",
+        "channel_steps": "1",
+        "loaded_reference": "6 periodic cochain grids; four symbolic flow residuals equal zero; 16 independent complex128 circuit references. Maximum parameter-shift / finite-difference feature error 2.99e-10. A separate 9-dimensional coherent density matrix checks the channel beyond diagonal states."
+      },
+      "console": {
+        "application_warning_error_messages": [],
+        "browser_extension_metadata_error_count": 13,
+        "browser_extension_message_classes": [
+          "Error sending browser metadata to extension: Object"
+        ],
+        "scope": "Sampled warning/error log window; tab history may include earlier visited pages."
+      },
+      "status": "passed_sample",
+      "optional_screenshot": {
+        "filename": "fluids.jpg",
+        "sha256": "4c999beef18c027c159c9d2a37665b22f1f471dbb02523fa1d3aa54a4af52b63",
+        "bytes": 64286,
+        "dimensions": [
+          1348,
+          926
+        ],
+        "required_for_assessment": false
+      }
+    },
+    {
+      "name": "learning",
+      "url": "https://amelie-iska.github.io/GRH-research/learning.html#graph",
+      "title": "Quantum ToricGT \u2014 Integral Structures",
+      "actions": [
+        "Waited for checked model and four held-out examples to load",
+        "Selected OOD 1 caccbdabcbad",
+        "Changed cost control from -1 to 0",
+        "Changed circuit offset to 3.14 radians",
+        "Inspected initial gate state and final gate 16",
+        "Selected edge token e0, encoder layer 2 and attention head 2"
+      ],
+      "observations": {
+        "graph": "01 \u00b7 WEIGHTED TOKENIZATION\n\nA prediction proposes.\nA certificate proves.\n\nVertices mark positions in a string. Each edge is a permitted token with an integer cost. The model predicts remaining costs and proposes a path; an independent dynamic program checks the optimum.\n\nHeld-out graph\nTEST 1 \u00b7 acdcccb\nTEST 2 \u00b7 bdaa\nOOD 1 \u00b7 caccbdabcbad\nOOD 2 \u00b7 bbddbddbcba\nCost control u\n0\nRestore example and weights\n\nFor every edge, cost = base cost + u \u00d7 slope. Changing u recomputes the circuit inputs, model output, and exact path certificate. The finite vocabulary is held fixed.\n\nc \u00b7 16\nca \u00b7 23\ncac \u00b7 10\na \u00b7 16\nac \u00b7 26\nacc \u00b7 23\nc \u00b7 16\ncc \u00b7 26\nccb \u00b7 12\nc \u00b7 16\ncb \u00b7 12\nb \u00b7 16\nbd \u00b7 28\nbda \u00b7 13\nd \u00b7 16\nda \u00b7 26\ndab \u00b7 15\na \u00b7 16\nab \u00b7 27\nabc \u00b7 29\nb \u00b7 16\nbcb \u00b7 19\nc \u00b7 16\ncb \u00b7 12\ncba \u00b7 14\nb \u00b7 16\nba \u00b7 25\nbad \u00b7 27\na \u00b7 16\nad \u00b7 27\nd \u00b7 16\n0\nc\n1\na\n2\nc\n3\nc\n4\nb\n5\nd\n6\na\n7\nb\n8\nc\n9\nb\n10\na\n11\nd\n12\nend\nLearned proposalCertified path All displayed costs use integer benchmark units.\nString\ncaccbdabcbad\nLearned proposal cost\n81\nExact minimum cost\n67\nProposal regret\n14\nInitial learned proposal\n\ncac | cb | dab | cb | a | d\n\nValid path: yes. Feasible dual bound: 6. Certificate gap: 75. A matching certificate was not obtained from the learned potential.\n\nA learned integer potential is made dual-feasible by a backward pass. Equality of path cost and lower bound proves optimality. A gap can remain even when the proposed path happens to be optimal.\n\nFinal certified answer\n\ncac | cb | dab | cba | d\n\nPath cost 67 = lower bound 67; gap 0. Exact dynamic programming supplied the final matching certificate.\n\nWhen needed, exact dynamic programming supplies a path and matching potential. Its correctness is reported separately from the model\u2019s prediction accuracy.\n\nInspect every predicted node value",
+        "initial_gate": "Initial state |000\u27e9.",
+        "recomputation": "Full model recomputed in 65.2 ms. Maximum normalized prediction change from the trained offsets: 1.260e+0.",
+        "norm": "Final state norm squared: 1.000000000000. Selected offset: 3.275288 radians.",
+        "routing": "Selected token: e0: 0\u21921. Sum of combine weights: 1.000000000."
+      },
+      "console": {
+        "application_warning_error_messages": [],
+        "browser_extension_metadata_error_count": 37,
+        "browser_extension_message_classes": [
+          "Error sending browser metadata to extension: Object"
+        ],
+        "scope": "Sampled warning/error log window; tab history may include earlier visited pages."
+      },
+      "status": "passed_sample",
+      "optional_screenshot": {
+        "filename": "learning.jpg",
+        "sha256": "023daeae63b3b4e1597be379bf064bb320c01dad5f08e9a51428a62b20d61148",
+        "bytes": 92126,
+        "dimensions": [
+          1348,
+          926
+        ],
+        "required_for_assessment": false
+      }
+    },
+    {
+      "name": "quantum",
+      "url": "https://amelie-iska.github.io/GRH-research/quantum.html",
+      "title": "Circuits on a Surface \u2014 Integral Structures",
+      "actions": [
+        "Loaded 18-qubit topology and live browser worker",
+        "Prepared the code with 42 gates",
+        "Inserted X on q0 as gate 43 and highlighted B0",
+        "Selected genus-2 32-qubit topology to exercise case-dependent data loading"
+      ],
+      "observations": {
+        "prepared": {
+          "playhead": "Applied 42 / 42 gates \u00b7 circuit complete.",
+          "syndrome": "A0 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA1 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA2 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA3 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA4 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA5 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA6 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA7 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA8 \u00b7 X\t1.000000\t0\t+1 eigenstate\nB0 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB1 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB2 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB3 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB4 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB5 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB6 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB7 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB8 \u00b7 Z\t1.000000\t0\t+1 eigenstate"
+        },
+        "after_x_on_q0": {
+          "playhead": "Applied 43 / 43 gates \u00b7 circuit complete.",
+          "syndrome": "A0 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA1 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA2 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA3 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA4 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA5 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA6 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA7 \u00b7 X\t1.000000\t0\t+1 eigenstate\nA8 \u00b7 X\t1.000000\t0\t+1 eigenstate\nB0 \u00b7 Z\t-1.000000\t1.000000\t\u22121 eigenstate\nB1 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB2 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB3 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB4 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB5 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB6 \u00b7 Z\t-1.000000\t1.000000\t\u22121 eigenstate\nB7 \u00b7 Z\t1.000000\t0\t+1 eigenstate\nB8 \u00b7 Z\t1.000000\t0\t+1 eigenstate"
+        },
+        "genus2": {
+          "title": "Genus 2 \u00b7 connected sum \u00b7 32 qubits \u00b7 32 qubits",
+          "topology": "Data qubits n\n32\nGenus g\n2\nLogical qubits k\n4\nV \u2212 E + F\n-2\nRanks X / Z\n13 / 15\nFaces / vertices\n16 / 14",
+          "prepare_button_enabled": false
+        },
+        "recorded_gpu_summary": "The saved GPU run reports 9 / 9 experiment checks passed on NVIDIA GeForce RTX 4090. Dense amplitudes and Pauli-error frames are shown as separate representations."
+      },
+      "console": {
+        "application_warning_error_messages": [],
+        "browser_extension_metadata_error_count": 48,
+        "browser_extension_message_classes": [
+          "Error sending browser metadata to extension: Object"
+        ],
+        "scope": "Sampled warning/error log window; tab history may include earlier visited pages."
+      },
+      "status": "passed_sample",
+      "notes": [
+        "The genus-2 heading repeats \u201832 qubits\u2019 twice; this is a cosmetic label defect. The topology data and disabled dense-browser controls loaded correctly."
+      ],
+      "optional_screenshot": {
+        "filename": "quantum-syndrome.jpg",
+        "sha256": "c75fd615bdce11de5b20cb6a97d74d0c175e87636ab9c3ed886b95a3bc258c9b",
+        "bytes": 89733,
+        "dimensions": [
+          1348,
+          926
+        ],
+        "required_for_assessment": false
+      }
+    },
+    {
+      "name": "legacy",
+      "url": "https://amelie-iska.github.io/GRH-research/legacy/index.html",
+      "title": "Surface orders \u00b7 Research atlas",
+      "actions": [
+        "Navigated through Original project to /GRH-research/legacy/index.html",
+        "Selected Hyperelliptic pentagon genus 2",
+        "Selected Hybrid ToricGT spectral surrogate",
+        "Moved checkpoint to initial epoch and then final epoch",
+        "Advanced held-out sample from 0 to 1"
+      ],
+      "observations": {
+        "surface_title": "Genus-two hyperelliptic dessin",
+        "initial_checkpoint": "Backend: PennyLane default.qubit CPU + pinned ToricGT Weyl matrices + exact Fraction certificates\nSeed: 20261104\n2 qubits \u00b7 12 parameters\nTrain / held-out: 75 / 25\nEpoch 0\nTraining loss 0.23750\nHeld-out loss 0.22052\nConstant test baseline 0.010664",
+        "final_checkpoint_and_certificate": "AUXILIARY / PRESERVED TRAINING EXPERIMENTS\n\nThese saved experiments measure state compression, selected local RG coupling regression, covariance alignment, or a finite spectral surrogate. They retain their original data and have different objectives from the full-action RG flow above.\n\nInspect the auxiliary benchmarks\nArchitecture\nFour-qubit QCNN compression\nShared quantum graph convolution\nQuantum-feature graph attention\nHybrid ToricGT spectral surrogate\nPhotonic Gaussian pooling\nGenus-four nine-qubit QCNN\n\npredict normalized lowest Harper eigenvalue; exact verifier accepts or repairs lower-bound proposals. ToricGT rational Weyl carrier, two-qubit feature circuit, classical affine readout, exact rational principal-minor verifier.\n\nToricGT Weyl carrier\nQuantum feature circuit\nLearned eigenvalue\nExact PSD verifier\nQuantum circuit layout (2D)\nBackend: PennyLane default.qubit CPU + pinned ToricGT Weyl matrices + exact Fraction certificates\nSeed: 20261104\n2 qubits \u00b7 12 parameters\nTrain / held-out: 75 / 25\nEpoch 160\nTraining loss 0.000043932\nHeld-out loss 0.000040190\nConstant test baseline 0.010664\nCheckpoint\nHeld-out example (final weights)\n{\n  \"lambda_rational\": \"1/2\",\n  \"learned_proposal\": -2.291041845722976,\n  \"rational_trial\": \"-587/256\",\n  \"proposal_accepted\": true,\n  \"certified_lower\": \"-4689379/2097152\",\n  \"certified_upper_bracket\": \"-37514957/16777216\",\n  \"principal_minors\": [\n    \"8883683/2097152\",\n    \"4689379/2097152\",\n    \"495075/2097152\",\n    \"4689379/2097152\",\n    \"40559444875081/4398046511104\",\n    \"4398089361225/4398046511104\",\n    \"40559444875081/4398046511104\",\n    \"1222082680649/4398046511104\",\n    \"21990275405641/4398046511104\",\n    \"1222082680649/4398046511104\",\n    \"10312254415554747067/9223372036854775808\",\n    \"185042582311313873595/9223372036854775808\",\n    \"10312254415554747067/9223372036854775808\",\n    \"574782121350535867/9223372036854775808\",\n    \"942285961955040932561/19342813113834066795298816\"\n  ],\n  \"scope\": \"exact rational PSD certificate for lower bound; bracket upper follows failed PSD or Rayleigh bound\"\n}\n\nFixed synthetic physics data; disjoint held-out samples, fixed seed, exact targets where stated. These objectives do not by themselves supply an effective Hamiltonian with its normalization or a scale-consistent RG flow. SDK execution status is recorded with each experiment.\n\nNew architecture data: 22 checked numerical traces \u00b7 formulas, provenance and reproduction. Open the step-through architecture inspector \u2197 Inspect actual states, tensors, masks, gates and expert slots; each evidence category is labelled.",
+        "sample_index_observed": 1,
+        "embedded_rg_loaded": "The legacy rg.html?embed=landing frame rendered live exact classical marginalization and its data after entering the section."
+      },
+      "console": {
+        "application_warning_error_messages": [],
+        "browser_extension_metadata_error_count": 60,
+        "browser_extension_message_classes": [
+          "Error sending browser metadata to extension: Object"
+        ],
+        "scope": "Sampled warning/error log window; tab history may include earlier visited pages."
+      },
+      "status": "passed_sample",
+      "optional_screenshot": {
+        "filename": "legacy.jpg",
+        "sha256": "40151b0c142e53e627022d09a0f48782730fe364a5d6821c1cbc8958e3524bfa",
+        "bytes": 77278,
+        "dimensions": [
+          1348,
+          926
+        ],
+        "required_for_assessment": false
+      }
+    }
+  ],
+  "observed_completed_utc": "2026-11-14T00:50:50.627Z",
+  "status": "passed_sample_with_cosmetic_finding",
+  "findings": [
+    {
+      "severity": "cosmetic",
+      "page": "quantum",
+      "description": "The genus-2 selected-case heading repeats \u201832 qubits\u2019 twice; topology data and the non-dense-browser boundary loaded correctly."
+    }
+  ],
+  "coverage": {
+    "home_navigation_observed": true,
+    "interactive_pages_sampled": 4,
+    "project_prefix": "/GRH-research/",
+    "dynamic_data_evidence": [
+      "Fluid reference summary loaded",
+      "Trained model, benchmark and held-out graph data loaded",
+      "Quantum worker and selected higher-genus case loaded",
+      "GPU execution records rendered",
+      "Legacy model data and embedded RG frame loaded"
+    ],
+    "network_visibility": "No full HAR or network-response inspector was exposed in the used browser API. Successful dynamic loading was assessed from rendered data, enabled controls, computed outputs and console messages; no failed-resource message appeared in the sampled application console.",
+    "limitations": [
+      "One desktop cloud Chromium session; no cross-browser or mobile/responsive matrix",
+      "Selected interactions only, not every laboratory, option, dataset, media player, download or legacy route",
+      "The browser sample does not establish correctness of every scientific claim or replace numerical/formal/source-hash checks",
+      "One browser transport interruption recovered without page reload; a broad text locator timeout was resolved with a scoped rendered-DOM read",
+      "Browser-extension metadata errors are reported separately from application errors"
+    ]
+  },
+  "public_site_url": "https://amelie-iska.github.io/GRH-research/",
+  "evidence_note": "The rendered-text observations and coverage limits in this record are self-contained. Screenshots are optional visual context and are not required to interpret the result."
+}

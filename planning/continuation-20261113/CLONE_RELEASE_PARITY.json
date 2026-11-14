@@ -1,0 +1,153 @@
+{
+  "observed_at_utc": "2026-11-14T01:03:47.709433+00:00",
+  "status": "passed",
+  "canonical_sha256": {
+    "extension/manuscript/main.pdf": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b",
+    "extension/manuscript/fluid-extension.pdf": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721",
+    "extension/site/downloads/source.zip": "6a779eaab83730da7425bf8b7c9c6adb37a669f52b202cb985aeb697941192c9",
+    "extension/site/downloads/lean4.zip": "3bdfa6aba15f544ff765effea970dd477ff30eeaabac4d5ec141dae2dce09818",
+    "extension/lean/BridgeTheorems.lean": "a85b897824b333fd8e7962bfb7959875e1c7e5d7870e4694b02e345855b895ba",
+    "extension/crypto/research_crypto.py": "54565f60dc085a9fddabc21c8f260f4611399f428d6d48a6b33772a063ad8116",
+    "extension/site/quantum.js": "5b83d8506e91af9a993dae86ce74b50eaef63a7227b6ef56bafeaf3129bfd6bc",
+    "extension/site/quantum.html": "3d1617706179b59e5a3e6264ed91f8c038087eeb8e705b132b9278195b2da2d0"
+  },
+  "clones": [
+    {
+      "machine_role": "remote_linux",
+      "head": "4b9adb4f9c598e7d01b8ca15ed502e169b83ab13",
+      "clean": true,
+      "all_selected_hashes_match": true,
+      "observed_at_utc": "2026-11-14T01:03:16.239831+00:00"
+    },
+    {
+      "machine_role": "local_windows",
+      "head": "4b9adb4f9c598e7d01b8ca15ed502e169b83ab13",
+      "clean": true,
+      "all_selected_hashes_match": true,
+      "observed_at_utc": "2026-11-14T01:03:14.0338714Z"
+    },
+    {
+      "machine_role": "workspace",
+      "head": "4b9adb4f9c598e7d01b8ca15ed502e169b83ab13",
+      "clean": true,
+      "all_selected_hashes_match": true,
+      "observed_at_utc": "2026-11-14T01:03:11.906966+00:00"
+    }
+  ],
+  "scope": "Observed clean source-release checkouts and selected byte hashes before the metadata-only receipt commit. Submodule records have their own observation times. The containing receipt commit is synchronized separately after publication.",
+  "project_directory_name": "GRH-research",
+  "private_machine_paths_and_identifiers_omitted": true,
+  "submodule_observations": [
+    {
+      "checked_at_utc": "2026-11-14T00:32:25.124887+00:00",
+      "submodules": [
+        {
+          "path": "GRH",
+          "expected_commit": "0c77122d3cff5b737fc56730f54045ef185e3df1",
+          "actual_commit": "0c77122d3cff5b737fc56730f54045ef185e3df1",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": "",
+          "tracked_files": 3,
+          "shallow": "true",
+          "nested_gitlinks": []
+        },
+        {
+          "path": "Surface-Orders-Hilbert-Polya",
+          "expected_commit": "212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2",
+          "actual_commit": "212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": "",
+          "tracked_files": 4,
+          "shallow": "true",
+          "nested_gitlinks": []
+        },
+        {
+          "path": "math",
+          "expected_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+          "actual_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": "",
+          "tracked_files": 174524,
+          "shallow": "true",
+          "nested_gitlinks": []
+        }
+      ],
+      "machine_role": "workspace"
+    },
+    {
+      "checked_at_utc": "2026-11-14T00:35:28.343975+00:00",
+      "submodules": [
+        {
+          "path": "GRH",
+          "expected_commit": "0c77122d3cff5b737fc56730f54045ef185e3df1",
+          "actual_commit": "0c77122d3cff5b737fc56730f54045ef185e3df1",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": "",
+          "tracked_files": 3,
+          "shallow": "true"
+        },
+        {
+          "path": "Surface-Orders-Hilbert-Polya",
+          "expected_commit": "212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2",
+          "actual_commit": "212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": "",
+          "tracked_files": 4,
+          "shallow": "true"
+        },
+        {
+          "path": "math",
+          "expected_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+          "actual_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": "",
+          "tracked_files": 174524,
+          "shallow": "true"
+        }
+      ],
+      "machine_role": "remote_linux"
+    },
+    {
+      "checked_at_utc": "2026-11-14T00:39:34.8708235Z",
+      "submodules": [
+        {
+          "path": "GRH",
+          "expected_commit": "0c77122d3cff5b737fc56730f54045ef185e3df1",
+          "actual_commit": "0c77122d3cff5b737fc56730f54045ef185e3df1",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": [],
+          "tracked_files": 3,
+          "shallow": "true"
+        },
+        {
+          "path": "Surface-Orders-Hilbert-Polya",
+          "expected_commit": "212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2",
+          "actual_commit": "212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": [],
+          "tracked_files": 4,
+          "shallow": "true"
+        },
+        {
+          "path": "math",
+          "expected_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+          "actual_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+          "pin_matches": true,
+          "worktree_clean": true,
+          "status_sample": [],
+          "tracked_files": 174524,
+          "shallow": "true"
+        }
+      ],
+      "machine_role": "local_windows"
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "record_type": "observed_publication_of_verified_source_snapshot",
+  "recorded_at_utc": "2026-11-14T01:06:18.402254+00:00",
+  "repository": "https://github.com/amelie-iska/GRH-research",
+  "release": {
+    "recovery_branch": "research/recovery-20261113",
+    "recovery_commit": "97345b643f6d6c576ef4b3cb9900dab4d820c585",
+    "initial_release_commit": "3e3aa651e765d170482b348dab5cc9e4e6091390",
+    "clean_checkout_packaging_commit": "6b8b6ec31779fe322804ae45ef3bd2dd440b95b3",
+    "presentation_correction_commit": "caf1bab7a90799dc55678b41f6e73ba4275c7cf7",
+    "browser_asset_version_commit": "4b9adb4f9c598e7d01b8ca15ed502e169b83ab13",
+    "verified_source_commit": "4b9adb4f9c598e7d01b8ca15ed502e169b83ab13",
+    "verified_source_tree": "76c8644338bb435ee9dfe075250c19be9cd10c4c",
+    "source_branch": "main",
+    "update_method": "Expected-head checked, non-forced fast-forward updates",
+    "packaging_correction": "Generated TeX intermediates are excluded so the compact archive reproduces from a clean tracked checkout.",
+    "presentation_correction": "The public-browser check found a repeated qubit-count suffix; the renderer now appends that suffix only when absent. A content-version query on its script URL makes clients request the revised asset. Earlier unsuccessful rendered checks remain in the additive browser record. The PDFs, formal sources, numerical kernels and proof archive are byte-identical to the prior source release.",
+    "receipt_versioning": "This record is versioned by its containing Git commit. It attests the source snapshot above; the later receipt-only commit does not change the published PDFs, code, archive inventory or Pages bundle."
+  },
+  "pages": {
+    "url": "https://amelie-iska.github.io/GRH-research/",
+    "branch": "gh-pages",
+    "commit": "4d6341b5a8bf072c20525868255f43eb238438c1",
+    "source_commit": "4b9adb4f9c598e7d01b8ca15ed502e169b83ab13",
+    "build": {
+      "status": "live_contents_verified",
+      "commit": "4d6341b5a8bf072c20525868255f43eb238438c1",
+      "verification": "Direct public HTTPS200 and exact source SHA-256 matches for the current HTML, versioned display script and downloadable artifacts. No separate authenticated build-status API claim."
+    },
+    "https_observed_at_utc": "2026-11-14T01:04:46.868151+00:00",
+    "initial_propagation_observation": {
+      "observed_at_utc": "2026-11-14T01:04:05.012900+00:00",
+      "not_yet_matching_paths": [
+        "downloads/source.zip",
+        "quantum.html",
+        "quantum.html?release=4b9adb4f9c59"
+      ]
+    },
+    "published_artifacts": [
+      {
+        "path": "verification/release-summary.json",
+        "http_status": 200,
+        "bytes": 11597,
+        "sha256": "6e70c8d74854b2ea8121e63c163a40c661acc65bb5af56989e9b020671bd4760",
+        "expected_sha256": "6e70c8d74854b2ea8121e63c163a40c661acc65bb5af56989e9b020671bd4760",
+        "matches_source": true
+      },
+      {
+        "path": "downloads/paper.pdf",
+        "http_status": 200,
+        "bytes": 2145675,
+        "sha256": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b",
+        "expected_sha256": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b",
+        "matches_source": true
+      },
+      {
+        "path": "downloads/fluid-extension.pdf",
+        "http_status": 200,
+        "bytes": 851343,
+        "sha256": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721",
+        "expected_sha256": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721",
+        "matches_source": true
+      },
+      {
+        "path": "downloads/source.zip",
+        "http_status": 200,
+        "bytes": 10565146,
+        "sha256": "6a779eaab83730da7425bf8b7c9c6adb37a669f52b202cb985aeb697941192c9",
+        "expected_sha256": "6a779eaab83730da7425bf8b7c9c6adb37a669f52b202cb985aeb697941192c9",
+        "matches_source": true,
+        "rechecked_at_utc": "2026-11-14T01:04:46.598300+00:00"
+      },
+      {
+        "path": "downloads/lean4.zip",
+        "http_status": 200,
+        "bytes": 211072,
+        "sha256": "3bdfa6aba15f544ff765effea970dd477ff30eeaabac4d5ec141dae2dce09818",
+        "expected_sha256": "3bdfa6aba15f544ff765effea970dd477ff30eeaabac4d5ec141dae2dce09818",
+        "matches_source": true
+      },
+      {
+        "path": "quantum.js?v=5b83d8506e91",
+        "http_status": 200,
+        "bytes": 37001,
+        "sha256": "5b83d8506e91af9a993dae86ce74b50eaef63a7227b6ef56bafeaf3129bfd6bc",
+        "expected_sha256": "5b83d8506e91af9a993dae86ce74b50eaef63a7227b6ef56bafeaf3129bfd6bc",
+        "matches_source": true
+      },
+      {
+        "path": "quantum.html",
+        "http_status": 200,
+        "bytes": 18171,
+        "sha256": "3d1617706179b59e5a3e6264ed91f8c038087eeb8e705b132b9278195b2da2d0",
+        "expected_sha256": "3d1617706179b59e5a3e6264ed91f8c038087eeb8e705b132b9278195b2da2d0",
+        "matches_source": true,
+        "rechecked_at_utc": "2026-11-14T01:04:46.761737+00:00"
+      },
+      {
+        "path": "quantum.html?release=4b9adb4f9c59",
+        "http_status": 200,
+        "bytes": 18171,
+        "sha256": "3d1617706179b59e5a3e6264ed91f8c038087eeb8e705b132b9278195b2da2d0",
+        "expected_sha256": "3d1617706179b59e5a3e6264ed91f8c038087eeb8e705b132b9278195b2da2d0",
+        "matches_source": true,
+        "rechecked_at_utc": "2026-11-14T01:04:46.868137+00:00"
+      }
+    ],
+    "all_checked_downloads_match": true,
+    "static_check": {
+      "status": "passed",
+      "html_documents": 50,
+      "local_references": 1382,
+      "byte_identical_json_files": 158,
+      "compatibility_entries": 648,
+      "url_mapping_cases": 17,
+      "url_idempotence_cases": 17,
+      "url_request_dom_contracts": 4,
+      "computed_reference_warnings": 17,
+      "evidence": "PAGES_STATIC_CHECK.json"
+    },
+    "browser_evidence": "PUBLIC_BROWSER_QA.json",
+    "label_correction_browser_evidence": "PUBLIC_BROWSER_LABEL_RECHECK.json",
+    "browser_screenshots_directory": "browser/",
+    "browser_evidence_reuse": "The four-page functional sample belongs to source 6b8b6ec. The subsequent source diff contains only the quantum heading renderer, its versioned script URL, and regenerated compact archive/readiness metadata. The additive public recheck preserves unsuccessful refresh observations and observes the corrected headings and the genus-two execution boundary on the final deployment.",
+    "browser_scope": "Sampled public interactive routes; not exhaustive coverage of every computed request or control."
+  },
+  "verification": {
+    "formal": {
+      "total_distinct_project_declarations": 483,
+      "total_source_files": 43,
+      "packages": [
+        {
+          "name": "extension",
+          "declarations": 115,
+          "source_files": 6
+        },
+        {
+          "name": "original_analytic",
+          "declarations": 361,
+          "source_files": 36
+        },
+        {
+          "name": "original_arithmetic",
+          "declarations": 7,
+          "source_files": 1
+        }
+      ],
+      "warnings": 0,
+      "lean_version": "4.24.0",
+      "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "permitted_foundational_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "admissions_or_unapproved_axioms_in_verified_set": 0,
+      "exact_types_and_axiom_dependencies_recorded": true,
+      "theorem_source_modified_in_this_continuation": false,
+      "trusted_boundary": "Named compiler and cached dependency artifacts; the complete compiler and dependency graph were not rebuilt from source."
+    },
+    "written_claims": {
+      "included_tex_files": 31,
+      "claim_environments": 269,
+      "by_environment": {
+        "proposition": 200,
+        "lemma": 19,
+        "theorem": 44,
+        "corollary": 5,
+        "problem": 1
+      },
+      "by_status": {
+        "local_argument_present": 257,
+        "conditional_local_argument": 5,
+        "external_cited": 6,
+        "proposed_open_problem": 1
+      },
+      "attached_proof_environments": 262,
+      "whole_environments_marked_fully_formalized": 0,
+      "environments_with_partial_formal_components": 25,
+      "verified_declarations_mapped_to_precise_components": 68,
+      "authoritative_verified_declarations": 115,
+      "selected_external_prose_statements": 9
+    },
+    "documents": {
+      "pdfs": {
+        "main": {
+          "pages": 341,
+          "pdf_sha256": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b",
+          "pdf_bytes": 2145675
+        },
+        "fluid-extension": {
+          "pages": 90,
+          "pdf_sha256": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721",
+          "pdf_bytes": 851343
+        }
+      },
+      "tracked_warning_categories": 6,
+      "warnings_in_each_tracked_category": 0,
+      "source_inputs_stable_during_build": true,
+      "physical_pages_visually_inspected": 11,
+      "visual_scope": "Selected representative pages, not every-page mathematical review."
+    },
+    "cryptography": {
+      "test_methods": 31,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "primitives": [
+        "AES-256-GCM",
+        "ChaCha20-Poly1305",
+        "Ed25519",
+        "ML-KEM-768",
+        "ML-KEM-1024"
+      ],
+      "cryptography_version": "50.0.0",
+      "openssl_version": "4.0.1",
+      "boundary_cases": "Actual 16 MiB payload and 1024 UTF-8-byte context limits, oversize rejection, canonical base64 pad bits, malformed Unicode, authentication and tampering.",
+      "scope": "Regression evidence for maintained-library wrappers; no new protocol security proof, backend audit or FIPS certification."
+    },
+    "verifier_runtime": {
+      "refusal_cases": 25,
+      "parent_modes": [
+        "ordinary",
+        "optimized"
+      ],
+      "assertion_bearing_verifiers_guarded": 5,
+      "false_pass_reproduced_and_fixed": true,
+      "ordinary_ecc_associativity_comparisons_executed": 6859
+    },
+    "formal_gate_regressions": {
+      "checks": 9,
+      "parent_modes": [
+        "ordinary",
+        "optimized"
+      ]
+    },
+    "claim_register_gate_regressions": {
+      "checks": 6,
+      "parent_modes": [
+        "ordinary",
+        "optimized"
+      ]
+    },
+    "release_regressions": {
+      "test_methods": 16,
+      "parent_modes": [
+        "ordinary",
+        "optimized"
+      ]
+    },
+    "source_site_archive_freshness": {
+      "status": "passed",
+      "checks": 2518,
+      "observed_environments": [
+        "workspace",
+        "clean tracked candidate",
+        "requested Linux clean source checkout"
+      ]
+    },
+    "archive_scope": {
+      "compact_source_eligible_files": 611,
+      "lean_zip_members": 142,
+      "lean_zip_scope": "Six extension Lean sources and recursive verification evidence, including 78 inherited-evidence entries. The 37 inherited Lean source files are in the full repository, not this compact Lean ZIP."
+    }
+  },
+  "machines": {
+    "source_release_parity_status": "passed",
+    "source_release_commit": "4b9adb4f9c598e7d01b8ca15ed502e169b83ab13",
+    "clone_count": 3,
+    "clean_at_observation": true,
+    "selected_payload_sha256_match": true,
+    "all_recorded_submodules_at_pins_and_clean": true,
+    "evidence": "CLONE_RELEASE_PARITY.json",
+    "transport": "Remote Desktop Commander for the two user devices; local Git for the workspace.",
+    "rustdesk": {
+      "connection_attempted": true,
+      "target_identified": "requested_linux_device",
+      "authenticated_viewing_verified": false,
+      "observed_outcome": "Viewer resolved the requested Linux target, then the connection closed or timed out; both endpoint event summaries agreed.",
+      "access_settings_changed": false,
+      "endpoint_identifiers_published": false
+    }
+  },
+  "credential_handling": {
+    "credential_values_copied_to_repository_or_artifacts": false,
+    "tracked_forbidden_credential_paths": 0,
+    "ignore_rule_verified": true,
+    "archive_and_pages_path_exclusions_verified": true,
+    "private_credential_source_path_in_this_record": false
+  },
+  "remaining_obligations": [
+    {
+      "area": "External Navier-Stokes formalization",
+      "status": "not_independently_kernel_verified",
+      "detail": "The separate Lean 4.34.0-rc2 full target build and Comparator run remain incomplete after the recorded HTTP 429 dependency-cache block. No new upstream build is claimed."
+    },
+    {
+      "area": "Full manuscript and source coverage",
+      "status": "partial",
+      "detail": "Zero complete composite manuscript environments are claimed fully formalized. Six requested original full texts remain access/review gaps. The historical 249-segment video inspection has no independently retained hashed transcript export."
+    },
+    {
+      "area": "GRH and Hilbert-Polya",
+      "status": "conditional_research_program",
+      "detail": "Arithmetic determinant/spectral identification and required analytic convergence inputs remain unresolved."
+    },
+    {
+      "area": "Continuum and quantum conclusions",
+      "status": "open",
+      "detail": "Finite algebraic models and checked interfaces do not establish the required uniform continuum estimates, a Yang-Mills mass gap, stronger unforced positive-viscosity conclusions, or demonstrated quantum advantage."
+    }
+  ],
+  "primary_source_scope": {
+    "openai_result": "Smooth externally forced positive-viscosity finite-time breakdown, Clay alternatives C and D.",
+    "openai_announcement": "https://openai.com/index/navier-stokes-solution/",
+    "clay_announcement": "https://www.claymath.org/news/navier-stokes-announcement/",
+    "prize_award_claimed": false
+  },
+  "supersedes_for_operational_status": [
+    "extension/review/final-pass/IMPLEMENTATION_STATE.md",
+    "extension/review/final-pass/publication-continuation-20261113.md",
+    "extension/IMPLEMENTATION_PLAN.md#resumed-execution-status"
+  ],
+  "evidence_sha256": {
+    "extension/lean/final-verification/verification.json": "0e22a8acbc9e9076a63af813d2f719cd64e27d30256f6f37c4950d77ac0868c8",
+    "extension/lean/inherited-verification/all/verification.json": "36f8dab6e560e0c00be039081e7dc9ff060c0fa439a50c59bbf811f5eb6e0ce3",
+    "extension/review/claim-register.json": "7be55113f7d4d6371df6dfc010f1934b0a0a84ae1192eb56418ab03e712c10b4",
+    "extension/review/formal-type-map.json": "d5e3934c5b92d271dce484fc469c214b6ae5c4b0d453776ffa736625aceded1f",
+    "extension/review/final-pass/formal-continuation-20261113.md": "435b6bd333012f51df3ac0ee0d2fde0e351ffb6b4e8b14ef3f0525f84b03b02d",
+    "extension/review/final-pass/implementation-continuation-20261113.md": "d1abedaf6ca98b5f2bd2785819c2915d4947b4c6e27f9948be829e1764c87c37",
+    "extension/review/final-pass/publication-continuation-20261113.md": "46367cc43afca4e2d63bd9646ee151c118867b3a59c5b4c916559bf609c61ad6",
+    "extension/review/final-pass/publication-gate-checks.json": "cc783edc2f0cef4413f4757a32c27815550241ba7c20796a4ff8f615d9016081",
+    "extension/review/final-pass/pdf-visual-continuation-20261113.json": "e79fa1ef76169c00e702aa7beced2ede8783607bf37f2e5829ed0ad73afb2a82",
+    "extension/review/final-pass/upstream-build-current.json": "0b7139762cff156d39311ad8d027471dc79cd9830fa0efd992700aafb2351d2f",
+    "extension/site/downloads/release-readiness.json": "d81ff16f034fdeddd1f9b02f864dd6dfa67a77fb095629685b22530795350dca",
+    "extension/site/verification/release-summary.json": "6e70c8d74854b2ea8121e63c163a40c661acc65bb5af56989e9b020671bd4760",
+    "planning/continuation-20261113/PUBLIC_BROWSER_QA.json": "ca1b845f379fc9b7d6a33e0da26432c6595316d1ded9f129bcfe4055b620d098",
+    "planning/continuation-20261113/PUBLIC_BROWSER_LABEL_RECHECK.json": "889f4bb3a6e955ce3ae1dd33ba871626e4b3a5f2d98f7bb2c63f56953e9baa32",
+    "planning/continuation-20261113/PAGES_STATIC_CHECK.json": "702567b43f7dda1e6b6d281cad67bd716347da895576b58b209a3451538911c5",
+    "planning/continuation-20261113/CLONE_RELEASE_PARITY.json": "97af3edea486304ec28ff1355d1fce672a6d38008aa3fe721636f5ddc12ab235",
+    "planning/continuation-20261113/browser/fluids.jpg": "4c999beef18c027c159c9d2a37665b22f1f471dbb02523fa1d3aa54a4af52b63",
+    "planning/continuation-20261113/browser/learning.jpg": "023daeae63b3b4e1597be379bf064bb320c01dad5f08e9a51428a62b20d61148",
+    "planning/continuation-20261113/browser/legacy.jpg": "40151b0c142e53e627022d09a0f48782730fe364a5d6821c1cbc8958e3524bfa",
+    "planning/continuation-20261113/browser/quantum-label-versioned.jpg": "be95d06aa02c2b187a76b0cbbf8020cc8087ebdd3b249362c405be062f98442b",
+    "planning/continuation-20261113/browser/quantum-syndrome.jpg": "c75fd615bdce11de5b20cb6a97d74d0c175e87636ab9c3ed886b95a3bc258c9b"
+  },
+  "scope": "Observed publication, byte consistency, scoped verification and device synchronization evidence. Hashes are consistency records, not digital signatures or a proof of all research claims. Historical intermediate failures are retained in the source release."
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "scope": "Bounded recheck after the public page adopted a content-versioned quantum.js URL; two headings and genus-two preparation control only.",
+  "observed_started_utc": "2026-11-14T01:05:18.301Z",
+  "reported_source_main_commit": "4b9adb4f9c598e7d01b8ca15ed502e169b83ab13",
+  "reported_pages_commit": "4d6341b5a8bf072c20525868255f43eb238438c1",
+  "reported_quantum_html_sha256": "3d1617706179b59e5a3e6264ed91f8c038087eeb8e705b132b9278195b2da2d0",
+  "reported_quantum_js_sha256": "5b83d8506e91af9a993dae86ce74b50eaef63a7227b6ef56bafeaf3129bfd6bc",
+  "deployment_provenance": "Parent task verified live HTTPS responses and matching asset hashes at 2026-11-14 01:04:46 UTC; this browser observes the rendered page and script URL, not an independent byte hash.",
+  "public_url": "https://amelie-iska.github.io/GRH-research/quantum.html?release=4b9adb4f9c59",
+  "observed_script_src": "quantum.js?v=5b83d8506e91",
+  "default_18_qubit": {
+    "heading": "3 \u00d7 3 torus \u00b7 18 qubits",
+    "count_phrase_occurrences": 1
+  },
+  "genus_2": {
+    "heading": "Genus 2 \u00b7 connected sum \u00b7 32 qubits",
+    "prepare_button_enabled": false,
+    "count_phrase_occurrences": 1
+  },
+  "checks": {
+    "default_heading_exact": true,
+    "default_count_once": true,
+    "genus2_heading_exact": true,
+    "genus2_count_once": true,
+    "genus2_prepare_disabled": true
+  },
+  "status": "passed",
+  "observed_completed_utc": "2026-11-14T01:05:18.793Z",
+  "optional_screenshot": {
+    "filename": "quantum-label-versioned.jpg",
+    "sha256": "be95d06aa02c2b187a76b0cbbf8020cc8087ebdd3b249362c405be062f98442b",
+    "bytes": 92874,
+    "dimensions": [
+      1348,
+      926
+    ],
+    "required_for_assessment": false
+  },
+  "previous_report_sha256": "2cbffa7cc738b09519c45a1c1d088e336da7ad4791ffc02b8fc49bd6adf97e7d",
+  "previous_report": {
+    "schema_version": 1,
+    "scope": "Bounded additive recheck of the quantum selected-case heading and genus-two dense-browser boundary only; original public-browser-qa.json is preserved.",
+    "observed_started_utc": "2026-11-14T00:57:50.764Z",
+    "reported_source_main_commit": "caf1bab7a90799dc55678b41f6e73ba4275c7cf7",
+    "reported_pages_commit": "4c1f6cea873c83720394558942985cf72c26eafb",
+    "reported_quantum_js_sha256": "5b83d8506e91af9a993dae86ce74b50eaef63a7227b6ef56bafeaf3129bfd6bc",
+    "deployment_provenance": "Parent release task verified live HTTPS 200 responses and matching new asset hashes at 2026-11-14 00:56:34 UTC. Authenticated Pages build API status was not separately retrieved for this patch.",
+    "public_url": "https://amelie-iska.github.io/GRH-research/quantum.html",
+    "default_18_qubit": {
+      "heading": "3 \u00d7 3 torus \u00b7 18 qubits",
+      "count_phrase_occurrences": 1
+    },
+    "genus_2": {
+      "heading": "Genus 2 \u00b7 connected sum \u00b7 32 qubits \u00b7 32 qubits",
+      "prepare_button_enabled": false,
+      "mode_description": "Exact topology and circuit loaded. This case does not allocate a dense browser state vector.",
+      "count_phrase_occurrences": 2
+    },
+    "checks": {
+      "default_heading_exact": true,
+      "default_count_once": true,
+      "genus2_heading_exact": false,
+      "genus2_count_once": false,
+      "genus2_prepare_disabled": true
+    },
+    "status": "failed_browser_recheck",
+    "observed_completed_utc": "2026-11-14T00:59:49.118Z",
+    "limitations": [
+      "Only the two selected-case headings and genus-two preparation boundary were rechecked",
+      "No full laboratory, console/network, mobile or cross-browser rerun",
+      "No repository files changed and no change to the original browser-QA record"
+    ],
+    "initial_navigation_observation": {
+      "default_18_qubit": {
+        "heading": "3 \u00d7 3 torus \u00b7 18 qubits",
+        "count_phrase_occurrences": 1
+      },
+      "genus_2": {
+        "heading": "Genus 2 \u00b7 connected sum \u00b7 32 qubits \u00b7 32 qubits",
+        "prepare_button_enabled": false,
+        "mode_description": "Exact topology and circuit loaded. This case does not allocate a dense browser state vector.",
+        "count_phrase_occurrences": 2
+      },
+      "status": "failed",
+      "observed_utc": "2026-11-14T00:57:56.051Z"
+    },
+    "recovery_attempt": "One ordinary browser reload followed by the same genus-two selection; duplicate heading remained visible.",
+    "asset_hash_verified_in_browser": false,
+    "interpretation": "The public asset hash was verified independently by the parent task. This browser still rendered the duplicate after navigation and one ordinary reload. A stale browser resource is possible, but its cause was not established with the exposed browser API.",
+    "optional_screenshot": {
+      "filename": "quantum-label-recheck.jpg",
+      "sha256": "a3808710835b1983bdf4087ad5418cc4b16e9575bae8aeee80db240aa726a109",
+      "bytes": 94149,
+      "dimensions": [
+        1348,
+        926
+      ],
+      "required_for_assessment": false
+    },
+    "ordinary_reload_result": {
+      "status": "failed_browser_recheck",
+      "checks": {
+        "default_heading_exact": true,
+        "default_count_once": true,
+        "genus2_heading_exact": false,
+        "genus2_count_once": false,
+        "genus2_prepare_disabled": true
+      },
+      "observed_completed_utc": "2026-11-14T00:58:23.839Z",
+      "genus_2": {
+        "heading": "Genus 2 \u00b7 connected sum \u00b7 32 qubits \u00b7 32 qubits",
+        "prepare_button_enabled": false,
+        "mode_description": "Exact topology and circuit loaded. This case does not allocate a dense browser state vector.",
+        "count_phrase_occurrences": 2
+      },
+      "default_18_qubit": {
+        "heading": "3 \u00d7 3 torus \u00b7 18 qubits",
+        "count_phrase_occurrences": 1
+      },
+      "recovery_attempt": "One ordinary browser reload followed by the same genus-two selection; duplicate heading remained visible."
+    },
+    "hard_reload_attempt": {
+      "started_utc": "2026-11-14T00:59:46.365Z",
+      "requested_control": "Documented tab.pressKey(null, 'ctrl+shift+r')",
+      "shortcut_call_returned": true,
+      "reload_independently_confirmed": false,
+      "immediate_heading": "Genus 2 \u00b7 connected sum \u00b7 32 qubits \u00b7 32 qubits",
+      "default_heading": "3 \u00d7 3 torus \u00b7 18 qubits",
+      "genus2_heading": "Genus 2 \u00b7 connected sum \u00b7 32 qubits \u00b7 32 qubits",
+      "genus2_prepare_enabled": false,
+      "checks": {
+        "default_count_once": true,
+        "genus2_count_once": false,
+        "genus2_prepare_disabled": true
+      },
+      "status": "failed_browser_recheck",
+      "completed_utc": "2026-11-14T00:59:49.118Z",
+      "api_limitation": "The documented shortcut call completed, but no navigation or page reset was observed, so an actual hard reload could not be independently confirmed. The advertised Tab.reload() API has no cache-bypass option, and the tab API exposes page content rather than a browser-chrome Reload button.",
+      "optional_screenshot": {
+        "filename": "quantum-label-hard-reload.jpg",
+        "sha256": "a3808710835b1983bdf4087ad5418cc4b16e9575bae8aeee80db240aa726a109",
+        "bytes": 94149,
+        "dimensions": [
+          1348,
+          926
+        ],
+        "required_for_assessment": false
+      }
+    },
+    "final_assessment": "The duplicate remains visible in this browser. The requested hard-refresh key call returned, but actual cache bypass was not established. This is not marked passed; earlier observations are preserved."
+  },
+  "final_assessment": "Passed after opening the specified release-qualified document and observing its versioned quantum.js URL. Both headings contain the count exactly once and genus-two preparation remains disabled. All earlier unsuccessful browser observations are retained in previous_report.",
+  "limitations": [
+    "Only the two selected-case headings, observed script URL and genus-two preparation boundary were checked in this final pass.",
+    "No full laboratory, console/network, mobile or cross-browser rerun; the earlier broader sample retains its original scope.",
+    "The parent task independently verified the served asset hashes. Browser observations here do not independently hash downloaded resources."
+  ],
+  "original_public_qa_sha256": "ca1b845f379fc9b7d6a33e0da26432c6595316d1ded9f129bcfe4055b620d098"
+}
