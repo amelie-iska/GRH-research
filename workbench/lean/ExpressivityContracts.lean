@@ -2,8 +2,9 @@ import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-! Selected transfer and robustness statements used by the source-led repair.
-The full Sumformer/Stone-Weierstrass universality theorem is an external result,
-not an axiom declared here and not purportedly established by these lemmas. -/
+The full continuous compact-domain graph theorem has a written constructive
+proof; these declarations verify specific interfaces in that argument. They do
+not introduce a universal-approximation theorem as an axiom. -/
 set_option autoImplicit false
 namespace ExpressivityContracts
 
@@ -24,9 +25,13 @@ namespace ExpressivityContracts
        _ = F y := hA y
 
  theorem encoded_uniform_bound {X Z Y : Type*} [PseudoMetricSpace Y]
-    (E : X → Z) (F : X → Y) (A : Z → Y) (K : Set X) (ε : ℝ)
-    (h : ∀ x ∈ K, dist (A (E x)) (F x) ≤ ε) :
-    ∀ x ∈ K, dist (A (E x)) (F x) ≤ ε := h
+    (E : X → Z) (F : X → Y) (G A : Z → Y) (K : Set X) (ε : ℝ)
+    (hF : ∀ x ∈ K, G (E x) = F x)
+    (h : ∀ z ∈ E '' K, dist (A z) (G z) ≤ ε) :
+    ∀ x ∈ K, dist (A (E x)) (F x) ≤ ε := by
+  intro x hx
+  have q := h (E x) ⟨x,hx,rfl⟩
+  simpa only [hF x hx] using q
 
  theorem decoder_error_bound {Y Z : Type*} [PseudoMetricSpace Y] [PseudoMetricSpace Z]
     (D : Y → Z) (y y' : Y) (L ε : ℝ) (hL : 0 ≤ L)
