@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "mode": "separate_capacity_followup",
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "free_bytes_before": 23960354816,
+    "total_bytes": 25250627584,
+    "driver_version": 13000,
+    "runtime_version": 12090,
+    "python": "3.12.3",
+    "packages": {
+      "cuquantum-python-cu12": "26.11.0",
+      "cupy-cuda12x": "14.2.0",
+      "custatevec-cu12": "1.15.1",
+      "custabilizer-cu12": "0.5.0",
+      "cutensornet-cu12": "2.15.0",
+      "stim": "1.16.0",
+      "numpy": "2.5.4"
+    },
+    "reserve_bytes": 2147483648,
+    "script_sha256": "33a411b0eebbaeaead7154d317562259ee0cc2dadee93784f6f3574835557ce5"
+  },
+  "utc_started": "2026-11-13T10:58:12Z",
+  "input_hashes": {
+    "gpu_capacity.py": {
+      "sha256": "a93263faedae9e4b63da2e4740dda7170c30d247a96e55950751a0bf11db9626",
+      "bytes": 5555
+    },
+    "gpu_experiments.py": {
+      "sha256": "33a411b0eebbaeaead7154d317562259ee0cc2dadee93784f6f3574835557ce5",
+      "bytes": 17972
+    },
+    "surface_codes.py": {
+      "sha256": "cd50d504c8508cb936711a6312fe75180da6df46d6608c448e5e6cae47ca1a83",
+      "bytes": 25872
+    },
+    "cases/cpu-validation.json": {
+      "sha256": "d599be029dfb16fcd4cda51dfccc2eb0267c86f30247e92c0b83ff3a91a2b019",
+      "bytes": 4248
+    },
+    "cases/genus2_3x3.json": {
+      "sha256": "3757927b7c93123fa27fcc3c5803b5fd613fc050d09955f8ce146d0d6904e9c0",
+      "bytes": 18545
+    },
+    "cases/genus3_3x3.json": {
+      "sha256": "087482e0fb6e27509448e7b20b9e96a031b952d10a771475f56e13c339c8d015",
+      "bytes": 26712
+    },
+    "cases/surface-cases.json": {
+      "sha256": "0f49d5b65c9a3776c6f11d795cd6934eb6c789d8709d0de95010104b02ce987f",
+      "bytes": 1026
+    },
+    "cases/torus32x32.json": {
+      "sha256": "10c9b1c49f0144cdd71534d8c8a461dab2c83be2880dfb4ed845a5da2b59704c",
+      "bytes": 1004834
+    },
+    "cases/torus3x3.json": {
+      "sha256": "5a46d0db886bb2813ecc77951282f9c5be4d5bb9d72835304a1eab2793e6a3e8",
+      "bytes": 10993
+    },
+    "cases/torus3x5.json": {
+      "sha256": "10e815be295d95c6d3cf948d65c36e024efc93181ea6823c9543bb38b642cd16",
+      "bytes": 17991
+    },
+    "results/gpu-results.json": {
+      "sha256": "79777ec1d0a2412480a10a61453286320a59a42834767c43050815be24b2c705",
+      "bytes": 27138
+    }
+  },
+  "experiments": [
+    {
+      "name": "genus3_frames",
+      "case": "genus3_3x3",
+      "genus": 3,
+      "backend": "NVIDIA cuStabilizer",
+      "representation": "Pauli-error frames relative to a known encoded stabilizer reference",
+      "data_qubits": 46,
+      "ancilla_qubits": 42,
+      "total_qubits": 88,
+      "shots": 32768,
+      "noise_model": {
+        "independent_X_probability": 0.001,
+        "independent_Z_probability": 0.001
+      },
+      "bit_table_bytes": 892928,
+      "setup_seconds": 0.01072567910887301,
+      "simulation_seconds": 0.002197626046836376,
+      "total_wall_seconds": 0.0818775431253016,
+      "syndrome_events": 5946,
+      "syndrome_rate": 0.004320417131696429,
+      "all_syndrome_bytes_checked": 172032,
+      "syndrome_byte_mismatches": 0,
+      "passed": true,
+      "claim_limit": "No full amplitude vector and no non-Clifford variational simulation in this backend",
+      "call_wall_seconds_including_topology_and_cleanup": 0.2095499651040882
+    },
+    {
+      "name": "torus_640_frames",
+      "case": "torus640x640",
+      "genus": 1,
+      "backend": "NVIDIA cuStabilizer",
+      "representation": "Pauli-error frames relative to a known encoded stabilizer reference",
+      "data_qubits": 819200,
+      "ancilla_qubits": 819200,
+      "total_qubits": 1638400,
+      "shots": 32768,
+      "noise_model": {
+        "independent_X_probability": 0.001,
+        "independent_Z_probability": 0.001
+      },
+      "bit_table_bytes": 16777216000,
+      "setup_seconds": 1.807019797153771,
+      "simulation_seconds": 1.7918329359963536,
+      "total_wall_seconds": 4.3279473460279405,
+      "syndrome_events": 107029374,
+      "syndrome_rate": 0.003987154886126518,
+      "all_syndrome_bytes_checked": 3355443200,
+      "syndrome_byte_mismatches": 0,
+      "passed": true,
+      "claim_limit": "No full amplitude vector and no non-Clifford variational simulation in this backend",
+      "call_wall_seconds_including_topology_and_cleanup": 4.81326768710278
+    }
+  ],
+  "seed": 20261113,
+  "shots_per_experiment": 32768,
+  "library_search_path": "/home/iska/Documents/LaTeX-projects/Orders-Complexes-Cryptography-YangMills-20261113/.venv-quantum/lib/python3.12/site-packages/nvidia/curand/lib:/home/iska/Documents/LaTeX-projects/Orders-Complexes-Cryptography-YangMills-20261113/.venv-quantum/lib/python3.12/site-packages/nvidia/cuda_runtime/lib:/home/iska/Documents/LaTeX-projects/Orders-Complexes-Cryptography-YangMills-20261113/.venv-quantum/lib/python3.12/site-packages/nvidia/cublas/lib:/home/iska/Documents/LaTeX-projects/Orders-Complexes-Cryptography-YangMills-20261113/.venv-quantum/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib:/home/iska/Documents/LaTeX-projects/Orders-Complexes-Cryptography-YangMills-20261113/.venv-quantum/lib/python3.12/site-packages/cuquantum/lib:/home/iska/Documents/LaTeX-projects/Orders-Complexes-Cryptography-YangMills-20261113/.venv-quantum/lib/python3.12/site-packages/cutensor/lib:",
+  "claim_limit": "Pauli-error frames relative to an assumed ideal encoded CSS reference; no dense amplitudes or learned decoder",
+  "capacity_selection": {
+    "lattice_size": 640,
+    "rounding_multiple": 32,
+    "shots": 32768,
+    "packed_bytes_per_qubit": 4096,
+    "free_bytes_at_selection": 23922606080,
+    "total_device_bytes": 25250627584,
+    "fixed_reserve_bytes": 2147483648,
+    "overhead_factor": 1.25,
+    "estimated_bit_table_bytes": 16777216000,
+    "estimated_required_bytes_including_overhead_and_reserve": 23119003648,
+    "selection_rule": "largest multiple of 32 with 1.25*(10*L^2*stride) <= free-2GiB",
+    "claim_limit": "Bounded test at this shot count and representation, not an absolute qubit maximum"
+  },
+  "utc_finished": "2026-11-13T10:58:17Z",
+  "passed": true,
+  "input_hashes_unchanged": true
+}
