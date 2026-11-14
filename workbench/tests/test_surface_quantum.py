@@ -21,11 +21,16 @@ class SurfaceQuantum(unittest.TestCase):
    a=controller(self.model,c);np.testing.assert_allclose(a['output'],r['output'],atol=2e-14,rtol=2e-14);np.testing.assert_allclose(a['theta'],r['theta'],atol=2e-14,rtol=2e-14)
  def test_actual_circuit_browser_python(self):
   qpath=str(ROOT/'extension/site/quantum-core.js')
-  code='const Q=require('+json.dumps(qpath)+');console.log(JSON.stringify(S.simulate(Q,p.model,p.config)));'
-  r=self.node(code,dict(model=self.model,config=DEFAULT));c=execute_cpu(self.model,DEFAULT)
-  self.assertAlmostEqual(r['expectation'],c['expectation'],places=12)
-  np.testing.assert_allclose(r['probability'],c['probability'],atol=2e-13)
-  self.assertAlmostEqual(r['energy'],c['energy'],places=11)
+  cases=[dict(DEFAULT,mode=m,gain=g)for m in ('maxplus','softmax','hard')for g in (0.,.6)]
+  cases.extend([dict(DEFAULT,qx=0.,qy=0.),dict(DEFAULT,signs=[-1,1,-1,1]),dict(DEFAULT,qx=-1.2,qy=.9)])
+  code='const Q=require('+json.dumps(qpath)+');const base=new Q.StateVector(18).applyCircuit(p.model.prepare_circuit);console.log(JSON.stringify(p.cases.map(c=>S.simulate(Q,p.model,c,base))));'
+  rows=self.node(code,dict(model=self.model,cases=cases))
+  self.assertEqual(len(rows),9)
+  for conf,r in zip(cases,rows):
+   c=execute_cpu(self.model,conf)
+   self.assertAlmostEqual(r['expectation'],c['expectation'],places=12)
+   np.testing.assert_allclose(r['probability'],c['probability'],atol=2e-13)
+   self.assertAlmostEqual(r['energy'],c['energy'],places=11)
  def test_preparation_stabilizers(self):
   state=cpu_state(self.model)
   for key,p in [('x_checks','X'),('z_checks','Z')]:

@@ -1,25 +1,38 @@
 \begin{figure}[p]
 \centering
-\begin{tikzpicture}[x=1.7cm,y=1.7cm,font=\scriptsize]
-\draw[gray,dashed] (0,0) rectangle (3,3);
-\foreach \y in {0,1,2}{\foreach \x in {0,1,2}{
- \pgfmathtruncatemacro{qh}{3*\y+\x}
- \pgfmathtruncatemacro{qv}{9+3*\y+\x}
- \draw[teal!70!black,thick] (\x,\y)--(\x+1,\y);
- \draw[teal!70!black,thick] (\x,\y)--(\x,\y+1);
- \node[circle,draw=teal!70!black,fill=white,inner sep=2.5pt] at (\x+.5,\y) {};
- \node[below=5pt] at (\x+.5,\y) {$q_{\qh}$};
- \node[circle,draw=teal!70!black,fill=white,inner sep=2.5pt] at (\x,\y+.5) {};
- \node[left=5pt] at (\x,\y+.5) {$q_{\qv}$};
-}}
-\foreach \y in {0,1,2,3}{\foreach \x in {0,1,2,3}{
- \pgfmathtruncatemacro{v}{3*mod(\y,3)+mod(\x,3)}
- \fill (\x,\y) circle (2pt);
- \node[above right=2pt] at (\x,\y) {$v_{\v}$};
-}}
-\draw[<->,gray] (.4,-.55)--(2.6,-.55);
-\node at (1.5,-.8) {Horizontal boundary identification};
-\node[rotate=90] at (3.65,1.5) {Vertical boundary identification};
-\end{tikzpicture}
+\setlength{\unitlength}{1mm}
+\begin{picture}(135,135)
+\put(20,25){\dashbox{1}(90,90){}}
+\multiput(20,25)(0,30){3}{\line(1,0){90}}
+\multiput(20,25)(30,0){3}{\line(0,1){90}}
+\put(35,25){\circle{3}}\put(35,19){\makebox(0,0){\small$q_0$}}
+\put(65,25){\circle{3}}\put(65,19){\makebox(0,0){\small$q_1$}}
+\put(95,25){\circle{3}}\put(95,19){\makebox(0,0){\small$q_2$}}
+\put(35,55){\circle{3}}\put(35,49){\makebox(0,0){\small$q_3$}}
+\put(65,55){\circle{3}}\put(65,49){\makebox(0,0){\small$q_4$}}
+\put(95,55){\circle{3}}\put(95,49){\makebox(0,0){\small$q_5$}}
+\put(35,85){\circle{3}}\put(35,79){\makebox(0,0){\small$q_6$}}
+\put(65,85){\circle{3}}\put(65,79){\makebox(0,0){\small$q_7$}}
+\put(95,85){\circle{3}}\put(95,79){\makebox(0,0){\small$q_8$}}
+\put(20,40){\circle{3}}\put(13,40){\makebox(0,0){\small$q_9$}}
+\put(50,40){\circle{3}}\put(43,40){\makebox(0,0){\small$q_{10}$}}
+\put(80,40){\circle{3}}\put(73,40){\makebox(0,0){\small$q_{11}$}}
+\put(20,70){\circle{3}}\put(13,70){\makebox(0,0){\small$q_{12}$}}
+\put(50,70){\circle{3}}\put(43,70){\makebox(0,0){\small$q_{13}$}}
+\put(80,70){\circle{3}}\put(73,70){\makebox(0,0){\small$q_{14}$}}
+\put(20,100){\circle{3}}\put(13,100){\makebox(0,0){\small$q_{15}$}}
+\put(50,100){\circle{3}}\put(43,100){\makebox(0,0){\small$q_{16}$}}
+\put(80,100){\circle{3}}\put(73,100){\makebox(0,0){\small$q_{17}$}}
+\multiput(20,25)(30,0){4}{\circle*{2}}
+\multiput(20,55)(30,0){4}{\circle*{2}}
+\multiput(20,85)(30,0){4}{\circle*{2}}
+\multiput(20,115)(30,0){4}{\circle*{2}}
+\put(23,28){\small$v_0$}\put(53,28){\small$v_1$}\put(83,28){\small$v_2$}\put(113,28){\small$v_0$}
+\put(23,58){\small$v_3$}\put(53,58){\small$v_4$}\put(83,58){\small$v_5$}\put(113,58){\small$v_3$}
+\put(23,88){\small$v_6$}\put(53,88){\small$v_7$}\put(83,88){\small$v_8$}\put(113,88){\small$v_6$}
+\put(23,118){\small$v_0$}\put(53,118){\small$v_1$}\put(83,118){\small$v_2$}\put(113,118){\small$v_0$}
+\put(45,9){\vector(-1,0){20}}\put(85,9){\vector(1,0){20}}
+\put(65,1){\makebox(0,0){\small Opposite boundaries are identified.}}
+\end{picture}
 \caption{A fundamental-domain chart of the actual $3\times3$ toric-code manifest. Boundary vertex labels repeat because opposite sides are identified. The eighteen white edge midpoints, not the thirty-six incidence darts, index the physical qubits. The selected first star is $\{q_0,q_2,q_9,q_{15}\}$.}
 \end{figure}
