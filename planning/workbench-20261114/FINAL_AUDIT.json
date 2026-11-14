@@ -1,0 +1,28 @@
+{
+  "schema": "grh.workbench.final-audit.v1",
+  "verified_at_utc": "2026-11-14T09:31:08Z",
+  "scientific_source_commit": "b01a5f5e1e301e8d1a111a84ff6052724e4c07ae",
+  "previous_publication_commit": "e30d393420c05e66144b8fd8edbe979d38cd134d",
+  "huggingface_repo": "AmelieSchreiber/GRH-Physical-Graph-Workbench",
+  "huggingface_revision": "84aa1e7241e67c9b85e31d2e45400d3f285c001d",
+  "previous_huggingface_revision": "cf1e2c5690e6f7056ee507bf3143813facfdbce8",
+  "pages_commit": "9fad0d0f973a27bb75fc1fcb9cb4b6025028fded",
+  "tests": {"normal_methods": 52, "optimized_methods": 52, "new_adversarial_methods": 20},
+  "fresh_formal_checks": {"finite_certificates_axiom_free": 5, "risk_statements": 4, "bgg_coefficient_identities": 6, "warnings": 0},
+  "data_replay": {"measured_noaa_rows": 1648, "train": 1015, "validation": 316, "test": 317, "duplicate_identities": 0, "cross_split_raw_support_overlap": 0, "public_noaa_runs_replayed": 8, "scope": "Within-series temporal holdouts; other source per-record arrays are not redistributed."},
+  "publication_checks": {"historical_manifest_members_verified": 103, "updated_manifest_members": 122, "pinned_huggingface_targets_byte_matched": 6, "live_pages_assets_byte_matched": 7},
+  "unchanged_artifacts": {
+    "pdf_pages": 37,
+    "pdf_bytes": 556705,
+    "pdf_sha256": "d6c420e11669241f247c37f44901ff5c56628dc289031ee083b9195626572f79",
+    "measured_results_sha256": "3eed1b691172b2b3aded5f8117e773594cb2804e59a5f1a2564bc7bcd7bdf630"
+  },
+  "scientific_source_machine_state": {
+    "iska": {"path": "/home/iska/Documents/amelie/GRH-research", "branch": "main", "head": "b01a5f5e1e301e8d1a111a84ff6052724e4c07ae", "clean": true},
+    "windows": {"path": "C:\\Users\\LIZ\\Documents\\GRH-research", "branch": "main", "head": "b01a5f5e1e301e8d1a111a84ff6052724e4c07ae", "clean": true},
+    "submodules": {"GRH": "0c77122d3cff5b737fc56730f54045ef185e3df1", "Surface-Orders-Hilbert-Polya": "212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2", "math": "4eaee87548250b2682affda7d05d947c05554bae"},
+    "metadata_commit_sync": "Checked separately after this receipt is committed."
+  },
+  "agent_attempts": {"launched": 8, "completed_development_outputs": 0, "reason": "Account usage limit", "work_performed_directly": true},
+  "research_claims_excluded": ["Observed hidden intentional message", "Full Mora-3 training", "Quantum hardware advantage", "Trained GFlowNet or BGG head", "Full category-O formalization", "New cryptographic security proof", "Continuum mass-gap theorem", "GRH/Hilbert-Polya arithmetic spectral identity"]
+}
