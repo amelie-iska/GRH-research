@@ -1,0 +1,105 @@
+\chapter{Nonlinear fluid coordinates and unitary half-density transport}
+\label{ch:half-density}
+
+The link between nonlinear dynamics and quantum operator language can be made exact without pretending that viscosity is a unitary gate. The correct object is a half-density on the classical state space. Its evolution is unitary even when physical kinetic energy decreases. The distinction is structural: Hilbert norm, phase-space volume and physical energy are three different quantities.
+
+This construction belongs to the Koopman--von Neumann tradition. Joseph's peer-reviewed treatment develops its use in quantum simulation of nonlinear non-Hamiltonian dynamics [H1]. The result below states the complete finite-dimensional energy-controlled interface used by this program and derives its action explicitly. Stone's theorem supplies the self-adjoint generator of the strongly continuous unitary group [H2].
+
+\section{A complete flow from the finite energy identity}
+
+Let $u\in\mathbb R^d$ be coordinates in a fixed, metrically orthonormal basis of a finite divergence-free cochain space. Consider the autonomous system
+\[
+ \dot u=b(u)=B(u,u)-Au+f,
+\]
+where $B$ is bilinear, $u\cdot B(u,u)=0$ for every $u$, $A$ is a fixed real matrix and $f$ is fixed. A symmetric positive-semidefinite $A$ gives the usual dissipative interpretation. The energy-consistent finite fluid interfaces in the monograph have this form after the declared projection and metric choice.
+
+\begin{theorem}[Complete nonlinear flow and its unitary realization]
+The vector field above generates a smooth complete flow $\Phi_t$ for every $t\in\mathbb R$. Write $J_t(x)=\det D\Phi_t(x)>0$. On $L^2(\mathbb R^d,dx)$ define
+\[
+ (U_t\psi)(x)=J_{-t}(x)^{1/2}\psi(\Phi_{-t}(x)).
+\]
+Then $U_t$ is a strongly continuous unitary group. It has a self-adjoint generator $H$ such that $U_t=e^{-itH}$. On compactly supported smooth functions,
+\[
+ H\psi=-i\left(b\cdot\nabla\psi+\tfrac12(\operatorname{div}b)\psi\right).
+\]
+The probability density $\rho_t=|U_t\psi|^2$ is the pushforward of $|\psi|^2$ by the classical flow and satisfies the Liouville transport equation.
+\end{theorem}
+\begin{proof}
+Let $E(u)=\|u\|^2/2$. The nonlinear term cancels exactly:
+\[
+ \frac{dE}{dt}=-u\cdot Au+u\cdot f.
+\]
+Hence
+\[
+ \left|\frac{dE}{dt}\right|\le(2\|A\|+1)E+\tfrac12\|f\|^2.
+\]
+Gronwall's inequality bounds $E$ on every bounded positive or negative time interval. Since $b$ is polynomial and locally Lipschitz, a finite endpoint of a maximal solution would require the solution to leave every compact set. The energy bound excludes this. Thus the flow is complete; smooth dependence and uniqueness give a smooth diffeomorphism with inverse $\Phi_{-t}$. The variational equation and Jacobi's formula give
+\[
+ J_t(x)=\exp\!\left(\int_0^t\operatorname{div}b(\Phi_s(x))\,ds\right)>0.
+\]
+
+Changing variables $x=\Phi_t(y)$ gives
+\[
+ \|U_t\psi\|_2^2
+ =\int J_{-t}(\Phi_t(y))|\psi(y)|^2J_t(y)\,dy
+ =\|\psi\|_2^2.
+\]
+The inverse-flow and Jacobian chain rules prove $U_tU_s=U_{t+s}$ and $U_{-t}=U_t^{-1}$. For compactly supported smooth $\psi$, the flow and Jacobian converge uniformly to their initial values on the relevant compact neighborhood as $t\to0$, so dominated convergence gives strong continuity. Density of these functions and the norm-one bound extend strong continuity to all of $L^2$. Stone's theorem gives the self-adjoint generator. Differentiating the displayed action at zero in $L^2$ yields $\partial_tU_t\psi|_0=-b\cdot\nabla\psi-\frac12(\operatorname{div}b)\psi$, which identifies $H$ on the stated domain. Taking the squared modulus gives the usual change-of-variables formula for transported probability and therefore the Liouville equation.
+\end{proof}
+
+\paragraph{Why dissipation is compatible with unitarity.}
+For an observable $F$ and states for which the integrals are finite,
+\[
+ \langle U_t\psi,FU_t\psi\rangle
+ =\int F(\Phi_t(y))|\psi(y)|^2\,dy.
+\]
+Taking $F=E$ transports the classical energy decay into a changing expectation of the energy observable. It does not turn that observable into the unitary generator $H$. In general the transport generator need not be bounded below. Consequently this realization is not a positive-energy quantum-field Hamiltonian or a mass-gap proof merely because Stone's theorem applies.
+
+Spatial incompressibility and phase-space incompressibility must also be distinguished. The cochain constraint imposes the first. Viscosity can make the divergence of the finite coefficient-space vector field negative. A naive pullback $\psi\circ\Phi_{-t}$ then fails to preserve the Lebesgue $L^2$ norm; the half-Jacobian factor is essential.
+
+\section{A nonlinear triad with an exact Jacobian law}
+
+The executed reference uses
+\[
+ B(u,u)=(a u_2u_3,b u_1u_3,c u_1u_2),\qquad a+b+c=0,
+\]
+with $(a,b,c)=(1,-1/2,-1/2)$, $A=\nu\operatorname{diag}(1,2,4)$, $\nu=0.13$ and $f=(0.03,-0.02,0.05)$. Its energy identity is the theorem's identity, and
+\[
+ \operatorname{div}b=-7\nu,\qquad J_t=e^{-7\nu t}.
+\]
+The implementation independently integrates the state, its variational matrix and the accumulated energy work, then checks inverse-flow composition, two-half-step composition, the exact determinant and energy balance. These are constructed dynamical reference tests, kept separate from the measured speech, detector and physiological records.
+
+For the one-dimensional contraction $\Phi_t(x)=e^{-at}x$, the normalized initial Gaussian amplitude gives
+\[
+ |U_t\psi(x)|^2=\frac{e^{at}}{\sqrt\pi}\exp(-e^{2at}x^2).
+\]
+Its integral is one and its second moment is $e^{-2at}/2$. Omitting the half-density factor gives squared norm $e^{-at}$ instead. Numerical quadrature checks both the valid realization and this deliberately invalid alternative. The exact algebraic energy and half-density coefficient identities are separately formalized in Lean.
+
+\section{A unitary discretization and its actual quantum operation}
+
+On a periodic grid let $D$ be the central-difference matrix, so $D^T=-D$, and let $V$ be the real diagonal velocity matrix. The discrete half-density transport operator
+\[
+ A_h=\tfrac12(VD+DV)
+\]
+is skew-adjoint. The associated $H_h=-iA_h$ is Hermitian. For real step $\tau$, define
+\[
+ C_\tau=(I+\tfrac\tau2A_h)^{-1}(I-\tfrac\tau2A_h).
+\]
+The first factor exists: the squared norm of $(I+\frac\tau2A_h)x$ is $\|x\|^2+\frac{\tau^2}{4}\|A_hx\|^2$. The two polynomial factors commute and are adjoints. Multiplication therefore gives $C_\tau^*C_\tau=I$. The abstract normal-unit calculation is verified in Lean.
+
+For a fixed bounded matrix, expanding the Cayley transform shows local error $O(\tau^3)$ relative to $e^{-\tau A_h}$. A telescoping comparison over a fixed horizon, using unit norm of both evolutions, gives global error $O(\tau^2)$. The code checks this order against independent Hermitian eigendecomposition at 10, 20 and 40 steps. Exact discrete unitarity does not imply zero time- or space-discretization error.
+
+The sixteen-state periodic reference is encoded on four qubits. Its Cayley matrix is passed to actual cuStateVec as a dense four-qubit unitary and compared with independent NumPy multiplication. This checks a genuine backend operation. The supplied dense matrix is not an efficient elementary-gate synthesis, and that compilation cost is not hidden in a claim of quantum speedup. The separate eighteen-qubit surface experiment already supplies explicit Hadamard, rotation and CNOT gates.
+
+\section{Operator learning, cyclic structure and the continuum problem}
+
+A learned graph operator can propose $b$, a projected update, or a map between finite cochain spaces. Energy-compatible parameterizations preserve the cancellation identity by construction; unconstrained models must pass its residual test. Uniform approximation of a vector field on an energy-controlled domain gives a finite-horizon trajectory bound through Gronwall. Controlling the Jacobian factor additionally requires derivative information, such as a $C^1$ approximation bound or a separately verified divergence envelope. A $C^0$ approximation claim alone does not certify the half-density amplitude.
+
+A return map $\Phi_T$ supplies a unitary monodromy operator $U_T$ in this realization. It is a precise operator attached to a dynamical cycle, not evidence that physical cosmological time is periodic. A smooth positive time change replaces $b$ by the corresponding rescaled vector field and changes both transport and divergence terms. Singular conformal crossover remains a separate extension problem; the earlier CCC chapter specifies the physical fields, matching data and observational hypotheses needed there.
+
+Finite energy-compatible Galerkin systems are complete by the theorem above. They do not reproduce a continuum singularity by simply blowing up a finite vector while its Euclidean energy remains bounded. Passing to the continuum requires control of the growing discretization space and the stronger norms in which regularity is tested. This pinpoints the analytic task in relating the program to the released Navier--Stokes proof. It is also why the framework keeps topology, metric, approximation scale and operator domain in the same explicit record.
+
+\begin{description}
+\item[H1] Ilon Joseph. \emph{Koopman--von Neumann approach to quantum simulation of nonlinear classical dynamics}. Physical Review Research 2, 043102 (2020). \url{https://doi.org/10.1103/PhysRevResearch.2.043102}
+\item[H2] M. H. Stone. \emph{On One-Parameter Unitary Groups in Hilbert Space}. Annals of Mathematics 33(3), 643--648 (1932). \url{https://doi.org/10.2307/1968538}
+\end{description}
