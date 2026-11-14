@@ -3,11 +3,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
 \usepackage[letterpaper,margin=1in,headheight=15pt]{geometry}
-\usepackage{microtype,booktabs,longtable,array,enumitem,fancyhdr,xcolor,graphicx}
+\usepackage{microtype,booktabs,longtable,array,enumitem,fancyhdr,xcolor,graphicx,tikz}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage[hyphens]{url}
 \usepackage[colorlinks=true,linkcolor=teal!60!black,urlcolor=blue!60!black]{hyperref}
 \hypersetup{pdftitle={Certified Surface Computation: Orders, Graph Learning and Quantum Realizations},pdfauthor={Research supplement prepared for Amelie Schreiber}}
 \setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{4pt}
 \pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Certified Surface Computation}\fancyfoot[C]{\thepage}
 \setcounter{tocdepth}{1}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -28,7 +30,9 @@ The volume includes a source-linked archive of the underlying research proofs, a
 The earlier 37-page supplement and its measured results remain reproducible historical artifacts. This edition integrates the new proofs, controls and visual workbench while preserving their provenance. The central surface explorer is available at \url{https://amelie-iska.github.io/GRH-research/workbench/surface.html}; its export binds the displayed configuration to the actual computed observations.
 \tableofcontents\mainmatter
 \input{unified-program}
+\input{framework-map}
 \input{source-proof-repair}
+\input{finite-formalization}
 \chapter{Graph languages and computational mechanisms}
 \input{language-graph-computation}
 \chapter{Physical data, coding and the first measured study}
@@ -38,6 +42,7 @@ The earlier 37-page supplement and its measured results remain reproducible hist
 \chapter{BGG, category \texorpdfstring{$\mathcal O$}{O} and structural synthesis}
 \input{bgg-category-o}
 \input{surface-guide}
+\input{surface-diagram}
 \appendix
 \begingroup\footnotesize\sloppy\input{references}\endgroup
 \end{document}

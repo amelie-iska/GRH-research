@@ -1,0 +1,25 @@
+\begin{figure}[p]
+\centering
+\begin{tikzpicture}[x=1.7cm,y=1.7cm,font=\scriptsize]
+\draw[gray,dashed] (0,0) rectangle (3,3);
+\foreach \y in {0,1,2}{\foreach \x in {0,1,2}{
+ \pgfmathtruncatemacro{qh}{3*\y+\x}
+ \pgfmathtruncatemacro{qv}{9+3*\y+\x}
+ \draw[teal!70!black,thick] (\x,\y)--(\x+1,\y);
+ \draw[teal!70!black,thick] (\x,\y)--(\x,\y+1);
+ \node[circle,draw=teal!70!black,fill=white,inner sep=2.5pt] at (\x+.5,\y) {};
+ \node[below=5pt] at (\x+.5,\y) {$q_{\qh}$};
+ \node[circle,draw=teal!70!black,fill=white,inner sep=2.5pt] at (\x,\y+.5) {};
+ \node[left=5pt] at (\x,\y+.5) {$q_{\qv}$};
+}}
+\foreach \y in {0,1,2,3}{\foreach \x in {0,1,2,3}{
+ \pgfmathtruncatemacro{v}{3*mod(\y,3)+mod(\x,3)}
+ \fill (\x,\y) circle (2pt);
+ \node[above right=2pt] at (\x,\y) {$v_{\v}$};
+}}
+\draw[<->,gray] (.4,-.55)--(2.6,-.55);
+\node at (1.5,-.8) {Horizontal boundary identification};
+\node[rotate=90] at (3.65,1.5) {Vertical boundary identification};
+\end{tikzpicture}
+\caption{A fundamental-domain chart of the actual $3\times3$ toric-code manifest. Boundary vertex labels repeat because opposite sides are identified. The eighteen white edge midpoints, not the thirty-six incidence darts, index the physical qubits. The selected first star is $\{q_0,q_2,q_9,q_{15}\}$.}
+\end{figure}

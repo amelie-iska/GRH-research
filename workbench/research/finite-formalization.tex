@@ -1,0 +1,23 @@
+\section{A complete finite graph-function theorem in Lean}
+
+The finite-domain result now has a structural formalization rather than only a table of sampled successes. \texttt{FiniteGraphNetworks.lean} defines a Boolean circuit syntax with input, constant, negation, conjunction and disjunction constructors. The same syntax has two interpreters: Boolean evaluation and a real-valued affine/ReLU evaluation. Induction on the complete syntax proves
+\[
+ \operatorname{neural}(\operatorname{bit}\circ x,C)
+ =\operatorname{bit}(\operatorname{discrete}(x,C))
+\]
+for every finite circuit $C$ and every Boolean input $x$. The real-valued operations are $1-u$, $\max(0,u+v-1)$ and $u+v-\max(0,u+v-1)$.
+
+For each Boolean pattern $s\in\{0,1\}^n$, a conjunction of matching literals constructs an indicator circuit $I_s$. Its neural interpretation is exactly one on $s$ and zero on every other Boolean input. Therefore, for an arbitrary real-valued finite table $F$,
+\[
+ N_F(x)=\sum_{s\in\{0,1\}^n}F(s)I_s(x)
+\]
+satisfies $N_F(x)=F(x)$ at every Boolean input. Applying this construction independently to each output coordinate gives the formally checked theorem
+\[
+ \forall F:\{0,1\}^n\to\mathbb R^m,\quad
+ N_F(x)=F(x)\quad\text{for every }x\in\{0,1\}^n.
+\]
+A fixed finite graph encoding places adjacency, type and mask bits into this input vector and output graph attributes into the coordinate vector. Thus this is an exact finite graph-to-graph representation theorem for that declared encoding. The theorem includes every table, not only those enumerated by a test script.
+
+The construction's cost is explicit: it contains a pattern circuit for every Boolean input and can be exponential in $n$. A directed acyclic circuit can be unfolded into the formal syntax tree, with the corresponding duplication cost. This proves representability and correctness, not efficient identification of the table from examples. The continuous compact-domain theorem uses the separate written interpolation argument and its selected formal identities; the finite theorem is not substituted for it.
+
+The formal module prints all seven theorem types and foundational dependencies. Its successful elaboration contains no \texttt{sorryAx}, no newly declared axiom and no \texttt{native\_decide} trust shortcut. These are the relevant facts when evaluating the proof, independently of the rhetoric surrounding neural computation.

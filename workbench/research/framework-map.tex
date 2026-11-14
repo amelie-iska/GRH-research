@@ -1,0 +1,21 @@
+\begin{figure}[p]
+\centering
+\begin{tikzpicture}[font=\small,>=Latex,
+ block/.style={draw=teal!65!black,rounded corners=2pt,fill=teal!4,text width=4.8cm,align=left,inner sep=8pt},
+ link/.style={->,thick,draw=teal!65!black}]
+\node[block] (presentation) at (0,0) {\textbf{Typed finite presentation}\\Dessin permutations; cellular incidence; quiver relations; integral coefficients.};
+\node[block] (algebra) at (-3.2,-2.35) {\textbf{Algebraic realization}\\Gentle modules and complexes; the rank-four order $\Lambda_\pi$; BGG maps and homotopies.};
+\node[block] (operator) at (3.2,-2.35) {\textbf{Operator realization}\\Metrics, Hodge operators, stochastic channels and commuting Pauli checks.};
+\node[block] (learning) at (-3.2,-5.05) {\textbf{Graph computation}\\Explicit encodings, output slots, neural operators, grammar proposals and directed analogy.};
+\node[block] (physical) at (3.2,-5.05) {\textbf{Physical and numerical models}\\Spin Hamiltonians, diffusive transport, fluid residuals and controlled refinements.};
+\node[block] (evidence) at (0,-7.6) {\textbf{Independent evidence}\\Exact witnesses; Lean theorems; CPU/browser/GPU agreement; held-out prediction and complete code lengths.};
+\draw[link] (presentation)--node[left,font=\scriptsize]{relations retained}(algebra);
+\draw[link] (presentation)--node[right,font=\scriptsize]{metric/state specified}(operator);
+\draw[link] (algebra)--node[left,font=\scriptsize]{typed encoding}(learning);
+\draw[link] (operator)--node[right,font=\scriptsize]{dynamics and scale}(physical);
+\draw[link] (learning)--node[above,font=\scriptsize]{propose / interpret}(physical);
+\draw[link] (learning)--(evidence);
+\draw[link] (physical)--(evidence);
+\end{tikzpicture}
+\caption{The program is a calculus of specified realizations. Arrows name mathematical interfaces, not automatic identifications of entire theories. The text supplies explicit constructions and proof obligations for each application.}
+\end{figure}
