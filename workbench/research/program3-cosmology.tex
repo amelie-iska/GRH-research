@@ -1,0 +1,81 @@
+\chapter{CCC geometry and a real-map search with frozen learned statistics}
+\label{ch:p3-ccc}
+
+\section{The original mathematical interfaces are retained}
+
+The original CCC chapter separates conformal geometry, elliptic estimates, quantum-information constraints and observational calibration. This continuation strengthens those interfaces instead of replacing them by a generic neural classifier. The formal additions check the middle-form conformal exponent and the explicit polynomial transformations used by the elliptic-curve discussion. They do not turn an algebraic identity into an observational confirmation of a crossover.
+
+For a metric rescaling in dimension $n$, the Hodge-star scaling on $k$-forms has exponent $n-2k$. In four dimensions at degree two this exponent is zero. The new finite identity checks that exponent's specialization. The full Hodge-star transformation law, metric signatures and Maxwell/source assumptions remain the mathematical premises stated in the original chapter.
+
+Let $P(x)=ax^4+bx^3+cx^2+dx+e$ and let $r$ be a root. Substituting $x=r+1/u$ and multiplying by $u^4$ produces
+\[
+ u^4P(r+1/u)=Au^3+Bu^2+Cu+D,
+\]
+where
+\[
+ A=P'(r),\quad B=P''(r)/2,\quad C=P'''(r)/6,\quad D=P''''(r)/24.
+\]
+For $v^2=Au^3+Bu^2+Cu+D$, put $X=Au+B/3$ and $Y=Av$. Then
+\[
+ Y^2=X^3+(AC-B^2/3)X+2B^3/27-ABC/3+A^2D.
+\]
+Lean checks the coefficient expansions and transport identity. A birational interpretation additionally requires the stated nonzero denominators and a simple root when $A$ is used to invert the coordinate change. Nonsingularity is a separate discriminant condition. The same algebraic shape across finite-field arithmetic and conformal-time equations is useful structure, not an identification of their physical interpretations.
+
+\section{Actual datasets and resolution-aware tests}
+
+The study uses three actual WMAP nine-year products: ILC and foreground-reduced V- and W-band temperature maps, plus the KQ85 mask. All are acquired through links on official NASA LAMBDA product pages. The acquisition record binds filenames, source URLs, exact bytes, FITS fields, native Nside512 nested ordering and temperature units. Millikelvin are explicitly converted to microkelvin; the ILC header's \texttt{mK, thermodynamic} wording is retained rather than rejected or silently normalized in the source record.
+
+The ILC documentation states reliability above approximately ten degrees and cautions about uncertainty at smaller angular scales [C1]. Accordingly this implementation tests broad Gaussian widths of 12, 18 and 24 degrees. It is not presented as a reproduction of a degree-scale Hawking-point search. Twenty-four fixed high-latitude centers and three scales give 72 templates.
+
+Processing is fixed: pixel-average to Nside16, estimate harmonics through $\ell=32$, remove monopole and dipole, apply an additional five-degree Gaussian beam, and reconstruct the map. Retained pixels require degraded KQ85 fraction at least 0.8 and absolute Galactic latitude at least twenty degrees. The original map beams differ; adding the same smoothing does not constitute exact common-beam deconvolution. The processing record retains that fact.
+
+Three statistics are scanned. The first compares a Gaussian-weighted temperature mean with the retained-sky mean. The second detects low variance in the outer radial annulus. The third applies a learned four-qubit hierarchy to four mean-subtracted radial summaries. The corresponding local graph is an ordered four-band relation, not a privileged target-derived topology.
+
+\section{Learned statistics selected before observation scoring}
+
+The channel architecture is the same explicit 4-to-2-to-1 construction used in the preceding chapter. Its gate angles and scalar readout are trained on independently generated phase-surrogate skies and injected broad profiles. The observed map's original phases do not select the weights, center grid, scale set, mask, amplitude grid or checkpoint.
+
+There are 1,024 training examples and 256 held-out validation examples, with Gaussian-profile amplitudes 64, 128 and 256 microkelvin. A bounded arctangent encoding maps four radial features to rotation angles, with the scale estimated from training only. Validation selects among 150 optimizer steps. The code freezes the selected gates, input scale and readout before computing the observed full-search scores.
+
+This is an actually trained, classically simulated QNN, not quantum hardware and not a trained full Mora-3 model. Its classifier is a candidate statistic for a specified injected alternative. Success on that injection task does not establish that every physical CCC signal has that form, or that another physical process cannot produce similar features.
+
+\section{The null is part of the result}
+
+For each processed map, null surrogates multiply $m>0$ harmonic coefficients by independent uniform phases and $m=0$ coefficients by independent random signs. Every coefficient magnitude is retained. Monopole and dipole remain absent. Training, reference-normalization, calibration and validation use distinct seeds and realizations.
+
+This conditional phase-randomization null is scientifically inspectable, but it is not a complete WMAP likelihood. Anisotropic instrumental noise, foreground-cleaning uncertainty, harmonic estimation and masking effects are not fully modeled. Exact randomization validity requires invariance under the declared phase action. A small rank can therefore diagnose disagreement with this surrogate law without uniquely identifying CCC.
+
+For every calibration sky, the pipeline recomputes the same location, scale and method maximum as for the observed sky. There are 511 calibration draws, so the smallest reported rank is $1/512$, never zero. Independent null validation uses 256 draws and reports its rejection fraction and Wilson interval. Injection sensitivity uses 64 additional controls per declared amplitude, including zero amplitude. All products and all outcomes remain in the record.
+
+\begin{theorem}[Conservative finite upper ranks, including ties]
+For $n$ real scores $s_i$, define $r_i=\#\{j:s_j\ge s_i\}$. Then for every integer $k$,
+\[
+ \#\{i:r_i\le k\}\le k.
+\]
+If the distinguished index is uniform under exchangeability, this gives the usual conservative finite-rank probability bound.
+\end{theorem}
+\begin{proof}
+If the set on the left is empty there is nothing to prove. Otherwise choose a member with minimum score among its members. Every member's score is at least that minimum, so the whole set is included in the chosen member's upper-rank set. Its cardinality is at most that upper rank, which is at most $k$. Ties are included in the upper-rank set and require no arbitrary tie-breaking assumption. Uniformity of the distinguished index then divides the count by $n$.
+\end{proof}
+
+The deterministic counting theorem is formalized for arbitrary finite score vectors, not only one simulated sample. Exchangeability of real observations and a physical null is an additional modeling premise. The earlier measure-theoretic family bounds remain applicable once their event-level premises are justified.
+
+\section{Observed results and frequency sensitivity}
+
+\begin{center}\small\input{cmb-table}\end{center}
+
+The original workstation run found a small joint phase-surrogate rank for the V-band product, but not for ILC or W-band. The independent runner preserves its own fully recorded recomputation rather than replacing it with those earlier numbers. These products share the CMB sky and observations; their ranks must not be multiplied as though they were independent confirmations. The displayed three-product correction is a union-bound allocation, not evidence that the underlying surrogate model is physically complete.
+
+The search retains the selected template, per-method maxima and all calibration maxima. The low-variance statistic can be unusual under its own method-specific null while the joint maximum has a different tail. This is why both are reported and why the local selected tail is not substituted for the full-search result.
+
+After the initial product disagreement was inspected, a separate exploratory followup was designed. It applies a common ILC-derived phase reference to all products and scans the processed V-minus-W map. It also reports masked cross-product correlations and map amplitudes. This followup is explicitly marked post-inspection. It does not replace the predeclared scan, is not added as independent evidence, and is not folded into a retroactively enlarged family with an unchanged significance claim.
+
+The V-minus-W map is a sensitivity diagnostic, not a pure foreground estimate: different effective beams, noise and cleaning residuals remain. Similarly, changing from each product's conditional harmonic magnitudes to a common reference changes the null hypothesis. Those changes are exactly what a robustness analysis should expose, rather than conceal behind a single favorable number.
+
+\section{Interactive replay without moving the goalposts}
+
+The sky view displays observed temperatures on a Galactic Mollweide projection, with the fixed exclusion mask visibly separated. Product, statistic, center and injected amplitude are controlled independently. At zero amplitude the original observed map is replayed. At nonzero amplitude the display says that a synthetic profile has been added. All 72 templates and all three frozen statistics are then recomputed with unchanged weights and unchanged calibration.
+
+The browser contains its own numerical implementation, including the actual four-qubit gates. It is compared with Python on all observed products and additional injected cases. A source-hash mismatch prevents the page from presenting an unverified data object as an accepted result. Exported state records the source commit, asset hashes, arithmetic outputs, quantum readouts and complete-search rank.
+
+This completes a concrete CCC-oriented observational extension: real source products, a frozen learned statistic, full-search controls, independent null validation, injection sensitivity, explicitly exploratory frequency tests, formal rank logic and an interactive replay. It does not claim to have established a physical cross-aeon channel or an intentional message. Those questions require alternative source models with distinguishable predictive consequences, as the original information-theoretic chapter explains.

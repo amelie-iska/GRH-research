@@ -1,0 +1,138 @@
+\chapter{Coverings, orders and learned quantum renormalization}
+\label{ch:p3-coverings}
+
+\section{Voltage covers preserve the specified local presentation}
+
+Let $Q$ be a finite quiver and assign each arrow $a:u\to v$ a voltage $\nu(a)$ in the cyclic group $\mathbb Z/d\mathbb Z$. The lift has vertices $(u,s)$ and arrows
+\[
+ (a,s):(u,s)\longrightarrow(v,s+\nu(a)).
+\]
+Translation of every sheet index by the same element is a deck action. A path lifts uniquely after its initial sheet is supplied. A monomial zero relation lifts to the corresponding zero relation on each lifted path.
+
+\begin{proposition}[Finite gentle cover]
+If a finite-dimensional quadratic monomial bound quiver is gentle, the voltage lift with the lifted monomial relations is gentle and finite-dimensional.
+\end{proposition}
+\begin{proof}
+At each lifted vertex, incoming and outgoing arrows correspond bijectively to those at the base vertex. Thus the degree-at-most-two conditions are unchanged. For each lifted arrow, allowed and forbidden successor and predecessor choices correspond bijectively to the base choices, so their uniqueness conditions persist. Any allowed lifted path projects to an allowed base path of the same length. Since the base's allowed-path lengths are bounded, the lifted allowed-path lengths are bounded as well. For a finite quadratic monomial presentation this gives finite dimensionality.
+\end{proof}
+
+The implementation checks every voltage assignment in selected small covers, not only one favorable drawing. It also constructs explicit unramified rectangular-torus cell covers, checks both cellular coboundary pullback identities and verifies $d_1d_2=0$. The degree-$d$ torus cover still has genus one. This is consistent with multiplicativity of Euler characteristic for an unramified cover, not evidence that an arbitrary quiver cover automatically extends to a marked, branched or holomorphic surface cover.
+
+For a surface with boundary, marked points or ramification, the covering data must include those structures. The gentle algebras associated with unpunctured marked surfaces in [G1] have specific hypotheses. A general categorical covering functor [G2], a voltage cover of a presentation, and a topological covering of a dessin surface are related constructions but not interchangeable definitions.
+
+\section{Integral relations can obstruct a special-fiber cover}
+
+The rank-four order of the preceding volume has generators satisfying
+\[
+ uv=\pi e_1,\qquad vu=\pi e_2.
+\]
+A lift that assigns independent sheet shifts to $u$ and $v$ makes their composite act by the total sheet shift. Over a torsion-free module with nonzero $\pi$, preserving the displayed relation requires that total shift to be the identity. In the explicit matrix realization the residual is
+\[
+ \pi\bigl(S_{\nu(u)+\nu(v)}-I\bigr).
+\]
+
+Reduction modulo $\pi$ turns the relation into a zero relation. The special fiber therefore admits covers that fail the original integral relation. The code checks this obstruction at degree two: voltages $(1,0)$ fail at $\pi=3$ but pass after specialization to zero; voltages $(1,1)$ preserve the integral relation. In this two-arrow example, zero cycle voltage also makes the resulting cover split into components. A connected nontrivial special-fiber cover is not thereby a connected cover of the same integral order.
+
+More general order coverings require a declared grading, central-parameter action, local lattice data and compatibility with all nonmonomial relations. The present obstruction gives an exact test to apply before extending a neural or categorical construction over the generic fiber. Forgetting the deformation parameter can genuinely remove information needed to validate the lift.
+
+\section{Neural pullback, descent and the cost of arbitrary identifiers}
+
+For a $d$-sheet finite cover let $U$ pull a base feature to a constant feature on each fiber. Over $\mathbb R$, put $P=d^{-1}U^{\mathsf T}$. Then
+\[
+ PU=I,\qquad (UP)^2=UP.
+\]
+The second map projects onto fiber-constant signals. In characteristic dividing $d$, this average is not defined by division; replacing it by an unnormalized sum can even send the constant-one feature to zero. The implementation retains that counterexample.
+
+\begin{proposition}[Local layer transport]
+Suppose a base message-passing update uses a shared message function, a shared node update, and a sum or normalized local mean over incoming arrows. On pullback features, the same update on the cover commutes with $U$.
+\end{proposition}
+\begin{proof}
+Every lifted vertex has one incoming lift of each incoming base arrow. The message arguments are equal because the source and target features are pulled back. Therefore the local sum is the base sum; the local degree is also the same, so normalized means agree. Applying the common node function preserves equality. Induction gives the result for every finite composition of such layers.
+\end{proof}
+
+There is a related global-attention identity. If each key/value is replicated exactly $d$ times, then each softmax numerator and its denominator receive the same factor $d$, leaving the weighted value unchanged. Repetition also leaves a coordinatewise maximum unchanged. Consequently normalized softmax and max-plus operations commute with the declared uniform replication. This statement requires transported or tied features and parameters. Arbitrary absolute sheet identifiers break it, as the negative test demonstrates. Global attention on arbitrary non-fiber-constant states is not covered by the identity.
+
+The normalized linear embedding $J=U/\sqrt d$ is an isometry. It is a direct-sum encoding of amplitudes, not a map that clones an unknown quantum state into $d$ independent tensor copies. That distinction preserves the no-cloning constraints already proved in the CCC chapter. A quantum circuit descends through a cover only after its state embedding and operator intertwining are specified.
+
+Covering alone also does not preserve a positive lower spectral gap. A connected $d$-fold cover of a finite cycle is a longer cycle; its smallest positive graph-Laplacian eigenvalue is $4\sin^2(\pi/(dN))$, which tends to zero. Base eigenvectors lift, but new non-fiber-constant modes appear. Thus cover degree is a geometric limit requiring its own estimates, not a substitute for the infinite-width limit of a neural parameterization.
+
+\section{A learned hierarchy of physical quantum channels}
+
+The implemented network coarse grains four qubits to two and then one. Each stage applies explicitly specified two-qubit unitary blocks and traces out the declared environment qubits. The first stage shares three rotation parameters across its two pairs, and the second stage uses another three. A scalar readout adds slope and bias; it is a classical postprocessor, not part of the quantum channel.
+
+For a stage unitary $W$ and an environment basis $\{|e\rangle\}$, the Kraus operators are
+\[
+ K_e=(I\otimes\langle e|)W.
+\]
+Their completeness follows directly:
+\[
+ \sum_eK_e^*K_e
+ =W^*\left(I\otimes\sum_e|e\rangle\langle e|\right)W=I.
+\]
+If $L_f$ describes the next complete stage, the combined operators are $L_fK_e$ and
+\[
+ \sum_{e,f}(L_fK_e)^*(L_fK_e)
+ =\sum_eK_e^*\left(\sum_fL_f^*L_f\right)K_e=I.
+\]
+The general rectangular-matrix identity is checked in Lean. An independent numerical implementation constructs the Kraus operators, while the training path uses a Heisenberg observable and another reference performs explicit partial traces. Their agreement checks both wire order and discarded-subsystem semantics.
+
+A discarded qubit need not be physically erased during a simulation. If no later gate acts on it, postponing its trace to the end gives the same retained density matrix. This allows the complete four-qubit unitary circuit to be replayed independently on CPU and cuStateVec. It does not postselect favorable outcomes, and it does not replace a channel by a nonlinear normalization of a selected branch.
+
+\section{What the learned renormalization map actually learns}
+
+Training uses exact Gibbs states of a four-site periodic transverse-field Ising Hamiltonian at inverse temperature one. The 33 coupling values are split by a declared index rule into train, validation and test. The objective retains the mean nearest-neighbor $ZZ$ observable at the final readout. The six gate angles and two readout parameters are actually optimized; validation selects the checkpoint and test couplings do not select it.
+
+\begin{center}\small\input{qrg-table}\end{center}
+
+This is a learned coarse-graining channel with a measurable target, not an assertion that every relevant operator is preserved. The complete first-stage two-qubit density matrix is retained, and its effective Hamiltonian is reconstructed as
+\[
+ H_{\mathrm{eff}}=-\log\rho_{\mathrm{coarse}}+cI.
+\]
+Every finite-temperature input is positive definite. Unitary conjugation preserves that property, and a partial trace of a positive-definite operator is positive definite: for nonzero $v$, sum the strictly positive quadratic forms on $v\otimes e$. Thus the matrix logarithm is defined for these exact states.
+
+The implementation expands $H_{\mathrm{eff}}$ in all sixteen two-qubit Pauli operators. Projecting it back to only $IX$, $XI$ and $ZZ$ is a separate model reduction. The trace distance between the actual coarse state and the Gibbs state of that truncated Hamiltonian is reported at every coupling. Nonzero generated interactions are not discarded while claiming exact closure within the original Ising family.
+
+A useful stability statement follows from the integral formula for the matrix logarithm. If positive definite $A,B$ have minimum eigenvalue at least $\mu>0$, the resolvent identity gives
+\[
+ \|\log A-\log B\|\le
+ \|A-B\|\int_0^\infty(\mu+t)^{-2}\,dt
+ =\frac{\|A-B\|}{\mu}.
+\]
+A learned coarse state close to a singular state can therefore have an unstable effective Hamiltonian even when its density-matrix error is small. The recorded minimum eigenvalues expose this condition instead of hiding it in a renormalization plot. An infinite-system fixed point, scaling exponent or universal phase transition needs a system-size analysis beyond these four-site experiments.
+
+\section{An explicit infinite-width theorem}
+
+The width study uses independent one-qubit feature circuits, not the number of sheets in a cover. Let $w_r\sim N(0,I_d)$ and $b_r\sim\mathrm{Unif}[0,2\pi]$ independently, and define
+\[
+ \varphi_r(x)=\sqrt2\,\langle Z\rangle_{R_Y(w_r\cdot x+b_r)|0\rangle}
+ =\sqrt2\cos(w_r\cdot x+b_r).
+\]
+Set $K_M(x,y)=M^{-1}\sum_{r=1}^M\varphi_r(x)\varphi_r(y)$.
+
+\begin{theorem}[Independent quantum features and their limiting kernel]
+For fixed $x,y$,
+\[
+ K_M(x,y)\longrightarrow
+ K(x,y)=\exp(-\|x-y\|^2/2)
+\]
+almost surely. On a fixed set of $n$ inputs,
+\[
+ \Pr\!\left(\max_{i,j}|K_M(x_i,x_j)-K(x_i,x_j)|>\epsilon\right)
+ \le2n^2e^{-M\epsilon^2/8}.
+\]
+Every empirical kernel is positive semidefinite.
+\end{theorem}
+\begin{proof}
+Averaging over $b$ gives $\mathbb E_b[2\cos(a+b)\cos(c+b)]=\cos(a-c)$. The characteristic function of a standard Gaussian then gives the displayed $K$. The strong law applies to the independent bounded products. Each product lies in $[-2,2]$, so Hoeffding's inequality gives $2e^{-M\epsilon^2/8}$ for a fixed pair. A union bound over the $n^2$ pairs proves the finite-set estimate. Positive semidefiniteness follows because $K_M$ is a feature Gram matrix.
+\end{proof}
+
+The empirical study uses widths 16, 64, 256, 1,024 and 4,096 and four fixed seeds, preserving all errors rather than requiring every realization to improve monotonically. The random-feature circuit is classically tractable; the example establishes a controlled quantum-feature limit, not a computational speedup.
+
+Readout-only kernel ridge regression has a corresponding stability estimate. If $\|K_M-K\|_2\le\delta$ and regularization is $\lambda I$ with $\lambda>0$, the resolvent identity gives
+\[
+ \|(K_M+\lambda I)^{-1}y-(K+\lambda I)^{-1}y\|_2
+ \le\delta\|y\|_2/\lambda^2.
+\]
+This is a specific trained readout regime. It does not prove that training every gate of an unrestricted deep quantum network leaves the kernel fixed.
+
+The trained-network Gaussian-process results in [Q2] are relevant to broader architectures, but their initialization, light-cone dependence, normalization, limiting kernel and learning-rate assumptions must travel with the theorem. A deep hierarchy with expanding causal cones, shared parameters or max-plus branches does not inherit the result merely by increasing a register count. Cover limits, feature-width limits, physical thermodynamic limits and optimizer-time limits remain four distinct operations.
