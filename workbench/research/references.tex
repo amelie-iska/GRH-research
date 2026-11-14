@@ -1,0 +1,39 @@
+\chapter{Primary sources and source-pinned implementation register}
+\label{ch:wb-sources}
+\noindent Reading scope: the native theorem/code passages discussed in the audit were inspected at the commits below. External entries are attributed results, not claims that their complete proofs were reverified in Lean. The present review checked primary metadata and the relevant accessible statements; selected sections of Yun, ConvexTok, the syntax--semantics paper and the BGG papers were examined. Unread surrounding arguments are not represented as a complete full-text review. Numerical experiments have a separate source/hash/run record. No third-party full text is redistributed.
+
+\begin{description}[style=nextline,leftmargin=1cm]
+\item[P1] Tropical Quivers of Architectures research program. Commit \texttt{2b6ab79a685e2c6233fb8892e59589951feeddad}; especially graph tokenization, graph-to-graph approximation and bounded grammar claims. \url{https://github.com/amelie-iska/Tropical_Quivers_of_Archs/tree/2b6ab79a685e2c6233fb8892e59589951feeddad}
+\item[P2] ToricGT source and manuscript. Commit \texttt{a5199bc989a6fb170e21220e5e87bf95bc2fc0b4}; tokenizer, graph model, GFlowNet primitive and fixed-cell/hybrid approximation statements. \url{https://github.com/amelie-iska/ToricGT/tree/a5199bc989a6fb170e21220e5e87bf95bc2fc0b4}
+\item[P3] TropicalGT implementation. Commit \texttt{f8ffc7150afdd83bace8078c86fde7c8eeb0e08e}; manuscript and tropical attention implementation. \url{https://github.com/amelie-iska/TropicalGT/tree/f8ffc7150afdd83bace8078c86fde7c8eeb0e08e}
+\item[P4] Mora-3 implementation. Commit \texttt{75ac2d696f42da0a673fc43a20d84686a2ceed40}; TokenGT, tropical attention, continuous GFN, forest selection and learned analogy interfaces. Historical working-preprint status is not a current training-completion claim. \url{https://github.com/amelie-iska/Mora-3/tree/75ac2d696f42da0a673fc43a20d84686a2ceed40}
+\item[P5] ToricGT-Program. Commit \texttt{f91ba1811b5a4f70d53c7120acf8ca2a0049f85b}; dynamical, memory, trajectory and algebraic-training manuscripts. \url{https://github.com/amelie-iska/ToricGT-Program/tree/f91ba1811b5a4f70d53c7120acf8ca2a0049f85b}
+\item[R1] Yun et al. \emph{Are Transformers universal approximators of sequence-to-sequence functions?} ICLR 2020; version 2. Theorems 2--3 use their stated $L^p$ metric. \url{https://arxiv.org/abs/1912.10077v2}
+\item[R2] Kim et al. \emph{Pure Transformers are Powerful Graph Learners}. NeurIPS 2022; version 2. TokenGT construction and graph expressivity. \url{https://arxiv.org/abs/2207.02505v2}
+\item[R3] Leshno, Lin, Pinkus and Schocken. \emph{Multilayer feedforward networks with a nonpolynomial activation function can approximate any function}. Neural Networks 6 (1993), 861--867. \url{https://doi.org/10.1016/S0893-6080(05)80131-5}
+\item[R4] P\'erez, Barcel\'o and Marinkovic. \emph{Attention is Turing-Complete}. JMLR 22(75), 2021. \url{https://jmlr.org/papers/v22/20-302.html}
+\item[R5] Merrill and Sabharwal. \emph{The Expressive Power of Transformers with Chain of Thought}. ICLR 2024; version 5. \url{https://arxiv.org/abs/2310.07923v5}
+\item[R6] Tempus, Whittington, Schmidt, Komm and Pimentel. \emph{Tokenisation via Convex Relaxations}. 2026 preprint, version 1. Integer formulation, LP relaxation and objective-specific certification. \url{https://arxiv.org/abs/2605.22821v1}
+\item[R7] Malkin et al. \emph{Trajectory balance: Improved credit assignment in GFlowNets}. NeurIPS 2022. \url{https://arxiv.org/abs/2201.13259}
+\item[R8] Lahlou et al. \emph{A theory of continuous generative flow networks}. ICML 2023. Generalized measure-based state spaces. \url{https://proceedings.mlr.press/v202/lahlou23a.html}
+\item[R9] Watrous. \emph{The Theory of Quantum Information}. Cambridge University Press, 2018. Channels, distinguishability and operational resource definitions. \url{https://cs.uwaterloo.ca/~watrous/TQI/}
+\item[R10] Fomin and Zelevinsky. \emph{Cluster algebras I: Foundations}. 2001 preprint; JAMS 2002. \url{https://arxiv.org/abs/math/0104151}
+\item[R11] Buan et al. \emph{Tilting theory and cluster combinatorics}. Advances in Mathematics 204 (2006). \url{https://arxiv.org/abs/math/0402054}
+\item[R12] Keller and Yang. \emph{Derived equivalences from mutations of quivers with potential}. Advances in Mathematics 226 (2011), 2118--2168. \url{https://arxiv.org/abs/0906.0761}
+\item[R13] Assem, Br\"ustle, Charbonneau-Jodoin and Plamondon. \emph{Gentle algebras arising from surface triangulations}. \url{https://arxiv.org/abs/0903.3347}
+\item[R14] Opper, Plamondon and Schroll. \emph{A geometric model for the derived category of gentle algebras}. \url{https://arxiv.org/abs/1801.09659}
+\item[R15] Lekili and Polishchuk. \emph{Derived equivalences of gentle algebras via Fukaya categories}. Version 5, 2019. Homologically smooth graded gentle algebras, boundary stops and line fields. \url{https://arxiv.org/abs/1801.06370v5}
+\item[R16] Chomsky, interview by Polychroniou, 3 May 2023. \emph{Noam Chomsky Speaks on What ChatGPT Is Really Good For}. \url{https://chomsky.info/20230503-2/}
+\item[R17] Marcolli, Berwick and Chomsky. \emph{Syntax-semantics interface: an algebraic model}. Version 1, 2023; especially Section 7, which relates attention to the algebraic framework. \url{https://arxiv.org/abs/2311.06189v1}
+\item[R18] Marcolli and Port. \emph{Graph Grammars, Insertion Lie Algebras, and Quantum Field Theory}. Mathematics in Computer Science 9 (2015), 391--408. \url{https://arxiv.org/abs/1502.07796}
+\item[R19] Kallini et al. \emph{Mission: Impossible Language Models}. ACL 2024. \url{https://aclanthology.org/2024.acl-long.787/}
+\item[R20] Hunter. \emph{Kallini et al. (2024) Do Not Compare Impossible Languages with Constituency-based Ones}. Computational Linguistics 51(2), 2025. \url{https://aclanthology.org/2025.cl-2.7/}
+\item[R21] Gulordava et al. \emph{Colorless Green Recurrent Networks Dream Hierarchically}. NAACL 2018. \url{https://aclanthology.org/N18-1108/}
+\item[R22] Lakretz et al. \emph{The emergence of number and syntax units in LSTM language models}. NAACL 2019. \url{https://aclanthology.org/N19-1002/}
+\item[B1] Bernstein, Gelfand and Gelfand. \emph{Differential operators on the base affine space and a study of $\mathfrak g$-modules}. In \emph{Lie groups and their representations}. Original category/resolution treatment; selected definitions and resolution discussion inspected, not the entire scanned volume. \url{https://www.math.utah.edu/~ptrapa/math-library/bernstein/bgg-resolution.pdf}
+\item[B2] Beilinson, Ginzburg and Soergel. \emph{Koszul duality patterns in representation theory}. JAMS 9 (1996), 473--527; Introduction and Theorems 1.1.1--1.1.3. \url{https://doi.org/10.1090/S0894-0347-96-00192-0}
+\item[B3] Eisenbud, Fl\o ystad and Schreyer. \emph{Sheaf Cohomology and Free Resolutions over Exterior Algebras}. Version 2, 2001; Transactions AMS 355 (2003), 4397--4426. Introduction and correspondence statements. \url{https://arxiv.org/abs/math/0104203v2}
+\item[B4] Humphreys. \emph{Representations of Semisimple Lie Algebras in the BGG Category O}. AMS, 2008. Bibliographic reference; not claimed fully reread. \url{https://doi.org/10.1090/gsm/094}
+\item[B5] Elias and Williamson. \emph{The Hodge theory of Soergel bimodules}. Annals of Mathematics 180 (2014), 1089--1136. External character/positivity theorem, not independently reproved here. \url{https://arxiv.org/abs/1212.0791v2}
+\item[B6] Braden, Licata, Proudfoot and Webster. \emph{Hypertoric category O}. Advances in Mathematics 231 (2012), 1487--1545. Use corrected version 5 (2022), which records a correction to Lemma 8.25. \url{https://arxiv.org/abs/1010.2001v5}
+\end{description}

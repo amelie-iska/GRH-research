@@ -1,0 +1,33 @@
+\documentclass[11pt,oneside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[letterpaper,margin=1in,headheight=15pt]{geometry}
+\usepackage{microtype,booktabs,longtable,array,enumitem,fancyhdr,xcolor}
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true,linkcolor=teal!60!black,urlcolor=blue!60!black]{hyperref}
+\hypersetup{pdftitle={Graph computation, information and category O},pdfauthor={Research supplement prepared for Amelie Schreiber}}
+\setlength{\emergencystretch}{3em}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Graph computation and verifiable research}\fancyfoot[C]{\thepage}
+\setcounter{tocdepth}{1}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\WorkbenchResearchRoot}{.}
+\title{\textbf{Graph computation, information\\and category $\mathcal O$}\\[1em]\Large ToricGT, TropicalGT and Mora-3:\\grammars, compression, analogy and explicit verification}
+\author{Research supplement prepared for Amelie Schreiber}
+\date{14 November 2026 UTC\\\small Versioned working research; not a claim of a solved cosmological or arithmetic conjecture}
+\begin{document}
+\frontmatter\maketitle
+\chapter*{Scope}
+This supplement extends the GRH-research monograph. It separates constructive mathematics, finite Lean proofs, exact arithmetic tests, numerical diagnostics, actual small native-model experiments and proposed integrations. The empirical study uses measured or observation-derived data and separately reports model and retrieval costs. No hidden physical message, cosmic communication, full-model training completion or quantum advantage is claimed. Repository commits and data receipts are the authority for execution status; mathematical constructions alone are not empirical results.
+\tableofcontents\mainmatter
+\chapter{Graph languages and computational mechanisms}
+\input{language-graph-computation}
+\chapter{Physical data, coding and experimental scope}
+\IfFileExists{physical-information.tex}{\input{physical-information}}{The experimental record is stored with the versioned code and dataset.}
+\IfFileExists{results-summary.tex}{\input{results-summary}}{}
+\IfFileExists{bgg-category-o.tex}{\chapter{BGG, category $\mathcal O$ and the structural synthesis}\input{bgg-category-o}}{}
+\appendix\input{references}
+\end{document}
