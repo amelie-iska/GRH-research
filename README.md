@@ -24,7 +24,7 @@ audits state their actual coverage and remaining obligations.
 - **Manuscript:** [compiled PDF](extension/manuscript/main.pdf), [LaTeX source](extension/manuscript/main.tex), [build instructions](extension/manuscript/BUILD.md).
 - **Fluid supplement:** [compiled PDF](extension/manuscript/fluid-extension.pdf), [LaTeX entry point](extension/manuscript/fluid-extension.tex), and [interactive fluid laboratory](extension/site/fluids.html).
 - **Interactive research atlas:** [site source](extension/site/index.html), with six mathematical laboratories, a live 18-qubit circuit/QNN companion, an algebra companion, live quantum ToricGT, diagram/language, synthetic-cosmology and fluid pages, original research pages, downloads, and verification records.
-- **Formal proofs:** [Lean package](extension/lean/README.md), comprising 115 selected declarations freshly checked across six modules with Lean 4.24.0 and a pinned mathlib revision.
+- **Formal proofs:** [Lean package](extension/lean/README.md), comprising 121 selected declarations freshly checked across seven modules with Lean 4.24.0 and a pinned mathlib revision.
 - **Actual GPU experiments:** [quantum methods and results](extension/quantum/README.md), with immutable-input hashes and measured execution records.
 - **Review coverage:** [review ledger](extension/review/README.md), source inventories, book-page coverage, primary-source audits, and explicitly unreviewed material.
 
@@ -161,11 +161,43 @@ Additional reproducible checks:
     python3 extension/code/verify_fluid_interfaces.py
     node extension/site/verify-fluids.cjs
 
-All 115 local Lean declarations were freshly checked, with exact types and
+All 121 selected extension Lean declarations were freshly checked, with exact types and
 axiom reports. The separate pinned upstream Navier–Stokes source audit covers
 the 609-module solution import closure. Its fresh full kernel build did not
 complete because dependency cache downloads were rate-limited; that source
 audit is not represented as a completed continuum proof verification.
+
+## Quantum–tropical operator realizations and control
+
+The new [realization chapter](extension/manuscript/chapters/quantum-tropical-realizations.tex)
+connects finite operator algebras, conservative quantum transport, tropical
+routing, nonlinear feedback and control. Its [primary-source review](extension/review/quantum-tropical-substrates-20261113.md)
+covers seventeen sources and explains proposed mappings to photonic networks,
+polariton fluids, atomic gases, superconducting cavities, magnetic reservoirs,
+soft bodies and natural photosynthetic transport. Generative material and
+photonic design are placed in an explicit physics-and-control validation loop.
+The physical realization and trained fluid-model milestones remain research goals.
+
+The [exact two-qubit controller](extension/code/quantum_gain_control.py)
+has a globally derived weighted trace-distance gain of **5/8**, an explicit
+fixed point, retained coherence, saturated feedback and a deterministic
+readout-error budget. The [verification record](extension/review/final-pass/quantum-gain-control/verification.json)
+checks rational channel matrices, coherent states, actual trace-distance bounds,
+trajectories and path sums. This is a classical exact simulation of separately
+accessible ensemble states, with no new hardware or training claim.
+
+The [weighted-gain certificate checker](extension/code/check_weighted_gain_witness.py)
+independently replays canonical rational evidence using integer arithmetic.
+Fifteen [test methods](extension/review/final-pass/weighted-gain/verification.json)
+cover valid, rejected, malformed and optimized-runtime cases. Six new
+[Lean results](extension/lean/WeightedGainContracts.lean) prove the algebraic
+gain and residual-propagation contracts, with precise partial manuscript maps.
+
+The [continuation plan and checkpoints](planning/continuation-20261113-b/)
+record the corrected exact-input boundary and publication progress. The
+249-entry video transcript has been independently reread and canonically
+hashed; a private cache retains the text, while public evidence retains only
+provenance. The six original-paper full-text gaps remain open.
 
 ## Sources, scope and rights
 
@@ -180,11 +212,11 @@ not redistributed here. Their bibliographic references, review notes and
 hashes are retained. Existing upstream authorship and notices are preserved.
 No new open-source license is imposed on inherited material.
 
-The revised manuscript has **341 pages**, with a separate **90-page fluid
+The revised manuscript has **355 pages**, with a separate **105-page fluid
 supplement**. Its [claim register](extension/review/claim-register.md) contains
-**269 named environments**: 257 local arguments, five specially marked
+**273 named environments**: 261 local arguments, five specially marked
 conditional arguments, six cited external results, and one open problem.
-The **262 attached proofs** are written arguments. Nine additional external
+The **266 attached proofs** are written arguments. Nine additional external
 statements in prose have explicit source and proof-scope classifications.
 
 The [independent second audit](extension/review/second-pass-math-audit.md)
@@ -192,12 +224,12 @@ covered all 125 original statements and all 55 additions in the earlier
 180-environment version. That historical coverage is preserved. The subsequent
 [fluid review records](extension/review/navier-stokes/) document the additional
 source reading, theorem checks, corrections, and their own reviewed snapshots;
-the earlier audit is not presented as an audit of all 269 current environments.
+the earlier audit is not presented as an audit of all 273 current environments.
 
-The six Lean modules contain **115 kernel-checked declarations**, all freshly
+The seven Lean modules contain **121 kernel-checked declarations**, all freshly
 rechecked with zero warnings. The [formal type map](extension/review/formal-type-map.md)
-records every declaration and maps **68** to precise partial components of
-**25** manuscript environments; no whole composite manuscript theorem is
+records every declaration and maps **74** to precise partial components of
+**27** manuscript environments; no whole composite manuscript theorem is
 labelled fully formalized. The [fresh verification record](extension/lean/final-verification/verification.json)
 preserves the exact tools, source hashes, axiom inventories, and kernel logs.
 It covers the local companion and leaves the separately documented upstream
@@ -231,6 +263,6 @@ The [fresh inherited audit](extension/lean/inherited-verification/all/verificati
 also checks **368 declarations across 37 original modules**: 361 analytic
 interface declarations and seven arithmetic declarations. All pass with zero
 warnings and exact type/axiom reports. This inventory is separate from the
-extension's 115 declarations; together they cover 483 distinct local project
-declarations across 43 source files. These counts describe checked declarations,
+extension's 121 declarations; together they cover 489 distinct local project
+declarations across 44 source files. These counts describe checked declarations,
 not whole manuscript theorems or an independently rebuilt upstream continuum proof.

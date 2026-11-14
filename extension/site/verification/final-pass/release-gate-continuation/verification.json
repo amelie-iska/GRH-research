@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at_utc": "2026-11-14T01:52:39.823064+00:00",
+  "source_sha256": {
+    "extension/code/release_freshness.py": "e0a6ee89005810fb1e0e4ae15f3af581e77e837eeea11e8277427084e5a48350",
+    "extension/code/test_release_freshness.py": "b764c334e05b771cedfdaaec85d61c66f68ba20b3f5ee878c53c6490fe33221d"
+  },
+  "unit_tests": [
+    {
+      "mode": "normal",
+      "command": [
+        "python",
+        "-B",
+        "extension/code/test_release_freshness.py"
+      ],
+      "exit_code": 0,
+      "test_methods_run": 33,
+      "elapsed_seconds": 11.027,
+      "log": "tests-mirror-normal.log",
+      "log_sha256": "eedc643cbac1ee7d11f6d506c6bc6f168ced3ce34882e35144e567f5b4e84a0f"
+    },
+    {
+      "mode": "optimized",
+      "command": [
+        "python",
+        "-B",
+        "-O",
+        "extension/code/test_release_freshness.py"
+      ],
+      "exit_code": 0,
+      "test_methods_run": 33,
+      "elapsed_seconds": 10.951,
+      "log": "tests-mirror-optimized.log",
+      "log_sha256": "aeecc81578e8a54eb97425ea8b87dff5b75360c63a87f4be865acd3c186119cf"
+    }
+  ],
+  "git_diff_check_exit_code": 0,
+  "full_clone_source_gate": {
+    "status": "passed",
+    "checks_run": 752,
+    "report": "current-root-mirror-final.json",
+    "report_sha256": "485f12ff692e1a4bc5ef76318afccc8bfca04a3525b090c9c1a97034f1a44ad4",
+    "site_checked": false,
+    "archives_checked": false
+  },
+  "recursive_public_evidence_mirrors": [
+    "weighted-gain",
+    "quantum-gain-control",
+    "release-gate-continuation"
+  ],
+  "mirror_regression": "Three nested directories and both linked verification.json files; each omitted public copy is rejected; credential paths are excluded.",
+  "summary": {
+    "pdfs": {
+      "main": {
+        "pages": 355,
+        "pdf_sha256": "9d0a9a4f0529e13522c9b1d64859cd8c7e674340940b9e6aaa826889e6bbf111",
+        "pdf_bytes": 2214862
+      },
+      "fluid-extension": {
+        "pages": 105,
+        "pdf_sha256": "806c46ed5b5a079441ef628346dda82db935aa5e6083af5416709c3fed385972",
+        "pdf_bytes": 923429
+      }
+    },
+    "local_finite_declarations": 121,
+    "local_modules": 7,
+    "inherited_declarations": 368,
+    "all_local_declarations": 489,
+    "weighted_gain_test_methods": 15,
+    "quantum_control_checks": {
+      "channel_parameter_cases": 180,
+      "choi_principal_minors": 2700,
+      "coherent_matrix_bloch_comparisons": 2160,
+      "fixed_control_distance_equalities": 2160,
+      "controller_pair_block_bounds": 256,
+      "trajectory_state_budget_checks": 132,
+      "residual_one_step_block_checks": 128,
+      "path_horizons": 8,
+      "invalid_domain_rejections": 20,
+      "independent_gain_replays": 2
+    },
+    "written_claims": {
+      "included_tex_files": 32,
+      "claim_environments": 273,
+      "by_environment": {
+        "proposition": 203,
+        "lemma": 19,
+        "theorem": 45,
+        "corollary": 5,
+        "problem": 1
+      },
+      "by_status": {
+        "local_argument_present": 261,
+        "conditional_local_argument": 5,
+        "external_cited": 6,
+        "proposed_open_problem": 1
+      },
+      "attached_proof_environments": 266,
+      "whole_environments_marked_fully_formalized": 0,
+      "environments_with_partial_formal_components": 27,
+      "verified_declarations_mapped_to_precise_components": 74,
+      "authoritative_verified_declarations": 121,
+      "selected_external_prose_statements": 9
+    },
+    "crypto_tests": 31,
+    "upstream_build_status": "fresh_source_audit_passed; fresh_final_kernel_build_not_completed",
+    "upstream_final_kernel_verified": false
+  },
+  "prior_iteration_reports_retained": [
+    "current-root.json",
+    "current-root.log",
+    "current-root-final.json",
+    "current-root-final.log",
+    "verification-before-mirror.json",
+    "tests-normal.log",
+    "tests-optimized.log"
+  ],
+  "scope": "Release consistency gate and bounded independent integer witness replay. Unit fixtures are synthetic, not proof evidence. The actual source gate was run after ROOT SOURCE READY; actual site and archive checks remain for the root publication pass. No heavy Lean rerun, new theorem, upstream verification, website deployment or machine synchronization is asserted by this receipt."
+}

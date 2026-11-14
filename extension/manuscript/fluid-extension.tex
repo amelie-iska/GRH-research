@@ -73,7 +73,7 @@
 \input{lean-listings-unicode}
 \title{\textbf{Fluid Dynamics, Orders\\and Quantum Information}\\[1em]\Large Microscopic reduction, finite complexes, quantum learning\\and a structural reading of the 2026 Navier--Stokes release}
 \author{Prepared for Amelie Schreiber\\[.4em]\normalsize A standalone extension of the research monograph}
-\date{13 November 2026\\\small Version 1.3: audited fluid and quiver interfaces}
+\date{13 November 2026\\\small Version 1.4: operator realizations and certified control}
 \begin{document}
 \frontmatter
 \hypersetup{pageanchor=false}
@@ -81,7 +81,7 @@
 \clearpage
 \hypersetup{pageanchor=true}
 \chapter*{Purpose and scope}
-This supplement develops the fluid-dynamics extension of \emph{Orders, Complexes, Cryptography and Quantum Yang--Mills}. It contains the same six fluid, reduction and quiver chapters and the fluid verification appendix as the complete monograph, with independent pagination. The bibliography identifies the primary sources, and the companion repository contains the source coverage, exact formal declarations, numerical programs and interactive laboratory.
+This supplement develops the fluid-dynamics extension of \emph{Orders, Complexes, Cryptography and Quantum Yang--Mills}. It contains the same seven fluid, reduction, quiver and operator-realization chapters and the fluid verification appendix as the complete monograph, with independent pagination. The bibliography identifies the primary sources, and the companion repository contains the source coverage, exact formal declarations, numerical programs and interactive laboratory.
 
 The contribution is an explicit mathematical interpretation and a collection of proved interfaces. The released continuum singularity theorem is attributed to its source. The selected local Lean declarations and finite computations have their own verification records. We do not present a stronger unforced theorem, a fully formalized version of every chapter, or a trained fluid model where none was executed.
 \tableofcontents
@@ -92,9 +92,10 @@ The contribution is an explicit mathematical interpretation and a collection of 
 \input{chapters/quantum-fluid}
 \input{chapters/reduction-contracts}
 \input{chapters/toric-transport-audit}
+\input{chapters/quantum-tropical-realizations}
 \appendix
 \input{chapters/fluid-verification}
 \backmatter
 \bibliographystyle{plainnat}
-\bibliography{references,ns-microscopic,ns-release,ns-structures,ns-spin,reduction-contracts,toric-audit}
+\bibliography{references,ns-microscopic,ns-release,ns-structures,ns-spin,reduction-contracts,toric-audit,quantum-tropical-substrates}
 \end{document}

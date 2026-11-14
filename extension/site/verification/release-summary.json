@@ -3,39 +3,54 @@
   "summary": {
     "pdfs": {
       "main": {
-        "pages": 341,
-        "pdf_sha256": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b",
-        "pdf_bytes": 2145675
+        "pages": 355,
+        "pdf_sha256": "9d0a9a4f0529e13522c9b1d64859cd8c7e674340940b9e6aaa826889e6bbf111",
+        "pdf_bytes": 2214862
       },
       "fluid-extension": {
-        "pages": 90,
-        "pdf_sha256": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721",
-        "pdf_bytes": 851343
+        "pages": 105,
+        "pdf_sha256": "806c46ed5b5a079441ef628346dda82db935aa5e6083af5416709c3fed385972",
+        "pdf_bytes": 923429
       }
     },
-    "local_finite_declarations": 115,
-    "local_modules": 6,
+    "local_finite_declarations": 121,
+    "local_modules": 7,
+    "inherited_declarations": 368,
+    "all_local_declarations": 489,
+    "weighted_gain_test_methods": 15,
+    "quantum_control_checks": {
+      "channel_parameter_cases": 180,
+      "choi_principal_minors": 2700,
+      "coherent_matrix_bloch_comparisons": 2160,
+      "fixed_control_distance_equalities": 2160,
+      "controller_pair_block_bounds": 256,
+      "trajectory_state_budget_checks": 132,
+      "residual_one_step_block_checks": 128,
+      "path_horizons": 8,
+      "invalid_domain_rejections": 20,
+      "independent_gain_replays": 2
+    },
     "written_claims": {
-      "included_tex_files": 31,
-      "claim_environments": 269,
+      "included_tex_files": 32,
+      "claim_environments": 273,
       "by_environment": {
-        "proposition": 200,
+        "proposition": 203,
         "lemma": 19,
-        "theorem": 44,
+        "theorem": 45,
         "corollary": 5,
         "problem": 1
       },
       "by_status": {
-        "local_argument_present": 257,
+        "local_argument_present": 261,
         "conditional_local_argument": 5,
         "external_cited": 6,
         "proposed_open_problem": 1
       },
-      "attached_proof_environments": 262,
+      "attached_proof_environments": 266,
       "whole_environments_marked_fully_formalized": 0,
-      "environments_with_partial_formal_components": 25,
-      "verified_declarations_mapped_to_precise_components": 68,
-      "authoritative_verified_declarations": 115,
+      "environments_with_partial_formal_components": 27,
+      "verified_declarations_mapped_to_precise_components": 74,
+      "authoritative_verified_declarations": 121,
       "selected_external_prose_statements": 9
     },
     "crypto_tests": 31,
@@ -43,15 +58,18 @@
     "upstream_final_kernel_verified": false
   },
   "source_sha256": {
-    "extension/manuscript/build-verification.json": "882210923badf9c811c2dc89ccb0ad4cbcfc7444d6e7856e7c6ceca9f1ab05e4",
-    "extension/manuscript/fluid-build-verification.json": "923a0006198b0ea0938c4578bce1337f9a750e7db16b27ab3704868b9a7b255c",
-    "extension/lean/final-verification/verification.json": "0e22a8acbc9e9076a63af813d2f719cd64e27d30256f6f37c4950d77ac0868c8",
-    "extension/review/claim-register.json": "7be55113f7d4d6371df6dfc010f1934b0a0a84ae1192eb56418ab03e712c10b4",
-    "extension/review/formal-type-map.json": "d5e3934c5b92d271dce484fc469c214b6ae5c4b0d453776ffa736625aceded1f",
+    "extension/manuscript/build-verification.json": "43fbdd9696db757659cb6dfa3f2fd71c30a560cef310ffb6394fadd04342d9c5",
+    "extension/manuscript/fluid-build-verification.json": "68d0c8c8ab41c642af70ccee379367525cb64162cb20adf7cbe7e7cf76c17ca1",
+    "extension/lean/final-verification/verification.json": "465cb1eceeb51316595b205d1e9cd532cf4705d62c4c767de8c879247f2443a1",
+    "extension/review/claim-register.json": "1d4971901efcc66266be60ede5d7384e21d9d05df35d3bd539a92a6a76dfda2b",
+    "extension/review/formal-type-map.json": "53735196176c86577a4a24d9d25ecc35f198424865441818218ad82f84c8aebf",
     "extension/crypto/verification.json": "3da9ea2a7b1ccd788d9b24100a5d2193a1931c85118d67482caf9ed0f2539da7",
-    "extension/review/final-pass/upstream-build-current.json": "0b7139762cff156d39311ad8d027471dc79cd9830fa0efd992700aafb2351d2f",
-    "extension/code/release_freshness.py": "9977ff39ad9773ee3bd6b44ae594c8d232bd19084a80d5fa7b483ca20b6103df",
-    "extension/code/refresh_site_release.py": "07648ee717350ee2700906443b106813395de788cbc1decefe18177683dc4c4e"
+    "extension/lean/inherited-verification/all/verification.json": "ee0968c2301ac20682b4213ae68bb7a1e7c114b82c247c07ac54cf49d7c648f6",
+    "extension/review/final-pass/weighted-gain/verification.json": "1cf941bfa7e87470605366f9f75876b96569d877bfd71793605b7e55ad51a898",
+    "extension/review/final-pass/quantum-gain-control/verification.json": "8faba74695eaf64b6ca85345c3b028d2b005ab2a03f7a0d183ae5596ec3ae51f",
+    "extension/review/final-pass/upstream-build-current.json": "1a690c5ddb10e7e1c5f73a339be9daa88645dae2515c9df1a0ce3f82725da827",
+    "extension/code/release_freshness.py": "e0a6ee89005810fb1e0e4ae15f3af581e77e837eeea11e8277427084e5a48350",
+    "extension/code/refresh_site_release.py": "ffae114c9a9fce33b852b37250a23b0a62484f2ed6006796952da2e3e5d7ac80"
   },
   "copied_files": [
     {
@@ -95,59 +113,184 @@
       "sha256": "317482e234ac21f26b4a355b2f371a66177e6c60038ec74c52737c478a9e7162"
     },
     {
+      "source": "extension/lean/final-verification/WeightedGainContracts.log",
+      "target": "verification/lean-current/WeightedGainContracts.log",
+      "sha256": "79be90d4807d1eb48df1f6478c3a2004db7cc0d90093f0af0c45a45225c0ffad"
+    },
+    {
       "source": "extension/lean/final-verification/verification.json",
       "target": "verification/lean-current/verification.json",
-      "sha256": "0e22a8acbc9e9076a63af813d2f719cd64e27d30256f6f37c4950d77ac0868c8"
+      "sha256": "465cb1eceeb51316595b205d1e9cd532cf4705d62c4c767de8c879247f2443a1"
     },
     {
       "source": "extension/manuscript/build-verification.json",
       "target": "verification/pdf-build.json",
-      "sha256": "882210923badf9c811c2dc89ccb0ad4cbcfc7444d6e7856e7c6ceca9f1ab05e4"
+      "sha256": "43fbdd9696db757659cb6dfa3f2fd71c30a560cef310ffb6394fadd04342d9c5"
     },
     {
       "source": "extension/manuscript/fluid-build-verification.json",
       "target": "verification/fluid-build-verification.json",
-      "sha256": "923a0006198b0ea0938c4578bce1337f9a750e7db16b27ab3704868b9a7b255c"
+      "sha256": "68d0c8c8ab41c642af70ccee379367525cb64162cb20adf7cbe7e7cf76c17ca1"
     },
     {
       "source": "extension/manuscript/fluid-extension.pdf",
       "target": "downloads/fluid-extension.pdf",
-      "sha256": "170fe2fb31d43e7fef6c0d2a5b162d66cf33d9b7cba54de16ec11b7124c91721"
+      "sha256": "806c46ed5b5a079441ef628346dda82db935aa5e6083af5416709c3fed385972"
     },
     {
       "source": "extension/manuscript/main.pdf",
       "target": "downloads/paper.pdf",
-      "sha256": "74910b1c9d54d2112386198e46e75df6a7f24b2ccc006806f3923c087369ea7b"
+      "sha256": "9d0a9a4f0529e13522c9b1d64859cd8c7e674340940b9e6aaa826889e6bbf111"
+    },
+    {
+      "source": "extension/manuscript/quantum-tropical-substrates.bib",
+      "target": "verification/quantum-tropical-substrates.bib",
+      "sha256": "2f23ba66b2ebcb1f8b25b2a04d288ca72e68c98eb3e8c55b110cdad147be4625"
     },
     {
       "source": "extension/review/claim-register.json",
       "target": "verification/claim-register.json",
-      "sha256": "7be55113f7d4d6371df6dfc010f1934b0a0a84ae1192eb56418ab03e712c10b4"
+      "sha256": "1d4971901efcc66266be60ede5d7384e21d9d05df35d3bd539a92a6a76dfda2b"
     },
     {
       "source": "extension/review/claim-register.md",
       "target": "verification/claim-register.md",
-      "sha256": "8b1827fd47082a353fc8f2f3599a33827303c32cc89edcb467647ff9d47deb35"
+      "sha256": "2ea974c5d09559982d190ce97e297fd078d05f86075447c8522bd1d10d43da74"
+    },
+    {
+      "source": "extension/review/final-pass/quantum-gain-control/gain-accepted-replay.json",
+      "target": "verification/final-pass/quantum-gain-control/gain-accepted-replay.json",
+      "sha256": "060d903b18f36b351ddecd298ada16f789ab667b4fd8f19f7fbfeb87c16ab8dc"
+    },
+    {
+      "source": "extension/review/final-pass/quantum-gain-control/gain-accepted.json",
+      "target": "verification/final-pass/quantum-gain-control/gain-accepted.json",
+      "sha256": "98b7294b4d6c62993c6d0018a527adc71d91ee100a451289f66d3cf1aefdbd73"
+    },
+    {
+      "source": "extension/review/final-pass/quantum-gain-control/gain-rejected-replay.json",
+      "target": "verification/final-pass/quantum-gain-control/gain-rejected-replay.json",
+      "sha256": "b298557a0fd79da0e6a28d28a390c571e6cc8898d58c9645ee843de340e6658d"
+    },
+    {
+      "source": "extension/review/final-pass/quantum-gain-control/gain-rejected.json",
+      "target": "verification/final-pass/quantum-gain-control/gain-rejected.json",
+      "sha256": "c53bfd593ac4b76bff8801840ba09603eac1ce128951792f96a83fde3de62f40"
+    },
+    {
+      "source": "extension/review/final-pass/quantum-gain-control/path-comparison.json",
+      "target": "verification/final-pass/quantum-gain-control/path-comparison.json",
+      "sha256": "25674fb69f9ffa4d78b3e3753788d4e80f34f5c0358cf05e25cbbf38f996d2ab"
+    },
+    {
+      "source": "extension/review/final-pass/quantum-gain-control/trajectories.json",
+      "target": "verification/final-pass/quantum-gain-control/trajectories.json",
+      "sha256": "ba6036b95fe6503e5cce686ba77eb6f16b6e8f87a12b03d65bda6ef16b0e919a"
+    },
+    {
+      "source": "extension/review/final-pass/quantum-gain-control/verification.json",
+      "target": "verification/final-pass/quantum-gain-control/verification.json",
+      "sha256": "8faba74695eaf64b6ca85345c3b028d2b005ab2a03f7a0d183ae5596ec3ae51f"
+    },
+    {
+      "source": "extension/review/final-pass/release-gate-continuation/current-root-mirror-final.json",
+      "target": "verification/final-pass/release-gate-continuation/current-root-mirror-final.json",
+      "sha256": "485f12ff692e1a4bc5ef76318afccc8bfca04a3525b090c9c1a97034f1a44ad4"
+    },
+    {
+      "source": "extension/review/final-pass/release-gate-continuation/tests-mirror-normal.log",
+      "target": "verification/final-pass/release-gate-continuation/tests-mirror-normal.log",
+      "sha256": "eedc643cbac1ee7d11f6d506c6bc6f168ced3ce34882e35144e567f5b4e84a0f"
+    },
+    {
+      "source": "extension/review/final-pass/release-gate-continuation/tests-mirror-optimized.log",
+      "target": "verification/final-pass/release-gate-continuation/tests-mirror-optimized.log",
+      "sha256": "aeecc81578e8a54eb97425ea8b87dff5b75360c63a87f4be865acd3c186119cf"
+    },
+    {
+      "source": "extension/review/final-pass/release-gate-continuation/verification.json",
+      "target": "verification/final-pass/release-gate-continuation/verification.json",
+      "sha256": "c1ab0c0c113edf478e96f55a1f378de0757e5fe5c3a2cabfa1b8249ad1961dc3"
     },
     {
       "source": "extension/review/final-pass/upstream-build-current.json",
       "target": "verification/final-pass/upstream-build-current.json",
-      "sha256": "0b7139762cff156d39311ad8d027471dc79cd9830fa0efd992700aafb2351d2f"
+      "sha256": "1a690c5ddb10e7e1c5f73a339be9daa88645dae2515c9df1a0ce3f82725da827"
     },
     {
       "source": "extension/review/final-pass/upstream-build-current.md",
       "target": "verification/final-pass/upstream-build-current.md",
-      "sha256": "18c5bdf8794f08940fd702afe9a0e251d952cb56716f65cf1476c553798e88c5"
+      "sha256": "2f478764ea81006a90bbd61429c1f4cc28085dd6a0586cec4b01e81d15b41a94"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/manifest.json",
+      "target": "verification/final-pass/weighted-gain/manifest.json",
+      "sha256": "b600750cbb43e6426bd5c2f3b984d02df178fde503c5efd914e37b3191ba3099"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/precorrection.json",
+      "target": "verification/final-pass/weighted-gain/precorrection.json",
+      "sha256": "fa6e30f9de1a1fad1813c336c9b5982cd701ec82a4de51a2996e2120e3bab1f3"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/replay-accepted.json",
+      "target": "verification/final-pass/weighted-gain/replay-accepted.json",
+      "sha256": "ceeb2e6fc9b8154dd172b7e59fcc60ec34d1eb10c2e3b80a1ad03d14541fe754"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/replay-noncontracting.json",
+      "target": "verification/final-pass/weighted-gain/replay-noncontracting.json",
+      "sha256": "0173ec4441952e951a910b577dbb39e318979a386cd95d1be23ed4102987acbd"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/replay-rejected.json",
+      "target": "verification/final-pass/weighted-gain/replay-rejected.json",
+      "sha256": "aa45839fb1fa2f97ff0a0a1f27220212dc8773b2717fe5ea46f243d780ceccd9"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/replay-subnormal-exact-rejected.json",
+      "target": "verification/final-pass/weighted-gain/replay-subnormal-exact-rejected.json",
+      "sha256": "02f2875a6d00c15220f6b8d66baf41b0ff31c967918ab6af7b112b5eb5aa37b8"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/verification.json",
+      "target": "verification/final-pass/weighted-gain/verification.json",
+      "sha256": "1cf941bfa7e87470605366f9f75876b96569d877bfd71793605b7e55ad51a898"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/witness-accepted.json",
+      "target": "verification/final-pass/weighted-gain/witness-accepted.json",
+      "sha256": "0012ab3f6c1ac049cb4b4092e20fc341ca36cc2d1faffb876e7e2d6d327855bb"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/witness-noncontracting.json",
+      "target": "verification/final-pass/weighted-gain/witness-noncontracting.json",
+      "sha256": "49ad324ea0e2734d2af6b637a9f6725eab16c718997fe5a553304b7dfd60cad3"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/witness-rejected.json",
+      "target": "verification/final-pass/weighted-gain/witness-rejected.json",
+      "sha256": "dd5944df816fce8e3a0f062e51ed4fafdd6d47c4bb05ac6508711bb10fc36171"
+    },
+    {
+      "source": "extension/review/final-pass/weighted-gain/witness-subnormal-exact-rejected.json",
+      "target": "verification/final-pass/weighted-gain/witness-subnormal-exact-rejected.json",
+      "sha256": "72b8d9648c2cac826538e6bc9b01ad4e3dd8b13782bf0c16c3fdf40f3ae3d86c"
     },
     {
       "source": "extension/review/formal-type-map.json",
       "target": "verification/formal-type-map.json",
-      "sha256": "d5e3934c5b92d271dce484fc469c214b6ae5c4b0d453776ffa736625aceded1f"
+      "sha256": "53735196176c86577a4a24d9d25ecc35f198424865441818218ad82f84c8aebf"
     },
     {
       "source": "extension/review/formal-type-map.md",
       "target": "verification/formal-type-map.md",
-      "sha256": "88108663286a7e4e50831039b41840ca20ffa70eeb3a8873848e8e62918d82f8"
+      "sha256": "8b0f87b1f11376be731fb1fd57407b47144506e2e36c7dc59e0dd6e219ef0437"
+    },
+    {
+      "source": "extension/review/quantum-tropical-substrates-20261113.md",
+      "target": "verification/quantum-tropical-substrates-20261113.md",
+      "sha256": "df9b22b0056ea5464f9d6cb6cc74340a850cd68a7542ea236b1ad01be11f7ea8"
     },
     {
       "source": "extension/verification/algebra-browser-qa.json",
@@ -252,12 +395,12 @@
     {
       "source": "extension/verification/verification-runtime-optimized.json",
       "target": "verification/verification-runtime-optimized.json",
-      "sha256": "e9c58baa9a5c18687483dfa9c257a10269a5ad5af9127263cff09fe809b18f7a"
+      "sha256": "7b9b48810a2e3e7fe7f08c986c50a179a45d6e01dbf9d51959a653dbff227448"
     },
     {
       "source": "extension/verification/verification-runtime.json",
       "target": "verification/verification-runtime.json",
-      "sha256": "55aa4c851112eb0e75ad317286daf85df77806ac17faad8547c7e5cf23dbe0c3"
+      "sha256": "13677402163fb5502aea21dc820477397068db9a4409d7d015f411bacc7d3833"
     }
   ],
   "scope": "Public metadata generated from source-current local records. This does not attest deployment, upstream continuum proof verification, whole-manuscript formalization or cryptographic security."

@@ -12,6 +12,8 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import subprocess
+import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -35,6 +37,30 @@ SITE_COPIES = {
     "extension/crypto/verification.log": "verification/crypto/verification.log",
     "extension/review/final-pass/upstream-build-current.json": "verification/final-pass/upstream-build-current.json",
     "extension/review/final-pass/upstream-build-current.md": "verification/final-pass/upstream-build-current.md",
+    "extension/review/quantum-tropical-substrates-20261113.md": "verification/quantum-tropical-substrates-20261113.md",
+    "extension/manuscript/quantum-tropical-substrates.bib": "verification/quantum-tropical-substrates.bib",
+}
+WEIGHTED_SOURCES = {
+    "extension/code/verify_toric_transport.py", "extension/code/check_weighted_gain_witness.py",
+    "extension/code/test_weighted_gain.py",
+}
+QUANTUM_SOURCES = {
+    "extension/code/quantum_gain_control.py", "extension/code/verify_quantum_gain_control.py",
+    "extension/code/verify_toric_transport.py", "extension/code/check_weighted_gain_witness.py",
+}
+WEIGHTED_CASES = {
+    "accepted": (0, "certified", True), "noncontracting": (0, "certified", False),
+    "rejected": (2, "rejected", False), "subnormal-exact-rejected": (2, "rejected", False),
+}
+QUANTUM_ARTIFACTS = {
+    "trajectories.json", "path-comparison.json", "gain-accepted.json", "gain-accepted-replay.json",
+    "gain-rejected.json", "gain-rejected-replay.json",
+}
+QUANTUM_COUNTERS = {
+    "channel_parameter_cases", "choi_principal_minors", "coherent_matrix_bloch_comparisons",
+    "fixed_control_distance_equalities", "controller_pair_block_bounds",
+    "trajectory_state_budget_checks", "residual_one_step_block_checks", "path_horizons",
+    "invalid_domain_rejections", "independent_gain_replays",
 }
 
 
@@ -104,6 +130,12 @@ def site_copy_map(root: Path) -> dict[str, str]:
     for path in (root / "extension/verification").glob("*"):
         if path.is_file() and not excluded_credential_path(path.relative_to(root)):
             copies[path.relative_to(root).as_posix()] = "verification/" + path.name
+    for name in ("weighted-gain", "quantum-gain-control", "release-gate-continuation"):
+        directory = root / "extension/review/final-pass" / name
+        for path in sorted(directory.rglob("*")):
+            if path.is_file() and not excluded_credential_path(path.relative_to(root)):
+                copies[path.relative_to(root).as_posix()] = (
+                    "verification/final-pass/" + name + "/" + path.relative_to(directory).as_posix())
     return copies
 
 
@@ -138,10 +170,12 @@ def check_release(root: Path = ROOT, *, site: bool = False,
         inputs[rel] = value
         return value
 
-    def match(path: Path, expected: str | None, code: str) -> None:
+    def match(path: Path, expected: str | None, code: str) -> bool:
         actual = file_hash(path)
-        require(bool(expected) and actual == expected, code,
+        valid = bool(expected) and actual == expected
+        require(valid, code,
                 str(path.relative_to(root)) if path.is_relative_to(root) else str(path))
+        return valid
 
     def read_json(path: Path) -> dict:
         if file_hash(path) is None:
@@ -154,6 +188,48 @@ def check_release(root: Path = ROOT, *, site: bool = False,
         except (ValueError, OSError) as error:
             require(False, "valid_json_object", str(path), str(error))
             return {}
+
+    def bind_sources(record: dict, expected: set[str], label: str) -> bool:
+        recorded = record.get("source_sha256", {})
+        valid = isinstance(recorded, dict) and set(recorded) == expected
+        require(valid, label + "_source_inventory", label)
+        if not isinstance(recorded, dict):
+            recorded = {}
+        results = [match(root / name, recorded.get(name), label + "_source_hash")
+                   for name in sorted(expected)]
+        return valid and all(results)
+
+    def bind_artifacts(directory: Path, recorded: object, expected: set[str], label: str) -> bool:
+        valid = isinstance(recorded, dict) and set(recorded) == expected
+        require(valid, label + "_artifact_inventory", directory.relative_to(root).as_posix())
+        if not isinstance(recorded, dict):
+            recorded = {}
+        results = [match(directory / name, recorded.get(name), label + "_artifact_hash")
+                   for name in sorted(expected)]
+        return valid and all(results)
+
+    def replay_gain(directory: Path, witness: str, replay: str,
+                    outcome: tuple[int, str, bool], ready: bool) -> None:
+        """Replay only the finite integer witness; expected rejections remain valid evidence."""
+        expected_exit, expected_status, contraction = outcome
+        recorded = read_json(directory / replay)
+        require(recorded.get("status") == expected_status
+                and recorded.get("bound_holds") is (expected_exit == 0)
+                and recorded.get("certifies_contraction") is contraction,
+                "gain_replay_record_status", replay)
+        if not ready:
+            return  # A source/artifact failure is already recorded; do not execute stale code.
+        try:
+            process = subprocess.run(
+                [sys.executable, "-B", str(root / "extension/code/check_weighted_gain_witness.py"),
+                 str(directory / witness)], cwd=root, text=True, capture_output=True, timeout=20)
+            actual = json.loads(process.stdout)
+            require(process.returncode == expected_exit and actual == recorded
+                    and not process.stderr,
+                    "gain_replay_matches_record", witness,
+                    f"Expected exit {expected_exit}; observed {process.returncode}.")
+        except (OSError, ValueError, subprocess.SubprocessError) as error:
+            require(False, "gain_replay_matches_record", witness, str(error))
 
     source = root / "extension/manuscript"
     pdf_metadata = {}
@@ -199,6 +275,7 @@ def check_release(root: Path = ROOT, *, site: bool = False,
     match(lean_root / "verify_all.py", formal.get("checker_sha256"), "formal_checker_hash")
     match(lean_root / "lakefile.toml", formal.get("lakefile_sha256"), "formal_configuration_hash")
     declaration_count = 0
+    formal_names = []
     for entry in formal.get("modules", []):
         name = entry.get("module", "unknown")
         match(root / entry["source"], entry.get("source_sha256"), "formal_source_hash")
@@ -215,6 +292,7 @@ def check_release(root: Path = ROOT, *, site: bool = False,
                 and not entry.get("unexpected_axioms"), "formal_axiom_boundary", name)
         require(len(declarations) == entry.get("declaration_count"), "formal_module_count", name)
         declaration_count += len(declarations)
+        formal_names.extend(declarations)
         if site:
             match(root / "extension/site/verification/lean-current" / entry["log"],
                   entry.get("log_sha256"), "site_formal_log")
@@ -230,6 +308,158 @@ def check_release(root: Path = ROOT, *, site: bool = False,
     if site:
         match(root / "extension/site/verification/lean-current/verification.json",
               file_hash(lean_root / "final-verification/verification.json"), "site_formal_record")
+
+    # This binding requires a full clone. The compact companion ZIP deliberately
+    # includes the extension and its evidence, not the inherited source packages.
+    inherited_root = lean_root / "inherited-verification/all"
+    inherited = read_json(inherited_root / "verification.json")
+    require(inherited.get("status") == "verified" and inherited.get("package") == "all"
+            and inherited.get("blocked_module_count") == 0
+            and inherited.get("configuration_unchanged_during_check") is True
+            and inherited.get("warnings_treated_as_errors") is True,
+            "inherited_record_status", "inherited-verification/all/verification.json")
+    provenance = inherited.get("provenance_sha256", {})
+    for key, path in {"checker": lean_root / "verify_inherited.py",
+                      "evidence_policy": lean_root / "verify_all.py",
+                      "repository_mathlib_manifest": root / "lean-analytic/mathlib-manifest.json"}.items():
+        match(path, provenance.get(key), "inherited_provenance_hash")
+    require(inherited.get("lean_version") == formal.get("lean_version")
+            and inherited.get("mathlib_commit") == formal.get("mathlib_commit")
+            and bool(inherited.get("lean_version")) and bool(inherited.get("mathlib_commit"))
+            and provenance.get("mathlib_manifest") == provenance.get("repository_mathlib_manifest"),
+            "inherited_toolchain_consistency", "inherited-verification/all/verification.json")
+    expected_sources = {p.relative_to(root).as_posix() for package in ("lean", "lean-analytic")
+                        for p in (root / package).glob("*.lean")}
+    modules = inherited.get("modules", [])
+    require(bool(list((root / "lean").glob("*.lean")))
+            and bool(list((root / "lean-analytic").glob("*.lean")))
+            and {entry.get("source") for entry in modules} == expected_sources
+            and len(modules) == len(expected_sources),
+            "inherited_source_inventory", "inherited-verification/all/verification.json")
+    inherited_names = []
+    for entry in modules:
+        name = entry.get("source", "unknown")
+        match(root / name, entry.get("source_sha256"), "inherited_source_hash")
+        match(inherited_root / entry["log"], entry.get("log_sha256"), "inherited_log_hash")
+        names = entry.get("declarations", [])
+        axioms = entry.get("axioms_per_declaration", {})
+        printed = entry.get("kernel_printed_types", {})
+        require(entry.get("status") == "verified" and entry.get("exit_code") == 0
+                and entry.get("warning_count") == 0
+                and entry.get("source_unchanged_during_check") is True
+                and entry.get("missing_compiled_dependencies") == [],
+                "inherited_module_status", name)
+        require(bool(names) and len(names) == entry.get("declaration_count")
+                and set(names) == set(axioms) == set(printed)
+                and entry.get("printed_types_cover_every_declaration") is True
+                and all(isinstance(value, str) and value.strip() for value in printed.values())
+                and all(set(value) <= ALLOWED_AXIOMS for value in axioms.values())
+                and not entry.get("unexpected_axioms"), "inherited_type_axiom_boundary", name)
+        inherited_names.extend(names)
+    inherited_count = len(inherited_names)
+    require(len(set(inherited_names)) == inherited_count
+            and set(inherited_names).isdisjoint(formal_names)
+            and inherited_count == inherited.get("declaration_count")
+            == inherited.get("verified_declaration_count")
+            and len(modules) == inherited.get("module_count") == inherited.get("verified_module_count"),
+            "inherited_count_consistency", "inherited-verification/all/verification.json")
+
+    weighted_root = root / "extension/review/final-pass/weighted-gain"
+    weighted = read_json(weighted_root / "verification.json")
+    weighted_manifest = read_json(weighted_root / "manifest.json")
+    require(weighted.get("status") == "passed"
+            and type(weighted.get("test_methods_run")) is int and weighted["test_methods_run"] > 0
+            and all(weighted.get(key) == 0 for key in ("failures", "errors", "skipped"))
+            and weighted.get("sources_unchanged_during_tests") is True
+            and all(type(weighted.get(key)) is int and weighted[key] > 0 for key in
+                    ("randomized_exact_cases_checked", "scalar_rejection_cases",
+                     "derived_field_mutation_cases", "standalone_cli_cases_checked")),
+            "weighted_record_status", "weighted-gain/verification.json")
+    weighted_sources_ok = bind_sources(weighted, WEIGHTED_SOURCES, "weighted")
+    manifest_sources_ok = bind_sources(weighted_manifest, WEIGHTED_SOURCES, "weighted_manifest")
+    weighted_examples = weighted_manifest.get("examples", [])
+    require(weighted_manifest.get("status") == "passed"
+            and isinstance(weighted_examples, list) and len(weighted_examples) == len(WEIGHTED_CASES)
+            and {entry.get("name") for entry in weighted_examples} == set(WEIGHTED_CASES)
+            and weighted_manifest.get("ordinary_regression_equal_to_ae44abb_except_source_hash") is True,
+            "weighted_manifest_status", "weighted-gain/manifest.json")
+    weighted_artifacts = {prefix + name + ".json" for name in WEIGHTED_CASES
+                          for prefix in ("witness-", "replay-")}
+    weighted_artifacts_ok = bind_artifacts(weighted_root, weighted_manifest.get("artifact_sha256"),
+                                           weighted_artifacts, "weighted")
+    for entry in weighted_examples:
+        name = entry.get("name")
+        if name not in WEIGHTED_CASES:
+            continue
+        exit_code, status, contraction = WEIGHTED_CASES[name]
+        witness, replay = "witness-" + name + ".json", "replay-" + name + ".json"
+        hashes = weighted_manifest.get("artifact_sha256", {})
+        require(entry.get("witness") == witness and entry.get("replay") == replay
+                and entry.get("witness_sha256") == hashes.get(witness)
+                and entry.get("replay_sha256") == hashes.get(replay)
+                and entry.get("exit_code") == exit_code and entry.get("status") == status
+                and entry.get("certifies_contraction") is contraction,
+                "weighted_example_metadata", str(name))
+    for name, outcome in WEIGHTED_CASES.items():
+        replay_gain(weighted_root, "witness-" + name + ".json", "replay-" + name + ".json", outcome,
+                    weighted_sources_ok and manifest_sources_ok and weighted_artifacts_ok)
+
+    quantum_root = root / "extension/review/final-pass/quantum-gain-control"
+    quantum = read_json(quantum_root / "verification.json")
+    require(quantum.get("status") == "passed" and quantum.get("sources_unchanged_during_checks") is True,
+            "quantum_record_status", "quantum-gain-control/verification.json")
+    quantum_sources_ok = bind_sources(quantum, QUANTUM_SOURCES, "quantum")
+    quantum_artifacts_ok = bind_artifacts(quantum_root, quantum.get("artifact_sha256"),
+                                          QUANTUM_ARTIFACTS, "quantum")
+    quantum_counts = quantum.get("counts", {})
+    require(isinstance(quantum_counts, dict) and set(quantum_counts) == QUANTUM_COUNTERS
+            and all(type(value) is int and value > 0 for value in quantum_counts.values()),
+            "quantum_counter_inventory", "quantum-gain-control/verification.json")
+    channel = quantum.get("channel_checks", {})
+    trajectory = read_json(quantum_root / "trajectories.json")
+    paths = read_json(quantum_root / "path-comparison.json")
+    parameter_cases = len(channel.get("retentions", [])) * len(channel.get("controls", []))
+    state_fixtures = channel.get("state_fixtures", 0)
+    steps = trajectory.get("steps_per_trajectory", -1)
+    rows = trajectory.get("trajectories", {})
+    valid_trajectories = (type(steps) is int and steps >= 1 and isinstance(rows, dict)
+                          and set(rows) == {"ideal", "bounded_readout_error"}
+                          and all(isinstance(values, list) and len(values) == steps + 1
+                                  and [row.get("step") for row in values] == list(range(steps + 1))
+                                  and all(len(row.get("bloch_states", [])) == 2 for row in values)
+                                  for values in rows.values()))
+    require(valid_trajectories and quantum.get("trajectories", {}).get("steps_per_trajectory") == steps
+            and quantum.get("trajectories", {}).get("states_per_trajectory") == steps + 1,
+            "quantum_trajectory_inventory", "quantum-gain-control/trajectories.json")
+    require(parameter_cases > 0 and type(state_fixtures) is int and state_fixtures > 0
+            and quantum_counts.get("channel_parameter_cases") == parameter_cases
+            and quantum_counts.get("choi_principal_minors") == 15 * parameter_cases
+            and quantum_counts.get("coherent_matrix_bloch_comparisons") == parameter_cases * state_fixtures
+            and quantum_counts.get("fixed_control_distance_equalities") == parameter_cases * state_fixtures
+            and quantum_counts.get("trajectory_state_budget_checks") == 4 * (steps + 1)
+            and quantum_counts.get("residual_one_step_block_checks") == 4 * steps
+            and quantum_counts.get("path_horizons") == len(paths.get("horizons", []))
+            and quantum_counts.get("independent_gain_replays") == 2
+            == len(quantum.get("independent_gain_replays", [])),
+            "quantum_counter_consistency", "quantum-gain-control/verification.json")
+    quantum_outcomes = {"accepted": (0, "certified", True), "rejected": (2, "rejected", False)}
+    replay_metadata = quantum.get("independent_gain_replays", [])
+    require(isinstance(replay_metadata, list) and len(replay_metadata) == 2
+            and {entry.get("name") for entry in replay_metadata} == set(quantum_outcomes),
+            "quantum_replay_inventory", "quantum-gain-control/verification.json")
+    for entry in replay_metadata:
+        name = entry.get("name")
+        if name not in quantum_outcomes:
+            continue
+        exit_code, status, contraction = quantum_outcomes[name]
+        witness = read_json(quantum_root / ("gain-" + name + ".json"))
+        require(entry.get("exit_code") == exit_code and entry.get("status") == status
+                and entry.get("certifies_contraction") is contraction
+                and entry.get("proposed_rate") == witness.get("rate"),
+                "quantum_replay_metadata", str(name))
+    for name, outcome in quantum_outcomes.items():
+        replay_gain(quantum_root, "gain-" + name + ".json", "gain-" + name + "-replay.json", outcome,
+                    quantum_sources_ok and quantum_artifacts_ok)
 
     crypto_root = root / "extension/crypto"
     crypto = read_json(crypto_root / "verification.json")
@@ -259,6 +489,10 @@ def check_release(root: Path = ROOT, *, site: bool = False,
     upstream = read_json(root / "extension/review/final-pass/upstream-build-current.json")
     summary = {"pdfs": pdf_metadata, "local_finite_declarations": declaration_count,
                "local_modules": len(formal.get("modules", [])),
+               "inherited_declarations": inherited_count,
+               "all_local_declarations": declaration_count + inherited_count,
+               "weighted_gain_test_methods": weighted.get("test_methods_run"),
+               "quantum_control_checks": quantum_counts,
                "written_claims": claim.get("counts", {}),
                "crypto_tests": crypto.get("tests_run"),
                "upstream_build_status": upstream.get("status"),
@@ -309,7 +543,7 @@ def check_release(root: Path = ROOT, *, site: bool = False,
     return {"schema_version": 1, "status": "passed" if not failures else "failed",
             "checks_run": checks, "site_checked": site, "archives_checked": archives,
             "summary": summary, "failures": failures, "input_sha256": inputs,
-            "scope": "Offline freshness and consistency of selected source, PDF, Lean, crypto and publication records. No new proof, independent upstream verification, certificate authenticity, browser interaction or deployment success is asserted."}
+            "scope": "Offline freshness and consistency of selected source, PDF, Lean, crypto and publication records, plus bounded independent integer replay of the supplied gain witnesses. Inherited source binding requires a full clone; the compact companion archive is an explicit extension subset. No new proof, independent upstream verification, certificate authenticity, browser interaction or deployment success is asserted."}
 
 
 def main() -> int:

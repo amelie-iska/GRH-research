@@ -2,7 +2,7 @@
 
 This register inventories every theorem, proposition, lemma, corollary, conjecture, and problem environment reachable from the current manuscript main file. It records what evidence is present; it is not a universal proof certificate.
 
-The snapshot contains **270 claim environments** in **31 included TeX files**. **263** have attached local proof environments. 6 general results are explicitly cited external theorems. 5 local arguments are classified as conditional transfer or deduction criteria because their additional inputs are not established by those claims.
+The snapshot contains **273 claim environments** in **32 included TeX files**. **266** have attached local proof environments. 6 general results are explicitly cited external theorems. 5 local arguments are classified as conditional transfer or deduction criteria because their additional inputs are not established by those claims.
 
 A separate list classifies 9 major external statements from the new fluid chapters, including the released continuum theorem and the kinetic-limit and quantum-algorithm literature. These prose records are not added to the number of locally proved environments.
 
@@ -263,6 +263,9 @@ A separate mathematical reading, with per-claim findings and its own reviewed so
 | toric-transport-audit.016 | toric-transport-audit.tex | theorem: Common weighted gain and accumulated residuals | Local argument | Partial components: WeightedGainContracts.gain_bound, WeightedGainContracts.matrix_action_weighted_bound, WeightedGainContracts.gain_iteration_with_residual, WeightedGainContracts.matrix_iteration_with_residual |
 | toric-transport-audit.017 | toric-transport-audit.tex | proposition: Binary log loss with correct endpoint conventions | Local argument | Not mapped |
 | toric-transport-audit.018 | toric-transport-audit.tex | proposition: Independent disjoint components can carry one bit jointly | Local argument | Not mapped |
+| quantum-tropical-realizations.001 | quantum-tropical-realizations.tex | proposition: Conservative transport on a direct-sum algebra | Local argument | Not mapped |
+| quantum-tropical-realizations.002 | quantum-tropical-realizations.tex | proposition: Controlled tropical limit of a positive sum | Local argument | Not mapped |
+| quantum-tropical-realizations.003 | quantum-tropical-realizations.tex | proposition: A physical channel family and a contracting feedback law | Local argument | Not mapped |
 | cyclic-cosmology.001 | cyclic-cosmology.tex | proposition: Connection change and null trajectories | Local argument | Not mapped |
 | cyclic-cosmology.002 | cyclic-cosmology.tex | proposition: Hodge scaling and the four-dimensional Maxwell system | Local argument | Not mapped |
 | cyclic-cosmology.003 | cyclic-cosmology.tex | theorem: Quartic compactification and conformal time | Local argument | Not mapped |
@@ -566,6 +569,7 @@ The remaining verified declarations are not forced into a broader manuscript sta
 
 ## Proposed research and incomplete goals outside the environment list
 
+- **Quantum-tropical fluid realizations and generative substrate design** — Finite channel and feedback statements have written proofs and exact example checks. A trained fluid model, generatively designed physical device, experimental realization and quantum advantage remain separate uncompleted milestones. Source: extension/manuscript/chapters/quantum-tropical-realizations.tex.
 - **Arithmetic zero-location/GRH bridge** — No GRH theorem is asserted; arithmetic identification and analytic convergence inputs remain obligations. Source: extension/manuscript/chapters/foundations.tex.
 - **Uniform metric control for arithmetic modules** — Construct and certify distortion bounds with explicit dependence on arithmetic input sizes. Source: extension/manuscript/chapters/synthesis.tex.
 - **Resource-certified improvements to ECC quantum arithmetic** — A full reversible circuit, ancilla policy, success probability, and cost comparison are required; no general speedup is established. Source: extension/manuscript/chapters/synthesis.tex.

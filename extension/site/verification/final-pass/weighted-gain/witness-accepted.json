@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "kind": "weighted-gain",
+  "gain": [
+    [
+      {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      {
+        "numerator": "2",
+        "denominator": "1"
+      }
+    ],
+    [
+      {
+        "numerator": "1",
+        "denominator": "8"
+      },
+      {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    ]
+  ],
+  "weights": [
+    {
+      "numerator": "4",
+      "denominator": "1"
+    },
+    {
+      "numerator": "1",
+      "denominator": "1"
+    }
+  ],
+  "rate": {
+    "numerator": "1",
+    "denominator": "2"
+  },
+  "row_lhs": [
+    {
+      "numerator": "2",
+      "denominator": "1"
+    },
+    {
+      "numerator": "1",
+      "denominator": "2"
+    }
+  ],
+  "row_rhs": [
+    {
+      "numerator": "2",
+      "denominator": "1"
+    },
+    {
+      "numerator": "1",
+      "denominator": "2"
+    }
+  ],
+  "row_slack": [
+    {
+      "numerator": "0",
+      "denominator": "1"
+    },
+    {
+      "numerator": "0",
+      "denominator": "1"
+    }
+  ],
+  "row_bounds": [
+    {
+      "numerator": "1",
+      "denominator": "2"
+    },
+    {
+      "numerator": "1",
+      "denominator": "2"
+    }
+  ],
+  "weighted_bound": {
+    "numerator": "1",
+    "denominator": "2"
+  },
+  "bound_holds": true,
+  "certifies_contraction": true
+}

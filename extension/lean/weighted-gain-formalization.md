@@ -116,6 +116,14 @@ this is not a rebuild of the entire dependency graph from source.
 | `WeightedGainContracts.lean` | `3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d` |
 | `final-verification/WeightedGainContracts.log` | `79be90d4807d1eb48df1f6478c3a2004db7cc0d90093f0af0c45a45225c0ffad` |
 | `final-verification/verification.json` | `465cb1eceeb51316595b205d1e9cd532cf4705d62c4c767de8c879247f2443a1` |
+| `inherited-verification/all/verification.json` | `ee0968c2301ac20682b4213ae68bb7a1e7c114b82c247c07ac54cf49d7c648f6` |
+
+The inherited-package audit was rerun offline after registering the new
+module, so its evidence-policy hash matches the current verifier file. It
+verified all **368 declarations in 37 inherited source files**, with zero
+blocked modules and zero warnings. The combined audited inventory is therefore
+**489 declarations across 44 source files**: 121 extension, 361 analytic, and
+seven arithmetic declarations. The inherited theorem sources were unchanged.
 
 The preceding 115-declaration verification is preserved in published commit
 `ae44abba256f29f477c2348fbf15497f305ac1e2`, at the same manifest path. That

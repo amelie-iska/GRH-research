@@ -6,7 +6,7 @@ This snapshot records **121 verified declarations**; 74 are mapped to precise ma
 
 Prefer kernel_printed_type when present: it includes elaborated implicit parameters and typeclass hypotheses. Otherwise the unchanged source signature and recorded section context are provided, with the exact source hash. Local definitions in the same module remain part of its interpretation.
 
-Fresh local checks are recorded in `extension/lean/final-verification/verification.json` and its six raw logs. Those checks concern the local Lean 4.24 companion; the upstream continuum Lean 4.34 build has its separate incomplete status.
+Fresh local checks are recorded in `extension/lean/final-verification/verification.json` and its seven raw logs. Those checks concern the local Lean 4.24 companion; the upstream continuum Lean 4.34 build has its separate incomplete status.
 
 ## Boundaries
 

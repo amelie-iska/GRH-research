@@ -61,6 +61,39 @@ The channel checks distinguish the live diagonal-state simulation from the separ
 
 \section{Reproduction commands}
 
+The weighted-gain continuation adds 15 test methods, including 256 seeded
+exact comparisons, 84 invalid-scalar cases, 16 evidence mutations and 21
+isolated CLI cases. Four retained witness/replay pairs cover a contracting
+bound, a rejected rate, a holding noncontracting rate and the exact rational
+reconstruction of a historical floating-point false positive. The separate
+quantum feedback example checks 180 channel parameter cases, 2,700 Choi
+principal minors, 2,160 coherent matrix/Bloch comparisons, 2,160
+fixed-control distance equalities and 256 exact controller block bounds.
+It additionally retains ideal and perturbed trajectories, eight path
+horizons, invalid-input checks and independent accepted/rejected gain
+replays. These are finite implementation checks; the global comparison
+and physical channel arguments are the written proofs in
+Chapter~\ref{ch:quantum-tropical-realizations}.
+
+The exact records and rational artifacts are stored in these directories:
+\begin{lstlisting}
+extension/review/final-pass/weighted-gain/
+extension/review/final-pass/quantum-gain-control/
+\end{lstlisting}
+From the repository root, the new checks can be run without a GPU or
+quantum device:
+\begin{lstlisting}
+python3 -B extension/code/test_weighted_gain.py
+python3 extension/code/check_weighted_gain_witness.py \
+  extension/review/final-pass/weighted-gain/witness-accepted.json
+python3 extension/code/verify_quantum_gain_control.py \
+  --output-dir /tmp/grh-quantum-gain-evidence
+\end{lstlisting}
+The independent witness checker works under optimized Python. The broader
+quantum example imports an existing verifier that deliberately refuses
+optimized execution; run that driver normally, as shown. Neither program
+claims a security proof, a trained fluid model or a native quantum run.
+
 From the repository root, the finite computations can be repeated with:
 \begin{lstlisting}
 python3 extension/code/verify_fluid_interfaces.py

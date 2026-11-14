@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-14T00:17:41.403883+00:00",
+  "checked_at_utc": "2026-11-14T01:33:03.265652+00:00",
   "status": "verified",
-  "module_count": 6,
-  "declaration_count": 115,
+  "module_count": 7,
+  "declaration_count": 121,
   "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
   "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
   "mathlib_commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
   "mathlib_tracked_files_clean": true,
-  "checker_sha256": "a232cb6f4fad348904c4bcd111a92f80e75f161c5de9d0519039e4b9d87dec4d",
-  "lakefile_sha256": "eae91e42d02c8a94b8eef98fe58b72c64379b444f3051e6809cb1c20a5bf614e",
+  "checker_sha256": "7aa82b2fe986518966e8e1e1f26b115d9c18d464e85df880284722c7df424e53",
+  "lakefile_sha256": "2f95c0d22ff6d1a7119a10223070ca13acb3078bc4d2897560e57cb03bf629e8",
   "provenance_sha256": {
-    "checker": "a232cb6f4fad348904c4bcd111a92f80e75f161c5de9d0519039e4b9d87dec4d",
-    "lakefile": "eae91e42d02c8a94b8eef98fe58b72c64379b444f3051e6809cb1c20a5bf614e",
+    "checker": "7aa82b2fe986518966e8e1e1f26b115d9c18d464e85df880284722c7df424e53",
+    "lakefile": "2f95c0d22ff6d1a7119a10223070ca13acb3078bc4d2897560e57cb03bf629e8",
     "lean_toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
     "lean_binary": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
     "lake_binary": "5f3828d1d1977654cf5602c40ac4ee52b64f7dcf34d64c5877d7b7d2d3616344",
@@ -175,7 +175,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 21.416603069999837,
+      "elapsed_seconds": 17.78358164599922,
       "declaration_count": 25,
       "declarations": [
         "ResearchBridge.complex_range_le_kernel",
@@ -263,7 +263,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 7.898587527000927,
+      "elapsed_seconds": 4.109832214002381,
       "declaration_count": 7,
       "declarations": [
         "ResearchQuantum.pauliX_square",
@@ -377,7 +377,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 4.048440116996062,
+      "elapsed_seconds": 4.750792705002823,
       "declaration_count": 16,
       "declarations": [
         "DiagramGrammar.context_sound",
@@ -614,7 +614,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 18.777052770994487,
+      "elapsed_seconds": 23.895605204001185,
       "declaration_count": 34,
       "declarations": [
         "FluidInterfaces.dot_self_nonneg",
@@ -751,7 +751,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 4.593467752987635,
+      "elapsed_seconds": 6.4030481850059005,
       "declaration_count": 16,
       "declarations": [
         "ReductionContracts.factorization_iff_fiber_constant",
@@ -885,7 +885,7 @@
       },
       "printed_types_cover_every_declaration": true,
       "exit_code": 0,
-      "elapsed_seconds": 4.180341472005239,
+      "elapsed_seconds": 3.9355644510069396,
       "declaration_count": 17,
       "declarations": [
         "TransportContracts.suffix_transport_telescope",
@@ -909,6 +909,69 @@
       "source_unchanged_during_check": true,
       "log": "TransportContracts.log",
       "log_sha256": "317482e234ac21f26b4a355b2f371a66177e6c60038ec74c52737c478a9e7162"
+    },
+    {
+      "module": "WeightedGainContracts",
+      "source": "extension/lean/WeightedGainContracts.lean",
+      "source_sha256": "3115e1bdf4ec4479e563cf9386b6b57ee9c4a7ae1e475ac00bcda77427a6753d",
+      "status": "verified",
+      "warning_count": 0,
+      "axioms_per_declaration": {
+        "WeightedGainContracts.row_ratio_iff": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "WeightedGainContracts.feasibility_mono": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "WeightedGainContracts.gain_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "WeightedGainContracts.matrix_action_weighted_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "WeightedGainContracts.gain_iteration_with_residual": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "WeightedGainContracts.matrix_iteration_with_residual": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "unexpected_axioms": {},
+      "kernel_printed_types": {
+        "WeightedGainContracts.row_ratio_iff": "WeightedGainContracts.row_ratio_iff.{u_1, u_2} {K : Type u_1} {\u03b9 : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype \u03b9] (G : Matrix \u03b9 \u03b9 K) (w : \u03b9 \u2192 K) (q : K) (hw : \u2200 (i : \u03b9), 0 < w i) :\n  (\u2200 (i : \u03b9), G.mulVec w i / w i \u2264 q) \u2194 \u2200 (i : \u03b9), G.mulVec w i \u2264 q * w i",
+        "WeightedGainContracts.feasibility_mono": "WeightedGainContracts.feasibility_mono.{u_1, u_2} {K : Type u_1} {\u03b9 : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype \u03b9] (G : Matrix \u03b9 \u03b9 K) (w : \u03b9 \u2192 K) (q q' : K) (hw : \u2200 (i : \u03b9), 0 < w i)\n  (hqq' : q \u2264 q') (hgain : \u2200 (i : \u03b9), G.mulVec w i \u2264 q * w i) (i : \u03b9) : G.mulVec w i \u2264 q' * w i",
+        "WeightedGainContracts.gain_bound": "WeightedGainContracts.gain_bound.{u_1, u_2} {K : Type u_1} {\u03b9 : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype \u03b9] (G : Matrix \u03b9 \u03b9 K) (w d d' : \u03b9 \u2192 K) (q r : K) (hG : \u2200 (i j : \u03b9), 0 \u2264 G i j)\n  (hgain : \u2200 (i : \u03b9), G.mulVec w i \u2264 q * w i) (hr : 0 \u2264 r) (hd : \u2200 (i : \u03b9), d i \u2264 r * w i)\n  (hstep : \u2200 (i : \u03b9), d' i \u2264 G.mulVec d i) (i : \u03b9) : d' i \u2264 q * r * w i",
+        "WeightedGainContracts.matrix_action_weighted_bound": "WeightedGainContracts.matrix_action_weighted_bound.{u_1, u_2} {K : Type u_1} {\u03b9 : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype \u03b9] (A G : Matrix \u03b9 \u03b9 K) (w x : \u03b9 \u2192 K) (q r : K) (hw : \u2200 (i : \u03b9), 0 < w i)\n  (hG : \u2200 (i j : \u03b9), 0 \u2264 G i j) (hgain : \u2200 (i : \u03b9), G.mulVec w i \u2264 q * w i) (hA : \u2200 (i j : \u03b9), |A i j| \u2264 G i j)\n  (hx : \u2200 (i : \u03b9), |x i| \u2264 r * w i) (i : \u03b9) : |A.mulVec x i| \u2264 q * r * w i",
+        "WeightedGainContracts.gain_iteration_with_residual": "WeightedGainContracts.gain_iteration_with_residual.{u_1, u_2} {K : Type u_1} {\u03b9 : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype \u03b9] (G : \u2115 \u2192 Matrix \u03b9 \u03b9 K) (w : \u03b9 \u2192 K) (q r\u2080 : K) (\u03b4 : \u2115 \u2192 K) (d : \u2115 \u2192 \u03b9 \u2192 K)\n  (hG : \u2200 (n : \u2115) (i j : \u03b9), 0 \u2264 G n i j) (hgain : \u2200 (n : \u2115) (i : \u03b9), (G n).mulVec w i \u2264 q * w i) (hq : 0 \u2264 q)\n  (hr\u2080 : 0 \u2264 r\u2080) (h\u03b4 : \u2200 (n : \u2115), 0 \u2264 \u03b4 n) (hzero : \u2200 (i : \u03b9), d 0 i \u2264 r\u2080 * w i)\n  (hstep : \u2200 (n : \u2115) (i : \u03b9), d (n + 1) i \u2264 (G n).mulVec (d n) i + \u03b4 n * w i) (n : \u2115) (i : \u03b9) :\n  d n i \u2264 WeightedGainContracts.errorBudget q r\u2080 \u03b4 n * w i",
+        "WeightedGainContracts.matrix_iteration_with_residual": "WeightedGainContracts.matrix_iteration_with_residual.{u_1, u_2} {K : Type u_1} {\u03b9 : Type u_2} [Field K] [LinearOrder K]\n  [IsStrictOrderedRing K] [Fintype \u03b9] (A G : \u2115 \u2192 Matrix \u03b9 \u03b9 K) (w : \u03b9 \u2192 K) (q r\u2080 : K) (\u03b4 : \u2115 \u2192 K) (u e : \u2115 \u2192 \u03b9 \u2192 K)\n  (hG : \u2200 (n : \u2115) (i j : \u03b9), 0 \u2264 G n i j) (hgain : \u2200 (n : \u2115) (i : \u03b9), (G n).mulVec w i \u2264 q * w i)\n  (hA : \u2200 (n : \u2115) (i j : \u03b9), |A n i j| \u2264 G n i j) (hq : 0 \u2264 q) (hr\u2080 : 0 \u2264 r\u2080) (h\u03b4 : \u2200 (n : \u2115), 0 \u2264 \u03b4 n)\n  (hzero : \u2200 (i : \u03b9), |u 0 i| \u2264 r\u2080 * w i) (he : \u2200 (n : \u2115) (i : \u03b9), |e n i| \u2264 \u03b4 n * w i)\n  (hu : \u2200 (n : \u2115), u (n + 1) = (A n).mulVec (u n) + e n) (n : \u2115) (i : \u03b9) :\n  |u n i| \u2264 WeightedGainContracts.errorBudget q r\u2080 \u03b4 n * w i"
+      },
+      "printed_types_cover_every_declaration": true,
+      "exit_code": 0,
+      "elapsed_seconds": 2.257022090998362,
+      "declaration_count": 6,
+      "declarations": [
+        "WeightedGainContracts.row_ratio_iff",
+        "WeightedGainContracts.feasibility_mono",
+        "WeightedGainContracts.gain_bound",
+        "WeightedGainContracts.matrix_action_weighted_bound",
+        "WeightedGainContracts.gain_iteration_with_residual",
+        "WeightedGainContracts.matrix_iteration_with_residual"
+      ],
+      "source_unchanged_during_check": true,
+      "log": "WeightedGainContracts.log",
+      "log_sha256": "79be90d4807d1eb48df1f6478c3a2004db7cc0d90093f0af0c45a45225c0ffad"
     }
   ],
   "scope": "Fresh elaboration, printed types and actual foundational axiom dependencies for exactly the listed finite-interface declarations. Cached compiled imports and the named Lean/mathlib toolchain are trusted. No claim of complete monograph, continuum Navier-Stokes, GRH, Yang-Mills or cryptographic implementation verification.",

@@ -1018,7 +1018,7 @@ def formal_type_markdown(mapping: dict) -> str:
              "manuscript components. No composite manuscript environment is marked "
              "fully formalized.", "", mapping["type_reading_note"], "",
              "Fresh local checks are recorded in "
-             "`extension/lean/final-verification/verification.json` and its six raw logs. "
+             "`extension/lean/final-verification/verification.json` and its seven raw logs. "
              "Those checks concern the local Lean 4.24 companion; the upstream "
              "continuum Lean 4.34 build has its separate incomplete status.", "",
              "## Boundaries", "",
@@ -1081,7 +1081,7 @@ def refresh_fluid_component_map(mapping: dict) -> None:
             "extension/lean/final-verification/verification.json",
         "historical_verification_note":
             "The old_modules recompilation flags describe the original fluid-only "
-            "subtask and are preserved. The current fresh check of all six local "
+            "subtask and are preserved. The current fresh check of all seven local "
             "modules is recorded separately; it does not recheck the upstream continuum release.",
     })
     path.write_text(json.dumps(previous, indent=2, ensure_ascii=False) + "\n")
@@ -1298,6 +1298,12 @@ def main() -> None:
         "external_prose_statements": external_prose,
         "formal_type_map": "extension/review/formal-type-map.json",
         "prose_research_directions": [
+            {
+                "name": "Quantum-tropical fluid realizations and generative substrate design",
+                "status": "proposed_research",
+                "status_note": "Finite channel and feedback statements have written proofs and exact example checks. A trained fluid model, generatively designed physical device, experimental realization and quantum advantage remain separate uncompleted milestones.",
+                "source_file": "extension/manuscript/chapters/quantum-tropical-realizations.tex",
+            },
             {
                 "name": "Arithmetic zero-location/GRH bridge",
                 "status": "unresolved_research_goal",

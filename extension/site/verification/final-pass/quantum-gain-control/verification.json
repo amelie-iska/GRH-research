@@ -1,0 +1,508 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checked_at_utc": "2026-11-14T01:43:48.776072+00:00",
+  "python": "3.12.14",
+  "seed": 20261114,
+  "arithmetic": "fractions.Fraction; exact rational complex matrix pairs",
+  "execution": "classical standard-library CPU simulation; no training or quantum hardware",
+  "state_domain": "tuple of separately accessible qubit ensemble density matrices with known Z expectations",
+  "counts": {
+    "channel_parameter_cases": 180,
+    "choi_principal_minors": 2700,
+    "coherent_matrix_bloch_comparisons": 2160,
+    "fixed_control_distance_equalities": 2160,
+    "controller_pair_block_bounds": 256,
+    "trajectory_state_budget_checks": 132,
+    "residual_one_step_block_checks": 128,
+    "path_horizons": 8,
+    "invalid_domain_rejections": 20,
+    "independent_gain_replays": 2
+  },
+  "channel_checks": {
+    "retentions": [
+      {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      {
+        "numerator": "1",
+        "denominator": "4"
+      },
+      {
+        "numerator": "1",
+        "denominator": "2"
+      },
+      {
+        "numerator": "1",
+        "denominator": "1"
+      }
+    ],
+    "controls": [
+      {
+        "numerator": "-1",
+        "denominator": "1"
+      },
+      {
+        "numerator": "-7",
+        "denominator": "8"
+      },
+      {
+        "numerator": "-6",
+        "denominator": "7"
+      },
+      {
+        "numerator": "-5",
+        "denominator": "6"
+      },
+      {
+        "numerator": "-4",
+        "denominator": "5"
+      },
+      {
+        "numerator": "-3",
+        "denominator": "4"
+      },
+      {
+        "numerator": "-5",
+        "denominator": "7"
+      },
+      {
+        "numerator": "-2",
+        "denominator": "3"
+      },
+      {
+        "numerator": "-5",
+        "denominator": "8"
+      },
+      {
+        "numerator": "-3",
+        "denominator": "5"
+      },
+      {
+        "numerator": "-4",
+        "denominator": "7"
+      },
+      {
+        "numerator": "-1",
+        "denominator": "2"
+      },
+      {
+        "numerator": "-3",
+        "denominator": "7"
+      },
+      {
+        "numerator": "-2",
+        "denominator": "5"
+      },
+      {
+        "numerator": "-3",
+        "denominator": "8"
+      },
+      {
+        "numerator": "-1",
+        "denominator": "3"
+      },
+      {
+        "numerator": "-2",
+        "denominator": "7"
+      },
+      {
+        "numerator": "-1",
+        "denominator": "4"
+      },
+      {
+        "numerator": "-1",
+        "denominator": "5"
+      },
+      {
+        "numerator": "-1",
+        "denominator": "6"
+      },
+      {
+        "numerator": "-1",
+        "denominator": "7"
+      },
+      {
+        "numerator": "-1",
+        "denominator": "8"
+      },
+      {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      {
+        "numerator": "1",
+        "denominator": "8"
+      },
+      {
+        "numerator": "1",
+        "denominator": "7"
+      },
+      {
+        "numerator": "1",
+        "denominator": "6"
+      },
+      {
+        "numerator": "1",
+        "denominator": "5"
+      },
+      {
+        "numerator": "1",
+        "denominator": "4"
+      },
+      {
+        "numerator": "2",
+        "denominator": "7"
+      },
+      {
+        "numerator": "1",
+        "denominator": "3"
+      },
+      {
+        "numerator": "3",
+        "denominator": "8"
+      },
+      {
+        "numerator": "2",
+        "denominator": "5"
+      },
+      {
+        "numerator": "3",
+        "denominator": "7"
+      },
+      {
+        "numerator": "1",
+        "denominator": "2"
+      },
+      {
+        "numerator": "4",
+        "denominator": "7"
+      },
+      {
+        "numerator": "3",
+        "denominator": "5"
+      },
+      {
+        "numerator": "5",
+        "denominator": "8"
+      },
+      {
+        "numerator": "2",
+        "denominator": "3"
+      },
+      {
+        "numerator": "5",
+        "denominator": "7"
+      },
+      {
+        "numerator": "3",
+        "denominator": "4"
+      },
+      {
+        "numerator": "4",
+        "denominator": "5"
+      },
+      {
+        "numerator": "5",
+        "denominator": "6"
+      },
+      {
+        "numerator": "6",
+        "denominator": "7"
+      },
+      {
+        "numerator": "7",
+        "denominator": "8"
+      },
+      {
+        "numerator": "1",
+        "denominator": "1"
+      }
+    ],
+    "state_fixtures": 12,
+    "choi_convention": "unnormalized input tensor output; trace two; output partial trace identity",
+    "positivity_method": "nonnegative weighted rank-one decomposition and all exact principal minors"
+  },
+  "feedback": {
+    "retention": {
+      "numerator": "1",
+      "denominator": "4"
+    },
+    "controller_graph": [
+      [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "2",
+          "denominator": "1"
+        }
+      ],
+      [
+        {
+          "numerator": "1",
+          "denominator": "8"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ]
+    ],
+    "bias": [
+      {
+        "numerator": "1",
+        "denominator": "4"
+      },
+      {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    ],
+    "gain_matrix": [
+      [
+        {
+          "numerator": "1",
+          "denominator": "4"
+        },
+        {
+          "numerator": "3",
+          "denominator": "2"
+        }
+      ],
+      [
+        {
+          "numerator": "3",
+          "denominator": "32"
+        },
+        {
+          "numerator": "1",
+          "denominator": "4"
+        }
+      ]
+    ],
+    "weights": [
+      {
+        "numerator": "4",
+        "denominator": "1"
+      },
+      {
+        "numerator": "1",
+        "denominator": "1"
+      }
+    ],
+    "rate": {
+      "numerator": "5",
+      "denominator": "8"
+    },
+    "unweighted_row_bound": {
+      "numerator": "7",
+      "denominator": "4"
+    },
+    "normalized_gain_matrix": [
+      [
+        {
+          "numerator": "1",
+          "denominator": "4"
+        },
+        {
+          "numerator": "3",
+          "denominator": "8"
+        }
+      ],
+      [
+        {
+          "numerator": "3",
+          "denominator": "8"
+        },
+        {
+          "numerator": "1",
+          "denominator": "4"
+        }
+      ]
+    ],
+    "fixed_point_bloch": [
+      [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "1",
+          "denominator": "3"
+        }
+      ],
+      [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "1",
+          "denominator": "24"
+        }
+      ]
+    ],
+    "initial_bloch": [
+      [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "1",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        }
+      ],
+      [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "-1",
+          "denominator": "1"
+        }
+      ]
+    ],
+    "initial_weighted_trace_distance": {
+      "numerator": "25",
+      "denominator": "48"
+    },
+    "local_rate_attained": true,
+    "sharpness_displaced_bloch": [
+      [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "2",
+          "denominator": "3"
+        }
+      ],
+      [
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "0",
+          "denominator": "1"
+        },
+        {
+          "numerator": "1",
+          "denominator": "8"
+        }
+      ]
+    ],
+    "sharpness_input_weighted_distance": {
+      "numerator": "1",
+      "denominator": "24"
+    },
+    "pair_comparison": "actual trace distances via exact two-block squared-radical inequalities; no L1 relaxation",
+    "nonlinear_midpoint_z_gap": {
+      "numerator": "9",
+      "denominator": "32"
+    },
+    "semantics": "Fixed-control blocks are CPTP; state-dependent expectation feedback is not a single linear CPTP map."
+  },
+  "trajectories": {
+    "steps_per_trajectory": 32,
+    "states_per_trajectory": 33,
+    "coherent_initial_block": "+Y",
+    "saturation_events": {
+      "ideal": 1,
+      "bounded_readout_error": 1
+    },
+    "distance_checks": "exact squared trace distances against squared nonnegative budgets"
+  },
+  "readout_error": {
+    "epsilon_each_sensor": {
+      "numerator": "1",
+      "denominator": "100"
+    },
+    "weighted_one_step_budget": {
+      "numerator": "3",
+      "denominator": "1600"
+    },
+    "limsup_upper_bound": {
+      "numerator": "1",
+      "denominator": "200"
+    },
+    "one_step_bound_attained_in_example": true,
+    "sequence": "alternating +/-epsilon proposed errors, readout clipped to [-1,1], actual error recorded",
+    "scope": "conditional deterministic error control; the limsup bound is not an attained-limit or finite-shot probability claim"
+  },
+  "tropical_comparison": {
+    "maximum_single_path_rate": {
+      "numerator": "3",
+      "denominator": "8"
+    },
+    "ordinary_row_norm_rate": {
+      "numerator": "5",
+      "denominator": "8"
+    },
+    "representation": "exact max-times products; logarithms not numerically evaluated"
+  },
+  "independent_gain_replays": [
+    {
+      "name": "accepted",
+      "proposed_rate": {
+        "numerator": "5",
+        "denominator": "8"
+      },
+      "exit_code": 0,
+      "status": "certified",
+      "certifies_contraction": true
+    },
+    {
+      "name": "rejected",
+      "proposed_rate": {
+        "numerator": "3",
+        "denominator": "5"
+      },
+      "exit_code": 2,
+      "status": "rejected",
+      "certifies_contraction": false
+    }
+  ],
+  "source_sha256": {
+    "extension/code/quantum_gain_control.py": "bba6243073671da66073123c8e7f9717119eec9e56de542497843cc6867e95a8",
+    "extension/code/verify_quantum_gain_control.py": "eb9b710c91d77096fbb1e559110c1180a4d2d76953073ae18ae8f63e0620859f",
+    "extension/code/verify_toric_transport.py": "b22fed38f4998e54baca0c0f29a587582137dbf9e5f219e0b8850a8f9ff70847",
+    "extension/code/check_weighted_gain_witness.py": "85b2c1ac08cc7fc76495961d24060e90e21c9808cdb3b7a1343cfea23e355b89"
+  },
+  "sources_unchanged_during_checks": true,
+  "artifact_sha256": {
+    "trajectories.json": "ba6036b95fe6503e5cce686ba77eb6f16b6e8f87a12b03d65bda6ef16b0e919a",
+    "path-comparison.json": "25674fb69f9ffa4d78b3e3753788d4e80f34f5c0358cf05e25cbbf38f996d2ab",
+    "gain-accepted.json": "98b7294b4d6c62993c6d0018a527adc71d91ee100a451289f66d3cf1aefdbd73",
+    "gain-accepted-replay.json": "060d903b18f36b351ddecd298ada16f789ab667b4fd8f19f7fbfeb87c16ab8dc",
+    "gain-rejected.json": "c53bfd593ac4b76bff8801840ba09603eac1ce128951792f96a83fde3de62f40",
+    "gain-rejected-replay.json": "b298557a0fd79da0e6a28d28a390c571e6cc8898d58c9645ee843de340e6658d"
+  },
+  "scope": "Finite exact implementation checks and replayed supplied-gain witnesses. The analytic channel/trace-distance envelope argument is separate; no complete Lean quantum formalization, finite-shot instrument, learned controller, fluid solver, speedup or hardware claim."
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "grh.pdf.layout-finding.v1",
+  "id": "QT-ORPHAN-001",
+  "status": "resolved",
+  "recorded_at_utc": "2026-11-14T01:55:37+00:00",
+  "finding": "A redundant final two-line generic sentence occupied an otherwise empty chapter-ending page in each initial edition.",
+  "initial_editions": {
+    "main": {
+      "pdf_sha256": "e7e0ed47846a6d7cf611ede68927646489e8ae8dd34b3c0471614305814a9a96",
+      "total_pages": 356,
+      "physical_page": 264,
+      "screenshot": "review-renderings/main-264.png",
+      "screenshot_sha256": "f136ac0c46e4adafee26a6db9551bfda29dd6b7f34d5d395bac047c4d8b4d1f5"
+    },
+    "fluid": {
+      "pdf_sha256": "378b2f9b28e56929ac48765d65b769c4ec3cf1f8e3ba58fd0e4ecdf94cc56593",
+      "total_pages": 106,
+      "physical_page": 87,
+      "screenshot": "review-renderings/fluid-087.png",
+      "screenshot_sha256": "df912e7d383c7fe15e12ecaa0ee295e60e98168d68dfb2e18506a6d48394d707"
+    }
+  },
+  "resolution": {
+    "change": "Root removed only the redundant final sentence from the shared chapter and rebuilt both books.",
+    "final_main_sha256": "9d0a9a4f0529e13522c9b1d64859cd8c7e674340940b9e6aaa826889e6bbf111",
+    "final_supplement_sha256": "806c46ed5b5a079441ef628346dda82db935aa5e6083af5416709c3fed385972",
+    "final_main_page_count": 355,
+    "final_supplement_page_count": 105,
+    "visually_checked_transitions": {
+      "main": [
+        263,
+        264
+      ],
+      "fluid": [
+        86,
+        87
+      ]
+    },
+    "result": "The substantive conclusion remains on the preceding page and the next page starts the next part or appendix; no orphan closing page remains."
+  },
+  "original_private_record_sha256": "f854fea59f2e3445850e43805a20eb2856d1e73265e254e85a1f5c868f199d45",
+  "publication_note": "Public metadata retains page/PDF/render hashes. Review-rendering PNGs are reproducible inspection inputs retained outside this repository; no complete page-by-page review is claimed."
+}

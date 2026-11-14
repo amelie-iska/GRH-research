@@ -13,8 +13,8 @@ retain their separately documented dependencies.
 ## Read and run
 
 - [Research atlas](index.html).
-- [Compiled monograph: 341 pages](downloads/paper.pdf).
-- [Standalone fluid supplement: 90 pages](downloads/fluid-extension.pdf).
+- [Compiled monograph: 355 pages](downloads/paper.pdf).
+- [Standalone fluid supplement: 105 pages](downloads/fluid-extension.pdf).
 - [Compact research source archive](downloads/source.zip).
 - [Lean companion archive](downloads/lean4.zip).
 
@@ -90,23 +90,29 @@ substitute for the upstream continuum kernel or Comparator checks.
 ## Current proof and source evidence
 
 The [claim register](verification/claim-register.md) inventories
-**269 named environments**, including
-257 local arguments,
+**273 named environments**, including
+261 local arguments,
 5 conditional arguments,
 6 cited external results, and
 1 open problem. It records
-**262 attached written proofs**. Presence of
+**266 attached written proofs**. Presence of
 a written argument does not certify its correctness. The selected external
 statements in prose retain their distinct source and proof-scope classifications.
 
 The [current selected Lean record](verification/lean-current/verification.json)
-contains **115 kernel-checked declarations in 6 modules**.
+contains **121 kernel-checked declarations in 7 modules**.
 The [formal type map](verification/formal-type-map.md) maps
-**68 declarations** to
-precise components of **25
+**74 declarations** to
+precise components of **27
 manuscript environments**. No complete composite manuscript environment is
 marked fully formalized. The source hashes, exact printed types, actual axiom
 dependencies and module logs accompany the record and the recursive Lean archive.
+
+The separately audited inherited sources add **368
+declarations**, giving **489 locally checked
+declarations** across the extension and inherited packages. Full reproduction
+of the inherited audit requires the complete Git checkout; the compact source
+archive remains the documented extension subset.
 
 The selected checks use Lean 4.24.0 and the pinned mathlib revision. Their
 foundational dependencies are limited to `propext`, `Classical.choice` and
@@ -120,6 +126,16 @@ The library-backed cryptographic implementation has
 exercise the implemented interfaces and malformed-input rejection. They do not
 prove computational security or certify a deployment.
 
+The [exact weighted-gain record](verification/final-pass/weighted-gain/verification.json)
+contains **15 test methods** and retains
+positive, negative and noncontracting rational witnesses with independent replay.
+The [quantum control record](verification/final-pass/quantum-gain-control/verification.json)
+binds exact channel, trace-distance, trajectory and tropical-path checks to
+their sources. The [operator-realization guide](realizations.html) explains
+the two-qubit feedback example, physical substrates and generative design;
+the [source review](verification/quantum-tropical-substrates-20261113.md)
+states which primary passages support each proposed connection.
+
 The [release summary](verification/release-summary.json) binds these displayed
 counts and the two PDF records to their source hashes. The separate upstream
 Navier–Stokes check remains **incomplete**, as recorded in the
@@ -132,8 +148,10 @@ their original scope. Fluid sources have separate
 [Farhat](verification/navier-stokes/farhat-review.md), and
 [quantum-algorithm](verification/navier-stokes/quantum-algorithms-review.md)
 records. They distinguish full-text reading, selected passages, image inspection
-and inaccessible originals. The prior 249-segment video transcript review lacks
-a retained executor-local transcript export and content hash. The nine current
+and inaccessible originals. The 249-entry video transcript has been independently
+reread, canonically extracted and verified in a private source cache. Its public
+provenance records the content hash without republishing the transcript. Six
+requested original-paper full texts remain inaccessible. The nine current
 Farhat decks contain 627 PDF pages including overlays; they are replacements
 for unavailable historical filenames, not a claim of identical editions.
 

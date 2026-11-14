@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-14T00:18:49.216060+00:00",
+  "checked_at_utc": "2026-11-14T01:45:40.852073+00:00",
   "status": "passed",
   "python_optimization": 1,
   "explicit_checks_active_under_optimization": true,
   "lean_version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
   "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
   "checker_sha256": "540b117d1d4f19210bf28be50adb1707ce6a23a244d71d8dafa7914327dbf82d",
-  "evidence_policy_sha256": "a232cb6f4fad348904c4bcd111a92f80e75f161c5de9d0519039e4b9d87dec4d",
+  "evidence_policy_sha256": "7aa82b2fe986518966e8e1e1f26b115d9c18d464e85df880284722c7df424e53",
   "checks": [
     {
       "name": "complete_kernel_evidence_accepted",
@@ -68,21 +68,21 @@
       "exit_code": 0,
       "warnings_as_errors": false,
       "log": "warning.log",
-      "log_sha256": "0ee8c080ba1c73710f9833d07152f57958581764da0d2bb43e011ab46bc390d5"
+      "log_sha256": "38a607d53d66f50e947613f19684d117274310eed9c30005d2b3c7894912ed38"
     },
     {
       "fixture": "warning-strict",
       "exit_code": 1,
       "warnings_as_errors": true,
       "log": "warning-strict.log",
-      "log_sha256": "2a049277ee55b8a9a7006d160d63ee5bf973d8142de3893c1d76bfca505fb84e"
+      "log_sha256": "500fa1bd2a2813240bab238d21c48b9505172e98eeaf2c0b50e84de4c21a2d5c"
     },
     {
       "fixture": "admitted",
       "exit_code": 0,
       "warnings_as_errors": false,
       "log": "admitted.log",
-      "log_sha256": "09e7a1fde4279908e9f0aaa34f51377c47cb090b9e910d35898201fffd697666"
+      "log_sha256": "e79789a100ed452f1635bc9f42fc62b206adc1211f173f66debe236869187a54"
     },
     {
       "fixture": "project-axiom",

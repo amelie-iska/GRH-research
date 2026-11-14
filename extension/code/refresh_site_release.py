@@ -73,6 +73,12 @@ manuscript environments**. No complete composite manuscript environment is
 marked fully formalized. The source hashes, exact printed types, actual axiom
 dependencies and module logs accompany the record and the recursive Lean archive.
 
+The separately audited inherited sources add **{summary['inherited_declarations']}
+declarations**, giving **{summary['all_local_declarations']} locally checked
+declarations** across the extension and inherited packages. Full reproduction
+of the inherited audit requires the complete Git checkout; the compact source
+archive remains the documented extension subset.
+
 The selected checks use Lean 4.24.0 and the pinned mathlib revision. Their
 foundational dependencies are limited to `propext`, `Classical.choice` and
 `Quot.sound`. They trust cached compiled imports; they do not independently
@@ -84,6 +90,16 @@ The library-backed cryptographic implementation has
 [current regression record](verification/crypto/verification.json). Those tests
 exercise the implemented interfaces and malformed-input rejection. They do not
 prove computational security or certify a deployment.
+
+The [exact weighted-gain record](verification/final-pass/weighted-gain/verification.json)
+contains **{summary['weighted_gain_test_methods']} test methods** and retains
+positive, negative and noncontracting rational witnesses with independent replay.
+The [quantum control record](verification/final-pass/quantum-gain-control/verification.json)
+binds exact channel, trace-distance, trajectory and tropical-path checks to
+their sources. The [operator-realization guide](realizations.html) explains
+the two-qubit feedback example, physical substrates and generative design;
+the [source review](verification/quantum-tropical-substrates-20261113.md)
+states which primary passages support each proposed connection.
 
 The [release summary](verification/release-summary.json) binds these displayed
 counts and the two PDF records to their source hashes. The separate upstream
@@ -97,8 +113,10 @@ their original scope. Fluid sources have separate
 [Farhat](verification/navier-stokes/farhat-review.md), and
 [quantum-algorithm](verification/navier-stokes/quantum-algorithms-review.md)
 records. They distinguish full-text reading, selected passages, image inspection
-and inaccessible originals. The prior 249-segment video transcript review lacks
-a retained executor-local transcript export and content hash. The nine current
+and inaccessible originals. The 249-entry video transcript has been independently
+reread, canonically extracted and verified in a private source cache. Its public
+provenance records the content hash without republishing the transcript. Six
+requested original-paper full texts remain inaccessible. The nine current
 Farhat decks contain 627 PDF pages including overlays; they are replacements
 for unavailable historical filenames, not a claim of identical editions.
 
@@ -144,6 +162,9 @@ for unavailable historical filenames, not a claim of identical editions.
                "extension/lean/final-verification/verification.json",
                "extension/review/claim-register.json", "extension/review/formal-type-map.json",
                "extension/crypto/verification.json",
+               "extension/lean/inherited-verification/all/verification.json",
+               "extension/review/final-pass/weighted-gain/verification.json",
+               "extension/review/final-pass/quantum-gain-control/verification.json",
                "extension/review/final-pass/upstream-build-current.json",
                "extension/code/release_freshness.py", "extension/code/refresh_site_release.py"]
     record = {"schema_version": 1, "summary": summary,

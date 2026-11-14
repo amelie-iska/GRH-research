@@ -1,0 +1,706 @@
+\chapter{Quantum--tropical fluid realizations: operators, control and substrates}
+\label{ch:quantum-tropical-realizations}
+
+\reviewstatus{This chapter develops an explicitly proposed realization of
+ToricGT-style graph models, together with finite mathematical results and an
+exact two-qubit feedback example. Its operator, tropical and control layers
+have separate contracts. The physical literature supplies demonstrated
+building blocks, not an experimental realization of the combined architecture.
+Generative substrate design and the mappings to natural systems below are
+research proposals. The new finite arguments are written proofs; only the
+weighted-gain components identified in the formal type map have Lean coverage.
+No new fluid-trained model, fabricated substrate or quantum speedup is reported.}
+
+\section{What a realization must specify}
+
+Here a \emph{quantum--tropical fluid realization} means a model with three
+explicit ingredients: quantum states and admissible operations on them;
+graph-based routing or a logarithmic asymptotic description; and dynamics
+whose relation to a fluid or other physical substrate is quantitatively
+specified. It is a proposed interface, rather than a claim that these three
+descriptions are interchangeable. A useful realization must identify an
+encoding, an evolution, a readout and the approximation error at each
+interface.
+
+The reviewed ToricGT implementation contributes graph tokens, endpoint
+incidence, finite Weyl operators, a mixture of ordinary and max-plus
+attention, and expert routing. The program and Tropical Quivers manuscripts
+add proposed algebraic and dynamical constraints. Their exact revisions and
+the corrections to selected statements are recorded in
+Chapter~\ref{ch:toric-transport-audit}. We retain that pinned meaning of
+``ToricGT-style''; the name alone imposes neither a hydrodynamic limit nor a
+physical quantum representation.\cite{qtToricGTCode,qtToricGTProgram,ToricAuditQuivers2026}
+
+A concrete specification can be written
+\[
+ (Q,\mathcal R,\mathcal A,\mathcal E,\Phi,\mathcal M,\pi,\mathcal P).
+\]
+Here $Q$ is a finite quiver, $\mathcal R$ its intended relations,
+$\mathcal A$ the operator algebra, $\mathcal E$ an encoding,
+$\Phi$ an admissible evolution, $\mathcal M$ a measurement instrument,
+$\pi$ a classical or coherent control law, and $\mathcal P$ a physical
+model with units, boundary conditions and parameter uncertainty. A compiler
+must say which of these structures it preserves. The fluid discretization
+and its continuum consistency belong to $\mathcal P$; the predictor's
+training objective belongs to a further statistical specification.
+
+For example, a gentle-algebra relation declaring a composition of two
+arrows zero is meaningful for a representation by linear maps on vector
+spaces. A composition of trace-preserving channels on a nonzero state space
+cannot be the zero map: it still preserves trace. Thus a forbidden path may
+be enforced in a classical routing graph, or represented by trace-decreasing
+branches of an instrument, but cannot simply be imposed as a zero relation
+between unconditional trace-preserving channels. Relations must be checked
+in the category in which the proposed hardware actually operates.
+
+\section{A finite operator algebra with conservative quantum transport}
+
+\subsection{Classical position and quantum internal state}
+
+Assign a finite-dimensional Hilbert space $\HH_i$ to each vertex and set
+\[
+ \mathcal A_Q=\bigoplus_{i\in V}\mathcal B(\HH_i).
+\]
+A state is a tuple $\rho=(\rho_i)$ with $\rho_i\succeq0$ and
+$\sum_i\Tr\rho_i=1$. The mass at vertex $i$ is
+$m_i=\Tr\rho_i$; when $m_i>0$, $\rho_i/m_i$ is its conditional internal
+state. The direct sum describes a classical location register with quantum
+internal degrees of freedom. Coherences between locations instead require
+the full algebra on $\bigoplus_i\HH_i$, including off-diagonal blocks.
+This choice changes the state space and therefore changes the physics.
+Neither finite description is automatically a many-body quantum fluid:
+a tensor-product or Fock-space model has additional particle and correlation
+structure. An encoding into finitely many blocks must state which
+observables it retains and bound truncation or leakage effects.
+
+Let $P_{ij}\ge0$, $\sum_iP_{ij}=1$, and let
+$\Phi_{ij}:\mathcal B(\HH_j)\to\mathcal B(\HH_i)$ be completely
+positive trace-preserving maps for each allowed transition. Define
+\begin{equation}\label{eq:qtf-transport}
+ (\mathcal T\rho)_i=\sum_jP_{ij}\Phi_{ij}(\rho_j).
+\end{equation}
+This finite construction is related to open quantum walks, whose
+operator-valued transition rules combine quantum internal states with
+classical position records.\cite{qtsAttal2012}
+
+\begin{proposition}[Conservative transport on a direct-sum algebra]
+\label{prop:qtf-channel-transport}
+Under the preceding assumptions, $\mathcal T$ is completely positive and
+trace preserving. Its masses satisfy $m'=Pm$. For Hermitian inputs
+$X=(X_j)$,
+\[
+ \sum_i\|(\mathcal TX)_i\|_1\le\sum_j\|X_j\|_1.
+\]
+In particular the total trace distance between two states cannot increase.
+\end{proposition}
+\begin{proof}
+Write $\Phi_{ij}(X)=\sum_\alpha K_{ij\alpha}XK_{ij\alpha}^*$ with
+$\sum_\alpha K_{ij\alpha}^*K_{ij\alpha}=I_{\HH_j}$. Regard each
+$\sqrt{P_{ij}}K_{ij\alpha}$ as a block operator supported from $j$ to
+$i$. Their Kraus sum defines a completely positive map, including after
+tensoring with any finite ancillary matrix algebra. On input block $j$,
+the sum of their adjoint products is
+$\sum_iP_{ij}I_{\HH_j}=I_{\HH_j}$, which proves trace preservation.
+Taking the trace of each output block gives $m'=Pm$.
+
+For a Hermitian $X_j$, write its positive and negative parts as
+$X_j=X_j^+-X_j^-$. Positivity and trace preservation imply
+\[
+ \|\Phi_{ij}(X_j)\|_1
+ \le\Tr\Phi_{ij}(X_j^+)+\Tr\Phi_{ij}(X_j^-)
+ =\|X_j\|_1.
+\]
+The triangle inequality and column sums of $P$ then give
+\[
+ \sum_i\Bigl\|\sum_jP_{ij}\Phi_{ij}(X_j)\Bigr\|_1
+ \le\sum_{i,j}P_{ij}\|X_j\|_1
+ =\sum_j\|X_j\|_1.
+\]
+\end{proof}
+
+Complete positivity is an algebraic constraint on a map and its extensions
+to entangled ancillary systems. A numerical test on a few positive input
+matrices does not establish it. A Kraus representation with a checked
+normalization, or an exactly positive Choi matrix with the correct partial
+trace, gives a finite certificate. The Heisenberg dual $\mathcal T^*$ acts
+linearly on observables and is unital. These statements concern the same
+channel in two dual descriptions.
+
+\subsection{The extra requirements imposed by a fluid interpretation}
+
+A local transition matrix depending on a prescribed velocity field can
+transport the masses $m_i$. Adding internal channels can represent
+collisions, relaxation or a controlled dissipative feature map. This is a
+finite transport model. To obtain a specified fluid equation one must also
+identify physical density, momentum, energy, length and time scales; prove
+the required conservation laws; specify constitutive assumptions; and
+control the discretization and kinetic limits. A positive mass-conserving
+map alone has no specified pressure law, viscosity or incompressibility.
+The reduction contracts in the preceding chapters state the corresponding
+closure and convergence obligations.
+
+For a continuous-time finite quantum model, a standard admissible generator
+has the form
+\[
+ \dot\rho=-i[H,\rho]+\sum_\alpha
+ \left(L_\alpha\rho L_\alpha^*
+ -\tfrac12\{L_\alpha^*L_\alpha,\rho\}\right),
+ \qquad H=H^*.
+\]
+With finite matrices and time-independent coefficients, this generates a
+completely positive trace-preserving semigroup.\cite{qtsLindblad1976}
+Local choices of the $L_\alpha$ encode dissipative graph transitions;
+off-diagonal Hamiltonian couplings can support coherent transport. A forward
+Euler step need not itself be completely positive, even when the continuous
+generator is admissible. A numerical realization must retain that
+distinction or use a structure-preserving step.
+
+Quantum fluids of light provide a particularly relevant physical family:
+interactions, coherent driving and loss lead to rich collective dynamics,
+with different descriptions appropriate to mean-field and correlated
+regimes. Their equations supply a possible physical model for coupled
+tokens; a generic optical neural-network nonlinearity does not automatically
+reproduce the correlated quantum regime.\cite{qtsCarusottoCiuti2013,qtsAmo2009}
+
+\section{Toric features, tropical routing and the information they discard}
+
+On $\C^d$, define $X|k\rangle=|k+1\bmod d\rangle$ and
+$Z|k\rangle=\omega^k|k\rangle$, where $\omega=e^{2\pi i/d}$. Then
+$ZX=\omega XZ$. Products $Z^aX^b$ give finite Weyl features, while
+expectations $\Tr(O\rho)$ give real features for Hermitian $O$.
+A unitary change of basis transports both $O$ and $\rho$ and leaves their
+pairing unchanged. A learned interface may therefore use these finite
+operator features while retaining a classical graph controller. Additional
+claims about a toric variety, a torus action or a BGG complex require their
+own explicitly preserved structure.
+
+The tropical part can enter as a routing optimizer or as a logarithmic
+envelope. For $\tau>0$ and $m\ge1$ real scores $s_j$, define
+\[
+ L_\tau(s)=\tau\log\sum_{j=1}^m e^{s_j/\tau},\qquad
+ p_j^\tau=\frac{e^{s_j/\tau}}{\sum_k e^{s_k/\tau}}.
+\]
+
+\begin{proposition}[Controlled tropical limit of a positive sum]
+\label{prop:qtf-tropical-limit}
+For $M=\max_js_j$,
+\[
+ M\le L_\tau(s)\le M+\tau\log m.
+\]
+If the maximizer $j_*$ is unique and
+$s_{j_*}-s_j\ge\gamma>0$ for all $j\ne j_*$, then
+\[
+ p_{j_*}^\tau\ge
+ \frac{1}{1+(m-1)e^{-\gamma/\tau}}.
+\]
+\end{proposition}
+\begin{proof}
+Factor $e^{M/\tau}$ from the sum. The remaining sum is between one and
+$m$, giving the first bounds after taking its logarithm. Divide the
+normalizing sum for $p_{j_*}^\tau$ by $e^{s_{j_*}/\tau}$.
+Each other term is at most $e^{-\gamma/\tau}$, which gives the second
+bound.
+\end{proof}
+
+This statement concerns a positive exponential sum. With several maximizers
+the limiting probability is supported on that set; there is no uniquely
+selected route without an extra rule. The reviewed tropical-attention code
+uses scores that depend on dot products and applies a max-plus aggregation.
+Even when the aggregation is piecewise affine in its supplied scores,
+the complete map need not be piecewise affine in all original inputs.
+
+For a product of nonnegative gain matrices, logarithms turn multiplication
+along one path into addition. Taking the largest path gives a max-plus
+envelope, with $\log0=-\infty$ and zero-weight paths absent. Ordinary
+matrix multiplication also sums over paths; its norm
+requires the path-multiplicity factor proved in
+Chapter~\ref{ch:toric-transport-audit}. Signed or complex amplitudes add
+phase cancellation as another issue. A tropical magnitude envelope can
+upper-bound selected effects once these factors are supplied, but does not
+retain the interference pattern or determine entanglement.
+
+Min-plus arithmetic also arises directly in control. A deterministic
+finite-horizon route problem has the Bellman recursion
+\[
+ V_n(i)=\min_{a\in\mathcal U(i)}
+ \{c_n(i,a)+V_{n+1}(f(i,a))\}.
+\]
+This is a precise optimization layer that can select graph operations.
+A stochastic, risk-sensitive or entropy-regularized controller has a
+different recursion, whose transition probabilities and normalization must
+be retained. A zero-temperature approximation can reduce exploration but
+also creates switching boundaries. The common gain certificate below is
+useful only if it covers every allowed branch and the effects of switching.
+
+\section{Nonlinear dynamics on an operator state space}
+
+\subsection{Where the nonlinearity lives}
+
+An operator algebra is a linear space with a product and an adjoint. There
+are several mathematically distinct ways to obtain nonlinear dynamics
+associated with it. First, a classical controller $z$ can select a channel
+or a generator:
+\[
+ \rho_{n+1}=\Phi_{\theta(z_n)}(\rho_n),\qquad
+ z_{n+1}=f(z_n,y_n),\qquad
+ y_n=\mathcal M_n(\rho_n).
+\]
+For a fixed classical setting, $\Phi_{\theta}$ is linear on density
+operators. The coupled controlled system can be nonlinear. If $y_n$
+denotes an ideal expectation rather than an actual measurement record,
+the displayed recursion is an ensemble-level model and needs a readout
+approximation before it describes hardware.
+For actual measurement records, the conditional measurement backaction
+must be included in the state update, or readout must use separately
+prepared copies. It cannot be omitted while retaining a claim about the
+same undisturbed quantum system.
+
+Second, a measurement instrument has unnormalized branches
+$\rho\mapsto K_y\rho K_y^*$. Each is linear and completely positive.
+Conditioning on a nonzero-probability outcome divides by
+$\Tr(K_y\rho K_y^*)$ and produces a nonlinear normalized update. A
+physically complete account retains the probabilities and the classical
+outcome register. Replacing that instrument with a deterministic normalized
+map on an unknown state changes the operation.
+
+Third, effective mean-field equations may contain a state-dependent
+Hamiltonian, for example $\dot\rho=-i[H(\rho),\rho]$, or a cubic
+order-parameter equation. Such equations approximate selected observables
+or many-body regimes under stated assumptions. Their nonlinearity does not
+by itself supply a fundamental nonlinear quantum channel. Driven polariton
+and atomic condensate models make this distinction experimentally relevant.
+\cite{qtsCarusottoCiuti2013,qtsBarontini2013}
+
+These three cases give a practical interpretation of a nonlinear operator
+perspective: learn and control dynamics \emph{on} a physically admissible
+state space while retaining the linear completely positive operations
+appropriate to each fixed experimental setting. Positivity, trace, symmetry,
+causality and accessible controls become architectural constraints.
+
+\subsection{Koopman lifting and its closure error}
+
+For a deterministic state-space map $F:\mathcal X\to\mathcal X$, the
+Koopman operator is $(Uf)(x)=f(F(x))$. It is linear in the observable $f$
+even when $F$ is nonlinear. On an algebra of ordinary scalar observables it
+also preserves products. For a stochastic transition, conditional
+expectation instead gives a positive unital operator, generally without
+product preservation. Neither construction is automatically the
+Heisenberg dual of a channel on the noncommutative algebra $\mathcal A_Q$:
+their domains and their notions of positivity must first be matched.
+
+A finite dictionary $\psi(x)$ may satisfy
+\[
+ \psi(F(x))=K\psi(x)+r(x).
+\]
+An exact finite representation requires $r=0$ on the claimed domain.
+Learning $K$ from trajectories ordinarily leaves a residual, and a small
+training residual is not a uniform domain bound. Finite invariant
+subspaces that also reconstruct the state impose substantial restrictions,
+as the primary Koopman-control analysis explains.\cite{qtsBrunton2016}
+The residual belongs in an error recurrence such as
+Theorem~\ref{thm:weighted-gain-propagation}. This connects operator learning
+to a checked control budget without declaring a finite closure exact.
+
+\section{Control, observability and robustness}
+
+\subsection{A common gain for coupled classical and quantum blocks}
+
+Let $d_\rho$ measure quantum-state error, for example trace distance, and
+let $d_z$ measure controller error. Suppose the actual closed-loop map
+satisfies on an invariant domain
+\[
+ \begin{pmatrix}d_\rho'\\d_z'\end{pmatrix}
+ \le
+ G\begin{pmatrix}d_\rho\\d_z\end{pmatrix}
+ +\begin{pmatrix}\eta_\rho\\\eta_z\end{pmatrix},\qquad
+ G=\begin{pmatrix}a&b\\c&d\end{pmatrix}\ge0.
+\]
+For $q>\max(a,d)$ and $b,c>0$, the certificate
+$Gw\le qw$ with $w_\rho,w_z>0$ is equivalent to
+\[
+ \frac{b}{q-a}\le\frac{w_\rho}{w_z}
+ \le\frac{q-d}{c}.
+\]
+Indeed the first row rearranges to the left inequality and the second to
+the right. Feasibility is therefore equivalent to
+$bc\le(q-a)(q-d)$ at that rate. If $a,d<1$ and
+$bc<(1-a)(1-d)$, continuity supplies a feasible $q<1$ sufficiently close
+to one. Cases with zero coupling can be checked directly using $Gw\le qw$.
+These formulas expose the cost of feedback: individually stable components
+can still have an excessive loop gain.
+
+Once the gains are justified, a common $w$ and $q$ give the full finite-time
+budget of Theorem~\ref{thm:weighted-gain-propagation}. An optimizer may
+propose $w$; the independent rational checker verifies the proposed
+inequalities. Separate certificates can cover model discrepancy, channel
+approximation, integration error and readout error as explicit residuals.
+For a uniform weighted perturbation $\delta$ and $q<1$, the eventual
+bound is $\delta/(1-q)$. A smaller $q$ improves this robustness bound,
+while rapid contraction also suppresses memory of past inputs. Reservoir
+design therefore needs a task-dependent tradeoff between memory, separation
+of inputs and noise sensitivity.\cite{qtsFujiiNakajima2017}
+
+\subsection{Accessible controls and finite readout}
+
+For a closed finite quantum system, accessible Hamiltonians generate a Lie
+algebra that constrains the reachable unitaries. Full unitary control still
+preserves the eigenvalues of a density matrix. Changing its spectrum
+requires measurement, dissipation or an enlarged system and subsequent
+discarding. Thus the ability to fit a target matrix numerically does not
+prove that a specific device can implement it.\cite{qtsAlbertiniDAlessandro2003}
+For an open device, the allowed jump operators, rates, locality, noise and
+bandwidth similarly constrain attainable channels.
+
+Observability has a corresponding cost. One cannot obtain every expectation
+of an unknown state from one undisturbed specimen. A hardware proposal must
+specify repeated preparations, ensemble access, weak measurement or an
+instrument with a state estimator. A statistical error guarantee over a
+finite number of measurements can be converted into a deterministic
+residual bound on the event that those estimates are accurate. The event's
+confidence, the number of shots and the finite time horizon remain part of
+the result; an unlimited-horizon guarantee does not follow automatically.
+
+For example, suppose $M$ measurement settings are fixed in advance and
+each uses $N$ independent shots with outcomes in $[-1,1]$. Hoeffding's
+inequality and a union bound give simultaneous error at most $\varepsilon$
+with probability at least $1-\delta$ when
+\[
+ N\ge\frac{2}{\varepsilon^2}\log\frac{2M}{\delta}.
+\]
+For one setting, the two-sided failure probability is at most
+$2e^{-N\varepsilon^2/2}$; adding these $M$ bounds proves the assertion.
+The confidence concerns sampling error for those fixed settings, not
+calibration bias or arbitrary temporally correlated reservoir outputs.
+Adaptive feedback requires a corresponding conditional sampling argument
+and a specified finite horizon.\cite{qtsHoeffding1963}
+
+Model predictive control can optimize a finite horizon subject to channel
+admissibility, actuator limits and a certified invariant set. For a
+classical energy model
+\[
+ \dot x=(J(x)-R(x))\nabla E(x)+B(x)u,\qquad
+ J^T=-J,\quad R\succeq0,
+\]
+the chain rule gives
+$\dot E=-\nabla E^TR\nabla E+y^Tu$ with
+$y=B^T\nabla E$. This is a useful energy-balance constraint for a
+fluid, elastic or electrical surrogate. A quantum dissipative model needs
+its own thermodynamic assumptions: an arbitrary driven channel need not
+decrease a chosen energy or increase entropy. The proposed controller
+must preserve the balance appropriate to its physical model.
+
+\section{An exact nonlinear quantum-state feedback example}
+
+The following small construction instantiates the control contract without
+assuming a gain bound from sampled derivatives. It uses a tuple of two
+qubit density matrices; it does not encode entanglement between the two
+blocks. Let $Z=\diag(1,-1)$,
+\[
+ z_j=\Tr(Z\rho_j),\quad
+ B=\begin{pmatrix}0&2\\1/8&0\end{pmatrix},\quad
+ b=\begin{pmatrix}1/4\\0\end{pmatrix},\quad
+ u_i=\operatorname{clip}((Bz+b)_i,-1,1).
+\]
+Set $a=1/4$, $\tau(u)=(I+uZ)/2$, and define
+\begin{equation}\label{eq:qtf-feedback}
+ F_i(\rho)=a\rho_i+(1-a)\tau(u_i).
+\end{equation}
+The clipped controller is nonlinear but globally Lipschitz. Its expectations
+are assumed known exactly for the ideal model. A device implementation
+would estimate them through the readout process just described.
+
+\begin{proposition}[A physical channel family and a contracting feedback law]
+\label{prop:qtf-feedback-example}
+For every fixed $u\in[-1,1]$,
+\[
+ \Phi_u(X)=aX+(1-a)\tau(u)\Tr X
+\]
+is completely positive and trace preserving. The ideal feedback map $F$
+preserves pairs of density matrices and satisfies, with
+$D_i=\tfrac12\|\rho_i-\sigma_i\|_1$,
+\[
+ D_i'\le\sum_jG_{ij}D_j,\qquad
+ G=\begin{pmatrix}1/4&3/2\\3/32&1/4\end{pmatrix},\qquad
+ G\begin{pmatrix}4\\1\end{pmatrix}
+ =\tfrac58\begin{pmatrix}4\\1\end{pmatrix}.
+\]
+It therefore contracts the weighted maximum trace distance at rate $5/8$.
+Its fixed point has Bloch vectors $(0,0,1/3)$ and $(0,0,1/24)$.
+The feedback map itself is not affine in the pair of input states.
+\end{proposition}
+\begin{proof}
+Since $|u|\le1$, $\tau(u)$ is a density matrix. In input--output order,
+the unnormalized Choi matrix is
+\[
+ J(\Phi_u)=a|\Omega\rangle\langle\Omega|
+ +(1-a)I\otimes\tau(u),\qquad
+ |\Omega\rangle=|00\rangle+|11\rangle.
+\]
+Both terms are positive, and tracing over the output gives
+$aI+(1-a)I=I$. Equivalently the replacement map has Kraus operators
+$\sqrt{t_k}|k\rangle\langle l|$, where $t_k$ are the diagonal entries
+of $\tau(u)$ and $k,l\in\{0,1\}$. Scaling these replacement operators
+by $\sqrt{1-a}$ and adjoining $\sqrt a I$ gives the same channel.
+Convexity then proves state-space
+invariance for every chosen control.
+
+Measurement duality gives $|\Delta z_j|\le2D_j$. Clipping is
+one-Lipschitz and
+$\tfrac12\|\tau(u)-\tau(v)\|_1=|u-v|/2$. Thus
+\[
+ D_i'\le aD_i+\frac{1-a}{2}|\Delta u_i|
+ \le aD_i+(1-a)\sum_j|B_{ij}|D_j.
+\]
+Substitution gives $G$, and direct multiplication gives its certificate.
+The state space is complete in this finite-dimensional metric, so the
+strict contraction has at most one fixed point and converges to it.
+At a fixed point the transverse Bloch coordinates vanish; the displayed
+$z$ values solve $z=Bz+b$ and lie inside the clipping interval. They
+therefore give existence as well as uniqueness.
+
+For nonaffinity, hold the first input at $z_1=0$ and choose second inputs
+with $z_2=0$ and $z_2=1$. The first output $z$ values are $3/16$ and
+$3/4$. Their average is $15/32$. At the midpoint input $z_2=1/2$,
+the clipped control is one and the first output is $3/4$. The difference
+is $9/32$, so a single affine channel cannot equal this ideal feedback
+map on all inputs.
+\end{proof}
+
+The fixed-control channels are physically admissible. The ideal feedback
+recursion describes what happens when a controller has the required
+expectations; it is not an instruction for obtaining them without readout
+cost. The associated exact implementation uses rational Bloch coordinates
+and rational Choi matrices. It retains a coherent initial state, tests an
+actually saturated step, and checks trace-distance bounds by squaring
+nonnegative quantities, avoiding floating-point square-root tolerances.
+These replacement channels are generally nonunital:
+$\Phi_u(I)=I+(1-a)uZ$. The entropy-monotonicity statement for the earlier
+unital heat channel consequently does not transfer to this example.
+
+There is also an exact tropical comparison. Weighted normalization gives
+\[
+ K=\diag(w)^{-1}G\diag(w)
+ =\begin{pmatrix}1/4&3/8\\3/8&1/4\end{pmatrix}.
+\]
+Every row of $K^n$ sums to $(5/8)^n$, whereas the largest weight of one
+length-$n$ path is $(3/8)^n$. The latter is attained by alternating the
+vertices. The difference comes from adding the other paths, exactly as in
+the path-multiplicity analysis. The proposed rate $3/5$ fails the supplied
+weighted certificate and is retained as negative replay evidence.
+
+Finally, if each measured expectation has deterministic error at most
+$\varepsilon$, the extra weighted one-step discrepancy is at most
+$3\varepsilon/16$: the two component bounds after division by $w_i$
+are $3\varepsilon/16$ and $3\varepsilon/64$. Therefore the same
+residual theorem gives the asymptotic envelope
+\[
+ \frac{3\varepsilon/16}{1-5/8}=\frac{\varepsilon}{2}.
+\]
+For $\varepsilon=1/100$, this is $1/200$. This is conditional error
+control under the stated readout bound. It is not an experimentally
+measured noise floor or a substitute for a finite-shot confidence analysis.
+
+\section{Candidate engineered and natural substrates}
+
+A substrate is relevant when its controlled degrees of freedom implement
+the specified encoding, operation and readout with bounded error. Its
+microscopic quantum origin alone does not establish useful coherent quantum
+processing. The following examples identify both the usable mechanism and
+the experiment needed to connect it to the proposed architecture.
+
+\begin{longtable}{p{0.20\textwidth}p{0.34\textwidth}p{0.36\textwidth}}
+\toprule
+Substrate & Candidate role & Evidence and realization test\\\midrule
+\endhead
+Programmable photonic networks &
+Interferometers implement coherent mode mixing; phase shifters and
+detectors can supply a graph operator and readout. A separate controller
+can update routing. &
+The cited programmable-transport experiment used continuous-wave laser
+illumination and intensity readout. A few-photon channel would need its
+own nonclassical-state specification and validation, alongside loss and
+control-drift measurements.
+\cite{qtsHarris2017}\\[6pt]
+Exciton--polariton fluids &
+Coupled cavities or spatial modes supply driven, lossy, interacting
+fields. They are candidates for nonlinear reservoirs and graph-coupled
+fluid features. &
+Quantum-fluid and superfluid phenomena motivate the mechanism. A
+realization must identify its mean-field or correlated regime, its
+input/output map, and the controller's error bounds.
+\cite{qtsCarusottoCiuti2013,qtsAmo2009}\\[6pt]
+Ultracold atomic gases &
+Trapped modes or lattice sites provide quantum matter with controllable
+couplings and, in selected settings, engineered local dissipation. &
+Dissipative many-body dynamics have been studied experimentally. A
+ToricGT mapping would additionally need accessible graph couplings,
+repeated state preparation and an observable task with a calibrated
+readout budget.\cite{qtsBarontini2013}\\[6pt]
+Superconducting cavity circuits &
+Microwave modes, nonlinear elements and engineered loss can implement
+bosonic channels, memory and controlled dissipation. &
+Engineered dissipation has confined dynamics to a quantum-state manifold.
+The proposed graph realization must quantify truncation, leakage,
+decoherence and the attainable channel family.\cite{qtsLeghtas2015}\\[6pt]
+Magnonic and magnetic networks &
+Spin-wave propagation and nonlinear responses can provide a compact
+dynamical reservoir with graph-like couplings. &
+Magnetic reservoir experiments support this computing mechanism. The
+usual wave-regime demonstration establishes a physical reservoir;
+quantum-state processing would need its own preparation and coherence
+evidence.\cite{qtsNamiki2023}\\[6pt]
+Soft bodies and fluid--structure systems &
+Elastic motion, damping and hydrodynamic coupling can distribute
+nonlinear memory across a body, with sensors and actuation supplying
+the interface. &
+Soft-body reservoir experiments demonstrate task-relevant dynamics.
+Natural morphologies motivate graph constraints, but every generated
+body needs a measured transfer map and robustness test.
+\cite{qtsNakajima2015}\\[6pt]
+Photosynthetic molecular networks &
+Excitonic couplings, vibrations and environmental relaxation offer a
+natural example of open-system energy transport. &
+The functional role and character of observed coherence require care.
+Electronic and vibrational contributions, disorder and open-system
+conditions must be distinguished before proposing an information
+processor.\cite{qtsDuan2017,qtsHarushDubi2021}\\\bottomrule
+\end{longtable}
+
+Natural vascular, porous and transport networks provide another source of
+geometries and conservation constraints for a classical graph-fluid
+realization. Their branching and feedback suggest a design grammar;
+they do not supply a trained ToricGT model by identification alone.
+Likewise, a crystal or a biological assembly discovered in nature can
+inspire a coupling pattern without providing arbitrary programmable
+control. The useful question is which functions the accessible dynamics
+can implement and which invariants survive the readout.
+
+There is no universal ordering of these substrates. Interferometric
+systems favor controlled linear mixing; strongly interacting quantum
+platforms favor selected many-body phenomena; dissipative mechanical and
+magnetic reservoirs may provide economical nonlinear memory. A comparison
+needs a common task, input bandwidth, output accuracy, reset protocol,
+energy accounting and training budget. Device operation, control and
+measurement must all enter the cost.
+
+\section{De novo substrate design with generative models}
+
+\subsection{Generate a physical candidate for a specified operator}
+
+A generative model can propose a material or geometry conditioned on a
+target response. Inorganic crystal generation and generative photonic
+inverse design provide concrete examples of this approach. Their outputs
+are candidates for a physical validation pipeline; the generative likelihood
+is not an operator-realization certificate.\cite{qtsZeni2025,qtsJiangFan2019}
+
+Let $s$ describe composition, geometry, connectivity and fabrication
+parameters, and let $u$ describe accessible controls. A forward model
+produces an effective evolution $\mathcal F_{s,u}$ and readout
+$\mathcal M_s$. One can seek
+\[
+ \min_{s,u,w,q}\quad
+ L_{\rm task}(s,u)+\lambda_E E(s,u)+\lambda_C C(s)
+ +\lambda_R R_{\rm uncertainty}(s,u)
+\]
+subject to physical admissibility, an observable target interface, and
+$G(s,u)w\le qw$ with $w>0$, $q<1$ when contraction is appropriate.
+The objective terms need measured definitions: prediction error,
+energy per usable output, fabrication or control cost, and a robustness
+penalty. A generative prior can constrain plausible $s$ without replacing
+the physical constraints.
+
+The specification should begin with a target channel, scattering map,
+response kernel or controlled fluid update, rather than with a visual
+shape. For an optical device, relevant constraints include a realizable
+material response, loss, bandwidth and fabrication tolerances. For a
+magnetic, elastic or fluid device, stability, conservation laws, boundary
+conditions and sensor coupling matter. For a proposed quantum device,
+state preparation, available interactions and admissible measurement are
+part of the target. Complete positivity constrains a reduced channel;
+additional locality and controllability constraints determine whether the
+chosen substrate can realize it.
+
+\subsection{A falsifiable co-design loop}
+
+The following sequence separates design exploration from validation.
+\begin{enumerate}
+\item Specify the graph task, allowed algebraic relations, encoding,
+observables, error tolerance and resource budget. Decide whether the
+target requires coherent quantum states or only a wave/dynamical response.
+\item Generate candidate structures conditioned on those requirements.
+Apply exact geometry, connectivity and composition constraints where
+available, and retain the generator version and random seed.
+\item Evaluate candidates with the appropriate physical solver and
+uncertainty model. Reject violations of conservation, positivity,
+stability or attainable controls; a good surrogate score cannot override
+these checks.
+\item Identify a reduced input--state--output model on a stated domain.
+Measure its residual on held-out conditions and obtain a justified gain
+envelope. If only sampled derivatives are available, record that empirical
+scope rather than promoting it to a uniform bound.
+\item Co-design the controller and positive weights. Replay finite
+rational certificates independently, and propagate solver, readout and
+fabrication errors through the common-gain budget.
+\item Evaluate prospective fabrication variation, then fabricate or
+assemble a selected candidate only under an actual experimental program.
+Calibrate it, test closed-loop behavior and compare with the predicted
+operator. A simulation-only result remains labeled as such.
+\item Compare against conventional numerical solvers and simpler
+physical or classical learning baselines on the same task. Include
+state preparation, measurement, reset, calibration and controller costs.
+\end{enumerate}
+
+MatterGen establishes that conditional generative modeling can propose
+inorganic crystals with target properties, including an experimentally
+tested candidate. It does not supply the mapping from a desired quantum
+channel to a fabricable quantum device.\cite{qtsZeni2025}
+Generative photonic inverse design directly targets an optical response,
+but its particular demonstrated response still needs an additional mapping
+to this graph-fluid architecture.\cite{qtsJiangFan2019}
+Those missing mappings are useful research questions: they specify what a
+new project must actually demonstrate.
+
+Natural systems can enter this loop as a prior on topology, material motifs
+or dynamics. A learned grammar might favor sparse transport networks,
+hierarchical elastic couplings or molecular geometries. The design must
+then be evaluated with the same operator, control and readout contracts
+as a wholly synthetic candidate. This makes biomimetic inspiration
+testable without treating an analogy as a realization.
+
+\section{Connections to the wider research program}
+
+The construction offers a practical role for the project's order and
+surface-algebra language: encode legal compositions and symmetries, select
+observable features, and demand that a realization preserve specified
+relations. Quantum information supplies admissible state transformations
+and operational distances. Tropical mathematics supplies routing and
+logarithmic bounds. Control theory connects these finite operations to
+robust dynamical behavior. Each connection has an explicit map and an
+error obligation.
+
+For Hilbert--P\'olya research, a controllable finite operator family can
+test spectral statistics or evaluate a proposed discretization. A finite
+fit to zeros does not establish the required self-adjoint operator,
+spectral identification or analytic limiting theorem. For Yang--Mills,
+an engineered finite dissipative or Hamiltonian gap is a property of that
+system and has no automatic implication for the continuum mass-gap
+problem. For cryptography, a generated physical response may be a useful
+device primitive, but a security claim additionally requires a threat
+model, entropy or hardness assumptions, extraction and implementation
+analysis. The existing cryptographic implementations and their security
+scope remain separate evidence.
+
+For Navier--Stokes, the useful next experiments are bounded: preservation
+of discrete invariants, closure-error prediction, controllable manufactured
+solutions and comparisons with conventional solvers at stated resolution.
+The externally released forced singularity theorem retains its own
+continuum hypotheses and independent-build status. The present finite
+control construction neither supplies a stronger continuum theorem nor
+removes the unresolved independent upstream build.
+
+The immediate implementation milestone is the exact feedback example and
+its independent gain replay. The next research milestone is a trained
+graph-fluid surrogate with a documented invariant domain and held-out
+error budget. A physical milestone requires one specified substrate,
+calibrated encoding and readout, measured operator agreement and a fair
+resource comparison.

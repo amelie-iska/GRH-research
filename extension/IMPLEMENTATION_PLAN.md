@@ -74,7 +74,7 @@ independent review findings are addressed, and all new statements are classified
 
 ## Chunk 2 — validate the Lean interfaces
 
-Compile all six selected modules using the existing pinned Lean 4.24.0 and
+Compile all seven selected modules using the existing pinned Lean 4.24.0 and
 mathlib revision. Print each theorem's exact type and axiom dependencies. Reject
 `sorryAx`, unproved project axioms, compilation errors and warnings. Map each
 declaration to the precise manuscript component it actually formalizes; avoid
@@ -189,3 +189,27 @@ Final publication and machine receipts live in
 `planning/continuation-20261113/PUBLICATION_STATUS.json`. This plan defines the
 acceptance procedure; that post-release receipt records observed commits and
 deployment outcomes without a self-referential archive hash.
+
+## Continuation: quantum–tropical realizations and control
+
+The continuation at `planning/continuation-20261113-b/` first preserves the
+existing release, then fixes the rational gain-input domain, adds independent
+integer certificate replay, and proves six gain/residual contracts in Lean.
+The next completed source chunk adds a finite controlled quantum-channel
+example and a chapter connecting operator dynamics, tropical envelopes,
+control and seven candidate substrate families. Seventeen primary sources
+have explicit reading-coverage records.
+
+Release acceptance requires fresh affected source/hash records, exact positive
+and negative numerical examples, independent mathematical review, both rebuilt
+PDFs with zero blocking layout/reference warnings, rendered-page inspection,
+consistent public evidence and archives, a verified GitHub/Pages push, and
+clean updated device clones. Source checkpoints precede the final release.
+
+Further experimental iterations are separately scoped: (1) train a graph-fluid
+surrogate on manufactured and held-out flows with conservation/error budgets;
+(2) identify one substrate's accessible operators, readout and uncertainty;
+(3) generate candidates subject to that physical model; (4) validate candidates
+with an independent solver and common gain certificate; and (5) measure an
+actual device and compare full-system cost with classical baselines. These
+are uncompleted research milestones, not claimed results of the exact example.
