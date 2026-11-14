@@ -46,6 +46,8 @@
       status.textContent = error.message; status.dataset.error = 'true';
       for (const id of ['riskFamilyBound', 'riskExactRank', 'riskScanMaximum', 'riskThresholdRelation']) $(id).textContent = '—';
       $('riskDecision').textContent = 'No certificate is available for these inputs.';
+      $('riskDecision').dataset.state = 'error';
+      $('riskExactScope').textContent = 'Exact finite replay is unavailable until the inputs are valid.';
     }
     if (panel) panel.refresh();
   }
@@ -98,9 +100,14 @@
       boundAsset('cosmology-moment-model.json', binding.runtime_sources),
       boundAsset('cosmology-noise-factor.json', binding.runtime_sources)
     ]);
-    data = dataset.json; model = momentModel.json;
-    if (model.dataset_sha256 !== dataset.sha256 || model.factor_sha256 !== factor.sha256)
+    if (momentModel.json.dataset_sha256 !== dataset.sha256 || momentModel.json.factor_sha256 !== factor.sha256)
       throw new Error('The moment model is bound to a different coefficient catalog.');
+    // The canvas fetched its own copy. Hashing this second response alone cannot
+    // establish that the active visualization uses the same coefficient catalog.
+    if (!root.CCCLab || typeof root.CCCLab.getDataset !== 'function'
+        || root.LabCertificateBridge.stable(root.CCCLab.getDataset()) !== root.LabCertificateBridge.stable(dataset.json))
+      throw new Error('The active canvas dataset differs from the verified exact dataset. Reload the page before exporting a certificate.');
+    data = dataset.json; model = momentModel.json;
     root.LabCertificateBridge.setCosmologyAdapter(parameters => C.evaluate(data, model, parameters));
     $('riskControls').disabled = false;
     panel = await root.LabCertificateUI.mount($('cosmologyCertificate'), {
