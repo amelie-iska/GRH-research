@@ -1,0 +1,115 @@
+\chapter{Source-led graph universality: preserved proofs and constructive repairs}
+\label{ch:source-led-repair}
+
+\section{What was missing from the preceding synthesis}
+
+The earlier discussion correctly distinguished Yun's $L^p$ approximation result from a supremum guarantee, but it did not give a separate, sufficiently detailed treatment of \texttt{TropicalGT/references/main.tex}. That manuscript supplies an additional invariant-graph-network argument for uniform graph-to-graph approximation, a finite interpolation construction, circuit simulations and a tropical geometric analysis. These are now preserved as source statements and examined individually. The positive program should not be reduced to one citation, nor should a statement be promoted to a verified theorem solely because it is typeset in a theorem environment.
+
+The exact-source port contains all 17 TeX research documents and six Mora-3 paper Markdown documents in the five accessible pinned trees. It records 475 named claim occurrences, 248 distinct statement hashes and 463 following proof occurrences. Repeated versions remain attributable rather than silently merged. Every original file is checked against its Git blob and a SHA-256 hash. The sixth supplied repository name, \texttt{amelie-iska/TropicalGT-Program}, returned 404 through both the public API and selected connector. TropicalGT's own Parts I--IV are included, but are not represented as proof that the inaccessible name denotes the same repository.
+
+\paragraph{Evidence categories.} The archive preserves exact source text. The review register records separately: accepted written argument under explicit hypotheses; repaired statement/proof; finite executable witness; selected Lean elaboration; and a remaining dependency. Source extraction does not mean that 475 results have been formalized in Lean. External full-text PDFs without corresponding authored source are not silently included in that reading claim.
+
+\section{A direct uniform graph-to-graph construction}
+
+Here is a positive route that does not infer supremum approximation from an $L^p$ statement or assume that one fixed low-order IGN is universal. It allows explicit identifiers, sufficient width/heads, output slots and a finite-group averaging wrapper. These resources are part of the theorem, not an assertion about an unchanged small checkpoint.
+
+\begin{lemma}[Exact finite-temperature gathering]
+Let $x_1,\ldots,x_N\in\mathbb R^d$ be labeled input-token features. Give token $j$ the identifier $e_j$. A constant query for head $i$ and identifier keys can produce score $\log2$ for token $i$ and zero for every other token. If $S=\sum_jx_j$, this head returns
+\[
+ h_i=\frac{S+x_i}{N+1}.
+\]
+A uniform-score head returns $\bar x=S/N$. Consequently,
+\[
+ x_i=(N+1)h_i-N\bar x.
+\]
+Thus $N+1$ heads followed by a linear map gather all labeled input features exactly at each output slot. Keys are restricted to input tokens by a fixed mask; the query constants and identifier coordinates are explicit inputs to the construction.
+\end{lemma}
+\begin{proof}
+Exponentiating the scores gives one weight two and $N-1$ weights one, with denominator $N+1$. The displayed identities follow by substitution. Biases or a constant input channel supply the constant queries. No infinite-temperature limit or discontinuous hard selection is used. The real-arithmetic identity is formalized separately; floating-point execution has its own numerical error.
+\end{proof}
+
+\begin{lemma}[Constructive compact-domain ReLU approximation]
+For a compact $K\subset\mathbb R^d$, every continuous $F:K\to\mathbb R^q$ can be uniformly approximated by a finite ReLU network.
+\end{lemma}
+\begin{proof}
+The empty domain is trivial. Otherwise use the sup norm and uniform continuity to choose $\delta>0$ so that $\|F(x)-F(y)\|_\infty<\epsilon/2$ whenever $x,y\in K$ and $\|x-y\|_\infty<\delta$. Choose a finite $\delta/2$-net $c_1,\ldots,c_M$ in $K$. Define
+\[
+ w_i(x)=\max\{0,1-\|x-c_i\|_\infty/\delta\},\quad
+ S(x)=\sum_iw_i(x),\quad A(x)=\sum_iF(c_i)w_i(x).
+\]
+Absolute value and finite maximum have exact finite ReLU realizations. On $K$, $1/2\le S(x)\le M$. The normalized combination $A(x)/S(x)$ is a convex combination of values at centers within $\delta$ of $x$, so its error is below $\epsilon/2$.
+
+It remains to approximate division without assuming it is a ReLU primitive. The reciprocal on $[1/2,M]$ has arbitrarily accurate finite piecewise-linear interpolants. Any one-dimensional continuous piecewise-linear function is an affine term plus a sum of hinge functions: its slope changes give the ReLU coefficients. Products on a bounded rectangle can likewise be approximated using
+\[
+ uv=\tfrac14\bigl((u+v)^2-(u-v)^2\bigr).
+\]
+Linear interpolation of $z^2$ on a mesh of width at most $h$ has error at most $h^2/4$, since the interpolation error on $[a,b]$ equals $(z-a)(b-z)$. The resulting product error is at most $h^2/8$. Because $A$ and the reciprocal interpolant are bounded, choose reciprocal and product errors so that their combined output error is below $\epsilon/2$. Composition gives a finite ReLU network with total uniform error below $\epsilon$. This is an existence construction; the net size and network cost can be large.
+\end{proof}
+
+\begin{theorem}[Uniform graph-to-graph approximation with declared resources]
+Let $\mathcal G$ be a compact bounded-size graph domain with a continuous injective finite-dimensional labeled encoding $E$. Let the output use a fixed finite set of typed slots and a continuous vector-valued target $F$. A graph-token architecture that contains the gathering construction, sufficiently expressive shared ReLU subnetworks, and explicit output-slot identifiers uniformly approximates $F$ after encoding. If a finite relabeling group $H$ preserves the domain, acts by coordinate permutations on inputs and outputs, and $F$ is equivariant, the finite Reynolds wrapper makes the approximator exactly equivariant without increasing its uniform error.
+\end{theorem}
+\begin{proof}
+A continuous injection from compact $\mathcal G$ into a Hausdorff vector space is a homeomorphism onto its image. Therefore $F\circ E^{-1}$ is continuous on the compact encoded domain. Exact gathering supplies that full encoded vector to each output slot. Apply the preceding ReLU construction. Distinct output-slot identifiers form finitely many separated cells, so a shared network can select the appropriate component. More concretely, for a bounded scalar $|z|\le B$ and a one-hot bit $b\in\{0,1\}$,
+\[
+ \operatorname{ReLU}(z+Bb)-\operatorname{ReLU}(z-Bb)-Bb=bz.
+\]
+This gives exact slot selection on the bounded approximation range.
+
+For the equivariant claim, define
+\[
+ A_H(x)=|H|^{-1}\sum_{h\in H}\rho_{\rm out}(h^{-1})
+ A(\rho_{\rm in}(h)x).
+\]
+Reindex the sum by $k=hg$ to show $A_H(\rho_{\rm in}(g)x)=\rho_{\rm out}(g)A_H(x)$. Since permutation actions preserve the sup norm and $F$ is equivariant, each transformed summand differs from $F(x)$ by less than $\epsilon$. The triangle inequality gives the same bound for the average. The wrapper is a finite parallel composition and sum of the preceding networks. It can require $|H|$ branches, factorial in the number of vertices. No efficient fixed-width universality is inferred.
+\end{proof}
+
+This is a uniform result, not merely $L^p$. It proves a capability of the explicitly extended family. A particular ToricGT/Mora-3 configuration inherits it only when its masks, identifier semantics, normalization and bypasses actually preserve the construction. The already published bypass lemma handles optional tropical or quantum branches; replacing the only ordinary path by an unrelated operator needs another proof. This theorem does not need a claim that every fixed-order $k$-IGN is universal.
+
+A separate external uniform route is Alberti--Dern--Thesing--Kutyniok's Sumformer theorem and its Transformer corollary [S1]. Their continuous multisymmetric-polynomial proof is relevant, with its latent dimension and architectural assumptions. It is not Yun's theorem with a silently changed norm. Extending a graph-defined target to all token permutations additionally requires compatibility on orbit intersections and stabilizers. Relabeling graph vertices and permuting token rows are different actions unless the tokenizer establishes their relation.
+
+\section{Finite interpolation, circuits and unbounded computation}
+
+The source's finite-domain claim has an elementary exact realization. For finitely many distinct encoded inputs $x_i$, choose $\delta$ smaller than their minimum pairwise sup distance. The ReLU hats
+\[
+ \phi_i(x)=\max\{0,1-\|x-x_i\|_\infty/\delta\}
+\]
+satisfy $\phi_i(x_j)=\mathbf1_{i=j}$. Hence $\sum_i y_i\phi_i(x)$ interpolates arbitrary prescribed finite output vectors exactly. Exact gathering makes this a labeled graph-token construction. For an orbit-closed finite domain and an equivariant target, Reynolds averaging preserves those exact values. If an input has a nontrivial automorphism, an equivariant target must be fixed by the induced output action. Merely choosing an isomorphic output representative does not automatically satisfy that requirement.
+
+The source's threshold-circuit construction is nonuniform and supplies gate tokens, wire identifiers and growing resources. Those premises are retained. The executable circuit check compares shared affine/ReLU gates with an independent Boolean interpreter on randomly generated acyclic circuits and explicit gate interventions. It proves neither that a trained checkpoint discovered the interpreter nor that general circuit satisfiability is efficiently solved. A threshold on an integer count can be placed at a half-integer margin; an approximation smaller than half a count preserves its Boolean value. A finite-precision softmax implementation must demonstrate that margin, not simply claim exact hard selection.
+
+The previous supplement's persistent-graph Turing simulation remains a separate constructive theorem with growing memory and shared local rules. The source itself distinguishes bounded graph universality from unbounded uniform computation. Likewise, a lower bound on a restricted hard-attention architecture does not transfer to a larger architecture solely because the larger class contains the restricted one. A valid transfer needs a reduction or an upper-bound simulation with the same resources and identifiers.
+
+\section{Dependency repairs and explicit counterexamples}
+
+\paragraph{Fixed tensor order.} The dedicated source's uniform theorem invokes universality of a fixed $k$-IGN. The cited general invariant/equivariant universality results allow sufficiently high intermediate tensor orders [S2,S3]. The executable rook/Shrikhande example has identical ordered-pair WL refinement histograms but different numbers of four-cliques, eight and zero. This exposes the low-order dependency, not an upper bound on every raw-identifier TokenGT. The repaired uniform proof above uses explicit gathering and symmetrization; the alternative IGN route must allow the tensor orders required by its universality theorem.
+
+\paragraph{Tropical output versus hard routing.} A coordinatewise max-plus head computes $\max_j(s_j+v_{jc})$, so different coordinates can have different winners. It is not generally the value vector of $\arg\max_j s_j$. Separately, hard routing among values can be discontinuous: scores $(q,-q)$ and values $(1,-1)$ give opposite one-sided limits at zero. The routing potential $\max(q,-q)$ remains continuous. A toric support-function conclusion therefore needs continuity of the output under study, not just piecewise formulas or rational routing hyperplanes.
+
+\paragraph{Planar region counts.} For convex polygons, every oriented edge normal of a Minkowski sum belongs to the union of summand edge normals. Thus $v(P_1+\cdots+P_H)\le\sum_hv(P_h)$. For two planar $N$-gons the bound is $2N$, not an attainable quadratic asymptotic. This contradicts the source's unqualified $\Omega(N^H)$ clause at $d=H=2$. Finite integer polygon checks are included, but the asymptotic correction follows from the normal-fan argument. The safe general finite bound is the product of summand vertex counts; stronger dimension-sensitive rates require a correctly stated theorem. Subsequent depth/lower-bound claims that use the invalid clause remain qualified rather than silently imported.
+
+\paragraph{Finite-temperature curvature.} For $P_\tau(s)=\tau\log\sum_j e^{s_j/\tau}$,
+\[
+ \nabla^2P_\tau=\tau^{-1}(\operatorname{diag}p-pp^T).
+\]
+If a unique winner has margin $\delta$, set $a=(N-1)e^{-\delta/\tau}$. The mass outside it is at most $a/(1+a)$. Since the covariance matrix is positive semidefinite,
+\[
+ \|\nabla^2P_\tau\|_2\le\operatorname{tr}(\nabla^2P_\tau)
+ \le 2a/\tau.
+\]
+The source's corresponding formula without the factor two fails already for two logits: the nonzero eigenvalue is $2p(1-p)/\tau$. Taking $p=3/4$ gives $3/(8\tau)>1/(3\tau)$, whereas $e^{-\delta/\tau}=1/3$. The rational inequality is checked in Lean; the exponential parameterization and covariance derivation are written mathematics.
+
+\paragraph{Probability and decoding.} Random-order joint total variation is controlled by a sum of uniform conditional total-variation errors through sequential coupling. An $L^p$ approximation to scores or conditional means does not establish that premise. Continuous-output laws require a declared dominating measure or another suitable probability metric. A bounded grammar with a real-valued threshold rule can be discontinuous; bounded graph size alone supplies neither continuity nor terminating, uniquely selected normal forms.
+
+\section{How these results connect to the physical program}
+
+The uniform theorem establishes a representational baseline; it does not identify a physical law from insufficient observations or guarantee out-of-distribution learning. The surface example uses a fixed verified cellulation, a clean dessin, a CSS spin code, a classical attention controller and actual quantum-state simulation. Max-plus witnesses describe the controller, not coherent quantum path amplitudes. The compound map has a well-defined interpretation: observed classical features select rotation parameters, then a valid quantum circuit evolves a prepared state. No free access to an unknown state's exact expectations is assumed.
+
+Approximation errors can be divided among feature extraction, attention/control, state preparation, gates, measurement and physical model discrepancy. Relation and BGG/chain-map certificates check the algebraic layer appropriate to each component. They do not turn a finite surface code into a continuum field-theory proof or a GRH spectral identity. The same distinctions govern measured-data compression: the graph, model, residual representation and selection procedure must be charged, and a compressible physical process is not thereby an intentional message.
+
+\section{Additional primary references}
+\begin{description}
+\item[S1] Alberti, Dern, Thesing and Kutyniok. \emph{Sumformer: Universal Approximation for Efficient Transformers}. PMLR 221 (2023), 72--86. Continuous proof and Theorems 4.1/4.3 inspected. \url{https://proceedings.mlr.press/v221/alberti23a.html}
+\item[S2] Maron, Fetaya, Segol and Lipman. \emph{On the Universality of Invariant Networks}. ICML 2019. Higher-order tensorization is an explicit premise. \url{https://proceedings.mlr.press/v97/maron19a.html}
+\item[S3] Keriven and Peyr\'e. \emph{Universal Invariant and Equivariant Graph Neural Networks}. Version 2, 2019. \url{https://arxiv.org/abs/1905.04943v2}
+\end{description}
