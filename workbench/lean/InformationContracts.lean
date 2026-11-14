@@ -18,7 +18,7 @@ namespace InformationContracts
   calc (∑ i, p i*(w*q i/p i)) = ∑ i,w*q i := by
           apply Finset.sum_congr rfl
           intro i _
-          field_simp
+          field_simp [hp i]
        _ = w := by rw [← Finset.mul_sum,hq,mul_one]
 
  theorem first_crossing_budget {ι : Type*} [Fintype ι]
