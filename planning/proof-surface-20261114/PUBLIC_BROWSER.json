@@ -1,0 +1,33 @@
+{
+  "schema": "grh.surface-public-browser.v1",
+  "url": "https://amelie-iska.github.io/GRH-research/workbench/surface.html",
+  "pages_commit": "00dc70e0168f91501c07fa90e1f3e58d38cbf2b8",
+  "verified_at_utc": "2026-11-14T11:19:26.136622+00:00",
+  "browser": "Installed Chrome through Playwright; connected Browser actions were read-only",
+  "viewports": [{"width":1365,"height":950},{"width":390,"height":844}],
+  "checks": {
+    "published_identity": true,
+    "published_topology": true,
+    "actual_worker": true,
+    "norm": true,
+    "temperature_value": true,
+    "sign_gate_response": true,
+    "linked_flat_selection": true,
+    "mobile_no_overflow": true,
+    "home_navigation": true,
+    "static_kernel_scope": true,
+    "no_page_exceptions": true
+  },
+  "page_errors": [],
+  "interaction_sequence": [
+    "Open published surface.html and wait for the versioned worker result",
+    "Select softmax and verify temperature 0.35",
+    "Flip input sign 1 and verify the expectation sign change",
+    "Switch to flat chart and inspect physical edge 15",
+    "Resize to mobile portrait and check document overflow",
+    "Open published workbench and request kernel verification",
+    "Verify the explicit static-host limitation and absence of a kernel receipt"
+  ],
+  "harness_repair": "The initial script looked for the local-service explanation in the status summary; it is correctly in the receipt panel. The assertion was corrected without changing application source.",
+  "scope": "Published interactive checks; static hosting runs simulation/arithmetic, not a remote Lean service. The separate local run has 30 checks and actual kernel replays."
+}
