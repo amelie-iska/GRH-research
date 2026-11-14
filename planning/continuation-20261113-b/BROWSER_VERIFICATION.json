@@ -1,0 +1,56 @@
+{
+  "browser": "Cloud Chrome, through the documented CUA API",
+  "checked_at_utc": "2026-11-14T02:05:40.061120+00:00",
+  "checks": {
+    "evidence_links_present": true,
+    "exact_feedback_equation_and_gain_table_readable": true,
+    "index_navigation_reaches_realizations": true,
+    "index_shows_121_selected_formal_declarations": true,
+    "index_shows_355_page_monograph": true,
+    "no_page_horizontal_overflow_at_observed_viewport": true,
+    "one_h1_and_five_h2_observed": true,
+    "seven_substrate_rows_present": true,
+    "substrate_table_all_rows_visually_reviewed_across_two_views": true,
+    "table_horizontal_scroll_region_focusable": true,
+    "weighted_rate_5_over_8_and_fixed_point_visible": true
+  },
+  "console_observation": {
+    "extension_origin_metadata_errors_returned": 7,
+    "interpretation": "The returned errors originate from the browser extension, not the published page. This is a bounded console observation, not a global absence-of-errors claim.",
+    "page_origin_entries_returned": 0,
+    "query": "Last ten warning/error entries",
+    "returned_entries": 7
+  },
+  "document_client_width": 1348,
+  "document_scroll_width": 1348,
+  "entry_url": "https://amelie-iska.github.io/GRH-research/",
+  "limitations": [
+    "No mobile browser viewport run was performed; static responsive checks are recorded separately.",
+    "This UI inspection does not certify mathematical correctness or physical hardware realization."
+  ],
+  "observed_anchor_urls": [
+    "https://amelie-iska.github.io/GRH-research/realizations.html#exact-example",
+    "https://amelie-iska.github.io/GRH-research/realizations.html#substrates"
+  ],
+  "pages_commit": "0cee58ad33aa2ea256f35e5dfe69187035bd964b",
+  "realizations_url": "https://amelie-iska.github.io/GRH-research/realizations.html",
+  "schema": "grh.public-browser-verification.v1",
+  "screenshot": {
+    "bytes": 100856,
+    "file": "REALIZATIONS_LIVE.jpg",
+    "scope": "Published page hero at the desktop viewport",
+    "sha256": "5a9e82f8a8b02dc2a71dcd242c6072ff14e860b0d1096fd7a5570737bbaa3ef1"
+  },
+  "source_commit": "70ffffe6a58c12fae3d8e228286336675274f9ed",
+  "status": "passed_with_recorded_scope",
+  "viewport_css_pixels": {
+    "height": 936,
+    "width": 1363
+  },
+  "visual_scope": [
+    "Hero, navigation and research-proposal qualification",
+    "Exact feedback equation, gain table, fixed-point and conditional readout bound",
+    "Seven-row substrate comparison and its evidence boundaries",
+    "Start of generative-design section"
+  ]
+}

@@ -3,7 +3,10 @@
 The source checkpoint `2f97dc9` preserved the rational-input correction,
 independent witness replay and six new Lean results. This release payload
 adds the requested operator/control/substrate material and its exact example.
-Publication and machine synchronization are recorded separately after push.
+Publication and machine synchronization are recorded separately in
+`PUBLICATION.md`, `PUBLICATION.json` and `MACHINE_SYNC.json`. The source and
+Pages payloads were pushed and the live site passed independent HTTP-byte
+and desktop-browser checks.
 
 ## Completed work
 
@@ -42,7 +45,7 @@ inaccessible. The project does not assert GRH, a continuum Yang-Mills mass
 gap, a stronger unforced Navier-Stokes result or physical realization of
 the proposed combined architecture.
 
-The final desktop preflight reported Windows offline and a Linux command
-timeout. A further bounded Linux connectivity check is tracked separately.
-These observations do not affect the verified repository payload, and are
-not represented as successful synchronization of the new release.
+Earlier desktop preflights reported Windows offline and a Linux command
+timeout. Subsequent observations and any successful fast-forward are
+recorded chronologically in `MACHINE_SYNC.json`; an online inventory entry
+alone is not treated as successful command access or synchronization.

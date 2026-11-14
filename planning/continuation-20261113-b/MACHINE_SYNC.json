@@ -1,0 +1,135 @@
+{
+  "completed_at": "2026-11-14T02:07:48.791Z",
+  "credentials_read": false,
+  "device_identifiers_included": false,
+  "devices": {
+    "iska-linux": {
+      "current_branch": "main",
+      "current_head": "70ffffe6a58c12fae3d8e228286336675274f9ed",
+      "preflight": {
+        "branch": {
+          "exit_code": 0,
+          "output": "main"
+        },
+        "device": "iska-linux",
+        "head": {
+          "exit_code": 0,
+          "output": "ae44abba256f29f477c2348fbf15497f305ac1e2"
+        },
+        "observed_at": "2026-11-14T02:06:47.569309+00:00",
+        "operation": "read_only_preflight",
+        "porcelain": {
+          "exit_code": 0,
+          "output": ""
+        },
+        "repository": "/home/iska/Documents/amelie/GRH-research",
+        "status": "preflight_complete",
+        "submodules": {
+          "exit_code": 0,
+          "output": " 0c77122d3cff5b737fc56730f54045ef185e3df1 GRH (heads/main)\n 212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2 Surface-Orders-Hilbert-Polya (heads/main)\n 4eaee87548250b2682affda7d05d947c05554bae math (heads/main)"
+        }
+      },
+      "recursive_submodules_clean": true,
+      "result": {
+        "completed_at": "2026-11-14T02:07:25.604306+00:00",
+        "device": "iska-linux",
+        "expected_source_commit": "70ffffe6a58c12fae3d8e228286336675274f9ed",
+        "repository": "/home/iska/Documents/amelie/GRH-research",
+        "started_at": "2026-11-14T02:07:21.172027+00:00",
+        "status": "synchronized_and_verified",
+        "steps": {
+          "fast_forward": {
+            "elapsed_seconds": 3.362,
+            "exit_code": 0
+          },
+          "fetch": {
+            "elapsed_seconds": 0.437,
+            "exit_code": 0
+          },
+          "fetched_origin_main": {
+            "elapsed_seconds": 0.001,
+            "exit_code": 0,
+            "output": "70ffffe6a58c12fae3d8e228286336675274f9ed"
+          },
+          "final_branch": {
+            "elapsed_seconds": 0.001,
+            "exit_code": 0,
+            "output": "main"
+          },
+          "final_head": {
+            "elapsed_seconds": 0.001,
+            "exit_code": 0,
+            "output": "70ffffe6a58c12fae3d8e228286336675274f9ed"
+          },
+          "final_porcelain": {
+            "elapsed_seconds": 0.148,
+            "exit_code": 0,
+            "output": ""
+          },
+          "final_submodule_worktrees": {
+            "elapsed_seconds": 0.125,
+            "exit_code": 0,
+            "output": ""
+          },
+          "final_submodules": {
+            "elapsed_seconds": 0.033,
+            "exit_code": 0,
+            "output": " 0c77122d3cff5b737fc56730f54045ef185e3df1 GRH (heads/main)\n 212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2 Surface-Orders-Hilbert-Polya (heads/main)\n 4eaee87548250b2682affda7d05d947c05554bae math (heads/main)"
+          },
+          "pre_branch": {
+            "elapsed_seconds": 0.001,
+            "exit_code": 0,
+            "output": "main"
+          },
+          "pre_head": {
+            "elapsed_seconds": 0.001,
+            "exit_code": 0,
+            "output": "ae44abba256f29f477c2348fbf15497f305ac1e2"
+          },
+          "pre_porcelain": {
+            "elapsed_seconds": 0.136,
+            "exit_code": 0,
+            "output": ""
+          },
+          "pre_submodule_worktrees": {
+            "elapsed_seconds": 0.146,
+            "exit_code": 0,
+            "output": ""
+          },
+          "pre_submodules": {
+            "elapsed_seconds": 0.04,
+            "exit_code": 0,
+            "output": " 0c77122d3cff5b737fc56730f54045ef185e3df1 GRH (heads/main)\n 212ff730cdfe5d9ab2dee17c11c7f83061fa0bf2 Surface-Orders-Hilbert-Polya (heads/main)\n 4eaee87548250b2682affda7d05d947c05554bae math (heads/main)"
+          }
+        }
+      },
+      "synchronization": "synchronized_and_verified",
+      "working_tree_clean": true
+    },
+    "windows-local": {
+      "current_head": null,
+      "current_status": null,
+      "no_retry": true,
+      "preflight": "transport_timeout",
+      "repository": "C:\\Users\\LIZ\\Documents\\GRH-research",
+      "response_observed_at": "2026-11-14T02:07:19.427Z",
+      "synchronization": "not_attempted",
+      "transport_error": "MCP request timed out",
+      "transport_error_code": -32603
+    }
+  },
+  "expected_source_commit": "70ffffe6a58c12fae3d8e228286336675274f9ed",
+  "original_device_receipt_sha256": "d4d421f41f9f5167f4ca4d065bf634bf3a571e67b02f7d8454aa2cc599bb31d4",
+  "schema_version": 1,
+  "scope": "Observed synchronization of the source payload. Later publication receipts form a separate metadata checkpoint.",
+  "shared_workspace_repo_mutated": false,
+  "status": "iska_verified_windows_transport_blocked",
+  "user_changes_discarded": false,
+  "workspace_source_observation": {
+    "branch": "main",
+    "head": "70ffffe6a58c12fae3d8e228286336675274f9ed",
+    "scope": "After source fetch and fast-forward, before creating these metadata receipts.",
+    "tree": "2843ce07108e0f2f370d2f77d1ffc218eef7aff9",
+    "working_tree_clean": true
+  }
+}

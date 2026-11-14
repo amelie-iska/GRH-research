@@ -1,0 +1,87 @@
+{
+  "clone_sync_record": "MACHINE_SYNC.json",
+  "credentials_included": false,
+  "downloads": [
+    {
+      "bytes": 2214862,
+      "path": "extension/site/downloads/paper.pdf",
+      "sha256": "9d0a9a4f0529e13522c9b1d64859cd8c7e674340940b9e6aaa826889e6bbf111"
+    },
+    {
+      "bytes": 923429,
+      "path": "extension/site/downloads/fluid-extension.pdf",
+      "sha256": "806c46ed5b5a079441ef628346dda82db935aa5e6083af5416709c3fed385972"
+    },
+    {
+      "bytes": 10936998,
+      "path": "extension/site/downloads/source.zip",
+      "sha256": "0bdd184084968313c6e5dce480bd950765e95d886f0c4d27cbb245078cba1073"
+    },
+    {
+      "bytes": 220927,
+      "path": "extension/site/downloads/lean4.zip",
+      "sha256": "1e6f24147644b16c1434571b5628f80aad07dcff3afb7f1f979705f7cffbb6bd"
+    }
+  ],
+  "github_actions_observation": {
+    "pages_run": {
+      "conclusion": "success",
+      "head_sha": "0cee58ad33aa2ea256f35e5dfe69187035bd964b",
+      "id": 43544149730,
+      "name": "pages build and deployment",
+      "status": "completed",
+      "url": "https://github.com/amelie-iska/GRH-research/actions/runs/43544149730"
+    },
+    "scope": "Observed through the Actions runs endpoint; no source CI run is claimed for this source commit.",
+    "source_head_workflow_runs": 0
+  },
+  "live_site": "https://amelie-iska.github.io/GRH-research/",
+  "live_verification": {
+    "browser_record": "BROWSER_VERIFICATION.json",
+    "exact_http_matches": 11,
+    "http_errors": 0,
+    "http_record": "PUBLIC_HTTP_VERIFICATION.json"
+  },
+  "metadata_checkpoint_scope": "Publication and synchronization receipts only. The validated source payload and Pages tree are the commits recorded above.",
+  "pages": {
+    "branch": "gh-pages",
+    "commit": "0cee58ad33aa2ea256f35e5dfe69187035bd964b",
+    "files": 1469,
+    "parent": "4d6341b5a8bf072c20525868255f43eb238438c1",
+    "reference_read_back": true,
+    "tree": "00d227244035884f9cba0fbae47070306f0a4970",
+    "tree_matches_isolated_bundle": true,
+    "unique_blobs": 811
+  },
+  "recorded_at_utc": "2026-11-14T02:06:44.276459+00:00",
+  "reference_policy": {
+    "expected_head_checks": true,
+    "force": false
+  },
+  "release_gate": {
+    "checks": 3139,
+    "record": "RELEASE_FRESHNESS.json"
+  },
+  "repository": "amelie-iska/GRH-research",
+  "schema": "grh.publication.v1",
+  "source": {
+    "branches": [
+      "main",
+      "research/continuation-20261113-b"
+    ],
+    "changed_paths_from_parent": 105,
+    "commit": "70ffffe6a58c12fae3d8e228286336675274f9ed",
+    "main_previous_head": "ae44abba256f29f477c2348fbf15497f305ac1e2",
+    "parent": "2f97dc961a95e1ac795b58bf362a3b419d355557",
+    "references_read_back": true,
+    "tree": "2843ce07108e0f2f370d2f77d1ffc218eef7aff9",
+    "tree_matches_frozen_index": true,
+    "unique_new_blobs": 67
+  },
+  "source_clone_status": {
+    "iska_linux": "verified_clean_at_source_payload",
+    "windows": "preflight_transport_timeout_no_update_attempted",
+    "workspace": "verified_clean_at_source_payload_before_receipts"
+  },
+  "status": "source_and_pages_published_and_live_verified"
+}
