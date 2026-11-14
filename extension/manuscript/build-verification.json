@@ -1,9 +1,9 @@
 {
   "status": "compiled; visual QA is recorded separately",
-  "engine": "pdfTeX 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian)",
-  "pages": 355,
-  "pdf_bytes": 2214862,
-  "pdf_sha256": "9d0a9a4f0529e13522c9b1d64859cd8c7e674340940b9e6aaa826889e6bbf111",
+  "engine": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)",
+  "pages": 440,
+  "pdf_bytes": 3373390,
+  "pdf_sha256": "b9474cb70727b606f25362fb6e71f9a964136429ea6b259d528639901f90458b",
   "warning_counts": {
     "overfull_boxes": 0,
     "missing_characters": 0,
@@ -14,7 +14,7 @@
   },
   "bibtex_warning_details": [],
   "source_sha256": {
-    "main.tex": "bd16836dd04610abf5bbebcaeb106c0e9eff41e023744cb897b76a10df2f793d",
+    "main.tex": "cfb2c7b9169eea4adcec1bb8e2b9c8ed6c3c945bafd19d69d34f8f3524f1e297",
     "lean-listings-unicode.tex": "137e02877a24382af88560496e48d4b23e47333978ed554cc23d222bce258ca6",
     "crypto-implementation.bib": "cb186c41392fbe706aea1e2ea1c402ef4e5e8d69c8c972208fbba81461f9fb2d",
     "ns-microscopic.bib": "37ff84161ae5bc08d31a6b9ee99f28c35fc67837afefec814050c741caa2bb6d",
@@ -49,7 +49,7 @@
     "chapters/microscopic-fluid-limits.tex": "f62ab20607940127fb90efe0cd34a662452650c2566afc54afdf0945f3c2fc57",
     "chapters/navier-stokes-release.tex": "a00306177dd8d7ad254fba284a98491fb9af7c67838ff97fd335c0fee5b77c9b",
     "chapters/orders.tex": "790e4136ee89cd7e207a7170efa6e5757b1081f5463df1580ebbefab715967bb",
-    "chapters/preface.tex": "1aaf42acbc37f1e959bce4ddbc188199ab29099c5245568b3cc4af9fa8a4bae0",
+    "chapters/preface.tex": "49b2fd222bebc4148b214215a1f9258c5458be1f2a066dfe28ced9e08c519541",
     "chapters/quantum-fluid.tex": "d587e3a62cd9372b01835371a12f8e6c8796c5bf3c959a0b805683e69716236b",
     "chapters/quantum-gpu-results.tex": "8ed9513fefba4a5bb1729dc30ee26d8c0c678d3e82568ed5f160f960072567b8",
     "chapters/quantum-spin-scope.tex": "2ab153802088c72e0613cf6e9ccc5b11135c78ca91de7af6ecc33393c3008450",
@@ -59,7 +59,7 @@
     "chapters/reduction-contracts.tex": "555c06b1df81370f8c37e7eeb3a8223566e24ff6945433d9c62b869c99dde9b5",
     "chapters/source-concordance.tex": "247e4ad085965a51ddceb45d873ba7b9f5d7d5eca0108413f161b868c8d87bca",
     "chapters/standard-monomials.tex": "bcb8570e01b24cd79ff5634ffad4fb6df2238ba6ba01de06f9207696b115f32b",
-    "chapters/synthesis.tex": "7ab2bee25d986f837536416a0e347127e566b424805ed4ec98c442d55946103c",
+    "chapters/synthesis.tex": "9060ffe30be1a87de2402330787485d13cc4cd0f3c39df0fc2ef7ee57518d58f",
     "chapters/tensor-grammars.tex": "fb4baa8fc2fd2a7340175631e3545260859f14dfe4e9fb22e16ae8445b7ac47e",
     "chapters/toric-transport-audit.tex": "4e4c979cb164127e09a8bcd9d21912388c0334df0b93fb3614e98c34116dc822",
     "figures/cone_link.pdf": "f1c9994b8705e12f6c1e5d0c45bee6d38ccbd88a8337ccc8c30b0973bff0c350",
@@ -77,17 +77,7 @@
   "shell_escape": false,
   "listings_path": "/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty",
   "runtime_preparation": {
-    "filesystem_search_fallback": true,
-    "local_font_map": {
-      "path": ".texbuild/fonts/pdftex.map",
-      "sha256": "af7f044ddd2fa489dfe2f16b5bd110d57862e8f018333cc4c09f6aa54af17e30",
-      "components": {
-        "cm.map": "fe2bdcbf7d33fd3e63443c3ee19d84abaaf2d9cff88593799b0f354e53c06df8",
-        "cmextra.map": "144a1ccfa5b819f9b81bcc40161626d1d1f10bb7f98e8b5d2e1f2cc32c48d2ad",
-        "symbols.map": "203853b8cc06e4bcee749c5a4dda0fea91bfc35a701c7f3f477839ed234e6c66",
-        "euler.map": "a02f57d10cdbca89199639ea6b3a07141f7383f79479a1bcebe5f3ef1362576e",
-        "lm.map": "d40c55f3e00607c98ae0d99112dcb56e18e9b9ea8febac443cfd6533469ac90d"
-      }
-    }
+    "filesystem_search_fallback": false,
+    "local_font_map": null
   }
 }

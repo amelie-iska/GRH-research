@@ -1,0 +1,12 @@
+'IntegratedOperatorContracts.power_intertwines' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IntegratedOperatorContracts.scalar_model_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IntegratedOperatorContracts.long_division_step' depends on axioms: [propext, Quot.sound]
+'IntegratedOperatorContracts.xor_output_involution' does not depend on any axioms
+IntegratedOperatorContracts.power_intertwines.{u_1, u_2} {m : Type u_1} {n : Type u_2} [Fintype m] [Fintype n]
+  [DecidableEq m] [DecidableEq n] (A : Matrix m m ℝ) (B : Matrix n n ℝ) (U : Matrix m n ℝ) (h : A * U = U * B) (k : ℕ) :
+  A ^ k * U = U * B ^ k
+IntegratedOperatorContracts.scalar_model_error (actual surrogate delta alpha : ℝ)
+  (herror : |actual - surrogate| ≤ delta) (hcal : surrogate ≤ alpha) : actual ≤ alpha + delta
+IntegratedOperatorContracts.long_division_step (p r bit : ℕ) (hr : r < p) (hb : bit ≤ 1) :
+  (if 2 * r + bit < p then 2 * r + bit else 2 * r + bit - p) < p
+IntegratedOperatorContracts.xor_output_involution (value output : Bool) : (output ^^ value ^^ value) = output

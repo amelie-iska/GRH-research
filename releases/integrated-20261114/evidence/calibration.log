@@ -1,0 +1,38 @@
+{
+  "schema": "grh.integrated-calibration.v1",
+  "exploratory_after_original": true,
+  "original_result_sha256": "9a0b94fcef39a3253ea9d68f698a9d7810833b1955d5206d33c84d28fde97ed2",
+  "trained_weights_sha256": "33dc5e05cfb7109b08db9ca332e27f780a0fc2e99e4e74daf5e4518c5dc13617",
+  "model_unchanged": true,
+  "search_size": {
+    "products": 3,
+    "methods": 3,
+    "templates": 72
+  },
+  "reference_draws": 512,
+  "calibration_draws": 4095,
+  "validation_draws": 1024,
+  "observed_maximum": 3.324807843851635,
+  "exceedances": 154,
+  "rank_p": 0.037841796875,
+  "rank_resolution": 0.000244140625,
+  "conditional_tail_binomial_interval_95": [
+    0.03198996071073251,
+    0.04389506006676903
+  ],
+  "selected_product": "V",
+  "selected_method": 1,
+  "selected_template": 8,
+  "null_validation": {
+    "rejections": 57,
+    "draws": 1024,
+    "fraction": 0.0556640625,
+    "interval_95": [
+      0.04242855159855284,
+      0.07152105123598544
+    ]
+  },
+  "max_crossproduct_error": 6.766753176711935e-16,
+  "scope": "Precision refinement of the conditional joint-phase null with refreshed normalization. Binomial intervals quantify simulation uncertainty conditional on this null, observed score and reference, not foreground/instrument misspecification or a probability for CCC.",
+  "source_sha256": "6c97d9d5d0b7e9a2c62fe76f4c1613495cb1c8b5af2295a0740c16a9eb4ada18"
+}

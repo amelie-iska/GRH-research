@@ -1,0 +1,421 @@
+{
+  "schema": "grh.uniform-arithmetic-study.v1",
+  "seed": 2026111404,
+  "records": [
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 7,
+      "bits": 3,
+      "operation": "add",
+      "input_bits": 6,
+      "output_bits": 4,
+      "qubits": 88,
+      "scratch_start": 10,
+      "resources": {
+        "gate_counts": {
+          "CX": 176,
+          "X": 60,
+          "CCX": 40
+        },
+        "total_gates": 276,
+        "qubits": 88,
+        "clean_scratch": 78,
+        "all_to_all_depth": 51
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 64,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "4277736a206b02b5fbc7a5a16fce3dc96062a65fde7fa94c8d40f43c17520f51",
+      "emitted_circuit": "field-7-add.json"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 7,
+      "bits": 3,
+      "operation": "multiply",
+      "input_bits": 6,
+      "output_bits": 4,
+      "qubits": 213,
+      "scratch_start": 10,
+      "resources": {
+        "gate_counts": {
+          "CX": 450,
+          "X": 150,
+          "CCX": 108
+        },
+        "total_gates": 708,
+        "qubits": 213,
+        "clean_scratch": 203,
+        "all_to_all_depth": 189
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 64,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "236814a50720d7d20b8e6d2aca819a0dd8a17c0e656164e10ef47089af9918ac",
+      "emitted_circuit": "field-7-multiply.json"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 7,
+      "bits": 3,
+      "operation": "inverse",
+      "input_bits": 3,
+      "output_bits": 4,
+      "qubits": 576,
+      "scratch_start": 7,
+      "resources": {
+        "gate_counts": {
+          "CX": 1290,
+          "X": 402,
+          "CCX": 294
+        },
+        "total_gates": 1986,
+        "qubits": 576,
+        "clean_scratch": 569,
+        "all_to_all_depth": 607
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 8,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "ed1da3f4fc41f2da1686f824e83c11f480891fe3a8dc23ade8f5fbbd00953f14",
+      "emitted_circuit": "field-7-inverse.json"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 13,
+      "bits": 4,
+      "operation": "add",
+      "input_bits": 8,
+      "output_bits": 5,
+      "qubits": 112,
+      "scratch_start": 13,
+      "resources": {
+        "gate_counts": {
+          "CX": 221,
+          "X": 72,
+          "CCX": 54
+        },
+        "total_gates": 347,
+        "qubits": 112,
+        "clean_scratch": 99,
+        "all_to_all_depth": 61
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 256,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "0a3e5ad28d88e421794ae8ccb966fcba434c97539ad83cfdae9b343c05e881d8",
+      "emitted_circuit": "field-13-add.json"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 13,
+      "bits": 4,
+      "operation": "multiply",
+      "input_bits": 8,
+      "output_bits": 5,
+      "qubits": 341,
+      "scratch_start": 13,
+      "resources": {
+        "gate_counts": {
+          "CX": 723,
+          "X": 218,
+          "CCX": 188
+        },
+        "total_gates": 1129,
+        "qubits": 341,
+        "clean_scratch": 328,
+        "all_to_all_depth": 259
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 256,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "28b9eea9e22181553aeee9882c2da8593f20729093944294d01df5e25035a96c",
+      "emitted_circuit": "field-13-multiply.json"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 13,
+      "bits": 4,
+      "operation": "inverse",
+      "input_bits": 4,
+      "output_bits": 5,
+      "qubits": 1520,
+      "scratch_start": 9,
+      "resources": {
+        "gate_counts": {
+          "CX": 3395,
+          "X": 954,
+          "CCX": 850
+        },
+        "total_gates": 5199,
+        "qubits": 1520,
+        "clean_scratch": 1511,
+        "all_to_all_depth": 1335
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 16,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "c8571c7016d083701da5eb1ca445f4e6227d999ffc5c59ba022ab0140964f0ac",
+      "emitted_circuit": "field-13-inverse.json"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 31,
+      "bits": 5,
+      "operation": "add",
+      "input_bits": 10,
+      "output_bits": 6,
+      "qubits": 148,
+      "scratch_start": 16,
+      "resources": {
+        "gate_counts": {
+          "CX": 302,
+          "X": 96,
+          "CCX": 68
+        },
+        "total_gates": 466,
+        "qubits": 148,
+        "clean_scratch": 132,
+        "all_to_all_depth": 67
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 1024,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "fef63304d3064fc746a914943d71fec88f081cfcdfe25edc8fdadc52d6a7b002"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 31,
+      "bits": 5,
+      "operation": "multiply",
+      "input_bits": 10,
+      "output_bits": 6,
+      "qubits": 542,
+      "scratch_start": 16,
+      "resources": {
+        "gate_counts": {
+          "CX": 1190,
+          "X": 340,
+          "CCX": 290
+        },
+        "total_gates": 1820,
+        "qubits": 542,
+        "clean_scratch": 526,
+        "all_to_all_depth": 381
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 1024,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "04e83068dd5bb4dddc7818174f9671b62b7ecd8e67b1136a5a6b2e6468cdc8b4"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 31,
+      "bits": 5,
+      "operation": "inverse",
+      "input_bits": 5,
+      "output_bits": 6,
+      "qubits": 3404,
+      "scratch_start": 11,
+      "resources": {
+        "gate_counts": {
+          "CX": 7780,
+          "X": 2090,
+          "CCX": 1854
+        },
+        "total_gates": 11724,
+        "qubits": 3404,
+        "clean_scratch": 3393,
+        "all_to_all_depth": 2715
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 32,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "bfc89602ac2dfece1473a1ef7f45a1592ac42b24c3bff62c10897b8d2802f679"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 251,
+      "bits": 8,
+      "operation": "add",
+      "input_bits": 16,
+      "output_bits": 9,
+      "qubits": 232,
+      "scratch_start": 25,
+      "resources": {
+        "gate_counts": {
+          "CX": 473,
+          "X": 144,
+          "CCX": 110
+        },
+        "total_gates": 727,
+        "qubits": 232,
+        "clean_scratch": 207,
+        "all_to_all_depth": 91
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 112,
+      "exhaustive_input_domain": false,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "7888db474d1f44d4e4add882e122ac2e377226e6a4b6253cdd5f66b8fc9ae59b"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 251,
+      "bits": 8,
+      "operation": "multiply",
+      "input_bits": 16,
+      "output_bits": 9,
+      "qubits": 1281,
+      "scratch_start": 25,
+      "resources": {
+        "gate_counts": {
+          "CX": 2849,
+          "X": 728,
+          "CCX": 728
+        },
+        "total_gates": 4305,
+        "qubits": 1281,
+        "clean_scratch": 1256,
+        "all_to_all_depth": 739
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 112,
+      "exhaustive_input_domain": false,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "78a0127e701a43d6a3886e1ebc79997532fc8f39568e53ce3336630608457af8"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 251,
+      "bits": 8,
+      "operation": "inverse",
+      "input_bits": 8,
+      "output_bits": 9,
+      "qubits": 14207,
+      "scratch_start": 17,
+      "resources": {
+        "gate_counts": {
+          "CX": 32487,
+          "X": 7898,
+          "CCX": 8192
+        },
+        "total_gates": 48577,
+        "qubits": 14207,
+        "clean_scratch": 14190,
+        "all_to_all_depth": 9001
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 256,
+      "exhaustive_input_domain": true,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "f0047e016b38d27ebfb2313307f903610552e0fc677785e9303deb98a090f36e"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 65521,
+      "bits": 16,
+      "operation": "add",
+      "input_bits": 32,
+      "output_bits": 17,
+      "qubits": 460,
+      "scratch_start": 49,
+      "resources": {
+        "gate_counts": {
+          "CX": 941,
+          "X": 276,
+          "CCX": 222
+        },
+        "total_gates": 1439,
+        "qubits": 460,
+        "clean_scratch": 411,
+        "all_to_all_depth": 157
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 112,
+      "exhaustive_input_domain": false,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "74a735abfe6880df7afe17fc705e4ed1e75fe0e2fa4faf7eac40000a4762afe4"
+    },
+    {
+      "schema": "grh.uniform-field-oracle.v1",
+      "p": 65521,
+      "bits": 16,
+      "operation": "multiply",
+      "input_bits": 32,
+      "output_bits": 17,
+      "qubits": 4805,
+      "scratch_start": 49,
+      "resources": {
+        "gate_counts": {
+          "CX": 10833,
+          "X": 2480,
+          "CCX": 2864
+        },
+        "total_gates": 16177,
+        "qubits": 4805,
+        "clean_scratch": 4756,
+        "all_to_all_depth": 2155
+      },
+      "specification": "Input preserved; output XOR (field result + 2^n validity); invalid inputs and inverse(0) contribute zero; scratch restored.",
+      "construction": "Uniform carry/borrow, schoolbook multiplication, binary long division, Fermat inversion, compute/copy/uncompute. No input enumeration in generator.",
+      "scope": "Ideal logical X/CX/CCX; no routing, fault tolerance, low-ancilla optimality or complete large-field elliptic scalar multiplication claim.",
+      "tested_words": 112,
+      "exhaustive_input_domain": false,
+      "arbitrary_output_replay": true,
+      "clean_scratch": true,
+      "circuit_sha256": "9fcfebd92a26a63e1c2a58cba92b025cea8232a05778757c986fc01d91589238"
+    }
+  ],
+  "complexity": "For n-bit modulus: addition O(n) gates/work, multiplication O(n^2), exponent inversion O(n^3); reverse cleanup doubles compute cost.",
+  "test_scope": "Exhaustive input domains through 10 input bits, seeded arbitrary output per input and explicit boundaries; wider instances sampled.",
+  "source_sha256": "8c087446ad70c7749c12a8945736095b357cb563623be7273a87269710f27a6d"
+}
