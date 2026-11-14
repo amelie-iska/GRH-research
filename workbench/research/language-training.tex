@@ -1,0 +1,135 @@
+\section{ConvexTok, graph incidence and the preservation of information}
+\label{sec:wb-convextok}
+
+Three tokenization questions must be separated. Vocabulary construction chooses which byte strings have token identities. Segmentation chooses a path through the available spans for a particular byte string. Graph tokenization represents vertices, edges, roles, ports and attributes. ConvexTok addresses vocabulary construction through an integer-program formulation and a convex relaxation, with feasible rounding and an objective-specific optimality gap [R6]. TokenGT-style incidence encoding addresses the third question. Combining them is meaningful, but they are not interchangeable mechanisms.
+
+For a fixed vocabulary, construct a segmentation DAG whose vertices are byte offsets $0,\ldots,L$ and whose edge $i\to j$ denotes a token matching the bytes in that interval. A valid segmentation is a path from zero to $L$. Additive token costs give the min-plus recurrence
+\[
+ d(j)=\min_{i\to j}\{d(i)+c(i,j)\},\qquad d(0)=0.
+\]
+The existence of a byte-fallback edge at every offset guarantees coverage. This recurrence is an exact algorithm for the declared fixed vocabulary and objective. It does not make the globally coupled vocabulary-selection problem a collection of independent shortest paths: selecting a token type can enable edges in many examples under one shared vocabulary budget.
+
+A feasible integer vocabulary solution provides an upper bound on a minimization optimum; a valid relaxation provides a lower bound. Their difference certifies a gap for that objective and dataset. It is not a certificate of grammatical correctness, semantic adequacy, graph equivariance, Turing completeness or improved downstream accuracy on every task. In particular, a compression certificate should retain the corpus split, normalization, token inventory, fallback policy and solver settings to which it applies.
+
+\begin{proposition}[Information-preserving tokenization does not reduce computability]
+Let $E:X\to Z$ be a computable encoding with a computable left inverse $D$, so $D(E(x))=x$. Every computable target $f:X\to Y$ has the implementation $f\circ D$ on encoded inputs. Conversely, if $E(x)=E(x')$ but $f(x)\ne f(x')$, no deterministic function of $E(x)$ alone realizes $f$ on both inputs.
+\end{proposition}
+\begin{proof}
+Composition of the supplied algorithms computes $(f\circ D)(E(x))=f(x)$. For the converse, a function takes the same value on equal inputs, contradicting the two different target values.
+\end{proof}
+
+The proposition explains why reversible byte tokenization can change efficiency without changing the underlying computable tasks. It also gives a direct obstruction for lossy graph summaries, dropped edge orientations, truncated attributes or unknown-token collapse. The complexity of decoding still counts. A succinct encoding may require a long expansion, and a tokenizer trained on held-out text can leak information even when it is perfectly reversible.
+
+For the proposed ToricGT/Mora-3 interface, span tokens should retain their byte intervals, modality, node or edge ownership, relation type, port position and provenance. Structural control tokens belong to a typed control channel. Ordinary payload containing the printed spelling of a control token must remain payload, not become an instruction to mutate a graph. When a vocabulary is extended, its new axis, decoder and checkpoint compatibility must be versioned instead of silently altering an old tokenizer certificate.
+
+\subsection{A precise toric connection, without confusing statistics with meaning}
+
+Let $A$ be the directed incidence matrix of the segmentation DAG, with columns indexed by token-occurrence edges. The nonnegative integer vector $z$ of a source-to-sink path satisfies $Az=b$, where $b$ is the fixed source/sink boundary vector under the chosen sign convention. Two paths $u,v$ have $A(u-v)=0$. Their monomial difference $X^u-X^v$ therefore belongs to the kernel of the monomial map sending an edge variable to the Laurent monomial determined by its incidence column. This is a toric-ideal relation for the declared incidence statistics.
+
+That equality is not a universal semantics theorem. Two paths can share incidence statistics while differing in token counts, attributes, costs or higher-level interpretation. Conversely, two semantically equivalent programs need not have the same incidence vector. The useful role of the toric construction is to describe a controlled algebra of alternate factorizations. Semantic preservation must be supplied by a separate denotation map or rewrite certificate.
+
+The same distinction applies to tropicalization. If all relevant leading coefficients are positive and a valuation convention is fixed, a sum's leading order can be obtained by the corresponding minimum rule without cancellation. For signed or complex coefficients, equal leading orders can cancel. Tokenization alternatives, grammar ambiguity and quantum amplitudes consequently require different algebraic treatments even when their diagrams share a DAG representation.
+
+\subsection{Prefix measurability and fair accounting}
+
+For autoregressive evaluation, a structural feature available at step $t$ must be measurable with respect to the already revealed input, public metadata and declared decoding order. A graph edge extracted using a hidden target token, a future parse annotation or a completed proof can leak the answer. It cannot be excused as geometric side information. Random-order decoding requires masks tied to the revealed set, including any edge features that depend on unrevealed endpoints.
+
+Report byte-normalized likelihood alongside graph validity, semantic accuracy and the size of nonrecoverable side information. Charge a learned vocabulary artifact, externally supplied graph structure, retrieval indices and verifier calls where they are necessary to the claimed system. A deterministic path graph recoverable from the observed sequence has a different information cost from a privileged semantic graph supplied by an oracle. These accounting choices should be predeclared and ablated rather than selected after seeing the score.
+
+\section{GFlowNets over derivations, programs and complete forests}
+\label{sec:wb-gfn}
+
+A language or circuit task often admits many acceptable constructions. A GFlowNet can learn a distribution over completed parses, proof objects, candidate circuits or reasoning forests rather than only select one maximum-score result. The original trajectory-balance theory and its continuous/hybrid extensions specify the conditions for that distributional interpretation [R7,R8]. A loss bearing the same name is not sufficient: its states, actions, backward probabilities, terminal objects and reference measure must match the theorem.
+
+Consider a finite construction DAG with source $s_0$, terminal set $\mathcal X$, normalized forward transitions $P_F(s'\mid s)$ and normalized backward transitions $P_B(s\mid s')$ over the actual parents of each non-source state. Assume every supported path terminates and every backward path reaches the source. For a complete path $\tau:s_0\leadsto x$, define products $P_F(\tau)$ and $P_B(\tau\mid x)$. Positive rewards $R(x)$ and a positive scalar $Z$ satisfy exact trajectory balance when
+\[
+ ZP_F(\tau)=R(x)P_B(\tau\mid x)
+\]
+for every complete supported trajectory, with sufficient support to cover the target objects.
+
+\begin{proposition}[Terminal law and a uniform residual bound]
+Under these assumptions, exact balance implies
+\[
+ P_F(X=x)=\frac{R(x)}{\sum_yR(y)}.
+\]
+More generally, suppose every complete path has a log-ratio residual $r_\tau$ satisfying
+\[
+ ZP_F(\tau)=R(x)P_B(\tau\mid x)e^{r_\tau},\qquad |r_\tau|\le\epsilon.
+\]
+Then, writing $p^*(x)=R(x)/\sum_yR(y)$,
+\[
+ e^{-2\epsilon}\le\frac{P_F(X=x)}{p^*(x)}\le e^{2\epsilon},\qquad
+ \|P_F-p^*\|_{\rm TV}\le\min\left\{1,\frac{e^{2\epsilon}-1}{2}\right\}.
+\]
+\end{proposition}
+\begin{proof}
+For each terminal $x$, the backward path probabilities sum to one. Summing the residual identity over paths ending at $x$ bounds $ZP_F(X=x)$ between $e^{-\epsilon}R(x)$ and $e^{\epsilon}R(x)$. Summing again over $x$ bounds $Z/\sum_yR(y)$ between the same two factors. Dividing gives the likelihood-ratio bounds. The total-variation bound follows from $\frac12\sum_x p^*(x)|P_F(x)/p^*(x)-1|$ and the upper bound on the absolute ratio error. Setting $\epsilon=0$ gives the exact law.
+\end{proof}
+
+The uniform residual hypothesis is deliberately stronger than a small mean squared loss on sampled training paths. A rare branch can have a large residual while barely affecting an average. Missing support cannot be repaired by a loss evaluated only where the sampler goes. The proposition is a useful certificate target for small enumerated grammars, not a claim that ordinary stochastic optimization establishes it on an exponentially large state space.
+
+The backward probability is evaluated at the \emph{destination}, over its valid parent choices. The inspected ToricGT primitive at \texttt{a5199bc}, \texttt{src/toricgt/gflownet.py}, evaluates both policy heads on the source-state slice and gathers the forward action index for each [P2]. Without an explicit encoding convention proving that these logits represent the correct destination-parent law, the general terminal-distribution theorem does not follow from this primitive. The extension records this as a source-level verification obligation; it does not modify a model under training or claim that every use of that module is invalid.
+
+Mora-3's continuous GFN primitives explicitly leave normalized policies, valid trajectories and the reward measure to their caller [P4]. That is the right scope for a primitive. A normalized Gaussian density is not a complete graph-generating process. A continuous latent update also cannot silently allocate a discrete topology: node counts, edge choices and stopping require a discrete policy or a separately specified skeleton.
+
+\subsection{Histories, objects and semantic equivalence classes}
+
+Suppose one terminal circuit can be constructed in ten action orders and another in one. Sampling action histories uniformly does not sample circuits uniformly. A GFlowNet's backward kernel can account for multiple routes to one terminal object, but only if the state and merge definitions identify the intended object. If terminals are instead derivation histories, the reward law is over histories. Quotienting afterward generally changes the law by the total probability in each equivalence class.
+
+Semantic merging is stronger still. Two graphs can denote the same Boolean function but have different structures and different future rewrite options. A checker may certify their denotational equivalence while a learned continuation policy remains sensitive to their representation. Merging their latent states requires either a sufficient statistic for the continuation problem or an explicit quotient policy; semantic equivalence alone does not prove those latent states interchangeable.
+
+This motivates a two-level architecture. A typed syntax graph retains identity, binding and construction history; a semantic channel stores certified invariants and can support retrieval or equivalence proposals. GFlowNet rewards can favor correct and diverse terminal objects while the verifier rejects invalid rewrites. The reward should not reward an attractive certificate format rather than the property actually checked.
+
+\subsection{Forests, flow matching and censoring}
+
+A complete forest can be represented by discrete topology $T$, typed actions $A$ and continuous coordinates $Z$. A hybrid target requires a counting measure on discrete structure and a declared measure on the continuous coordinates. Variable node counts change the continuous dimension. Densities from different dimensions cannot be compared as though they shared one Euclidean base measure. A topology-conditioned density or another rigorously specified disjoint-union construction is required.
+
+A deterministic flow-matching ODE is not a Gaussian-transition sampler. Its transition is concentrated on the deterministic flow map; attaching arbitrary Gaussian log probabilities to that map does not turn it into a valid continuous GFlowNet. One may distill a qualified stochastic teacher into a conditional flow, or define an SDE with its own density and stopping semantics. Those are distinct objectives and must be evaluated as such.
+
+Mora-3's inspected forest routine is bounded, layer-wise beam selection with explicit proposal and depth budgets [P4]. Its own implementation distinguishes that procedure from an on-policy GFlowNet kernel. A beam-pruned distribution is changed by selection. Terminal leaves, budget-censored leaves and invalid proposals must remain distinguishable. Reporting a truncated branch as a failed proof or as an accepted terminal changes both the scientific target and the probability model.
+
+For a random-order finite decoder, a useful sufficient condition is a uniform conditional total-variation error $\epsilon_t$ at every step, for all reachable histories under the comparison. Sequential maximal couplings then give joint total variation at most $\sum_t\epsilon_t$: couple each next token, and bound the probability of any mismatch by the union bound. This does not follow merely from approximating conditional means or from an unspecified $L^p$ score guarantee. Continuous outputs need density or measure-level assumptions appropriate to their reference space.
+
+\section{Dynamical expressivity, protected memory and error accumulation}
+\label{sec:wb-language-dynamics}
+
+The program's recurrent interpretation is useful: a shared graph update evolves a state containing a current candidate, evidence, memory and unresolved branches. However, the system has several different times. Physical time parameterizes the modeled process. Derivation depth counts reasoning steps. Solver time parameterizes integration of a continuous flow. Training time counts optimizer updates. A one-step solver that proposes an entire forest has not reduced the logical depth of every dependency in that forest to one.
+
+\begin{proposition}[Finite-horizon simulation error]
+Suppose exact states obey $x_{t+1}=F_t(x_t)$, approximate states obey $\hat x_{t+1}=\hat F_t(\hat x_t)$, and on the relevant operating domain $F_t$ is $L$-Lipschitz while $\|\hat F_t(z)-F_t(z)\|\le\delta_t$. If both trajectories stay in that domain, then
+\[
+ e_T\le L^T e_0+\sum_{t=0}^{T-1}L^{T-1-t}\delta_t,
+ \qquad e_t=\|\hat x_t-x_t\|.
+\]
+\end{proposition}
+\begin{proof}
+Insert and subtract $F_t(\hat x_t)$, use the triangle inequality and Lipschitz bound to get $e_{t+1}\le Le_t+\delta_t$, then induct. The domain condition is necessary; a local training estimate does not establish it.
+\end{proof}
+
+This connects approximation to the workbench's exact weighted-gain certificates. A positive comparison matrix and weights can establish a contraction rate for a specified block metric, provided the model-to-matrix inequality has been proved or independently justified on the domain. The exact arithmetic certificate verifies the matrix inequality, not the existence of that envelope for a learned dynamical system. A rate $q<1$ controls accumulated bounded disturbances by $\delta/(1-q)$ after transients, but it also imposes a memory tradeoff.
+
+\begin{proposition}[Global contraction erases separated initial-state information]
+Let $F$ be $q$-contractive with $0\le q<1$, let the initial states lie in a set of diameter $D$, and let a readout be $L_R$-Lipschitz. After $t$ autonomous iterations, any two readout values differ by at most $L_Rq^tD$.
+\end{proposition}
+\begin{proof}
+Iterating the contraction inequality gives $\|F^t(x)-F^t(y)\|\le q^tD$. Apply the readout bound.
+\end{proof}
+
+A model required to retain a fixed decision margin about arbitrarily old initial information cannot satisfy that globally contractive autonomous description forever. The constructive response is not to abandon stability: separate a stable continuous workspace from protected discrete or noncontractive memory, inject fresh inputs, or state a finite retention horizon. A graph executor naturally supports that separation. Toric phases or recurrent hidden states are not automatically protected memory; their noise, quantization and readout must be analyzed.
+
+Local tropical cells can expose which candidates dominate a decision. Their active margins provide perturbation diagnostics, and a sequence of visited cells gives a symbolic itinerary. Stability of each fitted cell matrix separately does not prove stability under arbitrary switching. A common weighted norm, a justified joint bound or restrictions on allowed itineraries are needed. Likewise, a max-plus largest-path growth rate is not the same as the norm of an ordinary sum over all paths; path multiplicity and phase cancellation remain separate terms in the error budget.
+
+\section{Quantum and hybrid generalizations}
+\label{sec:wb-quantum-language}
+
+A quantum extension needs a state space, preparation, admissible operations, control, measurement and a resource model. A classical graph may index quantum subsystems, or a quantum register may coherently encode graph labels; these are different constructions. Expectation-valued quantum features followed by a classical graph network give a hybrid model. A classical GPU simulation of that circuit remains classical computation of a quantum model, not evidence of hardware quantum advantage.
+
+The bypass proposition supplies a positive baseline: a hybrid architecture that genuinely retains its classical graph executor can retain its classical language and circuit capabilities while adding quantum features or quantum subroutines. Such an extension can be scientifically interesting without a claim of stronger computability. Conventional effectively specified quantum computation does not provide a halting oracle. Any complexity advantage must be stated for a particular problem, encoding, access model and accuracy, with preparation, shots, error correction and readout included [R9].
+
+Quantum circuit grammars have noncommuting operations, tensor structure and, for measurements, classical outcomes and conditional branches. Unitarians compose as amplitudes; unconditional physical evolutions compose as completely positive trace-preserving channels. A forbidden path in a gentle algebra cannot simply be imposed as a zero composition of trace-preserving channels on a nonzero normalized state space: trace preservation would give trace one, not zero. A zero relation can instead describe a forbidden syntactic route, an amplitude operator relation, or a vanishing trace-decreasing instrument branch, with their respective semantics kept explicit.
+
+For a sequence of channels, a uniform diamond-norm error bound permits a telescoping comparison of composed evolutions. Inserting one approximate channel at a time and using contractivity of pre- and post-composition by channels bounds total channel error by the sum of per-step errors. This statement requires actual channel maps; an arbitrary learned matrix is not a channel merely because it is attached to a quantum-labeled graph. The corresponding measurement distributions are controlled through the declared distinguishability bound.
+
+Finite-shot feature estimation introduces statistical error distinct from approximation and discretization error. A grammar selector making many adaptive decisions must account for the total measurement and selection protocol, not reuse a single-shot confidence level as a guarantee for the entire run. The new finite-search measure bounds are one conservative component when individual event bounds are available. They do not prove those calibration premises.
+
+A proposed quantum GFlowNet similarly needs care. Born probabilities can parameterize a classical transition policy when outcomes and normalization are explicit. A coherent sum of paths is not a classical probability flow over those same paths, because interference can change the terminal law. Phase-sensitive amplitudes cannot be treated as nonnegative rewards without changing the object modeled. The suitable research program compares a classical policy, a quantum-feature policy and a physically specified quantum sampling procedure under matched end-to-end budgets.

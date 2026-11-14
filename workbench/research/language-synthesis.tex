@@ -1,0 +1,120 @@
+\section{Quiver mutation, cluster structures and the semantics of rewriting}
+\label{sec:wb-cluster-language}
+
+A quiver used as an architecture diagram, an exchange quiver in cluster algebra, and the quiver of an algebra's module category are related only after the additional structure is specified. The workbench implements exact skew-symmetric matrix mutation and positive rational seed exchange. It does not turn an arbitrary learned attention graph into a cluster category. This distinction makes the connection useful: each interface can be tested rather than supported only by a common drawing.
+
+For a skew-symmetric exchange matrix $B=(b_{ij})$, mutation at $k$ is
+\[
+ b'_{ij}=\begin{cases}
+ -b_{ij},&i=k\text{ or }j=k,\\
+ b_{ij}+[b_{ik}]_+[b_{kj}]_+-[-b_{ik}]_+[-b_{kj}]_+,&\text{otherwise},
+ \end{cases}
+\]
+where $[a]_+=\max(a,0)$. In the coefficient-free seed convention used by the checker,
+\[
+ x'_k=\frac{\prod_i x_i^{[b_{ik}]_+}+\prod_i x_i^{[-b_{ik}]_+}}{x_k},
+ \qquad x'_i=x_i\ (i\ne k).
+\]
+These are the declared exchange rules, following the cluster-algebra framework [R10]. The implementation restricts to positive rational seed values and bounded exact integers so division and resource limits are explicit. Mutating twice at the same vertex restores the seed. The labeled $A_2$ five-step example exchanges the two initial coordinates rather than pretending the labels are unchanged.
+
+For a min-convention valuation and a subtraction-free setting with no leading-term cancellation, seed exchange induces
+\[
+ u'_k=\min\left\{\sum_i[b_{ik}]_+u_i,\sum_i[-b_{ik}]_+u_i\right\}-u_k.
+\]
+This gives a precise piecewise-linear relation between cluster combinatorics and tropical updates. It does not prove that every tropical attention operation is a cluster mutation, nor that a phase-bearing quantum seed satisfies a positive-valued valuation rule. A model using this grammar should store the exchange matrix, coefficients or their omission, seed chart, mutation index and invertibility domain as part of the state.
+
+\subsection{Why mutation does not automatically preserve a module category}
+
+Cluster categories organize mutation through additional homological structure; the hereditary cluster-category construction and its tilting interpretation are external results with explicit hypotheses [R11]. Quivers with potential carry still more data: the potential determines relations through cyclic derivatives. Keller--Yang mutation equivalences concern the associated differential graded construction in their stated setting, not a blanket equivalence between every pair of ordinary path-algebra module categories [R12]. Forgetting the potential, differential, grading or quotient changes the claim.
+
+A small example shows why this matters. Start with the path algebra of $1\to2\to3$ over a field. Mutating the middle exchange vertex gives an oriented triangle. Equipping that triangle with its cyclic potential gives the length-two zero relations. The resulting finite-dimensional gentle algebra has simples with periodic projective resolutions: with a consistent cyclic indexing, $\Omega S_i=S_{i+1}$ and $\Omega^3S_i=S_i$. It has infinite global dimension, while the starting acyclic path algebra is hereditary. Thus the exchange mutation cannot be interpreted as an automatic ordinary derived equivalence preserving these homological properties. The appropriate dg or cluster-category relation must be stated instead.
+
+The example is also a useful neural-grammar test. A model should be able to predict the mutated exchange matrix while refusing to attach an unjustified ``same ordinary derived category'' certificate. This is more demanding than producing the right picture: it tests whether the representation retains the category in which a statement is valid.
+
+\subsection{Gentle surface algebras, line fields and orders}
+
+For appropriate triangulations of unpunctured marked surfaces, the associated bound quiver algebra is gentle [R13]. Its relations, not only the underlying quiver, determine the allowed and forbidden path compositions. The workbench's finite checker verifies the quadratic-monomial local conditions and checks that allowed compositions have no directed cycle, which is the relevant finite-dimensionality test for that presentation. It does not classify derived equivalences or silently extend the unpunctured construction to arbitrary punctured surfaces.
+
+Geometric models for gentle derived categories connect indecomposable objects and morphisms to curves and intersections, while graded surface constructions retain additional data such as a line field and boundary stops [R14,R15]. These give useful structured targets for a graph model: arc incidence, grading, permitted intersections, relations and controlled transformations. A bare surface homeomorphism or equal genus does not recover all the categorical data. A learned representation should preserve the information needed by the particular theorem rather than compress everything into one topological number.
+
+Arithmetic orders add an integral layer. A field-linear representation or equivalence can forget torsion, denominators, local completions and lattice classes. An architecture action on modules over an order must specify the base ring, scalar extension, projectivity or torsion-freeness assumptions, and compatibility with the integral structure. The earlier orders chapter supplies these distinctions. A cluster seed containing rational coordinates does not itself define an equivalence of integral orders.
+
+A disciplined architecture grammar can therefore type its transformations by strength: combinatorial quiver rewrite; rational seed change; relation-preserving algebra map; equivalence in a specified derived or dg category; integral lattice-compatible map; or unitary equivalence of analytic operators. Each level has different evidence. Neural proposals can choose candidates across this hierarchy, but promotion to a stronger level requires the corresponding witness.
+
+\subsection{From categorical equivalence to Hilbert--P\'olya: the missing analytic bridge}
+
+Derived equivalence preserves categorical structure, not an arbitrarily chosen Euclidean inner product on a matrix realization. Similarity can preserve a finite spectrum without preserving norms; a general algebraic equivalence need not even give that chosen matrix similarity. An analytic Hilbert--P\'olya proposal additionally needs a Hilbert space, a densely defined self-adjoint operator and its domain, and an arithmetic spectral or determinant identity with the intended $L$-function. Approximation by finite self-adjoint matrices alone supplies none of those identities.
+
+The useful role of the graph architecture is to generate and test candidate finite presentations, symmetries, trace identities, integral constraints and compatible refinement maps. A continuum claim needs a justified convergence mode and control of spectral pollution. A GRH claim must keep the character and arithmetic family explicit, not replace all character-dependent information by a pooled spectral pattern. These are concrete proof obligations, not a reason to abandon the research program.
+
+Cryptographic applications require a similar separation. Fast mutation, a complicated orbit, chaotic-looking dynamics, a hard-looking graph or neural universality is not a security reduction. Public invariants can be useful for verification and simultaneously leak structure. The project should retain its reviewed cryptographic constructions and treat learned search or mutation encodings as experimental tools unless an explicit threat model and reduction or credible cryptanalysis support more. No secret keys or private evaluation data belong in the public grammar dataset.
+
+\section{Complexity: new interfaces do not make resource costs disappear}
+\label{sec:wb-language-complexity}
+
+Graph representations can improve alignment with a task while increasing the raw computation. A node-and-edge tokenization has $N=n+m$ tokens. Dense attention has quadratic pair interactions in $N$; for a dense graph $m$ is quadratic in $n$, so that component can grow quartically in the original vertex count before accounting for width. Higher-order graph constructions can require tokens indexed by tuples and incur their corresponding powers of $n$ [R2]. Exact blockwise or ring evaluation can reduce stored intermediates without universally reducing the number of pair interactions.
+
+A sparse circuit executor can instead apply one constant-size gate rule per vertex once predecessor values are available. A semiring shortest-path recurrence has a cost determined by the number of relaxations and edges. These are algorithmic benefits of an appropriate representation and schedule, not consequences of naming a layer tropical. A benchmark must distinguish an efficient algorithm learned by the network from an efficient algorithm provided by an external executor.
+
+The language hierarchy and circuit-complexity hierarchies classify different resources. Regular-language membership does not automatically mean that every chosen parallel representation has trivial constant-depth evaluation. Circuit evaluation, satisfiability, equivalence, parsing, graph matching and optimal rewriting should not be collapsed into one ``reasoning'' score. A verification problem may be easy while finding a witness remains expensive. A GFlowNet can amortize a distribution-specific search, but neither its objective nor a UAP theorem proves an efficient solver for every difficult instance.
+
+The correct scaling report includes graph size, edge density, attribute precision, grammar size, derivation depth, beam or candidate count, verifier cost, retrieval cost, tokenizer side information, quantum shots and classical simulation cost where applicable. Parameter count alone is inadequate. Approximation accuracy must be stated together with these resources; a family that becomes more accurate only by growing exponentially is still an existence result, not an efficient solution.
+
+\section{An extended response to anti-neural and restrictive function-learning claims}
+\label{sec:wb-chomsky-response}
+
+The response should challenge an actual claim, not a caricature of a research tradition. The May 2023 interview discussed in the existing chapter makes categorical statements about the inability of language models to contribute understanding [R16]. Those statements are different from a technical hypothesis about children's acquisition, a criticism of an experiment, or the claim that fluent output does not identify a causal mechanism. The latter concerns remain legitimate.
+
+There is a particularly important source distinction. Marcolli, Berwick and Chomsky's algebraic syntax--semantics paper explicitly relates transformer attention to its algebraic framework in Section 7 and argues against treating language-model success as a refutation of generative syntax [R17]. It should not be cited as proving an intrinsic incompatibility between attention and algebraic grammar. Its compatibility discussion is a productive starting point for this extension, not an opponent to be contradicted by misquotation.
+
+The positive argument developed here has four parts. First, a function can encode a compositional mechanism: exact Boolean gate execution and local Turing transitions demonstrate this without appeal to an unexplained universal-approximation slogan. Second, graph-valued states can preserve syntax, relations, memory and derivation history rather than compress every task into a fixed bag of words. Third, independently certified rewrites preserve a specified semantics regardless of whether a neural, symbolic or hybrid policy proposes them. Fourth, learning changes the search distribution and internal representation, which can be assessed through held-out composition and causal interventions rather than only surface fluency.
+
+None of these observations proves that a current trained model uses the intended mechanism. That issue requires experiments. But ``it learns a function'' is not a proof that it cannot: the supposed distinction disappears when the symbolic competitor also computes a function. The meaningful contrast is between an unconstrained fit and a mechanism with invariants, compositional structure, resource bounds and successful interventions. Neural parameterizations can occupy either side of that contrast.
+
+\subsection{Algebraic syntax is a design constraint, not an exclusion theorem}
+
+A free syntactic constructor can distinguish different derivation trees. A semantic map may deliberately identify several of them. A model should not confuse those levels. In particular, scalar tropical maximum is idempotent, $\max(a,a)=a$, and therefore cannot by itself be an injective representation of every syntactic construction that introduces a new distinct object. A graph node recording the constructor and its typed children can preserve that distinction while a separate tropical channel scores or summarizes it.
+
+Hopf-algebraic extraction, rooted-tree composition, operadic substitution and graph-grammar insertion suggest candidate supervision and consistency checks [R17,R18]. Their algebraic axioms can be evaluated on finite examples, used to reject invalid transformations, or implemented exactly in an external interpreter. Calling an embedding a character requires the relevant homomorphism identities, not a visually appealing latent plot. Calling a decomposition a coproduct requires its algebraic domain and compatibility. This is a route to stronger neural models precisely because it makes failure observable.
+
+The same principle applies to language order and binding. Symmetric pooling can discard word order or the identity of a bound variable. Directed, typed, port-aware graphs can retain them. Graph equivariance should remove arbitrary vertex names while preserving meaningful order and roles. If the target distinguishes two inputs that the encoding identifies, the information-preservation proposition proves that no downstream learner can recover the missing distinction. That is an actionable architectural diagnosis, not a global verdict on neural computation.
+
+\subsection{What empirical objections establish}
+
+The impossible-language debate illustrates why neither side should replace a controlled comparison with a slogan. Kallini and collaborators report differing learnability across constructed language transformations, while Hunter identifies a dependency-matching confound in an important comparison [R19,R20]. The appropriate inference is that the exact transformations and controls matter. Neither study by itself establishes that every neural model has human grammatical biases, or that neural models cannot acquire hierarchical structure.
+
+Existing studies of syntactic generalization and mechanistic structure motivate additional tests, but they do not certify the new architectures [R21,R22]. ToricGT, TropicalGT and Mora-3 must be evaluated on their own implementations and trained checkpoints. A speculative quantum extension cannot inherit empirical language performance from a classical model simply because it inherits a representational lower bound.
+
+A rigorous reply therefore rejects the categorical prohibition and retains the empirical burden. Neural learning is not barred in principle from mechanisms, recursion, counterfactuals or algebraic structure. The stronger positive scientific claim is earned when a model demonstrably uses those structures, survives counterexamples, generalizes under controlled distribution changes and pays its computational costs. Human developmental adequacy is an additional research question, not the sole criterion for being a useful model or scientific instrument.
+
+\section{Cosmological graph grammars and falsifiable inference}
+\label{sec:wb-language-cosmology}
+
+For the CCC application, distinguish a grammar of candidate signals from a physical law producing them. A model can propose temperature/polarization templates, graph-valued source configurations or candidate cross-aeon encodings. Their relation to a detector still requires a transfer model, nuisance parameters, masks, noise, foregrounds and calibration. A learned decoder cannot infer an intentional message merely because a flexible grammar can describe a pattern.
+
+The present cosmology lab already uses a maximum over its finite template search and a Monte Carlo rank based on full-search null maxima. The new exact rank certificate checks $(e+1)/(B+1)$ and its finite resolution. It does not prove exchangeability of the real and simulated statistics. The new Lean measure module separately proves finite-search union and discrepancy bounds from stated event-level premises. Together they make the logic more inspectable, but they do not convert a synthetic fixture into an observation.
+
+A grammar learned or selected using the same sky data increases the search procedure that must be calibrated. The null pipeline must include the same training, feature selection, model selection and template optimization when those stages affect the reported statistic, or those stages must be frozen independently. Repeatedly adapting the grammar after inspecting a signal and quoting an earlier fixed-search $p$-value breaks the intended guarantee. A positive detection would concern a specified statistical alternative; attribution to CCC, a preceding aeon or an intentional sender needs additional discriminating predictions.
+
+The language and complexity results help formulate testable alternatives. They explain how a candidate encoder or decoder could be implemented and what resources it needs. They do not establish the cosmological channel's existence. That separation is also what makes the proposal scientifically useful: physical, computational and statistical failures can be localized rather than hidden inside one broad claim of universal inference.
+
+\section{Evaluation and implementation program}
+\label{sec:wb-language-evaluation}
+
+The reference implementation should begin with small exact tasks whose complete semantics can be enumerated: typed bracket stacks, finite local tape transitions, Boolean circuits and interventions, token-DAG segmentation, mutation/involution, gentle relations, and finite GFlowNet construction DAGs. These are executable specification tests. Passing them with a hand-constructed executor is not trained performance and should never appear in a neural benchmark table as such.
+
+A trained comparison should then hold out structure, not merely random records. Keep all relabelings, equivalent normal forms, trajectories from one system, refinement levels, shared simulation initial conditions and derivations of one terminal object in the same split group when they could reveal the held-out target. For grammar induction, hold out combinations and depths while matching vocabulary, dependency distance, noise, rule counts and training exposure. For circuits, separate compositional families, topology, depth and interventions. For physical trajectories, separate systems and parameter regimes while retaining units and discretization metadata.
+
+The comparison set should include a sequence baseline, graph-token baseline, matched tropical/hybrid variant, a strong symbolic or numerical algorithm, and a certificate-aware learned policy where applicable. A quantum-feature comparison must include its classical simulator or efficiently computed feature counterpart when feasible, and report total measurement cost. A new architecture earns a claimed benefit only on a predeclared metric with matched information and a meaningful budget comparison.
+
+Report semantic success, exact validity, calibration, length/depth extrapolation, equivariance under the declared identifier action, conditional-mask leakage tests, verifier rejection rates and end-to-end cost. GFlowNet reports additionally need terminal-law agreement on enumerable examples, backward-kernel normalization, support coverage, multiplicity treatment and censoring. Forest reports need branch coverage and the distinction between generated topology and a supplied skeleton. A single aggregate accuracy or attractive embedding visualization cannot replace these measurements.
+
+Physical dataset curation should retain native values and axes, experimental versus simulated provenance, licenses, original release identifiers, grouped splits and hashes. The source catalog and any newly generated exact reference fixtures must be distinguished from external data actually redistributed. No new model-training run, legacy corpus replacement or admission of synthetic prose is authorized by these mathematical examples. In particular, the ongoing Mora-3 campaign remains separate from this research-text and reference-test extension.
+
+The implementation audit identifies three immediate tests before claiming theorem-to-code transfer: transported versus regenerated identifier equivariance in ToricGT; destination-conditioned backward probabilities and inverse-action alignment in the GFlowNet caller; and a genuinely implemented causal/random-order decoding interface for any Mora-3 theorem requiring one. These tests turn theoretical qualifications into concrete engineering work. They should be fixed or discharged in an isolated model change with its own regression suite rather than silently altering a running experiment.
+
+\subsection{Conclusion}
+
+The extended program is stronger than a blanket assertion of universality. It supplies explicit constructions for graph computation and circuit semantics; a faithful-interface contract for approximation; a uniform memory-growing executor for computability; a probabilistic contract for diverse derivation sampling; and a verification boundary for accepted rewrites. Toric, tropical, categorical and quantum structures can add useful representations and inductive biases when their semantics and costs are retained.
+
+The resulting response to anti-neural impossibility claims is direct: a function-learning mechanism is not intrinsically excluded from algorithmic, recursive, causal or compositional computation. The response to unqualified pro-neural claims is equally direct: bounded approximation, an architecture label, a training loss and a finite experiment are not interchangeable proofs of unbounded capability, efficient learning or real-world understanding. The research task is to connect those levels with explicit constructions, measurements and certificates. This extension makes those connections testable.
