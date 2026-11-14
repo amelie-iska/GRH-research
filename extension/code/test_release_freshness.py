@@ -201,6 +201,45 @@ class ReleaseFreshnessTests(unittest.TestCase):
         self.write("extension/code/new_component.py", "added after source packaging")
         self.reject("source_archive_inventory", archives=True)
 
+    def test_tex_build_leftovers_do_not_change_archive_or_clean_inventory(self):
+        # Reproduce the release defect: local TeX outputs existed while a clean
+        # checkout had no such files. Keep bibliography source and audit logs.
+        self.write("extension/manuscript/references.bib", "synthetic bibliography")
+        self.write("extension/manuscript/build-review.log", "retained audit evidence")
+        # Keep the synthetic PDF records consistent with their added source;
+        # the archive check must be the only variable exercised below.
+        for _, record_name, _, _ in PDFS:
+            path = "extension/manuscript/" + record_name
+            record = json.loads((self.root / path).read_text())
+            record["source_sha256"]["references.bib"] = self.hash(
+                "extension/manuscript/references.bib")
+            self.record(path, record)
+        baseline = {p.relative_to(self.root).as_posix()
+                    for p in compact_source_files(self.root)}
+        leftovers = [
+            "main.bbl", "main.out", "main.toc", "main.aux", "main.blg",
+            "main.bcf", "main.fls", "main.fdb_latexmk", "main.run.xml",
+            "main.synctex.gz", "main.lof", "main.lot", "main.dvi",
+            "slides.nav", "slides.snm", "slides.vrb", "slides.xdv",
+            "chapters/claim.aux", "fluid-extension.synctex",
+        ]
+        for name in leftovers:
+            self.write("extension/manuscript/" + name, "synthetic TeX intermediate")
+        self.assertEqual(baseline, {p.relative_to(self.root).as_posix()
+                                  for p in compact_source_files(self.root)})
+        self.add_archives()
+        with zipfile.ZipFile(self.root / "extension/site/downloads/source.zip") as archive:
+            names = set(archive.namelist())
+            self.assertTrue(baseline <= names)
+            self.assertIn("extension/manuscript/references.bib", names)
+            self.assertIn("extension/manuscript/build-review.log", names)
+            self.assertFalse(any("extension/manuscript/" + name in names
+                                 for name in leftovers))
+        self.assertEqual(check_release(self.root, archives=True)["status"], "passed")
+        for name in leftovers:
+            (self.root / "extension/manuscript" / name).unlink()
+        self.assertEqual(check_release(self.root, archives=True)["status"], "passed")
+
     def test_source_omitted_from_both_manifest_and_zip_rejected(self):
         self.add_archives()
         archive_path = self.root / "extension/site/downloads/source.zip"

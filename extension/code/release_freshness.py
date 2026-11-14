@@ -19,6 +19,13 @@ ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 PDFS = (("main", "build-verification.json", "paper.pdf", "pdf-build.json"),
         ("fluid-extension", "fluid-build-verification.json", "fluid-extension.pdf",
          "fluid-build-verification.json"))
+# These are reproducible TeX working files, not manuscript source or evidence.
+# Match full endings because pathlib's suffix alone loses .run.xml/.synctex.gz.
+TEX_INTERMEDIATE_ENDINGS = (
+    ".aux", ".bbl", ".bcf", ".blg", ".dvi", ".fdb_latexmk", ".fls",
+    ".lof", ".lot", ".nav", ".out", ".run.xml", ".snm", ".synctex",
+    ".synctex.gz", ".toc", ".vrb", ".xdv",
+)
 SITE_COPIES = {
     "extension/review/claim-register.json": "verification/claim-register.json",
     "extension/review/claim-register.md": "verification/claim-register.md",
@@ -63,6 +70,9 @@ def compact_source_files(root: Path) -> list[Path]:
         if rel.parts[:3] in {("extension", "site", "legacy"), ("extension", "site", "downloads")}:
             continue
         if path.suffix in {".pyc", ".olean", ".ilean", ".aux", ".blg", ".fls"}:
+            continue
+        if (rel.parts[:2] == ("extension", "manuscript")
+                and path.name.endswith(TEX_INTERMEDIATE_ENDINGS)):
             continue
         if rel.as_posix() in {"extension/manuscript/main.log", "extension/manuscript/fluid-extension.log"}:
             continue

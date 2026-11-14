@@ -49,18 +49,27 @@ Git archive is refused if a forbidden credential path is tracked. The Pages
 builder also rejects credential paths before copying or hashing site files.
 No actual credential file was copied into the working tree or test fixtures.
 
+The first remote clean-checkout gate caught local LaTeX intermediates
+(`main.bbl`, `main.out`, and `main.toc`) in the compact archive. These files were
+absent from the Git checkout, so deployment stopped. The corrected inventory
+excludes generated TeX auxiliaries, bibliography outputs, navigation/contents
+outputs, engine intermediates and SyncTeX metadata under the manuscript tree.
+Bibliography sources, PDFs and retained audit logs remain included. A regression
+packages a tree containing build leftovers, removes them to simulate a clean
+checkout, and requires the same archive inventory and a passing freshness gate.
+
 These checks compare records to current files. They are not cryptographically
 authenticated attestations, new kernel runs, a mathematical proof audit, a
 proof of implementation security, or a browser/deployment certificate.
 
 ## Gate verification
 
-The focused [negative-control record](publication-gate-checks.json) records fifteen
+The focused [negative-control record](publication-gate-checks.json) records sixteen
 test methods under ordinary and optimized Python. They cover stale PDF source
 or bytes, a new unrecorded chapter, a changed written claim, a changed formal
 log, an unapproved axiom, a changed cryptographic implementation, changed fluid
 reference data, a stale public record, a missing nested Lean log, added/omitted
-archive sources, credential-path exclusions and publication rejection. The positive fixture explicitly retains
+archive sources, generated TeX leftovers, credential-path exclusions and publication rejection. The positive fixture explicitly retains
 an incomplete upstream build. Synthetic test fixtures are labeled as such;
 they are not scientific evidence.
 
